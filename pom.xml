@@ -6,7 +6,15 @@
 
   <groupId>cn.ucloud</groupId>
   <artifactId>ucloud-sdk-java</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>ucloud-sdk-java-uhost</module>
+      <module>ucloud-sdk-java-unet</module>
+    <module>ucloud-sdk-java-ulb</module>
+    <module>ucloud-sdk-java-udisk</module>
+    <module>ucloud-sdk-java-vpc</module>
+  </modules>
 
   <name>ucloud-sdk-java</name>
   <url>http://www.example.com</url>
