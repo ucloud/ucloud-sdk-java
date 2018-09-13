@@ -45,7 +45,7 @@ public class Signature {
             // 拼接参数
             String stitchParams = stitchParams(params);
             // 拼接privateKey
-            stitchParams+=getGlobalAccount().getPrivateKey();
+            stitchParams += getGlobalAccount().getPrivateKey();
             // 签名
             signature = SHA1(stitchParams);
         }
@@ -53,16 +53,15 @@ public class Signature {
     }
 
     /**
-     *
      * @param params
      * @return
      */
-    public static Param[] getParamAfterSignature(Param[] params){
+    public static Param[] getParamAfterSignature(Param[] params) {
         Object[] objects = insertElement2Array(params, new Param("Signature", getSignature(params)), params.length);
         int len = objects.length;
         Param[] newParams = new Param[len];
-        for (int i=0;i<len;i++){
-            if (objects[i] instanceof Param){
+        for (int i = 0; i < len; i++) {
+            if (objects[i] instanceof Param) {
                 newParams[i] = (Param) objects[i];
             }
         }
@@ -98,7 +97,7 @@ public class Signature {
             int num = params.length;
             for (int i = 0; i < num; i++) {
                 try {
-                    if (!params[i].getParamKey().equals("PublicKey")){
+                    if (!params[i].getParamKey().equals("PublicKey")) {
                         params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
                     }
                 } catch (UnsupportedEncodingException e) {
@@ -136,33 +135,24 @@ public class Signature {
      */
     private static String SHA1(String decript) {
         try {
-            MessageDigest digest = java.security.MessageDigest
-                    .getInstance("SHA-1");
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
             digest.update(decript.getBytes());
             byte messageDigest[] = digest.digest();
             // Create Hex String
-            StringBuffer hexString = new StringBuffer();
-            // 字节数组转换为 十六进制 数
-            for (int i = 0; i < messageDigest.length; i++) {
-                String shaHex = Integer.toHexString(messageDigest[i] & 0xFF);
-                if (shaHex.length() < 2) {
-                    hexString.append(0);
-                }
-                hexString.append(shaHex);
-            }
-            return hexString.toString();
-
+            return FormatUtil.formatBytes2HexString(messageDigest, false);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+
         return "";
     }
 
     /**
      * 数组插入元素
+     *
      * @param objects 原数组
      * @param element 元素
-     * @param index 插入下标
+     * @param index   插入下标
      * @return 新数组
      */
     private static Object[] insertElement2Array(Object[] objects, Object element, int index) {
@@ -181,8 +171,6 @@ public class Signature {
         }
         return newObjs;
     }
-
-
 
 
 }
