@@ -6,7 +6,7 @@ package cn.ucloud.client;
  * @date: 2018-09-13 11:01
  **/
 
-public interface UCloudClient {
+public interface UcloudClient {
 
 
 }

@@ -7,6 +7,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @description: 签名工具类
@@ -16,7 +20,9 @@ import java.security.NoSuchAlgorithmException;
 
 
 public class Signature {
-    // 全局的账户
+    /**
+     * 全局的账户
+     */
     private static Account globalAccount;
 
 
@@ -33,7 +39,7 @@ public class Signature {
      * 获取签名字符串
      *
      * @param params 参数数组
-     * @return
+     * @return 签名字符串
      */
     public static String getSignature(Param[] params) {
         String signature = "";
@@ -41,21 +47,49 @@ public class Signature {
             // 排序
             sortParams(params);
             // url编码
-            urlEncodeParmas(params);
+            urlEncodeParams(params);
             // 拼接参数
             String stitchParams = stitchParams(params);
             // 拼接privateKey
             stitchParams+=getGlobalAccount().getPrivateKey();
             // 签名
-            signature = SHA1(stitchParams);
+            signature = sha1(stitchParams);
+        }
+        return signature;
+    }
+
+    /**
+     * 获取签名字符串
+     *
+     * @param params 参数列表
+     * @return 签名字符串
+     */
+    public static String getSignature(List<Param> params) {
+        String signature = "";
+        if (params != null) {
+            // 排序
+            Collections.sort(params, new Comparator<Param>() {
+                @Override
+                public int compare(Param p1, Param p2) {
+                    return p1.getParamKey().compareTo(p2.getParamKey());
+                }
+            });
+            // url编码
+            urlEncodeParams(params);
+            // 拼接参数
+            String stitchParams = stitchParams(params);
+            // 拼接privateKey
+            stitchParams+=getGlobalAccount().getPrivateKey();
+            // 签名
+            signature = sha1(stitchParams);
         }
         return signature;
     }
 
     /**
      *
-     * @param params
-     * @return
+     * @param params 参数数组
+     * @return 签名后的参数数组
      */
     public static Param[] getParamAfterSignature(Param[] params){
         Object[] objects = insertElement2Array(params, new Param("Signature", getSignature(params)), params.length);
@@ -67,6 +101,14 @@ public class Signature {
             }
         }
         return newParams;
+    }
+
+
+    public static List<Param> getParamAfterSignature(List<Param> params){
+        if (params != null){
+            params.add( new Param("Signature", getSignature(params)));
+        }
+        return params;
     }
 
 
@@ -93,13 +135,31 @@ public class Signature {
      *
      * @param params 参数数组
      */
-    private static void urlEncodeParmas(Param[] params) {
+    private static void urlEncodeParams(Param[] params) {
         if (params != null) {
             int num = params.length;
             for (int i = 0; i < num; i++) {
                 try {
-                    if (!params[i].getParamKey().equals("PublicKey")){
+                    if (!"PublicKey".equals(params[i].getParamKey())){
                         params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * 对参数进行Url编码
+     * @param params 参数列表
+     */
+    private static void urlEncodeParams(List<Param> params) {
+        if (params != null) {
+            for (Param param : params) {
+                try {
+                    if (!"PublicKey".equals(param.getParamKey())){
+                        param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
                     }
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -129,17 +189,34 @@ public class Signature {
 
 
     /**
+     * 获取签名串
+     * @param params  参数列表
+     * @return  待签名的签名串
+     */
+    private static String stitchParams(List<Param> params) {
+        StringBuilder builder = new StringBuilder();
+        if (params != null) {
+            for (Param param :params) {
+                builder.append(param.getParamKey());
+                builder.append(param.getParamValue());
+            }
+        }
+        return builder.toString();
+    }
+
+
+    /**
      * sha1加密
      *
-     * @param decript 待加密的字符串
+     * @param decrypt 待加密的字符串
      * @return 加密后的字符串
      */
-    private static String SHA1(String decript) {
+    private static String sha1(String decrypt) {
         try {
             MessageDigest digest = java.security.MessageDigest
                     .getInstance("SHA-1");
-            digest.update(decript.getBytes());
-            byte messageDigest[] = digest.digest();
+            digest.update(decrypt.getBytes());
+            byte[] messageDigest= digest.digest();
             // Create Hex String
             StringBuffer hexString = new StringBuffer();
             // 字节数组转换为 十六进制 数

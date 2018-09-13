@@ -1,5 +1,7 @@
 package cn.ucloud.model;
 
+import cn.ucloud.annotation.UcloudParam;
+
 import javax.validation.constraints.NotEmpty;
 
 /**
@@ -8,21 +10,41 @@ import javax.validation.constraints.NotEmpty;
  * @date: 2018-09-13 10:44
  **/
 
-public class GetUHostInstanceVncInfoParam {
+public class GetUhostInstanceVncInfoParam {
 
-    // require 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+    /**
+     * require 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     */
     @NotEmpty(message = "region can not be empty")
+    @UcloudParam("Region")
     private String region;
 
-    // optional 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+    /**
+     * optional 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     */
+    @UcloudParam("Zone")
     private String zone;
 
-    // require UHost实例ID 参见 DescribeUHostInstance
+    /**
+     * require UHost实例ID 参见 DescribeUHostInstance
+     */
+    @UcloudParam("UHostId")
     @NotEmpty(message = "uHostId can not be empty")
-    private String uHostId;
+    private String uhostId;
 
-    // optional 项目编号（子帐号用） 请参考GetProjectList接口
+    /**
+     * optional 项目编号（子帐号用） 请参考GetProjectList接口
+     */
     private String projectId;
+
+
+    public String getUhostId() {
+        return uhostId;
+    }
+
+    public void setUhostId(String uhostId) {
+        this.uhostId = uhostId;
+    }
 
     public String getRegion() {
         return region;
@@ -40,13 +62,6 @@ public class GetUHostInstanceVncInfoParam {
         this.zone = zone;
     }
 
-    public String getuHostId() {
-        return uHostId;
-    }
-
-    public void setuHostId(String uHostId) {
-        this.uHostId = uHostId;
-    }
 
     public String getProjectId() {
         return projectId;

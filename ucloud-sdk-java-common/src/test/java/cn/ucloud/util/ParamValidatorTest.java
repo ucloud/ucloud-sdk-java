@@ -1,5 +1,6 @@
 package cn.ucloud.util;
 
+import cn.ucloud.pojo.Param;
 import org.junit.Test;
 
 import javax.validation.ValidationException;
@@ -30,7 +31,15 @@ public class ParamValidatorTest {
 
     @Test
     public void validator() {
+        Person person = new Person();
+        person.setName("zhangsan");
         try {
+            ParamValidator.validator(person);
+        }catch (Exception e){
+            System.out.println(e.fillInStackTrace());
+        }
+        try {
+            System.out.println(new Person().getName());
             ParamValidator.validator(new Person());
         }catch (Exception e){
             System.out.println(e.fillInStackTrace());
