@@ -1,6 +1,7 @@
 package cn.ucloud.util;
 
 import cn.ucloud.annotation.UcloudParam;
+import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.Param;
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ import static org.junit.Assert.*;
  **/
 public class ObjectToParamTest {
 
-    private class Person{
+    private class Person extends BaseRequestParam {
         @UcloudParam("Name")
         private String name = "jianhui.zhang";
 

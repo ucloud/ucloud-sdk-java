@@ -1,6 +1,7 @@
 package cn.ucloud.model;
 
 import cn.ucloud.annotation.UcloudParam;
+import cn.ucloud.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
  * @date: 2018-09-13 10:44
  **/
 
-public class GetUhostInstanceVncInfoParam {
+public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
 
     /**
      * require 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
@@ -35,6 +36,7 @@ public class GetUhostInstanceVncInfoParam {
     /**
      * optional 项目编号（子帐号用） 请参考GetProjectList接口
      */
+    @UcloudParam("ProjectId")
     private String projectId;
 
 

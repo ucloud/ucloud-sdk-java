@@ -18,10 +18,12 @@ import static org.junit.Assert.*;
  **/
 public class SignatureTest {
 
+    private Account account;
+
     @Before
     public void initGlobalAccount(){
-        Signature.setGlobalAccount(new Account("46f09bb9fab4f12dfc160dae12273d5332b5debe",
-                "ucloudsomeone@example.com1296235120854146120","UCloud.cn"));
+        account = new Account("46f09bb9fab4f12dfc160dae12273d5332b5debe",
+                "ucloudsomeone@example.com1296235120854146120","UCloud.cn");
     }
 
     public  Param[] initParamsArray() {
@@ -34,11 +36,11 @@ public class SignatureTest {
                 new Param("Memory", 2048),
                 new Param("DiskSpace", 10),
                 new Param("LoginMode", "Password"),
-                new Param("Password", Signature.getGlobalAccount().getPassword()),
+                new Param("Password", account.getPassword()),
                 new Param("Name", "Host01"),
                 new Param("ChargeType", "Month"),
                 new Param("Quantity", 1),
-                new Param("PublicKey", Signature.getGlobalAccount().getPublicKey()),};
+                new Param("PublicKey", account.getPublicKey()),};
        return params;
     }
 
@@ -52,30 +54,30 @@ public class SignatureTest {
         params.add(new Param("Memory", 2048));
         params.add(new Param("DiskSpace", 10));
         params.add(new Param("LoginMode", "Password"));
-        params.add(new Param("Password", Signature.getGlobalAccount().getPassword()));
+        params.add(new Param("Password", account.getPassword()));
         params.add(new Param("Name", "Host01"));
         params.add(new Param("ChargeType", "Month"));
         params.add(new Param("Quantity", 1));
-        params.add(new Param("PublicKey", Signature.getGlobalAccount().getPublicKey()));
+        params.add(new Param("PublicKey", account.getPublicKey()));
         return params;
     }
 
     @Test
     public void getSignatureArray() {
         Param[] params = initParamsArray();
-        assertEquals("签名失败","4f9ef5df2abab2c6fccd1e9515cb7e2df8c6bb65",Signature.getSignature(params));
+        assertEquals("签名失败","4f9ef5df2abab2c6fccd1e9515cb7e2df8c6bb65",Signature.getSignature(params,account));
     }
     @Test
     public void getSignatureLsit() {
         List<Param> list =  new ArrayList<>(initParamsList());
-        assertEquals("签名失败","4f9ef5df2abab2c6fccd1e9515cb7e2df8c6bb65",Signature.getSignature(list));
+        assertEquals("签名失败","4f9ef5df2abab2c6fccd1e9515cb7e2df8c6bb65",Signature.getSignature(list,account));
     }
 
 
     @Test
     public void getParamArrayAfterSignature() {
         Param[] params = initParamsArray();
-        Param[] paramAfterSignature = Signature.getParamAfterSignature(params);
+        Param[] paramAfterSignature = Signature.getParamAfterSignature(params,account);
         int len = paramAfterSignature.length;
         for (int i =0 ;i<len;i++){
             System.out.println(paramAfterSignature[i].getParamKey()+"==="+paramAfterSignature[i].getParamValue());
@@ -85,7 +87,7 @@ public class SignatureTest {
     @Test
     public void getParamListAfterSignature() {
         List<Param> params = initParamsList();
-        params = Signature.getParamAfterSignature(params);
+        params = Signature.getParamAfterSignature(params,account);
         for (Param param:params){
             System.out.println(param.getParamKey()+"==="+param.getParamValue());
         }

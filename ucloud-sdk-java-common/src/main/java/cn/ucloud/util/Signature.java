@@ -20,20 +20,6 @@ import java.util.List;
 
 
 public class Signature {
-    /**
-     * 全局的账户
-     */
-    private static Account globalAccount;
-
-
-    public static Account getGlobalAccount() {
-        return globalAccount;
-    }
-
-    public static void setGlobalAccount(Account globalAccount) {
-        Signature.globalAccount = globalAccount;
-    }
-
 
     /**
      * 获取签名字符串
@@ -41,7 +27,7 @@ public class Signature {
      * @param params 参数数组
      * @return 签名字符串
      */
-    public static String getSignature(Param[] params) {
+    public static String getSignature(Param[] params,Account account) {
         String signature = "";
         if (params != null) {
             // 排序
@@ -51,7 +37,7 @@ public class Signature {
             // 拼接参数
             String stitchParams = stitchParams(params);
             // 拼接privateKey
-            stitchParams+=getGlobalAccount().getPrivateKey();
+            stitchParams+=account.getPrivateKey();
             // 签名
             signature = sha1(stitchParams);
         }
@@ -64,22 +50,15 @@ public class Signature {
      * @param params 参数列表
      * @return 签名字符串
      */
-    public static String getSignature(List<Param> params) {
+    public static String getSignature(List<Param> params,Account account) {
         String signature = "";
         if (params != null) {
             // 排序
-            Collections.sort(params, new Comparator<Param>() {
-                @Override
-                public int compare(Param p1, Param p2) {
-                    return p1.getParamKey().compareTo(p2.getParamKey());
-                }
-            });
-            // url编码
-            urlEncodeParams(params);
+            sortParams(params);
             // 拼接参数
             String stitchParams = stitchParams(params);
             // 拼接privateKey
-            stitchParams+=getGlobalAccount().getPrivateKey();
+            stitchParams+=account.getPrivateKey();
             // 签名
             signature = sha1(stitchParams);
         }
@@ -91,8 +70,8 @@ public class Signature {
      * @param params 参数数组
      * @return 签名后的参数数组
      */
-    public static Param[] getParamAfterSignature(Param[] params){
-        Object[] objects = insertElement2Array(params, new Param("Signature", getSignature(params)), params.length);
+    public static Param[] getParamAfterSignature(Param[] params,Account account){
+        Object[] objects = insertElement2Array(params, new Param("signature", getSignature(params,account)), params.length);
         int len = objects.length;
         Param[] newParams = new Param[len];
         for (int i=0;i<len;i++){
@@ -103,10 +82,14 @@ public class Signature {
         return newParams;
     }
 
-
-    public static List<Param> getParamAfterSignature(List<Param> params){
+    /**
+     *
+     * @param params 参数列表
+     * @return 签名后的参数列表
+     */
+    public static List<Param> getParamAfterSignature(List<Param> params,Account account){
         if (params != null){
-            params.add( new Param("Signature", getSignature(params)));
+            params.add( new Param("signature", getSignature(params,account)));
         }
         return params;
     }
@@ -117,7 +100,7 @@ public class Signature {
      *
      * @param params 参数数组
      */
-    private static void sortParams(Param[] params) {
+    public static void sortParams(Param[] params) {
         int num = params.length;
         for (int i = 0; i < num; i++) {
             for (int j = i + 1; j < num; j++) {
@@ -130,12 +113,29 @@ public class Signature {
         }
     }
 
+
+    /**
+     * 参数排序
+     * @param params 参数列表
+     */
+    public static void sortParams(List<Param> params){
+        if (params != null){
+            // 排序
+            Collections.sort(params, new Comparator<Param>() {
+                @Override
+                public int compare(Param p1, Param p2) {
+                    return p1.getParamKey().compareTo(p2.getParamKey());
+                }
+            });
+        }
+    }
+
     /**
      * 对参数进行url编码
      *
      * @param params 参数数组
      */
-    private static void urlEncodeParams(Param[] params) {
+    public static void urlEncodeParams(Param[] params) {
         if (params != null) {
             int num = params.length;
             for (int i = 0; i < num; i++) {
@@ -150,11 +150,12 @@ public class Signature {
         }
     }
 
+
     /**
      * 对参数进行Url编码
      * @param params 参数列表
      */
-    private static void urlEncodeParams(List<Param> params) {
+    public static void urlEncodeParams(List<Param> params) {
         if (params != null) {
             for (Param param : params) {
                 try {
@@ -175,7 +176,7 @@ public class Signature {
      * @param params 签名参数
      * @return 待签名的签名串
      */
-    private static String stitchParams(Param[] params) {
+    public static String stitchParams(Param[] params) {
         StringBuilder builder = new StringBuilder();
         if (params != null) {
             int num = params.length;
@@ -193,7 +194,7 @@ public class Signature {
      * @param params  参数列表
      * @return  待签名的签名串
      */
-    private static String stitchParams(List<Param> params) {
+    public static String stitchParams(List<Param> params) {
         StringBuilder builder = new StringBuilder();
         if (params != null) {
             for (Param param :params) {
@@ -211,7 +212,7 @@ public class Signature {
      * @param decrypt 待加密的字符串
      * @return 加密后的字符串
      */
-    private static String sha1(String decrypt) {
+    public static String sha1(String decrypt) {
         try {
             MessageDigest digest = java.security.MessageDigest
                     .getInstance("SHA-1");

@@ -1,12 +1,14 @@
 package cn.ucloud.model;
 
+import cn.ucloud.pojo.BaseRequestParam;
+
 /**
  * @description: 获取指定UHost实例的管理VNC配置详细信息 结果类
  * @author: codezhang
  * @date: 2018-09-13 11:04
  **/
 
-public class GetUhostInstanceVncInfoResult {
+public class GetUhostInstanceVncInfoResult{
     /**
      * 操作返回码
      */
