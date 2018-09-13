@@ -7,27 +7,27 @@ package cn.ucloud.pojo;
  **/
 
 public class Param {
-    private String ParamKey;
-    private Object ParamValue;
+    private String paramKey;
+    private Object paramValue;
 
     public Param(String paramKey, Object paramValue) {
-        ParamKey = paramKey;
-        ParamValue = paramValue;
+        this.paramKey = paramKey;
+        this.paramValue = paramValue;
     }
 
     public String getParamKey() {
-        return ParamKey;
+        return paramKey;
     }
 
     public void setParamKey(String paramKey) {
-        ParamKey = paramKey;
+        this.paramKey = paramKey;
     }
 
     public Object getParamValue() {
-        return ParamValue;
+        return paramValue;
     }
 
     public void setParamValue(Object paramValue) {
-        ParamValue = paramValue;
+        this.paramValue = paramValue;
     }
 }

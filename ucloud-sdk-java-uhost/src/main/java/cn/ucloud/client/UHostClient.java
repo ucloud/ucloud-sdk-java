@@ -7,4 +7,7 @@ package cn.ucloud.client;
  **/
 
 public class UHostClient {
+
+
+
 }
