@@ -13,11 +13,17 @@ public class UcloudConfig {
      */
     private Account account;
 
+    private String apiServerAddr ="https://api.ucloud.cn";
+
     public UcloudConfig(Account account) {
         this.account = account;
     }
 
     public Account getAccount() {
         return account;
+    }
+
+    public String getApiServerAddr() {
+        return apiServerAddr;
     }
 }

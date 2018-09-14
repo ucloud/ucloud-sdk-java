@@ -1,7 +1,5 @@
 package cn.ucloud.client;
 
-import cn.ucloud.pojo.Account;
-import cn.ucloud.pojo.UcloudConfig;
 
 /**
  * @description: 客户端接口

@@ -7,7 +7,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -27,7 +26,7 @@ public class Signature {
      * @param params 参数数组
      * @return 签名字符串
      */
-    public static String getSignature(Param[] params,Account account) {
+    protected static String getSignature(Param[] params,Account account) {
         String signature = "";
         if (params != null) {
             // 排序
@@ -50,7 +49,7 @@ public class Signature {
      * @param params 参数列表
      * @return 签名字符串
      */
-    public static String getSignature(List<Param> params,Account account) {
+    protected static String getSignature(List<Param> params,Account account) {
         String signature = "";
         if (params != null) {
             // 排序
@@ -70,7 +69,7 @@ public class Signature {
      * @param params 参数数组
      * @return 签名后的参数数组
      */
-    public static Param[] getParamAfterSignature(Param[] params,Account account){
+    protected static Param[] getParamAfterSignature(Param[] params,Account account){
         Object[] objects = insertElement2Array(params, new Param("signature", getSignature(params,account)), params.length);
         int len = objects.length;
         Param[] newParams = new Param[len];
@@ -87,7 +86,7 @@ public class Signature {
      * @param params 参数列表
      * @return 签名后的参数列表
      */
-    public static List<Param> getParamAfterSignature(List<Param> params,Account account){
+    protected static List<Param> getParamAfterSignature(List<Param> params,Account account){
         if (params != null){
             params.add( new Param("signature", getSignature(params,account)));
         }
@@ -100,7 +99,7 @@ public class Signature {
      *
      * @param params 参数数组
      */
-    public static void sortParams(Param[] params) {
+    protected static void sortParams(Param[] params) {
         int num = params.length;
         for (int i = 0; i < num; i++) {
             for (int j = i + 1; j < num; j++) {
@@ -118,7 +117,7 @@ public class Signature {
      * 参数排序
      * @param params 参数列表
      */
-    public static void sortParams(List<Param> params){
+    protected static void sortParams(List<Param> params){
         if (params != null){
             // 排序
             Collections.sort(params, new Comparator<Param>() {
@@ -135,7 +134,7 @@ public class Signature {
      *
      * @param params 参数数组
      */
-    public static void urlEncodeParams(Param[] params) {
+    protected static void urlEncodeParams(Param[] params) {
         if (params != null) {
             int num = params.length;
             for (int i = 0; i < num; i++) {
@@ -155,7 +154,7 @@ public class Signature {
      * 对参数进行Url编码
      * @param params 参数列表
      */
-    public static void urlEncodeParams(List<Param> params) {
+    protected static void urlEncodeParams(List<Param> params) {
         if (params != null) {
             for (Param param : params) {
                 try {

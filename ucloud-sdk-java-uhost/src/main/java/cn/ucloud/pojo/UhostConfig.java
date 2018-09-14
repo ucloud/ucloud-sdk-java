@@ -1,7 +1,7 @@
 package cn.ucloud.pojo;
 
 /**
- * @description:  uhost环境配置
+ * @description:  云主机配置信息
  * @author: codezhang
  * @date: 2018-09-13 19:27
  **/

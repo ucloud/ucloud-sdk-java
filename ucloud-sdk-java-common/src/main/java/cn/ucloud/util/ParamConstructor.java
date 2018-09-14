@@ -25,7 +25,7 @@ public class ParamConstructor {
         StringBuilder builder=new StringBuilder();
         // 设置publicKey
         baseRequestParam.setPublicKey(account.getPublicKey());
-        // 将参数对象转成List<Param>
+        // 将参数对象转成List<Param> 并完成参数校验
         List<Param> paramList = ObjectToParam.objectToParams(baseRequestParam);
         String signature = Signature.getSignature(paramList,account);
         // url编码

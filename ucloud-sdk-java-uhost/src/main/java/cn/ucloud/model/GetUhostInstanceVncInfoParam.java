@@ -72,4 +72,14 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    @Override
+    public String toString() {
+        return "GetUhostInstanceVncInfoParam{" +
+                "region='" + region + '\'' +
+                ", zone='" + zone + '\'' +
+                ", uhostId='" + uhostId + '\'' +
+                ", projectId='" + projectId + '\'' +
+                '}';
+    }
 }
