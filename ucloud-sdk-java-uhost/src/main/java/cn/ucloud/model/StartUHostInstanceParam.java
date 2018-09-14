@@ -43,6 +43,12 @@ public class StartUHostInstanceParam extends BaseRequestParam {
     @UcloudParam("DiskPassword")
     private String diskPssword;
 
+    public StartUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
+                                   @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+        this.region = region;
+        this.uhostId = uhostId;
+    }
+
     public String getRegion() {
         return region;
     }
