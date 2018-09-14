@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
  * @date: 2018-09-14 16:33
  **/
 
-public class StartUHostInstanceResult extends BaseResponseResult {
+public class RebootUHostInstanceResult extends BaseResponseResult {
 
     /**
      * 主机实例ID

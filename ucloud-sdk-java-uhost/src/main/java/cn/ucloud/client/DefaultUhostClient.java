@@ -34,38 +34,37 @@ public class DefaultUhostClient implements UhostClient {
     @Override
     public GetUhostInstanceVncInfoResult getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param) throws Exception {
         param.setAction("GetUHostInstanceVncInfo");
-        GetUhostInstanceVncInfoResult result = new GetUhostInstanceVncInfoResult();
-        UcloudHttp http = new UcloudHttpImpl();
-        result = (GetUhostInstanceVncInfoResult) http.doGet(param, config, null, result);
+        UcloudHttp http = new UcloudHttpImpl<GetUhostInstanceVncInfoResult>();
+        GetUhostInstanceVncInfoResult result = (GetUhostInstanceVncInfoResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
     public void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler handler, Boolean... asyncFlag) {
         param.setAction("GetUHostInstanceVncInfo");
-        UcloudHttp http = new UcloudHttpImpl();
+        UcloudHttp http = new UcloudHttpImpl<GetUhostInstanceVncInfoResult>();
         try {
-            http.doGet(param, config, handler, new GetUhostInstanceVncInfoResult(), asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
     public StartUHostInstanceResult startUHostInstance(StartUHostInstanceParam param) throws Exception {
         param.setAction("StartUHostInstance");
-        StartUHostInstanceResult result = new StartUHostInstanceResult();
-        UcloudHttp http = new UcloudHttpImpl();
-        result = (StartUHostInstanceResult) http.doGet(param, config, null, result);
+        UcloudHttp http = new UcloudHttpImpl<StartUHostInstanceResult>();
+        StartUHostInstanceResult result = (StartUHostInstanceResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
     public void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
         param.setAction("StartUHostInstance");
-        StartUHostInstanceResult result = new StartUHostInstanceResult();
-        UcloudHttp http = new UcloudHttpImpl();
+        UcloudHttp http = new UcloudHttpImpl<StartUHostInstanceResult>();
         try {
-            http.doGet(param, config, handler, result,asyncFlag);
-        }catch (Exception e){}
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
 
