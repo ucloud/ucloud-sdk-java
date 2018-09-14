@@ -26,7 +26,10 @@ public class UcloudHttpImpl implements UcloudHttp {
         // 创建Httpclient对象
         final CloseableHttpClient client = HttpClients.createDefault();
         // 创建http GET请求
-        final HttpGet httpGet = new HttpGet(config.getApiServerAddr() + "?" + ParamConstructor.getHttpGetParamString(param, config.getAccount()));
+        String httpGetParamString = ParamConstructor.getHttpGetParamString(param, config.getAccount());
+        System.out.println(httpGetParamString);
+        final HttpGet httpGet = new HttpGet(config.getApiServerAddr() + "?" + httpGetParamString);
+
         // response对象
         CloseableHttpResponse responseSync = null;
         //result 对象
@@ -77,11 +80,14 @@ public class UcloudHttpImpl implements UcloudHttp {
             } else {
                 // 同步非回调
                 responseSync = client.execute(httpGet);
+                String content = EntityUtils.toString(responseSync.getEntity(), "UTF-8");
                 if (responseSync.getStatusLine().getStatusCode() == 200) {
                     // 正常响应
-                    String content = EntityUtils.toString(responseSync.getEntity(), "UTF-8");
                     Gson gson = new Gson();
                     responseResult  = gson.fromJson(content, result.getClass());
+                }else {
+                    // 非200则认为是个异常
+                    throw new HttpException(content);
                 }
             }
         } finally {

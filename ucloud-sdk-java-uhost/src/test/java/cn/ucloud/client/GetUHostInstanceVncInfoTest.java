@@ -1,27 +1,27 @@
-package cn.ucloud;
+package cn.ucloud.client;
 
-
-import cn.ucloud.client.DefaultUhostClient;
-import cn.ucloud.client.UhostClient;
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.model.GetUhostInstanceVncInfoParam;
 import cn.ucloud.model.GetUhostInstanceVncInfoResult;
 import cn.ucloud.pojo.Account;
 import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UhostConfig;
+import org.junit.Before;
+import org.junit.Test;
+
 
 /**
  * @description:
  * @author: codezhang
- * @date: 2018-09-14 13:05
+ * @date: 2018-09-14 16:44
  **/
-public class UhostTest {
+public class GetUHostInstanceVncInfoTest {
 
-    private UhostClient client;
+    private UhostClient client ;
 
     private GetUhostInstanceVncInfoParam param;
 
-    @org.junit.Before
+    @Before
     public void  initData(){
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
@@ -34,7 +34,7 @@ public class UhostTest {
         param.setZone("cn-bj2-02");
     }
 
-    @org.junit.Test
+    @Test
     public void getUHostInstanceVncInfo() {
         try {
             GetUhostInstanceVncInfoResult uHostInstanceVncInfo = client.getUHostInstanceVncInfo(param);

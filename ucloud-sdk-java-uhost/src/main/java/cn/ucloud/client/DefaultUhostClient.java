@@ -5,6 +5,8 @@ import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
 import cn.ucloud.model.GetUhostInstanceVncInfoParam;
 import cn.ucloud.model.GetUhostInstanceVncInfoResult;
+import cn.ucloud.model.StartUHostInstanceParam;
+import cn.ucloud.model.StartUHostInstanceResult;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UhostConfig;
@@ -48,8 +50,22 @@ public class DefaultUhostClient implements UhostClient {
     }
 
     @Override
-    public BaseResponseResult startUHostInstance(BaseRequestParam param, UhostConfig config, UcloudHandler handler, Boolean... asyncFlag) throws Exception {
-        return null;
+    public StartUHostInstanceResult startUHostInstance(StartUHostInstanceParam param) throws Exception {
+        param.setAction("StartUHostInstance");
+        StartUHostInstanceResult result = new StartUHostInstanceResult();
+        UcloudHttp http = new UcloudHttpImpl();
+        result = (StartUHostInstanceResult) http.doGet(param, config, null, result);
+        return result;
+    }
+
+    @Override
+    public void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("StartUHostInstance");
+        StartUHostInstanceResult result = new StartUHostInstanceResult();
+        UcloudHttp http = new UcloudHttpImpl();
+        try {
+            http.doGet(param, config, handler, result,asyncFlag);
+        }catch (Exception e){}
     }
 
 
