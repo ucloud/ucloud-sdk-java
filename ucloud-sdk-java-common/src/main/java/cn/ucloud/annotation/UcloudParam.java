@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
  **/
 
 
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UcloudParam {
     String value();

@@ -117,12 +117,23 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
-
+    @Override
+    public CreateUHostInstanceResult createUHostInstance(CreateUHostInstanceParam param) throws Exception {
+        param.setAction("CreateUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(CreateUHostInstanceResult.class);
+        CreateUHostInstanceResult result = (CreateUHostInstanceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult createUHostInstance(BaseRequestParam param) {
-        return null;
+    public void createUHostInstance(CreateUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("CreateUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(CreateUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, null);
+        }catch (Exception e){ }
     }
+
 
     @Override
     public BaseResponseResult modifyUHostInstanceTag(BaseRequestParam param) {
