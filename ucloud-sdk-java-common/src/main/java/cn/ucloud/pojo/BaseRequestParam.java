@@ -35,7 +35,7 @@ public class BaseRequestParam {
 
 
     /**
-     * optional 项目编号（子帐号用） 请参考GetProjectList接口
+     * optional 项目编号（子帐号用）,不填写为默认项目，子帐号必须填写, 请参考GetProjectList接口
      */
     @UcloudParam("ProjectId")
     private String projectId;

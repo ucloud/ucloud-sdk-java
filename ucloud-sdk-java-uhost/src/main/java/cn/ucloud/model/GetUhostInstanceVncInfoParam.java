@@ -6,7 +6,7 @@ import cn.ucloud.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description: 获取指定UHost实例的管理VNC配置详细信息
+ * @description: 获取指定UHost实例的管理VNC配置详细信息 参数类
  * @author: codezhang
  * @date: 2018-09-13 10:44
  **/

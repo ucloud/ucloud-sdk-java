@@ -6,7 +6,7 @@ import cn.ucloud.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description: 重启主机参数对象
+ * @description: 重启主机参数类
  * @author: codezhang
  * @date: 2018-09-14 17:52
  **/

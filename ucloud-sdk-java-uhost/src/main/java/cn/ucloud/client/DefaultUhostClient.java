@@ -16,7 +16,6 @@ import cn.ucloud.pojo.UhostConfig;
 
 public class DefaultUhostClient implements UhostClient {
 
-
     /**
      * uhost配置
      */
@@ -68,8 +67,8 @@ public class DefaultUhostClient implements UhostClient {
     public RebootUHostInstanceResult rebootUHostInstance(RebootUHostInstanceParam param) throws Exception {
         param.setAction("RebootUHostInstance");
         UcloudHttp http = new UcloudHttpImpl(RebootUHostInstanceResult.class);
-        http.doGet(param, config, null);
-        return null;
+        RebootUHostInstanceResult result = (RebootUHostInstanceResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
@@ -83,14 +82,42 @@ public class DefaultUhostClient implements UhostClient {
 
 
     @Override
-    public BaseResponseResult stopUHostInstance(BaseRequestParam param) {
-        return null;
+    public StopUHostInstanceResult stopUHostInstance(StopUHostInstanceParam param) throws Exception {
+        param.setAction("StopUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(StopUHostInstanceResult.class);
+        StopUHostInstanceResult result = (StopUHostInstanceResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseResponseResult describeUHostTags(BaseRequestParam param) {
-        return null;
+    public void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("StopUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(StopUHostInstanceResult.class);
+        try {
+            http.doGet(param,config,handler,asyncFlag);
+        }catch (Exception e){}
     }
+
+    @Override
+    public DescribeUHostTagsResult describeUHostTags(DescribeUHostTagsParam param) throws Exception {
+        param.setAction("DescribeUHostTags");
+        UcloudHttp http = new UcloudHttpImpl(DescribeUHostTagsResult.class);
+        DescribeUHostTagsResult result = (DescribeUHostTagsResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("DescribeUHostTags");
+        UcloudHttp http = new UcloudHttpImpl(DescribeUHostTagsResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        }catch (Exception e){
+
+        }
+    }
+
+
 
     @Override
     public BaseResponseResult createUHostInstance(BaseRequestParam param) {
