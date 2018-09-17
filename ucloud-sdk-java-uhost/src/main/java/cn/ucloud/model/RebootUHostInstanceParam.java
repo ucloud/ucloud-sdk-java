@@ -36,9 +36,13 @@ public class RebootUHostInstanceParam extends BaseRequestParam {
      * optional 加密盘密码
      */
     @UcloudParam("DiskPassword")
-    private String diskPssword;
+    private String diskPassword;
 
-
+    public RebootUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
+                                    @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+        this.region = region;
+        this.uhostId = uhostId;
+    }
 
     public String getRegion() {
         return region;
@@ -65,13 +69,12 @@ public class RebootUHostInstanceParam extends BaseRequestParam {
     }
 
 
-
-    public String getDiskPssword() {
-        return diskPssword;
+    public String getDiskPassword() {
+        return diskPassword;
     }
 
-    public void setDiskPssword(String diskPssword) {
-        this.diskPssword = diskPssword;
+    public void setDiskPassword(String diskPassword) {
+        this.diskPassword = diskPassword;
     }
 
 
@@ -81,7 +84,7 @@ public class RebootUHostInstanceParam extends BaseRequestParam {
                 "region='" + region + '\'' +
                 ", zone='" + zone + '\'' +
                 ", uhostId='" + uhostId + '\'' +
-                ", diskPssword='" + diskPssword + '\'' +
+                ", diskPassword='" + diskPassword + '\'' +
                 '}';
     }
 }

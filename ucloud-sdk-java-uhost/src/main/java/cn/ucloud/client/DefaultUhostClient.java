@@ -3,10 +3,7 @@ package cn.ucloud.client;
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
-import cn.ucloud.model.GetUhostInstanceVncInfoParam;
-import cn.ucloud.model.GetUhostInstanceVncInfoResult;
-import cn.ucloud.model.StartUHostInstanceParam;
-import cn.ucloud.model.StartUHostInstanceResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UhostConfig;
@@ -34,7 +31,7 @@ public class DefaultUhostClient implements UhostClient {
     @Override
     public GetUhostInstanceVncInfoResult getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param) throws Exception {
         param.setAction("GetUHostInstanceVncInfo");
-        UcloudHttp http = new UcloudHttpImpl<GetUhostInstanceVncInfoResult>();
+        UcloudHttp http = new UcloudHttpImpl(GetUhostInstanceVncInfoResult.class);
         GetUhostInstanceVncInfoResult result = (GetUhostInstanceVncInfoResult) http.doGet(param, config, null);
         return result;
     }
@@ -42,7 +39,7 @@ public class DefaultUhostClient implements UhostClient {
     @Override
     public void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler handler, Boolean... asyncFlag) {
         param.setAction("GetUHostInstanceVncInfo");
-        UcloudHttp http = new UcloudHttpImpl<GetUhostInstanceVncInfoResult>();
+        UcloudHttp http = new UcloudHttpImpl(GetUhostInstanceVncInfoResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
@@ -52,7 +49,7 @@ public class DefaultUhostClient implements UhostClient {
     @Override
     public StartUHostInstanceResult startUHostInstance(StartUHostInstanceParam param) throws Exception {
         param.setAction("StartUHostInstance");
-        UcloudHttp http = new UcloudHttpImpl<StartUHostInstanceResult>();
+        UcloudHttp http = new UcloudHttpImpl(StartUHostInstanceResult.class);
         StartUHostInstanceResult result = (StartUHostInstanceResult) http.doGet(param, config, null);
         return result;
     }
@@ -60,18 +57,30 @@ public class DefaultUhostClient implements UhostClient {
     @Override
     public void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
         param.setAction("StartUHostInstance");
-        UcloudHttp http = new UcloudHttpImpl<StartUHostInstanceResult>();
+        UcloudHttp http = new UcloudHttpImpl(StartUHostInstanceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
 
-
     @Override
-    public BaseResponseResult rebootUHostInstance(BaseRequestParam param) {
+    public RebootUHostInstanceResult rebootUHostInstance(RebootUHostInstanceParam param) throws Exception {
+        param.setAction("RebootUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(RebootUHostInstanceResult.class);
+        http.doGet(param, config, null);
         return null;
     }
+
+    @Override
+    public void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("RebootUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(RebootUHostInstanceResult.class);
+        try {
+            http.doGet(param,config,handler,asyncFlag);
+        }catch (Exception e){}
+    }
+
 
     @Override
     public BaseResponseResult stopUHostInstance(BaseRequestParam param) {

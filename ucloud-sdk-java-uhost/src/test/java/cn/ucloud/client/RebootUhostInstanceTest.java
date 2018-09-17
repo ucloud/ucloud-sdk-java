@@ -26,10 +26,8 @@ public class RebootUhostInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"),
                         System.getenv("UcloudPassword"))));
-        param = new RebootUHostInstanceParam();
-        param.setRegion("cn-bj2");
+        param = new RebootUHostInstanceParam("cn-bj2","uhost-k2spt1");
         param.setZone("cn-bj2-02");
-        param.setUhostId("uhost-k2spt1");
         param.setProjectId("org-4nfe1i");
     }
 
