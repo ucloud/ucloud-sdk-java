@@ -28,7 +28,7 @@ public interface UhostClient extends UcloudClient {
      *
      * @param param  GetUhostInstanceVncInfoParam参数对象
      * @param handler 回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，同步的
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
     void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler handler, Boolean... asyncFlag);
 
@@ -44,7 +44,7 @@ public interface UhostClient extends UcloudClient {
      * 启动主机实例；出错则在回调中的error(e)处理
      * @param param 启动主机实例参数对象
      * @param handler 回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
     void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
 
@@ -60,7 +60,7 @@ public interface UhostClient extends UcloudClient {
      * 重启主机实例
      * @param param 重启主机实例参数对象
      * @param handler 回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
     void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
 
@@ -76,7 +76,7 @@ public interface UhostClient extends UcloudClient {
      * 关闭主机实例
      * @param param 关闭主机实例参数对象
      * @param handler 回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
     void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
 
@@ -93,14 +93,43 @@ public interface UhostClient extends UcloudClient {
      * 获取主机业务组列表
      * @param param 获取主机业务组列表参数对象
      * @param handler 回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
     void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
 
+    /**
+     * 创建云主机
+     * @param param  创建云主机参数对象
+     * @return 创建云主机结果对象
+     * @throws Exception 创建出错就抛出异常
+     */
+    CreateUHostInstanceResult createUHostInstance(CreateUHostInstanceParam param) throws Exception;
 
-    BaseResponseResult createUHostInstance(BaseRequestParam param);
+    /**
+     * 创建云主机
+     * @param param 创建云主机参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void createUHostInstance(CreateUHostInstanceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult modifyUHostInstanceTag(BaseRequestParam param);
+
+    /**
+     * 修改主机业务组名称
+     * @param param 修改主机业务组名称参数对象
+     * @return 修改主机业务组结果对象
+     * @throws Exception 修改出错则抛出异常
+     */
+    ModifyUHostInstanceTagResult modifyUHostInstanceTag(ModifyUHostInstanceTagParam param) throws Exception;
+
+    /**
+     *修改主机业务组名称
+     * @param param 修改主机业务组名称参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void modifyUHostInstanceTag(ModifyUHostInstanceTagParam param,UcloudHandler handler,Boolean... asyncFlag);
+
 
     BaseResponseResult terminateUHostInstance(BaseRequestParam param);
 

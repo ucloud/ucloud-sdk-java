@@ -117,17 +117,40 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
-
-
     @Override
-    public BaseResponseResult createUHostInstance(BaseRequestParam param) {
-        return null;
+    public CreateUHostInstanceResult createUHostInstance(CreateUHostInstanceParam param) throws Exception {
+        param.setAction("CreateUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(CreateUHostInstanceResult.class);
+        CreateUHostInstanceResult result = (CreateUHostInstanceResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseResponseResult modifyUHostInstanceTag(BaseRequestParam param) {
-        return null;
+    public void createUHostInstance(CreateUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("CreateUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(CreateUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, null);
+        }catch (Exception e){ }
     }
+
+    @Override
+    public ModifyUHostInstanceTagResult modifyUHostInstanceTag(ModifyUHostInstanceTagParam param) throws Exception {
+        param.setAction("ModifyUHostInstanceTag");
+        UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceTagResult.class);
+        ModifyUHostInstanceTagResult result = (ModifyUHostInstanceTagResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void modifyUHostInstanceTag(ModifyUHostInstanceTagParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("ModifyUHostInstanceTag");
+        UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceTagResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        }catch (Exception e){ }
+    }
+
 
     @Override
     public BaseResponseResult terminateUHostInstance(BaseRequestParam param) {
