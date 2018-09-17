@@ -19,11 +19,20 @@ public class TerminateUHostInstanceResult extends BaseResponseResult {
     @SerializedName("UHostIds")
     private List<String> uhostIds;
 
+
     /**
      * 放入回收站:"Yes", 彻底删除：“No”
      */
     @SerializedName("InRecycle")
     private String inRecycle;
+
+    @Override
+    public String toString() {
+        return "TerminateUHostInstanceResult{" +
+                "uhostIds=" + uhostIds +
+                ", inRecycle='" + inRecycle + '\'' +
+                '}';
+    }
 
     public List<String> getUhostIds() {
         return uhostIds;

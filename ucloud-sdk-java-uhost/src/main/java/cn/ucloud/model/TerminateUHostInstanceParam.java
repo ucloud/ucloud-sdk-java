@@ -16,7 +16,7 @@ public class TerminateUHostInstanceParam extends BaseRequestParam {
     /**
      * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
      */
-    @UcloudParam("region")
+    @UcloudParam("Region")
     @NotEmpty(message = "region can not be empty")
     private String Region;
 

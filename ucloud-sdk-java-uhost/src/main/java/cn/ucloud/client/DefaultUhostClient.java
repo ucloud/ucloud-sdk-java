@@ -151,11 +151,23 @@ public class DefaultUhostClient implements UhostClient {
         }catch (Exception e){ }
     }
 
+    @Override
+    public TerminateUHostInstanceResult terminateUHostInstance(TerminateUHostInstanceParam param) throws Exception {
+        param.setAction("TerminateUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(TerminateUHostInstanceResult.class);
+        TerminateUHostInstanceResult result = (TerminateUHostInstanceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult terminateUHostInstance(BaseRequestParam param) {
-        return null;
+    public void terminateUHostInstance(TerminateUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("TerminateUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(TerminateUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
+
 
     @Override
     public BaseResponseResult describeUHostInstance(BaseRequestParam param) {

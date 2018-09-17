@@ -131,7 +131,21 @@ public interface UhostClient extends UcloudClient {
     void modifyUHostInstanceTag(ModifyUHostInstanceTagParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult terminateUHostInstance(BaseRequestParam param);
+    /**
+     * 删除主机实例 非试用的过期资源不可删除； 关机状态下才能执行删除操作
+     * @param param 删除主机实例的 参数对象
+     * @return 删除主机实例的结果对象
+     * @throws Exception 删除出错则抛出异常
+     */
+    TerminateUHostInstanceResult terminateUHostInstance(TerminateUHostInstanceParam param) throws Exception;
+
+    /**
+     * 删除主机实例  非试用的过期资源不可删除； 关机状态下才能执行删除操作
+     * @param param 删除主机实例 参数对象
+     * @param handler 删除主机实例 结果对象
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void terminateUHostInstance(TerminateUHostInstanceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult describeUHostInstance(BaseRequestParam param);
 
