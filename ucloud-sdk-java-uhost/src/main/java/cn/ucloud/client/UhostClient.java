@@ -2,10 +2,7 @@ package cn.ucloud.client;
 
 
 import cn.ucloud.handler.UcloudHandler;
-import cn.ucloud.model.GetUhostInstanceVncInfoParam;
-import cn.ucloud.model.GetUhostInstanceVncInfoResult;
-import cn.ucloud.model.StartUHostInstanceParam;
-import cn.ucloud.model.StartUHostInstanceResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 
@@ -51,11 +48,55 @@ public interface UhostClient extends UcloudClient {
      */
     void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
 
-    BaseResponseResult rebootUHostInstance(BaseRequestParam param);
+    /**
+     * 重启主机实例
+     * @param param 重启主机实例参数对象
+     * @return 重启主机实例的结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    RebootUHostInstanceResult rebootUHostInstance(RebootUHostInstanceParam param) throws Exception;
 
-    BaseResponseResult stopUHostInstance(BaseRequestParam param);
+    /**
+     * 重启主机实例
+     * @param param 重启主机实例参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     */
+    void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
 
-    BaseResponseResult describeUHostTags(BaseRequestParam param);
+
+    /**
+     *
+     * @param param
+     * @return 关闭主机结果对象
+     */
+    StopUHostInstanceResult stopUHostInstance(StopUHostInstanceParam param) throws Exception;
+
+    /**
+     * 关闭主机实例
+     * @param param 关闭主机实例参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     */
+    void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+
+
+    /**
+     * 获取主机业务组列表
+     * @param param 获取主机业务列表参数对象
+     * @return 获取主机业务列表结果对象
+     * @throws Exception 获取出错则抛出异常
+     */
+    DescribeUHostTagsResult describeUHostTags(DescribeUHostTagsParam param) throws  Exception;
+
+    /**
+     * 获取主机业务组列表
+     * @param param 获取主机业务组列表参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，同步的
+     */
+    void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+
 
     BaseResponseResult createUHostInstance(BaseRequestParam param);
 

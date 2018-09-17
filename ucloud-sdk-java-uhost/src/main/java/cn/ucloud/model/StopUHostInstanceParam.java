@@ -6,12 +6,12 @@ import cn.ucloud.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description: 启动主机参数类
+ * @description: 关闭主机实例参数类
  * @author: codezhang
- * @date: 2018-09-14 16:10
+ * @date: 2018-09-17 13:41
  **/
 
-public class StartUHostInstanceParam extends BaseRequestParam {
+public class StopUHostInstanceParam extends BaseRequestParam {
 
     /**
      * require 地域，https://docs.ucloud.cn/api/summary/regionlist.html
@@ -31,15 +31,8 @@ public class StartUHostInstanceParam extends BaseRequestParam {
     @NotEmpty(message = "uhostId can not be empty")
     private String uhostId;
 
-
-    /**
-     * optional 加密盘密码
-     */
-    @UcloudParam("DiskPassword")
-    private String diskPssword;
-
-    public StartUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
-                                   @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+    public StopUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
+                                  @NotEmpty(message = "uhostId can not be empty") String uhostId) {
         this.region = region;
         this.uhostId = uhostId;
     }
@@ -69,11 +62,4 @@ public class StartUHostInstanceParam extends BaseRequestParam {
     }
 
 
-    public String getDiskPssword() {
-        return diskPssword;
-    }
-
-    public void setDiskPssword(String diskPssword) {
-        this.diskPssword = diskPssword;
-    }
 }

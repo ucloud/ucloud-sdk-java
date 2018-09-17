@@ -6,7 +6,7 @@ import cn.ucloud.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description: 获取指定UHost实例的管理VNC配置详细信息
+ * @description: 获取指定UHost实例的管理VNC配置详细信息 参数类
  * @author: codezhang
  * @date: 2018-09-13 10:44
  **/
@@ -33,11 +33,6 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
     @NotEmpty(message = "uHostId can not be empty")
     private String uhostId;
 
-    /**
-     * optional 项目编号（子帐号用） 请参考GetProjectList接口
-     */
-    @UcloudParam("ProjectId")
-    private String projectId;
 
     public GetUhostInstanceVncInfoParam(@NotEmpty(message = "region can not be empty") String region,
                                         @NotEmpty(message = "uHostId can not be empty") String uhostId) {
@@ -70,21 +65,12 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
     }
 
 
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
     @Override
     public String toString() {
         return "GetUhostInstanceVncInfoParam{" +
                 "region='" + region + '\'' +
                 ", zone='" + zone + '\'' +
                 ", uhostId='" + uhostId + '\'' +
-                ", projectId='" + projectId + '\'' +
                 '}';
     }
 }

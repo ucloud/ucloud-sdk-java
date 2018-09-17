@@ -25,8 +25,6 @@ public class ObjectToParam {
     public static List<Param> objectToParams(BaseRequestParam baseRequestParam) throws Exception {
         List<Param> params = new ArrayList<>();
         if (baseRequestParam != null) {
-            // 参数校验
-            ParamValidator.validator(baseRequestParam);
             // 参数转化
             Class<?> objectClass = baseRequestParam.getClass();
             Class<?> superclass = objectClass.getSuperclass();
