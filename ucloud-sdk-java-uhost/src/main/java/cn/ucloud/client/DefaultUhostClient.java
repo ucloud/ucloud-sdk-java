@@ -3,10 +3,7 @@ package cn.ucloud.client;
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
-import cn.ucloud.model.GetUhostInstanceVncInfoParam;
-import cn.ucloud.model.GetUhostInstanceVncInfoResult;
-import cn.ucloud.model.StartUHostInstanceParam;
-import cn.ucloud.model.StartUHostInstanceResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UhostConfig;
@@ -61,18 +58,30 @@ public class DefaultUhostClient implements UhostClient {
     @Override
     public void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
         param.setAction("StartUHostInstance");
-        StartUHostInstanceResult result = new StartUHostInstanceResult();
         UcloudHttp http = new UcloudHttpImpl();
         try {
-            http.doGet(param, config, handler, result,asyncFlag);
+            http.doGet(param, config, handler, new StartUHostInstanceResult(),asyncFlag);
         }catch (Exception e){}
     }
 
+    @Override
+    public RebootUHostInstanceResult rebootUHostInstance(RebootUHostInstanceParam param) throws Exception {
+        param.setAction("RebootUHostInstance");
+        RebootUHostInstanceResult result = new RebootUHostInstanceResult();
+        UcloudHttp http = new UcloudHttpImpl();
+        result = (RebootUHostInstanceResult) http.doGet(param, config, null, result);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult rebootUHostInstance(BaseRequestParam param) {
-        return null;
+    public void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        param.setAction("RebootUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl();
+        try {
+            http.doGet(param, config, handler, new RebootUHostInstanceResult(),asyncFlag);
+        } catch (Exception e) { }
     }
+
 
     @Override
     public BaseResponseResult stopUHostInstance(BaseRequestParam param) {

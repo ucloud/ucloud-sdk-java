@@ -33,11 +33,7 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
     @NotEmpty(message = "uHostId can not be empty")
     private String uhostId;
 
-    /**
-     * optional 项目编号（子帐号用） 请参考GetProjectList接口
-     */
-    @UcloudParam("ProjectId")
-    private String projectId;
+
 
 
     public String getUhostId() {
@@ -65,21 +61,12 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
     }
 
 
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
     @Override
     public String toString() {
         return "GetUhostInstanceVncInfoParam{" +
                 "region='" + region + '\'' +
                 ", zone='" + zone + '\'' +
                 ", uhostId='" + uhostId + '\'' +
-                ", projectId='" + projectId + '\'' +
                 '}';
     }
 }
