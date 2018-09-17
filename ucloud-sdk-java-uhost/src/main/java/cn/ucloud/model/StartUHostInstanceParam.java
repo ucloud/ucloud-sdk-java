@@ -32,12 +32,22 @@ public class StartUHostInstanceParam extends BaseRequestParam {
     private String uhostId;
 
     /**
+     * optional 项目编号（子帐号用） 请参考GetProjectList接口
+     */
+    @UcloudParam("ProjectId")
+    private String projectId;
+
+    /**
      * optional 加密盘密码
      */
     @UcloudParam("DiskPassword")
     private String diskPssword;
 
-
+    public StartUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
+                                   @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+        this.region = region;
+        this.uhostId = uhostId;
+    }
 
     public String getRegion() {
         return region;
@@ -63,7 +73,13 @@ public class StartUHostInstanceParam extends BaseRequestParam {
         this.uhostId = uhostId;
     }
 
+    public String getProjectId() {
+        return projectId;
+    }
 
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 
     public String getDiskPssword() {
         return diskPssword;
@@ -71,16 +87,5 @@ public class StartUHostInstanceParam extends BaseRequestParam {
 
     public void setDiskPssword(String diskPssword) {
         this.diskPssword = diskPssword;
-    }
-
-
-    @Override
-    public String toString() {
-        return "StartUHostInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", uhostId='" + uhostId + '\'' +
-                ", diskPssword='" + diskPssword + '\'' +
-                '}';
     }
 }

@@ -35,6 +35,11 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
 
 
 
+    public GetUhostInstanceVncInfoParam(@NotEmpty(message = "region can not be empty") String region,
+                                        @NotEmpty(message = "uHostId can not be empty") String uhostId) {
+        this.region = region;
+        this.uhostId = uhostId;
+    }
 
     public String getUhostId() {
         return uhostId;

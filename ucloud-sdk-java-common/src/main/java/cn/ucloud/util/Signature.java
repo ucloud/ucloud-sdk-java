@@ -26,7 +26,7 @@ public class Signature {
      * @param params 参数数组
      * @return 签名字符串
      */
-    protected static String getSignature(Param[] params,Account account) {
+    protected static String getSignature(Param[] params, Account account) {
         String signature = "";
         if (params != null) {
             // 排序
@@ -36,7 +36,7 @@ public class Signature {
             // 拼接参数
             String stitchParams = stitchParams(params);
             // 拼接privateKey
-            stitchParams+=account.getPrivateKey();
+            stitchParams += account.getPrivateKey();
             // 签名
             signature = sha1(stitchParams);
         }
@@ -49,7 +49,7 @@ public class Signature {
      * @param params 参数列表
      * @return 签名字符串
      */
-    protected static String getSignature(List<Param> params,Account account) {
+    protected static String getSignature(List<Param> params, Account account) {
         String signature = "";
         if (params != null) {
             // 排序
@@ -57,7 +57,7 @@ public class Signature {
             // 拼接参数
             String stitchParams = stitchParams(params);
             // 拼接privateKey
-            stitchParams+=account.getPrivateKey();
+            stitchParams += account.getPrivateKey();
             // 签名
             signature = sha1(stitchParams);
         }
@@ -65,16 +65,15 @@ public class Signature {
     }
 
     /**
-     *
      * @param params 参数数组
      * @return 签名后的参数数组
      */
-    protected static Param[] getParamAfterSignature(Param[] params,Account account){
-        Object[] objects = insertElement2Array(params, new Param("signature", getSignature(params,account)), params.length);
+    protected static Param[] getParamAfterSignature(Param[] params, Account account) {
+        Object[] objects = insertElement2Array(params, new Param("signature", getSignature(params, account)), params.length);
         int len = objects.length;
         Param[] newParams = new Param[len];
-        for (int i=0;i<len;i++){
-            if (objects[i] instanceof Param){
+        for (int i = 0; i < len; i++) {
+            if (objects[i] instanceof Param) {
                 newParams[i] = (Param) objects[i];
             }
         }
@@ -82,13 +81,12 @@ public class Signature {
     }
 
     /**
-     *
      * @param params 参数列表
      * @return 签名后的参数列表
      */
-    protected static List<Param> getParamAfterSignature(List<Param> params,Account account){
-        if (params != null){
-            params.add( new Param("signature", getSignature(params,account)));
+    protected static List<Param> getParamAfterSignature(List<Param> params, Account account) {
+        if (params != null) {
+            params.add(new Param("signature", getSignature(params, account)));
         }
         return params;
     }
@@ -115,10 +113,11 @@ public class Signature {
 
     /**
      * 参数排序
+     *
      * @param params 参数列表
      */
-    protected static void sortParams(List<Param> params){
-        if (params != null){
+    protected static void sortParams(List<Param> params) {
+        if (params != null) {
             // 排序
             Collections.sort(params, new Comparator<Param>() {
                 @Override
@@ -139,7 +138,7 @@ public class Signature {
             int num = params.length;
             for (int i = 0; i < num; i++) {
                 try {
-                    if (!"PublicKey".equals(params[i].getParamKey())){
+                    if (!"PublicKey".equals(params[i].getParamKey())) {
                         params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
                     }
                 } catch (UnsupportedEncodingException e) {
@@ -152,13 +151,14 @@ public class Signature {
 
     /**
      * 对参数进行Url编码
+     *
      * @param params 参数列表
      */
     protected static void urlEncodeParams(List<Param> params) {
         if (params != null) {
             for (Param param : params) {
                 try {
-                    if (!"PublicKey".equals(param.getParamKey())){
+                    if (!"PublicKey".equals(param.getParamKey())) {
                         param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
                     }
                 } catch (UnsupportedEncodingException e) {
@@ -190,13 +190,14 @@ public class Signature {
 
     /**
      * 获取签名串
-     * @param params  参数列表
-     * @return  待签名的签名串
+     *
+     * @param params 参数列表
+     * @return 待签名的签名串
      */
     public static String stitchParams(List<Param> params) {
         StringBuilder builder = new StringBuilder();
         if (params != null) {
-            for (Param param :params) {
+            for (Param param : params) {
                 builder.append(param.getParamKey());
                 builder.append(param.getParamValue());
             }
@@ -216,18 +217,9 @@ public class Signature {
             MessageDigest digest = java.security.MessageDigest
                     .getInstance("SHA-1");
             digest.update(decrypt.getBytes());
-            byte[] messageDigest= digest.digest();
+            byte[] messageDigest = digest.digest();
             // Create Hex String
-            StringBuffer hexString = new StringBuffer();
-            // 字节数组转换为 十六进制 数
-            for (int i = 0; i < messageDigest.length; i++) {
-                String shaHex = Integer.toHexString(messageDigest[i] & 0xFF);
-                if (shaHex.length() < 2) {
-                    hexString.append(0);
-                }
-                hexString.append(shaHex);
-            }
-            return hexString.toString();
+            return FormatUtil.formatBytes2HexString(messageDigest, false);
 
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
@@ -237,9 +229,10 @@ public class Signature {
 
     /**
      * 数组插入元素
+     *
      * @param objects 原数组
      * @param element 元素
-     * @param index 插入下标
+     * @param index   插入下标
      * @return 新数组
      */
     private static Object[] insertElement2Array(Object[] objects, Object element, int index) {
@@ -258,8 +251,6 @@ public class Signature {
         }
         return newObjs;
     }
-
-
 
 
 }

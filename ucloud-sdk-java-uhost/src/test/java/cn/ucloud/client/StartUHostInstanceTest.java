@@ -16,46 +16,44 @@ import org.junit.Test;
  **/
 public class StartUHostInstanceTest {
 
-    private UhostClient client ;
+    private UhostClient client;
 
     private StartUHostInstanceParam param;
 
     @Before
-    public void  initData(){
+    public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"),
                         System.getenv("UcloudPassword"))));
-        param = new StartUHostInstanceParam();
-        param.setRegion("cn-bj2");
+        param = new StartUHostInstanceParam("cn-bj2", "uhost-k2spt1");
         param.setZone("cn-bj2-02");
-        param.setUhostId("uhost-k2spt1");
         param.setProjectId("org-4nfe1i");
     }
-
 
 
     @Test
     public void startUHostInstance() {
         try {
             StartUHostInstanceResult startUHostInstanceResult = client.startUHostInstance(param);
-            System.out.println("同步："+startUHostInstanceResult);
+            System.out.println("同步：" + startUHostInstanceResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     @Test
     public void startUHostInstanceCallback() throws InterruptedException {
         client.startUHostInstanceCallback(param, new UcloudHandler() {
             @Override
             public Object success(BaseResponseResult result) {
-                System.out.println("success:"+result);
+                System.out.println("success:" + result);
                 return null;
             }
 
             @Override
             public Object failed(BaseResponseResult result) {
-                System.out.println("failed:"+result);
+                System.out.println("failed:" + result);
                 return null;
             }
 
@@ -65,7 +63,7 @@ public class StartUHostInstanceTest {
                 return null;
             }
         });
-        Thread.sleep(10 *1000);
+        Thread.sleep(10 * 1000);
     }
 
 }

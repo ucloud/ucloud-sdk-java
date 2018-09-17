@@ -17,20 +17,18 @@ import org.junit.Test;
  **/
 public class GetUHostInstanceVncInfoTest {
 
-    private UhostClient client ;
+    private UhostClient client;
 
     private GetUhostInstanceVncInfoParam param;
 
     @Before
-    public void  initData(){
+    public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"),
                         System.getenv("UcloudPassword"))));
-        param = new GetUhostInstanceVncInfoParam();
+        param = new GetUhostInstanceVncInfoParam("cn-bj2", "uhost-euyi2b");
         param.setProjectId("org-4nfe1i");
-        param.setUhostId("uhost-euyi2b");
-        param.setRegion("cn-bj2");
         param.setZone("cn-bj2-02");
     }
 
@@ -38,7 +36,7 @@ public class GetUHostInstanceVncInfoTest {
     public void getUHostInstanceVncInfo() {
         try {
             GetUhostInstanceVncInfoResult uHostInstanceVncInfo = client.getUHostInstanceVncInfo(param);
-            System.out.println("同步："+uHostInstanceVncInfo);
+            System.out.println("同步：" + uHostInstanceVncInfo);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,13 +47,13 @@ public class GetUHostInstanceVncInfoTest {
         client.getUHostInstanceVncInfoCallback(param, new UcloudHandler() {
             @Override
             public Object success(BaseResponseResult result) {
-                System.out.println("同步回调："+result);
+                System.out.println("同步回调：" + result);
                 return null;
             }
 
             @Override
             public Object failed(BaseResponseResult result) {
-                System.out.println("同步回调："+result);
+                System.out.println("同步回调：" + result);
                 return null;
             }
 
@@ -65,19 +63,19 @@ public class GetUHostInstanceVncInfoTest {
                 e.printStackTrace();
                 return null;
             }
-        },false);
+        }, false);
 
 
         client.getUHostInstanceVncInfoCallback(param, new UcloudHandler() {
             @Override
             public Object success(BaseResponseResult result) {
-                System.out.println("异步回调："+result);
+                System.out.println("异步回调：" + result);
                 return null;
             }
 
             @Override
             public Object failed(BaseResponseResult result) {
-                System.out.println("异步回调："+result);
+                System.out.println("异步回调：" + result);
                 return null;
             }
 
@@ -87,8 +85,8 @@ public class GetUHostInstanceVncInfoTest {
                 e.printStackTrace();
                 return null;
             }
-        },true);
+        }, true);
 
-        Thread.sleep(10*1000);
+        Thread.sleep(10 * 1000);
     }
 }
