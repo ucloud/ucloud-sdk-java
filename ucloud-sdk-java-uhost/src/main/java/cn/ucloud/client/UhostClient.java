@@ -228,7 +228,21 @@ public interface UhostClient extends UcloudClient {
      */
     void resetUHostInstancePassword(ResetUHostInstancePasswordParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult poweroffUHostInstance(BaseRequestParam param);
+    /**
+     * 模拟主机掉电
+     * @param param  模拟主机掉电参数对象
+     * @return 模拟主机掉电结果对象
+     * @throws Exception 模拟出错则抛出异常
+     */
+    PoweroffUHostInstanceResult poweroffUHostInstance(PoweroffUHostInstanceParam param) throws  Exception;
+
+    /**
+     * 模拟主机掉电
+     * @param param 模拟主机掉电参数
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void poweroffUHostInstance(PoweroffUHostInstanceParam param , UcloudHandler handler ,Boolean... asyncFlag);
 
     BaseResponseResult importCustomImage(BaseRequestParam param);
 

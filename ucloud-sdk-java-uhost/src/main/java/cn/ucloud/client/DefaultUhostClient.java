@@ -227,11 +227,21 @@ public class DefaultUhostClient implements UhostClient {
         } catch(Exception e){}
     }
 
+    @Override
+    public PoweroffUHostInstanceResult poweroffUHostInstance(PoweroffUHostInstanceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(PoweroffUHostInstanceResult.class);
+        PoweroffUHostInstanceResult result = (PoweroffUHostInstanceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult poweroffUHostInstance(BaseRequestParam param) {
-        return null;
+    public void poweroffUHostInstance(PoweroffUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(PoweroffUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch(Exception e){}
     }
+
 
     @Override
     public BaseResponseResult importCustomImage(BaseRequestParam param) {
