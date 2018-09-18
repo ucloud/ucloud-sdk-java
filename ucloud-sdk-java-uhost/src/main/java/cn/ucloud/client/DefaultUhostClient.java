@@ -365,11 +365,22 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
+    @Override
+    public CreateCustomImageResult createCustomImage(CreateCustomImageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateCustomImageResult.class);
+        CreateCustomImageResult result = (CreateCustomImageResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult createCustomImage(BaseRequestParam param) {
-        return null;
+    public void createCustomeImage(CreateCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreateCustomImageResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
 
     @Override
     public BaseResponseResult upgradeToArkUHostInstance(BaseRequestParam param) {
