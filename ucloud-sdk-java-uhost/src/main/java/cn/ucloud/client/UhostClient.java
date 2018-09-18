@@ -324,7 +324,21 @@ public interface UhostClient extends UcloudClient {
      */
     void reinstallUHostInstance(ReinstallUHostInstanceParam param,UcloudHandler handler , Boolean... asyncFlag);
 
-    BaseResponseResult getUHostUpgradePrice(BaseRequestParam param);
+    /**
+     * 获取主机升级价格
+     * @param param 获取主机升级价格参数
+     * @return 升级价格
+     * @throws Exception 获取出错则抛出异常
+     */
+    GetUHostUpgradePriceResult getUHostUpgradePrice(GetUHostUpgradePriceParam param) throws Exception;
+
+    /**
+     * 获取主机升级价格
+     * @param param 获取主机升级价格参数
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void getUHostUpgradePrice(GetUHostUpgradePriceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult modifyUHostInstanceRemark(BaseRequestParam param);
 

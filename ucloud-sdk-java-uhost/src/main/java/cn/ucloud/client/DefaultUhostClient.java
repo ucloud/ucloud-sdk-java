@@ -333,11 +333,22 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
+    @Override
+    public GetUHostUpgradePriceResult getUHostUpgradePrice(GetUHostUpgradePriceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUHostUpgradePriceResult.class);
+        GetUHostUpgradePriceResult result = (GetUHostUpgradePriceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult getUHostUpgradePrice(BaseRequestParam param) {
-        return null;
+    public void getUHostUpgradePrice(GetUHostUpgradePriceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUHostUpgradePriceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
 
     @Override
     public BaseResponseResult modifyUHostInstanceRemark(BaseRequestParam param) {
