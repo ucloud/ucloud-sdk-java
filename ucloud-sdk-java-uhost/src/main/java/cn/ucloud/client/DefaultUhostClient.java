@@ -154,7 +154,6 @@ public class DefaultUhostClient implements UhostClient {
 
     @Override
     public DescribeUHostInstanceResult describeUHostInstance(DescribeUHostInstanceParam param) throws Exception {
-        param.setAction("DescribeUHostInstance");
         UcloudHttp http = new UcloudHttpImpl(DescribeUHostInstanceResult.class);
         DescribeUHostInstanceResult result = (DescribeUHostInstanceResult) http.doGet(param, config, null);
         return result;
@@ -162,7 +161,10 @@ public class DefaultUhostClient implements UhostClient {
 
     @Override
     public void describeUHostInstance(DescribeUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+        UcloudHttp http = new UcloudHttpImpl(DescribeUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch(Exception e){}
     }
 
 

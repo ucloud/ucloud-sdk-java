@@ -78,6 +78,7 @@ public class DescribeUHostInstanceParam extends BaseRequestParam {
     private Integer limit;
 
     public DescribeUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region) {
+        super("DescribeUHostInstance");
         this.region = region;
     }
 
