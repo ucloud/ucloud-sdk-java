@@ -3,8 +3,6 @@ package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.model.*;
-import cn.ucloud.pojo.BaseRequestParam;
-import cn.ucloud.pojo.BaseResponseResult;
 
 /**
  * @description: 云主机的client接口
@@ -411,6 +409,20 @@ public interface UhostClient extends UcloudClient {
      */
     void createCustomeImage(CreateCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag);
 
-    BaseResponseResult upgradeToArkUHostInstance(BaseRequestParam param);
+    /**
+     * 普通升级为方舟机型
+     * @param param 普通升级为方舟机型参数对象
+     * @return 普通升级为方舟机型结果对象
+     * @throws Exception 升级出错则抛出异常
+     */
+    UpgradeToArkUHostInstanceResult upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param) throws Exception;
+
+    /**
+     * 普通升级为方舟机型
+     * @param param  普通升级为方舟机型参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param ,UcloudHandler handler,Boolean... asyncFlag);
 
 }
