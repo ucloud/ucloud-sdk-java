@@ -167,11 +167,21 @@ public class DefaultUhostClient implements UhostClient {
         } catch(Exception e){}
     }
 
+    @Override
+    public GetUHostInstancePriceResult getUHostInstancePrice(GetUHostInstancePriceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUHostInstancePriceResult.class);
+        GetUHostInstancePriceResult result = (GetUHostInstancePriceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult getUHostInstancePrice(BaseRequestParam param) {
-        return null;
+    public void getUHostInstancePrice(GetUHostInstancePriceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUHostInstancePriceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch(Exception e){}
     }
+
 
     @Override
     public BaseResponseResult resizeUHostInstance(BaseRequestParam param) {
