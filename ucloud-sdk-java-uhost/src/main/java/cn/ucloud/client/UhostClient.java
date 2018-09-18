@@ -340,7 +340,21 @@ public interface UhostClient extends UcloudClient {
      */
     void getUHostUpgradePrice(GetUHostUpgradePriceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult modifyUHostInstanceRemark(BaseRequestParam param);
+    /**
+     * 修改主机备注信息
+     * @param param 修改主机备注信息参数对象
+     * @return 修改结果
+     * @throws Exception 修改出错则抛出异常
+     */
+    ModifyUHostInstanceRemarkResult modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param) throws Exception;
+
+    /**
+     * 修改主机备注信息
+     * @param param 修改主机备注信息参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult createCustomImage(BaseRequestParam param);
 

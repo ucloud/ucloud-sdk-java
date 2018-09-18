@@ -349,11 +349,22 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
+    @Override
+    public ModifyUHostInstanceRemarkResult modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceRemarkResult.class);
+        ModifyUHostInstanceRemarkResult result = (ModifyUHostInstanceRemarkResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult modifyUHostInstanceRemark(BaseRequestParam param) {
-        return null;
+    public void modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceRemarkResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
 
     @Override
     public BaseResponseResult createCustomImage(BaseRequestParam param) {
