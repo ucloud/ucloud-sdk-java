@@ -13,18 +13,18 @@ public class BaseResponseResult {
      * 返回码 0 成功，其他失败
      */
     @SerializedName("RetCode")
-    private Integer retCode;
+    protected Integer retCode;
 
     /**
      * 操作名称 = 请求参数Action+"Response"
      */
     @SerializedName("Action")
-    private String action;
+    protected String action;
     /**
      * 提示信息，发生错误时
      */
     @SerializedName("Message")
-    private String message;
+    protected String message;
 
     public Integer getRetCode() {
         return retCode;

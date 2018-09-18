@@ -164,6 +164,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     }
 
 
+
     /**
      * optional UHost实例名称。默认：UHost
      */

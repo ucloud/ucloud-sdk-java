@@ -85,8 +85,6 @@ public class UcloudHttpImpl implements UcloudHttp {
                 // 同步非回调
                 responseSync = client.execute(httpGet);
                 String content = EntityUtils.toString(responseSync.getEntity(), "UTF-8");
-                // todo 删除syso
-                System.out.println(content);
                 if (responseSync.getStatusLine().getStatusCode() == 200) {
                     // 正常响应
                     Gson gson = new Gson();

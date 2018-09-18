@@ -1,7 +1,7 @@
 package cn.ucloud.client;
 
-import cn.ucloud.model.ResizeUHostInstanceParam;
-import cn.ucloud.model.ResizeUHostInstanceResult;
+import cn.ucloud.model.ResetUHostInstancePasswordParam;
+import cn.ucloud.model.ResetUHostInstancePasswordResult;
 import cn.ucloud.pojo.Account;
 import cn.ucloud.pojo.UhostConfig;
 import org.junit.Before;
@@ -10,13 +10,13 @@ import org.junit.Test;
 /**
  * @description:
  * @author: codezhang
- * @date: 2018-09-18 12:06
+ * @date: 2018-09-18 14:46
  **/
-public class ResizeUHostInstanceTest {
+public class ResetUHostInstancePasswordTest {
 
     private UhostClient client;
 
-    private ResizeUHostInstanceParam param;
+    private ResetUHostInstancePasswordParam param;
 
     @Before
     public void initData() {
@@ -24,18 +24,15 @@ public class ResizeUHostInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"),
                         System.getenv("UcloudPassword"))));
-        // uimage-cjswb5 ubuntu 16.04
-        //param = new ResizeUHostInstanceParam("cn-bj2","uhost-zzsffd");
-        param = new ResizeUHostInstanceParam("cn-bj2","uhost-euyi2b");
+        param = new ResetUHostInstancePasswordParam("cn-bj2","uhost-uvzzyt");
         param.setProjectId("org-4nfe1i");
-        param.setCpu(2);
+        param.setPassword("123456ab");
     }
-
     @Test
-    public void resizeUHostInstance() {
+    public void resetUHostInstancePassword() {
         try {
-            ResizeUHostInstanceResult resizeUHostInstanceResult = client.resizeUHostInstance(param);
-            System.out.println(resizeUHostInstanceResult);
+            ResetUHostInstancePasswordResult resetUHostInstancePasswordResult = client.resetUHostInstancePassword(param);
+            System.out.println(resetUHostInstancePasswordResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

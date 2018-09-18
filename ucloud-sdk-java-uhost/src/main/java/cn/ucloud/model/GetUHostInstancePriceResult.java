@@ -70,6 +70,9 @@ public class GetUHostInstancePriceResult extends BaseResponseResult {
     public String toString() {
         return "GetUHostInstancePriceResult{" +
                 "prices=" + prices +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

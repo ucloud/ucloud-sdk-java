@@ -24,4 +24,14 @@ public class ModifyUHostInstanceTagResult extends BaseResponseResult {
     public void setUhostId(String uhostId) {
         this.uhostId = uhostId;
     }
+
+    @Override
+    public String toString() {
+        return "ModifyUHostInstanceTagResult{" +
+                "uhostId='" + uhostId + '\'' +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }

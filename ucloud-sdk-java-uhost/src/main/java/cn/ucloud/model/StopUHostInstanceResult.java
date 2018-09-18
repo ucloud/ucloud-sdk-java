@@ -27,6 +27,9 @@ public class StopUHostInstanceResult extends BaseResponseResult {
     public String toString() {
         return "StopUHostInstanceResult{" +
                 "uhostId='" + uhostId + '\'' +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

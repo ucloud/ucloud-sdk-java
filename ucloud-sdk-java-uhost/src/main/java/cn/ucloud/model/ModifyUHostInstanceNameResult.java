@@ -29,6 +29,9 @@ public class ModifyUHostInstanceNameResult extends BaseResponseResult {
     public String toString() {
         return "ModifyUHostInstanceNameResult{" +
                 "uhostId='" + uhostId + '\'' +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

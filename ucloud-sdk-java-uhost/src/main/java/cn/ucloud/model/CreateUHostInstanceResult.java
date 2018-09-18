@@ -45,6 +45,9 @@ public class CreateUHostInstanceResult extends BaseResponseResult {
         return "CreateUHostInstanceResult{" +
                 "uhostIds=" + uhostIds +
                 ", ips=" + ips +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

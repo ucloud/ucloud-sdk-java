@@ -212,11 +212,21 @@ public class DefaultUhostClient implements UhostClient {
         } catch(Exception e){}
     }
 
+    @Override
+    public ResetUHostInstancePasswordResult resetUHostInstancePassword(ResetUHostInstancePasswordParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ResetUHostInstancePasswordResult.class);
+        ResetUHostInstancePasswordResult result = (ResetUHostInstancePasswordResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult resetUHostInstancePassword(BaseRequestParam param) {
-        return null;
+    public void resetUHostInstancePassword(ResetUHostInstancePasswordParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ResetUHostInstancePasswordResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch(Exception e){}
     }
+
 
     @Override
     public BaseResponseResult poweroffUHostInstance(BaseRequestParam param) {

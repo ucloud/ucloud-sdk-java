@@ -32,9 +32,6 @@ public class GetUHostInstancePriceTest {
     public void getUHostInstancePrice() {
         try {
             GetUHostInstancePriceResult uHostInstancePrice = client.getUHostInstancePrice(param);
-            System.out.println(uHostInstancePrice.getAction());
-            System.out.println(uHostInstancePrice.getRetCode());
-            System.out.println(uHostInstancePrice.getMessage());
             System.out.println(uHostInstancePrice);
         } catch (Exception e) {
             e.printStackTrace();

@@ -35,9 +35,6 @@ public class CreateUhostInstanceTest {
     public void createUHostInstance() {
         try {
             CreateUHostInstanceResult uHostInstance = client.createUHostInstance(param);
-            System.out.println(uHostInstance.getAction());
-            System.out.println(uHostInstance.getRetCode());
-            System.out.println(uHostInstance.getMessage());
             System.out.println(uHostInstance);
         } catch (Exception e) {
             e.printStackTrace();

@@ -33,9 +33,6 @@ public class TerminateUHostInstanceTest {
     public void terminateUHostInstance() {
         try {
             TerminateUHostInstanceResult terminateUHostInstanceResult = client.terminateUHostInstance(param);
-            System.out.println(terminateUHostInstanceResult.getRetCode());
-            System.out.println(terminateUHostInstanceResult.getAction());
-            System.out.println(terminateUHostInstanceResult.getMessage());
             System.out.println(terminateUHostInstanceResult);
         } catch (Exception e) {
             e.printStackTrace();

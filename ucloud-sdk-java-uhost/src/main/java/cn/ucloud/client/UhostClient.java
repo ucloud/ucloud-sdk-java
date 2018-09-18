@@ -212,7 +212,21 @@ public interface UhostClient extends UcloudClient {
      */
     void modifyUHostInstanceName(ModifyUHostInstanceNameParam param,UcloudHandler handler ,Boolean... asyncFlag);
 
-    BaseResponseResult resetUHostInstancePassword(BaseRequestParam param);
+    /**
+     * 修改主机密码
+     * @param param 修改主机密码参数
+     * @return 修改主机密码结果
+     * @throws Exception 修改出错则抛出异常
+     */
+    ResetUHostInstancePasswordResult resetUHostInstancePassword(ResetUHostInstancePasswordParam param) throws Exception;
+
+    /**
+     * 修改主机密码
+     * @param param 修改主机密码参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void resetUHostInstancePassword(ResetUHostInstancePasswordParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult poweroffUHostInstance(BaseRequestParam param);
 

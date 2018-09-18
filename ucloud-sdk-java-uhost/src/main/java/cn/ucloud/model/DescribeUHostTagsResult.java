@@ -97,6 +97,9 @@ public class DescribeUHostTagsResult extends BaseResponseResult {
         return "DescribeUHostTagsResult{" +
                 "totalCount=" + totalCount +
                 ", tagSet=" + tagSet +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

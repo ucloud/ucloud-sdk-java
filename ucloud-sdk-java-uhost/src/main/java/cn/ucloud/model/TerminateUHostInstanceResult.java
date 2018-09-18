@@ -26,13 +26,7 @@ public class TerminateUHostInstanceResult extends BaseResponseResult {
     @SerializedName("InRecycle")
     private String inRecycle;
 
-    @Override
-    public String toString() {
-        return "TerminateUHostInstanceResult{" +
-                "uhostIds=" + uhostIds +
-                ", inRecycle='" + inRecycle + '\'' +
-                '}';
-    }
+
 
     public List<String> getUhostIds() {
         return uhostIds;
@@ -48,5 +42,17 @@ public class TerminateUHostInstanceResult extends BaseResponseResult {
 
     public void setInRecycle(String inRecycle) {
         this.inRecycle = inRecycle;
+    }
+
+
+    @Override
+    public String toString() {
+        return "TerminateUHostInstanceResult{" +
+                "uhostIds=" + uhostIds +
+                ", inRecycle='" + inRecycle + '\'' +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

@@ -780,6 +780,9 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         return "DescribeUHostInstanceResult{" +
                 "totalCount='" + totalCount + '\'' +
                 ", uhosts=" + uhosts +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }

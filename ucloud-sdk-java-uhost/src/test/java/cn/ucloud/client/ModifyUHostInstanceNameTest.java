@@ -33,10 +33,7 @@ public class ModifyUHostInstanceNameTest {
     public void modifyUHostInstanceName() {
         try {
             ModifyUHostInstanceNameResult modifyUHostInstanceNameResult = client.modifyUHostInstanceName(param);
-            System.out.println(modifyUHostInstanceNameResult.getAction());
-            System.out.println(modifyUHostInstanceNameResult.getRetCode());
-            System.out.println(modifyUHostInstanceNameResult.getMessage());
-            System.out.println(modifyUHostInstanceNameResult.getUhostId());
+            System.out.println(modifyUHostInstanceNameResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

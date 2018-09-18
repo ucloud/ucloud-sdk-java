@@ -33,11 +33,7 @@ public class DescribeUHostInstanceTest {
 
         try {
             DescribeUHostInstanceResult describeUHostInstanceResult = client.describeUHostInstance(param);
-            System.out.println(describeUHostInstanceResult.getAction());
-            System.out.println(describeUHostInstanceResult.getRetCode());
-            System.out.println(describeUHostInstanceResult.getMessage());
             System.out.println(describeUHostInstanceResult);
-            System.out.println(describeUHostInstanceResult.getUhosts());
         } catch (Exception e) {
             e.printStackTrace();
         }

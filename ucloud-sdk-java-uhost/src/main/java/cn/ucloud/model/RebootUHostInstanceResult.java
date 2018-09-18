@@ -24,4 +24,14 @@ public class RebootUHostInstanceResult extends BaseResponseResult {
     public void setUhostId(String uhostId) {
         this.uhostId = uhostId;
     }
+
+    @Override
+    public String toString() {
+        return "RebootUHostInstanceResult{" +
+                "uhostId='" + uhostId + '\'' +
+                ", retCode=" + retCode +
+                ", action='" + action + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }

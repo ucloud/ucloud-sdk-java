@@ -33,10 +33,7 @@ public class ModifyUHostInstanceTagTest {
     public void modifyUHostInstanceTag() {
         try {
             ModifyUHostInstanceTagResult modifyUHostInstanceTagResult = client.modifyUHostInstanceTag(param);
-            System.out.println(modifyUHostInstanceTagResult.getRetCode());
-            System.out.println(modifyUHostInstanceTagResult.getAction());
-            System.out.println(modifyUHostInstanceTagResult.getMessage());
-            System.out.println(modifyUHostInstanceTagResult.getUhostId());
+            System.out.println(modifyUHostInstanceTagResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

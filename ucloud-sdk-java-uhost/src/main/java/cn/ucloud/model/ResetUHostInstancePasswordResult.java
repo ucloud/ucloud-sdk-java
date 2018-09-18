@@ -4,13 +4,16 @@ import cn.ucloud.pojo.BaseResponseResult;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * @description: 修改主机配置 结果对象
+ * @description: 修改主机密码 结果类
  * @author: codezhang
- * @date: 2018-09-18 12:02
+ * @date: 2018-09-18 14:41
  **/
 
-public class ResizeUHostInstanceResult extends BaseResponseResult {
+public class ResetUHostInstancePasswordResult extends BaseResponseResult {
 
+    /**
+     * UHost实例ID
+     */
     @SerializedName("UHostId")
     private String uhostId;
 
@@ -24,7 +27,7 @@ public class ResizeUHostInstanceResult extends BaseResponseResult {
 
     @Override
     public String toString() {
-        return "ResizeUHostInstanceResult{" +
+        return "ResetUHostInstancePasswordResult{" +
                 "uhostId='" + uhostId + '\'' +
                 ", retCode=" + retCode +
                 ", action='" + action + '\'' +
