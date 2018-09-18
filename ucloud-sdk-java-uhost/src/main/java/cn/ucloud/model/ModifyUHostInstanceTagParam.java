@@ -42,6 +42,7 @@ public class ModifyUHostInstanceTagParam extends BaseRequestParam {
 
     public ModifyUHostInstanceTagParam(@NotEmpty(message = "region can not be empty") String region,
                                        @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+        super("ModifyUHostInstanceTag");
         this.region = region;
         this.uhostId = uhostId;
     }

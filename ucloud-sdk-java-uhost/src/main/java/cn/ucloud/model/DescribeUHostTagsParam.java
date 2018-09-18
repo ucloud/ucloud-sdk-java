@@ -26,6 +26,7 @@ public class DescribeUHostTagsParam extends BaseRequestParam {
     private String zone;
 
     public DescribeUHostTagsParam(@NotEmpty(message = "region can not be empty") String region) {
+        super("DescribeUHostTags");
         this.region = region;
     }
 

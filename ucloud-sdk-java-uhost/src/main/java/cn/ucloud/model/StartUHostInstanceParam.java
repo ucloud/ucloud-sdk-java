@@ -40,6 +40,7 @@ public class StartUHostInstanceParam extends BaseRequestParam {
 
     public StartUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
                                    @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+        super("StartUHostInstance");
         this.region = region;
         this.uhostId = uhostId;
     }
