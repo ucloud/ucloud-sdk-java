@@ -168,11 +168,19 @@ public class DefaultUhostClient implements UhostClient {
         } catch (Exception e) { }
     }
 
+    @Override
+    public DescribeUHostInstanceResult describeUHostInstance(DescribeUHostInstanceParam param) throws Exception {
+        param.setAction("DescribeUHostInstance");
+        UcloudHttp http = new UcloudHttpImpl(DescribeUHostInstanceResult.class);
+        DescribeUHostInstanceResult result = (DescribeUHostInstanceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult describeUHostInstance(BaseRequestParam param) {
-        return null;
+    public void describeUHostInstance(DescribeUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+
     }
+
 
     @Override
     public BaseResponseResult getUHostInstancePrice(BaseRequestParam param) {

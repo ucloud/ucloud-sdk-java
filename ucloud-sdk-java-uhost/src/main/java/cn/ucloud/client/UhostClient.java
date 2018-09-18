@@ -147,7 +147,21 @@ public interface UhostClient extends UcloudClient {
      */
     void terminateUHostInstance(TerminateUHostInstanceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult describeUHostInstance(BaseRequestParam param);
+    /**
+     * 获取主机信息
+     * @param param 获取主机信息参数对象
+     * @return 获取主机信息结果对象
+     * @throws Exception 获取出错则抛出异常
+     */
+    DescribeUHostInstanceResult describeUHostInstance(DescribeUHostInstanceParam param) throws Exception;
+
+    /**
+     * 获取主机信息
+     * @param param 获取主机信息参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void describeUHostInstance(DescribeUHostInstanceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult getUHostInstancePrice(BaseRequestParam param);
 
