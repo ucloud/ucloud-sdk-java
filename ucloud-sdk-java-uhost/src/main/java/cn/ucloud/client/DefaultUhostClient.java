@@ -182,11 +182,21 @@ public class DefaultUhostClient implements UhostClient {
         } catch(Exception e){}
     }
 
+    @Override
+    public ResizeUHostInstanceResult resizeUHostInstance(ResizeUHostInstanceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ResizeUHostInstanceResult.class);
+        ResizeUHostInstanceResult result = (ResizeUHostInstanceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult resizeUHostInstance(BaseRequestParam param) {
-        return null;
+    public void resizeUHostInstance(ResizeUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ResizeUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch(Exception e){}
     }
+
 
     @Override
     public BaseResponseResult modifyUHostInstanceName(BaseRequestParam param) {

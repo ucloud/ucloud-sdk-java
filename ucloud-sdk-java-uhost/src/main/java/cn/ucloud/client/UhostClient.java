@@ -179,7 +179,22 @@ public interface UhostClient extends UcloudClient {
      */
     void getUHostInstancePrice(GetUHostInstancePriceParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult resizeUHostInstance(BaseRequestParam param);
+
+    /**
+     * 修改主机配置
+     * @param param 修改主机配置参数对象
+     * @return 修改主机参数结果对象
+     * @throws Exception 修改异常则抛出异常
+     */
+    ResizeUHostInstanceResult resizeUHostInstance(ResizeUHostInstanceParam param) throws  Exception;
+
+    /**
+     * 修改主机配置
+     * @param param 修改主机配置参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void resizeUHostInstance(ResizeUHostInstanceParam param,UcloudHandler handler , Boolean... asyncFlag);
 
     BaseResponseResult modifyUHostInstanceName(BaseRequestParam param);
 
