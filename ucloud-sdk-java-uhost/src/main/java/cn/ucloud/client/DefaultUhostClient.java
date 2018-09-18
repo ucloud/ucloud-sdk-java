@@ -269,11 +269,22 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
+    @Override
+    public CopyCustomImageResult copyCustomImage(CopyCustomImageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CopyCustomImageResult.class);
+        CopyCustomImageResult result = (CopyCustomImageResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult copyCustomImage(BaseRequestParam param) {
-        return null;
+    public void copyCustomImage(CopyCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CopyCustomImageResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
 
     @Override
     public BaseResponseResult describeImage(BaseRequestParam param) {

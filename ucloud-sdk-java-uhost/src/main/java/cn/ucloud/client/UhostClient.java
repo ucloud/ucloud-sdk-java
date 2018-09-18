@@ -260,7 +260,21 @@ public interface UhostClient extends UcloudClient {
      */
     void importCustomImage(ImportCustomImageParam param,UcloudHandler handler ,Boolean... asyncFlag);
 
-    BaseResponseResult copyCustomImage(BaseRequestParam param);
+    /**
+     * 复制用户镜像
+     * @param param  复制用户镜像参数
+     * @return 复制用户镜像结果
+     * @throws Exception 复制出错则抛出异常
+     */
+    CopyCustomImageResult copyCustomImage(CopyCustomImageParam param) throws Exception;
+
+    /**
+     * 复制用户镜像
+     * @param param  复制用户镜像参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void copyCustomImage(CopyCustomImageParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult describeImage(BaseRequestParam param);
 
