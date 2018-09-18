@@ -197,11 +197,21 @@ public class DefaultUhostClient implements UhostClient {
         } catch(Exception e){}
     }
 
+    @Override
+    public ModifyUHostInstanceNameResult modifyUHostInstanceName(ModifyUHostInstanceNameParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceNameResult.class);
+        ModifyUHostInstanceNameResult result = (ModifyUHostInstanceNameResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult modifyUHostInstanceName(BaseRequestParam param) {
-        return null;
+    public void modifyUHostInstanceName(ModifyUHostInstanceNameParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceNameResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch(Exception e){}
     }
+
 
     @Override
     public BaseResponseResult resetUHostInstancePassword(BaseRequestParam param) {

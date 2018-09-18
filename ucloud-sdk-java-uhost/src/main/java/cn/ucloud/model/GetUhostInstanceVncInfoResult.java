@@ -75,4 +75,5 @@ public class GetUhostInstanceVncInfoResult extends BaseResponseResult {
                 ", vncPassword='" + vncPassword + '\'' +
                 '}';
     }
+
 }

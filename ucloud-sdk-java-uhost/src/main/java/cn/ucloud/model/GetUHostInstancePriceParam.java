@@ -94,11 +94,11 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
         }
     }
 
-    public GetUHostInstancePriceParam(@NotEmpty(message = "region can not be null") String region,
-                                      @NotEmpty(message = "imageId can not be null") String imageId,
-                                      @NotEmpty(message = "cpu can not be null") Integer cpu,
-                                      @NotEmpty(message = "memory can not be null") Integer memory,
-                                      @NotEmpty(message = "count can not be null") Integer count) {
+    public GetUHostInstancePriceParam(@NotEmpty(message = "region can not be empty") String region,
+                                      @NotEmpty(message = "imageId can not be empty") String imageId,
+                                      @NotEmpty(message = "cpu can not be empty") Integer cpu,
+                                      @NotEmpty(message = "memory can not be empty") Integer memory,
+                                      @NotEmpty(message = "count can not be empty") Integer count) {
         super("GetUHostInstancePrice");
         this.region = region;
         this.imageId = imageId;
@@ -111,7 +111,7 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
      * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
      */
     @UcloudParam("Region")
-    @NotEmpty(message = "region can not be null")
+    @NotEmpty(message = "region can not be empty")
     private String region;
 
     /**
@@ -124,28 +124,28 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
      * require 镜像Id，可通过 [DescribeImage](describe_image.html) 获取镜像ID
      */
     @UcloudParam("ImageId")
-    @NotEmpty(message = "imageId can not be null")
+    @NotEmpty(message = "imageId can not be empty")
     private String imageId;
 
     /**
      * require 虚拟CPU核心数，单位: 个，范围: [1,16]，最小值为1，其他值是2的整数倍
      */
     @UcloudParam("CPU")
-    @NotEmpty(message = "cpu can not be null")
+    @NotEmpty(message = "cpu can not be empty")
     private Integer cpu;
 
     /**
      * require 内存容量大小，单位: MB，范围: [2048,65536]，步长: 2048。
      */
     @UcloudParam("Memory")
-    @NotEmpty(message = "memory can not be null")
+    @NotEmpty(message = "memory can not be empty")
     private Integer memory;
 
     /**
      * 购买台数，范围[1,5]
      */
     @UcloudParam("Count")
-    @NotEmpty(message = "count can not be null")
+    @NotEmpty(message = "count can not be empty")
     private  Integer count;
 
     /**
