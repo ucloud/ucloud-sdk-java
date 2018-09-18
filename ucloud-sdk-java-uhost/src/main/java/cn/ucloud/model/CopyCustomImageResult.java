@@ -1,7 +1,7 @@
 package cn.ucloud.model;
 
-import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseResponseResult;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * @description: 复制用户镜像 结果对象
@@ -13,7 +13,7 @@ public class CopyCustomImageResult extends BaseResponseResult {
     /**
      * 目标镜像Id
      */
-    @UcloudParam("TargetImageId")
+    @SerializedName("TargetImageId")
     private String targetImageId;
 
     @Override

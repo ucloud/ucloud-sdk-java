@@ -276,9 +276,37 @@ public interface UhostClient extends UcloudClient {
      */
     void copyCustomImage(CopyCustomImageParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult describeImage(BaseRequestParam param);
+    /**
+     * 获取镜像
+     * @param param 获取镜像参数对象
+     * @return 获取镜像结果对象
+     * @throws Exception 获取出错则抛出异常
+     */
+    DescribeImageResult describeImage(DescribeImageParam param) throws Exception;
 
-    BaseResponseResult terminateCustomImage(BaseRequestParam param);
+    /**
+     * 获取镜像
+     * @param param 获取镜像参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void describeImage(DescribeImageParam param,UcloudHandler handler,Boolean... asyncFlag);
+
+    /**
+     * 删除用户镜像
+     * @param param  删除用户镜像参数对象
+     * @return 删除用户镜像结果对象
+     * @throws Exception 删除出错则抛出异常
+     */
+    TerminateCustomImageResult terminateCustomImage(TerminateCustomImageParam param) throws  Exception;
+
+    /**
+     * 删除用户镜像
+     * @param param 删除用户镜像参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void terminateCustomImage(TerminateCustomImageParam param ,UcloudHandler handler,Boolean... asyncFlag);
 
     BaseResponseResult reinstallUHostInstance(BaseRequestParam param);
 

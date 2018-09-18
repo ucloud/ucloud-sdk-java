@@ -285,16 +285,38 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
-
     @Override
-    public BaseResponseResult describeImage(BaseRequestParam param) {
-        return null;
+    public DescribeImageResult describeImage(DescribeImageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeImageResult.class);
+        DescribeImageResult result = (DescribeImageResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseResponseResult terminateCustomImage(BaseRequestParam param) {
-        return null;
+    public void describeImage(DescribeImageParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeImageResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
+    @Override
+    public TerminateCustomImageResult terminateCustomImage(TerminateCustomImageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(TerminateCustomImageResult.class);
+        TerminateCustomImageResult result = (TerminateCustomImageResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void terminateCustomImage(TerminateCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(TerminateCustomImageResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
 
     @Override
     public BaseResponseResult reinstallUHostInstance(BaseRequestParam param) {
