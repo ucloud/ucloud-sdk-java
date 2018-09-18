@@ -317,11 +317,22 @@ public class DefaultUhostClient implements UhostClient {
         }
     }
 
+    @Override
+    public ReinstallUHostInstanceResult reinstallUHostInstance(ReinstallUHostInstanceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ReinstallUHostInstanceResult.class);
+        ReinstallUHostInstanceResult result = (ReinstallUHostInstanceResult) http.doGet(param, config, null);
+        return result;
+    }
 
     @Override
-    public BaseResponseResult reinstallUHostInstance(BaseRequestParam param) {
-        return null;
+    public void reinstallUHostInstance(ReinstallUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ReinstallUHostInstanceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
 
     @Override
     public BaseResponseResult getUHostUpgradePrice(BaseRequestParam param) {

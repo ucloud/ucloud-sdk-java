@@ -308,7 +308,21 @@ public interface UhostClient extends UcloudClient {
      */
     void terminateCustomImage(TerminateCustomImageParam param ,UcloudHandler handler,Boolean... asyncFlag);
 
-    BaseResponseResult reinstallUHostInstance(BaseRequestParam param);
+    /**
+     * 重装系统
+     * @param param 重装系统参数对象
+     * @return 重装系统结果对象
+     * @throws Exception 重装失败则抛出异常
+     */
+    ReinstallUHostInstanceResult reinstallUHostInstance(ReinstallUHostInstanceParam param) throws Exception;
+
+    /**
+     * 重装系统
+     * @param param  重装系统参数
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void reinstallUHostInstance(ReinstallUHostInstanceParam param,UcloudHandler handler , Boolean... asyncFlag);
 
     BaseResponseResult getUHostUpgradePrice(BaseRequestParam param);
 
