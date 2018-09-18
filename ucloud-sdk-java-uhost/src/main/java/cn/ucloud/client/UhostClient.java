@@ -244,7 +244,21 @@ public interface UhostClient extends UcloudClient {
      */
     void poweroffUHostInstance(PoweroffUHostInstanceParam param , UcloudHandler handler ,Boolean... asyncFlag);
 
-    BaseResponseResult importCustomImage(BaseRequestParam param);
+    /**
+     * 导入用户镜像
+     * @param param 导入用户镜像参数对象
+     * @return 导入用户镜像结果对象
+     * @throws Exception 导入错误则抛出异常
+     */
+    ImportCustomImageResult importCustomImage(ImportCustomImageParam param) throws  Exception;
+
+    /**
+     * 导入用户镜像
+     * @param param 导入用户镜像参数对象
+     * @param handler 回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void importCustomImage(ImportCustomImageParam param,UcloudHandler handler ,Boolean... asyncFlag);
 
     BaseResponseResult copyCustomImage(BaseRequestParam param);
 
