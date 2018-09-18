@@ -16,14 +16,14 @@ public class BaseRequestParam {
      */
     @UcloudParam("Action")
     @NotEmpty(message = "action can not be empty")
-    private String action;
+    protected String action;
 
     /**
      * require 根据公钥及API指令生成的用户签名，参见https://docs.ucloud.cn/api/summary/signature
      */
     @NotEmpty(message = "signature can not be empty")
     @UcloudParam("Signature")
-    private String signature;
+    protected String signature;
 
 
     /**
@@ -31,14 +31,18 @@ public class BaseRequestParam {
      */
     @UcloudParam("PublicKey")
     @NotEmpty(message = "publicKey can not be empty")
-    private String publicKey;
+    protected String publicKey;
 
 
     /**
      * optional 项目编号（子帐号用）,不填写为默认项目，子帐号必须填写, 请参考GetProjectList接口
      */
     @UcloudParam("ProjectId")
-    private String projectId;
+    protected String projectId;
+
+    protected BaseRequestParam(@NotEmpty(message = "action can not be empty") String action) {
+        this.action = action;
+    }
 
     public String getProjectId() {
         return projectId;

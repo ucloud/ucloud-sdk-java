@@ -33,6 +33,7 @@ public class StopUHostInstanceParam extends BaseRequestParam {
 
     public StopUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
                                   @NotEmpty(message = "uhostId can not be empty") String uhostId) {
+        super("StopUHostInstance");
         this.region = region;
         this.uhostId = uhostId;
     }

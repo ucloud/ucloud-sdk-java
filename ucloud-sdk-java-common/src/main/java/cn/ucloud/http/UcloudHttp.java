@@ -21,5 +21,5 @@ public interface UcloudHttp {
      * @return 同步时，返回请求到的数据结果
      * @throws Exception 同步非回调时，有异常则抛出异常
      */
-    public Object doGet(BaseRequestParam param, UcloudConfig config, UcloudHandler handler, Boolean... asyncFlag) throws Exception;
+    Object doGet(BaseRequestParam param, UcloudConfig config, UcloudHandler handler, Boolean... asyncFlag) throws Exception;
 }

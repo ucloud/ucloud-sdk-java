@@ -46,9 +46,10 @@ public class TerminateUHostInstanceParam extends BaseRequestParam {
     private String eipReleased;
 
 
-    public TerminateUHostInstanceParam(@NotEmpty(message = "region can not be empty")String region,
+    public TerminateUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
                                        @NotEmpty(message = "uhostId can not be empty") String uhostId) {
-        Region = region;
+        super("TerminateUHostInstance");
+        this.Region = region;
         this.uhostId = uhostId;
     }
 

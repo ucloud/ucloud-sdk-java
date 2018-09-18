@@ -102,6 +102,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     public CreateUHostInstanceParam(@NotEmpty(message = "region can not be empty") String region,
                                     @NotEmpty(message = "zone can not be empty") String zone,
                                     @NotEmpty(message = "imageId can not be empty") String imageId) {
+        super("CreateUHostInstance");
         this.region = region;
         this.zone = zone;
         this.imageId = imageId;

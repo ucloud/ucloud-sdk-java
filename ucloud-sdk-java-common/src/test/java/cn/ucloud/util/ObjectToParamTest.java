@@ -30,6 +30,10 @@ public class ObjectToParamTest {
 
         private Integer age ;
 
+        protected Person() {
+            super("");
+        }
+
         public String getName() {
             return name;
         }
