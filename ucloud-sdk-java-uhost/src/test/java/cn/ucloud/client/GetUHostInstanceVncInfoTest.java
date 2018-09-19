@@ -23,14 +23,10 @@ public class GetUHostInstanceVncInfoTest {
 
     @Before
     public void initData() {
-//        client = new DefaultUhostClient(new UhostConfig(
-//                new Account(System.getenv("UcloudPrivateKey"),
-//                        System.getenv("UcloudPublicKey"),
-//                        System.getenv("UcloudPassword"))));
         client = new DefaultUhostClient(new UhostConfig(
-                new Account("35e886746bec90eeac91523e4d01da45c2479403",
-                        "ucloudfee.fei@ucloud.cn14289063750002081996226",
-                        "feefei852")));
+                new Account(System.getenv("UcloudPrivateKey"),
+                        System.getenv("UcloudPublicKey"),
+                        System.getenv("UcloudPassword"))));
         param = new GetUhostInstanceVncInfoParam("cn-bj2", "uhost-euyi2b");
         param.setProjectId("org-4nfe1i");
         param.setZone("cn-bj2-02");
@@ -46,7 +42,7 @@ public class GetUHostInstanceVncInfoTest {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void getUHostInstanceVncInfoAsync() throws InterruptedException {
         client.getUHostInstanceVncInfoCallback(param, new UcloudHandler() {
             @Override
