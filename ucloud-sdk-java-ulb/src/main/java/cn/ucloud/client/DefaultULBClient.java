@@ -147,13 +147,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult allocateBackend(BaseRequestParam param) throws Exception {
-        return null;
+    public AllocateBackendResult allocateBackend(AllocateBackendParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AllocateBackendResult.class);
+        AllocateBackendResult result = (AllocateBackendResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void allocateBackend(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void allocateBackend(AllocateBackendParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AllocateBackendResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
