@@ -1,8 +1,7 @@
 package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
-import cn.ucloud.model.CreateULBParam;
-import cn.ucloud.model.CreateULBResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 
@@ -20,15 +19,15 @@ public interface ULBClient {
 
 
 
-    BaseResponseResult describeULB(BaseRequestParam param) throws Exception;
+    DescribeULBResult describeULB(DescribeULBParam param) throws Exception;
 
-    void describeUlb(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeUlb(DescribeULBParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
 
-    BaseResponseResult deleteULB(BaseRequestParam param) throws Exception;
+    DeleteULBResult deleteULB(DeleteULBParam param) throws Exception;
 
-    void deleteULB(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteULB(DeleteULBParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
 

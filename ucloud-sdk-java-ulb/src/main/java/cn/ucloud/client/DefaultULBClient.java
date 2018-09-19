@@ -3,8 +3,7 @@ package cn.ucloud.client;
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
-import cn.ucloud.model.CreateULBParam;
-import cn.ucloud.model.CreateULBResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.ULBConfig;
@@ -43,23 +42,33 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult describeULB(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeULBResult describeULB(DescribeULBParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
+        DescribeULBResult result = (DescribeULBResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeUlb(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void describeUlb(DescribeULBParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
-    public BaseResponseResult deleteULB(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteULBResult deleteULB(DeleteULBParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteULBResult.class);
+        DeleteULBResult result = (DeleteULBResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteULB(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteULB(DeleteULBParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteULBResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
