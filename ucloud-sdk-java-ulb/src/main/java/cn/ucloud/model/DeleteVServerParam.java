@@ -15,14 +15,23 @@ import javax.validation.constraints.NotEmpty;
 
 public class DeleteVServerParam extends BaseRequestParam {
 
+    /**
+     * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
+    /**
+     * require 负载均衡实例ID
+     */
     @UcloudParam("ULBId")
     @NotEmpty(message = "ulbId can not be empty")
     private String ulbId;
 
+    /**
+     * require VServer实例ID
+     */
     @NotEmpty(message = "vserverId can be empty")
     @UcloudParam("VServerId")
     private String vserverId;

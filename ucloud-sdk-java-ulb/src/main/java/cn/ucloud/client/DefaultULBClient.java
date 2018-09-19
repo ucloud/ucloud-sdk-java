@@ -132,13 +132,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult updateVServerAttribute(BaseRequestParam param) throws Exception {
-        return null;
+    public UpdateVServerAttributeResult updateVServerAttribute(UpdateVServerAttributeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateVServerAttributeResult.class);
+        UpdateVServerAttributeResult result = (UpdateVServerAttributeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void updateVServerAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void updateVServerAttribute(UpdateVServerAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateVServerAttributeResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

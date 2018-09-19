@@ -51,9 +51,9 @@ public interface ULBClient {
     void deleteVServer(DeleteVServerParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult updateVServerAttribute(BaseRequestParam param) throws Exception;
+    UpdateVServerAttributeResult updateVServerAttribute(UpdateVServerAttributeParam param) throws Exception;
 
-    void updateVServerAttribute(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void updateVServerAttribute(UpdateVServerAttributeParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult allocateBackend(BaseRequestParam param) throws Exception;
