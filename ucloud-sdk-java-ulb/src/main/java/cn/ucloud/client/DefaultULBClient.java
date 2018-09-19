@@ -117,13 +117,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult deleteVServer(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteVServerResult deleteVServer(DeleteVServerParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteVServerResult.class);
+        DeleteVServerResult result = (DeleteVServerResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteVServer(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteVServer(DeleteVServerParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteVServerResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
