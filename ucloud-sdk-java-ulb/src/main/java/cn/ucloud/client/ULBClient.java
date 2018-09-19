@@ -77,14 +77,14 @@ public interface ULBClient {
     void updateBackendAttribute(UpdateBackendAttributeParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult createPolicy(BaseRequestParam param) throws Exception;
+    CreatePolicyResult createPolicy(CreatePolicyParam param) throws Exception;
 
-    void createPolicy(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void createPolicy(CreatePolicyParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult updatePolicy(BaseRequestParam param) throws Exception;
+    UpdatePolicyResult updatePolicy(UpdatePolicyParam param) throws Exception;
 
-    void updatePolicy(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void updatePolicy(UpdatePolicyParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult deletePolicy(BaseRequestParam param) throws Exception;

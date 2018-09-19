@@ -215,23 +215,33 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult createPolicy(BaseRequestParam param) throws Exception {
-        return null;
+    public CreatePolicyResult createPolicy(CreatePolicyParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreatePolicyResult.class);
+        CreatePolicyResult result = (CreatePolicyResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void createPolicy(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void createPolicy(CreatePolicyParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreatePolicyResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
-    public BaseResponseResult updatePolicy(BaseRequestParam param) throws Exception {
-        return null;
+    public UpdatePolicyResult updatePolicy(UpdatePolicyParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdatePolicyResult.class);
+        UpdatePolicyResult result = (UpdatePolicyResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void updatePolicy(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void updatePolicy(UpdatePolicyParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdatePolicyResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
