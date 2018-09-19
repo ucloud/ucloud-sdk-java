@@ -36,9 +36,9 @@ public interface ULBClient {
     void updateULBAttribute(UpdateULBAttributeParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult createVServer(BaseRequestParam param) throws  Exception;
+    CreateVServerResult createVServer(CreateVServerParam param) throws  Exception;
 
-    void createVServer(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void createVServer(CreateVServerParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult describeVServer(BaseRequestParam param) throws Exception;
