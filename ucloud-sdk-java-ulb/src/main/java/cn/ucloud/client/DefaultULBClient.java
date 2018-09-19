@@ -177,13 +177,26 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult allocateBackendBatch(BaseRequestParam param) throws Exception {
-        return null;
+    public AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception {
+        if ( 1 == 1){
+            System.out.println("The interface is incorrect and cannot be used temporarily.");
+            return null;
+        }
+        UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
+        AllocateBackendBatchResult result = (AllocateBackendBatchResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void allocateBackendBatch(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void allocateBackendBatch(AllocateBackendBatchParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        if ( 1 == 1){
+            System.out.println("The interface is incorrect and cannot be used temporarily.");
+            return;
+        }
+        UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

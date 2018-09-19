@@ -67,9 +67,9 @@ public interface ULBClient {
 
 
 
-    BaseResponseResult allocateBackendBatch(BaseRequestParam param) throws Exception;
+    AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception;
 
-    void allocateBackendBatch(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void allocateBackendBatch(AllocateBackendBatchParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult updateBackendAttribute(BaseRequestParam param) throws Exception;

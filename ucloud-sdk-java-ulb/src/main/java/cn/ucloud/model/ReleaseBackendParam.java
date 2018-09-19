@@ -16,14 +16,23 @@ import javax.validation.constraints.NotEmpty;
 
 public class ReleaseBackendParam extends BaseRequestParam {
 
+    /**
+     * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
+    /**
+     * require 负载均衡实例的ID
+     */
     @UcloudParam("ULBId")
     @NotEmpty(message = "ulbId can not be empty")
     private String ulbId;
 
+    /**
+     * require 后端资源实例的ID(ULB后端ID，非资源自身ID)
+     */
     @NotEmpty(message = "backendId can not be empty")
     @UcloudParam("BackendId")
     private String backendId;
