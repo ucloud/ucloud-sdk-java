@@ -87,9 +87,9 @@ public interface ULBClient {
     void updatePolicy(UpdatePolicyParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult deletePolicy(BaseRequestParam param) throws Exception;
+    DeletePolicyResult deletePolicy(DeletePolicyParam param) throws Exception;
 
-    void deletePolicy(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void deletePolicy(DeletePolicyParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult deleteSSL(BaseRequestParam param) throws Exception;
