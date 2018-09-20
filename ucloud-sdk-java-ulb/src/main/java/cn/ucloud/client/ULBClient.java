@@ -67,9 +67,11 @@ public interface ULBClient {
 
 
 
+    // todo  测试
     AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception;
 
     void allocateBackendBatch(AllocateBackendBatchParam param,UcloudHandler handler,Boolean... asyncFlag);
+
 
 
     UpdateBackendAttributeResult updateBackendAttribute(UpdateBackendAttributeParam param) throws Exception;
@@ -92,29 +94,32 @@ public interface ULBClient {
     void deletePolicy(DeletePolicyParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult deleteSSL(BaseRequestParam param) throws Exception;
+    // todo  测试
+    DeleteSSLResult deleteSSL(DeleteSSLParam param) throws Exception;
 
-    void deleteSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void deleteSSL(DeleteSSLParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
+    // todo  测试
     BaseResponseResult bindSSL(BaseRequestParam param) throws Exception;
 
     void bindSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-
+    // todo  测试
     BaseResponseResult unbindSSL(BaseRequestParam param) throws Exception;
 
     void unbindSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
+    // todo  测试
     CreateSSLResult createSSL(CreateSSLParam param) throws Exception;
 
     void createSSL(CreateSSLParam param,UcloudHandler handler,Boolean... asyncFlag);
 
+    // todo  测试
+    DescribeSSLResult describeSSL(DescribeSSLParam param) throws Exception;
 
-    BaseResponseResult describeSSL(BaseRequestParam param) throws Exception;
-
-    void describeSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void describeSSL(DescribeSSLParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult deletePolicyGroup(BaseRequestParam param) throws Exception;

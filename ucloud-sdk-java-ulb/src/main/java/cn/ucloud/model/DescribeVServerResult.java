@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DescribeVServerResult extends BaseResponseResult {
 
-    public class ULBVServer{
+    public static class ULBVServer{
 
         /**
          * VServer实例的Id
@@ -234,7 +234,7 @@ public class DescribeVServerResult extends BaseResponseResult {
         }
     }
 
-    public class SSL{
+    public static class SSL{
 
         /**
          * SSL证书的Id
@@ -334,7 +334,7 @@ public class DescribeVServerResult extends BaseResponseResult {
         }
     }
 
-    public  class SSLBingedTarget{
+    public static class SSLBingedTarget{
 
         /**
          * SSL证书绑定到的VServer的资源ID
@@ -403,7 +403,7 @@ public class DescribeVServerResult extends BaseResponseResult {
         }
     }
 
-    public  class ULBBackend{
+    public static class ULBBackend{
         /**
          * 后端资源实例的Id
          */
@@ -545,7 +545,7 @@ public class DescribeVServerResult extends BaseResponseResult {
         }
     }
 
-    public class ULBPolicy{
+    public static class ULBPolicy{
 
         /**
          * 内容转发Id，默认内容转发类型下为空。
@@ -677,7 +677,7 @@ public class DescribeVServerResult extends BaseResponseResult {
         }
     }
 
-    public class PolicyBackend{
+    public static class PolicyBackend{
         /**
          * 所添加的后端资源在ULB中的对象ID，
          * （为ULB系统中使用，与资源自身ID无关)

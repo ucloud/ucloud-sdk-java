@@ -1,7 +1,7 @@
 package cn.ucloud.client;
 
-import cn.ucloud.model.CreateSSLParam;
-import cn.ucloud.model.CreateSSLResult;
+import cn.ucloud.model.DescribeSSLParam;
+import cn.ucloud.model.DescribeSSLResult;
 import cn.ucloud.pojo.Account;
 import cn.ucloud.pojo.ULBConfig;
 import org.junit.Before;
@@ -10,14 +10,13 @@ import org.junit.Test;
 /**
  * @description:
  * @author: codezhang
- * @date: 2018-09-20 09:47
+ * @date: 2018-09-20 19:12
  **/
-public class CreateSSLTest {
-
+public class DescribeSSLTest {
 
     private ULBClient client;
 
-    private CreateSSLParam param;
+    private DescribeSSLParam param;
 
     @Before
     public void initData() {
@@ -25,20 +24,16 @@ public class CreateSSLTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"),
                         System.getenv("UcloudPassword"))));
-        param = new CreateSSLParam("cn-bj2","ssl-sdk-java-test");
-        param.setPrivateKey("");
-        param.setSslContent("");
+        param = new DescribeSSLParam("cn-bj2");
         param.setProjectId("org-4nfe1i");
     }
 
 
-
     @Test
-    public void createSSL() {
-        // todo 测试
+    public void describeSSL() {
         try {
-            CreateSSLResult ssl = client.createSSL(param);
-            System.out.println(ssl);
+            DescribeSSLResult describeSSLResult = client.describeSSL(param);
+            System.out.println(describeSSLResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

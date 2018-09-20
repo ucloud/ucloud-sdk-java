@@ -14,7 +14,7 @@ import java.util.List;
 
 public class GetUHostInstancePriceResult extends BaseResponseResult {
 
-    public class Price{
+    public static class Price{
         /**
          * 付费方式
          */

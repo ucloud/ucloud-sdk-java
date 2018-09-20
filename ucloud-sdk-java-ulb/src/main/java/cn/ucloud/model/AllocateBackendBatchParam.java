@@ -18,7 +18,7 @@ import java.util.List;
 public class AllocateBackendBatchParam extends BaseRequestParam {
 
 
-    public class Backend {
+    public static class Backend {
         /**
          * require
          * 所添加的后端资源的资源ID
@@ -211,8 +211,5 @@ public class AllocateBackendBatchParam extends BaseRequestParam {
         this.vserverId = vserverId;
     }
 
-    public Backend newBackend(String resourceId,String resourceType,String ip){
-        Backend backend = new Backend(resourceId,resourceType,ip);
-        return backend;
-    }
+
 }

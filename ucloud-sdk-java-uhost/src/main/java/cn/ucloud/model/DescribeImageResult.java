@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DescribeImageResult extends BaseResponseResult {
 
-    public class UhostImage{
+    public static class UhostImage{
         /**
          * 镜像ID
          */

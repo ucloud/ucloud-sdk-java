@@ -17,7 +17,7 @@ import java.util.List;
 
 public class GetUHostInstancePriceParam extends BaseRequestParam {
 
-    public class UhostDisk {
+    public static class UhostDisk {
         /**
          * require 磁盘大小，单位GB。系统盘的默认大小为镜像大小。数据盘必传。
          */

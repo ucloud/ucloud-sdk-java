@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DescribeUHostTagsResult extends BaseResponseResult {
 
-    public  class UhostTag {
+    public static  class UhostTag {
         /**
          * 业务组名称
          */

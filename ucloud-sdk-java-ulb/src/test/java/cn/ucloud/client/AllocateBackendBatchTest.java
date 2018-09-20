@@ -30,8 +30,8 @@ public class AllocateBackendBatchTest {
         param = new AllocateBackendBatchParam("cn-bj2","ulb-0kawkr","vserver-se0ay2");
         param.setProjectId("org-4nfe1i");
         List<AllocateBackendBatchParam.Backend> backends = new ArrayList<>();
-        AllocateBackendBatchParam.Backend backend1 = param.newBackend("uhost-zzsffd", "UHost","10.9.146.72");
-        AllocateBackendBatchParam.Backend backend2 = param.newBackend("uhost-ewq1eu", "UHost","10.9.128.212");
+        AllocateBackendBatchParam.Backend backend1 =new  AllocateBackendBatchParam.Backend("uhost-zzsffd", "UHost","10.9.146.72");
+        AllocateBackendBatchParam.Backend backend2 =new  AllocateBackendBatchParam.Backend("uhost-ewq1eu", "UHost","10.9.128.212");
         backends.add(backend1);
         backends.add(backend2);
         param.setBackends(backends);
@@ -39,7 +39,6 @@ public class AllocateBackendBatchTest {
 
     @Test
     public void allocateBackendBatch() {
-        // todo 测试未通过
         try {
             AllocateBackendBatchResult allocateBackendBatchResult = client.allocateBackendBatch(param);
             System.out.println(allocateBackendBatchResult);

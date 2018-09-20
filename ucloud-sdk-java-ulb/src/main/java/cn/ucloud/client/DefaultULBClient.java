@@ -178,10 +178,6 @@ public class DefaultULBClient implements ULBClient {
 
     @Override
     public AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception {
-        if ( 1 == 1){
-            System.out.println("The interface is incorrect and cannot be used temporarily.");
-            return null;
-        }
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
         AllocateBackendBatchResult result = (AllocateBackendBatchResult) http.doGet(param, config, null);
         return result;
@@ -189,10 +185,6 @@ public class DefaultULBClient implements ULBClient {
 
     @Override
     public void allocateBackendBatch(AllocateBackendBatchParam param, UcloudHandler handler, Boolean... asyncFlag) {
-        if ( 1 == 1){
-            System.out.println("The interface is incorrect and cannot be used temporarily.");
-            return;
-        }
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
         try {
             http.doGet(param, config, handler,asyncFlag);
@@ -260,13 +252,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult deleteSSL(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteSSLResult deleteSSL(DeleteSSLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteSSLResult.class);
+        DeleteSSLResult result = (DeleteSSLResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteSSL(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteSSL(DeleteSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteSSLResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
@@ -306,13 +303,19 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult describeSSL(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeSSLResult describeSSL(DescribeSSLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
+        DescribeSSLResult result = (DescribeSSLResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeSSL(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void describeSSL(DescribeSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

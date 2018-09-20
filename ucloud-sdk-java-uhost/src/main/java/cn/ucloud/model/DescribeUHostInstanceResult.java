@@ -14,7 +14,7 @@ import java.util.List;
 public class DescribeUHostInstanceResult extends BaseResponseResult {
 
 
-    public class UHostElement {
+    public static class UHostElement {
         /**
          * UHost实例ID
          */
@@ -488,7 +488,7 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
     }
 
 
-    public class UHostDiskElement{
+    public static class UHostDiskElement{
         /**
          * 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
          */
@@ -662,7 +662,7 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
     }
 
 
-    public class UHostIpElement {
+    public static class UHostIpElement {
         /**
          * 国际: Internation，BGP: Bgp，内网: Private
          */
