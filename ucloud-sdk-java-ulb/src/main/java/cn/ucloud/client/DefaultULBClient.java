@@ -282,13 +282,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult unbindSSL(BaseRequestParam param) throws Exception {
-        return null;
+    public UnbindSSLResult unbindSSL(UnbindSSLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UnbindSSLResult.class);
+        UnbindSSLResult result = (UnbindSSLResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void unbindSSL(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void unbindSSL(UnbindSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UnbindSSLResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
