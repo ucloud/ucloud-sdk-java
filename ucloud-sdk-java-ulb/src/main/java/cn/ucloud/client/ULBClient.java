@@ -101,9 +101,9 @@ public interface ULBClient {
 
 
     // todo  测试
-    BaseResponseResult bindSSL(BaseRequestParam param) throws Exception;
+    BindSSLResult bindSSL(BindSSLParam param) throws Exception;
 
-    void bindSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void bindSSL(BindSSLParam param,UcloudHandler handler,Boolean... asyncFlag);
 
     // todo  测试
     BaseResponseResult unbindSSL(BaseRequestParam param) throws Exception;

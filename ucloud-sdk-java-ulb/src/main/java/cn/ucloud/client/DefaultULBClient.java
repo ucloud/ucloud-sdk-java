@@ -267,13 +267,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult bindSSL(BaseRequestParam param) throws Exception {
-        return null;
+    public BindSSLResult bindSSL(BindSSLParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(BindSSLResult.class);
+        BindSSLResult result = (BindSSLResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void bindSSL(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void bindSSL(BindSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(BindSSLResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
