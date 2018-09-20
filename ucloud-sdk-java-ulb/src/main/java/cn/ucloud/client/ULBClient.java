@@ -107,9 +107,9 @@ public interface ULBClient {
     void unbindSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult createSSL(BaseRequestParam param) throws Exception;
+    CreateSSLResult createSSL(CreateSSLParam param) throws Exception;
 
-    void createSSL(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void createSSL(CreateSSLParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     BaseResponseResult describeSSL(BaseRequestParam param) throws Exception;
