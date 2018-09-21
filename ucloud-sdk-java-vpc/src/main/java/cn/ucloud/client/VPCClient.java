@@ -288,20 +288,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 获取路由表详细信息(包括路由策略)
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult describeRouteTable(BaseRequestParam param) throws Exception;
+    DescribeRouteTableResult describeRouteTable(DescribeRouteTableParam param) throws Exception;
 
     /**
-     *
+     * 获取路由表详细信息(包括路由策略)
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeRouteTable(DescribeRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
