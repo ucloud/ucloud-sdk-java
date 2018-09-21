@@ -329,13 +329,19 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult deletePolicyGroup(BaseRequestParam param) throws Exception {
-        return null;
+    public DeletePolicyGroupResult deletePolicyGroup(DeletePolicyGroupParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeletePolicyGroupResult.class);
+        DeletePolicyGroupResult result = (DeletePolicyGroupResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deletePolicyGroup(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deletePolicyGroup(DeletePolicyGroupParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeletePolicyGroupResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

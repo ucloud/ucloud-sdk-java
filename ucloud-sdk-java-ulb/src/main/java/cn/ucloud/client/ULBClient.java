@@ -122,9 +122,9 @@ public interface ULBClient {
     void describeSSL(DescribeSSLParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult deletePolicyGroup(BaseRequestParam param) throws Exception;
+    DeletePolicyGroupResult deletePolicyGroup(DeletePolicyGroupParam param) throws Exception;
 
-    void deletePolicyGroup(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void deletePolicyGroup(DeletePolicyGroupParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     DescribePolicyGroupResult describePolicyGroup(DescribePolicyGroupParam param) throws Exception;
