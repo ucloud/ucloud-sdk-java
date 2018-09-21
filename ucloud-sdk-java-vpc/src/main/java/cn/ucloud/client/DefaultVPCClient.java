@@ -222,13 +222,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult associateRouteTable(BaseRequestParam param) throws Exception {
-        return null;
+    public AssociateRouteTableResult associateRouteTable(AssociateRouteTableParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AssociateRouteTableResult.class);
+        AssociateRouteTableResult result = (AssociateRouteTableResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void associateRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void associateRouteTable(AssociateRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AssociateRouteTableResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

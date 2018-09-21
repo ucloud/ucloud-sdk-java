@@ -237,20 +237,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 绑定子网的路由表
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult associateRouteTable(BaseRequestParam param) throws Exception;
+    AssociateRouteTableResult associateRouteTable(AssociateRouteTableParam param) throws Exception;
 
     /**
-     *
+     * 绑定子网的路由表
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void associateRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void associateRouteTable(AssociateRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
