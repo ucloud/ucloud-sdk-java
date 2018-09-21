@@ -169,20 +169,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 新建VPC互通
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult createVPCIntercom(BaseRequestParam param) throws Exception;
+    CreateVPCIntercomResult createVPCIntercom(CreateVPCIntercomParam param) throws Exception;
 
     /**
-     *
+     * 新建VPC互通
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createVPCIntercom(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createVPCIntercom(CreateVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
