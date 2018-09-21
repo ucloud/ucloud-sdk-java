@@ -102,13 +102,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult deleteSubnet(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteSubnetResult deleteSubnet(DeleteSubnetParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteSubnetResult.class);
+        DeleteSubnetResult result = (DeleteSubnetResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteSubnet(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteSubnet(DeleteSubnetParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteSubnetResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
