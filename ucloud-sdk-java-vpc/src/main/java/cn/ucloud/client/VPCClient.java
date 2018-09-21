@@ -152,20 +152,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 更新子网信息
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult updateSubnetAttribute(BaseRequestParam param) throws Exception;
+    UpdateSubnetAttributeResult updateSubnetAttribute(UpdateSubnetAttributeParam param) throws Exception;
 
     /**
-     *
+     * 更新子网信息
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateSubnetAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void updateSubnetAttribute(UpdateSubnetAttributeParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
