@@ -409,6 +409,4 @@ public interface ULBClient {
      */
     void updatePolicyGroupAttribute(UpdatePolicyGroupAttributeParam param,UcloudHandler handler,Boolean... asyncFlag);
 
-
-
 }
