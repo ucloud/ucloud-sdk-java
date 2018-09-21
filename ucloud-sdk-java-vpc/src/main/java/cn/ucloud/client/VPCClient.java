@@ -82,20 +82,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 创建子网
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult createSubnet(BaseRequestParam param) throws Exception;
+    CreateSubnetResult createSubnet(CreateSubnetParam param) throws Exception;
 
     /**
-     *
+     * 创建子网
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createSubnet(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createSubnet(CreateSubnetParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
 
