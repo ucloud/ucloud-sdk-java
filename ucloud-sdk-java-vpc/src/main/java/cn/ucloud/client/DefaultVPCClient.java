@@ -72,13 +72,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult addVPCNetwork(BaseRequestParam param) throws Exception {
-        return null;
+    public AddVPCNetworkResult addVPCNetwork(AddVPCNetworkParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AddVPCNetworkResult.class);
+        AddVPCNetworkResult result = (AddVPCNetworkResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void addVPCNetwork(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void addVPCNetwork(AddVPCNetworkParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AddVPCNetworkResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

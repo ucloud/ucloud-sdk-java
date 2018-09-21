@@ -65,20 +65,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 添加VPC网段
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult addVPCNetwork(BaseRequestParam param) throws Exception;
+    AddVPCNetworkResult addVPCNetwork(AddVPCNetworkParam param) throws Exception;
 
     /**
-     *
+     * 添加VPC网段
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void addVPCNetwork(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void addVPCNetwork(AddVPCNetworkParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**

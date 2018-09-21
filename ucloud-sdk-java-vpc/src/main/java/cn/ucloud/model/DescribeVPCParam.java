@@ -4,6 +4,7 @@ import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.Param;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,11 @@ public class DescribeVPCParam extends BaseRequestParam {
         if (vpcIds != null) {
             int len = vpcIds.size();
             for (int i = 0; i < len; i++) {
-                list.add(new Param("VPCIds."+i,vpcIds.get(i)));
+                String id = vpcIds.get(i);
+                if (id == null || id.length() <= 0){
+                    throw new ValidationException("vpcIds["+i+"] can not be empty");
+                }
+                list.add(new Param("VPCIds."+i,id));
             }
         }
         return list;
