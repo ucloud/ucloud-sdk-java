@@ -39,8 +39,6 @@ public class ObjectToParam {
                 params.addAll(getMethodParam(superclass, baseRequestParam));
             }
             params.addAll(getMethodParam(objectClass, baseRequestParam));
-            // 参数编码
-            Signature.urlEncodeParams(params);
         } else {
             throw new NullPointerException("param object can not be null");
         }

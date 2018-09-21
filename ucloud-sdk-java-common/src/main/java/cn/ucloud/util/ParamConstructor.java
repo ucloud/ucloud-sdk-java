@@ -29,16 +29,16 @@ public class ParamConstructor {
         baseRequestParam.setPublicKey(account.getPublicKey());
         // 将参数对象转成List<Param>
         List<Param> paramList = ObjectToParam.objectToParams(baseRequestParam);
-
+        // 获取签名字符串
         String signature = Signature.getSignature(paramList, account);
         // 参数校验
         ParamValidator.validator(paramList);
         // url编码
         Signature.urlEncodeParams(paramList);
         for (Param param : paramList) {
-            if (StringUtils.isBlank(param.getParamKey()))
+            if (StringUtils.isBlank(param.getParamKey())){
                 continue;
-
+            }
             builder.append(param.getParamKey() + "=" + param.getParamValue() + "&");
         }
 
