@@ -2,8 +2,6 @@ package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.model.*;
-import cn.ucloud.pojo.BaseRequestParam;
-import cn.ucloud.pojo.BaseResponseResult;
 
 /**
  * @description: vpc客户端
@@ -305,35 +303,35 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 路由策略增、删、改
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult modifyRouteRule(BaseRequestParam param) throws Exception;
+    ModifyRouteRuleResult modifyRouteRule(ModifyRouteRuleParam param) throws Exception;
 
     /**
-     *
+     * 路由策略增、删、改
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void modifyRouteRule(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
-     *
+     * 更新路由表基本信息
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult updateRouteTableAttribute(BaseRequestParam param) throws Exception;
+    UpdateRouteTableAttributeResult updateRouteTableAttribute(UpdateRouteTableAttributeParam param) throws Exception;
 
     /**
-     *
+     * 更新路由表基本信息
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateRouteTableAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler handler, Boolean... asyncFlag);
 }

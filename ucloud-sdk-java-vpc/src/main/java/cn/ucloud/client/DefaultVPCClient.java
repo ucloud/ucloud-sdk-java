@@ -4,8 +4,6 @@ import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
 import cn.ucloud.model.*;
-import cn.ucloud.pojo.BaseRequestParam;
-import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.VPCConfig;
 
 /**
@@ -282,22 +280,22 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult modifyRouteRule(BaseRequestParam param) throws Exception {
+    public ModifyRouteRuleResult modifyRouteRule(ModifyRouteRuleParam param) throws Exception {
         return null;
     }
 
     @Override
-    public void modifyRouteRule(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler handler, Boolean... asyncFlag) {
 
     }
 
     @Override
-    public BaseResponseResult updateRouteTableAttribute(BaseRequestParam param) throws Exception {
+    public UpdateRouteTableAttributeResult updateRouteTableAttribute(UpdateRouteTableAttributeParam param) throws Exception {
         return null;
     }
 
     @Override
-    public void updateRouteTableAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
 
     }
 }
