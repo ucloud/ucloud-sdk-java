@@ -39,6 +39,7 @@ public class AllocateBackendBatchTest {
 
     @Test
     public void allocateBackendBatch() {
+        // todo 测试
         try {
             AllocateBackendBatchResult allocateBackendBatchResult = client.allocateBackendBatch(param);
             System.out.println(allocateBackendBatchResult);

@@ -7,12 +7,14 @@ import com.google.gson.annotations.SerializedName;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description: 删除内容转发组 参数类
+ * @description: 更新内容转发组属性 参数类
  * @author: codezhang
- * @date: 2018-09-21 10:17
+ * @date: 2018-09-21 10:24
  **/
 
-public class DeletePolicyGroupParam extends BaseRequestParam {
+public class UpdatePolicyGroupAttributeParam extends BaseRequestParam {
+
+
 
     /**
      * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -21,16 +23,23 @@ public class DeletePolicyGroupParam extends BaseRequestParam {
     @UcloudParam("Region")
     private String region;
 
+
     /**
-     * require 内容转发策略组ID
+     * require  内容转发策略组ID
      */
     @NotEmpty(message = "groupId can not be empty")
     @SerializedName("GroupId")
     private String groupId;
 
-    public DeletePolicyGroupParam(@NotEmpty(message = "region can not be empty") String region,
-                                  @NotEmpty(message = "groupId can not be empty") String groupId) {
-        super("DeletePolicyGroup");
+    /**
+     * optional 修改策略转发组名称
+     */
+    @SerializedName("GroupName")
+    private String groupName;
+
+    public UpdatePolicyGroupAttributeParam( @NotEmpty(message = "region can not be empty") String region,
+                                            @NotEmpty(message = "groupId can not be empty") String groupId) {
+        super("UpdatePolicyGroupAttribute");
         this.region = region;
         this.groupId = groupId;
     }
@@ -49,5 +58,13 @@ public class DeletePolicyGroupParam extends BaseRequestParam {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 }

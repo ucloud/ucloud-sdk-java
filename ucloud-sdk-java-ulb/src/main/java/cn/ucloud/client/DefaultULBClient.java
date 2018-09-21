@@ -4,8 +4,6 @@ import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
 import cn.ucloud.model.*;
-import cn.ucloud.pojo.BaseRequestParam;
-import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.ULBConfig;
 
 /**
@@ -377,12 +375,18 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult updatePolicyGroupAttribute(BaseRequestParam param) throws Exception {
-        return null;
+    public UpdatePolicyGroupAttributeResult updatePolicyGroupAttribute(UpdatePolicyGroupAttributeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdatePolicyGroupAttributeResult.class);
+        UpdatePolicyGroupAttributeResult result = (UpdatePolicyGroupAttributeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void updatePolicyGroupAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void updatePolicyGroupAttribute(UpdatePolicyGroupAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdatePolicyGroupAttributeResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 }
