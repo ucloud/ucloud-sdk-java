@@ -237,13 +237,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult cloneRouteTable(BaseRequestParam param) throws Exception {
-        return null;
+    public CloneRouteTableResult cloneRouteTable(CloneRouteTableParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CloneRouteTableResult.class);
+        CloneRouteTableResult result = (CloneRouteTableResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void cloneRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void cloneRouteTable(CloneRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CloneRouteTableResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

@@ -254,20 +254,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 克隆路由表
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult cloneRouteTable(BaseRequestParam param) throws Exception;
+    CloneRouteTableResult cloneRouteTable(CloneRouteTableParam param) throws Exception;
 
     /**
-     *
+     * 克隆路由表
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void cloneRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void cloneRouteTable(CloneRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
