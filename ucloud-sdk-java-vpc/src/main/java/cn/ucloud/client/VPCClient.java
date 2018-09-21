@@ -117,20 +117,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 获取子网信息
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult describeSubnet(BaseRequestParam param) throws Exception;
+    DescribeSubnetResult describeSubnet(DescribeSubnetParam param) throws Exception;
 
     /**
-     *
+     * 获取子网信息
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeSubnet(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeSubnet(DescribeSubnetParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
 

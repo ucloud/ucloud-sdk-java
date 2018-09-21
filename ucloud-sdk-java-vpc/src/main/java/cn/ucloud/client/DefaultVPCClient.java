@@ -117,13 +117,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult describeSubnet(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeSubnetResult describeSubnet(DescribeSubnetParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeSubnetResult.class);
+        DescribeSubnetResult result = (DescribeSubnetResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeSubnet(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void describeSubnet(DescribeSubnetParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeSubnetResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
