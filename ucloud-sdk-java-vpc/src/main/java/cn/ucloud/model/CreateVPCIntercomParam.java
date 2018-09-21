@@ -37,9 +37,9 @@ public class CreateVPCIntercomParam extends BaseRequestParam {
     /**
      * optional 地域。 目的所在地域（如果目的VPC和源VPC不在同一个地域，两个地域需要建立跨域通道，且该字段必选）
      */
-    @NotEmpty(message = "dstRegion can not be empty")
     @UcloudParam("DstRegion")
     private String dstRegion;
+
 
     /**
      * optional 目的项目ID

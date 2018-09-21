@@ -177,13 +177,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult describeVPCIntercom(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeVPCIntercomResult describeVPCIntercom(DescribeVPCIntercomParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeVPCIntercomResult.class);
+        DescribeVPCIntercomResult result = (DescribeVPCIntercomResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeVPCIntercom(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void describeVPCIntercom(DescribeVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeVPCIntercomResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

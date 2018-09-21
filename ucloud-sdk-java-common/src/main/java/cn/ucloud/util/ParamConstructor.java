@@ -24,24 +24,26 @@ public class ParamConstructor {
      * @throws Exception 可能是NullPointerException（参数对象为空）或者ValidatorException（参数对象属性不满足要求）
      */
     public static String getHttpGetParamString(BaseRequestParam baseRequestParam, Account account) throws Exception {
-        StringBuilder builder = new StringBuilder();
         // 设置publicKey
         baseRequestParam.setPublicKey(account.getPublicKey());
         // 将参数对象转成List<Param>
         List<Param> paramList = ObjectToParam.objectToParams(baseRequestParam);
         // 获取签名字符串
         String signature = Signature.getSignature(paramList, account);
+        // 设置签名 到参数对象
+        baseRequestParam.setSignature(signature);
         // 参数校验
-        ParamValidator.validator(paramList);
+        ParamValidator.validator(baseRequestParam);
         // url编码
         Signature.urlEncodeParams(paramList);
+        // 构造url参数
+        StringBuilder builder = new StringBuilder();
         for (Param param : paramList) {
             if (StringUtils.isBlank(param.getParamKey())){
                 continue;
             }
             builder.append(param.getParamKey() + "=" + param.getParamValue() + "&");
         }
-
         // 设置签名
         builder.append("Signature" + "=" + signature);
         return builder.toString();
