@@ -203,20 +203,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     *  删除VPC互通
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult deleteVPCIntercom(BaseRequestParam param) throws Exception;
+    DeleteVPCIntercomResult deleteVPCIntercom(DeleteVPCIntercomParam param) throws Exception;
 
     /**
-     *
+     *  删除VPC互通
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteVPCIntercom(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteVPCIntercom(DeleteVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**

@@ -192,13 +192,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult deleteVPCIntercom(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteVPCIntercomResult deleteVPCIntercom(DeleteVPCIntercomParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteVPCIntercomResult.class);
+        DeleteVPCIntercomResult result = (DeleteVPCIntercomResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteVPCIntercom(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteVPCIntercom(DeleteVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteVPCIntercomResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
