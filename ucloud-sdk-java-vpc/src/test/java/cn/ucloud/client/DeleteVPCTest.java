@@ -1,26 +1,24 @@
 package cn.ucloud.client;
 
-import cn.ucloud.model.CreateVPCParam;
-import cn.ucloud.model.CreateVPCResult;
+import cn.ucloud.model.DeleteVPCParam;
+import cn.ucloud.model.DeleteVPCResult;
 import cn.ucloud.pojo.Account;
 import cn.ucloud.pojo.VPCConfig;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 /**
  * @description:
  * @author: codezhang
- * @date: 2018-09-21 11:40
+ * @date: 2018-09-21 14:11
  **/
-public class CreateVPCTest {
+public class DeleteVPCTest {
+
+
 
     private VPCClient client;
 
-    private CreateVPCParam param;
+    private DeleteVPCParam param;
 
     @Before
     public void initData() {
@@ -28,19 +26,16 @@ public class CreateVPCTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"),
                         System.getenv("UcloudPassword"))));
-        param = new CreateVPCParam("cn-bj2","sdk-java-vpc2");
-        List<String> network = new ArrayList<>();
-        network.add("10.10.0.0/16");
-        param.setNetwork(network);
+        param = new DeleteVPCParam("cn-bj2","uvnet-1wu2eb");
         param.setProjectId("org-4nfe1i");
     }
 
 
     @Test
-    public void createVPC() {
+    public void deleteVPC() {
         try {
-            CreateVPCResult vpc = client.createVPC(param);
-            System.out.println(vpc);
+            DeleteVPCResult deleteVPCResult = client.deleteVPC(param);
+            System.out.println(deleteVPCResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

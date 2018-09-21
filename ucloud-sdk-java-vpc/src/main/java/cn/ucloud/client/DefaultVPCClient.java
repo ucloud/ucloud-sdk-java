@@ -3,8 +3,7 @@ package cn.ucloud.client;
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
-import cn.ucloud.model.CreateVPCParam;
-import cn.ucloud.model.CreateVPCResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.VPCConfig;
@@ -43,13 +42,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult deleteVPC(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteVPCResult deleteVPC(DeleteVPCParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteVPCResult.class);
+        DeleteVPCResult result = (DeleteVPCResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteVPC(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteVPC(DeleteVPCParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteVPCResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override

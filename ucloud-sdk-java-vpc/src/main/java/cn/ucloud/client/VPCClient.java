@@ -1,8 +1,7 @@
 package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
-import cn.ucloud.model.CreateVPCParam;
-import cn.ucloud.model.CreateVPCResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.BaseResponseResult;
 
@@ -37,7 +36,7 @@ public interface VPCClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult deleteVPC(BaseRequestParam param) throws Exception;
+    DeleteVPCResult deleteVPC(DeleteVPCParam param) throws Exception;
 
     /**
      * 删除VPC
@@ -45,7 +44,7 @@ public interface VPCClient {
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteVPC(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteVPC(DeleteVPCParam param, UcloudHandler handler, Boolean... asyncFlag);
 
     /**
      * 获取VPC信息
