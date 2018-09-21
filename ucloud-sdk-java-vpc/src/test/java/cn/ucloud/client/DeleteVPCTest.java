@@ -20,6 +20,7 @@ public class DeleteVPCTest {
 
     private DeleteVPCParam param;
 
+
     @Before
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
