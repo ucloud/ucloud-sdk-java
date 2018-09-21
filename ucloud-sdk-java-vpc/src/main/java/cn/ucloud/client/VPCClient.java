@@ -271,20 +271,20 @@ public interface VPCClient {
 
 
     /**
-     *
+     * 删除自定义路由表
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult deleteRouteTable(BaseRequestParam param) throws Exception;
+    DeleteRouteTableResult deleteRouteTable(DeleteRouteTableParam param) throws Exception;
 
     /**
-     *
+     * 删除自定义路由表
      * @param param 参数对象
      * @param handler 回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteRouteTable(DeleteRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**

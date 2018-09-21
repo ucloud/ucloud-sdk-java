@@ -252,13 +252,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult deleteRouteTable(BaseRequestParam param) throws Exception {
-        return null;
+    public DeleteRouteTableResult deleteRouteTable(DeleteRouteTableParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteRouteTableResult.class);
+        DeleteRouteTableResult result = (DeleteRouteTableResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void deleteRouteTable(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void deleteRouteTable(DeleteRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteRouteTableResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
