@@ -57,13 +57,18 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public BaseResponseResult describeVPC(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeVPCResult describeVPC(DescribeVPCParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeVPCResult.class);
+        DescribeVPCResult result = (DescribeVPCResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeVPC(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void describeVPC(DescribeVPCParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeVPCResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) { }
     }
 
     @Override
