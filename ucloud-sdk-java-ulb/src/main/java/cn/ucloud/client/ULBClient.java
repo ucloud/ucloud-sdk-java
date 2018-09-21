@@ -127,9 +127,9 @@ public interface ULBClient {
     void deletePolicyGroup(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
-    BaseResponseResult describePolicyGroup(BaseRequestParam param) throws Exception;
+    DescribePolicyGroupResult describePolicyGroup(DescribePolicyGroupParam param) throws Exception;
 
-    void describePolicyGroup(BaseRequestParam param,UcloudHandler handler,Boolean... asyncFlag);
+    void describePolicyGroup(DescribePolicyGroupParam param,UcloudHandler handler,Boolean... asyncFlag);
 
 
     CreatePolicyGroupResult createPolicyGroup(CreatePolicyGroupParam param) throws Exception;

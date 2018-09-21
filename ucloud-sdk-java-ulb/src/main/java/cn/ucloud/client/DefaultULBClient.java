@@ -339,13 +339,19 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public BaseResponseResult describePolicyGroup(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribePolicyGroupResult describePolicyGroup(DescribePolicyGroupParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribePolicyGroupResult.class);
+        DescribePolicyGroupResult result = (DescribePolicyGroupResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describePolicyGroup(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void describePolicyGroup(DescribePolicyGroupParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribePolicyGroupResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
