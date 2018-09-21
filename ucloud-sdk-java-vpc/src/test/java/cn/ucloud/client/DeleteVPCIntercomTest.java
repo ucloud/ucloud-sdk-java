@@ -28,6 +28,7 @@ public class DeleteVPCIntercomTest {
         param.setProjectId("org-4nfe1i");
     }
 
+
     @Test
     public void deleteVPCIntercom() {
         try {
