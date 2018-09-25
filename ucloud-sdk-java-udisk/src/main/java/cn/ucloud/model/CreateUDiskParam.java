@@ -34,7 +34,7 @@ public class CreateUDiskParam extends BaseRequestParam {
     private int size;
 
     /**
-     * optional 实例名称
+     * name 实例名称
      */
     @NotEmpty(message = "name can not be empty")
     @UcloudParam("Name")

@@ -9,9 +9,9 @@ import javax.validation.constraints.NotEmpty;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/25 13:56
+ * @date: 2018/9/25 15:55
  */
-public class DeleteUDiskParam extends BaseRequestParam {
+public class RestoreUDiskParam extends BaseRequestParam {
     /**
      * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
@@ -27,16 +27,28 @@ public class DeleteUDiskParam extends BaseRequestParam {
     private String zone;
 
     /**
-     * uDiskId 要删除的UDisk的Id
+     * uDiskId 需要恢复的盘id
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
-    public DeleteUDiskParam(@NotEmpty(message = "region can not be empty") String region,
-                            @NotEmpty(message = "zone can not be empty") String zone,
-                            @NotEmpty(message = "uDiskId can not be empty") String uDiskId) {
-        super("DeleteUDisk");
+    /**
+     * SnapshotId 从指定的快照恢复
+     */
+    @UcloudParam("SnapshotId")
+    private String snapshotId;
+
+    /**
+     * snapshotTime 指定从方舟恢复的备份时间点
+     */
+    @UcloudParam("SnapshotTime")
+    private int snapshotTime;
+
+    public RestoreUDiskParam(@NotEmpty(message = "region can not be empty") String region,
+                             @NotEmpty(message = "zone can not be empty") String zone,
+                             @NotEmpty(message = "uDiskId can not be empty") String uDiskId) {
+        super("RestoreUDisk");
         this.region = region;
         this.zone = zone;
         this.uDiskId = uDiskId;
@@ -64,5 +76,21 @@ public class DeleteUDiskParam extends BaseRequestParam {
 
     public void setuDiskId(String uDiskId) {
         this.uDiskId = uDiskId;
+    }
+
+    public String getSnapshotId() {
+        return snapshotId;
+    }
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    public int getSnapshotTime() {
+        return snapshotTime;
+    }
+
+    public void setSnapshotTime(int snapshotTime) {
+        this.snapshotTime = snapshotTime;
     }
 }

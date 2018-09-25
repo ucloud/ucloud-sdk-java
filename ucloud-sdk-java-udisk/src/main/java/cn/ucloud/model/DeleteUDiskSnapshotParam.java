@@ -27,12 +27,6 @@ public class DeleteUDiskSnapshotParam extends BaseRequestParam {
     private String zone;
 
     /**
-     * projectId 项目编号
-     */
-    @UcloudParam("ProjectId")
-    private String projectId;
-
-    /**
      * SnapshotId 快照Id
      */
     @NotEmpty(message = "snapshotId can not be empty")
@@ -69,16 +63,6 @@ public class DeleteUDiskSnapshotParam extends BaseRequestParam {
 
     public void setZone(String zone) {
         this.zone = zone;
-    }
-
-    @Override
-    public String getProjectId() {
-        return projectId;
-    }
-
-    @Override
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public String getSnapshotId() {

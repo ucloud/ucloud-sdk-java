@@ -9,9 +9,9 @@ import javax.validation.constraints.NotEmpty;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/25 13:56
+ * @date: 2018/9/25 16:27
  */
-public class DeleteUDiskParam extends BaseRequestParam {
+public class DescribeUDiskParam extends BaseRequestParam {
     /**
      * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
@@ -22,24 +22,36 @@ public class DeleteUDiskParam extends BaseRequestParam {
     /**
      * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
-    @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * uDiskId 要删除的UDisk的Id
+     * uDiskId UDisk Id(留空返回全部)
      */
-    @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
-    public DeleteUDiskParam(@NotEmpty(message = "region can not be empty") String region,
-                            @NotEmpty(message = "zone can not be empty") String zone,
-                            @NotEmpty(message = "uDiskId can not be empty") String uDiskId) {
-        super("DeleteUDisk");
+    /**
+     * offset 数据偏移量, 默认为0
+     */
+    @UcloudParam("Offset")
+    private int offset;
+
+    /**
+     * limit 返回数据长度, 默认为20
+     */
+    @UcloudParam("Limit")
+    private int limit;
+
+    /**
+     * diskType 普通数据盘:DataDisk|普通系统盘:SystemDisk|SSD数据盘:SSDDataDisk; 为空拉取所有
+     */
+    @UcloudParam("DiskType")
+    private String diskType;
+
+    public DescribeUDiskParam(@NotEmpty(message = "region can not be empty") String region) {
+        super("DescribeUDisk");
         this.region = region;
-        this.zone = zone;
-        this.uDiskId = uDiskId;
     }
 
     public String getRegion() {
@@ -64,5 +76,29 @@ public class DeleteUDiskParam extends BaseRequestParam {
 
     public void setuDiskId(String uDiskId) {
         this.uDiskId = uDiskId;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
+
+    public String getDiskType() {
+        return diskType;
+    }
+
+    public void setDiskType(String diskType) {
+        this.diskType = diskType;
     }
 }

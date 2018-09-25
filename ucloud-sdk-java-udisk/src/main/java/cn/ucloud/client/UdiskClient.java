@@ -84,4 +84,112 @@ public interface UdiskClient {
      * @param asyncFlag 是否异步
      */
     void deleteUDisk(DeleteUDiskParam param, UcloudHandler<DeleteUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 重命名UDisk
+     *
+     * @param param {@link RenameUDiskParam} 参数对象
+     * @return {@link RenameUDiskResult}
+     * @throws Exception
+     */
+    RenameUDiskResult renameUDisk(RenameUDiskParam param) throws Exception;
+
+    /**
+     * 重命名UDisk
+     *
+     * @param param     {@link RenameUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void renameUDisk(RenameUDiskParam param, UcloudHandler<RenameUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 卸载某个已经挂载在指定UHost实例上的UDisk
+     *
+     * @param param {@link DetachUDiskParam} 参数对象
+     * @return {@link DetachUDiskResult}
+     * @throws Exception
+     */
+    DetachUDiskResult detachUDisk(DetachUDiskParam param) throws Exception;
+
+    /**
+     * 卸载某个已经挂载在指定UHost实例上的UDisk
+     *
+     * @param param     {@link DetachUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void detachUDisk(DetachUDiskParam param, UcloudHandler<DetachUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 从回收站中恢复云硬盘
+     *
+     * @param param {@link RecoverUDiskParam} 参数对象
+     * @return {@link RecoverUDiskResult}
+     * @throws Exception
+     */
+    RecoverUDiskResult recoverUDisk(RecoverUDiskParam param) throws Exception;
+
+    /**
+     * 从回收站中恢复云硬盘
+     *
+     * @param param     {@link RecoverUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void recoverUDisk(RecoverUDiskParam param, UcloudHandler<RecoverUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 从备份恢复数据至UDisk
+     *
+     * @param param {@link RestoreUDiskParam} 参数对象
+     * @return {@link RestoreUDiskResult}
+     * @throws Exception
+     */
+    RestoreUDiskResult restoreUDisk(RestoreUDiskParam param) throws Exception;
+
+    /**
+     * 从备份恢复数据至UDisk
+     *
+     * @param param     {@link RestoreUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void restoreUDisk(RestoreUDiskParam param, UcloudHandler<RestoreUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 从UDisk创建UDisk克隆
+     *
+     * @param param {@link CloneUDiskParam} 参数对象
+     * @return {@link CloneUDiskResult}
+     * @throws Exception
+     */
+    CloneUDiskResult cloneUDisk(CloneUDiskParam param) throws Exception;
+
+    /**
+     * 从UDisk创建UDisk克隆
+     *
+     * @param param     {@link CloneUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void cloneUDisk(CloneUDiskParam param, UcloudHandler<CloneUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取云硬盘列表
+     *
+     * @param param {@link DescribeUDiskParam} 参数对象
+     * @return {@link DescribeUDiskResult}
+     * @throws Exception
+     */
+    DescribeUDiskResult getDescribeUDisk(DescribeUDiskParam param) throws Exception;
+
+    /**
+     * 获取云硬盘列表
+     *
+     * @param param     {@link DescribeUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void getDescribeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag);
 }

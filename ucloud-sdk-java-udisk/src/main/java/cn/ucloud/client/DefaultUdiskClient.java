@@ -84,4 +84,100 @@ public class DefaultUdiskClient implements UdiskClient {
         }
     }
 
+    @Override
+    public RenameUDiskResult renameUDisk(RenameUDiskParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(RenameUDiskResult.class);
+        RenameUDiskResult result = (RenameUDiskResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void renameUDisk(RenameUDiskParam param, UcloudHandler<RenameUDiskResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(RenameUDiskResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public DetachUDiskResult detachUDisk(DetachUDiskParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DetachUDiskResult.class);
+        DetachUDiskResult result = (DetachUDiskResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void detachUDisk(DetachUDiskParam param, UcloudHandler<DetachUDiskResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DetachUDiskResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public RecoverUDiskResult recoverUDisk(RecoverUDiskParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(RecoverUDiskResult.class);
+        RecoverUDiskResult result = (RecoverUDiskResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void recoverUDisk(RecoverUDiskParam param, UcloudHandler<RecoverUDiskResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(RecoverUDiskResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public RestoreUDiskResult restoreUDisk(RestoreUDiskParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(RestoreUDiskResult.class);
+        RestoreUDiskResult result = (RestoreUDiskResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void restoreUDisk(RestoreUDiskParam param, UcloudHandler<RestoreUDiskResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(RestoreUDiskResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public CloneUDiskResult cloneUDisk(CloneUDiskParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CloneUDiskResult.class);
+        CloneUDiskResult result = (CloneUDiskResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void cloneUDisk(CloneUDiskParam param, UcloudHandler<CloneUDiskResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CloneUDiskResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public DescribeUDiskResult getDescribeUDisk(DescribeUDiskParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUDiskResult.class);
+        DescribeUDiskResult result = (DescribeUDiskResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void getDescribeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUDiskResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
 }

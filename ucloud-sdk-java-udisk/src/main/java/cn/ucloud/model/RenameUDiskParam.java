@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 13:56
  */
-public class DeleteUDiskParam extends BaseRequestParam {
+public class RenameUDiskParam extends BaseRequestParam {
     /**
      * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
@@ -27,19 +27,28 @@ public class DeleteUDiskParam extends BaseRequestParam {
     private String zone;
 
     /**
-     * uDiskId 要删除的UDisk的Id
+     * uDiskId 重命名的UDisk的Id
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
-    public DeleteUDiskParam(@NotEmpty(message = "region can not be empty") String region,
+    /**
+     * uDiskName 重命名UDisk的name
+     */
+    @NotEmpty(message = "uDiskName can not be empty")
+    @UcloudParam("UDiskName")
+    private String uDiskName;
+
+    public RenameUDiskParam(@NotEmpty(message = "region can not be empty") String region,
                             @NotEmpty(message = "zone can not be empty") String zone,
-                            @NotEmpty(message = "uDiskId can not be empty") String uDiskId) {
-        super("DeleteUDisk");
+                            @NotEmpty(message = "uDiskId can not be empty") String uDiskId,
+                            @NotEmpty(message = "UDiskName can not be empty") String uDiskName) {
+        super("RenameUDisk");
         this.region = region;
         this.zone = zone;
         this.uDiskId = uDiskId;
+        this.uDiskName = uDiskName;
     }
 
     public String getRegion() {
@@ -64,5 +73,13 @@ public class DeleteUDiskParam extends BaseRequestParam {
 
     public void setuDiskId(String uDiskId) {
         this.uDiskId = uDiskId;
+    }
+
+    public String getuDiskName() {
+        return uDiskName;
+    }
+
+    public void setuDiskName(String uDiskName) {
+        this.uDiskName = uDiskName;
     }
 }

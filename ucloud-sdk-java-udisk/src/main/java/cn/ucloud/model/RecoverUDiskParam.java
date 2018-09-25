@@ -9,9 +9,10 @@ import javax.validation.constraints.NotEmpty;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/25 13:56
+ * @date: 2018/9/25 15:50
  */
-public class DeleteUDiskParam extends BaseRequestParam {
+public class RecoverUDiskParam extends BaseRequestParam {
+
     /**
      * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
@@ -26,17 +27,30 @@ public class DeleteUDiskParam extends BaseRequestParam {
     @UcloudParam("Zone")
     private String zone;
 
+
     /**
-     * uDiskId 要删除的UDisk的Id
+     * uDiskId 云硬盘资源ID
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
-    public DeleteUDiskParam(@NotEmpty(message = "region can not be empty") String region,
-                            @NotEmpty(message = "zone can not be empty") String zone,
-                            @NotEmpty(message = "uDiskId can not be empty") String uDiskId) {
-        super("DeleteUDisk");
+    /**
+     * chargeType Year, Month, Dynamic, Trial 默认: Dynamic
+     */
+    @UcloudParam("ChargeType")
+    private String chargeType;
+
+    /**
+     * quantity 购买时长 默认: 1
+     */
+    @UcloudParam("Quantity")
+    private int quantity;
+
+    public RecoverUDiskParam(@NotEmpty(message = "region can not be empty") String region,
+                             @NotEmpty(message = "zone can not be empty") String zone,
+                             @NotEmpty(message = "uDiskId can not be empty") String uDiskId) {
+        super("RecoverUDisk");
         this.region = region;
         this.zone = zone;
         this.uDiskId = uDiskId;
@@ -64,5 +78,21 @@ public class DeleteUDiskParam extends BaseRequestParam {
 
     public void setuDiskId(String uDiskId) {
         this.uDiskId = uDiskId;
+    }
+
+    public String getChargeType() {
+        return chargeType;
+    }
+
+    public void setChargeType(String chargeType) {
+        this.chargeType = chargeType;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
