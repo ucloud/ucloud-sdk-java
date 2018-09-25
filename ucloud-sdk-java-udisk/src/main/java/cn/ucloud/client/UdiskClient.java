@@ -264,4 +264,77 @@ public interface UdiskClient {
      * @param asyncFlag 是否异步
      */
     void getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 创建快照
+     *
+     * @param param {@link CreateUDiskSnapshotParam} 参数对象
+     * @return {@link CreateUDiskSnapshotResult}
+     * @throws Exception
+     */
+    CreateUDiskSnapshotResult createUDiskSnapshot(CreateUDiskSnapshotParam param) throws Exception;
+
+    /**
+     * 创建快照
+     *
+     * @param param     {@link CreateUDiskSnapshotParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void createUDiskSnapshot(CreateUDiskSnapshotParam param, UcloudHandler<CreateUDiskSnapshotResult> handler, Boolean... asyncFlag);
+
+
+    /**
+     * 克隆快照
+     *
+     * @param param {@link CloneUDiskSnapshotParam} 参数对象
+     * @return {@link CloneUDiskSnapshotResult}
+     * @throws Exception
+     */
+    CloneUDiskSnapshotResult cloneUDiskSnapshot(CloneUDiskSnapshotParam param) throws Exception;
+
+    /**
+     * 克隆快照
+     *
+     * @param param     {@link CloneUDiskSnapshotParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void cloneUDiskSnapshot(CloneUDiskSnapshotParam param, UcloudHandler<CloneUDiskSnapshotResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 拉取回收站中云硬盘列表
+     *
+     * @param param {@link DescribeRecycleUDiskParam} 参数对象
+     * @return {@link DescribeRecycleUDiskResult}
+     * @throws Exception
+     */
+    DescribeRecycleUDiskResult getDescribeRecycleUDisk(DescribeRecycleUDiskParam param) throws Exception;
+
+    /**
+     * 拉取回收站中云硬盘列表
+     *
+     * @param param     {@link DescribeRecycleUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void getDescribeRecycleUDisk(DescribeRecycleUDiskParam param, UcloudHandler<DescribeRecycleUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 调整云硬盘
+     *
+     * @param param {@link ResizeUDiskParam} 参数对象
+     * @return {@link ResizeUDiskResult}
+     * @throws Exception
+     */
+    ResizeUDiskResult resizeUDisk(ResizeUDiskParam param) throws Exception;
+
+    /**
+     * 调整云硬盘
+     *
+     * @param param     {@link ResizeUDiskParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void resizeUDisk(ResizeUDiskParam param, UcloudHandler<ResizeUDiskResult> handler, Boolean... asyncFlag);
 }
