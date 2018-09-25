@@ -1,6 +1,7 @@
 package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 
 /**
@@ -25,24 +26,24 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateEIP(BaseRequestParam param, UcloudHandler handler,Boolean... asyncFlag);
+    void allocateEIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**
-     *
+     * 获取弹性IP信息
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam describeEIP(BaseRequestParam param) throws  Exception;
+    DescribeEIPResult describeEIP(DescribeEIPParam param) throws  Exception;
 
     /**
-     *
+     * 获取弹性IP信息
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeEIP(BaseRequestParam param, UcloudHandler handler,Boolean... asyncFlag);
+    void describeEIP(DescribeEIPParam param, UcloudHandler handler,Boolean... asyncFlag);
 
 
     /**
