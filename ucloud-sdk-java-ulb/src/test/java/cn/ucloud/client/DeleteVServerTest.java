@@ -22,8 +22,7 @@ public class DeleteVServerTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DeleteVServerParam("cn-bj2","ulb-0kawkr","vserver-02n1ot");
         param.setProjectId("org-4nfe1i");
     }

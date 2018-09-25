@@ -22,8 +22,7 @@ public class UpdateULBAttributeTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new UpdateULBAttributeParam("cn-bj2","ulb-0kawkr");
         param.setName("codezhang-ulb");
         param.setProjectId("org-4nfe1i");

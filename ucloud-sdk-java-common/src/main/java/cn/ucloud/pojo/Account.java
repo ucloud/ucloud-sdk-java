@@ -1,9 +1,5 @@
 package cn.ucloud.pojo;
 
-import com.sun.xml.internal.messaging.saaj.util.Base64;
-
-import java.io.UnsupportedEncodingException;
-
 /**
  * @description: 账户
  * @author: codezhang
@@ -14,24 +10,10 @@ public class Account {
 
     private String privateKey;
     private String publicKey;
-    private String password;
 
-    public Account(String privateKey, String publicKey, String password) {
+    public Account(String privateKey, String publicKey) {
         this.privateKey = privateKey;
         this.publicKey = publicKey;
-        try {
-            this.password = new String(Base64.encode((password).getBytes("utf-8")));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getPrivateKey() {

@@ -26,8 +26,7 @@ public class CreateVPCTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new CreateVPCParam("cn-bj2","sdk-java-vpc2");
         List<String> network = new ArrayList<>();
         network.add("10.10.0.0/16");

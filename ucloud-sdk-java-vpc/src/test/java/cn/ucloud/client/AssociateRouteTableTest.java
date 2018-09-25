@@ -23,8 +23,7 @@ public class AssociateRouteTableTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new AssociateRouteTableParam("cn-bj2","subnet-5c232h","routetable-pxtsmf");
         param.setProjectId("org-4nfe1i");
     }

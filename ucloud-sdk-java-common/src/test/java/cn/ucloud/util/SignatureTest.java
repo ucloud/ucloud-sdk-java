@@ -2,14 +2,13 @@ package cn.ucloud.util;
 
 import cn.ucloud.pojo.Account;
 import cn.ucloud.pojo.Param;
-import com.sun.xml.internal.messaging.saaj.util.Base64;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @description:
@@ -23,7 +22,7 @@ public class SignatureTest {
     @Before
     public void initGlobalAccount(){
         account = new Account("46f09bb9fab4f12dfc160dae12273d5332b5debe",
-                "ucloudsomeone@example.com1296235120854146120","UCloud.cn");
+                "ucloudsomeone@example.com1296235120854146120");
     }
 
     public  Param[] initParamsArray() {
@@ -36,7 +35,7 @@ public class SignatureTest {
                 new Param("Memory", 2048),
                 new Param("DiskSpace", 10),
                 new Param("LoginMode", "Password"),
-                new Param("Password", account.getPassword()),
+                new Param("Password", "aaaa"),
                 new Param("Name", "Host01"),
                 new Param("ChargeType", "Month"),
                 new Param("Quantity", 1),
@@ -54,7 +53,7 @@ public class SignatureTest {
         params.add(new Param("Memory", 2048));
         params.add(new Param("DiskSpace", 10));
         params.add(new Param("LoginMode", "Password"));
-        params.add(new Param("Password", account.getPassword()));
+        params.add(new Param("Password", "aaa"));
         params.add(new Param("Name", "Host01"));
         params.add(new Param("ChargeType", "Month"));
         params.add(new Param("Quantity", 1));

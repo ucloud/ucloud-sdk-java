@@ -21,8 +21,7 @@ public class ReinstallUHostInstanceTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new ReinstallUHostInstanceParam("cn-bj2","uhost-zzsffd");
         param.setPassword("123456ab");
         param.setProjectId("org-4nfe1i");

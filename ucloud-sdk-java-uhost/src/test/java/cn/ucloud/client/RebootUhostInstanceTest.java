@@ -24,8 +24,7 @@ public class RebootUhostInstanceTest {
     public void  initData(){
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new RebootUHostInstanceParam("cn-bj2","uhost-k2spt1");
         param.setZone("cn-bj2-02");
         param.setProjectId("org-4nfe1i");

@@ -21,8 +21,7 @@ public class CreatePolicyGroupTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new CreatePolicyGroupParam("cn-bj2");
         param.setGroupName("group-test-java-sdk");
         param.setProjectId("org-4nfe1i");

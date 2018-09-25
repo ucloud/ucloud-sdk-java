@@ -26,8 +26,7 @@ public class UpdatePolicyTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new UpdatePolicyParam("cn-bj2","ulb-0kawkr","vserver-se0ay2",
                 "b5e76c15-ab56-4cf4-8c7c-45defa2302bf","test2");
         List<String> backendIds = new ArrayList<>();

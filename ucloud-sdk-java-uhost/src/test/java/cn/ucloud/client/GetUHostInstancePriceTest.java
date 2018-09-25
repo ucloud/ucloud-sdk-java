@@ -22,8 +22,7 @@ public class GetUHostInstancePriceTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
         param = new GetUHostInstancePriceParam("cn-bj2","uimage-cjswb5",2,2048,2);
     }

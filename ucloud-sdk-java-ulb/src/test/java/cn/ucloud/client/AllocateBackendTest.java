@@ -23,8 +23,7 @@ public class AllocateBackendTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new AllocateBackendParam("cn-bj2","ulb-0kawkr","vserver-se0ay2",
                 "UHost","uhost-zzsffd");
         param.setProjectId("org-4nfe1i");

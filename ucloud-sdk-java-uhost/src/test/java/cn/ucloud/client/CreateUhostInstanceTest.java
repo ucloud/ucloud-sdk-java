@@ -22,8 +22,7 @@ public class CreateUhostInstanceTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
         param = new CreateUHostInstanceParam("cn-bj2","cn-bj2-02","uimage-cjswb5");
         param.setName("java-sdk-test");

@@ -25,8 +25,7 @@ public class DeleteVPCTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DeleteVPCParam("cn-bj2","uvnet-1wu2eb");
         param.setProjectId("org-4nfe1i");
     }

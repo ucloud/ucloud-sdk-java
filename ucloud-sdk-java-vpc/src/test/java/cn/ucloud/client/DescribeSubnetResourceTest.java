@@ -24,8 +24,7 @@ public class DescribeSubnetResourceTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DescribeSubnetResourceParam("cn-bj2","subnet-2kprhq");
         param.setProjectId("org-4nfe1i");
     }

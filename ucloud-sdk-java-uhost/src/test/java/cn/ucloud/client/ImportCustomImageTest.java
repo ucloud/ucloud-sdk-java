@@ -1,6 +1,7 @@
 package cn.ucloud.client;
 
 import cn.ucloud.model.ImportCustomImageParam;
+import cn.ucloud.model.ImportCustomImageResult;
 import cn.ucloud.pojo.Account;
 import cn.ucloud.pojo.UhostConfig;
 import org.junit.Before;
@@ -21,8 +22,7 @@ public class ImportCustomImageTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new ImportCustomImageParam("cn-bj2","java-sdk-import-test","",
                 "","","",true);
         param.setProjectId("org-4nfe1i");
@@ -31,5 +31,11 @@ public class ImportCustomImageTest {
     @Test
     public void importCustomImage() {
         // todo 测试
+        try {
+            ImportCustomImageResult importCustomImageResult = client.importCustomImage(param);
+            System.out.println(importCustomImageResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -22,8 +22,7 @@ public class CreateRouteTableTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new CreateRouteTableParam("cn-bj2","uvnet-qmrkj1");
         param.setName("sdk-java-route");
         param.setProjectId("org-4nfe1i");
