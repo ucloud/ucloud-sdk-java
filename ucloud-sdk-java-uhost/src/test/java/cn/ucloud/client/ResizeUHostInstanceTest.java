@@ -22,8 +22,7 @@ public class ResizeUHostInstanceTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
         //param = new ResizeUHostInstanceParam("cn-bj2","uhost-zzsffd");
         param = new ResizeUHostInstanceParam("cn-bj2","uhost-euyi2b");

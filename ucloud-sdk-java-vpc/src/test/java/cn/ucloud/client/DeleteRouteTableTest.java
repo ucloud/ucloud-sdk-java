@@ -22,8 +22,7 @@ public class DeleteRouteTableTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DeleteRouteTableParam("cn-bj2","routetable-2dumbv");
         param.setProjectId("org-4nfe1i");
     }

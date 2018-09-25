@@ -23,8 +23,7 @@ public class UpdateSubnetAttributeTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new UpdateSubnetAttributeParam("cn-bj2","subnet-5c232h");
         param.setName("java-sdk-test-name");
         param.setProjectId("org-4nfe1i");

@@ -23,8 +23,7 @@ public class CreateSSLTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new CreateSSLParam("cn-bj2","ssl-sdk-java-test");
         param.setPrivateKey("");
         param.setSslContent("");

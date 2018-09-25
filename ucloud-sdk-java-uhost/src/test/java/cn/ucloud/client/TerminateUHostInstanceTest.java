@@ -22,8 +22,7 @@ public class TerminateUHostInstanceTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new TerminateUHostInstanceParam("cn-bj2","uhost-1irm01");
     }
 

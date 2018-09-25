@@ -24,8 +24,7 @@ public class ReleaseBackendTest {
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new ReleaseBackendParam("cn-bj2", "ulb-0kawkr", "backend-eo5qpv");
         param.setProjectId("org-4nfe1i");
     }

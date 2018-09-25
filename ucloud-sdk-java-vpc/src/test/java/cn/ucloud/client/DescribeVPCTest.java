@@ -24,8 +24,7 @@ public class DescribeVPCTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DescribeVPCParam("cn-bj2");
         param.setProjectId("org-4nfe1i");
     }

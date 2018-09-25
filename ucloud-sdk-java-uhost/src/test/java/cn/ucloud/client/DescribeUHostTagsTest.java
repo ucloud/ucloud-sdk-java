@@ -22,8 +22,7 @@ public class DescribeUHostTagsTest {
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DescribeUHostTagsParam("cn-bj2");
         param.setProjectId("org-4nfe1i");
     }

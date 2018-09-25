@@ -22,8 +22,7 @@ public class DeleteVPCIntercomTest {
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"),
-                        System.getenv("UcloudPassword"))));
+                        System.getenv("UcloudPublicKey"))));
         param = new DeleteVPCIntercomParam("cn-bj2","uvnet-lsltj0","uvnet-qmrkj1");
         param.setProjectId("org-4nfe1i");
     }
