@@ -1,5 +1,6 @@
 package cn.ucloud.pojo;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -52,10 +53,6 @@ public class BaseResponseResult {
 
     @Override
     public String toString() {
-        return "BaseResponseResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+        return new Gson().toJson(this);
     }
 }

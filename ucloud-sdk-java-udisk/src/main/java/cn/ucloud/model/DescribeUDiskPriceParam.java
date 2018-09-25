@@ -14,14 +14,14 @@ import javax.validation.constraints.NotEmpty;
 public class DescribeUDiskPriceParam extends BaseRequestParam {
 
     /**
-     * require 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * optional 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
@@ -45,12 +45,6 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
      */
     @UcloudParam("Quantity")
     private String quantity;
-
-    /**
-     * projectId 项目编号
-     */
-    @UcloudParam("ProjectId")
-    private String projectId;
 
     /**
      * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
@@ -105,16 +99,6 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
-    }
-
-    @Override
-    public String getProjectId() {
-        return projectId;
-    }
-
-    @Override
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public String getuDataArkMode() {
