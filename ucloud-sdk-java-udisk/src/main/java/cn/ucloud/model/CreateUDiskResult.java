@@ -24,8 +24,4 @@ public class CreateUDiskResult extends BaseResponseResult {
         this.uDiskId = uDiskId;
     }
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

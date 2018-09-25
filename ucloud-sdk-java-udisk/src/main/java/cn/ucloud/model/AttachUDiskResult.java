@@ -32,9 +32,4 @@ public class AttachUDiskResult extends BaseResponseResult {
     public void setuDiskId(String uDiskId) {
         this.uDiskId = uDiskId;
     }
-
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

@@ -233,8 +233,4 @@ public class DescribeUDiskResult extends BaseResponseResult {
         }
     }
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

@@ -12,8 +12,4 @@ import com.google.gson.annotations.SerializedName;
  */
 public class DeleteUDiskResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

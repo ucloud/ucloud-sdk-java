@@ -1,7 +1,6 @@
 package cn.ucloud.model;
 
 import cn.ucloud.pojo.BaseResponseResult;
-import com.google.gson.Gson;
 
 /**
  * @description:
@@ -11,8 +10,4 @@ import com.google.gson.Gson;
  */
 public class RestoreUDiskResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

@@ -180,4 +180,68 @@ public class DefaultUdiskClient implements UdiskClient {
         }
     }
 
+    @Override
+    public SetUDiskUDataArkModeResult setUDiskUDataArkMode(SetUDiskUDataArkModeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(SetUDiskUDataArkModeResult.class);
+        SetUDiskUDataArkModeResult result = (SetUDiskUDataArkModeResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void setUDiskUDataArkMode(SetUDiskUDataArkModeParam param, UcloudHandler<SetUDiskUDataArkModeResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(SetUDiskUDataArkModeResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public DescribeUDiskSnapshotResult getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUDiskSnapshotResult.class);
+        DescribeUDiskSnapshotResult result = (DescribeUDiskSnapshotResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param, UcloudHandler<DescribeUDiskSnapshotResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUDiskSnapshotResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public DeleteUDiskSnapshotResult deleteUDiskSnapshot(DeleteUDiskSnapshotParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUDiskSnapshotResult.class);
+        DeleteUDiskSnapshotResult result = (DeleteUDiskSnapshotResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void deleteUDiskSnapshot(DeleteUDiskSnapshotParam param, UcloudHandler<DeleteUDiskSnapshotResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUDiskSnapshotResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public DescribeUDiskUpgradePriceResult getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUDiskUpgradePriceResult.class);
+        DescribeUDiskUpgradePriceResult result = (DescribeUDiskUpgradePriceResult) http.doGet(param, config, null);
+        return result;
+    }
+
+    @Override
+    public void getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUDiskUpgradePriceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
 }

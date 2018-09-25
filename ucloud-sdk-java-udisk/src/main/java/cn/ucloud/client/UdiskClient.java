@@ -192,4 +192,76 @@ public interface UdiskClient {
      * @param asyncFlag 是否异步
      */
     void getDescribeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 设置UDisk数据方舟的状态
+     *
+     * @param param {@link SetUDiskUDataArkModeParam} 参数对象
+     * @return {@link SetUDiskUDataArkModeResult}
+     * @throws Exception
+     */
+    SetUDiskUDataArkModeResult setUDiskUDataArkMode(SetUDiskUDataArkModeParam param) throws Exception;
+
+    /**
+     * 设置UDisk数据方舟的状态
+     *
+     * @param param     {@link SetUDiskUDataArkModeParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void setUDiskUDataArkMode(SetUDiskUDataArkModeParam param, UcloudHandler<SetUDiskUDataArkModeResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取快照列表
+     *
+     * @param param {@link DescribeUDiskSnapshotParam} 参数对象
+     * @return {@link DescribeUDiskSnapshotResult}
+     * @throws Exception
+     */
+    DescribeUDiskSnapshotResult getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception;
+
+    /**
+     * 获取快照列表
+     *
+     * @param param     {@link DescribeUDiskSnapshotParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param, UcloudHandler<DescribeUDiskSnapshotResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 删除快照
+     *
+     * @param param {@link DeleteUDiskSnapshotParam} 参数对象
+     * @return {@link DeleteUDiskSnapshotResult}
+     * @throws Exception
+     */
+    DeleteUDiskSnapshotResult deleteUDiskSnapshot(DeleteUDiskSnapshotParam param) throws Exception;
+
+    /**
+     * 删除快照
+     *
+     * @param param     {@link DeleteUDiskSnapshotParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void deleteUDiskSnapshot(DeleteUDiskSnapshotParam param, UcloudHandler<DeleteUDiskSnapshotResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取云硬盘升级价格
+     *
+     * @param param {@link DescribeUDiskUpgradePriceParam} 参数对象
+     * @return {@link DescribeUDiskUpgradePriceResult}
+     * @throws Exception
+     */
+    DescribeUDiskUpgradePriceResult getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception;
+
+    /**
+     * 获取云硬盘升级价格
+     *
+     * @param param     {@link DescribeUDiskUpgradePriceParam}   参数对象
+     * @param handler   {@link UcloudHandler}回调callback
+     * @param asyncFlag 是否异步
+     */
+    void getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag);
 }
