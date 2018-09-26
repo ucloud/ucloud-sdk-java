@@ -32,7 +32,7 @@ public class CreateUDiskParam extends BaseRequestParam {
      */
     @NotNull(message = "size can not be null")
     @UcloudParam("Size")
-    private Integer size;
+    private Integer size = 1;
 
     /**
      * name 实例名称
@@ -57,7 +57,7 @@ public class CreateUDiskParam extends BaseRequestParam {
      * uDataArkMode 是否开启数据方舟
      */
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode;
+    private String uDataArkMode = "No";
 
     /**
      * tag 业务组 默认：Default

@@ -4,6 +4,7 @@ import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description:
@@ -29,9 +30,9 @@ public class DescribeUDiskUpgradePriceParam extends BaseRequestParam {
     /**
      * size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
      */
-    @NotEmpty(message = "size can not be empty")
+    @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private int size;
+    private Integer size = 1;
 
     /**
      * sourceId 升级目标UDisk ID
@@ -45,7 +46,7 @@ public class DescribeUDiskUpgradePriceParam extends BaseRequestParam {
      */
     @NotEmpty(message = "uDataArkMode can not be empty")
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode;
+    private String uDataArkMode = "No";
 
     /**
      * diskType 磁盘类型，SSDDataDisk:ssd数据盘,DataDisk:普通数据盘。默认为DataDisk
@@ -56,7 +57,7 @@ public class DescribeUDiskUpgradePriceParam extends BaseRequestParam {
     public DescribeUDiskUpgradePriceParam(@NotEmpty(message = "region can not be empty") String region,
                                           @NotEmpty(message = "zone can not be empty") String zone,
                                           @NotEmpty(message = "projectId can not be empty") String projectId,
-                                          @NotEmpty(message = "size can not be empty") int size,
+                                          @NotEmpty(message = "size can not be empty") Integer size,
                                           @NotEmpty(message = "sourceId can not be empty") String sourceId,
                                           @NotEmpty(message = "uDataArkMode can not be empty") String uDataArkMode) {
         super("DescribeUDiskUpgradePrice");
@@ -84,11 +85,11 @@ public class DescribeUDiskUpgradePriceParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

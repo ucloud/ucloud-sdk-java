@@ -4,6 +4,7 @@ import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description:
@@ -43,9 +44,9 @@ public class CloneUDiskSnapshotParam extends BaseRequestParam {
     /**
      * size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
      */
-    @NotEmpty(message = "size can not be empty")
+    @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private int size;
+    private Integer size = 1;
 
     /**
      * comment 快照描述
@@ -63,25 +64,25 @@ public class CloneUDiskSnapshotParam extends BaseRequestParam {
      * quantity 购买时长 默认: 1
      */
     @UcloudParam("Quantity")
-    private int quantity;
+    private Integer quantity;
 
     /**
      * uDataArkMode 是否开启数据方舟 默认:No
      */
     @UcloudParam("UDataArkMode")
-    private int uDataArkMode;
+    private Integer uDataArkMode;
 
     /**
      * couponId 使用的代金券id
      */
     @UcloudParam("CouponId")
-    private int couponId;
+    private Integer couponId;
 
     public CloneUDiskSnapshotParam(@NotEmpty(message = "region can not be empty") String region,
                                    @NotEmpty(message = "zone can not be empty") String zone,
                                    @NotEmpty(message = "name can not be empty") String name,
                                    @NotEmpty(message = "sourceId can not be empty") String sourceId,
-                                   @NotEmpty(message = "size can not be empty") int size) {
+                                   @NotEmpty(message = "size can not be empty") Integer size) {
         super("CloneUDiskSnapshot");
         this.region = region;
         this.zone = zone;
@@ -122,11 +123,11 @@ public class CloneUDiskSnapshotParam extends BaseRequestParam {
         this.sourceId = sourceId;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -146,27 +147,27 @@ public class CloneUDiskSnapshotParam extends BaseRequestParam {
         this.chargeType = chargeType;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public int getuDataArkMode() {
+    public Integer getuDataArkMode() {
         return uDataArkMode;
     }
 
-    public void setuDataArkMode(int uDataArkMode) {
+    public void setuDataArkMode(Integer uDataArkMode) {
         this.uDataArkMode = uDataArkMode;
     }
 
-    public int getCouponId() {
+    public Integer getCouponId() {
         return couponId;
     }
 
-    public void setCouponId(int couponId) {
+    public void setCouponId(Integer couponId) {
         this.couponId = couponId;
     }
 }

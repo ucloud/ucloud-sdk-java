@@ -33,7 +33,7 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private Integer size;
+    private Integer size = 1;
 
     /**
      * chargeType Year， Month， Dynamic，Trial，默认: Dynamic 如果不指定，则一次性获取三种计费
@@ -51,7 +51,7 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
      * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
      */
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode;
+    private String uDataArkMode = "No";
 
     /**
      * diskType UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），默认值（DataDisk）

@@ -30,13 +30,13 @@ public class DescribeRecycleUDiskParam extends BaseRequestParam {
      * offset 数据偏移量, 默认为0
      */
     @UcloudParam("Offset")
-    private int offset;
+    private Integer offset;
 
     /**
      * limit 返回数据长度, 默认为20
      */
     @UcloudParam("Limit")
-    private int limit;
+    private Integer limit = 20;
 
     public DescribeRecycleUDiskParam(@NotEmpty(message = "region can not be empty") String region,
                                      @NotEmpty(message = "zone can not be empty") String zone) {
@@ -61,19 +61,19 @@ public class DescribeRecycleUDiskParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public int getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(int offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public int getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(int limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 }

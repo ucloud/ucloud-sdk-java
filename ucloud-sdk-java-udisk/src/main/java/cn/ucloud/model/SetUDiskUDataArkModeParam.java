@@ -38,7 +38,7 @@ public class SetUDiskUDataArkModeParam extends BaseRequestParam {
      */
     @NotEmpty(message = "uDataArkMode can not be empty")
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode;
+    private String uDataArkMode = "No";
 
 
     public SetUDiskUDataArkModeParam(@NotEmpty(message = "region can not be empty") String region,

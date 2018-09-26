@@ -44,7 +44,7 @@ public class CloneUDiskParam extends BaseRequestParam {
      * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
      */
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode;
+    private String uDataArkMode = "No";
 
     /**
      * quantity 购买时长 默认: 1

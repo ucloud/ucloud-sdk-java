@@ -35,7 +35,7 @@ public class DescribeUDiskSnapshotParam extends BaseRequestParam {
      * limit 返回数据长度, 默认为20
      */
     @UcloudParam("Limit")
-    private int limit;
+    private Integer limit = 20;
 
 
     /**

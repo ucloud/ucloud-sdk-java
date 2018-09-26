@@ -41,7 +41,7 @@ public class DescribeUDiskParam extends BaseRequestParam {
      * limit 返回数据长度, 默认为20
      */
     @UcloudParam("Limit")
-    private int limit;
+    private Integer limit = 20;
 
     /**
      * diskType 普通数据盘:DataDisk|普通系统盘:SystemDisk|SSD数据盘:SSDDataDisk; 为空拉取所有
