@@ -4,6 +4,7 @@ import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description:
@@ -30,9 +31,9 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
     /**
      * size 购买UDisk大小,单位:GB,范围[1~1000]
      */
-    @NotEmpty(message = "size can not be empty")
+    @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private int size;
+    private Integer size;
 
     /**
      * chargeType Year， Month， Dynamic，Trial，默认: Dynamic 如果不指定，则一次性获取三种计费
@@ -44,7 +45,7 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
      * quantity 购买UDisk的时长，默认值为1
      */
     @UcloudParam("Quantity")
-    private int quantity;
+    private Integer quantity;
 
     /**
      * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
@@ -60,7 +61,7 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
 
     public DescribeUDiskPriceParam(@NotEmpty(message = "region can not be empty") String region,
                                    @NotEmpty(message = "zone can not be empty") String zone,
-                                   @NotEmpty(message = "size can not be empty") int size) {
+                                   @NotEmpty(message = "size can not be empty") Integer size) {
         super("DescribeUDiskPrice");
         this.region = region;
         this.zone = zone;
@@ -83,11 +84,11 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -99,11 +100,11 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
         this.chargeType = chargeType;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

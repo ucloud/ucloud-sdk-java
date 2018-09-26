@@ -65,6 +65,7 @@ public class DefaultUdiskClient implements UdiskClient {
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

@@ -4,6 +4,7 @@ import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description:
@@ -29,9 +30,9 @@ public class CreateUDiskParam extends BaseRequestParam {
     /**
      * size 购买UDisk大小,单位:GB,普通盘: 范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限;SSD盘： 范围[1~4000]。
      */
-    @NotEmpty(message = "size can not be empty")
+    @NotNull(message = "size can not be null")
     @UcloudParam("Size")
-    private int size;
+    private Integer size;
 
     /**
      * name 实例名称
@@ -78,7 +79,7 @@ public class CreateUDiskParam extends BaseRequestParam {
 
     public CreateUDiskParam(@NotEmpty(message = "region can not be empty") String region,
                             @NotEmpty(message = "zone can not be empty") String zone,
-                            @NotEmpty(message = "size can not be empty") int size,
+                            @NotEmpty(message = "size can not be empty") Integer size,
                             @NotEmpty(message = "name can not be empty") String name) {
         super("CreateUDisk");
         this.region = region;
@@ -103,11 +104,11 @@ public class CreateUDiskParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public int getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

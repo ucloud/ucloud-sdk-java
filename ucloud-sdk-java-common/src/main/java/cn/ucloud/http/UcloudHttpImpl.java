@@ -43,13 +43,17 @@ public class UcloudHttpImpl implements UcloudHttp {
                 public void run() {
                     CloseableHttpResponse responseAsync = null;
                     try {
+                        // TODO: 删除
+                        System.out.println("[request]:" + httpGet);
                         // 执行http get请求
                         responseAsync = client.execute(httpGet);
                         // 正常响应
                         String content = EntityUtils.toString(responseAsync.getEntity(), "UTF-8");
+                        // TODO: 删除
+                        System.out.println("[response]:" + content);
                         if (responseAsync.getStatusLine().getStatusCode() == 200) {
                             Gson gson = new Gson();
-                            BaseResponseResult responseResult = gson.fromJson(content,resultClass);
+                            BaseResponseResult responseResult = gson.fromJson(content, resultClass);
                             if (responseResult.getRetCode() == 0) {
                                 handler.success(responseResult);
                             } else {
@@ -82,15 +86,17 @@ public class UcloudHttpImpl implements UcloudHttp {
             // response对象
             CloseableHttpResponse responseSync = null;
             try {
+                // TODO: 删除
+                System.out.println("[request]:" + httpGet);
                 // 同步非回调
                 responseSync = client.execute(httpGet);
                 String content = EntityUtils.toString(responseSync.getEntity(), "UTF-8");
-                // todo 删除
-                System.out.println(content);
+                // TODO: 删除
+                System.out.println("[response]:" + content);
                 if (responseSync.getStatusLine().getStatusCode() == 200) {
                     // 正常响应
                     Gson gson = new Gson();
-                    responseResult =  gson.fromJson(content, resultClass);
+                    responseResult = gson.fromJson(content, resultClass);
                 } else {
                     // 非200则认为是个异常
                     throw new HttpException(content);
