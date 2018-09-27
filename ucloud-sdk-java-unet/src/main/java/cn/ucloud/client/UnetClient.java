@@ -387,7 +387,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam releaseShareBandwidth(BaseRequestParam param) throws  Exception;
+    ReleaseShareBandwidthResult releaseShareBandwidth(ReleaseShareBandwidthParam param) throws  Exception;
 
     /**
      *
@@ -395,7 +395,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void releaseShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void releaseShareBandwidth(ReleaseShareBandwidthParam param, UcloudHandler<ReleaseShareBandwidthResult> handler,Boolean... asyncFlag);
 
 
     /**
@@ -404,7 +404,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam associateEIPWithShareBandwidth(BaseRequestParam param) throws  Exception;
+    AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param) throws  Exception;
 
     /**
      *
@@ -412,7 +412,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void associateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param, UcloudHandler<AssociateEIPWithShareBandwidthResult> handler,Boolean... asyncFlag);
 
 
     /**
@@ -421,7 +421,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam disassociateEIPWithShareBandwidth(BaseRequestParam param) throws  Exception;
+    DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param) throws  Exception;
 
     /**
      *
@@ -429,7 +429,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void disassociateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param, UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler,Boolean... asyncFlag);
 
 
     /**
@@ -438,7 +438,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam describeBandwidthUsage(BaseRequestParam param) throws  Exception;
+    DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param) throws  Exception;
 
     /**
      *
@@ -446,7 +446,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeBandwidthUsage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void describeBandwidthUsage(DescribeBandwidthUsageParam param, UcloudHandler<DescribeBandwidthUsageResult> handler,Boolean... asyncFlag);
 
 
     /**
@@ -455,7 +455,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam deleteFirewall(BaseRequestParam param) throws  Exception;
+    DeleteFirewallResult deleteFirewall(DeleteFirewallParam param) throws  Exception;
 
     /**
      *
@@ -463,7 +463,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void deleteFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void deleteFirewall(DeleteFirewallParam param, UcloudHandler<DeleteFirewallResult> handler,Boolean... asyncFlag);
 
 
     /**
@@ -472,7 +472,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam updateFirewallAttribute(BaseRequestParam param) throws  Exception;
+    UpdateFirewallAttributeResult updateFirewallAttribute(UpdateFirewallAttributeParam param) throws  Exception;
 
     /**
      *
@@ -480,7 +480,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void updateFirewallAttribute(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void updateFirewallAttribute(UpdateFirewallAttributeParam param, UcloudHandler<UpdateFirewallAttributeResult> handler,Boolean... asyncFlag);
 
 
     /**
@@ -489,7 +489,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam updateFirewall(BaseRequestParam param) throws  Exception;
+    UpdateFirewallResult updateFirewall(UpdateFirewallParam param) throws  Exception;
 
     /**
      *
@@ -497,42 +497,7 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void updateFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
-
-
-
-    /**
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception  请求出错则抛出异常
-     */
-    BaseRequestParam describeFirewallResource(BaseRequestParam param) throws  Exception;
-
-    /**
-     *
-     * @param param 请求参数对象
-     * @param handler 异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void describeFirewallResource(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
-
-
-    /**
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception  请求出错则抛出异常
-     */
-    BaseRequestParam describeFirewall(BaseRequestParam param) throws  Exception;
-
-    /**
-     *
-     * @param param 请求参数对象
-     * @param handler 异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void describeFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void updateFirewall(UpdateFirewallParam param, UcloudHandler<UpdateFirewallResult> handler,Boolean... asyncFlag);
 
 
 
@@ -542,7 +507,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam grantFirewall(BaseRequestParam param) throws  Exception;
+    DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param) throws  Exception;
 
     /**
      *
@@ -550,7 +515,24 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void grantFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void describeFirewallResource(DescribeFirewallResourceParam param, UcloudHandler<DescribeFirewallResourceResult> handler,Boolean... asyncFlag);
+
+
+    /**
+     *
+     * @param param 请求参数对象
+     * @return 结果对象
+     * @throws Exception  请求出错则抛出异常
+     */
+    DescribeFirewallResult describeFirewall(DescribeFirewallParam param) throws  Exception;
+
+    /**
+     *
+     * @param param 请求参数对象
+     * @param handler 异步处理器
+     * @param asyncFlag 异步标记位，默认true异步
+     */
+    void describeFirewall(DescribeFirewallParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
 
 
 
@@ -560,7 +542,7 @@ public interface UnetClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam createFirewall(BaseRequestParam param) throws  Exception;
+    GrantFirewallResult grantFirewall(GrantFirewallParam param) throws  Exception;
 
     /**
      *
@@ -568,7 +550,25 @@ public interface UnetClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void createFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void grantFirewall(GrantFirewallParam param, UcloudHandler<GrantFirewallResult> handler,Boolean... asyncFlag);
+
+
+
+    /**
+     *
+     * @param param 请求参数对象
+     * @return 结果对象
+     * @throws Exception  请求出错则抛出异常
+     */
+    CreateFirewallResult createFirewall(CreateFirewallParam param) throws  Exception;
+
+    /**
+     *
+     * @param param 请求参数对象
+     * @param handler 异步处理器
+     * @param asyncFlag 异步标记位，默认true异步
+     */
+    void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler,Boolean... asyncFlag);
 
 
 }

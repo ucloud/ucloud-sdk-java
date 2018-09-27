@@ -258,112 +258,180 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam releaseShareBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public ReleaseShareBandwidthResult releaseShareBandwidth(ReleaseShareBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ReleaseShareBandwidthResult.class);
+        ReleaseShareBandwidthResult result = (ReleaseShareBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void releaseShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void releaseShareBandwidth(ReleaseShareBandwidthParam param, UcloudHandler<ReleaseShareBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ReleaseShareBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public BaseRequestParam associateEIPWithShareBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AssociateEIPWithShareBandwidthResult.class);
+        AssociateEIPWithShareBandwidthResult result = (AssociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void associateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
+    public void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param, UcloudHandler<AssociateEIPWithShareBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AssociateEIPWithShareBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 
+
+    @Override
+    public DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DisassociateEIPWithShareBandwidthResult.class);
+        DisassociateEIPWithShareBandwidthResult result = (DisassociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam disassociateEIPWithShareBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param, UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DisassociateEIPWithShareBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void disassociateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthUsageResult.class);
+        DescribeBandwidthUsageResult result = (DescribeBandwidthUsageResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam describeBandwidthUsage(BaseRequestParam param) throws Exception {
-        return null;
+    public void describeBandwidthUsage(DescribeBandwidthUsageParam param, UcloudHandler<DescribeBandwidthUsageResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthUsageResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void describeBandwidthUsage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public DeleteFirewallResult deleteFirewall(DeleteFirewallParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteFirewallResult.class);
+        DeleteFirewallResult result = (DeleteFirewallResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam deleteFirewall(BaseRequestParam param) throws Exception {
-        return null;
+    public void deleteFirewall(DeleteFirewallParam param, UcloudHandler<DeleteFirewallResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteFirewallResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void deleteFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public UpdateFirewallAttributeResult updateFirewallAttribute(UpdateFirewallAttributeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateFirewallAttributeResult.class);
+        UpdateFirewallAttributeResult result = (UpdateFirewallAttributeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam updateFirewallAttribute(BaseRequestParam param) throws Exception {
-        return null;
+    public void updateFirewallAttribute(UpdateFirewallAttributeParam param, UcloudHandler<UpdateFirewallAttributeResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateFirewallAttributeResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void updateFirewallAttribute(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public UpdateFirewallResult updateFirewall(UpdateFirewallParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateFirewallResult.class);
+        UpdateFirewallResult result = (UpdateFirewallResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam updateFirewall(BaseRequestParam param) throws Exception {
-        return null;
+    public void updateFirewall(UpdateFirewallParam param, UcloudHandler<UpdateFirewallResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateFirewallResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void updateFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResourceResult.class);
+        DescribeFirewallResourceResult result = (DescribeFirewallResourceResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam describeFirewallResource(BaseRequestParam param) throws Exception {
-        return null;
+    public void describeFirewallResource(DescribeFirewallResourceParam param, UcloudHandler<DescribeFirewallResourceResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResourceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void describeFirewallResource(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public DescribeFirewallResult describeFirewall(DescribeFirewallParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResult.class);
+        DescribeFirewallResult result = (DescribeFirewallResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam describeFirewall(BaseRequestParam param) throws Exception {
-        return null;
+    public void describeFirewall(DescribeFirewallParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void describeFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public GrantFirewallResult grantFirewall(GrantFirewallParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GrantFirewallResult.class);
+        GrantFirewallResult result = (GrantFirewallResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam grantFirewall(BaseRequestParam param) throws Exception {
-        return null;
+    public void grantFirewall(GrantFirewallParam param, UcloudHandler<GrantFirewallResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GrantFirewallResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public void grantFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public CreateFirewallResult createFirewall(CreateFirewallParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateFirewallResult.class);
+        CreateFirewallResult result = (CreateFirewallResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public BaseRequestParam createFirewall(BaseRequestParam param) throws Exception {
-        return null;
+    public void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreateFirewallResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
-    @Override
-    public void createFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
-    }
 }
