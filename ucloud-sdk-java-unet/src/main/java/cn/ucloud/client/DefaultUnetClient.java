@@ -184,13 +184,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam getEIPPayMode(BaseRequestParam param) throws Exception {
-        return null;
+    public GetEIPPayModeResult getEIPPayMode(GetEIPPayModeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetEIPPayModeResult.class);
+        GetEIPPayModeResult result = (GetEIPPayModeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void getEIPPayMode(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void getEIPPayMode(GetEIPPayModeParam param, UcloudHandler<GetEIPPayModeResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetEIPPayModeResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

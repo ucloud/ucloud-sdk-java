@@ -186,20 +186,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 获取弹性IP计费方式
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam getEIPPayMode(BaseRequestParam param) throws  Exception;
+    GetEIPPayModeResult getEIPPayMode(GetEIPPayModeParam param) throws  Exception;
 
     /**
-     *
+     * 获取弹性IP计费方式
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void getEIPPayMode(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void getEIPPayMode(GetEIPPayModeParam param, UcloudHandler<GetEIPPayModeResult> handler,Boolean... asyncFlag);
 
 
 
