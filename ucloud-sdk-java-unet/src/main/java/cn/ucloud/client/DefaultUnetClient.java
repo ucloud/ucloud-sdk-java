@@ -226,13 +226,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam describeVIP(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeVIPResult describeVIP(DescribeVIPParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeVIPResult.class);
+        DescribeVIPResult result = (DescribeVIPResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void describeVIP(DescribeVIPParam param, UcloudHandler<DescribeVIPResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeVIPResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

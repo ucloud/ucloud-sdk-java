@@ -240,20 +240,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 获取内网虚拟IP信息
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam describeVIP(BaseRequestParam param) throws  Exception;
+    DescribeVIPResult describeVIP(DescribeVIPParam param) throws  Exception;
 
     /**
-     *
+     * 获取内网虚拟IP信息
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void describeVIP(DescribeVIPParam param, UcloudHandler<DescribeVIPResult> handler,Boolean... asyncFlag);
 
 
 
