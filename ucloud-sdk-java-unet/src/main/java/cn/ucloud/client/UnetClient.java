@@ -99,20 +99,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 将弹性IP从资源上解绑
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam unBindEIP(BaseRequestParam param) throws  Exception;
+    UnBindEIPResult unBindEIP(UnBindEIPParam param) throws  Exception;
 
     /**
-     *
+     * 将弹性IP从资源上解绑
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void unBindEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void unBindEIP(UnBindEIPParam param, UcloudHandler<UnBindEIPResult> handler,Boolean... asyncFlag);
 
 
     /**

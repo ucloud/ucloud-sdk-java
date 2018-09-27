@@ -104,13 +104,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam unBindEIP(BaseRequestParam param) throws Exception {
-        return null;
+    public UnBindEIPResult unBindEIP(UnBindEIPParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UnBindEIPResult.class);
+        UnBindEIPResult result = (UnBindEIPResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void unBindEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void unBindEIP(UnBindEIPParam param, UcloudHandler<UnBindEIPResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UnBindEIPResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
