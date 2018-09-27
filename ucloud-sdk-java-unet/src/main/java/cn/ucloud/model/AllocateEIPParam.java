@@ -4,6 +4,7 @@ import cn.ucloud.annotation.UcloudParam;
 import cn.ucloud.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description: 申请弹性IP 参数类
@@ -47,6 +48,7 @@ public class AllocateEIPParam extends BaseRequestParam {
      * 非共享带宽模式必须指定非0Mbps带宽.
      * 各地域非共享带宽的带宽范围如下： 流量计费[1-200]，带宽计费[1-800]
      */
+    @NotNull(message = "bandwidth can not be null")
     @UcloudParam("Bandwidth")
     private Integer bandwidth;
 
@@ -101,9 +103,10 @@ public class AllocateEIPParam extends BaseRequestParam {
     @UcloudParam("CouponId")
     private String couponId;
 
+
     public AllocateEIPParam(@NotEmpty(message = "region can not be empty") String region,
                             @NotEmpty(message = "operatorName can not be empty") String operatorName,
-                            Integer bandwidth) {
+                            @NotNull(message = "bandwidth can not be null") Integer bandwidth) {
         super("AllocateEIP");
         this.region = region;
         this.operatorName = operatorName;
