@@ -13,6 +13,7 @@ public interface VPCClient {
 
     /**
      * 创建VPC
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -21,15 +22,17 @@ public interface VPCClient {
 
     /**
      * 创建VPC
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createVPC(CreateVPCParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createVPC(CreateVPCParam param, UcloudHandler<CreateVPCResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 删除VPC
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -38,14 +41,16 @@ public interface VPCClient {
 
     /**
      * 删除VPC
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteVPC(DeleteVPCParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteVPC(DeleteVPCParam param, UcloudHandler<DeleteVPCResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取VPC信息
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -54,16 +59,17 @@ public interface VPCClient {
 
     /**
      * 获取VPC信息
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeVPC(DescribeVPCParam param, UcloudHandler handler, Boolean... asyncFlag);
-
+    void describeVPC(DescribeVPCParam param, UcloudHandler<DescribeVPCResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 添加VPC网段
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -72,15 +78,17 @@ public interface VPCClient {
 
     /**
      * 添加VPC网段
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void addVPCNetwork(AddVPCNetworkParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void addVPCNetwork(AddVPCNetworkParam param, UcloudHandler<AddVPCNetworkResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 创建子网
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -89,16 +97,17 @@ public interface VPCClient {
 
     /**
      * 创建子网
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createSubnet(CreateSubnetParam param, UcloudHandler handler, Boolean... asyncFlag);
-
+    void createSubnet(CreateSubnetParam param, UcloudHandler<CreateSubnetResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 删除子网
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -107,15 +116,17 @@ public interface VPCClient {
 
     /**
      * 删除子网
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteSubnet(DeleteSubnetParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteSubnet(DeleteSubnetParam param, UcloudHandler<DeleteSubnetResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 获取子网信息
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -124,16 +135,17 @@ public interface VPCClient {
 
     /**
      * 获取子网信息
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeSubnet(DescribeSubnetParam param, UcloudHandler handler, Boolean... asyncFlag);
-
+    void describeSubnet(DescribeSubnetParam param, UcloudHandler<DescribeSubnetResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 获取子网资源信息
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -142,15 +154,17 @@ public interface VPCClient {
 
     /**
      * 获取子网资源信息
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeSubnetResource(DescribeSubnetResourceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeSubnetResource(DescribeSubnetResourceParam param, UcloudHandler<DescribeSubnetResourceResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 更新子网信息
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -159,15 +173,17 @@ public interface VPCClient {
 
     /**
      * 更新子网信息
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateSubnetAttribute(UpdateSubnetAttributeParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void updateSubnetAttribute(UpdateSubnetAttributeParam param, UcloudHandler<UpdateSubnetAttributeResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 新建VPC互通
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -176,15 +192,17 @@ public interface VPCClient {
 
     /**
      * 新建VPC互通
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createVPCIntercom(CreateVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createVPCIntercom(CreateVPCIntercomParam param, UcloudHandler<CreateVPCIntercomResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 获取VPC互通信息
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -193,15 +211,17 @@ public interface VPCClient {
 
     /**
      * 获取VPC互通信息
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeVPCIntercom(DescribeVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeVPCIntercom(DescribeVPCIntercomParam param, UcloudHandler<DescribeVPCIntercomResult> handler, Boolean... asyncFlag);
 
 
     /**
-     *  删除VPC互通
+     * 删除VPC互通
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -209,16 +229,18 @@ public interface VPCClient {
     DeleteVPCIntercomResult deleteVPCIntercom(DeleteVPCIntercomParam param) throws Exception;
 
     /**
-     *  删除VPC互通
-     * @param param 参数对象
-     * @param handler 回调处理器
+     * 删除VPC互通
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteVPCIntercom(DeleteVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteVPCIntercom(DeleteVPCIntercomParam param, UcloudHandler<DeleteVPCIntercomResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 创建路由表
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -227,15 +249,17 @@ public interface VPCClient {
 
     /**
      * 创建路由表
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createRouteTable(CreateRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createRouteTable(CreateRouteTableParam param, UcloudHandler<CreateRouteTableResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 绑定子网的路由表
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -244,15 +268,17 @@ public interface VPCClient {
 
     /**
      * 绑定子网的路由表
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void associateRouteTable(AssociateRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void associateRouteTable(AssociateRouteTableParam param, UcloudHandler<AssociateRouteTableResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 克隆路由表
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -261,15 +287,17 @@ public interface VPCClient {
 
     /**
      * 克隆路由表
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void cloneRouteTable(CloneRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void cloneRouteTable(CloneRouteTableParam param, UcloudHandler<CloneRouteTableResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 删除自定义路由表
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -278,15 +306,17 @@ public interface VPCClient {
 
     /**
      * 删除自定义路由表
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void deleteRouteTable(DeleteRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void deleteRouteTable(DeleteRouteTableParam param, UcloudHandler<DeleteRouteTableResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 获取路由表详细信息(包括路由策略)
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -295,15 +325,17 @@ public interface VPCClient {
 
     /**
      * 获取路由表详细信息(包括路由策略)
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeRouteTable(DescribeRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeRouteTable(DescribeRouteTableParam param, UcloudHandler<DescribeRouteTableResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 路由策略增、删、改
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -312,15 +344,17 @@ public interface VPCClient {
 
     /**
      * 路由策略增、删、改
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler<ModifyRouteRuleResult> handler, Boolean... asyncFlag);
 
 
     /**
      * 更新路由表基本信息
+     *
      * @param param 参数对象
      * @return 结果对象
      * @throws Exception 出错则抛出异常
@@ -329,9 +363,10 @@ public interface VPCClient {
 
     /**
      * 更新路由表基本信息
-     * @param param 参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler<UpdateRouteTableAttributeResult> handler, Boolean... asyncFlag);
 }

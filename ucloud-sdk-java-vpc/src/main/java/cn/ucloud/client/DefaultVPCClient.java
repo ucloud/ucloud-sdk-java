@@ -31,10 +31,10 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void createVPC(CreateVPCParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createVPC(CreateVPCParam param, UcloudHandler<CreateVPCResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateVPCResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -47,11 +47,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void deleteVPC(DeleteVPCParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteVPC(DeleteVPCParam param, UcloudHandler<DeleteVPCResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteVPCResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -62,11 +63,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void describeVPC(DescribeVPCParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeVPC(DescribeVPCParam param, UcloudHandler<DescribeVPCResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeVPCResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -77,11 +79,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void addVPCNetwork(AddVPCNetworkParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void addVPCNetwork(AddVPCNetworkParam param, UcloudHandler<AddVPCNetworkResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AddVPCNetworkResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -92,11 +95,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void createSubnet(CreateSubnetParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createSubnet(CreateSubnetParam param, UcloudHandler<CreateSubnetResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateSubnetResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -107,11 +111,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void deleteSubnet(DeleteSubnetParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteSubnet(DeleteSubnetParam param, UcloudHandler<DeleteSubnetResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteSubnetResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -122,11 +127,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void describeSubnet(DescribeSubnetParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeSubnet(DescribeSubnetParam param, UcloudHandler<DescribeSubnetResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeSubnetResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -137,11 +143,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void describeSubnetResource(DescribeSubnetResourceParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeSubnetResource(DescribeSubnetResourceParam param, UcloudHandler<DescribeSubnetResourceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeSubnetResourceResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -152,11 +159,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void updateSubnetAttribute(UpdateSubnetAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateSubnetAttribute(UpdateSubnetAttributeParam param, UcloudHandler<UpdateSubnetAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateSubnetAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -167,11 +175,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void createVPCIntercom(CreateVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createVPCIntercom(CreateVPCIntercomParam param, UcloudHandler<CreateVPCIntercomResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateVPCIntercomResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -182,11 +191,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void describeVPCIntercom(DescribeVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeVPCIntercom(DescribeVPCIntercomParam param, UcloudHandler<DescribeVPCIntercomResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeVPCIntercomResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -197,11 +207,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void deleteVPCIntercom(DeleteVPCIntercomParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteVPCIntercom(DeleteVPCIntercomParam param, UcloudHandler<DeleteVPCIntercomResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteVPCIntercomResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -212,11 +223,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void createRouteTable(CreateRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createRouteTable(CreateRouteTableParam param, UcloudHandler<CreateRouteTableResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateRouteTableResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -227,11 +239,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void associateRouteTable(AssociateRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void associateRouteTable(AssociateRouteTableParam param, UcloudHandler<AssociateRouteTableResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AssociateRouteTableResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -242,11 +255,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void cloneRouteTable(CloneRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void cloneRouteTable(CloneRouteTableParam param, UcloudHandler<CloneRouteTableResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CloneRouteTableResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -257,11 +271,12 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void deleteRouteTable(DeleteRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteRouteTable(DeleteRouteTableParam param, UcloudHandler<DeleteRouteTableResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteRouteTableResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -272,30 +287,44 @@ public class DefaultVPCClient implements VPCClient {
     }
 
     @Override
-    public void describeRouteTable(DescribeRouteTableParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeRouteTable(DescribeRouteTableParam param, UcloudHandler<DescribeRouteTableResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeRouteTableResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
+
 
     @Override
     public ModifyRouteRuleResult modifyRouteRule(ModifyRouteRuleParam param) throws Exception {
-        return null;
+        UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
+        ModifyRouteRuleResult result = (ModifyRouteRuleResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler<ModifyRouteRuleResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
     public UpdateRouteTableAttributeResult updateRouteTableAttribute(UpdateRouteTableAttributeParam param) throws Exception {
-        return null;
+        UcloudHttp http = new UcloudHttpImpl(UpdateRouteTableAttributeResult.class);
+        UpdateRouteTableAttributeResult result = (UpdateRouteTableAttributeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void updateRouteTableAttribute(UpdateRouteTableAttributeParam param, UcloudHandler<UpdateRouteTableAttributeResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateRouteTableAttributeResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 }

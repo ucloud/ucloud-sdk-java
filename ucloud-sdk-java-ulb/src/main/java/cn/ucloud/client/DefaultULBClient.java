@@ -32,11 +32,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void createUlb(CreateULBParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createUlb(CreateULBParam param, UcloudHandler<CreateULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateULBResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -47,11 +48,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void describeUlb(DescribeULBParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeUlb(DescribeULBParam param, UcloudHandler<DescribeULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -62,11 +64,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void deleteULB(DeleteULBParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteULB(DeleteULBParam param, UcloudHandler<DeleteULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteULBResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -77,11 +80,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void updateULBAttribute(UpdateULBAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateULBAttribute(UpdateULBAttributeParam param, UcloudHandler<UpdateULBAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateULBAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -92,11 +96,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void createVServer(CreateVServerParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createVServer(CreateVServerParam param, UcloudHandler<CreateVServerResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateVServerResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -107,11 +112,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void describeVServer(DescribeVServerParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeVServer(DescribeVServerParam param, UcloudHandler<DescribeVServerResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeVServerResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -122,11 +128,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void deleteVServer(DeleteVServerParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteVServer(DeleteVServerParam param, UcloudHandler<DeleteVServerResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteVServerResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -137,11 +144,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void updateVServerAttribute(UpdateVServerAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateVServerAttribute(UpdateVServerAttributeParam param, UcloudHandler<UpdateVServerAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateVServerAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -152,11 +160,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void allocateBackend(AllocateBackendParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void allocateBackend(AllocateBackendParam param, UcloudHandler<AllocateBackendResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -167,11 +176,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void releaseBackend(ReleaseBackendParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void releaseBackend(ReleaseBackendParam param, UcloudHandler<ReleaseBackendResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ReleaseBackendResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -182,11 +192,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void allocateBackendBatch(AllocateBackendBatchParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void allocateBackendBatch(AllocateBackendBatchParam param, UcloudHandler<AllocateBackendBatchResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -197,11 +208,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void updateBackendAttribute(UpdateBackendAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateBackendAttribute(UpdateBackendAttributeParam param, UcloudHandler<UpdateBackendAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateBackendAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -212,11 +224,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void createPolicy(CreatePolicyParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createPolicy(CreatePolicyParam param, UcloudHandler<CreatePolicyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreatePolicyResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -227,11 +240,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void updatePolicy(UpdatePolicyParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updatePolicy(UpdatePolicyParam param, UcloudHandler<UpdatePolicyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdatePolicyResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -242,11 +256,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void deletePolicy(DeletePolicyParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deletePolicy(DeletePolicyParam param, UcloudHandler<DeletePolicyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeletePolicyResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -257,11 +272,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void deleteSSL(DeleteSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteSSL(DeleteSSLParam param, UcloudHandler<DeleteSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteSSLResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -272,11 +288,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void bindSSL(BindSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void bindSSL(BindSSLParam param, UcloudHandler<BindSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BindSSLResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -287,11 +304,12 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void unbindSSL(UnbindSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void unbindSSL(UnbindSSLParam param, UcloudHandler<UnbindSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UnbindSSLResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
-        } catch (Exception e) { }
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -302,10 +320,10 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void createSSL(CreateSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createSSL(CreateSSLParam param, UcloudHandler<CreateSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateSSLResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -318,10 +336,10 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void describeSSL(DescribeSSLParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeSSL(DescribeSSLParam param, UcloudHandler<DescribeSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -334,10 +352,10 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void deletePolicyGroup(DeletePolicyGroupParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deletePolicyGroup(DeletePolicyGroupParam param, UcloudHandler<DeletePolicyGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeletePolicyGroupResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -350,10 +368,10 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void describePolicyGroup(DescribePolicyGroupParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describePolicyGroup(DescribePolicyGroupParam param, UcloudHandler<DescribePolicyGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribePolicyGroupResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -366,10 +384,10 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void createPolicyGroup(CreatePolicyGroupParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createPolicyGroup(CreatePolicyGroupParam param, UcloudHandler<CreatePolicyGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -382,10 +400,10 @@ public class DefaultULBClient implements ULBClient {
     }
 
     @Override
-    public void updatePolicyGroupAttribute(UpdatePolicyGroupAttributeParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updatePolicyGroupAttribute(UpdatePolicyGroupAttributeParam param, UcloudHandler<UpdatePolicyGroupAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdatePolicyGroupAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

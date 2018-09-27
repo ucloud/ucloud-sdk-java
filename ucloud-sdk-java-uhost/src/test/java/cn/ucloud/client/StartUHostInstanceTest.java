@@ -43,15 +43,15 @@ public class StartUHostInstanceTest {
 
     @Test
     public void startUHostInstanceCallback() throws InterruptedException {
-        client.startUHostInstanceCallback(param, new UcloudHandler() {
+        client.startUHostInstanceCallback(param, new UcloudHandler<StartUHostInstanceResult>() {
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(StartUHostInstanceResult result) {
                 System.out.println("success:" + result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(StartUHostInstanceResult result) {
                 System.out.println("failed:" + result);
                 return null;
             }

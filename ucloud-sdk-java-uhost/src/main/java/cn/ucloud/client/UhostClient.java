@@ -29,7 +29,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler<GetUhostInstanceVncInfoResult> handler, Boolean... asyncFlag);
 
     /**
      * 启动主机实例
@@ -47,7 +47,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler<StartUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 重启主机实例
@@ -65,7 +65,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler<RebootUHostInstanceResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -81,7 +81,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler<StopUHostInstanceResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -100,7 +100,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler<DescribeUHostTagsResult> handler, Boolean... asyncFlag);
 
     /**
      * 创建云主机
@@ -118,7 +118,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void createUHostInstance(CreateUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createUHostInstance(CreateUHostInstanceParam param, UcloudHandler<CreateUHostInstanceResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -137,7 +137,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void modifyUHostInstanceTag(ModifyUHostInstanceTagParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void modifyUHostInstanceTag(ModifyUHostInstanceTagParam param, UcloudHandler<ModifyUHostInstanceTagResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -156,7 +156,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   删除主机实例 结果对象
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void terminateUHostInstance(TerminateUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void terminateUHostInstance(TerminateUHostInstanceParam param, UcloudHandler<TerminateUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取主机信息
@@ -174,7 +174,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void describeUHostInstance(DescribeUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeUHostInstance(DescribeUHostInstanceParam param, UcloudHandler<DescribeUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取主机价格
@@ -192,7 +192,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void getUHostInstancePrice(GetUHostInstancePriceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void getUHostInstancePrice(GetUHostInstancePriceParam param, UcloudHandler<GetUHostInstancePriceResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -211,7 +211,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void resizeUHostInstance(ResizeUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void resizeUHostInstance(ResizeUHostInstanceParam param, UcloudHandler<ResizeUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 修改主机名称
@@ -229,7 +229,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void modifyUHostInstanceName(ModifyUHostInstanceNameParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void modifyUHostInstanceName(ModifyUHostInstanceNameParam param, UcloudHandler<ModifyUHostInstanceNameResult> handler, Boolean... asyncFlag);
 
     /**
      * 修改主机密码
@@ -247,7 +247,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void resetUHostInstancePassword(ResetUHostInstancePasswordParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void resetUHostInstancePassword(ResetUHostInstancePasswordParam param, UcloudHandler<ResetUHostInstancePasswordResult> handler, Boolean... asyncFlag);
 
     /**
      * 模拟主机掉电
@@ -265,7 +265,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void poweroffUHostInstance(PoweroffUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void poweroffUHostInstance(PoweroffUHostInstanceParam param, UcloudHandler<PoweroffUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 导入用户镜像
@@ -283,7 +283,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void importCustomImage(ImportCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void importCustomImage(ImportCustomImageParam param, UcloudHandler<ImportCustomImageResult> handler, Boolean... asyncFlag);
 
     /**
      * 复制用户镜像
@@ -301,7 +301,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void copyCustomImage(CopyCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void copyCustomImage(CopyCustomImageParam param, UcloudHandler<CopyCustomImageResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取镜像
@@ -319,7 +319,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void describeImage(DescribeImageParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void describeImage(DescribeImageParam param, UcloudHandler<DescribeImageResult> handler, Boolean... asyncFlag);
 
     /**
      * 删除用户镜像
@@ -337,7 +337,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void terminateCustomImage(TerminateCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void terminateCustomImage(TerminateCustomImageParam param, UcloudHandler<TerminateCustomImageResult> handler, Boolean... asyncFlag);
 
     /**
      * 重装系统
@@ -355,7 +355,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void reinstallUHostInstance(ReinstallUHostInstanceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void reinstallUHostInstance(ReinstallUHostInstanceParam param, UcloudHandler<ReinstallUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取主机升级价格
@@ -373,7 +373,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void getUHostUpgradePrice(GetUHostUpgradePriceParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void getUHostUpgradePrice(GetUHostUpgradePriceParam param, UcloudHandler<GetUHostUpgradePriceResult> handler, Boolean... asyncFlag);
 
     /**
      * 修改主机备注信息
@@ -391,7 +391,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param, UcloudHandler<ModifyUHostInstanceRemarkResult> handler, Boolean... asyncFlag);
 
     /**
      * 创建用户镜像
@@ -407,7 +407,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler 回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void createCustomeImage(CreateCustomImageParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void createCustomeImage(CreateCustomImageParam param, UcloudHandler<CreateCustomImageResult> handler, Boolean... asyncFlag);
 
     /**
      * 普通升级为方舟机型
@@ -423,6 +423,6 @@ public interface UhostClient extends UcloudClient {
      * @param handler 回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param ,UcloudHandler handler,Boolean... asyncFlag);
+    void upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param ,UcloudHandler<UpgradeToArkUHostInstanceResult> handler,Boolean... asyncFlag);
 
 }
