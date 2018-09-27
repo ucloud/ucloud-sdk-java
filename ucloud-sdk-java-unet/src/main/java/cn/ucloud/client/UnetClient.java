@@ -298,20 +298,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 获取某地域下的带宽包信息
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam describeBandwidthPackage(BaseRequestParam param) throws  Exception;
+    DescribeBandwidthPackageResult describeBandwidthPackage(DescribeBandwidthPackageParam param) throws  Exception;
 
     /**
-     *
+     * 获取某地域下的带宽包信息
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void describeBandwidthPackage(DescribeBandwidthPackageParam param, UcloudHandler<DescribeBandwidthPackageResult> handler,Boolean... asyncFlag);
 
 
 

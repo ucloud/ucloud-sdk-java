@@ -280,13 +280,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam describeBandwidthPackage(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeBandwidthPackageResult describeBandwidthPackage(DescribeBandwidthPackageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthPackageResult.class);
+        DescribeBandwidthPackageResult result = (DescribeBandwidthPackageResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void describeBandwidthPackage(DescribeBandwidthPackageParam param, UcloudHandler<DescribeBandwidthPackageResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthPackageResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

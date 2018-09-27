@@ -38,6 +38,7 @@ public class CreateBandwidthPackageParam extends BaseRequestParam {
 
     /**
      * require 带宽包有效时长, 取值范围为大于0的整数,
+     * 注意===》单位：小时
      * 即该带宽包在EnableTime到 EnableTime+TimeRange时间段内生效
      */
     @NotNull(message = "timeRange can not be null")
