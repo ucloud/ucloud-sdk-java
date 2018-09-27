@@ -4,7 +4,6 @@ package cn.ucloud.uhost.client;
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.uhost.model.*;
-import cn.uhost.model.*;
 
 /**
  * @description: 云主机的client接口

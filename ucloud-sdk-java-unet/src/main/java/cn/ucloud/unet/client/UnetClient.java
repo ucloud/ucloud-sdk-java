@@ -3,7 +3,6 @@ package cn.ucloud.unet.client;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.unet.model.*;
-import cn.unet.model.*;
 
 /**
  * @description: unet客户端

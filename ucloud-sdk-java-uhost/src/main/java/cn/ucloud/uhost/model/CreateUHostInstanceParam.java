@@ -4,7 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.exception.ValidatorException;
 import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
-import com.sun.xml.internal.messaging.saaj.util.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
@@ -152,7 +152,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
             if (this.getPassword() != null && !"".equals(this.getPassword())) {
                 try {
                     list.add(new Param("LoginMode","Password"));
-                    list.add(new Param("Password",  new String(Base64.encode((password).getBytes("utf-8")))));
+                    list.add(new Param("Password",  new String( Base64.encodeBase64((password).getBytes("utf-8")))));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }

@@ -2,7 +2,6 @@ package cn.ucloud.ulb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.ulb.model.*;
-import cn.ulb.model.*;
 
 /**
  * @description: 负载均衡 客户端接口
