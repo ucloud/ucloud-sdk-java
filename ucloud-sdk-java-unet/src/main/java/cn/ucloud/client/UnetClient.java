@@ -222,20 +222,22 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 申请内网虚拟IP
+     * 根据提供信息，申请内网VIP(Virtual IP），多用于高可用程序作为漂移IP。
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam allocateVIP(BaseRequestParam param) throws  Exception;
+    AllocateVIPResult allocateVIP(AllocateVIPParam param) throws  Exception;
 
     /**
-     *
+     * 申请内网虚拟IP
+     * 根据提供信息，申请内网VIP(Virtual IP），多用于高可用程序作为漂移IP。
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void allocateVIP(AllocateVIPParam param, UcloudHandler<AllocateVIPResult> handler,Boolean... asyncFlag);
 
 
 

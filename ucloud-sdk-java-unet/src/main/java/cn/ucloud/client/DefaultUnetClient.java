@@ -216,13 +216,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam allocateVIP(BaseRequestParam param) throws Exception {
-        return null;
+    public AllocateVIPResult allocateVIP(AllocateVIPParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AllocateVIPResult.class);
+        AllocateVIPResult result = (AllocateVIPResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void allocateVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void allocateVIP(AllocateVIPParam param, UcloudHandler<AllocateVIPResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AllocateVIPResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
