@@ -248,13 +248,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam releaseVIP(BaseRequestParam param) throws Exception {
-        return null;
+    public ReleaseVIPResult releaseVIP(ReleaseVIPParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ReleaseVIPResult.class);
+        ReleaseVIPResult result = (ReleaseVIPResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void releaseVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void releaseVIP(ReleaseVIPParam param, UcloudHandler<ReleaseVIPResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ReleaseVIPResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
