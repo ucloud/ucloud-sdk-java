@@ -24,9 +24,12 @@ public class CreateUhostInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
-        param = new CreateUHostInstanceParam("cn-bj2","cn-bj2-02","uimage-cjswb5");
-        param.setName("java-sdk-test");
+        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-02","uimage-cjswb5");
+        param.setName("java-sdk-test-aaa");
         param.setPassword("123456ab");
+        param.setProjectId("org-4nfe1i");
+        param.setVpcId("uvnet-dbboih");
+        param.setSubnetId("subnet-us0fsb");
     }
 
 

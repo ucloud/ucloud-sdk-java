@@ -13,20 +13,20 @@ import cn.ucloud.pojo.BaseRequestParam;
 public interface UnetClient {
 
     /**
-     *
+     * 申请弹性IP
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam allocateEIP(BaseRequestParam param) throws  Exception;
+    AllocateEIPResult allocateEIP(AllocateEIPParam param) throws  Exception;
 
     /**
-     *
+     * 申请弹性IP
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateEIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag);
+    void allocateEIP(AllocateEIPParam param, UcloudHandler handler, Boolean... asyncFlag);
 
 
     /**

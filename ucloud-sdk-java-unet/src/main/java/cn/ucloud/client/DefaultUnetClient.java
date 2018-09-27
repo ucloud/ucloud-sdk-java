@@ -3,8 +3,7 @@ package cn.ucloud.client;
 import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
-import cn.ucloud.model.DescribeEIPParam;
-import cn.ucloud.model.DescribeEIPResult;
+import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
 import cn.ucloud.pojo.UnetConfig;
 
@@ -24,13 +23,19 @@ public class DefaultUnetClient implements UnetClient {
 
 
     @Override
-    public BaseRequestParam allocateEIP(BaseRequestParam param) throws Exception {
-        return null;
+    public AllocateEIPResult allocateEIP(AllocateEIPParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AllocateEIPResult.class);
+        AllocateEIPResult result = (AllocateEIPResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void allocateEIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void allocateEIP(AllocateEIPParam param, UcloudHandler handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AllocateEIPResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
