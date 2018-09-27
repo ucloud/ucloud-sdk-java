@@ -168,13 +168,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam getEIPUpgradePrice(BaseRequestParam param) throws Exception {
-        return null;
+    public GetEIPUpgradePriceResult getEIPUpgradePrice(GetEIPUpgradePriceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetEIPUpgradePriceResult.class);
+        GetEIPUpgradePriceResult result = (GetEIPUpgradePriceResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void getEIPUpgradePrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void getEIPUpgradePrice(GetEIPUpgradePriceParam param, UcloudHandler<GetEIPUpgradePriceResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetEIPUpgradePriceResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

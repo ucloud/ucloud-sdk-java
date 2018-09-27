@@ -168,20 +168,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 获取弹性IP带宽改动价格
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam getEIPUpgradePrice(BaseRequestParam param) throws  Exception;
+    GetEIPUpgradePriceResult getEIPUpgradePrice(GetEIPUpgradePriceParam param) throws  Exception;
 
     /**
-     *
+     * 获取弹性IP带宽改动价格
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void getEIPUpgradePrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void getEIPUpgradePrice(GetEIPUpgradePriceParam param, UcloudHandler<GetEIPUpgradePriceResult> handler,Boolean... asyncFlag);
 
 
 
