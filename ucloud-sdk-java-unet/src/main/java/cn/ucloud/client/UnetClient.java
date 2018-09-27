@@ -316,20 +316,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 删除弹性IP上已附加带宽包
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam deleteBandwidthPackage(BaseRequestParam param) throws  Exception;
+    DeleteBandwidthPackageResult deleteBandwidthPackage(DeleteBandwidthPackageParam param) throws  Exception;
 
     /**
-     *
+     * 删除弹性IP上已附加带宽包
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void deleteBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void deleteBandwidthPackage(DeleteBandwidthPackageParam param, UcloudHandler<DeleteBandwidthPackageResult> handler,Boolean... asyncFlag);
 
 
 
