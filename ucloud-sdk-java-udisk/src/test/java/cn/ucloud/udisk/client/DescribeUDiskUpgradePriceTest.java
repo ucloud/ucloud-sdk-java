@@ -1,11 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.DescribeUDiskUpgradePriceParam;
 import cn.ucloud.udisk.model.DescribeUDiskUpgradePriceResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +31,7 @@ public class DescribeUDiskUpgradePriceTest {
     @Test
     public void doTest() {
         try {
-            DescribeUDiskUpgradePriceResult result = client.getDescribeUDiskUpgradePrice(param);
+            DescribeUDiskUpgradePriceResult result = client.describeUDiskUpgradePrice(param);
             System.out.println("同步：" + result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,7 +40,7 @@ public class DescribeUDiskUpgradePriceTest {
 
     @Test
     public void doTestCallback() {
-        client.getDescribeUDiskUpgradePrice(param, new UcloudHandler<DescribeUDiskUpgradePriceResult>() {
+        client.describeUDiskUpgradePrice(param, new UcloudHandler<DescribeUDiskUpgradePriceResult>() {
             @Override
             public Object success(DescribeUDiskUpgradePriceResult result) {
                 System.out.println("异步 success：" + result);

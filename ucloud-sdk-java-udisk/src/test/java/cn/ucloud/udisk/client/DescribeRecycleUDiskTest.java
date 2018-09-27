@@ -1,11 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.DescribeRecycleUDiskParam;
 import cn.ucloud.udisk.model.DescribeRecycleUDiskResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +31,7 @@ public class DescribeRecycleUDiskTest {
     @Test
     public void doTest() {
         try {
-            DescribeRecycleUDiskResult result = client.getDescribeRecycleUDisk(param);
+            DescribeRecycleUDiskResult result = client.describeRecycleUDisk(param);
             System.out.println("同步：" + result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,7 +40,7 @@ public class DescribeRecycleUDiskTest {
 
     @Test
     public void doTestCallback() {
-        client.getDescribeRecycleUDisk(param, new UcloudHandler<DescribeRecycleUDiskResult>() {
+        client.describeRecycleUDisk(param, new UcloudHandler<DescribeRecycleUDiskResult>() {
             @Override
             public Object success(DescribeRecycleUDiskResult result) {
                 System.out.println("异步 success：" + result);

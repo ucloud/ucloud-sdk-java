@@ -18,7 +18,7 @@ public interface UdiskClient {
      * @return {@link DescribeUDiskPriceResult} 结果对象
      * @throws Exception 出错抛出异常
      */
-    DescribeUDiskPriceResult getDescribeUDiskPrice(DescribeUDiskPriceParam param) throws Exception;
+    DescribeUDiskPriceResult describeUDiskPrice(DescribeUDiskPriceParam param) throws Exception;
 
     /**
      * 获取云硬盘价格-DescribeUDiskPrice (回调)
@@ -27,7 +27,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getDescribeUDiskPriceCallback(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag);
+    void describeUDiskPriceCallback(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag);
 
     /**
      * 挂载云硬盘
@@ -182,7 +182,7 @@ public interface UdiskClient {
      * @return {@link DescribeUDiskResult}
      * @throws Exception
      */
-    DescribeUDiskResult getDescribeUDisk(DescribeUDiskParam param) throws Exception;
+    DescribeUDiskResult describeUDisk(DescribeUDiskParam param) throws Exception;
 
     /**
      * 获取云硬盘列表
@@ -191,7 +191,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getDescribeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag);
+    void describeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag);
 
     /**
      * 设置UDisk数据方舟的状态
@@ -218,7 +218,7 @@ public interface UdiskClient {
      * @return {@link DescribeUDiskSnapshotResult}
      * @throws Exception
      */
-    DescribeUDiskSnapshotResult getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception;
+    DescribeUDiskSnapshotResult describeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception;
 
     /**
      * 获取快照列表
@@ -227,7 +227,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param, UcloudHandler<DescribeUDiskSnapshotResult> handler, Boolean... asyncFlag);
+    void describeUDiskSnapshot(DescribeUDiskSnapshotParam param, UcloudHandler<DescribeUDiskSnapshotResult> handler, Boolean... asyncFlag);
 
     /**
      * 删除快照
@@ -254,7 +254,7 @@ public interface UdiskClient {
      * @return {@link DescribeUDiskUpgradePriceResult}
      * @throws Exception
      */
-    DescribeUDiskUpgradePriceResult getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception;
+    DescribeUDiskUpgradePriceResult describeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception;
 
     /**
      * 获取云硬盘升级价格
@@ -263,7 +263,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag);
+    void describeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag);
 
     /**
      * 创建快照
@@ -309,7 +309,7 @@ public interface UdiskClient {
      * @return {@link DescribeRecycleUDiskResult}
      * @throws Exception
      */
-    DescribeRecycleUDiskResult getDescribeRecycleUDisk(DescribeRecycleUDiskParam param) throws Exception;
+    DescribeRecycleUDiskResult describeRecycleUDisk(DescribeRecycleUDiskParam param) throws Exception;
 
     /**
      * 拉取回收站中云硬盘列表
@@ -318,7 +318,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getDescribeRecycleUDisk(DescribeRecycleUDiskParam param, UcloudHandler<DescribeRecycleUDiskResult> handler, Boolean... asyncFlag);
+    void describeRecycleUDisk(DescribeRecycleUDiskParam param, UcloudHandler<DescribeRecycleUDiskResult> handler, Boolean... asyncFlag);
 
     /**
      * 调整云硬盘

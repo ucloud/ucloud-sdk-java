@@ -27,3 +27,4 @@ hs_err_pid*
 ucloud-sdk-java.iml
 */*.DS_Store
 */target
+.DS_Store

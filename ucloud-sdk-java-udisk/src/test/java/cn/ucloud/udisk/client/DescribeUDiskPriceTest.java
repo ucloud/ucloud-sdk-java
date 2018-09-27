@@ -1,12 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.DescribeUDiskPriceParam;
 import cn.ucloud.udisk.model.DescribeUDiskPriceResult;
-import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,9 +29,9 @@ public class DescribeUDiskPriceTest {
     }
 
     @Test
-    public void getDescribeUDiskPrice() {
+    public void describeUDiskPrice() {
         try {
-            DescribeUDiskPriceResult result = client.getDescribeUDiskPrice(param);
+            DescribeUDiskPriceResult result = client.describeUDiskPrice(param);
             System.out.println("同步：" + result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,16 +39,16 @@ public class DescribeUDiskPriceTest {
     }
 
     @Test
-    public void getDescribeUDiskPriceCallback() {
-       client.getDescribeUDiskPriceCallback(param, new UcloudHandler() {
+    public void describeUDiskPriceCallback() {
+       client.describeUDiskPriceCallback(param, new UcloudHandler<DescribeUDiskPriceResult>() {
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(DescribeUDiskPriceResult result) {
                 System.out.println("异步 success：" + result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(DescribeUDiskPriceResult result) {
                 System.out.println("异步 failed：" + result);
                 return null;
             }

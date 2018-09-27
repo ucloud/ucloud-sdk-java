@@ -21,14 +21,14 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public DescribeUDiskPriceResult getDescribeUDiskPrice(DescribeUDiskPriceParam param) throws Exception {
+    public DescribeUDiskPriceResult describeUDiskPrice(DescribeUDiskPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskPriceResult.class);
         DescribeUDiskPriceResult result = (DescribeUDiskPriceResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
-    public void getDescribeUDiskPriceCallback(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag) {
+    public void describeUDiskPriceCallback(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskPriceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -166,14 +166,14 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public DescribeUDiskResult getDescribeUDisk(DescribeUDiskParam param) throws Exception {
+    public DescribeUDiskResult describeUDisk(DescribeUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskResult.class);
         DescribeUDiskResult result = (DescribeUDiskResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
-    public void getDescribeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag) {
+    public void describeUDisk(DescribeUDiskParam param, UcloudHandler<DescribeUDiskResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -198,14 +198,14 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public DescribeUDiskSnapshotResult getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception {
+    public DescribeUDiskSnapshotResult describeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskSnapshotResult.class);
         DescribeUDiskSnapshotResult result = (DescribeUDiskSnapshotResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
-    public void getDescribeUDiskSnapshot(DescribeUDiskSnapshotParam param, UcloudHandler<DescribeUDiskSnapshotResult> handler, Boolean... asyncFlag) {
+    public void describeUDiskSnapshot(DescribeUDiskSnapshotParam param, UcloudHandler<DescribeUDiskSnapshotResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskSnapshotResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -230,14 +230,14 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public DescribeUDiskUpgradePriceResult getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception {
+    public DescribeUDiskUpgradePriceResult describeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskUpgradePriceResult.class);
         DescribeUDiskUpgradePriceResult result = (DescribeUDiskUpgradePriceResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
-    public void getDescribeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag) {
+    public void describeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param, UcloudHandler<DescribeUDiskUpgradePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskUpgradePriceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -278,14 +278,14 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public DescribeRecycleUDiskResult getDescribeRecycleUDisk(DescribeRecycleUDiskParam param) throws Exception {
+    public DescribeRecycleUDiskResult describeRecycleUDisk(DescribeRecycleUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeRecycleUDiskResult.class);
         DescribeRecycleUDiskResult result = (DescribeRecycleUDiskResult) http.doGet(param, config, null);
         return result;
     }
 
     @Override
-    public void getDescribeRecycleUDisk(DescribeRecycleUDiskParam param, UcloudHandler<DescribeRecycleUDiskResult> handler, Boolean... asyncFlag) {
+    public void describeRecycleUDisk(DescribeRecycleUDiskParam param, UcloudHandler<DescribeRecycleUDiskResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeRecycleUDiskResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);

@@ -1,11 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.DescribeUDiskSnapshotParam;
 import cn.ucloud.udisk.model.DescribeUDiskSnapshotResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +31,7 @@ public class DescribeUDiskSnapshotTest {
     @Test
     public void doTest() {
         try {
-            DescribeUDiskSnapshotResult result = client.getDescribeUDiskSnapshot(param);
+            DescribeUDiskSnapshotResult result = client.describeUDiskSnapshot(param);
             System.out.println("同步：" + result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,7 +40,7 @@ public class DescribeUDiskSnapshotTest {
 
     @Test
     public void doTestCallback() {
-        client.getDescribeUDiskSnapshot(param, new UcloudHandler<DescribeUDiskSnapshotResult>() {
+        client.describeUDiskSnapshot(param, new UcloudHandler<DescribeUDiskSnapshotResult>() {
             @Override
             public Object success(DescribeUDiskSnapshotResult result) {
                 System.out.println("异步 success：" + result);
