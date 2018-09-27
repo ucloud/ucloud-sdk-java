@@ -65,20 +65,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 释放弹性IP资源, 所释放弹性IP必须为非绑定状态.
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam releaseEIP(BaseRequestParam param) throws  Exception;
+    ReleaseEIPResult releaseEIP(ReleaseEIPParam param) throws  Exception;
 
     /**
-     *
+     * 释放弹性IP资源, 所释放弹性IP必须为非绑定状态.
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void releaseEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void releaseEIP(ReleaseEIPParam param, UcloudHandler<ReleaseEIPResult> handler,Boolean... asyncFlag);
 
 
     /**

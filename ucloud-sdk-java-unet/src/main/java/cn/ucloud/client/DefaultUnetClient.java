@@ -72,13 +72,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam releaseEIP(BaseRequestParam param) throws Exception {
-        return null;
+    public ReleaseEIPResult releaseEIP(ReleaseEIPParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ReleaseEIPResult.class);
+        ReleaseEIPResult result = (ReleaseEIPResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void releaseEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void releaseEIP(ReleaseEIPParam param, UcloudHandler<ReleaseEIPResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ReleaseEIPResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
