@@ -311,14 +311,21 @@ public class DefaultUnetClient implements UnetClient {
         }
     }
 
+
     @Override
-    public BaseRequestParam allocateShareBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public AllocateShareBandwidthResult allocateShareBandwidth(AllocateShareBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(AllocateShareBandwidthResult.class);
+        AllocateShareBandwidthResult result = (AllocateShareBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void allocateShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void allocateShareBandwidth(AllocateShareBandwidthParam param, UcloudHandler<AllocateShareBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(AllocateShareBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

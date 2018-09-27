@@ -334,20 +334,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 开通共享带宽
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam allocateShareBandwidth(BaseRequestParam param) throws  Exception;
+    AllocateShareBandwidthResult allocateShareBandwidth(AllocateShareBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 开通共享带宽
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void allocateShareBandwidth(AllocateShareBandwidthParam param, UcloudHandler<AllocateShareBandwidthResult> handler,Boolean... asyncFlag);
 
 
 
