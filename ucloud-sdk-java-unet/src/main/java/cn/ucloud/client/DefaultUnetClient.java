@@ -5,6 +5,7 @@ import cn.ucloud.http.UcloudHttp;
 import cn.ucloud.http.UcloudHttpImpl;
 import cn.ucloud.model.*;
 import cn.ucloud.pojo.BaseRequestParam;
+import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UnetConfig;
 
 /**
@@ -30,7 +31,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void allocateEIP(AllocateEIPParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void allocateEIP(AllocateEIPParam param, UcloudHandler<AllocateEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateEIPResult.class);
         try {
             http.doGet(param, config, handler,asyncFlag);
@@ -46,7 +47,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeEIP(DescribeEIPParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeEIP(DescribeEIPParam param, UcloudHandler<DescribeEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeEIPResult.class);
         try {
             http.doGet(param, config, handler,asyncFlag);
@@ -55,13 +56,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam updateEIPAttribute(BaseRequestParam param) throws Exception {
-        return null;
+    public UpdateEIPAttributeResult updateEIPAttribute(UpdateEIPAttributeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateEIPAttributeResult.class);
+        UpdateEIPAttributeResult result = (UpdateEIPAttributeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void updateEIPAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
-
+    public void updateEIPAttribute(UpdateEIPAttributeParam param, UcloudHandler<UpdateEIPAttributeResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateEIPAttributeResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
@@ -70,7 +77,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void releaseEIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void releaseEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -80,7 +87,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void bindEIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void bindEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -90,7 +97,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void unBindEIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void unBindEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -100,7 +107,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void modifyEIPBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void modifyEIPBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -110,7 +117,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void modifyEIPWeight(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void modifyEIPWeight(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -120,7 +127,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void getEIPPrice(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void getEIPPrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -130,7 +137,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void getEIPUpgradePrice(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void getEIPUpgradePrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -140,7 +147,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void getEIPPayMode(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void getEIPPayMode(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -150,7 +157,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void setEIPPayMode(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void setEIPPayMode(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -160,7 +167,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void allocateVIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void allocateVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -170,7 +177,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeVIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -180,7 +187,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void releaseVIP(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void releaseVIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -190,7 +197,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void createBandwidthPackage(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -200,7 +207,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeBandwidthPackage(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -210,7 +217,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void deleteBandwidthPackage(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -220,7 +227,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void allocateShareBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void allocateShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -230,7 +237,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeShareBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -240,7 +247,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void resizeShareBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void resizeShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -250,7 +257,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void releaseShareBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void releaseShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -260,7 +267,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void associateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void associateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -270,7 +277,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void disassociateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void disassociateEIPWithShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -280,7 +287,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeBandwidthUsage(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeBandwidthUsage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -290,7 +297,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void deleteFirewall(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void deleteFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -300,7 +307,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void updateFirewallAttribute(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateFirewallAttribute(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -310,7 +317,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void updateFirewall(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void updateFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -320,7 +327,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeFirewallResource(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeFirewallResource(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -330,7 +337,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void describeFirewall(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void describeFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -340,7 +347,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void grantFirewall(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void grantFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 
@@ -350,7 +357,7 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public void createFirewall(BaseRequestParam param, UcloudHandler handler, Boolean... asyncFlag) {
+    public void createFirewall(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
 
     }
 }

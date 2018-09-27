@@ -6,7 +6,7 @@ import cn.ucloud.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 申请弹性IP 参数类
  * @author: codezhang
  * @date: 2018-09-27 10:10
  **/

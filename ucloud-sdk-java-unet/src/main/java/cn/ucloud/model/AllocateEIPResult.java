@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 申请弹性IP 结果类
  * @author: codezhang
  * @date: 2018-09-27 10:11
  **/
