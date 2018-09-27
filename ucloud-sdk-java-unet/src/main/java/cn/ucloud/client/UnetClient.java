@@ -352,37 +352,37 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 获取共享带宽信息
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam describeShareBandwidth(BaseRequestParam param) throws  Exception;
+    DescribeShareBandwidthResult describeShareBandwidth(DescribeShareBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 获取共享带宽信息
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void describeShareBandwidth(DescribeShareBandwidthParam param, UcloudHandler<DescribeShareBandwidthResult> handler,Boolean... asyncFlag);
 
 
     /**
-     *
+     * 调整共享带宽的带宽值
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam resizeShareBandwidth(BaseRequestParam param) throws  Exception;
+    ResizeShareBandwidthResult resizeShareBandwidth(ResizeShareBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 调整共享带宽的带宽值
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void resizeShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void resizeShareBandwidth(ResizeShareBandwidthParam param, UcloudHandler<ResizeShareBandwidthResult> handler,Boolean... asyncFlag);
 
 
     /**

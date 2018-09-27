@@ -34,7 +34,7 @@ public class DefaultUnetClient implements UnetClient {
     public void allocateEIP(AllocateEIPParam param, UcloudHandler<AllocateEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateEIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -50,7 +50,7 @@ public class DefaultUnetClient implements UnetClient {
     public void describeEIP(DescribeEIPParam param, UcloudHandler<DescribeEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeEIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -66,7 +66,7 @@ public class DefaultUnetClient implements UnetClient {
     public void updateEIPAttribute(UpdateEIPAttributeParam param, UcloudHandler<UpdateEIPAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateEIPAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -82,7 +82,7 @@ public class DefaultUnetClient implements UnetClient {
     public void releaseEIP(ReleaseEIPParam param, UcloudHandler<ReleaseEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ReleaseEIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -98,7 +98,7 @@ public class DefaultUnetClient implements UnetClient {
     public void bindEIP(BindEIPParam param, UcloudHandler<BindEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BindEIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -114,7 +114,7 @@ public class DefaultUnetClient implements UnetClient {
     public void unBindEIP(UnBindEIPParam param, UcloudHandler<UnBindEIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UnBindEIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -130,7 +130,7 @@ public class DefaultUnetClient implements UnetClient {
     public void modifyEIPBandwidth(ModifyEIPBandwidthParam param, UcloudHandler<ModifyEIPBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyEIPBandwidthResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -146,7 +146,7 @@ public class DefaultUnetClient implements UnetClient {
     public void modifyEIPWeight(ModifyEIPWeightParam param, UcloudHandler<ModifyEIPWeightResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyEIPWeightResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -162,7 +162,7 @@ public class DefaultUnetClient implements UnetClient {
     public void getEIPPrice(GetEIPPriceParam param, UcloudHandler<GetEIPPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetEIPPriceResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -178,7 +178,7 @@ public class DefaultUnetClient implements UnetClient {
     public void getEIPUpgradePrice(GetEIPUpgradePriceParam param, UcloudHandler<GetEIPUpgradePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetEIPUpgradePriceResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -194,7 +194,7 @@ public class DefaultUnetClient implements UnetClient {
     public void getEIPPayMode(GetEIPPayModeParam param, UcloudHandler<GetEIPPayModeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetEIPPayModeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -210,7 +210,7 @@ public class DefaultUnetClient implements UnetClient {
     public void setEIPPayMode(SetEIPPayModeParam param, UcloudHandler<SetEIPPayModeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(SetEIPPayModeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -226,7 +226,7 @@ public class DefaultUnetClient implements UnetClient {
     public void allocateVIP(AllocateVIPParam param, UcloudHandler<AllocateVIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateVIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -242,7 +242,7 @@ public class DefaultUnetClient implements UnetClient {
     public void describeVIP(DescribeVIPParam param, UcloudHandler<DescribeVIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeVIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -258,7 +258,7 @@ public class DefaultUnetClient implements UnetClient {
     public void releaseVIP(ReleaseVIPParam param, UcloudHandler<ReleaseVIPResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ReleaseVIPResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -274,7 +274,7 @@ public class DefaultUnetClient implements UnetClient {
     public void createBandwidthPackage(CreateBandwidthPackageParam param, UcloudHandler<CreateBandwidthPackageResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateBandwidthPackageResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -290,7 +290,7 @@ public class DefaultUnetClient implements UnetClient {
     public void describeBandwidthPackage(DescribeBandwidthPackageParam param, UcloudHandler<DescribeBandwidthPackageResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthPackageResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -306,7 +306,7 @@ public class DefaultUnetClient implements UnetClient {
     public void deleteBandwidthPackage(DeleteBandwidthPackageParam param, UcloudHandler<DeleteBandwidthPackageResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteBandwidthPackageResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -323,29 +323,41 @@ public class DefaultUnetClient implements UnetClient {
     public void allocateShareBandwidth(AllocateShareBandwidthParam param, UcloudHandler<AllocateShareBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateShareBandwidthResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
 
     @Override
-    public BaseRequestParam describeShareBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeShareBandwidthResult describeShareBandwidth(DescribeShareBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeShareBandwidthResult.class);
+        DescribeShareBandwidthResult result = (DescribeShareBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void describeShareBandwidth(DescribeShareBandwidthParam param, UcloudHandler<DescribeShareBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeShareBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
-    public BaseRequestParam resizeShareBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public ResizeShareBandwidthResult resizeShareBandwidth(ResizeShareBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ResizeShareBandwidthResult.class);
+        ResizeShareBandwidthResult result = (ResizeShareBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void resizeShareBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void resizeShareBandwidth(ResizeShareBandwidthParam param, UcloudHandler<ResizeShareBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ResizeShareBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
