@@ -278,20 +278,22 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 创建宽带包
+     * 为非共享带宽模式下, 已绑定资源实例的带宽计费弹性IP附加临时带宽包
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam createBandwidthPackage(BaseRequestParam param) throws  Exception;
+    CreateBandwidthPackageResult createBandwidthPackage(CreateBandwidthPackageParam param) throws  Exception;
 
     /**
-     *
+     * 创建宽带包
+     * 为非共享带宽模式下, 已绑定资源实例的带宽计费弹性IP附加临时带宽包
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void createBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void createBandwidthPackage(CreateBandwidthPackageParam param, UcloudHandler<CreateBandwidthPackageResult> handler,Boolean... asyncFlag);
 
 
 

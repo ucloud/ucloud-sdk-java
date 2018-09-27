@@ -264,13 +264,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam createBandwidthPackage(BaseRequestParam param) throws Exception {
-        return null;
+    public CreateBandwidthPackageResult createBandwidthPackage(CreateBandwidthPackageParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateBandwidthPackageResult.class);
+        CreateBandwidthPackageResult result = (CreateBandwidthPackageResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void createBandwidthPackage(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void createBandwidthPackage(CreateBandwidthPackageParam param, UcloudHandler<CreateBandwidthPackageResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreateBandwidthPackageResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
