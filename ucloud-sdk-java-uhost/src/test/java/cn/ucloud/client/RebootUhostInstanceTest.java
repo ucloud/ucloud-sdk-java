@@ -4,7 +4,6 @@ import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.model.RebootUHostInstanceParam;
 import cn.ucloud.model.RebootUHostInstanceResult;
 import cn.ucloud.pojo.Account;
-import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,15 +42,15 @@ public class RebootUhostInstanceTest {
 
     @Test
     public void rebootUHostInstanceCallback() {
-         client.rebootUHostInstanceCallback(param, new UcloudHandler() {
+         client.rebootUHostInstanceCallback(param, new UcloudHandler<RebootUHostInstanceResult>() {
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(RebootUHostInstanceResult result) {
                 System.out.println("success:"+result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(RebootUHostInstanceResult result) {
                 System.out.println("failed:"+result);
                 return null;
             }

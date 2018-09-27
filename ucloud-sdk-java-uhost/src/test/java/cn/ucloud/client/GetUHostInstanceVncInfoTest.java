@@ -4,7 +4,6 @@ import cn.ucloud.handler.UcloudHandler;
 import cn.ucloud.model.GetUhostInstanceVncInfoParam;
 import cn.ucloud.model.GetUhostInstanceVncInfoResult;
 import cn.ucloud.pojo.Account;
-import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,15 +42,15 @@ public class GetUHostInstanceVncInfoTest {
 
     @Test
     public void getUHostInstanceVncInfoAsync() throws InterruptedException {
-        client.getUHostInstanceVncInfoCallback(param, new UcloudHandler() {
+        client.getUHostInstanceVncInfoCallback(param, new UcloudHandler<GetUhostInstanceVncInfoResult> () {
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(GetUhostInstanceVncInfoResult result) {
                 System.out.println("同步回调：" + result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(GetUhostInstanceVncInfoResult result) {
                 System.out.println("同步回调：" + result);
                 return null;
             }
@@ -65,15 +64,15 @@ public class GetUHostInstanceVncInfoTest {
         }, false);
 
 
-        client.getUHostInstanceVncInfoCallback(param, new UcloudHandler() {
+        client.getUHostInstanceVncInfoCallback(param, new UcloudHandler<GetUhostInstanceVncInfoResult>(){
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(GetUhostInstanceVncInfoResult result) {
                 System.out.println("异步回调：" + result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(GetUhostInstanceVncInfoResult result) {
                 System.out.println("异步回调：" + result);
                 return null;
             }
