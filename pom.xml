@@ -34,7 +34,6 @@
   </properties>
 
   <dependencyManagement>
-
     <dependencies>
       <dependency>
         <groupId>junit</groupId>
@@ -81,13 +80,7 @@
         <artifactId>commons-codec</artifactId>
         <version>${codec.version}</version>
       </dependency>
-
-
     </dependencies>
-
-
-
-
   </dependencyManagement>
 
 
