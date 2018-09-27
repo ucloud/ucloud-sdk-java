@@ -133,20 +133,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 修改弹性IP的外网出口权重
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam modifyEIPWeight(BaseRequestParam param) throws  Exception;
+    ModifyEIPWeightResult modifyEIPWeight(ModifyEIPWeightParam param) throws  Exception;
 
     /**
-     *
+     * 修改弹性IP的外网出口权重
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void modifyEIPWeight(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void modifyEIPWeight(ModifyEIPWeightParam param, UcloudHandler<ModifyEIPWeightResult> handler,Boolean... asyncFlag);
 
 
 

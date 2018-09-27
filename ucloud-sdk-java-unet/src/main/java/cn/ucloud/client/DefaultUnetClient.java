@@ -136,13 +136,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam modifyEIPWeight(BaseRequestParam param) throws Exception {
-        return null;
+    public ModifyEIPWeightResult modifyEIPWeight(ModifyEIPWeightParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyEIPWeightResult.class);
+        ModifyEIPWeightResult result = (ModifyEIPWeightResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void modifyEIPWeight(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void modifyEIPWeight(ModifyEIPWeightParam param, UcloudHandler<ModifyEIPWeightResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyEIPWeightResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
