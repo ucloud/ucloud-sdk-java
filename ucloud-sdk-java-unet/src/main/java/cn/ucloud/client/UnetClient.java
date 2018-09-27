@@ -116,20 +116,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 调整弹性IP的外网带宽
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam modifyEIPBandwidth(BaseRequestParam param) throws  Exception;
+    ModifyEIPBandwidthResult modifyEIPBandwidth(ModifyEIPBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 调整弹性IP的外网带宽
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void modifyEIPBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void modifyEIPBandwidth(ModifyEIPBandwidthParam param, UcloudHandler<ModifyEIPBandwidthResult> handler,Boolean... asyncFlag);
 
 
     /**

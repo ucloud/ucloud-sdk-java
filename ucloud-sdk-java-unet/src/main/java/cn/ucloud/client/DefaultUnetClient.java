@@ -120,13 +120,19 @@ public class DefaultUnetClient implements UnetClient {
     }
 
     @Override
-    public BaseRequestParam modifyEIPBandwidth(BaseRequestParam param) throws Exception {
-        return null;
+    public ModifyEIPBandwidthResult modifyEIPBandwidth(ModifyEIPBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyEIPBandwidthResult.class);
+        ModifyEIPBandwidthResult result = (ModifyEIPBandwidthResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void modifyEIPBandwidth(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void modifyEIPBandwidth(ModifyEIPBandwidthParam param, UcloudHandler<ModifyEIPBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyEIPBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler,asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
