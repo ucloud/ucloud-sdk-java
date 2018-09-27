@@ -82,20 +82,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 将尚未使用的弹性IP绑定到指定的资源
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam bindEIP(BaseRequestParam param) throws  Exception;
+    BindEIPResult bindEIP(BindEIPParam param) throws  Exception;
 
     /**
-     *
+     * 将尚未使用的弹性IP绑定到指定的资源
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void bindEIP(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void bindEIP(BindEIPParam param, UcloudHandler<BindEIPResult> handler,Boolean... asyncFlag);
 
 
     /**
