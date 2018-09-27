@@ -1,10 +1,9 @@
 package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
-import cn.ucloud.model.DescribeUDiskPriceParam;
-import cn.ucloud.model.DescribeUDiskPriceResult;
+import cn.ucloud.model.DescribeUDiskUpgradePriceParam;
+import cn.ucloud.model.DescribeUDiskUpgradePriceResult;
 import cn.ucloud.pojo.Account;
-import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,26 +12,26 @@ import org.junit.Test;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/18 10:44
+ * @date: 2018/9/26 17:14
  */
-public class DescribeUDiskPriceTest {
+public class DescribeUDiskUpgradePriceTest {
     private UdiskClient client;
 
-    private DescribeUDiskPriceParam param;
+    private DescribeUDiskUpgradePriceParam param;
 
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeUDiskPriceParam("cn-sh2", "cn-sh2-01", 16);
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeUDiskUpgradePriceParam("cn-sh2","cn-sh2-01","org-4nfe1i",
+                32,"bs-4qfrwv","No");
     }
 
     @Test
-    public void getDescribeUDiskPrice() {
+    public void doTest() {
         try {
-            DescribeUDiskPriceResult result = client.getDescribeUDiskPrice(param);
+            DescribeUDiskUpgradePriceResult result = client.getDescribeUDiskUpgradePrice(param);
             System.out.println("同步：" + result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,16 +39,16 @@ public class DescribeUDiskPriceTest {
     }
 
     @Test
-    public void getDescribeUDiskPriceCallback() {
-       client.getDescribeUDiskPriceCallback(param, new UcloudHandler() {
+    public void doTestCallback() {
+        client.getDescribeUDiskUpgradePrice(param, new UcloudHandler<DescribeUDiskUpgradePriceResult>() {
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(DescribeUDiskUpgradePriceResult result) {
                 System.out.println("异步 success：" + result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(DescribeUDiskUpgradePriceResult result) {
                 System.out.println("异步 failed：" + result);
                 return null;
             }
@@ -59,7 +58,6 @@ public class DescribeUDiskPriceTest {
                 System.out.println("异步 error：" + e);
                 return null;
             }
-        });
-
+        }, false);
     }
 }

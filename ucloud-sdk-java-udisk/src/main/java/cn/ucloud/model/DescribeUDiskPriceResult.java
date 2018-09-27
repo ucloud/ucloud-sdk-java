@@ -15,22 +15,17 @@ import java.util.List;
 public class DescribeUDiskPriceResult extends BaseResponseResult {
 
     @SerializedName("DataSet")
-    private List<UdiskPriceData> dataSet;
+    private List<UDiskPriceDataSet> dataSet;
 
-    public List<UdiskPriceData> getDataSet() {
+    public List<UDiskPriceDataSet> getDataSet() {
         return dataSet;
     }
 
-    public void setDataSet(List<UdiskPriceData> dataSet) {
+    public void setDataSet(List<UDiskPriceDataSet> dataSet) {
         this.dataSet = dataSet;
     }
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
-
-    public class UdiskPriceData {
+    public class UDiskPriceDataSet {
         /**
          * Year， Month， Dynamic，Trial
          */

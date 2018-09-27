@@ -10,10 +10,9 @@ import javax.validation.constraints.NotNull;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/18 10:01
+ * @date: 2018/9/25 18:28
  */
-public class DescribeUDiskPriceParam extends BaseRequestParam {
-
+public class DescribeUDiskUpgradePriceParam extends BaseRequestParam {
     /**
      * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
@@ -29,43 +28,45 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
     private String zone;
 
     /**
-     * size 购买UDisk大小,单位:GB,范围[1~1000]
+     * size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
     private Integer size = 1;
 
     /**
-     * chargeType Year， Month， Dynamic，Trial，默认: Dynamic 如果不指定，则一次性获取三种计费
+     * sourceId 升级目标UDisk ID
      */
-    @UcloudParam("ChargeType")
-    private String chargeType;
-
-    /**
-     * quantity 购买UDisk的时长，默认值为1
-     */
-    @UcloudParam("Quantity")
-    private Integer quantity;
+    @NotEmpty(message = "sourceId can not be empty")
+    @UcloudParam("SourceId")
+    private String sourceId;
 
     /**
      * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
      */
+    @NotEmpty(message = "uDataArkMode can not be empty")
     @UcloudParam("UDataArkMode")
     private String uDataArkMode = "No";
 
     /**
-     * diskType UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），默认值（DataDisk）
+     * diskType 磁盘类型，SSDDataDisk:ssd数据盘,DataDisk:普通数据盘。默认为DataDisk
      */
     @UcloudParam("DiskType")
     private String diskType;
 
-    public DescribeUDiskPriceParam(@NotEmpty(message = "region can not be empty") String region,
-                                   @NotEmpty(message = "zone can not be empty") String zone,
-                                   @NotEmpty(message = "size can not be empty") Integer size) {
-        super("DescribeUDiskPrice");
+    public DescribeUDiskUpgradePriceParam(@NotEmpty(message = "region can not be empty") String region,
+                                          @NotEmpty(message = "zone can not be empty") String zone,
+                                          @NotEmpty(message = "projectId can not be empty") String projectId,
+                                          @NotEmpty(message = "size can not be empty") Integer size,
+                                          @NotEmpty(message = "sourceId can not be empty") String sourceId,
+                                          @NotEmpty(message = "uDataArkMode can not be empty") String uDataArkMode) {
+        super("DescribeUDiskUpgradePrice");
         this.region = region;
         this.zone = zone;
+        this.projectId = projectId;
         this.size = size;
+        this.sourceId = sourceId;
+        this.uDataArkMode = uDataArkMode;
     }
 
     public String getRegion() {
@@ -92,20 +93,12 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
         this.size = size;
     }
 
-    public String getChargeType() {
-        return chargeType;
+    public String getSourceId() {
+        return sourceId;
     }
 
-    public void setChargeType(String chargeType) {
-        this.chargeType = chargeType;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
     }
 
     public String getuDataArkMode() {

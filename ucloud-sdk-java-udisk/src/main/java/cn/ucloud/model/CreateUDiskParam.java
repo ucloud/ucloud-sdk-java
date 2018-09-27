@@ -10,10 +10,9 @@ import javax.validation.constraints.NotNull;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/18 10:01
+ * @date: 2018/9/25 14:35
  */
-public class DescribeUDiskPriceParam extends BaseRequestParam {
-
+public class CreateUDiskParam extends BaseRequestParam {
     /**
      * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
@@ -29,29 +28,42 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
     private String zone;
 
     /**
-     * size 购买UDisk大小,单位:GB,范围[1~1000]
+     * size 购买UDisk大小,单位:GB,普通盘: 范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限;SSD盘： 范围[1~4000]。
      */
-    @NotNull(message = "size can not be empty")
+    @NotNull(message = "size can not be null")
     @UcloudParam("Size")
     private Integer size = 1;
 
     /**
-     * chargeType Year， Month， Dynamic，Trial，默认: Dynamic 如果不指定，则一次性获取三种计费
+     * name 实例名称
+     */
+    @NotEmpty(message = "name can not be empty")
+    @UcloudParam("Name")
+    private String name;
+
+    /**
+     * chargeType Year, Month, Dynamic, Trial 默认: Dynamic
      */
     @UcloudParam("ChargeType")
     private String chargeType;
 
     /**
-     * quantity 购买UDisk的时长，默认值为1
+     * quantity 购买时长 默认: 1
      */
     @UcloudParam("Quantity")
-    private Integer quantity;
+    private int quantity;
 
     /**
-     * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
+     * uDataArkMode 是否开启数据方舟
      */
     @UcloudParam("UDataArkMode")
     private String uDataArkMode = "No";
+
+    /**
+     * tag 业务组 默认：Default
+     */
+    @UcloudParam("Tag")
+    private String tag;
 
     /**
      * diskType UDisk 类型: DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），默认值（DataDisk）
@@ -59,13 +71,21 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
     @UcloudParam("DiskType")
     private String diskType;
 
-    public DescribeUDiskPriceParam(@NotEmpty(message = "region can not be empty") String region,
-                                   @NotEmpty(message = "zone can not be empty") String zone,
-                                   @NotEmpty(message = "size can not be empty") Integer size) {
-        super("DescribeUDiskPrice");
+    /**
+     * couponId 使用的代金券id
+     */
+    @UcloudParam("CouponId")
+    private String couponId;
+
+    public CreateUDiskParam(@NotEmpty(message = "region can not be empty") String region,
+                            @NotEmpty(message = "zone can not be empty") String zone,
+                            @NotEmpty(message = "size can not be empty") Integer size,
+                            @NotEmpty(message = "name can not be empty") String name) {
+        super("CreateUDisk");
         this.region = region;
         this.zone = zone;
         this.size = size;
+        this.name = name;
     }
 
     public String getRegion() {
@@ -92,6 +112,14 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
         this.size = size;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getChargeType() {
         return chargeType;
     }
@@ -100,11 +128,11 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
         this.chargeType = chargeType;
     }
 
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -116,11 +144,27 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
         this.uDataArkMode = uDataArkMode;
     }
 
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     public String getDiskType() {
         return diskType;
     }
 
     public void setDiskType(String diskType) {
         this.diskType = diskType;
+    }
+
+    public String getCouponId() {
+        return couponId;
+    }
+
+    public void setCouponId(String couponId) {
+        this.couponId = couponId;
     }
 }

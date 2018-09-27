@@ -1,10 +1,11 @@
 package cn.ucloud.client;
 
 import cn.ucloud.handler.UcloudHandler;
-import cn.ucloud.model.DescribeUDiskPriceParam;
-import cn.ucloud.model.DescribeUDiskPriceResult;
+import cn.ucloud.model.AttachUDiskParam;
+import cn.ucloud.model.AttachUDiskResult;
+import cn.ucloud.model.CreateUDiskParam;
+import cn.ucloud.model.CreateUDiskResult;
 import cn.ucloud.pojo.Account;
-import cn.ucloud.pojo.BaseResponseResult;
 import cn.ucloud.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,26 +14,26 @@ import org.junit.Test;
  * @description:
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
- * @date: 2018/9/18 10:44
+ * @date: 2018/9/26 13:53
  */
-public class DescribeUDiskPriceTest {
+public class CreateUDiskTest {
     private UdiskClient client;
 
-    private DescribeUDiskPriceParam param;
+    private CreateUDiskParam param;
 
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeUDiskPriceParam("cn-sh2", "cn-sh2-01", 16);
+        param = new CreateUDiskParam("cn-sh2", "cn-sh2-01", 16, "udisk-test");
         param.setProjectId("org-4nfe1i");
     }
 
     @Test
-    public void getDescribeUDiskPrice() {
+    public void createUDisk() {
         try {
-            DescribeUDiskPriceResult result = client.getDescribeUDiskPrice(param);
+            CreateUDiskResult result = client.createUDisk(param);
             System.out.println("同步：" + result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,16 +41,16 @@ public class DescribeUDiskPriceTest {
     }
 
     @Test
-    public void getDescribeUDiskPriceCallback() {
-       client.getDescribeUDiskPriceCallback(param, new UcloudHandler() {
+    public void createUDiskCallback() {
+        client.createUDisk(param, new UcloudHandler<CreateUDiskResult>() {
             @Override
-            public Object success(BaseResponseResult result) {
+            public Object success(CreateUDiskResult result) {
                 System.out.println("异步 success：" + result);
                 return null;
             }
 
             @Override
-            public Object failed(BaseResponseResult result) {
+            public Object failed(CreateUDiskResult result) {
                 System.out.println("异步 failed：" + result);
                 return null;
             }
@@ -59,7 +60,6 @@ public class DescribeUDiskPriceTest {
                 System.out.println("异步 error：" + e);
                 return null;
             }
-        });
-
+        }, false);
     }
 }
