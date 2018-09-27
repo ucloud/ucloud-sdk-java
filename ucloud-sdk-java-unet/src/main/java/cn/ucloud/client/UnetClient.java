@@ -151,20 +151,20 @@ public interface UnetClient {
 
 
     /**
-     *
+     * 获取弹性IP价格
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    BaseRequestParam getEIPPrice(BaseRequestParam param) throws  Exception;
+    GetEIPPriceResult getEIPPrice(GetEIPPriceParam param) throws  Exception;
 
     /**
-     *
+     * 获取弹性IP价格
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void getEIPPrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void getEIPPrice(GetEIPPriceParam param, UcloudHandler<GetEIPPriceResult> handler,Boolean... asyncFlag);
 
 
     /**
