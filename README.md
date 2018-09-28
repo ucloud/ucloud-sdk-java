@@ -90,8 +90,8 @@ public class main {
 
     public static void main(String []args)  {
         UdiskClient client = new DefaultUdiskClient(new UdiskConfig(
-                new Account("35e886746bec90eeac91523e4d01da45c2479403",
-                        "ucloudfee.fei@ucloud.cn14289063750002081996226")
+                new Account("PrivateKey",
+                        "PublicKey")
         ));
         DescribeUDiskParam param = new DescribeUDiskParam("region");
         param.setProjectId("projectId");
