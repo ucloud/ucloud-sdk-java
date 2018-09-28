@@ -1,9 +1,8 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
-import cn.ucloud.vpc.model.UpdateRouteTableAttributeParam;
 import cn.ucloud.common.pojo.Account;
+import cn.ucloud.vpc.model.UpdateRouteTableAttributeParam;
+import cn.ucloud.vpc.model.UpdateRouteTableAttributeResult;
 import cn.ucloud.vpc.pojo.VPCConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,11 +24,17 @@ public class UpdateRouteTableAttributeTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpdateRouteTableAttributeParam();
+        param = new UpdateRouteTableAttributeParam("cn-bj2","routetable-ciodbt");
         param.setProjectId("org-4nfe1i");
+        param.setName("java-sdk-test-routeTable");
     }
     @Test
     public void updateRouteTableAttribute() {
-        // TODO: 后端API未发布
+        try {
+            UpdateRouteTableAttributeResult updateRouteTableAttributeResult = client.updateRouteTableAttribute(param);
+            System.out.println(updateRouteTableAttributeResult);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
