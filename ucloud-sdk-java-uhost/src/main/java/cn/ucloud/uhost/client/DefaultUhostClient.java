@@ -33,7 +33,7 @@ public class DefaultUhostClient implements UhostClient {
     }
 
     @Override
-    public void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler<GetUhostInstanceVncInfoResult> handler, Boolean... asyncFlag) {
+    public void getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param, UcloudHandler<GetUhostInstanceVncInfoResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUhostInstanceVncInfoResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -49,7 +49,7 @@ public class DefaultUhostClient implements UhostClient {
     }
 
     @Override
-    public void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler<StartUHostInstanceResult> handler, Boolean... asyncFlag) {
+    public void startUHostInstance(StartUHostInstanceParam param, UcloudHandler<StartUHostInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(StartUHostInstanceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -65,7 +65,7 @@ public class DefaultUhostClient implements UhostClient {
     }
 
     @Override
-    public void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler<RebootUHostInstanceResult> handler, Boolean... asyncFlag) {
+    public void rebootUHostInstance(RebootUHostInstanceParam param, UcloudHandler<RebootUHostInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RebootUHostInstanceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -82,7 +82,7 @@ public class DefaultUhostClient implements UhostClient {
     }
 
     @Override
-    public void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler<StopUHostInstanceResult> handler, Boolean... asyncFlag) {
+    public void stopUHostInstance(StopUHostInstanceParam param, UcloudHandler<StopUHostInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(StopUHostInstanceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -98,7 +98,7 @@ public class DefaultUhostClient implements UhostClient {
     }
 
     @Override
-    public void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler<DescribeUHostTagsResult> handler, Boolean... asyncFlag) {
+    public void describeUHostTags(StopUHostInstanceParam param, UcloudHandler<DescribeUHostTagsResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUHostTagsResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);

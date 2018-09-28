@@ -1,11 +1,9 @@
 package cn.ucloud.uhost.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.model.StartUHostInstanceParam;
 import cn.ucloud.uhost.model.StartUHostInstanceResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +42,7 @@ public class StartUHostInstanceTest {
 
     @Test
     public void startUHostInstanceCallback() throws InterruptedException {
-        client.startUHostInstanceCallback(param, new UcloudHandler<StartUHostInstanceResult>() {
+        client.startUHostInstance(param, new UcloudHandler<StartUHostInstanceResult>() {
             @Override
             public Object success(StartUHostInstanceResult result) {
                 System.out.println("success:" + result);

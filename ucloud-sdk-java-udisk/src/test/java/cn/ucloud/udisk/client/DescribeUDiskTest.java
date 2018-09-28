@@ -29,7 +29,7 @@ public class DescribeUDiskTest {
     }
 
     @Test
-    public void doTest() {
+    public void describeUDisk() {
         try {
             DescribeUDiskResult result = client.describeUDisk(param);
             System.out.println("同步：" + result);
@@ -39,7 +39,7 @@ public class DescribeUDiskTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void describeUDiskCallback() {
         client.describeUDisk(param, new UcloudHandler<DescribeUDiskResult>() {
             @Override
             public Object success(DescribeUDiskResult result) {

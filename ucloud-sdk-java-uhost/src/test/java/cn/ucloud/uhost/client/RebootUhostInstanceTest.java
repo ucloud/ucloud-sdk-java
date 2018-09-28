@@ -1,11 +1,9 @@
 package cn.ucloud.uhost.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.model.RebootUHostInstanceParam;
 import cn.ucloud.uhost.model.RebootUHostInstanceResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +42,7 @@ public class RebootUhostInstanceTest {
 
     @Test
     public void rebootUHostInstanceCallback() {
-         client.rebootUHostInstanceCallback(param, new UcloudHandler<RebootUHostInstanceResult>() {
+         client.rebootUHostInstance(param, new UcloudHandler<RebootUHostInstanceResult>() {
             @Override
             public Object success(RebootUHostInstanceResult result) {
                 System.out.println("success:"+result);

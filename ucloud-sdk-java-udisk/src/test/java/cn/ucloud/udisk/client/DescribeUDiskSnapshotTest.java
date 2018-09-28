@@ -29,7 +29,7 @@ public class DescribeUDiskSnapshotTest {
     }
 
     @Test
-    public void doTest() {
+    public void describeUDiskSnapshot() {
         try {
             DescribeUDiskSnapshotResult result = client.describeUDiskSnapshot(param);
             System.out.println("同步：" + result);
@@ -39,7 +39,7 @@ public class DescribeUDiskSnapshotTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void describeUDiskSnapshotCallback() {
         client.describeUDiskSnapshot(param, new UcloudHandler<DescribeUDiskSnapshotResult>() {
             @Override
             public Object success(DescribeUDiskSnapshotResult result) {

@@ -27,7 +27,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void describeUDiskPriceCallback(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag);
+    void describeUDiskPrice(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag);
 
     /**
      * 挂载云硬盘
@@ -47,7 +47,7 @@ public interface UdiskClient {
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void attachUDiskCallback(AttachUDiskParam param, UcloudHandler<AttachUDiskResult> handler, Boolean... asyncFlag);
+    void attachUDisk(AttachUDiskParam param, UcloudHandler<AttachUDiskResult> handler, Boolean... asyncFlag);
 
     /**
      * 创建UDisk磁盘

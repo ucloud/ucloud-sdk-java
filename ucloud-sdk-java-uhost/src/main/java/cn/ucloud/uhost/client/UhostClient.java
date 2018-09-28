@@ -30,7 +30,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void getUHostInstanceVncInfoCallback(GetUhostInstanceVncInfoParam param, UcloudHandler<GetUhostInstanceVncInfoResult> handler, Boolean... asyncFlag);
+    void getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param, UcloudHandler<GetUhostInstanceVncInfoResult> handler, Boolean... asyncFlag);
 
     /**
      * 启动主机实例
@@ -48,7 +48,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void startUHostInstanceCallback(StartUHostInstanceParam param, UcloudHandler<StartUHostInstanceResult> handler, Boolean... asyncFlag);
+    void startUHostInstance(StartUHostInstanceParam param, UcloudHandler<StartUHostInstanceResult> handler, Boolean... asyncFlag);
 
     /**
      * 重启主机实例
@@ -66,7 +66,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void rebootUHostInstanceCallback(RebootUHostInstanceParam param, UcloudHandler<RebootUHostInstanceResult> handler, Boolean... asyncFlag);
+    void rebootUHostInstance(RebootUHostInstanceParam param, UcloudHandler<RebootUHostInstanceResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -82,7 +82,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void stopUHostInstanceCallback(StopUHostInstanceParam param, UcloudHandler<StopUHostInstanceResult> handler, Boolean... asyncFlag);
+    void stopUHostInstance(StopUHostInstanceParam param, UcloudHandler<StopUHostInstanceResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -101,7 +101,7 @@ public interface UhostClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void describeUHostTagsCallback(StopUHostInstanceParam param, UcloudHandler<DescribeUHostTagsResult> handler, Boolean... asyncFlag);
+    void describeUHostTags(StopUHostInstanceParam param, UcloudHandler<DescribeUHostTagsResult> handler, Boolean... asyncFlag);
 
     /**
      * 创建云主机

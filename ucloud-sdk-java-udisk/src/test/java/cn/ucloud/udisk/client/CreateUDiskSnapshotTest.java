@@ -1,11 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.CreateUDiskSnapshotParam;
 import cn.ucloud.udisk.model.CreateUDiskSnapshotResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +30,7 @@ public class CreateUDiskSnapshotTest {
     }
 
     @Test
-    public void doTest() {
+    public void createUDiskSnapshot() {
         try {
             CreateUDiskSnapshotResult result = client.createUDiskSnapshot(param);
             System.out.println("同步：" + result);
@@ -42,7 +40,7 @@ public class CreateUDiskSnapshotTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void createUDiskSnapshotCallback() {
         client.createUDiskSnapshot(param, new UcloudHandler<CreateUDiskSnapshotResult>() {
             @Override
             public Object success(CreateUDiskSnapshotResult result) {

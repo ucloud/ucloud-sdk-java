@@ -1,11 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.RecoverUDiskParam;
 import cn.ucloud.udisk.model.RecoverUDiskResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +29,7 @@ public class RecoverUDiskTest {
     }
 
     @Test
-    public void doTest() {
+    public void recoverUDisk() {
         try {
             RecoverUDiskResult result = client.recoverUDisk(param);
             System.out.println("同步：" + result);
@@ -41,7 +39,7 @@ public class RecoverUDiskTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void recoverUDiskCallback() {
         client.recoverUDisk(param, new UcloudHandler<RecoverUDiskResult>() {
             @Override
             public Object success(RecoverUDiskResult result) {

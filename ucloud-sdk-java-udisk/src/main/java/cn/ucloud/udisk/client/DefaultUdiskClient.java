@@ -28,7 +28,7 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public void describeUDiskPriceCallback(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag) {
+    public void describeUDiskPrice(DescribeUDiskPriceParam param, UcloudHandler<DescribeUDiskPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskPriceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -44,7 +44,7 @@ public class DefaultUdiskClient implements UdiskClient {
     }
 
     @Override
-    public void attachUDiskCallback(AttachUDiskParam param, UcloudHandler<AttachUDiskResult> handler, Boolean... asyncFlag) {
+    public void attachUDisk(AttachUDiskParam param, UcloudHandler<AttachUDiskResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AttachUDiskResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);

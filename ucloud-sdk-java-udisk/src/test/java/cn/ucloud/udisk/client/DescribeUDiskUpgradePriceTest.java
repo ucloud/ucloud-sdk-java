@@ -29,7 +29,7 @@ public class DescribeUDiskUpgradePriceTest {
     }
 
     @Test
-    public void doTest() {
+    public void describeUDiskUpgradePrice() {
         try {
             DescribeUDiskUpgradePriceResult result = client.describeUDiskUpgradePrice(param);
             System.out.println("同步：" + result);
@@ -39,7 +39,7 @@ public class DescribeUDiskUpgradePriceTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void describeUDiskUpgradePriceCallback() {
         client.describeUDiskUpgradePrice(param, new UcloudHandler<DescribeUDiskUpgradePriceResult>() {
             @Override
             public Object success(DescribeUDiskUpgradePriceResult result) {

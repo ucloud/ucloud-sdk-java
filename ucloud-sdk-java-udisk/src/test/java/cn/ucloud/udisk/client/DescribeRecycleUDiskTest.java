@@ -29,7 +29,7 @@ public class DescribeRecycleUDiskTest {
     }
 
     @Test
-    public void doTest() {
+    public void describeRecycleUDisk() {
         try {
             DescribeRecycleUDiskResult result = client.describeRecycleUDisk(param);
             System.out.println("同步：" + result);
@@ -39,7 +39,7 @@ public class DescribeRecycleUDiskTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void describeRecycleUDiskCallback() {
         client.describeRecycleUDisk(param, new UcloudHandler<DescribeRecycleUDiskResult>() {
             @Override
             public Object success(DescribeRecycleUDiskResult result) {

@@ -40,7 +40,7 @@ public class DescribeUDiskPriceTest {
 
     @Test
     public void describeUDiskPriceCallback() {
-       client.describeUDiskPriceCallback(param, new UcloudHandler<DescribeUDiskPriceResult>() {
+       client.describeUDiskPrice(param, new UcloudHandler<DescribeUDiskPriceResult>() {
             @Override
             public Object success(DescribeUDiskPriceResult result) {
                 System.out.println("异步 success：" + result);

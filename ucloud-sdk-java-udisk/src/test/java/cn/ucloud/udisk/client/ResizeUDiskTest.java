@@ -1,11 +1,9 @@
 package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udisk.client.DefaultUdiskClient;
-import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.model.ResizeUDiskParam;
 import cn.ucloud.udisk.model.ResizeUDiskResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +29,7 @@ public class ResizeUDiskTest {
     }
 
     @Test
-    public void doTest() {
+    public void resizeUDisk() {
         try {
             ResizeUDiskResult result = client.resizeUDisk(param);
             System.out.println("同步：" + result);
@@ -41,7 +39,7 @@ public class ResizeUDiskTest {
     }
 
     @Test
-    public void doTestCallback() {
+    public void resizeUDiskCallback() {
         client.resizeUDisk(param, new UcloudHandler<ResizeUDiskResult>() {
             @Override
             public Object success(ResizeUDiskResult result) {
