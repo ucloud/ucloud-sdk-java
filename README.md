@@ -40,7 +40,8 @@ ucloud开发者工具套件（SDK）。<br>
      异常信息中会给出必要参数的属性名称。
 
 第三步、发起请求并处理结果（支持三种方式）
-    
+
+----   
         方式1：同步处理
         try{
             result = client.method(param);
@@ -49,7 +50,7 @@ ucloud开发者工具套件（SDK）。<br>
             // 比如网络异常等
         }
         这个方式与常见调用方式相同，阻塞调用，直到当前请求结果返回。
-        
+----        
         方式2：同步回调处理
         client.method(param, new UcloudHandler<*Result>() {
              @Override
@@ -69,6 +70,38 @@ ucloud开发者工具套件（SDK）。<br>
                    // 当发生异常时候，需要在这个方法中进行处理
                    return null;
              }
-        });
+        },false);
         这个方式也是阻塞的，直到当前请求结果返回。
+----
+        方式3：异步回调处理    
+        这个方式是非阻塞的，调用方式与方式2类似，但是要缺省method()最后的flag参数，或者为true。
         
+代码实例：
+```java
+import cn.ucloud.common.pojo.Account;
+import cn.ucloud.udisk.client.DefaultUdiskClient;
+import cn.ucloud.udisk.client.UdiskClient;
+import cn.ucloud.udisk.model.DescribeUDiskParam;
+import cn.ucloud.udisk.model.DescribeUDiskResult;
+import cn.ucloud.udisk.pojo.UdiskConfig;
+
+
+public class main {
+
+    public static void main(String []args)  {
+        UdiskClient client = new DefaultUdiskClient(new UdiskConfig(
+                new Account("35e886746bec90eeac91523e4d01da45c2479403",
+                        "ucloudfee.fei@ucloud.cn14289063750002081996226")
+        ));
+        DescribeUDiskParam param = new DescribeUDiskParam("region");
+        param.setProjectId("projectId");
+        DescribeUDiskResult describeUDisk = null;
+        try {
+            describeUDisk = client.describeUDisk(param);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(describeUDisk);
+    }
+}
+```
