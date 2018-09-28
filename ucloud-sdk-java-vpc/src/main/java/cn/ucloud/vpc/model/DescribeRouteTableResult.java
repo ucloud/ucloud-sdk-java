@@ -77,6 +77,101 @@ public class DescribeRouteTableResult extends BaseResponseResult {
         @SerializedName("VPCName")
         private String vpcName;
 
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public List<RouteRule> getRouteRules() {
+            return routeRules;
+        }
+
+        public void setRouteRules(List<RouteRule> routeRules) {
+            this.routeRules = routeRules;
+        }
+
+        public String getRouteTableId() {
+            return routeTableId;
+        }
+
+        public void setRouteTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+        }
+
+        public Integer getRouteTableType() {
+            return routeTableType;
+        }
+
+        public void setRouteTableType(Integer routeTableType) {
+            this.routeTableType = routeTableType;
+        }
+
+        public Integer getSubnetCount() {
+            return subnetCount;
+        }
+
+        public void setSubnetCount(Integer subnetCount) {
+            this.subnetCount = subnetCount;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getVpcId() {
+            return vpcId;
+        }
+
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getVpcName() {
+            return vpcName;
+        }
+
+        public void setVpcName(String vpcName) {
+            this.vpcName = vpcName;
+        }
+
+        @Override
+        public String toString() {
+            return "RouteTable{" +
+                    "createTime=" + createTime +
+                    ", name='" + name + '\'' +
+                    ", remark='" + remark + '\'' +
+                    ", routeRules=" + routeRules +
+                    ", routeTableId='" + routeTableId + '\'' +
+                    ", routeTableType=" + routeTableType +
+                    ", subnetCount=" + subnetCount +
+                    ", tag='" + tag + '\'' +
+                    ", vpcId='" + vpcId + '\'' +
+                    ", vpcName='" + vpcName + '\'' +
+                    '}';
+        }
     }
 
 
