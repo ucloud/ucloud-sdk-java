@@ -76,7 +76,7 @@ ucloud开发者工具套件（SDK）。<br>
         方式3：异步回调处理    
         这个方式是非阻塞的，调用方式与方式2类似，但是要缺省method()最后的flag参数，或者为true。
         
-代码实例：
+代码示例：
 ```java
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udisk.client.DefaultUdiskClient;
