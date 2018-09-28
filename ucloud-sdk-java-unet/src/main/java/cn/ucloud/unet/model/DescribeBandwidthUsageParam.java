@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 获取带宽用量 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 16:03
@@ -25,19 +25,19 @@ public class DescribeBandwidthUsageParam extends BaseRequestParam {
     private String region;
 
     /**
-     * limit 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20
+     * optional limit 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20
      */
     @UcloudParam("Limit")
-    private Integer limit = 20;
+    private Integer limit ;
 
     /**
-     * offset 返回数据偏移量, 默认为0
+     * optional offset 返回数据偏移量, 默认为0
      */
     @UcloudParam("Offset")
-    private Integer offset = 0;
+    private Integer offset ;
 
     /**
-     * eipIds EIP的资源Id
+     * optional eipIds EIP的资源Id
      */
     private List<String> eipIds;
 
@@ -48,9 +48,9 @@ public class DescribeBandwidthUsageParam extends BaseRequestParam {
             List<String> eipIds = this.getEipIds();
             for (int i = 0, len = eipIds.size(); i < len; i++) {
                 String eipId = eipIds.get(i);
-                if (StringUtils.isBlank(eipId))
+                if (StringUtils.isBlank(eipId)){
                     throw new ValidatorException("eipId[" + i + "] can not be empty");
-
+                }
                 list.add(new Param("EIP." + i, eipId));
             }
         }

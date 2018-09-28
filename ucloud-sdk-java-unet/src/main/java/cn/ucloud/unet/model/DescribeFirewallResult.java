@@ -7,43 +7,142 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 获取防火墙信息 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 15:14
  */
 public class DescribeFirewallResult extends BaseResponseResult {
-    @SerializedName("TotalCount")
-    private int totalCount;
-    @SerializedName("DataSet")
-    private List<FirewallData> dataSet;
+
+    public static class FirewallRule {
+        /**
+         * 目标端口
+         */
+        @SerializedName("DstPort")
+        private String dstPort;
+        /**
+         * 优先级
+         */
+        @SerializedName("Priority")
+        private String piority;
+
+        /**
+         * 协议类型
+         */
+        @SerializedName("ProtocolType")
+        private String protocolType;
+        /**
+         * 防火墙动作
+         */
+        @SerializedName("RuleAction")
+        private String ruleAction;
+        /**
+         * 源地址
+         */
+        @SerializedName("SrcIP")
+        private String srcIP;
+
+        public String getDstPort() {
+            return dstPort;
+        }
+
+        public void setDstPort(String dstPort) {
+            this.dstPort = dstPort;
+        }
+
+        public String getPiority() {
+            return piority;
+        }
+
+        public void setPiority(String piority) {
+            this.piority = piority;
+        }
+
+        public String getProtocolType() {
+            return protocolType;
+        }
+
+        public void setProtocolType(String protocolType) {
+            this.protocolType = protocolType;
+        }
+
+        public String getRuleAction() {
+            return ruleAction;
+        }
+
+        public void setRuleAction(String ruleAction) {
+            this.ruleAction = ruleAction;
+        }
+
+        public String getSrcIP() {
+            return srcIP;
+        }
+
+        public void setSrcIP(String srcIP) {
+            this.srcIP = srcIP;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
+        }
+    }
 
     public static class FirewallData {
-
+        /**
+         * 防火墙组创建时间，格式为Unix Timestamp
+         */
         @SerializedName("CreateTime")
-        private int createTime;
+        private Integer createTime;
+
+        /**
+         * Firewall ID
+         */
         @SerializedName("FWId")
         private String fwId;
+        /**
+         * 分组ID
+         */
         @SerializedName("GroupId")
         private String groupId;
+        /**
+         * 防火墙名称
+         */
         @SerializedName("Name")
         private String name;
+        /**
+         * 备注
+         */
         @SerializedName("Remark")
         private String remark;
+        /**
+         * 防火墙绑定资源数量
+         */
         @SerializedName("ResourceCount")
-        private int resourceCount;
+        private Integer resourceCount;
+        /**
+         * 业务组
+         */
         @SerializedName("Tag")
         private String tag;
+        /**
+         * 防火墙组类型，枚举值为： "user defined", 用户自定义防火墙；
+         * "recommend web", 默认Web防火墙；
+         * "recommend non web", 默认非Web防火墙
+         */
         @SerializedName("Type")
         private String type;
+        /**
+         * 防火墙组中的规则列表，参见 FirewallRuleSet
+         */
         @SerializedName("Rule")
         private List<FirewallRule> rule;
 
-        public int getCreateTime() {
+        public Integer getCreateTime() {
             return createTime;
         }
 
-        public void setCreateTime(int createTime) {
+        public void setCreateTime(Integer createTime) {
             this.createTime = createTime;
         }
 
@@ -79,11 +178,11 @@ public class DescribeFirewallResult extends BaseResponseResult {
             this.remark = remark;
         }
 
-        public int getResourceCount() {
+        public Integer getResourceCount() {
             return resourceCount;
         }
 
-        public void setResourceCount(int resourceCount) {
+        public void setResourceCount(Integer resourceCount) {
             this.resourceCount = resourceCount;
         }
 
@@ -117,70 +216,28 @@ public class DescribeFirewallResult extends BaseResponseResult {
             return new Gson().toJson(this);
         }
 
-        public static class FirewallRule {
-            @SerializedName("DstPort")
-            private String dstPort;
-            @SerializedName("Priority")
-            private String piority;
-            @SerializedName("ProtocolType")
-            private String protocolType;
-            @SerializedName("RuleAction")
-            private String ruleAction;
-            @SerializedName("SrcIP")
-            private String srcIP;
 
-            public String getDstPort() {
-                return dstPort;
-            }
-
-            public void setDstPort(String dstPort) {
-                this.dstPort = dstPort;
-            }
-
-            public String getPiority() {
-                return piority;
-            }
-
-            public void setPiority(String piority) {
-                this.piority = piority;
-            }
-
-            public String getProtocolType() {
-                return protocolType;
-            }
-
-            public void setProtocolType(String protocolType) {
-                this.protocolType = protocolType;
-            }
-
-            public String getRuleAction() {
-                return ruleAction;
-            }
-
-            public void setRuleAction(String ruleAction) {
-                this.ruleAction = ruleAction;
-            }
-
-            public String getSrcIP() {
-                return srcIP;
-            }
-
-            public void setSrcIP(String srcIP) {
-                this.srcIP = srcIP;
-            }
-
-            @Override
-            public String toString() {
-                return new Gson().toJson(this);
-            }
-        }
     }
 
-    public int getTotalCount() {
+    /**
+     * 满足条件的数目
+     */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
+    /**
+     * 获取的防火墙组详细信息 参见 FirewallDataSet
+     */
+    @SerializedName("DataSet")
+    private List<FirewallData> dataSet;
+
+
+
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(int totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

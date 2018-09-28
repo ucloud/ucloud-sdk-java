@@ -7,42 +7,42 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * @description:
+ * @description: 调整云硬盘 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 18:58
  */
 public class ResizeUDiskParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * uDiskId UDisk Id
+     * require uDiskId UDisk Id
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
     /**
-     * size 调整后大小, 单位:GB, 范围[1~2000],权限位控制可达8000,若需要请申请开通相关权限。
+     * require size 调整后大小, 单位:GB, 范围[1~2000],权限位控制可达8000,若需要请申请开通相关权限。
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private Integer size = 1;
+    private Integer size ;
 
     /**
-     * couponId 使用的代金券id
+     * optional couponId 使用的代金券id
      */
     @UcloudParam("CouponId")
     private String couponId;

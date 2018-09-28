@@ -6,12 +6,15 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 创建快照 结果类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 18:41
  */
 public class CreateUDiskSnapshotResult extends BaseResponseResult {
+    /**
+     * 快照ID
+     */
     @SerializedName("SnapshotId")
     private List<String> snapshotId;
 

@@ -6,12 +6,15 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 创建云硬盘 结果类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 13:58
  */
 public class CreateUDiskResult extends BaseResponseResult {
+    /**
+     * 云磁盘ID
+     */
     @SerializedName("UDiskId")
     private List<String> uDiskId;
 

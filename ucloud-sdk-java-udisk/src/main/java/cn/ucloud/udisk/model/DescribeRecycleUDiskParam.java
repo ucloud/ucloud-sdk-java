@@ -6,34 +6,34 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 拉取回收站中云硬盘列表 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 18:52
  */
 public class DescribeRecycleUDiskParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * offset 数据偏移量, 默认为0
+     * optional offset 数据偏移量, 默认为0
      */
     @UcloudParam("Offset")
     private Integer offset;
 
     /**
-     * limit 返回数据长度, 默认为20
+     * optional limit 返回数据长度, 默认为20
      */
     @UcloudParam("Limit")
     private Integer limit = 20;

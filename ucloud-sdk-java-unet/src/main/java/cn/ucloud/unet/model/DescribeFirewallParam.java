@@ -6,7 +6,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 获取防火墙信息  参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 15:14
@@ -26,28 +26,28 @@ public class DescribeFirewallParam extends BaseRequestParam {
     private String fwId;
 
     /**
-     * require 绑定防火墙组的资源类型，如uhost
+     * optional 绑定防火墙组的资源类型，如uhost
      */
     @UcloudParam("ResourceType")
     private String resourceType;
 
     /**
-     * require 绑定防火墙组的资源ID
+     * optional 绑定防火墙组的资源ID
      */
     @UcloudParam("ResourceId")
     private String resourceId;
 
     /**
-     * require 返回数据长度，默认为20，最大10000000
+     * optional 返回数据长度，默认为20，最大10000000
      */
     @UcloudParam("Limit")
-    private Integer limit = 20;
+    private Integer limit;
 
     /**
-     * require 列表起始位置偏移量，默认为0
+     * optional 列表起始位置偏移量，默认为0
      */
     @UcloudParam("Offset")
-    private Integer offset = 0;
+    private Integer offset;
 
     public DescribeFirewallParam(@NotEmpty(message = "region can not be empty") String region) {
         super("DescribeFirewall");

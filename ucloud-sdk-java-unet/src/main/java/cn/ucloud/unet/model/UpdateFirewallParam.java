@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 更新防火墙
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 15:43
@@ -26,14 +26,14 @@ public class UpdateFirewallParam extends BaseRequestParam {
     private String region;
 
     /**
-     * require 防火墙ID，默认为返回所有防火墙
+     * require 防火墙ID
      */
     @NotEmpty(message = "fwId can not be empty")
     @UcloudParam("FWId")
     private String fwId;
 
     /**
-     * rule 防火墙规则
+     * optional rule 防火墙规则
      */
     @NotNull(message = "rule can not be empty")
     private List<Rule> rule;

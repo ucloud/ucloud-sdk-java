@@ -2,13 +2,12 @@ package cn.ucloud.unet.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * @description:
+ * @description: 释放共享带宽 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 17:48
@@ -36,10 +35,10 @@ public class ReleaseShareBandwidthParam extends BaseRequestParam {
     private Integer eIPBandwidth;
 
     /**
-     * require Bandwidth 带宽计费, Traffic 转流量计费
+     * optional Bandwidth 带宽计费, Traffic 转流量计费
      */
     @UcloudParam("PayMode")
-    private StringUtils payMode;
+    private String payMode;
 
     public ReleaseShareBandwidthParam(@NotEmpty(message = "region can not be empty") String region,
                                       @NotEmpty(message = "shareBandwidthId can not be empty") String shareBandwidthId,
@@ -74,11 +73,11 @@ public class ReleaseShareBandwidthParam extends BaseRequestParam {
         this.eIPBandwidth = eIPBandwidth;
     }
 
-    public StringUtils getPayMode() {
+    public String getPayMode() {
         return payMode;
     }
 
-    public void setPayMode(StringUtils payMode) {
+    public void setPayMode(String payMode) {
         this.payMode = payMode;
     }
 }

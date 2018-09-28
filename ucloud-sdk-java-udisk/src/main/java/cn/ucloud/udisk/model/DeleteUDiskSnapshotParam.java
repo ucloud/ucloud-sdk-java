@@ -6,35 +6,35 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 删除云磁盘快照 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 11:48
  */
 public class DeleteUDiskSnapshotParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * SnapshotId 快照Id
+     * require SnapshotId 快照Id
      */
     @NotEmpty(message = "snapshotId can not be empty")
     @UcloudParam("SnapshotId")
     private String snapshotId;
 
     /**
-     * uDiskId UDisk Id,删除该盘所创建出来的所有快照
+     * optional uDiskId UDisk Id,删除该盘所创建出来的所有快照
      */
     @UcloudParam("UDiskId")
     private String uDiskId;

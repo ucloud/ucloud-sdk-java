@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 创建防火墙  参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 11:31
@@ -27,20 +27,20 @@ public class CreateFirewallParam extends BaseRequestParam {
     private String region;
 
     /**
-     * name 防火墙名称， 默认为Firewall
+     * require name 防火墙名称， 默认为Firewall
      */
     @UcloudParam("Name")
     @NotEmpty(message = "name can not be empty")
     private String name;
 
     /**
-     * tag 防火墙业务组，默认为Default
+     * optional tag 防火墙业务组，默认为Default
      */
     @UcloudParam("Tag")
     private String tag;
 
     /**
-     * remark 防火墙描述，默认为空
+     * optional remark 防火墙描述，默认为空
      */
     @UcloudParam("Remark")
     private String remark;

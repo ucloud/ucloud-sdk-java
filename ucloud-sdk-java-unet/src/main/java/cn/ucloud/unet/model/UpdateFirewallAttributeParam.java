@@ -6,7 +6,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 更新防火墙属性 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 15:51
@@ -27,19 +27,19 @@ public class UpdateFirewallAttributeParam extends BaseRequestParam {
     private String fwId;
 
     /**
-     * require 防火墙名称，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
+     * optional 防火墙名称，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
      */
     @UcloudParam("Name")
     private String name;
 
     /**
-     * require 防火墙业务组，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
+     * optional 防火墙业务组，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
      */
     @UcloudParam("Tag")
     private String tag;
 
     /**
-     * require 防火墙备注，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
+     * optional 防火墙备注，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上
      */
     @UcloudParam("Remark")
     private String remark;

@@ -7,61 +7,83 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 获取云磁盘快照信息 结果类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 18:06
  */
 public class DescribeUDiskSnapshotResult extends BaseResponseResult {
 
-    @SerializedName("TotalCount")
-    private int totalCount;
-    @SerializedName("DataSet")
-    private List<UDiskSnapshotData> dataSet;
-
-    public int getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
-    public List<UDiskSnapshotData> getDataSet() {
-        return dataSet;
-    }
-
-    public void setDataSet(List<UDiskSnapshotData> dataSet) {
-        this.dataSet = dataSet;
-    }
-
     public static class UDiskSnapshotData {
+
+        /**
+         * 快照描述
+         */
         @SerializedName("Comment")
         private String comment;
+        /**
+         * 支付类型
+         */
         @SerializedName("ChargeType")
         private String chargeType;
+        /**
+         * 快照名称
+         */
         @SerializedName("Name")
         private String name;
+        /**
+         * 快照的源UDisk的Name
+         */
         @SerializedName("UDiskName")
         private String uDiskName;
+        /**
+         * 过期时间
+         */
         @SerializedName("ExpiredTime")
-        private int expiredTime;
+        private Integer expiredTime;
+        /**
+         * 快照的源UDisk的Id
+         */
         @SerializedName("UDiskId")
         private String uDiskId;
+        /**
+         * 快照Id
+         */
         @SerializedName("SnapshotId")
         private String snapshotId;
+        /**
+         * 创建时间
+         */
         @SerializedName("CreateTime")
-        private int createTime;
+        private Integer createTime;
+        /**
+         * 容量单位GB
+         */
         @SerializedName("Size")
-        private int size;
+        private Integer size;
+        /**
+         * 快照状态，Normal:正常,Failed:失败,Creating:制作中
+         */
         @SerializedName("Status")
         private String status;
+        /**
+         * 对应磁盘是否处于可用状态
+         */
         @SerializedName("IsUDiskAvailable")
         private boolean isUDiskAvailable;
+        /**
+         * 快照版本
+         */
         @SerializedName("Version")
         private String version;
+        /**
+         * 磁盘类型，0:数据盘，1:系统盘
+         */
         @SerializedName("DiskType")
-        private int diskType;
+        private Integer diskType;
+        /**
+         * 对应磁盘制作快照时所挂载的主机
+         */
         @SerializedName("UHostId")
         private String uHostId;
 
@@ -97,11 +119,11 @@ public class DescribeUDiskSnapshotResult extends BaseResponseResult {
             this.uDiskName = uDiskName;
         }
 
-        public int getExpiredTime() {
+        public Integer getExpiredTime() {
             return expiredTime;
         }
 
-        public void setExpiredTime(int expiredTime) {
+        public void setExpiredTime(Integer expiredTime) {
             this.expiredTime = expiredTime;
         }
 
@@ -121,19 +143,19 @@ public class DescribeUDiskSnapshotResult extends BaseResponseResult {
             this.snapshotId = snapshotId;
         }
 
-        public int getCreateTime() {
+        public Integer getCreateTime() {
             return createTime;
         }
 
-        public void setCreateTime(int createTime) {
+        public void setCreateTime(Integer createTime) {
             this.createTime = createTime;
         }
 
-        public int getSize() {
+        public Integer getSize() {
             return size;
         }
 
-        public void setSize(int size) {
+        public void setSize(Integer size) {
             this.size = size;
         }
 
@@ -161,11 +183,11 @@ public class DescribeUDiskSnapshotResult extends BaseResponseResult {
             this.version = version;
         }
 
-        public int getDiskType() {
+        public Integer getDiskType() {
             return diskType;
         }
 
-        public void setDiskType(int diskType) {
+        public void setDiskType(Integer diskType) {
             this.diskType = diskType;
         }
 
@@ -181,5 +203,35 @@ public class DescribeUDiskSnapshotResult extends BaseResponseResult {
         public String toString() {
             return new Gson().toJson(this);
         }
+    }
+
+    /**
+     * 根据过滤条件得到的总数
+     */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+    /**
+     * Snapshot列表, 详细参见 UDiskSnapshotSet
+     */
+    @SerializedName("DataSet")
+    private List<UDiskSnapshotData> dataSet;
+
+
+
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public List<UDiskSnapshotData> getDataSet() {
+        return dataSet;
+    }
+
+    public void setDataSet(List<UDiskSnapshotData> dataSet) {
+        this.dataSet = dataSet;
     }
 }

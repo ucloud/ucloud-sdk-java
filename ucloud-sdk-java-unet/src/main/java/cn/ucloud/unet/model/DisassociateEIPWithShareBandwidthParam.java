@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 将EIP移出共享带宽 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 16:54
@@ -40,10 +40,12 @@ public class DisassociateEIPWithShareBandwidthParam extends BaseRequestParam {
     private Integer bandwidth;
 
     /**
-     * require 移出共享带宽后，EIP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; 默认为 "Bandwidth".
+     * optional 移出共享带宽后，EIP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; 默认为 "Bandwidth".
      */
     @UcloudParam("PayMode")
-    private StringUtils payMode;
+    private String payMode;
+
+
 
     /**
      * eipIds EIP的资源Id
@@ -74,6 +76,14 @@ public class DisassociateEIPWithShareBandwidthParam extends BaseRequestParam {
         this.region = region;
         this.shareBandwidthId = shareBandwidthId;
         this.bandwidth = bandwidth;
+    }
+
+    public String getPayMode() {
+        return payMode;
+    }
+
+    public void setPayMode(String payMode) {
+        this.payMode = payMode;
     }
 
     public String getRegion() {

@@ -6,44 +6,44 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 从备份恢复数据至UDisk 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 15:55
  */
 public class RestoreUDiskParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * uDiskId 需要恢复的盘id
+     * require  uDiskId 需要恢复的盘id
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
     /**
-     * SnapshotId 从指定的快照恢复
+     * optional SnapshotId 从指定的快照恢复
      */
     @UcloudParam("SnapshotId")
     private String snapshotId;
 
     /**
-     * snapshotTime 指定从方舟恢复的备份时间点
+     * optional snapshotTime 指定从方舟恢复的备份时间点
      */
     @UcloudParam("SnapshotTime")
-    private int snapshotTime;
+    private Integer snapshotTime;
 
     public RestoreUDiskParam(@NotEmpty(message = "region can not be empty") String region,
                              @NotEmpty(message = "zone can not be empty") String zone,
@@ -86,11 +86,11 @@ public class RestoreUDiskParam extends BaseRequestParam {
         this.snapshotId = snapshotId;
     }
 
-    public int getSnapshotTime() {
+    public Integer getSnapshotTime() {
         return snapshotTime;
     }
 
-    public void setSnapshotTime(int snapshotTime) {
+    public void setSnapshotTime(Integer snapshotTime) {
         this.snapshotTime = snapshotTime;
     }
 }

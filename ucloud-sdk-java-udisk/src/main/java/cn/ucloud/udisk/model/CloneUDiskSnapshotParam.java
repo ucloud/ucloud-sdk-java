@@ -7,73 +7,73 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * @description:
+ * @description: 克隆快照 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 18:46
  */
 public class CloneUDiskSnapshotParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * name 实例名称
+     * require name 实例名称
      */
     @NotEmpty(message = "name can not be empty")
     @UcloudParam("Name")
     private String name;
 
     /**
-     * sourceId 克隆父Snapshot的Id
+     * require sourceId 克隆父Snapshot的Id
      */
     @NotEmpty(message = "sourceId can not be empty")
     @UcloudParam("SourceId")
     private String sourceId;
 
     /**
-     * size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
+     * require size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
     private Integer size = 1;
 
     /**
-     * comment 快照描述
+     * optional comment 快照描述
      */
     @UcloudParam("Comment")
     private String comment;
 
     /**
-     * chargeType Year , Month, Dynamic 默认: Dynamic
+     * optional chargeType Year , Month, Dynamic 默认: Dynamic
      */
     @UcloudParam("ChargeType")
     private String chargeType;
 
     /**
-     * quantity 购买时长 默认: 1
+     * optional quantity 购买时长 默认: 1
      */
     @UcloudParam("Quantity")
     private Integer quantity;
 
     /**
-     * uDataArkMode 是否开启数据方舟 默认:No
+     * optional uDataArkMode 是否开启数据方舟 默认:No
      */
     @UcloudParam("UDataArkMode")
     private Integer uDataArkMode;
 
     /**
-     * couponId 使用的代金券id
+     * optional couponId 使用的代金券id
      */
     @UcloudParam("CouponId")
     private Integer couponId;

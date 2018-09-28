@@ -6,35 +6,36 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 挂载云硬盘 参数类
+ * 将一个可用的UDisk挂载到某台主机上，当UDisk挂载成功后，还需要在主机内部进行文件系统操作
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 13:56
  */
 public class AttachUDiskParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * uHostId UHost实例ID
+     * require uHostId UHost实例ID
      */
     @NotEmpty(message = "uHostId can not be empty")
     @UcloudParam("UHostId")
     private String uHostId;
 
     /**
-     * uDiskId 需要挂载的UDisk实例ID
+     * require uDiskId 需要挂载的UDisk实例ID
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")

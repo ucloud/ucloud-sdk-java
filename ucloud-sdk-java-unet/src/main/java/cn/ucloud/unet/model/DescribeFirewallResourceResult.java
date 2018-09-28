@@ -6,35 +6,67 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 获取防火墙绑定资源 结果类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 15:26
  */
 public class DescribeFirewallResourceResult extends BaseResponseResult {
+
+    /**
+     * 满足条件的个数
+     */
     @SerializedName("TotalCount")
-    private int totalCount;
+    private Integer totalCount;
+
+    /**
+     * 资源列表，见 ResourceSet
+     */
     @SerializedName("ResourceSet")
     private List<Resource> resourceSet;
 
 
     public static class Resource {
+        /**
+         * 绑定资源的资源类型
+         */
         @SerializedName("ResourceType")
         private String resourceType;
+        /**
+         * 绑定该防火墙的资源id
+         */
         @SerializedName("ResourceID")
         private String resourceID;
+        /**
+         * 可用区
+         */
         @SerializedName("Zone")
-        private int zone;
+        private String zone;
+        /**
+         * 内网IP
+         */
         @SerializedName("PrivateIP")
         private String privateIP;
+        /**
+         * 名称
+         */
         @SerializedName("Name")
         private String name;
+        /**
+         * 业务组
+         */
         @SerializedName("Tag")
         private String tag;
+        /**
+         * 备注
+         */
         @SerializedName("Remark")
         private String remark;
+        /**
+         * 状态
+         */
         @SerializedName("Status")
-        private int status;
+        private String status;
 
         public String getResourceType() {
             return resourceType;
@@ -52,11 +84,11 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
             this.resourceID = resourceID;
         }
 
-        public int getZone() {
+        public String getZone() {
             return zone;
         }
 
-        public void setZone(int zone) {
+        public void setZone(String zone) {
             this.zone = zone;
         }
 
@@ -92,20 +124,20 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
             this.remark = remark;
         }
 
-        public int getStatus() {
+        public String getStatus() {
             return status;
         }
 
-        public void setStatus(int status) {
+        public void setStatus(String status) {
             this.status = status;
         }
     }
 
-    public int getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(int totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

@@ -4,15 +4,21 @@ import cn.ucloud.common.pojo.BaseResponseResult;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * @description:
+ * @description: 挂载云硬盘 结果类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 13:58
  */
 public class AttachUDiskResult extends BaseResponseResult {
+    /**
+     * 主机id
+     */
     @SerializedName("UHostId")
     private String uHostId;
 
+    /**
+     * 云磁盘ID
+     */
     @SerializedName("UDiskId")
     private String uDiskId;
 

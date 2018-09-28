@@ -6,35 +6,35 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 重命名云硬盘 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 13:56
  */
 public class RenameUDiskParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * uDiskId 重命名的UDisk的Id
+     * require uDiskId 重命名的UDisk的Id
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
     /**
-     * uDiskName 重命名UDisk的name
+     * require uDiskName 重命名UDisk的name
      */
     @NotEmpty(message = "uDiskName can not be empty")
     @UcloudParam("UDiskName")

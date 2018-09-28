@@ -1,23 +1,12 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
-import com.google.gson.annotations.SerializedName;
 
 /**
- * @description:
+ * @description: 将EIP加入共享带宽 结果类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/27 16:54
  */
 public class AssociateEIPWithShareBandwidthResult extends BaseResponseResult {
-    @SerializedName("Request_uuid")
-    private String request_uuid;
-
-    public String getRequest_uuid() {
-        return request_uuid;
-    }
-
-    public void setRequest_uuid(String request_uuid) {
-        this.request_uuid = request_uuid;
-    }
 }

@@ -6,39 +6,39 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 设置UDisk数据方舟的状态 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 17:38
  */
 public class SetUDiskUDataArkModeParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * uDiskId 需要设置数据方舟的UDisk的Id
+     * require uDiskId 需要设置数据方舟的UDisk的Id
      */
     @NotEmpty(message = "uDiskId can not be empty")
     @UcloudParam("UDiskId")
     private String uDiskId;
 
     /**
-     * uDataArkMode 是否开启数据方舟，开启:"Yes", 不支持:"No"
+     * require uDataArkMode 是否开启数据方舟，开启:"Yes", 不支持:"No"
      */
     @NotEmpty(message = "uDataArkMode can not be empty")
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode = "No";
+    private String uDataArkMode;
 
 
     public SetUDiskUDataArkModeParam(@NotEmpty(message = "region can not be empty") String region,

@@ -7,49 +7,49 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * @description:
+ * @description: 获取云磁盘配置改变的价格 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 18:28
  */
 public class DescribeUDiskUpgradePriceParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
+     * require size 购买UDisk大小,单位:GB,范围[1~2000], 权限位控制可达8T,若需要请申请开通相关权限。
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private Integer size = 1;
+    private Integer size ;
 
     /**
-     * sourceId 升级目标UDisk ID
+     * require sourceId 升级目标UDisk ID
      */
     @NotEmpty(message = "sourceId can not be empty")
     @UcloudParam("SourceId")
     private String sourceId;
 
     /**
-     * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
+     * require uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
      */
     @NotEmpty(message = "uDataArkMode can not be empty")
     @UcloudParam("UDataArkMode")
-    private String uDataArkMode = "No";
+    private String uDataArkMode ;
 
     /**
-     * diskType 磁盘类型，SSDDataDisk:ssd数据盘,DataDisk:普通数据盘。默认为DataDisk
+     * optional diskType 磁盘类型，SSDDataDisk:ssd数据盘,DataDisk:普通数据盘。默认为DataDisk
      */
     @UcloudParam("DiskType")
     private String diskType;

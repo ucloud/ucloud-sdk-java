@@ -6,66 +6,66 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @description:
+ * @description: 克隆云硬盘 参数类
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/25 16:05
  */
 public class CloneUDiskParam extends BaseRequestParam {
     /**
-     * region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require region 地域，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
 
     /**
-     * zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
+     * require zone 可用区，参见https://docs.ucloud.cn/api/summary/regionlist.html
      */
     @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
 
     /**
-     * name 实例名称
+     * require name 实例名称
      */
     @NotEmpty(message = "name can not be empty")
     @UcloudParam("Name")
     private String name;
 
     /**
-     * sourceId 克隆父Disk的Id
+     * require sourceId 克隆父Disk的Id
      */
     @NotEmpty(message = "sourceId can not be empty")
     @UcloudParam("SourceId")
     private String sourceId;
 
     /**
-     * uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
+     * optional uDataArkMode 是否打开数据方舟, 打开"Yes",关闭"No", 默认关闭
      */
     @UcloudParam("UDataArkMode")
     private String uDataArkMode = "No";
 
     /**
-     * quantity 购买时长 默认: 1
+     * optional quantity 购买时长 默认: 1
      */
     @UcloudParam("Quantity")
-    private int quantity;
+    private Integer quantity;
 
     /**
-     * comment Disk注释
+     * optional comment Disk注释
      */
     @UcloudParam("Comment")
-    private int comment;
+    private Integer comment;
 
     /**
-     * chargeType Year, Month, Dynamic, Trial 默认: Dynamic
+     * optional chargeType Year, Month, Dynamic, Trial 默认: Dynamic
      */
     @UcloudParam("ChargeType")
     private String chargeType;
 
     /**
-     * couponId 使用的代金券id
+     * optional couponId 使用的代金券id
      */
     @UcloudParam("CouponId")
     private String couponId;
@@ -121,19 +121,19 @@ public class CloneUDiskParam extends BaseRequestParam {
         this.uDataArkMode = uDataArkMode;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public int getComment() {
+    public Integer getComment() {
         return comment;
     }
 
-    public void setComment(int comment) {
+    public void setComment(Integer comment) {
         this.comment = comment;
     }
 
