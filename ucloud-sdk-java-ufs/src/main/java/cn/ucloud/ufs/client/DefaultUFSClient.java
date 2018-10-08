@@ -91,13 +91,19 @@ public class DefaultUFSClient implements UFSClient {
     }
 
     @Override
-    public BaseResponseResult describeUFSVolumeWhiteList(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeWhiteListResult.class);
+        DescribeUFSVolumeWhiteListResult result = (DescribeUFSVolumeWhiteListResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeUFSVolumeWhiteList(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param, UcloudHandler<DescribeUFSVolumeWhiteListResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeWhiteListResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
