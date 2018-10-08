@@ -104,7 +104,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult extendUFSVolume(BaseRequestParam param) throws Exception;
+    ExtendUFSVolumeResult extendUFSVolume(ExtendUFSVolumeParam param) throws Exception;
 
     /**
      * 文件系统扩容
@@ -112,7 +112,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void extendUFSVolume(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void extendUFSVolume(ExtendUFSVolumeParam param, UcloudHandler<ExtendUFSVolumeResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -121,7 +121,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult initUFSVolumeWhiteList(BaseRequestParam param) throws Exception;
+    InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param) throws Exception;
 
     /**
      * 初始化文件系统白名单
@@ -129,7 +129,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void initUFSVolumeWhiteList(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param, UcloudHandler<InitUFSVolumeWhiteListResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -138,7 +138,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult removeUFSVolume(BaseRequestParam param) throws Exception;
+    RemoveUFSVolumeResult removeUFSVolume(RemoveUFSVolumeParam param) throws Exception;
 
     /**
      * 删除文件系统
@@ -146,7 +146,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void removeUFSVolume(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void removeUFSVolume(RemoveUFSVolumeParam param, UcloudHandler<RemoveUFSVolumeResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -155,7 +155,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult updateUFSVolumeInfo(BaseRequestParam param) throws Exception;
+    UpdateUFSVolumeInfoResult updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param) throws Exception;
 
     /**
      * 更改文件系统相关信息（名称／备注）
@@ -163,9 +163,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateUFSVolumeInfo(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
-
-
+    void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param, UcloudHandler<UpdateUFSVolumeInfoResult> handler, Boolean... asyncFlag);
 
     /**
      * 更新文件系统白名单
@@ -173,7 +171,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult updateUFSVolumeWhiteList(BaseRequestParam param) throws Exception;
+    UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param) throws Exception;
 
     /**
      * 更新文件系统白名单
@@ -181,6 +179,6 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateUFSVolumeWhiteList(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param, UcloudHandler<UpdateUFSVolumeWhiteListResult> handler, Boolean... asyncFlag);
 
 }
