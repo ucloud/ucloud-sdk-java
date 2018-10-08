@@ -10,6 +10,9 @@ import com.google.gson.annotations.SerializedName;
  * @date: 2018/10/8 14:55
  */
 public class InitUFSVolumeWhiteListResult extends BaseResponseResult {
+    /**
+     * 挂载点信息
+     */
     @SerializedName("MountPoint")
     private String mountPoint;
 
