@@ -33,6 +33,8 @@ public class UcloudHttpImpl implements UcloudHttp {
         final CloseableHttpClient client = HttpClients.createDefault();
         // 创建http GET请求
         String httpGetParamString = ParamConstructor.getHttpGetParamString(param, config.getAccount());
+        // todo 删除
+        System.out.println("[url]"+httpGetParamString);
         final HttpGet httpGet = new HttpGet(config.getApiServerAddr() + "?" + httpGetParamString);
         //result 对象
         Object responseResult = null;

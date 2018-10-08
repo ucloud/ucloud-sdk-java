@@ -1,8 +1,12 @@
 package cn.ucloud.ufs.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.common.http.UcloudHttp;
+import cn.ucloud.common.http.UcloudHttpImpl;
 import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.BaseResponseResult;
+import cn.ucloud.ufs.model.DescribeUFSVolumeParam;
+import cn.ucloud.ufs.model.DescribeUFSVolumeResult;
 import cn.ucloud.ufs.pojo.UFSConfig;
 
 /**
@@ -34,13 +38,19 @@ public class DefaultUFSClient implements UFSClient {
     }
 
     @Override
-    public BaseResponseResult describeUFSVolume(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeUFSVolumeResult describeUFSVolume(DescribeUFSVolumeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeResult.class);
+        DescribeUFSVolumeResult result = (DescribeUFSVolumeResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeUFSVolume(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void describeUFSVolume(DescribeUFSVolumeParam param, UcloudHandler<DescribeUFSVolumeResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

@@ -3,6 +3,7 @@ package cn.ucloud.ufs.client;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.BaseResponseResult;
+import cn.ucloud.ufs.model.*;
 
 /**
  * @description: 文件存储接口
@@ -34,7 +35,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult describeUFSVolume(BaseRequestParam param) throws Exception;
+    DescribeUFSVolumeResult describeUFSVolume(DescribeUFSVolumeParam param) throws Exception;
 
     /**
      * 获取文件系统列表
@@ -42,7 +43,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolume(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void describeUFSVolume(DescribeUFSVolumeParam param, UcloudHandler<DescribeUFSVolumeResult> handler, Boolean... asyncFlag);
 
 
     /**
