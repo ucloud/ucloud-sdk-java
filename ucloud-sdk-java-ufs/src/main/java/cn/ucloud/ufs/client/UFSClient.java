@@ -165,8 +165,6 @@ public interface UFSClient  {
      */
     void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param, UcloudHandler<UpdateUFSVolumeInfoResult> handler, Boolean... asyncFlag);
 
-
-
     /**
      * 更新文件系统白名单
      * @param param 参数对象
