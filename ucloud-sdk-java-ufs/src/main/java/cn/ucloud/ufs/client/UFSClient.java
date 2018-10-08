@@ -70,7 +70,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult describeUFSVolumeUpgradePrice(BaseRequestParam param) throws Exception;
+    DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param) throws Exception;
 
     /**
      * 文件系统扩容价格
@@ -78,7 +78,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolumeUpgradePrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param, UcloudHandler<DescribeUFSVolumeUpgradePriceResult> handler, Boolean... asyncFlag);
 
 
     /**

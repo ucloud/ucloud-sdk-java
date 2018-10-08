@@ -75,13 +75,19 @@ public class DefaultUFSClient implements UFSClient {
     }
 
     @Override
-    public BaseResponseResult describeUFSVolumeUpgradePrice(BaseRequestParam param) throws Exception {
-        return null;
+    public DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeUpgradePriceResult.class);
+        DescribeUFSVolumeUpgradePriceResult result = (DescribeUFSVolumeUpgradePriceResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
-    public void describeUFSVolumeUpgradePrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
-
+    public void describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param, UcloudHandler<DescribeUFSVolumeUpgradePriceResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeUpgradePriceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
