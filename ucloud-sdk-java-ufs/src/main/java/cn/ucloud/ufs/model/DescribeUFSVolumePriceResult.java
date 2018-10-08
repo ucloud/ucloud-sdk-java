@@ -18,8 +18,8 @@ public class DescribeUFSVolumePriceResult extends BaseResponseResult {
         /**
          * Year， Month， Dynamic，Trial
          */
-        @SerializedName("ChangeType")
-        private String changeType;
+        @SerializedName("ChargeType")
+        private String chargeType;
 
         /**
          * 价格 (单位: 分)
@@ -33,12 +33,12 @@ public class DescribeUFSVolumePriceResult extends BaseResponseResult {
         @SerializedName("ChargeName")
         private String chargeName;
 
-        public String getChangeType() {
-            return changeType;
+        public String getChargeType() {
+            return chargeType;
         }
 
-        public void setChangeType(String changeType) {
-            this.changeType = changeType;
+        public void setChargeType(String changeType) {
+            this.chargeType = changeType;
         }
 
         public BigDecimal getPrice() {
@@ -60,7 +60,7 @@ public class DescribeUFSVolumePriceResult extends BaseResponseResult {
         @Override
         public String toString() {
             return "UFSPrice{" +
-                    "changeType='" + changeType + '\'' +
+                    "changeType='" + chargeType + '\'' +
                     ", price=" + price +
                     ", chargeName='" + chargeName + '\'' +
                     '}';

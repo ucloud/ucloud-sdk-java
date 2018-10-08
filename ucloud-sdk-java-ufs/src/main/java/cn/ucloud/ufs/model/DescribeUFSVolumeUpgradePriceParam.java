@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description: 文件系统扩容价格 参数类
@@ -30,7 +31,7 @@ public class DescribeUFSVolumeUpgradePriceParam extends BaseRequestParam {
     /**
      * require 文件系统大小，大小1024G ~ 25600G (1T ~ 25T)，必须为1024的整数倍。
      */
-    @NotEmpty(message = "size can not be null")
+    @NotNull(message = "size can not be null")
     @UcloudParam("Size")
     private Integer size;
 

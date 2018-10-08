@@ -24,7 +24,7 @@ public class DescribeUFSVolumeWhiteListTest {
         client = new DefaultUFSClient(new UFSConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeUFSVolumeWhiteListParam("cn-bj2","");
+        param = new DescribeUFSVolumeWhiteListParam("cn-bj2","ufs-qx1waw");
         param.setProjectId("org-4nfe1i");
     }
 
