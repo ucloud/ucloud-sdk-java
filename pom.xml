@@ -15,6 +15,7 @@
     <module>ucloud-sdk-java-udisk</module>
     <module>ucloud-sdk-java-vpc</module>
     <module>ucloud-sdk-java-common</module>
+      <module>ucloud-sdk-java-ufs</module>
   </modules>
 
   <name>ucloud-sdk-java</name>
