@@ -18,7 +18,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult createUFSVolume(BaseRequestParam param) throws Exception;
+    CreateUFSVolumeResult createUFSVolume(CreateUFSVolumeParam param) throws Exception;
 
     /**
      * 创建文件系统
@@ -26,7 +26,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createUFSVolume(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void createUFSVolume(CreateUFSVolumeParam param, UcloudHandler<CreateUFSVolumeResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -52,7 +52,7 @@ public interface UFSClient  {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult describeUFSVolumePrice(BaseRequestParam param) throws Exception;
+    DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param) throws Exception;
 
     /**
      * 获取文件系统价格
@@ -60,7 +60,7 @@ public interface UFSClient  {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolumePrice(BaseRequestParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void describeUFSVolumePrice(DescribeUFSVolumePriceParam param, UcloudHandler<DescribeUFSVolumePriceResult> handler, Boolean... asyncFlag);
 
 
 
