@@ -1,10 +1,8 @@
 package cn.ucloud.ulb.client;
 
-import cn.ucloud.ulb.client.DefaultULBClient;
-import cn.ucloud.ulb.client.ULBClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.model.UnbindSSLParam;
 import cn.ucloud.ulb.model.UnbindSSLResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,13 +23,12 @@ public class UnbindSSLTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UnbindSSLParam("cn-bj2","b5e76c15-ab56-4cf4-8c7c-45defa2302bf","vserverid","sslid");
+        param = new UnbindSSLParam("cn-bj2","ulb-1gtyz4","vserver-asrpxv","ssl-r2bxbf");
         param.setProjectId("org-4nfe1i");
     }
 
     @Test
     public void unbindSSL() {
-        // todo 测试
         try {
             UnbindSSLResult unbindSSLResult = client.unbindSSL(param);
             System.out.println(unbindSSLResult);
