@@ -1,10 +1,8 @@
 package cn.ucloud.uhost.client;
 
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.model.ImportCustomImageParam;
 import cn.ucloud.uhost.model.ImportCustomImageResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +30,7 @@ public class ImportCustomImageTest {
 
     @Test
     public void importCustomImage() {
-        // todo 测试
+        // todo 测试 依赖UFILE
         try {
             ImportCustomImageResult importCustomImageResult = client.importCustomImage(param);
             System.out.println(importCustomImageResult);

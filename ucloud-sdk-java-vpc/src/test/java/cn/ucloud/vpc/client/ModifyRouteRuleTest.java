@@ -37,7 +37,7 @@ public class ModifyRouteRuleTest {
     }
     @Test
     public void modifyRouteRule() {
-        // todo 测试
+        // todo 测试 未上线
         try {
             ModifyRouteRuleResult modifyRouteRuleResult = client.modifyRouteRule(param);
             System.out.println(modifyRouteRuleResult);

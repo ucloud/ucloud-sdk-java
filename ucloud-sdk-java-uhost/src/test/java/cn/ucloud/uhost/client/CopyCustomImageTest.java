@@ -1,8 +1,8 @@
 package cn.ucloud.uhost.client;
 
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.uhost.model.TerminateCustomImageParam;
-import cn.ucloud.uhost.model.TerminateCustomImageResult;
+import cn.ucloud.uhost.model.CopyCustomImageParam;
+import cn.ucloud.uhost.model.CopyCustomImageResult;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,28 +10,28 @@ import org.junit.Test;
 /**
  * @description:
  * @author: codezhang
- * @date: 2018-09-18 16:58
+ * @date: 2018-10-09 19:54
  **/
-public class TerminateCustomImageTest {
+public class CopyCustomImageTest {
 
     private UhostClient client;
 
-    private TerminateCustomImageParam param;
+    private CopyCustomImageParam param;
 
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new TerminateCustomImageParam("cn-bj2","uimage-tjbrnz");
+        param = new CopyCustomImageParam("cn-bj2","uimage-4h2rc2","org-4nfe1i");
         param.setProjectId("org-4nfe1i");
     }
 
     @Test
-    public void terminateCustomImage() {
+    public void copyCustomImage() {
         try {
-            TerminateCustomImageResult terminateCustomImageResult = client.terminateCustomImage(param);
-            System.out.println(terminateCustomImageResult);
+            CopyCustomImageResult copyCustomImageResult = client.copyCustomImage(param);
+            System.out.println(copyCustomImageResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
