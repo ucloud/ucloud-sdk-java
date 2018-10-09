@@ -1,10 +1,8 @@
 package cn.ucloud.ulb.client;
 
-import cn.ucloud.ulb.client.DefaultULBClient;
-import cn.ucloud.ulb.client.ULBClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.model.BindSSLParam;
 import cn.ucloud.ulb.model.BindSSLResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +30,6 @@ public class BindSSLTest {
 
     @Test
     public void bindSSL() {
-        //todo 测试
         try {
             BindSSLResult bindSSLResult = client.bindSSL(param);
             System.out.println(bindSSLResult);

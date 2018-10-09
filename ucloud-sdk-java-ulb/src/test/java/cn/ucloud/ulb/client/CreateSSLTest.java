@@ -1,10 +1,8 @@
 package cn.ucloud.ulb.client;
 
-import cn.ucloud.ulb.client.DefaultULBClient;
-import cn.ucloud.ulb.client.ULBClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.model.CreateSSLParam;
 import cn.ucloud.ulb.model.CreateSSLResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,8 +25,8 @@ public class CreateSSLTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new CreateSSLParam("cn-bj2","ssl-sdk-java-test");
-        param.setPrivateKey("");
-        param.setSslContent("");
+        param.setPrivateKey("保持.key文件格式 注意保持换行");
+        param.setSslContent("保持.crt文件格式 注意保持换行");
         param.setProjectId("org-4nfe1i");
     }
 
@@ -36,7 +34,6 @@ public class CreateSSLTest {
 
     @Test
     public void createSSL() {
-        // todo 测试
         try {
             CreateSSLResult ssl = client.createSSL(param);
             System.out.println(ssl);

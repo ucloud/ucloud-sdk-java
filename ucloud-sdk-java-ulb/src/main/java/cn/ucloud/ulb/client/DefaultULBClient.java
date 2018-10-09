@@ -315,7 +315,7 @@ public class DefaultULBClient implements ULBClient {
     @Override
     public CreateSSLResult createSSL(CreateSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateSSLResult.class);
-        CreateSSLResult result = (CreateSSLResult) http.doGet(param, config, null);
+        CreateSSLResult result = (CreateSSLResult) http.doPost(param, config, null);
         return result;
     }
 

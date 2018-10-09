@@ -2,11 +2,15 @@ package cn.ucloud.ulb.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @description:  创建SSL证书 参数类
+ * @description: 创建SSL证书 参数类
  * 创建SSL证书，可以把整个 Pem 证书内容传过来，或者把证书、私钥、CA证书分别传过来
  * @author: codezhang
  * @date: 2018-09-19 18:57
@@ -37,20 +41,34 @@ public class CreateSSLParam extends BaseRequestParam {
     /**
      * optional SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书
      */
-    @UcloudParam("SSLContent")
+    //@UcloudParam("SSLContent")
     private String sslContent;
+
+    /**
+     * optional 加密证书的私钥
+     */
+    //@UcloudParam("privateKey")
+    private String privateKey;
+
+    @UcloudParam("SSLContent")
+    public List<Param> checkSSLContent() throws Exception {
+        List<Param> list = new ArrayList<>();
+        if (sslContent != null && sslContent.length() > 0) {
+            if (privateKey.length() <= 0){
+                throw new ValidationException("privateKey can not be empty with sslContent is not empty");
+            }else {
+                list.add(new Param("SSLContent",privateKey+sslContent));
+            }
+        }
+        return list;
+    }
+
 
     /**
      * optional 用户的证书
      */
     @UcloudParam("UserCert")
     private String userCert;
-
-    /**
-     * optional 加密证书的私钥
-     */
-    @UcloudParam("PrivateKey")
-    private String privateKey;
 
 
     /**
