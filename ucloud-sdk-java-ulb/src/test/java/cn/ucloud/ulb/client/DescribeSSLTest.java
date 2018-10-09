@@ -1,10 +1,8 @@
 package cn.ucloud.ulb.client;
 
-import cn.ucloud.ulb.client.DefaultULBClient;
-import cn.ucloud.ulb.client.ULBClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.model.DescribeSSLParam;
 import cn.ucloud.ulb.model.DescribeSSLResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +30,6 @@ public class DescribeSSLTest {
 
     @Test
     public void describeSSL() {
-        // todo 测试
         try {
             DescribeSSLResult describeSSLResult = client.describeSSL(param);
             System.out.println(describeSSLResult);

@@ -84,104 +84,144 @@ public class DescribeSSLResult extends BaseResponseResult {
     }
 
 
-    /**
-     * SSL证书的Id
-     */
-    @SerializedName("SSLId")
-    private String sslId;
+    public static class SSLInfo{
+        /**
+         * SSL证书的Id
+         */
+        @SerializedName("SSLId")
+        private String sslId;
+
+
+        /**
+         * SSL证书的名字
+         */
+        @SerializedName("SSLName")
+        private String sslName;
+
+        /**
+         * SSL证书类型，暂时只有 Pem 一种类型
+         */
+        @SerializedName("SSLType")
+        private String sslType;
+
+        /**
+         * SSL证书的内容
+         */
+        @SerializedName("SSLContent")
+        private String sslContent;
+
+        /**
+         * 创建时间
+         */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /**
+         * SSL证书绑定到的对象
+         */
+        @SerializedName("BindedTargetSet")
+        private List<SSLBindedTarget> sslBindedTargets;
+
+        public String getSslId() {
+            return sslId;
+        }
+
+        public void setSslId(String sslId) {
+            this.sslId = sslId;
+        }
+
+        public String getSslName() {
+            return sslName;
+        }
+
+        public void setSslName(String sslName) {
+            this.sslName = sslName;
+        }
+
+        public String getSslType() {
+            return sslType;
+        }
+
+        public void setSslType(String sslType) {
+            this.sslType = sslType;
+        }
+
+        public String getSslContent() {
+            return sslContent;
+        }
+
+        public void setSslContent(String sslContent) {
+            this.sslContent = sslContent;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public List<SSLBindedTarget> getSslBindedTargets() {
+            return sslBindedTargets;
+        }
+
+        public void setSslBindedTargets(List<SSLBindedTarget> sslBindedTargets) {
+            this.sslBindedTargets = sslBindedTargets;
+        }
+
+
+        @Override
+        public String toString() {
+            return "SSLInfo{" +
+                    "sslId='" + sslId + '\'' +
+                    ", sslName='" + sslName + '\'' +
+                    ", sslType='" + sslType + '\'' +
+                    ", sslContent='" + sslContent + '\'' +
+                    ", createTime=" + createTime +
+                    ", sslBindedTargets=" + sslBindedTargets +
+                    '}';
+        }
+    }
 
 
     /**
-     * SSL证书的名字
+     * 满足条件的SSL证书总数
      */
-    @SerializedName("SSLName")
-    private String sslName;
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
 
     /**
-     * SSL证书类型，暂时只有 Pem 一种类型
+     * SSL证书详细信息，具体结构见 ULBSSLSet
      */
-    @SerializedName("SSLType")
-    private String sslType;
+    @SerializedName("DataSet")
+    private List<SSLInfo> sslInfos;
 
-    /**
-     * SSL证书的内容
-     */
-    @SerializedName("SSLContent")
-    private String sslContent;
+    public Integer getTotalCount() {
+        return totalCount;
+    }
 
-    /**
-     * 创建时间
-     */
-    @SerializedName("CreateTime")
-    private Integer createTime;
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
-    /**
-     * SSL证书绑定到的对象
-     */
-    @SerializedName("SSLBindedTargetSet")
-    private List<SSLBindedTarget> sslBindedTargets;
+    public List<SSLInfo> getSslInfos() {
+        return sslInfos;
+    }
 
+    public void setSslInfos(List<SSLInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+    }
 
     @Override
     public String toString() {
         return "DescribeSSLResult{" +
-                "sslId='" + sslId + '\'' +
-                ", sslName='" + sslName + '\'' +
-                ", sslType='" + sslType + '\'' +
-                ", sslContent='" + sslContent + '\'' +
-                ", createTime=" + createTime +
-                ", sslBindedTargets=" + sslBindedTargets +
+                "totalCount=" + totalCount +
+                ", sslInfos=" + sslInfos +
                 ", retCode=" + retCode +
                 ", action='" + action + '\'' +
                 ", message='" + message + '\'' +
                 '}';
-    }
-
-    public String getSslId() {
-        return sslId;
-    }
-
-    public void setSslId(String sslId) {
-        this.sslId = sslId;
-    }
-
-    public String getSslName() {
-        return sslName;
-    }
-
-    public void setSslName(String sslName) {
-        this.sslName = sslName;
-    }
-
-    public String getSslType() {
-        return sslType;
-    }
-
-    public void setSslType(String sslType) {
-        this.sslType = sslType;
-    }
-
-    public String getSslContent() {
-        return sslContent;
-    }
-
-    public void setSslContent(String sslContent) {
-        this.sslContent = sslContent;
-    }
-
-    public Integer getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Integer createTime) {
-        this.createTime = createTime;
-    }
-
-    public List<SSLBindedTarget> getSslBindedTargets() {
-        return sslBindedTargets;
-    }
-
-    public void setSslBindedTargets(List<SSLBindedTarget> sslBindedTargets) {
-        this.sslBindedTargets = sslBindedTargets;
     }
 }
