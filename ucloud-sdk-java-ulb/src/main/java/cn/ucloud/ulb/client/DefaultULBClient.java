@@ -187,20 +187,19 @@ public class DefaultULBClient implements ULBClient {
     @Override
     public AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception {
         // 测试未通过
-        //UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
-        //AllocateBackendBatchResult result = (AllocateBackendBatchResult) http.doGet(param, config, null);
-        //return result;
-        return null;
+        UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
+        AllocateBackendBatchResult result = (AllocateBackendBatchResult) http.doGet(param, config, null);
+        return result;
     }
 
     @Override
     public void allocateBackendBatch(AllocateBackendBatchParam param, UcloudHandler<AllocateBackendBatchResult> handler, Boolean... asyncFlag) {
         // 测试未通过
-        //UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
-        //try {
-        //    http.doGet(param, config, handler, asyncFlag);
-        //} catch (Exception e) {
-        //}
+        UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
