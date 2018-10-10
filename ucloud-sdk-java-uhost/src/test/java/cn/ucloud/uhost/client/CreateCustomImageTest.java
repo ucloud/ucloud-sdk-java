@@ -1,7 +1,6 @@
 package cn.ucloud.uhost.client;
 
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+
 import cn.ucloud.uhost.model.CreateCustomImageParam;
 import cn.ucloud.uhost.model.CreateCustomImageResult;
 import cn.ucloud.common.pojo.Account;

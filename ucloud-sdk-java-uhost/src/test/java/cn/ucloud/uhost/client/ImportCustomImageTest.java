@@ -23,14 +23,13 @@ public class ImportCustomImageTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ImportCustomImageParam("cn-bj2","java-sdk-import-test","",
-                "","","",true);
+        param = new ImportCustomImageParam("cn-bj2","java-sdk-import-test","ufile-url",
+                "Other","Other","qcow2",true);
         param.setProjectId("org-4nfe1i");
     }
 
     @Test
     public void importCustomImage() {
-        // todo 测试 依赖UFILE
         try {
             ImportCustomImageResult importCustomImageResult = client.importCustomImage(param);
             System.out.println(importCustomImageResult);

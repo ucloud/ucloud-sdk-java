@@ -38,13 +38,13 @@ public class AllocateBackendBatchParam extends BaseRequestParam {
 
         /**
          * optional
-         * 所添加的后端资源服务端口，取值范围[1-65535]，默认80
+         * 所添加的后端资源服务端口，取值范围[1-65535]
          */
         private Integer port;
 
         /**
          * optional
-         * 后端实例状态开关，枚举值： 1：启用； 0：禁用 默认为启用
+         * 后端实例状态开关，枚举值： 1：启用； 0：禁用
          */
         private Integer enabled;
 
@@ -54,9 +54,11 @@ public class AllocateBackendBatchParam extends BaseRequestParam {
          */
         private String ip;
 
-        public Backend(String resourceId, String resourceType,String ip) {
+        public Backend(String resourceId, String resourceType,Integer port,Integer enabled,String ip) {
             this.resourceId = resourceId;
             this.resourceType = resourceType;
+            this.port = port;
+            this.enabled = enabled;
             this.ip = ip;
         }
 
@@ -150,12 +152,12 @@ public class AllocateBackendBatchParam extends BaseRequestParam {
                 if (backend.port != null){
                     valueBuild.append("|"+backend.port);
                 }else {
-                    valueBuild.append("|80");
+                    throw new ValidationException("backend["+i+"].port can not be null");
                 }
                 if (backend.enabled != null){
                     valueBuild.append("|"+backend.enabled);
                 }else {
-                    valueBuild.append("|1");
+                    throw new ValidationException("backend["+i+"].enabled can not be null");
                 }
                 if (backend.ip != null && backend.ip.length() > 0){
                     valueBuild.append("|"+backend.ip);

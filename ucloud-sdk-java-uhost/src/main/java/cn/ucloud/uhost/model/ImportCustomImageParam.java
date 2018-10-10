@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description: 导入镜像 参数对象
@@ -63,7 +64,7 @@ public class ImportCustomImageParam extends BaseRequestParam {
      * require 是否授权。必须填true
      */
     @UcloudParam("Auth")
-    @NotEmpty(message = "auth can not ne null")
+    @NotNull(message = "auth can not ne null")
     private Boolean auth;
 
     /**

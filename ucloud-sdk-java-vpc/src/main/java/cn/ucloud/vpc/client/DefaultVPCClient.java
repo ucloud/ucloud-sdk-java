@@ -298,18 +298,21 @@ public class DefaultVPCClient implements VPCClient {
 
     @Override
     public ModifyRouteRuleResult modifyRouteRule(ModifyRouteRuleParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
-        ModifyRouteRuleResult result = (ModifyRouteRuleResult) http.doGet(param, config, null);
-        return result;
+        // 未上线
+        return null;
+        //UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
+        //ModifyRouteRuleResult result = (ModifyRouteRuleResult) http.doGet(param, config, null);
+        //return result;
     }
 
     @Override
     public void modifyRouteRule(ModifyRouteRuleParam param, UcloudHandler<ModifyRouteRuleResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
+        // 未上线
+        //UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
+        //try {
+        //   http.doGet(param, config, handler, asyncFlag);
+        //} catch (Exception e) {
+        //}
     }
 
     @Override
