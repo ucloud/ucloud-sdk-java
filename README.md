@@ -13,7 +13,6 @@ ucloud开发者工具套件（SDK）。<br>
 ### 使用准备
 - 需要一个UCloud的账号以及一对PrivateKey、PublicKey[点此获取](https://console.ucloud.cn/uapi/apikey)
   
-  说明：如果获取到的PublicKey中包含"/"，则需要重新获取。
 
 ### sdk获取
 方式一、maven仓库（暂时无效）

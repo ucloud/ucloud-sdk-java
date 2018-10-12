@@ -7,7 +7,7 @@
   <groupId>cn.ucloud</groupId>
   <artifactId>ucloud-sdk-java</artifactId>
   <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.6-release</version>
   <modules>
     <module>ucloud-sdk-java-uhost</module>
     <module>ucloud-sdk-java-unet</module>
@@ -15,11 +15,52 @@
     <module>ucloud-sdk-java-udisk</module>
     <module>ucloud-sdk-java-vpc</module>
     <module>ucloud-sdk-java-common</module>
-      <module>ucloud-sdk-java-ufs</module>
+    <module>ucloud-sdk-java-ufs</module>
   </modules>
 
   <name>ucloud-sdk-java</name>
   <url>http://www.ucloud.cn</url>
+
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/ucloud/ucloud-sdk-java</url>
+    <connection>https://github.com/ucloud/ucloud-sdk-java.git</connection>
+    <developerConnection>https://github.com/ucloud/ucloud-sdk-java</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>zhangjianhui</name>
+      <email>jianhui.zhang@ucloud.cn</email>
+      <url>https://github.com/ucloud/ucloud-sdk-java</url>
+    </developer>
+    <developer>
+      <name>yinjun</name>
+      <email>joshua.yin@ucloud.cn</email>
+      <url>https://github.com/ucloud/ucloud-sdk-java</url>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+      <snapshotRepository>
+        <id>sonatype-nexus-ucloud</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      </snapshotRepository>
+      <repository>
+        <id>sonatype-nexus-ucloud</id>
+        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      </repository>
+  </distributionManagement>
+
+
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -108,8 +149,6 @@
           <skipTests>true</skipTests>
         </configuration>
       </plugin>
-
-
       <!--配置生成源码包-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

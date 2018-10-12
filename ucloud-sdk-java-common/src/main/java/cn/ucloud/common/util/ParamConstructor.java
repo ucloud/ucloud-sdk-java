@@ -44,6 +44,7 @@ public class ParamConstructor {
             }
             builder.append(param.getParamKey() + "=" + param.getParamValue() + "&");
         }
+
         // 设置签名
         builder.append("Signature" + "=" + signature);
         return builder.toString();
