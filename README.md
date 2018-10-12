@@ -15,7 +15,14 @@ ucloud开发者工具套件（SDK）。<br>
   
 
 ### sdk获取
-方式一、maven仓库（暂时无效）
+方式一、maven仓库
+
+    以使用udisk为例：
+    <dependency>
+      <groupId>cn.ucloud</groupId>
+      <artifactId>ucloud-sdk-java-udisk</artifactId>
+      <version>0.6-release</version>
+    </dependency>
 
 方式二、官网下载（暂时无效）
 
