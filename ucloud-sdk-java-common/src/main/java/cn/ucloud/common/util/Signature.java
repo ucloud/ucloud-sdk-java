@@ -136,10 +136,7 @@ public class Signature {
             int num = params.length;
             for (int i = 0; i < num; i++) {
                 try {
-                    // PublicKey 参数不编码
-                    if (!"PublicKey".equals(params[i].getParamKey())) {
-                        params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
-                    }
+                    params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
@@ -157,9 +154,7 @@ public class Signature {
         if (params != null) {
             for (Param param : params) {
                 try {
-                    if (!"PublicKey".equals(param.getParamKey())) {
-                        param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
-                    }
+                    param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
