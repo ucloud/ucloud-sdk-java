@@ -21,7 +21,7 @@ ucloud开发者工具套件（SDK）。<br>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.6.1-release</version>
+      <version>0.6.2-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -115,7 +115,7 @@ public class Main {
 }
 ```
 
-### 业务集成
+### 业务集成(暂不支持)
 
 在ucloud-sdk-java-integration中，对于一些常见的业务流程或者一些有着特定前置条件的接口，<br>
 我们对这些流程进行了集成封装处理。你可以直接调用这些封装好了的接口来完成目标操作，而不<br>需要关心业务细节或者那些特定前置条件。
@@ -126,3 +126,14 @@ uhost：
 - TerminateUHostInstanceIntegration 删除云主机
 
 
+### 版本更新历史
+- 0.6-release
+
+    第一个正式版本，支持了udisk,ufile,uhost,vpc,unet,ulb的产品服务调用
+- 0.6.1-release
+
+    修复了ucloud-sdk-java-common中存在的publicKey编码问题
+- 0.6.2-release
+
+    支持获取基础数据的接口GetRegion和GetProductList
+    

@@ -16,7 +16,7 @@
         <dependency>
             <groupId>cn.ucloud</groupId>
             <artifactId>ucloud-sdk-java-common</artifactId>
-            <version>0.6.1-release</version>
+            <version>0.6.2-release</version>
         </dependency>
 
         <dependency>
