@@ -23,33 +23,33 @@ public class DefaultUcloudClient implements UcloudClient {
     }
 
     @Override
-    public GetRegionResult getRegion(GetRegionParam param) throws Exception {
+    public GetRegionResult getRegion() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
-        GetRegionResult result = (GetRegionResult) http.doGet(param, config, null);
+        GetRegionResult result = (GetRegionResult) http.doGet(new GetRegionParam(), config, null);
         return result;
     }
 
     @Override
-    public void getRegion(GetRegionParam param, UcloudHandler<GetRegionResult> handler, Boolean... asyncFlag) {
+    public void getRegion( UcloudHandler<GetRegionResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doGet(new GetRegionParam(), config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
 
     @Override
-    public GetProjectListResult getProductList(GetProjectListParam param) throws Exception {
+    public GetProjectListResult getProductList() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
-        GetProjectListResult result = (GetProjectListResult) http.doGet(param, config, null);
+        GetProjectListResult result = (GetProjectListResult) http.doGet(new GetProjectListParam(), config, null);
         return result;
     }
 
     @Override
-    public void getProductList(GetProjectListParam param, UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag) {
+    public void getProductList(UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doGet(new GetProjectListParam(), config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

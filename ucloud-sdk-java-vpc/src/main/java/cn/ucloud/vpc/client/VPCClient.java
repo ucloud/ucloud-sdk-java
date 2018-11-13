@@ -1,5 +1,6 @@
 package cn.ucloud.vpc.client;
 
+import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.vpc.model.*;
 
@@ -9,7 +10,7 @@ import cn.ucloud.vpc.model.*;
  * @date: 2018-09-21 10:56
  **/
 
-public interface VPCClient {
+public interface VPCClient extends UcloudClient {
 
     /**
      * 创建VPC

@@ -1,5 +1,6 @@
 package cn.ucloud.vpc.client;
 
+import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
@@ -12,7 +13,7 @@ import cn.ucloud.vpc.pojo.VPCConfig;
  * @date: 2018-09-21 11:22
  **/
 
-public class DefaultVPCClient implements VPCClient {
+public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
 
     /**
      * VPC环境配置
@@ -20,6 +21,7 @@ public class DefaultVPCClient implements VPCClient {
     private VPCConfig config;
 
     public DefaultVPCClient(VPCConfig config) {
+        super(config);
         this.config = config;
     }
 

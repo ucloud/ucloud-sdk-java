@@ -1,5 +1,6 @@
 package cn.ucloud.unet.client;
 
+import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.unet.model.*;
@@ -10,7 +11,7 @@ import cn.ucloud.unet.model.*;
  * @date: 2018-09-25 11:24
  **/
 
-public interface UnetClient {
+public interface UnetClient extends UcloudClient {
 
     /**
      * 申请弹性IP

@@ -1,5 +1,6 @@
 package cn.ucloud.unet.client;
 
+import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
@@ -13,11 +14,12 @@ import cn.ucloud.unet.pojo.UnetConfig;
  * @date: 2018-09-25 18:57
  **/
 
-public class DefaultUnetClient implements UnetClient {
+public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient {
 
     private UnetConfig config;
 
     public DefaultUnetClient(UnetConfig config) {
+        super(config);
         this.config = config;
     }
 

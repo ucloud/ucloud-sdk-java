@@ -1,5 +1,6 @@
 package cn.ucloud.ulb.client;
 
+import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.ulb.model.*;
 
@@ -9,7 +10,7 @@ import cn.ucloud.ulb.model.*;
  * @date: 2018-09-19 09:17
  **/
 
-public interface ULBClient {
+public interface ULBClient extends UcloudClient {
 
     /**
      * 创建ULB

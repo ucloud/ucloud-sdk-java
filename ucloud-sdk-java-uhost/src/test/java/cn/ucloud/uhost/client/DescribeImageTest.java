@@ -1,10 +1,8 @@
 package cn.ucloud.uhost.client;
 
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.model.DescribeImageParam;
 import cn.ucloud.uhost.model.DescribeImageResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;

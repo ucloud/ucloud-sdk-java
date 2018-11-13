@@ -1,5 +1,6 @@
 package cn.ucloud.udisk.client;
 
+import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.udisk.model.*;
 
@@ -9,7 +10,7 @@ import cn.ucloud.udisk.model.*;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/17 19:07
  */
-public interface UdiskClient {
+public interface UdiskClient extends UcloudClient {
 
     /**
      * 获取云硬盘价格-DescribeUDiskPrice

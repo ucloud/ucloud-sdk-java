@@ -1,5 +1,6 @@
 package cn.ucloud.uhost.client;
 
+import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
@@ -12,7 +13,7 @@ import cn.ucloud.uhost.pojo.UhostConfig;
  * @date: 2018-09-14 10:57
  **/
 
-public class DefaultUhostClient implements UhostClient {
+public class DefaultUhostClient extends DefaultUcloudClient implements UhostClient {
 
     /**
      * uhost配置
@@ -21,6 +22,7 @@ public class DefaultUhostClient implements UhostClient {
 
 
     public DefaultUhostClient(UhostConfig config) {
+        super(config);
         this.config = config;
     }
 

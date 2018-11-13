@@ -1,5 +1,6 @@
 package cn.ucloud.ulb.client;
 
+import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
@@ -12,7 +13,7 @@ import cn.ucloud.ulb.pojo.ULBConfig;
  * @date: 2018-09-19 09:35
  **/
 
-public class DefaultULBClient implements ULBClient {
+public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
 
     /**
      * ULB 配置
@@ -20,6 +21,7 @@ public class DefaultULBClient implements ULBClient {
     private ULBConfig config;
 
     public DefaultULBClient(ULBConfig config) {
+        super(config);
         this.config = config;
     }
 

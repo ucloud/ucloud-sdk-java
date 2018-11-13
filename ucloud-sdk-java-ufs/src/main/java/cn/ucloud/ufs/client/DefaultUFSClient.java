@@ -1,10 +1,9 @@
 package cn.ucloud.ufs.client;
 
+import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.ufs.model.*;
 import cn.ucloud.ufs.pojo.UFSConfig;
 
@@ -14,7 +13,7 @@ import cn.ucloud.ufs.pojo.UFSConfig;
  * @date: 2018-10-08 14:32
  **/
 
-public class DefaultUFSClient implements UFSClient {
+public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
 
     /**
      * UFS配置参数
@@ -22,6 +21,7 @@ public class DefaultUFSClient implements UFSClient {
     private UFSConfig config;
 
     public DefaultUFSClient(UFSConfig config) {
+        super(config);
         this.config = config;
     }
 

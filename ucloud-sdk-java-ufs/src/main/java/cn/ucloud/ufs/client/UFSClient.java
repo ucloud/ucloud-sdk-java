@@ -1,8 +1,7 @@
 package cn.ucloud.ufs.client;
 
+import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.ufs.model.*;
 
 /**
@@ -10,7 +9,7 @@ import cn.ucloud.ufs.model.*;
  * @author: codezhang
  * @date: 2018-10-08 14:31
  **/
-public interface UFSClient  {
+public interface UFSClient extends UcloudClient {
 
     /**
      * 创建文件系统

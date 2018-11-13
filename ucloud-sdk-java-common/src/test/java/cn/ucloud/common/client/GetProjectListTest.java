@@ -1,6 +1,5 @@
 package cn.ucloud.common.client;
 
-import cn.ucloud.common.model.GetProjectListParam;
 import cn.ucloud.common.model.GetProjectListResult;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.common.pojo.UcloudConfig;
@@ -15,21 +14,17 @@ import org.junit.Test;
 public class GetProjectListTest {
 
     private UcloudClient client;
-
-    private GetProjectListParam param;
-
     @Before
     public void initData() {
         client = new DefaultUcloudClient(new UcloudConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new GetProjectListParam();
     }
 
     @Test
     public void getProductList() {
         try {
-            GetProjectListResult productList = client.getProductList(param);
+            GetProjectListResult productList = client.getProductList();
             System.out.println(productList);
         } catch (Exception e) {
             e.printStackTrace();

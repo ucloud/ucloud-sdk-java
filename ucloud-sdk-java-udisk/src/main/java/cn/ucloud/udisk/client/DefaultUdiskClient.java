@@ -1,5 +1,6 @@
 package cn.ucloud.udisk.client;
 
+import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
@@ -12,11 +13,12 @@ import cn.ucloud.udisk.pojo.UdiskConfig;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/18 10:37
  */
-public class DefaultUdiskClient implements UdiskClient {
+public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClient  {
 
     private UdiskConfig config;
 
     public DefaultUdiskClient(UdiskConfig config) {
+        super(config);
         this.config = config;
     }
 
