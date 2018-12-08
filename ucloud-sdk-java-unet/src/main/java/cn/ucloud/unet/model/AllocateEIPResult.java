@@ -98,6 +98,14 @@ public class AllocateEIPResult extends BaseResponseResult {
     @SerializedName("EIPSet")
     private List<EIP> eips;
 
+    public List<EIP> getEips() {
+        return eips;
+    }
+
+    public void setEips(List<EIP> eips) {
+        this.eips = eips;
+    }
+
     @Override
     public String toString() {
         return "AllocateEIPResult{" +
