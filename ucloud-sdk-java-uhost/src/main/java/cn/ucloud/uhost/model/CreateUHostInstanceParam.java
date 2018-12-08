@@ -151,7 +151,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         if ("Password".equals(this.getLoginMode())) {
             if (this.getPassword() != null && !"".equals(this.getPassword())) {
                 try {
-                    list.add(new Param("LoginMode","Password"));
+                    //list.add(new Param("LoginMode","Password"));
                     list.add(new Param("Password",  new String( Base64.encodeBase64((password).getBytes("utf-8")))));
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -281,7 +281,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         List<Param> list = new ArrayList<>();
         if ("KeyPair".equals(this.getLoginMode())) {
             if (this.getKeyPair() != null && this.getKeyPair().length() > 0) {
-                list.add(new Param("LoginMode","KeyPair"));
+                //list.add(new Param("LoginMode","KeyPair"));
                 list.add(new Param("KeyPair", this.getKeyPair()));
             } else {
                 throw new ValidationException("keyPair can not be empty with loginModel equals KeyPair");

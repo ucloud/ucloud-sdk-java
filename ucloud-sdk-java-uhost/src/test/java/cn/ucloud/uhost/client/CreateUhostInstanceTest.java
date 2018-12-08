@@ -1,13 +1,14 @@
 package cn.ucloud.uhost.client;
 
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.model.CreateUHostInstanceParam;
 import cn.ucloud.uhost.model.CreateUHostInstanceResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @description:
@@ -26,12 +27,16 @@ public class CreateUhostInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
-        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-02","uimage-cjswb5");
+        CreateUHostInstanceParam.UhostDisk disk = new CreateUHostInstanceParam.UhostDisk(25,"LOCAL_SSD",false);
+        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-03","uimage-m1proq");
         param.setName("java-sdk-test-aaa");
         param.setPassword("123456ab");
-        param.setProjectId("org-4nfe1i");
-        param.setVpcId("uvnet-dbboih");
-        param.setSubnetId("subnet-us0fsb");
+        param.setProjectId("org-izug1m");
+        param.setLoginMode("Password");
+        List diskList =new ArrayList<CreateUHostInstanceParam.UhostDisk>();
+        param.setDisks(diskList);
+        //param.setVpcId("uvnet-dbboih");
+        //param.setSubnetId("subnet-us0fsb");
     }
 
 
