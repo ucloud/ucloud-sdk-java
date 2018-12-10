@@ -1,10 +1,8 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.unet.model.AllocateEIPParam;
 import cn.ucloud.unet.model.AllocateEIPResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.unet.pojo.UnetConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,8 +23,8 @@ public class AllocateEIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AllocateEIPParam("cn-bj2","Bgp",1);
-        param.setProjectId("org-4nfe1i");
+        param = new AllocateEIPParam("cn-sh2","Bgp",1);
+        param.setProjectId("org-izug1m");
     }
 
     @Test
