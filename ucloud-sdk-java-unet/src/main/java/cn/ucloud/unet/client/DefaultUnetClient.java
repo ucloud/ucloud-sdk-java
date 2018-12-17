@@ -27,8 +27,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public AllocateEIPResult allocateEIP(AllocateEIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AllocateEIPResult.class);
-        AllocateEIPResult result = (AllocateEIPResult) http.doGet(param, config, null);
-        return result;
+        return (AllocateEIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -43,8 +42,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeEIPResult describeEIP(DescribeEIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeEIPResult.class);
-        DescribeEIPResult result = (DescribeEIPResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeEIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -59,8 +57,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public UpdateEIPAttributeResult updateEIPAttribute(UpdateEIPAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateEIPAttributeResult.class);
-        UpdateEIPAttributeResult result = (UpdateEIPAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateEIPAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -75,8 +72,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public ReleaseEIPResult releaseEIP(ReleaseEIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReleaseEIPResult.class);
-        ReleaseEIPResult result = (ReleaseEIPResult) http.doGet(param, config, null);
-        return result;
+        return (ReleaseEIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -91,8 +87,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public BindEIPResult bindEIP(BindEIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(BindEIPResult.class);
-        BindEIPResult result = (BindEIPResult) http.doGet(param, config, null);
-        return result;
+        return (BindEIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -107,8 +102,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public UnBindEIPResult unBindEIP(UnBindEIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UnBindEIPResult.class);
-        UnBindEIPResult result = (UnBindEIPResult) http.doGet(param, config, null);
-        return result;
+        return (UnBindEIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -123,8 +117,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public ModifyEIPBandwidthResult modifyEIPBandwidth(ModifyEIPBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyEIPBandwidthResult.class);
-        ModifyEIPBandwidthResult result = (ModifyEIPBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (ModifyEIPBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -139,8 +132,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public ModifyEIPWeightResult modifyEIPWeight(ModifyEIPWeightParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyEIPWeightResult.class);
-        ModifyEIPWeightResult result = (ModifyEIPWeightResult) http.doGet(param, config, null);
-        return result;
+        return (ModifyEIPWeightResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -155,8 +147,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public GetEIPPriceResult getEIPPrice(GetEIPPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetEIPPriceResult.class);
-        GetEIPPriceResult result = (GetEIPPriceResult) http.doGet(param, config, null);
-        return result;
+        return (GetEIPPriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -171,8 +162,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public GetEIPUpgradePriceResult getEIPUpgradePrice(GetEIPUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetEIPUpgradePriceResult.class);
-        GetEIPUpgradePriceResult result = (GetEIPUpgradePriceResult) http.doGet(param, config, null);
-        return result;
+        return (GetEIPUpgradePriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -187,8 +177,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public GetEIPPayModeResult getEIPPayMode(GetEIPPayModeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetEIPPayModeResult.class);
-        GetEIPPayModeResult result = (GetEIPPayModeResult) http.doGet(param, config, null);
-        return result;
+        return (GetEIPPayModeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -203,8 +192,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public SetEIPPayModeResult setEIPPayMode(SetEIPPayModeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(SetEIPPayModeResult.class);
-        SetEIPPayModeResult result = (SetEIPPayModeResult) http.doGet(param, config, null);
-        return result;
+        return (SetEIPPayModeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -219,8 +207,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public AllocateVIPResult allocateVIP(AllocateVIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AllocateVIPResult.class);
-        AllocateVIPResult result = (AllocateVIPResult) http.doGet(param, config, null);
-        return result;
+        return (AllocateVIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -235,8 +222,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeVIPResult describeVIP(DescribeVIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeVIPResult.class);
-        DescribeVIPResult result = (DescribeVIPResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeVIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -251,8 +237,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public ReleaseVIPResult releaseVIP(ReleaseVIPParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReleaseVIPResult.class);
-        ReleaseVIPResult result = (ReleaseVIPResult) http.doGet(param, config, null);
-        return result;
+        return (ReleaseVIPResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -267,8 +252,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public CreateBandwidthPackageResult createBandwidthPackage(CreateBandwidthPackageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateBandwidthPackageResult.class);
-        CreateBandwidthPackageResult result = (CreateBandwidthPackageResult) http.doGet(param, config, null);
-        return result;
+        return (CreateBandwidthPackageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -283,8 +267,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeBandwidthPackageResult describeBandwidthPackage(DescribeBandwidthPackageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthPackageResult.class);
-        DescribeBandwidthPackageResult result = (DescribeBandwidthPackageResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeBandwidthPackageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -299,8 +282,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DeleteBandwidthPackageResult deleteBandwidthPackage(DeleteBandwidthPackageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteBandwidthPackageResult.class);
-        DeleteBandwidthPackageResult result = (DeleteBandwidthPackageResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteBandwidthPackageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -316,8 +298,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public AllocateShareBandwidthResult allocateShareBandwidth(AllocateShareBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AllocateShareBandwidthResult.class);
-        AllocateShareBandwidthResult result = (AllocateShareBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (AllocateShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -332,8 +313,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeShareBandwidthResult describeShareBandwidth(DescribeShareBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeShareBandwidthResult.class);
-        DescribeShareBandwidthResult result = (DescribeShareBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -348,8 +328,7 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public ResizeShareBandwidthResult resizeShareBandwidth(ResizeShareBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeShareBandwidthResult.class);
-        ResizeShareBandwidthResult result = (ResizeShareBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (ResizeShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -364,15 +343,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public ReleaseShareBandwidthResult releaseShareBandwidth(ReleaseShareBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReleaseShareBandwidthResult.class);
-        ReleaseShareBandwidthResult result = (ReleaseShareBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (ReleaseShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
     public void releaseShareBandwidth(ReleaseShareBandwidthParam param, UcloudHandler<ReleaseShareBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ReleaseShareBandwidthResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -380,15 +358,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AssociateEIPWithShareBandwidthResult.class);
-        AssociateEIPWithShareBandwidthResult result = (AssociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (AssociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
     public void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param, UcloudHandler<AssociateEIPWithShareBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AssociateEIPWithShareBandwidthResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -397,15 +374,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DisassociateEIPWithShareBandwidthResult.class);
-        DisassociateEIPWithShareBandwidthResult result = (DisassociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
-        return result;
+        return (DisassociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
     public void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param, UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DisassociateEIPWithShareBandwidthResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -413,15 +389,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthUsageResult.class);
-        DescribeBandwidthUsageResult result = (DescribeBandwidthUsageResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeBandwidthUsageResult) http.doGet(param, config, null);
     }
 
     @Override
     public void describeBandwidthUsage(DescribeBandwidthUsageParam param, UcloudHandler<DescribeBandwidthUsageResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeBandwidthUsageResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -429,15 +404,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DeleteFirewallResult deleteFirewall(DeleteFirewallParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteFirewallResult.class);
-        DeleteFirewallResult result = (DeleteFirewallResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteFirewallResult) http.doGet(param, config, null);
     }
 
     @Override
     public void deleteFirewall(DeleteFirewallParam param, UcloudHandler<DeleteFirewallResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteFirewallResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -445,15 +419,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public UpdateFirewallAttributeResult updateFirewallAttribute(UpdateFirewallAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateFirewallAttributeResult.class);
-        UpdateFirewallAttributeResult result = (UpdateFirewallAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateFirewallAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
     public void updateFirewallAttribute(UpdateFirewallAttributeParam param, UcloudHandler<UpdateFirewallAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateFirewallAttributeResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -461,15 +434,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public UpdateFirewallResult updateFirewall(UpdateFirewallParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateFirewallResult.class);
-        UpdateFirewallResult result = (UpdateFirewallResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateFirewallResult) http.doGet(param, config, null);
     }
 
     @Override
     public void updateFirewall(UpdateFirewallParam param, UcloudHandler<UpdateFirewallResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateFirewallResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -477,15 +449,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResourceResult.class);
-        DescribeFirewallResourceResult result = (DescribeFirewallResourceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeFirewallResourceResult) http.doGet(param, config, null);
     }
 
     @Override
     public void describeFirewallResource(DescribeFirewallResourceParam param, UcloudHandler<DescribeFirewallResourceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResourceResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -493,15 +464,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public DescribeFirewallResult describeFirewall(DescribeFirewallParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResult.class);
-        DescribeFirewallResult result = (DescribeFirewallResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeFirewallResult) http.doGet(param, config, null);
     }
 
     @Override
     public void describeFirewall(DescribeFirewallParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeFirewallResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -509,15 +479,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public GrantFirewallResult grantFirewall(GrantFirewallParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GrantFirewallResult.class);
-        GrantFirewallResult result = (GrantFirewallResult) http.doGet(param, config, null);
-        return result;
+        return (GrantFirewallResult) http.doGet(param, config, null);
     }
 
     @Override
     public void grantFirewall(GrantFirewallParam param, UcloudHandler<GrantFirewallResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GrantFirewallResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -525,15 +494,14 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     @Override
     public CreateFirewallResult createFirewall(CreateFirewallParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateFirewallResult.class);
-        CreateFirewallResult result = (CreateFirewallResult) http.doGet(param, config, null);
-        return result;
+        return (CreateFirewallResult) http.doGet(param, config, null);
     }
 
     @Override
     public void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateFirewallResult.class);
         try {
-            http.doGet(param, config, handler,asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
