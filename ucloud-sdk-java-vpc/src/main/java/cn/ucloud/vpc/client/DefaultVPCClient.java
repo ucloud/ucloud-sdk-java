@@ -28,8 +28,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public CreateVPCResult createVPC(CreateVPCParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateVPCResult.class);
-        CreateVPCResult result = (CreateVPCResult) http.doGet(param, config, null);
-        return result;
+        return (CreateVPCResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -44,8 +43,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DeleteVPCResult deleteVPC(DeleteVPCParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteVPCResult.class);
-        DeleteVPCResult result = (DeleteVPCResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteVPCResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -60,8 +58,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DescribeVPCResult describeVPC(DescribeVPCParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeVPCResult.class);
-        DescribeVPCResult result = (DescribeVPCResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeVPCResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -76,8 +73,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public AddVPCNetworkResult addVPCNetwork(AddVPCNetworkParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AddVPCNetworkResult.class);
-        AddVPCNetworkResult result = (AddVPCNetworkResult) http.doGet(param, config, null);
-        return result;
+        return (AddVPCNetworkResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -92,8 +88,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public CreateSubnetResult createSubnet(CreateSubnetParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateSubnetResult.class);
-        CreateSubnetResult result = (CreateSubnetResult) http.doGet(param, config, null);
-        return result;
+        return (CreateSubnetResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -108,8 +103,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DeleteSubnetResult deleteSubnet(DeleteSubnetParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteSubnetResult.class);
-        DeleteSubnetResult result = (DeleteSubnetResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteSubnetResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -124,8 +118,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DescribeSubnetResult describeSubnet(DescribeSubnetParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeSubnetResult.class);
-        DescribeSubnetResult result = (DescribeSubnetResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeSubnetResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -140,8 +133,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DescribeSubnetResourceResult describeSubnetResource(DescribeSubnetResourceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeSubnetResourceResult.class);
-        DescribeSubnetResourceResult result = (DescribeSubnetResourceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeSubnetResourceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -156,8 +148,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public UpdateSubnetAttributeResult updateSubnetAttribute(UpdateSubnetAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateSubnetAttributeResult.class);
-        UpdateSubnetAttributeResult result = (UpdateSubnetAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateSubnetAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -172,8 +163,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public CreateVPCIntercomResult createVPCIntercom(CreateVPCIntercomParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateVPCIntercomResult.class);
-        CreateVPCIntercomResult result = (CreateVPCIntercomResult) http.doGet(param, config, null);
-        return result;
+        return (CreateVPCIntercomResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -188,8 +178,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DescribeVPCIntercomResult describeVPCIntercom(DescribeVPCIntercomParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeVPCIntercomResult.class);
-        DescribeVPCIntercomResult result = (DescribeVPCIntercomResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeVPCIntercomResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -204,8 +193,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DeleteVPCIntercomResult deleteVPCIntercom(DeleteVPCIntercomParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteVPCIntercomResult.class);
-        DeleteVPCIntercomResult result = (DeleteVPCIntercomResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteVPCIntercomResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -220,8 +208,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public CreateRouteTableResult createRouteTable(CreateRouteTableParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateRouteTableResult.class);
-        CreateRouteTableResult result = (CreateRouteTableResult) http.doGet(param, config, null);
-        return result;
+        return (CreateRouteTableResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -236,8 +223,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public AssociateRouteTableResult associateRouteTable(AssociateRouteTableParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AssociateRouteTableResult.class);
-        AssociateRouteTableResult result = (AssociateRouteTableResult) http.doGet(param, config, null);
-        return result;
+        return (AssociateRouteTableResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -252,8 +238,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public CloneRouteTableResult cloneRouteTable(CloneRouteTableParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CloneRouteTableResult.class);
-        CloneRouteTableResult result = (CloneRouteTableResult) http.doGet(param, config, null);
-        return result;
+        return (CloneRouteTableResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -268,8 +253,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DeleteRouteTableResult deleteRouteTable(DeleteRouteTableParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteRouteTableResult.class);
-        DeleteRouteTableResult result = (DeleteRouteTableResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteRouteTableResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -284,8 +268,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public DescribeRouteTableResult describeRouteTable(DescribeRouteTableParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeRouteTableResult.class);
-        DescribeRouteTableResult result = (DescribeRouteTableResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeRouteTableResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -302,8 +285,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     public ModifyRouteRuleResult modifyRouteRule(ModifyRouteRuleParam param) throws Exception {
         // 未上线
         UcloudHttp http = new UcloudHttpImpl(ModifyRouteRuleResult.class);
-        ModifyRouteRuleResult result = (ModifyRouteRuleResult) http.doGet(param, config, null);
-        return result;
+        return (ModifyRouteRuleResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -319,8 +301,7 @@ public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
     @Override
     public UpdateRouteTableAttributeResult updateRouteTableAttribute(UpdateRouteTableAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateRouteTableAttributeResult.class);
-        UpdateRouteTableAttributeResult result = (UpdateRouteTableAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateRouteTableAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
