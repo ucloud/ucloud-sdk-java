@@ -30,8 +30,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public GetUhostInstanceVncInfoResult getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUhostInstanceVncInfoResult.class);
-        GetUhostInstanceVncInfoResult result = (GetUhostInstanceVncInfoResult) http.doGet(param, config, null);
-        return result;
+        return (GetUhostInstanceVncInfoResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -46,8 +45,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public StartUHostInstanceResult startUHostInstance(StartUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(StartUHostInstanceResult.class);
-        StartUHostInstanceResult result = (StartUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (StartUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -62,8 +60,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public RebootUHostInstanceResult rebootUHostInstance(RebootUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RebootUHostInstanceResult.class);
-        RebootUHostInstanceResult result = (RebootUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (RebootUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -79,8 +76,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public StopUHostInstanceResult stopUHostInstance(StopUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(StopUHostInstanceResult.class);
-        StopUHostInstanceResult result = (StopUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (StopUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -95,8 +91,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public DescribeUHostTagsResult describeUHostTags(DescribeUHostTagsParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUHostTagsResult.class);
-        DescribeUHostTagsResult result = (DescribeUHostTagsResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUHostTagsResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -112,8 +107,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public CreateUHostInstanceResult createUHostInstance(CreateUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUHostInstanceResult.class);
-        CreateUHostInstanceResult result = (CreateUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (CreateUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -128,8 +122,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ModifyUHostInstanceTagResult modifyUHostInstanceTag(ModifyUHostInstanceTagParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceTagResult.class);
-        ModifyUHostInstanceTagResult result = (ModifyUHostInstanceTagResult) http.doGet(param, config, null);
-        return result;
+        return (ModifyUHostInstanceTagResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -144,8 +137,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public TerminateUHostInstanceResult terminateUHostInstance(TerminateUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(TerminateUHostInstanceResult.class);
-        TerminateUHostInstanceResult result = (TerminateUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (TerminateUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -160,8 +152,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public DescribeUHostInstanceResult describeUHostInstance(DescribeUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUHostInstanceResult.class);
-        DescribeUHostInstanceResult result = (DescribeUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -176,8 +167,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public GetUHostInstancePriceResult getUHostInstancePrice(GetUHostInstancePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUHostInstancePriceResult.class);
-        GetUHostInstancePriceResult result = (GetUHostInstancePriceResult) http.doGet(param, config, null);
-        return result;
+        return (GetUHostInstancePriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -192,8 +182,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ResizeUHostInstanceResult resizeUHostInstance(ResizeUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeUHostInstanceResult.class);
-        ResizeUHostInstanceResult result = (ResizeUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (ResizeUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -208,8 +197,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ModifyUHostInstanceNameResult modifyUHostInstanceName(ModifyUHostInstanceNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceNameResult.class);
-        ModifyUHostInstanceNameResult result = (ModifyUHostInstanceNameResult) http.doGet(param, config, null);
-        return result;
+        return (ModifyUHostInstanceNameResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -224,8 +212,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ResetUHostInstancePasswordResult resetUHostInstancePassword(ResetUHostInstancePasswordParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResetUHostInstancePasswordResult.class);
-        ResetUHostInstancePasswordResult result = (ResetUHostInstancePasswordResult) http.doGet(param, config, null);
-        return result;
+        return (ResetUHostInstancePasswordResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -240,8 +227,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public PoweroffUHostInstanceResult poweroffUHostInstance(PoweroffUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(PoweroffUHostInstanceResult.class);
-        PoweroffUHostInstanceResult result = (PoweroffUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (PoweroffUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -256,8 +242,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ImportCustomImageResult importCustomImage(ImportCustomImageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ImportCustomImageResult.class);
-        ImportCustomImageResult result = (ImportCustomImageResult) http.doGet(param, config, null);
-        return result;
+        return (ImportCustomImageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -272,8 +257,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public CopyCustomImageResult copyCustomImage(CopyCustomImageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CopyCustomImageResult.class);
-        CopyCustomImageResult result = (CopyCustomImageResult) http.doGet(param, config, null);
-        return result;
+        return (CopyCustomImageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -288,8 +272,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public DescribeImageResult describeImage(DescribeImageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeImageResult.class);
-        DescribeImageResult result = (DescribeImageResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeImageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -304,8 +287,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public TerminateCustomImageResult terminateCustomImage(TerminateCustomImageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(TerminateCustomImageResult.class);
-        TerminateCustomImageResult result = (TerminateCustomImageResult) http.doGet(param, config, null);
-        return result;
+        return (TerminateCustomImageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -320,8 +302,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ReinstallUHostInstanceResult reinstallUHostInstance(ReinstallUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReinstallUHostInstanceResult.class);
-        ReinstallUHostInstanceResult result = (ReinstallUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (ReinstallUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -336,8 +317,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public GetUHostUpgradePriceResult getUHostUpgradePrice(GetUHostUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUHostUpgradePriceResult.class);
-        GetUHostUpgradePriceResult result = (GetUHostUpgradePriceResult) http.doGet(param, config, null);
-        return result;
+        return (GetUHostUpgradePriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -352,8 +332,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public ModifyUHostInstanceRemarkResult modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceRemarkResult.class);
-        ModifyUHostInstanceRemarkResult result = (ModifyUHostInstanceRemarkResult) http.doGet(param, config, null);
-        return result;
+        return (ModifyUHostInstanceRemarkResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -368,8 +347,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public CreateCustomImageResult createCustomImage(CreateCustomImageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateCustomImageResult.class);
-        CreateCustomImageResult result = (CreateCustomImageResult) http.doGet(param, config, null);
-        return result;
+        return (CreateCustomImageResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -384,8 +362,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     @Override
     public UpgradeToArkUHostInstanceResult upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpgradeToArkUHostInstanceResult.class);
-        UpgradeToArkUHostInstanceResult result = (UpgradeToArkUHostInstanceResult) http.doGet(param, config, null);
-        return result;
+        return (UpgradeToArkUHostInstanceResult) http.doGet(param, config, null);
     }
 
     @Override
