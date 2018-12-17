@@ -28,7 +28,7 @@ public interface ULBClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，默认异步true
      */
-    void createUlb(CreateULBParam param, UcloudHandler<CreateULBResult> handler, Boolean... asyncFlag);
+    void createULB(CreateULBParam param, UcloudHandler<CreateULBResult> handler, Boolean... asyncFlag);
 
 
     /**
@@ -47,7 +47,7 @@ public interface ULBClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUlb(DescribeULBParam param, UcloudHandler<DescribeULBResult> handler, Boolean... asyncFlag);
+    void describeULB(DescribeULBParam param, UcloudHandler<DescribeULBResult> handler, Boolean... asyncFlag);
 
 
     /**

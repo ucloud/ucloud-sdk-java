@@ -29,12 +29,11 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreateULBResult createULB(CreateULBParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateULBResult.class);
-        CreateULBResult result = (CreateULBResult) http.doGet(param, config, null);
-        return result;
+        return (CreateULBResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void createUlb(CreateULBParam param, UcloudHandler<CreateULBResult> handler, Boolean... asyncFlag) {
+    public void createULB(CreateULBParam param, UcloudHandler<CreateULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateULBResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -45,12 +44,11 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DescribeULBResult describeULB(DescribeULBParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
-        DescribeULBResult result = (DescribeULBResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeULBResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void describeUlb(DescribeULBParam param, UcloudHandler<DescribeULBResult> handler, Boolean... asyncFlag) {
+    public void describeULB(DescribeULBParam param, UcloudHandler<DescribeULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -61,8 +59,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeleteULBResult deleteULB(DeleteULBParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteULBResult.class);
-        DeleteULBResult result = (DeleteULBResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteULBResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -77,8 +74,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdateULBAttributeResult updateULBAttribute(UpdateULBAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateULBAttributeResult.class);
-        UpdateULBAttributeResult result = (UpdateULBAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateULBAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -93,8 +89,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreateVServerResult createVServer(CreateVServerParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateVServerResult.class);
-        CreateVServerResult result = (CreateVServerResult) http.doGet(param, config, null);
-        return result;
+        return (CreateVServerResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -109,8 +104,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DescribeVServerResult describeVServer(DescribeVServerParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeVServerResult.class);
-        DescribeVServerResult result = (DescribeVServerResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeVServerResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -125,8 +119,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeleteVServerResult deleteVServer(DeleteVServerParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteVServerResult.class);
-        DeleteVServerResult result = (DeleteVServerResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteVServerResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -141,8 +134,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdateVServerAttributeResult updateVServerAttribute(UpdateVServerAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateVServerAttributeResult.class);
-        UpdateVServerAttributeResult result = (UpdateVServerAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateVServerAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -157,8 +149,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public AllocateBackendResult allocateBackend(AllocateBackendParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendResult.class);
-        AllocateBackendResult result = (AllocateBackendResult) http.doGet(param, config, null);
-        return result;
+        return (AllocateBackendResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -173,8 +164,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public ReleaseBackendResult releaseBackend(ReleaseBackendParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReleaseBackendResult.class);
-        ReleaseBackendResult result = (ReleaseBackendResult) http.doGet(param, config, null);
-        return result;
+        return (ReleaseBackendResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -190,8 +180,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     public AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception {
         // 测试未通过
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
-        AllocateBackendBatchResult result = (AllocateBackendBatchResult) http.doGet(param, config, null);
-        return result;
+        return (AllocateBackendBatchResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -207,8 +196,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdateBackendAttributeResult updateBackendAttribute(UpdateBackendAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateBackendAttributeResult.class);
-        UpdateBackendAttributeResult result = (UpdateBackendAttributeResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateBackendAttributeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -223,8 +211,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreatePolicyResult createPolicy(CreatePolicyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreatePolicyResult.class);
-        CreatePolicyResult result = (CreatePolicyResult) http.doGet(param, config, null);
-        return result;
+        return (CreatePolicyResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -239,8 +226,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdatePolicyResult updatePolicy(UpdatePolicyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdatePolicyResult.class);
-        UpdatePolicyResult result = (UpdatePolicyResult) http.doGet(param, config, null);
-        return result;
+        return (UpdatePolicyResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -255,8 +241,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeletePolicyResult deletePolicy(DeletePolicyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeletePolicyResult.class);
-        DeletePolicyResult result = (DeletePolicyResult) http.doGet(param, config, null);
-        return result;
+        return (DeletePolicyResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -271,8 +256,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeleteSSLResult deleteSSL(DeleteSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteSSLResult.class);
-        DeleteSSLResult result = (DeleteSSLResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteSSLResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -287,8 +271,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public BindSSLResult bindSSL(BindSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(BindSSLResult.class);
-        BindSSLResult result = (BindSSLResult) http.doGet(param, config, null);
-        return result;
+        return (BindSSLResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -303,8 +286,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UnbindSSLResult unbindSSL(UnbindSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UnbindSSLResult.class);
-        UnbindSSLResult result = (UnbindSSLResult) http.doGet(param, config, null);
-        return result;
+        return (UnbindSSLResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -319,8 +301,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreateSSLResult createSSL(CreateSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateSSLResult.class);
-        CreateSSLResult result = (CreateSSLResult) http.doPost(param, config, null);
-        return result;
+        return (CreateSSLResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -335,8 +316,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DescribeSSLResult describeSSL(DescribeSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
-        DescribeSSLResult result = (DescribeSSLResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeSSLResult) http.doGet(param, config, null);
     }
 
     @Override
