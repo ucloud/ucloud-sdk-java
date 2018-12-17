@@ -29,8 +29,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public CreateUFSVolumeResult createUFSVolume(CreateUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUFSVolumeResult.class);
-        CreateUFSVolumeResult result = (CreateUFSVolumeResult) http.doGet(param, config, null);
-        return result;
+        return (CreateUFSVolumeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -45,8 +44,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public DescribeUFSVolumeResult describeUFSVolume(DescribeUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeResult.class);
-        DescribeUFSVolumeResult result = (DescribeUFSVolumeResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUFSVolumeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -61,8 +59,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumePriceResult.class);
-        DescribeUFSVolumePriceResult result = (DescribeUFSVolumePriceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUFSVolumePriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -77,8 +74,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeUpgradePriceResult.class);
-        DescribeUFSVolumeUpgradePriceResult result = (DescribeUFSVolumeUpgradePriceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUFSVolumeUpgradePriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -93,8 +89,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeWhiteListResult.class);
-        DescribeUFSVolumeWhiteListResult result = (DescribeUFSVolumeWhiteListResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUFSVolumeWhiteListResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -109,8 +104,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public ExtendUFSVolumeResult extendUFSVolume(ExtendUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ExtendUFSVolumeResult.class);
-        ExtendUFSVolumeResult result = (ExtendUFSVolumeResult) http.doGet(param, config, null);
-        return result;
+        return (ExtendUFSVolumeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -125,8 +119,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(InitUFSVolumeWhiteListResult.class);
-        InitUFSVolumeWhiteListResult result = (InitUFSVolumeWhiteListResult) http.doGet(param, config, null);
-        return result;
+        return (InitUFSVolumeWhiteListResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -141,8 +134,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public RemoveUFSVolumeResult removeUFSVolume(RemoveUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RemoveUFSVolumeResult.class);
-        RemoveUFSVolumeResult result = (RemoveUFSVolumeResult) http.doGet(param, config, null);
-        return result;
+        return (RemoveUFSVolumeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -157,8 +149,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public UpdateUFSVolumeInfoResult updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeInfoResult.class);
-        UpdateUFSVolumeInfoResult result = (UpdateUFSVolumeInfoResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateUFSVolumeInfoResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -173,8 +164,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeWhiteListResult.class);
-        UpdateUFSVolumeWhiteListResult result = (UpdateUFSVolumeWhiteListResult) http.doGet(param, config, null);
-        return result;
+        return (UpdateUFSVolumeWhiteListResult) http.doGet(param, config, null);
     }
 
     @Override
