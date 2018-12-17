@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FormatUtil {
     public static int BCD2Int(byte data) {
@@ -70,7 +72,7 @@ public class FormatUtil {
             for (int i = 0; i < byteLen; i++)
                 arr[i] = (byte) Integer.parseInt(str.substring(i * 2, i * 2 + 2), 16);
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.getGlobal().log(Level.WARNING,e.getMessage());
             return null;
         }
 

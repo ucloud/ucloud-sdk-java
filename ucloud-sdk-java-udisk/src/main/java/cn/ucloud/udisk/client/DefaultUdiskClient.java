@@ -13,7 +13,7 @@ import cn.ucloud.udisk.pojo.UdiskConfig;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/9/18 10:37
  */
-public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClient  {
+public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClient {
 
     private UdiskConfig config;
 
@@ -25,8 +25,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DescribeUDiskPriceResult describeUDiskPrice(DescribeUDiskPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskPriceResult.class);
-        DescribeUDiskPriceResult result = (DescribeUDiskPriceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUDiskPriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -41,8 +40,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public AttachUDiskResult attachUDisk(AttachUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AttachUDiskResult.class);
-        AttachUDiskResult result = (AttachUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (AttachUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -57,8 +55,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public CreateUDiskResult createUDisk(CreateUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUDiskResult.class);
-        CreateUDiskResult result = (CreateUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (CreateUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -67,15 +64,13 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
     @Override
     public DeleteUDiskResult deleteUDisk(DeleteUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUDiskResult.class);
-        DeleteUDiskResult result = (DeleteUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -90,8 +85,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public RenameUDiskResult renameUDisk(RenameUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RenameUDiskResult.class);
-        RenameUDiskResult result = (RenameUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (RenameUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -106,8 +100,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DetachUDiskResult detachUDisk(DetachUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DetachUDiskResult.class);
-        DetachUDiskResult result = (DetachUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (DetachUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -122,8 +115,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public RecoverUDiskResult recoverUDisk(RecoverUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RecoverUDiskResult.class);
-        RecoverUDiskResult result = (RecoverUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (RecoverUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -138,8 +130,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public RestoreUDiskResult restoreUDisk(RestoreUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RestoreUDiskResult.class);
-        RestoreUDiskResult result = (RestoreUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (RestoreUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -154,8 +145,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public CloneUDiskResult cloneUDisk(CloneUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CloneUDiskResult.class);
-        CloneUDiskResult result = (CloneUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (CloneUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -170,8 +160,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DescribeUDiskResult describeUDisk(DescribeUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskResult.class);
-        DescribeUDiskResult result = (DescribeUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -186,8 +175,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public SetUDiskUDataArkModeResult setUDiskUDataArkMode(SetUDiskUDataArkModeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(SetUDiskUDataArkModeResult.class);
-        SetUDiskUDataArkModeResult result = (SetUDiskUDataArkModeResult) http.doGet(param, config, null);
-        return result;
+        return (SetUDiskUDataArkModeResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -202,8 +190,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DescribeUDiskSnapshotResult describeUDiskSnapshot(DescribeUDiskSnapshotParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskSnapshotResult.class);
-        DescribeUDiskSnapshotResult result = (DescribeUDiskSnapshotResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUDiskSnapshotResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -218,8 +205,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DeleteUDiskSnapshotResult deleteUDiskSnapshot(DeleteUDiskSnapshotParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUDiskSnapshotResult.class);
-        DeleteUDiskSnapshotResult result = (DeleteUDiskSnapshotResult) http.doGet(param, config, null);
-        return result;
+        return (DeleteUDiskSnapshotResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -234,8 +220,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DescribeUDiskUpgradePriceResult describeUDiskUpgradePrice(DescribeUDiskUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDiskUpgradePriceResult.class);
-        DescribeUDiskUpgradePriceResult result = (DescribeUDiskUpgradePriceResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeUDiskUpgradePriceResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -250,8 +235,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public CreateUDiskSnapshotResult createUDiskSnapshot(CreateUDiskSnapshotParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUDiskSnapshotResult.class);
-        CreateUDiskSnapshotResult result = (CreateUDiskSnapshotResult) http.doGet(param, config, null);
-        return result;
+        return (CreateUDiskSnapshotResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -266,8 +250,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public CloneUDiskSnapshotResult cloneUDiskSnapshot(CloneUDiskSnapshotParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CloneUDiskSnapshotResult.class);
-        CloneUDiskSnapshotResult result = (CloneUDiskSnapshotResult) http.doGet(param, config, null);
-        return result;
+        return (CloneUDiskSnapshotResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -282,8 +265,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public DescribeRecycleUDiskResult describeRecycleUDisk(DescribeRecycleUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeRecycleUDiskResult.class);
-        DescribeRecycleUDiskResult result = (DescribeRecycleUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (DescribeRecycleUDiskResult) http.doGet(param, config, null);
     }
 
     @Override
@@ -298,8 +280,7 @@ public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClie
     @Override
     public ResizeUDiskResult resizeUDisk(ResizeUDiskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeUDiskResult.class);
-        ResizeUDiskResult result = (ResizeUDiskResult) http.doGet(param, config, null);
-        return result;
+        return (ResizeUDiskResult) http.doGet(param, config, null);
     }
 
     @Override

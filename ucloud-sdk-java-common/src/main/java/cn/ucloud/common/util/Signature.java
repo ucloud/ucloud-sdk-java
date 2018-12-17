@@ -10,6 +10,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @description: 签名工具类
@@ -67,7 +69,13 @@ public class Signature {
      * @return 签名后的参数数组
      */
     protected static Param[] getParamAfterSignature(Param[] params, Account account) {
+        if (params == null) {
+            params = new Param[0];
+        }
         Object[] objects = insertElement2Array(params, new Param("signature", getSignature(params, account)), params.length);
+        if (objects == null) {
+            objects = new Param[0];
+        }
         int len = objects.length;
         Param[] newParams = new Param[len];
         for (int i = 0; i < len; i++) {
@@ -138,7 +146,7 @@ public class Signature {
                 try {
                     params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                    Logger.getGlobal().log(Level.WARNING, e.getMessage());
                 }
             }
         }
@@ -156,7 +164,7 @@ public class Signature {
                 try {
                     param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                    Logger.getGlobal().log(Level.WARNING, e.getMessage());
                 }
             }
         }
@@ -216,7 +224,7 @@ public class Signature {
             return FormatUtil.formatBytes2HexString(messageDigest, false);
 
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            Logger.getGlobal().log(Level.WARNING, e.getMessage());
         }
         return "";
     }
