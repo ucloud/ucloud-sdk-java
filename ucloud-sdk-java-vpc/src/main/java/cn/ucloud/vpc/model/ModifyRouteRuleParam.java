@@ -152,35 +152,36 @@ public class ModifyRouteRuleParam extends BaseRequestParam {
             if (len <= 0) {
                 throw new ValidationException("routeRules can not be empty");
             } else {
+                String exceptionFormat = "routeRule[%d].%s";
                 for (int i = 0; i < len; i++) {
                     RouteRule routeRule = routeRules.get(i);
                     StringBuilder builder = new StringBuilder();
                     if (routeRule.routeRuleId == null || routeRule.routeRuleId.length() <= 0) {
-                        throw new ValidationException("routeRule[" + i + "].routeRuleId can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "routeRuleId can not be empty"));
                     }
                     builder.append(routeRule.routeRuleId + "|");
                     if (routeRule.targetSegment == null || routeRule.targetSegment.length() <= 0) {
-                        throw new ValidationException("routeRule[" + i + "].targetSegment can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "targetSegment can not be empty"));
                     }
                     builder.append(routeRule.targetSegment + "|");
                     if (routeRule.nextJumpType == null || routeRule.nextJumpType.length() <= 0) {
-                        throw new ValidationException("routeRule[" + i + "].nextJumpType can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "nextJumpType can not be empty"));
                     }
                     builder.append(routeRule.nextJumpType + "|");
                     if (routeRule.nextJump == null || routeRule.nextJump.length() <= 0) {
-                        throw new ValidationException("routeRule[" + i + "].nextJump can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "nextJump can not be empty"));
                     }
                     builder.append(routeRule.nextJump + "|");
                     if (routeRule.priority == null) {
-                        throw new ValidationException("routeRule[" + i + "].priority can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "priority can not be empty"));
                     }
                     builder.append(routeRule.priority + "|");
                     if (routeRule.remark == null || routeRule.remark.length() <= 0) {
-                        throw new ValidationException("routeRule[" + i + "].remark can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "remark can not be empty"));
                     }
                     builder.append(routeRule.remark + "|");
                     if (routeRule.flag == null || routeRule.flag.length() <= 0) {
-                        throw new ValidationException("routeRule[" + i + "].flag can not be empty");
+                        throw new ValidationException(String.format(exceptionFormat, i, "flag can not be empty"));
                     }
                     builder.append(routeRule.flag);
                     list.add(new Param("RouteRule." + i, builder.toString()));

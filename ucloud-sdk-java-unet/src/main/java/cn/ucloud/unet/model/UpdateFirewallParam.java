@@ -43,25 +43,26 @@ public class UpdateFirewallParam extends BaseRequestParam {
         List<Param> list = new ArrayList<>();
         if (this.getRule() != null && !this.getRule().isEmpty()) {
             List<Rule> rules = this.getRule();
+            String exceptionFormat = "rule[%d%s";
             for (int i = 0, len = rules.size(); i < len; i++) {
                 Rule rule = rules.get(i);
                 if (rule == null) {
-                    throw new ValidatorException("rule[" + i + "] can not be null");
+                    throw new ValidatorException(String.format(exceptionFormat, i, " can not be null"));
                 } else {
                     if (StringUtils.isBlank(rule.getProtocol())) {
-                        throw new ValidatorException("rule[" + i + "].protocol can not be empty");
+                        throw new ValidatorException(String.format(exceptionFormat, i, "protocol can not be empty"));
                     }
                     if (rule.getPort() == null || rule.getPort() <= 0) {
-                        throw new ValidatorException("rule[" + i + "].port can not be null or value <= 0");
+                        throw new ValidatorException(String.format(exceptionFormat, i, "port can not be null or value <= 0"));
                     }
                     if (StringUtils.isBlank(rule.getIp())) {
-                        throw new ValidatorException("rule[" + i + "].ip can not be empty");
+                        throw new ValidatorException(String.format(exceptionFormat, i, "ip can not be empty"));
                     }
                     if (StringUtils.isBlank(rule.getAcceptOrNot())) {
-                        throw new ValidatorException("rule[" + i + "].acceptOrNot can not be empty");
+                        throw new ValidatorException(String.format(exceptionFormat, i, "acceptOrNot can not be empty"));
                     }
                     if (StringUtils.isBlank(rule.getPriority())) {
-                        throw new ValidatorException("rule[" + i + "].priority can not be empty");
+                        throw new ValidatorException(String.format(exceptionFormat, i, "priority can not be empty"));
                     }
                     list.add(new Param("Rule." + i, rule.getRule()));
                 }
@@ -104,7 +105,9 @@ public class UpdateFirewallParam extends BaseRequestParam {
     }
 
     public static class Rule {
+        @SuppressWarnings("squid:S1170")
         private final String ruleFormat = "%s|%d|%s|%s|%s";
+        @SuppressWarnings("squid:S1700")
         private String rule;
 
         /**

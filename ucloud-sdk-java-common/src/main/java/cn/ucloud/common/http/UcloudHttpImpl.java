@@ -150,7 +150,7 @@ public class UcloudHttpImpl implements UcloudHttp {
 
     private void handleResult(UcloudHandler handler, BaseResponseResult responseResult) {
         if (handler != null) {
-            if (success(responseResult)) {
+            if (isSuccess(responseResult)) {
                 handler.success(responseResult);
             } else {
                 handler.failed(responseResult);
@@ -158,7 +158,7 @@ public class UcloudHttpImpl implements UcloudHttp {
         }
     }
 
-    private boolean success(BaseResponseResult responseResult) {
+    private boolean isSuccess(BaseResponseResult responseResult) {
         boolean success = false;
         if (responseResult != null) {
             success = responseResult.getRetCode() == 0;
