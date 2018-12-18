@@ -201,7 +201,9 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     }
 
     @Override
-    public void modifyUHostInstanceName(ModifyUHostInstanceNameParam param, UcloudHandler<ModifyUHostInstanceNameResult> handler, Boolean... asyncFlag) {
+    public void modifyUHostInstanceName(ModifyUHostInstanceNameParam param,
+                                        UcloudHandler<ModifyUHostInstanceNameResult> handler,
+                                        Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUHostInstanceNameResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -216,7 +218,9 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     }
 
     @Override
-    public void resetUHostInstancePassword(ResetUHostInstancePasswordParam param, UcloudHandler<ResetUHostInstancePasswordResult> handler, Boolean... asyncFlag) {
+    public void resetUHostInstancePassword(ResetUHostInstancePasswordParam param,
+                                           UcloudHandler<ResetUHostInstancePasswordResult> handler,
+                                           Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ResetUHostInstancePasswordResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);

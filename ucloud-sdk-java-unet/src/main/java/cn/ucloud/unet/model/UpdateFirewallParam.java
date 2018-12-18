@@ -152,17 +152,21 @@ public class UpdateFirewallParam extends BaseRequestParam {
         @NotEmpty(message = "rule can not be empty")
         @UcloudParam("Rule")
         public String getRule() {
-            if (port <= 0)
+            if (port <= 0) {
                 port = 22;
-            if (StringUtils.isBlank(protocol))
+            }
+            if (StringUtils.isBlank(protocol)) {
                 protocol = "TCP";
-            if (StringUtils.isBlank(ip))
+            }
+            if (StringUtils.isBlank(ip)) {
                 ip = "192.168.1.1";
-            if (StringUtils.isBlank(acceptOrNot))
+            }
+            if (StringUtils.isBlank(acceptOrNot)) {
                 acceptOrNot = "DROP";
-            if (StringUtils.isBlank(priority))
+            }
+            if (StringUtils.isBlank(priority)) {
                 priority = "LOW";
-
+            }
             rule = String.format(ruleFormat, protocol, port, ip + "/" + port, acceptOrNot, priority);
             return rule;
         }

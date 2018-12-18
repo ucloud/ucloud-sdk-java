@@ -45,11 +45,12 @@ public class UpdateUFSVolumeWhiteListParam extends BaseRequestParam {
             List<String> ids = this.getuHostIds();
             for (int i = 0, len = ids.size(); i < len; i++) {
                 String uHostId = ids.get(i);
-
-                if (StringUtils.isBlank(uHostId))
+                if (StringUtils.isBlank(uHostId)){
                     throw new ValidatorException("uHostId[" + i + "] can not be empty");
-                else
+                }
+                else{
                     list.add(new Param("UHostId." + i, uHostId));
+                }
             }
         }
         return list;

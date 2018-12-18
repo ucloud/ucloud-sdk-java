@@ -21,7 +21,6 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
         /**
          * require 磁盘大小，单位GB。系统盘的默认大小为镜像大小。数据盘必传。
          */
-        //@NotEmpty(message = "uhost.disk.size can not be empty")
         private Integer size;
 
 
@@ -36,14 +35,12 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
          * 默认为LOCAL_NORMAL。
          * 磁盘仅支持有限组合，详情请查询控制台。
          */
-        //@NotEmpty(message = "uhost.disk.type can not be empty")
         private String type;
 
         /**
          * require
          * 是否是系统盘。枚举值：True|False
          */
-        //@NotEmpty(message = "uhost.disk.isboot can not be null")
         private Boolean isBoot;
 
         /**

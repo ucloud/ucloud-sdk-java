@@ -41,13 +41,11 @@ public class CreateSSLParam extends BaseRequestParam {
     /**
      * optional SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书
      */
-    //@UcloudParam("SSLContent")
     private String sslContent;
 
     /**
      * optional 加密证书的私钥
      */
-    //@UcloudParam("privateKey")
     private String privateKey;
 
     @UcloudParam("SSLContent")

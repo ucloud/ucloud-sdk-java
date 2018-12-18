@@ -70,8 +70,11 @@ public interface UhostClient extends UcloudClient {
 
 
     /**
-     * @param param
+     * 关闭主机实例
+     *
+     * @param param 关机参数对象
      * @return 关闭主机结果对象
+     * @throws Exception 关机出错则抛出异常
      */
     StopUHostInstanceResult stopUHostInstance(StopUHostInstanceParam param) throws Exception;
 

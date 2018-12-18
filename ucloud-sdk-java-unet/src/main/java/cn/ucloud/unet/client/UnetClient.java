@@ -386,7 +386,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 关闭共享带宽
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -394,7 +394,7 @@ public interface UnetClient extends UcloudClient {
     ReleaseShareBandwidthResult releaseShareBandwidth(ReleaseShareBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 关闭共享带宽
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -403,7 +403,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 将EIP加入共享带宽
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -411,7 +411,7 @@ public interface UnetClient extends UcloudClient {
     AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 将EIP加入共享带宽
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -420,7 +420,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 将EIP移出共享带宽
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -428,7 +428,7 @@ public interface UnetClient extends UcloudClient {
     DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param) throws  Exception;
 
     /**
-     *
+     * 将EIP移出共享带宽
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -437,7 +437,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 获取带宽用量
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -445,7 +445,7 @@ public interface UnetClient extends UcloudClient {
     DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param) throws  Exception;
 
     /**
-     *
+     * 获取带宽用量
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -454,7 +454,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 删除防火墙
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -462,7 +462,7 @@ public interface UnetClient extends UcloudClient {
     DeleteFirewallResult deleteFirewall(DeleteFirewallParam param) throws  Exception;
 
     /**
-     *
+     * 删除防火墙
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -471,7 +471,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 更新防火墙属性
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -479,7 +479,7 @@ public interface UnetClient extends UcloudClient {
     UpdateFirewallAttributeResult updateFirewallAttribute(UpdateFirewallAttributeParam param) throws  Exception;
 
     /**
-     *
+     * 更新防火墙属性
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -488,7 +488,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 更新防火墙规则
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -496,7 +496,7 @@ public interface UnetClient extends UcloudClient {
     UpdateFirewallResult updateFirewall(UpdateFirewallParam param) throws  Exception;
 
     /**
-     *
+     * 更新防火墙规则
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -506,7 +506,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 获取防火墙绑定资源
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -514,7 +514,7 @@ public interface UnetClient extends UcloudClient {
     DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param) throws  Exception;
 
     /**
-     *
+     * 获取防火墙绑定资源
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -523,7 +523,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 获取防火墙
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -531,7 +531,7 @@ public interface UnetClient extends UcloudClient {
     DescribeFirewallResult describeFirewall(DescribeFirewallParam param) throws  Exception;
 
     /**
-     *
+     * 获取防火墙
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -541,7 +541,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 应用防火墙
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -549,7 +549,7 @@ public interface UnetClient extends UcloudClient {
     GrantFirewallResult grantFirewall(GrantFirewallParam param) throws  Exception;
 
     /**
-     *
+     * 应用防火墙
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
@@ -559,7 +559,7 @@ public interface UnetClient extends UcloudClient {
 
 
     /**
-     *
+     * 创建防火墙
      * @param param 请求参数对象
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
@@ -567,7 +567,7 @@ public interface UnetClient extends UcloudClient {
     CreateFirewallResult createFirewall(CreateFirewallParam param) throws  Exception;
 
     /**
-     *
+     * 创建防火墙
      * @param param 请求参数对象
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步

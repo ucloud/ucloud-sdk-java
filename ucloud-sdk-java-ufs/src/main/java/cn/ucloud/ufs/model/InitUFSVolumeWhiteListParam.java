@@ -7,7 +7,6 @@ import cn.ucloud.common.pojo.Param;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,11 +43,12 @@ public class InitUFSVolumeWhiteListParam extends BaseRequestParam {
             List<String> ids = this.getuHostIds();
             for (int i = 0, len = ids.size(); i < len; i++) {
                 String uHostId = ids.get(i);
-
-                if (StringUtils.isBlank(uHostId))
+                if (StringUtils.isBlank(uHostId)){
                     throw new ValidatorException("uHostId[" + i + "] can not be empty");
-                else
+                }
+                else{
                     list.add(new Param("UHostId." + i, uHostId));
+                }
             }
         }
         return list;

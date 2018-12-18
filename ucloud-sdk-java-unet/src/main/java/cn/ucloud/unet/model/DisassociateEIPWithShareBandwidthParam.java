@@ -59,9 +59,9 @@ public class DisassociateEIPWithShareBandwidthParam extends BaseRequestParam {
             List<String> eipIds = this.getEipIds();
             for (int i = 0, len = eipIds.size(); i < len; i++) {
                 String eipId = eipIds.get(i);
-                if (StringUtils.isBlank(eipId))
+                if (StringUtils.isBlank(eipId)){
                     throw new ValidatorException("eipId[" + i + "] can not be empty");
-
+                }
                 list.add(new Param("EIPIds." + i, eipId));
             }
         }
