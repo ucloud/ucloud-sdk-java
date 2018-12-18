@@ -33,7 +33,9 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public void createUFSVolume(CreateUFSVolumeParam param, UcloudHandler<CreateUFSVolumeResult> handler, Boolean... asyncFlag) {
+    public void createUFSVolume(CreateUFSVolumeParam param,
+                                UcloudHandler<CreateUFSVolumeResult> handler,
+                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUFSVolumeResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -59,7 +61,8 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param) throws Exception {
+    public DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumePriceResult.class);
         return (DescribeUFSVolumePriceResult) http.doGet(param, config, null);
     }
@@ -94,7 +97,8 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param) throws Exception {
+    public DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeWhiteListResult.class);
         return (DescribeUFSVolumeWhiteListResult) http.doGet(param, config, null);
     }
@@ -117,7 +121,8 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public void extendUFSVolume(ExtendUFSVolumeParam param, UcloudHandler<ExtendUFSVolumeResult> handler, Boolean... asyncFlag) {
+    public void extendUFSVolume(ExtendUFSVolumeParam param, UcloudHandler<ExtendUFSVolumeResult> handler,
+                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ExtendUFSVolumeResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -126,7 +131,8 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param) throws Exception {
+    public InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(InitUFSVolumeWhiteListResult.class);
         return (InitUFSVolumeWhiteListResult) http.doGet(param, config, null);
     }
@@ -149,7 +155,8 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public void removeUFSVolume(RemoveUFSVolumeParam param, UcloudHandler<RemoveUFSVolumeResult> handler, Boolean... asyncFlag) {
+    public void removeUFSVolume(RemoveUFSVolumeParam param, UcloudHandler<RemoveUFSVolumeResult> handler,
+                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RemoveUFSVolumeResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -164,7 +171,9 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param, UcloudHandler<UpdateUFSVolumeInfoResult> handler, Boolean... asyncFlag) {
+    public void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param,
+                                    UcloudHandler<UpdateUFSVolumeInfoResult> handler,
+                                    Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeInfoResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -173,13 +182,16 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     }
 
     @Override
-    public UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param) throws Exception {
+    public UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeWhiteListResult.class);
         return (UpdateUFSVolumeWhiteListResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param, UcloudHandler<UpdateUFSVolumeWhiteListResult> handler, Boolean... asyncFlag) {
+    public void updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param,
+                                         UcloudHandler<UpdateUFSVolumeWhiteListResult> handler,
+                                         Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeWhiteListResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);

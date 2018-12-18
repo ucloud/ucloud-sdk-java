@@ -25,7 +25,8 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void createUFSVolume(CreateUFSVolumeParam param, UcloudHandler<CreateUFSVolumeResult> handler, Boolean... asyncFlag);
+    void createUFSVolume(CreateUFSVolumeParam param, UcloudHandler<CreateUFSVolumeResult> handler,
+                         Boolean... asyncFlag);
 
 
     /**
@@ -42,7 +43,8 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolume(DescribeUFSVolumeParam param, UcloudHandler<DescribeUFSVolumeResult> handler, Boolean... asyncFlag);
+    void describeUFSVolume(DescribeUFSVolumeParam param, UcloudHandler<DescribeUFSVolumeResult> handler,
+                           Boolean... asyncFlag);
 
 
     /**
@@ -51,7 +53,8 @@ public interface UFSClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param) throws Exception;
+    DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param)
+            throws Exception;
 
     /**
      * 获取文件系统价格
@@ -59,7 +62,9 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolumePrice(DescribeUFSVolumePriceParam param, UcloudHandler<DescribeUFSVolumePriceResult> handler, Boolean... asyncFlag);
+    void describeUFSVolumePrice(DescribeUFSVolumePriceParam param,
+                                UcloudHandler<DescribeUFSVolumePriceResult> handler,
+                                Boolean... asyncFlag);
 
 
 
@@ -69,7 +74,8 @@ public interface UFSClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param) throws Exception;
+    DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param)
+            throws Exception;
 
     /**
      * 文件系统扩容价格
@@ -77,7 +83,9 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param, UcloudHandler<DescribeUFSVolumeUpgradePriceResult> handler, Boolean... asyncFlag);
+    void describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param,
+                                       UcloudHandler<DescribeUFSVolumeUpgradePriceResult> handler,
+                                       Boolean... asyncFlag);
 
 
     /**
@@ -86,7 +94,8 @@ public interface UFSClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param) throws Exception;
+    DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param)
+            throws Exception;
 
     /**
      * 获取文件系统白名单
@@ -94,7 +103,9 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param, UcloudHandler<DescribeUFSVolumeWhiteListResult> handler, Boolean... asyncFlag);
+    void describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param,
+                                    UcloudHandler<DescribeUFSVolumeWhiteListResult> handler,
+                                    Boolean... asyncFlag);
 
 
     /**
@@ -111,7 +122,8 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void extendUFSVolume(ExtendUFSVolumeParam param, UcloudHandler<ExtendUFSVolumeResult> handler, Boolean... asyncFlag);
+    void extendUFSVolume(ExtendUFSVolumeParam param, UcloudHandler<ExtendUFSVolumeResult> handler,
+                         Boolean... asyncFlag);
 
 
     /**
@@ -120,7 +132,8 @@ public interface UFSClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param) throws Exception;
+    InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param)
+            throws Exception;
 
     /**
      * 初始化文件系统白名单
@@ -128,7 +141,9 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param, UcloudHandler<InitUFSVolumeWhiteListResult> handler, Boolean... asyncFlag);
+    void initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param,
+                                UcloudHandler<InitUFSVolumeWhiteListResult> handler,
+                                Boolean... asyncFlag);
 
 
     /**
@@ -145,7 +160,8 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void removeUFSVolume(RemoveUFSVolumeParam param, UcloudHandler<RemoveUFSVolumeResult> handler, Boolean... asyncFlag);
+    void removeUFSVolume(RemoveUFSVolumeParam param, UcloudHandler<RemoveUFSVolumeResult> handler,
+                         Boolean... asyncFlag);
 
 
     /**
@@ -162,7 +178,9 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param, UcloudHandler<UpdateUFSVolumeInfoResult> handler, Boolean... asyncFlag);
+    void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param,
+                             UcloudHandler<UpdateUFSVolumeInfoResult> handler,
+                             Boolean... asyncFlag);
 
     /**
      * 更新文件系统白名单
@@ -170,7 +188,8 @@ public interface UFSClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param) throws Exception;
+    UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param)
+            throws Exception;
 
     /**
      * 更新文件系统白名单
@@ -178,6 +197,8 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param, UcloudHandler<UpdateUFSVolumeWhiteListResult> handler, Boolean... asyncFlag);
+    void updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param,
+                                  UcloudHandler<UpdateUFSVolumeWhiteListResult> handler,
+                                  Boolean... asyncFlag);
 
 }

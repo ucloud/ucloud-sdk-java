@@ -27,7 +27,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateEIP(AllocateEIPParam param, UcloudHandler<AllocateEIPResult> handler, Boolean... asyncFlag);
+    void allocateEIP(AllocateEIPParam param, UcloudHandler<AllocateEIPResult> handler,
+                     Boolean... asyncFlag);
 
 
     /**
@@ -44,7 +45,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeEIP(DescribeEIPParam param, UcloudHandler<DescribeEIPResult> handler,Boolean... asyncFlag);
+    void describeEIP(DescribeEIPParam param, UcloudHandler<DescribeEIPResult> handler,
+                     Boolean... asyncFlag);
 
 
     /**
@@ -53,7 +55,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    UpdateEIPAttributeResult updateEIPAttribute(UpdateEIPAttributeParam param) throws  Exception;
+    UpdateEIPAttributeResult updateEIPAttribute(UpdateEIPAttributeParam param)
+            throws  Exception;
 
     /**
      * 更新弹性IP名称，业务组，备注等属性字段
@@ -61,7 +64,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void updateEIPAttribute(UpdateEIPAttributeParam param, UcloudHandler<UpdateEIPAttributeResult> handler, Boolean... asyncFlag);
+    void updateEIPAttribute(UpdateEIPAttributeParam param,
+                            UcloudHandler<UpdateEIPAttributeResult> handler,
+                            Boolean... asyncFlag);
 
 
     /**
@@ -78,7 +83,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void releaseEIP(ReleaseEIPParam param, UcloudHandler<ReleaseEIPResult> handler,Boolean... asyncFlag);
+    void releaseEIP(ReleaseEIPParam param, UcloudHandler<ReleaseEIPResult> handler,
+                    Boolean... asyncFlag);
 
 
     /**
@@ -112,7 +118,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void unBindEIP(UnBindEIPParam param, UcloudHandler<UnBindEIPResult> handler,Boolean... asyncFlag);
+    void unBindEIP(UnBindEIPParam param, UcloudHandler<UnBindEIPResult> handler,
+                   Boolean... asyncFlag);
 
 
     /**
@@ -121,7 +128,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    ModifyEIPBandwidthResult modifyEIPBandwidth(ModifyEIPBandwidthParam param) throws  Exception;
+    ModifyEIPBandwidthResult modifyEIPBandwidth(ModifyEIPBandwidthParam param)
+            throws  Exception;
 
     /**
      * 调整弹性IP的外网带宽
@@ -129,7 +137,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void modifyEIPBandwidth(ModifyEIPBandwidthParam param, UcloudHandler<ModifyEIPBandwidthResult> handler,Boolean... asyncFlag);
+    void modifyEIPBandwidth(ModifyEIPBandwidthParam param,
+                            UcloudHandler<ModifyEIPBandwidthResult> handler,
+                            Boolean... asyncFlag);
 
 
     /**
@@ -146,7 +156,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void modifyEIPWeight(ModifyEIPWeightParam param, UcloudHandler<ModifyEIPWeightResult> handler,Boolean... asyncFlag);
+    void modifyEIPWeight(ModifyEIPWeightParam param, UcloudHandler<ModifyEIPWeightResult> handler,
+                         Boolean... asyncFlag);
 
 
 
@@ -164,7 +175,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void getEIPPrice(GetEIPPriceParam param, UcloudHandler<GetEIPPriceResult> handler,Boolean... asyncFlag);
+    void getEIPPrice(GetEIPPriceParam param, UcloudHandler<GetEIPPriceResult> handler,
+                     Boolean... asyncFlag);
 
 
     /**
@@ -181,7 +193,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void getEIPUpgradePrice(GetEIPUpgradePriceParam param, UcloudHandler<GetEIPUpgradePriceResult> handler,Boolean... asyncFlag);
+    void getEIPUpgradePrice(GetEIPUpgradePriceParam param, UcloudHandler<GetEIPUpgradePriceResult> handler,
+                            Boolean... asyncFlag);
 
 
 
@@ -199,7 +212,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void getEIPPayMode(GetEIPPayModeParam param, UcloudHandler<GetEIPPayModeResult> handler,Boolean... asyncFlag);
+    void getEIPPayMode(GetEIPPayModeParam param, UcloudHandler<GetEIPPayModeResult> handler,
+                       Boolean... asyncFlag);
 
 
 
@@ -217,7 +231,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void setEIPPayMode(SetEIPPayModeParam param, UcloudHandler<SetEIPPayModeResult> handler,Boolean... asyncFlag);
+    void setEIPPayMode(SetEIPPayModeParam param, UcloudHandler<SetEIPPayModeResult> handler,
+                       Boolean... asyncFlag);
 
 
 
@@ -237,7 +252,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateVIP(AllocateVIPParam param, UcloudHandler<AllocateVIPResult> handler,Boolean... asyncFlag);
+    void allocateVIP(AllocateVIPParam param, UcloudHandler<AllocateVIPResult> handler,
+                     Boolean... asyncFlag);
 
 
 
@@ -255,7 +271,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeVIP(DescribeVIPParam param, UcloudHandler<DescribeVIPResult> handler,Boolean... asyncFlag);
+    void describeVIP(DescribeVIPParam param, UcloudHandler<DescribeVIPResult> handler,
+                     Boolean... asyncFlag);
 
 
 
@@ -284,7 +301,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    CreateBandwidthPackageResult createBandwidthPackage(CreateBandwidthPackageParam param) throws  Exception;
+    CreateBandwidthPackageResult createBandwidthPackage(CreateBandwidthPackageParam param)
+            throws  Exception;
 
     /**
      * 创建宽带包
@@ -293,7 +311,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void createBandwidthPackage(CreateBandwidthPackageParam param, UcloudHandler<CreateBandwidthPackageResult> handler,Boolean... asyncFlag);
+    void createBandwidthPackage(CreateBandwidthPackageParam param,
+                                UcloudHandler<CreateBandwidthPackageResult> handler,
+                                Boolean... asyncFlag);
 
 
 
@@ -303,7 +323,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    DescribeBandwidthPackageResult describeBandwidthPackage(DescribeBandwidthPackageParam param) throws  Exception;
+    DescribeBandwidthPackageResult describeBandwidthPackage(DescribeBandwidthPackageParam param)
+            throws  Exception;
 
     /**
      * 获取某地域下的带宽包信息
@@ -311,7 +332,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeBandwidthPackage(DescribeBandwidthPackageParam param, UcloudHandler<DescribeBandwidthPackageResult> handler,Boolean... asyncFlag);
+    void describeBandwidthPackage(DescribeBandwidthPackageParam param,
+                                  UcloudHandler<DescribeBandwidthPackageResult> handler,
+                                  Boolean... asyncFlag);
 
 
 
@@ -321,7 +344,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    DeleteBandwidthPackageResult deleteBandwidthPackage(DeleteBandwidthPackageParam param) throws  Exception;
+    DeleteBandwidthPackageResult deleteBandwidthPackage(DeleteBandwidthPackageParam param)
+            throws  Exception;
 
     /**
      * 删除弹性IP上已附加带宽包
@@ -329,7 +353,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void deleteBandwidthPackage(DeleteBandwidthPackageParam param, UcloudHandler<DeleteBandwidthPackageResult> handler,Boolean... asyncFlag);
+    void deleteBandwidthPackage(DeleteBandwidthPackageParam param,
+                                UcloudHandler<DeleteBandwidthPackageResult> handler,
+                                Boolean... asyncFlag);
 
 
 
@@ -339,7 +365,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    AllocateShareBandwidthResult allocateShareBandwidth(AllocateShareBandwidthParam param) throws  Exception;
+    AllocateShareBandwidthResult allocateShareBandwidth(AllocateShareBandwidthParam param)
+            throws  Exception;
 
     /**
      * 开通共享带宽
@@ -347,7 +374,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void allocateShareBandwidth(AllocateShareBandwidthParam param, UcloudHandler<AllocateShareBandwidthResult> handler,Boolean... asyncFlag);
+    void allocateShareBandwidth(AllocateShareBandwidthParam param,
+                                UcloudHandler<AllocateShareBandwidthResult> handler,
+                                Boolean... asyncFlag);
 
 
 
@@ -357,7 +386,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    DescribeShareBandwidthResult describeShareBandwidth(DescribeShareBandwidthParam param) throws  Exception;
+    DescribeShareBandwidthResult describeShareBandwidth(DescribeShareBandwidthParam param)
+            throws  Exception;
 
     /**
      * 获取共享带宽信息
@@ -365,7 +395,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeShareBandwidth(DescribeShareBandwidthParam param, UcloudHandler<DescribeShareBandwidthResult> handler,Boolean... asyncFlag);
+    void describeShareBandwidth(DescribeShareBandwidthParam param,
+                                UcloudHandler<DescribeShareBandwidthResult> handler,
+                                Boolean... asyncFlag);
 
 
     /**
@@ -382,7 +414,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void resizeShareBandwidth(ResizeShareBandwidthParam param, UcloudHandler<ResizeShareBandwidthResult> handler,Boolean... asyncFlag);
+    void resizeShareBandwidth(ResizeShareBandwidthParam param,
+                              UcloudHandler<ResizeShareBandwidthResult> handler,
+                              Boolean... asyncFlag);
 
 
     /**
@@ -399,7 +433,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void releaseShareBandwidth(ReleaseShareBandwidthParam param, UcloudHandler<ReleaseShareBandwidthResult> handler,Boolean... asyncFlag);
+    void releaseShareBandwidth(ReleaseShareBandwidthParam param,
+                               UcloudHandler<ReleaseShareBandwidthResult> handler,
+                               Boolean... asyncFlag);
 
 
     /**
@@ -408,7 +444,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param) throws  Exception;
+    AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param)
+            throws  Exception;
 
     /**
      * 将EIP加入共享带宽
@@ -416,7 +453,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param, UcloudHandler<AssociateEIPWithShareBandwidthResult> handler,Boolean... asyncFlag);
+    void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param,
+                                        UcloudHandler<AssociateEIPWithShareBandwidthResult> handler,
+                                        Boolean... asyncFlag);
 
 
     /**
@@ -425,7 +464,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param) throws  Exception;
+    DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param)
+            throws  Exception;
 
     /**
      * 将EIP移出共享带宽
@@ -433,7 +473,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param, UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler,Boolean... asyncFlag);
+    void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param,
+                                           UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler,
+                                           Boolean... asyncFlag);
 
 
     /**
@@ -442,7 +484,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param) throws  Exception;
+    DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param)
+            throws  Exception;
 
     /**
      * 获取带宽用量
@@ -450,7 +493,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeBandwidthUsage(DescribeBandwidthUsageParam param, UcloudHandler<DescribeBandwidthUsageResult> handler,Boolean... asyncFlag);
+    void describeBandwidthUsage(DescribeBandwidthUsageParam param,
+                                UcloudHandler<DescribeBandwidthUsageResult> handler,
+                                Boolean... asyncFlag);
 
 
     /**
@@ -484,7 +529,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void updateFirewallAttribute(UpdateFirewallAttributeParam param, UcloudHandler<UpdateFirewallAttributeResult> handler,Boolean... asyncFlag);
+    void updateFirewallAttribute(UpdateFirewallAttributeParam param,
+                                 UcloudHandler<UpdateFirewallAttributeResult> handler,
+                                 Boolean... asyncFlag);
 
 
     /**
@@ -501,7 +548,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void updateFirewall(UpdateFirewallParam param, UcloudHandler<UpdateFirewallResult> handler,Boolean... asyncFlag);
+    void updateFirewall(UpdateFirewallParam param, UcloudHandler<UpdateFirewallResult> handler,
+                        Boolean... asyncFlag);
 
 
 
@@ -511,7 +559,8 @@ public interface UnetClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception  请求出错则抛出异常
      */
-    DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param) throws  Exception;
+    DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param)
+            throws  Exception;
 
     /**
      * 获取防火墙绑定资源
@@ -519,7 +568,9 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeFirewallResource(DescribeFirewallResourceParam param, UcloudHandler<DescribeFirewallResourceResult> handler,Boolean... asyncFlag);
+    void describeFirewallResource(DescribeFirewallResourceParam param,
+                                  UcloudHandler<DescribeFirewallResourceResult> handler,
+                                  Boolean... asyncFlag);
 
 
     /**
@@ -536,7 +587,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void describeFirewall(DescribeFirewallParam param, UcloudHandler<BaseResponseResult> handler,Boolean... asyncFlag);
+    void describeFirewall(DescribeFirewallParam param, UcloudHandler<BaseResponseResult> handler,
+                          Boolean... asyncFlag);
 
 
 
@@ -554,7 +606,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void grantFirewall(GrantFirewallParam param, UcloudHandler<GrantFirewallResult> handler,Boolean... asyncFlag);
+    void grantFirewall(GrantFirewallParam param, UcloudHandler<GrantFirewallResult> handler,
+                       Boolean... asyncFlag);
 
 
 
@@ -572,7 +625,8 @@ public interface UnetClient extends UcloudClient {
      * @param handler 异步处理器
      * @param asyncFlag 异步标记位，默认true异步
      */
-    void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler,Boolean... asyncFlag);
+    void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler,
+                        Boolean... asyncFlag);
 
 
 }
