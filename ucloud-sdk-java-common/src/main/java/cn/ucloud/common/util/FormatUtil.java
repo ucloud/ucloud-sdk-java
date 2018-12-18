@@ -71,7 +71,7 @@ public class FormatUtil {
             for (int i = 0; i < byteLen; i++)
                 arr[i] = (byte) Integer.parseInt(str.substring(i * 2, i * 2 + 2), 16);
         } catch (Exception e) {
-            Logger.getGlobal().log(Level.WARNING,e.getMessage());
+            Logger.getGlobal().log(Level.SEVERE,e.getMessage());
             return null;
         }
 

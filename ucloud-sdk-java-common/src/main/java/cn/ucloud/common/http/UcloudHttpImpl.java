@@ -17,6 +17,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @description: UcloudHttp实现类
@@ -37,7 +39,7 @@ public class UcloudHttpImpl implements UcloudHttp {
         // 创建http GET请求
         String httpGetParamString = ParamConstructor.getHttpGetParamString(param, config.getAccount());
         final HttpGet httpGet = new HttpGet(config.getApiServerAddr() + "?" + httpGetParamString);
-        return doHttp(httpGet, handler, asyncFlag);
+        return preHttp(httpGet, handler, asyncFlag);
     }
 
 
@@ -52,96 +54,125 @@ public class UcloudHttpImpl implements UcloudHttp {
         StringEntity entity = new StringEntity(httpPostParamString);
         entity.setContentEncoding("UTF-8");
         httpPost.setEntity(entity);
-        return doHttp(httpPost, handler, asyncFlag);
+        return preHttp(httpPost, handler, asyncFlag);
     }
 
-    private Object doHttp(HttpUriRequest request, UcloudHandler handler, Boolean... asyncFlag) throws Exception {
-        // 创建Httpclient对象
-        final CloseableHttpClient client = HttpClients.createDefault();
+    private Object preHttp(HttpUriRequest request, UcloudHandler handler, Boolean... asyncFlag) throws Exception {
         //result 对象
         Object responseResult = null;
         if (handler != null) {
-            // 回调
-            Thread thread = new Thread() {
-                @Override
-                public void run() {
-                    CloseableHttpResponse responseAsync = null;
-                    try {
-                        // 执行http get请求
-                        responseAsync = client.execute(request);
-                        if (responseAsync != null) {
-                            // 正常响应
-                            String content = EntityUtils.toString(responseAsync.getEntity(), "UTF-8");
-                            if (responseAsync.getStatusLine().getStatusCode() == 200) {
-                                Gson gson = new Gson();
-                                BaseResponseResult responseResult = gson.fromJson(content, resultClass);
-                                if (responseResult.getRetCode() == 0) {
-                                    handler.success(responseResult);
-                                } else {
-                                    handler.failed(responseResult);
-                                }
-                            } else {
-                                handler.error(new HttpException(content));
-                            }
-                        }
-                    } catch (Exception e) {
-                        //异常
-                        handler.error(e);
-                    } finally {
-                        try {
-                            if (responseAsync != null) {
-                                responseAsync.close();
-                            }
-                        } catch (IOException e) {
-                        }
-                        try {
-                            client.close();
-                        } catch (IOException e) {
-
-                        }
-                    }
-                }
-            };
             if (isSync(asyncFlag)) {
                 // 同步回调
-                thread.run();
+                doHttp(request, handler);
             } else {
                 // 异步回调
+                Thread thread = new Thread() {
+                    @Override
+                    public void run() {
+                        try {
+                            doHttp(request, handler);
+                        } catch (Exception e) {
+                            Logger.getGlobal().log(Level.SEVERE,e.getMessage());
+                        }
+                    }
+                };
                 thread.start();
             }
         } else {
-            // response对象
-            CloseableHttpResponse responseSync = null;
-            try {
-                // 同步非回调
-                responseSync = client.execute(request);
-                String content = EntityUtils.toString(responseSync.getEntity(), "UTF-8");
-                if (responseSync.getStatusLine().getStatusCode() == 200) {
-                    // 正常响应
+            // 同步
+            responseResult = doHttp(request, null);
+        }
+        return responseResult;
+    }
+
+    private BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler ) throws Exception {
+        CloseableHttpResponse response = null;
+        BaseResponseResult responseResult = null;
+        // 创建Httpclient对象
+        final CloseableHttpClient client = HttpClients.createDefault();
+        try {
+            // 执行http get请求
+            response = client.execute(request);
+            if (response != null) {
+                // 正常响应
+                String content = EntityUtils.toString(response.getEntity(), "UTF-8");
+                if (statusOK(response)) {
                     Gson gson = new Gson();
                     responseResult = gson.fromJson(content, resultClass);
+                    if (handler != null) {
+                        handleResult(handler, responseResult);
+                    }
                 } else {
                     // 非200则认为是个异常
-                    throw new HttpException(content);
-                }
-            } finally {
-                try {
-                    if (responseSync != null) {
-                        responseSync.close();
+                    if (handler != null) {
+                        handler.error(new HttpException(content));
+                    } else {
+                        throw new HttpException(content);
                     }
-                } catch (IOException e) {
                 }
-                try {
-                    client.close();
-                } catch (IOException e) {
+            } else {
+                handleException(handler, new NullPointerException("response is null"));
+            }
+        } catch (Exception e) {
+            if (handler != null) {
+                //异常
+                handler.error(e);
+            } else {
+                throw e;
+            }
+        } finally {
+            try {
+                if (response != null) {
+                    response.close();
                 }
+            } catch (IOException e) {
+                Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+            }
+            try {
+                client.close();
+            }catch (IOException e){
+                Logger.getGlobal().log(Level.SEVERE, e.getMessage());
             }
         }
         return responseResult;
     }
 
     private boolean isSync(Boolean[] asyncFlag) {
-        return asyncFlag.length > 0 && asyncFlag[0] != null && !asyncFlag[0];
+        return asyncFlag != null && asyncFlag.length > 0 && asyncFlag[0] != null && !asyncFlag[0];
+    }
+
+
+    private void handleException(UcloudHandler handler, Exception e) {
+        if (handler != null) {
+            handler.error(e);
+        }
+    }
+
+    private void handleResult(UcloudHandler handler, BaseResponseResult responseResult) {
+        if (handler != null) {
+            if (success(responseResult)) {
+                handler.success(responseResult);
+            } else {
+                handler.failed(responseResult);
+            }
+        }
+    }
+
+    private boolean success(BaseResponseResult responseResult) {
+        boolean success = false;
+        if (responseResult != null) {
+            success = responseResult.getRetCode() == 0;
+        }
+        return success;
+    }
+
+
+    private boolean statusOK(CloseableHttpResponse response) {
+        boolean ok = false;
+        if (response != null) {
+            ok = response.getStatusLine().getStatusCode() == 200;
+        }
+        return ok;
     }
 
 }

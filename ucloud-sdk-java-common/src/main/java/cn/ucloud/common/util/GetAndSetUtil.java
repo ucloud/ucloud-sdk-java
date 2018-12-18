@@ -29,7 +29,7 @@ public class GetAndSetUtil {
         try {
             return objectClass.getMethod(sb.toString());
         } catch (Exception e) {
-            Logger.getGlobal().log(Level.WARNING, e.getMessage());
+            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
         }
         return null;
     }
@@ -54,7 +54,7 @@ public class GetAndSetUtil {
             sb.append(fieldName.substring(1));
             return objectClass.getMethod(sb.toString(), parameterTypes);
         } catch (Exception e) {
-            Logger.getGlobal().log(Level.WARNING, e.getMessage());
+            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
         }
         return null;
     }

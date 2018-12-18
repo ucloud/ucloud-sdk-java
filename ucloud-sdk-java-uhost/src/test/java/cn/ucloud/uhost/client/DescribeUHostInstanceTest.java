@@ -24,8 +24,8 @@ public class DescribeUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeUHostInstanceParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeUHostInstanceParam("cn-sh2");
+        param.setProjectId("org-pbmy1g");
     }
 
     @Test
@@ -61,7 +61,7 @@ public class DescribeUHostInstanceTest {
         });
 
         try {
-            Thread.sleep(60*1000);
+            Thread.sleep(10*1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

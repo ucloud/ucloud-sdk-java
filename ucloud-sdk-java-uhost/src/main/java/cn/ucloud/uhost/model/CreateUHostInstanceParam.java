@@ -155,7 +155,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
                 try {
                     list.add(new Param("Password",  new String( Base64.encodeBase64((password).getBytes("utf-8")))));
                 } catch (UnsupportedEncodingException e) {
-                    Logger.getGlobal().log(Level.WARNING,e.getMessage());
+                    Logger.getGlobal().log(Level.SEVERE,e.getMessage());
                 }
             } else {
                 throw new ValidatorException("password can not be empty with loginModel equal Password");

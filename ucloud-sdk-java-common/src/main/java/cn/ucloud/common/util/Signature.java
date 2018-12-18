@@ -146,7 +146,7 @@ public class Signature {
                 try {
                     params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
-                    Logger.getGlobal().log(Level.WARNING, e.getMessage());
+                    Logger.getGlobal().log(Level.SEVERE, e.getMessage());
                 }
             }
         }
@@ -164,7 +164,7 @@ public class Signature {
                 try {
                     param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
-                    Logger.getGlobal().log(Level.WARNING, e.getMessage());
+                    Logger.getGlobal().log(Level.SEVERE, e.getMessage());
                 }
             }
         }
@@ -224,7 +224,7 @@ public class Signature {
             return FormatUtil.formatBytes2HexString(messageDigest, false);
 
         } catch (NoSuchAlgorithmException e) {
-            Logger.getGlobal().log(Level.WARNING, e.getMessage());
+            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
         }
         return "";
     }
