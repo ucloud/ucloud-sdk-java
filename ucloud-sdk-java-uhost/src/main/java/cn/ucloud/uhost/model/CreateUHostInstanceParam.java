@@ -11,6 +11,8 @@ import javax.validation.constraints.NotEmpty;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @description: 创建主机实例参数类
@@ -151,10 +153,9 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         if ("Password".equals(this.getLoginMode())) {
             if (this.getPassword() != null && !"".equals(this.getPassword())) {
                 try {
-                    //list.add(new Param("LoginMode","Password"));
                     list.add(new Param("Password",  new String( Base64.encodeBase64((password).getBytes("utf-8")))));
                 } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                    Logger.getGlobal().log(Level.WARNING,e.getMessage());
                 }
             } else {
                 throw new ValidatorException("password can not be empty with loginModel equal Password");
@@ -229,7 +230,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     @UcloudParam("UhostDisk")
     public List<Param> checkUhostDisk() throws ValidatorException {
         List<Param> list = new ArrayList<>();
-        if (this.getDisks() != null && this.getDisks().size() > 0) {
+        if (this.getDisks() != null && this.getDisks().isEmpty()) {
             List<UhostDisk> uhostDisks = this.getDisks();
             int len = uhostDisks.size();
             for (int i = 0; i < len; i++) {
@@ -281,7 +282,6 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         List<Param> list = new ArrayList<>();
         if ("KeyPair".equals(this.getLoginMode())) {
             if (this.getKeyPair() != null && this.getKeyPair().length() > 0) {
-                //list.add(new Param("LoginMode","KeyPair"));
                 list.add(new Param("KeyPair", this.getKeyPair()));
             } else {
                 throw new ValidationException("keyPair can not be empty with loginModel equals KeyPair");

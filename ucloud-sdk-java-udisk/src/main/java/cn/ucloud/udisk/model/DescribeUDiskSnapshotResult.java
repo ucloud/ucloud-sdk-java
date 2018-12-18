@@ -171,8 +171,8 @@ public class DescribeUDiskSnapshotResult extends BaseResponseResult {
             return isUDiskAvailable;
         }
 
-        public void setUDiskAvailable(boolean UDiskAvailable) {
-            isUDiskAvailable = UDiskAvailable;
+        public void setUDiskAvailable(boolean uDiskAvailable) {
+            isUDiskAvailable = uDiskAvailable;
         }
 
         public String getVersion() {

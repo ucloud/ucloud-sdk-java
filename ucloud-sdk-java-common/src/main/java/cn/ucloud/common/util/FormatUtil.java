@@ -28,8 +28,7 @@ public class FormatUtil {
             return "";
 
         Random random = new Random(System.currentTimeMillis());
-
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         int times = (int) Math.ceil(byteSize / 4.f);
 
         for (int i = 0; i < times; i++) {
@@ -83,7 +82,7 @@ public class FormatUtil {
         if (data == null || data.length == 0)
             return "";
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (byte b : data)
             sb.append(String.format("%02x", b));
 
@@ -94,7 +93,7 @@ public class FormatUtil {
         if (data == null || data.isEmpty())
             return "";
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (byte b : data)
             sb.append(String.format("%02x", b));
 

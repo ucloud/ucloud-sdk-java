@@ -281,7 +281,7 @@ public class DescribeUDiskResult extends BaseResponseResult {
      * 磁盘信息
      */
     @SerializedName("DataSet")
-    private List<UDiskData> DataSet;
+    private List<UDiskData> dataSet;
 
     public Integer getTotalCount() {
         return totalCount;
@@ -292,11 +292,11 @@ public class DescribeUDiskResult extends BaseResponseResult {
     }
 
     public List<UDiskData> getDataSet() {
-        return DataSet;
+        return dataSet;
     }
 
-    public void setDataSet(List<UDiskData> DataSet) {
-        this.DataSet = DataSet;
+    public void setDataSet(List<UDiskData> dataSet) {
+        this.dataSet = dataSet;
     }
 
 

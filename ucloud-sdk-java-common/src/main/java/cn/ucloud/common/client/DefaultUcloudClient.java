@@ -25,8 +25,7 @@ public class DefaultUcloudClient implements UcloudClient {
     @Override
     public GetRegionResult getRegion() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
-        GetRegionResult result = (GetRegionResult) http.doGet(new GetRegionParam(), config, null);
-        return result;
+        return (GetRegionResult) http.doGet(new GetRegionParam(), config, null);
     }
 
     @Override
@@ -41,8 +40,7 @@ public class DefaultUcloudClient implements UcloudClient {
     @Override
     public GetProjectListResult getProductList() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
-        GetProjectListResult result = (GetProjectListResult) http.doGet(new GetProjectListParam(), config, null);
-        return result;
+        return (GetProjectListResult) http.doGet(new GetProjectListParam(), config, null);
     }
 
     @Override

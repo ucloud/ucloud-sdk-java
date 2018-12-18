@@ -156,7 +156,7 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
     @UcloudParam("UhostDisk")
     public List<Param> checkUhostDisk() throws ValidatorException {
         List<Param> list = new ArrayList<>();
-        if (this.getDisks() != null && this.getDisks().size() > 0) {
+        if (this.getDisks() != null && this.getDisks().isEmpty()) {
             List<UhostDisk> uhostDisks = this.getDisks();
             int len = uhostDisks.size();
             for (int i = 0; i < len; i++) {

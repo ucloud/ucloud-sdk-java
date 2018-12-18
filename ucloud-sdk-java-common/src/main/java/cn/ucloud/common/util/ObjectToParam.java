@@ -77,6 +77,7 @@ public class ObjectToParam {
 
     /**
      * 根据类对象 获取方法参数
+     *
      * @param clazz            类对象的class
      * @param baseRequestParam 类对象
      * @return 方法参数列表
@@ -87,13 +88,13 @@ public class ObjectToParam {
         if (clazz != null) {
             Method[] declaredMethods = clazz.getDeclaredMethods();
             int len = declaredMethods.length;
-            for (int i = 0 ;i< len ;i++){
+            for (int i = 0; i < len; i++) {
                 UcloudParam annotation = declaredMethods[i].getAnnotation(UcloudParam.class);
-                if (annotation!= null){
+                if (annotation != null) {
                     declaredMethods[i].setAccessible(true);
                     Object invoke = declaredMethods[i].invoke(baseRequestParam);
-                    if (invoke != null && invoke instanceof List){
-                        List<Param> params = (List<Param>)invoke;
+                    if (invoke instanceof List) {
+                        List<Param> params = (List<Param>) invoke;
                         list.addAll(params);
                     }
                 }

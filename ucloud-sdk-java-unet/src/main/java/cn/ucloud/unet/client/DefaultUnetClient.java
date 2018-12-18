@@ -356,13 +356,16 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
     }
 
     @Override
-    public AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param) throws Exception {
+    public AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AssociateEIPWithShareBandwidthResult.class);
         return (AssociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param, UcloudHandler<AssociateEIPWithShareBandwidthResult> handler, Boolean... asyncFlag) {
+    public void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param,
+                                               UcloudHandler<AssociateEIPWithShareBandwidthResult> handler,
+                                               Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AssociateEIPWithShareBandwidthResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -372,13 +375,16 @@ public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient
 
 
     @Override
-    public DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param) throws Exception {
+    public DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DisassociateEIPWithShareBandwidthResult.class);
         return (DisassociateEIPWithShareBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param, UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler, Boolean... asyncFlag) {
+    public void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param,
+                                                  UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler,
+                                                  Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DisassociateEIPWithShareBandwidthResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
