@@ -164,11 +164,11 @@ public class UpdateFirewallParam extends BaseRequestParam {
             if (StringUtils.isBlank(ip)) {
                 ip = "192.168.1.1";
             }
-            if (StringUtils.isBlank(acceptOrNot)) {
-                acceptOrNot = "DROP";
-            }
             if (StringUtils.isBlank(priority)) {
                 priority = "LOW";
+            }
+            if (StringUtils.isBlank(acceptOrNot)) {
+                acceptOrNot = "DROP";
             }
             rule = String.format(ruleFormat, protocol, port, ip + "/" + port, acceptOrNot, priority);
             return rule;

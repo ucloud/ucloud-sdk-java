@@ -65,7 +65,6 @@ public class DisassociateEIPWithShareBandwidthParam extends BaseRequestParam {
                 list.add(new Param("EIPIds." + i, eipId));
             }
         }
-
         return list;
     }
 

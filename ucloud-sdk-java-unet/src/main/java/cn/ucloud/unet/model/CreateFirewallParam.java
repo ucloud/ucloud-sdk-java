@@ -72,11 +72,11 @@ public class CreateFirewallParam extends BaseRequestParam {
                     if (StringUtils.isBlank(rule.getIp())) {
                         throw new ValidatorException(String.format(exceptionFormat, i, "ip can not be empty"));
                     }
-                    if (StringUtils.isBlank(rule.getAcceptOrNot())) {
-                        throw new ValidatorException(String.format(exceptionFormat, i, "acceptOrNot can not be empty"));
-                    }
                     if (StringUtils.isBlank(rule.getPriority())) {
                         throw new ValidatorException(String.format(exceptionFormat, i, "priority can not be empty"));
+                    }
+                    if (StringUtils.isBlank(rule.getAcceptOrNot())) {
+                        throw new ValidatorException(String.format(exceptionFormat, i, "acceptOrNot can not be empty"));
                     }
                     list.add(new Param("Rule." + i, rule.getRule()));
                 }

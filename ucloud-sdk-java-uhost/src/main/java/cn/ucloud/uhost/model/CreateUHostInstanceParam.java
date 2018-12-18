@@ -227,28 +227,30 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     @UcloudParam("UhostDisk")
     public List<Param> checkUhostDisk() throws ValidatorException {
         List<Param> list = new ArrayList<>();
-        if (this.getDisks() != null && this.getDisks().isEmpty()) {
+        if (this.getDisks() != null && !this.getDisks().isEmpty()) {
             List<UhostDisk> uhostDisks = this.getDisks();
             int len = uhostDisks.size();
+            String exceptionFormat = "uhost.disk[%d]%s";
+            String disksParamFormat = "Disks.%d.%s";
             for (int i = 0; i < len; i++) {
                 UhostDisk disk = uhostDisks.get(i);
                 if (disk == null) {
-                    throw new ValidatorException("uhost.disk[" + i + "] can not be null");
+                    throw new ValidatorException(String.format(exceptionFormat,i ," can not be null"));
                 } else {
-                    if (disk.getSize() == null || disk.getSize() <= 0) {
-                        throw new ValidatorException("uhost.disk[" + i + "].size can not be null or size <= 0");
-                    }
                     if (disk.getBoot() == null) {
-                        throw new ValidatorException("uhost.disk[" + i + "].isBoot can not be null");
+                        throw new ValidatorException(String.format(exceptionFormat,i ,".isBoot can not be null"));
+                    }
+                    if (disk.getSize() == null || disk.getSize() <= 0) {
+                        throw new ValidatorException(String.format(exceptionFormat,i ,".size can not be null or size <= 0"));
                     }
                     if (disk.getType() == null || disk.getType().length() <= 0) {
-                        throw new ValidatorException("uhost.disk[" + i + "].type can not be null");
+                        throw new ValidatorException(String.format(exceptionFormat,i ,".type can not be null"));
                     }
-                    list.add(new Param("Disks." + i + ".Size", disk.getSize()));
-                    list.add(new Param("Disks." + i + ".Type", disk.getType()));
-                    list.add(new Param("Disks." + i + ".IsBoot", disk.getBoot()));
+                    list.add(new Param(String.format(disksParamFormat,i,"Size"), disk.getSize()));
+                    list.add(new Param(String.format(disksParamFormat,i,"Type"), disk.getType()));
+                    list.add(new Param(String.format(disksParamFormat,i,"IsBoot"), disk.getBoot()));
                     if (disk.backupType != null && disk.getBackupType().length() > 0) {
-                        list.add(new Param("Disks." + i + ".BackupType", disk.getBackupType()));
+                        list.add(new Param(String.format(disksParamFormat,i,"BackupType"), disk.getBackupType()));
                     }
                 }
             }
