@@ -25,7 +25,6 @@ public class DescribeUHostInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeUHostInstanceParam("cn-sh2");
-        param.setProjectId("org-pbmy1g");
     }
 
     @Test

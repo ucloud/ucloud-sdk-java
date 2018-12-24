@@ -72,7 +72,7 @@ public class UcloudHttpImpl implements UcloudHttp {
                         try {
                             doHttp(request, handler);
                         } catch (Exception e) {
-                            Logger.getGlobal().log(Level.SEVERE,e.getMessage());
+                            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
                         }
                     }
                 };
@@ -85,7 +85,7 @@ public class UcloudHttpImpl implements UcloudHttp {
         return responseResult;
     }
 
-    private BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler ) throws Exception {
+    private BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler) throws Exception {
         CloseableHttpResponse response = null;
         BaseResponseResult responseResult = null;
         // 创建Httpclient对象
@@ -130,7 +130,7 @@ public class UcloudHttpImpl implements UcloudHttp {
             }
             try {
                 client.close();
-            }catch (IOException e){
+            } catch (IOException e) {
                 Logger.getGlobal().log(Level.SEVERE, e.getMessage());
             }
         }

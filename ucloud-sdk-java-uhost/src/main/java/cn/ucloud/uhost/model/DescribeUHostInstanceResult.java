@@ -1,6 +1,7 @@
 package cn.ucloud.uhost.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -53,6 +54,12 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("ImageId")
         private String imageId;
 
+        @SerializedName("IsExpire")
+        private String isExpire;
+
+        @SerializedName("IsolationGroup")
+        private String isolationGroup;
+
         /**
          * 基础镜像ID（指当前自定义镜像的来源镜像）
          */
@@ -64,6 +71,9 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
          */
         @SerializedName("BasicImageName")
         private String basicImageName;
+
+        @SerializedName("BootDiskState")
+        private String bootDiskState;
 
         /**
          * 业务组名称
@@ -121,6 +131,12 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         private Integer cpu;
 
         /**
+         * 虚拟GPU核数，单位: 个
+         */
+        @SerializedName("GPU")
+        private Integer gpu;
+
+        /**
          * 内存大小，单位: MB
          */
         @SerializedName("Memory")
@@ -162,6 +178,9 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("TimemachineFeature")
         private String timeMachineFeature;
 
+        @SerializedName("TotalDiskSpace")
+        private Integer totalDiskSpace;
+
         /**
          * true: 开启热升级； false，未开启热升级
          */
@@ -189,6 +208,7 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         /**
          * "Linux"或者"Windows"
          */
+        @SerializedName("OsType")
         private String osType;
 
         /**
@@ -449,46 +469,60 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
             this.lifeCycle = lifeCycle;
         }
 
+        public String getIsExpire() {
+            return isExpire;
+        }
+
+        public UHostElement setIsExpire(String isExpire) {
+            this.isExpire = isExpire;
+            return this;
+        }
+
+        public String getIsolationGroup() {
+            return isolationGroup;
+        }
+
+        public UHostElement setIsolationGroup(String isolationGroup) {
+            this.isolationGroup = isolationGroup;
+            return this;
+        }
+
+        public String getBootDiskState() {
+            return bootDiskState;
+        }
+
+        public UHostElement setBootDiskState(String bootDiskState) {
+            this.bootDiskState = bootDiskState;
+            return this;
+        }
+
+        public Integer getGpu() {
+            return gpu;
+        }
+
+        public UHostElement setGpu(Integer gpu) {
+            this.gpu = gpu;
+            return this;
+        }
+
+        public Integer getTotalDiskSpace() {
+            return totalDiskSpace;
+        }
+
+        public UHostElement setTotalDiskSpace(Integer totalDiskSpace) {
+            this.totalDiskSpace = totalDiskSpace;
+            return this;
+        }
+
         @Override
         public String toString() {
-            return "UHostElement{" +
-                    "uhostId='" + uhostId + '\'' +
-                    ", uhostType='" + uhostType + '\'' +
-                    ", zone='" + zone + '\'' +
-                    ", storageType='" + storageType + '\'' +
-                    ", imageId='" + imageId + '\'' +
-                    ", basicImageId='" + basicImageId + '\'' +
-                    ", basicImageName='" + basicImageName + '\'' +
-                    ", tag='" + tag + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", name='" + name + '\'' +
-                    ", state='" + state + '\'' +
-                    ", createTime=" + createTime +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", expireTime=" + expireTime +
-                    ", cpu=" + cpu +
-                    ", memory=" + memory +
-                    ", autoRenew='" + autoRenew + '\'' +
-                    ", uhostDisks=" + uhostDisks +
-                    ", uhostIps=" + uhostIps +
-                    ", netCapAbility='" + netCapAbility + '\'' +
-                    ", networkState='" + networkState + '\'' +
-                    ", timeMachineFeature='" + timeMachineFeature + '\'' +
-                    ", hotPlugFeature=" + hotPlugFeature +
-                    ", subnetType='" + subnetType + '\'' +
-                    ", ips=" + ips +
-                    ", osName='" + osName + '\'' +
-                    ", osType='" + osType + '\'' +
-                    ", deleteTime=" + deleteTime +
-                    ", hostType='" + hostType + '\'' +
-                    ", lifeCycle='" + lifeCycle + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
 
     }
 
 
-    public static class UHostDiskElement{
+    public static class UHostDiskElement {
         /**
          * 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk
          */
@@ -506,6 +540,9 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
          */
         @SerializedName("Name")
         private String name;
+
+        @SerializedName("NetCapFeature")
+        private String netCapFeature;
 
         /**
          * 磁盘盘符
@@ -643,21 +680,18 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
             this.isBoot = isBoot;
         }
 
+        public String getNetCapFeature() {
+            return netCapFeature;
+        }
+
+        public UHostDiskElement setNetCapFeature(String netCapFeature) {
+            this.netCapFeature = netCapFeature;
+            return this;
+        }
+
         @Override
         public String toString() {
-            return "UHostDiskElement{" +
-                    "type='" + type + '\'' +
-                    ", diskId='" + diskId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", drive='" + drive + '\'' +
-                    ", size=" + size +
-                    ", backupType='" + backupType + '\'' +
-                    ", iops=" + iops +
-                    ", diskShortId='" + diskShortId + '\'' +
-                    ", encrypted='" + encrypted + '\'' +
-                    ", diskType='" + diskType + '\'' +
-                    ", isBoot='" + isBoot + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -670,10 +704,10 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         private String type;
 
         /**
-         * IP资源ID (内网IP无对应的资源ID)
+         * Mac地址
          */
-        @SerializedName("IPId")
-        private String ipId;
+        @SerializedName("Mac")
+        private String mac;
 
         /**
          * ip地址
@@ -683,14 +717,14 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         /**
          * IP对应的带宽, 单位: Mb (内网IP不显示带宽信息)
          */
-        @SerializedName("Bandwidth")
-        private Integer bandWidth;
+        @SerializedName("SubnetId")
+        private String subnetId;
 
         /**
          * 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。
          */
-        @SerializedName("Default")
-        private String flexibleNetworkCard;
+        @SerializedName("VPCId")
+        private String vpcId;
 
         public String getType() {
             return type;
@@ -700,12 +734,12 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
             this.type = type;
         }
 
-        public String getIpId() {
-            return ipId;
+        public String getMac() {
+            return mac;
         }
 
-        public void setIpId(String ipId) {
-            this.ipId = ipId;
+        public void setMac(String mac) {
+            this.mac = mac;
         }
 
         public String getIp() {
@@ -716,34 +750,27 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
             this.ip = ip;
         }
 
-        public Integer getBandWidth() {
-            return bandWidth;
+        public String getSubnetId() {
+            return subnetId;
         }
 
-        public void setBandWidth(Integer bandWidth) {
-            this.bandWidth = bandWidth;
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
         }
 
-        public String getFlexibleNetworkCard() {
-            return flexibleNetworkCard;
+        public String getVpcId() {
+            return vpcId;
         }
 
-        public void setFlexibleNetworkCard(String flexibleNetworkCard) {
-            this.flexibleNetworkCard = flexibleNetworkCard;
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
         }
 
         @Override
         public String toString() {
-            return "UHostIpElement{" +
-                    "type='" + type + '\'' +
-                    ", ipId='" + ipId + '\'' +
-                    ", ip='" + ip + '\'' +
-                    ", bandWidth=" + bandWidth +
-                    ", flexibleNetworkCard='" + flexibleNetworkCard + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
-
 
 
     /**
@@ -773,16 +800,5 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
 
     public void setUhosts(List<UHostElement> uhosts) {
         this.uhosts = uhosts;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUHostInstanceResult{" +
-                "totalCount='" + totalCount + '\'' +
-                ", uhosts=" + uhosts +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }
