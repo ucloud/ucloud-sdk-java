@@ -371,6 +371,51 @@ public class DescribeULBResult extends BaseResponseResult {
         @SerializedName("PolicySet")
         private List<ULBPolicy> policies;
 
+
+        /**
+         * 创建时间
+         */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /**
+         * 监控类型
+         */
+        @SerializedName("MonitorType")
+        private String monitorType;
+
+
+        /**
+         *
+         */
+        @SerializedName("MetricIdSet")
+        private List<VServerMetric> metricList;
+
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getMonitorType() {
+            return monitorType;
+        }
+
+        public void setMonitorType(String monitorType) {
+            this.monitorType = monitorType;
+        }
+
+        public List<VServerMetric> getMetricList() {
+            return metricList;
+        }
+
+        public void setMetricList(List<VServerMetric> metricList) {
+            this.metricList = metricList;
+        }
+
         public String getVserverId() {
             return vserverId;
         }
@@ -478,6 +523,46 @@ public class DescribeULBResult extends BaseResponseResult {
         @Override
         public String toString() {
             return new Gson().toJson(this);
+        }
+    }
+
+    public static class VServerMetric{
+
+        /**
+         * id
+         */
+        @SerializedName("MetricId")
+        private String metricId;
+
+        /**
+         * 类型
+         */
+        @SerializedName("Type")
+        private String type;
+
+        public String getMetricId() {
+            return metricId;
+        }
+
+        public void setMetricId(String metricId) {
+            this.metricId = metricId;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+
+        @Override
+        public String toString() {
+            return "VServerMetric{" +
+                    "metricId='" + metricId + '\'' +
+                    ", type='" + type + '\'' +
+                    '}';
         }
     }
 
@@ -594,12 +679,29 @@ public class DescribeULBResult extends BaseResponseResult {
         /**
          * 后端资源实例的运行状态
          */
+        @SerializedName("Status")
         private Integer status;
 
         /**
          * 后端资源实例的资源所在的子网的ID
          */
+        @SerializedName("SubnetId")
         private String subnetId;
+
+        /**
+         * 权重
+         */
+        @SerializedName("Weight")
+        private Integer weight;
+
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
 
         public String getBackendId() {
             return backendId;
