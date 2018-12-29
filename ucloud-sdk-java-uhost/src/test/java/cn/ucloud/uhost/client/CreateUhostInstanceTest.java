@@ -34,7 +34,7 @@ public class CreateUhostInstanceTest {
         param.setProjectId("org-izug1m");
         param.setLoginMode("Password");
         List diskList =new ArrayList<CreateUHostInstanceParam.UhostDisk>();
-        diskList.add(new CreateUHostInstanceParam.UhostDisk(-1,"1",false));
+        diskList.add(new CreateUHostInstanceParam.UhostDisk(10,"LOCAL_NORMAL",false));
         param.setDisks(diskList);
         //param.setVpcId("uvnet-dbboih");
         //param.setSubnetId("subnet-us0fsb");

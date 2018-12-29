@@ -1,7 +1,5 @@
 package cn.ucloud.ulb.client;
 
-import cn.ucloud.ulb.client.DefaultULBClient;
-import cn.ucloud.ulb.client.ULBClient;
 import cn.ucloud.ulb.model.CreateULBParam;
 import cn.ucloud.ulb.model.CreateULBResult;
 import cn.ucloud.common.pojo.Account;
