@@ -1,6 +1,7 @@
 package cn.ucloud.ulb.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class DescribeULBResult extends BaseResponseResult {
 
-    public static class ULB{
+    public static class ULB {
         /**
          * 负载均衡的资源ID
          */
@@ -79,6 +80,9 @@ public class DescribeULBResult extends BaseResponseResult {
          */
         @SerializedName("ULBType")
         private String ulbType;
+
+        @SerializedName("VPCId")
+        private String vpcId;
 
         /**
          * ULB 为 InnerMode 时，ULB 所属的子网ID，默认为空
@@ -207,28 +211,21 @@ public class DescribeULBResult extends BaseResponseResult {
             this.privateIp = privateIp;
         }
 
+        public String getVpcId() {
+            return vpcId;
+        }
+
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
         @Override
         public String toString() {
-            return "ULB{" +
-                    "ulbId='" + ulbId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", tag='" + tag + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", bandwidthType=" + bandwidthType +
-                    ", bandwidth=" + bandwidth +
-                    ", createTime=" + createTime +
-                    ", expireTime=" + expireTime +
-                    ", ips=" + ips +
-                    ", ulbvServers=" + ulbvServers +
-                    ", ulbType='" + ulbType + '\'' +
-                    ", subnetId='" + subnetId + '\'' +
-                    ", businessId='" + businessId + '\'' +
-                    ", privateIp='" + privateIp + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
-    public static class ULBIP{
+    public static class ULBIP {
         /**
          * 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP
          */
@@ -273,16 +270,12 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ULBIP{" +
-                    "operatorName='" + operatorName + '\'' +
-                    ", eip='" + eip + '\'' +
-                    ", eipId='" + eipId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
-    public static class ULBVServer{
+    public static class ULBVServer {
 
         /**
          * VServer实例的Id
@@ -321,7 +314,6 @@ public class DescribeULBResult extends BaseResponseResult {
         private String method;
 
         /**
-         *
          * VServer会话保持方式。枚举值为：
          * None -> 关闭会话保持；
          * ServerInsert -> 自动生成；
@@ -485,26 +477,12 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ULBVServer{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", protocol='" + protocol + '\'' +
-                    ", frontendPort=" + frontendPort +
-                    ", method='" + method + '\'' +
-                    ", persistenceType='" + persistenceType + '\'' +
-                    ", persistenceInfo='" + persistenceInfo + '\'' +
-                    ", clientTimeout=" + clientTimeout +
-                    ", status=" + status +
-                    ", ulbssls=" + ulbssls +
-                    ", backends=" + backends +
-                    ", listenType='" + listenType + '\'' +
-                    ", policies=" + policies +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
-    public  static class ULBSSL{
+    public static class ULBSSL {
 
         /**
          * SSL证书绑定到的VServer的资源ID
@@ -564,17 +542,12 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ULBSSL{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", ulbId='" + ulbId + '\'' +
-                    ", ulbName='" + ulbName + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
-    public static  class ULBBackend{
+    public static class ULBBackend {
         /**
          * 后端资源实例的Id
          */
@@ -702,22 +675,12 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ULBBackend{" +
-                    "backendId='" + backendId + '\'' +
-                    ", resourceType='" + resourceType + '\'' +
-                    ", resourceId='" + resourceId + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    ", privateIp='" + privateIp + '\'' +
-                    ", port=" + port +
-                    ", enabled=" + enabled +
-                    ", status=" + status +
-                    ", subnetId='" + subnetId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
-    public static class ULBPolicy{
+    public static class ULBPolicy {
 
         /**
          * 内容转发Id，默认内容转发类型下为空。
@@ -836,20 +799,11 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ULBPolicy{" +
-                    "policyId='" + policyId + '\'' +
-                    ", policyType='" + policyType + '\'' +
-                    ", type='" + type + '\'' +
-                    ", match='" + match + '\'' +
-                    ", policyPriority=" + policyPriority +
-                    ", vserverId='" + vserverId + '\'' +
-                    ", totalCount=" + totalCount +
-                    ", backends=" + backends +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
-    public static class PolicyBackend{
+    public static class PolicyBackend {
         /**
          * 所添加的后端资源在ULB中的对象ID，
          * （为ULB系统中使用，与资源自身ID无关)
@@ -923,16 +877,9 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "PolicyBackend{" +
-                    "backendId='" + backendId + '\'' +
-                    ", objectId='" + objectId + '\'' +
-                    ", port=" + port +
-                    ", privateIp='" + privateIp + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
-
 
     /**
      * 满足条件的ULB总数
@@ -965,12 +912,6 @@ public class DescribeULBResult extends BaseResponseResult {
 
     @Override
     public String toString() {
-        return "DescribeULBResult{" +
-                "totalCount=" + totalCount +
-                ", ulbs=" + ulbs +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+        return new Gson().toJson(this);
     }
 }
