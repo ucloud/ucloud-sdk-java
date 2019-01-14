@@ -31,7 +31,7 @@ public class CreateUhostInstanceTest {
         param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-03","uimage-m1proq");
         param.setName("java-sdk-test-aaa");
         param.setPassword("123456ab");
-        param.setProjectId("org-izug1m");
+        param.setProjectId("org-pbmy1g");
         param.setLoginMode("Password");
         List diskList =new ArrayList<CreateUHostInstanceParam.UhostDisk>();
         diskList.add(new CreateUHostInstanceParam.UhostDisk(10,"LOCAL_NORMAL",false));
