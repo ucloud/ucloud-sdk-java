@@ -1,4 +1,5 @@
 ## ucloud-sdk-java
+![badge](http://9000.sonar-service.prj-sonarqube.svc.a1.gw.ucloudadmin.com/api/project_badges/measure?project=esl-ipdd-ucloud-sdk-java&metric=alert_status) <br/>
 ucloud开发者工具套件（SDK）。<br>
 面向UCloud的多个产品服务，目前包括：
 - uhost
