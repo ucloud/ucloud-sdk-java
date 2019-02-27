@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 
 public class UcloudHttpImpl implements UcloudHttp {
 
+
     private Class<? extends BaseResponseResult> resultClass;
 
     public UcloudHttpImpl(Class<? extends BaseResponseResult> resultClass) {
@@ -96,6 +97,7 @@ public class UcloudHttpImpl implements UcloudHttp {
             if (response != null) {
                 // 正常响应
                 String content = EntityUtils.toString(response.getEntity(), "UTF-8");
+                //Logger.getGlobal().log(Level.INFO,"response content:"+content);
                 if (statusOK(response)) {
                     Gson gson = new Gson();
                     responseResult = gson.fromJson(content, resultClass);
