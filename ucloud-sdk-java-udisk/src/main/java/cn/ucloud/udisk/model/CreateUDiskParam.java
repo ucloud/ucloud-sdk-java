@@ -77,6 +77,8 @@ public class CreateUDiskParam extends BaseRequestParam {
     @UcloudParam("CouponId")
     private String couponId;
 
+
+
     public CreateUDiskParam(@NotEmpty(message = "region can not be empty") String region,
                             @NotEmpty(message = "zone can not be empty") String zone,
                             @NotEmpty(message = "size can not be empty") Integer size,

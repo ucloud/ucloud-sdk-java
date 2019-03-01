@@ -361,14 +361,14 @@ public class DescribeEIPResult extends BaseResponseResult {
         /**
          * 已绑定资源的资源ID
          */
-        @SerializedName("ResourceId")
+        @SerializedName("ResourceID")
         private String resourceId;
 
         /**
          * 弹性IP的资源ID
          */
-        @SerializedName("EIPId")
-        private String eipId;
+        @SerializedName("Zone")
+        private String zone;
 
         public String getResourceType() {
             return resourceType;
@@ -394,12 +394,12 @@ public class DescribeEIPResult extends BaseResponseResult {
             this.resourceId = resourceId;
         }
 
-        public String getEipId() {
-            return eipId;
+        public String getZone() {
+            return zone;
         }
 
-        public void setEipId(String eipId) {
-            this.eipId = eipId;
+        public void setZone(String zone) {
+            this.zone = zone;
         }
 
         @Override
@@ -408,7 +408,7 @@ public class DescribeEIPResult extends BaseResponseResult {
                     "resourceType='" + resourceType + '\'' +
                     ", resourceName='" + resourceName + '\'' +
                     ", resourceId='" + resourceId + '\'' +
-                    ", eipId='" + eipId + '\'' +
+                    ", zone='" + zone + '\'' +
                     '}';
         }
     }

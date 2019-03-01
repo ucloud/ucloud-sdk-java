@@ -1,10 +1,8 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.unet.model.DescribeEIPParam;
 import cn.ucloud.unet.model.DescribeEIPResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.unet.pojo.UnetConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,8 +23,8 @@ public class DescribeEIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeEIPParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeEIPParam("cn-sh2");
+        param.setProjectId("org-pbmy1g");
     }
 
 
