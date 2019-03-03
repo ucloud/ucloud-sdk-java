@@ -417,4 +417,327 @@ public interface UDBClient extends UcloudClient {
     void createUDBParamGroup(CreateUDBParamGroupParam param, UcloudHandler<CreateUDBParamGroupResult> handler,
                              Boolean... asyncFlag);
 
+    /**
+     * 创建MongoDB的副本节点
+     *
+     * @param param 对象参数
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateUDBReplicationInstanceResult createUDBReplicationInstance(CreateUDBReplicationInstanceParam param)
+            throws Exception;
+
+    /**
+     * 创建MongoDB的副本节点
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createUDBReplicationInstance(CreateUDBReplicationInstanceParam param,
+                                      UcloudHandler<CreateUDBReplicationInstanceResult> handler,
+                                      Boolean... asyncFlag);
+
+    /**
+     * 创建mongos实例
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateUDBRouteInstanceResult createUDBRouteInstance(CreateUDBRouteInstanceParam param) throws Exception;
+
+
+    /**
+     * 创建mongos实例
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createUDBRouteInstance(CreateUDBRouteInstanceParam param,
+                                UcloudHandler<CreateUDBRouteInstanceResult> handler,
+                                Boolean... asyncFlag);
+
+    /**
+     * 创建UDB实例的slave
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateUDBSlaveParam createUDBSlave(CreateUDBSlaveParam param) throws Exception;
+
+
+    /**
+     * 创建UDB实例的slave
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createUDBSlave(CreateUDBSlaveParam param, UcloudHandler<CreateUDBSlaveResult> handler,
+                        Boolean... asyncFlag);
+
+    /**
+     * 删除数据迁移任务
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteDBTransferTaskResult deleteDBTransferTask(DeleteDBTransferTaskParam param) throws Exception;
+
+
+    /**
+     * 删除数据迁移任务
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteDBTransferTask(DeleteDBTransferTaskParam param,
+                              UcloudHandler<DeleteDBTransferTaskResult> handler,
+                              Boolean... asyncFlag);
+
+    /**
+     * 删除sqlserver帐号
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteSqlserverAccountResult deleteSqlserverAccount(DeleteSqlserverAccountParam param) throws Exception;
+
+    /**
+     * 删除sqlserver帐号
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteSqlserverAccount(DeleteSqlserverAccountParam param,
+                                UcloudHandler<DeleteSqlserverAccountResult> handler,
+                                Boolean... asyncFlag);
+
+
+    /**
+     * 删除sqlserver高可用镜像数据库
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteSqlserverDatabaseResult deleteSqlserverDatabase(DeleteSqlserverDatabaseParam param)
+            throws Exception;
+
+    /**
+     * 删除sqlserver高可用镜像数据库
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteSqlserverDatabase(DeleteSqlserverDatabaseParam param,
+                                 UcloudHandler<DeleteSqlserverDatabaseResult> handler,
+                                 Boolean... asyncFlag);
+
+    /**
+     * 删除UDB实例备份
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteUDBBackupResult deleteUDBBackup(DeleteUDBBackupParam param) throws Exception;
+
+    /**
+     * 删除UDB实例备份
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteUDBBackup(DeleteUDBBackupParam param, UcloudHandler<DeleteUDBBackupResult> handler,
+                         Boolean... asyncFlag);
+
+    /**
+     * 删除数据库专区
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteUDBCInstanceResult deleteUDBCInstance(DeleteUDBCInstanceParam param) throws Exception;
+
+
+    /**
+     * 删除数据库专区
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteUDBCInstance(DeleteUDBCInstanceParam param, UcloudHandler<DeleteUDBCInstanceResult> handler,
+                            Boolean... asyncFlag);
+
+    /**
+     * 删除云数据库
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteUDBInstanceResult deleteUDBInstance(DeleteUDBInstanceParam param) throws Exception;
+
+    /**
+     * 删除云数据库
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteUDBInstance(DeleteUDBInstanceParam param, UcloudHandler<DeleteUDBInstanceResult> handler,
+                           Boolean asyncFlag);
+
+
+    /**
+     * 删除UDB日志包
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteUDBLogPackageResult deleteUDBLogPackage(DeleteUDBLogPackageParam param) throws Exception;
+
+
+    /**
+     * 删除UDB日志包
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteUDBLogPackage(DeleteUDBLogPackageParam param,
+                             UcloudHandler<DeleteUDBLogPackageResult> handler,
+                             Boolean... asyncFlag);
+
+    /**
+     * 删除配置
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteUDBParamGroupReuslt deleteUDBParamGroup(DeleteUDBParamGroupParam param) throws Exception;
+
+    /**
+     * 删除配置
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteUDBParamGroup(DeleteUDBParamGroupParam param,
+                             UcloudHandler<DeleteUDBParamGroupReuslt> handler,
+                             Boolean... asyncFlag);
+
+    /**
+     * 获取迁移任务信息
+     *
+     * @param param 参数对象
+     * @return 回调接口
+     * @throws Exception
+     */
+    DescribeDBTransferTaskResult describeDBTransferTask(DescribeDBTransferTaskParam param) throws Exception;
+
+    /**
+     * 获取迁移任务信息
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void describeDBTransferTask(DescribeDBTransferTaskParam param,
+                                UcloudHandler<DescribeDBTransferTaskResult> handler,
+                                Boolean... asyncFlag);
+
+    /**
+     * 获取单点升级高可用实例的差价
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DescribePromoteToHAPriceResult describePromoteToHAPrcie(DescribePromoteToHAPriceParam param) throws Exception;
+
+    /**
+     * 获取单点升级高可用实例的差价
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void describePromoteToHAPrice(DescribePromoteToHAPriceParam param,
+                                  UcloudHandler<DescribePromoteToHAPriceResult> handler,
+                                  Boolean... asyncFlag);
+
+    /**
+     * 拉取sqlserver帐号
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DescribeSqlserverAccountsResult describeSqlserverAccounts(DescribeSqlserverAccountsParam param) throws Exception;
+
+    /**
+     * 拉取sqlserver帐号
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void describeSqlserverAccounts(DescribeSqlserverAccountsParam param,
+                                   UcloudHandler<DescribeSqlserverAccountsResult> handler,
+                                   Boolean... asyncFlag);
+
+    /**
+     * 拉取sqlserver实例下数据库列表
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DescribeSqlserverDatabasesResult describeSqlserverDatabase(DescribeSqlserverDatabasesParam param) throws Exception;
+
+    /**
+     * 拉取sqlserver实例下数据库列表
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void describeSqlserverDatabase(DescribeSqlserverDatabasesParam param,
+                                   UcloudHandler<DescribeSqlserverDatabasesResult> handler,
+                                   Boolean... asyncFlag);
+
+    /**
+     * 获取备份列表
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DescribeUDBBackupResult describeUDBBackup(DescribeUDBBackupParam param) throws Exception;
+
+    /**
+     * 获取备份列表
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void describeUDBBackup(DescribeUDBBackupParam param, UcloudHandler<DescribeUDBBackupResult> handler,
+                           Boolean... asyncFlag);
 }
