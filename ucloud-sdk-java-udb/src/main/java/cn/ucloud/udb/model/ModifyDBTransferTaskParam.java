@@ -4,14 +4,13 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 /**
- * @Description : 创建数据迁移任务 参数类
+ * @Description : 修改数据迁移任务 参数类
  * @Author : codezhang
- * @Date : 2019-03-01 15:17
+ * @Date : 2019-03-04 18:19
  **/
-public class CreateDBTransferTaskParam extends BaseRequestParam {
+public class ModifyDBTransferTaskParam extends BaseRequestParam {
 
     /**
      * 目标库所在地域。 参见 [地域和可用区列表](../summary/regionlist.html)
@@ -28,16 +27,21 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
     private String zone;
 
     /**
+     * 任务Id
+     */
+    @NotEmpty(message = "taskId can not be empty")
+    @UcloudParam("TaskId")
+    private String taskId;
+
+    /**
      * 任务名称
      */
-    @NotEmpty(message = "taskName can not empty")
     @UcloudParam("TaskName")
     private String taskName;
 
     /**
      * 源库类型（MySQL, MongoDB, PostgreSQL)
      */
-    @NotEmpty(message = "srcDBTypeId can not be empty")
     @UcloudParam("SrcDBTypeId")
     private String srcDBTypeId;
 
@@ -45,100 +49,81 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
      * 源db实例类型: - uhost-udb: 表示用户云主机自建 - udb-udb: UDB （暂时两者在后端处理上没有区别）
      */
     @UcloudParam("SrcInstanceTypeId")
-    @NotEmpty(message = "srcInstanceTypeId can not be empty")
     private String srcInstanceTypeId;
 
     /**
      * 源库用户名
      */
-    @NotEmpty(message = "srcUser can not be empty")
     @UcloudParam("SrcUser")
     private String srcUser;
 
     /**
      * 源库用户密码
      */
-    @NotEmpty(message = "srcPassword can not be empty")
     @UcloudParam("SrcPassword")
     private String srcPassword;
 
     /**
      * 源库IP
      */
-    @NotEmpty(message = "srcIP can not be empty")
     @UcloudParam("SrcIP")
     private String srcIP;
 
     /**
      * 源库使用的端口
      */
-    @NotNull(message = "srcPort can not be null")
     @UcloudParam("SrcPort")
     private Integer srcPort;
 
     /**
      * 目标库类型（MySQL, MongoDB, PostgreSQL)
      */
-    @NotEmpty(message = "dstDBTypeId can not be empty")
     @UcloudParam("DstDBTypeId")
     private String dstDBTypeId;
 
     /**
      * 目标库DBId
      */
-    @NotEmpty(message = "dstDBId can not be empty")
     @UcloudParam("DstDBId")
     private String dstDBId;
 
     /**
      * 目标库用户名
      */
-    @NotEmpty(message = "dstUser can not be empty")
     @UcloudParam("DstUser")
     private String dstUser;
 
     /**
      * 目标库用户密码
      */
-    @NotEmpty(message = "dstPassword can not be empty")
     @UcloudParam("DstPassword")
     private String dstPassword;
 
     /**
+     * 目标库所在region
+     */
+    @UcloudParam("DstRegion")
+    private String dstRegion;
+
+    /**
+     * 目标库所在zone
+     */
+    @UcloudParam("DstZone")
+    private String dstZone;
+
+    /**
      * full表示全量，full_incr表示全量+增量
      */
-    @NotEmpty(message = "migrateType can not be empty")
     @UcloudParam("MigrateType")
     private String migrateType;
 
-
-    public CreateDBTransferTaskParam(@NotEmpty(message = "region can not be empty") String region,
-                                     @NotEmpty(message = "taskName can not empty") String taskName,
-                                     @NotEmpty(message = "srcDBType can not be empty") String srcDBTypeId,
-                                     @NotEmpty(message = "srcInstanceTypeId can not be empty") String srcInstanceTypeId,
-                                     @NotEmpty(message = "srcUser can not be empty") String srcUser,
-                                     @NotEmpty(message = "srcPassword can not be empty") String srcPassword,
-                                     @NotEmpty(message = "srcIP can not be empty") String srcIP,
-                                     @NotNull(message = "srcPort can not be null") Integer srcPort,
-                                     @NotEmpty(message = "dstDBTypeId can not be empty") String dstDBTypeId,
-                                     @NotEmpty(message = "dstDBId can not be empty") String dstDBId,
-                                     @NotEmpty(message = "dstUser can not be empty") String dstUser,
-                                     @NotEmpty(message = "dstPassword") String dstPassword,
-                                     @NotEmpty(message = "migrateType can not be empty") String migrateType) {
-        super("CreateDBTransferTask");
+    public ModifyDBTransferTaskParam(@NotEmpty(message = "region can not be empty") String region,
+                                     @NotEmpty(message = "zone can not be empty") String zone,
+                                     @NotEmpty(message = "taskId can not be empty") String taskId) {
+        super("ModifyDBTransferTask");
         this.region = region;
-        this.taskName = taskName;
-        this.srcDBTypeId = srcDBTypeId;
-        this.srcInstanceTypeId = srcInstanceTypeId;
-        this.srcUser = srcUser;
-        this.srcPassword = srcPassword;
-        this.srcIP = srcIP;
-        this.srcPort = srcPort;
-        this.dstDBTypeId = dstDBTypeId;
-        this.dstDBId = dstDBId;
-        this.dstUser = dstUser;
-        this.dstPassword = dstPassword;
-        this.migrateType = migrateType;
+        this.zone = zone;
+        this.taskId = taskId;
     }
 
     public String getRegion() {
@@ -155,6 +140,14 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
 
     public void setZone(String zone) {
         this.zone = zone;
+    }
+
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     public String getTaskName() {
@@ -245,6 +238,22 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
         this.dstPassword = dstPassword;
     }
 
+    public String getDstRegion() {
+        return dstRegion;
+    }
+
+    public void setDstRegion(String dstRegion) {
+        this.dstRegion = dstRegion;
+    }
+
+    public String getDstZone() {
+        return dstZone;
+    }
+
+    public void setDstZone(String dstZone) {
+        this.dstZone = dstZone;
+    }
+
     public String getMigrateType() {
         return migrateType;
     }
@@ -255,9 +264,10 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
 
     @Override
     public String toString() {
-        return "CreateDBTransferTaskParam{" +
+        return "ModifyDBTransferTaskParam{" +
                 "region='" + region + '\'' +
                 ", zone='" + zone + '\'' +
+                ", taskId='" + taskId + '\'' +
                 ", taskName='" + taskName + '\'' +
                 ", srcDBTypeId='" + srcDBTypeId + '\'' +
                 ", srcInstanceTypeId='" + srcInstanceTypeId + '\'' +
@@ -269,6 +279,8 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
                 ", dstDBId='" + dstDBId + '\'' +
                 ", dstUser='" + dstUser + '\'' +
                 ", dstPassword='" + dstPassword + '\'' +
+                ", dstRegion='" + dstRegion + '\'' +
+                ", dstZone='" + dstZone + '\'' +
                 ", migrateType='" + migrateType + '\'' +
                 ", action='" + action + '\'' +
                 ", signature='" + signature + '\'' +

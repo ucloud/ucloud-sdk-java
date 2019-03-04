@@ -177,7 +177,7 @@ public class CreateMongoDBReplicaSetParam extends BaseRequestParam {
     }
 
     @UcloudParam("SSDType")
-    public List<Param> checkSSDType() throws Exception {
+    public List<Param> checkSSDType() throws ValidationException {
         List<Param> list = new ArrayList<>();
         if (useSSD) {
             if (ssdType == null) {
