@@ -4,8 +4,8 @@ import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.pojo.UcloudConfig;
 import cn.ucloud.udpn.model.*;
+import cn.ucloud.udpn.pojo.UdpnConfig;
 
 /**
  * @description:
@@ -15,7 +15,7 @@ import cn.ucloud.udpn.model.*;
  */
 public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient {
 
-    public DefaultUDPNClient(UcloudConfig config) {
+    public DefaultUDPNClient(UdpnConfig config) {
         super(config);
     }
 

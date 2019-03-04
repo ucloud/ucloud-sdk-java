@@ -15,11 +15,8 @@ import cn.ucloud.udisk.pojo.UdiskConfig;
  */
 public class DefaultUdiskClient extends DefaultUcloudClient implements UdiskClient {
 
-    private UdiskConfig config;
-
     public DefaultUdiskClient(UdiskConfig config) {
         super(config);
-        this.config = config;
     }
 
     @Override
