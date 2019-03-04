@@ -16,7 +16,7 @@ import cn.ucloud.common.pojo.UcloudConfig;
  **/
 
 public class DefaultUcloudClient implements UcloudClient {
-    private UcloudConfig config;
+    protected UcloudConfig config;
 
     public DefaultUcloudClient(UcloudConfig config) {
         this.config = config;

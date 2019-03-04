@@ -17,6 +17,7 @@
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-ufs</module>
         <module>ucloud-sdk-java-udb</module>
+        <module>ucloud-sdk-java-udpn</module>
     </modules>
 
     <name>ucloud-sdk-java</name>
