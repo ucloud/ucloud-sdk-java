@@ -16,11 +16,8 @@ import cn.ucloud.unet.pojo.UnetConfig;
 
 public class DefaultUnetClient extends DefaultUcloudClient implements UnetClient {
 
-    private UnetConfig config;
-
     public DefaultUnetClient(UnetConfig config) {
         super(config);
-        this.config = config;
     }
 
 

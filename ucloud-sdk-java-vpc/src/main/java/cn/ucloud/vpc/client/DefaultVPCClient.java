@@ -15,14 +15,8 @@ import cn.ucloud.vpc.pojo.VPCConfig;
 
 public class DefaultVPCClient extends DefaultUcloudClient implements VPCClient {
 
-    /**
-     * VPC环境配置
-     */
-    private VPCConfig config;
-
     public DefaultVPCClient(VPCConfig config) {
         super(config);
-        this.config = config;
     }
 
     @Override

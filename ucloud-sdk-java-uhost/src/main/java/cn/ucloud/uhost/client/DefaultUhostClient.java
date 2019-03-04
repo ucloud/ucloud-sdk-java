@@ -15,17 +15,9 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 
 public class DefaultUhostClient extends DefaultUcloudClient implements UhostClient {
 
-    /**
-     * uhost配置
-     */
-    private UhostConfig config;
-
-
     public DefaultUhostClient(UhostConfig config) {
         super(config);
-        this.config = config;
     }
-
 
     @Override
     public GetUhostInstanceVncInfoResult getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param) throws Exception {
