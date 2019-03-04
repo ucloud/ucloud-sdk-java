@@ -15,16 +15,9 @@ import cn.ucloud.ufs.pojo.UFSConfig;
 
 public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
 
-    /**
-     * UFS配置参数
-     */
-    private UFSConfig config;
-
     public DefaultUFSClient(UFSConfig config) {
         super(config);
-        this.config = config;
     }
-
 
     @Override
     public CreateUFSVolumeResult createUFSVolume(CreateUFSVolumeParam param) throws Exception {

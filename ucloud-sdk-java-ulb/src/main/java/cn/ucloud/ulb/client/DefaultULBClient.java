@@ -15,14 +15,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 
 public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
 
-    /**
-     * ULB 配置
-     */
-    private ULBConfig config;
-
     public DefaultULBClient(ULBConfig config) {
         super(config);
-        this.config = config;
     }
 
 
