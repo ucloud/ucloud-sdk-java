@@ -1,9 +1,9 @@
 package cn.ucloud.udpn.client;
 
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.pojo.UcloudConfig;
 import cn.ucloud.udpn.model.DescribeUDPNParam;
 import cn.ucloud.udpn.model.DescribeUDPNResult;
+import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +20,7 @@ public class DescribeUDPNTest {
 
     @Before
     public void initData() {
-        client = new DefaultUDPNClient(new UcloudConfig(
+        client = new DefaultUDPNClient(new UdpnConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeUDPNParam();
