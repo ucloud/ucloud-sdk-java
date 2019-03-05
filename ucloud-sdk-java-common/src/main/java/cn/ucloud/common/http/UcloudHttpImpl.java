@@ -97,10 +97,10 @@ public class UcloudHttpImpl implements UcloudHttp {
             if (response != null) {
                 // 正常响应
                 String content = EntityUtils.toString(response.getEntity(), "UTF-8");
-                //Logger.getGlobal().log(Level.INFO,"response content:"+content);
                 if (statusOK(response)) {
                     Gson gson = new Gson();
                     responseResult = gson.fromJson(content, resultClass);
+                    responseResult.setResponseContent(content);
                     if (handler != null) {
                         handleResult(handler, responseResult);
                     }

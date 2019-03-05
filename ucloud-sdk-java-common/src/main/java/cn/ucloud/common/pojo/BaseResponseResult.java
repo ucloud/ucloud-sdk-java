@@ -27,6 +27,19 @@ public class BaseResponseResult {
     @SerializedName("Message")
     protected String message;
 
+    /**
+     * response content
+     */
+    protected String responseContent;
+
+    public String getResponseContent() {
+        return responseContent;
+    }
+
+    public void setResponseContent(String responseContent) {
+        this.responseContent = responseContent;
+    }
+
     public Integer getRetCode() {
         return retCode;
     }
