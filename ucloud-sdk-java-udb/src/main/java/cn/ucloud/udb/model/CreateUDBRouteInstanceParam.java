@@ -124,7 +124,7 @@ public class CreateUDBRouteInstanceParam extends BaseRequestParam {
     @UcloudParam("ConfigsvrId")
     public List<Param> checkConfigsvrId() throws ValidationException {
         List<Param> params = new ArrayList<>();
-        if (configsvrId == null || configsvrId.size() <= 0) {
+        if (configsvrId == null || configsvrId.isEmpty()) {
             throw new ValidationException("configsvrId can not be empty");
         } else {
             for (int i = 0; i < configsvrId.size(); i++) {

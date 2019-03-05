@@ -88,7 +88,7 @@ public class EditUDBBackupBlacklistParam extends BaseRequestParam {
     @UcloudParam("Blacklist")
     public List<Param> checkBlacklist() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (blacklists == null || blacklists.size() <= 0) {
+        if (blacklists == null || blacklists.isEmpty()) {
             throw new ValidationException("blacklists can not be empty");
         } else {
             StringBuilder builder = new StringBuilder();
