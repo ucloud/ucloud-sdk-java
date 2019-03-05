@@ -25,14 +25,4 @@ public class FetchDBPrecheckResultResult extends BaseResponseResult {
     public void setResult(List<String> result) {
         this.result = result;
     }
-
-    @Override
-    public String toString() {
-        return "FetchDBPrecheckResultResult{" +
-                "result=" + result +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

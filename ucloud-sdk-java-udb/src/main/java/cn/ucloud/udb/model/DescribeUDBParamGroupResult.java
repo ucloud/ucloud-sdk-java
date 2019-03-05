@@ -114,18 +114,7 @@ public class DescribeUDBParamGroupResult extends BaseResponseResult {
             this.formatType = formatType;
         }
 
-        @Override
-        public String toString() {
-            return "UDBParamGroup{" +
-                    "key='" + key + '\'' +
-                    ", value='" + value + '\'' +
-                    ", valueType=" + valueType +
-                    ", allowedVal='" + allowedVal + '\'' +
-                    ", applyType=" + applyType +
-                    ", modifiable=" + modifiable +
-                    ", formatType=" + formatType +
-                    '}';
-        }
+
     }
 
 
@@ -219,17 +208,6 @@ public class DescribeUDBParamGroupResult extends BaseResponseResult {
             this.udbParamMembers = udbParamMembers;
         }
 
-        @Override
-        public String toString() {
-            return "UDBParamGroup{" +
-                    "groupId=" + groupId +
-                    ", groupName='" + groupName + '\'' +
-                    ", dbTypeId='" + dbTypeId + '\'' +
-                    ", description='" + description + '\'' +
-                    ", modifiable=" + modifiable +
-                    ", udbParamMembers=" + udbParamMembers +
-                    '}';
-        }
     }
 
     /**
@@ -260,14 +238,5 @@ public class DescribeUDBParamGroupResult extends BaseResponseResult {
         this.totalCount = totalCount;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBParamGroupResult{" +
-                "udbParamGroups=" + udbParamGroups +
-                ", totalCount=" + totalCount +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

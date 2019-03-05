@@ -24,14 +24,4 @@ public class DescribeUDBBinlogBackupURLResult extends BaseResponseResult {
     public void setBackupPath(String backupPath) {
         this.backupPath = backupPath;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBBinlogBackupURLResult{" +
-                "backupPath='" + backupPath + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

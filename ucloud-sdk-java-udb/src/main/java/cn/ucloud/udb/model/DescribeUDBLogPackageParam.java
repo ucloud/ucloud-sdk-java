@@ -163,22 +163,4 @@ public class DescribeUDBLogPackageParam extends BaseRequestParam {
         this.endTime = endTime;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBLogPackageParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", type=" + type +
-                ", types=" + types +
-                ", dbId='" + dbId + '\'' +
-                ", beginTime=" + beginTime +
-                ", endTime=" + endTime +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

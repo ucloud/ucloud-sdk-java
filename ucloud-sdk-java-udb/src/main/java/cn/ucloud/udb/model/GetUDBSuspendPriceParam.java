@@ -84,17 +84,4 @@ public class GetUDBSuspendPriceParam extends BaseRequestParam {
     public void setDbIds(List<String> dbIds) {
         this.dbIds = dbIds;
     }
-
-    @Override
-    public String toString() {
-        return "GetUDBSuspendPriceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbIds=" + dbIds +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

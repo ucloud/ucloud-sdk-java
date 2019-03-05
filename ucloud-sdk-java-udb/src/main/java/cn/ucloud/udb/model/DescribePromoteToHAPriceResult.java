@@ -24,13 +24,4 @@ public class DescribePromoteToHAPriceResult extends BaseResponseResult {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "DescribePromoteToHAPriceResult{" +
-                "price=" + price +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

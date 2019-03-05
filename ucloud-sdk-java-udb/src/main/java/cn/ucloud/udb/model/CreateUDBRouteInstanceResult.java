@@ -24,13 +24,4 @@ public class CreateUDBRouteInstanceResult extends BaseResponseResult {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBRouteInstanceResult{" +
-                "dbId='" + dbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

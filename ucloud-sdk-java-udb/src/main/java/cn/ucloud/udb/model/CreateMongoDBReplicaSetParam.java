@@ -358,34 +358,4 @@ public class CreateMongoDBReplicaSetParam extends BaseRequestParam {
         this.vpcId = vpcId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateMongoDBReplicaSetParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", name='" + name + '\'' +
-                ", adminPassword='" + adminPassword + '\'' +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", diskSpace=" + diskSpace +
-                ", paramGroupId=" + paramGroupId +
-                ", memoryLimit=" + memoryLimit +
-                ", port=" + port +
-                ", chargeType='" + chargeType + '\'' +
-                ", quantity=" + quantity +
-                ", adminUser='" + adminUser + '\'' +
-                ", backupCount=" + backupCount +
-                ", backupTime=" + backupTime +
-                ", backupDuration=" + backupDuration +
-                ", useSSD=" + useSSD +
-                ", ssdType='" + ssdType + '\'' +
-                ", cpu=" + cpu +
-                ", instanceType='" + instanceType + '\'' +
-                ", subnetId='" + subnetId + '\'' +
-                ", vpcId='" + vpcId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

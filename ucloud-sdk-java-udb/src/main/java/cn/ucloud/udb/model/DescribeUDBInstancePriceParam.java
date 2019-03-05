@@ -205,25 +205,4 @@ public class DescribeUDBInstancePriceParam extends BaseRequestParam {
     public void setInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstancePriceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", count=" + count +
-                ", quantity=" + quantity +
-                ", chargeType='" + chargeType + '\'' +
-                ", useSSD=" + useSSD +
-                ", ssdType='" + ssdType + '\'' +
-                ", instanceMode='" + instanceMode + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

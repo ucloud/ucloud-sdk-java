@@ -237,27 +237,4 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
     public void setDbId(String dbId) {
         this.dbId = dbId;
     }
-
-    @Override
-    public String toString() {
-        return "CheckUDBInstanceAllowanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", classType='" + classType + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", useSSD=" + useSSD +
-                ", count=" + count +
-                ", instanceMode='" + instanceMode + '\'' +
-                ", ssdType='" + ssdType + '\'' +
-                ", srcId='" + srcId + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", udbcId='" + udbcId + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

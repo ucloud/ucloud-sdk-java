@@ -80,18 +80,4 @@ public class DescribeUDBInstanceBinlogBackupStateParam extends BaseRequestParam 
     public void setBackupZone(String backupZone) {
         this.backupZone = backupZone;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceBinlogBackupStateParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", backupId='" + backupId + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

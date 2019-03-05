@@ -105,19 +105,4 @@ public class DescribeUDBCPriceParam extends BaseRequestParam {
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBCPriceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", type='" + type + '\'' +
-                ", chargeType='" + chargeType + '\'' +
-                ", count=" + count +
-                ", quantity=" + quantity +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

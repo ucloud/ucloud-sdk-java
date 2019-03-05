@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 17:04
  **/
 public class EditUDBBackupBlacklistResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "EditUDBBackupBlacklistResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

@@ -23,14 +23,4 @@ public class GetUDBSuspendPriceResult extends BaseResponseResult {
     public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
     }
-
-    @Override
-    public String toString() {
-        return "GetUDBSuspendPriceResult{" +
-                "totalPrice='" + totalPrice + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

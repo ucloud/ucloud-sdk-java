@@ -84,16 +84,6 @@ public class DescribeUDBCTypeResult extends BaseResponseResult {
             this.type = type;
         }
 
-        @Override
-        public String toString() {
-            return "UDBCType{" +
-                    "diskType=" + diskType +
-                    ", memoryLimit=" + memoryLimit +
-                    ", useSSD=" + useSSD +
-                    ", name='" + name + '\'' +
-                    ", type='" + type + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -108,15 +98,5 @@ public class DescribeUDBCTypeResult extends BaseResponseResult {
 
     public void setUdbcTypes(List<UDBCType> udbcTypes) {
         this.udbcTypes = udbcTypes;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBCTypeResult{" +
-                "udbcTypes=" + udbcTypes +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

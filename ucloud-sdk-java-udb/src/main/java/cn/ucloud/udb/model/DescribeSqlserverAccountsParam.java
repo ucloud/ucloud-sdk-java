@@ -105,20 +105,4 @@ public class DescribeSqlserverAccountsParam extends BaseRequestParam {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeSqlserverAccountsParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", accountName='" + accountName + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

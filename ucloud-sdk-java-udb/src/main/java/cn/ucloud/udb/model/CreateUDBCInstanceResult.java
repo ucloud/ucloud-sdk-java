@@ -25,13 +25,4 @@ public class CreateUDBCInstanceResult extends BaseResponseResult {
         this.udbcId = udbcId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBCInstanceResult{" +
-                "udbcId='" + udbcId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

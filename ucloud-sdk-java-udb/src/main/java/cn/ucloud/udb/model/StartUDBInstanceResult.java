@@ -9,12 +9,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 public class StartUDBInstanceResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "StartUDBInstanceResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

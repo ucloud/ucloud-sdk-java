@@ -9,12 +9,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 public class DeleteUDBInstanceResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "DeleteUDBInstanceResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

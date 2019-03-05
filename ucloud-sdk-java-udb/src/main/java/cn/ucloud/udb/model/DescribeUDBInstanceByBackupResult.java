@@ -80,17 +80,4 @@ public class DescribeUDBInstanceByBackupResult extends BaseResponseResult {
         this.diskSpace = diskSpace;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceByBackupResult{" +
-                "instanceMode='" + instanceMode + '\'' +
-                ", udbTypeId='" + udbTypeId + '\'' +
-                ", InstanceType='" + InstanceType + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

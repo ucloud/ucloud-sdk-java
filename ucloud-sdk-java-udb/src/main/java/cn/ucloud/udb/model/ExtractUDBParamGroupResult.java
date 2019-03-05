@@ -23,14 +23,4 @@ public class ExtractUDBParamGroupResult extends BaseResponseResult {
     public void setContent(String content) {
         this.content = content;
     }
-
-    @Override
-    public String toString() {
-        return "ExtractUDBParamGroupResult{" +
-                "content='" + content + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

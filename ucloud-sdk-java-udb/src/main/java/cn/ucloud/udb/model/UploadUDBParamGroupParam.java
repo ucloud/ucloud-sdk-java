@@ -150,22 +150,4 @@ public class UploadUDBParamGroupParam extends BaseRequestParam {
     public void setParamGroupTypeId(Integer paramGroupTypeId) {
         this.paramGroupTypeId = paramGroupTypeId;
     }
-
-    @Override
-    public String toString() {
-        return "UploadUDBParamGroupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", groupName='" + groupName + '\'' +
-                ", description='" + description + '\'' +
-                ", content='" + content + '\'' +
-                ", regionFlag=" + regionFlag +
-                ", paramGroupTypeId=" + paramGroupTypeId +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

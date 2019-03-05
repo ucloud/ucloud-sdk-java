@@ -80,17 +80,4 @@ public class ModifyUDBInstanceNameParam extends BaseRequestParam {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "ModifyUDBInstanceNameParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", name='" + name + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

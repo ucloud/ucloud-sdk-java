@@ -81,17 +81,4 @@ public class EnableUDBRWSplittingParam extends BaseRequestParam {
         this.backupZone = backupZone;
     }
 
-    @Override
-    public String toString() {
-        return "EnableUDBRWSplittingParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", masterDBId='" + masterDBId + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

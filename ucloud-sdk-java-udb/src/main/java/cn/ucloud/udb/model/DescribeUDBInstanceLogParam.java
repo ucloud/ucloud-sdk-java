@@ -115,19 +115,4 @@ public class DescribeUDBInstanceLogParam extends BaseRequestParam {
         this.logType = logType;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceLogParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", beginTime=" + beginTime +
-                ", endTime=" + endTime +
-                ", logType='" + logType + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

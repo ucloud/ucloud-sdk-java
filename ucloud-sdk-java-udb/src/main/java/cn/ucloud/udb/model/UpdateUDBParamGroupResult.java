@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 19:55
  **/
 public class UpdateUDBParamGroupResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "UpdateUDBParamGroupResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

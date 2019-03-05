@@ -156,23 +156,4 @@ public class DescribeUDBInstanceParam extends BaseRequestParam {
     public void setIncludeSlaves(Boolean includeSlaves) {
         this.includeSlaves = includeSlaves;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", classType='" + classType + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", dbId='" + dbId + '\'' +
-                ", isInUDBC=" + isInUDBC +
-                ", udbcId='" + udbcId + '\'' +
-                ", includeSlaves=" + includeSlaves +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

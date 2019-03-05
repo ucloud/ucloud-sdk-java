@@ -66,16 +66,4 @@ public class CompleteDBTransferTaskParam extends BaseRequestParam {
         this.taskId = taskId;
     }
 
-    @Override
-    public String toString() {
-        return "CompleteDBTransferTaskParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

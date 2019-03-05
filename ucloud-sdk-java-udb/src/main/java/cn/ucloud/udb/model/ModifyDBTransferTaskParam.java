@@ -262,30 +262,4 @@ public class ModifyDBTransferTaskParam extends BaseRequestParam {
         this.migrateType = migrateType;
     }
 
-    @Override
-    public String toString() {
-        return "ModifyDBTransferTaskParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", taskName='" + taskName + '\'' +
-                ", srcDBTypeId='" + srcDBTypeId + '\'' +
-                ", srcInstanceTypeId='" + srcInstanceTypeId + '\'' +
-                ", srcUser='" + srcUser + '\'' +
-                ", srcPassword='" + srcPassword + '\'' +
-                ", srcIP='" + srcIP + '\'' +
-                ", srcPort=" + srcPort +
-                ", dstDBTypeId='" + dstDBTypeId + '\'' +
-                ", dstDBId='" + dstDBId + '\'' +
-                ", dstUser='" + dstUser + '\'' +
-                ", dstPassword='" + dstPassword + '\'' +
-                ", dstRegion='" + dstRegion + '\'' +
-                ", dstZone='" + dstZone + '\'' +
-                ", migrateType='" + migrateType + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

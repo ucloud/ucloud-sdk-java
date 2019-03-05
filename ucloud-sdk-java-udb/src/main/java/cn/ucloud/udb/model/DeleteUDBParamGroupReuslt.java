@@ -9,13 +9,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 public class DeleteUDBParamGroupReuslt extends BaseResponseResult {
 
-
-    @Override
-    public String toString() {
-        return "DeleteUDBParamGroupReuslt{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

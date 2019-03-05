@@ -98,18 +98,5 @@ public class RecoverUDBInstanceParam extends BaseRequestParam {
         this.time = time;
     }
 
-    @Override
-    public String toString() {
-        return "RecoverUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", srcDBId='" + srcDBId + '\'' +
-                ", dstDBId='" + dstDBId + '\'' +
-                ", time=" + time +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

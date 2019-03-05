@@ -114,20 +114,4 @@ public class BackupUDBInstanceSlowLogParam extends BaseRequestParam {
     public void setBackupName(String backupName) {
         this.backupName = backupName;
     }
-
-    @Override
-    public String toString() {
-        return "BackupUDBInstanceSlowLogParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", beginTime=" + beginTime +
-                ", endTime=" + endTime +
-                ", backupName='" + backupName + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

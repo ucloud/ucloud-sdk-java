@@ -76,18 +76,4 @@ public class ListUDBConfigSvrParam extends BaseRequestParam {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    @Override
-    public String toString() {
-        return "ListUDBConfigSvrParam{" +
-                "region='" + region + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-01 11:39
  **/
 public class CancelDBTransferTaskResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "CancelDBTransferTaskResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

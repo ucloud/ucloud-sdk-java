@@ -66,16 +66,4 @@ public class DescribeUDBSplittingInfoParam extends BaseRequestParam {
         this.masterDBId = masterDBId;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBSplittingInfoParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", masterDBId='" + masterDBId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

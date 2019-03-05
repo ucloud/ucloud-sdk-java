@@ -233,25 +233,4 @@ public class ResizeUDBInstanceParam extends BaseRequestParam {
         this.couponId = couponId;
     }
 
-    @Override
-    public String toString() {
-        return "ResizeUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", useSSD=" + useSSD +
-                ", ssdType='" + ssdType + '\'' +
-                ", udbcId='" + udbcId + '\'' +
-                ", instanceType='" + instanceType + '\'' +
-                ", instanceMode='" + instanceMode + '\'' +
-                ", startAfterUpgrade=" + startAfterUpgrade +
-                ", couponId='" + couponId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

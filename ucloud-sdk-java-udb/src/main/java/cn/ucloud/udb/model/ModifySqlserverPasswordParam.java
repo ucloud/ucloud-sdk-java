@@ -101,18 +101,4 @@ public class ModifySqlserverPasswordParam extends BaseRequestParam {
         this.newPassword = newPassword;
     }
 
-    @Override
-    public String toString() {
-        return "ModifySqlserverPasswordParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", accountName='" + accountName + '\'' +
-                ", newPassword='" + newPassword + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

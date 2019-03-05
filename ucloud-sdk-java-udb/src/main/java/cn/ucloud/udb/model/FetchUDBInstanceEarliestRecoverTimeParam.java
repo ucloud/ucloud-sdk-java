@@ -63,16 +63,4 @@ public class FetchUDBInstanceEarliestRecoverTimeParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "FetchUDBInstanceEarliestRecoverTimeParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

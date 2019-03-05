@@ -24,14 +24,4 @@ public class CreateUDBParamGroupResult extends BaseResponseResult {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-
-    @Override
-    public String toString() {
-        return "CreateUDBParamGroupResult{" +
-                "groupId='" + groupId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -24,13 +24,5 @@ public class CreateUDBSlaveResult extends BaseResponseResult {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBSlaveResult{" +
-                "dbId='" + dbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

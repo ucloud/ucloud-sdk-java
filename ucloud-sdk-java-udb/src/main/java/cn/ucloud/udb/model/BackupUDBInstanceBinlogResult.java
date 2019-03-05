@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-01 11:15
  **/
 public class BackupUDBInstanceBinlogResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "BackupUDBInstanceBinlogResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

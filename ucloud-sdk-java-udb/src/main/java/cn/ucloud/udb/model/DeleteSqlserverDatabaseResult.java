@@ -9,12 +9,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 public class DeleteSqlserverDatabaseResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "DeleteSqlserverDatabaseResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

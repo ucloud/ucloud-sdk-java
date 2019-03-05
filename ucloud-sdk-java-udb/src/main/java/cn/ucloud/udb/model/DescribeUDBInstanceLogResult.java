@@ -38,14 +38,4 @@ public class DescribeUDBInstanceLogResult extends BaseResponseResult {
         this.nextTime = nextTime;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceLogResult{" +
-                "log='" + log + '\'' +
-                ", nextTime='" + nextTime + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

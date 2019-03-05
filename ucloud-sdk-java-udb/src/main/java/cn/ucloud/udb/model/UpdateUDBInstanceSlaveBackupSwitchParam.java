@@ -93,19 +93,4 @@ public class UpdateUDBInstanceSlaveBackupSwitchParam extends BaseRequestParam {
     public void setSlaveDBId(String slaveDBId) {
         this.slaveDBId = slaveDBId;
     }
-
-    @Override
-    public String toString() {
-        return "UpdateUDBInstanceSlaveBackupSwitchParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", masterDBId='" + masterDBId + '\'' +
-                ", backupSwitch=" + backupSwitch +
-                ", slaveDBId='" + slaveDBId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

@@ -81,17 +81,4 @@ public class BackupUDBInstanceErrorLogParam extends BaseRequestParam {
         this.backupName = backupName;
     }
 
-    @Override
-    public String toString() {
-        return "BackupUDBInstanceErrorLogParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", backupName='" + backupName + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

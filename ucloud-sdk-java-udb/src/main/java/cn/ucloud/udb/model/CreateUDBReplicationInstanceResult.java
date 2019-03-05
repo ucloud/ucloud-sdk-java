@@ -23,14 +23,4 @@ public class CreateUDBReplicationInstanceResult extends BaseResponseResult {
     public void setDbId(String dbId) {
         this.dbId = dbId;
     }
-
-    @Override
-    public String toString() {
-        return "CreateUDBReplicationInstanceResult{" +
-                "dbId='" + dbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

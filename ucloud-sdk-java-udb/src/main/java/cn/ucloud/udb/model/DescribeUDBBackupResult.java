@@ -174,22 +174,6 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
             this.backupEndTime = backupEndTime;
         }
 
-        @Override
-        public String toString() {
-            return "UDBBackup{" +
-                    "backupId='" + backupId + '\'' +
-                    ", backupName='" + backupName + '\'' +
-                    ", backupTime=" + backupTime +
-                    ", backupSize=" + backupSize +
-                    ", backupType=" + backupType +
-                    ", state='" + state + '\'' +
-                    ", dbId='" + dbId + '\'' +
-                    ", dbName='" + dbName + '\'' +
-                    ", zone='" + zone + '\'' +
-                    ", backupZone='" + backupZone + '\'' +
-                    ", backupEndTime=" + backupEndTime +
-                    '}';
-        }
     }
 
 
@@ -221,14 +205,4 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
         this.backups = backups;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBBackupResult{" +
-                "totalCount=" + totalCount +
-                ", backups=" + backups +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

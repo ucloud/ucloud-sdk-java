@@ -66,16 +66,5 @@ public class DeleteDBTransferTaskParam extends BaseRequestParam {
         this.taskId = taskId;
     }
 
-    @Override
-    public String toString() {
-        return "DeleteDBTransferTaskParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 19:18
  **/
 public class RevokeAccountPrivilegesResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "RevokeAccountPrivilegesResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

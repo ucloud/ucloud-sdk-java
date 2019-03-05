@@ -9,12 +9,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 public class DisableUDBRWSplittingResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "DisableUDBRWSplittingResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

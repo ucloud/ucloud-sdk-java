@@ -267,29 +267,6 @@ public class DescribeUDBCInstanceResult extends BaseResponseResult {
             this.autoRenew = autoRenew;
         }
 
-        @Override
-        public String toString() {
-            return "UDBCInstance{" +
-                    "udbcId='" + udbcId + '\'' +
-                    ", udbcName='" + udbcName + '\'' +
-                    ", diskSpace=" + diskSpace +
-                    ", memoryLimit=" + memoryLimit +
-                    ", createTime=" + createTime +
-                    ", modifyTime=" + modifyTime +
-                    ", udbInstanceCount=" + udbInstanceCount +
-                    ", type='" + type + '\'' +
-                    ", usedMemory=" + usedMemory +
-                    ", usedDiskSpace=" + usedDiskSpace +
-                    ", expiredTime=" + expiredTime +
-                    ", remark='" + remark + '\'' +
-                    ", isExpired=" + isExpired +
-                    ", tag='" + tag + '\'' +
-                    ", zone='" + zone + '\'' +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", quantity=" + quantity +
-                    ", autoRenew='" + autoRenew + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -320,14 +297,4 @@ public class DescribeUDBCInstanceResult extends BaseResponseResult {
         this.totalCount = totalCount;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBCInstanceResult{" +
-                "udbcInstances=" + udbcInstances +
-                ", totalCount=" + totalCount +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

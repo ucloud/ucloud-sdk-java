@@ -97,18 +97,4 @@ public class GrantAccountPrivilegesParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "GrantAccountPrivilegesParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", accountName='" + accountName + '\'' +
-                ", dbName='" + dbName + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

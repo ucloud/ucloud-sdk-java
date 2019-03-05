@@ -42,13 +42,6 @@ public class DescribeUDBInstancePriceResult extends BaseResponseResult {
             this.price = price;
         }
 
-        @Override
-        public String toString() {
-            return "UDBInstancePrice{" +
-                    "chargeType='" + chargeType + '\'' +
-                    ", price=" + price +
-                    '}';
-        }
     }
 
     /**
@@ -63,15 +56,5 @@ public class DescribeUDBInstancePriceResult extends BaseResponseResult {
 
     public void setUdbInstancePrices(List<UDBInstancePrice> udbInstancePrices) {
         this.udbInstancePrices = udbInstancePrices;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstancePriceResult{" +
-                "udbInstancePrices=" + udbInstancePrices +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

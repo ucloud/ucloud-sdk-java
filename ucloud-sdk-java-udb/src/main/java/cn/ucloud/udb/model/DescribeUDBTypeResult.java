@@ -31,12 +31,7 @@ public class DescribeUDBTypeResult extends BaseResponseResult {
             this.dbTypeId = dbTypeId;
         }
 
-        @Override
-        public String toString() {
-            return "UDBType{" +
-                    "dbTypeId='" + dbTypeId + '\'' +
-                    '}';
-        }
+
     }
 
     /**
@@ -53,13 +48,5 @@ public class DescribeUDBTypeResult extends BaseResponseResult {
         this.udbTypes = udbTypes;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBTypeResult{" +
-                "udbTypes=" + udbTypes +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

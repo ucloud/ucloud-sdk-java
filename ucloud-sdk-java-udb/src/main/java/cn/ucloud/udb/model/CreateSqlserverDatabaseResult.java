@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-01 18:41
  **/
 public class CreateSqlserverDatabaseResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "CreateSqlserverDatabaseResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

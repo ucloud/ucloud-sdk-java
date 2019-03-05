@@ -42,13 +42,6 @@ public class DescribeUDBInstanceByHostIpResult extends BaseResponseResult {
             this.virtualIP = virtualIP;
         }
 
-        @Override
-        public String toString() {
-            return "UDBInstanceByHostIp{" +
-                    "dbId='" + dbId + '\'' +
-                    ", virtualIP='" + virtualIP + '\'' +
-                    '}';
-        }
     }
 
 
@@ -64,15 +57,5 @@ public class DescribeUDBInstanceByHostIpResult extends BaseResponseResult {
 
     public void setUdbInstanceByHostIps(List<UDBInstanceByHostIp> udbInstanceByHostIps) {
         this.udbInstanceByHostIps = udbInstanceByHostIps;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceByHostIpResult{" +
-                "udbInstanceByHostIps=" + udbInstanceByHostIps +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

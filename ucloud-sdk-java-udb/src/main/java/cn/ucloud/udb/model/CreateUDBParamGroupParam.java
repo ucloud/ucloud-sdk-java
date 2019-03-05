@@ -141,20 +141,4 @@ public class CreateUDBParamGroupParam extends BaseRequestParam {
         this.regionFlag = regionFlag;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBParamGroupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", groupName='" + groupName + '\'' +
-                ", description='" + description + '\'' +
-                ", srcGroupId='" + srcGroupId + '\'' +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", regionFlag=" + regionFlag +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

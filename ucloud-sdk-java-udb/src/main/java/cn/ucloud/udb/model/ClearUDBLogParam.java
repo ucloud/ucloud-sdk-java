@@ -94,19 +94,4 @@ public class ClearUDBLogParam extends BaseRequestParam {
     public void setBeforeTime(Integer beforeTime) {
         this.beforeTime = beforeTime;
     }
-
-    @Override
-    public String toString() {
-        return "ClearUDBLogParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", logType=" + logType +
-                ", beforeTime=" + beforeTime +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

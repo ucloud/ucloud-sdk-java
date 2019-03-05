@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 17:40
  **/
 public class GrantAccountPrivilegesResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "GrantAccountPrivilegesResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

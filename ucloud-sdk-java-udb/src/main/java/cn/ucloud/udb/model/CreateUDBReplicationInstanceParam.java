@@ -135,22 +135,4 @@ public class CreateUDBReplicationInstanceParam extends BaseRequestParam {
     public void setCouponId(String couponId) {
         this.couponId = couponId;
     }
-
-    @Override
-    public String toString() {
-        return "CreateUDBReplicationInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", srcId='" + srcId + '\'' +
-                ", name='" + name + '\'' +
-                ", port=" + port +
-                ", isArbiter=" + isArbiter +
-                ", useSSD=" + useSSD +
-                ", couponId='" + couponId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

@@ -161,20 +161,4 @@ public class SetUDBRWSplittingParam extends BaseRequestParam {
         this.dbIds = dbIds;
     }
 
-    @Override
-    public String toString() {
-        return "SetUDBRWSplittingParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", masterDBId='" + masterDBId + '\'' +
-                ", readMode='" + readMode + '\'' +
-                ", readPercents=" + readPercents +
-                ", delayThreshold=" + delayThreshold +
-                ", dbIds=" + dbIds +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

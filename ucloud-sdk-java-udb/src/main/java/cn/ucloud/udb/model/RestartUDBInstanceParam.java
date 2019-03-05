@@ -63,16 +63,5 @@ public class RestartUDBInstanceParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "RestartUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

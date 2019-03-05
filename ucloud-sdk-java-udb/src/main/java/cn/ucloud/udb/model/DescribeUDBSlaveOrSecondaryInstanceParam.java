@@ -80,17 +80,5 @@ public class DescribeUDBSlaveOrSecondaryInstanceParam extends BaseRequestParam {
         this.classType = classType;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBSlaveOrSecondaryInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", classType='" + classType + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

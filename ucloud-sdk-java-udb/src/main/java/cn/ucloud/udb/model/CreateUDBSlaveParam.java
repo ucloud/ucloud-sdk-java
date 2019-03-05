@@ -224,27 +224,6 @@ public class CreateUDBSlaveParam extends BaseRequestParam {
         this.couponId = couponId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBSlaveParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", srcId='" + srcId + '\'' +
-                ", name='" + name + '\'' +
-                ", port=" + port +
-                ", useSSD=" + useSSD +
-                ", ssdType='" + ssdType + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", isLock=" + isLock +
-                ", instanceMode='" + instanceMode + '\'' +
-                ", instanceType='" + instanceType + '\'' +
-                ", couponId='" + couponId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }
 

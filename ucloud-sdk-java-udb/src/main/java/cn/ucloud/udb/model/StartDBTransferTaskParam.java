@@ -65,16 +65,4 @@ public class StartDBTransferTaskParam extends BaseRequestParam {
         this.taskId = taskId;
     }
 
-    @Override
-    public String toString() {
-        return "StartDBTransferTaskParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

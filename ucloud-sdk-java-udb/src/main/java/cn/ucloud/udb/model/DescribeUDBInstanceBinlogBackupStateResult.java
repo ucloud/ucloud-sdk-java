@@ -27,14 +27,4 @@ public class DescribeUDBInstanceBinlogBackupStateResult extends BaseResponseResu
     public void setState(String state) {
         this.state = state;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceBinlogBackupStateResult{" +
-                "state='" + state + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -77,17 +77,5 @@ public class DeleteUDBInstanceParam extends BaseRequestParam {
         this.udbcId = udbcId;
     }
 
-    @Override
-    public String toString() {
-        return "DeleteUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", udbcId='" + udbcId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

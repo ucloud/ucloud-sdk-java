@@ -95,18 +95,4 @@ public class DescribeDBTransferTaskParam extends BaseRequestParam {
         this.offset = offset;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeDBTransferTaskParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

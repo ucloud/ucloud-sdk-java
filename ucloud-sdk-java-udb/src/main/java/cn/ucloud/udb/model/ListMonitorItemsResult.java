@@ -140,20 +140,6 @@ public class ListMonitorItemsResult extends BaseResponseResult {
             this.compareOption = compareOption;
         }
 
-        @Override
-        public String toString() {
-            return "MetricInfo{" +
-                    "metricName='" + metricName + '\'' +
-                    ", unit='" + unit + '\'' +
-                    ", conversionFactor='" + conversionFactor + '\'' +
-                    ", type='" + type + '\'' +
-                    ", metricGroup='" + metricGroup + '\'' +
-                    ", supportAlarm=" + supportAlarm +
-                    ", alarmRange='" + alarmRange + '\'' +
-                    ", frequency='" + frequency + '\'' +
-                    ", compareOption=" + compareOption +
-                    '}';
-        }
     }
 
     /**
@@ -170,13 +156,4 @@ public class ListMonitorItemsResult extends BaseResponseResult {
         this.metricInfos = metricInfos;
     }
 
-    @Override
-    public String toString() {
-        return "ListMonitorItemsResult{" +
-                "metricInfos=" + metricInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -70,15 +70,6 @@ public class DescribeUDBInstanceBinlogResult extends BaseResponseResult {
             this.endTime = endTime;
         }
 
-        @Override
-        public String toString() {
-            return "UDBInstanceBinlog{" +
-                    "name='" + name + '\'' +
-                    ", size=" + size +
-                    ", beginTime=" + beginTime +
-                    ", endTime=" + endTime +
-                    '}';
-        }
     }
 
     /**
@@ -93,15 +84,5 @@ public class DescribeUDBInstanceBinlogResult extends BaseResponseResult {
 
     public void setUdbInstanceBinlogs(List<UDBInstanceBinlog> udbInstanceBinlogs) {
         this.udbInstanceBinlogs = udbInstanceBinlogs;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceBinlogResult{" +
-                "udbInstanceBinlogs=" + udbInstanceBinlogs +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

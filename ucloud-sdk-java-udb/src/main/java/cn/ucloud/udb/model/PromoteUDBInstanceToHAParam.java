@@ -49,15 +49,4 @@ public class PromoteUDBInstanceToHAParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "PromoteUDBInstanceToHAParam{" +
-                "region='" + region + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

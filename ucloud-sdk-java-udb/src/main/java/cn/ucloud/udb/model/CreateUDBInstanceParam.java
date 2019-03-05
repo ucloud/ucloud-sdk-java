@@ -470,38 +470,4 @@ public class CreateUDBInstanceParam extends BaseRequestParam {
     public void setCouponId(String couponId) {
         this.couponId = couponId;
     }
-
-    @Override
-    public String toString() {
-        return "CreateUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", name='" + name + '\'' +
-                ", adminPassword='" + adminPassword + '\'' +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", port=" + port +
-                ", diskSpace=" + diskSpace +
-                ", paramGroupId=" + paramGroupId +
-                ", memoryLimit=" + memoryLimit +
-                ", clusterRole='" + clusterRole + '\'' +
-                ", chargeType='" + chargeType + '\'' +
-                ", quantity=" + quantity +
-                ", adminUser='" + adminUser + '\'' +
-                ", backupCount=" + backupCount +
-                ", backupTime=" + backupTime +
-                ", backupDuration=" + backupDuration +
-                ", backupId=" + backupId +
-                ", useSSD=" + useSSD +
-                ", ssdType='" + ssdType + '\'' +
-                ", instanceMode='" + instanceMode + '\'' +
-                ", udbcId='" + udbcId + '\'' +
-                ", cpu=" + cpu +
-                ", instanceType='" + instanceType + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", subnetId='" + subnetId + '\'' +
-                ", vpcId='" + vpcId + '\'' +
-                ", disableSemisync=" + disableSemisync +
-                ", couponId='" + couponId + '\'' +
-                '}';
-    }
 }

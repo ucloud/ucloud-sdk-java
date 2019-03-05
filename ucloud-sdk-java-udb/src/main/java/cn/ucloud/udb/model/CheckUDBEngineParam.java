@@ -83,17 +83,4 @@ public class CheckUDBEngineParam extends BaseRequestParam {
         this.engineType = engineType;
     }
 
-    @Override
-    public String toString() {
-        return "CheckUDBEngineParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", engineType='" + engineType + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

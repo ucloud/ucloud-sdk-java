@@ -142,21 +142,4 @@ public class DescribeUDBInstanceUpgradePriceParam extends BaseRequestParam {
     public void setSsdType(String ssdType) {
         this.ssdType = ssdType;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceUpgradePriceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", useSSD=" + useSSD +
-                ", ssdType='" + ssdType + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

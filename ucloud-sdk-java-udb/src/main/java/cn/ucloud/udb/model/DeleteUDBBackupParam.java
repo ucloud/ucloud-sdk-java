@@ -81,17 +81,4 @@ public class DeleteUDBBackupParam extends BaseRequestParam {
         this.backupZone = backupZone;
     }
 
-    @Override
-    public String toString() {
-        return "DeleteUDBBackupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", backupId='" + backupId + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

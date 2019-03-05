@@ -25,13 +25,5 @@ public class SwitchUDBInstanceToHAResult extends BaseResponseResult {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "SwitchUDBInstanceToHAResult{" +
-                "dbId='" + dbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

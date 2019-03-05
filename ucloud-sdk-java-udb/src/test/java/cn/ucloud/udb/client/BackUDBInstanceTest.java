@@ -2,9 +2,14 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.udb.model.BackupUDBInstanceParam;
+import cn.ucloud.udb.model.BackupUDBInstanceResult;
 import cn.ucloud.udb.pojo.UDBConfig;
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 /**
  * @Description :
@@ -23,17 +28,15 @@ public class BackUDBInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
 
-        param = new BackupUDBInstanceParam("cn-sh2", "cn-sh2-01", "sdk-java-test");
+        param = new BackupUDBInstanceParam("cn-sh2", "cn-sh2-02", "sdk-java-test");
         param.setProjectId("org-izug1m");
     }
 
     @Test
     public void backupUDBInstance() {
         try {
-            System.out.println("aaab");
-            System.out.println(System.getenv("UcloudPrivateKey"));
-            //BackupUDBInstanceResult result = client.backupUDBInstance(param);
-            //JSONAssert.assertEquals(result.getResponseContent(),result.toString(),true);
+            BackupUDBInstanceResult result = client.backupUDBInstance(param);
+            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result),true);
         } catch (Exception e) {
             e.printStackTrace();
         }

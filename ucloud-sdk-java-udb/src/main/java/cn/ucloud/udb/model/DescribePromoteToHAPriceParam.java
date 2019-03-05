@@ -62,17 +62,4 @@ public class DescribePromoteToHAPriceParam extends BaseRequestParam {
     public void setDbId(String dbId) {
         this.dbId = dbId;
     }
-
-    @Override
-    public String toString() {
-        return "DescribePromoteToHAPriceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

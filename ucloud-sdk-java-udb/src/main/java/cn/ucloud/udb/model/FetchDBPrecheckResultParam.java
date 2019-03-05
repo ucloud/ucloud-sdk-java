@@ -65,17 +65,4 @@ public class FetchDBPrecheckResultParam extends BaseRequestParam {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
-
-    @Override
-    public String toString() {
-        return "FetchDBPrecheckResultParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

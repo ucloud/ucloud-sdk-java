@@ -80,17 +80,4 @@ public class CreateSqlserverDatabaseParam extends BaseRequestParam {
         this.dbName = dbName;
     }
 
-    @Override
-    public String toString() {
-        return "CreateSqlserverDatabaseParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", dbName='" + dbName + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

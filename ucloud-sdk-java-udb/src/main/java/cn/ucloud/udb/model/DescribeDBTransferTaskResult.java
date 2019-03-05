@@ -388,35 +388,6 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
             this.warningCode = warningCode;
         }
 
-        @Override
-        public String toString() {
-            return "DBTransferTask{" +
-                    "taskId='" + taskId + '\'' +
-                    ", taskName='" + taskName + '\'' +
-                    ", migrateType='" + migrateType + '\'' +
-                    ", cretaeTime=" + cretaeTime +
-                    ", srcDBTypeId='" + srcDBTypeId + '\'' +
-                    ", srcInstanceTypeId='" + srcInstanceTypeId + '\'' +
-                    ", srcIP='" + srcIP + '\'' +
-                    ", srcPort=" + srcPort +
-                    ", srcUser='" + srcUser + '\'' +
-                    ", srcPassword='" + srcPassword + '\'' +
-                    ", dstDBTypeId='" + dstDBTypeId + '\'' +
-                    ", dstDBInstanceName='" + dstDBInstanceName + '\'' +
-                    ", dstIP='" + dstIP + '\'' +
-                    ", dstDBId='" + dstDBId + '\'' +
-                    ", dstUser='" + dstUser + '\'' +
-                    ", dstPassowrd='" + dstPassowrd + '\'' +
-                    ", dstRegion='" + dstRegion + '\'' +
-                    ", dstZone='" + dstZone + '\'' +
-                    ", taskState='" + taskState + '\'' +
-                    ", migratePercentage='" + migratePercentage + '\'' +
-                    ", zone='" + zone + '\'' +
-                    ", errorCode='" + errorCode + '\'' +
-                    ", delaySeconds='" + delaySeconds + '\'' +
-                    ", warningCode='" + warningCode + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -447,14 +418,4 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
         this.tasks = tasks;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeDBTransferTaskResult{" +
-                "totalCount=" + totalCount +
-                ", tasks=" + tasks +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

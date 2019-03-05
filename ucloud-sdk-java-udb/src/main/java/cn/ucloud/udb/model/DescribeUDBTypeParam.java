@@ -50,15 +50,5 @@ public class DescribeUDBTypeParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBTypeParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

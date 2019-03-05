@@ -24,13 +24,4 @@ public class CreateUDBInstanceByRecoveryResult extends BaseResponseResult {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBInstanceByRecoveryResult{" +
-                "dbId='" + dbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

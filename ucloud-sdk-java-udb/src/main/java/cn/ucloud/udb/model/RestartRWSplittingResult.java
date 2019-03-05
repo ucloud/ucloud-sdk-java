@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 19:11
  **/
 public class RestartRWSplittingResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "RestartRWSplittingResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

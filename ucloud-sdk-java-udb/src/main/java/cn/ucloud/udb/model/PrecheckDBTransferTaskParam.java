@@ -64,17 +64,4 @@ public class PrecheckDBTransferTaskParam extends BaseRequestParam {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
-
-    @Override
-    public String toString() {
-        return "PrecheckDBTransferTaskParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", taskId='" + taskId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

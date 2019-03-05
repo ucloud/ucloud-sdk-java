@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 19:51
  **/
 public class UpdateUDBInstanceSlaveBackupSwitchResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "UpdateUDBInstanceSlaveBackupSwitchResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

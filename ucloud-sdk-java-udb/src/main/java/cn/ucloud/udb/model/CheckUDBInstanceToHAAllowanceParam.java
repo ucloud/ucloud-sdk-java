@@ -48,16 +48,4 @@ public class CheckUDBInstanceToHAAllowanceParam extends BaseRequestParam {
     public void setDbId(String dbId) {
         this.dbId = dbId;
     }
-
-    @Override
-    public String toString() {
-        return "CheckUDBInstanceToHAAllowanceParam{" +
-                "region='" + region + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

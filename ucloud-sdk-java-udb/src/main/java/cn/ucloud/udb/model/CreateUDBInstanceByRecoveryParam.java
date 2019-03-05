@@ -169,23 +169,4 @@ public class CreateUDBInstanceByRecoveryParam extends BaseRequestParam {
         this.couponId = couponId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBInstanceByRecoveryParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", name='" + name + '\'' +
-                ", srcDBId='" + srcDBId + '\'' +
-                ", recoveryTime=" + recoveryTime +
-                ", useSSD=" + useSSD +
-                ", chargeType='" + chargeType + '\'' +
-                ", quantity=" + quantity +
-                ", udbcId='" + udbcId + '\'' +
-                ", couponId='" + couponId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

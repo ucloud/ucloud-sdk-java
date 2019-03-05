@@ -81,17 +81,4 @@ public class ExtractUDBParamGroupParam extends BaseRequestParam {
         this.regionFlag = regionFlag;
     }
 
-    @Override
-    public String toString() {
-        return "ExtractUDBParamGroupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", groupId=" + groupId +
-                ", regionFlag=" + regionFlag +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

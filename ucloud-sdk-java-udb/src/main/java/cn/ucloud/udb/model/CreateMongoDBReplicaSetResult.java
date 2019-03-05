@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-01 18:23
  **/
 public class CreateMongoDBReplicaSetResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "CreateMongoDBReplicaSetResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

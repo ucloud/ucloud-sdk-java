@@ -26,13 +26,4 @@ public class DescribeUDBBackupBlacklistResult extends BaseResponseResult {
         this.blacklist = blacklist;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBBackupBlacklistResult{" +
-                "blacklist=" + blacklist +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

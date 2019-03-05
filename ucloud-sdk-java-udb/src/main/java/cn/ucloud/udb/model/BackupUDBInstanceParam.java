@@ -95,18 +95,4 @@ public class BackupUDBInstanceParam extends BaseRequestParam {
         this.useBlackList = useBlackList;
     }
 
-    @Override
-    public String toString() {
-        return "BackupUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", backupName='" + backupName + '\'' +
-                ", useBlackList=" + useBlackList +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

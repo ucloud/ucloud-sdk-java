@@ -56,14 +56,6 @@ public class ListUDBConfigSvrResult extends BaseResponseResult {
             this.dbTypeId = dbTypeId;
         }
 
-        @Override
-        public String toString() {
-            return "UDBConfigSvr{" +
-                    "dbId='" + dbId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", dbTypeId='" + dbTypeId + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -80,13 +72,4 @@ public class ListUDBConfigSvrResult extends BaseResponseResult {
         this.udbConfigSvrs = udbConfigSvrs;
     }
 
-    @Override
-    public String toString() {
-        return "ListUDBConfigSvrResult{" +
-                "udbConfigSvrs=" + udbConfigSvrs +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

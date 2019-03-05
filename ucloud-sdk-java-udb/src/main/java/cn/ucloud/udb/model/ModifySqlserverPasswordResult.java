@@ -8,12 +8,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 18:37
  **/
 public class ModifySqlserverPasswordResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "ModifySqlserverPasswordResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -56,15 +56,6 @@ public class DescribeSqlserverDatabasesResult extends BaseResponseResult {
         public void setAccountName(List<String> accountName) {
             this.accountName = accountName;
         }
-
-        @Override
-        public String toString() {
-            return "DBNameInfo{" +
-                    "dbName='" + dbName + '\'' +
-                    ", state='" + state + '\'' +
-                    ", accountName=" + accountName +
-                    '}';
-        }
     }
 
     /**
@@ -79,15 +70,5 @@ public class DescribeSqlserverDatabasesResult extends BaseResponseResult {
 
     public void setDbNameInfos(List<DBNameInfo> dbNameInfos) {
         this.dbNameInfos = dbNameInfos;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeSqlserverDatabasesResult{" +
-                "dbNameInfos=" + dbNameInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

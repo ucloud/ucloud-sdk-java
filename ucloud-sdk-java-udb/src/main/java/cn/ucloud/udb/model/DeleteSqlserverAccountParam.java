@@ -80,17 +80,5 @@ public class DeleteSqlserverAccountParam extends BaseRequestParam {
         this.accountName = accountName;
     }
 
-    @Override
-    public String toString() {
-        return "DeleteSqlserverAccountParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", accountName='" + accountName + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

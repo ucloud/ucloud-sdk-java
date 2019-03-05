@@ -106,19 +106,4 @@ public class DescribeSqlserverDatabasesParam extends BaseRequestParam {
         this.offset = offset;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeSqlserverDatabasesParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", dbName='" + dbName + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

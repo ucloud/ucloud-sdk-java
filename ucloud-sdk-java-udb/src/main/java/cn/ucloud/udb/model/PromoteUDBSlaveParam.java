@@ -77,17 +77,5 @@ public class PromoteUDBSlaveParam extends BaseRequestParam {
         isForce = force;
     }
 
-    @Override
-    public String toString() {
-        return "PromoteUDBSlaveParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", isForce=" + isForce +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

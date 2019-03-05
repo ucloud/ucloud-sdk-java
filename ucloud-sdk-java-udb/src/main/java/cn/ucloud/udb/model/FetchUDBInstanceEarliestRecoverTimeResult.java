@@ -23,14 +23,4 @@ public class FetchUDBInstanceEarliestRecoverTimeResult extends BaseResponseResul
     public void setEarliestTime(Integer earliestTime) {
         this.earliestTime = earliestTime;
     }
-
-    @Override
-    public String toString() {
-        return "FetchUDBInstanceEarliestRecoverTimeResult{" +
-                "earliestTime=" + earliestTime +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

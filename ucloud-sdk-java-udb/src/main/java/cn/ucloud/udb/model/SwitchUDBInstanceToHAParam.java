@@ -106,19 +106,4 @@ public class SwitchUDBInstanceToHAParam extends BaseRequestParam {
         this.tag = tag;
     }
 
-    @Override
-    public String toString() {
-        return "SwitchUDBInstanceToHAParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", chargeType='" + chargeType + '\'' +
-                ", quantity=" + quantity +
-                ", tag='" + tag + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

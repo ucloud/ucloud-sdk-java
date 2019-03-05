@@ -29,13 +29,4 @@ public class CreateUDBInstanceResult extends BaseResponseResult {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBInstanceResult{" +
-                "dbId='" + dbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

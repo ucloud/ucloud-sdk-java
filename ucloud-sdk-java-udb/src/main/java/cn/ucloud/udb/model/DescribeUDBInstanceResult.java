@@ -442,41 +442,6 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         public void setInstanceMode(String instanceMode) {
             this.instanceMode = instanceMode;
         }
-
-        @Override
-        public String toString() {
-            return "UDBSlaveInstance{" +
-                    "dbId='" + dbId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", dbTypeId='" + dbTypeId + '\'' +
-                    ", paramGroupId=" + paramGroupId +
-                    ", adminUser='" + adminUser + '\'' +
-                    ", virtualIP='" + virtualIP + '\'' +
-                    ", virtualMAC='" + virtualMAC + '\'' +
-                    ", port=" + port +
-                    ", srcDBId='" + srcDBId + '\'' +
-                    ", backupCount=" + backupCount +
-                    ", backupBeginTime=" + backupBeginTime +
-                    ", backupDuration=" + backupDuration +
-                    ", backupBlacklist='" + backupBlacklist + '\'' +
-                    ", state='" + state + '\'' +
-                    ", createTime=" + createTime +
-                    ", modifyTime=" + modifyTime +
-                    ", expiredTime=" + expiredTime +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", memoryLimit=" + memoryLimit +
-                    ", diskSpace=" + diskSpace +
-                    ", useSSD=" + useSSD +
-                    ", ssdType='" + ssdType + '\'' +
-                    ", role='" + role + '\'' +
-                    ", diskUsedSize=" + diskUsedSize +
-                    ", dataFileSize=" + dataFileSize +
-                    ", systemFileSize=" + systemFileSize +
-                    ", logFileSize=" + logFileSize +
-                    ", backupDate='" + backupDate + '\'' +
-                    ", instanceMode='" + instanceMode + '\'' +
-                    '}';
-        }
     }
 
 
@@ -964,45 +929,6 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         public void setBackupZone(String backupZone) {
             this.backupZone = backupZone;
         }
-
-        @Override
-        public String toString() {
-            return "UDBInstance{" +
-                    "zone='" + zone + '\'' +
-                    ", clusterRole='" + clusterRole + '\'' +
-                    ", dbId='" + dbId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", dbTypeId='" + dbTypeId + '\'' +
-                    ", paramGroupId=" + paramGroupId +
-                    ", adminUser='" + adminUser + '\'' +
-                    ", virtualIP='" + virtualIP + '\'' +
-                    ", virtualMAC='" + virtualMAC + '\'' +
-                    ", port=" + port +
-                    ", srcDBId='" + srcDBId + '\'' +
-                    ", backupCount=" + backupCount +
-                    ", backupBeginTime=" + backupBeginTime +
-                    ", backupDuration=" + backupDuration +
-                    ", backupBlacklist='" + backupBlacklist + '\'' +
-                    ", state='" + state + '\'' +
-                    ", createTime=" + createTime +
-                    ", modifyTime=" + modifyTime +
-                    ", expiredTime=" + expiredTime +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", memoryLimit=" + memoryLimit +
-                    ", diskSpace=" + diskSpace +
-                    ", useSSD=" + useSSD +
-                    ", ssdType='" + ssdType + '\'' +
-                    ", role='" + role + '\'' +
-                    ", diskUsedSize=" + diskUsedSize +
-                    ", dataFileSize=" + dataFileSize +
-                    ", systemFileSize=" + systemFileSize +
-                    ", logFileSize=" + logFileSize +
-                    ", backupDate='" + backupDate + '\'' +
-                    ", instanceMode='" + instanceMode + '\'' +
-                    ", slaveInstances=" + slaveInstances +
-                    ", backupZone='" + backupZone + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -1034,14 +960,4 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         this.totalCount = totalCount;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceResult{" +
-                "udbInstances=" + udbInstances +
-                ", totalCount=" + totalCount +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

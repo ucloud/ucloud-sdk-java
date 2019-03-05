@@ -63,16 +63,4 @@ public class CheckRecoverUDBInstanceParam extends BaseRequestParam {
         this.srcDBId = srcDBId;
     }
 
-    @Override
-    public String toString() {
-        return "CheckRecoverUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", srcDBId='" + srcDBId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

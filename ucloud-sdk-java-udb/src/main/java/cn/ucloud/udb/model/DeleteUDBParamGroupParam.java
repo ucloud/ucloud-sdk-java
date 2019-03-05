@@ -80,17 +80,5 @@ public class DeleteUDBParamGroupParam extends BaseRequestParam {
         this.regionFlag = regionFlag;
     }
 
-    @Override
-    public String toString() {
-        return "DeleteUDBParamGroupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", groupId='" + groupId + '\'' +
-                ", regionFlag=" + regionFlag +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

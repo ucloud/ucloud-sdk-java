@@ -48,16 +48,4 @@ public class DescribeUDBCTypeParam extends BaseRequestParam {
     public void setZone(String zone) {
         this.zone = zone;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBCTypeParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

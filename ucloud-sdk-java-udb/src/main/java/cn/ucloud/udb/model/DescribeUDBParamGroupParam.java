@@ -138,21 +138,5 @@ public class DescribeUDBParamGroupParam extends BaseRequestParam {
         this.classType = classType;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBParamGroupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", limit=" + limit +
-                ", offset=" + offset +
-                ", groupId='" + groupId + '\'' +
-                ", isInUDBC=" + isInUDBC +
-                ", regionFlag=" + regionFlag +
-                ", classType='" + classType + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

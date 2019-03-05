@@ -9,12 +9,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 public class ModifyUDBInstancePasswordResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "ModifyUDBInstancePasswordResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

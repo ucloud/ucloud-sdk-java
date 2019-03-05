@@ -24,14 +24,4 @@ public class CheckUDBInstanceToHAAllowanceResult extends BaseResponseResult {
     public void setAllowance(String allowance) {
         this.allowance = allowance;
     }
-
-    @Override
-    public String toString() {
-        return "CheckUDBInstanceToHAAllowanceResult{" +
-                "allowance='" + allowance + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

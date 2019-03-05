@@ -8,12 +8,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 18:41
  **/
 public class ModifyUDBInstanceNameResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "ModifyUDBInstanceNameResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

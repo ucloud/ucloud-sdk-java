@@ -412,38 +412,6 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
             this.backupDate = backupDate;
         }
 
-        @Override
-        public String toString() {
-            return "UDBInstance{" +
-                    "dbId='" + dbId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", dbTypeId='" + dbTypeId + '\'' +
-                    ", paramGroupId=" + paramGroupId +
-                    ", adminUser='" + adminUser + '\'' +
-                    ", virtualIP='" + virtualIP + '\'' +
-                    ", virtualMAC='" + virtualMAC + '\'' +
-                    ", port=" + port +
-                    ", srcDBId='" + srcDBId + '\'' +
-                    ", backupCount=" + backupCount +
-                    ", backupBeginTime=" + backupBeginTime +
-                    ", backupDuration=" + backupDuration +
-                    ", backupBlacklist='" + backupBlacklist + '\'' +
-                    ", state='" + state + '\'' +
-                    ", createTime=" + createTime +
-                    ", modifyTime=" + modifyTime +
-                    ", expiredTime=" + expiredTime +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", memoryLimit=" + memoryLimit +
-                    ", diskSpace=" + diskSpace +
-                    ", useSSD=" + useSSD +
-                    ", ssdType='" + ssdType + '\'' +
-                    ", role='" + role + '\'' +
-                    ", diskUsedSize=" + diskUsedSize +
-                    ", dataFileSize=" + dataFileSize +
-                    ", isSlaveBackup=" + isSlaveBackup +
-                    ", backupDate='" + backupDate + '\'' +
-                    '}';
-        }
     }
 
 
@@ -461,13 +429,5 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
         this.instances = instances;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBSlaveOrSecondaryInstanceResult{" +
-                "instances=" + instances +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

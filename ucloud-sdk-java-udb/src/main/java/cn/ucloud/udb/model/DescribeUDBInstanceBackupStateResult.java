@@ -28,13 +28,5 @@ public class DescribeUDBInstanceBackupStateResult extends BaseResponseResult {
         this.state = state;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceBackupStateResult{" +
-                "state='" + state + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

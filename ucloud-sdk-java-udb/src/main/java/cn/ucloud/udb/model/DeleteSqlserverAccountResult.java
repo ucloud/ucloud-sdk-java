@@ -8,12 +8,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-03 15:02
  **/
 public class DeleteSqlserverAccountResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "DeleteSqlserverAccountResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

@@ -125,20 +125,6 @@ public class DescribeUDBInstanceByParamGroupResult extends BaseResponseResult {
         public void setRole(String role) {
             this.role = role;
         }
-
-        @Override
-        public String toString() {
-            return "UDBInstanceByParamGroup{" +
-                    "dbId='" + dbId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", virtualIP='" + virtualIP + '\'' +
-                    ", port=" + port +
-                    ", state='" + state + '\'' +
-                    ", createTime=" + createTime +
-                    ", expiredTime='" + expiredTime + '\'' +
-                    ", role='" + role + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -153,15 +139,5 @@ public class DescribeUDBInstanceByParamGroupResult extends BaseResponseResult {
 
     public void setUdbInstanceByParamGroups(List<UDBInstanceByParamGroup> udbInstanceByParamGroups) {
         this.udbInstanceByParamGroups = udbInstanceByParamGroups;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceByParamGroupResult{" +
-                "udbInstanceByParamGroups=" + udbInstanceByParamGroups +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

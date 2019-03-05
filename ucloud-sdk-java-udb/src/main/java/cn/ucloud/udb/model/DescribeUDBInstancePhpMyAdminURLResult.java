@@ -24,13 +24,4 @@ public class DescribeUDBInstancePhpMyAdminURLResult extends BaseResponseResult {
         this.pmaPath = pmaPath;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstancePhpMyAdminURLResult{" +
-                "pmaPath='" + pmaPath + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -94,18 +94,4 @@ public class BackupUDBInstanceBinlogParam extends BaseRequestParam {
         this.backupName = backupName;
     }
 
-    @Override
-    public String toString() {
-        return "BackupUDBInstanceBinlogParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", backupFile='" + backupFile + '\'' +
-                ", backupName='" + backupName + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

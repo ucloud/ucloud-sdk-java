@@ -98,18 +98,5 @@ public class DescribeUDBInstanceBinlogParam extends BaseRequestParam {
         this.endTime = endTime;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceBinlogParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", beginTime=" + beginTime +
-                ", endTime=" + endTime +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
+
 }

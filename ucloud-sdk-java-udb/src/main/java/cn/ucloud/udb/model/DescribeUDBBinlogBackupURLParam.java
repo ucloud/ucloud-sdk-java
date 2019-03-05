@@ -80,17 +80,4 @@ public class DescribeUDBBinlogBackupURLParam extends BaseRequestParam {
         this.backupId = backupId;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBBinlogBackupURLParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", backupId='" + backupId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

@@ -77,17 +77,4 @@ public class StopUDBInstanceParam extends BaseRequestParam {
         this.forceToKill = forceToKill;
     }
 
-    @Override
-    public String toString() {
-        return "StopUDBInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", forceToKill=" + forceToKill +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

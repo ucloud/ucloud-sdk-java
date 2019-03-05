@@ -241,27 +241,4 @@ public class CreateUDBRouteInstanceParam extends BaseRequestParam {
     public void setCouponId(String couponId) {
         this.couponId = couponId;
     }
-
-    @Override
-    public String toString() {
-        return "CreateUDBRouteInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", name='" + name + '\'' +
-                ", port=" + port +
-                ", paramGroupId=" + paramGroupId +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", configsvrId=" + configsvrId +
-                ", chargeType='" + chargeType + '\'' +
-                ", quantity=" + quantity +
-                ", useSSD='" + useSSD + '\'' +
-                ", couponId='" + couponId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

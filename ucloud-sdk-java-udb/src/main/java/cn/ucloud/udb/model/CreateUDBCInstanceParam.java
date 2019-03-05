@@ -154,22 +154,4 @@ public class CreateUDBCInstanceParam extends BaseRequestParam {
         this.couponId = couponId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUDBCInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", udbCName='" + udbcName + '\'' +
-                ", type='" + type + '\'' +
-                ", tag='" + tag + '\'' +
-                ", quantity=" + quantity +
-                ", chargeType='" + chargeType + '\'' +
-                ", remark='" + remark + '\'' +
-                ", couponId='" + couponId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

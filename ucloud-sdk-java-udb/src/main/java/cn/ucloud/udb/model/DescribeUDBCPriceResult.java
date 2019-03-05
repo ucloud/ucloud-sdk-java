@@ -41,14 +41,6 @@ public class DescribeUDBCPriceResult extends BaseResponseResult {
         public void setPrice(Double price) {
             this.price = price;
         }
-
-        @Override
-        public String toString() {
-            return "UDBCInstancePice{" +
-                    "chargeType='" + chargeType + '\'' +
-                    ", price=" + price +
-                    '}';
-        }
     }
 
     /**
@@ -65,13 +57,4 @@ public class DescribeUDBCPriceResult extends BaseResponseResult {
         this.prices = prices;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBCPriceResult{" +
-                "prices=" + prices +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

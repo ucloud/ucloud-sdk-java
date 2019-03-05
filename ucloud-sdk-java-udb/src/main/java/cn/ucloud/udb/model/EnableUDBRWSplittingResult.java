@@ -38,14 +38,4 @@ public class EnableUDBRWSplittingResult extends BaseResponseResult {
         this.rwIP = rwIP;
     }
 
-    @Override
-    public String toString() {
-        return "EnableUDBRWSplittingResult{" +
-                "masterDBId='" + masterDBId + '\'' +
-                ", rwIP='" + rwIP + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

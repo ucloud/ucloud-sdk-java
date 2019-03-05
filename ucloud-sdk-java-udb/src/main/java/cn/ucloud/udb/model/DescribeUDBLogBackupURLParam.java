@@ -79,17 +79,4 @@ public class DescribeUDBLogBackupURLParam extends BaseRequestParam {
         this.backupId = backupId;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBLogBackupURLParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", backupId='" + backupId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

@@ -109,19 +109,4 @@ public class UpdateUDBInstanceBackupStrategyParam extends BaseRequestParam {
         this.forceDump = forceDump;
     }
 
-    @Override
-    public String toString() {
-        return "UpdateUDBInstanceBackupStrategyParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", backupTime=" + backupTime +
-                ", backupDate=" + backupDate +
-                ", forceDump=" + forceDump +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

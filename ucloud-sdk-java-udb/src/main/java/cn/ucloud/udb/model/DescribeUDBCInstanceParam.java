@@ -60,16 +60,4 @@ public class DescribeUDBCInstanceParam extends BaseRequestParam {
         this.udbcId = udbcId;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBCInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", udbcId='" + udbcId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

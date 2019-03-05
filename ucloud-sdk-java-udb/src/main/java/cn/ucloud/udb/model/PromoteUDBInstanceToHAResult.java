@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-04 18:51
  **/
 public class PromoteUDBInstanceToHAResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "PromoteUDBInstanceToHAResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

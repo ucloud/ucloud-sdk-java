@@ -80,17 +80,4 @@ public class DeleteSqlserverDatabaseParam extends BaseRequestParam {
         this.dbName = dbName;
     }
 
-    @Override
-    public String toString() {
-        return "DeleteSqlserverDatabaseParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", dbName='" + dbName + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

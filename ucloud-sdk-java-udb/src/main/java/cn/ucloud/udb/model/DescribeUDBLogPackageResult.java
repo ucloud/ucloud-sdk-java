@@ -158,21 +158,6 @@ public class DescribeUDBLogPackageResult extends BaseResponseResult {
             this.backupZone = backupZone;
         }
 
-        @Override
-        public String toString() {
-            return "UDBLogPackage{" +
-                    "backupId=" + backupId +
-                    ", backupName='" + backupName + '\'' +
-                    ", backupTime=" + backupTime +
-                    ", backupSize=" + backupSize +
-                    ", backupType=" + backupType +
-                    ", state='" + state + '\'' +
-                    ", dbId='" + dbId + '\'' +
-                    ", dbName='" + dbName + '\'' +
-                    ", zone='" + zone + '\'' +
-                    ", backupZone='" + backupZone + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -203,14 +188,4 @@ public class DescribeUDBLogPackageResult extends BaseResponseResult {
         this.udbLogPackages = udbLogPackages;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBLogPackageResult{" +
-                "totalCount=" + totalCount +
-                ", udbLogPackages=" + udbLogPackages +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

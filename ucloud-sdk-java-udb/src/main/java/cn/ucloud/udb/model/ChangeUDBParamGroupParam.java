@@ -79,18 +79,4 @@ public class ChangeUDBParamGroupParam extends BaseRequestParam {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-
-    @Override
-    public String toString() {
-        return "ChangeUDBParamGroupParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", groupId='" + groupId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

@@ -56,14 +56,6 @@ public class DescribeSqlserverAccountsResult extends BaseResponseResult {
             this.dbName = dbName;
         }
 
-        @Override
-        public String toString() {
-            return "AccountInfo{" +
-                    "accountName='" + accountName + '\'' +
-                    ", state='" + state + '\'' +
-                    ", dbName='" + dbName + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -80,13 +72,4 @@ public class DescribeSqlserverAccountsResult extends BaseResponseResult {
         this.accountInfos = accountInfos;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeSqlserverAccountsResult{" +
-                "accountInfos=" + accountInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

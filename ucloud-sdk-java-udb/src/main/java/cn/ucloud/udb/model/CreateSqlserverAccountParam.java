@@ -97,18 +97,4 @@ public class CreateSqlserverAccountParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateSqlserverAccountParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", accountName='" + accountName + '\'' +
-                ", accountPassword='" + accountPassword + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }

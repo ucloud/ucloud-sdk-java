@@ -84,16 +84,6 @@ public class DescribeUDBSplittingInfoResult extends BaseResponseResult {
             this.state = state;
         }
 
-        @Override
-        public String toString() {
-            return "UDBRWSplitting{" +
-                    "dbId='" + dbId + '\'' +
-                    ", role='" + role + '\'' +
-                    ", virtualIP='" + virtualIP + '\'' +
-                    ", readWeight=" + readWeight +
-                    ", state='" + state + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -264,24 +254,4 @@ public class DescribeUDBSplittingInfoResult extends BaseResponseResult {
         this.backupZone = backupZone;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUDBSplittingInfoResult{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", masterDBId='" + masterDBId + '\'' +
-                ", rwIP='" + rwIP + '\'' +
-                ", delayThreshold=" + delayThreshold +
-                ", port=" + port +
-                ", readMode='" + readMode + '\'' +
-                ", dbTypeId='" + dbTypeId + '\'' +
-                ", rwState='" + rwState + '\'' +
-                ", splittings=" + splittings +
-                ", mainZone='" + mainZone + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

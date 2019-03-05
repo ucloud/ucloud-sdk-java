@@ -66,17 +66,4 @@ public class DescribeUDBInstanceByHostIpParam extends BaseRequestParam {
     public void setHostIP(String hostIP) {
         this.hostIP = hostIP;
     }
-
-    @Override
-    public String toString() {
-        return "DescribeUDBInstanceByHostIpParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", hostIP='" + hostIP + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
-    }
 }
