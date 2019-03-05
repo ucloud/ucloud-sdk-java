@@ -1,9 +1,9 @@
 package cn.ucloud.udpn.client;
 
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.pojo.UcloudConfig;
 import cn.ucloud.udpn.model.GetUDPNPriceParam;
 import cn.ucloud.udpn.model.GetUDPNPriceResult;
+import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +20,7 @@ public class GetUDPNPriceTest {
 
     @Before
     public void initData() {
-        client = new DefaultUDPNClient(new UcloudConfig(
+        client = new DefaultUDPNClient(new UdpnConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new GetUDPNPriceParam("cn-bj2", "cn-sh2", 2);

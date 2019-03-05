@@ -33,7 +33,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    BackupUDBInstanceBinlogParam backupUDBInstanceBinlog(BackupUDBInstanceBinlogParam param) throws Exception;
+    BackupUDBInstanceBinlogResult backupUDBInstanceBinlog(BackupUDBInstanceBinlogParam param) throws Exception;
 
     /**
      * 备份UDB指定时间段的binlog列表
@@ -42,7 +42,7 @@ public interface UDBClient extends UcloudClient {
      * @param handler   回调接口
      * @param asyncFlag 是否异步
      */
-    void backupUDBInstance(BackupUDBInstanceBinlogParam param, UcloudHandler<BackupUDBInstanceBinlogResult> handler,
+    void backupUDBInstanceBinlog(BackupUDBInstanceBinlogParam param, UcloudHandler<BackupUDBInstanceBinlogResult> handler,
                            Boolean... asyncFlag);
 
     /**
@@ -72,7 +72,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    BackupUDBInstanceSlowLogParam backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param) throws Exception;
+    BackupUDBInstanceBinlogResult backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param) throws Exception;
 
     /**
      * 备份UDB指定时间段的slowlog分析结果
@@ -181,7 +181,7 @@ public interface UDBClient extends UcloudClient {
      * @param asyncFlag 是否异步
      */
     void checkUDBInstanceAllowance(CheckUDBInstanceAllowanceParam param,
-                                   UcloudHandler<CheckRecoverUDBInstanceResult> handler,
+                                   UcloudHandler<CheckUDBInstanceAllowanceResult> handler,
                                    Boolean... asyncFlag);
 
     /**
@@ -212,7 +212,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    CheckUDBInstanceToHAAllowanceResult checkUDBInstanceToAllowance(CheckUDBInstanceToHAAllowanceParam param)
+    CheckUDBInstanceToHAAllowanceResult checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceParam param)
             throws Exception;
 
     /**
@@ -330,7 +330,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    CreateSqlserverDatabaseParam createSqlserverDatabase(CreateSqlserverDatabaseParam param) throws Exception;
+    CreateSqlserverDatabaseResult createSqlserverDatabase(CreateSqlserverDatabaseParam param) throws Exception;
 
     /**
      * 创建sqlserver高可用镜像数据库
@@ -407,11 +407,11 @@ public interface UDBClient extends UcloudClient {
     /**
      * 从已有配置文件创建新配置文件
      *
-     * @param paramGroupParam 参数对象
+     * @param param 参数对象
      * @return 结果对象
      * @throws Exception
      */
-    CreateUDBParamGroupResult createUDBParamGroup(CreateUDBParamGroupParam paramGroupParam) throws Exception;
+    CreateUDBParamGroupResult createUDBParamGroup(CreateUDBParamGroupParam param) throws Exception;
 
 
     /**
@@ -473,7 +473,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    CreateUDBSlaveParam createUDBSlave(CreateUDBSlaveParam param) throws Exception;
+    CreateUDBSlaveResult createUDBSlave(CreateUDBSlaveParam param) throws Exception;
 
 
     /**
@@ -676,7 +676,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    DescribePromoteToHAPriceResult describePromoteToHAPrcie(DescribePromoteToHAPriceParam param) throws Exception;
+    DescribePromoteToHAPriceResult describePromoteToHAPrice(DescribePromoteToHAPriceParam param) throws Exception;
 
     /**
      * 获取单点升级高可用实例的差价
@@ -1568,7 +1568,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    PromoteUDBSlaveResult promoteUDBSlave(PromoteUDBSlaveResult param) throws Exception;
+    PromoteUDBSlaveResult promoteUDBSlave(PromoteUDBSlaveParam param) throws Exception;
 
     /**
      * 从库提升为独立库
