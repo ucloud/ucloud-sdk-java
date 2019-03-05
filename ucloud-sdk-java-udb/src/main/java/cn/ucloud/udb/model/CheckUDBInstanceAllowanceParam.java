@@ -2,9 +2,13 @@ package cn.ucloud.udb.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Description : 检查UDB资源余量 参数类
@@ -63,7 +67,6 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
     private Integer count;
 
     /**
-     *
      * UDB实例的部署模式：可选值为： Normal: 普通单点实例， HA: 高可用部署实例
      */
     @UcloudParam("InstanceMode")
@@ -74,7 +77,6 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
     /**
      * SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则需要指定SSD类型
      */
-    @UcloudParam("SSDType")
     private String ssdType;
 
     /**
@@ -116,6 +118,20 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
         this.useSSD = useSSD;
         this.count = count;
         this.instanceMode = instanceMode;
+    }
+
+    @UcloudParam("SSDType")
+    public List<Param> checkSSDType() throws ValidationException {
+        List<Param> list = new ArrayList<>();
+        if (useSSD) {
+            if (ssdType == null) {
+                throw new ValidationException("ssdType can not be empty when useSSD is true");
+            } else {
+                Param param = new Param("SSDType", ssdType);
+                list.add(param);
+            }
+        }
+        return list;
     }
 
     public String getRegion() {
@@ -220,28 +236,5 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
 
     public void setDbId(String dbId) {
         this.dbId = dbId;
-    }
-
-    @Override
-    public String toString() {
-        return "CheckUDBInstanceAllowanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", classType='" + classType + '\'' +
-                ", memoryLimit=" + memoryLimit +
-                ", diskSpace=" + diskSpace +
-                ", useSSD=" + useSSD +
-                ", count=" + count +
-                ", instanceMode='" + instanceMode + '\'' +
-                ", ssdType='" + ssdType + '\'' +
-                ", srcId='" + srcId + '\'' +
-                ", backupZone='" + backupZone + '\'' +
-                ", udbcId='" + udbcId + '\'' +
-                ", dbId='" + dbId + '\'' +
-                ", action='" + action + '\'' +
-                ", signature='" + signature + '\'' +
-                ", publicKey='" + publicKey + '\'' +
-                ", projectId='" + projectId + '\'' +
-                '}';
     }
 }

@@ -8,13 +8,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Date : 2019-03-01 11:05
  **/
 public class BackupUDBInstanceResult extends BaseResponseResult {
-
-    @Override
-    public String toString() {
-        return "BackupUDBInstanceResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

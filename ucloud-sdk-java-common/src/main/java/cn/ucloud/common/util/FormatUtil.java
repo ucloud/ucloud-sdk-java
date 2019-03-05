@@ -1,11 +1,11 @@
 package cn.ucloud.common.util;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -16,6 +16,9 @@ import java.util.logging.Logger;
  */
 
 public class FormatUtil {
+
+    private static Logger logger = LoggerFactory.getLogger(FormatUtil.class.getName());
+
     public static int BCD2Int(byte data) {
         data &= 0xff;
         int low = data & 0xf;
@@ -76,7 +79,7 @@ public class FormatUtil {
                 arr[i] = (byte) Integer.parseInt(str.substring(i * 2, i * 2 + 2), 16);
             }
         } catch (Exception e) {
-            Logger.getGlobal().log(Level.SEVERE,e.getMessage());
+            logger.error(e.getMessage());
             return null;
         }
         return arr;

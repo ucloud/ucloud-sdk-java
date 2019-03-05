@@ -15,10 +15,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @description: UcloudHttp实现类
@@ -35,27 +35,51 @@ public class UcloudHttpImpl implements UcloudHttp {
         this.resultClass = resultClass;
     }
 
+    private static Logger logger = LoggerFactory.getLogger(UcloudHttpImpl.class.getName());
+
     @Override
-    public Object doGet(BaseRequestParam param, UcloudConfig config, final UcloudHandler handler, Boolean... asyncFlag) throws Exception {
-        // 创建http GET请求
-        String httpGetParamString = ParamConstructor.getHttpGetParamString(param, config.getAccount());
-        final HttpGet httpGet = new HttpGet(config.getApiServerAddr() + "?" + httpGetParamString);
-        return preHttp(httpGet, handler, asyncFlag);
+    public Object doGet(BaseRequestParam param, UcloudConfig config, final UcloudHandler handler,
+                        Boolean... asyncFlag) throws Exception {
+        Object result = null;
+        try {
+            // 创建http GET请求
+            String httpGetParamString = ParamConstructor.getHttpGetParamString(param, config.getAccount());
+            final HttpGet httpGet = new HttpGet(config.getApiServerAddr() + "?" + httpGetParamString);
+            result = preHttp(httpGet, handler, asyncFlag);
+        } catch (Exception e) {
+            if (handler == null) {
+                throw e;
+            } else {
+                handler.error(e);
+            }
+        }
+        return result;
     }
 
 
     @Override
-    public Object doPost(BaseRequestParam param, UcloudConfig config, UcloudHandler handler, Boolean... asyncFlag) throws Exception {
-        // 创建http GET请求
-        String httpPostParamString = ParamConstructor.getHttpPostParamString(param, config.getAccount());
-        final HttpPost httpPost = new HttpPost(config.getApiServerAddr());
-        //application/json
-        httpPost.setHeader("Content-Type", "application/json; charset=utf-8");
-        //设置参数
-        StringEntity entity = new StringEntity(httpPostParamString);
-        entity.setContentEncoding("UTF-8");
-        httpPost.setEntity(entity);
-        return preHttp(httpPost, handler, asyncFlag);
+    public Object doPost(BaseRequestParam param, UcloudConfig config, UcloudHandler handler, Boolean... asyncFlag)
+            throws Exception {
+        Object result = null;
+        try {
+            // 创建http POST请求
+            String httpPostParamString = ParamConstructor.getHttpPostParamString(param, config.getAccount());
+            final HttpPost httpPost = new HttpPost(config.getApiServerAddr());
+            //application/json
+            httpPost.setHeader("Content-Type", "application/json; charset=utf-8");
+            //设置参数
+            StringEntity entity = new StringEntity(httpPostParamString);
+            entity.setContentEncoding("UTF-8");
+            httpPost.setEntity(entity);
+            result = preHttp(httpPost, handler, asyncFlag);
+        } catch (Exception e) {
+            if (handler == null) {
+                throw e;
+            } else {
+                handler.error(e);
+            }
+        }
+        return result;
     }
 
     private Object preHttp(HttpUriRequest request, UcloudHandler handler, Boolean... asyncFlag) throws Exception {
@@ -73,7 +97,7 @@ public class UcloudHttpImpl implements UcloudHttp {
                         try {
                             doHttp(request, handler);
                         } catch (Exception e) {
-                            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+                            logger.error(e.getMessage());
                         }
                     }
                 };
@@ -92,15 +116,17 @@ public class UcloudHttpImpl implements UcloudHttp {
         // 创建Httpclient对象
         final CloseableHttpClient client = HttpClients.createDefault();
         try {
+            request.addHeader("User-Agent", "ucloud-sdk-java");
             // 执行http get请求
             response = client.execute(request);
             if (response != null) {
                 // 正常响应
                 String content = EntityUtils.toString(response.getEntity(), "UTF-8");
-                //Logger.getGlobal().log(Level.INFO,"response content:"+content);
+                logger.info("response content:{}",content);
                 if (statusOK(response)) {
                     Gson gson = new Gson();
                     responseResult = gson.fromJson(content, resultClass);
+                    responseResult.setResponseContent(content);
                     if (handler != null) {
                         handleResult(handler, responseResult);
                     }
@@ -128,12 +154,12 @@ public class UcloudHttpImpl implements UcloudHttp {
                     response.close();
                 }
             } catch (IOException e) {
-                Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+                logger.error(e.getMessage());
             }
             try {
                 client.close();
             } catch (IOException e) {
-                Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+                logger.error(e.getMessage());
             }
         }
         return responseResult;

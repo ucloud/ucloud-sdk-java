@@ -25,13 +25,4 @@ public class CheckUDBEngineResult extends BaseResponseResult {
         this.used = used;
     }
 
-    @Override
-    public String toString() {
-        return "CheckUDBEngineResult{" +
-                "used=" + used +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

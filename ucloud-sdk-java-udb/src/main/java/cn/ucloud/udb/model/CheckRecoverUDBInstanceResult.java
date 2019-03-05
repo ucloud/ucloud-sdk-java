@@ -23,14 +23,4 @@ public class CheckRecoverUDBInstanceResult extends BaseResponseResult {
     public void setLastestTime(Integer lastestTime) {
         this.lastestTime = lastestTime;
     }
-
-    @Override
-    public String toString() {
-        return "CheckRecoverUDBInstanceResult{" +
-                "lastestTime=" + lastestTime +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

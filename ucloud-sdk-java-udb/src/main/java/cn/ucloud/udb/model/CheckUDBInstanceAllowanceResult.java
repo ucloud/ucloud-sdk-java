@@ -15,13 +15,5 @@ public class CheckUDBInstanceAllowanceResult extends BaseResponseResult {
     @SerializedName("Count")
     private Integer count;
 
-    @Override
-    public String toString() {
-        return "CheckUDBInstanceAllowanceResult{" +
-                "count=" + count +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }
