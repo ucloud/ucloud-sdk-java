@@ -1,9 +1,10 @@
 package cn.ucloud.common.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @description: java model 工具
@@ -12,6 +13,8 @@ import java.util.logging.Logger;
  **/
 
 public class GetAndSetUtil {
+
+    private static Logger logger = LoggerFactory.getLogger(GetAndSetUtil.class.getName());
 
     /**
      * java反射bean的get方法
@@ -29,7 +32,7 @@ public class GetAndSetUtil {
         try {
             return objectClass.getMethod(sb.toString());
         } catch (Exception e) {
-            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+            logger.error(e.getMessage());
         }
         return null;
     }
@@ -54,7 +57,7 @@ public class GetAndSetUtil {
             sb.append(fieldName.substring(1));
             return objectClass.getMethod(sb.toString(), parameterTypes);
         } catch (Exception e) {
-            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+            logger.error(e.getMessage());
         }
         return null;
     }

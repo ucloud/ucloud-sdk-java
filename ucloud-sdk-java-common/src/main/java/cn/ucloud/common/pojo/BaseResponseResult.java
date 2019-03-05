@@ -1,6 +1,7 @@
 package cn.ucloud.common.pojo;
 
 import com.google.gson.Gson;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -28,9 +29,9 @@ public class BaseResponseResult {
     protected String message;
 
     /**
-     * response content
+     * response content 不进行 JsonSerDe
      */
-    protected String responseContent;
+    protected transient String responseContent;
 
     public String getResponseContent() {
         return responseContent;

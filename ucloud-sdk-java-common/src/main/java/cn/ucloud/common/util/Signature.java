@@ -2,6 +2,8 @@ package cn.ucloud.common.util;
 
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.common.pojo.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -10,8 +12,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @description: 签名工具类
@@ -21,6 +21,8 @@ import java.util.logging.Logger;
 
 
 public class Signature {
+
+    private static Logger logger = LoggerFactory.getLogger(Signature.class.getName());
 
     /**
      * 获取签名字符串
@@ -146,7 +148,7 @@ public class Signature {
                 try {
                     params[i].setParamValue(URLEncoder.encode(params[i].getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
-                    Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+                    logger.error(e.getMessage());
                 }
             }
         }
@@ -164,7 +166,7 @@ public class Signature {
                 try {
                     param.setParamValue(URLEncoder.encode(param.getParamValue().toString(), "utf-8"));
                 } catch (UnsupportedEncodingException e) {
-                    Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+                    logger.error(e.getMessage());
                 }
             }
         }
@@ -224,7 +226,7 @@ public class Signature {
             return FormatUtil.formatBytes2HexString(messageDigest, false);
 
         } catch (NoSuchAlgorithmException e) {
-            Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+            logger.error(e.getMessage());
         }
         return "";
     }
