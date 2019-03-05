@@ -1,9 +1,9 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
-import cn.ucloud.udb.model.ChangeUDBParamGroupParam;
-import cn.ucloud.udb.model.ChangeUDBParamGroupResult;
+import cn.ucloud.udb.model.BackupUDBInstanceParam;
+import cn.ucloud.udb.model.CheckRecoverUDBInstanceParam;
+import cn.ucloud.udb.model.CheckRecoverUDBInstanceResult;
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.junit.Before;
@@ -15,26 +15,26 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 17:47
+ * @Date : 2019-03-05 18:16
  **/
-public class ChangeUDBParamGroupTest {
+public class CheckRecoverUDBInstanceTest {
 
     private UDBClient client;
 
-    private ChangeUDBParamGroupParam param;
+    private CheckRecoverUDBInstanceParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ChangeUDBParamGroupParam("cn-sh2", "udb-h3q25faw", "sdk-java-test");
+        param = new CheckRecoverUDBInstanceParam("cn-sh2", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试
     @Test
-    public void changeUDBParamGroup() {
+    public void checkRecoverUDBInstance() {
         try {
-            ChangeUDBParamGroupResult result = client.changeUDBParamGroup(param);
+            CheckRecoverUDBInstanceResult result = client.checkRecoverUDBInstance(param);
             JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,10 +42,10 @@ public class ChangeUDBParamGroupTest {
     }
 
     @Test
-    public void changeUDBParamGroupCallback() {
-        client.changeUDBParamGroup(param, new UcloudHandler<ChangeUDBParamGroupResult>() {
+    public void checkRecoverUDBInstanceCallback() {
+        client.checkRecoverUDBInstance(param, new UcloudHandler<CheckRecoverUDBInstanceResult>() {
             @Override
-            public Object success(ChangeUDBParamGroupResult result) {
+            public Object success(CheckRecoverUDBInstanceResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
                 } catch (JSONException e) {
@@ -55,7 +55,7 @@ public class ChangeUDBParamGroupTest {
             }
 
             @Override
-            public Object failed(ChangeUDBParamGroupResult result) {
+            public Object failed(CheckRecoverUDBInstanceResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
                 } catch (JSONException e) {
