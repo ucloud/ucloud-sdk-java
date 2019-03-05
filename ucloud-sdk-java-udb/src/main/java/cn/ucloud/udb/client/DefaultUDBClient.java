@@ -67,7 +67,6 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

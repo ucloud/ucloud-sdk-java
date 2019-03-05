@@ -47,7 +47,7 @@ public class GetUDBSuspendPriceParam extends BaseRequestParam {
     @UcloudParam("DBIds")
     public List<Param> checkDBIds() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (dbIds == null || dbIds.size() <= 0) {
+        if (dbIds == null || dbIds.isEmpty()) {
             throw new ValidationException("dbIds can not be empty");
         } else {
             for (int i = 0; i < dbIds.size(); i++) {
