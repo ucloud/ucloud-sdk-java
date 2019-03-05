@@ -62,7 +62,7 @@ public class UcloudHttpImpl implements UcloudHttp {
             throws Exception {
         Object result = null;
         try {
-            // 创建http GET请求
+            // 创建http POST请求
             String httpPostParamString = ParamConstructor.getHttpPostParamString(param, config.getAccount());
             final HttpPost httpPost = new HttpPost(config.getApiServerAddr());
             //application/json
@@ -122,6 +122,7 @@ public class UcloudHttpImpl implements UcloudHttp {
             if (response != null) {
                 // 正常响应
                 String content = EntityUtils.toString(response.getEntity(), "UTF-8");
+                logger.info("response content:{}",content);
                 if (statusOK(response)) {
                     Gson gson = new Gson();
                     responseResult = gson.fromJson(content, resultClass);

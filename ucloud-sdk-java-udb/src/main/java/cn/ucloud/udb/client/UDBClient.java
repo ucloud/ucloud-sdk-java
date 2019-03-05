@@ -72,7 +72,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    BackupUDBInstanceBinlogResult backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param) throws Exception;
+    BackupUDBInstanceSlowLogResult backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param) throws Exception;
 
     /**
      * 备份UDB指定时间段的slowlog分析结果
@@ -82,7 +82,7 @@ public interface UDBClient extends UcloudClient {
      * @param asyncFlag 是否异步
      */
     void backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param,
-                                  UcloudHandler<BackupUDBInstanceBinlogResult> handler,
+                                  UcloudHandler<BackupUDBInstanceSlowLogResult> handler,
                                   Boolean... asyncFlag);
 
     /**

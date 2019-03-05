@@ -1,38 +1,38 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
-import cn.ucloud.udb.model.BackupUDBInstanceResult;
+import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
+import cn.ucloud.udb.model.BackupUDBInstanceBinlogResult;
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import static junit.framework.TestCase.assertNull;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 13:31
+ * @Date : 2019-03-05 16:12
  **/
-public class BackUDBInstanceTest {
+public class BackupUDBInstanceBinlogTest {
 
     private UDBClient client;
 
-    private BackupUDBInstanceParam param;
-
+    private BackupUDBInstanceBinlogParam param;
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new BackupUDBInstanceParam("cn-sh2", "udb-h3q25faw", "sdk-java-test");
+        param = new BackupUDBInstanceBinlogParam("cn-sh2", "udb-h3q25faw", "sdk-java-test");
         param.setProjectId("org-izug1m");
     }
 
     @Test
-    public void backupUDBInstance() {
+    public void backupUDBInstanceBinlog() {
         try {
-            BackupUDBInstanceResult result = client.backupUDBInstance(param);
+            BackupUDBInstanceBinlogResult result = client.backupUDBInstanceBinlog(param);
             JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,10 +40,10 @@ public class BackUDBInstanceTest {
     }
 
     @Test
-    public void backupUDBInstanceCallback() {
-        client.backupUDBInstance(param, new UcloudHandler<BackupUDBInstanceResult>() {
+    public void backupUDBInstanceBinlogCallBack() {
+        client.backupUDBInstanceBinlog(param, new UcloudHandler<BackupUDBInstanceBinlogResult>() {
             @Override
-            public Object success(BackupUDBInstanceResult result) {
+            public Object success(BackupUDBInstanceBinlogResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
                 } catch (JSONException e) {
@@ -53,11 +53,11 @@ public class BackUDBInstanceTest {
             }
 
             @Override
-            public Object failed(BackupUDBInstanceResult result) {
+            public Object failed(BackupUDBInstanceBinlogResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    assertNull(e);
                 }
                 return null;
             }

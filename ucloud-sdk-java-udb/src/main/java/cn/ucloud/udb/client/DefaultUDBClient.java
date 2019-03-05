@@ -45,7 +45,7 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     @Override
     public void backupUDBInstanceBinlog(BackupUDBInstanceBinlogParam param,
                                   UcloudHandler<BackupUDBInstanceBinlogResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceResult.class);
+        UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceBinlogResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
@@ -67,21 +67,22 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     @Override
-    public BackupUDBInstanceBinlogResult backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param)
+    public BackupUDBInstanceSlowLogResult backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param)
             throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceBinlogResult.class);
-        return (BackupUDBInstanceBinlogResult) http.doGet(param, config, null);
+        UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceSlowLogResult.class);
+        return (BackupUDBInstanceSlowLogResult) http.doGet(param, config, null);
     }
 
     @Override
     public void backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param,
-                                         UcloudHandler<BackupUDBInstanceBinlogResult> handler,
+                                         UcloudHandler<BackupUDBInstanceSlowLogResult> handler,
                                          Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceBinlogResult.class);
+        UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceSlowLogResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {

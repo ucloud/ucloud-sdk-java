@@ -1,38 +1,39 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
-import cn.ucloud.udb.model.BackupUDBInstanceResult;
+import cn.ucloud.udb.model.BackupUDBInstanceErrorLogParam;
+import cn.ucloud.udb.model.BackupUDBInstanceErrorLogResult;
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 13:31
+ * @Date : 2019-03-05 16:58
  **/
-public class BackUDBInstanceTest {
-
+public class BackupUDBInstanceErrorLogTest {
     private UDBClient client;
 
-    private BackupUDBInstanceParam param;
+    private BackupUDBInstanceErrorLogParam param;
 
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new BackupUDBInstanceParam("cn-sh2", "udb-h3q25faw", "sdk-java-test");
+        param = new BackupUDBInstanceErrorLogParam("cn-sh2", "udb-h3q25faw", "sdk-java-test-error-log");
         param.setProjectId("org-izug1m");
     }
 
     @Test
-    public void backupUDBInstance() {
+    public void backupUDBInstanceErrorLog() {
+        BackupUDBInstanceErrorLogResult result = null;
         try {
-            BackupUDBInstanceResult result = client.backupUDBInstance(param);
+            result = client.backupUDBInstanceErrorLog(param);
             JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,10 +41,10 @@ public class BackUDBInstanceTest {
     }
 
     @Test
-    public void backupUDBInstanceCallback() {
-        client.backupUDBInstance(param, new UcloudHandler<BackupUDBInstanceResult>() {
+    public void backupUDBInstanceErrorLogCallback() {
+        client.backupUDBInstanceErrorLog(param, new UcloudHandler<BackupUDBInstanceErrorLogResult>() {
             @Override
-            public Object success(BackupUDBInstanceResult result) {
+            public Object success(BackupUDBInstanceErrorLogResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
                 } catch (JSONException e) {
@@ -53,7 +54,7 @@ public class BackUDBInstanceTest {
             }
 
             @Override
-            public Object failed(BackupUDBInstanceResult result) {
+            public Object failed(BackupUDBInstanceErrorLogResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
                 } catch (JSONException e) {
@@ -67,6 +68,11 @@ public class BackUDBInstanceTest {
                 e.printStackTrace();
                 return null;
             }
-        }, false);
+        });
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

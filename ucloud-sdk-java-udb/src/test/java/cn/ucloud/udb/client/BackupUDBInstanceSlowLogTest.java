@@ -1,38 +1,41 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
-import cn.ucloud.udb.model.BackupUDBInstanceResult;
+import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
+import cn.ucloud.udb.model.BackupUDBInstanceErrorLogResult;
+import cn.ucloud.udb.model.BackupUDBInstanceSlowLogParam;
+import cn.ucloud.udb.model.BackupUDBInstanceSlowLogResult;
 import com.google.gson.Gson;
-import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 13:31
+ * @Date : 2019-03-05 17:11
  **/
-public class BackUDBInstanceTest {
+public class BackupUDBInstanceSlowLogTest {
 
     private UDBClient client;
 
-    private BackupUDBInstanceParam param;
-
+    private BackupUDBInstanceSlowLogParam param;
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new BackupUDBInstanceParam("cn-sh2", "udb-h3q25faw", "sdk-java-test");
+        param = new BackupUDBInstanceSlowLogParam("cn-sh2", "udb-h3q25faw", 1551770000, 1551777220
+                , "sdk-java-test-slow");
         param.setProjectId("org-izug1m");
     }
 
     @Test
-    public void backupUDBInstance() {
+    public void backupUDBInstanceSlowLog() {
         try {
-            BackupUDBInstanceResult result = client.backupUDBInstance(param);
+            BackupUDBInstanceSlowLogResult result = client.backupUDBInstanceSlowLog(param);
             JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,23 +43,23 @@ public class BackUDBInstanceTest {
     }
 
     @Test
-    public void backupUDBInstanceCallback() {
-        client.backupUDBInstance(param, new UcloudHandler<BackupUDBInstanceResult>() {
+    public void backupUDBInstanceSlowLogCallback() {
+        client.backupUDBInstanceSlowLog(param, new UcloudHandler<BackupUDBInstanceSlowLogResult>() {
             @Override
-            public Object success(BackupUDBInstanceResult result) {
+            public Object success(BackupUDBInstanceSlowLogResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return null;
             }
 
             @Override
-            public Object failed(BackupUDBInstanceResult result) {
+            public Object failed(BackupUDBInstanceSlowLogResult result) {
                 try {
                     JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return null;
@@ -67,6 +70,6 @@ public class BackUDBInstanceTest {
                 e.printStackTrace();
                 return null;
             }
-        }, false);
+        },false);
     }
 }
