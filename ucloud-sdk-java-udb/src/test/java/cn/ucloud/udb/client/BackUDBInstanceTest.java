@@ -4,10 +4,13 @@ import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.udb.model.BackupUDBInstanceParam;
 import cn.ucloud.udb.model.BackupUDBInstanceResult;
 import com.google.gson.Gson;
+import junit.framework.TestCase;
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
+
+import static org.junit.Assert.assertNull;
 
 
 /**
@@ -33,9 +36,9 @@ public class BackUDBInstanceTest {
     public void backupUDBInstance() {
         try {
             BackupUDBInstanceResult result = client.backupUDBInstance(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -44,27 +47,19 @@ public class BackUDBInstanceTest {
         client.backupUDBInstance(param, new UcloudHandler<BackupUDBInstanceResult>() {
             @Override
             public Object success(BackupUDBInstanceResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(BackupUDBInstanceResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
         }, false);

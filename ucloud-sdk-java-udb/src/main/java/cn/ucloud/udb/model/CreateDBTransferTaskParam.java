@@ -59,7 +59,7 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
      * 源库用户密码
      */
     @NotEmpty(message = "srcPassword can not be empty")
-    @UcloudParam("SrcPassword")
+    @UcloudParam("SrcPasswd")
     private String srcPassword;
 
     /**
@@ -101,7 +101,7 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
      * 目标库用户密码
      */
     @NotEmpty(message = "dstPassword can not be empty")
-    @UcloudParam("DstPassword")
+    @UcloudParam("DstPasswd")
     private String dstPassword;
 
     /**
@@ -113,6 +113,7 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
 
 
     public CreateDBTransferTaskParam(@NotEmpty(message = "region can not be empty") String region,
+                                     @NotEmpty(message = "zone can not be empty") String zone,
                                      @NotEmpty(message = "taskName can not empty") String taskName,
                                      @NotEmpty(message = "srcDBType can not be empty") String srcDBTypeId,
                                      @NotEmpty(message = "srcInstanceTypeId can not be empty") String srcInstanceTypeId,
@@ -127,6 +128,7 @@ public class CreateDBTransferTaskParam extends BaseRequestParam {
                                      @NotEmpty(message = "migrateType can not be empty") String migrateType) {
         super("CreateDBTransferTask");
         this.region = region;
+        this.zone = zone;
         this.taskName = taskName;
         this.srcDBTypeId = srcDBTypeId;
         this.srcInstanceTypeId = srcInstanceTypeId;

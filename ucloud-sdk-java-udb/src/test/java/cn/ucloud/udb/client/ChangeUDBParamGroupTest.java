@@ -35,9 +35,9 @@ public class ChangeUDBParamGroupTest {
     public void changeUDBParamGroup() {
         try {
             ChangeUDBParamGroupResult result = client.changeUDBParamGroup(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -46,27 +46,19 @@ public class ChangeUDBParamGroupTest {
         client.changeUDBParamGroup(param, new UcloudHandler<ChangeUDBParamGroupResult>() {
             @Override
             public Object success(ChangeUDBParamGroupResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(ChangeUDBParamGroupResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
         }, false);

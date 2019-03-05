@@ -1,12 +1,10 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceResult;
-import cn.ucloud.udb.model.ChangeUDBParamGroupParam;
-import cn.ucloud.udb.model.CheckUDBEngineParam;
-import cn.ucloud.udb.model.CheckUDBEngineResult;
+import cn.ucloud.udb.model.CheckUDBInstanceAllowanceParam;
+import cn.ucloud.udb.model.CheckUDBInstanceToHAAllowanceParam;
+import cn.ucloud.udb.model.CheckUDBInstanceToHAAllowanceResult;
 import com.google.gson.Gson;
-import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -16,25 +14,27 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 18:26
+ * @Date : 2019-03-05 21:25
  **/
-public class CheckUDBEngineTest {
+public class CheckUDBInstanceToHAAllowanceTest {
+
 
     private UDBClient client;
 
-    private CheckUDBEngineParam param;
+    private CheckUDBInstanceToHAAllowanceParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CheckUDBEngineParam("cn-sh2", "udb-h3q25faw", "MyISAM");
+        param = new CheckUDBInstanceToHAAllowanceParam("cn-sh2", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
 
     @Test
-    public void checkUDBEngine() {
+    public void checkUDBInstanceToHAAllowance() {
         try {
-            CheckUDBEngineResult result = client.checkUDBEngine(param);
+            CheckUDBInstanceToHAAllowanceResult result = client.checkUDBInstanceToHAAllowance(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -42,16 +42,16 @@ public class CheckUDBEngineTest {
     }
 
     @Test
-    public void checkUDBEngineCallback() {
-        client.checkUDBEngine(param, new UcloudHandler<CheckUDBEngineResult>() {
+    public void checkUDBInstanceToHAAllowanceCallback() {
+        client.checkUDBInstanceToHAAllowance(param, new UcloudHandler<CheckUDBInstanceToHAAllowanceResult>() {
             @Override
-            public Object success(CheckUDBEngineResult result) {
+            public Object success(CheckUDBInstanceToHAAllowanceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CheckUDBEngineResult result) {
+            public Object failed(CheckUDBInstanceToHAAllowanceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

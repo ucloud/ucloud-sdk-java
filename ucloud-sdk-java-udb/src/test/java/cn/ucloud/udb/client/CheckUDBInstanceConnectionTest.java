@@ -1,10 +1,9 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceResult;
-import cn.ucloud.udb.model.ChangeUDBParamGroupParam;
-import cn.ucloud.udb.model.CheckUDBEngineParam;
-import cn.ucloud.udb.model.CheckUDBEngineResult;
+import cn.ucloud.udb.model.CheckUDBInstanceAllowanceParam;
+import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
+import cn.ucloud.udb.model.CheckUDBInstanceConnectionResult;
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.junit.Before;
@@ -16,25 +15,27 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 18:26
+ * @Date : 2019-03-05 21:21
  **/
-public class CheckUDBEngineTest {
+public class CheckUDBInstanceConnectionTest {
+
 
     private UDBClient client;
 
-    private CheckUDBEngineParam param;
+    private CheckUDBInstanceConnectionParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CheckUDBEngineParam("cn-sh2", "udb-h3q25faw", "MyISAM");
+        param = new CheckUDBInstanceConnectionParam("cn-sh2", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
 
     @Test
-    public void checkUDBEngine() {
+    public void checkUDBInstanceConnection() {
         try {
-            CheckUDBEngineResult result = client.checkUDBEngine(param);
+            CheckUDBInstanceConnectionResult result = client.checkUDBInstanceConnection(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -42,16 +43,16 @@ public class CheckUDBEngineTest {
     }
 
     @Test
-    public void checkUDBEngineCallback() {
-        client.checkUDBEngine(param, new UcloudHandler<CheckUDBEngineResult>() {
+    public void checkUDBInstanceConnectionCallback() {
+        client.checkUDBInstanceConnection(param, new UcloudHandler<CheckUDBInstanceConnectionResult>() {
             @Override
-            public Object success(CheckUDBEngineResult result) {
+            public Object success(CheckUDBInstanceConnectionResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CheckUDBEngineResult result) {
+            public Object failed(CheckUDBInstanceConnectionResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

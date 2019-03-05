@@ -35,9 +35,9 @@ public class CheckRecoverUDBInstanceTest {
     public void checkRecoverUDBInstance() {
         try {
             CheckRecoverUDBInstanceResult result = client.checkRecoverUDBInstance(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -46,27 +46,19 @@ public class CheckRecoverUDBInstanceTest {
         client.checkRecoverUDBInstance(param, new UcloudHandler<CheckRecoverUDBInstanceResult>() {
             @Override
             public Object success(CheckRecoverUDBInstanceResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(CheckRecoverUDBInstanceResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
         }, false);

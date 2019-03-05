@@ -104,6 +104,7 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
     private String dbId;
 
     public CheckUDBInstanceAllowanceParam(@NotEmpty(message = "region can not be empty") String region,
+                                          @NotEmpty(message = "zone can not be empty") String zone,
                                           @NotEmpty(message = "classType can not be empty") String classType,
                                           @NotNull(message = "memoryLimit can not be null") Integer memoryLimit,
                                           @NotNull(message = "diskSpace can not be null") Integer diskSpace,
@@ -112,6 +113,7 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
                                           @NotEmpty(message = "instanceMode can not be empty") String instanceMode) {
         super("CheckUDBInstanceAllowance");
         this.region = region;
+        this.zone = zone;
         this.classType = classType;
         this.memoryLimit = memoryLimit;
         this.diskSpace = diskSpace;
@@ -123,7 +125,7 @@ public class CheckUDBInstanceAllowanceParam extends BaseRequestParam {
     @UcloudParam("SSDType")
     public List<Param> checkSSDType() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (useSSD) {
+        if (useSSD != null && useSSD) {
             if (ssdType == null) {
                 throw new ValidationException("ssdType can not be empty when useSSD is true");
             } else {

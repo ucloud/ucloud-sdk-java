@@ -1,40 +1,38 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceResult;
-import cn.ucloud.udb.model.ChangeUDBParamGroupParam;
-import cn.ucloud.udb.model.CheckUDBEngineParam;
-import cn.ucloud.udb.model.CheckUDBEngineResult;
-import com.google.gson.Gson;
-import org.json.JSONException;
+import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
+import cn.ucloud.udb.model.CompleteDBTransferTaskParam;
+import cn.ucloud.udb.model.CompleteDBTransferTaskResult;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 
 import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 18:26
+ * @Date : 2019-03-05 21:41
  **/
-public class CheckUDBEngineTest {
+public class CompleteDBTransferTaskTest {
 
     private UDBClient client;
 
-    private CheckUDBEngineParam param;
+    private CompleteDBTransferTaskParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CheckUDBEngineParam("cn-sh2", "udb-h3q25faw", "MyISAM");
+        param = new CompleteDBTransferTaskParam("cn-sh2", "cn-sh2-02", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
 
+    // todo 测试
     @Test
-    public void checkUDBEngine() {
+    public void completeDBTransferTask() {
         try {
-            CheckUDBEngineResult result = client.checkUDBEngine(param);
+            CompleteDBTransferTaskResult result = client.completeDBTransferTask(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -42,16 +40,16 @@ public class CheckUDBEngineTest {
     }
 
     @Test
-    public void checkUDBEngineCallback() {
-        client.checkUDBEngine(param, new UcloudHandler<CheckUDBEngineResult>() {
+    public void completeDBTransferTaskCallback() {
+        client.completeDBTransferTask(param, new UcloudHandler<CompleteDBTransferTaskResult>() {
             @Override
-            public Object success(CheckUDBEngineResult result) {
+            public Object success(CompleteDBTransferTaskResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CheckUDBEngineResult result) {
+            public Object failed(CompleteDBTransferTaskResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

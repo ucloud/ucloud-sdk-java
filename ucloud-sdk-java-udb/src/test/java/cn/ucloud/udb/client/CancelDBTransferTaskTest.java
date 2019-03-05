@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @Description :
  * @Author : codezhang
@@ -33,9 +35,9 @@ public class CancelDBTransferTaskTest {
     public void cancelDBTransferTask() {
         try {
             CancelDBTransferTaskResult result = client.cancelDBTransferTask(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -44,27 +46,19 @@ public class CancelDBTransferTaskTest {
         client.cancelDBTransferTask(param, new UcloudHandler<CancelDBTransferTaskResult>() {
             @Override
             public Object success(CancelDBTransferTaskResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(CancelDBTransferTaskResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
         }, false);
