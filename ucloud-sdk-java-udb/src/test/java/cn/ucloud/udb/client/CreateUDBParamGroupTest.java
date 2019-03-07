@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CompleteDBTransferTaskParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.CreateUDBParamGroupParam;
 import cn.ucloud.udb.model.CreateUDBParamGroupResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,7 +25,7 @@ public class CreateUDBParamGroupTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         param = new CreateUDBParamGroupParam("cn-sh2", "cn-sh2-02", "sdk-java-param-group",
-                "sdk-java","udb-hzceb3cr","mongodb-3.2");
+                "sdk-java", "udb-hzceb3cr", "mongodb-3.2");
         param.setProjectId("org-izug1m");
     }
 

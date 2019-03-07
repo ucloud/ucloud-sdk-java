@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.CreateDBTransferTaskParam;
 import cn.ucloud.udb.model.CreateDBTransferTaskResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -24,10 +24,10 @@ public class CreateDBTransferTaskTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateDBTransferTaskParam("cn-sh2", "cn-sh2-02","sdk-java-test","MySQL",
-                "udb-udb","root","sdk-java-test","10.23.148.134",
-                3306,"MySQL","udb-h3q25faw","root",
-                "sdk-java-test","full_inc");
+        param = new CreateDBTransferTaskParam("cn-sh2", "cn-sh2-02", "sdk-java-test", "MySQL",
+                "udb-udb", "root", "sdk-java-test", "10.23.148.134",
+                3306, "MySQL", "udb-h3q25faw", "root",
+                "sdk-java-test", "full_inc");
         param.setProjectId("org-izug1m");
     }
 

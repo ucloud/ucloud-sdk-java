@@ -75,7 +75,7 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
         /**
          * 源库密码
          */
-        @SerializedName("SrcPassword")
+        @SerializedName("SrcPasswd")
         private String srcPassword;
 
         /**
@@ -111,8 +111,8 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
         /**
          * 目标库密码
          */
-        @SerializedName("DstPassword")
-        private String dstPassowrd;
+        @SerializedName("DstPasswd")
+        private String dstPassword;
 
         /**
          * 目标库所在region
@@ -179,7 +179,7 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
          * preError98 : 目标库无法连通！
          */
         @SerializedName("ErrorCode")
-        private String errorCode;
+        private List<String> errorCode;
 
         /**
          * 同步延时
@@ -193,7 +193,7 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
          * preWarn3: 由于没有所有库的TRIGGER权限，因此不迁移触发器！
          */
         @SerializedName("WarningCode")
-        private String warningCode;
+        private List<String> warningCode;
 
 
         public String getTaskId() {
@@ -316,12 +316,12 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
             this.dstUser = dstUser;
         }
 
-        public String getDstPassowrd() {
-            return dstPassowrd;
+        public String getDstPassword() {
+            return dstPassword;
         }
 
-        public void setDstPassowrd(String dstPassowrd) {
-            this.dstPassowrd = dstPassowrd;
+        public void setDstPassword(String dstPassword) {
+            this.dstPassword = dstPassword;
         }
 
         public String getDstRegion() {
@@ -364,13 +364,14 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
             this.zone = zone;
         }
 
-        public String getErrorCode() {
+        public List<String> getErrorCode() {
             return errorCode;
         }
 
-        public void setErrorCode(String errorCode) {
+        public void setErrorCode(List<String> errorCode) {
             this.errorCode = errorCode;
         }
+
 
         public String getDelaySeconds() {
             return delaySeconds;
@@ -380,14 +381,13 @@ public class DescribeDBTransferTaskResult extends BaseResponseResult {
             this.delaySeconds = delaySeconds;
         }
 
-        public String getWarningCode() {
+        public List<String> getWarningCode() {
             return warningCode;
         }
 
-        public void setWarningCode(String warningCode) {
+        public void setWarningCode(List<String> warningCode) {
             this.warningCode = warningCode;
         }
-
     }
 
     /**

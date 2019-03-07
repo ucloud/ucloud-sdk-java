@@ -18,4 +18,6 @@
 *.iml
 */target
 target
+generator.yml
+template
 

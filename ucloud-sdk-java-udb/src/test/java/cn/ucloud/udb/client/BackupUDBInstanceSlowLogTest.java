@@ -1,17 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
-import cn.ucloud.udb.model.BackupUDBInstanceErrorLogResult;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.BackupUDBInstanceSlowLogParam;
 import cn.ucloud.udb.model.BackupUDBInstanceSlowLogResult;
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

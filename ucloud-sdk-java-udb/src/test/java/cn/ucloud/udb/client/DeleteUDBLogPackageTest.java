@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.ClearUDBLogParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.DeleteUDBLogPackageParam;
 import cn.ucloud.udb.model.DeleteUDBLogPackageResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +28,7 @@ public class DeleteUDBLogPackageTest {
         param = new DeleteUDBLogPackageParam("cn-sh2", "cn-sh2-02", "62493");
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void deleteUDBLogPackage() {
         try {

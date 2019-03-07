@@ -77,12 +77,14 @@ public class DescribeUDBInstanceParam extends BaseRequestParam {
     private Boolean includeSlaves;
 
     public DescribeUDBInstanceParam(@NotEmpty(message = "region can not be empty") String region,
+                                    @NotEmpty(message = "classType can not be empty") String classType,
                                     @NotNull(message = "limit can not be null") Integer limit,
                                     @NotNull(message = "offset can not be null") Integer offset) {
         super("DescribeUDBInstance");
         this.region = region;
         this.limit = limit;
         this.offset = offset;
+        this.classType = classType;
     }
 
     public String getRegion() {

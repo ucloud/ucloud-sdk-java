@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CompleteDBTransferTaskParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.DeleteUDBBackupParam;
 import cn.ucloud.udb.model.DeleteUDBBackupResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

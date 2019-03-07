@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.CreateUDBCInstanceParam;
 import cn.ucloud.udb.model.CreateUDBCInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -24,7 +24,7 @@ public class CreateUDBCInstanceTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBCInstanceParam("cn-sh2", "cn-sh2-02", "sdk-java-udbc", "1","sdk-java");
+        param = new CreateUDBCInstanceParam("cn-sh2", "cn-sh2-02", "sdk-java-udbc", "1", "sdk-java");
         param.setProjectId("org-izug1m");
     }
 

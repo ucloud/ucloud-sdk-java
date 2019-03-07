@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.CompleteDBTransferTaskParam;
 import cn.ucloud.udb.model.CompleteDBTransferTaskResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

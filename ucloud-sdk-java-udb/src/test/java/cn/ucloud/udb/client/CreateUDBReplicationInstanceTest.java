@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.ClearUDBLogParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.CreateUDBReplicationInstanceParam;
 import cn.ucloud.udb.model.CreateUDBReplicationInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

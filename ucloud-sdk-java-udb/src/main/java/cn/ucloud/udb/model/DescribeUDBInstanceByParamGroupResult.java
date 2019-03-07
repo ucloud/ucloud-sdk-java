@@ -54,7 +54,7 @@ public class DescribeUDBInstanceByParamGroupResult extends BaseResponseResult {
          * DB实例过期时间
          */
         @SerializedName("ExpiredTime")
-        private String expiredTime;
+        private Integer expiredTime;
 
         /**
          * DB实例角色
@@ -110,11 +110,11 @@ public class DescribeUDBInstanceByParamGroupResult extends BaseResponseResult {
             this.createTime = createTime;
         }
 
-        public String getExpiredTime() {
+        public Integer getExpiredTime() {
             return expiredTime;
         }
 
-        public void setExpiredTime(String expiredTime) {
+        public void setExpiredTime(Integer expiredTime) {
             this.expiredTime = expiredTime;
         }
 

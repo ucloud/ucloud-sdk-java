@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.ClearUDBLogParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.DeleteUDBInstanceParam;
 import cn.ucloud.udb.model.DeleteUDBInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -15,7 +15,6 @@ import static org.junit.Assert.*;
  * @Date : 2019-03-06 14:10
  **/
 public class DeleteUDBInstanceTest {
-
 
 
     private UDBClient client;

@@ -1,13 +1,13 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CreateDBTransferTaskParam;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.DeleteSqlserverAccountParam;
 import cn.ucloud.udb.model.DeleteSqlserverAccountResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -24,7 +24,7 @@ public class DeleteSqlserverAccountTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DeleteSqlserverAccountParam("cn-sh2", "cn-sh2-02","sdk-java-test");
+        param = new DeleteSqlserverAccountParam("cn-sh2", "cn-sh2-02", "sdk-java-test");
         param.setProjectId("org-izug1m");
     }
 

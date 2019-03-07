@@ -1,15 +1,11 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.udb.model.BackupUDBInstanceErrorLogParam;
 import cn.ucloud.udb.model.BackupUDBInstanceErrorLogResult;
-import com.google.gson.Gson;
-import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.assertNull;
 
@@ -62,6 +58,6 @@ public class BackupUDBInstanceErrorLogTest {
                 assertNull(e);
                 return null;
             }
-        },false);
+        }, false);
     }
 }
