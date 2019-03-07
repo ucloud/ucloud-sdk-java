@@ -4,7 +4,6 @@ import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.udb.model.*;
 import cn.ucloud.udb.pojo.UDBConfig;
 
@@ -26,7 +25,7 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public void backupUDBInstance(BaseRequestParam param,
+    public void backupUDBInstance(BackupUDBInstanceParam param,
                                   UcloudHandler<BackupUDBInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceResult.class);
         try {

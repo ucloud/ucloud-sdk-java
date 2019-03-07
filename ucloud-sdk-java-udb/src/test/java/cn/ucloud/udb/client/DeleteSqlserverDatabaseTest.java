@@ -1,9 +1,9 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
 import cn.ucloud.udb.model.CreateDBTransferTaskParam;
-import cn.ucloud.udb.model.CreateDBTransferTaskResult;
+import cn.ucloud.udb.model.DeleteSqlserverDatabaseParam;
+import cn.ucloud.udb.model.DeleteSqlserverDatabaseResult;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,29 +12,27 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 21:43
+ * @Date : 2019-03-06 13:59
  **/
-public class CreateDBTransferTaskTest {
+public class DeleteSqlserverDatabaseTest {
 
     private UDBClient client;
 
-    private CreateDBTransferTaskParam param;
+    private DeleteSqlserverDatabaseParam param;
 
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateDBTransferTaskParam("cn-sh2", "cn-sh2-02","sdk-java-test","MySQL",
-                "udb-udb","root","sdk-java-test","10.23.148.134",
-                3306,"MySQL","udb-h3q25faw","root",
-                "sdk-java-test","full_inc");
+        param = new DeleteSqlserverDatabaseParam("cn-sh2","udb-xxx","sdk-java-test");
         param.setProjectId("org-izug1m");
     }
 
+    // todo 测试
     @Test
-    public void createDBTransferTask() {
+    public void deleteSqlserverDatabase() {
         try {
-            CreateDBTransferTaskResult result = client.createDBTransferTask(param);
+            DeleteSqlserverDatabaseResult result = client.deleteSqlserverDatabase(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -42,16 +40,16 @@ public class CreateDBTransferTaskTest {
     }
 
     @Test
-    public void createMongoDBReplicaSet() {
-        client.createDBTransferTask(param, new UcloudHandler<CreateDBTransferTaskResult>() {
+    public void deleteSqlserverDatabaseCallBack() {
+        client.deleteSqlserverDatabase(param, new UcloudHandler<DeleteSqlserverDatabaseResult>() {
             @Override
-            public Object success(CreateDBTransferTaskResult result) {
+            public Object success(DeleteSqlserverDatabaseResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateDBTransferTaskResult result) {
+            public Object failed(DeleteSqlserverDatabaseResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

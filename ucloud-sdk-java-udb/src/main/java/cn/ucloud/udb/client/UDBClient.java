@@ -23,7 +23,7 @@ public interface UDBClient extends UcloudClient {
      * @param handler   回调接口
      * @param asyncFlag 是否异步
      */
-    void backupUDBInstance(BaseRequestParam param, UcloudHandler<BackupUDBInstanceResult> handler,
+    void backupUDBInstance(BackupUDBInstanceParam param, UcloudHandler<BackupUDBInstanceResult> handler,
                            Boolean... asyncFlag);
 
     /**

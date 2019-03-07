@@ -1,9 +1,9 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
-import cn.ucloud.udb.model.CreateDBTransferTaskParam;
-import cn.ucloud.udb.model.CreateDBTransferTaskResult;
+import cn.ucloud.udb.model.CreateMongoDBReplicaSetParam;
+import cn.ucloud.udb.model.CreateUDBSlaveParam;
+import cn.ucloud.udb.model.CreateUDBSlaveResult;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,29 +12,26 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 21:43
+ * @Date : 2019-03-06 11:50
  **/
-public class CreateDBTransferTaskTest {
+public class CreateUDBSlaveTest {
 
     private UDBClient client;
 
-    private CreateDBTransferTaskParam param;
-
+    private CreateUDBSlaveParam param;
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateDBTransferTaskParam("cn-sh2", "cn-sh2-02","sdk-java-test","MySQL",
-                "udb-udb","root","sdk-java-test","10.23.148.134",
-                3306,"MySQL","udb-h3q25faw","root",
-                "sdk-java-test","full_inc");
+        param = new CreateUDBSlaveParam("cn-sh2", "udb-5yb2i0vn", "slave-test");
         param.setProjectId("org-izug1m");
     }
 
+    // todo 测试 response messsage 拼写错误
     @Test
-    public void createDBTransferTask() {
+    public void createUDBSlave() {
         try {
-            CreateDBTransferTaskResult result = client.createDBTransferTask(param);
+            CreateUDBSlaveResult result = client.createUDBSlave(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -42,16 +39,16 @@ public class CreateDBTransferTaskTest {
     }
 
     @Test
-    public void createMongoDBReplicaSet() {
-        client.createDBTransferTask(param, new UcloudHandler<CreateDBTransferTaskResult>() {
+    public void createUDBSlaveCallback() {
+        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
             @Override
-            public Object success(CreateDBTransferTaskResult result) {
+            public Object success(CreateUDBSlaveResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateDBTransferTaskResult result) {
+            public Object failed(CreateUDBSlaveResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

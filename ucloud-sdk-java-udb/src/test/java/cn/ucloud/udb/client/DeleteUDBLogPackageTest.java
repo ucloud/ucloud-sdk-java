@@ -1,9 +1,9 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.CheckUDBInstanceConnectionParam;
-import cn.ucloud.udb.model.CreateDBTransferTaskParam;
-import cn.ucloud.udb.model.CreateDBTransferTaskResult;
+import cn.ucloud.udb.model.ClearUDBLogParam;
+import cn.ucloud.udb.model.DeleteUDBLogPackageParam;
+import cn.ucloud.udb.model.DeleteUDBLogPackageResult;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,29 +12,26 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-05 21:43
+ * @Date : 2019-03-06 14:15
  **/
-public class CreateDBTransferTaskTest {
+public class DeleteUDBLogPackageTest {
+
 
     private UDBClient client;
 
-    private CreateDBTransferTaskParam param;
+    private DeleteUDBLogPackageParam param;
 
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateDBTransferTaskParam("cn-sh2", "cn-sh2-02","sdk-java-test","MySQL",
-                "udb-udb","root","sdk-java-test","10.23.148.134",
-                3306,"MySQL","udb-h3q25faw","root",
-                "sdk-java-test","full_inc");
+        param = new DeleteUDBLogPackageParam("cn-sh2", "cn-sh2-02", "62493");
         param.setProjectId("org-izug1m");
     }
-
     @Test
-    public void createDBTransferTask() {
+    public void deleteUDBLogPackage() {
         try {
-            CreateDBTransferTaskResult result = client.createDBTransferTask(param);
+            DeleteUDBLogPackageResult result = client.deleteUDBLogPackage(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -42,16 +39,16 @@ public class CreateDBTransferTaskTest {
     }
 
     @Test
-    public void createMongoDBReplicaSet() {
-        client.createDBTransferTask(param, new UcloudHandler<CreateDBTransferTaskResult>() {
+    public void deleteUDBLogPackageCallback() {
+        client.deleteUDBLogPackage(param, new UcloudHandler<DeleteUDBLogPackageResult>() {
             @Override
-            public Object success(CreateDBTransferTaskResult result) {
+            public Object success(DeleteUDBLogPackageResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateDBTransferTaskResult result) {
+            public Object failed(DeleteUDBLogPackageResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
