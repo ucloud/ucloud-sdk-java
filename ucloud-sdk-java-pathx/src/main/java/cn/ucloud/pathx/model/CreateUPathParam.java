@@ -10,15 +10,9 @@ import javax.validation.constraints.NotNull;
 /**
  * @Description : 创建UPath 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-07 04:19
+ * @Date : 2019-03-08 04:06
  **/
 public class CreateUPathParam extends BaseRequestParam {
-    /**
-     * 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html)
-     */
-    @UcloudParam("ProjectId")
-    @NotEmpty(message = "projectId can not be empty")
-    private String projectId;
     /**
      * UPath名字
      */
@@ -72,14 +66,6 @@ public class CreateUPathParam extends BaseRequestParam {
         this.quantity = quantity;
     }
 
-
-    public String getProjectId() {
-        return this.projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
 
     public String getName() {
         return this.name;

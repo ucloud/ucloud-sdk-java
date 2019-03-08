@@ -1,84 +1,98 @@
 package cn.ucloud.pathx.model;
 
+import cn.ucloud.common.pojo.BaseResponseResult;
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 
 /**
- * @Description : 子线路 模型类
- * @Author : ucloud-sdk-generator
- * @Date : 2019-03-07 04:19
- **/
-public class LineDetail {
-    /**
-     * 线路源
-     */
-    @SerializedName("LineFrom")
-    private String lineFrom;
-    /**
-     * 线路目的
-     */
-    @SerializedName("LineTo")
-    private String lineTo;
-    /**
-     * 线路计费Id
-     */
-    @SerializedName("LineId")
-    private String lineId;
-    /**
-     * 线路源中文名称
-     */
-    @SerializedName("LineFromName")
-    private String lineFromName;
-    /**
-     * 线路目的中文名称
-     */
-    @SerializedName("LineToName")
-    private String lineToName;
+* @Description : 子线路 模型类
+* @Author : ucloud-sdk-generator
+* @Date : 2019-03-08 04:06
+**/
+public class LineDetail  {
+            /**
+            * 线路源
+            */
+            @SerializedName("LineFrom")
+                private String lineFrom;
+            /**
+            * 线路目的
+            */
+            @SerializedName("LineTo")
+                private String lineTo;
+            /**
+            * 线路计费Id
+            */
+            @SerializedName("LineId")
+                private String lineId;
+            /**
+            * 线路源中文名称
+            */
+            @SerializedName("LineFromName")
+                private String lineFromName;
+            /**
+            * 线路目的中文名称
+            */
+            @SerializedName("LineToName")
+                private String lineToName;
 
 
-    public String getLineFrom() {
-        return this.lineFrom;
-    }
+                public String getLineFrom() {
+                return this.lineFrom;
+                }
 
-    public void setLineFrom(String lineFrom) {
-        this.lineFrom = lineFrom;
-    }
-
-
-    public String getLineTo() {
-        return this.lineTo;
-    }
-
-    public void setLineTo(String lineTo) {
-        this.lineTo = lineTo;
-    }
+                public void setLineFrom(String lineFrom) {
+                this.lineFrom = lineFrom;
+                }
 
 
-    public String getLineId() {
-        return this.lineId;
-    }
-
-    public void setLineId(String lineId) {
-        this.lineId = lineId;
-    }
 
 
-    public String getLineFromName() {
-        return this.lineFromName;
-    }
+                public String getLineTo() {
+                return this.lineTo;
+                }
 
-    public void setLineFromName(String lineFromName) {
-        this.lineFromName = lineFromName;
-    }
+                public void setLineTo(String lineTo) {
+                this.lineTo = lineTo;
+                }
 
 
-    public String getLineToName() {
-        return this.lineToName;
-    }
 
-    public void setLineToName(String lineToName) {
-        this.lineToName = lineToName;
-    }
+
+                public String getLineId() {
+                return this.lineId;
+                }
+
+                public void setLineId(String lineId) {
+                this.lineId = lineId;
+                }
+
+
+
+
+                public String getLineFromName() {
+                return this.lineFromName;
+                }
+
+                public void setLineFromName(String lineFromName) {
+                this.lineFromName = lineFromName;
+                }
+
+
+
+
+                public String getLineToName() {
+                return this.lineToName;
+                }
+
+                public void setLineToName(String lineToName) {
+                this.lineToName = lineToName;
+                }
+
+
+
+
 
 
 }

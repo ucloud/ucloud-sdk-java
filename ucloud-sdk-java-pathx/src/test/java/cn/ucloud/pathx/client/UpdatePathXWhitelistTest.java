@@ -1,72 +1,77 @@
 package cn.ucloud.pathx.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.pathx.model.UpdatePathXWhitelistParam;
 import cn.ucloud.pathx.model.UpdatePathXWhitelistResult;
-import cn.ucloud.pathx.pojo.PATHXConfig;
+import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.List;
+import cn.ucloud.common.pojo.Account;
+import cn.ucloud.common.util.JSONComparator;
+import cn.ucloud.pathx.pojo.PATHXConfig;
 
 import static org.junit.Assert.assertNull;
 
 
 /**
- * @Description : PATHX.UpdatePathXWhitelist 测试
- * @Author : ucloud-sdk-generator
- * @Date : 2019-03-07 04:19
- **/
+* @Description : PATHX.UpdatePathXWhitelist 测试
+* @Author : ucloud-sdk-generator
+* @Date : 2019-03-08 04:06
+**/
 public class UpdatePathXWhitelistTest {
 
-    private PATHXClient client;
+private PATHXClient client;
 
-    private UpdatePathXWhitelistParam param;
-
-
-    @Before
-    public void setUp() throws Exception {
-        client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String instanceId = "cn-sh2";
-        param = new UpdatePathXWhitelistParam(projectId, instanceId);
-        param.setProjectId("org-izug1m");
-    }
+private UpdatePathXWhitelistParam param;
 
 
-    @Test
-    public void updatePathXWhitelist() {
-        try {
-            UpdatePathXWhitelistResult result = client.updatePathXWhitelist(param);
-            JSONComparator.jsonComparator(result);
-        } catch (Exception e) {
-            assertNull(e);
-        }
-    }
 
-    @Test
-    public void updatePathXWhitelistCallback() {
-        client.updatePathXWhitelist(param, new UcloudHandler
-                <UpdatePathXWhitelistResult>() {
-            @Override
-            public Object success(UpdatePathXWhitelistResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
 
-            @Override
-            public Object failed(UpdatePathXWhitelistResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
 
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
+@Before
+public void setUp() throws Exception {
+client =  new DefaultPATHXClient(new PATHXConfig(
+new Account(System.getenv("UcloudPrivateKey"),
+System.getenv("UcloudPublicKey"))));
+                    String projectId = "cn-sh2";
+                    String instanceId = "cn-sh2";
+param = new UpdatePathXWhitelistParam( projectId, instanceId);
+param.setProjectId("org-izug1m");
+}
+
+
+@Test
+public void updatePathXWhitelist() {
+try {
+UpdatePathXWhitelistResult result = client.updatePathXWhitelist(param);
+JSONComparator.jsonComparator(result);
+} catch (Exception e) {
+assertNull(e);
+}
+}
+
+@Test
+public void updatePathXWhitelistCallback() {
+client.updatePathXWhitelist(param, new UcloudHandler
+<UpdatePathXWhitelistResult>() {
+@Override
+public Object success(UpdatePathXWhitelistResult result) {
+JSONComparator.jsonComparator(result);
+return null;
+}
+
+@Override
+public Object failed(UpdatePathXWhitelistResult result) {
+JSONComparator.jsonComparator(result);
+return null;
+}
+
+@Override
+public Object error(Exception e) {
+assertNull(e);
+return null;
+}
+}, false);
+}
 }
