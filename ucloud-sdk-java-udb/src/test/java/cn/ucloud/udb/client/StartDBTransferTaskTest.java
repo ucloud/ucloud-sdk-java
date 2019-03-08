@@ -2,36 +2,42 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.EnableUDBRWSplittingParam;
+import cn.ucloud.udb.model.StartDBTransferTaskParam;
+import cn.ucloud.udb.model.StartDBTransferTaskResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-08 14:37
  **/
-public class CreateUDBSlaveTest {
+public class StartDBTransferTaskTest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private StartDBTransferTaskParam param;
+    // taskId
+    // 16ed874b-59a4-443c-b5e3-2784cab13cdb
+    // 39c27da5-8bc9-45b4-a5bc-172189a0f0c4
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        param = new StartDBTransferTaskParam("cn-sh2", "cn-sh2-02",
+                "16ed874b-59a4-443c-b5e3-2784cab13cdb");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 能创建成功 response messsage 拼写错误
+    // todo 测试 没有权限
+
     @Test
-    public void createUDBSlave() {
+    public void startUDBInstance() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            StartDBTransferTaskResult result = client.startDBTransferTask(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -39,16 +45,16 @@ public class CreateUDBSlaveTest {
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void startUDBInstanceCallback() {
+        client.startDBTransferTask(param, new UcloudHandler<StartDBTransferTaskResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(StartDBTransferTaskResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(StartDBTransferTaskResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

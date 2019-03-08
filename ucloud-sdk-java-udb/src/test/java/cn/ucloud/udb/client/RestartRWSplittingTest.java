@@ -2,36 +2,38 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.PromoteUDBSlaveParam;
+import cn.ucloud.udb.model.RestartRWSplittingParam;
+import cn.ucloud.udb.model.RestartRWSplittingResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-08 14:07
  **/
-public class CreateUDBSlaveTest {
+public class RestartRWSplittingTest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private RestartRWSplittingParam param;
+
+
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        param = new RestartRWSplittingParam("cn-sh2", "cn-sh2-02","udb-zahyyi04");
         param.setProjectId("org-izug1m");
     }
-
-    // todo 能创建成功 response messsage 拼写错误
     @Test
-    public void createUDBSlave() {
+    public void restartRWSplitting() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            RestartRWSplittingResult result = client.restartRWSplitting(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -39,16 +41,16 @@ public class CreateUDBSlaveTest {
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void restartRWSplittingCallback() {
+        client.restartRWSplitting(param, new UcloudHandler<RestartRWSplittingResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(RestartRWSplittingResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(RestartRWSplittingResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

@@ -2,53 +2,56 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.ListUDBConfigSvrParam;
+import cn.ucloud.udb.model.ModifySqlserverPasswordParam;
+import cn.ucloud.udb.model.ModifySqlserverPasswordResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-08 13:12
  **/
-public class CreateUDBSlaveTest {
+public class ModifySqlserverPasswordTest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private ModifySqlserverPasswordParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        param = new ModifySqlserverPasswordParam("cn-sh2", "cn-sh2-02","udb-h3q25faw",
+                "test","sdk-java");
         param.setProjectId("org-izug1m");
     }
-
-    // todo 能创建成功 response messsage 拼写错误
+    // todo 测试 没有sqlserver实例
     @Test
-    public void createUDBSlave() {
+    public void modifySqlserverPassword() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            ModifySqlserverPasswordResult result = client.modifySqlserverPassword(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
         }
+
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void modifySqlserverPasswordCallback() {
+        client.modifySqlserverPassword(param, new UcloudHandler<ModifySqlserverPasswordResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(ModifySqlserverPasswordResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(ModifySqlserverPasswordResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

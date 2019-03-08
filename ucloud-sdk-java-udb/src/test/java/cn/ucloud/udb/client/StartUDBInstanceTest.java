@@ -2,36 +2,38 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.EnableUDBRWSplittingParam;
+import cn.ucloud.udb.model.StartUDBInstanceParam;
+import cn.ucloud.udb.model.StartUDBInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-08 14:41
  **/
-public class CreateUDBSlaveTest {
+public class StartUDBInstanceTest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private StartUDBInstanceParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        param = new StartUDBInstanceParam("cn-sh2",
+                "udb-zahyyi04");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 能创建成功 response messsage 拼写错误
     @Test
-    public void createUDBSlave() {
+    public void startUDBInstance() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            StartUDBInstanceResult result = client.startUDBInstance(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -39,16 +41,16 @@ public class CreateUDBSlaveTest {
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void startUDBInstanceCallback() {
+        client.startUDBInstance(param, new UcloudHandler<StartUDBInstanceResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(StartUDBInstanceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(StartUDBInstanceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

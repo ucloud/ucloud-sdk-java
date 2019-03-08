@@ -2,36 +2,41 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.FetchDBPrecheckResultParam;
+import cn.ucloud.udb.model.GetUDBSuspendPriceParam;
+import cn.ucloud.udb.model.GetUDBSuspendPriceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-07 22:39
  **/
-public class CreateUDBSlaveTest {
+public class GetUDBSuspendPriceTest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private GetUDBSuspendPriceParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        List<String> dbIds = new ArrayList<>();
+        dbIds.add("udb-h3q25faw");
+        param = new GetUDBSuspendPriceParam("cn-sh2", "cn-sh2-02",dbIds );
         param.setProjectId("org-izug1m");
     }
-
-    // todo 能创建成功 response messsage 拼写错误
     @Test
-    public void createUDBSlave() {
+    public void getUDBSuspendPrice() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            GetUDBSuspendPriceResult result = client.getUDBSuspendPrice(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -39,16 +44,16 @@ public class CreateUDBSlaveTest {
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void getUDBSuspendPriceCallback() {
+        client.getUDBSuspendPrice(param, new UcloudHandler<GetUDBSuspendPriceResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(GetUDBSuspendPriceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(GetUDBSuspendPriceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

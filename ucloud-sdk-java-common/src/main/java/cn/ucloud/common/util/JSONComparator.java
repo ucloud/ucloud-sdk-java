@@ -3,6 +3,7 @@ package cn.ucloud.common.util;
 import cn.ucloud.common.pojo.BaseResponseResult;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.json.JSONObject;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;

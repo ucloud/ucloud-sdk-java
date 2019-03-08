@@ -2,36 +2,40 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.PromoteUDBSlaveParam;
+import cn.ucloud.udb.model.ResizeUDBInstanceParam;
+import cn.ucloud.udb.model.ResizeUDBInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-08 14:03
  **/
-public class CreateUDBSlaveTest {
+public class ResizeUDBInstanceTest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private ResizeUDBInstanceParam param;
+
+
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        param = new ResizeUDBInstanceParam("cn-sh2", "udb-rfzhjps1",1000,
+                30);
         param.setProjectId("org-izug1m");
     }
 
-    // todo 能创建成功 response messsage 拼写错误
     @Test
-    public void createUDBSlave() {
+    public void resizeUDBInstance() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            ResizeUDBInstanceResult result = client.resizeUDBInstance(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -39,16 +43,16 @@ public class CreateUDBSlaveTest {
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void resizeUDBInstanceCallback() {
+        client.resizeUDBInstance(param, new UcloudHandler<ResizeUDBInstanceResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(ResizeUDBInstanceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(ResizeUDBInstanceResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

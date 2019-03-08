@@ -2,36 +2,37 @@ package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.util.JSONComparator;
-import cn.ucloud.udb.model.CreateUDBSlaveParam;
-import cn.ucloud.udb.model.CreateUDBSlaveResult;
+import cn.ucloud.udb.model.ModifyUDBInstanceNameParam;
+import cn.ucloud.udb.model.PromoteUDBInstanceToHAParam;
+import cn.ucloud.udb.model.PromoteUDBInstanceToHAResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-03-06 11:50
+ * @Date : 2019-03-08 13:41
  **/
-public class CreateUDBSlaveTest {
+public class PromoteUDBInstanceToHATest {
 
     private UDBClient client;
 
-    private CreateUDBSlaveParam param;
+    private PromoteUDBInstanceToHAParam param;
+
 
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new CreateUDBSlaveParam("cn-sh2", "udb-zahyyi04", "slave-test");
+        param = new PromoteUDBInstanceToHAParam("cn-sh2", "udb-5qoh3hru");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 能创建成功 response messsage 拼写错误
     @Test
-    public void createUDBSlave() {
+    public void promoteUDBInstanceToHA() {
         try {
-            CreateUDBSlaveResult result = client.createUDBSlave(param);
+            PromoteUDBInstanceToHAResult result = client.promoteUDBInstanceToHA(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
@@ -39,16 +40,16 @@ public class CreateUDBSlaveTest {
     }
 
     @Test
-    public void createUDBSlaveCallback() {
-        client.createUDBSlave(param, new UcloudHandler<CreateUDBSlaveResult>() {
+    public void promoteUDBInstanceToHACallback() {
+        client.promoteUDBInstanceToHA(param, new UcloudHandler<PromoteUDBInstanceToHAResult>() {
             @Override
-            public Object success(CreateUDBSlaveResult result) {
+            public Object success(PromoteUDBInstanceToHAResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
-            public Object failed(CreateUDBSlaveResult result) {
+            public Object failed(PromoteUDBInstanceToHAResult result) {
                 JSONComparator.jsonComparator(result);
                 return null;
             }

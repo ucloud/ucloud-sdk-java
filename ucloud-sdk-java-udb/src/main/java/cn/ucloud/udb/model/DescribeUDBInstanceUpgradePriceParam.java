@@ -40,7 +40,7 @@ public class DescribeUDBInstanceUpgradePriceParam extends BaseRequestParam {
     /**
      * 内存限制(MB)
      */
-    @UcloudParam("Memory")
+    @UcloudParam("MemoryLimit")
     @NotNull(message = "memoryLimit can not be null")
     private Integer memoryLimit;
 
