@@ -6,7 +6,6 @@
 
 .mtj.tmp/
 
-*.jar
 *.war
 *.nar
 *.ear
@@ -18,6 +17,5 @@
 *.iml
 */target
 target
-generator.yml
-template
+*.jar
 
