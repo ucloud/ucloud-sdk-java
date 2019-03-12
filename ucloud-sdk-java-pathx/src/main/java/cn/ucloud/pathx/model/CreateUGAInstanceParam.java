@@ -2,72 +2,185 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 
 /**
-* @Description : 创建全球加速配置项 参数类
-* @Author : ucloud-sdk-generator
-* @Date : 2019-03-08 04:06
-**/
+ * @Description : 创建全球加速配置项 参数类
+ * @Author : ucloud-sdk-generator
+ * @Date : 2019-03-12 04:27
+ **/
 public class CreateUGAInstanceParam extends BaseRequestParam {
-            /**
-            * 加速实例名称
-            */
-            @UcloudParam("Name")
-                    @NotEmpty(message = "name can not be empty")
-                private String name;
-            /**
-            * 加速源IP，多个IP用逗号隔开(,)隔开;IPList和Domain二选一必填
-            */
-            @UcloudParam("IPList")
-                private String iPList;
-            /**
-            * 加速源域名;IPList和Domain二选一必填
-            */
-            @UcloudParam("Domain")
-                private String domain;
-            // TODO 需要人工接入 CreateUGAInstance =》 TCP.n
-            // TODO 需要人工接入 CreateUGAInstance =》 UDP.n
-            // TODO 需要人工接入 CreateUGAInstance =》 HTTP.n
-            // TODO 需要人工接入 CreateUGAInstance =》 HTTPS.n
+    /**
+     * 加速实例名称
+     */
+    @UcloudParam("Name")
+    @NotEmpty(message = "name can not be empty")
+    private String name;
+    /**
+     * 加速源IP，多个IP用逗号隔开(,)隔开;IPList和Domain二选一必填
+     */
+    @UcloudParam("IPList")
+    private String iPList;
+    /**
+     * 加速源域名;IPList和Domain二选一必填
+     */
+    @UcloudParam("Domain")
+    private String domain;
+
+    /**
+     * tcp 端口号
+     */
+    private List<Integer> tcpPorts;
+
+    /**
+     * udp 端口号
+     */
+    private List<Integer> udpPorts;
+
+    /**
+     * http 端口号
+     */
+    private List<Integer> httpPorts;
+
+    /**
+     * https 端口号
+     */
+    private List<Integer> httpsPorts;
 
 
-public CreateUGAInstanceParam(                    String projectId
-                    ,String name
-){
-    super("CreateUGAInstance");
-                this.projectId = projectId;
-                this.name = name;
-}
+    public CreateUGAInstanceParam(String projectId
+            , String name
+    ) {
+        super("CreateUGAInstance");
+        this.projectId = projectId;
+        this.name = name;
+    }
 
-
-                public String getName() {
-                return this.name;
+    @UcloudParam("tcpPorts")
+    public List<Param> checkTCPPorts() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (tcpPorts != null && !tcpPorts.isEmpty()) {
+            int size = tcpPorts.size();
+            for (int i = 0; i < size; i++) {
+                if (tcpPorts.get(i) == null){
+                    throw new ValidationException(String.format("tcpPorts[%d] can not be null",i));
+                }else {
+                    params.add(new Param(String.format("TCP.%d",i),tcpPorts.get(i)));
                 }
+            }
+        }
+        return params;
+    }
 
-                public void setName(String name) {
-                this.name = name;
+    @UcloudParam("udpPorts")
+    public List<Param> checkUCPPorts() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (udpPorts != null && !udpPorts.isEmpty()) {
+            int size = udpPorts.size();
+            for (int i = 0; i < size; i++) {
+                if (udpPorts.get(i) == null){
+                    throw new ValidationException(String.format("udpPorts[%d] can not be null",i));
+                }else {
+                    params.add(new Param(String.format("UDP.%d",i),udpPorts.get(i)));
                 }
+            }
+        }
+        return params;
+    }
 
-                public String getIPList() {
-                return this.iPList;
+    @UcloudParam("httpPorts")
+    public List<Param> checkHTTPPorts() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (httpPorts != null && !httpPorts.isEmpty()) {
+            int size = httpPorts.size();
+            for (int i = 0; i < size; i++) {
+                if (httpPorts.get(i) == null){
+                    throw new ValidationException(String.format("httpPorts[%d] can not be null",i));
+                }else {
+                    params.add(new Param(String.format("HTTP.%d",i),httpPorts.get(i)));
                 }
+            }
+        }
+        return params;
+    }
 
-                public void setIPList(String iPList) {
-                this.iPList = iPList;
+    @UcloudParam("httpsPorts")
+    public List<Param> checkHTTPSPorts() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (httpsPorts != null && !httpsPorts.isEmpty()) {
+            int size = httpsPorts.size();
+            for (int i = 0; i < size; i++) {
+                if (httpsPorts.get(i) == null){
+                    throw new ValidationException(String.format("httpsPorts[%d] can not be null",i));
+                }else {
+                    params.add(new Param(String.format("HTTPS.%d",i),httpsPorts.get(i)));
                 }
+            }
+        }
+        return params;
+    }
 
-                public String getDomain() {
-                return this.domain;
-                }
+    public List<Integer> getTcpPorts() {
+        return tcpPorts;
+    }
 
-                public void setDomain(String domain) {
-                this.domain = domain;
-                }
+    public void setTcpPorts(List<Integer> tcpPorts) {
+        this.tcpPorts = tcpPorts;
+    }
 
+    public List<Integer> getUdpPorts() {
+        return udpPorts;
+    }
+
+    public void setUdpPorts(List<Integer> udpPorts) {
+        this.udpPorts = udpPorts;
+    }
+
+    public List<Integer> getHttpPorts() {
+        return httpPorts;
+    }
+
+    public void setHttpPorts(List<Integer> httpPorts) {
+        this.httpPorts = httpPorts;
+    }
+
+    public List<Integer> getHttpsPorts() {
+        return httpsPorts;
+    }
+
+    public void setHttpsPorts(List<Integer> httpsPorts) {
+        this.httpsPorts = httpsPorts;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getiPList() {
+        return this.iPList;
+    }
+
+    public void setiPList(String iPList) {
+        this.iPList = iPList;
+    }
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 
 
 }

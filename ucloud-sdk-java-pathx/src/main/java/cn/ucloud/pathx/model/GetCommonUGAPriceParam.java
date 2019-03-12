@@ -2,52 +2,48 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 
 /**
-* @Description : 获取苹果加速通道价格 参数类
-* @Author : ucloud-sdk-generator
-* @Date : 2019-03-08 04:06
-**/
+ * @Description : 获取苹果加速通道价格 参数类
+ * @Author : ucloud-sdk-generator
+ * @Date : 2019-03-12 04:27
+ **/
 public class GetCommonUGAPriceParam extends BaseRequestParam {
-            /**
-            * 购买周期
-            */
-            @UcloudParam("Quantity")
-                private Integer quantity;
-            /**
-            * 计费模式
-            */
-            @UcloudParam("ChargeType")
-                private String chargeType;
+    /**
+     * 购买周期
+     */
+    @UcloudParam("Quantity")
+    private Integer quantity;
+    /**
+     * 计费模式
+     */
+    @UcloudParam("ChargeType")
+    private String chargeType;
 
 
-public GetCommonUGAPriceParam(                    String projectId
-){
-    super("GetCommonUGAPrice");
-                this.projectId = projectId;
-}
+    public GetCommonUGAPriceParam(String projectId
+    ) {
+        super("GetCommonUGAPrice");
+        this.projectId = projectId;
+    }
 
 
-                public Integer getQuantity() {
-                return this.quantity;
-                }
+    public Integer getQuantity() {
+        return this.quantity;
+    }
 
-                public void setQuantity(Integer quantity) {
-                this.quantity = quantity;
-                }
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 
-                public String getChargeType() {
-                return this.chargeType;
-                }
+    public String getChargeType() {
+        return this.chargeType;
+    }
 
-                public void setChargeType(String chargeType) {
-                this.chargeType = chargeType;
-                }
-
+    public void setChargeType(String chargeType) {
+        this.chargeType = chargeType;
+    }
 
 
 }

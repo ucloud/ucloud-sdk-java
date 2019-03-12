@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @Description : 创建UPath 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-08 04:06
+ * @Date : 2019-03-12 04:27
  **/
 public class CreateUPathParam extends BaseRequestParam {
     /**
