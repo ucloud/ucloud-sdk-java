@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -27,16 +29,16 @@ public class ReleaseBackendTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ReleaseBackendParam("cn-bj2", "ulb-0kawkr", "backend-eo5qpv");
-        param.setProjectId("org-4nfe1i");
+        param = new ReleaseBackendParam("cn-sh2", "ulb-wki4vn5g", "backend-iv1u4lvb");
+        param.setProjectId("org-izug1m");
     }
     @Test
     public void releaseBackend() {
         try {
-            ReleaseBackendResult releaseBackendResult = client.releaseBackend(param);
-            System.out.println(releaseBackendResult);
+            ReleaseBackendResult result = client.releaseBackend(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -24,17 +26,17 @@ public class BindSSLTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new BindSSLParam("cn-bj2","ulb-1gtyz4","vserver-asrpxv","ssl-r2bxbf");
-        param.setProjectId("org-4nfe1i");
+        param = new BindSSLParam("cn-sh2","ulb-wki4vn5g","vserver-sfhly4db","ssl-r2bxbf");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void bindSSL() {
         try {
-            BindSSLResult bindSSLResult = client.bindSSL(param);
-            System.out.println(bindSSLResult);
+            BindSSLResult result = client.bindSSL(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

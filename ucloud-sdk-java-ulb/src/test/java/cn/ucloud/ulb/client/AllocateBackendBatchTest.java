@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -26,24 +28,21 @@ public class AllocateBackendBatchTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AllocateBackendBatchParam("cn-bj2","ulb-wo45wj","vserver-qrtil3");
-        param.setProjectId("org-4nfe1i");
+        param = new AllocateBackendBatchParam("cn-sh2","ulb-wki4vn5g","vserver-sfhly4db");
+        param.setProjectId("org-izug1m");
         List<AllocateBackendBatchParam.Backend> backends = new ArrayList<>();
-        AllocateBackendBatchParam.Backend backend1 =new  AllocateBackendBatchParam.Backend("uhost-kdegdk", "UHost",80,1,"10.9.146.72");
-        AllocateBackendBatchParam.Backend backend2 =new  AllocateBackendBatchParam.Backend("uhost-zzsffd", "UHost",80,1,"10.9.128.212");
+        AllocateBackendBatchParam.Backend backend1 =new  AllocateBackendBatchParam.Backend("uhost-dwomflqt", "UHost",80,1,"10.25.178.61");
         backends.add(backend1);
-        backends.add(backend2);
         param.setBackends(backends);
     }
 
     @Test
     public void allocateBackendBatch() {
-        // todo 测试 Service error and break
         try {
-            AllocateBackendBatchResult allocateBackendBatchResult = client.allocateBackendBatch(param);
-            System.out.println(allocateBackendBatchResult);
+            AllocateBackendBatchResult result = client.allocateBackendBatch(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }
