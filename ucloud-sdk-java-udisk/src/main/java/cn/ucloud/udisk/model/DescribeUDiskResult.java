@@ -113,6 +113,48 @@ public class DescribeUDiskResult extends BaseResponseResult {
         @SerializedName("Size")
         private Integer size;
 
+        /**
+         * 是否支持开启方舟，1支持 ，0不支持
+         */
+        @SerializedName("ArkSwitchEnable")
+        private Integer arkSwitchEnable;
+
+        /**
+         * 是否支持快照，1支持 ，0不支持
+         */
+        @SerializedName("SnapEnable")
+        private Integer snapEnable;
+
+        /**
+         * 是否支持克隆，1支持 ，0不支持
+         */
+        @SerializedName("CloneEnable")
+        private Integer cloneEnable;
+
+        public Integer getArkSwitchEnable() {
+            return arkSwitchEnable;
+        }
+
+        public void setArkSwitchEnable(Integer arkSwitchEnable) {
+            this.arkSwitchEnable = arkSwitchEnable;
+        }
+
+        public Integer getSnapEnable() {
+            return snapEnable;
+        }
+
+        public void setSnapEnable(Integer snapEnable) {
+            this.snapEnable = snapEnable;
+        }
+
+        public Integer getCloneEnable() {
+            return cloneEnable;
+        }
+
+        public void setCloneEnable(Integer cloneEnable) {
+            this.cloneEnable = cloneEnable;
+        }
+
         public String getStatus() {
             return status;
         }

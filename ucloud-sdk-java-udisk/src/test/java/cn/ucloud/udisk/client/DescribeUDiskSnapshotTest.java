@@ -8,6 +8,8 @@ import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -32,7 +34,7 @@ public class DescribeUDiskSnapshotTest {
     public void describeUDiskSnapshot() {
         try {
             DescribeUDiskSnapshotResult result = client.describeUDiskSnapshot(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,19 +45,19 @@ public class DescribeUDiskSnapshotTest {
         client.describeUDiskSnapshot(param, new UcloudHandler<DescribeUDiskSnapshotResult>() {
             @Override
             public Object success(DescribeUDiskSnapshotResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(DescribeUDiskSnapshotResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         }, false);

@@ -22,6 +22,7 @@ public class ${api.name}Param extends BaseRequestParam {
             // TODO 需要人工接入 ${api.name} =》 ${param.name}
         <#else >
             <#if param.type = 'array' && param.arrType != 'int' && param.arrType != 'string'>
+                // TODO 需要人工接入 ${api.name} =》 ${param.name}
                 <#continue />
             </#if>
             /**
@@ -38,18 +39,27 @@ public class ${api.name}Param extends BaseRequestParam {
             </#if>
             <#if (param.type = 'string')>
                 private String ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if (param.type = 'int')>
                 private Integer ${param.name?uncap_first};
+                <#continue >
+            </#if>
+            <#if (param.type = 'float')>
+                private Double ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if (param.type = 'bool')>
                 private Boolean ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if param.type = 'array' && param.arrType = 'int'>
                 private List${r'<Integer>'} ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if param.type = 'array' && param.arrType = 'string'>
                 private List${r'<String>'} ${param.name?uncap_first};
+                <#continue >
             </#if>
         </#if>
     </#list>
@@ -63,22 +73,32 @@ public class ${api.name}Param extends BaseRequestParam {
                 <#if (param.type = 'string')>
                     <#if cf != 0>,</#if>String ${param.name?uncap_first}
                     <#assign cf++ >
+                    <#continue >
                 </#if>
                 <#if (param.type = 'int')>
                     <#if cf != 0>,</#if>Integer ${param.name?uncap_first}
                     <#assign cf++ >
+                    <#continue >
                 </#if>
                 <#if (param.type = 'bool')>
                     <#if cf != 0>,</#if>Boolean ${param.name?uncap_first}
                     <#assign cf++ >
+                    <#continue >
+                </#if>
+                <#if (param.type = 'float')>
+                    <#if cf != 0>,</#if>Double ${param.name?uncap_first}
+                    <#assign cf++ >
+                    <#continue >
                 </#if>
                 <#if (param.type = 'array' && param.arrType = 'int' )>
                     <#if cf != 0>,</#if>List${r'<Integer>'} ${param.name?uncap_first}
                     <#assign cf++ >
+                    <#continue >
                 </#if>
                 <#if (param.type = 'array' && param.arrType = 'string' )>
                     <#if cf != 0>,</#if>List${r'<String>'} ${param.name?uncap_first}
                     <#assign cf++ >
+                    <#continue >
                 </#if>
             </#if>
         </#list>
@@ -101,10 +121,9 @@ super("${api.name}");
 }
 
 
-
 <#if api.requestParams?exists>
     <#list api.requestParams as param>
-        <#if (!param.name?contains('.') && param.type != 'array' && param.name != 'ProjectId')>
+        <#if (!param.name?contains('.') && param.name != 'ProjectId')>
             <#if (param.type = 'string')>
                 public String get${CalcGetAndSetName(param.name?uncap_first,'string')}() {
                 return this.${param.name?uncap_first};
@@ -113,7 +132,7 @@ super("${api.name}");
                 public void set${CalcGetAndSetName(param.name?uncap_first,'string')}(String ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
-
+                <#continue >
             </#if>
             <#if param.type = 'int' >
                 public Integer get${CalcGetAndSetName(param.name?uncap_first,'int')}() {
@@ -123,7 +142,17 @@ super("${api.name}");
                 public void set${CalcGetAndSetName(param.name?uncap_first,'int')}(Integer ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
+            </#if>
+            <#if param.type = 'float' >
+                public Double get${CalcGetAndSetName(param.name?uncap_first,'float')}() {
+                return this.${param.name?uncap_first};
+                }
 
+                public void set${CalcGetAndSetName(param.name?uncap_first,'float')}(Double ${param.name?uncap_first}) {
+                this.${param.name?uncap_first} = ${param.name?uncap_first};
+                }
+                <#continue >
             </#if>
             <#if param.type = 'bool' >
                 public Boolean get${CalcGetAndSetName(param.name?uncap_first,'bool')}() {
@@ -133,7 +162,31 @@ super("${api.name}");
                 public void set${CalcGetAndSetName(param.name?uncap_first,'bool')}(Boolean ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
             </#if>
+
+            <#if param.type = 'array' && param.arrType = 'string' >
+                public List${r'<String>'} get${CalcGetAndSetName(param.name?uncap_first,'List<String>')}() {
+                return this.${param.name?uncap_first};
+                }
+
+                public void set${CalcGetAndSetName(param.name?uncap_first,'List<String>')}(List${r'<String>'} ${param.name?uncap_first}) {
+                this.${param.name?uncap_first} = ${param.name?uncap_first};
+                }
+                <#continue >
+            </#if>
+
+            <#if param.type = 'array' && param.arrType = 'int' >
+                public List${r'<Integer>'} get${CalcGetAndSetName(param.name?uncap_first,'List<Integer>')}() {
+                return this.${param.name?uncap_first};
+                }
+
+                public void set${CalcGetAndSetName(param.name?uncap_first,'List<Integer>')}(List${r'<Integer>'} ${param.name?uncap_first}) {
+                this.${param.name?uncap_first} = ${param.name?uncap_first};
+                }
+                <#continue >
+            </#if>
+
         </#if>
     </#list>
 </#if>

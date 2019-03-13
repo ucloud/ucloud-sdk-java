@@ -32,7 +32,7 @@ public class DeleteUDiskSnapshotTest {
     public void deleteUDiskSnapshot() {
         try {
             DeleteUDiskSnapshotResult result = client.deleteUDiskSnapshot(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,13 +43,13 @@ public class DeleteUDiskSnapshotTest {
         client.deleteUDiskSnapshot(param, new UcloudHandler<DeleteUDiskSnapshotResult>() {
             @Override
             public Object success(DeleteUDiskSnapshotResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(DeleteUDiskSnapshotResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 

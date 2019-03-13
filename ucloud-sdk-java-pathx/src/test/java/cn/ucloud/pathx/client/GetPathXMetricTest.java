@@ -35,7 +35,8 @@ public class GetPathXMetricTest {
         Integer endTime = 1;
         String resourceType = "cn-sh2";
         String lineId = "cn-sh2";
-        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId);
+        String metricNames= "";
+        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId,metricNames);
         param.setProjectId("org-izug1m");
     }
 

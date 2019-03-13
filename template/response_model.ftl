@@ -25,21 +25,31 @@ public class ${api.name}Result extends BaseResponseResult {
             @SerializedName("${param.name}")
             <#if (param.type = 'string')>
                 private String ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if (param.type = 'int')>
                 private Integer ${param.name?uncap_first};
+                <#continue >
+            </#if>
+            <#if (param.type = 'float')>
+                private Double ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if (param.type = 'bool')>
                 private Boolean ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if param.type = 'array' && param.arrType = 'int'>
                 private List${r'<Integer>'} ${param.name?uncap_first};
+                <#continue >
             </#if>
             <#if param.type = 'array' && param.arrType = 'string'>
                 private List${r'<String>'} ${param.name?uncap_first};
+                <#continue >
             </#if>
-            <#if param.type = 'array' && param.arrType != 'string' && param.arrType != 'int'>
+            <#if (param.type = 'array' && param.arrType != 'string' && param.arrType != 'int') || param.type = 'object'>
                 private List${r'<'}${param.arrType}${r'>'} ${param.name?uncap_first};
+                <#continue >
             </#if>
         </#if>
     </#list>
@@ -51,7 +61,7 @@ public class ${api.name}Result extends BaseResponseResult {
         <#if param.name = 'RetCode' || param.name = 'Action' || param.name = 'Message'>
             <#continue >
         </#if>
-        <#if (!param.name?contains('.') && param.type != 'array')>
+        <#if (!param.name?contains('.') )>
             <#if (param.type = 'string')>
                 public String get${CalcGetAndSetName(param.name?uncap_first,'string')}() {
                 return this.${param.name?uncap_first};
@@ -60,7 +70,7 @@ public class ${api.name}Result extends BaseResponseResult {
                 public void set${CalcGetAndSetName(param.name?uncap_first,'string')}(String ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
-
+                <#continue >
             </#if>
             <#if param.type = 'int' >
                 public Integer get${CalcGetAndSetName(param.name?uncap_first,'int')}() {
@@ -70,7 +80,17 @@ public class ${api.name}Result extends BaseResponseResult {
                 public void set${CalcGetAndSetName(param.name?uncap_first,'int')}(Integer ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
+            </#if>
+            <#if param.type = 'float' >
+                public Double get${CalcGetAndSetName(param.name?uncap_first,'float')}() {
+                return this.${param.name?uncap_first};
+                }
 
+                public void set${CalcGetAndSetName(param.name?uncap_first,'float')}(Double ${param.name?uncap_first}) {
+                this.${param.name?uncap_first} = ${param.name?uncap_first};
+                }
+                <#continue >
             </#if>
             <#if param.type = 'bool' >
                 public Boolean get${CalcGetAndSetName(param.name?uncap_first,'bool')}() {
@@ -80,6 +100,7 @@ public class ${api.name}Result extends BaseResponseResult {
                 public void set${CalcGetAndSetName(param.name?uncap_first,'bool')}(Boolean ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
             </#if>
 
             <#if param.type = 'array' && param.arrType = 'string' >
@@ -90,6 +111,7 @@ public class ${api.name}Result extends BaseResponseResult {
                 public void set${CalcGetAndSetName(param.name?uncap_first,'List<String>')}(List${r'<String>'} ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
             </#if>
 
             <#if param.type = 'array' && param.arrType = 'int' >
@@ -100,6 +122,7 @@ public class ${api.name}Result extends BaseResponseResult {
                 public void set${CalcGetAndSetName(param.name?uncap_first,'List<Integer>')}(List${r'<Integer>'} ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
             </#if>
 
             <#if param.type = 'array' && param.arrType != 'int' && param.arrType != 'string' >
@@ -110,6 +133,7 @@ public class ${api.name}Result extends BaseResponseResult {
                 public void set${CalcGetAndSetName(param.name?uncap_first,'List<Model>')}(List${r'<'}${param.arrType}${r'>'} ${param.name?uncap_first}) {
                 this.${param.name?uncap_first} = ${param.name?uncap_first};
                 }
+                <#continue >
             </#if>
         </#if>
     </#list>

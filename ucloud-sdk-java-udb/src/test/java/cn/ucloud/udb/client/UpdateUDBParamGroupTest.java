@@ -1,7 +1,7 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.util.JSONComparator;
+
 import cn.ucloud.udb.model.SwitchUDBInstanceToHAParam;
 import cn.ucloud.udb.model.UpdateUDBParamGroupParam;
 import cn.ucloud.udb.model.UpdateUDBParamGroupResult;

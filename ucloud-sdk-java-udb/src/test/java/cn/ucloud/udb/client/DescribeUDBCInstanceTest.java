@@ -1,7 +1,7 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.util.JSONComparator;
+
 import cn.ucloud.udb.model.DeleteSqlserverDatabaseParam;
 import cn.ucloud.udb.model.DescribeUDBCInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBCInstanceResult;

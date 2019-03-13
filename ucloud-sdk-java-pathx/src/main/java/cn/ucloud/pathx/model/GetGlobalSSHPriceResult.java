@@ -14,4 +14,13 @@ public class GetGlobalSSHPriceResult extends BaseResponseResult {
      * 价格,返回单位为元
      */
     @SerializedName("Price")
+    private Double price;
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 }

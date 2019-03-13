@@ -8,6 +8,8 @@ import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description: 挂载云硬盘
  * @author: joshua
@@ -32,9 +34,9 @@ public class AttachUDiskTest {
     public void attachUDisk() {
         try {
             AttachUDiskResult result = client.attachUDisk(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -43,19 +45,19 @@ public class AttachUDiskTest {
         client.attachUDisk(param, new UcloudHandler<AttachUDiskResult>() {
             @Override
             public Object success(AttachUDiskResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(AttachUDiskResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         },false);

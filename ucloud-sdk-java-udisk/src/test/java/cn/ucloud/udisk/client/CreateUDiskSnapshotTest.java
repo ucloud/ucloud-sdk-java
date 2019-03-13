@@ -33,7 +33,7 @@ public class CreateUDiskSnapshotTest {
     public void createUDiskSnapshot() {
         try {
             CreateUDiskSnapshotResult result = client.createUDiskSnapshot(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,13 +44,13 @@ public class CreateUDiskSnapshotTest {
         client.createUDiskSnapshot(param, new UcloudHandler<CreateUDiskSnapshotResult>() {
             @Override
             public Object success(CreateUDiskSnapshotResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(CreateUDiskSnapshotResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
