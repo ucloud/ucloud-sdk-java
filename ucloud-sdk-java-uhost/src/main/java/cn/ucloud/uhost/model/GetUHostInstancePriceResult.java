@@ -43,13 +43,6 @@ public class GetUHostInstancePriceResult extends BaseResponseResult {
             this.price = price;
         }
 
-        @Override
-        public String toString() {
-            return "Price{" +
-                    "chargeType='" + chargeType + '\'' +
-                    ", price=" + price +
-                    '}';
-        }
     }
 
     /**
@@ -66,13 +59,4 @@ public class GetUHostInstancePriceResult extends BaseResponseResult {
         this.prices = prices;
     }
 
-    @Override
-    public String toString() {
-        return "GetUHostInstancePriceResult{" +
-                "prices=" + prices +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

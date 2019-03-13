@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -26,17 +28,17 @@ public class PoweroffUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new PoweroffUHostInstanceParam("cn-bj2","uhost-zzsffd");
-        param.setProjectId("org-4nfe1i");
+        param = new PoweroffUHostInstanceParam("cn-sh2","uhost-rjonwb2x");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void poweroffUHostInstance() {
         try {
-            PoweroffUHostInstanceResult poweroffUHostInstanceResult = client.poweroffUHostInstance(param);
-            System.out.println(poweroffUHostInstanceResult);
+            PoweroffUHostInstanceResult result = client.poweroffUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

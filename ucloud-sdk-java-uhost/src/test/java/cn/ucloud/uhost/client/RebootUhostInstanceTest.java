@@ -8,6 +8,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -24,42 +26,19 @@ public class RebootUhostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new RebootUHostInstanceParam("cn-bj2","uhost-k2spt1");
-        param.setZone("cn-bj2-02");
-        param.setProjectId("org-4nfe1i");
+        param = new RebootUHostInstanceParam("cn-sh2","uhost-rjonwb2x");
+        param.setZone("cn-sh2-02");
+        param.setProjectId("org-izug1m");
     }
 
 
     @Test
     public void rebootUHostInstance() {
         try {
-            RebootUHostInstanceResult rebootUHostInstanceResult = client.rebootUHostInstance(param);
-            System.out.println("同步："+rebootUHostInstanceResult);
+            RebootUHostInstanceResult result = client.rebootUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
-    }
-
-    @Test
-    public void rebootUHostInstanceCallback() {
-         client.rebootUHostInstance(param, new UcloudHandler<RebootUHostInstanceResult>() {
-            @Override
-            public Object success(RebootUHostInstanceResult result) {
-                System.out.println("success:"+result);
-                return null;
-            }
-
-            @Override
-            public Object failed(RebootUHostInstanceResult result) {
-                System.out.println("failed:"+result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                System.out.println(e.fillInStackTrace());
-                return null;
-            }
-        });
     }
 }

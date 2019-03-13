@@ -1,13 +1,13 @@
 package cn.ucloud.uhost.client;
 
-import cn.ucloud.uhost.client.DefaultUhostClient;
-import cn.ucloud.uhost.client.UhostClient;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.model.ResizeUHostInstanceParam;
 import cn.ucloud.uhost.model.ResizeUHostInstanceResult;
-import cn.ucloud.common.pojo.Account;
 import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @description:
@@ -27,18 +27,18 @@ public class ResizeUHostInstanceTest {
                         System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
         //param = new ResizeUHostInstanceParam("cn-bj2","uhost-zzsffd");
-        param = new ResizeUHostInstanceParam("cn-bj2","uhost-euyi2b");
-        param.setProjectId("org-4nfe1i");
+        param = new ResizeUHostInstanceParam("cn-sh2", "uhost-rjonwb2x");
+        param.setProjectId("org-izug1m");
         param.setCpu(2);
     }
 
     @Test
     public void resizeUHostInstance() {
         try {
-            ResizeUHostInstanceResult resizeUHostInstanceResult = client.resizeUHostInstance(param);
-            System.out.println(resizeUHostInstanceResult);
+            ResizeUHostInstanceResult result = client.resizeUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

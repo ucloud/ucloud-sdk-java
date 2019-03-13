@@ -16,15 +16,6 @@ public class CopyCustomImageResult extends BaseResponseResult {
     @SerializedName("TargetImageId")
     private String targetImageId;
 
-    @Override
-    public String toString() {
-        return "CopyCustomImageResult{" +
-                "targetImageId='" + targetImageId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 
     public String getTargetImageId() {
         return targetImageId;

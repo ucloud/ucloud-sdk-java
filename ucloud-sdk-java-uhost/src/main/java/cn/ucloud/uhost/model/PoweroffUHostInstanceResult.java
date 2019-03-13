@@ -24,14 +24,4 @@ public class PoweroffUHostInstanceResult extends BaseResponseResult {
     public void setUhostId(String uhostId) {
         this.uhostId = uhostId;
     }
-
-    @Override
-    public String toString() {
-        return "PoweroffUHostInstanceResult{" +
-                "uhostId='" + uhostId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

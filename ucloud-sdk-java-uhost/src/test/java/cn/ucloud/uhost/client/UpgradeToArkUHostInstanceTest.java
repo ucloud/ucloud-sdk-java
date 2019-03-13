@@ -11,6 +11,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -28,19 +30,19 @@ public class UpgradeToArkUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpgradeToArkUHostInstanceParam("cn-bj2","cn-bj2-02");
-        param.setProjectId("org-4nfe1i");
+        param = new UpgradeToArkUHostInstanceParam("cn-sh2","cn-sh2-02");
+        param.setProjectId("org-izug1m");
         ArrayList<String> ids = new ArrayList<>();
-        ids.add("uhost-zzsffd");
+        ids.add("uhost-rjonwb2x");
         param.setUhostIds(ids);
     }
     @Test
     public void upgradeToArkUHostInstance() {
         try {
-            UpgradeToArkUHostInstanceResult upgradeToArkUHostInstanceResult = client.upgradeToArkUHostInstance(param);
-            System.out.println(upgradeToArkUHostInstanceResult);
+            UpgradeToArkUHostInstanceResult result = client.upgradeToArkUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

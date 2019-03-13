@@ -8,6 +8,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -31,10 +33,10 @@ public class CreateCustomImageTest {
     @Test
     public void createCustomImage() {
         try {
-            CreateCustomImageResult customImage = client.createCustomImage(param);
-            System.out.println(customImage);
+            CreateCustomImageResult result = client.createCustomImage(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

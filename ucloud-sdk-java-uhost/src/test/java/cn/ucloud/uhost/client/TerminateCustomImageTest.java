@@ -30,8 +30,8 @@ public class TerminateCustomImageTest {
     @Test
     public void terminateCustomImage() {
         try {
-            TerminateCustomImageResult terminateCustomImageResult = client.terminateCustomImage(param);
-            System.out.println(terminateCustomImageResult);
+            TerminateCustomImageResult result = client.terminateCustomImage(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }

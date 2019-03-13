@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -28,10 +30,10 @@ public class CreateUhostInstanceTest {
                         System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
         CreateUHostInstanceParam.UhostDisk disk = new CreateUHostInstanceParam.UhostDisk(25,"LOCAL_SSD",false);
-        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-03","uimage-m1proq");
+        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-02","uimage-m1proq");
         param.setName("java-sdk-test-aaa");
         param.setPassword("123456ab");
-        param.setProjectId("org-pbmy1g");
+        param.setProjectId("org-izug1m");
         param.setLoginMode("Password");
         List diskList =new ArrayList<CreateUHostInstanceParam.UhostDisk>();
         diskList.add(new CreateUHostInstanceParam.UhostDisk(10,"LOCAL_NORMAL",false));
@@ -44,10 +46,10 @@ public class CreateUhostInstanceTest {
     @Test
     public void createUHostInstance() {
         try {
-            CreateUHostInstanceResult uHostInstance = client.createUHostInstance(param);
-            System.out.println(uHostInstance);
+            CreateUHostInstanceResult result = client.createUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

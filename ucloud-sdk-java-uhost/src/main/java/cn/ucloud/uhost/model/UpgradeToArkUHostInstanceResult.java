@@ -27,13 +27,4 @@ public class UpgradeToArkUHostInstanceResult extends BaseResponseResult {
         this.uhostSet = uhostSet;
     }
 
-    @Override
-    public String toString() {
-        return "UpgradeToArkUHostInstanceResult{" +
-                "uhostSet=" + uhostSet +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

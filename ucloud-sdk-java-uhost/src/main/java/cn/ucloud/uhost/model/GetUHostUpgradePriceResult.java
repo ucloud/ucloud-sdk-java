@@ -27,13 +27,4 @@ public class GetUHostUpgradePriceResult extends BaseResponseResult {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "GetUHostUpgradePriceResult{" +
-                "price=" + price +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

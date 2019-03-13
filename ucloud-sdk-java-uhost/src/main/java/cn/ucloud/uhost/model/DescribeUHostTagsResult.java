@@ -1,6 +1,7 @@
 package cn.ucloud.uhost.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -55,15 +56,6 @@ public class DescribeUHostTagsResult extends BaseResponseResult {
         public void setZone(String zone) {
             this.zone = zone;
         }
-
-        @Override
-        public String toString() {
-            return "UhostTag{" +
-                    "tag='" + tag + '\'' +
-                    ", totalCount=" + totalCount +
-                    ", zone='" + zone + '\'' +
-                    '}';
-        }
     }
 
 
@@ -92,14 +84,4 @@ public class DescribeUHostTagsResult extends BaseResponseResult {
         this.tagSet = tagSet;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUHostTagsResult{" +
-                "totalCount=" + totalCount +
-                ", tagSet=" + tagSet +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

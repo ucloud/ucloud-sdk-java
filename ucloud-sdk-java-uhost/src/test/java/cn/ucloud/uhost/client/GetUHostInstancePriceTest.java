@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -32,10 +34,10 @@ public class GetUHostInstancePriceTest {
     @Test
     public void getUHostInstancePrice() {
         try {
-            GetUHostInstancePriceResult uHostInstancePrice = client.getUHostInstancePrice(param);
-            System.out.println(uHostInstancePrice);
+            GetUHostInstancePriceResult result = client.getUHostInstancePrice(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

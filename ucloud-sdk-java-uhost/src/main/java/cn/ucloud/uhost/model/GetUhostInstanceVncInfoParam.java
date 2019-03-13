@@ -66,12 +66,4 @@ public class GetUhostInstanceVncInfoParam extends BaseRequestParam {
     }
 
 
-    @Override
-    public String toString() {
-        return "GetUhostInstanceVncInfoParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", uhostId='" + uhostId + '\'' +
-                '}';
-    }
 }
