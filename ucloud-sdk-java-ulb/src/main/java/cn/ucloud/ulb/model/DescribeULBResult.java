@@ -219,10 +219,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.vpcId = vpcId;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     public static class ULBIP {
@@ -268,10 +264,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.eipId = eipId;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
 
@@ -520,10 +512,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.policies = policies;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     public static class VServerMetric{
@@ -556,14 +544,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.type = type;
         }
 
-
-        @Override
-        public String toString() {
-            return "VServerMetric{" +
-                    "metricId='" + metricId + '\'' +
-                    ", type='" + type + '\'' +
-                    '}';
-        }
     }
 
 
@@ -625,10 +605,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.ulbName = ulbName;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
 
@@ -775,10 +751,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.subnetId = subnetId;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
 
@@ -898,11 +870,6 @@ public class DescribeULBResult extends BaseResponseResult {
         public void setBackends(List<PolicyBackend> backends) {
             this.backends = backends;
         }
-
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     public static class PolicyBackend {
@@ -977,10 +944,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.resourceName = resourceName;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     /**
@@ -1012,8 +975,4 @@ public class DescribeULBResult extends BaseResponseResult {
         this.ulbs = ulbs;
     }
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

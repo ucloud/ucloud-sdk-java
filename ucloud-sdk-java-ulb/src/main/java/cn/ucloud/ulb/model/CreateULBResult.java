@@ -17,16 +17,6 @@ public class CreateULBResult extends BaseResponseResult {
     @SerializedName("ULBId")
     private String ulbId;
 
-    @Override
-    public String toString() {
-        return "CreateULBResult{" +
-                "ulbId='" + ulbId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
-
     public String getUlbId() {
         return ulbId;
     }

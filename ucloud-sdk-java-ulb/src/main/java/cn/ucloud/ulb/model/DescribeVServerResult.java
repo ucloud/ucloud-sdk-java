@@ -214,24 +214,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.policies = policies;
         }
 
-        @Override
-        public String toString() {
-            return "ULBVServer{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", protocol='" + protocol + '\'' +
-                    ", frontendPort=" + frontendPort +
-                    ", method='" + method + '\'' +
-                    ", persistenceType='" + persistenceType + '\'' +
-                    ", persistenceInfo='" + persistenceInfo + '\'' +
-                    ", clientTimeout=" + clientTimeout +
-                    ", status=" + status +
-                    ", ulbssls=" + ssls +
-                    ", backends=" + backends +
-                    ", listenType='" + listenType + '\'' +
-                    ", policies=" + policies +
-                    '}';
-        }
     }
 
     public static class SSL{
@@ -321,17 +303,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.sslBingedTargets = sslBingedTargets;
         }
 
-        @Override
-        public String toString() {
-            return "SSL{" +
-                    "sslId='" + sslId + '\'' +
-                    ", sslName='" + sslName + '\'' +
-                    ", sslType='" + sslType + '\'' +
-                    ", sslContent='" + sslContent + '\'' +
-                    ", createTime=" + createTime +
-                    ", sslBingedTargets=" + sslBingedTargets +
-                    '}';
-        }
     }
 
     public static class SSLBingedTarget{
@@ -392,15 +363,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.ulbName = ulbName;
         }
 
-        @Override
-        public String toString() {
-            return "SSLBingedTarget{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", ulbId='" + ulbId + '\'' +
-                    ", ulbName='" + ulbName + '\'' +
-                    '}';
-        }
     }
 
     public static class ULBBackend{
@@ -529,20 +491,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.subnetId = subnetId;
         }
 
-        @Override
-        public String toString() {
-            return "ULBBackend{" +
-                    "backendId='" + backendId + '\'' +
-                    ", resourceType='" + resourceType + '\'' +
-                    ", resourceId='" + resourceId + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    ", privateIp='" + privateIp + '\'' +
-                    ", port=" + port +
-                    ", enabled=" + enabled +
-                    ", status=" + status +
-                    ", subnetId='" + subnetId + '\'' +
-                    '}';
-        }
     }
 
     public static class ULBPolicy{
@@ -662,19 +610,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.backends = backends;
         }
 
-        @Override
-        public String toString() {
-            return "ULBPolicy{" +
-                    "policyId='" + policyId + '\'' +
-                    ", policyType='" + policyType + '\'' +
-                    ", type='" + type + '\'' +
-                    ", match='" + match + '\'' +
-                    ", policyPriority=" + policyPriority +
-                    ", vserverId='" + vserverId + '\'' +
-                    ", totalCount=" + totalCount +
-                    ", backends=" + backends +
-                    '}';
-        }
     }
 
     public static class PolicyBackend{
@@ -749,16 +684,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.resourceName = resourceName;
         }
 
-        @Override
-        public String toString() {
-            return "PolicyBackend{" +
-                    "backendId='" + backendId + '\'' +
-                    ", objectId='" + objectId + '\'' +
-                    ", port=" + port +
-                    ", privateIp='" + privateIp + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    '}';
-        }
     }
 
 
@@ -790,14 +715,4 @@ public class DescribeVServerResult extends BaseResponseResult {
         this.ulbvServers = ulbvServers;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeVServerResult{" +
-                "totalCount=" + totalCount +
-                ", ulbvServers=" + ulbvServers +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

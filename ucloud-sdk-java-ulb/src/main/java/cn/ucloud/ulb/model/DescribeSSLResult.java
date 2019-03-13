@@ -72,15 +72,6 @@ public class DescribeSSLResult extends BaseResponseResult {
             this.ulbName = ulbName;
         }
 
-        @Override
-        public String toString() {
-            return "SSLBindedTarget{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", ulbId='" + ulbId + '\'' +
-                    ", ulbName='" + ulbName + '\'' +
-                    '}';
-        }
     }
 
 
@@ -170,18 +161,6 @@ public class DescribeSSLResult extends BaseResponseResult {
             this.sslBindedTargets = sslBindedTargets;
         }
 
-
-        @Override
-        public String toString() {
-            return "SSLInfo{" +
-                    "sslId='" + sslId + '\'' +
-                    ", sslName='" + sslName + '\'' +
-                    ", sslType='" + sslType + '\'' +
-                    ", sslContent='" + sslContent + '\'' +
-                    ", createTime=" + createTime +
-                    ", sslBindedTargets=" + sslBindedTargets +
-                    '}';
-        }
     }
 
 
@@ -214,14 +193,4 @@ public class DescribeSSLResult extends BaseResponseResult {
         this.sslInfos = sslInfos;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeSSLResult{" +
-                "totalCount=" + totalCount +
-                ", sslInfos=" + sslInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

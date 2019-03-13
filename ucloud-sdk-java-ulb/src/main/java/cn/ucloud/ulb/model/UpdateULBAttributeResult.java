@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class UpdateULBAttributeResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "UpdateULBAttributeResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

@@ -28,13 +28,4 @@ public class AllocateBackendBatchResult extends BaseResponseResult {
         this.backendIds = backendIds;
     }
 
-    @Override
-    public String toString() {
-        return "AllocateBackendBatchResult{" +
-                "backendIds=" + backendIds +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

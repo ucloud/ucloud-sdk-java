@@ -25,13 +25,4 @@ public class CreateVServerResult extends BaseResponseResult {
         this.vserverId = vserverId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateVServerResult{" +
-                "vserverId='" + vserverId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }
