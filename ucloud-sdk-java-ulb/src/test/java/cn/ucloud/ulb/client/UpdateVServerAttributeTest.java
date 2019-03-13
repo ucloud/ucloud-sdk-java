@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -26,8 +28,8 @@ public class UpdateVServerAttributeTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpdateVServerAttributeParam("cn-bj2","ulb-0kawkr","vserver-se0ay2");
-        param.setProjectId("org-4nfe1i");
+        param = new UpdateVServerAttributeParam("cn-sh2","ulb-wki4vn5g","vserver-whdrqoq0");
+        param.setProjectId("org-izug1m");
         param.setVserverName("jjj");
     }
 
@@ -35,10 +37,10 @@ public class UpdateVServerAttributeTest {
     @Test
     public void updateVServerAttribute() {
         try {
-            UpdateVServerAttributeResult updateVServerAttributeResult = client.updateVServerAttribute(param);
-            System.out.println(updateVServerAttributeResult);
+            UpdateVServerAttributeResult result = client.updateVServerAttribute(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

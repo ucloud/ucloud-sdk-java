@@ -12,6 +12,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -28,19 +30,19 @@ public class CreatePolicyTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreatePolicyParam("cn-bj2","ulb-0kawkr","vserver-se0ay2","test");
+        param = new CreatePolicyParam("cn-sh2","ulb-wki4vn5g","vserver-whdrqoq0","test");
         List<String> backendIds = new ArrayList<>();
-        backendIds.add("backend-man2yu");
+        backendIds.add("backend-3ptzuqu3");
         param.setBackendIds(backendIds);
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-izug1m");
     }
     @Test
     public void createPolicy() {
         try {
-            CreatePolicyResult policy = client.createPolicy(param);
-            System.out.println(policy);
+            CreatePolicyResult result = client.createPolicy(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -13,19 +13,43 @@ import java.util.List;
 
 public class AllocateBackendBatchResult extends BaseResponseResult {
 
+    public static class Backend{
+
+        @SerializedName("BackendId")
+        private String backendId;
+
+        @SerializedName("ResourceId")
+        private String resourceId;
+
+        public String getBackendId() {
+            return backendId;
+        }
+
+        public void setBackendId(String backendId) {
+            this.backendId = backendId;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+    }
+
     /**
-     * 所添加的后端资源ID，（为ULB系统中使用，与资源自身ID无关），
+     * 所添加的后端资源，（为ULB系统中使用，与资源自身ID无关），
      * 可用于 UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend
      */
-    @SerializedName("BackendId")
-    private List<String> backendIds;
+    @SerializedName("BackendSet")
+    private List<Backend> backends;
 
-    public List<String> getBackendIds() {
-        return backendIds;
+    public List<Backend> getBackends() {
+        return backends;
     }
 
-    public void setBackendIds(List<String> backendIds) {
-        this.backendIds = backendIds;
+    public void setBackends(List<Backend> backends) {
+        this.backends = backends;
     }
-
 }

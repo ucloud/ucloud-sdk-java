@@ -110,6 +110,69 @@ public class DescribeVServerResult extends BaseResponseResult {
         @SerializedName("PolicySet")
         private List<ULBPolicy> policies;
 
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        @SerializedName("Domain")
+        private String domain;
+
+        @SerializedName("MetricIdSet")
+        private List<Metric> metrics;
+
+        @SerializedName("MonitorType")
+        private String monitorType;
+
+        @SerializedName("Path")
+        private String path;
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        public String getMonitorType() {
+            return monitorType;
+        }
+
+        public void setMonitorType(String monitorType) {
+            this.monitorType = monitorType;
+        }
+
+        public List<SSL> getSsls() {
+            return ssls;
+        }
+
+        public void setSsls(List<SSL> ssls) {
+            this.ssls = ssls;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public List<Metric> getMetrics() {
+            return metrics;
+        }
+
+        public void setMetrics(List<Metric> metrics) {
+            this.metrics = metrics;
+        }
+
         public String getVserverId() {
             return vserverId;
         }
@@ -684,6 +747,31 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.resourceName = resourceName;
         }
 
+    }
+
+    public static class Metric{
+
+        @SerializedName("MetricId")
+        private String metricId;
+
+        @SerializedName("Type")
+        private String type;
+
+        public String getMetricId() {
+            return metricId;
+        }
+
+        public void setMetricId(String metricId) {
+            this.metricId = metricId;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
     }
 
 

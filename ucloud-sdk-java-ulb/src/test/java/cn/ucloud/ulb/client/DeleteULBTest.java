@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -33,10 +35,10 @@ public class DeleteULBTest {
     @Test
     public void deleteULB() {
         try {
-            DeleteULBResult deleteULBResult = client.deleteULB(param);
-            System.out.println(deleteULBResult);
+            DeleteULBResult result = client.deleteULB(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }
