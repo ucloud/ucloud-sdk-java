@@ -2,7 +2,6 @@ package cn.ucloud.pathx.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.pathx.model.GetPathXMetricParam;
 import cn.ucloud.pathx.model.GetPathXMetricResult;
 import cn.ucloud.pathx.pojo.PATHXConfig;
@@ -35,8 +34,8 @@ public class GetPathXMetricTest {
         Integer endTime = 1;
         String resourceType = "cn-sh2";
         String lineId = "cn-sh2";
-        String metricNames= "";
-        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId,metricNames);
+        String metricNames = "";
+        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId, metricNames);
         param.setProjectId("org-izug1m");
     }
 

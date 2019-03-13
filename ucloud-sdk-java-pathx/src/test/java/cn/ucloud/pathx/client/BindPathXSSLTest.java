@@ -2,7 +2,6 @@ package cn.ucloud.pathx.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.pathx.model.BindPathXSSLParam;
 import cn.ucloud.pathx.model.BindPathXSSLResult;
 import cn.ucloud.pathx.pojo.PATHXConfig;
@@ -35,7 +34,7 @@ public class BindPathXSSLTest {
         String sSLId = "cn-sh2";
         String uGAId = "cn-sh2";
         List<Integer> ports = new ArrayList<>();
-        param = new BindPathXSSLParam(sSLId, uGAId,ports);
+        param = new BindPathXSSLParam(sSLId, uGAId, ports);
         param.setProjectId("org-izug1m");
     }
 

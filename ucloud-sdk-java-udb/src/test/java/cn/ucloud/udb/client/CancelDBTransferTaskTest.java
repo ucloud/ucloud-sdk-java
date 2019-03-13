@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.CancelDBTransferTaskParam;
 import cn.ucloud.udb.model.CancelDBTransferTaskResult;
 import org.junit.Before;

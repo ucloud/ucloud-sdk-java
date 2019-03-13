@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.PromoteUDBSlaveParam;
 import cn.ucloud.udb.model.RestartRWSplittingParam;
 import cn.ucloud.udb.model.RestartRWSplittingResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -22,14 +20,13 @@ public class RestartRWSplittingTest {
     private RestartRWSplittingParam param;
 
 
-
-
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new RestartRWSplittingParam("cn-sh2", "cn-sh2-02","udb-zahyyi04");
+        param = new RestartRWSplittingParam("cn-sh2", "cn-sh2-02", "udb-zahyyi04");
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void restartRWSplitting() {
         try {

@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.AttachUDiskParam;
 import cn.ucloud.udisk.model.AttachUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class AttachUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void attachUDiskCallback() {
         client.attachUDisk(param, new UcloudHandler<AttachUDiskResult>() {

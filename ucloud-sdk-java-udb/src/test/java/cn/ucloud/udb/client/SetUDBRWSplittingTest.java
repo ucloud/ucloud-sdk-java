@@ -1,8 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DisableUDBRWSplittingParam;
 import cn.ucloud.udb.model.SetUDBRWSplittingParam;
 import cn.ucloud.udb.model.SetUDBRWSplittingResult;
 import org.junit.Before;
@@ -11,7 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -34,7 +32,7 @@ public class SetUDBRWSplittingTest {
         readPercents.add(10);
         readPercents.add(90);
         param = new SetUDBRWSplittingParam("cn-sh2", "cn-sh2-02",
-                "udb-zahyyi04","Custom",dbIds);
+                "udb-zahyyi04", "Custom", dbIds);
         param.setReadPercents(readPercents);
         param.setProjectId("org-izug1m");
     }

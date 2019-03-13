@@ -1,16 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DeleteUDBInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceBinlogParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceBinlogResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.sql.Time;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,9 +24,10 @@ public class DescribeUDBInstanceBinlogTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         param = new DescribeUDBInstanceBinlogParam("cn-sh2", "udb-h3q25faw",
-                1551783710,1551956510);
+                1551783710, 1551956510);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void describeUDBInstanceBinlog() {
         try {

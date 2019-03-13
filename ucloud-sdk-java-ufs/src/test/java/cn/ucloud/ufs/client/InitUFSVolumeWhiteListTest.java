@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -28,18 +30,18 @@ public class InitUFSVolumeWhiteListTest {
                         System.getenv("UcloudPublicKey"))));
         List<String> uhostIds = new ArrayList<>();
         uhostIds.add("uhost-zzsffd");
-        param = new InitUFSVolumeWhiteListParam("cn-bj2", "ufs-qx1waw");
+        param = new InitUFSVolumeWhiteListParam("cn-bj2", "ufs-vnc50gpn");
         param.setuHostIds(uhostIds);
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void initUFSVolumeWhiteList() {
         try {
-            InitUFSVolumeWhiteListResult describeUFSVolumeResult = client.initUFSVolumeWhiteList(param);
-            System.out.println(describeUFSVolumeResult);
+            InitUFSVolumeWhiteListResult result = client.initUFSVolumeWhiteList(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

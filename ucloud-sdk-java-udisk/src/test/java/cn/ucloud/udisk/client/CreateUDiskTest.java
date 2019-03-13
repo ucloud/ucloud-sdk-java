@@ -6,7 +6,10 @@ import cn.ucloud.udisk.model.CreateUDiskParam;
 import cn.ucloud.udisk.model.CreateUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 /**
  * @description:
@@ -15,7 +18,14 @@ import org.junit.Test;
  * @date: 2018/9/26 13:53
  */
 public class CreateUDiskTest {
+
     private UdiskClient client;
+
+    private String projectId="org-izug1m";
+
+    private String region="cn-sh2";
+
+    private String zone="cn-sh2-02";
 
     private CreateUDiskParam param;
 
@@ -24,8 +34,8 @@ public class CreateUDiskTest {
         client = new DefaultUdiskClient(new UdiskConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateUDiskParam("cn-sh2", "cn-sh2-02", 16, "udisk-test");
-        param.setProjectId("org-izug1m");
+        param = new CreateUDiskParam(region, zone, 16, "udisk-test");
+        param.setProjectId(projectId);
     }
 
     @Test
@@ -38,6 +48,7 @@ public class CreateUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void createUDiskCallback() {
         client.createUDisk(param, new UcloudHandler<CreateUDiskResult>() {

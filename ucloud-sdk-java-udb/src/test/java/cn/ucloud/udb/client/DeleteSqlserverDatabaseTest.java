@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.DeleteSqlserverDatabaseParam;
 import cn.ucloud.udb.model.DeleteSqlserverDatabaseResult;
 import org.junit.Before;

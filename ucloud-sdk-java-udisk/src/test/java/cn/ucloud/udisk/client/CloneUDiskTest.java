@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.CloneUDiskParam;
 import cn.ucloud.udisk.model.CloneUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -38,6 +39,7 @@ public class CloneUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void cloneUDiskCallback() {
         client.cloneUDisk(param, new UcloudHandler<CloneUDiskResult>() {

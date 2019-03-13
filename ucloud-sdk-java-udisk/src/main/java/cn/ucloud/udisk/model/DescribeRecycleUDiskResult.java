@@ -23,7 +23,7 @@ public class DescribeRecycleUDiskResult extends BaseResponseResult {
      * 云磁盘信息
      */
     @SerializedName("DataSet")
-    private List<RecycleUDisk> dataSet;
+    private List<RecycleUDisk> recycleUDisks;
 
 
     public static class RecycleUDisk {
@@ -140,5 +140,21 @@ public class DescribeRecycleUDiskResult extends BaseResponseResult {
         public String toString() {
             return new Gson().toJson(this);
         }
+    }
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public List<RecycleUDisk> getRecycleUDisks() {
+        return recycleUDisks;
+    }
+
+    public void setRecycleUDisks(List<RecycleUDisk> recycleUDisks) {
+        this.recycleUDisks = recycleUDisks;
     }
 }

@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DescribeUDBCPriceParam;
 import cn.ucloud.udb.model.ListUDBConfigSvrParam;
 import cn.ucloud.udb.model.ListUDBConfigSvrResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +26,7 @@ public class ListUDBConfigSvrTest {
         param = new ListUDBConfigSvrParam("cn-sh2", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
+
     // todo 测试Get names error
     @Test
     public void listUDBConfigSvr() {

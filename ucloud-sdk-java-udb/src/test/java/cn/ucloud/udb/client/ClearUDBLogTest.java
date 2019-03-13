@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.ClearUDBLogParam;
 import cn.ucloud.udb.model.ClearUDBLogResult;
 import org.junit.Before;

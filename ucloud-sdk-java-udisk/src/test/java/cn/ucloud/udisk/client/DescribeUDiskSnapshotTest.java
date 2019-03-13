@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DescribeUDiskSnapshotParam;
 import cn.ucloud.udisk.model.DescribeUDiskSnapshotResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class DescribeUDiskSnapshotTest {
         }
     }
 
+    @Ignore
     @Test
     public void describeUDiskSnapshotCallback() {
         client.describeUDiskSnapshot(param, new UcloudHandler<DescribeUDiskSnapshotResult>() {

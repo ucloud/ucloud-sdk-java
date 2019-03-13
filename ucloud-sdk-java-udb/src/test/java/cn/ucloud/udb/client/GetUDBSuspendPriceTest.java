@@ -1,8 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.FetchDBPrecheckResultParam;
 import cn.ucloud.udb.model.GetUDBSuspendPriceParam;
 import cn.ucloud.udb.model.GetUDBSuspendPriceResult;
 import org.junit.Before;
@@ -11,7 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -30,9 +28,10 @@ public class GetUDBSuspendPriceTest {
         client = GetUDBClient.getUDBClient();
         List<String> dbIds = new ArrayList<>();
         dbIds.add("udb-h3q25faw");
-        param = new GetUDBSuspendPriceParam("cn-sh2", "cn-sh2-02",dbIds );
+        param = new GetUDBSuspendPriceParam("cn-sh2", "cn-sh2-02", dbIds);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void getUDBSuspendPrice() {
         try {

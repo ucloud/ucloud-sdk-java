@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -36,10 +38,10 @@ public class UpdateUFSVolumeWhiteListTest {
     @Test
     public void updateUFSVolumeWhiteList() {
         try {
-            UpdateUFSVolumeWhiteListResult describeUFSVolumeResult = client.updateUFSVolumeWhiteList(param);
-            System.out.println(describeUFSVolumeResult);
+            UpdateUFSVolumeWhiteListResult result = client.updateUFSVolumeWhiteList(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

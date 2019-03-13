@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.RecoverUDiskParam;
 import cn.ucloud.udisk.model.RecoverUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class RecoverUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void recoverUDiskCallback() {
         client.recoverUDisk(param, new UcloudHandler<RecoverUDiskResult>() {

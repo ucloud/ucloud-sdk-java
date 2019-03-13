@@ -7,6 +7,8 @@ import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -30,9 +32,9 @@ public class DescribeUDPNTest {
     public void describeUDPN() {
         try {
             DescribeUDPNResult describeUDPNResult = client.DescribeUDPN(param);
-            System.out.println(describeUDPNResult);
+            JSONComparator.jsonComparator(describeUDPNResult);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

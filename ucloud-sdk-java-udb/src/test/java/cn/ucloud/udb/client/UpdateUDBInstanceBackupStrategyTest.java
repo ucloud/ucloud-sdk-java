@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.RevokeAccountPrivilegesParam;
 import cn.ucloud.udb.model.UpdateUDBInstanceBackupStrategyParam;
 import cn.ucloud.udb.model.UpdateUDBInstanceBackupStrategyResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,7 +26,6 @@ public class UpdateUDBInstanceBackupStrategyTest {
         param.setBackupTime(0);
         param.setProjectId("org-izug1m");
     }
-
 
 
     @Test

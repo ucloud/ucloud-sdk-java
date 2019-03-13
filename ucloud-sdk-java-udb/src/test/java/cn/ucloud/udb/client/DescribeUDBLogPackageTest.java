@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DescribeUDBLogBackupURLParam;
 import cn.ucloud.udb.model.DescribeUDBLogPackageParam;
 import cn.ucloud.udb.model.DescribeUDBLogPackageResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +26,7 @@ public class DescribeUDBLogPackageTest {
         param = new DescribeUDBLogPackageParam("cn-sh2", 100, 0);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void deleteUDBLogPackage() {
         DescribeUDBLogPackageResult result = null;

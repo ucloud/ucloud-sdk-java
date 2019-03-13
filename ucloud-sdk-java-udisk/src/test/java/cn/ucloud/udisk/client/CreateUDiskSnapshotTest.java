@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.CreateUDiskSnapshotParam;
 import cn.ucloud.udisk.model.CreateUDiskSnapshotResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -39,6 +40,7 @@ public class CreateUDiskSnapshotTest {
         }
     }
 
+    @Ignore
     @Test
     public void createUDiskSnapshotCallback() {
         client.createUDiskSnapshot(param, new UcloudHandler<CreateUDiskSnapshotResult>() {

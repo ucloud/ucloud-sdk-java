@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DescribeUDBCInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceBackupURLParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceBackupURLResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,7 +23,7 @@ public class DescribeUDBInstanceBackupURLTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DescribeUDBInstanceBackupURLParam("cn-sh2",269427,"udb-h3q25faw");
+        param = new DescribeUDBInstanceBackupURLParam("cn-sh2", 269427, "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
 

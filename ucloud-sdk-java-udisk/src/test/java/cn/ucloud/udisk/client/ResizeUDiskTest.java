@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.ResizeUDiskParam;
 import cn.ucloud.udisk.model.ResizeUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class ResizeUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void resizeUDiskCallback() {
         client.resizeUDisk(param, new UcloudHandler<ResizeUDiskResult>() {

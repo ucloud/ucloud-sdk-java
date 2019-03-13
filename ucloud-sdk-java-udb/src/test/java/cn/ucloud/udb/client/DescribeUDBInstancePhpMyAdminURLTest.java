@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.DescribeUDBInstancePhpMyAdminURLParam;
 import cn.ucloud.udb.model.DescribeUDBInstancePhpMyAdminURLResult;
 import org.junit.Before;

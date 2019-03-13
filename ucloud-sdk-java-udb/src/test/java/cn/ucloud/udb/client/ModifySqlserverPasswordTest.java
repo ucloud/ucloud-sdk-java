@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.ListUDBConfigSvrParam;
 import cn.ucloud.udb.model.ModifySqlserverPasswordParam;
 import cn.ucloud.udb.model.ModifySqlserverPasswordResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,10 +23,11 @@ public class ModifySqlserverPasswordTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ModifySqlserverPasswordParam("cn-sh2", "cn-sh2-02","udb-h3q25faw",
-                "test","sdk-java");
+        param = new ModifySqlserverPasswordParam("cn-sh2", "cn-sh2-02", "udb-h3q25faw",
+                "test", "sdk-java");
         param.setProjectId("org-izug1m");
     }
+
     // todo 测试 没有sqlserver实例
     @Test
     public void modifySqlserverPassword() {

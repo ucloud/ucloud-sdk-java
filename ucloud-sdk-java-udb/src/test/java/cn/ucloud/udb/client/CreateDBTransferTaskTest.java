@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.CreateDBTransferTaskParam;
 import cn.ucloud.udb.model.CreateDBTransferTaskResult;
 import org.junit.Before;

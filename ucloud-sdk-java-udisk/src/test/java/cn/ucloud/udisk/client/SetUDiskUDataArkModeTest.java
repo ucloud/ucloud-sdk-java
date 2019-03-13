@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.SetUDiskUDataArkModeParam;
 import cn.ucloud.udisk.model.SetUDiskUDataArkModeResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class SetUDiskUDataArkModeTest {
         }
     }
 
+    @Ignore
     @Test
     public void setUDiskUDataArkModeCallback() {
         client.setUDiskUDataArkMode(param, new UcloudHandler<SetUDiskUDataArkModeResult>() {

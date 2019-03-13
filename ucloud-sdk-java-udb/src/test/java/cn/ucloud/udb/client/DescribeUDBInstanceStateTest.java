@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceStateParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceStateResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +26,7 @@ public class DescribeUDBInstanceStateTest {
         param = new DescribeUDBInstanceStateParam("cn-sh2", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void describeUDBInstanceBackupState() {
         try {

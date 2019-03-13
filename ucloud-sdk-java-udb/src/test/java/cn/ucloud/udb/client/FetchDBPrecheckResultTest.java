@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.FetchDBPrecheckResultParam;
 import cn.ucloud.udb.model.FetchDBPrecheckResultResult;
 import org.junit.Before;

@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.ModifyUDBInstanceNameParam;
 import cn.ucloud.udb.model.PrecheckDBTransferTaskParam;
 import cn.ucloud.udb.model.PrecheckDBTransferTaskResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -33,6 +31,7 @@ public class PrecheckDBTransferTaskTest {
                 "16ed874b-59a4-443c-b5e3-2784cab13cdb");
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void precheckDBTransferTask() {
         try {

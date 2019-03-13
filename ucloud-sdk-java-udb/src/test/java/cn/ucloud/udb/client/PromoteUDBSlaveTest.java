@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.ModifyUDBInstanceNameParam;
 import cn.ucloud.udb.model.PromoteUDBSlaveParam;
 import cn.ucloud.udb.model.PromoteUDBSlaveResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -20,8 +18,6 @@ public class PromoteUDBSlaveTest {
     private UDBClient client;
 
     private PromoteUDBSlaveParam param;
-
-
 
 
     @Before

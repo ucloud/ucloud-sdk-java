@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.PromoteUDBSlaveParam;
 import cn.ucloud.udb.model.ResizeUDBInstanceParam;
 import cn.ucloud.udb.model.ResizeUDBInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -22,12 +20,10 @@ public class ResizeUDBInstanceTest {
     private ResizeUDBInstanceParam param;
 
 
-
-
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ResizeUDBInstanceParam("cn-sh2", "udb-rfzhjps1",1000,
+        param = new ResizeUDBInstanceParam("cn-sh2", "udb-rfzhjps1", 1000,
                 30);
         param.setProjectId("org-izug1m");
     }

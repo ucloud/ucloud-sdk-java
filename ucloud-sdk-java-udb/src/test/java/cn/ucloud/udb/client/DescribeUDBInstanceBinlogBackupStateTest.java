@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DeleteUDBInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceBinlogBackupStateParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceBinlogBackupStateResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,9 +23,10 @@ public class DescribeUDBInstanceBinlogBackupStateTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DescribeUDBInstanceBinlogBackupStateParam("cn-sh2","cn-sh2-02" ,63033);
+        param = new DescribeUDBInstanceBinlogBackupStateParam("cn-sh2", "cn-sh2-02", 63033);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void describeUDBInstanceBinlogBackupState() {
         try {

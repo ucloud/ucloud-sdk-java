@@ -2,7 +2,6 @@ package cn.ucloud.pathx.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.pathx.model.InsertPathXWhitelistParam;
 import cn.ucloud.pathx.model.InsertPathXWhitelistResult;
 import cn.ucloud.pathx.pojo.PATHXConfig;
@@ -35,7 +34,7 @@ public class InsertPathXWhitelistTest {
         String projectId = "cn-sh2";
         String instanceId = "cn-sh2";
         List<String> whiteList = new ArrayList<>();
-        param = new InsertPathXWhitelistParam(projectId, instanceId,whiteList);
+        param = new InsertPathXWhitelistParam(projectId, instanceId, whiteList);
         param.setProjectId("org-izug1m");
     }
 

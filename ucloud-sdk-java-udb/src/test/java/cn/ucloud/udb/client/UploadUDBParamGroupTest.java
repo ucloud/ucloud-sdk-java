@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DeleteDBTransferTaskParam;
 import cn.ucloud.udb.model.UploadUDBParamGroupParam;
 import cn.ucloud.udb.model.UploadUDBParamGroupResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -31,10 +29,11 @@ public class UploadUDBParamGroupTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new UploadUDBParamGroupParam("cn-sh2", "cn-sh2-02","mysql-5.5",
-                "peggypig-up","sdk-java-upload",content);
+        param = new UploadUDBParamGroupParam("cn-sh2", "cn-sh2-02", "mysql-5.5",
+                "peggypig-up", "sdk-java-upload", content);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void uploadUDBParamGroup() {
         try {
