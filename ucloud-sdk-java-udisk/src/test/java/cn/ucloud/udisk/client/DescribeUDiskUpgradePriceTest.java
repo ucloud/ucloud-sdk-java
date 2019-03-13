@@ -6,7 +6,10 @@ import cn.ucloud.udisk.model.DescribeUDiskUpgradePriceParam;
 import cn.ucloud.udisk.model.DescribeUDiskUpgradePriceResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @description:
@@ -32,30 +35,31 @@ public class DescribeUDiskUpgradePriceTest {
     public void describeUDiskUpgradePrice() {
         try {
             DescribeUDiskUpgradePriceResult result = client.describeUDiskUpgradePrice(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void describeUDiskUpgradePriceCallback() {
         client.describeUDiskUpgradePrice(param, new UcloudHandler<DescribeUDiskUpgradePriceResult>() {
             @Override
             public Object success(DescribeUDiskUpgradePriceResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(DescribeUDiskUpgradePriceResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         }, false);

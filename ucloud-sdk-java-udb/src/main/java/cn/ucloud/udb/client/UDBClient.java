@@ -23,7 +23,7 @@ public interface UDBClient extends UcloudClient {
      * @param handler   回调接口
      * @param asyncFlag 是否异步
      */
-    void backupUDBInstance(BaseRequestParam param, UcloudHandler<BackupUDBInstanceResult> handler,
+    void backupUDBInstance(BackupUDBInstanceParam param, UcloudHandler<BackupUDBInstanceResult> handler,
                            Boolean... asyncFlag);
 
     /**
@@ -636,7 +636,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    DeleteUDBParamGroupReuslt deleteUDBParamGroup(DeleteUDBParamGroupParam param) throws Exception;
+    DeleteUDBParamGroupResult deleteUDBParamGroup(DeleteUDBParamGroupParam param) throws Exception;
 
     /**
      * 删除配置
@@ -646,7 +646,7 @@ public interface UDBClient extends UcloudClient {
      * @param asyncFlag 是否异步
      */
     void deleteUDBParamGroup(DeleteUDBParamGroupParam param,
-                             UcloudHandler<DeleteUDBParamGroupReuslt> handler,
+                             UcloudHandler<DeleteUDBParamGroupResult> handler,
                              Boolean... asyncFlag);
 
     /**
@@ -965,7 +965,7 @@ public interface UDBClient extends UcloudClient {
      * @param handler   回调接口
      * @param asyncFlag 是否异步
      */
-    void describeUDBInstanceBinlogBackupState(DescribeUDBInstanceByBackupParam param,
+    void describeUDBInstanceByBackup(DescribeUDBInstanceByBackupParam param,
                                               UcloudHandler<DescribeUDBInstanceByBackupResult> handler,
                                               Boolean... asyncFlag);
 
@@ -1018,7 +1018,7 @@ public interface UDBClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception
      */
-    DescribeUDBInstanceLogResult describeUDBInstanceLogParam(DescribeUDBInstanceLogParam param) throws Exception;
+    DescribeUDBInstanceLogResult describeUDBInstanceLog(DescribeUDBInstanceLogParam param) throws Exception;
 
     /**
      * 获取UDB错误日志或慢查询日志
@@ -1027,7 +1027,7 @@ public interface UDBClient extends UcloudClient {
      * @param handler   回调接口
      * @param asyncFlag 是否异步
      */
-    void describeUDBInstanceLogParam(DescribeUDBInstanceLogParam param,
+    void describeUDBInstanceLog(DescribeUDBInstanceLogParam param,
                                      UcloudHandler<DescribeUDBInstanceLogResult> handler,
                                      Boolean... asyncFlag);
 

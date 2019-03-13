@@ -57,8 +57,8 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
         /**
          * DB实例虚ip的mac地址
          */
-        @SerializedName("VirtualMAC")
-        private String virtualMAC;
+        @SerializedName("VirtualIPMac")
+        private String virtualIPMac;
 
         /**
          * 端口号，mysql默认3306，mongodb默认27017
@@ -183,7 +183,7 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
          * 从库备份开关
          */
         @SerializedName("IsSlaveBackup")
-        private Integer isSlaveBackup;
+        private Boolean isSlaveBackup;
 
         /**
          * 备份日期标记位。共7位,每一位为一周中一天的备份情况
@@ -195,6 +195,62 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
          */
         @SerializedName("BackupDate")
         private String backupDate;
+
+        /**
+         * 实例类型
+         */
+        @SerializedName("InstanceType")
+        private String instanceType;
+
+        /**
+         * 实例类型ID
+         */
+        @SerializedName("InstanceTypeId")
+        private Integer instanceTypeId;
+
+        /**
+         * 日志文件大小
+         */
+        @SerializedName("LogFileSize")
+        private Integer logFileSize;
+
+        /**
+         * 系统文件大小
+         */
+        @SerializedName("SystemFileSize")
+        private Integer systemFileSize;
+
+        public Integer getLogFileSize() {
+            return logFileSize;
+        }
+
+        public void setLogFileSize(Integer logFileSize) {
+            this.logFileSize = logFileSize;
+        }
+
+        public Integer getSystemFileSize() {
+            return systemFileSize;
+        }
+
+        public void setSystemFileSize(Integer systemFileSize) {
+            this.systemFileSize = systemFileSize;
+        }
+
+        public Integer getInstanceTypeId() {
+            return instanceTypeId;
+        }
+
+        public void setInstanceTypeId(Integer instanceTypeId) {
+            this.instanceTypeId = instanceTypeId;
+        }
+
+        public String getInstanceType() {
+            return instanceType;
+        }
+
+        public void setInstanceType(String instanceType) {
+            this.instanceType = instanceType;
+        }
 
         public String getDbId() {
             return dbId;
@@ -244,12 +300,12 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
             this.virtualIP = virtualIP;
         }
 
-        public String getVirtualMAC() {
-            return virtualMAC;
+        public String getVirtualIPMac() {
+            return virtualIPMac;
         }
 
-        public void setVirtualMAC(String virtualMAC) {
-            this.virtualMAC = virtualMAC;
+        public void setVirtualIPMac(String virtualIPMac) {
+            this.virtualIPMac = virtualIPMac;
         }
 
         public Integer getPort() {
@@ -396,12 +452,12 @@ public class DescribeUDBSlaveOrSecondaryInstanceResult extends BaseResponseResul
             this.dataFileSize = dataFileSize;
         }
 
-        public Integer getIsSlaveBackup() {
+        public Boolean getSlaveBackup() {
             return isSlaveBackup;
         }
 
-        public void setIsSlaveBackup(Integer isSlaveBackup) {
-            this.isSlaveBackup = isSlaveBackup;
+        public void setSlaveBackup(Boolean slaveBackup) {
+            isSlaveBackup = slaveBackup;
         }
 
         public String getBackupDate() {

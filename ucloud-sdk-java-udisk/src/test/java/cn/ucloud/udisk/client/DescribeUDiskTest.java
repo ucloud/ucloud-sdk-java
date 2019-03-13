@@ -6,7 +6,10 @@ import cn.ucloud.udisk.model.DescribeUDiskParam;
 import cn.ucloud.udisk.model.DescribeUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @description:
@@ -25,37 +28,38 @@ public class DescribeUDiskTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeUDiskParam("cn-sh2");
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void describeUDisk() {
         try {
             DescribeUDiskResult result = client.describeUDisk(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void describeUDiskCallback() {
         client.describeUDisk(param, new UcloudHandler<DescribeUDiskResult>() {
             @Override
             public Object success(DescribeUDiskResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(DescribeUDiskResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         }, false);

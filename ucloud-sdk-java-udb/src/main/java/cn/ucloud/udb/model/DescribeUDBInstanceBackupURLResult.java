@@ -16,6 +16,12 @@ public class DescribeUDBInstanceBackupURLResult extends BaseResponseResult {
     @SerializedName("BackupPath")
     private String backupPath;
 
+    /**
+     * 内部地址
+     */
+    @SerializedName("InnerBackupPath")
+    private String innerBackupPath;
+
     public String getBackupPath() {
         return backupPath;
     }
@@ -24,5 +30,11 @@ public class DescribeUDBInstanceBackupURLResult extends BaseResponseResult {
         this.backupPath = backupPath;
     }
 
+    public String getInnerBackupPath() {
+        return innerBackupPath;
+    }
 
+    public void setInnerBackupPath(String innerBackupPath) {
+        this.innerBackupPath = innerBackupPath;
+    }
 }

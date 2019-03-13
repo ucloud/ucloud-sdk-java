@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Description : 获取UDB的slowlog备份地址 参数类
@@ -32,15 +33,15 @@ public class DescribeUDBLogBackupURLParam extends BaseRequestParam {
     private String dbId;
 
     /**
-     * DB实例备份ID
+     * 备份ID
      */
-    @NotEmpty(message = "backupId can not be empty")
+    @NotNull(message = "backupId can not be null")
     @UcloudParam("BackupId")
-    private String backupId;
+    private Integer backupId;
 
     public DescribeUDBLogBackupURLParam(@NotEmpty(message = "region can not be empty") String region,
                                         @NotEmpty(message = "dbId can not be empty") String dbId,
-                                        @NotEmpty(message = "backupId can not be empty") String backupId) {
+                                        @NotNull(message = "backupId can not be null") Integer backupId) {
         super("DescribeUDBLogBackupURL");
         this.region = region;
         this.dbId = dbId;
@@ -71,12 +72,11 @@ public class DescribeUDBLogBackupURLParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    public String getBackupId() {
+    public Integer getBackupId() {
         return backupId;
     }
 
-    public void setBackupId(String backupId) {
+    public void setBackupId(Integer backupId) {
         this.backupId = backupId;
     }
-
 }

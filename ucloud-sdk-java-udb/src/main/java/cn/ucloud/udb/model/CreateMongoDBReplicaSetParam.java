@@ -35,6 +35,7 @@ public class CreateMongoDBReplicaSetParam extends BaseRequestParam {
     /**
      * PrimaryDB实例名称，至少6位
      */
+    @UcloudParam("Name")
     @NotEmpty(message = "name can not be empty")
     private String name;
 
@@ -79,7 +80,7 @@ public class CreateMongoDBReplicaSetParam extends BaseRequestParam {
     /**
      * 端口号
      */
-    @NotEmpty(message = "port can not be null")
+    @NotNull(message = "port can not be null")
     @UcloudParam("Port")
     private Integer port;
 
@@ -179,7 +180,7 @@ public class CreateMongoDBReplicaSetParam extends BaseRequestParam {
     @UcloudParam("SSDType")
     public List<Param> checkSSDType() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (useSSD) {
+        if (useSSD != null && useSSD) {
             if (ssdType == null) {
                 throw new ValidationException("ssdType can not be empty when useSSD is true");
             } else {

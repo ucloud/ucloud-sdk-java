@@ -6,7 +6,10 @@ import cn.ucloud.udisk.model.SetUDiskUDataArkModeParam;
 import cn.ucloud.udisk.model.SetUDiskUDataArkModeResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @description:
@@ -32,30 +35,31 @@ public class SetUDiskUDataArkModeTest {
     public void setUDiskUDataArkMode() {
         try {
             SetUDiskUDataArkModeResult result = client.setUDiskUDataArkMode(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void setUDiskUDataArkModeCallback() {
         client.setUDiskUDataArkMode(param, new UcloudHandler<SetUDiskUDataArkModeResult>() {
             @Override
             public Object success(SetUDiskUDataArkModeResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(SetUDiskUDataArkModeResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         }, false);

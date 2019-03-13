@@ -100,7 +100,7 @@ public class CreateUDBSlaveParam extends BaseRequestParam {
     public CreateUDBSlaveParam(@NotEmpty(message = "region can not be empty") String region,
                                @NotEmpty(message = "srcId can not be empty") String srcId,
                                @NotEmpty(message = "name can not be empty") String name) {
-        super("CreateUDBSlaveParam");
+        super("CreateUDBSlave");
         this.region = region;
         this.srcId = srcId;
         this.name = name;
@@ -109,7 +109,7 @@ public class CreateUDBSlaveParam extends BaseRequestParam {
     @UcloudParam("SSDType")
     public List<Param> checkSSDType() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (useSSD) {
+        if (useSSD != null && useSSD) {
             if (ssdType == null) {
                 throw new ValidationException("ssdType can not be empty when useSSD is true");
             } else {

@@ -6,7 +6,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * @Description :
+ * @Description : 修改UDB自动备份策略 参数类
  * @Author : codezhang
  * @Date : 2019-03-04 19:42
  **/

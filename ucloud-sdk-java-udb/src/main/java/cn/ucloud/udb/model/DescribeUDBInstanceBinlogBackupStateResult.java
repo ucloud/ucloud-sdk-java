@@ -20,6 +20,20 @@ public class DescribeUDBInstanceBinlogBackupStateResult extends BaseResponseResu
     @SerializedName("State")
     private String state;
 
+    /**
+     * 备份大小
+     */
+    @SerializedName("BackupSize")
+    private Integer backupSize;
+
+    public Integer getBackupSize() {
+        return backupSize;
+    }
+
+    public void setBackupSize(Integer backupSize) {
+        this.backupSize = backupSize;
+    }
+
     public String getState() {
         return state;
     }

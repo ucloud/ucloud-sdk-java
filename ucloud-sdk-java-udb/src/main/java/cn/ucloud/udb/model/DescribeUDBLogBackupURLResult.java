@@ -16,6 +16,12 @@ public class DescribeUDBLogBackupURLResult extends BaseResponseResult {
     @SerializedName("BackupPath")
     private String backupPath;
 
+    /**
+     * 用户网地址
+     */
+    @SerializedName("UsernetPath")
+    private String userNetPath;
+
     public String getBackupPath() {
         return backupPath;
     }

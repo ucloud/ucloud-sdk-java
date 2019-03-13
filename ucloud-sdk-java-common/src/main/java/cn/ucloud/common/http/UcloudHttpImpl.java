@@ -118,6 +118,7 @@ public class UcloudHttpImpl implements UcloudHttp {
         try {
             request.addHeader("User-Agent", "ucloud-sdk-java");
             // 执行http get请求
+            logger.info("request line:{}",request.getRequestLine());
             response = client.execute(request);
             if (response != null) {
                 // 正常响应

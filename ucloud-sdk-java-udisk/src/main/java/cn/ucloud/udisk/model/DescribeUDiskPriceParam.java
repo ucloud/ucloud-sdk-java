@@ -33,7 +33,7 @@ public class DescribeUDiskPriceParam extends BaseRequestParam {
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private Integer size = 1;
+    private Integer size;
 
     /**
      * optional chargeType Year， Month， Dynamic，Trial，默认: Dynamic 如果不指定，则一次性获取三种计费

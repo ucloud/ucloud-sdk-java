@@ -47,7 +47,7 @@ public class DescribeUDBInstancePriceResult extends BaseResponseResult {
     /**
      * 价格 参照UDBInstancePrice
      */
-    @SerializedName("DateSet")
+    @SerializedName("DataSet")
     private List<UDBInstancePrice> udbInstancePrices;
 
     public List<UDBInstancePrice> getUdbInstancePrices() {

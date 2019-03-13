@@ -7,6 +7,8 @@ import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -23,16 +25,16 @@ public class ReleaseUDPNTest {
         client = new DefaultUDPNClient(new UdpnConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ReleaseUDPNParam("udpn-5bst2lvo");
+        param = new ReleaseUDPNParam("udpn-111qalty");
     }
 
     @Test
     public void releaseUDPN() {
         try {
-            ReleaseUDPNResult ReleaseUDPNResult = client.ReleaseUDPN(param);
-            System.out.println(ReleaseUDPNResult);
+            ReleaseUDPNResult result = client.ReleaseUDPN(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }
