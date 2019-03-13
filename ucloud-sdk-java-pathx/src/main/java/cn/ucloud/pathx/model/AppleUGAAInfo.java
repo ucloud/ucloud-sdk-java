@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : 苹果审核加速通道信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class AppleUGAAInfo {
     /**
@@ -66,7 +66,6 @@ public class AppleUGAAInfo {
         this.uGAId = uGAId;
     }
 
-
     public String getcName() {
         return this.cName;
     }
@@ -75,6 +74,13 @@ public class AppleUGAAInfo {
         this.cName = cName;
     }
 
+    public List<String> getiPList() {
+        return this.iPList;
+    }
+
+    public void setiPList(List<String> iPList) {
+        this.iPList = iPList;
+    }
 
     public String getuGAName() {
         return this.uGAName;
@@ -83,7 +89,6 @@ public class AppleUGAAInfo {
     public void setuGAName(String uGAName) {
         this.uGAName = uGAName;
     }
-
 
     public String getDomain() {
         return this.domain;
@@ -94,6 +99,14 @@ public class AppleUGAAInfo {
     }
 
 
+    public List<UGAATask> getTaskSet() {
+        return this.taskSet;
+    }
+
+    public void setTaskSet(List<UGAATask> taskSet) {
+        this.taskSet = taskSet;
+    }
+
     public String getChargeType() {
         return this.chargeType;
     }
@@ -102,7 +115,6 @@ public class AppleUGAAInfo {
         this.chargeType = chargeType;
     }
 
-
     public String getCreateTime() {
         return this.createTime;
     }
@@ -110,7 +122,6 @@ public class AppleUGAAInfo {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
-
 
     public String getExpireTime() {
         return this.expireTime;

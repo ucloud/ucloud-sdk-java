@@ -10,7 +10,7 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 /**
  * @Description : PATHX 默认客户端接口实现
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClient {
     public DefaultPATHXClient(PATHXConfig config) {
@@ -411,6 +411,22 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     public void deletePathXSSL(DeletePathXSSLParam param,
                                UcloudHandler<DeletePathXSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeletePathXSSLResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public ModifyUGANameResult modifyUGAName(ModifyUGANameParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUGANameResult.class);
+        return (ModifyUGANameResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void modifyUGAName(ModifyUGANameParam param,
+                              UcloudHandler<ModifyUGANameResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUGANameResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {

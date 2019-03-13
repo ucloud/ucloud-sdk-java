@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 子线路 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class LineDetail {
     /**
@@ -44,7 +44,6 @@ public class LineDetail {
         this.lineFrom = lineFrom;
     }
 
-
     public String getLineTo() {
         return this.lineTo;
     }
@@ -52,7 +51,6 @@ public class LineDetail {
     public void setLineTo(String lineTo) {
         this.lineTo = lineTo;
     }
-
 
     public String getLineId() {
         return this.lineId;
@@ -62,7 +60,6 @@ public class LineDetail {
         this.lineId = lineId;
     }
 
-
     public String getLineFromName() {
         return this.lineFromName;
     }
@@ -70,7 +67,6 @@ public class LineDetail {
     public void setLineFromName(String lineFromName) {
         this.lineFromName = lineFromName;
     }
-
 
     public String getLineToName() {
         return this.lineToName;

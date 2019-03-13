@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取GlobalSSH出入带宽数据 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetGlobalSSHMetricResult extends BaseResponseResult {
     /**
@@ -18,11 +18,5 @@ public class GetGlobalSSHMetricResult extends BaseResponseResult {
     @SerializedName("Metrics")
     private List<GlobalSSHMetric> metrics;
 
-    public List<GlobalSSHMetric> getMetrics() {
-        return metrics;
-    }
 
-    public void setMetrics(List<GlobalSSHMetric> metrics) {
-        this.metrics = metrics;
-    }
 }

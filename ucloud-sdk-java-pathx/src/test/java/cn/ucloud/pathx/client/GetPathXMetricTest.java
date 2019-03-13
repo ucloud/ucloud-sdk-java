@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetPathXMetricParam;
 import cn.ucloud.pathx.model.GetPathXMetricResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetPathXMetric 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetPathXMetricTest {
 
@@ -34,8 +33,7 @@ public class GetPathXMetricTest {
         Integer endTime = 1;
         String resourceType = "cn-sh2";
         String lineId = "cn-sh2";
-        String metricNames = "";
-        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId, metricNames);
+        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId);
         param.setProjectId("org-izug1m");
     }
 
@@ -50,27 +48,4 @@ public class GetPathXMetricTest {
         }
     }
 
-    @Test
-    public void getPathXMetricCallback() {
-        client.getPathXMetric(param, new UcloudHandler
-                <GetPathXMetricResult>() {
-            @Override
-            public Object success(GetPathXMetricResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetPathXMetricResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

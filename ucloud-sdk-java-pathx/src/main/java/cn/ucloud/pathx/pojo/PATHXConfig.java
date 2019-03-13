@@ -6,7 +6,7 @@ import cn.ucloud.common.pojo.UcloudConfig;
 /**
  * @Description : PATHX 配置类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class PATHXConfig extends UcloudConfig {
 

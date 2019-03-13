@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : Describle PathX SSL 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class PathXSSLSet {
     /**
@@ -46,7 +46,6 @@ public class PathXSSLSet {
         this.sSLId = sSLId;
     }
 
-
     public String getsSLName() {
         return this.sSLName;
     }
@@ -54,7 +53,6 @@ public class PathXSSLSet {
     public void setsSLName(String sSLName) {
         this.sSLName = sSLName;
     }
-
 
     public String getsSLMD5() {
         return this.sSLMD5;
@@ -64,13 +62,21 @@ public class PathXSSLSet {
         this.sSLMD5 = sSLMD5;
     }
 
-
     public Integer getCreateTime() {
         return this.createTime;
     }
 
     public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
+    }
+
+
+    public List<SSLBindedTargetSet> getsSLBindedTargetSet() {
+        return this.sSLBindedTargetSet;
+    }
+
+    public void setsSLBindedTargetSet(List<SSLBindedTargetSet> sSLBindedTargetSet) {
+        this.sSLBindedTargetSet = sSLBindedTargetSet;
     }
 
 

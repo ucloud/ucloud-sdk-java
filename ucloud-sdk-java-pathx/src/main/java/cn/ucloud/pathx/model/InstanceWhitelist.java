@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : 实例白名单规则 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class InstanceWhitelist {
     /**
@@ -29,6 +29,15 @@ public class InstanceWhitelist {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+
+    public List<Whitelist> getRuleSet() {
+        return this.ruleSet;
+    }
+
+    public void setRuleSet(List<Whitelist> ruleSet) {
+        this.ruleSet = ruleSet;
     }
 
 

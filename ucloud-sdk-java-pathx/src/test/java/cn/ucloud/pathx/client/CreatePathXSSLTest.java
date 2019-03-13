@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.CreatePathXSSLParam;
 import cn.ucloud.pathx.model.CreatePathXSSLResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.CreatePathXSSL 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreatePathXSSLTest {
 
@@ -45,27 +44,4 @@ public class CreatePathXSSLTest {
         }
     }
 
-    @Test
-    public void createPathXSSLCallback() {
-        client.createPathXSSL(param, new UcloudHandler
-                <CreatePathXSSLResult>() {
-            @Override
-            public Object success(CreatePathXSSLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(CreatePathXSSLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

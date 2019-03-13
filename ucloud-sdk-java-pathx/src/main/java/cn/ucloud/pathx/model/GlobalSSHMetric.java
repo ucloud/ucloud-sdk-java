@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : GlobalSSH一段时间内的带宽监控数据 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GlobalSSHMetric {
     /**
@@ -22,19 +22,23 @@ public class GlobalSSHMetric {
     @SerializedName("NetworkIn")
     private List<MatricPoint> networkIn;
 
+
     public List<MatricPoint> getNetworkOut() {
-        return networkOut;
+        return this.networkOut;
     }
 
     public void setNetworkOut(List<MatricPoint> networkOut) {
         this.networkOut = networkOut;
     }
 
+
     public List<MatricPoint> getNetworkIn() {
-        return networkIn;
+        return this.networkIn;
     }
 
     public void setNetworkIn(List<MatricPoint> networkIn) {
         this.networkIn = networkIn;
     }
+
+
 }

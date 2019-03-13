@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 /**
  * @Description : 修改GlobalSSH备注 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class ModifyGlobalSSHRemarkParam extends BaseRequestParam {
     /**

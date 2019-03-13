@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 /**
  * @Description : 查询UPath的监控模板 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribeUPathTemplateParam extends BaseRequestParam {
     /**

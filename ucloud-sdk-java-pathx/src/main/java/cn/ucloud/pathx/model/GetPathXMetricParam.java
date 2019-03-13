@@ -5,13 +5,12 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 
 /**
  * @Description : 获取全球加速监控信息 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetPathXMetricParam extends BaseRequestParam {
     /**
@@ -32,20 +31,7 @@ public class GetPathXMetricParam extends BaseRequestParam {
     @UcloudParam("EndTime")
     @NotNull(message = "endTime can not be null")
     private Integer endTime;
-
-    /**
-     * 查询的监控项，以逗号分隔，拼接成一个字符串。目前仅允许一下内容：
-     * NetworkOut:出口带宽，
-     * NetworkIn:入口带宽，
-     * NetworkOutUsage:出口使用率，
-     * NetworkInUsage:入口使用率，
-     * TCPDelay:tcp延迟,
-     * InputRetransmitRate：输入重传率，
-     * OutputRetransmitRate：输出重传率；
-     * TCPConNum：tcp连接数
-     */
-    private String metricNames;
-
+    // TODO 需要人工接入 GetPathXMetric =》 MetricName.n
     /**
      * upath:加速线路,uga:加速实例
      */
@@ -66,25 +52,17 @@ public class GetPathXMetricParam extends BaseRequestParam {
             , Integer endTime
             , String resourceType
             , String lineId
-            , String metricNames
     ) {
         super("GetPathXMetric");
         this.projectId = projectId;
         this.resourceId = resourceId;
         this.beginTime = beginTime;
         this.endTime = endTime;
+        // TODO 需要人工接入 GetPathXMetric =》 MetricName.n is required
         this.resourceType = resourceType;
         this.lineId = lineId;
-        this.metricNames = metricNames;
     }
 
-    public String getMetricNames() {
-        return metricNames;
-    }
-
-    public void setMetricNames(String metricNames) {
-        this.metricNames = metricNames;
-    }
 
     public String getResourceId() {
         return this.resourceId;

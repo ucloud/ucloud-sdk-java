@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : 全球加速实例信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UGAAInfo {
     /**
@@ -16,6 +16,11 @@ public class UGAAInfo {
      */
     @SerializedName("UGAId")
     private String uGAId;
+    /**
+     * 流量转发方式，包括L4、L7
+     */
+    @SerializedName("ForwardType")
+    private String forwardType;
     /**
      * 全球加速cname
      */
@@ -61,6 +66,13 @@ public class UGAAInfo {
         this.uGAId = uGAId;
     }
 
+    public String getForwardType() {
+        return this.forwardType;
+    }
+
+    public void setForwardType(String forwardType) {
+        this.forwardType = forwardType;
+    }
 
     public String getcName() {
         return this.cName;
@@ -70,6 +82,13 @@ public class UGAAInfo {
         this.cName = cName;
     }
 
+    public List<String> getiPList() {
+        return this.iPList;
+    }
+
+    public void setiPList(List<String> iPList) {
+        this.iPList = iPList;
+    }
 
     public String getuGAName() {
         return this.uGAName;
@@ -79,7 +98,6 @@ public class UGAAInfo {
         this.uGAName = uGAName;
     }
 
-
     public String getDomain() {
         return this.domain;
     }
@@ -88,13 +106,30 @@ public class UGAAInfo {
         this.domain = domain;
     }
 
-
     public String getLocation() {
         return this.location;
     }
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+
+    public List<UPathSet> getuPathSet() {
+        return this.uPathSet;
+    }
+
+    public void setuPathSet(List<UPathSet> uPathSet) {
+        this.uPathSet = uPathSet;
+    }
+
+
+    public List<UGAATask> getTaskSet() {
+        return this.taskSet;
+    }
+
+    public void setTaskSet(List<UGAATask> taskSet) {
+        this.taskSet = taskSet;
     }
 
 

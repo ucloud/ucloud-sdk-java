@@ -2,18 +2,14 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.common.pojo.Param;
 
-import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * @Description : 解绑PathX SSL 证书 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UnBindPathXSSLParam extends BaseRequestParam {
     /**
@@ -28,46 +24,18 @@ public class UnBindPathXSSLParam extends BaseRequestParam {
     @UcloudParam("SSLId")
     @NotEmpty(message = "sSLId can not be empty")
     private String sSLId;
+    // TODO 需要人工接入 UnBindPathXSSL =》 Port.n
 
-    /**
-     * 解绑SSL证书的端口。Port.0 Port.1格式 端口错误则解绑失败。
-     */
-    private List<Integer> ports;
 
     public UnBindPathXSSLParam(String uGAId
-            , String sSLId, List<Integer> ports
+            , String sSLId
     ) {
         super("UnBindPathXSSL");
         this.uGAId = uGAId;
         this.sSLId = sSLId;
-        this.ports = ports;
+        // TODO 需要人工接入 UnBindPathXSSL =》 Port.n is required
     }
 
-    @UcloudParam("ports")
-    public List<Param> checkHTTPSPorts() throws ValidationException {
-        List<Param> params = new ArrayList<>();
-        if (ports != null && !ports.isEmpty()) {
-            int size = ports.size();
-            for (int i = 0; i < size; i++) {
-                if (ports.get(i) == null) {
-                    throw new ValidationException(String.format("ports[%d] can not be null", i));
-                } else {
-                    params.add(new Param(String.format("Port.%d", i), ports.get(i)));
-                }
-            }
-        } else {
-            throw new ValidationException("ports can not be empty");
-        }
-        return params;
-    }
-
-    public List<Integer> getPorts() {
-        return ports;
-    }
-
-    public void setPorts(List<Integer> ports) {
-        this.ports = ports;
-    }
 
     public String getuGAId() {
         return this.uGAId;

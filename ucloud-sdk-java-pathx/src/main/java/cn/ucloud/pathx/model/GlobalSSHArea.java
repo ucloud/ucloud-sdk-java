@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : GlobalSSH覆盖地区,包括关联的UCloud机房信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GlobalSSHArea {
     /**
@@ -36,13 +36,20 @@ public class GlobalSSHArea {
         this.area = area;
     }
 
-
     public String getAreaCode() {
         return this.areaCode;
     }
 
     public void setAreaCode(String areaCode) {
         this.areaCode = areaCode;
+    }
+
+    public List<String> getRegionSet() {
+        return this.regionSet;
+    }
+
+    public void setRegionSet(List<String> regionSet) {
+        this.regionSet = regionSet;
     }
 
 

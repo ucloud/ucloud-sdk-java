@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.ModifyUPathNameParam;
 import cn.ucloud.pathx.model.ModifyUPathNameResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.ModifyUPathName 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class ModifyUPathNameTest {
 
@@ -46,27 +45,4 @@ public class ModifyUPathNameTest {
         }
     }
 
-    @Test
-    public void modifyUPathNameCallback() {
-        client.modifyUPathName(param, new UcloudHandler
-                <ModifyUPathNameResult>() {
-            @Override
-            public Object success(ModifyUPathNameResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ModifyUPathNameResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取GlobalSSH实例列表 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribeGlobalSSHInstanceResult extends BaseResponseResult {
     /**
@@ -17,6 +17,15 @@ public class DescribeGlobalSSHInstanceResult extends BaseResponseResult {
      */
     @SerializedName("InstanceSet")
     private List<GlobalSSHInfo> instanceSet;
+
+
+    public List<GlobalSSHInfo> getInstanceSet() {
+        return this.instanceSet;
+    }
+
+    public void setInstanceSet(List<GlobalSSHInfo> instanceSet) {
+        this.instanceSet = instanceSet;
+    }
 
 
 }

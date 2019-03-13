@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : uga信息中携带的upath信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UPathSet {
     /**
@@ -56,7 +56,6 @@ public class UPathSet {
         this.uPathName = uPathName;
     }
 
-
     public String getuPathId() {
         return this.uPathId;
     }
@@ -64,7 +63,6 @@ public class UPathSet {
     public void setuPathId(String uPathId) {
         this.uPathId = uPathId;
     }
-
 
     public String getBandwidth() {
         return this.bandwidth;
@@ -74,7 +72,6 @@ public class UPathSet {
         this.bandwidth = bandwidth;
     }
 
-
     public String getLineId() {
         return this.lineId;
     }
@@ -82,7 +79,6 @@ public class UPathSet {
     public void setLineId(String lineId) {
         this.lineId = lineId;
     }
-
 
     public String getLineFromName() {
         return this.lineFromName;
@@ -92,13 +88,21 @@ public class UPathSet {
         this.lineFromName = lineFromName;
     }
 
-
     public String getLineToName() {
         return this.lineToName;
     }
 
     public void setLineToName(String lineToName) {
         this.lineToName = lineToName;
+    }
+
+
+    public List<OutPublicIpInfo> getOutPublicIpList() {
+        return this.outPublicIpList;
+    }
+
+    public void setOutPublicIpList(List<OutPublicIpInfo> outPublicIpList) {
+        this.outPublicIpList = outPublicIpList;
     }
 
 

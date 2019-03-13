@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetGlobalSSHPriceParam;
 import cn.ucloud.pathx.model.GetGlobalSSHPriceResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetGlobalSSHPrice 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetGlobalSSHPriceTest {
 
@@ -45,27 +44,4 @@ public class GetGlobalSSHPriceTest {
         }
     }
 
-    @Test
-    public void getGlobalSSHPriceCallback() {
-        client.getGlobalSSHPrice(param, new UcloudHandler
-                <GetGlobalSSHPriceResult>() {
-            @Override
-            public Object success(GetGlobalSSHPriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetGlobalSSHPriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

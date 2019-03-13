@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetGlobalSSHMetricParam;
 import cn.ucloud.pathx.model.GetGlobalSSHMetricResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetGlobalSSHMetric 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetGlobalSSHMetricTest {
 
@@ -46,27 +45,4 @@ public class GetGlobalSSHMetricTest {
         }
     }
 
-    @Test
-    public void getGlobalSSHMetricCallback() {
-        client.getGlobalSSHMetric(param, new UcloudHandler
-                <GetGlobalSSHMetricResult>() {
-            @Override
-            public Object success(GetGlobalSSHMetricResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetGlobalSSHMetricResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }
