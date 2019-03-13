@@ -28,13 +28,4 @@ public class DescribeUFSVolumeUpgradePriceResult extends BaseResponseResult {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUFSVolumeUpgradePriceResult{" +
-                "price=" + price +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }
