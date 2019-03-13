@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.RevokeAccountPrivilegesParam;
 import cn.ucloud.udb.model.SwitchUDBInstanceToHAParam;
 import cn.ucloud.udb.model.SwitchUDBInstanceToHAResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +26,7 @@ public class SwitchUDBInstanceToHATest {
         param = new SwitchUDBInstanceToHAParam("cn-sh2", "udb-rfzhjps1");
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void switchUDBInstanceToHA() {
         try {

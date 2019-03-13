@@ -1,13 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.DeleteUDBParamGroupParam;
 import cn.ucloud.udb.model.DeleteUDBParamGroupResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -23,7 +22,7 @@ public class DeleteUDBParamGroupTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DeleteUDBParamGroupParam("cn-sh2", "cn-sh2-02",18921);
+        param = new DeleteUDBParamGroupParam("cn-sh2", "cn-sh2-02", 18921);
         param.setProjectId("org-izug1m");
     }
 

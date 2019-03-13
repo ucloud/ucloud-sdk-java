@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DescribeRecycleUDiskParam;
 import cn.ucloud.udisk.model.DescribeRecycleUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class DescribeRecycleUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void describeRecycleUDiskCallback() {
         client.describeRecycleUDisk(param, new UcloudHandler<DescribeRecycleUDiskResult>() {

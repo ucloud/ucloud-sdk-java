@@ -1,8 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DescribeUDBInstanceParam;
 import cn.ucloud.udb.model.EditUDBBackupBlacklistParam;
 import cn.ucloud.udb.model.EditUDBBackupBlacklistResult;
 import org.junit.Before;
@@ -11,7 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -29,10 +27,11 @@ public class EditUDBBackupBlacklistTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         List<EditUDBBackupBlacklistParam.Blacklist> blacklist = new ArrayList<>();
-        blacklist.add(new EditUDBBackupBlacklistParam.Blacklist("admin","%"));
-        param = new EditUDBBackupBlacklistParam("cn-sh2", "udb-h3q25faw",blacklist);
+        blacklist.add(new EditUDBBackupBlacklistParam.Blacklist("admin", "%"));
+        param = new EditUDBBackupBlacklistParam("cn-sh2", "udb-h3q25faw", blacklist);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void editUDBBackupBlacklist() {
         try {

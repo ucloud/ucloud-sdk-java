@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DeleteUDiskParam;
 import cn.ucloud.udisk.model.DeleteUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -28,6 +29,7 @@ public class DeleteUDiskTest {
         param.setProjectId("org-4nfe1i");
     }
 
+
     @Test
     public void deleteUDisk() {
         try {
@@ -38,6 +40,7 @@ public class DeleteUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void deleteUDiskCallback() {
         client.deleteUDisk(param, new UcloudHandler<DeleteUDiskResult>() {

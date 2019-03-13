@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.ModifyUDBInstanceNameParam;
 import cn.ucloud.udb.model.PromoteUDBInstanceToHAParam;
 import cn.ucloud.udb.model.PromoteUDBInstanceToHAResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

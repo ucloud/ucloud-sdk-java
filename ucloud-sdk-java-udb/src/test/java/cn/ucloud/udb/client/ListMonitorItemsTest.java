@@ -1,15 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.ListMonitorItemsParam;
 import cn.ucloud.udb.model.ListMonitorItemsResult;
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -22,8 +19,6 @@ public class ListMonitorItemsTest {
     private UDBClient client;
 
     private ListMonitorItemsParam param;
-
-
 
 
     @Before

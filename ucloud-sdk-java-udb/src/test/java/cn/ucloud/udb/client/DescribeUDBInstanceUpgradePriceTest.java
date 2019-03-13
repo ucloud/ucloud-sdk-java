@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceUpgradePriceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceUpgradePriceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -26,9 +24,10 @@ public class DescribeUDBInstanceUpgradePriceTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         param = new DescribeUDBInstanceUpgradePriceParam("cn-sh2", "udb-h3q25faw",
-                1000,30);
+                1000, 30);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void describeUDBInstanceUpgradePrice() {
         try {

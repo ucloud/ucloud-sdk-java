@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -26,17 +28,17 @@ public class ExtendUFSVolumeTest {
         client = new DefaultUFSClient(new UFSConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ExtendUFSVolumeParam("cn-bj2", "ufs-qx1waw", 2 * 1024);
-        param.setProjectId("org-4nfe1i");
+        param = new ExtendUFSVolumeParam("cn-bj2", "ufs-vnc50gpn", 2 * 1024);
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void extendUFSVolume() {
         try {
-            ExtendUFSVolumeResult describeUFSVolumeResult = client.extendUFSVolume(param);
-            System.out.println(describeUFSVolumeResult);
+            ExtendUFSVolumeResult result = client.extendUFSVolume(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

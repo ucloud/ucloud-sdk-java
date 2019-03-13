@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DescribeUDBTypeParam;
 import cn.ucloud.udb.model.FetchUDBInstanceEarliestRecoverTimeParam;
 import cn.ucloud.udb.model.FetchUDBInstanceEarliestRecoverTimeResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +26,7 @@ public class FetchUDBInstanceEarliestRecoverTimeTest {
         param = new FetchUDBInstanceEarliestRecoverTimeParam("cn-sh2", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void fetchUDBInstanceEarliestRecoverTime() {
         try {

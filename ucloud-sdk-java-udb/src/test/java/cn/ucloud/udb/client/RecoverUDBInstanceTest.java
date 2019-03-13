@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.PromoteUDBSlaveParam;
 import cn.ucloud.udb.model.RecoverUDBInstanceParam;
 import cn.ucloud.udb.model.RecoverUDBInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -22,12 +20,10 @@ public class RecoverUDBInstanceTest {
     private RecoverUDBInstanceParam param;
 
 
-
-
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new RecoverUDBInstanceParam("cn-sh2", "udb-5qoh3hru","udb-zahyyi04",1551993284);
+        param = new RecoverUDBInstanceParam("cn-sh2", "udb-5qoh3hru", "udb-zahyyi04", 1551993284);
         param.setProjectId("org-izug1m");
     }
 

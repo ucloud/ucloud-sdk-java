@@ -1,13 +1,12 @@
 package cn.ucloud.udb.client;
 
 
-import cn.ucloud.udb.model.EnableUDBRWSplittingParam;
 import cn.ucloud.udb.model.GrantAccountPrivilegesParam;
 import cn.ucloud.udb.model.GrantAccountPrivilegesResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,7 +24,7 @@ public class GrantAccountPrivilegesTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         param = new GrantAccountPrivilegesParam("cn-sh2", "sdk-java",
-                "sdk-java-test","udb-h3q25faw");
+                "sdk-java-test", "udb-h3q25faw");
         param.setProjectId("org-izug1m");
     }
 

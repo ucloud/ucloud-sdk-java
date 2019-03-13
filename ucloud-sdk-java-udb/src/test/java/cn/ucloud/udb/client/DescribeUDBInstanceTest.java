@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DeleteUDBBackupParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,9 +23,10 @@ public class DescribeUDBInstanceTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DescribeUDBInstanceParam("cn-sh2", "NOSQL",10,0);
+        param = new DescribeUDBInstanceParam("cn-sh2", "NOSQL", 10, 0);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void describeUDBCInstance() {
         try {

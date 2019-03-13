@@ -1,13 +1,12 @@
 package cn.ucloud.udb.client;
 
 
-import cn.ucloud.udb.model.DescribeUDBInstanceUpgradePriceParam;
 import cn.ucloud.udb.model.EnableUDBRWSplittingParam;
 import cn.ucloud.udb.model.EnableUDBRWSplittingResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

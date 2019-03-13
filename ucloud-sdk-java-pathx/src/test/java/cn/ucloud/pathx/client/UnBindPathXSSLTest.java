@@ -2,7 +2,6 @@ package cn.ucloud.pathx.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.pathx.model.UnBindPathXSSLParam;
 import cn.ucloud.pathx.model.UnBindPathXSSLResult;
 import cn.ucloud.pathx.pojo.PATHXConfig;
@@ -35,7 +34,7 @@ public class UnBindPathXSSLTest {
         String uGAId = "cn-sh2";
         String sSLId = "cn-sh2";
         List<Integer> ports = new ArrayList<>();
-        param = new UnBindPathXSSLParam(uGAId, sSLId,ports);
+        param = new UnBindPathXSSLParam(uGAId, sSLId, ports);
         param.setProjectId("org-izug1m");
     }
 

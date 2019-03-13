@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.SwitchUDBInstanceToHAParam;
 import cn.ucloud.udb.model.UpdateUDBParamGroupParam;
 import cn.ucloud.udb.model.UpdateUDBParamGroupResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -24,8 +22,8 @@ public class UpdateUDBParamGroupTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new UpdateUDBParamGroupParam("cn-sh2", "cn-sh2-02",18942,
-                "net.http.enabled","true");
+        param = new UpdateUDBParamGroupParam("cn-sh2", "cn-sh2-02", 18942,
+                "net.http.enabled", "true");
         param.setProjectId("org-izug1m");
     }
 

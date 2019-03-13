@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.DeleteDBTransferTaskParam;
 import cn.ucloud.udb.model.DeleteDBTransferTaskResult;
 import org.junit.Before;

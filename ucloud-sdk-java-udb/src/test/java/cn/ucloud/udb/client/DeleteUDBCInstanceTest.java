@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.DeleteUDBCInstanceParam;
 import cn.ucloud.udb.model.DeleteUDBCInstanceResult;
 import org.junit.Before;

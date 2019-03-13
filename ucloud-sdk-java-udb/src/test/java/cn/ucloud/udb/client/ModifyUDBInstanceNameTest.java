@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.ListMonitorItemsParam;
 import cn.ucloud.udb.model.ModifyUDBInstanceNameParam;
 import cn.ucloud.udb.model.ModifyUDBInstanceNameResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -22,12 +20,10 @@ public class ModifyUDBInstanceNameTest {
     private ModifyUDBInstanceNameParam param;
 
 
-
-
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ModifyUDBInstanceNameParam("cn-sh2", "udb-h3q25faw","modify-name");
+        param = new ModifyUDBInstanceNameParam("cn-sh2", "udb-h3q25faw", "modify-name");
         param.setProjectId("org-izug1m");
     }
 

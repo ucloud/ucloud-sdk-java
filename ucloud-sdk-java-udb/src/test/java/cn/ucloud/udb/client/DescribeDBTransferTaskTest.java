@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.BackupUDBInstanceParam;
 import cn.ucloud.udb.model.DescribeDBTransferTaskParam;
 import cn.ucloud.udb.model.DescribeDBTransferTaskResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,9 +23,10 @@ public class DescribeDBTransferTaskTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DescribeDBTransferTaskParam("cn-sh2", "cn-sh2-02",10,0);
+        param = new DescribeDBTransferTaskParam("cn-sh2", "cn-sh2-02", 10, 0);
         param.setProjectId("org-izug1m");
     }
+
     @Test
     public void describeDBTransferTask() {
         try {

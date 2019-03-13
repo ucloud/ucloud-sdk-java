@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DeleteSqlserverDatabaseParam;
 import cn.ucloud.udb.model.DescribeUDBCInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBCInstanceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

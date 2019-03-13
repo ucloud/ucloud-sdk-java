@@ -7,6 +7,8 @@ import cn.ucloud.ufs.pojo.UFSConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -24,15 +26,15 @@ public class CreateUFSVolumeTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new CreateUFSVolumeParam("cn-bj2",1024);
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-izug1m");
     }
     @Test
     public void createUFSVolume() {
         try {
-            CreateUFSVolumeResult ufsVolume = client.createUFSVolume(param);
-            System.out.println(ufsVolume);
+            CreateUFSVolumeResult result = client.createUFSVolume(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.CreateUDBInstanceParam;
 import cn.ucloud.udb.model.CreateUDBInstanceResult;
 import org.junit.Before;

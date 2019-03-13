@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DeleteUDBBackupParam;
 import cn.ucloud.udb.model.DescribeUDBCPriceParam;
 import cn.ucloud.udb.model.DescribeUDBCPriceResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -28,6 +26,7 @@ public class DescribeUDBCPriceTest {
         param = new DescribeUDBCPriceParam("cn-sh2", "cn-sh2-02");
         param.setProjectId("org-izug1m");
     }
+
     // todo 测试  没有权限
     @Test
     public void describeUDBCPrice() {

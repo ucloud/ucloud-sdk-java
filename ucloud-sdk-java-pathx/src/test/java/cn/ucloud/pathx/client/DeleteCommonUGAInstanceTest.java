@@ -2,7 +2,6 @@ package cn.ucloud.pathx.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.pathx.model.DeleteCommonUGAInstanceParam;
 import cn.ucloud.pathx.model.DeleteCommonUGAInstanceResult;
 import cn.ucloud.pathx.pojo.PATHXConfig;

@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DeleteUDiskSnapshotParam;
 import cn.ucloud.udisk.model.DeleteUDiskSnapshotResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -38,6 +39,7 @@ public class DeleteUDiskSnapshotTest {
         }
     }
 
+    @Ignore
     @Test
     public void deleteUDiskSnapshotCallback() {
         client.deleteUDiskSnapshot(param, new UcloudHandler<DeleteUDiskSnapshotResult>() {

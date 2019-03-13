@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DescribeUDiskParam;
 import cn.ucloud.udisk.model.DescribeUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class DescribeUDiskTest {
         }
     }
 
+    @Ignore
     @Test
     public void describeUDiskCallback() {
         client.describeUDisk(param, new UcloudHandler<DescribeUDiskResult>() {

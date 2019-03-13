@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.CreateSqlserverDatabaseParam;
 import cn.ucloud.udb.model.CreateSqlserverDatabaseResult;
 import org.junit.Before;

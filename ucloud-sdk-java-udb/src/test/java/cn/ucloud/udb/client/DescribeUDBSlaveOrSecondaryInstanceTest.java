@@ -1,7 +1,6 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
 import cn.ucloud.udb.model.DescribeUDBSlaveOrSecondaryInstanceParam;
 import cn.ucloud.udb.model.DescribeUDBSlaveOrSecondaryInstanceResult;
 import org.junit.Before;

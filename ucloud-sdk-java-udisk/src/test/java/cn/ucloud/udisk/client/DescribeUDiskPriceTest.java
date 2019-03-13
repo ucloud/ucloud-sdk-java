@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DescribeUDiskPriceParam;
 import cn.ucloud.udisk.model.DescribeUDiskPriceResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -40,6 +41,7 @@ public class DescribeUDiskPriceTest {
         }
     }
 
+    @Ignore
     @Test
     public void describeUDiskPriceCallback() {
        client.describeUDiskPrice(param, new UcloudHandler<DescribeUDiskPriceResult>() {

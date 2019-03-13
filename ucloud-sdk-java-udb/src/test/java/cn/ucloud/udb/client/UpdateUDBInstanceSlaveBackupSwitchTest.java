@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.RevokeAccountPrivilegesParam;
 import cn.ucloud.udb.model.UpdateUDBInstanceSlaveBackupSwitchParam;
 import cn.ucloud.udb.model.UpdateUDBInstanceSlaveBackupSwitchResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :

@@ -1,14 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-
-import cn.ucloud.udb.model.DescribeUDBInstanceParam;
 import cn.ucloud.udb.model.ExtractUDBParamGroupParam;
 import cn.ucloud.udb.model.ExtractUDBParamGroupResult;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -25,7 +23,7 @@ public class ExtractUDBParamGroupTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ExtractUDBParamGroupParam("cn-sh2", "cn-sh2-02",1);
+        param = new ExtractUDBParamGroupParam("cn-sh2", "cn-sh2-02", 1);
         param.setProjectId("org-izug1m");
     }
 
