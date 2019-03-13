@@ -6,7 +6,10 @@ import cn.ucloud.udisk.model.RecoverUDiskParam;
 import cn.ucloud.udisk.model.RecoverUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @description:
@@ -32,30 +35,31 @@ public class RecoverUDiskTest {
     public void recoverUDisk() {
         try {
             RecoverUDiskResult result = client.recoverUDisk(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void recoverUDiskCallback() {
         client.recoverUDisk(param, new UcloudHandler<RecoverUDiskResult>() {
             @Override
             public Object success(RecoverUDiskResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(RecoverUDiskResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         }, false);

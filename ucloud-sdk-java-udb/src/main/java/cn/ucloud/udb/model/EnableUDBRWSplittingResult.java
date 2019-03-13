@@ -19,8 +19,22 @@ public class EnableUDBRWSplittingResult extends BaseResponseResult {
     /**
      * 读写分离访问IP
      */
-    @SerializedName("RWIP")
+    @SerializedName("RWIp")
     private String rwIP;
+
+    /**
+     * 读写分离ID
+     */
+    @SerializedName("RWId")
+    private String rwId;
+
+    public String getRwId() {
+        return rwId;
+    }
+
+    public void setRwId(String rwId) {
+        this.rwId = rwId;
+    }
 
     public String getMasterDBId() {
         return masterDBId;

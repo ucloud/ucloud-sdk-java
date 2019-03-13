@@ -18,6 +18,11 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
     public static class UDBSlaveInstance {
 
         /**
+         * DB实例所在可用区
+         */
+        @SerializedName("Zone")
+        private String zone;
+        /**
          * DB实例id
          */
         @SerializedName("DBId")
@@ -52,6 +57,12 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         private String adminUser;
 
         /**
+         * 实例类型
+         */
+        @SerializedName("InstanceType")
+        private String instanceType;
+
+        /**
          * DB实例虚ip
          */
         @SerializedName("VirtualIP")
@@ -60,8 +71,8 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         /**
          * DB实例虚ip的mac地址
          */
-        @SerializedName("VirtualMAC")
-        private String virtualMAC;
+        @SerializedName("VirtualIPMac")
+        private String virtualIPMAC;
 
         /**
          * 端口号，mysql默认3306，mongodb默认27017
@@ -174,25 +185,25 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
          * DB实例磁盘已使用空间，单位GB
          */
         @SerializedName("DiskUsedSize")
-        private Integer diskUsedSize;
+        private Double diskUsedSize;
 
         /**
          * DB实例数据文件大小，单位GB
          */
         @SerializedName("DataFileSize")
-        private Integer dataFileSize;
+        private Double dataFileSize;
 
         /**
          * DB实例系统文件大小，单位GB
          */
         @SerializedName("SystemFileSize")
-        private Integer systemFileSize;
+        private Double systemFileSize;
 
         /**
          * DB实例日志文件大小，单位GB
          */
         @SerializedName("LogFileSize")
-        private Integer logFileSize;
+        private Double logFileSize;
 
         /**
          * 备份日期标记位。共7位,每一位为一周中一天的备份情况
@@ -210,6 +221,122 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
          */
         @SerializedName("InstanceMode")
         private String instanceMode;
+
+        /**
+         * 当DB类型为mongodb时，返回该实例所在集群中的角色
+         */
+        @SerializedName("ClusterRole")
+        private String clusterRole;
+
+        /**
+         * 实例类型ID
+         */
+        @SerializedName("InstanceTypeId")
+        private Integer instanceTypeId;
+
+
+        /**
+         * 副本集合ID
+         */
+        @SerializedName("ReplicateSetId")
+        private String replicateSetId;
+
+        /**
+         * 子网ID
+         */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /**
+         * 业务组
+         */
+        @SerializedName("Tag")
+        private String tag;
+
+        /**
+         * VPC id
+         */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /**
+         * UDBC id
+         */
+        @SerializedName("UDBCId")
+        private String udbcId;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        public String getUdbcId() {
+            return udbcId;
+        }
+
+        public void setUdbcId(String udbcId) {
+            this.udbcId = udbcId;
+        }
+
+        public String getVpcId() {
+            return vpcId;
+        }
+
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getReplicateSetId() {
+            return replicateSetId;
+        }
+
+        public void setReplicateSetId(String replicateSetId) {
+            this.replicateSetId = replicateSetId;
+        }
+
+        public Integer getInstanceTypeId() {
+            return instanceTypeId;
+        }
+
+        public void setInstanceTypeId(Integer instanceTypeId) {
+            this.instanceTypeId = instanceTypeId;
+        }
+
+
+        public String getInstanceType() {
+            return instanceType;
+        }
+
+        public void setInstanceType(String instanceType) {
+            this.instanceType = instanceType;
+        }
+
+        public String getClusterRole() {
+            return clusterRole;
+        }
+
+        public void setClusterRole(String clusterRole) {
+            this.clusterRole = clusterRole;
+        }
 
         public String getDbId() {
             return dbId;
@@ -259,12 +386,12 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
             this.virtualIP = virtualIP;
         }
 
-        public String getVirtualMAC() {
-            return virtualMAC;
+        public String getVirtualIPMAC() {
+            return virtualIPMAC;
         }
 
-        public void setVirtualMAC(String virtualMAC) {
-            this.virtualMAC = virtualMAC;
+        public void setVirtualIPMAC(String virtualIPMAC) {
+            this.virtualIPMAC = virtualIPMAC;
         }
 
         public Integer getPort() {
@@ -395,35 +522,35 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
             this.role = role;
         }
 
-        public Integer getDiskUsedSize() {
+        public Double getDiskUsedSize() {
             return diskUsedSize;
         }
 
-        public void setDiskUsedSize(Integer diskUsedSize) {
+        public void setDiskUsedSize(Double diskUsedSize) {
             this.diskUsedSize = diskUsedSize;
         }
 
-        public Integer getDataFileSize() {
+        public Double getDataFileSize() {
             return dataFileSize;
         }
 
-        public void setDataFileSize(Integer dataFileSize) {
+        public void setDataFileSize(Double dataFileSize) {
             this.dataFileSize = dataFileSize;
         }
 
-        public Integer getSystemFileSize() {
+        public Double getSystemFileSize() {
             return systemFileSize;
         }
 
-        public void setSystemFileSize(Integer systemFileSize) {
+        public void setSystemFileSize(Double systemFileSize) {
             this.systemFileSize = systemFileSize;
         }
 
-        public Integer getLogFileSize() {
+        public Double getLogFileSize() {
             return logFileSize;
         }
 
-        public void setLogFileSize(Integer logFileSize) {
+        public void setLogFileSize(Double logFileSize) {
             this.logFileSize = logFileSize;
         }
 
@@ -458,7 +585,7 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
          * 包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter
          * ，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式
          */
-        @SerializedName("CluserRole")
+        @SerializedName("ClusterRole")
         private String clusterRole;
         /**
          * DB实例id
@@ -503,8 +630,8 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         /**
          * DB实例虚ip的mac地址
          */
-        @SerializedName("VirtualMAC")
-        private String virtualMAC;
+        @SerializedName("VirtualIPMac")
+        private String virtualIPMAC;
 
         /**
          * 端口号，mysql默认3306，mongodb默认27017
@@ -617,25 +744,25 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
          * DB实例磁盘已使用空间，单位GB
          */
         @SerializedName("DiskUsedSize")
-        private Integer diskUsedSize;
+        private Double diskUsedSize;
 
         /**
          * DB实例数据文件大小，单位GB
          */
         @SerializedName("DataFileSize")
-        private Integer dataFileSize;
+        private Double dataFileSize;
 
         /**
          * DB实例系统文件大小，单位GB
          */
         @SerializedName("SystemFileSize")
-        private Integer systemFileSize;
+        private Double systemFileSize;
 
         /**
          * DB实例日志文件大小，单位GB
          */
         @SerializedName("LogFileSize")
-        private Integer logFileSize;
+        private Double logFileSize;
 
         /**
          * 备份日期标记位。共7位,每一位为一周中一天的备份情况
@@ -665,6 +792,104 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
          */
         @SerializedName("BackupZone")
         private String backupZone;
+
+        /**
+         * 实例类型
+         */
+        @SerializedName("InstanceType")
+        private String instanceType;
+
+        /**
+         * 实例类型ID
+         */
+        @SerializedName("InstanceTypeId")
+        private Integer instanceTypeId;
+
+        /**
+         * 副本集合ID
+         */
+        @SerializedName("ReplicateSetId")
+        private String replicateSetId;
+
+        /**
+         * 子网ID
+         */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /**
+         * 业务组
+         */
+        @SerializedName("Tag")
+        private String tag;
+
+        /**
+         * VPC id
+         */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /**
+         * UDBC id
+         */
+        @SerializedName("UDBCId")
+        private String udbcId;
+
+        public String getUdbcId() {
+            return udbcId;
+        }
+
+        public void setUdbcId(String udbcId) {
+            this.udbcId = udbcId;
+        }
+
+        public String getVpcId() {
+            return vpcId;
+        }
+
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getReplicateSetId() {
+            return replicateSetId;
+        }
+
+        public void setReplicateSetId(String replicateSetId) {
+            this.replicateSetId = replicateSetId;
+        }
+
+        public Integer getInstanceTypeId() {
+            return instanceTypeId;
+        }
+
+        public void setInstanceTypeId(Integer instanceTypeId) {
+            this.instanceTypeId = instanceTypeId;
+        }
+
+        public String getInstanceType() {
+            return instanceType;
+        }
+
+        public void setInstanceType(String instanceType) {
+            this.instanceType = instanceType;
+        }
 
         public String getZone() {
             return zone;
@@ -730,12 +955,12 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
             this.virtualIP = virtualIP;
         }
 
-        public String getVirtualMAC() {
-            return virtualMAC;
+        public String getVirtualIPMAC() {
+            return virtualIPMAC;
         }
 
-        public void setVirtualMAC(String virtualMAC) {
-            this.virtualMAC = virtualMAC;
+        public void setVirtualIPMAC(String virtualIPMAC) {
+            this.virtualIPMAC = virtualIPMAC;
         }
 
         public Integer getPort() {
@@ -866,35 +1091,35 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
             this.role = role;
         }
 
-        public Integer getDiskUsedSize() {
+        public Double getDiskUsedSize() {
             return diskUsedSize;
         }
 
-        public void setDiskUsedSize(Integer diskUsedSize) {
+        public void setDiskUsedSize(Double diskUsedSize) {
             this.diskUsedSize = diskUsedSize;
         }
 
-        public Integer getDataFileSize() {
+        public Double getDataFileSize() {
             return dataFileSize;
         }
 
-        public void setDataFileSize(Integer dataFileSize) {
+        public void setDataFileSize(Double dataFileSize) {
             this.dataFileSize = dataFileSize;
         }
 
-        public Integer getSystemFileSize() {
+        public Double getSystemFileSize() {
             return systemFileSize;
         }
 
-        public void setSystemFileSize(Integer systemFileSize) {
+        public void setSystemFileSize(Double systemFileSize) {
             this.systemFileSize = systemFileSize;
         }
 
-        public Integer getLogFileSize() {
+        public Double getLogFileSize() {
             return logFileSize;
         }
 
-        public void setLogFileSize(Integer logFileSize) {
+        public void setLogFileSize(Double logFileSize) {
             this.logFileSize = logFileSize;
         }
 

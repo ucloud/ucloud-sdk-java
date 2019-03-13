@@ -45,7 +45,7 @@ public class CheckUDBEngineParam extends BaseRequestParam {
     public CheckUDBEngineParam(@NotEmpty(message = "region can not be empty") String region,
                                @NotEmpty(message = "dbId can not be empty") String dbId,
                                @NotEmpty(message = "engineType can not be empty") String engineType) {
-        super("CheckUDBEngineParam");
+        super("CheckUDBEngine");
         this.region = region;
         this.dbId = dbId;
         this.engineType = engineType;

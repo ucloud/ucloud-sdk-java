@@ -7,6 +7,8 @@ import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -30,9 +32,9 @@ public class AllocateUDPNTest {
     public void allocateUDPN() {
         try {
             AllocateUDPNResult allocateUDPNResult = client.AllocateUDPN(param);
-            System.out.println(allocateUDPNResult);
+            JSONComparator.jsonComparator(allocateUDPNResult);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -14,14 +14,14 @@ public class CreateUDBParamGroupResult extends BaseResponseResult {
      * 新配置参数组id
      */
     @SerializedName("GroupId")
-    private String groupId;
+    private Integer groupId;
 
 
-    public String getGroupId() {
+    public Integer getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(String groupId) {
+    public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
 }

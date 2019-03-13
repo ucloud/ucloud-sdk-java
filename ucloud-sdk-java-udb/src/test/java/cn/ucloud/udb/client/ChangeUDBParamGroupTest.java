@@ -1,16 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
 import cn.ucloud.udb.model.ChangeUDBParamGroupParam;
 import cn.ucloud.udb.model.ChangeUDBParamGroupResult;
-import com.google.gson.Gson;
-import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -30,13 +26,14 @@ public class ChangeUDBParamGroupTest {
         param.setProjectId("org-izug1m");
     }
 
+    // todo 测试
     @Test
     public void changeUDBParamGroup() {
         try {
             ChangeUDBParamGroupResult result = client.changeUDBParamGroup(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -45,27 +42,19 @@ public class ChangeUDBParamGroupTest {
         client.changeUDBParamGroup(param, new UcloudHandler<ChangeUDBParamGroupResult>() {
             @Override
             public Object success(ChangeUDBParamGroupResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(ChangeUDBParamGroupResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
         }, false);

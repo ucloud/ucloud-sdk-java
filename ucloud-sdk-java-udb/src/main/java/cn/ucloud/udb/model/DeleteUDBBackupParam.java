@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Description : 删除UDB实例备份 参数类
@@ -29,20 +30,19 @@ public class DeleteUDBBackupParam extends BaseRequestParam {
     /**
      * 备份id，可通过DescribeUDBBackup获得
      */
-    @NotEmpty(message = "backupId can not be empty")
+    @NotNull(message = "backupId can not be null")
     @UcloudParam("BackupId")
-    private String backupId;
+    private Integer backupId;
 
     /**
      * 跨可用区高可用备库所在可用区，参见［可用区列表］
      */
-    @NotEmpty(message = "backupZone can not be empty")
     @UcloudParam("BackupZone")
     private String backupZone;
 
     public DeleteUDBBackupParam(@NotEmpty(message = "region can not be empty") String region,
                                 @NotEmpty(message = "zone can not be empty") String zone,
-                                @NotEmpty(message = "backupId can not be empty") String backupId) {
+                                @NotNull(message = "backupId can not be null") Integer backupId) {
         super("DeleteUDBBackup");
         this.region = region;
         this.zone = zone;
@@ -65,11 +65,11 @@ public class DeleteUDBBackupParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public String getBackupId() {
+    public Integer getBackupId() {
         return backupId;
     }
 
-    public void setBackupId(String backupId) {
+    public void setBackupId(Integer backupId) {
         this.backupId = backupId;
     }
 

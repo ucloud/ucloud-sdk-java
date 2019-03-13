@@ -40,7 +40,7 @@ public class DescribeUDBInstanceUpgradePriceParam extends BaseRequestParam {
     /**
      * 内存限制(MB)
      */
-    @UcloudParam("Memory")
+    @UcloudParam("MemoryLimit")
     @NotNull(message = "memoryLimit can not be null")
     private Integer memoryLimit;
 
@@ -76,7 +76,7 @@ public class DescribeUDBInstanceUpgradePriceParam extends BaseRequestParam {
     @UcloudParam("SSDType")
     public List<Param> checkSSDType() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (useSSD) {
+        if (useSSD != null && useSSD) {
             if (ssdType == null) {
                 throw new ValidationException("ssdType can not be empty when useSSD is true");
             } else {

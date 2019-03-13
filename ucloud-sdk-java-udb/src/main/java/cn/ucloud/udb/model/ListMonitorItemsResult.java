@@ -1,6 +1,8 @@
 package cn.ucloud.udb.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import cn.ucloud.udb.json.AlarmRangeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -12,6 +14,41 @@ import java.util.List;
  **/
 public class ListMonitorItemsResult extends BaseResponseResult {
 
+    public static class AlarmRange{
+
+        @SerializedName("min")
+        private Integer min;
+
+        @SerializedName("max")
+        private Integer max;
+
+        private String value;
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        public Integer getMin() {
+            return min;
+        }
+
+        public void setMin(Integer min) {
+            this.min = min;
+        }
+
+        public Integer getMax() {
+            return max;
+        }
+
+        public void setMax(Integer max) {
+            this.max = max;
+        }
+    }
+
     public static class MetricInfo {
 
         /**
@@ -19,6 +56,12 @@ public class ListMonitorItemsResult extends BaseResponseResult {
          */
         @SerializedName("MetricName")
         private String metricName;
+
+        /**
+         * 指标ID
+         */
+        @SerializedName("MetricId")
+        private Integer metricId;
 
         /**
          * 单位
@@ -30,7 +73,7 @@ public class ListMonitorItemsResult extends BaseResponseResult {
          * 单位转换因子（1000/1024）
          */
         @SerializedName("ConversionFactor")
-        private String conversionFactor;
+        private Integer conversionFactor;
 
         /**
          * 数据类型
@@ -48,19 +91,20 @@ public class ListMonitorItemsResult extends BaseResponseResult {
          * 是否支持告警
          */
         @SerializedName("SupportAlarm")
-        private Boolean supportAlarm;
+        private String supportAlarm;
 
         /**
          * 告警设置范围
          */
+        @JsonAdapter(value = AlarmRangeAdapter.class)
         @SerializedName("AlarmRange")
-        private String alarmRange;
+        private AlarmRange alarmRange;
 
         /**
          * 数据上报频率
          */
         @SerializedName("Frequency")
-        private String frequency;
+        private Integer frequency;
 
         /**
          * 比较参数，可选GE,LE
@@ -84,11 +128,11 @@ public class ListMonitorItemsResult extends BaseResponseResult {
             this.unit = unit;
         }
 
-        public String getConversionFactor() {
+        public Integer getConversionFactor() {
             return conversionFactor;
         }
 
-        public void setConversionFactor(String conversionFactor) {
+        public void setConversionFactor(Integer conversionFactor) {
             this.conversionFactor = conversionFactor;
         }
 
@@ -108,27 +152,35 @@ public class ListMonitorItemsResult extends BaseResponseResult {
             this.metricGroup = metricGroup;
         }
 
-        public Boolean getSupportAlarm() {
+        public Integer getMetricId() {
+            return metricId;
+        }
+
+        public void setMetricId(Integer metricId) {
+            this.metricId = metricId;
+        }
+
+        public String getSupportAlarm() {
             return supportAlarm;
         }
 
-        public void setSupportAlarm(Boolean supportAlarm) {
+        public void setSupportAlarm(String supportAlarm) {
             this.supportAlarm = supportAlarm;
         }
 
-        public String getAlarmRange() {
+        public AlarmRange getAlarmRange() {
             return alarmRange;
         }
 
-        public void setAlarmRange(String alarmRange) {
+        public void setAlarmRange(AlarmRange alarmRange) {
             this.alarmRange = alarmRange;
         }
 
-        public String getFrequency() {
+        public Integer getFrequency() {
             return frequency;
         }
 
-        public void setFrequency(String frequency) {
+        public void setFrequency(Integer frequency) {
             this.frequency = frequency;
         }
 
@@ -145,7 +197,7 @@ public class ListMonitorItemsResult extends BaseResponseResult {
     /**
      * 指标信息集合  MetricInfo
      */
-    @SerializedName("DateSet")
+    @SerializedName("DataSet")
     private List<MetricInfo> metricInfos;
 
     public List<MetricInfo> getMetricInfos() {

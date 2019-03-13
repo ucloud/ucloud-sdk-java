@@ -3,13 +3,10 @@ package cn.ucloud.udb.client;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.udb.model.BackupUDBInstanceErrorLogParam;
 import cn.ucloud.udb.model.BackupUDBInstanceErrorLogResult;
-import com.google.gson.Gson;
-import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -34,9 +31,9 @@ public class BackupUDBInstanceErrorLogTest {
         BackupUDBInstanceErrorLogResult result = null;
         try {
             result = client.backupUDBInstanceErrorLog(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -45,34 +42,21 @@ public class BackupUDBInstanceErrorLogTest {
         client.backupUDBInstanceErrorLog(param, new UcloudHandler<BackupUDBInstanceErrorLogResult>() {
             @Override
             public Object success(BackupUDBInstanceErrorLogResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(BackupUDBInstanceErrorLogResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
-        });
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        }, false);
     }
 }

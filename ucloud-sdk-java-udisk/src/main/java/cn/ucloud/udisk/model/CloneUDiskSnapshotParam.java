@@ -46,7 +46,7 @@ public class CloneUDiskSnapshotParam extends BaseRequestParam {
      */
     @NotNull(message = "size can not be empty")
     @UcloudParam("Size")
-    private Integer size = 1;
+    private Integer size;
 
     /**
      * optional comment 快照描述

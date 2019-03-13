@@ -7,6 +7,8 @@ import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -29,10 +31,10 @@ public class GetUDPNLineListTest {
     @Test
     public void getUDPNLineList() {
         try {
-            GetUDPNLineListResult GetUDPNLineListResult = client.GetUDPNLineList(param);
-            System.out.println(GetUDPNLineListResult);
+            GetUDPNLineListResult result = client.GetUDPNLineList(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -3,11 +3,9 @@ package cn.ucloud.udb.client;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
 import cn.ucloud.udb.model.BackupUDBInstanceBinlogResult;
-import com.google.gson.Gson;
-import org.json.JSONException;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 
 import static junit.framework.TestCase.assertNull;
 
@@ -33,9 +31,9 @@ public class BackupUDBInstanceBinlogTest {
     public void backupUDBInstanceBinlog() {
         try {
             BackupUDBInstanceBinlogResult result = client.backupUDBInstanceBinlog(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -44,27 +42,19 @@ public class BackupUDBInstanceBinlogTest {
         client.backupUDBInstanceBinlog(param, new UcloudHandler<BackupUDBInstanceBinlogResult>() {
             @Override
             public Object success(BackupUDBInstanceBinlogResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(BackupUDBInstanceBinlogResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (JSONException e) {
-                    assertNull(e);
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                Assert.assertNull(e);
                 return null;
             }
         }, false);
