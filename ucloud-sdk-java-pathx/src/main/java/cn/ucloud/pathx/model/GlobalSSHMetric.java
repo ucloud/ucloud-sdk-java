@@ -22,5 +22,19 @@ public class GlobalSSHMetric {
     @SerializedName("NetworkIn")
     private List<MatricPoint> networkIn;
 
+    public List<MatricPoint> getNetworkOut() {
+        return networkOut;
+    }
 
+    public void setNetworkOut(List<MatricPoint> networkOut) {
+        this.networkOut = networkOut;
+    }
+
+    public List<MatricPoint> getNetworkIn() {
+        return networkIn;
+    }
+
+    public void setNetworkIn(List<MatricPoint> networkIn) {
+        this.networkIn = networkIn;
+    }
 }

@@ -1,7 +1,7 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.util.JSONComparator;
+
 import cn.ucloud.udb.model.DescribeUDBBackupBlacklistParam;
 import cn.ucloud.udb.model.DescribeUDBBackupBlacklistResult;
 import org.junit.Before;

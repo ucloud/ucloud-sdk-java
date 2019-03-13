@@ -1,9 +1,8 @@
-package cn.ucloud.common.util;
+package cn.ucloud.udisk.client;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.json.JSONObject;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.slf4j.Logger;
@@ -23,7 +22,7 @@ public class JSONComparator {
     public static void jsonComparator(BaseResponseResult result) {
         try {
             Gson gson = new GsonBuilder().serializeNulls().create();
-            logger.info("result 2 json:{}",gson.toJson(result));
+            logger.info("result 2 json:{}", gson.toJson(result));
             JSONAssert.assertEquals(result.getResponseContent(), gson.toJson(result), JSONCompareMode.LENIENT);
         } catch (Exception e) {
             assertNull(e);

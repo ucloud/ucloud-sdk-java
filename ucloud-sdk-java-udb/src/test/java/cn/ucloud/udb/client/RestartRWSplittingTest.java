@@ -1,7 +1,7 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.util.JSONComparator;
+
 import cn.ucloud.udb.model.PromoteUDBSlaveParam;
 import cn.ucloud.udb.model.RestartRWSplittingParam;
 import cn.ucloud.udb.model.RestartRWSplittingResult;

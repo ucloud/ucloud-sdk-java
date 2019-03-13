@@ -75,6 +75,7 @@
         <lang.version>3.8</lang.version>
         <codec.version>1.9</codec.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <jsonassert.version>1.5.0</jsonassert.version>
     </properties>
 
     <dependencyManagement>
@@ -90,7 +91,7 @@
             <dependency>
                 <groupId>org.skyscreamer</groupId>
                 <artifactId>jsonassert</artifactId>
-                <version>1.5.0</version>
+                <version>${jsonassert.version}</version>
                 <scope>test</scope>
             </dependency>
 

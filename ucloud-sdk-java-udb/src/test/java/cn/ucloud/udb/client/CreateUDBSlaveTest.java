@@ -1,7 +1,7 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.util.JSONComparator;
+
 import cn.ucloud.udb.model.CreateUDBSlaveParam;
 import cn.ucloud.udb.model.CreateUDBSlaveResult;
 import org.junit.Before;

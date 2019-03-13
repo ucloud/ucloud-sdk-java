@@ -1,7 +1,7 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.util.JSONComparator;
+
 import cn.ucloud.udb.model.DisableUDBRWSplittingParam;
 import cn.ucloud.udb.model.SetUDBRWSplittingParam;
 import cn.ucloud.udb.model.SetUDBRWSplittingResult;

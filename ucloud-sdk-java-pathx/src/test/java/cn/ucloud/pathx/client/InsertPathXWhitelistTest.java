@@ -9,6 +9,9 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
@@ -31,7 +34,8 @@ public class InsertPathXWhitelistTest {
                         System.getenv("UcloudPublicKey"))));
         String projectId = "cn-sh2";
         String instanceId = "cn-sh2";
-        param = new InsertPathXWhitelistParam(projectId, instanceId);
+        List<String> whiteList = new ArrayList<>();
+        param = new InsertPathXWhitelistParam(projectId, instanceId,whiteList);
         param.setProjectId("org-izug1m");
     }
 
