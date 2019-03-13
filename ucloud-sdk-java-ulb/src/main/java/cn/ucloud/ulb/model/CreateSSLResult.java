@@ -25,13 +25,4 @@ public class CreateSSLResult extends BaseResponseResult {
         this.sslId = sslId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateSSLResult{" +
-                "sslId='" + sslId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

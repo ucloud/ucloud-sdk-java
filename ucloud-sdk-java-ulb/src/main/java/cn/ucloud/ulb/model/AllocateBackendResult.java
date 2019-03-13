@@ -26,13 +26,4 @@ public class AllocateBackendResult extends BaseResponseResult {
         this.backendId = backendId;
     }
 
-    @Override
-    public String toString() {
-        return "AllocateBackendResult{" +
-                "backendId='" + backendId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

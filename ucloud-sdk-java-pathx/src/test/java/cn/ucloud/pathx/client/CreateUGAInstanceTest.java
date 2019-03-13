@@ -8,6 +8,9 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
@@ -28,10 +31,13 @@ public class CreateUGAInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String name = "cn-sh2";
+        String projectId = "org-izug1m";
+        String name = "sdk-java-test";
+        List<Integer> tcpPorts = new ArrayList<>();
+        tcpPorts.add(80);
         param = new CreateUGAInstanceParam(projectId, name);
-        param.setProjectId("org-izug1m");
+        param.setTcpPorts(tcpPorts);
+        param.setDomain("codezhang.cn");
     }
 
 
@@ -45,27 +51,4 @@ public class CreateUGAInstanceTest {
         }
     }
 
-    @Test
-    public void createUGAInstanceCallback() {
-        client.createUGAInstance(param, new UcloudHandler
-                <CreateUGAInstanceResult>() {
-            @Override
-            public Object success(CreateUGAInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(CreateUGAInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }
