@@ -24,13 +24,4 @@ public class TerminateCustomImageResult extends BaseResponseResult {
         this.imageId = imageId;
     }
 
-    @Override
-    public String toString() {
-        return "TerminateCustomImageResult{" +
-                "imageId='" + imageId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

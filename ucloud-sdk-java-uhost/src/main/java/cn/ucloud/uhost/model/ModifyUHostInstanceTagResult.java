@@ -14,7 +14,7 @@ public class ModifyUHostInstanceTagResult extends BaseResponseResult {
     /**
      * 主机实例ID
      */
-    @SerializedName("UhostId")
+    @SerializedName("UHostId")
     private String  uhostId;
 
     public String getUhostId() {
@@ -25,13 +25,4 @@ public class ModifyUHostInstanceTagResult extends BaseResponseResult {
         this.uhostId = uhostId;
     }
 
-    @Override
-    public String toString() {
-        return "ModifyUHostInstanceTagResult{" +
-                "uhostId='" + uhostId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

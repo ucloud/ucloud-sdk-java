@@ -66,16 +66,5 @@ public class GetUhostInstanceVncInfoResult extends BaseResponseResult {
         this.vncPassword = vncPassword;
     }
 
-    @Override
-    public String toString() {
-        return "GetUhostInstanceVncInfoResult{" +
-                "uHostId='" + uHostId + '\'' +
-                ", vncIP='" + vncIP + '\'' +
-                ", vncPort=" + vncPort +
-                ", vncPassword='" + vncPassword + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

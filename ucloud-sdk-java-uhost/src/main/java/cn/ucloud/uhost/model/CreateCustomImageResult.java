@@ -25,13 +25,4 @@ public class CreateCustomImageResult extends BaseResponseResult {
         this.imageId = imageId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateCustomImageResult{" +
-                "imageId='" + imageId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -40,14 +40,4 @@ public class CreateUHostInstanceResult extends BaseResponseResult {
         this.ips = ips;
     }
 
-    @Override
-    public String toString() {
-        return "CreateUHostInstanceResult{" +
-                "uhostIds=" + uhostIds +
-                ", ips=" + ips +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

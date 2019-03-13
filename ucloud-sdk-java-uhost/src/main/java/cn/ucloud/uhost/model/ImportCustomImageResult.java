@@ -17,15 +17,6 @@ public class ImportCustomImageResult extends BaseResponseResult {
     @SerializedName("ImageId")
     private String imageId;
 
-    @Override
-    public String toString() {
-        return "ImportCustomImageResult{" +
-                "imageId='" + imageId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 
     public String getImageId() {
         return imageId;

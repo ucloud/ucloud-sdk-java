@@ -7,6 +7,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -23,18 +25,18 @@ public class StopUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new StopUHostInstanceParam("cn-bj2", "uhost-kdegdk");
-        param.setZone("cn-bj2-02");
-        param.setProjectId("org-4nfe1i");
+        param = new StopUHostInstanceParam("cn-sh2", "uhost-rjonwb2x");
+        param.setZone("cn-sh2-02");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void stopUHostInstance() {
         try {
-            StopUHostInstanceResult stopUHostInstanceResult = client.stopUHostInstance(param);
-            System.out.println("同步：" + stopUHostInstanceResult);
+            StopUHostInstanceResult result = client.stopUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

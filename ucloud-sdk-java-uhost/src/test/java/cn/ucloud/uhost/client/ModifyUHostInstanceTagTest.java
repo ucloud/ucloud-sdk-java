@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -26,17 +28,17 @@ public class ModifyUHostInstanceTagTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
-        param = new ModifyUHostInstanceTagParam("cn-bj2","uhost-1irm01");
+        param = new ModifyUHostInstanceTagParam("cn-sh2","uhost-rjonwb2x");
         param.setTag("demo");
     }
 
     @Test
     public void modifyUHostInstanceTag() {
         try {
-            ModifyUHostInstanceTagResult modifyUHostInstanceTagResult = client.modifyUHostInstanceTag(param);
-            System.out.println(modifyUHostInstanceTagResult);
+            ModifyUHostInstanceTagResult result = client.modifyUHostInstanceTag(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

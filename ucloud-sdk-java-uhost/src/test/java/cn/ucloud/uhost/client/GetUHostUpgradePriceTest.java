@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,17 +27,18 @@ public class GetUHostUpgradePriceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new GetUHostUpgradePriceParam("cn-bj2","uhost-zzsffd");
-        param.setProjectId("org-4nfe1i");
+        param = new GetUHostUpgradePriceParam("cn-sh2","uhost-rjonwb2x");
+        param.setZone("cn-sh2-02");
+        param.setProjectId("org-izug1m");
         param.setCpu(16);
     }
     @Test
     public void getUHostUpgradePrice() {
         try {
-            GetUHostUpgradePriceResult uHostUpgradePrice = client.getUHostUpgradePrice(param);
-            System.out.println(uHostUpgradePrice);
+            GetUHostUpgradePriceResult result = client.getUHostUpgradePrice(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

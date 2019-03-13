@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,17 +27,17 @@ public class ResetUHostInstancePasswordTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ResetUHostInstancePasswordParam("cn-bj2","uhost-uvzzyt");
-        param.setProjectId("org-4nfe1i");
+        param = new ResetUHostInstancePasswordParam("cn-sh2","uhost-rjonwb2x");
+        param.setProjectId("org-izug1m");
         param.setPassword("123456ab");
     }
     @Test
     public void resetUHostInstancePassword() {
         try {
-            ResetUHostInstancePasswordResult resetUHostInstancePasswordResult = client.resetUHostInstancePassword(param);
-            System.out.println(resetUHostInstancePasswordResult);
+            ResetUHostInstancePasswordResult result = client.resetUHostInstancePassword(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,7 +27,7 @@ public class TerminateUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new TerminateUHostInstanceParam("cn-bj2","uhost-1irm01");
+        param = new TerminateUHostInstanceParam("cn-sh2","uhost-rjonwb2x");
     }
 
 
@@ -33,10 +35,10 @@ public class TerminateUHostInstanceTest {
     @Test
     public void terminateUHostInstance() {
         try {
-            TerminateUHostInstanceResult terminateUHostInstanceResult = client.terminateUHostInstance(param);
-            System.out.println(terminateUHostInstanceResult);
+            TerminateUHostInstanceResult result = client.terminateUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+           assertNull(e);
         }
     }
 }

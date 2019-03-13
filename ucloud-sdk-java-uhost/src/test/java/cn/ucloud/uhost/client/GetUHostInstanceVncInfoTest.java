@@ -8,6 +8,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 
 /**
  * @description:
@@ -25,66 +27,18 @@ public class GetUHostInstanceVncInfoTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new GetUhostInstanceVncInfoParam("cn-bj2", "uhost-euyi2b");
-        param.setProjectId("org-4nfe1i");
+        param = new GetUhostInstanceVncInfoParam("cn-bj2", "uhost-rjonwb2x");
+        param.setProjectId("org-izug1m");
         param.setZone("cn-bj2-02");
     }
 
     @Test
     public void getUHostInstanceVncInfo() {
         try {
-            GetUhostInstanceVncInfoResult uHostInstanceVncInfo = client.getUHostInstanceVncInfo(param);
-            System.out.println("同步：" + uHostInstanceVncInfo);
+            GetUhostInstanceVncInfoResult result = client.getUHostInstanceVncInfo(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
-    }
-
-    @Test
-    public void getUHostInstanceVncInfoAsync() throws InterruptedException {
-        client.getUHostInstanceVncInfo(param, new UcloudHandler<GetUhostInstanceVncInfoResult> () {
-            @Override
-            public Object success(GetUhostInstanceVncInfoResult result) {
-                System.out.println("同步回调：" + result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetUhostInstanceVncInfoResult result) {
-                System.out.println("同步回调：" + result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                System.out.println("同步回调：");
-                e.printStackTrace();
-                return null;
-            }
-        }, false);
-
-
-        client.getUHostInstanceVncInfo(param, new UcloudHandler<GetUhostInstanceVncInfoResult>(){
-            @Override
-            public Object success(GetUhostInstanceVncInfoResult result) {
-                System.out.println("异步回调：" + result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetUhostInstanceVncInfoResult result) {
-                System.out.println("异步回调：" + result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                System.out.println("异步回调：");
-                e.printStackTrace();
-                return null;
-            }
-        }, true);
-
-        Thread.sleep(10 * 1000);
     }
 }

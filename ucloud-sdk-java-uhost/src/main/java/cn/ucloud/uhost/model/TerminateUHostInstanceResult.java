@@ -16,8 +16,8 @@ public class TerminateUHostInstanceResult extends BaseResponseResult {
     /**
      * UHost 实例 Id
      */
-    @SerializedName("UHostIds")
-    private List<String> uhostIds;
+    @SerializedName("UHostId")
+    private String uhostId;
 
 
     /**
@@ -27,13 +27,12 @@ public class TerminateUHostInstanceResult extends BaseResponseResult {
     private String inRecycle;
 
 
-
-    public List<String> getUhostIds() {
-        return uhostIds;
+    public String getUhostId() {
+        return uhostId;
     }
 
-    public void setUhostIds(List<String> uhostIds) {
-        this.uhostIds = uhostIds;
+    public void setUhostId(String uhostId) {
+        this.uhostId = uhostId;
     }
 
     public String getInRecycle() {
@@ -45,14 +44,4 @@ public class TerminateUHostInstanceResult extends BaseResponseResult {
     }
 
 
-    @Override
-    public String toString() {
-        return "TerminateUHostInstanceResult{" +
-                "uhostIds=" + uhostIds +
-                ", inRecycle='" + inRecycle + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }
