@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : Describle SSL Bind UAG Info 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class SSLBindedTargetSet {
     /**
@@ -28,7 +28,6 @@ public class SSLBindedTargetSet {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
-
 
     public String getResourceName() {
         return this.resourceName;

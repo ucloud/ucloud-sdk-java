@@ -7,7 +7,7 @@ import cn.ucloud.pathx.model.*;
 /**
  * @Description : PATHX 客户端接口
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public interface PATHXClient extends UcloudClient {
 
@@ -535,6 +535,27 @@ public interface PATHXClient extends UcloudClient {
     void deletePathXSSL(DeletePathXSSLParam param,
                         UcloudHandler<DeletePathXSSLResult> handler,
                         Boolean... asyncFlag);
+
+    /**
+     * 更改加速配置名字
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    ModifyUGANameResult modifyUGAName(
+            ModifyUGANameParam param) throws Exception;
+
+    /**
+     * 更改加速配置名字 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void modifyUGAName(ModifyUGANameParam param,
+                       UcloudHandler<ModifyUGANameResult> handler,
+                       Boolean... asyncFlag);
 
     /**
      * 获取UPath价格

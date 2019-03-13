@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : （deprecated）检查三级域名合法性和唯一性 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CheckPreCNameResult extends BaseResponseResult {
     /**

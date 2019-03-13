@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 告警详情 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class AlarmRuler {
     /**
@@ -49,7 +49,6 @@ public class AlarmRuler {
         this.alarmStrategy = alarmStrategy;
     }
 
-
     public String getCompare() {
         return this.compare;
     }
@@ -57,7 +56,6 @@ public class AlarmRuler {
     public void setCompare(String compare) {
         this.compare = compare;
     }
-
 
     public Integer getContactGroupId() {
         return this.contactGroupId;
@@ -67,7 +65,6 @@ public class AlarmRuler {
         this.contactGroupId = contactGroupId;
     }
 
-
     public String getMetricName() {
         return this.metricName;
     }
@@ -76,7 +73,6 @@ public class AlarmRuler {
         this.metricName = metricName;
     }
 
-
     public Integer getThreshold() {
         return this.threshold;
     }
@@ -84,7 +80,6 @@ public class AlarmRuler {
     public void setThreshold(Integer threshold) {
         this.threshold = threshold;
     }
-
 
     public Integer getTriggerCount() {
         return this.triggerCount;

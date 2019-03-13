@@ -2,18 +2,14 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.common.pojo.Param;
 
-import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * @Description : 创建苹果审核加速通道 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateCommonUGAInstanceParam extends BaseRequestParam {
     /**
@@ -56,21 +52,8 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
      */
     @UcloudParam("Domain")
     private String domain;
-
-    /**
-     * TCP端口号，端口必填，
-     * GlobalSSH只能添加一个TCP端口；
-     * AppStore可以同时加多个TCP和UDP端口，如TCP.0，TCP.1，UDP.0等
-     */
-    private List<Integer> tcpPorts;
-
-    /**
-     * UDP端口号，端口必填，
-     * GlobalSSH只能添加一个TCP端口；
-     * AppStore可以同时加多个TCP和UDP端口，如TCP.0，TCP.1，UDP.0等
-     */
-    private List<Integer> udpPorts;
-
+    // TODO 需要人工接入 CreateCommonUGAInstance =》 TCP.n
+    // TODO 需要人工接入 CreateCommonUGAInstance =》 UDP.n
     /**
      * globalSSH提供CName的三级域名
      */
@@ -97,42 +80,6 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
         this.chargeType = chargeType;
         this.uGAType = uGAType;
         this.name = name;
-    }
-
-    @UcloudParam("tcpPorts")
-    public List<Param> checkTCPPorts() throws ValidationException {
-        List<Param> params = new ArrayList<>();
-        if (tcpPorts != null && !tcpPorts.isEmpty()) {
-            int size = tcpPorts.size();
-            for (int i = 0; i < size; i++) {
-                if (tcpPorts.get(i) == null){
-                    throw new ValidationException(String.format("tcpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("TCP.%d",i),tcpPorts.get(i)));
-                }
-            }
-        }else {
-            throw new ValidationException("tcpPorts can not be empty");
-        }
-        return params;
-    }
-
-    @UcloudParam("udpPorts")
-    public List<Param> checkUCPPorts() throws ValidationException {
-        List<Param> params = new ArrayList<>();
-        if (udpPorts != null && !udpPorts.isEmpty()) {
-            int size = udpPorts.size();
-            for (int i = 0; i < size; i++) {
-                if (udpPorts.get(i) == null){
-                    throw new ValidationException(String.format("udpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("UDP.%d",i),udpPorts.get(i)));
-                }
-            }
-        }else {
-            throw new ValidationException("udpPorts can not be empty");
-        }
-        return params;
     }
 
 

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description :  模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class TrafficDaily {
     /**
@@ -34,7 +34,6 @@ public class TrafficDaily {
         this.date = date;
     }
 
-
     public Integer getTraffic() {
         return this.traffic;
     }
@@ -42,7 +41,6 @@ public class TrafficDaily {
     public void setTraffic(Integer traffic) {
         this.traffic = traffic;
     }
-
 
     public String getBillingState() {
         return this.billingState;

@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.UpdatePathXWhitelistParam;
 import cn.ucloud.pathx.model.UpdatePathXWhitelistResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.UpdatePathXWhitelist 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UpdatePathXWhitelistTest {
 
@@ -45,27 +44,4 @@ public class UpdatePathXWhitelistTest {
         }
     }
 
-    @Test
-    public void updatePathXWhitelistCallback() {
-        client.updatePathXWhitelist(param, new UcloudHandler
-                <UpdatePathXWhitelistResult>() {
-            @Override
-            public Object success(UpdatePathXWhitelistResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(UpdatePathXWhitelistResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

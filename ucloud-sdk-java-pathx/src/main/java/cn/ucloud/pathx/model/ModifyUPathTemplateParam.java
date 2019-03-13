@@ -7,7 +7,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 /**
  * @Description : 修改UPath监控告警项 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class ModifyUPathTemplateParam extends BaseRequestParam {
     /**

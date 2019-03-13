@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : 加速线路信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UPathInfo {
     /**
@@ -61,7 +61,6 @@ public class UPathInfo {
         this.name = name;
     }
 
-
     public String getuPathId() {
         return this.uPathId;
     }
@@ -70,7 +69,6 @@ public class UPathInfo {
         this.uPathId = uPathId;
     }
 
-
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -78,7 +76,6 @@ public class UPathInfo {
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
-
 
     public String getLineId() {
         return this.lineId;
@@ -89,6 +86,14 @@ public class UPathInfo {
     }
 
 
+    public List<UGAAInfo> getuGAList() {
+        return this.uGAList;
+    }
+
+    public void setuGAList(List<UGAAInfo> uGAList) {
+        this.uGAList = uGAList;
+    }
+
     public Integer getCreateTime() {
         return this.createTime;
     }
@@ -97,7 +102,6 @@ public class UPathInfo {
         this.createTime = createTime;
     }
 
-
     public Integer getExpireTime() {
         return this.expireTime;
     }
@@ -105,7 +109,6 @@ public class UPathInfo {
     public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
     }
-
 
     public String getChargeType() {
         return this.chargeType;

@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetUGAUpdatePriceParam;
 import cn.ucloud.pathx.model.GetUGAUpdatePriceResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetUGAUpdatePrice 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetUGAUpdatePriceTest {
 
@@ -45,27 +44,4 @@ public class GetUGAUpdatePriceTest {
         }
     }
 
-    @Test
-    public void getUGAUpdatePriceCallback() {
-        client.getUGAUpdatePrice(param, new UcloudHandler
-                <GetUGAUpdatePriceResult>() {
-            @Override
-            public Object success(GetUGAUpdatePriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetUGAUpdatePriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

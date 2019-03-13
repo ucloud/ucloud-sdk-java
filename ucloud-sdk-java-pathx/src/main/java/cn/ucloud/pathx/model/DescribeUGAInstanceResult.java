@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取全球加速服务加速配置信息 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribeUGAInstanceResult extends BaseResponseResult {
     /**
@@ -17,6 +17,15 @@ public class DescribeUGAInstanceResult extends BaseResponseResult {
      */
     @SerializedName("UGAList")
     private List<UGAAInfo> uGAList;
+
+
+    public List<UGAAInfo> getuGAList() {
+        return this.uGAList;
+    }
+
+    public void setuGAList(List<UGAAInfo> uGAList) {
+        this.uGAList = uGAList;
+    }
 
 
 }

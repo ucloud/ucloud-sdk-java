@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取SSL证书信息 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribePathXSSLResult extends BaseResponseResult {
     /**
@@ -17,6 +17,15 @@ public class DescribePathXSSLResult extends BaseResponseResult {
      */
     @SerializedName("DataSet")
     private List<PathXSSLSet> dataSet;
+
+
+    public List<PathXSSLSet> getDataSet() {
+        return this.dataSet;
+    }
+
+    public void setDataSet(List<PathXSSLSet> dataSet) {
+        this.dataSet = dataSet;
+    }
 
 
 }

@@ -2,18 +2,14 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.common.pojo.Param;
 
-import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * @Description : 增量插入白名单 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class InsertPathXWhitelistParam extends BaseRequestParam {
     /**
@@ -22,43 +18,18 @@ public class InsertPathXWhitelistParam extends BaseRequestParam {
     @UcloudParam("InstanceId")
     @NotEmpty(message = "instanceId can not be empty")
     private String instanceId;
+    // TODO 需要人工接入 InsertPathXWhitelist =》 Whitelist.n
 
-    /**
-     * 白名单规则，例如
-     * 'Whitelist.0: 192.168.1.1/24|tcp|22'，'Whitelist.1: 192.168.1.2|tcp|8080:8090'，
-     * 第一个参数为ip或ip段，
-     * 第二个参数代表协议（tcp/udp），
-     * 第三个参数代表端口号或端口范围（使用 ':' 隔开）；
-     * 可以添加多条规则（递增Rule.n字段内的n值）； 此接口用于在原有规则基础上增量添加新的规则
-     */
-    private List<String> whiteList;
 
     public InsertPathXWhitelistParam(String projectId
-            , String instanceId, List<String> whiteList
+            , String instanceId
     ) {
         super("InsertPathXWhitelist");
         this.projectId = projectId;
         this.instanceId = instanceId;
-        this.whiteList = whiteList;
+        // TODO 需要人工接入 InsertPathXWhitelist =》 Whitelist.n is required
     }
 
-    @UcloudParam("whiteList")
-    public List<Param> checkWhiteList() throws ValidationException {
-        List<Param> params = new ArrayList<>();
-        if (whiteList != null && !whiteList.isEmpty()) {
-            int size = whiteList.size();
-            for (int i = 0; i < size; i++) {
-                if (whiteList.get(i) == null || whiteList.get(i).length() <= 0) {
-                    throw new ValidationException(String.format("whiteList[%d] can not be empty",i));
-                }else {
-                    params.add(new Param(String.format("WhiteList.%d",i),whiteList.get(i)));
-                }
-            }
-        } else {
-            throw new ValidationException("whiteList can not be empty");
-        }
-        return params;
-    }
 
     public String getInstanceId() {
         return this.instanceId;
