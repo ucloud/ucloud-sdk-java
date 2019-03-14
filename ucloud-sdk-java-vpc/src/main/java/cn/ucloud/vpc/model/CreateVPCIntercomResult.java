@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class CreateVPCIntercomResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "CreateVPCIntercomResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

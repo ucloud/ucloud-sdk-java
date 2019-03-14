@@ -1,6 +1,7 @@
 package cn.ucloud.vpc.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class DescribeVPCResult extends BaseResponseResult {
 
-    public static class  VPC{
+    public static class VPC {
 
         /**
          * 创建时间 Unix时间戳
@@ -62,6 +63,12 @@ public class DescribeVPCResult extends BaseResponseResult {
          */
         @SerializedName("VPCId")
         private String vpcId;
+
+        /**
+         * 备注信息
+         */
+        @SerializedName("Remark")
+        private String remark;
 
         public Integer getCreateTime() {
             return createTime;
@@ -127,23 +134,22 @@ public class DescribeVPCResult extends BaseResponseResult {
             this.vpcId = vpcId;
         }
 
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
         @Override
         public String toString() {
-            return "VPC{" +
-                    "createTime=" + createTime +
-                    ", name='" + name + '\'' +
-                    ", networks=" + networks +
-                    ", networkInfos=" + networkInfos +
-                    ", subnetCount=" + subnetCount +
-                    ", tag='" + tag + '\'' +
-                    ", updateTime=" + updateTime +
-                    ", vpcId='" + vpcId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
-    public  static class NetworkInfo {
+    public static class NetworkInfo {
 
         @SerializedName("Network")
         private String network;
@@ -169,16 +175,16 @@ public class DescribeVPCResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "NetworkInfo{" +
-                    "network='" + network + '\'' +
-                    ", subnetCount=" + subnetCount +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
     @SerializedName("DataSet")
     private List<VPC> vpcs;
+
+    @SerializedName("TotalCount")
+    private Integer totalCount;
 
     public List<VPC> getVpcs() {
         return vpcs;
@@ -188,13 +194,11 @@ public class DescribeVPCResult extends BaseResponseResult {
         this.vpcs = vpcs;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeVPCResult{" +
-                "vpcs=" + vpcs +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 }

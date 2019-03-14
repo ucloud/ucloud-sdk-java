@@ -10,12 +10,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
 
 public class DeleteVPCResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "DeleteVPCResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

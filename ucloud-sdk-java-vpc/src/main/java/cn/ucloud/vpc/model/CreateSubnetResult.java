@@ -25,13 +25,4 @@ public class CreateSubnetResult extends BaseResponseResult {
         this.subnetId = subnetId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateSubnetResult{" +
-                "subnetId='" + subnetId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

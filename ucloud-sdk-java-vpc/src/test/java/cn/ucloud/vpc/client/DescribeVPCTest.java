@@ -16,7 +16,6 @@ import org.junit.Test;
  **/
 public class DescribeVPCTest {
 
-
     private VPCClient client;
 
     private DescribeVPCParam param;
@@ -28,13 +27,13 @@ public class DescribeVPCTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeVPCParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
     }
     @Test
     public void describeVPC() {
         try {
             DescribeVPCResult describeVPCResult = client.describeVPC(param);
             System.out.println(describeVPCResult);
+            JSONComparator.jsonComparator(describeVPCResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

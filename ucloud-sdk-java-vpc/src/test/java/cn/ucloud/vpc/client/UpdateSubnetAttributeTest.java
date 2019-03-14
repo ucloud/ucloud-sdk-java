@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.UpdateSubnetAttributeParam;
 import cn.ucloud.vpc.model.UpdateSubnetAttributeResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,9 +24,8 @@ public class UpdateSubnetAttributeTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpdateSubnetAttributeParam("cn-bj2","subnet-5c232h");
-        param.setName("java-sdk-test-name");
-        param.setProjectId("org-4nfe1i");
+        param = new UpdateSubnetAttributeParam("cn-bj2", "subnet-52f1rwlv");
+        param.setName("ucloud-sdk-java-subnet");
     }
 
     @Test
@@ -36,6 +33,7 @@ public class UpdateSubnetAttributeTest {
         try {
             UpdateSubnetAttributeResult updateSubnetAttributeResult = client.updateSubnetAttribute(param);
             System.out.println(updateSubnetAttributeResult);
+            JSONComparator.jsonComparator(updateSubnetAttributeResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

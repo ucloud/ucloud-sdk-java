@@ -25,13 +25,4 @@ public class CreateRouteTableResult extends BaseResponseResult {
         this.routeTableId = routeTableId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateRouteTableResult{" +
-                "routeTableId='" + routeTableId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

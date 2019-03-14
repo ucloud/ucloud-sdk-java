@@ -1,6 +1,7 @@
 package cn.ucloud.vpc.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -75,12 +76,7 @@ public class DescribeSubnetResourceResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "SubnetResource{" +
-                    "ip='" + ip + '\'' +
-                    ", name='" + name + '\'' +
-                    ", resourceId='" + resourceId + '\'' +
-                    ", resourceType='" + resourceType + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -111,16 +107,5 @@ public class DescribeSubnetResourceResult extends BaseResponseResult {
 
     public void setSubnetResources(List<SubnetResource> subnetResources) {
         this.subnetResources = subnetResources;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeSubnetResourceResult{" +
-                "totalCount=" + totalCount +
-                ", subnetResources=" + subnetResources +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }
