@@ -45,28 +45,4 @@ public class ListCatalogTablePropertiesTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void listCatalogTablePropertiesCallback() {
-        client.listCatalogTableProperties(param, new UcloudHandler
-                <ListCatalogTablePropertiesResult>() {
-            @Override
-            public Object success(ListCatalogTablePropertiesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ListCatalogTablePropertiesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

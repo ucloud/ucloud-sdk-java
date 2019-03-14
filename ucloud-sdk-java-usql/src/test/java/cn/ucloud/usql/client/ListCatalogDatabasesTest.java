@@ -43,28 +43,4 @@ public class ListCatalogDatabasesTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void listCatalogDatabasesCallback() {
-        client.listCatalogDatabases(param, new UcloudHandler
-                <ListCatalogDatabasesResult>() {
-            @Override
-            public Object success(ListCatalogDatabasesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ListCatalogDatabasesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

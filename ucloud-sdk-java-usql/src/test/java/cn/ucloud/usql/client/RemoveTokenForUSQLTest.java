@@ -45,27 +45,4 @@ public class RemoveTokenForUSQLTest {
         }
     }
 
-    @Test
-    public void removeTokenForUSQLCallback() {
-        client.removeTokenForUSQL(param, new UcloudHandler
-                <RemoveTokenForUSQLResult>() {
-            @Override
-            public Object success(RemoveTokenForUSQLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(RemoveTokenForUSQLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

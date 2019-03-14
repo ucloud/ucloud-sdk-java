@@ -42,28 +42,4 @@ public class ListTokensForUSQLTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void listTokensForUSQLCallback() {
-        client.listTokensForUSQL(param, new UcloudHandler
-                <ListTokensForUSQLResult>() {
-            @Override
-            public Object success(ListTokensForUSQLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ListTokensForUSQLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

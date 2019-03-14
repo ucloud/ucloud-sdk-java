@@ -45,27 +45,5 @@ public class GetNamedQueryTest {
         }
     }
 
-    @Test
-    public void getNamedQueryCallback() {
-        client.getNamedQuery(param, new UcloudHandler
-                <GetNamedQueryResult>() {
-            @Override
-            public Object success(GetNamedQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
 
-            @Override
-            public Object failed(GetNamedQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

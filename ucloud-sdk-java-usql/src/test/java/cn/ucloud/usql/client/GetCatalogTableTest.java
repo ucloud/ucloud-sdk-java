@@ -42,28 +42,4 @@ public class GetCatalogTableTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void getCatalogTableCallback() {
-        client.getCatalogTable(param, new UcloudHandler
-                <GetCatalogTableResult>() {
-            @Override
-            public Object success(GetCatalogTableResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetCatalogTableResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

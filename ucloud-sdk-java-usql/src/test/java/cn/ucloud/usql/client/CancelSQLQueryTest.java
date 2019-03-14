@@ -45,27 +45,4 @@ public class CancelSQLQueryTest {
         }
     }
 
-    @Test
-    public void cancelSQLQueryCallback() {
-        client.cancelSQLQuery(param, new UcloudHandler
-                <CancelSQLQueryResult>() {
-            @Override
-            public Object success(CancelSQLQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(CancelSQLQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

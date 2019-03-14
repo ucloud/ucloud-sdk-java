@@ -44,28 +44,4 @@ public class DeleteNamedQueryTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void deleteNamedQueryCallback() {
-        client.deleteNamedQuery(param, new UcloudHandler
-                <DeleteNamedQueryResult>() {
-            @Override
-            public Object success(DeleteNamedQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DeleteNamedQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

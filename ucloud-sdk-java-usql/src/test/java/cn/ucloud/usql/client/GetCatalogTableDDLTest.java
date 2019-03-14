@@ -45,28 +45,4 @@ public class GetCatalogTableDDLTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void getCatalogTableDDLCallback() {
-        client.getCatalogTableDDL(param, new UcloudHandler
-                <GetCatalogTableDDLResult>() {
-            @Override
-            public Object success(GetCatalogTableDDLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetCatalogTableDDLResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

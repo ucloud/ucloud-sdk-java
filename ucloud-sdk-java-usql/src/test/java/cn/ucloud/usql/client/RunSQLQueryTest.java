@@ -46,27 +46,4 @@ public class RunSQLQueryTest {
         }
     }
 
-    @Test
-    public void runSQLQueryCallback() {
-        client.runSQLQuery(param, new UcloudHandler
-                <RunSQLQueryResult>() {
-            @Override
-            public Object success(RunSQLQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(RunSQLQueryResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }
