@@ -7,6 +7,9 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
@@ -27,10 +30,14 @@ public class AddUGATaskTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uGAId = "uga-gzivmuiu";
         param = new AddUGATaskParam(projectId, uGAId);
         param.setProjectId("org-izug1m");
+        List<Integer> tcpPorts = new ArrayList<>();
+        tcpPorts.add(222);
+        //param.setTcpPorts(tcpPorts);
+        param.setUdpPorts(tcpPorts);
     }
 
 

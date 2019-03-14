@@ -27,11 +27,10 @@ public class ModifyGlobalSSHPortTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String instanceId = "cn-sh2";
-        Integer port = 1;
+        String projectId = "org-izug1m";
+        String instanceId = "uga-eskzpkk2";
+        Integer port = 112;
         param = new ModifyGlobalSSHPortParam(projectId, instanceId, port);
-        param.setProjectId("org-izug1m");
     }
 
 

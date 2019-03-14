@@ -27,10 +27,9 @@ public class GetUGAPriceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         Integer uPathNum = 1;
         param = new GetUGAPriceParam(projectId, uPathNum);
-        param.setProjectId("org-izug1m");
     }
 
 

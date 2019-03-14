@@ -25,7 +25,7 @@ public class UPathInfo {
      * 带宽
      */
     @SerializedName("Bandwidth")
-    private String bandwidth;
+    private Integer bandwidth;
     /**
      * 线路ID
      */
@@ -52,6 +52,38 @@ public class UPathInfo {
     @SerializedName("ChargeType")
     private String chargeType;
 
+    @SerializedName("LineFromName")
+    private String lineFromName;
+
+    @SerializedName("LineToName")
+    private String lineToName;
+
+    @SerializedName("OutPublicIpList")
+    private List<OutPublicIpInfo> outPublicIpInfos;
+
+    public String getLineFromName() {
+        return lineFromName;
+    }
+
+    public void setLineFromName(String lineFromName) {
+        this.lineFromName = lineFromName;
+    }
+
+    public String getLineToName() {
+        return lineToName;
+    }
+
+    public void setLineToName(String lineToName) {
+        this.lineToName = lineToName;
+    }
+
+    public List<OutPublicIpInfo> getOutPublicIpInfos() {
+        return outPublicIpInfos;
+    }
+
+    public void setOutPublicIpInfos(List<OutPublicIpInfo> outPublicIpInfos) {
+        this.outPublicIpInfos = outPublicIpInfos;
+    }
 
     public String getName() {
         return this.name;
@@ -69,11 +101,11 @@ public class UPathInfo {
         this.uPathId = uPathId;
     }
 
-    public String getBandwidth() {
-        return this.bandwidth;
+    public Integer getBandwidth() {
+        return bandwidth;
     }
 
-    public void setBandwidth(String bandwidth) {
+    public void setBandwidth(Integer bandwidth) {
         this.bandwidth = bandwidth;
     }
 

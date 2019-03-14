@@ -401,37 +401,6 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
         }
     }
 
-    @Override
-    public DeletePathXSSLResult deletePathXSSL(DeletePathXSSLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DeletePathXSSLResult.class);
-        return (DeletePathXSSLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void deletePathXSSL(DeletePathXSSLParam param,
-                               UcloudHandler<DeletePathXSSLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DeletePathXSSLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public ModifyUGANameResult modifyUGAName(ModifyUGANameParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(ModifyUGANameResult.class);
-        return (ModifyUGANameResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void modifyUGAName(ModifyUGANameParam param,
-                              UcloudHandler<ModifyUGANameResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(ModifyUGANameResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
 
     @Override
     public GetUPathPriceResult getUPathPrice(GetUPathPriceParam param) throws Exception {
@@ -562,22 +531,6 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     }
 
     @Override
-    public GetLinesResult getLines(GetLinesParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(GetLinesResult.class);
-        return (GetLinesResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void getLines(GetLinesParam param,
-                         UcloudHandler<GetLinesResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(GetLinesResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public GetGlobalSSHTrafficResult getGlobalSSHTraffic(GetGlobalSSHTrafficParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHTrafficResult.class);
         return (GetGlobalSSHTrafficResult) http.doGet(param, config, null);
@@ -587,22 +540,6 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     public void getGlobalSSHTraffic(GetGlobalSSHTrafficParam param,
                                     UcloudHandler<GetGlobalSSHTrafficResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHTrafficResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public CheckPreCNameResult checkPreCName(CheckPreCNameParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(CheckPreCNameResult.class);
-        return (CheckPreCNameResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void checkPreCName(CheckPreCNameParam param,
-                              UcloudHandler<CheckPreCNameResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(CheckPreCNameResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
@@ -657,67 +594,5 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
         }
     }
 
-    @Override
-    public DescribePathXSSLResult describePathXSSL(DescribePathXSSLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribePathXSSLResult.class);
-        return (DescribePathXSSLResult) http.doGet(param, config, null);
-    }
 
-    @Override
-    public void describePathXSSL(DescribePathXSSLParam param,
-                                 UcloudHandler<DescribePathXSSLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribePathXSSLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public CreatePathXSSLResult createPathXSSL(CreatePathXSSLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(CreatePathXSSLResult.class);
-        return (CreatePathXSSLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void createPathXSSL(CreatePathXSSLParam param,
-                               UcloudHandler<CreatePathXSSLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(CreatePathXSSLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public BindPathXSSLResult bindPathXSSL(BindPathXSSLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(BindPathXSSLResult.class);
-        return (BindPathXSSLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void bindPathXSSL(BindPathXSSLParam param,
-                             UcloudHandler<BindPathXSSLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(BindPathXSSLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public UnBindPathXSSLResult unBindPathXSSL(UnBindPathXSSLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(UnBindPathXSSLResult.class);
-        return (UnBindPathXSSLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void unBindPathXSSL(UnBindPathXSSLParam param,
-                               UcloudHandler<UnBindPathXSSLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(UnBindPathXSSLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
 }

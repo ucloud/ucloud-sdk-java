@@ -27,10 +27,9 @@ public class DeleteUPathTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uPathId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uPathId = "upath-gv4navte";
         param = new DeleteUPathParam(projectId, uPathId);
-        param.setProjectId("org-izug1m");
     }
 
 

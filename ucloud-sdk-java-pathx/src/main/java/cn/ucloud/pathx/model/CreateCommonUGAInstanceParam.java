@@ -2,8 +2,13 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -16,8 +21,8 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
      * 购买周期
      */
     @UcloudParam("Quantity")
-    @NotEmpty(message = "quantity can not be empty")
-    private String quantity;
+    @NotNull(message = "quantity can not be null")
+    private Integer quantity;
     /**
      * 加速地区，AppStore默认是“中国”，GlobalSSH支持“洛杉矶”，“新加坡”，“香港”，“法兰克福”，“东京”
      */
@@ -52,8 +57,17 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
      */
     @UcloudParam("Domain")
     private String domain;
-    // TODO 需要人工接入 CreateCommonUGAInstance =》 TCP.n
-    // TODO 需要人工接入 CreateCommonUGAInstance =》 UDP.n
+
+
+    /**
+     * tcp端口
+     */
+    private List<Integer> tcpPorts;
+    /**
+     * udp端口
+     */
+    private List<Integer> udpPorts;
+
     /**
      * globalSSH提供CName的三级域名
      */
@@ -67,7 +81,7 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
 
 
     public CreateCommonUGAInstanceParam(String projectId
-            , String quantity
+            , Integer quantity
             , String location
             , String chargeType
             , String uGAType
@@ -82,12 +96,58 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
         this.name = name;
     }
 
-
-    public String getQuantity() {
-        return this.quantity;
+    @UcloudParam("TCP")
+    public List<Param> checkTCPPorts() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (tcpPorts != null) {
+            int size = tcpPorts.size();
+            for (int i = 0; i < size; i++) {
+                Integer port = tcpPorts.get(i);
+                if (port == null) {
+                    throw new ValidationException(String.format("tcpPorts[%d] can not be null", i));
+                }
+                params.add(new Param(String.format("TCP.%d", i), port));
+            }
+        }
+        return params;
     }
 
-    public void setQuantity(String quantity) {
+    @UcloudParam("UDP")
+    public List<Param> checkUDPPorts() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (udpPorts != null) {
+            int size = udpPorts.size();
+            for (int i = 0; i < size; i++) {
+                Integer port = udpPorts.get(i);
+                if (port == null) {
+                    throw new ValidationException(String.format("udpPorts[%d] can not be null", i));
+                }
+                params.add(new Param(String.format("UDP.%d", i), port));
+            }
+        }
+        return params;
+    }
+    public List<Integer> getTcpPorts() {
+        return tcpPorts;
+    }
+
+    public void setTcpPorts(List<Integer> tcpPorts) {
+        this.tcpPorts = tcpPorts;
+    }
+
+    public List<Integer> getUdpPorts() {
+        return udpPorts;
+    }
+
+    public void setUdpPorts(List<Integer> udpPorts) {
+        this.udpPorts = udpPorts;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

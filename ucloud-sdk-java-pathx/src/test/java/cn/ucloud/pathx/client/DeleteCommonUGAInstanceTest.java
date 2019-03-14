@@ -27,9 +27,9 @@ public class DeleteCommonUGAInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
-        String uGAType = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uGAId = "uga-2bfjbuet";
+        String uGAType = "AppStore";
         param = new DeleteCommonUGAInstanceParam(projectId, uGAId, uGAType);
         param.setProjectId("org-izug1m");
     }

@@ -3,6 +3,8 @@ package cn.ucloud.pathx.model;
 import cn.ucloud.common.pojo.BaseResponseResult;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 
 /**
  * @Description : 获取UGA价格 结果类
@@ -13,17 +15,14 @@ public class GetUGAPriceResult extends BaseResponseResult {
     /**
      * 价格
      */
-    @SerializedName("Price")
-    private Integer price;
+    @SerializedName("PriceSet")
+    private List<Price> prices;
 
-
-    public Integer getPrice() {
-        return this.price;
+    public List<Price> getPrices() {
+        return prices;
     }
 
-    public void setPrice(Integer price) {
-        this.price = price;
+    public void setPrices(List<Price> prices) {
+        this.prices = prices;
     }
-
-
 }

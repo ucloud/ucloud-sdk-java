@@ -14,14 +14,14 @@ public class GetUPathUpdatePriceResult extends BaseResponseResult {
      *
      */
     @SerializedName("Price")
-    private Integer price;
+    private Double price;
 
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return this.price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

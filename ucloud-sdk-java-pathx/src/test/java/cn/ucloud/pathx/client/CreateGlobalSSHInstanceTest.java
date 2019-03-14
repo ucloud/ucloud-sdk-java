@@ -27,13 +27,12 @@ public class CreateGlobalSSHInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String area = "cn-sh2";
-        String targetIP = "cn-sh2";
+        String projectId = "org-izug1m";
+        String area = "香港";
+        String targetIP = "10.25.178.61";
         Integer port = 1;
-        String areaCode = "cn-sh2";
+        String areaCode = "HKG";
         param = new CreateGlobalSSHInstanceParam(projectId, area, targetIP, port, areaCode);
-        param.setProjectId("org-izug1m");
     }
 
 

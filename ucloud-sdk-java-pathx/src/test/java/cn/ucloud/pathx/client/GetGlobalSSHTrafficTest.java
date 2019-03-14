@@ -27,12 +27,11 @@ public class GetGlobalSSHTrafficTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
-        Integer beginTime = 1;
-        Integer endTime = 1;
+        String projectId = "org-izug1m";
+        String uGAId = "uga-eskzpkk2";
+        Integer beginTime = 1552460481;
+        Integer endTime = 1552546881;
         param = new GetGlobalSSHTrafficParam(projectId, uGAId, beginTime, endTime);
-        param.setProjectId("org-izug1m");
     }
 
 

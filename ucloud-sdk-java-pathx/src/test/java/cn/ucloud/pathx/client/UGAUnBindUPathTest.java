@@ -27,11 +27,10 @@ public class UGAUnBindUPathTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
-        String uPathId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uGAId = "uga-f3q0ywyi";
+        String uPathId = "upath-bwccmk2b";
         param = new UGAUnBindUPathParam(projectId, uGAId, uPathId);
-        param.setProjectId("org-izug1m");
     }
 
 

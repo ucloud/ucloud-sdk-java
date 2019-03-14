@@ -27,10 +27,9 @@ public class DeleteGlobalSSHInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String instanceId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String instanceId = "uga-giqsvxrl";
         param = new DeleteGlobalSSHInstanceParam(projectId, instanceId);
-        param.setProjectId("org-izug1m");
     }
 
 

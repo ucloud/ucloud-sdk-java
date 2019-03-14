@@ -14,16 +14,14 @@ public class GetUGAUpdatePriceResult extends BaseResponseResult {
      *
      */
     @SerializedName("Price")
-    private Integer price;
+    private Double price;
 
 
-    public Integer getPrice() {
-        return this.price;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
-
-
 }

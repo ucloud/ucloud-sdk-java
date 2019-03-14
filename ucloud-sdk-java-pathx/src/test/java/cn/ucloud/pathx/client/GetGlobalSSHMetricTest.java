@@ -27,9 +27,9 @@ public class GetGlobalSSHMetricTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String instanceId = "cn-sh2";
-        Integer beginTime = 1;
-        Integer endTime = 1;
+        String instanceId = "uga-eskzpkk2";
+        Integer beginTime = 1552460481;
+        Integer endTime = 1552546881;
         param = new GetGlobalSSHMetricParam(instanceId, beginTime, endTime);
         param.setProjectId("org-izug1m");
     }
