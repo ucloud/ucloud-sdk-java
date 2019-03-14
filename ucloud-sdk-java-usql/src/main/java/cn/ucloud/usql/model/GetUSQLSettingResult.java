@@ -16,6 +16,16 @@ public class GetUSQLSettingResult extends BaseResponseResult {
     @SerializedName("OutputLocation")
     private String outputLocation;
 
+    @SerializedName("Request")
+    private String request;
+
+    public String getRequest() {
+        return request;
+    }
+
+    public void setRequest(String request) {
+        this.request = request;
+    }
 
     public String getOutputLocation() {
         return this.outputLocation;

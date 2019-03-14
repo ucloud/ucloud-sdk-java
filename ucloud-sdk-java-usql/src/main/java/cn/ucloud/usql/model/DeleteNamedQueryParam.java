@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -22,12 +23,12 @@ public class DeleteNamedQueryParam extends BaseRequestParam {
      * 已命名的SQL查询ID
      */
     @UcloudParam("NamedQueryId")
-    @NotEmpty(message = "namedQueryId can not be empty")
-    private String namedQueryId;
+    @NotNull(message = "namedQueryId can not be null")
+    private Integer namedQueryId;
 
 
     public DeleteNamedQueryParam(String region
-            , String namedQueryId
+            , Integer namedQueryId
     ) {
         super("DeleteNamedQuery");
         this.region = region;
@@ -43,13 +44,11 @@ public class DeleteNamedQueryParam extends BaseRequestParam {
         this.region = region;
     }
 
-    public String getNamedQueryId() {
-        return this.namedQueryId;
+    public Integer getNamedQueryId() {
+        return namedQueryId;
     }
 
-    public void setNamedQueryId(String namedQueryId) {
+    public void setNamedQueryId(Integer namedQueryId) {
         this.namedQueryId = namedQueryId;
     }
-
-
 }

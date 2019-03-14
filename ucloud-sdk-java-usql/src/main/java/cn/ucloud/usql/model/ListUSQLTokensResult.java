@@ -21,7 +21,7 @@ public class ListUSQLTokensResult extends BaseResponseResult {
      * 授权令牌总数
      */
     @SerializedName("TotalCount")
-    private String totalCount;
+    private Integer totalCount;
     /**
      * 授权令牌集合
      */
@@ -37,14 +37,13 @@ public class ListUSQLTokensResult extends BaseResponseResult {
         this.request = request;
     }
 
-    public String getTotalCount() {
-        return this.totalCount;
+    public Integer getTotalCount() {
+        return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-
 
     public List<Tokens> getTokens() {
         return this.tokens;

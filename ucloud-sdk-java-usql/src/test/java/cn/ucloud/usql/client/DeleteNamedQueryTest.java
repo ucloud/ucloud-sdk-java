@@ -28,8 +28,8 @@ public class DeleteNamedQueryTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String namedQueryId = "cn-sh2";
+        String region = "cn-bj2";
+        Integer namedQueryId = 10000602;
         param = new DeleteNamedQueryParam(region, namedQueryId);
         param.setProjectId("org-izug1m");
     }

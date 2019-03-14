@@ -75,48 +75,6 @@ public interface USQLClient extends UcloudClient {
                         Boolean... asyncFlag);
 
     /**
-     * 【待删除】删除授权
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    RemoveTokenForUSQLResult removeTokenForUSQL(
-            RemoveTokenForUSQLParam param) throws Exception;
-
-    /**
-     * 【待删除】删除授权 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void removeTokenForUSQL(RemoveTokenForUSQLParam param,
-                            UcloudHandler<RemoveTokenForUSQLResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
-     * 【待删除】获取USQL相关授权列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ListTokensForUSQLResult listTokensForUSQL(
-            ListTokensForUSQLParam param) throws Exception;
-
-    /**
-     * 【待删除】获取USQL相关授权列表 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void listTokensForUSQL(ListTokensForUSQLParam param,
-                           UcloudHandler<ListTokensForUSQLResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
      * 获取SQL查询结果下载地址
      *
      * @param param 参数对象
@@ -157,48 +115,6 @@ public interface USQLClient extends UcloudClient {
     void deleteCatalogDatabase(DeleteCatalogDatabaseParam param,
                                UcloudHandler<DeleteCatalogDatabaseResult> handler,
                                Boolean... asyncFlag);
-
-    /**
-     * 获取表信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    GetCatalogTableResult getCatalogTable(
-            GetCatalogTableParam param) throws Exception;
-
-    /**
-     * 获取表信息 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void getCatalogTable(GetCatalogTableParam param,
-                         UcloudHandler<GetCatalogTableResult> handler,
-                         Boolean... asyncFlag);
-
-    /**
-     * 【待删除】增加授权
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    AddTokenForUSQLResult addTokenForUSQL(
-            AddTokenForUSQLParam param) throws Exception;
-
-    /**
-     * 【待删除】增加授权 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void addTokenForUSQL(AddTokenForUSQLParam param,
-                         UcloudHandler<AddTokenForUSQLResult> handler,
-                         Boolean... asyncFlag);
 
     /**
      * 获取命名查询列表
@@ -453,27 +369,6 @@ public interface USQLClient extends UcloudClient {
                                Boolean... asyncFlag);
 
     /**
-     * 获取USQL服务状态
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    GetUSQLServiceResult getUSQLService(
-            GetUSQLServiceParam param) throws Exception;
-
-    /**
-     * 获取USQL服务状态 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void getUSQLService(GetUSQLServiceParam param,
-                        UcloudHandler<GetUSQLServiceResult> handler,
-                        Boolean... asyncFlag);
-
-    /**
      * 获取数据库列表
      *
      * @param param 参数对象
@@ -514,27 +409,6 @@ public interface USQLClient extends UcloudClient {
     void runSQLQuery(RunSQLQueryParam param,
                      UcloudHandler<RunSQLQueryResult> handler,
                      Boolean... asyncFlag);
-
-    /**
-     * 开通USQL服务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    OpenUSQLServiceResult openUSQLService(
-            OpenUSQLServiceParam param) throws Exception;
-
-    /**
-     * 开通USQL服务 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void openUSQLService(OpenUSQLServiceParam param,
-                         UcloudHandler<OpenUSQLServiceResult> handler,
-                         Boolean... asyncFlag);
 
     /**
      * 创建表

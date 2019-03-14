@@ -28,8 +28,8 @@ public class ListCatalogTablesTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "example";
         param = new ListCatalogTablesParam(region, databaseName);
         param.setProjectId("org-izug1m");
     }

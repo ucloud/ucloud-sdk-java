@@ -28,13 +28,13 @@ public class ListCatalogTablePropertiesTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "sdk_java";
         String tableName = "cn-sh2";
         param = new ListCatalogTablePropertiesParam(region, databaseName, tableName);
         param.setProjectId("org-izug1m");
     }
-
+    // todo 测试
 
     @Test
     public void listCatalogTableProperties() {

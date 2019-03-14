@@ -19,7 +19,7 @@ public class GetNamedQueryResult extends BaseResponseResult {
      * SQL查询名称
      */
     @SerializedName("QueryName")
-    private Integer queryName;
+    private String queryName;
     /**
      * SQL查询描述
      */
@@ -34,7 +34,7 @@ public class GetNamedQueryResult extends BaseResponseResult {
      * SQL查询保存时间
      */
     @SerializedName("CreateTime")
-    private String createTime;
+    private Integer createTime;
     /**
      * SQL查询ID
      */
@@ -50,11 +50,11 @@ public class GetNamedQueryResult extends BaseResponseResult {
         this.request = request;
     }
 
-    public Integer getQueryName() {
-        return this.queryName;
+    public String getQueryName() {
+        return queryName;
     }
 
-    public void setQueryName(Integer queryName) {
+    public void setQueryName(String queryName) {
         this.queryName = queryName;
     }
 
@@ -74,11 +74,11 @@ public class GetNamedQueryResult extends BaseResponseResult {
         this.queryString = queryString;
     }
 
-    public String getCreateTime() {
-        return this.createTime;
+    public Integer getCreateTime() {
+        return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
     }
 

@@ -28,10 +28,10 @@ public class GetSQLQueryDataURLTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String queryId = "cn-sh2";
+        String region = "cn-bj2";
+        String queryId = "20190314_125527_00020_fmje5";
         param = new GetSQLQueryDataURLParam(region, queryId);
-        param.setProjectId("org-izug1m");
+        param.setProjectId("org-pbmy1g");
     }
 
 

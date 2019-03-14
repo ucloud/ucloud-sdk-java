@@ -28,8 +28,8 @@ public class EnableUSQLTokenTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String dataSource = "cn-sh2";
+        String region = "cn-bj2";
+        String dataSource = "ufile";
         Integer state = 1;
         param = new EnableUSQLTokenParam(region, dataSource, state);
         param.setProjectId("org-izug1m");

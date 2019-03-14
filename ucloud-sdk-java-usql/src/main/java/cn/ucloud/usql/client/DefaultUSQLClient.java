@@ -66,38 +66,6 @@ public class DefaultUSQLClient extends DefaultUcloudClient implements USQLClient
     }
 
     @Override
-    public RemoveTokenForUSQLResult removeTokenForUSQL(RemoveTokenForUSQLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(RemoveTokenForUSQLResult.class);
-        return (RemoveTokenForUSQLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void removeTokenForUSQL(RemoveTokenForUSQLParam param,
-                                   UcloudHandler<RemoveTokenForUSQLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(RemoveTokenForUSQLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public ListTokensForUSQLResult listTokensForUSQL(ListTokensForUSQLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(ListTokensForUSQLResult.class);
-        return (ListTokensForUSQLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void listTokensForUSQL(ListTokensForUSQLParam param,
-                                  UcloudHandler<ListTokensForUSQLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(ListTokensForUSQLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public GetSQLQueryDataURLResult getSQLQueryDataURL(GetSQLQueryDataURLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetSQLQueryDataURLResult.class);
         return (GetSQLQueryDataURLResult) http.doGet(param, config, null);
@@ -123,38 +91,6 @@ public class DefaultUSQLClient extends DefaultUcloudClient implements USQLClient
     public void deleteCatalogDatabase(DeleteCatalogDatabaseParam param,
                                       UcloudHandler<DeleteCatalogDatabaseResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteCatalogDatabaseResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public GetCatalogTableResult getCatalogTable(GetCatalogTableParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(GetCatalogTableResult.class);
-        return (GetCatalogTableResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void getCatalogTable(GetCatalogTableParam param,
-                                UcloudHandler<GetCatalogTableResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(GetCatalogTableResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public AddTokenForUSQLResult addTokenForUSQL(AddTokenForUSQLParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(AddTokenForUSQLResult.class);
-        return (AddTokenForUSQLResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void addTokenForUSQL(AddTokenForUSQLParam param,
-                                UcloudHandler<AddTokenForUSQLResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(AddTokenForUSQLResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
@@ -354,22 +290,6 @@ public class DefaultUSQLClient extends DefaultUcloudClient implements USQLClient
     }
 
     @Override
-    public GetUSQLServiceResult getUSQLService(GetUSQLServiceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(GetUSQLServiceResult.class);
-        return (GetUSQLServiceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void getUSQLService(GetUSQLServiceParam param,
-                               UcloudHandler<GetUSQLServiceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(GetUSQLServiceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public ListCatalogDatabasesResult listCatalogDatabases(ListCatalogDatabasesParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ListCatalogDatabasesResult.class);
         return (ListCatalogDatabasesResult) http.doGet(param, config, null);
@@ -395,22 +315,6 @@ public class DefaultUSQLClient extends DefaultUcloudClient implements USQLClient
     public void runSQLQuery(RunSQLQueryParam param,
                             UcloudHandler<RunSQLQueryResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RunSQLQueryResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public OpenUSQLServiceResult openUSQLService(OpenUSQLServiceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(OpenUSQLServiceResult.class);
-        return (OpenUSQLServiceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void openUSQLService(OpenUSQLServiceParam param,
-                                UcloudHandler<OpenUSQLServiceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(OpenUSQLServiceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {

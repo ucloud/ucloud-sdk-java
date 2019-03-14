@@ -28,9 +28,9 @@ public class DeleteCatalogTableTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
-        String tableName = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "sdk_java";
+        String tableName = "json_test";
         param = new DeleteCatalogTableParam(region, databaseName, tableName);
         param.setProjectId("org-izug1m");
     }

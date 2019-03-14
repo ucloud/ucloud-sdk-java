@@ -28,13 +28,13 @@ public class UpdateUSQLSettingTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String outputLocation = "cn-sh2";
+        String region = "cn-bj2";
+        String outputLocation = "ufile://usql-query-results-izug1m-cn-bj2";
         param = new UpdateUSQLSettingParam(region, outputLocation);
         param.setProjectId("org-izug1m");
     }
 
-
+    // todo 测试 internal service error.
     @Test
     public void updateUSQLSetting() {
         try {

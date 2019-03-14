@@ -28,8 +28,8 @@ public class GetCatalogDatabaseTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "sdk_java";
         param = new GetCatalogDatabaseParam(region, databaseName);
         param.setProjectId("org-izug1m");
     }

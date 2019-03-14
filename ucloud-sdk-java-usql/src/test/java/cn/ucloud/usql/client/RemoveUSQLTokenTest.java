@@ -28,8 +28,8 @@ public class RemoveUSQLTokenTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String dataSource = "cn-sh2";
+        String region = "cn-bj2";
+        String dataSource = "ufile";
         param = new RemoveUSQLTokenParam(region, dataSource);
         param.setProjectId("org-izug1m");
     }

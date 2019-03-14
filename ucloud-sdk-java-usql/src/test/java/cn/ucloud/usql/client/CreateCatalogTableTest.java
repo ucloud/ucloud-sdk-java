@@ -31,14 +31,23 @@ public class CreateCatalogTableTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
-        String tableName = "cn-sh2";
-        String location = "cn-sh2";
-        String formation = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "sdk_java";
+        String tableName = "json_test";
+        String location = "ufile://javasdk/sample.json.tar";
+        String formation = "JSON";
         List<CreateCatalogTableParam.Column> columns = new ArrayList<>();
+        columns.add(new CreateCatalogTableParam.Column("docId","string"));
+        columns.add(new CreateCatalogTableParam.Column("user","struct<id:int,username:string,name:string," +
+                "shippingaddress:struct<address1:string,address2:string,city:string,state:string>," +
+                "orders:array<struct<itemid:int,orderdate:string>>>"));
+        List<CreateCatalogTableParam.Property> properties = new ArrayList<>();
+        properties.add(new CreateCatalogTableParam.Property("delimiter",","));
         param = new CreateCatalogTableParam(region, databaseName, tableName, location, formation,columns);
+        param.setProperties(properties);
+        param.setColumns(columns);
         param.setProjectId("org-izug1m");
+
     }
 
 
@@ -48,6 +57,7 @@ public class CreateCatalogTableTest {
             CreateCatalogTableResult result = client.createCatalogTable(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
+            e.printStackTrace();
             assertNull(e);
         }
     }
