@@ -46,27 +46,4 @@ public class GetSQLQueryDataTest {
         }
     }
 
-    @Test
-    public void getSQLQueryDataCallback() {
-        client.getSQLQueryData(param, new UcloudHandler
-                <GetSQLQueryDataResult>() {
-            @Override
-            public Object success(GetSQLQueryDataResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetSQLQueryDataResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

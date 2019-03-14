@@ -44,27 +44,4 @@ public class ListSQLQueriesTest {
         }
     }
 
-    @Test
-    public void listSQLQueriesCallback() {
-        client.listSQLQueries(param, new UcloudHandler
-                <ListSQLQueriesResult>() {
-            @Override
-            public Object success(ListSQLQueriesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ListSQLQueriesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

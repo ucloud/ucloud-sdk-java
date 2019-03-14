@@ -44,27 +44,4 @@ public class ListNamedQueriesTest {
         }
     }
 
-    @Test
-    public void listNamedQueriesCallback() {
-        client.listNamedQueries(param, new UcloudHandler
-                <ListNamedQueriesResult>() {
-            @Override
-            public Object success(ListNamedQueriesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ListNamedQueriesResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

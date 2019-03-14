@@ -44,27 +44,4 @@ public class GetUSQLServiceTest {
         }
     }
 
-    @Test
-    public void getUSQLServiceCallback() {
-        client.getUSQLService(param, new UcloudHandler
-                <GetUSQLServiceResult>() {
-            @Override
-            public Object success(GetUSQLServiceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetUSQLServiceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

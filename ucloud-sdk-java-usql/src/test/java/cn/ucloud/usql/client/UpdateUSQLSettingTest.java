@@ -45,27 +45,4 @@ public class UpdateUSQLSettingTest {
         }
     }
 
-    @Test
-    public void updateUSQLSettingCallback() {
-        client.updateUSQLSetting(param, new UcloudHandler
-                <UpdateUSQLSettingResult>() {
-            @Override
-            public Object success(UpdateUSQLSettingResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(UpdateUSQLSettingResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

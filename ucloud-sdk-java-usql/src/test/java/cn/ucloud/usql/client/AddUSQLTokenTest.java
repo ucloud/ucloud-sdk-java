@@ -47,27 +47,4 @@ public class AddUSQLTokenTest {
         }
     }
 
-    @Test
-    public void addUSQLTokenCallback() {
-        client.addUSQLToken(param, new UcloudHandler
-                <AddUSQLTokenResult>() {
-            @Override
-            public Object success(AddUSQLTokenResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(AddUSQLTokenResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

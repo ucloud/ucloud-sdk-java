@@ -48,27 +48,4 @@ public class OpenUSQLServiceTest {
         }
     }
 
-    @Test
-    public void openUSQLServiceCallback() {
-        client.openUSQLService(param, new UcloudHandler
-                <OpenUSQLServiceResult>() {
-            @Override
-            public Object success(OpenUSQLServiceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(OpenUSQLServiceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

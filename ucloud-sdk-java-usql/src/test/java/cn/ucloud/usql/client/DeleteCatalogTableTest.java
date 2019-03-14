@@ -45,28 +45,4 @@ public class DeleteCatalogTableTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void deleteCatalogTableCallback() {
-        client.deleteCatalogTable(param, new UcloudHandler
-                <DeleteCatalogTableResult>() {
-            @Override
-            public Object success(DeleteCatalogTableResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DeleteCatalogTableResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }
