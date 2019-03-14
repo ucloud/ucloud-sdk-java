@@ -50,7 +50,7 @@ public class DescribeUDPNResult extends BaseResponseResult {
          * 带宽
          */
         @SerializedName("Bandwidth")
-        private String bandWidth;
+        private Integer bandWidth;
         /**
          * unix 时间戳 创建时间
          */
@@ -94,11 +94,11 @@ public class DescribeUDPNResult extends BaseResponseResult {
             this.chargeType = chargeType;
         }
 
-        public String getBandWidth() {
+        public Integer getBandWidth() {
             return bandWidth;
         }
 
-        public void setBandWidth(String bandWidth) {
+        public void setBandWidth(Integer bandWidth) {
             this.bandWidth = bandWidth;
         }
 

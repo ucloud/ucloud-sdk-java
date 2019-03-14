@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Description : 创建MongoDB的副本节点 参数类
+ * @Description : 创建mongos实例 参数类
  * @Author : codezhang
  * @Date : 2019-03-03 14:08
  **/
@@ -131,7 +131,7 @@ public class CreateUDBRouteInstanceParam extends BaseRequestParam {
                 if (configsvrId.get(i) == null || configsvrId.get(i).length() <= 0) {
                     throw new ValidationException(String.format("configsvrId.%d can not be empty", i));
                 } else {
-                    params.add(new Param(String.format("ConfigsrvId.%d", i), configsvrId.get(i)));
+                    params.add(new Param(String.format("ConfigsvrId.%d", i), configsvrId.get(i)));
                 }
             }
         }

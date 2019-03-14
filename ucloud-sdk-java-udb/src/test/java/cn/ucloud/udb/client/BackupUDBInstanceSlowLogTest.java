@@ -1,17 +1,12 @@
 package cn.ucloud.udb.client;
 
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.udb.model.BackupUDBInstanceBinlogParam;
-import cn.ucloud.udb.model.BackupUDBInstanceErrorLogResult;
 import cn.ucloud.udb.model.BackupUDBInstanceSlowLogParam;
 import cn.ucloud.udb.model.BackupUDBInstanceSlowLogResult;
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 
 /**
  * @Description :
@@ -36,9 +31,9 @@ public class BackupUDBInstanceSlowLogTest {
     public void backupUDBInstanceSlowLog() {
         try {
             BackupUDBInstanceSlowLogResult result = client.backupUDBInstanceSlowLog(param);
-            JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
@@ -47,29 +42,21 @@ public class BackupUDBInstanceSlowLogTest {
         client.backupUDBInstanceSlowLog(param, new UcloudHandler<BackupUDBInstanceSlowLogResult>() {
             @Override
             public Object success(BackupUDBInstanceSlowLogResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(BackupUDBInstanceSlowLogResult result) {
-                try {
-                    JSONAssert.assertEquals(result.getResponseContent(), new Gson().toJson(result), true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                e.printStackTrace();
+                assertNull(e);
                 return null;
             }
-        },false);
+        }, false);
     }
 }

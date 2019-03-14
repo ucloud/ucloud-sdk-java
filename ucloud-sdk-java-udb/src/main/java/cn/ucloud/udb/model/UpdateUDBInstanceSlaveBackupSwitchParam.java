@@ -4,9 +4,10 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
- * @Description :
+ * @Description : 开启或者关闭UDB从库备份 参数类
  * @Author : codezhang
  * @Date : 2019-03-04 19:47
  **/
@@ -35,7 +36,7 @@ public class UpdateUDBInstanceSlaveBackupSwitchParam extends BaseRequestParam {
     /**
      * 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。
      */
-    @NotEmpty(message = "backupSwitch can not be empty")
+    @NotNull(message = "backupSwitch can not be empty")
     @UcloudParam("BackupSwitch")
     private Integer backupSwitch;
 
@@ -47,7 +48,7 @@ public class UpdateUDBInstanceSlaveBackupSwitchParam extends BaseRequestParam {
 
     public UpdateUDBInstanceSlaveBackupSwitchParam(@NotEmpty(message = "region can not be empty") String region,
                                                    @NotEmpty(message = "masterDBId can not be empty") String masterDBId,
-                                                   @NotEmpty(message = "backupSwitch can not be empty") Integer backupSwitch) {
+                                                   @NotNull(message = "backupSwitch can not be empty") Integer backupSwitch) {
         super("UpdateUDBInstanceSlaveBackupSwitch");
         this.region = region;
         this.masterDBId = masterDBId;

@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Description :  根据备份获取UDB实例信息 参数类
@@ -29,9 +30,9 @@ public class DescribeUDBInstanceByBackupParam extends BaseRequestParam {
     /**
      * 备份Id
      */
-    @NotEmpty(message = "backupId can not be empty")
+    @NotNull(message = "backupId can not be null")
     @UcloudParam("BackupId")
-    private String backupId;
+    private Integer backupId;
 
     /**
      * DB实例Id,该值可通过DescribeUDBInstance获取
@@ -42,7 +43,7 @@ public class DescribeUDBInstanceByBackupParam extends BaseRequestParam {
 
     public DescribeUDBInstanceByBackupParam(@NotEmpty(message = "region can not be empty") String region,
                                             @NotEmpty(message = "zone can not be empty") String zone,
-                                            @NotEmpty(message = "backupId can not be empty") String backupId) {
+                                            @NotNull(message = "backupId can not be null") Integer backupId) {
         super("DescribeUDBInstanceByBackup");
         this.region = region;
         this.zone = zone;
@@ -65,11 +66,11 @@ public class DescribeUDBInstanceByBackupParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public String getBackupId() {
+    public Integer getBackupId() {
         return backupId;
     }
 
-    public void setBackupId(String backupId) {
+    public void setBackupId(Integer backupId) {
         this.backupId = backupId;
     }
 

@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.CloneUDiskParam;
 import cn.ucloud.udisk.model.CloneUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -32,24 +33,25 @@ public class CloneUDiskTest {
     public void cloneUDisk() {
         try {
             CloneUDiskResult result = client.cloneUDisk(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void cloneUDiskCallback() {
         client.cloneUDisk(param, new UcloudHandler<CloneUDiskResult>() {
             @Override
             public Object success(CloneUDiskResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(CloneUDiskResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 

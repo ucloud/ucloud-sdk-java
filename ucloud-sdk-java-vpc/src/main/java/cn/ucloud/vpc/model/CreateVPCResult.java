@@ -25,13 +25,4 @@ public class CreateVPCResult extends BaseResponseResult {
         this.vpcId = vpcId;
     }
 
-    @Override
-    public String toString() {
-        return "CreateVPCResult{" +
-                "vpcId='" + vpcId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

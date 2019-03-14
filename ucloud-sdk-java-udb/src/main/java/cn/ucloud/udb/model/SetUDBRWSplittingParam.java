@@ -39,7 +39,7 @@ public class SetUDBRWSplittingParam extends BaseRequestParam {
     private String masterDBId;
 
     /**
-     * 读写分离策略
+     * 读写分离策略 DataNodeOnly/Uniform/SlaveUniform/Custom
      */
     @NotEmpty(message = "readMode can not be empty")
     @UcloudParam("ReadModel")
@@ -65,16 +65,21 @@ public class SetUDBRWSplittingParam extends BaseRequestParam {
     public SetUDBRWSplittingParam(@NotEmpty(message = "region can not be empty") String region,
                                   @NotEmpty(message = "zone can not be empty") String zone,
                                   @NotEmpty(message = "masterDBId can not be empty") String masterDBId,
-                                  @NotEmpty(message = "readMode can not be empty") String readMode) {
+                                  @NotEmpty(message = "readMode can not be empty") String readMode,
+                                  List<String> dbIds) {
         super("SetUDBRWSplitting");
         this.region = region;
         this.zone = zone;
         this.masterDBId = masterDBId;
         this.readMode = readMode;
+        this.dbIds = dbIds;
     }
 
     @UcloudParam("ReadPercents")
     public List<Param> checkReadPercents() throws ValidationException {
+        if ("Custom".equals(readMode) && (readPercents == null || readPercents.isEmpty())){
+            throw new ValidationException(String.format("readPercents can not be empty when read mode is custom"));
+        }
         List<Param> list = new ArrayList<>();
         if (readPercents != null && !readPercents.isEmpty()) {
             for (int i = 0; i < readPercents.size(); i++) {
@@ -92,7 +97,9 @@ public class SetUDBRWSplittingParam extends BaseRequestParam {
     @UcloudParam("DBIds")
     public List<Param> checkDBIds() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (dbIds != null && !dbIds.isEmpty()) {
+        if (dbIds == null || dbIds.isEmpty()) {
+            throw new ValidationException(String.format("dbIds can not be empty"));
+        } else {
             for (int i = 0; i < dbIds.size(); i++) {
                 if (dbIds.get(i) == null || dbIds.get(i).length() <= 0) {
                     throw new ValidationException(String.format("dbIds[%d] can not be empty", i));

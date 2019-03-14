@@ -27,8 +27,7 @@ public class DescribeSubnetResourceTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeSubnetResourceParam("cn-bj2","subnet-2kprhq");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeSubnetResourceParam("cn-bj2", "subnet-rmitl4");
     }
 
     @Test
@@ -36,6 +35,7 @@ public class DescribeSubnetResourceTest {
         try {
             DescribeSubnetResourceResult describeSubnetResourceResult = client.describeSubnetResource(param);
             System.out.println(describeSubnetResourceResult);
+            JSONComparator.jsonComparator(describeSubnetResourceResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.CloneRouteTableParam;
 import cn.ucloud.vpc.model.CloneRouteTableResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class CloneRouteTableTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CloneRouteTableParam("cn-bj2","routetable-pxtsmf");
-        param.setProjectId("org-4nfe1i");
+        param = new CloneRouteTableParam("cn-bj2", "routetable-ucyi5kkm");
     }
 
 
@@ -36,6 +33,7 @@ public class CloneRouteTableTest {
         try {
             CloneRouteTableResult cloneRouteTableResult = client.cloneRouteTable(param);
             System.out.println(cloneRouteTableResult);
+            JSONComparator.jsonComparator(cloneRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

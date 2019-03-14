@@ -16,14 +16,13 @@ public class DescribeUDBBackupBlacklistResult extends BaseResponseResult {
      * DB的黑名单列表, db.%为指定库 dbname.tablename为指定表
      */
     @SerializedName("Blacklist")
-    private List<String> blacklist;
+    private String blacklist;
 
-    public List<String> getBlacklist() {
+    public String getBlacklist() {
         return blacklist;
     }
 
-    public void setBlacklist(List<String> blacklist) {
+    public void setBlacklist(String blacklist) {
         this.blacklist = blacklist;
     }
-
 }

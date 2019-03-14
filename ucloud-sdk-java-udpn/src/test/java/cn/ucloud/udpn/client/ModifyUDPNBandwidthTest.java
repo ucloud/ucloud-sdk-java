@@ -7,6 +7,8 @@ import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -23,16 +25,16 @@ public class ModifyUDPNBandwidthTest {
         client = new DefaultUDPNClient(new UdpnConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ModifyUDPNBandwidthParam("udpn-5bst2lvo", 3);
+        param = new ModifyUDPNBandwidthParam("udpn-111qalty", 3);
     }
 
     @Test
     public void modifyUDPNBandwidth() {
         try {
-            ModifyUDPNBandwidthResult ModifyUDPNBandwidthResult = client.ModifyUDPNBandwidth(param);
-            System.out.println(ModifyUDPNBandwidthResult);
+            ModifyUDPNBandwidthResult result = client.ModifyUDPNBandwidth(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

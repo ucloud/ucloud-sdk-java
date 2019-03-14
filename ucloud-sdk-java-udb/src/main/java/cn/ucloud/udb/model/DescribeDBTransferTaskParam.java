@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Description : 获取迁移任务信息 参数类
@@ -39,20 +40,26 @@ public class DescribeDBTransferTaskParam extends BaseRequestParam {
      * 分页显示起始偏移位置，列表操作则指定
      */
     @UcloudParam("Limit")
+    @NotNull(message = "limit can not be null")
     private Integer limit;
 
 
     /**
      * 分页显示数量，列表操作则指定
      */
+    @NotNull(message = "offset can not be null")
     @UcloudParam("Offset")
     private Integer offset;
 
     public DescribeDBTransferTaskParam(@NotEmpty(message = "region can not be empty") String region,
-                                       @NotEmpty(message = "zone can not be empty") String zone) {
+                                       @NotEmpty(message = "zone can not be empty") String zone,
+                                       @NotNull(message = "limit can not be null") Integer limit,
+                                       @NotNull(message = "offset can not be null") Integer offset) {
         super("DescribeDBTransferTask");
         this.region = region;
         this.zone = zone;
+        this.limit = limit;
+        this.offset = offset;
     }
 
     public String getRegion() {

@@ -18,7 +18,7 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
          * 备份id
          */
         @SerializedName("BackupId")
-        private String backupId;
+        private Integer backupId;
 
 
         /**
@@ -81,16 +81,32 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
         private String backupZone;
 
         /**
+         * 错误信息
+         */
+        @SerializedName("ErrorInfo")
+        private String errorInfo;
+
+        /**
          * 备份完成时间(Unix时间戳)
          */
         @SerializedName("BackupEndTime")
         private Integer backupEndTime;
 
-        public String getBackupId() {
+
+
+        public String getErrorInfo() {
+            return errorInfo;
+        }
+
+        public void setErrorInfo(String errorInfo) {
+            this.errorInfo = errorInfo;
+        }
+
+        public Integer getBackupId() {
             return backupId;
         }
 
-        public void setBackupId(String backupId) {
+        public void setBackupId(Integer backupId) {
             this.backupId = backupId;
         }
 

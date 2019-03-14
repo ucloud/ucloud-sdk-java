@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Description : 删除配置 参数类
@@ -29,9 +30,9 @@ public class DeleteUDBParamGroupParam extends BaseRequestParam {
     /**
      * 参数组id,可通过DescribeUDBParamGroup获取
      */
-    @NotEmpty(message = "groupId can not be empty")
+    @NotNull(message = "groupId can not be empty")
     @UcloudParam("GroupId")
-    private String groupId;
+    private Integer groupId;
 
     /**
      * 是否属于地域级别
@@ -41,7 +42,7 @@ public class DeleteUDBParamGroupParam extends BaseRequestParam {
 
     public DeleteUDBParamGroupParam(@NotEmpty(message = "region can not be empty") String region,
                                     @NotEmpty(message = "zone can not be empty") String zone,
-                                    @NotEmpty(message = "groupId can not be empty") String groupId) {
+                                    @NotNull(message = "groupId can not be empty") Integer groupId) {
         super("DeleteUDBParamGroup");
         this.region = region;
         this.zone = zone;
@@ -64,11 +65,11 @@ public class DeleteUDBParamGroupParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public String getGroupId() {
+    public Integer getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(String groupId) {
+    public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
 
