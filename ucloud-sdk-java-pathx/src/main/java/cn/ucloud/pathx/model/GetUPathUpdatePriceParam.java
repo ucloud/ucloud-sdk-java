@@ -28,6 +28,7 @@ public class GetUPathUpdatePriceParam extends BaseRequestParam {
     /**
      *
      */
+    @NotEmpty(message = "lineId can not be empty")
     @UcloudParam("LineId")
     private String lineId;
 
@@ -35,11 +36,13 @@ public class GetUPathUpdatePriceParam extends BaseRequestParam {
     public GetUPathUpdatePriceParam(String projectId
             , String resourceId
             , Integer bandwidth
+            , String lineId
     ) {
         super("GetUPathUpdatePrice");
         this.projectId = projectId;
         this.resourceId = resourceId;
         this.bandwidth = bandwidth;
+        this.lineId = lineId;
     }
 
 

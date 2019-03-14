@@ -3,6 +3,7 @@ package cn.ucloud.pathx.model;
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 
@@ -21,18 +22,20 @@ public class GetUGAUpdatePriceParam extends BaseRequestParam {
     /**
      *
      */
+    @NotEmpty(message = "resourceId can not be empty")
     @UcloudParam("ResourceId")
     private String resourceId;
 
 
+
     public GetUGAUpdatePriceParam(String projectId
-            , Integer uPathNum
+            , Integer uPathNum,String resourceId
     ) {
         super("GetUGAUpdatePrice");
         this.projectId = projectId;
         this.uPathNum = uPathNum;
+        this.resourceId = resourceId;
     }
-
 
     public Integer getuPathNum() {
         return this.uPathNum;

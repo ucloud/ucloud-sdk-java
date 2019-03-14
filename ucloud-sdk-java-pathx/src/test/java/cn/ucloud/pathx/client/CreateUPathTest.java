@@ -30,7 +30,7 @@ public class CreateUPathTest {
         String projectId = "org-izug1m";
         String name = "sdk-java-test";
         String lineId = "line_hk_cn-gd";
-        Integer bandwidth = 1;
+        Integer bandwidth = 2;
         String chargeType = "Dynamic";
         Integer quantity = 1;
         param = new CreateUPathParam(projectId, name, lineId, bandwidth, chargeType, quantity);

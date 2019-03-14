@@ -27,12 +27,11 @@ public class GetUGAUpdatePriceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         Integer uPathNum = 1;
-        param = new GetUGAUpdatePriceParam(projectId, uPathNum);
-        param.setProjectId("org-izug1m");
+        String resourceId = "upath-bwccmk2b";
+        param = new GetUGAUpdatePriceParam(projectId, uPathNum,resourceId);
     }
-
 
     @Test
     public void getUGAUpdatePrice() {

@@ -16,7 +16,13 @@ public class GetGlobalSSHMetricResult extends BaseResponseResult {
      * 相关指标，如带宽等
      */
     @SerializedName("Metrics")
-    private List<GlobalSSHMetric> metrics;
+    private GlobalSSHMetric metrics;
 
+    public GlobalSSHMetric getMetrics() {
+        return metrics;
+    }
 
+    public void setMetrics(GlobalSSHMetric metrics) {
+        this.metrics = metrics;
+    }
 }

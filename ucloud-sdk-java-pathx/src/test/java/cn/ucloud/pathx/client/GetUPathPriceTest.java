@@ -27,13 +27,12 @@ public class GetUPathPriceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         Integer bandwidth = 1;
         Integer quantity = 1;
-        String chargeType = "cn-sh2";
-        String lineId = "cn-sh2";
+        String chargeType = "Dynamic";
+        String lineId = "line_hk_cn-gd";
         param = new GetUPathPriceParam(projectId, bandwidth, quantity, chargeType, lineId);
-        param.setProjectId("org-izug1m");
     }
 
 

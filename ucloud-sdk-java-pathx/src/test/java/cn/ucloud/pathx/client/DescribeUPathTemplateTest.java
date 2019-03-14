@@ -27,12 +27,10 @@ public class DescribeUPathTemplateTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uPathId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uPathId = "upath-bwccmk2b";
         param = new DescribeUPathTemplateParam(projectId, uPathId);
-        param.setProjectId("org-izug1m");
     }
-
 
     @Test
     public void describeUPathTemplate() {

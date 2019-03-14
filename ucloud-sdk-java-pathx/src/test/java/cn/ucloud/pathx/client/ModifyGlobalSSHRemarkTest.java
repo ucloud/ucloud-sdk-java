@@ -27,10 +27,10 @@ public class ModifyGlobalSSHRemarkTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String instanceId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String instanceId = "uga-eskzpkk2";
         param = new ModifyGlobalSSHRemarkParam(projectId, instanceId);
-        param.setProjectId("org-izug1m");
+        param.setRemark("test");
     }
 
 

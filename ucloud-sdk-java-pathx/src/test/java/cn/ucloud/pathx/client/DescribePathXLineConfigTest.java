@@ -28,7 +28,7 @@ public class DescribePathXLineConfigTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribePathXLineConfigParam();
-        param.setProjectId("org-izug1m");
+        //param.setProjectId("org-izug1m");
     }
 
 

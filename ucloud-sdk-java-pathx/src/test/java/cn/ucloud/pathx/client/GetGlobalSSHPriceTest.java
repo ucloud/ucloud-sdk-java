@@ -28,7 +28,7 @@ public class GetGlobalSSHPriceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         Integer quantity = 1;
-        String chargeType = "cn-sh2";
+        String chargeType = "Dynamic";
         param = new GetGlobalSSHPriceParam(quantity, chargeType);
         param.setProjectId("org-izug1m");
     }

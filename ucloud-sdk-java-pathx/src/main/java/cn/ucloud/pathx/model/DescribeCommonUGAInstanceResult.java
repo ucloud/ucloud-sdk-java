@@ -15,7 +15,7 @@ public class DescribeCommonUGAInstanceResult extends BaseResponseResult {
     /**
      * 全球加速实例信息列表
      */
-    @SerializedName("UGAAList")
+    @SerializedName("UGAList")
     private List<AppleUGAAInfo> uGAAList;
 
 

@@ -28,7 +28,7 @@ public class DescribeGlobalSSHAreaTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeGlobalSSHAreaParam();
-        param.setProjectId("org-izug1m");
+        //param.setProjectId("org-izug1m");
     }
 
 

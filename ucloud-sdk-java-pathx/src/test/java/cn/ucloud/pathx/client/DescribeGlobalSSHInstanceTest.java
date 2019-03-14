@@ -27,9 +27,8 @@ public class DescribeGlobalSSHInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         param = new DescribeGlobalSSHInstanceParam(projectId);
-        param.setProjectId("org-izug1m");
     }
 
 

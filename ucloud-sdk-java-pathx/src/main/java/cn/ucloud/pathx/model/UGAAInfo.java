@@ -57,6 +57,16 @@ public class UGAAInfo {
     @SerializedName("TaskSet")
     private List<UGAATask> taskSet;
 
+    @SerializedName("OutPublicIpList")
+    private List<OutPublicIpInfo> outPublicIpInfos;
+
+    public List<OutPublicIpInfo> getOutPublicIpInfos() {
+        return outPublicIpInfos;
+    }
+
+    public void setOutPublicIpInfos(List<OutPublicIpInfo> outPublicIpInfos) {
+        this.outPublicIpInfos = outPublicIpInfos;
+    }
 
     public String getuGAId() {
         return this.uGAId;

@@ -27,8 +27,8 @@ public class DescribeCommonUGAInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAType = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uGAType = "AppStore";
         param = new DescribeCommonUGAInstanceParam(projectId, uGAType);
         param.setProjectId("org-izug1m");
     }

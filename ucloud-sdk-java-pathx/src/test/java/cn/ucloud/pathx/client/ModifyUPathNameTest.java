@@ -27,11 +27,10 @@ public class ModifyUPathNameTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uPathId = "cn-sh2";
-        String name = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uPathId = "upath-bwccmk2b";
+        String name = "sdk-java-test-rename";
         param = new ModifyUPathNameParam(projectId, uPathId, name);
-        param.setProjectId("org-izug1m");
     }
 
 

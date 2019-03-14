@@ -2,6 +2,8 @@ package cn.ucloud.pathx.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 
 /**
  * @Description : GlobalSSH实例信息 模型类
@@ -55,6 +57,16 @@ public class GlobalSSHInfo {
     @SerializedName("ExpireTime")
     private Integer expireTime;
 
+    @SerializedName("OutPublicIpList")
+    private List<OutPublicIpInfo> outPublicIpInfos;
+
+    public List<OutPublicIpInfo> getOutPublicIpInfos() {
+        return outPublicIpInfos;
+    }
+
+    public void setOutPublicIpInfos(List<OutPublicIpInfo> outPublicIpInfos) {
+        this.outPublicIpInfos = outPublicIpInfos;
+    }
 
     public String getInstanceId() {
         return this.instanceId;

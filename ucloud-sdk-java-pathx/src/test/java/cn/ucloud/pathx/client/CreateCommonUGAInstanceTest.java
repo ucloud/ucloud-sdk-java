@@ -7,6 +7,9 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
@@ -27,14 +30,17 @@ public class CreateCommonUGAInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String quantity = "cn-sh2";
-        String location = "cn-sh2";
-        String chargeType = "cn-sh2";
-        String uGAType = "cn-sh2";
-        String name = "cn-sh2";
+        String projectId = "org-izug1m";
+        Integer quantity = 0;
+        String location = "中国";
+        String chargeType = "Month";
+        String uGAType = "AppStore";
+        String name = "sdk-java";
         param = new CreateCommonUGAInstanceParam(projectId, quantity, location, chargeType, uGAType, name);
-        param.setProjectId("org-izug1m");
+        List<Integer> tcpPorts = new ArrayList<>();
+        tcpPorts.add(8080);
+        param.setTcpPorts(tcpPorts);
+        param.setDomain("codezhang.cn");
     }
 
 

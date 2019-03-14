@@ -27,11 +27,10 @@ public class ModifyUPathBandwidthTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uPathId = "cn-sh2";
-        String bandwidth = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uPathId = "upath-bwccmk2b";
+        Integer bandwidth = 2;
         param = new ModifyUPathBandwidthParam(projectId, uPathId, bandwidth);
-        param.setProjectId("org-izug1m");
     }
 
 

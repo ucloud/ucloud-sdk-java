@@ -3,9 +3,13 @@ package cn.ucloud.pathx.client;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.InsertPathXWhitelistParam;
 import cn.ucloud.pathx.model.InsertPathXWhitelistResult;
+import cn.ucloud.pathx.model.PathXWhitelist;
 import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertNull;
 
@@ -27,10 +31,11 @@ public class InsertPathXWhitelistTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String instanceId = "cn-sh2";
-        param = new InsertPathXWhitelistParam(projectId, instanceId);
-        param.setProjectId("org-izug1m");
+        String projectId = "org-izug1m";
+        String instanceId = "uga-eskzpkk2";
+        List<PathXWhitelist> whitelists = new ArrayList<>();
+        whitelists.add(new PathXWhitelist("192.168.1.2","tcp","22"));
+        param = new InsertPathXWhitelistParam(projectId, instanceId,whitelists);
     }
 
 
