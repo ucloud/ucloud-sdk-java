@@ -7,6 +7,6 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  * @Author : codezhang
  * @Date : 2019-03-03 15:59
  **/
-public class DeleteUDBParamGroupReuslt extends BaseResponseResult {
+public class DeleteUDBParamGroupResult extends BaseResponseResult {
 
 }

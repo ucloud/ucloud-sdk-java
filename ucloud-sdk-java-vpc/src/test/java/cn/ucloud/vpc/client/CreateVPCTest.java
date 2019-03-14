@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.CreateVPCParam;
 import cn.ucloud.vpc.model.CreateVPCResult;
 import cn.ucloud.common.pojo.Account;
@@ -31,9 +29,8 @@ public class CreateVPCTest {
                         System.getenv("UcloudPublicKey"))));
         param = new CreateVPCParam("cn-bj2","sdk-java-vpc2");
         List<String> network = new ArrayList<>();
-        network.add("10.10.0.0/16");
+        network.add("10.24.0.0/16");
         param.setNetwork(network);
-        param.setProjectId("org-4nfe1i");
     }
 
 
@@ -42,6 +39,7 @@ public class CreateVPCTest {
         try {
             CreateVPCResult vpc = client.createVPC(param);
             System.out.println(vpc);
+            JSONComparator.jsonComparator(vpc);
         } catch (Exception e) {
             e.printStackTrace();
         }

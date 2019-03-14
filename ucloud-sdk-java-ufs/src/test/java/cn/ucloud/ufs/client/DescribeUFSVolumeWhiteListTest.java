@@ -7,6 +7,8 @@ import cn.ucloud.ufs.pojo.UFSConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,16 +27,16 @@ public class DescribeUFSVolumeWhiteListTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeUFSVolumeWhiteListParam("cn-bj2","ufs-qx1waw");
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void describeUFSVolumeWhiteList() {
         try {
-            DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteListResult = client.describeUFSVolumeWhiteList(param);
-            System.out.println(describeUFSVolumeWhiteListResult);
+            DescribeUFSVolumeWhiteListResult result = client.describeUFSVolumeWhiteList(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.AssociateRouteTableParam;
 import cn.ucloud.vpc.model.AssociateRouteTableResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class AssociateRouteTableTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AssociateRouteTableParam("cn-bj2","subnet-5c232h","routetable-pxtsmf");
-        param.setProjectId("org-4nfe1i");
+        param = new AssociateRouteTableParam("cn-bj2", "subnet-52f1rwlv", "routetable-ucyi5kkm");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class AssociateRouteTableTest {
         try {
             AssociateRouteTableResult associateRouteTableResult = client.associateRouteTable(param);
             System.out.println(associateRouteTableResult);
+            JSONComparator.jsonComparator(associateRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

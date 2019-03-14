@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.DeleteVPCIntercomParam;
 import cn.ucloud.vpc.model.DeleteVPCIntercomResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class DeleteVPCIntercomTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DeleteVPCIntercomParam("cn-bj2","uvnet-lsltj0","uvnet-qmrkj1");
-        param.setProjectId("org-4nfe1i");
+        param = new DeleteVPCIntercomParam("cn-bj2", "uvnet-453iklki", "uvnet-ckhwco");
     }
 
 
@@ -35,6 +32,7 @@ public class DeleteVPCIntercomTest {
         try {
             DeleteVPCIntercomResult deleteVPCIntercomResult = client.deleteVPCIntercom(param);
             System.out.println(deleteVPCIntercomResult);
+            JSONComparator.jsonComparator(deleteVPCIntercomResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -75,6 +75,20 @@ public class DescribeUFSVolumeResult extends BaseResponseResult {
         @SerializedName("IsExpired")
         private String isExpired;
 
+        /**
+         * 支付方式
+         */
+        @SerializedName("ChargeType")
+        private String chargeType;
+
+        public String getChargeType() {
+            return chargeType;
+        }
+
+        public void setChargeType(String chargeType) {
+            this.chargeType = chargeType;
+        }
+
         public String getVolumeName() {
             return volumeName;
         }
@@ -154,22 +168,6 @@ public class DescribeUFSVolumeResult extends BaseResponseResult {
         public void setIsExpired(String isExpired) {
             this.isExpired = isExpired;
         }
-
-        @Override
-        public String toString() {
-            return "UFSVolumeInfo{" +
-                    "volumeName='" + volumeName + '\'' +
-                    ", volumeId='" + volumeId + '\'' +
-                    ", volumeStatus='" + volumeStatus + '\'' +
-                    ", mountPoint='" + mountPoint + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", tag='" + tag + '\'' +
-                    ", createTime=" + createTime +
-                    ", expiredTime=" + expiredTime +
-                    ", size=" + size +
-                    ", isExpired='" + isExpired + '\'' +
-                    '}';
-        }
     }
 
 
@@ -202,14 +200,4 @@ public class DescribeUFSVolumeResult extends BaseResponseResult {
         this.ufsVolumeInfos = ufsVolumeInfos;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUFSVolumeResult{" +
-                "totalCount=" + totalCount +
-                ", ufsVolumeInfos=" + ufsVolumeInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

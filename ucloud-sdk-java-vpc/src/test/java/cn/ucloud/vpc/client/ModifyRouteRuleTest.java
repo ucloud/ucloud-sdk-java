@@ -27,20 +27,20 @@ public class ModifyRouteRuleTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ModifyRouteRuleParam("cn-bj2","routetable-ciodbt");
-        param.setProjectId("org-4nfe1i");
-        ModifyRouteRuleParam.RouteRule routeRule = new ModifyRouteRuleParam.RouteRule("1","10.10.0.0/16 ",
-                "instance","uhost-zzsffd",0,"test","add");
+        param = new ModifyRouteRuleParam("cn-bj2", "routetable-ucyi5kkm");
+        param.setProjectId("org-izug1m");
+        ModifyRouteRuleParam.RouteRule routeRule = new ModifyRouteRuleParam.RouteRule("1", "10.24.0.0/16",
+                "instance", "uhost-kv444y5x", 0, "test", "add");
         List<ModifyRouteRuleParam.RouteRule> list = new ArrayList<>();
         list.add(routeRule);
         param.setRouteRules(list);
     }
     @Test
     public void modifyRouteRule() {
-        // todo 测试 未上线
         try {
             ModifyRouteRuleResult modifyRouteRuleResult = client.modifyRouteRule(param);
             System.out.println(modifyRouteRuleResult);
+            JSONComparator.jsonComparator(modifyRouteRuleResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

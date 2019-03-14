@@ -19,8 +19,8 @@ public class DescribeUDBInstanceByBackupResult extends BaseResponseResult {
     /**
      * DB类型id
      */
-    @SerializedName("UDBTypeId")
-    private String udbTypeId;
+    @SerializedName("DBTypeId")
+    private String dbTypeId;
 
     /**
      * UDB实例类型
@@ -48,12 +48,12 @@ public class DescribeUDBInstanceByBackupResult extends BaseResponseResult {
         this.instanceMode = instanceMode;
     }
 
-    public String getUdbTypeId() {
-        return udbTypeId;
+    public String getDbTypeId() {
+        return dbTypeId;
     }
 
-    public void setUdbTypeId(String udbTypeId) {
-        this.udbTypeId = udbTypeId;
+    public void setDbTypeId(String dbTypeId) {
+        this.dbTypeId = dbTypeId;
     }
 
     public String getInstanceType() {

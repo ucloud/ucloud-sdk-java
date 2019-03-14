@@ -74,12 +74,14 @@ public class CreateUDBCInstanceParam extends BaseRequestParam {
     public CreateUDBCInstanceParam(@NotEmpty(message = "region can not be empty") String region,
                                    @NotEmpty(message = "zone can not be empty") String zone,
                                    @NotEmpty(message = "udbcName can not be empty") String udbcName,
-                                   @NotEmpty(message = "type can not be empty") String type) {
+                                   @NotEmpty(message = "type can not be empty") String type,
+                                   @NotEmpty(message = "tag can not be empty") String tag) {
         super("CreateUDBCInstance");
         this.region = region;
         this.zone = zone;
         this.udbcName = udbcName;
         this.type = type;
+        this.tag = tag;
     }
 
     public String getRegion() {

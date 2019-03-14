@@ -215,6 +215,7 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     /**
      * optional 内存大小。单位：MB。范围 ：[1024, 131072]， 取值为2的幂次方。默认值：8192。
      */
+    @UcloudParam("Memory")
     private Integer memory;
 
 

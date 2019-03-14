@@ -160,6 +160,48 @@ public class DescribeUDBParamGroupResult extends BaseResponseResult {
         @SerializedName("ParamMember")
         private List<UDBParamMember> udbParamMembers;
 
+        /**
+         * 参数类型名称
+         */
+        @SerializedName("ParamGroupTypeName")
+        private String paramGroupTypeName;
+
+        /**
+         * region 标记
+         */
+        @SerializedName("RegionFlag")
+        private Boolean regionFlag;
+
+        /**
+         * 可用区
+         */
+        @SerializedName("Zone")
+        private String zone;
+
+        public Boolean getRegionFlag() {
+            return regionFlag;
+        }
+
+        public void setRegionFlag(Boolean regionFlag) {
+            this.regionFlag = regionFlag;
+        }
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        public String getParamGroupTypeName() {
+            return paramGroupTypeName;
+        }
+
+        public void setParamGroupTypeName(String paramGroupTypeName) {
+            this.paramGroupTypeName = paramGroupTypeName;
+        }
+
         public Integer getGroupId() {
             return groupId;
         }

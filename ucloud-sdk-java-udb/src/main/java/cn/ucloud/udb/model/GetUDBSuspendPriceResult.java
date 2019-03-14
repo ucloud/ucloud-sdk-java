@@ -14,13 +14,13 @@ public class GetUDBSuspendPriceResult extends BaseResponseResult {
      * 退款金额
      */
     @SerializedName("TotalPrice")
-    private String totalPrice;
+    private Integer totalPrice;
 
-    public String getTotalPrice() {
+    public Integer getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(Integer totalPrice) {
         this.totalPrice = totalPrice;
     }
 }

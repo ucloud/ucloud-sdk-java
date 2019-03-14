@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.DescribeVPCIntercomParam;
 import cn.ucloud.vpc.model.DescribeVPCIntercomResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class DescribeVPCIntercomTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeVPCIntercomParam("cn-bj2","uvnet-lsltj0");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeVPCIntercomParam("cn-bj2", "uvnet-ckhwco");
     }
 
     @Test
@@ -34,6 +31,7 @@ public class DescribeVPCIntercomTest {
         try {
             DescribeVPCIntercomResult describeVPCIntercomResult = client.describeVPCIntercom(param);
             System.out.println(describeVPCIntercomResult);
+            JSONComparator.jsonComparator(describeVPCIntercomResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

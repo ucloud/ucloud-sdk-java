@@ -6,7 +6,10 @@ import cn.ucloud.udisk.model.DetachUDiskParam;
 import cn.ucloud.udisk.model.DetachUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
 
 /**
  * @description:
@@ -32,30 +35,31 @@ public class DetachUDiskTest {
     public void detachUDisk() {
         try {
             DetachUDiskResult result = client.detachUDisk(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void detachUDiskCallback() {
         client.detachUDisk(param, new UcloudHandler<DetachUDiskResult>() {
             @Override
             public Object success(DetachUDiskResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(DetachUDiskResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object error(Exception e) {
-                System.out.println("异步 error：" + e);
+                assertNull(e);
                 return null;
             }
         },false);

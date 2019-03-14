@@ -27,7 +27,6 @@ public class DescribeSubnetTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeSubnetParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
     }
 
     @Test
@@ -35,6 +34,7 @@ public class DescribeSubnetTest {
         try {
             DescribeSubnetResult describeSubnetResult = client.describeSubnet(param);
             System.out.println(describeSubnetResult);
+            JSONComparator.jsonComparator(describeSubnetResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

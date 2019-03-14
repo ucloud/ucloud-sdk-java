@@ -40,19 +40,18 @@ public class UpdateRouteTableAttributeParam extends BaseRequestParam {
     @UcloudParam("Remark")
     private String remark;
 
-    public UpdateRouteTableAttributeParam( @NotEmpty(message = "region can not be empty") String region,
-                                          @NotEmpty(message = "routeTableId can not be empty") String routeTableId) {
-        super("UpdateRouteTableAttribute");
-        this.region = region;
-        this.routeTableId = routeTableId;
-    }
-
     /**
      * optional 业务组名称
      */
     @UcloudParam("Tag")
     private String tag;
 
+    public UpdateRouteTableAttributeParam( @NotEmpty(message = "region can not be empty") String region,
+                                          @NotEmpty(message = "routeTableId can not be empty") String routeTableId) {
+        super("UpdateRouteTableAttribute");
+        this.region = region;
+        this.routeTableId = routeTableId;
+    }
 
     public String getRegion() {
         return region;

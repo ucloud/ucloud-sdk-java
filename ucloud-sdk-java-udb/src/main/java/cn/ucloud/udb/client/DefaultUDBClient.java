@@ -4,7 +4,6 @@ import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.udb.model.*;
 import cn.ucloud.udb.pojo.UDBConfig;
 
@@ -26,7 +25,7 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public void backupUDBInstance(BaseRequestParam param,
+    public void backupUDBInstance(BackupUDBInstanceParam param,
                                   UcloudHandler<BackupUDBInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BackupUDBInstanceResult.class);
         try {
@@ -561,16 +560,16 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public DeleteUDBParamGroupReuslt deleteUDBParamGroup(DeleteUDBParamGroupParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DeleteUDBParamGroupReuslt.class);
-        return (DeleteUDBParamGroupReuslt) http.doGet(param, config, null);
+    public DeleteUDBParamGroupResult deleteUDBParamGroup(DeleteUDBParamGroupParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUDBParamGroupResult.class);
+        return (DeleteUDBParamGroupResult) http.doGet(param, config, null);
     }
 
     @Override
     public void deleteUDBParamGroup(DeleteUDBParamGroupParam param,
-                                    UcloudHandler<DeleteUDBParamGroupReuslt> handler,
+                                    UcloudHandler<DeleteUDBParamGroupResult> handler,
                                     Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DeleteUDBParamGroupReuslt.class);
+        UcloudHttp http = new UcloudHttpImpl(DeleteUDBParamGroupResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
@@ -852,7 +851,7 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public void describeUDBInstanceBinlogBackupState(DescribeUDBInstanceByBackupParam param,
+    public void describeUDBInstanceByBackup(DescribeUDBInstanceByBackupParam param,
                                                      UcloudHandler<DescribeUDBInstanceByBackupResult> handler,
                                                      Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDBInstanceByBackupResult.class);
@@ -899,14 +898,14 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public DescribeUDBInstanceLogResult describeUDBInstanceLogParam(DescribeUDBInstanceLogParam param)
+    public DescribeUDBInstanceLogResult describeUDBInstanceLog(DescribeUDBInstanceLogParam param)
             throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDBInstanceLogResult.class);
         return (DescribeUDBInstanceLogResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void describeUDBInstanceLogParam(DescribeUDBInstanceLogParam param,
+    public void describeUDBInstanceLog(DescribeUDBInstanceLogParam param,
                                             UcloudHandler<DescribeUDBInstanceLogResult> handler,
                                             Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDBInstanceLogResult.class);

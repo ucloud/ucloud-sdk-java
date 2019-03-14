@@ -7,6 +7,8 @@ import cn.ucloud.udpn.pojo.UdpnConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -29,10 +31,10 @@ public class GetUDPNUpgradePriceTest {
     @Test
     public void getUDPNUpgradePrice() {
         try {
-            GetUDPNUpgradePriceResult GetUDPNUpgradePriceResult = client.GetUDPNUpgradePrice(param);
-            System.out.println(GetUDPNUpgradePriceResult);
+            GetUDPNUpgradePriceResult result = client.GetUDPNUpgradePrice(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class UpdateRouteTableAttributeResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "UpdateRouteTableAttributeResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

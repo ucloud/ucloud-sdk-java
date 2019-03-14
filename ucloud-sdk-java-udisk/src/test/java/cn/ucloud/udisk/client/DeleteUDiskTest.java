@@ -6,6 +6,7 @@ import cn.ucloud.udisk.model.DeleteUDiskParam;
 import cn.ucloud.udisk.model.DeleteUDiskResult;
 import cn.ucloud.udisk.pojo.UdiskConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -28,28 +29,30 @@ public class DeleteUDiskTest {
         param.setProjectId("org-4nfe1i");
     }
 
+
     @Test
     public void deleteUDisk() {
         try {
             DeleteUDiskResult result = client.deleteUDisk(param);
-            System.out.println("同步：" + result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    @Ignore
     @Test
     public void deleteUDiskCallback() {
         client.deleteUDisk(param, new UcloudHandler<DeleteUDiskResult>() {
             @Override
             public Object success(DeleteUDiskResult result) {
-                System.out.println("异步 success：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
             @Override
             public Object failed(DeleteUDiskResult result) {
-                System.out.println("异步 failed：" + result);
+                JSONComparator.jsonComparator(result);
                 return null;
             }
 
