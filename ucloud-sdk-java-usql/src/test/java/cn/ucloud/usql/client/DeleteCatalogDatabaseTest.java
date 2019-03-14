@@ -28,8 +28,8 @@ public class DeleteCatalogDatabaseTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "sdk_java2";
         param = new DeleteCatalogDatabaseParam(region, databaseName);
         param.setProjectId("org-izug1m");
     }

@@ -9,6 +9,13 @@ import com.google.gson.annotations.SerializedName;
  * @Date : 2019-03-13 07:56
  **/
 public class QuerySummary {
+
+    /**
+     * 查询ID
+     */
+    @SerializedName("QueryId")
+    private String queryId;
+
     /**
      * 查询ID
      */
@@ -33,7 +40,7 @@ public class QuerySummary {
      * 扫描字节数量
      */
     @SerializedName("ScannedBytes")
-    private Integer scannedBytes;
+    private Long scannedBytes;
     /**
      * 错误信息
      */
@@ -55,6 +62,24 @@ public class QuerySummary {
     @SerializedName("EndTime")
     private Integer endTime;
 
+    @SerializedName("OutputRecordCount")
+    private Integer outputRecordCount;
+
+    public String getQueryId() {
+        return queryId;
+    }
+
+    public void setQueryId(String queryId) {
+        this.queryId = queryId;
+    }
+
+    public Integer getOutputRecordCount() {
+        return outputRecordCount;
+    }
+
+    public void setOutputRecordCount(Integer outputRecordCount) {
+        this.outputRecordCount = outputRecordCount;
+    }
 
     public String getNamedQueryId() {
         return this.namedQueryId;
@@ -88,11 +113,11 @@ public class QuerySummary {
         this.state = state;
     }
 
-    public Integer getScannedBytes() {
-        return this.scannedBytes;
+    public Long getScannedBytes() {
+        return scannedBytes;
     }
 
-    public void setScannedBytes(Integer scannedBytes) {
+    public void setScannedBytes(Long scannedBytes) {
         this.scannedBytes = scannedBytes;
     }
 

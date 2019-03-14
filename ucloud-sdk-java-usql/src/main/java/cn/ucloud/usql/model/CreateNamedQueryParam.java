@@ -2,8 +2,14 @@ package cn.ucloud.usql.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+import org.apache.commons.codec.binary.Base64;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -27,26 +33,36 @@ public class CreateNamedQueryParam extends BaseRequestParam {
     /**
      * SQL查询的SQL语句
      */
-    @UcloudParam("QueryString")
     @NotEmpty(message = "queryString can not be empty")
     private String queryString;
     /**
      * SQL查询的描述
      */
+    @NotEmpty(message = "queryDescription can not be empty")
     @UcloudParam("QueryDescription")
     private String queryDescription;
 
 
     public CreateNamedQueryParam(String region
             , String queryName
-            , String queryString
+            , String queryString, String queryDescription
     ) {
         super("CreateNamedQuery");
         this.region = region;
         this.queryName = queryName;
         this.queryString = queryString;
+        this.queryDescription = queryDescription;
     }
 
+    @UcloudParam("QueryString")
+    public List<Param> checkQueryString() throws ValidationException, UnsupportedEncodingException {
+        List<Param> params = new ArrayList<>();
+        if (queryString == null || queryString.length() <= 0) {
+            throw new ValidationException("queryString can not be empty");
+        }
+        params.add(new Param("QueryString", new String(Base64.encodeBase64((queryString).getBytes("utf-8")))));
+        return params;
+    }
 
     public String getRegion() {
         return this.region;

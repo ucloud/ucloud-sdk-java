@@ -28,8 +28,8 @@ public class CancelSQLQueryTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String queryId = "cn-sh2";
+        String region = "cn-bj2";
+        String queryId = "20190314_124536_00015_fmje5";
         param = new CancelSQLQueryParam(region, queryId);
         param.setProjectId("org-izug1m");
     }

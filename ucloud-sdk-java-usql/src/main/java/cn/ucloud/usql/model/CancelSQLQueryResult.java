@@ -16,6 +16,9 @@ public class CancelSQLQueryResult extends BaseResponseResult {
     @SerializedName("QueryId")
     private String queryId;
 
+    @SerializedName("Request")
+    private String request;
+
 
     public String getQueryId() {
         return this.queryId;

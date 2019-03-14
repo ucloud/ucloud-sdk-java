@@ -19,7 +19,7 @@ public class DeleteNamedQueryResult extends BaseResponseResult {
      * 删除的已保存SQL的ID
      */
     @SerializedName("NamedQueryId")
-    private String namedQueryId;
+    private Integer namedQueryId;
 
 
     public String getRequest() {
@@ -30,13 +30,11 @@ public class DeleteNamedQueryResult extends BaseResponseResult {
         this.request = request;
     }
 
-    public String getNamedQueryId() {
-        return this.namedQueryId;
+    public Integer getNamedQueryId() {
+        return namedQueryId;
     }
 
-    public void setNamedQueryId(String namedQueryId) {
+    public void setNamedQueryId(Integer namedQueryId) {
         this.namedQueryId = namedQueryId;
     }
-
-
 }

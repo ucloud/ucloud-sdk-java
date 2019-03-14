@@ -41,14 +41,16 @@ public class CreateCatalogTableParam extends BaseRequestParam {
     @UcloudParam("Location")
     @NotEmpty(message = "location can not be empty")
     private String location;
-    private List<Column> columns;
     /**
      * 数据格式：比如CSV，ORC， TSV等
      */
     @UcloudParam("Formation")
     @NotEmpty(message = "formation can not be empty")
     private String formation;
+
     private List<Property> properties;
+
+    private List<Column> columns;
 
     public CreateCatalogTableParam(String region
             , String databaseName
@@ -83,8 +85,8 @@ public class CreateCatalogTableParam extends BaseRequestParam {
                 if (columns.get(i).type == null || columns.get(i).type.length() <= 0) {
                     throw new ValidationException(String.format("columns[%d].type can not be empty", i));
                 }
-                params.add(new Param(String.format("Column.%d.name", i), columns.get(i).name));
-                params.add(new Param(String.format("Column.%d.type", i), columns.get(i).type));
+                params.add(new Param(String.format("Column.%d.Name", i), columns.get(i).name));
+                params.add(new Param(String.format("Column.%d.Type", i), columns.get(i).type));
             }
         }
         return params;
@@ -93,9 +95,7 @@ public class CreateCatalogTableParam extends BaseRequestParam {
     @UcloudParam("Properties")
     public List<Param> checkProperties() throws ValidationException {
         List<Param> params = new ArrayList<>();
-        if (properties == null || properties.isEmpty()) {
-            throw new ValidationException("properties can not be empty");
-        } else {
+        if (properties != null) {
             int size = properties.size();
             for (int i = 0; i < size; i++) {
                 if (properties.get(i) == null) {
@@ -104,8 +104,8 @@ public class CreateCatalogTableParam extends BaseRequestParam {
                 if (properties.get(i).key == null || properties.get(i).key.length() <= 0) {
                     throw new ValidationException(String.format("properties[%d].key can not be empty", i));
                 }
-                params.add(new Param(String.format("Property.%d.key", i), properties.get(i).key));
-                params.add(new Param(String.format("Property.%d.value", i), properties.get(i).value));
+                params.add(new Param(String.format("Property.%d.Key", i), properties.get(i).key));
+                params.add(new Param(String.format("Property.%d.Value", i), properties.get(i).value));
             }
         }
         return params;
@@ -179,6 +179,11 @@ public class CreateCatalogTableParam extends BaseRequestParam {
          */
         private String type;
 
+        public Column(String name, String type) {
+            this.name = name;
+            this.type = type;
+        }
+
         public String getName() {
             return name;
         }
@@ -207,6 +212,11 @@ public class CreateCatalogTableParam extends BaseRequestParam {
          * 表属性的value
          */
         private String value;
+
+        public Property(String key, String value) {
+            this.key = key;
+            this.value = value;
+        }
 
         public String getKey() {
             return key;

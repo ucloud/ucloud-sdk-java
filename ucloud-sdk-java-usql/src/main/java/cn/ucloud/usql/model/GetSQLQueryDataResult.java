@@ -36,7 +36,7 @@ public class GetSQLQueryDataResult extends BaseResponseResult {
      * 结果数据集合， 数组中每一项代表1条记录。
      */
     @SerializedName("Rows")
-    private List<String> rows;
+    private List<List<String>> rows;
     /**
      * 查询类型，有SELECT， CREATE_TABLE等多种SQL类型
      */
@@ -76,11 +76,11 @@ public class GetSQLQueryDataResult extends BaseResponseResult {
         this.header = header;
     }
 
-    public List<String> getRows() {
-        return this.rows;
+    public List<List<String>> getRows() {
+        return rows;
     }
 
-    public void setRows(List<String> rows) {
+    public void setRows(List<List<String>> rows) {
         this.rows = rows;
     }
 

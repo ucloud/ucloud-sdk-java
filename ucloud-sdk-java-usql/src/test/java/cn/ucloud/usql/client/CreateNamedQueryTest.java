@@ -1,6 +1,5 @@
 package cn.ucloud.usql.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.usql.model.CreateNamedQueryParam;
 import cn.ucloud.usql.model.CreateNamedQueryResult;
@@ -22,16 +21,28 @@ public class CreateNamedQueryTest {
 
     private CreateNamedQueryParam param;
 
+    private String qs = "CREATE EXTERNAL TABLE `complex_json`( \n" +
+            "              `docid` string COMMENT 'from deserializer',  \n" +
+            "              `user` struct<id:int,username:string,name:string,shippingaddress:struct<address1:string,address2:string,city:string,state:string>,orders:array<struct<itemid:int,orderdate:string>>> COMMENT 'from deserializer') \n" +
+            "            ROW FORMAT SERDE  \n" +
+            "              'org.openx.data.jsonserde.JsonSerDe' \n" +
+            "            STORED AS INPUTFORMAT  \n" +
+            "              'org.apache.hadoop.mapred.TextInputFormat'  \n" +
+            "            OUTPUTFORMAT  \n" +
+            "              'org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat' \n" +
+            "            LOCATION \n" +
+            "              'ufile://javasdk/sample.json.tar';";
 
     @Before
     public void setUp() throws Exception {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String queryName = "cn-sh2";
-        String queryString = "cn-sh2";
-        param = new CreateNamedQueryParam(region, queryName, queryString);
+        String region = "cn-bj2";
+        String queryName = "sdk_java2";
+        String queryString = qs;
+        String queryDescription = "sdk_java";
+        param = new CreateNamedQueryParam(region, queryName, queryString,queryDescription);
         param.setProjectId("org-izug1m");
     }
 

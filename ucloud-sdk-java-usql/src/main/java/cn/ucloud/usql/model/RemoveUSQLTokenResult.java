@@ -21,6 +21,16 @@ public class RemoveUSQLTokenResult extends BaseResponseResult {
     @SerializedName("DataSource")
     private String dataSource;
 
+    @SerializedName("Request")
+    private String request;
+
+    public String getRequest() {
+        return request;
+    }
+
+    public void setRequest(String request) {
+        this.request = request;
+    }
 
     public String getRegion() {
         return this.region;

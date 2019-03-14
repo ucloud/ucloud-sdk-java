@@ -28,7 +28,7 @@ public class GetUSQLSettingTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
+        String region = "cn-bj2";
         param = new GetUSQLSettingParam(region);
         param.setProjectId("org-izug1m");
     }

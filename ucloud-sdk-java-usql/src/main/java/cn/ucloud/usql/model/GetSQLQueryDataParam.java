@@ -74,12 +74,10 @@ public class GetSQLQueryDataParam extends BaseRequestParam {
     }
 
     public String getMarker() {
-        return this.marker;
+        return marker;
     }
 
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-
 }

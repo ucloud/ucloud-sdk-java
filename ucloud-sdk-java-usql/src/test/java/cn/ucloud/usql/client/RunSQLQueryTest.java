@@ -22,17 +22,18 @@ public class RunSQLQueryTest {
 
     private RunSQLQueryParam param;
 
+    private String qs = "select * from part";
 
     @Before
     public void setUp() throws Exception {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String databaseName = "cn-sh2";
-        String queryString = "cn-sh2";
+        String region = "cn-bj2";
+        String databaseName = "example";
+        String queryString = qs;
         param = new RunSQLQueryParam(region, databaseName, queryString);
-        param.setProjectId("org-izug1m");
+        param.setProjectId("org-pbmy1g");
     }
 
 

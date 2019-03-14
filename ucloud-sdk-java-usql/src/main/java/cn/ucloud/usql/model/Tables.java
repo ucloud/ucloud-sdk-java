@@ -14,23 +14,21 @@ public class Tables {
     /**
      * 数据表名称
      */
-    @SerializedName("Names")
-    private String names;
+    @SerializedName("Name")
+    private String name;
     /**
      * 数据表的所有列
      */
     @SerializedName("Columns")
     private List<Column> columns;
 
-
-    public String getNames() {
-        return this.names;
+    public String getName() {
+        return name;
     }
 
-    public void setNames(String names) {
-        this.names = names;
+    public void setName(String name) {
+        this.name = name;
     }
-
 
     public List<Column> getColumns() {
         return this.columns;

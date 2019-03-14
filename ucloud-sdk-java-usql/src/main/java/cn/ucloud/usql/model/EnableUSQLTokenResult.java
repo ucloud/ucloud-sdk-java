@@ -18,8 +18,8 @@ public class EnableUSQLTokenResult extends BaseResponseResult {
     /**
      * 数据源名称， 如ufile
      */
-    @SerializedName("DataSourceType")
-    private String dataSourceType;
+    @SerializedName("DataSource")
+    private String dataSource;
     /**
      * true： 该授权已经启用
      * false: 该授权已经关闭
@@ -36,12 +36,12 @@ public class EnableUSQLTokenResult extends BaseResponseResult {
         this.request = request;
     }
 
-    public String getDataSourceType() {
-        return this.dataSourceType;
+    public String getDataSource() {
+        return dataSource;
     }
 
-    public void setDataSourceType(String dataSourceType) {
-        this.dataSourceType = dataSourceType;
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
     }
 
     public Boolean getEnable() {

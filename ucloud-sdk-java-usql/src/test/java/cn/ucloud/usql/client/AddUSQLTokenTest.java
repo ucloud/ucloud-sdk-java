@@ -1,6 +1,5 @@
 package cn.ucloud.usql.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.usql.model.AddUSQLTokenParam;
 import cn.ucloud.usql.model.AddUSQLTokenResult;
@@ -28,10 +27,10 @@ public class AddUSQLTokenTest {
         client = new DefaultUSQLClient(new USQLConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String region = "cn-sh2";
-        String dataSource = "cn-sh2";
-        String accessKeyId = "cn-sh2";
-        String accessKeySecret = "cn-sh2";
+        String region = "cn-bj2";
+        String dataSource = "ufile";
+        String accessKeyId = System.getenv("UFileKey");
+        String accessKeySecret = System.getenv("UFileSecret");
         param = new AddUSQLTokenParam(region, dataSource, accessKeyId, accessKeySecret);
         param.setProjectId("org-izug1m");
     }
