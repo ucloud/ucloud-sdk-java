@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.CreateRouteTableParam;
 import cn.ucloud.vpc.model.CreateRouteTableResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,9 +23,8 @@ public class CreateRouteTableTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateRouteTableParam("cn-bj2","uvnet-qmrkj1");
+        param = new CreateRouteTableParam("cn-bj2", "uvnet-453iklki");
         param.setName("sdk-java-route");
-        param.setProjectId("org-4nfe1i");
     }
 
 
@@ -36,6 +33,7 @@ public class CreateRouteTableTest {
         try {
             CreateRouteTableResult routeTable = client.createRouteTable(param);
             System.out.println(routeTable);
+            JSONComparator.jsonComparator(routeTable);
         } catch (Exception e) {
             e.printStackTrace();
         }

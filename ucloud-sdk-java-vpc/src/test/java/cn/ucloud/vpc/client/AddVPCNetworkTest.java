@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.AddVPCNetworkParam;
 import cn.ucloud.vpc.model.AddVPCNetworkResult;
 import cn.ucloud.common.pojo.Account;

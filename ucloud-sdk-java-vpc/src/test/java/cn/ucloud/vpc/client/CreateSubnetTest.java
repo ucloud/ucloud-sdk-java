@@ -1,7 +1,5 @@
 package cn.ucloud.vpc.client;
 
-import cn.ucloud.vpc.client.DefaultVPCClient;
-import cn.ucloud.vpc.client.VPCClient;
 import cn.ucloud.vpc.model.CreateSubnetParam;
 import cn.ucloud.vpc.model.CreateSubnetResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,10 +23,9 @@ public class CreateSubnetTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateSubnetParam("cn-bj2","uvnet-qmrkj1","10.10.0.0");
+        param = new CreateSubnetParam("cn-bj2", "uvnet-453iklki", "10.24.0.0");
         param.setSubnetNmae("sdk-java-subnet");
         param.setNetmask(16);
-        param.setProjectId("org-4nfe1i");
     }
 
     @Test
@@ -36,6 +33,7 @@ public class CreateSubnetTest {
         try {
             CreateSubnetResult subnet = client.createSubnet(param);
             System.out.println(subnet);
+            JSONComparator.jsonComparator(subnet);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class UpdateSubnetAttributeResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "UpdateSubnetAttributeResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

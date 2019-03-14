@@ -64,7 +64,6 @@ public class DescribeVPCIntercomParam extends BaseRequestParam {
     }
 
     public String getRegion() {
-
         return region;
     }
 
