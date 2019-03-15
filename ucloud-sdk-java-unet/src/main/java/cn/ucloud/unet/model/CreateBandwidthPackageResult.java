@@ -18,21 +18,25 @@ public class CreateBandwidthPackageResult extends BaseResponseResult {
     @SerializedName("BandwidthPackageId")
     private String bandwidthPackageId;
 
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
+
     public String getBandwidthPackageId() {
         return bandwidthPackageId;
     }
 
     public void setBandwidthPackageId(String bandwidthPackageId) {
         this.bandwidthPackageId = bandwidthPackageId;
-    }
-
-    @Override
-    public String toString() {
-        return "CreateBandwidthPackageResult{" +
-                "bandwidthPackageId='" + bandwidthPackageId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

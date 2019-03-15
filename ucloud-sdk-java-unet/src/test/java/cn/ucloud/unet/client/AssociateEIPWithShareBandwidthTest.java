@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.AssociateEIPWithShareBandwidthParam;
 import cn.ucloud.unet.model.AssociateEIPWithShareBandwidthResult;
 import cn.ucloud.common.pojo.Account;
@@ -30,10 +28,9 @@ public class AssociateEIPWithShareBandwidthTest {
                         System.getenv("UcloudPublicKey"))));
 
         List<String> eipIds = new ArrayList<>();
-        eipIds.add("eip-192.168.1.1");
-        eipIds.add("eip-192.168.1.2");
-        param = new AssociateEIPWithShareBandwidthParam("cn-sh2", "123", eipIds);
-        param.setProjectId("org-4nfe1i");
+        eipIds.add("eip-vcsnbgi4");
+        eipIds.add("eip-243oe1tx");
+        param = new AssociateEIPWithShareBandwidthParam("cn-sh2", "bwshare-cybkx5q2", eipIds);
     }
 
     @Test
@@ -41,6 +38,7 @@ public class AssociateEIPWithShareBandwidthTest {
         try {
             AssociateEIPWithShareBandwidthResult allocateEIPResult = client.associateEIPWithShareBandwidth(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

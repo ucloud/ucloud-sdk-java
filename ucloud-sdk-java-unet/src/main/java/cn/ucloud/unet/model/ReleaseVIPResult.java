@@ -10,12 +10,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
 
 public class ReleaseVIPResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "ReleaseVIPResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.AllocateVIPParam;
 import cn.ucloud.unet.model.AllocateVIPResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class AllocateVIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AllocateVIPParam("cn-bj2","uvnet-qmrkj1","subnet-i0ab1k");
-        param.setProjectId("org-4nfe1i");
+        param = new AllocateVIPParam("cn-sh2", "uvnet-3fy3r4", "subnet-orq0th");
     }
 
     @Test
@@ -34,6 +31,7 @@ public class AllocateVIPTest {
         try {
             AllocateVIPResult allocateVIPResult = client.allocateVIP(param);
             System.out.println(allocateVIPResult);
+            JSONComparator.jsonComparator(allocateVIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

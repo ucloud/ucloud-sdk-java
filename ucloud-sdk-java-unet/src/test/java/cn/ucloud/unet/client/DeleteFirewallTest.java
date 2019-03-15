@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.DeleteFirewallParam;
 import cn.ucloud.unet.model.DeleteFirewallResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class DeleteFirewallTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
 
-        param = new DeleteFirewallParam("cn-sh2", "fwId");
-        param.setProjectId("org-4nfe1i");
+        param = new DeleteFirewallParam("cn-sh2", "firewall-vemh4wh0");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class DeleteFirewallTest {
         try {
             DeleteFirewallResult allocateEIPResult = client.deleteFirewall(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

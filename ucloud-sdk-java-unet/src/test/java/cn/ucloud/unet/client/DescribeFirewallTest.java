@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.DescribeFirewallParam;
 import cn.ucloud.unet.model.DescribeFirewallResult;
 import cn.ucloud.common.pojo.Account;
@@ -27,7 +25,6 @@ public class DescribeFirewallTest {
                         System.getenv("UcloudPublicKey"))));
 
         param = new DescribeFirewallParam("cn-sh2");
-        param.setProjectId("org-4nfe1i");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class DescribeFirewallTest {
         try {
             DescribeFirewallResult allocateEIPResult = client.describeFirewall(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -44,15 +45,26 @@ public class GetEIPPayModeResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "EIPPayMode{" +
-                    "eipId='" + eipId + '\'' +
-                    ", payMode='" + payMode + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
     @SerializedName("EIPPayMode")
     private List<EIPPayMode> eipPayModes;
+
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
 
     public List<EIPPayMode> getEipPayModes() {
         return eipPayModes;
@@ -60,15 +72,5 @@ public class GetEIPPayModeResult extends BaseResponseResult {
 
     public void setEipPayModes(List<EIPPayMode> eipPayModes) {
         this.eipPayModes = eipPayModes;
-    }
-
-    @Override
-    public String toString() {
-        return "GetEIPPayModeResult{" +
-                "eipPayModes=" + eipPayModes +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

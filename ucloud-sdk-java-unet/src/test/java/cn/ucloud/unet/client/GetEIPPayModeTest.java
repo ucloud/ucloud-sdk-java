@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.GetEIPPayModeParam;
 import cn.ucloud.unet.model.GetEIPPayModeResult;
 import cn.ucloud.common.pojo.Account;
@@ -28,22 +26,18 @@ public class GetEIPPayModeTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new GetEIPPayModeParam("cn-bj2");
+        param = new GetEIPPayModeParam("cn-sh2");
         List<String> ids = new ArrayList<>();
-        ids.add("eip-44ayct");
-        ids.add("eip-3gt54w");
-        ids.add("eip-apyxhe");
-        ids.add("eip-e3uptk");
+        ids.add("eip-vcsnbgi4");
         param.setEipIds(ids);
-        param.setProjectId("org-4nfe1i");
     }
-
 
     @Test
     public void getEIPPayMode() {
         try {
             GetEIPPayModeResult eipPayMode = client.getEIPPayMode(param);
             System.out.println(eipPayMode);
+            JSONComparator.jsonComparator(eipPayMode);
         } catch (Exception e) {
             e.printStackTrace();
         }
