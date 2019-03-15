@@ -28,10 +28,11 @@ public class ModifyURedisConfigTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String configId = "cn-sh2";
-        String key = "cn-sh2";
-        String value = "cn-sh2";
-        param = new ModifyURedisConfigParam(region, configId, key, value);
+        String zone = "cn-sh2-02";
+        String configId = "ada66d19-dcee-4b3f-a70d-b5b23c60b41d";
+        String key = "activerehashing";
+        String value = "no";
+        param = new ModifyURedisConfigParam(region, zone,configId, key, value);
         param.setProjectId("org-izug1m");
     }
 

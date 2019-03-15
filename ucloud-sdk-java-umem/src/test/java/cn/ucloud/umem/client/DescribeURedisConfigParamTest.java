@@ -28,8 +28,8 @@ public class DescribeURedisConfigParamTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
-        String configId = "cn-sh2";
+        String zone = "cn-sh2-02";
+        String configId = "ada66d19-dcee-4b3f-a70d-b5b23c60b41d";
         param = new DescribeURedisConfigParamParam(region, zone, configId);
         param.setProjectId("org-izug1m");
     }

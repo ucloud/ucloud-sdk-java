@@ -28,7 +28,7 @@ public class DeleteUMemSpaceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String spaceId = "cn-sh2";
+        String spaceId = "umem-wylum1mp";
         param = new DeleteUMemSpaceParam(region, spaceId);
         param.setProjectId("org-izug1m");
     }

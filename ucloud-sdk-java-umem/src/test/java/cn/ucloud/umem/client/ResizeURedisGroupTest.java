@@ -28,8 +28,8 @@ public class ResizeURedisGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        Integer size = 1;
+        String groupId = "uredis-pgouk5n1";
+        Integer size = 2;
         param = new ResizeURedisGroupParam(region, groupId, size);
         param.setProjectId("org-izug1m");
     }

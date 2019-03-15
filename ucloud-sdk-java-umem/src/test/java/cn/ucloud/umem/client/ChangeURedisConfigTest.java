@@ -28,8 +28,8 @@ public class ChangeURedisConfigTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        String configId = "cn-sh2";
+        String groupId = "uredis-vzovqixi";
+        String configId = "3e45ac48-f8a2-a9q2-261d-l342dab130gf";
         param = new ChangeURedisConfigParam(region, groupId, configId);
         param.setProjectId("org-izug1m");
     }

@@ -28,12 +28,12 @@ public class DescribeURedisSlaveGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String masterGroupId = "cn-sh2";
+        String masterGroupId = "cn-sh2-02";
         param = new DescribeURedisSlaveGroupParam(region, masterGroupId);
         param.setProjectId("org-izug1m");
     }
 
-
+    // todo 服务不可用
     @Test
     public void describeURedisSlaveGroup() {
         try {

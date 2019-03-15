@@ -28,10 +28,11 @@ public class CreateURedisConfigTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String sourceConfigId = "cn-sh2";
-        String name = "cn-sh2";
-        String description = "cn-sh2";
-        param = new CreateURedisConfigParam(region, sourceConfigId, name, description);
+        String zone = "cn-sh2-02";
+        String sourceConfigId = "3e45ac48-f8a2-a9q2-261d-l342dab130gf";
+        String name = "sdk-java-config";
+        String description = "sdk-java-test";
+        param = new CreateURedisConfigParam(region,zone, sourceConfigId, name, description);
         param.setProjectId("org-izug1m");
     }
 

@@ -28,7 +28,7 @@ public class DescribeUMemcachePriceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
+        String zone = "cn-sh2-02";
         Integer size = 1;
         param = new DescribeUMemcachePriceParam(region, zone, size);
         param.setProjectId("org-izug1m");

@@ -28,7 +28,7 @@ public class DescribeURedisPriceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
+        String zone = "cn-sh2-02";
         Integer size = 1;
         param = new DescribeURedisPriceParam(region, zone, size);
         param.setProjectId("org-izug1m");

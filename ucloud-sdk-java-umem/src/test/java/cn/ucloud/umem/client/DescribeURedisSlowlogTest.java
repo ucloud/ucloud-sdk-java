@@ -28,8 +28,8 @@ public class DescribeURedisSlowlogTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
-        String groupId = "cn-sh2";
+        String zone = "cn-sh2-02";
+        String groupId = "uredis-pgouk5n1";
         param = new DescribeURedisSlowlogParam(region, zone, groupId);
         param.setProjectId("org-izug1m");
     }

@@ -29,8 +29,8 @@ public class CheckURedisAllowanceParam extends BaseRequestParam {
      * 创建实例的容量大小, 单位:GB 目前仅支持1/2/4/8/16/32六种规格
      */
     @UcloudParam("Size")
-    @NotEmpty(message = "size can not be empty")
-    private String size;
+    @NotNull(message = "size can not be null")
+    private Integer size;
     /**
      * 创建实例的数量，[1-10]
      */
@@ -51,7 +51,7 @@ public class CheckURedisAllowanceParam extends BaseRequestParam {
 
     public CheckURedisAllowanceParam(String region
             , String zone
-            , String size
+            , Integer size
             , Integer count
     ) {
         super("CheckURedisAllowance");
@@ -78,11 +78,11 @@ public class CheckURedisAllowanceParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public String getSize() {
-        return this.size;
+    public Integer getSize() {
+        return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 

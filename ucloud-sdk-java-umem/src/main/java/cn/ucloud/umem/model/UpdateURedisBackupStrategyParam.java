@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -33,8 +34,8 @@ public class UpdateURedisBackupStrategyParam extends BaseRequestParam {
      * 备份时间，默认为0
      */
     @UcloudParam("BackupTime")
-    @NotEmpty(message = "backupTime can not be empty")
-    private String backupTime;
+    @NotNull(message = "backupTime can not be null")
+    private Integer backupTime;
     /**
      * 是否打开默认备份功能。enable(打开)，disable(关闭)，默认enable
      */
@@ -44,7 +45,7 @@ public class UpdateURedisBackupStrategyParam extends BaseRequestParam {
 
     public UpdateURedisBackupStrategyParam(String region
             , String groupId
-            , String backupTime
+            , Integer backupTime
     ) {
         super("UpdateURedisBackupStrategy");
         this.region = region;
@@ -77,11 +78,11 @@ public class UpdateURedisBackupStrategyParam extends BaseRequestParam {
         this.groupId = groupId;
     }
 
-    public String getBackupTime() {
-        return this.backupTime;
+    public Integer getBackupTime() {
+        return backupTime;
     }
 
-    public void setBackupTime(String backupTime) {
+    public void setBackupTime(Integer backupTime) {
         this.backupTime = backupTime;
     }
 

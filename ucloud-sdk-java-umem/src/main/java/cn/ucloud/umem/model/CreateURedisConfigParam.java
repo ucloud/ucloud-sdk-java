@@ -21,6 +21,7 @@ public class CreateURedisConfigParam extends BaseRequestParam {
     /**
      * 可用区。参见 [可用区列表](../summary/regionlist.html)
      */
+    @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
     /**
@@ -49,12 +50,14 @@ public class CreateURedisConfigParam extends BaseRequestParam {
 
 
     public CreateURedisConfigParam(String region
+            , String zone
             , String sourceConfigId
             , String name
             , String description
     ) {
         super("CreateURedisConfig");
         this.region = region;
+        this.zone = zone;
         this.sourceConfigId = sourceConfigId;
         this.name = name;
         this.description = description;

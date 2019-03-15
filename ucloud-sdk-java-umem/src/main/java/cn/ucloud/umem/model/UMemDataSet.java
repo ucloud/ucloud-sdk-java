@@ -30,7 +30,7 @@ public class UMemDataSet {
      * 是否拥有只读Slave
      */
     @SerializedName("OwnSlave")
-    private Boolean ownSlave;
+    private String ownSlave;
     /**
      * 资源ID
      */
@@ -72,7 +72,19 @@ public class UMemDataSet {
     @SerializedName("UsedSize")
     private Integer usedSize;
     /**
-     * 实例状态                                  Starting                  // 创建中       Creating                  // 初始化中     CreateFail                // 创建失败     Fail                      // 创建失败     Deleting                  // 删除中       DeleteFail                // 删除失败     Running                   // 运行         Resizing                  // 容量调整中   ResizeFail                // 容量调整失败 Configing                 // 配置中       ConfigFail                // 配置失败Restarting                // 重启中
+     * 实例状态
+     * Starting                  // 创建中
+     * Creating                  // 初始化中
+     * CreateFail                // 创建失败
+     * Fail                      // 创建失败
+     * Deleting                  // 删除中
+     * DeleteFail                // 删除失败
+     * Running                   // 运行
+     * Resizing                  // 容量调整中
+     * ResizeFail                // 容量调整失败
+     * Configing                 // 配置中
+     * ConfigFail                // 配置失败
+     * Restarting                // 重启中
      */
     @SerializedName("State")
     private String state;
@@ -132,6 +144,31 @@ public class UMemDataSet {
     @SerializedName("SlaveZone")
     private String slaveZone;
 
+    @SerializedName("SubnetId")
+    private String subnetId;
+
+    @SerializedName("VPCId")
+    private String vpcId;
+
+    public void setOwnSlave(String ownSlave) {
+        this.ownSlave = ownSlave;
+    }
+
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
 
     public String getZone() {
         return this.zone;
@@ -158,13 +195,6 @@ public class UMemDataSet {
         this.dataSet = dataSet;
     }
 
-    public Boolean getOwnSlave() {
-        return this.ownSlave;
-    }
-
-    public void setOwnSlave(Boolean ownSlave) {
-        this.ownSlave = ownSlave;
-    }
 
     public String getResourceId() {
         return this.resourceId;

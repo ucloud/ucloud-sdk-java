@@ -28,8 +28,8 @@ public class ModifyURedisGroupNameTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        String name = "cn-sh2";
+        String groupId = "uredis-pgouk5n1";
+        String name = "rename-d";
         param = new ModifyURedisGroupNameParam(region, groupId, name);
         param.setProjectId("org-izug1m");
     }

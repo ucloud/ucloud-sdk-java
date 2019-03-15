@@ -28,8 +28,8 @@ public class DescribeURedisUpgradePriceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        Integer size = 1;
-        String groupId = "cn-sh2";
+        Integer size = 2;
+        String groupId = "uredis-pgouk5n1";
         param = new DescribeURedisUpgradePriceParam(region, size, groupId);
         param.setProjectId("org-izug1m");
     }

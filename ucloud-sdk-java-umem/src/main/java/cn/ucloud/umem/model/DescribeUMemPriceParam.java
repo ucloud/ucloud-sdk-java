@@ -22,6 +22,7 @@ public class DescribeUMemPriceParam extends BaseRequestParam {
     /**
      * 可用区。参见 [可用区列表](../summary/regionlist.html)
      */
+    @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
     /**
@@ -31,8 +32,9 @@ public class DescribeUMemPriceParam extends BaseRequestParam {
     @NotNull(message = "size can not be null")
     private Integer size;
     /**
-     * 空间类型:single(无热备),double(热备)(默认: double)
+     * 空间类型:single(无热备),double(热备)
      */
+    @NotEmpty(message = "type can not be empty")
     @UcloudParam("Type")
     private String type;
     /**
@@ -55,11 +57,15 @@ public class DescribeUMemPriceParam extends BaseRequestParam {
     public DescribeUMemPriceParam(String region
             , String projectId
             , Integer size
+            , String zone
+            , String type
     ) {
         super("DescribeUMemPrice");
         this.region = region;
         this.projectId = projectId;
         this.size = size;
+        this.zone = zone;
+        this.type = type;
     }
 
 

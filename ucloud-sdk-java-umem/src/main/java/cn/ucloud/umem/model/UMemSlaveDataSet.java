@@ -45,7 +45,19 @@ public class UMemSlaveDataSet {
     @SerializedName("UsedSize")
     private Integer usedSize;
     /**
-     * 实例状态                                  Starting                  // 创建中       Creating                  // 初始化中     CreateFail                // 创建失败     Fail                      // 创建失败     Deleting                  // 删除中       DeleteFail                // 删除失败     Running                   // 运行         Resizing                  // 容量调整中   ResizeFail                // 容量调整失败 Configing                 // 配置中       ConfigFail                // 配置失败Restarting                // 重启中
+     * 实例状态
+     * Starting                  // 创建中
+     * Creating                  // 初始化中
+     * CreateFail                // 创建失败
+     * Fail                      // 创建失败
+     * Deleting                  // 删除中
+     * DeleteFail                // 删除失败
+     * Running                   // 运行
+     * Resizing                  // 容量调整中
+     * ResizeFail                // 容量调整失败
+     * Configing                 // 配置中
+     * ConfigFail                // 配置失败
+     * Restarting                // 重启中
      */
     @SerializedName("State")
     private String state;

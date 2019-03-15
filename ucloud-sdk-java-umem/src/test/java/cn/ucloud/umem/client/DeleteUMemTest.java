@@ -28,8 +28,8 @@ public class DeleteUMemTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String resourceId = "cn-sh2";
-        String resourceType = "cn-sh2";
+        String resourceId = "umem-lqkn30ev";
+        String resourceType = "distributed";
         param = new DeleteUMemParam(region, resourceId, resourceType);
         param.setProjectId("org-izug1m");
     }

@@ -29,13 +29,14 @@ public class DescribeUMemUpgradePriceTest {
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
         Integer size = 1;
-        String type = "cn-sh2";
-        String spaceId = "cn-sh2";
+        String type = "single";
+        String spaceId = "cumemcache-x1xxnxra";
         param = new DescribeUMemUpgradePriceParam(region, size, type, spaceId);
         param.setProjectId("org-izug1m");
     }
 
 
+    // todo 测试 服务不可用
     @Test
     public void describeUMemUpgradePrice() {
         try {

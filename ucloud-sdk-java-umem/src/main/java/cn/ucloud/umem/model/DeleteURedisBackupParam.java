@@ -21,6 +21,7 @@ public class DeleteURedisBackupParam extends BaseRequestParam {
     /**
      * 可用区。参见 [可用区列表](../summary/regionlist.html)
      */
+    @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
     /**
@@ -37,11 +38,12 @@ public class DeleteURedisBackupParam extends BaseRequestParam {
 
 
     public DeleteURedisBackupParam(String region
-            , String backupId
+            , String backupId, String zone
     ) {
         super("DeleteURedisBackup");
         this.region = region;
         this.backupId = backupId;
+        this.zone = zone;
     }
 
 

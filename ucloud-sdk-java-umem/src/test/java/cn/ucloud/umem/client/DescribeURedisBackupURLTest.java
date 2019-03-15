@@ -28,8 +28,8 @@ public class DescribeURedisBackupURLTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        Integer backupId = 1;
-        String groupId = "cn-sh2";
+        String backupId = "59575ff4-9c40-49aa-a4f3-81abc246a93b";
+        String groupId = "uredis-pgouk5n1";
         param = new DescribeURedisBackupURLParam(region, backupId, groupId);
         param.setProjectId("org-izug1m");
     }

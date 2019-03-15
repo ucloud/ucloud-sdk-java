@@ -28,8 +28,8 @@ public class ResizeUMemcacheGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        Integer size = 1;
+        String groupId = "umemcache-x1xxnxra";
+        Integer size = 2;
         param = new ResizeUMemcacheGroupParam(region, groupId, size);
         param.setProjectId("org-izug1m");
     }

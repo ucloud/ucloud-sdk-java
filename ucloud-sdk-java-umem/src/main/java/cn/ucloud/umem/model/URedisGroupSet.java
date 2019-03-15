@@ -105,6 +105,71 @@ public class URedisGroupSet {
     @SerializedName("SlaveZone")
     private String slaveZone;
 
+    @SerializedName("GroupName")
+    private String groupName;
+
+    @SerializedName("MemorySize")
+    private Integer memorySize;
+
+    @SerializedName("Protocol")
+    private String protocol;
+
+    @SerializedName("SubnetId")
+    private String subnetId;
+
+    @SerializedName("Type")
+    private String type;
+
+    @SerializedName("VPCId")
+    private String vpcId;
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public Integer getMemorySize() {
+        return memorySize;
+    }
+
+    public void setMemorySize(Integer memorySize) {
+        this.memorySize = memorySize;
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
 
     public String getGroupId() {
         return this.groupId;

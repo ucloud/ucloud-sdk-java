@@ -42,7 +42,7 @@ public class ResizeUMemcacheGroupParam extends BaseRequestParam {
     @UcloudParam("ChargeType")
     private String chargeType;
     /**
-     * 空间类型:single(无热备),double(热备)(默认: double)
+     * 空间类型:single(无热备),double(热备)
      */
     @UcloudParam("Type")
     private String type;

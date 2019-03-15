@@ -433,37 +433,6 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
         }
     }
 
-    @Override
-    public ModifyUDredisSpaceNameResult modifyUDredisSpaceName(ModifyUDredisSpaceNameParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(ModifyUDredisSpaceNameResult.class);
-        return (ModifyUDredisSpaceNameResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void modifyUDredisSpaceName(ModifyUDredisSpaceNameParam param,
-                                       UcloudHandler<ModifyUDredisSpaceNameResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(ModifyUDredisSpaceNameResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DeleteUDredisSpaceResult deleteUDredisSpace(DeleteUDredisSpaceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DeleteUDredisSpaceResult.class);
-        return (DeleteUDredisSpaceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void deleteUDredisSpace(DeleteUDredisSpaceParam param,
-                                   UcloudHandler<DeleteUDredisSpaceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DeleteUDredisSpaceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
 
     @Override
     public DescribeUMemPriceResult describeUMemPrice(DescribeUMemPriceParam param) throws Exception {
@@ -683,86 +652,6 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     public void describeURedisSlaveGroup(DescribeURedisSlaveGroupParam param,
                                          UcloudHandler<DescribeURedisSlaveGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisSlaveGroupResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DescribeUDredisUpgradePriceResult describeUDredisUpgradePrice(DescribeUDredisUpgradePriceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDredisUpgradePriceResult.class);
-        return (DescribeUDredisUpgradePriceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDredisUpgradePrice(DescribeUDredisUpgradePriceParam param,
-                                            UcloudHandler<DescribeUDredisUpgradePriceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDredisUpgradePriceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DescribeUDredisPriceResult describeUDredisPrice(DescribeUDredisPriceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDredisPriceResult.class);
-        return (DescribeUDredisPriceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDredisPrice(DescribeUDredisPriceParam param,
-                                     UcloudHandler<DescribeUDredisPriceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDredisPriceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public CreateUDredisSpaceResult createUDredisSpace(CreateUDredisSpaceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(CreateUDredisSpaceResult.class);
-        return (CreateUDredisSpaceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void createUDredisSpace(CreateUDredisSpaceParam param,
-                                   UcloudHandler<CreateUDredisSpaceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(CreateUDredisSpaceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DescribeUDredisSpaceResult describeUDredisSpace(DescribeUDredisSpaceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDredisSpaceResult.class);
-        return (DescribeUDredisSpaceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDredisSpace(DescribeUDredisSpaceParam param,
-                                     UcloudHandler<DescribeUDredisSpaceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDredisSpaceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public ResizeUDredisSpaceResult resizeUDredisSpace(ResizeUDredisSpaceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(ResizeUDredisSpaceResult.class);
-        return (ResizeUDredisSpaceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void resizeUDredisSpace(ResizeUDredisSpaceParam param,
-                                   UcloudHandler<ResizeUDredisSpaceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(ResizeUDredisSpaceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {

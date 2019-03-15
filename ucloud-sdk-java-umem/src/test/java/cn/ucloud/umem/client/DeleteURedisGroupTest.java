@@ -28,7 +28,7 @@ public class DeleteURedisGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
+        String groupId = "uredis-vzovqixi";
         param = new DeleteURedisGroupParam(region, groupId);
         param.setProjectId("org-izug1m");
     }

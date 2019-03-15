@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -28,20 +29,20 @@ public class CheckUDredisSpaceAllowanceParam extends BaseRequestParam {
      * 创建实例的容量大小
      */
     @UcloudParam("Size")
-    @NotEmpty(message = "size can not be empty")
-    private String size;
+    @NotNull(message = "size can not be null")
+    private Integer size;
     /**
      * 创建实例的数量，[1-10]
      */
     @UcloudParam("Count")
-    @NotEmpty(message = "count can not be empty")
-    private String count;
+    @NotNull(message = "count can not be null")
+    private Integer count;
 
 
     public CheckUDredisSpaceAllowanceParam(String region
             , String zone
-            , String size
-            , String count
+            , Integer size
+            , Integer count
     ) {
         super("CheckUDredisSpaceAllowance");
         this.region = region;
@@ -67,21 +68,19 @@ public class CheckUDredisSpaceAllowanceParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public String getSize() {
-        return this.size;
+    public Integer getSize() {
+        return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
-    public String getCount() {
-        return this.count;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
-
-
 }

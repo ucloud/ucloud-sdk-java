@@ -73,6 +73,39 @@ public class UMemSpaceSet {
     private List<UMemSpaceAddressSet> address;
 
 
+    @SerializedName("SubnetId")
+    private String subnetId;
+
+    @SerializedName("Tag")
+    private String tag;
+
+    @SerializedName("VPCId")
+    private String vpcId;
+
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     public String getSpaceId() {
         return this.spaceId;
     }

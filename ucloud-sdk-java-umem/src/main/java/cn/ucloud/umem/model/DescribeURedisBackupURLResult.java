@@ -16,6 +16,27 @@ public class DescribeURedisBackupURLResult extends BaseResponseResult {
     @SerializedName("BackupURL")
     private String backupURL;
 
+    @SerializedName("BackupPath")
+    private String backupPath;
+
+    @SerializedName("InnerBackupPath")
+    private String innerBackupPath;
+
+    public String getBackupPath() {
+        return backupPath;
+    }
+
+    public void setBackupPath(String backupPath) {
+        this.backupPath = backupPath;
+    }
+
+    public String getInnerBackupPath() {
+        return innerBackupPath;
+    }
+
+    public void setInnerBackupPath(String innerBackupPath) {
+        this.innerBackupPath = innerBackupPath;
+    }
 
     public String getBackupURL() {
         return this.backupURL;

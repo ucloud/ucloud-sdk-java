@@ -28,8 +28,9 @@ public class DeleteURedisBackupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String backupId = "cn-sh2";
-        param = new DeleteURedisBackupParam(region, backupId);
+        String zone = "cn-sh2-02";
+        String backupId = "2c02ec12-5e65-4e0b-88ea-6dd6f48070df";
+        param = new DeleteURedisBackupParam(region, backupId,zone);
         param.setProjectId("org-izug1m");
     }
 

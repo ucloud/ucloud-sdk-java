@@ -28,8 +28,9 @@ public class CreateUMemcacheGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String name = "cn-sh2";
-        param = new CreateUMemcacheGroupParam(region, name);
+        String zone = "cn-sh2-02";
+        String name = "sdk-java-umem-group2";
+        param = new CreateUMemcacheGroupParam(region, name,zone);
         param.setProjectId("org-izug1m");
     }
 

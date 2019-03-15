@@ -28,9 +28,9 @@ public class CheckUDredisSpaceAllowanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
-        String size = "cn-sh2";
-        String count = "cn-sh2";
+        String zone = "cn-sh2-02";
+        Integer size = 2;
+        Integer count = 10;
         param = new CheckUDredisSpaceAllowanceParam(region, zone, size, count);
         param.setProjectId("org-izug1m");
     }

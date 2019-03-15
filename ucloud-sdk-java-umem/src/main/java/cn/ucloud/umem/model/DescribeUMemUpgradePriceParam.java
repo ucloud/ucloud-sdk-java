@@ -31,7 +31,7 @@ public class DescribeUMemUpgradePriceParam extends BaseRequestParam {
     @NotNull(message = "size can not be null")
     private Integer size;
     /**
-     * 空间类型:single(无热备),double(热备)(默认: double)
+     * 空间类型:single(无热备),double(热备)
      */
     @UcloudParam("Type")
     @NotEmpty(message = "type can not be empty")

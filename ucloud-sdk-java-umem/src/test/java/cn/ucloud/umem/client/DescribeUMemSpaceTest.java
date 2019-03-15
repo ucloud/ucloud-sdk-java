@@ -30,6 +30,7 @@ public class DescribeUMemSpaceTest {
         String region = "cn-sh2";
         param = new DescribeUMemSpaceParam(region);
         param.setProjectId("org-izug1m");
+        param.setZone("cn-sh2-02");
     }
 
 
