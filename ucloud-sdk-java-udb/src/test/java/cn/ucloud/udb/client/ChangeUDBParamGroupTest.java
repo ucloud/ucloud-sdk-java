@@ -36,27 +36,4 @@ public class ChangeUDBParamGroupTest {
             assertNull(e);
         }
     }
-
-    @Test
-    public void changeUDBParamGroupCallback() {
-        client.changeUDBParamGroup(param, new UcloudHandler<ChangeUDBParamGroupResult>() {
-            @Override
-            public Object success(ChangeUDBParamGroupResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ChangeUDBParamGroupResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

@@ -451,22 +451,6 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     }
 
     @Override
-    public DescribeUMemUpgradePriceResult describeUMemUpgradePrice(DescribeUMemUpgradePriceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUMemUpgradePriceResult.class);
-        return (DescribeUMemUpgradePriceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUMemUpgradePrice(DescribeUMemUpgradePriceParam param,
-                                         UcloudHandler<DescribeUMemUpgradePriceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUMemUpgradePriceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public ResizeUMemSpaceResult resizeUMemSpace(ResizeUMemSpaceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeUMemSpaceResult.class);
         return (ResizeUMemSpaceResult) http.doGet(param, config, null);
