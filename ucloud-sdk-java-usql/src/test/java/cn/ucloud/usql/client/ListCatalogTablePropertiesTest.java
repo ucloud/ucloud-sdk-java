@@ -34,7 +34,6 @@ public class ListCatalogTablePropertiesTest {
         param = new ListCatalogTablePropertiesParam(region, databaseName, tableName);
         param.setProjectId("org-izug1m");
     }
-    // todo 测试
 
     @Test
     public void listCatalogTableProperties() {

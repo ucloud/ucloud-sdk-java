@@ -34,7 +34,6 @@ public class UpdateUSQLSettingTest {
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试 internal service error.
     @Test
     public void updateUSQLSetting() {
         try {
