@@ -8,6 +8,10 @@ ucloud开发者工具套件（SDK）。<br/>
 - ulb
 - vpc
 - ufs
+- usql
+- pathx
+- udb
+- udpn
 
 后续将支持更多的UCloud的产品服务。
 
