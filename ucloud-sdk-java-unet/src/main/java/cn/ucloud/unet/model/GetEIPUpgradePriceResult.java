@@ -19,13 +19,36 @@ public class GetEIPUpgradePriceResult extends BaseResponseResult {
     @SerializedName("Price")
     private BigDecimal price;
 
-    @Override
-    public String toString() {
-        return "GetEIPUpgradePriceResult{" +
-                "price=" + price +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    @SerializedName("PurchaseValue")
+    private Integer purchaseValue;
+
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Integer getPurchaseValue() {
+        return purchaseValue;
+    }
+
+    public void setPurchaseValue(Integer purchaseValue) {
+        this.purchaseValue = purchaseValue;
     }
 }

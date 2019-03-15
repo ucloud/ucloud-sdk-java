@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class DescribeVIPResult extends BaseResponseResult {
 
-    public static class VIPDetail{
+    public static class VIPDetail {
 
         /**
          * 虚拟ip id
@@ -56,6 +57,48 @@ public class DescribeVIPResult extends BaseResponseResult {
          */
         @SerializedName("VPCId")
         private String vpcId;
+
+        /**
+         * VIP名称
+         */
+        @SerializedName("Name")
+        private String name;
+
+        /**
+         * 备注
+         */
+        @SerializedName("Remark")
+        private String remark;
+
+        /**
+         * 项目组
+         */
+        @SerializedName("Tag")
+        private String tag;
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
 
         public String getVipId() {
             return vipId;
@@ -115,15 +158,7 @@ public class DescribeVIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "VIPDetail{" +
-                    "vipId='" + vipId + '\'' +
-                    ", createTime=" + createTime +
-                    ", zone='" + zone + '\'' +
-                    ", realIp='" + realIp + '\'' +
-                    ", vip='" + vip + '\'' +
-                    ", subnetId='" + subnetId + '\'' +
-                    ", vpcId='" + vpcId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -142,7 +177,7 @@ public class DescribeVIPResult extends BaseResponseResult {
     /**
      * 内网VIP详情
      */
-    @SerializedName("VIPSet")
+    @SerializedName(value = "VIPSet")
     private List<VIPDetail> vipDetails;
 
     public List<String> getVips() {
@@ -167,17 +202,5 @@ public class DescribeVIPResult extends BaseResponseResult {
 
     public void setVipDetails(List<VIPDetail> vipDetails) {
         this.vipDetails = vipDetails;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeVIPResult{" +
-                "vips=" + vips +
-                ", totalCount=" + totalCount +
-                ", vipDetails=" + vipDetails +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

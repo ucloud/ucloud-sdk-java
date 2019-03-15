@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.UnBindEIPParam;
 import cn.ucloud.unet.model.UnBindEIPResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,14 +23,14 @@ public class UnBindEIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UnBindEIPParam("cn-bj2","eip-44ayct","uhost","uhost-zzsffd");
-        param.setProjectId("org-4nfe1i");
+        param = new UnBindEIPParam("cn-sh2", "eip-vcsnbgi4", "uhost", "uhost-dwomflqt");
     }
     @Test
     public void unBindEIP() {
         try {
             UnBindEIPResult unBindEIPResult = client.unBindEIP(param);
             System.out.println(unBindEIPResult);
+            JSONComparator.jsonComparator(unBindEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

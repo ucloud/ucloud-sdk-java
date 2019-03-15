@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.ReleaseEIPParam;
 import cn.ucloud.unet.model.ReleaseEIPResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class ReleaseEIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ReleaseEIPParam("cn-bj2","eip-asixq3");
-        param.setProjectId("org-4nfe1i");
+        param = new ReleaseEIPParam("cn-sh2", "eip-243oe1tx");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class ReleaseEIPTest {
         try {
             ReleaseEIPResult releaseEIPResult = client.releaseEIP(param);
             System.out.println(releaseEIPResult);
+            JSONComparator.jsonComparator(releaseEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
