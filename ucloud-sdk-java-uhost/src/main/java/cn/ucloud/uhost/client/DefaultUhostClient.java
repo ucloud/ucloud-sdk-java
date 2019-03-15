@@ -370,5 +370,20 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
         }
     }
 
+    @Override
+    public GetMetricResult getMetric(GetMetricParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetMetricResult.class);
+        return (GetMetricResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getMetric(GetMetricParam param, UcloudHandler<GetMetricResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetMetricResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
 
 }
