@@ -38,7 +38,6 @@ public class AddVPCNetworkTest {
     public void addVPCNetwork() {
         try {
             AddVPCNetworkResult addVPCNetworkResult = client.addVPCNetwork(param);
-            System.out.println(addVPCNetworkResult);
             JSONComparator.jsonComparator(addVPCNetworkResult);
         } catch (Exception e) {
             e.printStackTrace();

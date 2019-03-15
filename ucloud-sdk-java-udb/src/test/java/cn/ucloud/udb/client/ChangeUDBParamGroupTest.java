@@ -22,11 +22,10 @@ public class ChangeUDBParamGroupTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ChangeUDBParamGroupParam("cn-sh2", "udb-h3q25faw", "sdk-java-test");
+        param = new ChangeUDBParamGroupParam("cn-sh2", "udb-04wyi5pz", "2");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试
     @Test
     public void changeUDBParamGroup() {
         try {
@@ -35,28 +34,5 @@ public class ChangeUDBParamGroupTest {
         } catch (Exception e) {
             assertNull(e);
         }
-    }
-
-    @Test
-    public void changeUDBParamGroupCallback() {
-        client.changeUDBParamGroup(param, new UcloudHandler<ChangeUDBParamGroupResult>() {
-            @Override
-            public Object success(ChangeUDBParamGroupResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ChangeUDBParamGroupResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
     }
 }

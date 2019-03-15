@@ -22,11 +22,10 @@ public class DescribeUDBInstanceBackupStateTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DescribeUDBInstanceBackupStateParam("cn-sh2", "cn-sh2-02", 62492);
+        param = new DescribeUDBInstanceBackupStateParam("cn-sh2", "cn-sh2-02", 273798);
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试 get backup state error
     @Test
     public void describeUDBInstanceBackupState() {
         try {
@@ -35,29 +34,5 @@ public class DescribeUDBInstanceBackupStateTest {
         } catch (Exception e) {
             assertNull(e);
         }
-    }
-
-    @Test
-    public void describeUDBInstanceBackupStateCallback() {
-        client.describeUDBInstanceBackupState(param, new UcloudHandler<DescribeUDBInstanceBackupStateResult>() {
-            @Override
-            public Object success(DescribeUDBInstanceBackupStateResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DescribeUDBInstanceBackupStateResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-
     }
 }

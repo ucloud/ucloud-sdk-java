@@ -20,6 +20,28 @@ public class DescribeUDBInstanceBackupStateResult extends BaseResponseResult {
     @SerializedName("State")
     private String state;
 
+    @SerializedName("BackupSize")
+    private Integer backupSize;
+
+    @SerializedName("BackupEndTime")
+    private Integer backupEndTime;
+
+    public Integer getBackupEndTime() {
+        return backupEndTime;
+    }
+
+    public void setBackupEndTime(Integer backupEndTime) {
+        this.backupEndTime = backupEndTime;
+    }
+
+    public Integer getBackupSize() {
+        return backupSize;
+    }
+
+    public void setBackupSize(Integer backupSize) {
+        this.backupSize = backupSize;
+    }
+
     public String getState() {
         return state;
     }
