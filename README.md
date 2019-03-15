@@ -135,7 +135,7 @@ public class Main {
 - 0.6.3-release
 
     修复个别接口返回结果和实际有出入的问题
-- 0.8.0-release
+- 0.6.3.1-release
 
     修复DescribeEIP接口与实际接口有出入的问题
 - 0.8.0-release
