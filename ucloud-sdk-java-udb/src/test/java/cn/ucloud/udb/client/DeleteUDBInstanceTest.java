@@ -24,11 +24,10 @@ public class DeleteUDBInstanceTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DeleteUDBInstanceParam("cn-sh2", "udb-h3q25faw");
+        param = new DeleteUDBInstanceParam("cn-sh2", "udb-1bb42rf5");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试 删除接口异常
     @Test
     public void deleteUDBCInstance() {
         try {
@@ -37,28 +36,5 @@ public class DeleteUDBInstanceTest {
         } catch (Exception e) {
             assertNull(e);
         }
-    }
-
-    @Test
-    public void deleteUDBCInstanceCallback() {
-        client.deleteUDBInstance(param, new UcloudHandler<DeleteUDBInstanceResult>() {
-            @Override
-            public Object success(DeleteUDBInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DeleteUDBInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
     }
 }

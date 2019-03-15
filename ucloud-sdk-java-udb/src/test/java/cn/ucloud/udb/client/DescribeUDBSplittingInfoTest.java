@@ -24,11 +24,10 @@ public class DescribeUDBSplittingInfoTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         param = new DescribeUDBSplittingInfoParam("cn-sh2", "cn-sh2-02",
-                "udb-h3q25faw");
+                "udb-04wyi5pz");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试
     @Test
     public void describeUDBSplittingInfo() {
         try {
@@ -39,26 +38,4 @@ public class DescribeUDBSplittingInfoTest {
         }
     }
 
-    @Test
-    public void describeUDBSplittingInfoCallback() {
-        client.describeUDBSplittingInfo(param, new UcloudHandler<DescribeUDBSplittingInfoResult>() {
-            @Override
-            public Object success(DescribeUDBSplittingInfoResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DescribeUDBSplittingInfoResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

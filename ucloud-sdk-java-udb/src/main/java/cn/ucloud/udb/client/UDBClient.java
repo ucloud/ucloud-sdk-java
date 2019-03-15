@@ -654,27 +654,6 @@ public interface UDBClient extends UcloudClient {
                                               Boolean... asyncFlag);
 
     /**
-     * 根据IP获取宿主机上未删除DB列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceByHostIpResult describeUDBInstanceByHostIp(DescribeUDBInstanceByHostIpParam param)
-            throws Exception;
-
-    /**
-     * 根据IP获取宿主机上未删除DB列表
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceByHostIp(DescribeUDBInstanceByHostIpParam param,
-                                     UcloudHandler<DescribeUDBInstanceByHostIpResult> handler,
-                                     Boolean... asyncFlag);
-
-    /**
      * 根据配置文件获取UDB实例信息
      *
      * @param param 参数对象

@@ -578,24 +578,6 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public DescribeUDBInstanceByHostIpResult describeUDBInstanceByHostIp(
-            DescribeUDBInstanceByHostIpParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBInstanceByHostIpResult.class);
-        return (DescribeUDBInstanceByHostIpResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDBInstanceByHostIp(DescribeUDBInstanceByHostIpParam param,
-                                            UcloudHandler<DescribeUDBInstanceByHostIpResult> handler,
-                                            Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBInstanceByHostIpResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public DescribeUDBInstanceByParamGroupResult describeUDBInstanceByParamGroup(
             DescribeUDBInstanceByParamGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDBInstanceByParamGroupResult.class);
