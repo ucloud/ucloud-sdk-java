@@ -24,15 +24,15 @@ public class UpdateRouteTableAttributeTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpdateRouteTableAttributeParam("cn-bj2","routetable-ciodbt");
-        param.setProjectId("org-4nfe1i");
-        param.setName("java-sdk-test-routeTable");
+        param = new UpdateRouteTableAttributeParam("cn-bj2", "routetable-ucyi5kkm");
+        param.setName("ucloud-sdk-java-routeTable");
     }
     @Test
     public void updateRouteTableAttribute() {
         try {
             UpdateRouteTableAttributeResult updateRouteTableAttributeResult = client.updateRouteTableAttribute(param);
             System.out.println(updateRouteTableAttributeResult);
+            JSONComparator.jsonComparator(updateRouteTableAttributeResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

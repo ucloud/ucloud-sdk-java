@@ -1,6 +1,7 @@
 package cn.ucloud.vpc.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 public class DescribeRouteTableResult extends BaseResponseResult {
 
 
-    public static class RouteTable{
+    public static class RouteTable {
 
         /**
          * 创建时间
@@ -159,23 +160,12 @@ public class DescribeRouteTableResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "RouteTable{" +
-                    "createTime=" + createTime +
-                    ", name='" + name + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", routeRules=" + routeRules +
-                    ", routeTableId='" + routeTableId + '\'' +
-                    ", routeTableType=" + routeTableType +
-                    ", subnetCount=" + subnetCount +
-                    ", tag='" + tag + '\'' +
-                    ", vpcId='" + vpcId + '\'' +
-                    ", vpcName='" + vpcName + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
 
-    public static class RouteRule{
+    public static class RouteRule {
 
         /**
          * 目标地址
@@ -263,14 +253,7 @@ public class DescribeRouteTableResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "RouteRule{" +
-                    "dstAddr='" + dstAddr + '\'' +
-                    ", nextHop='" + nextHop + '\'' +
-                    ", nextHopName='" + nextHopName + '\'' +
-                    ", nextHopType='" + nextHopType + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", routeRuleId='" + routeRuleId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -288,8 +271,6 @@ public class DescribeRouteTableResult extends BaseResponseResult {
     private Integer totalCount;
 
 
-
-
     public List<RouteTable> getRouteTables() {
         return routeTables;
     }
@@ -304,16 +285,5 @@ public class DescribeRouteTableResult extends BaseResponseResult {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeRouteTableResult{" +
-                "routeTables=" + routeTables +
-                ", totalCount=" + totalCount +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

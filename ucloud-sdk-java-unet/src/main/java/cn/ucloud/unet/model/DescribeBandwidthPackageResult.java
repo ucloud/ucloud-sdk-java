@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class DescribeBandwidthPackageResult extends BaseResponseResult {
         /**
          * 带宽包的资源ID
          */
-        @SerializedName("BandwidthPackage")
+        @SerializedName("BandwidthPackageId")
         private String bandwidthPackageId;
 
         /**
@@ -57,6 +58,20 @@ public class DescribeBandwidthPackageResult extends BaseResponseResult {
          */
         @SerializedName("EIPAddr")
         private List<EIPAddr> eipAddrs;
+
+        /**
+         * 生命周期
+         */
+        @SerializedName("LifeCycle")
+        private String lifeCycle;
+
+        public String getLifeCycle() {
+            return lifeCycle;
+        }
+
+        public void setLifeCycle(String lifeCycle) {
+            this.lifeCycle = lifeCycle;
+        }
 
         public String getBandwidthPackageId() {
             return bandwidthPackageId;
@@ -116,15 +131,7 @@ public class DescribeBandwidthPackageResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "BandwidthPackage{" +
-                    "bandwidthPackageId='" + bandwidthPackageId + '\'' +
-                    ", enableTime=" + enableTime +
-                    ", disableTime=" + disableTime +
-                    ", createTime=" + createTime +
-                    ", bandwidth=" + bandwidth +
-                    ", eipId='" + eipId + '\'' +
-                    ", eipAddrs=" + eipAddrs +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -161,10 +168,7 @@ public class DescribeBandwidthPackageResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "EIPAddr{" +
-                    "operatorName='" + operatorName + '\'' +
-                    ", ip='" + ip + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -180,6 +184,20 @@ public class DescribeBandwidthPackageResult extends BaseResponseResult {
     @SerializedName("DataSets")
     private List<BandwidthPackage> bandwidthPackages;
 
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
+
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -194,16 +212,5 @@ public class DescribeBandwidthPackageResult extends BaseResponseResult {
 
     public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
         this.bandwidthPackages = bandwidthPackages;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeBandwidthPackageResult{" +
-                "totalCount=" + totalCount +
-                ", bandwidthPackages=" + bandwidthPackages +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -60,11 +61,7 @@ public class AllocateVIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "VIPInfo{" +
-                    "vip='" + vip + '\'' +
-                    ", vipId='" + vipId + '\'' +
-                    ", vpcId='" + vpcId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -96,16 +93,5 @@ public class AllocateVIPResult extends BaseResponseResult {
 
     public void setVipInfos(List<VIPInfo> vipInfos) {
         this.vipInfos = vipInfos;
-    }
-
-    @Override
-    public String toString() {
-        return "AllocateVIPResult{" +
-                "vips=" + vips +
-                ", vipInfos=" + vipInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

@@ -1,6 +1,7 @@
 package cn.ucloud.vpc.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -242,24 +243,7 @@ public class DescribeSubnetResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "Subnet{" +
-                    "createTime=" + createTime +
-                    ", gateway='" + gateway + '\'' +
-                    ", hasNATGW=" + hasNATGW +
-                    ", name='" + name + '\'' +
-                    ", netmask='" + netmask + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", routeTableId='" + routeTableId + '\'' +
-                    ", subnet='" + subnet + '\'' +
-                    ", subnetId='" + subnetId + '\'' +
-                    ", subnetName='" + subnetName + '\'' +
-                    ", subnetType=" + subnetType +
-                    ", tag='" + tag + '\'' +
-                    ", vpcId='" + vpcId + '\'' +
-                    ", vpcName='" + vpcName + '\'' +
-                    ", vrouterId='" + vrouterId + '\'' +
-                    ", zone='" + zone + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -287,16 +271,5 @@ public class DescribeSubnetResult extends BaseResponseResult {
 
     public void setSubnets(List<Subnet> subnets) {
         this.subnets = subnets;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeSubnetResult{" +
-                "totalCount=" + totalCount +
-                ", subnets=" + subnets +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

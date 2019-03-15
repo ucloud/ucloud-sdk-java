@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * @description: 调整弹性IP的外网带宽 参数类
@@ -9,12 +10,17 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class ModifyEIPBandwidthResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "ModifyEIPBandwidthResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
     }
 }

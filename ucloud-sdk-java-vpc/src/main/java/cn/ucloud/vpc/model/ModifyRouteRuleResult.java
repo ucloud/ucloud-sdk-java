@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class ModifyRouteRuleResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "ModifyRouteRuleResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

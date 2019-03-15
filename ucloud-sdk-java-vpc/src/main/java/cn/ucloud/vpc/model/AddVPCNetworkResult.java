@@ -10,12 +10,4 @@ import cn.ucloud.common.pojo.BaseResponseResult;
 
 public class AddVPCNetworkResult extends BaseResponseResult {
 
-    @Override
-    public String toString() {
-        return "AddVPCNetworkResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

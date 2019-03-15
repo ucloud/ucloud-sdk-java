@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.UpdateFirewallParam;
 import cn.ucloud.unet.model.UpdateFirewallResult;
 import cn.ucloud.common.pojo.Account;
@@ -28,12 +26,10 @@ public class UpdateFirewallTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        
+
         List<UpdateFirewallParam.Rule> rules = new ArrayList<>();
-        rules.add(new UpdateFirewallParam.Rule("TCP", 22, "192.168.1.1", "ACCEPT", "LOW"));
-        rules.add(new UpdateFirewallParam.Rule("TCP", 22, "192.168.1.2", "ACCEPT", "LOW"));
-        param = new UpdateFirewallParam("cn-sh2", "fwId",rules);
-        param.setProjectId("org-4nfe1i");
+        rules.add(new UpdateFirewallParam.Rule("TCP", 24, "120.132.8.183", "ACCEPT", "MEDIUM"));
+        param = new UpdateFirewallParam("cn-sh2", "firewall-xujipdz3", rules);
     }
 
     @Test
@@ -41,6 +37,7 @@ public class UpdateFirewallTest {
         try {
             UpdateFirewallResult allocateEIPResult = client.updateFirewall(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

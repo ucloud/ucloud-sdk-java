@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.CreateFirewallParam;
 import cn.ucloud.unet.model.CreateFirewallResult;
 import cn.ucloud.common.pojo.Account;
@@ -30,10 +28,8 @@ public class CreateFirewallTest {
                         System.getenv("UcloudPublicKey"))));
 
         List<CreateFirewallParam.Rule> rules = new ArrayList<>();
-        rules.add(new CreateFirewallParam.Rule("TCP", 22, "192.168.1.1", "ACCEPT", "LOW"));
-        rules.add(new CreateFirewallParam.Rule("TCP", 22, "192.168.1.2", "ACCEPT", "LOW"));
-        param = new CreateFirewallParam("cn-sh2", rules,"Firewall");
-        param.setProjectId("org-4nfe1i");
+        rules.add(new CreateFirewallParam.Rule("TCP", 22, "120.132.8.183", "ACCEPT", "LOW"));
+        param = new CreateFirewallParam("cn-sh2", rules, "Firewall-test");
     }
 
     @Test
@@ -41,6 +37,7 @@ public class CreateFirewallTest {
         try {
             CreateFirewallResult allocateEIPResult = client.createFirewall(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -24,7 +24,6 @@ public class DescribeRouteTableTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeRouteTableParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
     }
 
     @Test
@@ -32,6 +31,7 @@ public class DescribeRouteTableTest {
         try {
             DescribeRouteTableResult describeRouteTableResult = client.describeRouteTable(param);
             System.out.println(describeRouteTableResult);
+            JSONComparator.jsonComparator(describeRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

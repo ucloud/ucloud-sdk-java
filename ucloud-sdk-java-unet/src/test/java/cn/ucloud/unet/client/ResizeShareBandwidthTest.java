@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.ResizeShareBandwidthParam;
 import cn.ucloud.unet.model.ResizeShareBandwidthResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class ResizeShareBandwidthTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ResizeShareBandwidthParam("cn-bj2",20,"bwshare-4nma45");
-        param.setProjectId("org-4nfe1i");
+        param = new ResizeShareBandwidthParam("cn-sh2", 20, "bwshare-cybkx5q2");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class ResizeShareBandwidthTest {
         try {
             ResizeShareBandwidthResult resizeShareBandwidthResult = client.resizeShareBandwidth(param);
             System.out.println(resizeShareBandwidthResult);
+            JSONComparator.jsonComparator(resizeShareBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

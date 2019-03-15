@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class DeleteVPCIntercomResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "DeleteVPCIntercomResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

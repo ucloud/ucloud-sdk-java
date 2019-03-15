@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * @description: 将尚未使用的弹性IP绑定到指定的资源 结果类
@@ -9,12 +10,17 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class BindEIPResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "BindEIPResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
     }
 }

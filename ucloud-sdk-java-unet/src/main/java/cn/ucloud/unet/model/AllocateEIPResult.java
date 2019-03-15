@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -45,10 +46,7 @@ public class AllocateEIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "EIP{" +
-                    "eipId='" + eipId + '\'' +
-                    ", eipAddrs=" + eipAddrs +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -85,10 +83,7 @@ public class AllocateEIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "EIPAddr{" +
-                    "operatorName='" + operatorName + '\'' +
-                    ", ip='" + ip + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -98,6 +93,12 @@ public class AllocateEIPResult extends BaseResponseResult {
     @SerializedName("EIPSet")
     private List<EIP> eips;
 
+    /**
+     * 请求uuid
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
     public List<EIP> getEips() {
         return eips;
     }
@@ -106,13 +107,11 @@ public class AllocateEIPResult extends BaseResponseResult {
         this.eips = eips;
     }
 
-    @Override
-    public String toString() {
-        return "AllocateEIPResult{" +
-                "eips=" + eips +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
     }
 }
