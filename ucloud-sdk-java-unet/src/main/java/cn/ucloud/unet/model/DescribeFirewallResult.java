@@ -42,6 +42,20 @@ public class DescribeFirewallResult extends BaseResponseResult {
         @SerializedName("SrcIP")
         private String srcIP;
 
+        /**
+         * 备注
+         */
+        @SerializedName("Remark")
+        private String remark;
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
         public String getDstPort() {
             return dstPort;
         }

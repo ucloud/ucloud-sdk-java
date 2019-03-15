@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
          * 可用区
          */
         @SerializedName("Zone")
-        private String zone;
+        private Integer zone;
         /**
          * 内网IP
          */
@@ -66,7 +67,7 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
          * 状态
          */
         @SerializedName("Status")
-        private String status;
+        private Integer status;
 
         public String getResourceType() {
             return resourceType;
@@ -84,11 +85,11 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
             this.resourceID = resourceID;
         }
 
-        public String getZone() {
+        public Integer getZone() {
             return zone;
         }
 
-        public void setZone(String zone) {
+        public void setZone(int zone) {
             this.zone = zone;
         }
 
@@ -124,12 +125,17 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
             this.remark = remark;
         }
 
-        public String getStatus() {
+        public Integer getStatus() {
             return status;
         }
 
-        public void setStatus(String status) {
+        public void setStatus(int status) {
             this.status = status;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
         }
     }
 

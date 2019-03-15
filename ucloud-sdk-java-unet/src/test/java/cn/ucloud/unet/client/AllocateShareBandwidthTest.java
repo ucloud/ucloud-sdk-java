@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.AllocateShareBandwidthParam;
 import cn.ucloud.unet.model.AllocateShareBandwidthResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class AllocateShareBandwidthTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AllocateShareBandwidthParam("cn-bj2","sdk-java-shareBandwidth","Dynamic",24);
-        param.setProjectId("org-4nfe1i");
+        param = new AllocateShareBandwidthParam("cn-sh2", "ucloud-sdk-java-shareBandwidth", "Dynamic", 24);
     }
 
     @Test
@@ -34,6 +31,7 @@ public class AllocateShareBandwidthTest {
         try {
             AllocateShareBandwidthResult allocateShareBandwidthResult = client.allocateShareBandwidth(param);
             System.out.println(allocateShareBandwidthResult);
+            JSONComparator.jsonComparator(allocateShareBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

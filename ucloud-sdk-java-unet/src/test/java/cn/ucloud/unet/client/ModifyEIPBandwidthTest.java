@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.ModifyEIPBandwidthParam;
 import cn.ucloud.unet.model.ModifyEIPBandwidthResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class ModifyEIPBandwidthTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ModifyEIPBandwidthParam("cn-bj2","eip-44ayct",1);
-        param.setProjectId("org-4nfe1i");
+        param = new ModifyEIPBandwidthParam("cn-sh2", "eip-vcsnbgi4", 4);
     }
 
     @Test
@@ -34,6 +31,7 @@ public class ModifyEIPBandwidthTest {
         try {
             ModifyEIPBandwidthResult modifyEIPBandwidthResult = client.modifyEIPBandwidth(param);
             System.out.println(modifyEIPBandwidthResult);
+            JSONComparator.jsonComparator(modifyEIPBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

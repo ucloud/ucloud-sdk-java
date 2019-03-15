@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.ReleaseVIPParam;
 import cn.ucloud.unet.model.ReleaseVIPResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class ReleaseVIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ReleaseVIPParam("cn-bj2","vip-fafuny");
-        param.setProjectId("org-4nfe1i");
+        param = new ReleaseVIPParam("cn-sh2", "vip-utxslh2t");
     }
 
     @Test
@@ -34,6 +31,7 @@ public class ReleaseVIPTest {
         try {
             ReleaseVIPResult releaseVIPResult = client.releaseVIP(param);
             System.out.println(releaseVIPResult);
+            JSONComparator.jsonComparator(releaseVIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
