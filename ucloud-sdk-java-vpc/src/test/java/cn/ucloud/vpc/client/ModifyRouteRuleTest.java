@@ -39,7 +39,6 @@ public class ModifyRouteRuleTest {
     public void modifyRouteRule() {
         try {
             ModifyRouteRuleResult modifyRouteRuleResult = client.modifyRouteRule(param);
-            System.out.println(modifyRouteRuleResult);
             JSONComparator.jsonComparator(modifyRouteRuleResult);
         } catch (Exception e) {
             e.printStackTrace();

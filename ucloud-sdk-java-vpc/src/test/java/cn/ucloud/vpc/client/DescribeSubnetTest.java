@@ -33,7 +33,6 @@ public class DescribeSubnetTest {
     public void describeSubnet() {
         try {
             DescribeSubnetResult describeSubnetResult = client.describeSubnet(param);
-            System.out.println(describeSubnetResult);
             JSONComparator.jsonComparator(describeSubnetResult);
         } catch (Exception e) {
             e.printStackTrace();

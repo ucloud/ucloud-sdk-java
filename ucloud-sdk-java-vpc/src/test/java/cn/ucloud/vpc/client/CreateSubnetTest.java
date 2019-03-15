@@ -32,7 +32,6 @@ public class CreateSubnetTest {
     public void createSubnet() {
         try {
             CreateSubnetResult subnet = client.createSubnet(param);
-            System.out.println(subnet);
             JSONComparator.jsonComparator(subnet);
         } catch (Exception e) {
             e.printStackTrace();

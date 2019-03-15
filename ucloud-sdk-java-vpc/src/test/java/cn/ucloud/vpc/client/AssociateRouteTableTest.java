@@ -31,7 +31,6 @@ public class AssociateRouteTableTest {
     public void associateRouteTable() {
         try {
             AssociateRouteTableResult associateRouteTableResult = client.associateRouteTable(param);
-            System.out.println(associateRouteTableResult);
             JSONComparator.jsonComparator(associateRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();

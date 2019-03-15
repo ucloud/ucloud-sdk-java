@@ -38,7 +38,6 @@ public class CreateVPCTest {
     public void createVPC() {
         try {
             CreateVPCResult vpc = client.createVPC(param);
-            System.out.println(vpc);
             JSONComparator.jsonComparator(vpc);
         } catch (Exception e) {
             e.printStackTrace();

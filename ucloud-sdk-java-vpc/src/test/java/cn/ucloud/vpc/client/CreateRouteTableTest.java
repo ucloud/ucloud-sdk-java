@@ -32,7 +32,6 @@ public class CreateRouteTableTest {
     public void createRouteTable() {
         try {
             CreateRouteTableResult routeTable = client.createRouteTable(param);
-            System.out.println(routeTable);
             JSONComparator.jsonComparator(routeTable);
         } catch (Exception e) {
             e.printStackTrace();

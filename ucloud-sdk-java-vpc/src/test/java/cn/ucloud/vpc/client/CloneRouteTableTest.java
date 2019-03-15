@@ -32,7 +32,6 @@ public class CloneRouteTableTest {
     public void cloneRouteTable() {
         try {
             CloneRouteTableResult cloneRouteTableResult = client.cloneRouteTable(param);
-            System.out.println(cloneRouteTableResult);
             JSONComparator.jsonComparator(cloneRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();

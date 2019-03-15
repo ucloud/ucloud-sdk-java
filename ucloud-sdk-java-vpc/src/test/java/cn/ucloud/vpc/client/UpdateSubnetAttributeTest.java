@@ -32,7 +32,6 @@ public class UpdateSubnetAttributeTest {
     public void updateSubnetAttribute() {
         try {
             UpdateSubnetAttributeResult updateSubnetAttributeResult = client.updateSubnetAttribute(param);
-            System.out.println(updateSubnetAttributeResult);
             JSONComparator.jsonComparator(updateSubnetAttributeResult);
         } catch (Exception e) {
             e.printStackTrace();

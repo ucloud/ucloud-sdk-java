@@ -31,7 +31,6 @@ public class UpdateRouteTableAttributeTest {
     public void updateRouteTableAttribute() {
         try {
             UpdateRouteTableAttributeResult updateRouteTableAttributeResult = client.updateRouteTableAttribute(param);
-            System.out.println(updateRouteTableAttributeResult);
             JSONComparator.jsonComparator(updateRouteTableAttributeResult);
         } catch (Exception e) {
             e.printStackTrace();
