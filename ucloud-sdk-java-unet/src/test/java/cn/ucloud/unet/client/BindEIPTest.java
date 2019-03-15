@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.BindEIPParam;
 import cn.ucloud.unet.model.BindEIPResult;
 import cn.ucloud.common.pojo.Account;
@@ -16,8 +14,6 @@ import org.junit.Test;
  **/
 public class BindEIPTest {
 
-
-
     private UnetClient client;
 
     private BindEIPParam param;
@@ -27,8 +23,7 @@ public class BindEIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new BindEIPParam("cn-bj2","eip-44ayct","uhost","uhost-zzsffd");
-        param.setProjectId("org-4nfe1i");
+        param = new BindEIPParam("cn-sh2", "eip-vcsnbgi4", "uhost", "uhost-dwomflqt");
     }
 
     @Test
@@ -36,6 +31,7 @@ public class BindEIPTest {
         try {
             BindEIPResult bindEIPResult = client.bindEIP(param);
             System.out.println(bindEIPResult);
+            JSONComparator.jsonComparator(bindEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.UpdateFirewallAttributeParam;
 import cn.ucloud.unet.model.UpdateFirewallAttributeResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,8 @@ public class UpdateFirewallAttributeTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
 
-        param = new UpdateFirewallAttributeParam("cn-sh2", "fwId");
-        param.setProjectId("org-4nfe1i");
+        param = new UpdateFirewallAttributeParam("cn-sh2", "firewall-xujipdz3");
+        param.setName("ucloud-sdk-java-test-fw");
     }
 
     @Test
@@ -35,6 +33,7 @@ public class UpdateFirewallAttributeTest {
         try {
             UpdateFirewallAttributeResult allocateEIPResult = client.updateFirewallAttribute(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

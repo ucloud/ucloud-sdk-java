@@ -23,8 +23,9 @@ public class AllocateEIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AllocateEIPParam("cn-sh2","Bgp",1);
-        param.setProjectId("org-izug1m");
+        param = new AllocateEIPParam("cn-sh2", "Bgp", 2);
+        param.setTag("ucloud-sdk-java-test");
+        param.setRemark("ucloud-sdk-java-test-eip");
     }
 
     @Test
@@ -32,6 +33,7 @@ public class AllocateEIPTest {
         try {
             AllocateEIPResult allocateEIPResult = client.allocateEIP(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

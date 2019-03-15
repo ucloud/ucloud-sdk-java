@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.DeleteBandwidthPackageParam;
 import cn.ucloud.unet.model.DeleteBandwidthPackageResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class DeleteBandwidthPackageTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DeleteBandwidthPackageParam("cn-bj2","bwpack-hipzkn");
-        param.setProjectId("org-4nfe1i");
+        param = new DeleteBandwidthPackageParam("cn-sh2", "bwpack-z13014dl");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class DeleteBandwidthPackageTest {
         try {
             DeleteBandwidthPackageResult deleteBandwidthPackageResult = client.deleteBandwidthPackage(param);
             System.out.println(deleteBandwidthPackageResult);
+            JSONComparator.jsonComparator(deleteBandwidthPackageResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

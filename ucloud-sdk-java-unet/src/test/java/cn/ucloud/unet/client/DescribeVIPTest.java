@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.DescribeVIPParam;
 import cn.ucloud.unet.model.DescribeVIPResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class DescribeVIPTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeVIPParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeVIPParam("cn-sh2");
     }
 
     @Test
@@ -34,6 +31,7 @@ public class DescribeVIPTest {
         try {
             DescribeVIPResult describeVIPResult = client.describeVIP(param);
             System.out.println(describeVIPResult);
+            JSONComparator.jsonComparator(describeVIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

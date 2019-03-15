@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class DescribeShareBandwidthResult extends BaseResponseResult {
 
-    public static class ShareBandwidth{
+    public static class ShareBandwidth {
 
         /**
          * 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps
@@ -49,7 +50,7 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
          * EIP信息,详情见 EIPAddrSet
          */
         @SerializedName("EIPSet")
-        private List<EIPAddr> eipAddrs;
+        private List<EIP> eips;
 
         /**
          * 共享带宽保底值(后付费)
@@ -60,8 +61,22 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
         /**
          * 共享带宽后付费开始计费时间(后付费)
          */
+        @SerializedName("PostPayStartTime")
         private Integer postPayStartTime;
 
+        /**
+         * 共享带宽名称
+         */
+        @SerializedName("Name")
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
 
         public Integer getShareBandwidth() {
             return shareBandwidth;
@@ -103,12 +118,12 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
             this.expireTime = expireTime;
         }
 
-        public List<EIPAddr> getEipAddrs() {
-            return eipAddrs;
+        public List<EIP> getEips() {
+            return eips;
         }
 
-        public void setEipAddrs(List<EIPAddr> eipAddrs) {
-            this.eipAddrs = eipAddrs;
+        public void setEips(List<EIP> eips) {
+            this.eips = eips;
         }
 
         public Integer getBandwidthGuarantee() {
@@ -129,21 +144,52 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ShareBandwidth{" +
-                    "shareBandwidth=" + shareBandwidth +
-                    ", shareBandwidthId='" + shareBandwidthId + '\'' +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", createTime=" + createTime +
-                    ", expireTime=" + expireTime +
-                    ", eipAddrs=" + eipAddrs +
-                    ", bandwidthGuarantee=" + bandwidthGuarantee +
-                    ", postPayStartTime=" + postPayStartTime +
-                    '}';
+            return new Gson().toJson(this);
+        }
+    }
+
+    public static class EIP {
+        @SerializedName("Bandwidth")
+        private Integer bandWidth;
+
+        @SerializedName("EIPId")
+        private String eipId;
+
+        @SerializedName("EIPAddr")
+        private List<EIPAddr> eipAddrs;
+
+        public Integer getBandWidth() {
+            return bandWidth;
+        }
+
+        public void setBandWidth(Integer bandWidth) {
+            this.bandWidth = bandWidth;
+        }
+
+        public String getEipId() {
+            return eipId;
+        }
+
+        public void setEipId(String eipId) {
+            this.eipId = eipId;
+        }
+
+        public List<EIPAddr> getEipAddrs() {
+            return eipAddrs;
+        }
+
+        public void setEipAddrs(List<EIPAddr> eipAddrs) {
+            this.eipAddrs = eipAddrs;
+        }
+
+        @Override
+        public String toString() {
+            return new Gson().toJson(this);
         }
     }
 
 
-    public static class EIPAddr{
+    public static class EIPAddr {
 
         /**
          * 运营商信息, 枚举值为: Bgp: BGP; International: 国际.
@@ -175,10 +221,7 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "BandwidthPackage{" +
-                    "operatorName='" + operatorName + '\'' +
-                    ", ip='" + ip + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -188,21 +231,39 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
     @SerializedName("DataSet")
     private List<ShareBandwidth> shareBandwidths;
 
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    /**
+     * 总数量
+     */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     public List<ShareBandwidth> getShareBandwidths() {
         return shareBandwidths;
     }
 
     public void setShareBandwidths(List<ShareBandwidth> shareBandwidths) {
         this.shareBandwidths = shareBandwidths;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeShareBandwidthResult{" +
-                "shareBandwidths=" + shareBandwidths +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

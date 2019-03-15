@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.DescribeBandwidthUsageParam;
 import cn.ucloud.unet.model.DescribeBandwidthUsageResult;
 import cn.ucloud.common.pojo.Account;
@@ -30,11 +28,9 @@ public class DescribeBandwidthUsageTest {
                         System.getenv("UcloudPublicKey"))));
 
         List<String> eipIds = new ArrayList<>();
-        eipIds.add("eip-192.168.1.1");
-        eipIds.add("eip-192.168.1.2");
+        eipIds.add("eip-vcsnbgi4");
         param = new DescribeBandwidthUsageParam("cn-sh2");
         param.setEipIds(eipIds);
-        param.setProjectId("org-4nfe1i");
     }
 
     @Test
@@ -42,6 +38,7 @@ public class DescribeBandwidthUsageTest {
         try {
             DescribeBandwidthUsageResult allocateEIPResult = client.describeBandwidthUsage(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

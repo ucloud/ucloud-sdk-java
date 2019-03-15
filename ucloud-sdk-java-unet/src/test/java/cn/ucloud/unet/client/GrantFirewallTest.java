@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.GrantFirewallParam;
 import cn.ucloud.unet.model.GrantFirewallResult;
 import cn.ucloud.common.pojo.Account;
@@ -26,8 +24,7 @@ public class GrantFirewallTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
 
-        param = new GrantFirewallParam("cn-sh2", "fwId","UHost","123");
-        param.setProjectId("org-4nfe1i");
+        param = new GrantFirewallParam("cn-sh2", "firewall-xujipdz3", "UHost", "uhost-dwomflqt");
     }
 
     @Test
@@ -35,6 +32,7 @@ public class GrantFirewallTest {
         try {
             GrantFirewallResult allocateEIPResult = client.grantFirewall(param);
             System.out.println(allocateEIPResult);
+            JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

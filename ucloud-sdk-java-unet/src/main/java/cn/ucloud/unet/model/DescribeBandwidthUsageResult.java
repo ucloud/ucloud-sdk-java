@@ -25,24 +25,29 @@ public class DescribeBandwidthUsageResult extends BaseResponseResult {
     @SerializedName("EIPSet")
     private List<EIP> eIPSet;
 
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
 
     public static class EIP {
         /**
          * 最近5分钟带宽用量, 单位Mbps
          */
         @SerializedName("CurBandwidth")
-        private Float curBandwidth;
+        private Double curBandwidth;
         /**
          * 弹性IP资源ID
          */
         @SerializedName("EIPId")
         private String eIPId;
 
-        public Float getCurBandwidth() {
+        public Double getCurBandwidth() {
             return curBandwidth;
         }
 
-        public void setCurBandwidth(Float curBandwidth) {
+        public void setCurBandwidth(Double curBandwidth) {
             this.curBandwidth = curBandwidth;
         }
 
@@ -74,5 +79,13 @@ public class DescribeBandwidthUsageResult extends BaseResponseResult {
 
     public void seteIPSet(List<EIP> eIPSet) {
         this.eIPSet = eIPSet;
+    }
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
     }
 }

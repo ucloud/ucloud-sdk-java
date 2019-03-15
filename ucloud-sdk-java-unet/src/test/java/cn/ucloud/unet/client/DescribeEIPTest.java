@@ -24,15 +24,14 @@ public class DescribeEIPTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeEIPParam("cn-sh2");
-        param.setProjectId("org-pbmy1g");
     }
-
 
     @Test
     public void describeEIP() {
         try {
             DescribeEIPResult result = client.describeEIP(param);
             System.out.println(result);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
