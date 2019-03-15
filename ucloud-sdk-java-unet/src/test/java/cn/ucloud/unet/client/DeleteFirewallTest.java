@@ -31,7 +31,6 @@ public class DeleteFirewallTest {
     public void deleteFirewall() {
         try {
             DeleteFirewallResult allocateEIPResult = client.deleteFirewall(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

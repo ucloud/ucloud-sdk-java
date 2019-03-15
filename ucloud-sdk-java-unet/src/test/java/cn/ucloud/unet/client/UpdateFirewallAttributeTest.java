@@ -32,7 +32,6 @@ public class UpdateFirewallAttributeTest {
     public void updateFirewallAttribute() {
         try {
             UpdateFirewallAttributeResult allocateEIPResult = client.updateFirewallAttribute(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

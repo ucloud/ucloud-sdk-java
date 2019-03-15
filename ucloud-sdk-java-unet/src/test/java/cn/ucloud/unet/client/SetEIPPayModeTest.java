@@ -30,7 +30,6 @@ public class SetEIPPayModeTest {
     public void setEIPPayMode() {
         try {
             SetEIPPayModeResult setEIPPayModeResult = client.setEIPPayMode(param);
-            System.out.println(setEIPPayModeResult);
             JSONComparator.jsonComparator(setEIPPayModeResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -30,7 +30,6 @@ public class BindEIPTest {
     public void bindEIP() {
         try {
             BindEIPResult bindEIPResult = client.bindEIP(param);
-            System.out.println(bindEIPResult);
             JSONComparator.jsonComparator(bindEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -30,7 +30,6 @@ public class ModifyEIPWeightTest {
     public void modifyEIPBandwidth() {
         try {
             ModifyEIPWeightResult modifyEIPWeightResult = client.modifyEIPWeight(param);
-            System.out.println(modifyEIPWeightResult);
             JSONComparator.jsonComparator(modifyEIPWeightResult);
         } catch (Exception e) {
             e.printStackTrace();

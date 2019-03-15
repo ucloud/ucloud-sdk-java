@@ -31,7 +31,6 @@ public class ReleaseShareBandwidthTest {
     public void releaseShareBandwidth() {
         try {
             ReleaseShareBandwidthResult allocateEIPResult = client.releaseShareBandwidth(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

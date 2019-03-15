@@ -31,7 +31,6 @@ public class ResizeShareBandwidthTest {
     public void resizeShareBandwidth() {
         try {
             ResizeShareBandwidthResult resizeShareBandwidthResult = client.resizeShareBandwidth(param);
-            System.out.println(resizeShareBandwidthResult);
             JSONComparator.jsonComparator(resizeShareBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();
