@@ -31,7 +31,6 @@ public class DeleteBandwidthPackageTest {
     public void deleteBandwidthPackage() {
         try {
             DeleteBandwidthPackageResult deleteBandwidthPackageResult = client.deleteBandwidthPackage(param);
-            System.out.println(deleteBandwidthPackageResult);
             JSONComparator.jsonComparator(deleteBandwidthPackageResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -30,7 +30,6 @@ public class AllocateShareBandwidthTest {
     public void allocateShareBandwidth() {
         try {
             AllocateShareBandwidthResult allocateShareBandwidthResult = client.allocateShareBandwidth(param);
-            System.out.println(allocateShareBandwidthResult);
             JSONComparator.jsonComparator(allocateShareBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -30,7 +30,6 @@ public class DescribeVIPTest {
     public void describeVIP() {
         try {
             DescribeVIPResult describeVIPResult = client.describeVIP(param);
-            System.out.println(describeVIPResult);
             JSONComparator.jsonComparator(describeVIPResult);
         } catch (Exception e) {
             e.printStackTrace();

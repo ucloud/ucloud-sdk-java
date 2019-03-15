@@ -30,7 +30,6 @@ public class ReleaseVIPTest {
     public void releaseVIP() {
         try {
             ReleaseVIPResult releaseVIPResult = client.releaseVIP(param);
-            System.out.println(releaseVIPResult);
             JSONComparator.jsonComparator(releaseVIPResult);
         } catch (Exception e) {
             e.printStackTrace();

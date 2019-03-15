@@ -30,7 +30,6 @@ public class ModifyEIPBandwidthTest {
     public void modifyEIPBandwidth() {
         try {
             ModifyEIPBandwidthResult modifyEIPBandwidthResult = client.modifyEIPBandwidth(param);
-            System.out.println(modifyEIPBandwidthResult);
             JSONComparator.jsonComparator(modifyEIPBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();

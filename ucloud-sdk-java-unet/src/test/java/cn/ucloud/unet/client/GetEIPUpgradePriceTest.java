@@ -31,7 +31,6 @@ public class GetEIPUpgradePriceTest {
     public void getEIPUpgradePrice() {
         try {
             GetEIPUpgradePriceResult eipUpgradePrice = client.getEIPUpgradePrice(param);
-            System.out.println(eipUpgradePrice);
             JSONComparator.jsonComparator(eipUpgradePrice);
         } catch (Exception e) {
             e.printStackTrace();

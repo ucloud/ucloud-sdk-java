@@ -31,7 +31,6 @@ public class GrantFirewallTest {
     public void grantFirewall() {
         try {
             GrantFirewallResult allocateEIPResult = client.grantFirewall(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

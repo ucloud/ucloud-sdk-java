@@ -37,7 +37,6 @@ public class AssociateEIPWithShareBandwidthTest {
     public void associateEIPWithShareBandwidth() {
         try {
             AssociateEIPWithShareBandwidthResult allocateEIPResult = client.associateEIPWithShareBandwidth(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();
