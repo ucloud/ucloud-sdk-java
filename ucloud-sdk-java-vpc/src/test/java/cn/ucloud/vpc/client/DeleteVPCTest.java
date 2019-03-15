@@ -28,8 +28,7 @@ public class DeleteVPCTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DeleteVPCParam("cn-bj2","uvnet-1wu2eb");
-        param.setProjectId("org-4nfe1i");
+        param = new DeleteVPCParam("cn-bj2", "uvnet-0h0zx0ox");
     }
 
 
@@ -38,6 +37,7 @@ public class DeleteVPCTest {
         try {
             DeleteVPCResult deleteVPCResult = client.deleteVPC(param);
             System.out.println(deleteVPCResult);
+            JSONComparator.jsonComparator(deleteVPCResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

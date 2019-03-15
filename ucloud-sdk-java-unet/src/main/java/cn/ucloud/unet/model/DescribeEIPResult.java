@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -98,7 +99,7 @@ public class DescribeEIPResult extends BaseResponseResult {
         /**
          * 共享带宽信息 参见 ShareBandwidthSet
          */
-        @SerializedName("ShareBandwidth")
+        @SerializedName("ShareBandwidthSet")
         private ShareBandwidth shareBandwidth;
 
         /**
@@ -106,6 +107,34 @@ public class DescribeEIPResult extends BaseResponseResult {
          */
         @SerializedName("Expire")
         private Boolean expire;
+
+        /**
+         * 带宽
+         */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /**
+         * 带宽类型
+         */
+        @SerializedName("BandwidthType")
+        private Integer bandwidthType;
+
+        public Integer getBandwidthType() {
+            return bandwidthType;
+        }
+
+        public void setBandwidthType(Integer bandwidthType) {
+            this.bandwidthType = bandwidthType;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
 
         public String getEipId() {
             return eipId;
@@ -229,23 +258,7 @@ public class DescribeEIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "UnetEIP{" +
-                    "eipId='" + eipId + '\'' +
-                    ", weight=" + weight +
-                    ", bandwithType=" + bandwithType +
-                    ", status='" + status + '\'' +
-                    ", chargeType='" + chargeType + '\'' +
-                    ", createTime=" + createTime +
-                    ", expireTime=" + expireTime +
-                    ", resource=" + resource +
-                    ", eipAddrs=" + eipAddrs +
-                    ", name='" + name + '\'' +
-                    ", tag='" + tag + '\'' +
-                    ", remark='" + remark + '\'' +
-                    ", payMode='" + payMode + '\'' +
-                    ", shareBandwidth=" + shareBandwidth +
-                    ", expire=" + expire +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -281,10 +294,7 @@ public class DescribeEIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "UnetEIPAddr{" +
-                    "operatorName='" + operatorName + '\'' +
-                    ", ip='" + ip + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -335,11 +345,7 @@ public class DescribeEIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "ShareBandwidth{" +
-                    "shareBandwidth=" + shareBandwidth +
-                    ", shareBandwidthName='" + shareBandwidthName + '\'' +
-                    ", shareBandwidthId='" + shareBandwidthId + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -404,12 +410,7 @@ public class DescribeEIPResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "UnetEIPResource{" +
-                    "resourceType='" + resourceType + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    ", resourceId='" + resourceId + '\'' +
-                    ", zone='" + zone + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -431,6 +432,20 @@ public class DescribeEIPResult extends BaseResponseResult {
      */
     @SerializedName("EIPSet")
     private List<UnetEIP> eips;
+
+    /**
+     * 请求uuid
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
 
     public Integer getTotalCount() {
         return totalCount;
@@ -454,17 +469,5 @@ public class DescribeEIPResult extends BaseResponseResult {
 
     public void setEips(List<UnetEIP> eips) {
         this.eips = eips;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeEIPResult{" +
-                "totalCount=" + totalCount +
-                ", totalBandwidth=" + totalBandwidth +
-                ", eips=" + eips +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.GetEIPPriceParam;
 import cn.ucloud.unet.model.GetEIPPriceResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class GetEIPPriceTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new GetEIPPriceParam("cn-bj2","Bgp",1);
-        param.setProjectId("org-4nfe1i");
+        param = new GetEIPPriceParam("cn-sh2", "Bgp", 2);
     }
 
     @Test
@@ -34,6 +31,7 @@ public class GetEIPPriceTest {
         try {
             GetEIPPriceResult eipPrice = client.getEIPPrice(param);
             System.out.println(eipPrice);
+            JSONComparator.jsonComparator(eipPrice);
         } catch (Exception e) {
             e.printStackTrace();
         }

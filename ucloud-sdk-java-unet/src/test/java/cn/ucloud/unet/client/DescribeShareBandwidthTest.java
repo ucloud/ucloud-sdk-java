@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.DescribeShareBandwidthParam;
 import cn.ucloud.unet.model.DescribeShareBandwidthResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class DescribeShareBandwidthTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeShareBandwidthParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeShareBandwidthParam("cn-sh2");
     }
 
     @Test
@@ -34,6 +31,7 @@ public class DescribeShareBandwidthTest {
         try {
             DescribeShareBandwidthResult describeShareBandwidthResult = client.describeShareBandwidth(param);
             System.out.println(describeShareBandwidthResult);
+            JSONComparator.jsonComparator(describeShareBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

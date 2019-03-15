@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.ModifyEIPWeightParam;
 import cn.ucloud.unet.model.ModifyEIPWeightResult;
 import cn.ucloud.common.pojo.Account;
@@ -16,7 +14,6 @@ import org.junit.Test;
  **/
 public class ModifyEIPWeightTest {
 
-
     private UnetClient client;
 
     private ModifyEIPWeightParam param;
@@ -26,8 +23,7 @@ public class ModifyEIPWeightTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ModifyEIPWeightParam("cn-bj2","eip-44ayct",100);
-        param.setProjectId("org-4nfe1i");
+        param = new ModifyEIPWeightParam("cn-bj2", "eip-vcsnbgi4", 100);
     }
 
     @Test
@@ -35,6 +31,7 @@ public class ModifyEIPWeightTest {
         try {
             ModifyEIPWeightResult modifyEIPWeightResult = client.modifyEIPWeight(param);
             System.out.println(modifyEIPWeightResult);
+            JSONComparator.jsonComparator(modifyEIPWeightResult);
         } catch (Exception e) {
             e.printStackTrace();
         }

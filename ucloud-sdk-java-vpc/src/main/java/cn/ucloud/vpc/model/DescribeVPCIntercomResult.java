@@ -1,6 +1,7 @@
 package cn.ucloud.vpc.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -52,6 +53,12 @@ public class DescribeVPCIntercomResult extends BaseResponseResult {
         @SerializedName("Tag")
         private String tag;
 
+        /**
+         *
+         */
+        @SerializedName("Remark")
+        private String remark;
+
         public String getProjectId() {
             return projectId;
         }
@@ -100,17 +107,17 @@ public class DescribeVPCIntercomResult extends BaseResponseResult {
             this.tag = tag;
         }
 
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
 
         @Override
         public String toString() {
-            return "VPCIntercom{" +
-                    "projectId='" + projectId + '\'' +
-                    ", networks=" + networks +
-                    ", dstRegion='" + dstRegion + '\'' +
-                    ", name='" + name + '\'' +
-                    ", vpcId='" + vpcId + '\'' +
-                    ", tag='" + tag + '\'' +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -126,15 +133,5 @@ public class DescribeVPCIntercomResult extends BaseResponseResult {
 
     public void setVpcIntercoms(List<VPCIntercom> vpcIntercoms) {
         this.vpcIntercoms = vpcIntercoms;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeVPCIntercomResult{" +
-                "vpcIntercoms=" + vpcIntercoms +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

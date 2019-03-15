@@ -58,16 +58,19 @@ public class CreateVPCParam extends BaseRequestParam {
     /**
      * optional 业务组名称
      */
+    @UcloudParam("Tag")
     private String tag;
 
     /**
      * optional 备注
      */
+    @UcloudParam("Remark")
     private String remark;
 
     /**
      * optional VPC类型
      */
+    @UcloudParam("Type")
     private Integer type;
 
     public CreateVPCParam(@NotEmpty(message = "region can not be empty") String region,

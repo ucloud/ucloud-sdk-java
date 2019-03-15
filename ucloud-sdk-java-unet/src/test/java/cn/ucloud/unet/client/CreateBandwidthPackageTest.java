@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.CreateBandwidthPackageParam;
 import cn.ucloud.unet.model.CreateBandwidthPackageResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,8 +23,7 @@ public class CreateBandwidthPackageTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateBandwidthPackageParam("cn-bj2","eip-44ayct",1,24);
-        param.setProjectId("org-4nfe1i");
+        param = new CreateBandwidthPackageParam("cn-sh2", "eip-vcsnbgi4", 6, 1);
     }
 
     @Test
@@ -34,6 +31,7 @@ public class CreateBandwidthPackageTest {
         try {
             CreateBandwidthPackageResult bandwidthPackage = client.createBandwidthPackage(param);
             System.out.println(bandwidthPackage);
+            JSONComparator.jsonComparator(bandwidthPackage);
         } catch (Exception e) {
             e.printStackTrace();
         }

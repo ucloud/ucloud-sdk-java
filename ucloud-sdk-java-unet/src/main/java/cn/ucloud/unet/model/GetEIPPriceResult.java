@@ -1,6 +1,7 @@
 package cn.ucloud.unet.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.math.BigDecimal;
@@ -60,11 +61,7 @@ public class GetEIPPriceResult extends BaseResponseResult {
 
         @Override
         public String toString() {
-            return "EIPPrice{" +
-                    "chargeType='" + chargeType + '\'' +
-                    ", price=" + price +
-                    ", purchaseValue=" + purchaseValue +
-                    '}';
+            return new Gson().toJson(this);
         }
     }
 
@@ -74,21 +71,25 @@ public class GetEIPPriceResult extends BaseResponseResult {
     @SerializedName("PriceSet")
     private List<EIPPrice> eipPrices;
 
+    /**
+     * 请求UUID
+     */
+    @SerializedName("Request_uuid")
+    private String requestUuid;
+
+    public String getRequestUuid() {
+        return requestUuid;
+    }
+
+    public void setRequestUuid(String requestUuid) {
+        this.requestUuid = requestUuid;
+    }
+
     public List<EIPPrice> getEipPrices() {
         return eipPrices;
     }
 
     public void setEipPrices(List<EIPPrice> eipPrices) {
         this.eipPrices = eipPrices;
-    }
-
-    @Override
-    public String toString() {
-        return "GetEIPPriceResult{" +
-                "eipPrices=" + eipPrices +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

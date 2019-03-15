@@ -1,7 +1,5 @@
 package cn.ucloud.unet.client;
 
-import cn.ucloud.unet.client.DefaultUnetClient;
-import cn.ucloud.unet.client.UnetClient;
 import cn.ucloud.unet.model.UpdateEIPAttributeParam;
 import cn.ucloud.unet.model.UpdateEIPAttributeResult;
 import cn.ucloud.common.pojo.Account;
@@ -25,9 +23,10 @@ public class UpdateEIPAttributeTest {
         client = new DefaultUnetClient(new UnetConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpdateEIPAttributeParam("cn-bj2","eip-44ayct");
-        param.setProjectId("org-4nfe1i");
+        param = new UpdateEIPAttributeParam("cn-sh2", "eip-vcsnbgi4");
         param.setName("sdk-java-test");
+        param.setRemark("改名字");
+        param.setTag("ucloud-sdk-java-test");
     }
 
     @Test
@@ -35,6 +34,7 @@ public class UpdateEIPAttributeTest {
         try {
             UpdateEIPAttributeResult updateEIPAttributeResult = client.updateEIPAttribute(param);
             System.out.println(updateEIPAttributeResult);
+            JSONComparator.jsonComparator(updateEIPAttributeResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
