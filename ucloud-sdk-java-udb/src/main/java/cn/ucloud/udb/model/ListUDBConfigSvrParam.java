@@ -20,11 +20,11 @@ public class ListUDBConfigSvrParam extends BaseRequestParam {
     private String region;
 
     /**
-     * DB实例Id,该值可以通过DescribeUDBInstance获取
+     * 可用区。参见 [可用区列表](../summary/regionlist.html)
      */
-    @UcloudParam("DBId")
-    @NotEmpty(message = "dbId can not be empty")
-    private String dbId;
+    @UcloudParam("Zone")
+    @NotEmpty(message = "zone can not be empty")
+    private String zone;
 
     /**
      * 分页显示数量，默认为100
@@ -39,10 +39,10 @@ public class ListUDBConfigSvrParam extends BaseRequestParam {
     private Integer offset;
 
     public ListUDBConfigSvrParam(@NotEmpty(message = "region can not be empty") String region,
-                                 @NotEmpty(message = "dbId can not be empty") String dbId) {
+                                 @NotEmpty(message = "zone can not be empty") String zone) {
         super("ListUDBConfigSvr");
         this.region = region;
-        this.dbId = dbId;
+        this.zone = zone;
     }
 
     public String getRegion() {
@@ -53,12 +53,12 @@ public class ListUDBConfigSvrParam extends BaseRequestParam {
         this.region = region;
     }
 
-    public String getDbId() {
-        return dbId;
+    public String getZone() {
+        return zone;
     }
 
-    public void setDbId(String dbId) {
-        this.dbId = dbId;
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public Integer getLimit() {

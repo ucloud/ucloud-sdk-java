@@ -22,12 +22,11 @@ public class DescribeUDBInstanceLogTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new DescribeUDBInstanceLogParam("cn-sh2", "udb-h3q25faw", 1551783710,
+        param = new DescribeUDBInstanceLogParam("cn-sh2", "udb-vh2tznqa", 1551783710,
                 "slow");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试 describe udb log error
     @Test
     public void describeUDBInstanceLog() {
         try {
@@ -36,28 +35,5 @@ public class DescribeUDBInstanceLogTest {
         } catch (Exception e) {
             assertNull(e);
         }
-    }
-
-    @Test
-    public void describeUDBInstanceLogCallback() {
-        client.describeUDBInstanceLog(param, new UcloudHandler<DescribeUDBInstanceLogResult>() {
-            @Override
-            public Object success(DescribeUDBInstanceLogResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DescribeUDBInstanceLogResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
     }
 }

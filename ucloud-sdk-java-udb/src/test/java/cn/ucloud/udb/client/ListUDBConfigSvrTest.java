@@ -23,11 +23,10 @@ public class ListUDBConfigSvrTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ListUDBConfigSvrParam("cn-sh2", "udb-h3q25faw");
+        param = new ListUDBConfigSvrParam("cn-sh2", "cn-sh2-02");
         param.setProjectId("org-izug1m");
     }
 
-    // todo 测试Get names error
     @Test
     public void listUDBConfigSvr() {
         try {
@@ -36,28 +35,5 @@ public class ListUDBConfigSvrTest {
         } catch (Exception e) {
             assertNull(e);
         }
-    }
-
-    @Test
-    public void listUDBConfigSvrCallback() {
-        client.listUDBConfigSvr(param, new UcloudHandler<ListUDBConfigSvrResult>() {
-            @Override
-            public Object success(ListUDBConfigSvrResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ListUDBConfigSvrResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
     }
 }

@@ -86,10 +86,13 @@ public class DescribeUDBSplittingInfoResult extends BaseResponseResult {
 
     }
 
+    @SerializedName("CreateTime")
+    private Integer createTime;
+
     /**
      * 地域
      */
-    @SerializedName("Region")
+    @SerializedName(value =  "Region",alternate = {"Regin"})
     private String region;
 
     /**
@@ -157,6 +160,14 @@ public class DescribeUDBSplittingInfoResult extends BaseResponseResult {
      */
     @SerializedName("BackupZone")
     private String backupZone;
+
+    public Integer getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Integer createTime) {
+        this.createTime = createTime;
+    }
 
     public String getRegion() {
         return region;
