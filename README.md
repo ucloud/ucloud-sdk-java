@@ -27,7 +27,7 @@ ucloud开发者工具套件（SDK）。<br/>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.6.3.1-release</version>
+      <version>0.8.0-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -135,7 +135,7 @@ public class Main {
 - 0.6.3-release
 
     修复个别接口返回结果和实际有出入的问题
-- 0.6.3.1-release
+- 0.8.0-release
 
     修复DescribeEIP接口与实际接口有出入的问题
 - 0.8.0-release
