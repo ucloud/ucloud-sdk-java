@@ -31,7 +31,6 @@ public class DeleteVPCIntercomTest {
     public void deleteVPCIntercom() {
         try {
             DeleteVPCIntercomResult deleteVPCIntercomResult = client.deleteVPCIntercom(param);
-            System.out.println(deleteVPCIntercomResult);
             JSONComparator.jsonComparator(deleteVPCIntercomResult);
         } catch (Exception e) {
             e.printStackTrace();

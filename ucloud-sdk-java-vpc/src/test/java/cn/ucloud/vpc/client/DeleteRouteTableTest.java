@@ -30,7 +30,6 @@ public class DeleteRouteTableTest {
     public void deleteRouteTable() {
         try {
             DeleteRouteTableResult deleteRouteTableResult = client.deleteRouteTable(param);
-            System.out.println(deleteRouteTableResult);
             JSONComparator.jsonComparator(deleteRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();

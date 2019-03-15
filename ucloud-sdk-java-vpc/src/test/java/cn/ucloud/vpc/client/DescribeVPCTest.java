@@ -32,7 +32,6 @@ public class DescribeVPCTest {
     public void describeVPC() {
         try {
             DescribeVPCResult describeVPCResult = client.describeVPC(param);
-            System.out.println(describeVPCResult);
             JSONComparator.jsonComparator(describeVPCResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -36,7 +36,6 @@ public class DeleteVPCTest {
     public void deleteVPC() {
         try {
             DeleteVPCResult deleteVPCResult = client.deleteVPC(param);
-            System.out.println(deleteVPCResult);
             JSONComparator.jsonComparator(deleteVPCResult);
         } catch (Exception e) {
             e.printStackTrace();
