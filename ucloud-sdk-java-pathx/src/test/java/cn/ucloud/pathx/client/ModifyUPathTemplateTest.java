@@ -28,7 +28,8 @@ public class ModifyUPathTemplateTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String projectId = "cn-sh2";
-        param = new ModifyUPathTemplateParam(projectId);
+        String upathId = "xxx";
+        param = new ModifyUPathTemplateParam(projectId,upathId);
         param.setProjectId("org-izug1m");
     }
 
