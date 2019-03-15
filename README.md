@@ -12,6 +12,7 @@ ucloud开发者工具套件（SDK）。<br/>
 - pathx
 - udb
 - udpn
+- umem
 
 后续将支持更多的UCloud的产品服务。
 
