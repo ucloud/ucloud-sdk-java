@@ -1,8 +1,6 @@
 package cn.ucloud.uhost.model;
 
 import cn.ucloud.common.pojo.BaseResponseResult;
-import cn.ucloud.uhost.json.MetricAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.HashMap;
