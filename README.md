@@ -121,16 +121,6 @@ public class Main {
 }
 ```
 
-### 业务集成(暂不支持)
-
-在ucloud-sdk-java-integration中，对于一些常见的业务流程或者一些有着特定前置条件的接口，<br>
-我们对这些流程进行了集成封装处理。你可以直接调用这些封装好了的接口来完成目标操作，而不<br>需要关心业务细节或者那些特定前置条件。
-
-目前支持的流程操作：
-
-uhost：
-- TerminateUHostInstanceIntegration 删除云主机
-
 
 ### 版本更新历史
 - 0.6-release
@@ -148,4 +138,7 @@ uhost：
 - 0.6.3.1-release
 
     修复DescribeEIP接口与实际接口有出入的问题
+- 0.8.0-release
+    
+    新增UMem/USQL/UDB/PATHX/UDPN产品，对既有产品接口进行更新维护。
     
