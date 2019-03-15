@@ -145,7 +145,7 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         /**
          * 是否自动续费，自动续费：“Yes”，不自动续费：“No”
          */
-        @SerializedName("AuthRenew")
+        @SerializedName("AutoRenew")
         private String autoRenew;
 
         /**
@@ -228,6 +228,17 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
          */
         @SerializedName("LifeCycle")
         private String lifeCycle;
+
+        @SerializedName("NetCapFeature")
+        private Boolean netCapFeature;
+
+        public Boolean getNetCapFeature() {
+            return netCapFeature;
+        }
+
+        public void setNetCapFeature(Boolean netCapFeature) {
+            this.netCapFeature = netCapFeature;
+        }
 
         public String getUhostId() {
             return uhostId;
@@ -726,6 +737,17 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("VPCId")
         private String vpcId;
 
+        @SerializedName("Default")
+        private String def;
+
+        public String getDef() {
+            return def;
+        }
+
+        public void setDef(String def) {
+            this.def = def;
+        }
+
         public String getType() {
             return type;
         }
@@ -777,7 +799,7 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
      * 满足查询条件的UHostInstance总数
      */
     @SerializedName("TotalCount")
-    private String totalCount;
+    private Integer totalCount;
 
     /**
      * 云主机实例列表，每项参数可见下面 UHostElement
@@ -786,11 +808,11 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
     private List<UHostElement> uhosts;
 
 
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

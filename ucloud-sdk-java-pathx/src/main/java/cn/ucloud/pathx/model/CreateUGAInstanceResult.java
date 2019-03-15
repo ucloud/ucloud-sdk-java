@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 创建全球加速配置项 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateUGAInstanceResult extends BaseResponseResult {
     /**
@@ -29,7 +29,6 @@ public class CreateUGAInstanceResult extends BaseResponseResult {
     public void setuGAId(String uGAId) {
         this.uGAId = uGAId;
     }
-
 
     public String getcName() {
         return this.cName;

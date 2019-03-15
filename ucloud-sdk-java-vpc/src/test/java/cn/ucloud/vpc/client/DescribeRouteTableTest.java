@@ -30,7 +30,6 @@ public class DescribeRouteTableTest {
     public void describeRouteTable() {
         try {
             DescribeRouteTableResult describeRouteTableResult = client.describeRouteTable(param);
-            System.out.println(describeRouteTableResult);
             JSONComparator.jsonComparator(describeRouteTableResult);
         } catch (Exception e) {
             e.printStackTrace();

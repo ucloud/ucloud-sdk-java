@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 白名单规则 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class Whitelist {
     /**
@@ -34,7 +34,6 @@ public class Whitelist {
         this.srcIP = srcIP;
     }
 
-
     public String getProtocolType() {
         return this.protocolType;
     }
@@ -42,7 +41,6 @@ public class Whitelist {
     public void setProtocolType(String protocolType) {
         this.protocolType = protocolType;
     }
-
 
     public String getDstPort() {
         return this.dstPort;

@@ -7,6 +7,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -29,10 +31,10 @@ public class DescribeImageTest {
     @Test
     public void describeImage() {
         try {
-            DescribeImageResult describeImageResult = client.describeImage(param);
-            System.out.println(describeImageResult);
+            DescribeImageResult result = client.describeImage(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -31,7 +31,6 @@ public class CreateVPCIntercomTest {
     public void createVPCIntercom() {
         try {
             CreateVPCIntercomResult vpcIntercom = client.createVPCIntercom(param);
-            System.out.println(vpcIntercom);
             JSONComparator.jsonComparator(vpcIntercom);
         } catch (Exception e) {
             e.printStackTrace();

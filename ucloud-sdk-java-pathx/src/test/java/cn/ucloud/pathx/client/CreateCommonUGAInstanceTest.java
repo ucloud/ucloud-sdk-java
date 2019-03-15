@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.CreateCommonUGAInstanceParam;
 import cn.ucloud.pathx.model.CreateCommonUGAInstanceResult;
@@ -8,13 +7,16 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
 /**
  * @Description : PATHX.CreateCommonUGAInstance 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateCommonUGAInstanceTest {
 
@@ -28,14 +30,17 @@ public class CreateCommonUGAInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String quantity = "cn-sh2";
-        String location = "cn-sh2";
-        String chargeType = "cn-sh2";
-        String uGAType = "cn-sh2";
-        String name = "cn-sh2";
+        String projectId = "org-izug1m";
+        Integer quantity = 0;
+        String location = "中国";
+        String chargeType = "Month";
+        String uGAType = "AppStore";
+        String name = "sdk-java";
         param = new CreateCommonUGAInstanceParam(projectId, quantity, location, chargeType, uGAType, name);
-        param.setProjectId("org-izug1m");
+        List<Integer> tcpPorts = new ArrayList<>();
+        tcpPorts.add(8080);
+        param.setTcpPorts(tcpPorts);
+        param.setDomain("codezhang.cn");
     }
 
 
@@ -49,27 +54,4 @@ public class CreateCommonUGAInstanceTest {
         }
     }
 
-    @Test
-    public void createCommonUGAInstanceCallback() {
-        client.createCommonUGAInstance(param, new UcloudHandler
-                <CreateCommonUGAInstanceResult>() {
-            @Override
-            public Object success(CreateCommonUGAInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(CreateCommonUGAInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

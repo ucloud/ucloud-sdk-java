@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.CreateUPathParam;
 import cn.ucloud.pathx.model.CreateUPathResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.CreateUPath 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateUPathTest {
 
@@ -28,12 +27,12 @@ public class CreateUPathTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String name = "cn-sh2";
-        String lineId = "cn-sh2";
-        Integer bandwidth = 1;
-        String chargeType = "cn-sh2";
-        String quantity = "cn-sh2";
+        String projectId = "org-izug1m";
+        String name = "sdk-java-test";
+        String lineId = "line_hk_cn-gd";
+        Integer bandwidth = 2;
+        String chargeType = "Dynamic";
+        Integer quantity = 1;
         param = new CreateUPathParam(projectId, name, lineId, bandwidth, chargeType, quantity);
         param.setProjectId("org-izug1m");
     }
@@ -49,27 +48,4 @@ public class CreateUPathTest {
         }
     }
 
-    @Test
-    public void createUPathCallback() {
-        client.createUPath(param, new UcloudHandler
-                <CreateUPathResult>() {
-            @Override
-            public Object success(CreateUPathResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(CreateUPathResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

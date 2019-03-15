@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.CreateGlobalSSHInstanceParam;
 import cn.ucloud.pathx.model.CreateGlobalSSHInstanceResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.CreateGlobalSSHInstance 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateGlobalSSHInstanceTest {
 
@@ -28,13 +27,12 @@ public class CreateGlobalSSHInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String area = "cn-sh2";
-        String targetIP = "cn-sh2";
+        String projectId = "org-izug1m";
+        String area = "香港";
+        String targetIP = "10.25.178.61";
         Integer port = 1;
-        String areaCode = "cn-sh2";
+        String areaCode = "HKG";
         param = new CreateGlobalSSHInstanceParam(projectId, area, targetIP, port, areaCode);
-        param.setProjectId("org-izug1m");
     }
 
 
@@ -48,27 +46,4 @@ public class CreateGlobalSSHInstanceTest {
         }
     }
 
-    @Test
-    public void createGlobalSSHInstanceCallback() {
-        client.createGlobalSSHInstance(param, new UcloudHandler
-                <CreateGlobalSSHInstanceResult>() {
-            @Override
-            public Object success(CreateGlobalSSHInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(CreateGlobalSSHInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

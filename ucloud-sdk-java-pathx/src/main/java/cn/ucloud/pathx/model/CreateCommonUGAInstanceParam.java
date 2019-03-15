@@ -6,6 +6,7 @@ import cn.ucloud.common.pojo.Param;
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,15 +14,15 @@ import java.util.List;
 /**
  * @Description : 创建苹果审核加速通道 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateCommonUGAInstanceParam extends BaseRequestParam {
     /**
      * 购买周期
      */
     @UcloudParam("Quantity")
-    @NotEmpty(message = "quantity can not be empty")
-    private String quantity;
+    @NotNull(message = "quantity can not be null")
+    private Integer quantity;
     /**
      * 加速地区，AppStore默认是“中国”，GlobalSSH支持“洛杉矶”，“新加坡”，“香港”，“法兰克福”，“东京”
      */
@@ -57,17 +58,13 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
     @UcloudParam("Domain")
     private String domain;
 
-    /**
-     * TCP端口号，端口必填，
-     * GlobalSSH只能添加一个TCP端口；
-     * AppStore可以同时加多个TCP和UDP端口，如TCP.0，TCP.1，UDP.0等
-     */
-    private List<Integer> tcpPorts;
 
     /**
-     * UDP端口号，端口必填，
-     * GlobalSSH只能添加一个TCP端口；
-     * AppStore可以同时加多个TCP和UDP端口，如TCP.0，TCP.1，UDP.0等
+     * tcp端口
+     */
+    private List<Integer> tcpPorts;
+    /**
+     * udp端口
      */
     private List<Integer> udpPorts;
 
@@ -84,7 +81,7 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
 
 
     public CreateCommonUGAInstanceParam(String projectId
-            , String quantity
+            , Integer quantity
             , String location
             , String chargeType
             , String uGAType
@@ -99,48 +96,58 @@ public class CreateCommonUGAInstanceParam extends BaseRequestParam {
         this.name = name;
     }
 
-    @UcloudParam("tcpPorts")
+    @UcloudParam("TCP")
     public List<Param> checkTCPPorts() throws ValidationException {
         List<Param> params = new ArrayList<>();
-        if (tcpPorts != null && !tcpPorts.isEmpty()) {
+        if (tcpPorts != null) {
             int size = tcpPorts.size();
             for (int i = 0; i < size; i++) {
-                if (tcpPorts.get(i) == null){
-                    throw new ValidationException(String.format("tcpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("TCP.%d",i),tcpPorts.get(i)));
+                Integer port = tcpPorts.get(i);
+                if (port == null) {
+                    throw new ValidationException(String.format("tcpPorts[%d] can not be null", i));
                 }
+                params.add(new Param(String.format("TCP.%d", i), port));
             }
-        }else {
-            throw new ValidationException("tcpPorts can not be empty");
         }
         return params;
     }
 
-    @UcloudParam("udpPorts")
-    public List<Param> checkUCPPorts() throws ValidationException {
+    @UcloudParam("UDP")
+    public List<Param> checkUDPPorts() throws ValidationException {
         List<Param> params = new ArrayList<>();
-        if (udpPorts != null && !udpPorts.isEmpty()) {
+        if (udpPorts != null) {
             int size = udpPorts.size();
             for (int i = 0; i < size; i++) {
-                if (udpPorts.get(i) == null){
-                    throw new ValidationException(String.format("udpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("UDP.%d",i),udpPorts.get(i)));
+                Integer port = udpPorts.get(i);
+                if (port == null) {
+                    throw new ValidationException(String.format("udpPorts[%d] can not be null", i));
                 }
+                params.add(new Param(String.format("UDP.%d", i), port));
             }
-        }else {
-            throw new ValidationException("udpPorts can not be empty");
         }
         return params;
     }
-
-
-    public String getQuantity() {
-        return this.quantity;
+    public List<Integer> getTcpPorts() {
+        return tcpPorts;
     }
 
-    public void setQuantity(String quantity) {
+    public void setTcpPorts(List<Integer> tcpPorts) {
+        this.tcpPorts = tcpPorts;
+    }
+
+    public List<Integer> getUdpPorts() {
+        return udpPorts;
+    }
+
+    public void setUdpPorts(List<Integer> udpPorts) {
+        this.udpPorts = udpPorts;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

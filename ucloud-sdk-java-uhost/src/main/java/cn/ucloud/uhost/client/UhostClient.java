@@ -399,6 +399,7 @@ public interface UhostClient extends UcloudClient {
 
     /**
      * 创建用户镜像
+     *
      * @param param 创建用户镜像参数对象
      * @return 创建结果
      * @throws Exception 创建出错则抛出异常
@@ -407,14 +408,16 @@ public interface UhostClient extends UcloudClient {
 
     /**
      * 创建用户镜像
-     * @param param 创建用户镜像参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     创建用户镜像参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
     void createCustomeImage(CreateCustomImageParam param, UcloudHandler<CreateCustomImageResult> handler, Boolean... asyncFlag);
 
     /**
      * 普通升级为方舟机型
+     *
      * @param param 普通升级为方舟机型参数对象
      * @return 普通升级为方舟机型结果对象
      * @throws Exception 升级出错则抛出异常
@@ -423,10 +426,30 @@ public interface UhostClient extends UcloudClient {
 
     /**
      * 普通升级为方舟机型
-     * @param param  普通升级为方舟机型参数对象
-     * @param handler 回调处理器
+     *
+     * @param param     普通升级为方舟机型参数对象
+     * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param ,UcloudHandler<UpgradeToArkUHostInstanceResult> handler,Boolean... asyncFlag);
+    void upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param, UcloudHandler<UpgradeToArkUHostInstanceResult> handler, Boolean... asyncFlag);
+
+
+    /**
+     * 获取监控信息
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 升级出错则抛出异常
+     */
+    GetMetricResult getMetric(GetMetricParam param) throws Exception;
+
+    /**
+     * 获取监控信息
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     */
+    void getMetric(GetMetricParam param, UcloudHandler<GetMetricResult> handler, Boolean... asyncFlag);
 
 }

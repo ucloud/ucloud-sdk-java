@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.DeleteUGATaskParam;
 import cn.ucloud.pathx.model.DeleteUGATaskResult;
@@ -8,13 +7,16 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
 /**
  * @Description : PATHX.DeleteUGATask 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DeleteUGATaskTest {
 
@@ -28,10 +30,12 @@ public class DeleteUGATaskTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uGAId = "uga-gzivmuiu";
         param = new DeleteUGATaskParam(projectId, uGAId);
-        param.setProjectId("org-izug1m");
+        List<Integer> udpPorts = new ArrayList<>();
+        udpPorts.add(222);
+        param.setUdpPorts(udpPorts);
     }
 
 
@@ -45,27 +49,4 @@ public class DeleteUGATaskTest {
         }
     }
 
-    @Test
-    public void deleteUGATaskCallback() {
-        client.deleteUGATask(param, new UcloudHandler
-                <DeleteUGATaskResult>() {
-            @Override
-            public Object success(DeleteUGATaskResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DeleteUGATaskResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : 一段时间内的监控数据 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class MetricPeriod {
     /**
@@ -41,6 +41,60 @@ public class MetricPeriod {
      */
     @SerializedName("BandOut")
     private List<MatricPoint> bandOut;
+
+
+    public List<MatricPoint> getNetworkOut() {
+        return this.networkOut;
+    }
+
+    public void setNetworkOut(List<MatricPoint> networkOut) {
+        this.networkOut = networkOut;
+    }
+
+
+    public List<MatricPoint> getNetworkIn() {
+        return this.networkIn;
+    }
+
+    public void setNetworkIn(List<MatricPoint> networkIn) {
+        this.networkIn = networkIn;
+    }
+
+
+    public List<MatricPoint> getNetworkOutUsage() {
+        return this.networkOutUsage;
+    }
+
+    public void setNetworkOutUsage(List<MatricPoint> networkOutUsage) {
+        this.networkOutUsage = networkOutUsage;
+    }
+
+
+    public List<MatricPoint> getNetworkInUsage() {
+        return this.networkInUsage;
+    }
+
+    public void setNetworkInUsage(List<MatricPoint> networkInUsage) {
+        this.networkInUsage = networkInUsage;
+    }
+
+
+    public List<MatricPoint> getBandIn() {
+        return this.bandIn;
+    }
+
+    public void setBandIn(List<MatricPoint> bandIn) {
+        this.bandIn = bandIn;
+    }
+
+
+    public List<MatricPoint> getBandOut() {
+        return this.bandOut;
+    }
+
+    public void setBandOut(List<MatricPoint> bandOut) {
+        this.bandOut = bandOut;
+    }
 
 
 }

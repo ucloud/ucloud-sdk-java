@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -30,10 +32,10 @@ public class DeleteSSLTest {
     @Test
     public void deleteSSL() {
         try {
-            DeleteSSLResult deleteSSLResult = client.deleteSSL(param);
-            System.out.println(deleteSSLResult);
+            DeleteSSLResult result = client.deleteSSL(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

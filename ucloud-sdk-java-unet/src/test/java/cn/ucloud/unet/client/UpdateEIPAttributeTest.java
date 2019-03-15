@@ -33,7 +33,6 @@ public class UpdateEIPAttributeTest {
     public void updateEIPAttribute() {
         try {
             UpdateEIPAttributeResult updateEIPAttributeResult = client.updateEIPAttribute(param);
-            System.out.println(updateEIPAttributeResult);
             JSONComparator.jsonComparator(updateEIPAttributeResult);
         } catch (Exception e) {
             e.printStackTrace();

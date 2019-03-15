@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,18 +27,18 @@ public class UpdateBackendAttributeTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new UpdateBackendAttributeParam("cn-bj2","ulb-0kawkr","backend-bnifby");
+        param = new UpdateBackendAttributeParam("cn-sh2","ulb-wki4vn5g","backend-3ptzuqu3");
         param.setEnabled(1);
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void updateBackendAttribute() {
         try {
-            UpdateBackendAttributeResult updateBackendAttributeResult = client.updateBackendAttribute(param);
-            System.out.println(updateBackendAttributeResult);
+            UpdateBackendAttributeResult result = client.updateBackendAttribute(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

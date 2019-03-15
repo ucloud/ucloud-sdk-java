@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -31,10 +33,10 @@ public class DescribeSSLTest {
     @Test
     public void describeSSL() {
         try {
-            DescribeSSLResult describeSSLResult = client.describeSSL(param);
-            System.out.println(describeSSLResult);
+            DescribeSSLResult result = client.describeSSL(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

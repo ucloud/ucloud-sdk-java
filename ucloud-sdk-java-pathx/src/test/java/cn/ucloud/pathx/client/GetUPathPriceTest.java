@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetUPathPriceParam;
 import cn.ucloud.pathx.model.GetUPathPriceResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetUPathPrice 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetUPathPriceTest {
 
@@ -28,13 +27,12 @@ public class GetUPathPriceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         Integer bandwidth = 1;
         Integer quantity = 1;
-        String chargeType = "cn-sh2";
-        String lineId = "cn-sh2";
+        String chargeType = "Dynamic";
+        String lineId = "line_hk_cn-gd";
         param = new GetUPathPriceParam(projectId, bandwidth, quantity, chargeType, lineId);
-        param.setProjectId("org-izug1m");
     }
 
 
@@ -48,27 +46,4 @@ public class GetUPathPriceTest {
         }
     }
 
-    @Test
-    public void getUPathPriceCallback() {
-        client.getUPathPrice(param, new UcloudHandler
-                <GetUPathPriceResult>() {
-            @Override
-            public Object success(GetUPathPriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetUPathPriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

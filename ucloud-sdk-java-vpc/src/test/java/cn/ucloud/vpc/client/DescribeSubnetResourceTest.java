@@ -34,7 +34,6 @@ public class DescribeSubnetResourceTest {
     public void describeSubnetResource() {
         try {
             DescribeSubnetResourceResult describeSubnetResourceResult = client.describeSubnetResource(param);
-            System.out.println(describeSubnetResourceResult);
             JSONComparator.jsonComparator(describeSubnetResourceResult);
         } catch (Exception e) {
             e.printStackTrace();

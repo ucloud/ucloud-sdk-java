@@ -2,16 +2,19 @@ package cn.ucloud.pathx.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 
 /**
  * @Description : 获取全球加速监控信息 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetPathXMetricParam extends BaseRequestParam {
     /**
@@ -34,7 +37,8 @@ public class GetPathXMetricParam extends BaseRequestParam {
     private Integer endTime;
 
     /**
-     * 查询的监控项，以逗号分隔，拼接成一个字符串。目前仅允许一下内容：
+     * 查询的监控项，以逗号分隔，拼接成一个字符串。
+     * 目前仅允许一下内容：
      * NetworkOut:出口带宽，
      * NetworkIn:入口带宽，
      * NetworkOutUsage:出口使用率，
@@ -44,7 +48,7 @@ public class GetPathXMetricParam extends BaseRequestParam {
      * OutputRetransmitRate：输出重传率；
      * TCPConNum：tcp连接数
      */
-    private String metricNames;
+    private List<String> metricNames;
 
     /**
      * upath:加速线路,uga:加速实例
@@ -65,26 +69,35 @@ public class GetPathXMetricParam extends BaseRequestParam {
             , Integer beginTime
             , Integer endTime
             , String resourceType
-            , String lineId
-            , String metricNames
+            , String lineId, List<String> metricNames
     ) {
         super("GetPathXMetric");
         this.projectId = projectId;
         this.resourceId = resourceId;
         this.beginTime = beginTime;
         this.endTime = endTime;
+        this.metricNames = metricNames;
         this.resourceType = resourceType;
         this.lineId = lineId;
-        this.metricNames = metricNames;
     }
 
-    public String getMetricNames() {
-        return metricNames;
+    @UcloudParam("MetricName")
+    public List<Param> checkMetricNames() throws ValidationException {
+        List<Param> params = new ArrayList<>();
+        if (metricNames == null || metricNames.isEmpty()) {
+            throw new ValidationException("metricNames can not be empty");
+        }
+        int size = metricNames.size();
+        for (int i = 0; i < size; i++) {
+            String name = metricNames.get(i);
+            if (name == null || name.length() <= 0){
+                throw new ValidationException(String.format("metricNames[%d] can not be empty",i));
+            }
+            params.add(new Param(String.format("MetricName.%d",i),name));
+        }
+        return params;
     }
 
-    public void setMetricNames(String metricNames) {
-        this.metricNames = metricNames;
-    }
 
     public String getResourceId() {
         return this.resourceId;

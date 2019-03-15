@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 出口IP信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class OutPublicIpInfo {
     /**
@@ -28,7 +28,6 @@ public class OutPublicIpInfo {
     public void setiP(String iP) {
         this.iP = iP;
     }
-
 
     public String getArea() {
         return this.area;

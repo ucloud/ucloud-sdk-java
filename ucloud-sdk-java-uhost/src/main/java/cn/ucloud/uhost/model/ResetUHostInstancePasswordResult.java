@@ -24,14 +24,4 @@ public class ResetUHostInstancePasswordResult extends BaseResponseResult {
     public void setUhostId(String uhostId) {
         this.uhostId = uhostId;
     }
-
-    @Override
-    public String toString() {
-        return "ResetUHostInstancePasswordResult{" +
-                "uhostId='" + uhostId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

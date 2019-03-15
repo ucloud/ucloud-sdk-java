@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -26,17 +28,17 @@ public class DeletePolicyTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DeletePolicyParam("cn-bj2","b5e76c15-ab56-4cf4-8c7c-45defa2302bf");
-        param.setProjectId("org-4nfe1i");
+        param = new DeletePolicyParam("cn-sh2","2f738258-ccda-460a-83af-cb0d466f97bf");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void deletePolicy() {
         try {
-            DeletePolicyResult deletePolicyResult = client.deletePolicy(param);
-            System.out.println(deletePolicyResult);
+            DeletePolicyResult result = client.deletePolicy(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

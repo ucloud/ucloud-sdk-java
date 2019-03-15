@@ -31,7 +31,6 @@ public class DeleteSubnetTest {
     public void deleteSubnet() {
         try {
             DeleteSubnetResult deleteSubnetResult = client.deleteSubnet(param);
-            System.out.println(deleteSubnetResult);
             JSONComparator.jsonComparator(deleteSubnetResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -7,6 +7,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -31,10 +33,10 @@ public class ImportCustomImageTest {
     @Test
     public void importCustomImage() {
         try {
-            ImportCustomImageResult importCustomImageResult = client.importCustomImage(param);
-            System.out.println(importCustomImageResult);
+            ImportCustomImageResult result = client.importCustomImage(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

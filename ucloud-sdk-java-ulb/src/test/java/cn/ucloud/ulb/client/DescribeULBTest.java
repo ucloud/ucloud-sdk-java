@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -24,16 +26,16 @@ public class DescribeULBTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeULBParam("cn-sh2");
-        param.setProjectId("org-pbmy1g");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void describeULB() {
         try {
-            DescribeULBResult describeULBResult = client.describeULB(param);
-            System.out.println(describeULBResult);
+            DescribeULBResult result = client.describeULB(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

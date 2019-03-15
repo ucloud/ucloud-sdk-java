@@ -30,12 +30,6 @@ public class DescribeUFSVolumeWhiteListResult extends BaseResponseResult {
             this.uhostId = uhostId;
         }
 
-        @Override
-        public String toString() {
-            return "WhiteListInfo{" +
-                    "uhostId='" + uhostId + '\'' +
-                    '}';
-        }
     }
 
     /**
@@ -67,14 +61,4 @@ public class DescribeUFSVolumeWhiteListResult extends BaseResponseResult {
         this.whiteListInfos = whiteListInfos;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeUFSVolumeWhiteListResult{" +
-                "totalCount=" + totalCount +
-                ", whiteListInfos=" + whiteListInfos +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

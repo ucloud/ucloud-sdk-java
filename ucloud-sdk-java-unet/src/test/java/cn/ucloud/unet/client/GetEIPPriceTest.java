@@ -30,7 +30,6 @@ public class GetEIPPriceTest {
     public void getEIPPrice() {
         try {
             GetEIPPriceResult eipPrice = client.getEIPPrice(param);
-            System.out.println(eipPrice);
             JSONComparator.jsonComparator(eipPrice);
         } catch (Exception e) {
             e.printStackTrace();

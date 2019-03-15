@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetUGAPriceParam;
 import cn.ucloud.pathx.model.GetUGAPriceResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetUGAPrice 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetUGAPriceTest {
 
@@ -28,10 +27,9 @@ public class GetUGAPriceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         Integer uPathNum = 1;
         param = new GetUGAPriceParam(projectId, uPathNum);
-        param.setProjectId("org-izug1m");
     }
 
 
@@ -45,27 +43,4 @@ public class GetUGAPriceTest {
         }
     }
 
-    @Test
-    public void getUGAPriceCallback() {
-        client.getUGAPrice(param, new UcloudHandler
-                <GetUGAPriceResult>() {
-            @Override
-            public Object success(GetUGAPriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetUGAPriceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取加速线路信息 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribeUPathResult extends BaseResponseResult {
     /**
@@ -17,6 +17,15 @@ public class DescribeUPathResult extends BaseResponseResult {
      */
     @SerializedName("UPathSet")
     private List<UPathInfo> uPathSet;
+
+
+    public List<UPathInfo> getuPathSet() {
+        return this.uPathSet;
+    }
+
+    public void setuPathSet(List<UPathInfo> uPathSet) {
+        this.uPathSet = uPathSet;
+    }
 
 
 }

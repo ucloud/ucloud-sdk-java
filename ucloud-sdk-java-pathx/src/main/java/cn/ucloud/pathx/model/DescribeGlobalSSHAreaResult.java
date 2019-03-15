@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取GlobalSSH覆盖的地区列表 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribeGlobalSSHAreaResult extends BaseResponseResult {
     /**
@@ -17,6 +17,15 @@ public class DescribeGlobalSSHAreaResult extends BaseResponseResult {
      */
     @SerializedName("AreaSet")
     private List<GlobalSSHArea> areaSet;
+
+
+    public List<GlobalSSHArea> getAreaSet() {
+        return this.areaSet;
+    }
+
+    public void setAreaSet(List<GlobalSSHArea> areaSet) {
+        this.areaSet = areaSet;
+    }
 
 
 }

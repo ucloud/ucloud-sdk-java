@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -30,10 +32,10 @@ public class UnbindSSLTest {
     @Test
     public void unbindSSL() {
         try {
-            UnbindSSLResult unbindSSLResult = client.unbindSSL(param);
-            System.out.println(unbindSSLResult);
+            UnbindSSLResult result = client.unbindSSL(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+           assertNull(e);
         }
     }
 }

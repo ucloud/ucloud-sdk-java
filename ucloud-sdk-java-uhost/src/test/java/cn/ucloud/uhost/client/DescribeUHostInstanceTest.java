@@ -8,6 +8,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,45 +27,19 @@ public class DescribeUHostInstanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeUHostInstanceParam("cn-sh2");
+        param.setProjectId("org-izug1m");
+        param.setZone("cn-sh2-02");
     }
 
     @Test
     public void describeUHostInstance() {
         try {
-            DescribeUHostInstanceResult describeUHostInstanceResult = client.describeUHostInstance(param);
-            System.out.println(describeUHostInstanceResult);
+            DescribeUHostInstanceResult result = client.describeUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 
-    @Test
-    public void describeUHostInstanceCallBack() {
-        client.describeUHostInstance(param, new UcloudHandler<DescribeUHostInstanceResult>() {
-            @Override
-            public Object success(DescribeUHostInstanceResult result) {
-                System.out.println(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DescribeUHostInstanceResult result) {
-                System.out.println(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                System.out.println(e);
-                return null;
-            }
-        });
-
-        try {
-            Thread.sleep(30*1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

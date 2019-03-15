@@ -7,6 +7,8 @@ import cn.ucloud.ufs.pojo.UFSConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: joshua
@@ -30,10 +32,10 @@ public class RemoveUFSVolumeTest {
     @Test
     public void removeUFSVolume() {
         try {
-            RemoveUFSVolumeResult describeUFSVolumeResult = client.removeUFSVolume(param);
-            System.out.println(describeUFSVolumeResult);
+            RemoveUFSVolumeResult result = client.removeUFSVolume(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -23,8 +25,8 @@ public class CreateULBTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateULBParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
+        param = new CreateULBParam("cn-sh2");
+        param.setProjectId("org-izug1m");
         param.setTag("sdk-java-test");
     }
 
@@ -32,10 +34,10 @@ public class CreateULBTest {
     @Test
     public void createULB() {
         try {
-            CreateULBResult ulb = client.createULB(param);
-            System.out.println(ulb);
+            CreateULBResult result = client.createULB(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

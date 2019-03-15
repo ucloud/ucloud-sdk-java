@@ -73,7 +73,7 @@ public class DescribeULBResult extends BaseResponseResult {
          * 负载均衡实例中存在的VServer实例列表，具体结构见下方 ULBVServerSet
          */
         @SerializedName("VServerSet")
-        private List<ULBVServer> ulbvServers;
+        private List<List<ULBVServer>> ulbVServers;
 
         /**
          * ULB 的类型
@@ -98,6 +98,14 @@ public class DescribeULBResult extends BaseResponseResult {
 
         @SerializedName("PrivateIP")
         private String privateIp;
+
+        public List<List<ULBVServer>> getUlbVServers() {
+            return ulbVServers;
+        }
+
+        public void setUlbVServers(List<List<ULBVServer>> ulbVServers) {
+            this.ulbVServers = ulbVServers;
+        }
 
         public String getUlbId() {
             return ulbId;
@@ -171,13 +179,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.ips = ips;
         }
 
-        public List<ULBVServer> getUlbvServers() {
-            return ulbvServers;
-        }
-
-        public void setUlbvServers(List<ULBVServer> ulbvServers) {
-            this.ulbvServers = ulbvServers;
-        }
 
         public String getUlbType() {
             return ulbType;
@@ -219,10 +220,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.vpcId = vpcId;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     public static class ULBIP {
@@ -268,10 +265,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.eipId = eipId;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
 
@@ -391,6 +384,27 @@ public class DescribeULBResult extends BaseResponseResult {
         @SerializedName("MetricIdSet")
         private List<VServerMetric> metricList;
 
+        @SerializedName("Domain")
+        private String domain;
+
+        @SerializedName("Path")
+        private String path;
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
 
         public Integer getCreateTime() {
             return createTime;
@@ -520,10 +534,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.policies = policies;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     public static class VServerMetric{
@@ -556,14 +566,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.type = type;
         }
 
-
-        @Override
-        public String toString() {
-            return "VServerMetric{" +
-                    "metricId='" + metricId + '\'' +
-                    ", type='" + type + '\'' +
-                    '}';
-        }
     }
 
 
@@ -625,10 +627,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.ulbName = ulbName;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
 
@@ -775,10 +773,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.subnetId = subnetId;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
 
@@ -898,11 +892,6 @@ public class DescribeULBResult extends BaseResponseResult {
         public void setBackends(List<PolicyBackend> backends) {
             this.backends = backends;
         }
-
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     public static class PolicyBackend {
@@ -936,6 +925,17 @@ public class DescribeULBResult extends BaseResponseResult {
          */
         @SerializedName("ResourceName")
         private String resourceName;
+
+        @SerializedName("Weight")
+        private Integer weight;
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
 
         public String getBackendId() {
             return backendId;
@@ -977,10 +977,6 @@ public class DescribeULBResult extends BaseResponseResult {
             this.resourceName = resourceName;
         }
 
-        @Override
-        public String toString() {
-            return new Gson().toJson(this);
-        }
     }
 
     /**
@@ -1012,8 +1008,4 @@ public class DescribeULBResult extends BaseResponseResult {
         this.ulbs = ulbs;
     }
 
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
 }

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 某一时刻的监控数据 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class MatricPoint {
     /**
@@ -28,7 +28,6 @@ public class MatricPoint {
     public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
     }
-
 
     public Integer getValue() {
         return this.value;

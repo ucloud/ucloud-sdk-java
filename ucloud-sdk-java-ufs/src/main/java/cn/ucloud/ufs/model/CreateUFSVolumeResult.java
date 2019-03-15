@@ -53,16 +53,4 @@ public class CreateUFSVolumeResult extends BaseResponseResult {
     public void setVolumeStatus(String volumeStatus) {
         this.volumeStatus = volumeStatus;
     }
-
-    @Override
-    public String toString() {
-        return "CreateUFSVolumeResult{" +
-                "volumeName='" + volumeName + '\'' +
-                ", volumeId='" + volumeId + '\'' +
-                ", volumeStatus='" + volumeStatus + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }
