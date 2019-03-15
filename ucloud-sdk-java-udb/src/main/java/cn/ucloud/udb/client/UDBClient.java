@@ -344,26 +344,6 @@ public interface UDBClient extends UcloudClient {
                                  Boolean... asyncFlag);
 
     /**
-     * 创建数据库专区
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBCInstanceResult createUDBCInstance(CreateUDBCInstanceParam param) throws Exception;
-
-
-    /**
-     * 创建数据库专区
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBCInstance(CreateUDBCInstanceParam param, UcloudHandler<CreateUDBCInstanceResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
      * 创建数据库
      *
      * @param param 参数对象
@@ -569,26 +549,6 @@ public interface UDBClient extends UcloudClient {
                          Boolean... asyncFlag);
 
     /**
-     * 删除数据库专区
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUDBCInstanceResult deleteUDBCInstance(DeleteUDBCInstanceParam param) throws Exception;
-
-
-    /**
-     * 删除数据库专区
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUDBCInstance(DeleteUDBCInstanceParam param, UcloudHandler<DeleteUDBCInstanceResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
      * 删除云数据库
      *
      * @param param 参数对象
@@ -787,64 +747,6 @@ public interface UDBClient extends UcloudClient {
     void describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLParam param,
                                     UcloudHandler<DescribeUDBBinlogBackupURLResult> handler,
                                     Boolean... asyncFlag);
-
-    /**
-     * 获取数据库专区的信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBCInstanceResult describeUDBCInstance(DescribeUDBCInstanceParam param) throws Exception;
-
-    /**
-     * 获取数据库专区的信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBCInstance(DescribeUDBCInstanceParam param, UcloudHandler<DescribeUDBCInstanceResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 专区价格信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBCPriceResult describeUDBCPrice(DescribeUDBCPriceParam param) throws Exception;
-
-    /**
-     * 专区价格信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBCPrice(DescribeUDBCPriceParam param, UcloudHandler<DescribeUDBCPriceResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 获取数据专区的类型信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBCTypeResult describeUDBCType(DescribeUDBCTypeParam param) throws Exception;
-
-    /**
-     * 获取数据专区的类型信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBCType(DescribeUDBCTypeParam param, UcloudHandler<DescribeUDBCTypeResult> handler,
-                          Boolean... asyncFlag);
-
 
     /**
      * 获取云数据库信息

@@ -317,22 +317,6 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
         }
     }
 
-    @Override
-    public CreateUDBCInstanceResult createUDBCInstance(CreateUDBCInstanceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(CreateUDBCInstanceResult.class);
-        return (CreateUDBCInstanceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void createUDBCInstance(CreateUDBCInstanceParam param,
-                                   UcloudHandler<CreateUDBCInstanceResult> handler,
-                                   Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(CreateUDBCInstanceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
 
     @Override
     public CreateUDBInstanceResult createUDBInstance(CreateUDBInstanceParam param) throws Exception {
@@ -509,24 +493,6 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
     }
 
     @Override
-    public DeleteUDBCInstanceResult deleteUDBCInstance(DeleteUDBCInstanceParam param)
-            throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DeleteUDBCInstanceResult.class);
-        return (DeleteUDBCInstanceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void deleteUDBCInstance(DeleteUDBCInstanceParam param,
-                                   UcloudHandler<DeleteUDBCInstanceResult> handler,
-                                   Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DeleteUDBCInstanceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public DeleteUDBInstanceResult deleteUDBInstance(DeleteUDBInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUDBInstanceResult.class);
         return (DeleteUDBInstanceResult) http.doGet(param, config, null);
@@ -695,58 +661,6 @@ public class DefaultUDBClient extends DefaultUcloudClient implements UDBClient {
                                            UcloudHandler<DescribeUDBBinlogBackupURLResult> handler,
                                            Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDBBinlogBackupURLResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DescribeUDBCInstanceResult describeUDBCInstance(DescribeUDBCInstanceParam param)
-            throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBCInstanceResult.class);
-        return (DescribeUDBCInstanceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDBCInstance(DescribeUDBCInstanceParam param,
-                                     UcloudHandler<DescribeUDBCInstanceResult> handler,
-                                     Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBCInstanceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DescribeUDBCPriceResult describeUDBCPrice(DescribeUDBCPriceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBCPriceResult.class);
-        return (DescribeUDBCPriceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDBCPrice(DescribeUDBCPriceParam param,
-                                  UcloudHandler<DescribeUDBCPriceResult> handler,
-                                  Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBCPriceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public DescribeUDBCTypeResult describeUDBCType(DescribeUDBCTypeParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBCTypeResult.class);
-        return (DescribeUDBCTypeResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void describeUDBCType(DescribeUDBCTypeParam param,
-                                 UcloudHandler<DescribeUDBCTypeResult> handler,
-                                 Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(DescribeUDBCTypeResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
