@@ -29,7 +29,7 @@ public class DescribeUMemcacheUpgradePriceTest {
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
         Integer size = 1;
-        String groupId = "cn-sh2";
+        String groupId = "umemcache-x1xxnxra";
         param = new DescribeUMemcacheUpgradePriceParam(region, size, groupId);
         param.setProjectId("org-izug1m");
     }

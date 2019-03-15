@@ -28,8 +28,8 @@ public class ModifyURedisGroupPasswordTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        String password = "cn-sh2";
+        String groupId = "uredis-pgouk5n1";
+        String password = "cn_sh2";
         param = new ModifyURedisGroupPasswordParam(region, groupId, password);
         param.setProjectId("org-izug1m");
     }

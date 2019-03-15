@@ -28,7 +28,7 @@ public class DeleteUMemcacheGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
+        String groupId = "umemcache-tkal2r4b";
         param = new DeleteUMemcacheGroupParam(region, groupId);
         param.setProjectId("org-izug1m");
     }

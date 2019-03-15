@@ -28,8 +28,11 @@ public class DescribeUMemTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        param = new DescribeUMemParam(region);
+        String protocol = "redis";
+        param = new DescribeUMemParam(region,protocol);
         param.setProjectId("org-izug1m");
+        param.setZone("cn-sh2-02");
+        param.setResourceId("umem-lwzcxbcl");
     }
 
 

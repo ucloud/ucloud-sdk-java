@@ -2,9 +2,14 @@ package cn.ucloud.umem.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -43,7 +48,7 @@ public class CreateUMemSpaceParam extends BaseRequestParam {
     @UcloudParam("Protocol")
     private String protocol;
     /**
-     * 空间类型:single(无热备),double(热备)(默认: double)
+     * 空间类型:single(无热备),double(热备)
      */
     @UcloudParam("Type")
     private String type;
@@ -66,7 +71,6 @@ public class CreateUMemSpaceParam extends BaseRequestParam {
      * URedis密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。
      * 密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx。
      */
-    @UcloudParam("Password")
     private String password;
     /**
      * 使用的代金券id
@@ -84,6 +88,17 @@ public class CreateUMemSpaceParam extends BaseRequestParam {
         this.size = size;
         this.name = name;
         this.zone = zone;
+    }
+
+
+    @UcloudParam("Password")
+    public List<Param> checkPassword() throws UnsupportedEncodingException {
+        List<Param> params = new ArrayList<>();
+        if (password != null && password.length() > 0) {
+            params.add(new Param("Password", new
+                    String(Base64.encodeBase64((password).getBytes("utf-8")))));
+        }
+        return params;
     }
 
 

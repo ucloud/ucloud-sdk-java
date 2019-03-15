@@ -28,7 +28,7 @@ public class DescribeURedisConfigTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
+        String zone = "cn-sh2-02";
         Boolean regionFlag = false;
         param = new DescribeURedisConfigParam(region, zone, regionFlag);
         param.setProjectId("org-izug1m");

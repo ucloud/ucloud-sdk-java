@@ -26,6 +26,7 @@ public class DescribeUMemParam extends BaseRequestParam {
     /**
      * 协议类型: memcache, redis
      */
+    @NotEmpty(message = "protocol can not be empty")
     @UcloudParam("Protocol")
     private String protocol;
     /**
@@ -45,10 +46,12 @@ public class DescribeUMemParam extends BaseRequestParam {
     private String resourceId;
 
 
-    public DescribeUMemParam(String region
+    public DescribeUMemParam(String region,
+                             String protocol
     ) {
         super("DescribeUMem");
         this.region = region;
+        this.protocol = protocol;
     }
 
 

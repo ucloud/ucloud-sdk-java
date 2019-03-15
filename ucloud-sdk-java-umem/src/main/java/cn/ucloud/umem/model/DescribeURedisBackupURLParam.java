@@ -29,7 +29,7 @@ public class DescribeURedisBackupURLParam extends BaseRequestParam {
      */
     @UcloudParam("BackupId")
     @NotNull(message = "backupId can not be null")
-    private Integer backupId;
+    private String backupId;
     /**
      *
      */
@@ -44,7 +44,7 @@ public class DescribeURedisBackupURLParam extends BaseRequestParam {
 
 
     public DescribeURedisBackupURLParam(String region
-            , Integer backupId
+            , String backupId
             , String groupId
     ) {
         super("DescribeURedisBackupURL");
@@ -70,11 +70,11 @@ public class DescribeURedisBackupURLParam extends BaseRequestParam {
         this.zone = zone;
     }
 
-    public Integer getBackupId() {
-        return this.backupId;
+    public String getBackupId() {
+        return backupId;
     }
 
-    public void setBackupId(Integer backupId) {
+    public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
 

@@ -29,6 +29,7 @@ public class DescribeUMemcacheVersionTest {
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
         param = new DescribeUMemcacheVersionParam(region);
+
         param.setProjectId("org-izug1m");
     }
 

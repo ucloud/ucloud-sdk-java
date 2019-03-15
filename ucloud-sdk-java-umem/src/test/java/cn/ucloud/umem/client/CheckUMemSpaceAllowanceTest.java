@@ -28,9 +28,9 @@ public class CheckUMemSpaceAllowanceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
-        Integer size = 1;
-        Integer count = 1;
+        String zone = "cn-sh2-02";
+        Integer size = 16;
+        Integer count = 10;
         param = new CheckUMemSpaceAllowanceParam(region, zone, size, count);
         param.setProjectId("org-izug1m");
     }

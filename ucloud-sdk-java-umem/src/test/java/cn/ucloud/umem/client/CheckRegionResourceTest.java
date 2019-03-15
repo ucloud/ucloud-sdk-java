@@ -28,6 +28,7 @@ public class CheckRegionResourceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new CheckRegionResourceParam();
+
         param.setProjectId("org-izug1m");
     }
 

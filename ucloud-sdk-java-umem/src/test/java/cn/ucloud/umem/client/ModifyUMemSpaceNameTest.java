@@ -28,8 +28,8 @@ public class ModifyUMemSpaceNameTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String spaceId = "cn-sh2";
-        String name = "cn-sh2";
+        String spaceId = "umem-lwzcxbcl";
+        String name = "rename-sdk-java";
         param = new ModifyUMemSpaceNameParam(region, spaceId, name);
         param.setProjectId("org-izug1m");
     }

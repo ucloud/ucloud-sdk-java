@@ -30,6 +30,7 @@ public class DescribeURedisBackupTest {
         String region = "cn-sh2";
         param = new DescribeURedisBackupParam(region);
         param.setProjectId("org-izug1m");
+
     }
 
 

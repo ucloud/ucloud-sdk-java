@@ -28,7 +28,7 @@ public class RestartUMemcacheGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
+        String groupId = "umemcache-x1xxnxra";
         param = new RestartUMemcacheGroupParam(region, groupId);
         param.setProjectId("org-izug1m");
     }

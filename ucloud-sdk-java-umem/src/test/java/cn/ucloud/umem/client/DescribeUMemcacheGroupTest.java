@@ -28,8 +28,10 @@ public class DescribeUMemcacheGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
+        String zone = "cn-sh2-02";
         param = new DescribeUMemcacheGroupParam(region);
         param.setProjectId("org-izug1m");
+        param.setZone(zone);
     }
 
 

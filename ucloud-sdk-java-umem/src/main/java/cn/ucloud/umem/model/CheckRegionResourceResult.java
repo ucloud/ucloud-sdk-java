@@ -16,16 +16,13 @@ public class CheckRegionResourceResult extends BaseResponseResult {
      * 总体资源，见RegionsResourceSet
      */
     @SerializedName("Regions")
-    private List<String> regions;
+    private List<RegionResource> regionResources;
 
-
-    public List<String> getRegions() {
-        return this.regions;
+    public List<RegionResource> getRegionResources() {
+        return regionResources;
     }
 
-    public void setRegions(List<String> regions) {
-        this.regions = regions;
+    public void setRegionResources(List<RegionResource> regionResources) {
+        this.regionResources = regionResources;
     }
-
-
 }

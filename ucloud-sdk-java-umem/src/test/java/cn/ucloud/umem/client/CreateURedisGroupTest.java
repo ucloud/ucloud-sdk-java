@@ -28,9 +28,9 @@ public class CreateURedisGroupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
-        String name = "cn-sh2";
-        String highAvailability = "cn-sh2";
+        String zone = "cn-sh2-02";
+        String name = "dddddd2";
+        String highAvailability = "enable";
         param = new CreateURedisGroupParam(region, zone, name, highAvailability);
         param.setProjectId("org-izug1m");
     }

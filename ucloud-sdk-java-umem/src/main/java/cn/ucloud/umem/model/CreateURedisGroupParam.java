@@ -2,8 +2,13 @@ package cn.ucloud.umem.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.validation.constraints.NotEmpty;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -79,7 +84,6 @@ public class CreateURedisGroupParam extends BaseRequestParam {
     /**
      * 初始化密码,需要 base64 编码
      */
-    @UcloudParam("Password")
     private String password;
     /**
      * 有此项代表从备份中创建，无代表正常创建
@@ -114,7 +118,15 @@ public class CreateURedisGroupParam extends BaseRequestParam {
         this.name = name;
         this.highAvailability = highAvailability;
     }
-
+    @UcloudParam("Password")
+    public List<Param> checkPassword() throws UnsupportedEncodingException {
+        List<Param> params = new ArrayList<>();
+        if (password != null && password.length() > 0) {
+            params.add(new Param("Password", new
+                    String(Base64.encodeBase64((password).getBytes("utf-8")))));
+        }
+        return params;
+    }
 
     public String getRegion() {
         return this.region;

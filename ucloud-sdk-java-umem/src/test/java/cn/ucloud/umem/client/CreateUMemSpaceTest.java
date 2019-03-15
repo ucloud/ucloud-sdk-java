@@ -28,9 +28,10 @@ public class CreateUMemSpaceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        Integer size = 1;
-        String name = "sdk-java";
-        param = new CreateUMemSpaceParam(region, size, name);
+        String zone = "cn-sh2-02";
+        Integer size = 16;
+        String name = "sdk-java2";
+        param = new CreateUMemSpaceParam(region, size, name,zone);
         param.setProjectId("org-izug1m");
     }
 

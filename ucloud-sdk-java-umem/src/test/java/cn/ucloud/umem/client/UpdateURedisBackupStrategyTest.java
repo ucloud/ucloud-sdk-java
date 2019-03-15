@@ -28,10 +28,11 @@ public class UpdateURedisBackupStrategyTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        String backupTime = "cn-sh2";
+        String groupId = "uredis-pgouk5n1";
+        Integer backupTime = 24;
         param = new UpdateURedisBackupStrategyParam(region, groupId, backupTime);
         param.setProjectId("org-izug1m");
+        param.setAutoBackup("enable");
     }
 
 

@@ -28,8 +28,8 @@ public class ResizeUMemSpaceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String spaceId = "cn-sh2";
-        Integer size = 1;
+        String spaceId = "umem-lwzcxbcl";
+        Integer size = 18;
         param = new ResizeUMemSpaceParam(region, spaceId, size);
         param.setProjectId("org-izug1m");
     }

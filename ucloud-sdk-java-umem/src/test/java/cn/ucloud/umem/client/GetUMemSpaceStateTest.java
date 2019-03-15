@@ -28,7 +28,7 @@ public class GetUMemSpaceStateTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String spaceId = "cn-sh2";
+        String spaceId = "umem-lwzcxbcl";
         param = new GetUMemSpaceStateParam(region, spaceId);
         param.setProjectId("org-izug1m");
     }

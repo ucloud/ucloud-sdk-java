@@ -55,6 +55,16 @@ public class URedisConfigSet {
     @SerializedName("RegionFlag")
     private Boolean regionFlag;
 
+    @SerializedName("Zone")
+    private String zone ;
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
+    }
 
     public String getConfigId() {
         return this.configId;

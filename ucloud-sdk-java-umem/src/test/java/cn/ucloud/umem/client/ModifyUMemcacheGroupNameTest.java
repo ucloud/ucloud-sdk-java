@@ -28,8 +28,8 @@ public class ModifyUMemcacheGroupNameTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        String name = "cn-sh2";
+        String groupId = "umemcache-x1xxnxra";
+        String name = "rename-umem";
         param = new ModifyUMemcacheGroupNameParam(region, groupId, name);
         param.setProjectId("org-izug1m");
     }

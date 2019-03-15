@@ -21,6 +21,7 @@ public class CreateUMemcacheGroupParam extends BaseRequestParam {
     /**
      * 可用区。参见 [可用区列表](../summary/regionlist.html)
      */
+    @NotEmpty(message = "zone can not be empty")
     @UcloudParam("Zone")
     private String zone;
     /**
@@ -72,11 +73,12 @@ public class CreateUMemcacheGroupParam extends BaseRequestParam {
 
 
     public CreateUMemcacheGroupParam(String region
-            , String name
+            , String name,String zone
     ) {
         super("CreateUMemcacheGroup");
         this.region = region;
         this.name = name;
+        this.zone = zone;
     }
 
 

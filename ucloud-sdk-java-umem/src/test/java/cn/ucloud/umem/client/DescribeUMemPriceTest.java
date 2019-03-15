@@ -28,10 +28,11 @@ public class DescribeUMemPriceTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String projectId = "cn-sh2";
-        Integer size = 1;
-        param = new DescribeUMemPriceParam(region, projectId, size);
-        param.setProjectId("org-izug1m");
+        String zone ="cn-sh2-02";
+        String projectId = "org-izug1m";
+        Integer size = 16;
+        String type = "single";
+        param = new DescribeUMemPriceParam(region, projectId, size,zone,type);
     }
 
 

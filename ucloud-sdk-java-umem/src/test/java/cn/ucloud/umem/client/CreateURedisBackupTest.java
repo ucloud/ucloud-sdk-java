@@ -28,12 +28,11 @@ public class CreateURedisBackupTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String groupId = "cn-sh2";
-        String backupName = "cn-sh2";
+        String groupId = "uredis-pgouk5n1";
+        String backupName = "bsk";
         param = new CreateURedisBackupParam(region, groupId, backupName);
         param.setProjectId("org-izug1m");
     }
-
 
     @Test
     public void createURedisBackup() {

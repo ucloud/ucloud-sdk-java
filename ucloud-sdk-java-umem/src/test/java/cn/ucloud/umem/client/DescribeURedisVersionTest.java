@@ -28,7 +28,7 @@ public class DescribeURedisVersionTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         String region = "cn-sh2";
-        String zone = "cn-sh2";
+        String zone = "cn-sh2-02";
         param = new DescribeURedisVersionParam(region, zone);
         param.setProjectId("org-izug1m");
     }

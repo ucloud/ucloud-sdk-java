@@ -2,8 +2,13 @@ package cn.ucloud.umem.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.validation.constraints.NotEmpty;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -32,7 +37,6 @@ public class ModifyURedisGroupPasswordParam extends BaseRequestParam {
     /**
      * 新密码字符串，如要取消密码，此值为空字符串
      */
-    @UcloudParam("Password")
     @NotEmpty(message = "password can not be empty")
     private String password;
 
@@ -45,6 +49,16 @@ public class ModifyURedisGroupPasswordParam extends BaseRequestParam {
         this.region = region;
         this.groupId = groupId;
         this.password = password;
+    }
+
+    @UcloudParam("Password")
+    public List<Param> checkPassword() throws UnsupportedEncodingException {
+        List<Param> params = new ArrayList<>();
+        if (password != null && password.length() > 0) {
+            params.add(new Param("Password", new
+                    String(Base64.encodeBase64((password).getBytes("utf-8")))));
+        }
+        return params;
     }
 
 
