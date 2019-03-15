@@ -1,54 +1,48 @@
 package cn.ucloud.umem.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.common.pojo.Account;
 import cn.ucloud.umem.model.DescribeURedisBackupURLParam;
 import cn.ucloud.umem.model.DescribeURedisBackupURLResult;
-import com.google.gson.Gson;
+import cn.ucloud.umem.pojo.UMEMConfig;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.List;
-import cn.ucloud.common.pojo.Account;
-import cn.ucloud.umem.pojo.UMEMConfig;
 
 import static org.junit.Assert.assertNull;
 
 
 /**
-* @Description : UMEM.DescribeURedisBackupURL 测试
-* @Author : ucloud-sdk-generator
-* @Date : 2019-03-15 10:00
-**/
+ * @Description : UMEM.DescribeURedisBackupURL 测试
+ * @Author : ucloud-sdk-generator
+ * @Date : 2019-03-15 10:00
+ **/
 public class DescribeURedisBackupURLTest {
 
-private UMEMClient client;
+    private UMEMClient client;
 
-private DescribeURedisBackupURLParam param;
-
-
+    private DescribeURedisBackupURLParam param;
 
 
+    @Before
+    public void setUp() throws Exception {
+        client = new DefaultUMEMClient(new UMEMConfig(
+                new Account(System.getenv("UcloudPrivateKey"),
+                        System.getenv("UcloudPublicKey"))));
+        String region = "cn-sh2";
+        Integer backupId = 1;
+        String groupId = "cn-sh2";
+        param = new DescribeURedisBackupURLParam(region, backupId, groupId);
+        param.setProjectId("org-izug1m");
+    }
 
-@Before
-public void setUp() throws Exception {
-client =  new DefaultUMEMClient(new UMEMConfig(
-new Account(System.getenv("UcloudPrivateKey"),
-System.getenv("UcloudPublicKey"))));
-                    String region = "cn-sh2";
-                    Integer backupId = 1;
-                    String groupId = "cn-sh2";
-param = new DescribeURedisBackupURLParam( region, backupId, groupId);
-param.setProjectId("org-izug1m");
-}
 
-
-@Test
-public void describeURedisBackupURL() {
-try {
-DescribeURedisBackupURLResult result = client.describeURedisBackupURL(param);
-JSONComparator.jsonComparator(result);
-} catch (Exception e) {
-assertNull(e);
-}
-}
+    @Test
+    public void describeURedisBackupURL() {
+        try {
+            DescribeURedisBackupURLResult result = client.describeURedisBackupURL(param);
+            JSONComparator.jsonComparator(result);
+        } catch (Exception e) {
+            assertNull(e);
+        }
+    }
 
 }

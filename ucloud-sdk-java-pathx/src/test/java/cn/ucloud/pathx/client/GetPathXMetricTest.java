@@ -48,7 +48,6 @@ public class GetPathXMetricTest {
         param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime,
                 resourceType, lineId,metricNames);
     }
-    // todo 测试  没有权限
     @Test
     public void getPathXMetric() {
         try {
