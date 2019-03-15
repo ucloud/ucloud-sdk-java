@@ -27,11 +27,10 @@ public class AddVPCNetworkTest {
         client = new DefaultVPCClient(new VPCConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AddVPCNetworkParam("cn-bj2","uvnet-qmrkj1");
+        param = new AddVPCNetworkParam("cn-bj2", "uvnet-453iklki");
         List<String> network = new ArrayList<>();
-        network.add("10.11.0.0/16");
+        network.add("10.25.0.0/16");
         param.setNetwork(network);
-        param.setProjectId("org-4nfe1i");
     }
 
 
@@ -40,6 +39,7 @@ public class AddVPCNetworkTest {
         try {
             AddVPCNetworkResult addVPCNetworkResult = client.addVPCNetwork(param);
             System.out.println(addVPCNetworkResult);
+            JSONComparator.jsonComparator(addVPCNetworkResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
