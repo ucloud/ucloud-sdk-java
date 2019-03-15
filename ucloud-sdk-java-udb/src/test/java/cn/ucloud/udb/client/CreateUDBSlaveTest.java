@@ -26,7 +26,6 @@ public class CreateUDBSlaveTest {
         param.setProjectId("org-izug1m");
     }
 
-    // todo 能创建成功 response messsage 拼写错误
     @Test
     public void createUDBSlave() {
         try {

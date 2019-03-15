@@ -86,25 +86,6 @@ public interface UDBClient extends UcloudClient {
                                   Boolean... asyncFlag);
 
     /**
-     * 取消数据传输任务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CancelDBTransferTaskResult cancelDBTransferTask(CancelDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 取消数据传输任务
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void cancelDBTransferTask(CancelDBTransferTaskParam param, UcloudHandler<CancelDBTransferTaskResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
      * 修改配置文件
      *
      * @param param 参数对象
@@ -244,44 +225,6 @@ public interface UDBClient extends UcloudClient {
      */
     void clearUDBLog(ClearUDBLogParam param, UcloudHandler<ClearUDBLogResult> handler, Boolean... asyncFlag);
 
-    /**
-     * 结束数据迁移任务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CompleteDBTransferTaskResult completeDBTransferTask(CompleteDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 结束数据迁移任务
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void completeDBTransferTask(CompleteDBTransferTaskParam param,
-                                UcloudHandler<CompleteDBTransferTaskResult> handler,
-                                Boolean... asyncFlag);
-
-    /**
-     * 创建数据迁移任务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateDBTransferTaskResult createDBTransferTask(CreateDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 创建数据迁移任务
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createDBTransferTask(CreateDBTransferTaskParam param, UcloudHandler<CreateDBTransferTaskResult> handler,
-                              Boolean... asyncFlag);
 
     /**
      * 创建DB副本集
@@ -302,66 +245,6 @@ public interface UDBClient extends UcloudClient {
     void createMongoDBReplicaSet(CreateMongoDBReplicaSetParam param,
                                  UcloudHandler<CreateMongoDBReplicaSetResult> handler,
                                  Boolean... asyncFlag);
-
-    /**
-     * 创建sqlserver帐号
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateSqlserverAccountResult createSqlserverAccount(CreateSqlserverAccountParam param) throws Exception;
-
-    /**
-     * 创建sqlserver帐号
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createSqlserverAccount(CreateSqlserverAccountParam param,
-                                UcloudHandler<CreateSqlserverAccountResult> handler,
-                                Boolean... asyncFlag);
-
-    /**
-     * 创建sqlserver高可用镜像数据库
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateSqlserverDatabaseResult createSqlserverDatabase(CreateSqlserverDatabaseParam param) throws Exception;
-
-    /**
-     * 创建sqlserver高可用镜像数据库
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createSqlserverDatabase(CreateSqlserverDatabaseParam param,
-                                 UcloudHandler<CreateSqlserverDatabaseResult> handler,
-                                 Boolean... asyncFlag);
-
-    /**
-     * 创建数据库专区
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBCInstanceResult createUDBCInstance(CreateUDBCInstanceParam param) throws Exception;
-
-
-    /**
-     * 创建数据库专区
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBCInstance(CreateUDBCInstanceParam param, UcloudHandler<CreateUDBCInstanceResult> handler,
-                            Boolean... asyncFlag);
 
     /**
      * 创建数据库
@@ -486,68 +369,6 @@ public interface UDBClient extends UcloudClient {
     void createUDBSlave(CreateUDBSlaveParam param, UcloudHandler<CreateUDBSlaveResult> handler,
                         Boolean... asyncFlag);
 
-    /**
-     * 删除数据迁移任务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteDBTransferTaskResult deleteDBTransferTask(DeleteDBTransferTaskParam param) throws Exception;
-
-
-    /**
-     * 删除数据迁移任务
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteDBTransferTask(DeleteDBTransferTaskParam param,
-                              UcloudHandler<DeleteDBTransferTaskResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 删除sqlserver帐号
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteSqlserverAccountResult deleteSqlserverAccount(DeleteSqlserverAccountParam param) throws Exception;
-
-    /**
-     * 删除sqlserver帐号
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteSqlserverAccount(DeleteSqlserverAccountParam param,
-                                UcloudHandler<DeleteSqlserverAccountResult> handler,
-                                Boolean... asyncFlag);
-
-
-    /**
-     * 删除sqlserver高可用镜像数据库
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteSqlserverDatabaseResult deleteSqlserverDatabase(DeleteSqlserverDatabaseParam param)
-            throws Exception;
-
-    /**
-     * 删除sqlserver高可用镜像数据库
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteSqlserverDatabase(DeleteSqlserverDatabaseParam param,
-                                 UcloudHandler<DeleteSqlserverDatabaseResult> handler,
-                                 Boolean... asyncFlag);
 
     /**
      * 删除UDB实例备份
@@ -567,26 +388,6 @@ public interface UDBClient extends UcloudClient {
      */
     void deleteUDBBackup(DeleteUDBBackupParam param, UcloudHandler<DeleteUDBBackupResult> handler,
                          Boolean... asyncFlag);
-
-    /**
-     * 删除数据库专区
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUDBCInstanceResult deleteUDBCInstance(DeleteUDBCInstanceParam param) throws Exception;
-
-
-    /**
-     * 删除数据库专区
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUDBCInstance(DeleteUDBCInstanceParam param, UcloudHandler<DeleteUDBCInstanceResult> handler,
-                            Boolean... asyncFlag);
 
     /**
      * 删除云数据库
@@ -649,25 +450,6 @@ public interface UDBClient extends UcloudClient {
                              UcloudHandler<DeleteUDBParamGroupResult> handler,
                              Boolean... asyncFlag);
 
-    /**
-     * 获取迁移任务信息
-     *
-     * @param param 参数对象
-     * @return 回调接口
-     * @throws Exception
-     */
-    DescribeDBTransferTaskResult describeDBTransferTask(DescribeDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 获取迁移任务信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeDBTransferTask(DescribeDBTransferTaskParam param,
-                                UcloudHandler<DescribeDBTransferTaskResult> handler,
-                                Boolean... asyncFlag);
 
     /**
      * 获取单点升级高可用实例的差价
@@ -688,46 +470,6 @@ public interface UDBClient extends UcloudClient {
     void describePromoteToHAPrice(DescribePromoteToHAPriceParam param,
                                   UcloudHandler<DescribePromoteToHAPriceResult> handler,
                                   Boolean... asyncFlag);
-
-    /**
-     * 拉取sqlserver帐号
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeSqlserverAccountsResult describeSqlserverAccounts(DescribeSqlserverAccountsParam param) throws Exception;
-
-    /**
-     * 拉取sqlserver帐号
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeSqlserverAccounts(DescribeSqlserverAccountsParam param,
-                                   UcloudHandler<DescribeSqlserverAccountsResult> handler,
-                                   Boolean... asyncFlag);
-
-    /**
-     * 拉取sqlserver实例下数据库列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeSqlserverDatabasesResult describeSqlserverDatabase(DescribeSqlserverDatabasesParam param) throws Exception;
-
-    /**
-     * 拉取sqlserver实例下数据库列表
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeSqlserverDatabase(DescribeSqlserverDatabasesParam param,
-                                   UcloudHandler<DescribeSqlserverDatabasesResult> handler,
-                                   Boolean... asyncFlag);
 
     /**
      * 获取备份列表
@@ -787,64 +529,6 @@ public interface UDBClient extends UcloudClient {
     void describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLParam param,
                                     UcloudHandler<DescribeUDBBinlogBackupURLResult> handler,
                                     Boolean... asyncFlag);
-
-    /**
-     * 获取数据库专区的信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBCInstanceResult describeUDBCInstance(DescribeUDBCInstanceParam param) throws Exception;
-
-    /**
-     * 获取数据库专区的信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBCInstance(DescribeUDBCInstanceParam param, UcloudHandler<DescribeUDBCInstanceResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 专区价格信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBCPriceResult describeUDBCPrice(DescribeUDBCPriceParam param) throws Exception;
-
-    /**
-     * 专区价格信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBCPrice(DescribeUDBCPriceParam param, UcloudHandler<DescribeUDBCPriceResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 获取数据专区的类型信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBCTypeResult describeUDBCType(DescribeUDBCTypeParam param) throws Exception;
-
-    /**
-     * 获取数据专区的类型信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBCType(DescribeUDBCTypeParam param, UcloudHandler<DescribeUDBCTypeResult> handler,
-                          Boolean... asyncFlag);
-
 
     /**
      * 获取云数据库信息
@@ -968,27 +652,6 @@ public interface UDBClient extends UcloudClient {
     void describeUDBInstanceByBackup(DescribeUDBInstanceByBackupParam param,
                                               UcloudHandler<DescribeUDBInstanceByBackupResult> handler,
                                               Boolean... asyncFlag);
-
-    /**
-     * 根据IP获取宿主机上未删除DB列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceByHostIpResult describeUDBInstanceByHostIp(DescribeUDBInstanceByHostIpParam param)
-            throws Exception;
-
-    /**
-     * 根据IP获取宿主机上未删除DB列表
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceByHostIp(DescribeUDBInstanceByHostIpParam param,
-                                     UcloudHandler<DescribeUDBInstanceByHostIpResult> handler,
-                                     Boolean... asyncFlag);
 
     /**
      * 根据配置文件获取UDB实例信息
@@ -1323,26 +986,6 @@ public interface UDBClient extends UcloudClient {
     void extractUDBParamGroup(ExtractUDBParamGroupParam param, UcloudHandler<ExtractUDBParamGroupResult> handler,
                               Boolean... asyncFlag);
 
-
-    /**
-     * 获取数据迁移预检查结果名称
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    FetchDBPrecheckResultResult fetchDBPrecheckResult(FetchDBPrecheckResultParam param) throws Exception;
-
-    /**
-     * 获取数据迁移预检查结果名称
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void fetchDBPrecheckResult(FetchDBPrecheckResultParam param, UcloudHandler<FetchDBPrecheckResultResult> handler,
-                               Boolean... asyncFlag);
-
     /**
      * 获取UDB最早可回档的时间点
      *
@@ -1385,27 +1028,6 @@ public interface UDBClient extends UcloudClient {
                             UcloudHandler<GetUDBSuspendPriceResult> handler,
                             Boolean... asyncFlag);
 
-
-    /**
-     * 对sqlserver帐号授权
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    GrantAccountPrivilegesResult grantAccountPrivileges(GrantAccountPrivilegesParam param) throws Exception;
-
-    /**
-     * 对sqlserver帐号授权
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void grantAccountPrivileges(GrantAccountPrivilegesParam param,
-                                UcloudHandler<GrantAccountPrivilegesResult> handler,
-                                Boolean... asyncFlag);
-
     /**
      * 获取某DB类型的所有监控项
      *
@@ -1447,44 +1069,6 @@ public interface UDBClient extends UcloudClient {
 
 
     /**
-     * 修改数据迁移任务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ModifyDBTransferTaskResult modifyDBTransferTask(ModifyDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 修改数据迁移任务
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void modifyDBTransferTask(ModifyDBTransferTaskParam param, UcloudHandler<ModifyDBTransferTaskResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 更改sqlserver密码
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ModifySqlserverPasswordResult modifySqlserverPassword(ModifySqlserverPasswordParam param) throws Exception;
-
-    /**
-     * 更改sqlserver密码
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void modifySqlserverPassword(ModifySqlserverPasswordParam param, UcloudHandler<ModifySqlserverPasswordResult> handler,
-                                 Boolean... asyncFlag);
-
-    /**
      * 修改云数据库名称
      *
      * @param param 参数对象
@@ -1521,25 +1105,6 @@ public interface UDBClient extends UcloudClient {
      */
     void modifyUDBInstancePassword(ModifyUDBInstancePasswordParam param,
                                    UcloudHandler<ModifyUDBInstancePasswordResult> handler, Boolean... asyncFlag);
-
-    /**
-     * 数据迁移预检查
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    PrecheckDBTransferTaskResult precheckDBTransferTask(PrecheckDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 数据迁移预检查
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void precheckDBTransferTask(PrecheckDBTransferTaskParam param,
-                                UcloudHandler<PrecheckDBTransferTaskResult> handler, Boolean... asyncFlag);
 
     /**
      * 普通db升级为高可用
@@ -1694,25 +1259,6 @@ public interface UDBClient extends UcloudClient {
      */
     void setUDBRWSplitting(SetUDBRWSplittingParam param,
                            UcloudHandler<SetUDBRWSplittingResult> handler, Boolean... asyncFlag);
-
-    /**
-     * 开启迁移任务
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    StartDBTransferTaskResult startDBTransferTask(StartDBTransferTaskParam param) throws Exception;
-
-    /**
-     * 开启迁移任务
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void startDBTransferTask(StartDBTransferTaskParam param,
-                             UcloudHandler<StartDBTransferTaskResult> handler, Boolean... asyncFlag);
 
     /**
      * 启动云数据库

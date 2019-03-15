@@ -579,27 +579,6 @@ public interface UMEMClient extends UcloudClient {
                            Boolean... asyncFlag);
 
     /**
-     * 获取升级价格
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUMemUpgradePriceResult describeUMemUpgradePrice(
-            DescribeUMemUpgradePriceParam param) throws Exception;
-
-    /**
-     * 获取升级价格 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUMemUpgradePrice(DescribeUMemUpgradePriceParam param,
-                                  UcloudHandler<DescribeUMemUpgradePriceResult> handler,
-                                  Boolean... asyncFlag);
-
-    /**
      * 调整容量
      *
      * @param param 参数对象
