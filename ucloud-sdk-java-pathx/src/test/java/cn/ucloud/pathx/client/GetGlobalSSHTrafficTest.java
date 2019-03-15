@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetGlobalSSHTrafficParam;
 import cn.ucloud.pathx.model.GetGlobalSSHTrafficResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.GetGlobalSSHTraffic 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetGlobalSSHTrafficTest {
 
@@ -28,12 +27,11 @@ public class GetGlobalSSHTrafficTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
-        Integer beginTime = 1;
-        Integer endTime = 1;
+        String projectId = "org-izug1m";
+        String uGAId = "uga-eskzpkk2";
+        Integer beginTime = 1552460481;
+        Integer endTime = 1552546881;
         param = new GetGlobalSSHTrafficParam(projectId, uGAId, beginTime, endTime);
-        param.setProjectId("org-izug1m");
     }
 
 
@@ -47,27 +45,4 @@ public class GetGlobalSSHTrafficTest {
         }
     }
 
-    @Test
-    public void getGlobalSSHTrafficCallback() {
-        client.getGlobalSSHTraffic(param, new UcloudHandler
-                <GetGlobalSSHTrafficResult>() {
-            @Override
-            public Object success(GetGlobalSSHTrafficResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetGlobalSSHTrafficResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.ModifyGlobalSSHRemarkParam;
 import cn.ucloud.pathx.model.ModifyGlobalSSHRemarkResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.ModifyGlobalSSHRemark 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class ModifyGlobalSSHRemarkTest {
 
@@ -28,10 +27,10 @@ public class ModifyGlobalSSHRemarkTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String instanceId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String instanceId = "uga-eskzpkk2";
         param = new ModifyGlobalSSHRemarkParam(projectId, instanceId);
-        param.setProjectId("org-izug1m");
+        param.setRemark("test");
     }
 
 
@@ -45,27 +44,4 @@ public class ModifyGlobalSSHRemarkTest {
         }
     }
 
-    @Test
-    public void modifyGlobalSSHRemarkCallback() {
-        client.modifyGlobalSSHRemark(param, new UcloudHandler
-                <ModifyGlobalSSHRemarkResult>() {
-            @Override
-            public Object success(ModifyGlobalSSHRemarkResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(ModifyGlobalSSHRemarkResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

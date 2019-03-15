@@ -31,7 +31,6 @@ public class DescribeFirewallResourceTest {
     public void describeFirewallResource() {
         try {
             DescribeFirewallResourceResult allocateEIPResult = client.describeFirewallResource(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

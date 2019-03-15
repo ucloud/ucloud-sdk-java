@@ -4,12 +4,13 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 /**
  * @Description : 修改加速线路带宽 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class ModifyUPathBandwidthParam extends BaseRequestParam {
     /**
@@ -22,13 +23,13 @@ public class ModifyUPathBandwidthParam extends BaseRequestParam {
      * 带宽
      */
     @UcloudParam("Bandwidth")
-    @NotEmpty(message = "bandwidth can not be empty")
-    private String bandwidth;
+    @NotNull(message = "bandwidth can not be null")
+    private Integer bandwidth;
 
 
     public ModifyUPathBandwidthParam(String projectId
             , String uPathId
-            , String bandwidth
+            , Integer bandwidth
     ) {
         super("ModifyUPathBandwidth");
         this.projectId = projectId;
@@ -45,13 +46,11 @@ public class ModifyUPathBandwidthParam extends BaseRequestParam {
         this.uPathId = uPathId;
     }
 
-    public String getBandwidth() {
-        return this.bandwidth;
+    public Integer getBandwidth() {
+        return bandwidth;
     }
 
-    public void setBandwidth(String bandwidth) {
+    public void setBandwidth(Integer bandwidth) {
         this.bandwidth = bandwidth;
     }
-
-
 }

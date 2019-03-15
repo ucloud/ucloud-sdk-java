@@ -50,6 +50,9 @@ public class DescribeImageResult extends BaseResponseResult {
         @SerializedName("ImageType")
         private String imageType;
 
+        @SerializedName("MinimalCPU")
+        private String minimalCPU;
+
         /**
          * 特殊状态标识
          */
@@ -98,11 +101,41 @@ public class DescribeImageResult extends BaseResponseResult {
         @SerializedName("CreateTime")
         private Integer createTime;
 
+        @SerializedName("PriceSet")
+        private List<Double> priceSet;
+
         /**
          * 镜像大小
          */
         @SerializedName("ImageSize")
         private Integer imageSize;
+
+        @SerializedName("Tag")
+        private String tag;
+
+        public String getMinimalCPU() {
+            return minimalCPU;
+        }
+
+        public void setMinimalCPU(String minimalCPU) {
+            this.minimalCPU = minimalCPU;
+        }
+
+        public List<Double> getPriceSet() {
+            return priceSet;
+        }
+
+        public void setPriceSet(List<Double> priceSet) {
+            this.priceSet = priceSet;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
 
         public String getImageId() {
             return imageId;
@@ -223,27 +256,6 @@ public class DescribeImageResult extends BaseResponseResult {
         public void setImageSize(Integer imageSize) {
             this.imageSize = imageSize;
         }
-
-        @Override
-        public String toString() {
-            return "UhostImage{" +
-                    "imageId='" + imageId + '\'' +
-                    ", imageName='" + imageName + '\'' +
-                    ", zone='" + zone + '\'' +
-                    ", osType='" + osType + '\'' +
-                    ", osName='" + osName + '\'' +
-                    ", imageType='" + imageType + '\'' +
-                    ", features=" + features +
-                    ", funcType='" + funcType + '\'' +
-                    ", integratedSoftware='" + integratedSoftware + '\'' +
-                    ", vendor='" + vendor + '\'' +
-                    ", link='" + link + '\'' +
-                    ", state='" + state + '\'' +
-                    ", imageDescription='" + imageDescription + '\'' +
-                    ", createTime=" + createTime +
-                    ", imageSize=" + imageSize +
-                    '}';
-        }
     }
 
 
@@ -273,16 +285,5 @@ public class DescribeImageResult extends BaseResponseResult {
 
     public void setImages(List<UhostImage> images) {
         this.images = images;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeImageResult{" +
-                "totalCount=" + totalCount +
-                ", images=" + images +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

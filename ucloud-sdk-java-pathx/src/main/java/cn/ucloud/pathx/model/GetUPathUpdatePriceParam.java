@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @Description : 获取UPath升级价格 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetUPathUpdatePriceParam extends BaseRequestParam {
     /**
@@ -28,6 +28,7 @@ public class GetUPathUpdatePriceParam extends BaseRequestParam {
     /**
      *
      */
+    @NotEmpty(message = "lineId can not be empty")
     @UcloudParam("LineId")
     private String lineId;
 
@@ -35,11 +36,13 @@ public class GetUPathUpdatePriceParam extends BaseRequestParam {
     public GetUPathUpdatePriceParam(String projectId
             , String resourceId
             , Integer bandwidth
+            , String lineId
     ) {
         super("GetUPathUpdatePrice");
         this.projectId = projectId;
         this.resourceId = resourceId;
         this.bandwidth = bandwidth;
+        this.lineId = lineId;
     }
 
 

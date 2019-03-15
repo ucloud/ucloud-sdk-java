@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.common.util.JSONComparator;
 import cn.ucloud.${api.product?lower_case?replace("-","_")}.pojo.${api.product?upper_case?replace("-","_")}Config;
 
 import static org.junit.Assert.assertNull;
@@ -92,7 +91,7 @@ assertNull(e);
 }
 }
 
-@Test
+<#--@Test
 public void ${api.name?uncap_first}Callback() {
 client.${api.name?uncap_first}(param, new UcloudHandler
 ${r'<'}${api.name}Result${r'>'}() {
@@ -114,5 +113,5 @@ assertNull(e);
 return null;
 }
 }, false);
-}
+}-->
 }

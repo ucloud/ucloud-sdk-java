@@ -24,13 +24,4 @@ public class UpdatePolicyResult extends BaseResponseResult {
         this.policyId = policyId;
     }
 
-    @Override
-    public String toString() {
-        return "UpdatePolicyResult{" +
-                "policyId='" + policyId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

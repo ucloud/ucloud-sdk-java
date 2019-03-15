@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class UpdateVServerAttributeResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "UpdateVServerAttributeResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

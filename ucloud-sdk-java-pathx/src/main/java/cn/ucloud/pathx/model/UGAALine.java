@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : UGAA加速线路 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UGAALine {
     /**
@@ -51,7 +51,6 @@ public class UGAALine {
         this.lineFrom = lineFrom;
     }
 
-
     public String getLineTo() {
         return this.lineTo;
     }
@@ -59,7 +58,6 @@ public class UGAALine {
     public void setLineTo(String lineTo) {
         this.lineTo = lineTo;
     }
-
 
     public String getLineId() {
         return this.lineId;
@@ -69,7 +67,6 @@ public class UGAALine {
         this.lineId = lineId;
     }
 
-
     public String getLineFromName() {
         return this.lineFromName;
     }
@@ -78,13 +75,21 @@ public class UGAALine {
         this.lineFromName = lineFromName;
     }
 
-
     public String getLineToName() {
         return this.lineToName;
     }
 
     public void setLineToName(String lineToName) {
         this.lineToName = lineToName;
+    }
+
+
+    public List<LineDetail> getLineDetail() {
+        return this.lineDetail;
+    }
+
+    public void setLineDetail(List<LineDetail> lineDetail) {
+        this.lineDetail = lineDetail;
     }
 
 

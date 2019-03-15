@@ -29,7 +29,6 @@ public class UnBindEIPTest {
     public void unBindEIP() {
         try {
             UnBindEIPResult unBindEIPResult = client.unBindEIP(param);
-            System.out.println(unBindEIPResult);
             JSONComparator.jsonComparator(unBindEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

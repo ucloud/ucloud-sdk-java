@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,18 +27,18 @@ public class DescribeUHostTagsTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DescribeUHostTagsParam("cn-bj2");
-        param.setProjectId("org-4nfe1i");
+        param = new DescribeUHostTagsParam("cn-sh2");
+        param.setProjectId("org-izug1m");
     }
 
 
     @Test
     public void describeUHostTags() {
         try {
-            DescribeUHostTagsResult describeUHostTagsResult = client.describeUHostTags(param);
-            System.out.println(describeUHostTagsResult);
+            DescribeUHostTagsResult result = client.describeUHostTags(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

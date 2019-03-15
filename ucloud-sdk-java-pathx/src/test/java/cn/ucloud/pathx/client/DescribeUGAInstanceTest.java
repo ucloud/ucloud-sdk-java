@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.DescribeUGAInstanceParam;
 import cn.ucloud.pathx.model.DescribeUGAInstanceResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.DescribeUGAInstance 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribeUGAInstanceTest {
 
@@ -28,9 +27,8 @@ public class DescribeUGAInstanceTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         param = new DescribeUGAInstanceParam(projectId);
-        param.setProjectId("org-izug1m");
     }
 
 
@@ -44,27 +42,4 @@ public class DescribeUGAInstanceTest {
         }
     }
 
-    @Test
-    public void describeUGAInstanceCallback() {
-        client.describeUGAInstance(param, new UcloudHandler
-                <DescribeUGAInstanceResult>() {
-            @Override
-            public Object success(DescribeUGAInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(DescribeUGAInstanceResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

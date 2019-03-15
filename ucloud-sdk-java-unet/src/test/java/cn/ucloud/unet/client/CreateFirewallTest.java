@@ -36,7 +36,6 @@ public class CreateFirewallTest {
     public void createFirewall() {
         try {
             CreateFirewallResult allocateEIPResult = client.createFirewall(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

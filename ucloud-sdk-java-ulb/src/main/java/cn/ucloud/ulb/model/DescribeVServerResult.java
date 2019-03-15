@@ -110,6 +110,69 @@ public class DescribeVServerResult extends BaseResponseResult {
         @SerializedName("PolicySet")
         private List<ULBPolicy> policies;
 
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        @SerializedName("Domain")
+        private String domain;
+
+        @SerializedName("MetricIdSet")
+        private List<Metric> metrics;
+
+        @SerializedName("MonitorType")
+        private String monitorType;
+
+        @SerializedName("Path")
+        private String path;
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        public String getMonitorType() {
+            return monitorType;
+        }
+
+        public void setMonitorType(String monitorType) {
+            this.monitorType = monitorType;
+        }
+
+        public List<SSL> getSsls() {
+            return ssls;
+        }
+
+        public void setSsls(List<SSL> ssls) {
+            this.ssls = ssls;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public List<Metric> getMetrics() {
+            return metrics;
+        }
+
+        public void setMetrics(List<Metric> metrics) {
+            this.metrics = metrics;
+        }
+
         public String getVserverId() {
             return vserverId;
         }
@@ -214,24 +277,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.policies = policies;
         }
 
-        @Override
-        public String toString() {
-            return "ULBVServer{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", protocol='" + protocol + '\'' +
-                    ", frontendPort=" + frontendPort +
-                    ", method='" + method + '\'' +
-                    ", persistenceType='" + persistenceType + '\'' +
-                    ", persistenceInfo='" + persistenceInfo + '\'' +
-                    ", clientTimeout=" + clientTimeout +
-                    ", status=" + status +
-                    ", ulbssls=" + ssls +
-                    ", backends=" + backends +
-                    ", listenType='" + listenType + '\'' +
-                    ", policies=" + policies +
-                    '}';
-        }
     }
 
     public static class SSL{
@@ -321,17 +366,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.sslBingedTargets = sslBingedTargets;
         }
 
-        @Override
-        public String toString() {
-            return "SSL{" +
-                    "sslId='" + sslId + '\'' +
-                    ", sslName='" + sslName + '\'' +
-                    ", sslType='" + sslType + '\'' +
-                    ", sslContent='" + sslContent + '\'' +
-                    ", createTime=" + createTime +
-                    ", sslBingedTargets=" + sslBingedTargets +
-                    '}';
-        }
     }
 
     public static class SSLBingedTarget{
@@ -392,15 +426,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.ulbName = ulbName;
         }
 
-        @Override
-        public String toString() {
-            return "SSLBingedTarget{" +
-                    "vserverId='" + vserverId + '\'' +
-                    ", vserverName='" + vserverName + '\'' +
-                    ", ulbId='" + ulbId + '\'' +
-                    ", ulbName='" + ulbName + '\'' +
-                    '}';
-        }
     }
 
     public static class ULBBackend{
@@ -529,20 +554,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.subnetId = subnetId;
         }
 
-        @Override
-        public String toString() {
-            return "ULBBackend{" +
-                    "backendId='" + backendId + '\'' +
-                    ", resourceType='" + resourceType + '\'' +
-                    ", resourceId='" + resourceId + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    ", privateIp='" + privateIp + '\'' +
-                    ", port=" + port +
-                    ", enabled=" + enabled +
-                    ", status=" + status +
-                    ", subnetId='" + subnetId + '\'' +
-                    '}';
-        }
     }
 
     public static class ULBPolicy{
@@ -662,19 +673,6 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.backends = backends;
         }
 
-        @Override
-        public String toString() {
-            return "ULBPolicy{" +
-                    "policyId='" + policyId + '\'' +
-                    ", policyType='" + policyType + '\'' +
-                    ", type='" + type + '\'' +
-                    ", match='" + match + '\'' +
-                    ", policyPriority=" + policyPriority +
-                    ", vserverId='" + vserverId + '\'' +
-                    ", totalCount=" + totalCount +
-                    ", backends=" + backends +
-                    '}';
-        }
     }
 
     public static class PolicyBackend{
@@ -749,15 +747,30 @@ public class DescribeVServerResult extends BaseResponseResult {
             this.resourceName = resourceName;
         }
 
-        @Override
-        public String toString() {
-            return "PolicyBackend{" +
-                    "backendId='" + backendId + '\'' +
-                    ", objectId='" + objectId + '\'' +
-                    ", port=" + port +
-                    ", privateIp='" + privateIp + '\'' +
-                    ", resourceName='" + resourceName + '\'' +
-                    '}';
+    }
+
+    public static class Metric{
+
+        @SerializedName("MetricId")
+        private String metricId;
+
+        @SerializedName("Type")
+        private String type;
+
+        public String getMetricId() {
+            return metricId;
+        }
+
+        public void setMetricId(String metricId) {
+            this.metricId = metricId;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
         }
     }
 
@@ -790,14 +803,4 @@ public class DescribeVServerResult extends BaseResponseResult {
         this.ulbvServers = ulbvServers;
     }
 
-    @Override
-    public String toString() {
-        return "DescribeVServerResult{" +
-                "totalCount=" + totalCount +
-                ", ulbvServers=" + ulbvServers +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

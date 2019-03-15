@@ -7,6 +7,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -19,15 +21,19 @@ public class CreateSSLTest {
 
     private CreateSSLParam param;
 
+    private String content = "";
+
+    private String privateKey = "";
+
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateSSLParam("cn-bj2","ssl-sdk-java-test");
-        param.setPrivateKey("保持.key文件格式 注意保持换行");
-        param.setSslContent("保持.crt文件格式 注意保持换行");
-        param.setProjectId("org-4nfe1i");
+        param = new CreateSSLParam("cn-sh2","ssl-sdk-java-test");
+        param.setPrivateKey(privateKey);
+        param.setSslContent(content);
+        param.setProjectId("org-izug1m");
     }
 
 
@@ -35,10 +41,10 @@ public class CreateSSLTest {
     @Test
     public void createSSL() {
         try {
-            CreateSSLResult ssl = client.createSSL(param);
-            System.out.println(ssl);
+            CreateSSLResult result= client.createSSL(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

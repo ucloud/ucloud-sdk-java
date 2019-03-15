@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.GetPathXMetricParam;
 import cn.ucloud.pathx.model.GetPathXMetricResult;
@@ -8,13 +7,16 @@ import cn.ucloud.pathx.pojo.PATHXConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertNull;
 
 
 /**
  * @Description : PATHX.GetPathXMetric 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetPathXMetricTest {
 
@@ -28,18 +30,24 @@ public class GetPathXMetricTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
+        String projectId = "org-izug1m";
         String resourceId = "cn-sh2";
         Integer beginTime = 1;
         Integer endTime = 1;
-        String resourceType = "cn-sh2";
-        String lineId = "cn-sh2";
-        String metricNames = "";
-        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime, resourceType, lineId, metricNames);
-        param.setProjectId("org-izug1m");
+        String resourceType = "upath";
+        String lineId = "line_hk_cn-gd";
+        List<String> metricNames = new ArrayList<>();
+        metricNames.add("NetworkOut");
+        metricNames.add("NetworkIn");
+        metricNames.add("NetworkOutUsage");
+        metricNames.add("NetworkInUsage");
+        metricNames.add("TCPDelay");
+        metricNames.add("InputRetransmitRate");
+        metricNames.add("OutputRetransmitRate");
+        metricNames.add("TCPConNum");
+        param = new GetPathXMetricParam(projectId, resourceId, beginTime, endTime,
+                resourceType, lineId,metricNames);
     }
-
-
     @Test
     public void getPathXMetric() {
         try {
@@ -50,27 +58,4 @@ public class GetPathXMetricTest {
         }
     }
 
-    @Test
-    public void getPathXMetricCallback() {
-        client.getPathXMetric(param, new UcloudHandler
-                <GetPathXMetricResult>() {
-            @Override
-            public Object success(GetPathXMetricResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(GetPathXMetricResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

@@ -30,7 +30,6 @@ public class DescribeVPCIntercomTest {
     public void describeVPCIntercom() {
         try {
             DescribeVPCIntercomResult describeVPCIntercomResult = client.describeVPCIntercom(param);
-            System.out.println(describeVPCIntercomResult);
             JSONComparator.jsonComparator(describeVPCIntercomResult);
         } catch (Exception e) {
             e.printStackTrace();

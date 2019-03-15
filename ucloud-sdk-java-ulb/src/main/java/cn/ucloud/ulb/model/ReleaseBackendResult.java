@@ -9,12 +9,5 @@ import cn.ucloud.common.pojo.BaseResponseResult;
  **/
 
 public class ReleaseBackendResult extends BaseResponseResult {
-    @Override
-    public String toString() {
-        return "ReleaseBackendResult{" +
-                "retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
+
 }

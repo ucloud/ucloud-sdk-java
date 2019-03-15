@@ -8,6 +8,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -24,19 +26,19 @@ public class StartUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new StartUHostInstanceParam("cn-bj2", "uhost-k2spt1");
-        param.setZone("cn-bj2-02");
-        param.setProjectId("org-4nfe1i");
+        param = new StartUHostInstanceParam("cn-sh2", "uhost-rjonwb2x");
+        param.setZone("cn-sh2-02");
+        param.setProjectId("org-izug1m");
     }
 
 
     @Test
     public void startUHostInstance() {
         try {
-            StartUHostInstanceResult startUHostInstanceResult = client.startUHostInstance(param);
-            System.out.println("同步：" + startUHostInstanceResult);
+            StartUHostInstanceResult result = client.startUHostInstance(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 

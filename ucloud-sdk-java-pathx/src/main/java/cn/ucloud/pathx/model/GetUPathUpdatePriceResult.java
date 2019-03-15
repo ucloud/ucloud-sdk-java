@@ -7,21 +7,21 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 获取UPath升级价格 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetUPathUpdatePriceResult extends BaseResponseResult {
     /**
      *
      */
     @SerializedName("Price")
-    private Integer price;
+    private Double price;
 
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return this.price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

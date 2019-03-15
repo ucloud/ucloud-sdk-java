@@ -1,6 +1,5 @@
 package cn.ucloud.pathx.client;
 
-import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.pathx.model.UGAUnBindUPathParam;
 import cn.ucloud.pathx.model.UGAUnBindUPathResult;
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description : PATHX.UGAUnBindUPath 测试
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class UGAUnBindUPathTest {
 
@@ -28,11 +27,10 @@ public class UGAUnBindUPathTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        String projectId = "cn-sh2";
-        String uGAId = "cn-sh2";
-        String uPathId = "cn-sh2";
+        String projectId = "org-izug1m";
+        String uGAId = "uga-f3q0ywyi";
+        String uPathId = "upath-bwccmk2b";
         param = new UGAUnBindUPathParam(projectId, uGAId, uPathId);
-        param.setProjectId("org-izug1m");
     }
 
 
@@ -46,27 +44,4 @@ public class UGAUnBindUPathTest {
         }
     }
 
-    @Test
-    public void uGAUnBindUPathCallback() {
-        client.uGAUnBindUPath(param, new UcloudHandler
-                <UGAUnBindUPathResult>() {
-            @Override
-            public Object success(UGAUnBindUPathResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object failed(UGAUnBindUPathResult result) {
-                JSONComparator.jsonComparator(result);
-                return null;
-            }
-
-            @Override
-            public Object error(Exception e) {
-                assertNull(e);
-                return null;
-            }
-        }, false);
-    }
 }

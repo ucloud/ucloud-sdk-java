@@ -32,7 +32,6 @@ public class AllocateEIPTest {
     public void allocateEIP() {
         try {
             AllocateEIPResult allocateEIPResult = client.allocateEIP(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

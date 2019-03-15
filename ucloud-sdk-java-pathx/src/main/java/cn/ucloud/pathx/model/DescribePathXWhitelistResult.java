@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @Description : 获取入口白名单列表 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class DescribePathXWhitelistResult extends BaseResponseResult {
     /**
@@ -17,6 +17,15 @@ public class DescribePathXWhitelistResult extends BaseResponseResult {
      */
     @SerializedName("WhitelistSet")
     private List<InstanceWhitelist> whitelistSet;
+
+
+    public List<InstanceWhitelist> getWhitelistSet() {
+        return this.whitelistSet;
+    }
+
+    public void setWhitelistSet(List<InstanceWhitelist> whitelistSet) {
+        this.whitelistSet = whitelistSet;
+    }
 
 
 }

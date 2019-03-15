@@ -56,15 +56,6 @@ public class DescribeUFSVolumePriceResult extends BaseResponseResult {
         public void setChargeName(String chargeName) {
             this.chargeName = chargeName;
         }
-
-        @Override
-        public String toString() {
-            return "UFSPrice{" +
-                    "changeType='" + chargeType + '\'' +
-                    ", price=" + price +
-                    ", chargeName='" + chargeName + '\'' +
-                    '}';
-        }
     }
 
 
@@ -80,15 +71,5 @@ public class DescribeUFSVolumePriceResult extends BaseResponseResult {
 
     public void setUfsPrices(List<UFSPrice> ufsPrices) {
         this.ufsPrices = ufsPrices;
-    }
-
-    @Override
-    public String toString() {
-        return "DescribeUFSVolumePriceResult{" +
-                "ufsPrices=" + ufsPrices +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

@@ -25,13 +25,4 @@ public class ModifyUHostInstanceRemarkResult extends BaseResponseResult {
         this.uhostId = uhostId;
     }
 
-    @Override
-    public String toString() {
-        return "ModifyUHostInstanceRemarkResult{" +
-                "uhostId='" + uhostId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

@@ -37,7 +37,6 @@ public class DescribeBandwidthUsageTest {
     public void describeBandwidthUsage() {
         try {
             DescribeBandwidthUsageResult allocateEIPResult = client.describeBandwidthUsage(param);
-            System.out.println(allocateEIPResult);
             JSONComparator.jsonComparator(allocateEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

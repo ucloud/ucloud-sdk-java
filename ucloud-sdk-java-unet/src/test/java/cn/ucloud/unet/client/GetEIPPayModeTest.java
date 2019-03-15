@@ -36,7 +36,6 @@ public class GetEIPPayModeTest {
     public void getEIPPayMode() {
         try {
             GetEIPPayModeResult eipPayMode = client.getEIPPayMode(param);
-            System.out.println(eipPayMode);
             JSONComparator.jsonComparator(eipPayMode);
         } catch (Exception e) {
             e.printStackTrace();

@@ -17,6 +17,9 @@ public class ReinstallUHostInstanceResult extends BaseResponseResult {
     @SerializedName("UHostId")
     private String uhostId;
 
+    @SerializedName("TotalCount")
+    private String totalCount;
+
     public String getUhostId() {
         return uhostId;
     }
@@ -25,13 +28,4 @@ public class ReinstallUHostInstanceResult extends BaseResponseResult {
         this.uhostId = uhostId;
     }
 
-    @Override
-    public String toString() {
-        return "ReinstallUHostInstanceResult{" +
-                "uhostId='" + uhostId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

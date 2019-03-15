@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * @Description : 创建UPath 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateUPathParam extends BaseRequestParam {
     /**
@@ -41,8 +41,8 @@ public class CreateUPathParam extends BaseRequestParam {
      * 购买周期
      */
     @UcloudParam("Quantity")
-    @NotEmpty(message = "quantity can not be empty")
-    private String quantity;
+    @NotNull(message = "quantity can not be null")
+    private Integer quantity;
     /**
      * 代金券Id
      */
@@ -55,7 +55,7 @@ public class CreateUPathParam extends BaseRequestParam {
             , String lineId
             , Integer bandwidth
             , String chargeType
-            , String quantity
+            , Integer quantity
     ) {
         super("CreateUPath");
         this.projectId = projectId;
@@ -99,11 +99,11 @@ public class CreateUPathParam extends BaseRequestParam {
         this.chargeType = chargeType;
     }
 
-    public String getQuantity() {
-        return this.quantity;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

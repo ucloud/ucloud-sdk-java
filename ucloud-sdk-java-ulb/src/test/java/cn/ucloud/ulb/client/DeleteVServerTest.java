@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,17 +27,17 @@ public class DeleteVServerTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new DeleteVServerParam("cn-bj2","ulb-0kawkr","vserver-02n1ot");
-        param.setProjectId("org-4nfe1i");
+        param = new DeleteVServerParam("cn-sh2","ulb-wki4vn5g","vserver-whdrqoq0");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void deleteVServer() {
         try {
-            DeleteVServerResult deleteVServerResult = client.deleteVServer(param);
-            System.out.println(deleteVServerResult);
+            DeleteVServerResult result = client.deleteVServer(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

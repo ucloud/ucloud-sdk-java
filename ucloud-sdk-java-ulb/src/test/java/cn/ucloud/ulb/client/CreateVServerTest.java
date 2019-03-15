@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,18 +27,18 @@ public class CreateVServerTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new CreateVServerParam("cn-bj2","ulb-0kawkr");
-        param.setVserverName("sdk-java-vserver");
-        param.setProjectId("org-4nfe1i");
+        param = new CreateVServerParam("cn-sh2","ulb-wki4vn5g");
+        param.setVserverName("sdk-java-vserver1");
+        param.setProjectId("org-izug1m");
     }
 
     @Test
     public void createVServer() {
         try {
-            CreateVServerResult vServer = client.createVServer(param);
-            System.out.println(vServer);
+            CreateVServerResult result = client.createVServer(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

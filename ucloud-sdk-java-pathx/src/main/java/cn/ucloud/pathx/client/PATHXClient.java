@@ -7,7 +7,7 @@ import cn.ucloud.pathx.model.*;
 /**
  * @Description : PATHX 客户端接口
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public interface PATHXClient extends UcloudClient {
 
@@ -516,27 +516,6 @@ public interface PATHXClient extends UcloudClient {
                      Boolean... asyncFlag);
 
     /**
-     * 删除PathX SSL证书
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeletePathXSSLResult deletePathXSSL(
-            DeletePathXSSLParam param) throws Exception;
-
-    /**
-     * 删除PathX SSL证书 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deletePathXSSL(DeletePathXSSLParam param,
-                        UcloudHandler<DeletePathXSSLResult> handler,
-                        Boolean... asyncFlag);
-
-    /**
      * 获取UPath价格
      *
      * @param param 参数对象
@@ -705,27 +684,6 @@ public interface PATHXClient extends UcloudClient {
                            Boolean... asyncFlag);
 
     /**
-     * 获取线路数
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    GetLinesResult getLines(
-            GetLinesParam param) throws Exception;
-
-    /**
-     * 获取线路数 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void getLines(GetLinesParam param,
-                  UcloudHandler<GetLinesResult> handler,
-                  Boolean... asyncFlag);
-
-    /**
      * 获取全球运维通道流量统计数据
      *
      * @param param 参数对象
@@ -745,27 +703,6 @@ public interface PATHXClient extends UcloudClient {
     void getGlobalSSHTraffic(GetGlobalSSHTrafficParam param,
                              UcloudHandler<GetGlobalSSHTrafficResult> handler,
                              Boolean... asyncFlag);
-
-    /**
-     * （deprecated）检查三级域名合法性和唯一性
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckPreCNameResult checkPreCName(
-            CheckPreCNameParam param) throws Exception;
-
-    /**
-     * （deprecated）检查三级域名合法性和唯一性 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkPreCName(CheckPreCNameParam param,
-                       UcloudHandler<CheckPreCNameResult> handler,
-                       Boolean... asyncFlag);
 
     /**
      * 创建UPath
@@ -830,87 +767,4 @@ public interface PATHXClient extends UcloudClient {
                                    UcloudHandler<DescribeGlobalSSHInstanceResult> handler,
                                    Boolean... asyncFlag);
 
-    /**
-     * 获取SSL证书信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribePathXSSLResult describePathXSSL(
-            DescribePathXSSLParam param) throws Exception;
-
-    /**
-     * 获取SSL证书信息 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describePathXSSL(DescribePathXSSLParam param,
-                          UcloudHandler<DescribePathXSSLResult> handler,
-                          Boolean... asyncFlag);
-
-    /**
-     * 创建证书
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreatePathXSSLResult createPathXSSL(
-            CreatePathXSSLParam param) throws Exception;
-
-    /**
-     * 创建证书 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createPathXSSL(CreatePathXSSLParam param,
-                        UcloudHandler<CreatePathXSSLResult> handler,
-                        Boolean... asyncFlag);
-
-    /**
-     * 绑定PathX SSL证书
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    BindPathXSSLResult bindPathXSSL(
-            BindPathXSSLParam param) throws Exception;
-
-    /**
-     * 绑定PathX SSL证书 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void bindPathXSSL(BindPathXSSLParam param,
-                      UcloudHandler<BindPathXSSLResult> handler,
-                      Boolean... asyncFlag);
-
-    /**
-     * 解绑PathX SSL 证书
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    UnBindPathXSSLResult unBindPathXSSL(
-            UnBindPathXSSLParam param) throws Exception;
-
-    /**
-     * 解绑PathX SSL 证书 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void unBindPathXSSL(UnBindPathXSSLParam param,
-                        UcloudHandler<UnBindPathXSSLResult> handler,
-                        Boolean... asyncFlag);
 }

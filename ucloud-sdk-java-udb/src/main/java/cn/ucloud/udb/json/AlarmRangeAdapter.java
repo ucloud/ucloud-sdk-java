@@ -41,15 +41,13 @@ public class AlarmRangeAdapter extends TypeAdapter<ListMonitorItemsResult.AlarmR
         if (!isString){
             in.beginObject();
             while (in.hasNext()) {
-                if (!isString){
-                    switch (in.nextName()){
-                        case "min":
-                            alarmRange.setMin(in.nextInt());
-                            break;
-                        case "max":
-                            alarmRange.setMax(in.nextInt());
-                            break;
-                    }
+                switch (in.nextName()){
+                    case "min":
+                        alarmRange.setMin(in.nextInt());
+                        break;
+                    case "max":
+                        alarmRange.setMax(in.nextInt());
+                        break;
                 }
             }
             in.endObject();

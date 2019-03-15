@@ -9,6 +9,8 @@ import cn.ucloud.uhost.pojo.UhostConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,18 +27,18 @@ public class ModifyUHostInstanceNameTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new ModifyUHostInstanceNameParam("cn-bj2","uhost-zzsffd");
-        param.setProjectId("org-4nfe1i");
+        param = new ModifyUHostInstanceNameParam("cn-sh2","uhost-rjonwb2x");
+        param.setProjectId("org-izug1m");
         param.setName("java-sdk-test");
     }
 
     @Test
     public void modifyUHostInstanceName() {
         try {
-            ModifyUHostInstanceNameResult modifyUHostInstanceNameResult = client.modifyUHostInstanceName(param);
-            System.out.println(modifyUHostInstanceNameResult);
+            ModifyUHostInstanceNameResult result = client.modifyUHostInstanceName(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }

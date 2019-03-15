@@ -25,13 +25,4 @@ public class StartUHostInstanceResult extends BaseResponseResult {
         this.uhostId = uhostId;
     }
 
-    @Override
-    public String toString() {
-        return "StartUHostInstanceResult{" +
-                "uhostId='" + uhostId + '\'' +
-                ", retCode=" + retCode +
-                ", action='" + action + '\'' +
-                ", message='" + message + '\'' +
-                '}';
-    }
 }

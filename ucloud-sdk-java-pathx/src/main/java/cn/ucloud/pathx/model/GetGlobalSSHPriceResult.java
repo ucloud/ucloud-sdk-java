@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * @Description : 获取GlobalSSH价格 结果类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GetGlobalSSHPriceResult extends BaseResponseResult {
     /**
@@ -16,11 +16,14 @@ public class GetGlobalSSHPriceResult extends BaseResponseResult {
     @SerializedName("Price")
     private Double price;
 
+
     public Double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
     }
+
+
 }

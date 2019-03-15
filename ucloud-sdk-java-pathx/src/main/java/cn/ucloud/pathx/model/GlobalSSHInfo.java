@@ -2,11 +2,13 @@ package cn.ucloud.pathx.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 
 /**
  * @Description : GlobalSSH实例信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class GlobalSSHInfo {
     /**
@@ -55,6 +57,16 @@ public class GlobalSSHInfo {
     @SerializedName("ExpireTime")
     private Integer expireTime;
 
+    @SerializedName("OutPublicIpList")
+    private List<OutPublicIpInfo> outPublicIpInfos;
+
+    public List<OutPublicIpInfo> getOutPublicIpInfos() {
+        return outPublicIpInfos;
+    }
+
+    public void setOutPublicIpInfos(List<OutPublicIpInfo> outPublicIpInfos) {
+        this.outPublicIpInfos = outPublicIpInfos;
+    }
 
     public String getInstanceId() {
         return this.instanceId;
@@ -64,7 +76,6 @@ public class GlobalSSHInfo {
         this.instanceId = instanceId;
     }
 
-
     public String getAcceleratingDomain() {
         return this.acceleratingDomain;
     }
@@ -72,7 +83,6 @@ public class GlobalSSHInfo {
     public void setAcceleratingDomain(String acceleratingDomain) {
         this.acceleratingDomain = acceleratingDomain;
     }
-
 
     public String getArea() {
         return this.area;
@@ -82,7 +92,6 @@ public class GlobalSSHInfo {
         this.area = area;
     }
 
-
     public String getTargetIP() {
         return this.targetIP;
     }
@@ -90,7 +99,6 @@ public class GlobalSSHInfo {
     public void setTargetIP(String targetIP) {
         this.targetIP = targetIP;
     }
-
 
     public String getRemark() {
         return this.remark;
@@ -100,7 +108,6 @@ public class GlobalSSHInfo {
         this.remark = remark;
     }
 
-
     public Integer getPort() {
         return this.port;
     }
@@ -108,7 +115,6 @@ public class GlobalSSHInfo {
     public void setPort(Integer port) {
         this.port = port;
     }
-
 
     public String getChargeType() {
         return this.chargeType;
@@ -118,7 +124,6 @@ public class GlobalSSHInfo {
         this.chargeType = chargeType;
     }
 
-
     public Integer getCreateTime() {
         return this.createTime;
     }
@@ -126,7 +131,6 @@ public class GlobalSSHInfo {
     public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
     }
-
 
     public Integer getExpireTime() {
         return this.expireTime;

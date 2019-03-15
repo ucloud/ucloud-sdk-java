@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Description : 苹果审核加速通道信息 模型类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class AppleUGAAInfo {
     /**
@@ -50,13 +50,34 @@ public class AppleUGAAInfo {
      * 创建时间
      */
     @SerializedName("CreateTime")
-    private String createTime;
+    private Integer createTime;
     /**
      * 过期时间
      */
     @SerializedName("ExpireTime")
-    private String expireTime;
+    private Integer expireTime;
 
+    @SerializedName("Location")
+    private String location;
+
+    @SerializedName("OutPublicIpList")
+    private List<OutPublicIpInfo> outPublicIpInfos;
+
+    public List<OutPublicIpInfo> getOutPublicIpInfos() {
+        return outPublicIpInfos;
+    }
+
+    public void setOutPublicIpInfos(List<OutPublicIpInfo> outPublicIpInfos) {
+        this.outPublicIpInfos = outPublicIpInfos;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public String getuGAId() {
         return this.uGAId;
@@ -66,7 +87,6 @@ public class AppleUGAAInfo {
         this.uGAId = uGAId;
     }
 
-
     public String getcName() {
         return this.cName;
     }
@@ -75,6 +95,13 @@ public class AppleUGAAInfo {
         this.cName = cName;
     }
 
+    public List<String> getiPList() {
+        return this.iPList;
+    }
+
+    public void setiPList(List<String> iPList) {
+        this.iPList = iPList;
+    }
 
     public String getuGAName() {
         return this.uGAName;
@@ -83,7 +110,6 @@ public class AppleUGAAInfo {
     public void setuGAName(String uGAName) {
         this.uGAName = uGAName;
     }
-
 
     public String getDomain() {
         return this.domain;
@@ -94,6 +120,14 @@ public class AppleUGAAInfo {
     }
 
 
+    public List<UGAATask> getTaskSet() {
+        return this.taskSet;
+    }
+
+    public void setTaskSet(List<UGAATask> taskSet) {
+        this.taskSet = taskSet;
+    }
+
     public String getChargeType() {
         return this.chargeType;
     }
@@ -102,23 +136,19 @@ public class AppleUGAAInfo {
         this.chargeType = chargeType;
     }
 
-
-    public String getCreateTime() {
-        return this.createTime;
+    public Integer getCreateTime() {
+        return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Integer createTime) {
         this.createTime = createTime;
     }
 
-
-    public String getExpireTime() {
-        return this.expireTime;
+    public Integer getExpireTime() {
+        return expireTime;
     }
 
-    public void setExpireTime(String expireTime) {
+    public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
     }
-
-
 }

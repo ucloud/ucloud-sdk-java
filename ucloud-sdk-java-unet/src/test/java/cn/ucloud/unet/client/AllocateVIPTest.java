@@ -30,7 +30,6 @@ public class AllocateVIPTest {
     public void allocateVIP() {
         try {
             AllocateVIPResult allocateVIPResult = client.allocateVIP(param);
-            System.out.println(allocateVIPResult);
             JSONComparator.jsonComparator(allocateVIPResult);
         } catch (Exception e) {
             e.printStackTrace();

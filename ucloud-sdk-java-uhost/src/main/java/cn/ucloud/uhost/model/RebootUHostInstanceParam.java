@@ -78,14 +78,4 @@ public class RebootUHostInstanceParam extends BaseRequestParam {
         this.diskPassword = diskPassword;
     }
 
-
-    @Override
-    public String toString() {
-        return "RebootUHostInstanceParam{" +
-                "region='" + region + '\'' +
-                ", zone='" + zone + '\'' +
-                ", uhostId='" + uhostId + '\'' +
-                ", diskPassword='" + diskPassword + '\'' +
-                '}';
-    }
 }

@@ -31,7 +31,6 @@ public class ReleaseEIPTest {
     public void releaseEIP() {
         try {
             ReleaseEIPResult releaseEIPResult = client.releaseEIP(param);
-            System.out.println(releaseEIPResult);
             JSONComparator.jsonComparator(releaseEIPResult);
         } catch (Exception e) {
             e.printStackTrace();

@@ -30,7 +30,6 @@ public class DescribeShareBandwidthTest {
     public void describeShareBandwidth() {
         try {
             DescribeShareBandwidthResult describeShareBandwidthResult = client.describeShareBandwidth(param);
-            System.out.println(describeShareBandwidthResult);
             JSONComparator.jsonComparator(describeShareBandwidthResult);
         } catch (Exception e) {
             e.printStackTrace();

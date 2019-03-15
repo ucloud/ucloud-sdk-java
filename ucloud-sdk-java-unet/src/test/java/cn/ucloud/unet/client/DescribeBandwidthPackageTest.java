@@ -30,7 +30,6 @@ public class DescribeBandwidthPackageTest {
     public void describeBandwidthPackage() {
         try {
             DescribeBandwidthPackageResult describeBandwidthPackageResult = client.describeBandwidthPackage(param);
-            System.out.println(describeBandwidthPackageResult);
             JSONComparator.jsonComparator(describeBandwidthPackageResult);
         } catch (Exception e) {
             e.printStackTrace();

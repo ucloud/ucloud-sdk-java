@@ -78,7 +78,7 @@ public class SetUDBRWSplittingParam extends BaseRequestParam {
     @UcloudParam("ReadPercents")
     public List<Param> checkReadPercents() throws ValidationException {
         if ("Custom".equals(readMode) && (readPercents == null || readPercents.isEmpty())){
-            throw new ValidationException(String.format("readPercents can not be empty when read mode is custom"));
+            throw new ValidationException("readPercents can not be empty when read mode is custom");
         }
         List<Param> list = new ArrayList<>();
         if (readPercents != null && !readPercents.isEmpty()) {
@@ -98,7 +98,7 @@ public class SetUDBRWSplittingParam extends BaseRequestParam {
     public List<Param> checkDBIds() throws ValidationException {
         List<Param> list = new ArrayList<>();
         if (dbIds == null || dbIds.isEmpty()) {
-            throw new ValidationException(String.format("dbIds can not be empty"));
+            throw new ValidationException("dbIds can not be empty");
         } else {
             for (int i = 0; i < dbIds.size(); i++) {
                 if (dbIds.get(i) == null || dbIds.get(i).length() <= 0) {

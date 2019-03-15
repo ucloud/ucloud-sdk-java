@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @Description : 创建全球加速配置项 参数类
  * @Author : ucloud-sdk-generator
- * @Date : 2019-03-12 04:27
+ * @Date : 2019-03-13 10:02
  **/
 public class CreateUGAInstanceParam extends BaseRequestParam {
     /**
@@ -33,98 +33,101 @@ public class CreateUGAInstanceParam extends BaseRequestParam {
     @UcloudParam("Domain")
     private String domain;
 
-    /**
-     * tcp 端口号
-     */
-    private List<Integer> tcpPorts;
+    @UcloudParam("ChargeType")
+    private String chargeType;
+
+    @UcloudParam("Quantity")
+    private Integer quantity;
+
+    @UcloudParam("IsHighNet")
+    private Boolean isHighNet;
+
+    @NotEmpty(message = "location can not be empty")
+    @UcloudParam("Location")
+    private String location;
 
     /**
-     * udp 端口号
+     * tcp端口
+     */
+    private List<Integer> tcpPorts;
+    /**
+     * udp端口
      */
     private List<Integer> udpPorts;
 
-    /**
-     * http 端口号
-     */
-    private List<Integer> httpPorts;
+    public String getLocation() {
+        return location;
+    }
 
-    /**
-     * https 端口号
-     */
-    private List<Integer> httpsPorts;
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
+    public Boolean getHighNet() {
+        return isHighNet;
+    }
+
+    public void setHighNet(Boolean highNet) {
+        isHighNet = highNet;
+    }
 
     public CreateUGAInstanceParam(String projectId
-            , String name
+            , String name, String location
     ) {
         super("CreateUGAInstance");
         this.projectId = projectId;
         this.name = name;
+        this.location = location;
     }
 
-    @UcloudParam("tcpPorts")
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getChargeType() {
+        return chargeType;
+    }
+
+    public void setChargeType(String chargeType) {
+        this.chargeType = chargeType;
+    }
+
+    @UcloudParam("TCP")
     public List<Param> checkTCPPorts() throws ValidationException {
         List<Param> params = new ArrayList<>();
-        if (tcpPorts != null && !tcpPorts.isEmpty()) {
+        if (tcpPorts != null) {
             int size = tcpPorts.size();
             for (int i = 0; i < size; i++) {
-                if (tcpPorts.get(i) == null){
-                    throw new ValidationException(String.format("tcpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("TCP.%d",i),tcpPorts.get(i)));
+                Integer port = tcpPorts.get(i);
+                if (port == null) {
+                    throw new ValidationException(String.format("tcpPorts[%d] can not be null", i));
                 }
+                params.add(new Param(String.format("TCP.%d", i), port));
             }
         }
         return params;
     }
 
-    @UcloudParam("udpPorts")
-    public List<Param> checkUCPPorts() throws ValidationException {
+    @UcloudParam("UDP")
+    public List<Param> checkUDPPorts() throws ValidationException {
         List<Param> params = new ArrayList<>();
-        if (udpPorts != null && !udpPorts.isEmpty()) {
+        if (udpPorts != null) {
             int size = udpPorts.size();
             for (int i = 0; i < size; i++) {
-                if (udpPorts.get(i) == null){
-                    throw new ValidationException(String.format("udpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("UDP.%d",i),udpPorts.get(i)));
+                Integer port = udpPorts.get(i);
+                if (port == null) {
+                    throw new ValidationException(String.format("udpPorts[%d] can not be null", i));
                 }
+                params.add(new Param(String.format("UDP.%d", i), port));
             }
         }
         return params;
     }
 
-    @UcloudParam("httpPorts")
-    public List<Param> checkHTTPPorts() throws ValidationException {
-        List<Param> params = new ArrayList<>();
-        if (httpPorts != null && !httpPorts.isEmpty()) {
-            int size = httpPorts.size();
-            for (int i = 0; i < size; i++) {
-                if (httpPorts.get(i) == null){
-                    throw new ValidationException(String.format("httpPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("HTTP.%d",i),httpPorts.get(i)));
-                }
-            }
-        }
-        return params;
-    }
-
-    @UcloudParam("httpsPorts")
-    public List<Param> checkHTTPSPorts() throws ValidationException {
-        List<Param> params = new ArrayList<>();
-        if (httpsPorts != null && !httpsPorts.isEmpty()) {
-            int size = httpsPorts.size();
-            for (int i = 0; i < size; i++) {
-                if (httpsPorts.get(i) == null){
-                    throw new ValidationException(String.format("httpsPorts[%d] can not be null",i));
-                }else {
-                    params.add(new Param(String.format("HTTPS.%d",i),httpsPorts.get(i)));
-                }
-            }
-        }
-        return params;
-    }
 
     public List<Integer> getTcpPorts() {
         return tcpPorts;
@@ -141,23 +144,7 @@ public class CreateUGAInstanceParam extends BaseRequestParam {
     public void setUdpPorts(List<Integer> udpPorts) {
         this.udpPorts = udpPorts;
     }
-
-    public List<Integer> getHttpPorts() {
-        return httpPorts;
-    }
-
-    public void setHttpPorts(List<Integer> httpPorts) {
-        this.httpPorts = httpPorts;
-    }
-
-    public List<Integer> getHttpsPorts() {
-        return httpsPorts;
-    }
-
-    public void setHttpsPorts(List<Integer> httpsPorts) {
-        this.httpsPorts = httpsPorts;
-    }
-
+    
     public String getName() {
         return this.name;
     }

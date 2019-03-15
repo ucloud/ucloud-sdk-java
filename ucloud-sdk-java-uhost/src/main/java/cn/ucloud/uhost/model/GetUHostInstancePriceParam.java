@@ -6,6 +6,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -128,21 +129,21 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
      * require 虚拟CPU核心数，单位: 个，范围: [1,16]，最小值为1，其他值是2的整数倍
      */
     @UcloudParam("CPU")
-    @NotEmpty(message = "cpu can not be empty")
+    @NotNull(message = "cpu can not be null")
     private Integer cpu;
 
     /**
      * require 内存容量大小，单位: MB，范围: [2048,65536]，步长: 2048。
      */
     @UcloudParam("Memory")
-    @NotEmpty(message = "memory can not be empty")
+    @NotNull(message = "memory can not be null")
     private Integer memory;
 
     /**
      * 购买台数，范围[1,5]
      */
     @UcloudParam("Count")
-    @NotEmpty(message = "count can not be empty")
+    @NotNull(message = "count can not be null")
     private Integer count;
 
     /**

@@ -9,6 +9,8 @@ import cn.ucloud.ulb.pojo.ULBConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertNull;
+
 /**
  * @description:
  * @author: codezhang
@@ -26,19 +28,19 @@ public class AllocateBackendTest {
         client = new DefaultULBClient(new ULBConfig(
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
-        param = new AllocateBackendParam("cn-bj2","ulb-0kawkr","vserver-se0ay2",
-                "UHost","uhost-zzsffd");
-        param.setProjectId("org-4nfe1i");
+        param = new AllocateBackendParam("cn-sh2","ulb-wki4vn5g","vserver-sfhly4db",
+                "UHost","uhost-dwomflqt");
+        param.setProjectId("org-izug1m");
     }
 
 
     @Test
     public void allocateBackend() {
         try {
-            AllocateBackendResult allocateBackendResult = client.allocateBackend(param);
-            System.out.println(allocateBackendResult);
+            AllocateBackendResult result = client.allocateBackend(param);
+            JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-            e.printStackTrace();
+            assertNull(e);
         }
     }
 }
