@@ -475,12 +475,25 @@ public class DescribeVServerResult extends BaseResponseResult {
         /**
          * 后端资源实例的运行状态
          */
+        @SerializedName("Status")
         private Integer status;
 
         /**
          * 后端资源实例的资源所在的子网的ID
          */
+        @SerializedName("SubnetId")
         private String subnetId;
+
+        @SerializedName("Weight")
+        private Integer weight;
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
 
         public String getBackendId() {
             return backendId;
@@ -706,6 +719,17 @@ public class DescribeVServerResult extends BaseResponseResult {
          */
         @SerializedName("ResourceName")
         private String resourceName;
+
+        @SerializedName("Weight")
+        private Integer weight;
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
 
         public String getBackendId() {
             return backendId;
