@@ -113,6 +113,17 @@ public class DescribeSSLResult extends BaseResponseResult {
         @SerializedName("BindedTargetSet")
         private List<SSLBindedTarget> sslBindedTargets;
 
+        @SerializedName("HashValue")
+        private String hashValue;
+
+        public String getHashValue() {
+            return hashValue;
+        }
+
+        public void setHashValue(String hashValue) {
+            this.hashValue = hashValue;
+        }
+
         public String getSslId() {
             return sslId;
         }

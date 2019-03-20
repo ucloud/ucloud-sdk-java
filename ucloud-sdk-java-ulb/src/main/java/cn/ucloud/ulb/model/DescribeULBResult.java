@@ -73,7 +73,7 @@ public class DescribeULBResult extends BaseResponseResult {
          * 负载均衡实例中存在的VServer实例列表，具体结构见下方 ULBVServerSet
          */
         @SerializedName("VServerSet")
-        private List<List<ULBVServer>> ulbVServers;
+        private List<ULBVServer> ulbVServers;
 
         /**
          * ULB 的类型
@@ -99,11 +99,11 @@ public class DescribeULBResult extends BaseResponseResult {
         @SerializedName("PrivateIP")
         private String privateIp;
 
-        public List<List<ULBVServer>> getUlbVServers() {
+        public List<ULBVServer> getUlbVServers() {
             return ulbVServers;
         }
 
-        public void setUlbVServers(List<List<ULBVServer>> ulbVServers) {
+        public void setUlbVServers(List<ULBVServer> ulbVServers) {
             this.ulbVServers = ulbVServers;
         }
 
