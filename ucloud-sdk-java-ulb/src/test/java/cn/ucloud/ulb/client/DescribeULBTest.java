@@ -26,7 +26,7 @@ public class DescribeULBTest {
                 new Account(System.getenv("UcloudPrivateKey"),
                         System.getenv("UcloudPublicKey"))));
         param = new DescribeULBParam("cn-sh2");
-        param.setProjectId("org-izug1m");
+        param.setProjectId("org-o1ftjk");
     }
 
     @Test
