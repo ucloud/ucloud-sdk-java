@@ -31,7 +31,7 @@ public class ModifyUDPNBandwidthTest {
     @Test
     public void modifyUDPNBandwidth() {
         try {
-            ModifyUDPNBandwidthResult result = client.ModifyUDPNBandwidth(param);
+            ModifyUDPNBandwidthResult result = client.modifyUDPNBandwidth(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
