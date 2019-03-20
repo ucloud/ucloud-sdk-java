@@ -31,7 +31,7 @@ public class DescribeUDPNTest {
     @Test
     public void describeUDPN() {
         try {
-            DescribeUDPNResult describeUDPNResult = client.DescribeUDPN(param);
+            DescribeUDPNResult describeUDPNResult = client.describeUDPN(param);
             JSONComparator.jsonComparator(describeUDPNResult);
         } catch (Exception e) {
             assertNull(e);

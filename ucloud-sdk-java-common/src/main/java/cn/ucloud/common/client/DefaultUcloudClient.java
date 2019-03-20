@@ -29,7 +29,7 @@ public class DefaultUcloudClient implements UcloudClient {
     }
 
     @Override
-    public void getRegion( UcloudHandler<GetRegionResult> handler, Boolean... asyncFlag) {
+    public void getRegion(UcloudHandler<GetRegionResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
         try {
             http.doGet(new GetRegionParam(), config, handler, asyncFlag);

@@ -31,7 +31,7 @@ public class GetUDPNLineListTest {
     @Test
     public void getUDPNLineList() {
         try {
-            GetUDPNLineListResult result = client.GetUDPNLineList(param);
+            GetUDPNLineListResult result = client.getUDPNLineList(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
