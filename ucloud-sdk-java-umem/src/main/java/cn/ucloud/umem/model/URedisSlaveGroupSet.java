@@ -59,8 +59,19 @@ public class URedisSlaveGroupSet {
      */
     @SerializedName("ChargeType")
     private String chargeType;
+
     /**
-     * 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败
+     * 状态标记
+     * Creating // 初始化中
+     * CreateFail // 创建失败
+     * Deleting // 删除中
+     * DeleteFail // 删除失败
+     * Running // 运行
+     * Resizing // 容量调整中
+     * ResizeFail // 容量调整失败
+     * Configing // 配置中
+     * ConfigFail // 配置失败
+     * Restarting // 重启中
      */
     @SerializedName("State")
     private String state;
