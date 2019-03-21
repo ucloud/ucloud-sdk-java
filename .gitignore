@@ -17,4 +17,4 @@
 *.iml
 */target
 target
-
+clean.sh
