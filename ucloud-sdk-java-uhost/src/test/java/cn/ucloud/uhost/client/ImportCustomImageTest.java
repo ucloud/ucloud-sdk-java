@@ -23,8 +23,8 @@ public class ImportCustomImageTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new ImportCustomImageParam("cn-bj2","java-sdk-import-test","ufile-url",
                 "Other","Other","qcow2",true);
         param.setProjectId("org-4nfe1i");

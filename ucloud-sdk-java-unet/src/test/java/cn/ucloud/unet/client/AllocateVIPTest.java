@@ -21,8 +21,8 @@ public class AllocateVIPTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new AllocateVIPParam("cn-sh2", "uvnet-3fy3r4", "subnet-orq0th");
     }
 

@@ -24,8 +24,8 @@ public class BindSSLTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new BindSSLParam("cn-sh2","ulb-wki4vn5g","vserver-sfhly4db","ssl-r2bxbf");
         param.setProjectId("org-izug1m");
     }

@@ -21,8 +21,8 @@ public class CreateSubnetTest {
     @Before
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CreateSubnetParam("cn-bj2", "uvnet-453iklki", "10.24.0.0");
         param.setSubnetNmae("sdk-java-subnet");
         param.setNetmask(16);

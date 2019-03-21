@@ -23,8 +23,8 @@ public class CopyCustomImageTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CopyCustomImageParam("cn-bj2","uimage-4h2rc2","org-4nfe1i");
         param.setProjectId("org-4nfe1i");
     }

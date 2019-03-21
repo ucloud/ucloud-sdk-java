@@ -26,8 +26,8 @@ public class CreateUhostInstanceTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         // uimage-cjswb5 ubuntu 16.04
         CreateUHostInstanceParam.UhostDisk disk = new CreateUHostInstanceParam.UhostDisk(25,"LOCAL_SSD",false);
         param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-02","uimage-m1proq");

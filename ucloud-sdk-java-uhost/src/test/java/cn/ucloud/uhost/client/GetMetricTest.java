@@ -26,8 +26,8 @@ public class GetMetricTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         List<String> metricNames = new ArrayList<>();
         metricNames.add("NetPacketIn");
         param = new GetMetricParam("cn-sh2", "cn-sh2-02",

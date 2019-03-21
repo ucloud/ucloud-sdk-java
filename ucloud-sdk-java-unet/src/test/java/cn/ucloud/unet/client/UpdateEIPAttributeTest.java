@@ -21,8 +21,8 @@ public class UpdateEIPAttributeTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new UpdateEIPAttributeParam("cn-sh2", "eip-vcsnbgi4");
         param.setName("sdk-java-test");
         param.setRemark("改名字");

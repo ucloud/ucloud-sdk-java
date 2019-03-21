@@ -28,8 +28,8 @@ public class CreatePolicyTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CreatePolicyParam("cn-sh2","ulb-wki4vn5g","vserver-whdrqoq0","test");
         List<String> backendIds = new ArrayList<>();
         backendIds.add("backend-3ptzuqu3");

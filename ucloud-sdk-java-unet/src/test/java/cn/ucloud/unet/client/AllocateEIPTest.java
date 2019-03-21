@@ -21,8 +21,8 @@ public class AllocateEIPTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new AllocateEIPParam("cn-sh2", "Bgp", 2);
         param.setTag("ucloud-sdk-java-test");
         param.setRemark("ucloud-sdk-java-test-eip");

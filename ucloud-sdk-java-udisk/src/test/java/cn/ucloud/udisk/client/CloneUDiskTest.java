@@ -23,8 +23,8 @@ public class CloneUDiskTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CloneUDiskParam("cn-sh2", "cn-sh2-01", "clone-from-bs-4qfrwv","bs-4qfrwv");
         param.setProjectId("org-4nfe1i");
     }

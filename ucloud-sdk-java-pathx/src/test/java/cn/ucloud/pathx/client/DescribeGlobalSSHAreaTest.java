@@ -25,8 +25,8 @@ public class DescribeGlobalSSHAreaTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DescribeGlobalSSHAreaParam();
         //param.setProjectId("org-izug1m");
     }

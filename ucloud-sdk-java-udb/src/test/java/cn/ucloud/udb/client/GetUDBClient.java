@@ -12,7 +12,7 @@ public class GetUDBClient {
 
     public static UDBClient getUDBClient() {
         return new DefaultUDBClient(new UDBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
     }
 }

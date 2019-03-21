@@ -25,8 +25,8 @@ public class AddVPCNetworkTest {
     @Before
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new AddVPCNetworkParam("cn-bj2", "uvnet-453iklki");
         List<String> network = new ArrayList<>();
         network.add("10.25.0.0/16");

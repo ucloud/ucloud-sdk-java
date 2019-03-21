@@ -24,8 +24,8 @@ public class CreateCustomImageTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CreateCustomImageParam("cn-bj2","uhost-zzsffd","java-sdk-test");
         param.setProjectId("org-4nfe1i");
     }

@@ -25,8 +25,8 @@ public class GetGlobalSSHPriceTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         Integer quantity = 1;
         String chargeType = "Dynamic";
         param = new GetGlobalSSHPriceParam(quantity, chargeType);

@@ -24,8 +24,8 @@ public class RenameUDiskTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new RenameUDiskParam("cn-sh2", "cn-sh2-02", "bs-yroe5bmn",
                 "rename-sdk-java");
         param.setProjectId("org-izug1m");
