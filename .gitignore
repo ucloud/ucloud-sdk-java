@@ -13,7 +13,8 @@
 *.tar.gz
 *.rar
 
-.*
+.*/
+.DS_Store
 *.iml
 */target
 target
