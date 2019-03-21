@@ -21,8 +21,8 @@ public class DeleteSubnetTest {
     @Before
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DeleteSubnetParam("cn-bj2", "subnet-vmuluk");
     }
 

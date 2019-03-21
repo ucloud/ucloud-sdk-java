@@ -23,8 +23,8 @@ public class ReleaseUDPNTest {
     @Before
     public void initData() {
         client = new DefaultUDPNClient(new UdpnConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new ReleaseUDPNParam("udpn-111qalty");
     }
 

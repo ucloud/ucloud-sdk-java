@@ -18,8 +18,8 @@ public class GetRegionTest {
     @Before
     public void initData() {
         client = new DefaultUcloudClient(new UcloudConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
     }
 
     @Test

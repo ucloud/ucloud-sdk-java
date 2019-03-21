@@ -32,8 +32,8 @@ public class CreateUDiskTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CreateUDiskParam(region, zone, 16, "udisk-test");
         param.setProjectId(projectId);
     }

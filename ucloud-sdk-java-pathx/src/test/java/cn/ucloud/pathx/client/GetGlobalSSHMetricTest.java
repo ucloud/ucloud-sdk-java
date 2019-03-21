@@ -25,8 +25,8 @@ public class GetGlobalSSHMetricTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String instanceId = "uga-eskzpkk2";
         Integer beginTime = 1552460481;
         Integer endTime = 1552546881;

@@ -26,8 +26,8 @@ public class DeletePolicyTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DeletePolicyParam("cn-sh2","2f738258-ccda-460a-83af-cb0d466f97bf");
         param.setProjectId("org-izug1m");
     }

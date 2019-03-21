@@ -25,8 +25,8 @@ public class DeleteURedisBackupTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUMEMClient(new UMEMConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-sh2";
         String zone = "cn-sh2-02";
         String backupId = "2c02ec12-5e65-4e0b-88ea-6dd6f48070df";

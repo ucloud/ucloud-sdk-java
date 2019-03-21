@@ -24,8 +24,8 @@ public class DescribeUHostInstanceTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DescribeUHostInstanceParam("cn-sh2");
         param.setProjectId("org-izug1m");
         param.setZone("cn-sh2-02");

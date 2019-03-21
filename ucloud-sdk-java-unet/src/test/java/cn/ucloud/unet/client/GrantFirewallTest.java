@@ -21,8 +21,8 @@ public class GrantFirewallTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
 
         param = new GrantFirewallParam("cn-sh2", "firewall-xujipdz3", "UHost", "uhost-dwomflqt");
     }

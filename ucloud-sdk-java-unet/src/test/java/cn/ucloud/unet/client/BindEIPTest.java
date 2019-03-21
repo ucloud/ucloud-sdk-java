@@ -21,8 +21,8 @@ public class BindEIPTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new BindEIPParam("cn-sh2", "eip-vcsnbgi4", "uhost", "uhost-dwomflqt");
     }
 

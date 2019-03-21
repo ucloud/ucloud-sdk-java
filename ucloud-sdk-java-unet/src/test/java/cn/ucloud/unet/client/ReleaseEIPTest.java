@@ -22,8 +22,8 @@ public class ReleaseEIPTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new ReleaseEIPParam("cn-sh2", "eip-243oe1tx");
     }
 

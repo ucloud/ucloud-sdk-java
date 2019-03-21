@@ -25,8 +25,8 @@ public class ChangeURedisConfigTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUMEMClient(new UMEMConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-sh2";
         String groupId = "uredis-vzovqixi";
         String configId = "3e45ac48-f8a2-a9q2-261d-l342dab130gf";

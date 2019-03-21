@@ -26,8 +26,8 @@ public class GetSQLQueryDataTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUSQLClient(new USQLConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-bj2";
         String queryId = "20190314_125527_00020_fmje5";
         Integer limit = 100;
