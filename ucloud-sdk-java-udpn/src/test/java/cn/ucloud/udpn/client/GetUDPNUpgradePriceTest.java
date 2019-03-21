@@ -31,7 +31,7 @@ public class GetUDPNUpgradePriceTest {
     @Test
     public void getUDPNUpgradePrice() {
         try {
-            GetUDPNUpgradePriceResult result = client.GetUDPNUpgradePrice(param);
+            GetUDPNUpgradePriceResult result = client.getUDPNUpgradePrice(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);

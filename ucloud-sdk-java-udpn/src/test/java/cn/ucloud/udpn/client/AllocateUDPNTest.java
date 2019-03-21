@@ -31,7 +31,7 @@ public class AllocateUDPNTest {
     @Test
     public void allocateUDPN() {
         try {
-            AllocateUDPNResult allocateUDPNResult = client.AllocateUDPN(param);
+            AllocateUDPNResult allocateUDPNResult = client.allocateUDPN(param);
             JSONComparator.jsonComparator(allocateUDPNResult);
         } catch (Exception e) {
             assertNull(e);

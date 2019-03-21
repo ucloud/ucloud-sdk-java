@@ -20,13 +20,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public AllocateUDPNResult AllocateUDPN(AllocateUDPNParam param) throws Exception {
+    public AllocateUDPNResult allocateUDPN(AllocateUDPNParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AllocateUDPNResult.class);
         return (AllocateUDPNResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void AllocateUDPN(AllocateUDPNParam param, UcloudHandler<AllocateUDPNResult> handler, Boolean... asyncFlag) {
+    public void allocateUDPN(AllocateUDPNParam param, UcloudHandler<AllocateUDPNResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateUDPNResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -35,13 +35,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public DescribeUDPNResult DescribeUDPN(DescribeUDPNParam param) throws Exception {
+    public DescribeUDPNResult describeUDPN(DescribeUDPNParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDPNResult.class);
         return (DescribeUDPNResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void DescribeUDPN(DescribeUDPNParam param, UcloudHandler<DescribeUDPNResult> handler, Boolean... asyncFlag) {
+    public void describeUDPN(DescribeUDPNParam param, UcloudHandler<DescribeUDPNResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUDPNResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -50,13 +50,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public GetUDPNLineListResult GetUDPNLineList(GetUDPNLineListParam param) throws Exception {
+    public GetUDPNLineListResult getUDPNLineList(GetUDPNLineListParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUDPNLineListResult.class);
         return (GetUDPNLineListResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void GetUDPNLineList(GetUDPNLineListParam param, UcloudHandler<GetUDPNLineListResult> handler, Boolean... asyncFlag) {
+    public void getUDPNLineList(GetUDPNLineListParam param, UcloudHandler<GetUDPNLineListResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUDPNLineListResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -65,13 +65,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public GetUDPNPriceResult GetUDPNPrice(GetUDPNPriceParam param) throws Exception {
+    public GetUDPNPriceResult getUDPNPrice(GetUDPNPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUDPNPriceResult.class);
         return (GetUDPNPriceResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void GetUDPNPrice(GetUDPNPriceParam param, UcloudHandler<GetUDPNPriceResult> handler, Boolean... asyncFlag) {
+    public void getUDPNPrice(GetUDPNPriceParam param, UcloudHandler<GetUDPNPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUDPNPriceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -80,13 +80,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public GetUDPNUpgradePriceResult GetUDPNUpgradePrice(GetUDPNUpgradePriceParam param) throws Exception {
+    public GetUDPNUpgradePriceResult getUDPNUpgradePrice(GetUDPNUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUDPNUpgradePriceResult.class);
         return (GetUDPNUpgradePriceResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void GetUDPNUpgradePrice(GetUDPNUpgradePriceParam param, UcloudHandler<GetUDPNUpgradePriceResult> handler, Boolean... asyncFlag) {
+    public void getUDPNUpgradePrice(GetUDPNUpgradePriceParam param, UcloudHandler<GetUDPNUpgradePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUDPNUpgradePriceResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -95,13 +95,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public ModifyUDPNBandwidthResult ModifyUDPNBandwidth(ModifyUDPNBandwidthParam param) throws Exception {
+    public ModifyUDPNBandwidthResult modifyUDPNBandwidth(ModifyUDPNBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUDPNBandwidthResult.class);
         return (ModifyUDPNBandwidthResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void ModifyUDPNBandwidth(ModifyUDPNBandwidthParam param, UcloudHandler<ModifyUDPNBandwidthResult> handler, Boolean... asyncFlag) {
+    public void modifyUDPNBandwidth(ModifyUDPNBandwidthParam param, UcloudHandler<ModifyUDPNBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUDPNBandwidthResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
@@ -110,13 +110,13 @@ public class DefaultUDPNClient extends DefaultUcloudClient implements UDPNClient
     }
 
     @Override
-    public ReleaseUDPNResult ReleaseUDPN(ReleaseUDPNParam param) throws Exception {
+    public ReleaseUDPNResult releaseUDPN(ReleaseUDPNParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReleaseUDPNResult.class);
         return (ReleaseUDPNResult) http.doGet(param, config, null);
     }
 
     @Override
-    public void ReleaseUDPN(ReleaseUDPNParam param, UcloudHandler<ReleaseUDPNResult> handler, Boolean... asyncFlag) {
+    public void releaseUDPN(ReleaseUDPNParam param, UcloudHandler<ReleaseUDPNResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ReleaseUDPNResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);

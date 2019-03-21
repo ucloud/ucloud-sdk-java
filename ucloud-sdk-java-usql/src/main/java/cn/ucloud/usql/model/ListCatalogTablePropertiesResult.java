@@ -31,7 +31,7 @@ public class ListCatalogTablePropertiesResult extends BaseResponseResult {
      * 数据表属性列表
      */
     @SerializedName("TableProperties")
-    private List<String> tableProperties;
+    private List<Property> tableProperties;
 
 
     public String getRequest() {
@@ -58,13 +58,11 @@ public class ListCatalogTablePropertiesResult extends BaseResponseResult {
         this.tableName = tableName;
     }
 
-    public List<String> getTableProperties() {
-        return this.tableProperties;
+    public List<Property> getTableProperties() {
+        return tableProperties;
     }
 
-    public void setTableProperties(List<String> tableProperties) {
+    public void setTableProperties(List<Property> tableProperties) {
         this.tableProperties = tableProperties;
     }
-
-
 }
