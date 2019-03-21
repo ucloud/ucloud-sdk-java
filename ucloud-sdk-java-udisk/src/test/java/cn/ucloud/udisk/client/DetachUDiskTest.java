@@ -25,8 +25,8 @@ public class DetachUDiskTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DetachUDiskParam("cn-sh2", "cn-sh2-01", "uhost-gddou3","bs-0pikhv");
         param.setProjectId("org-4nfe1i");
     }

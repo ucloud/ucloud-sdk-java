@@ -23,8 +23,8 @@ public class CreateULBTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CreateULBParam("cn-sh2");
         param.setProjectId("org-izug1m");
         param.setTag("sdk-java-test");

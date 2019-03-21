@@ -23,8 +23,8 @@ public class StopUHostInstanceTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new StopUHostInstanceParam("cn-sh2", "uhost-rjonwb2x");
         param.setZone("cn-sh2-02");
         param.setProjectId("org-izug1m");

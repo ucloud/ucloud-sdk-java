@@ -21,8 +21,8 @@ public class ModifyEIPWeightTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new ModifyEIPWeightParam("cn-bj2", "eip-vcsnbgi4", 100);
     }
 

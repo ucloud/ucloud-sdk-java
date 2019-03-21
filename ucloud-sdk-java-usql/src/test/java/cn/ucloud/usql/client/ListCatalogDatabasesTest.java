@@ -26,8 +26,8 @@ public class ListCatalogDatabasesTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUSQLClient(new USQLConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-bj2";
         param = new ListCatalogDatabasesParam(region);
         param.setProjectId("org-izug1m");

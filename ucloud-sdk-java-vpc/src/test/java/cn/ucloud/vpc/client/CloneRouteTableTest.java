@@ -22,8 +22,8 @@ public class CloneRouteTableTest {
     @Before
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CloneRouteTableParam("cn-bj2", "routetable-ucyi5kkm");
     }
 

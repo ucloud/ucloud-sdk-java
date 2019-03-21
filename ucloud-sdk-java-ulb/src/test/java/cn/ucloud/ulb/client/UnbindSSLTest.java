@@ -23,8 +23,8 @@ public class UnbindSSLTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new UnbindSSLParam("cn-bj2","ulb-1gtyz4","vserver-asrpxv","ssl-r2bxbf");
         param.setProjectId("org-4nfe1i");
     }

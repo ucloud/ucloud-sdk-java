@@ -26,8 +26,8 @@ public class DeleteNamedQueryTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUSQLClient(new USQLConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-bj2";
         Integer namedQueryId = 10000602;
         param = new DeleteNamedQueryParam(region, namedQueryId);

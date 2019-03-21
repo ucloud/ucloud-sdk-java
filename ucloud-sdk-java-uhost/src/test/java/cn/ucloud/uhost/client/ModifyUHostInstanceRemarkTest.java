@@ -26,8 +26,8 @@ public class ModifyUHostInstanceRemarkTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new ModifyUHostInstanceRemarkParam("cn-sh2","uhost-rjonwb2x");
         param.setProjectId("org-izug1m");
         param.setRemark("java-sdk-test");

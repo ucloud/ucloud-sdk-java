@@ -21,8 +21,8 @@ public class SetEIPPayModeTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new SetEIPPayModeParam("cn-sh2", "eip-vcsnbgi4", "Traffic", 4);
     }
 

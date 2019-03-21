@@ -25,8 +25,8 @@ public class DescribeURedisBackupStateTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUMEMClient(new UMEMConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-sh2";
         String groupId = "uredis-pgouk5n1";
         String backupId = "59575ff4-9c40-49aa-a4f3-81abc246a93b";

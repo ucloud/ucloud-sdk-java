@@ -25,8 +25,8 @@ public class ResizeUDiskTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new ResizeUDiskParam("cn-sh2","cn-sh2-01","bs-4qfrwv",8);
         param.setProjectId("org-4nfe1i");
     }

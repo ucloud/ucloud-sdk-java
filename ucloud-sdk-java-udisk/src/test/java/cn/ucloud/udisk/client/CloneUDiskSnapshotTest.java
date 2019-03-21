@@ -25,8 +25,8 @@ public class CloneUDiskSnapshotTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CloneUDiskSnapshotParam("cn-sh2", "cn-sh2-01", "clone-snapshot-bsSnap-c4kkvk",
                 "bsSnap-c4kkvk", 16);
         param.setProjectId("org-4nfe1i");
