@@ -25,8 +25,8 @@ public class DescribeSubnetResourceTest {
     @Before
     public void initData() {
         client = new DefaultVPCClient(new VPCConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DescribeSubnetResourceParam("cn-bj2", "subnet-rmitl4");
     }
 

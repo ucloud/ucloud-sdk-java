@@ -28,8 +28,8 @@ public class UpgradeToArkUHostInstanceTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new UpgradeToArkUHostInstanceParam("cn-sh2","cn-sh2-02");
         param.setProjectId("org-izug1m");
         ArrayList<String> ids = new ArrayList<>();

@@ -25,8 +25,8 @@ public class GetGlobalSSHTrafficTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String projectId = "org-izug1m";
         String uGAId = "uga-eskzpkk2";
         Integer beginTime = 1552460481;

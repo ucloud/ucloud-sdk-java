@@ -25,8 +25,8 @@ public class GetUHostInstanceVncInfoTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new GetUhostInstanceVncInfoParam("cn-bj2", "uhost-rjonwb2x");
         param.setProjectId("org-izug1m");
         param.setZone("cn-bj2-02");

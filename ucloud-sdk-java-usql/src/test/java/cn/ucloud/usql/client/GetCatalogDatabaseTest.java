@@ -26,8 +26,8 @@ public class GetCatalogDatabaseTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUSQLClient(new USQLConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-bj2";
         String databaseName = "sdk_java";
         param = new GetCatalogDatabaseParam(region, databaseName);

@@ -25,8 +25,8 @@ public class DescribeURedisVersionTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUMEMClient(new UMEMConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-sh2";
         String zone = "cn-sh2-02";
         param = new DescribeURedisVersionParam(region, zone);

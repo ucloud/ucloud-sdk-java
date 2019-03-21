@@ -73,8 +73,8 @@ private ${api.name}Param param;
 @Before
 public void setUp() throws Exception {
 client =  new Default${api.product?upper_case?replace("-","_")}Client(new ${api.product?upper_case?replace("-","_")}Config(
-new Account(System.getenv("UcloudPrivateKey"),
-System.getenv("UcloudPublicKey"))));
+new Account(System.getenv("UCloudPrivateKey"),
+System.getenv("UCloudPublicKey"))));
 <@testParam/>
 param = new ${api.name}Param(${paramString});
 param.setProjectId("org-izug1m");

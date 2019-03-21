@@ -23,8 +23,8 @@ public class RemoveUFSVolumeTest {
     @Before
     public void initData() {
         client = new DefaultUFSClient(new UFSConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new RemoveUFSVolumeParam("cn-bj2", "ufs-vnc50gpn");
         param.setProjectId("org-izug1m");
     }

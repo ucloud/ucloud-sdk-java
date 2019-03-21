@@ -25,8 +25,8 @@ public class RestoreUDiskTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new RestoreUDiskParam("cn-sh2", "cn-sh2-01", "bs-4qfrwv");
         param.setProjectId("org-4nfe1i");
     }

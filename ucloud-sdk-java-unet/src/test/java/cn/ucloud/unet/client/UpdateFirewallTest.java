@@ -24,8 +24,8 @@ public class UpdateFirewallTest {
     @Before
     public void initData() {
         client = new DefaultUnetClient(new UnetConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
 
         List<UpdateFirewallParam.Rule> rules = new ArrayList<>();
         rules.add(new UpdateFirewallParam.Rule("TCP", 24, "120.132.8.183", "ACCEPT", "MEDIUM"));

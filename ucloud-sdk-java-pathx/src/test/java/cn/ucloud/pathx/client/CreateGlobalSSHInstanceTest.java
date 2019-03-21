@@ -25,8 +25,8 @@ public class CreateGlobalSSHInstanceTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String projectId = "org-izug1m";
         String area = "香港";
         String targetIP = "10.25.178.61";

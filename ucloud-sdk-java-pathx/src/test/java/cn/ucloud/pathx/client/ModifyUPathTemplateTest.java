@@ -25,8 +25,8 @@ public class ModifyUPathTemplateTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultPATHXClient(new PATHXConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String projectId = "cn-sh2";
         String upathId = "xxx";
         param = new ModifyUPathTemplateParam(projectId,upathId);

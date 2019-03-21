@@ -21,8 +21,8 @@ public class TerminateCustomImageTest {
     @Before
     public void initData() {
         client = new DefaultUhostClient(new UhostConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new TerminateCustomImageParam("cn-bj2","uimage-tjbrnz");
         param.setProjectId("org-4nfe1i");
     }

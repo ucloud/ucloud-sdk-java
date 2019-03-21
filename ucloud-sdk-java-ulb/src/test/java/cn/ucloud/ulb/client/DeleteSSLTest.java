@@ -23,8 +23,8 @@ public class DeleteSSLTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DeleteSSLParam("cn-bj2","ssl-2ynhbu");
         param.setProjectId("org-4nfe1i");
     }

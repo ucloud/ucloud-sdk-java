@@ -25,8 +25,8 @@ public class DescribeUMemSpaceTest {
     @Before
     public void setUp() throws Exception {
         client = new DefaultUMEMClient(new UMEMConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         String region = "cn-sh2";
         param = new DescribeUMemSpaceParam(region);
         param.setProjectId("org-izug1m");

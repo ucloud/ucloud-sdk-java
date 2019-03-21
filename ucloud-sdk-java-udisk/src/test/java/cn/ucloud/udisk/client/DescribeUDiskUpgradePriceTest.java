@@ -25,8 +25,8 @@ public class DescribeUDiskUpgradePriceTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DescribeUDiskUpgradePriceParam("cn-sh2","cn-sh2-01","org-4nfe1i",
                 32,"bs-4qfrwv","No");
     }

@@ -25,8 +25,8 @@ public class DeleteULBTest {
     @Before
     public void initData() {
         client = new DefaultULBClient(new ULBConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new DeleteULBParam("cn-bj2","ulb-lzpob3");
         param.setProjectId("org-4nfe1i");
     }

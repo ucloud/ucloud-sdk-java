@@ -23,8 +23,8 @@ public class CreateUDiskSnapshotTest {
     @Before
     public void initData() {
         client = new DefaultUdiskClient(new UdiskConfig(
-                new Account(System.getenv("UcloudPrivateKey"),
-                        System.getenv("UcloudPublicKey"))));
+                new Account(System.getenv("UCloudPrivateKey"),
+                        System.getenv("UCloudPublicKey"))));
         param = new CreateUDiskSnapshotParam("cn-sh2", "cn-sh2-01", "bs-4qfrwv","snapshot-bs-4qfrwv");
         param.setQuantity(2);
         param.setProjectId("org-4nfe1i");
