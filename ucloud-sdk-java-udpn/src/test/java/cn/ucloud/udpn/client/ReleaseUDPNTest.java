@@ -31,7 +31,7 @@ public class ReleaseUDPNTest {
     @Test
     public void releaseUDPN() {
         try {
-            ReleaseUDPNResult result = client.ReleaseUDPN(param);
+            ReleaseUDPNResult result = client.releaseUDPN(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);

@@ -19,7 +19,7 @@ public interface UDPNClient extends UcloudClient {
      * @return AllocateUDPNResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    AllocateUDPNResult AllocateUDPN(AllocateUDPNParam param) throws Exception;
+    AllocateUDPNResult allocateUDPN(AllocateUDPNParam param) throws Exception;
 
     /**
      * 分配 UDPN 专线
@@ -28,7 +28,7 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void AllocateUDPN(AllocateUDPNParam param, UcloudHandler<AllocateUDPNResult> handler, Boolean... asyncFlag);
+    void allocateUDPN(AllocateUDPNParam param, UcloudHandler<AllocateUDPNResult> handler, Boolean... asyncFlag);
 
     /**
      * 描述 UDPN
@@ -37,7 +37,7 @@ public interface UDPNClient extends UcloudClient {
      * @return DescribeUDPNResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    DescribeUDPNResult DescribeUDPN(DescribeUDPNParam param) throws Exception;
+    DescribeUDPNResult describeUDPN(DescribeUDPNParam param) throws Exception;
 
     /**
      * 描述 UDPN
@@ -46,7 +46,7 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void DescribeUDPN(DescribeUDPNParam param, UcloudHandler<DescribeUDPNResult> handler, Boolean... asyncFlag);
+    void describeUDPN(DescribeUDPNParam param, UcloudHandler<DescribeUDPNResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取当前支持的专线线路列表
@@ -56,7 +56,7 @@ public interface UDPNClient extends UcloudClient {
      * @return GetUDPNLineListResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUDPNLineListResult GetUDPNLineList(GetUDPNLineListParam param) throws Exception;
+    GetUDPNLineListResult getUDPNLineList(GetUDPNLineListParam param) throws Exception;
 
     /**
      * 获取当前支持的专线线路列表
@@ -66,7 +66,7 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void GetUDPNLineList(GetUDPNLineListParam param, UcloudHandler<GetUDPNLineListResult> handler, Boolean... asyncFlag);
+    void getUDPNLineList(GetUDPNLineListParam param, UcloudHandler<GetUDPNLineListResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取 UDPN 价格
@@ -76,7 +76,7 @@ public interface UDPNClient extends UcloudClient {
      * @return GetUDPNPriceResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUDPNPriceResult GetUDPNPrice(GetUDPNPriceParam param) throws Exception;
+    GetUDPNPriceResult getUDPNPrice(GetUDPNPriceParam param) throws Exception;
 
     /**
      * 获取 UDPN 价格
@@ -86,7 +86,7 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void GetUDPNPrice(GetUDPNPriceParam param, UcloudHandler<GetUDPNPriceResult> handler, Boolean... asyncFlag);
+    void getUDPNPrice(GetUDPNPriceParam param, UcloudHandler<GetUDPNPriceResult> handler, Boolean... asyncFlag);
 
     /**
      * 获取专线升级价格
@@ -95,7 +95,7 @@ public interface UDPNClient extends UcloudClient {
      * @return GetUDPNUpgradePriceResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUDPNUpgradePriceResult GetUDPNUpgradePrice(GetUDPNUpgradePriceParam param) throws Exception;
+    GetUDPNUpgradePriceResult getUDPNUpgradePrice(GetUDPNUpgradePriceParam param) throws Exception;
 
     /**
      * 获取专线升级价格
@@ -104,7 +104,7 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void GetUDPNUpgradePrice(GetUDPNUpgradePriceParam param, UcloudHandler<GetUDPNUpgradePriceResult> handler, Boolean... asyncFlag);
+    void getUDPNUpgradePrice(GetUDPNUpgradePriceParam param, UcloudHandler<GetUDPNUpgradePriceResult> handler, Boolean... asyncFlag);
 
     /**
      * 修改带宽值
@@ -113,7 +113,7 @@ public interface UDPNClient extends UcloudClient {
      * @return ModifyUDPNBandwidthResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    ModifyUDPNBandwidthResult ModifyUDPNBandwidth(ModifyUDPNBandwidthParam param) throws Exception;
+    ModifyUDPNBandwidthResult modifyUDPNBandwidth(ModifyUDPNBandwidthParam param) throws Exception;
 
     /**
      * 修改带宽值
@@ -122,7 +122,7 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void ModifyUDPNBandwidth(ModifyUDPNBandwidthParam param, UcloudHandler<ModifyUDPNBandwidthResult> handler, Boolean... asyncFlag);
+    void modifyUDPNBandwidth(ModifyUDPNBandwidthParam param, UcloudHandler<ModifyUDPNBandwidthResult> handler, Boolean... asyncFlag);
 
     /**
      * 释放 UDPN
@@ -131,7 +131,7 @@ public interface UDPNClient extends UcloudClient {
      * @return ReleaseUDPNResult 结果对象
      * @throws Exception 出错则抛出异常
      */
-    ReleaseUDPNResult ReleaseUDPN(ReleaseUDPNParam param) throws Exception;
+    ReleaseUDPNResult releaseUDPN(ReleaseUDPNParam param) throws Exception;
 
     /**
      * 释放 UDPN
@@ -140,5 +140,5 @@ public interface UDPNClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
      */
-    void ReleaseUDPN(ReleaseUDPNParam param, UcloudHandler<ReleaseUDPNResult> handler, Boolean... asyncFlag);
+    void releaseUDPN(ReleaseUDPNParam param, UcloudHandler<ReleaseUDPNResult> handler, Boolean... asyncFlag);
 }

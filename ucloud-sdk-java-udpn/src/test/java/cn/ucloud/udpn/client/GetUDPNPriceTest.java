@@ -29,7 +29,7 @@ public class GetUDPNPriceTest {
     @Test
     public void getUDPNPrice() {
         try {
-            GetUDPNPriceResult GetUDPNPriceResult = client.GetUDPNPrice(param);
+            GetUDPNPriceResult GetUDPNPriceResult = client.getUDPNPrice(param);
             System.out.println(GetUDPNPriceResult);
         } catch (Exception e) {
             e.printStackTrace();
