@@ -536,26 +536,6 @@ public interface UMEMClient extends UcloudClient {
                                     UcloudHandler<UpdateURedisBackupStrategyResult> handler,
                                     Boolean... asyncFlag);
 
-    /**
-     * 检查高性能UMem剩余资源
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckUDredisSpaceAllowanceResult checkUDredisSpaceAllowance(
-            CheckUDredisSpaceAllowanceParam param) throws Exception;
-
-    /**
-     * 检查高性能UMem剩余资源 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkUDredisSpaceAllowance(CheckUDredisSpaceAllowanceParam param,
-                                    UcloudHandler<CheckUDredisSpaceAllowanceResult> handler,
-                                    Boolean... asyncFlag);
 
     /**
      * 获取价格
