@@ -4,6 +4,7 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @Description : 修改配置文件 参数类
@@ -36,12 +37,12 @@ public class ChangeUDBParamGroupParam extends BaseRequestParam {
      * 参数组Id
      */
     @UcloudParam("GroupId")
-    @NotEmpty(message = "groupId can not be empty")
-    private String groupId;
+    @NotNull(message = "groupId can not be null")
+    private Integer groupId;
 
     public ChangeUDBParamGroupParam(@NotEmpty(message = "region can not be empty") String region,
                                     @NotEmpty(message = "dbId can not be empty") String dbId,
-                                    @NotEmpty(message = "groupId can not be empty") String groupId) {
+                                    @NotNull(message = "groupId can not be empty") Integer groupId) {
         super("ChangeUDBParamGroup");
         this.region = region;
         this.dbId = dbId;
@@ -72,11 +73,12 @@ public class ChangeUDBParamGroupParam extends BaseRequestParam {
         this.dbId = dbId;
     }
 
-    public String getGroupId() {
+
+    public Integer getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(String groupId) {
+    public void setGroupId(Integer groupId) {
         this.groupId = groupId;
     }
 }
