@@ -417,21 +417,6 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
         }
     }
 
-    @Override
-    public CheckUDredisSpaceAllowanceResult checkUDredisSpaceAllowance(CheckUDredisSpaceAllowanceParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(CheckUDredisSpaceAllowanceResult.class);
-        return (CheckUDredisSpaceAllowanceResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void checkUDredisSpaceAllowance(CheckUDredisSpaceAllowanceParam param,
-                                           UcloudHandler<CheckUDredisSpaceAllowanceResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(CheckUDredisSpaceAllowanceResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
 
 
     @Override
