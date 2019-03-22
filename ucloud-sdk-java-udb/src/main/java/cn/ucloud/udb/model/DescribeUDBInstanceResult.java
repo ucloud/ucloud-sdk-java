@@ -23,7 +23,7 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("virtual_ip")
         private String virtualIp;
 
-        @SerializedName("Port")
+        @SerializedName("port")
         private Integer port;
 
         public String getDbId() {
