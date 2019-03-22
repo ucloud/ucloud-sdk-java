@@ -2,7 +2,6 @@ package cn.ucloud.udb.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseResponseResult;
-import com.google.gson.annotations.SerializedName;
 
 /**
  * @Description : 创建UDB实例的slave 结果类
@@ -14,7 +13,7 @@ public class CreateUDBSlaveResult extends BaseResponseResult {
     /**
      * 创建slave的DBId
      */
-    @SerializedName("DBId")
+    @UcloudParam("DBId")
     private String dbId;
 
     public String getDbId() {
