@@ -25,7 +25,7 @@ public class UPathSet {
      * 带宽
      */
     @SerializedName("Bandwidth")
-    private String bandwidth;
+    private Integer bandwidth;
     /**
      * 线路ID
      */
@@ -64,11 +64,11 @@ public class UPathSet {
         this.uPathId = uPathId;
     }
 
-    public String getBandwidth() {
-        return this.bandwidth;
+    public Integer getBandwidth() {
+        return bandwidth;
     }
 
-    public void setBandwidth(String bandwidth) {
+    public void setBandwidth(Integer bandwidth) {
         this.bandwidth = bandwidth;
     }
 
