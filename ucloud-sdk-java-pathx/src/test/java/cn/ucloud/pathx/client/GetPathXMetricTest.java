@@ -30,8 +30,8 @@ public class GetPathXMetricTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        String projectId = "org-izug1m";
-        String resourceId = "cn-sh2";
+        String projectId = "org-o1ftjk";
+        String resourceId = "upath-yxpvs2l0";
         Integer beginTime = 1;
         Integer endTime = 1;
         String resourceType = "upath";

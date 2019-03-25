@@ -42,6 +42,49 @@ public class MetricPeriod {
     @SerializedName("BandOut")
     private List<MatricPoint> bandOut;
 
+    @SerializedName("TCPDelay")
+    private Double tcpDelay;
+
+    @SerializedName("InputRetransmitRate")
+    private Double inputRetransmitRate;
+
+    @SerializedName("OutputRetransmitRate")
+    private Double outputRetransmitRate;
+
+    @SerializedName("TCPConNum")
+    private Integer tcpConNum;
+
+    public Double getTcpDelay() {
+        return tcpDelay;
+    }
+
+    public void setTcpDelay(Double tcpDelay) {
+        this.tcpDelay = tcpDelay;
+    }
+
+    public Double getInputRetransmitRate() {
+        return inputRetransmitRate;
+    }
+
+    public void setInputRetransmitRate(Double inputRetransmitRate) {
+        this.inputRetransmitRate = inputRetransmitRate;
+    }
+
+    public Double getOutputRetransmitRate() {
+        return outputRetransmitRate;
+    }
+
+    public void setOutputRetransmitRate(Double outputRetransmitRate) {
+        this.outputRetransmitRate = outputRetransmitRate;
+    }
+
+    public Integer getTcpConNum() {
+        return tcpConNum;
+    }
+
+    public void setTcpConNum(Integer tcpConNum) {
+        this.tcpConNum = tcpConNum;
+    }
 
     public List<MatricPoint> getNetworkOut() {
         return this.networkOut;

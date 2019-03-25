@@ -16,16 +16,14 @@ public class GetPathXMetricResult extends BaseResponseResult {
      *
      */
     @SerializedName("DataSet")
-    private List<MetricPeriod> dataSet;
+    private MetricPeriod dataSet;
 
 
-    public List<MetricPeriod> getDataSet() {
-        return this.dataSet;
+    public MetricPeriod getDataSet() {
+        return dataSet;
     }
 
-    public void setDataSet(List<MetricPeriod> dataSet) {
+    public void setDataSet(MetricPeriod dataSet) {
         this.dataSet = dataSet;
     }
-
-
 }
