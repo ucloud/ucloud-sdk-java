@@ -51,6 +51,7 @@ public class UGAAInfo {
      */
     @SerializedName("UPathSet")
     private List<UPathSet> uPathSet;
+
     /**
      * 端口配置信息
      */
@@ -59,6 +60,7 @@ public class UGAAInfo {
 
     @SerializedName("OutPublicIpList")
     private List<OutPublicIpInfo> outPublicIpInfos;
+
 
     public List<OutPublicIpInfo> getOutPublicIpInfos() {
         return outPublicIpInfos;
