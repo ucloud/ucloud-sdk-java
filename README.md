@@ -27,7 +27,7 @@ ucloud开发者工具套件（SDK）。<br/>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.8.0-release</version>
+      <version>0.8.1-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -141,4 +141,6 @@ public class Main {
 - 0.8.0-release
     
     新增UMem/USQL/UDB/PATHX/UDPN产品，对既有产品接口进行更新维护。
+- 0.8.1-release
+    修复UNet.CreateFirewall规则错误的bug以及udb部分接口与实际返回有出入的问题。
     
