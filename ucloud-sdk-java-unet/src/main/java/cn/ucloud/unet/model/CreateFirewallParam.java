@@ -55,7 +55,7 @@ public class CreateFirewallParam extends BaseRequestParam {
     @UcloudParam("Rule")
     public List<Param> checkFirewallRule() throws ValidatorException {
         List<Param> list = new ArrayList<>();
-        if (rule == null || rule.size() <= 0){
+        if (rule == null || rule.isEmpty()) {
             throw new ValidatorException("rule can not be empty");
         }
         List<Rule> rules = this.getRule();
