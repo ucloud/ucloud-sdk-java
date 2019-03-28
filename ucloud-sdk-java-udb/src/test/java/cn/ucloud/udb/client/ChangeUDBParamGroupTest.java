@@ -22,7 +22,7 @@ public class ChangeUDBParamGroupTest {
     @Before
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
-        param = new ChangeUDBParamGroupParam("cn-sh2", "udb-04wyi5pz", "2");
+        param = new ChangeUDBParamGroupParam("cn-sh2", "udb-04wyi5pz", 2);
         param.setProjectId("org-izug1m");
     }
 
