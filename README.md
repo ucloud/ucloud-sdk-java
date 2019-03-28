@@ -140,7 +140,8 @@ public class Main {
     修复DescribeEIP接口与实际接口有出入的问题
 - 0.8.0-release
     
-    新增UMem/USQL/UDB/PATHX/UDPN产品，对既有产品接口进行更新维护。
+    新增UMem/USQL/UDB/PATHX/UDPN产品，对既有产品接口进行更新维护
 - 0.8.1-release
-    修复UNet.CreateFirewall规则错误的bug以及udb部分接口与实际返回有出入的问题。
+
+    修复UNet.CreateFirewall规则错误的bug以及udb部分接口与实际返回有出入的问题
     

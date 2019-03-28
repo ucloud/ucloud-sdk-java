@@ -123,6 +123,9 @@ public class UMemDataSet {
      */
     @SerializedName("BackupTime")
     private Integer backupTime;
+
+    @SerializedName("ModifyTime")
+    private Integer modifyTime;
     /**
      * 是否开启高可用,enable,disable
      */
@@ -149,6 +152,18 @@ public class UMemDataSet {
 
     @SerializedName("VPCId")
     private String vpcId;
+
+    public String getOwnSlave() {
+        return ownSlave;
+    }
+
+    public Integer getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Integer modifyTime) {
+        this.modifyTime = modifyTime;
+    }
 
     public void setOwnSlave(String ownSlave) {
         this.ownSlave = ownSlave;
