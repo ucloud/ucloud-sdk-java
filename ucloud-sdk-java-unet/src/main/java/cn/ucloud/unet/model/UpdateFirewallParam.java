@@ -41,31 +41,32 @@ public class UpdateFirewallParam extends BaseRequestParam {
     @UcloudParam("Rule")
     public List<Param> checkFirewallRule() throws ValidatorException {
         List<Param> list = new ArrayList<>();
-        if (this.getRule() != null && !this.getRule().isEmpty()) {
-            List<Rule> rules = this.getRule();
-            String exceptionFormat = "rule[%d%s";
-            for (int i = 0, len = rules.size(); i < len; i++) {
-                Rule rule = rules.get(i);
-                if (rule == null) {
-                    throw new ValidatorException(String.format(exceptionFormat, i, " can not be null"));
-                } else {
-                    if (StringUtils.isBlank(rule.getProtocol())) {
-                        throw new ValidatorException(String.format(exceptionFormat, i, "protocol can not be empty"));
-                    }
-                    if (rule.getPort() == null || rule.getPort() <= 0) {
-                        throw new ValidatorException(String.format(exceptionFormat, i, "port can not be null or value <= 0"));
-                    }
-                    if (StringUtils.isBlank(rule.getIp())) {
-                        throw new ValidatorException(String.format(exceptionFormat, i, "ip can not be empty"));
-                    }
-                    if (StringUtils.isBlank(rule.getAcceptOrNot())) {
-                        throw new ValidatorException(String.format(exceptionFormat, i, "acceptOrNot can not be empty"));
-                    }
-                    if (StringUtils.isBlank(rule.getPriority())) {
-                        throw new ValidatorException(String.format(exceptionFormat, i, "priority can not be empty"));
-                    }
-                    list.add(new Param("Rule." + i, rule.getRule()));
+        if (rule == null || rule.isEmpty()) {
+            throw new ValidatorException("rule can not be empty");
+        }
+        List<Rule> rules = this.getRule();
+        String exceptionFormat = "rule[%d%s";
+        for (int i = 0, len = rules.size(); i < len; i++) {
+            Rule rule = rules.get(i);
+            if (rule == null) {
+                throw new ValidatorException(String.format(exceptionFormat, i, " can not be null"));
+            } else {
+                if (StringUtils.isBlank(rule.getProtocol())) {
+                    throw new ValidatorException(String.format(exceptionFormat, i, "protocol can not be empty"));
                 }
+                if (rule.getPort() == null || rule.getPort() <= 0) {
+                    throw new ValidatorException(String.format(exceptionFormat, i, "port can not be null or value <= 0"));
+                }
+                if (StringUtils.isBlank(rule.getIp())) {
+                    throw new ValidatorException(String.format(exceptionFormat, i, "ip can not be empty"));
+                }
+                if (StringUtils.isBlank(rule.getAcceptOrNot())) {
+                    throw new ValidatorException(String.format(exceptionFormat, i, "acceptOrNot can not be empty"));
+                }
+                if (StringUtils.isBlank(rule.getPriority())) {
+                    throw new ValidatorException(String.format(exceptionFormat, i, "priority can not be empty"));
+                }
+                list.add(new Param("Rule." + i, rule.getRule()));
             }
         }
         return list;
@@ -155,22 +156,7 @@ public class UpdateFirewallParam extends BaseRequestParam {
         @NotEmpty(message = "rule can not be empty")
         @UcloudParam("Rule")
         public String getRule() {
-            if (port <= 0) {
-                port = 22;
-            }
-            if (StringUtils.isBlank(protocol)) {
-                protocol = "TCP";
-            }
-            if (StringUtils.isBlank(ip)) {
-                ip = "192.168.1.1";
-            }
-            if (StringUtils.isBlank(priority)) {
-                priority = "LOW";
-            }
-            if (StringUtils.isBlank(acceptOrNot)) {
-                acceptOrNot = "DROP";
-            }
-            rule = String.format(ruleFormat, protocol, port, ip + "/" + port, acceptOrNot, priority);
+            rule = String.format(ruleFormat, protocol, port, ip, acceptOrNot, priority);
             return rule;
         }
 
