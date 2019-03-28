@@ -28,7 +28,7 @@ public class SetUDiskUDataArkModeTest {
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
         param = new SetUDiskUDataArkModeParam("cn-sh2", "cn-sh2-01", "bs-4qfrwv","org-4nfe1i",
-                "Yes");
+                "Yes","Dynamic");
     }
 
     @Test
