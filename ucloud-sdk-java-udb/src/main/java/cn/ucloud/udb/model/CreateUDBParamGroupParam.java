@@ -4,7 +4,6 @@ import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 /**
  * @Description : 从已有配置文件创建新配置文件 参数类
@@ -44,9 +43,9 @@ public class CreateUDBParamGroupParam extends BaseRequestParam {
     /**
      * 源参数组id
      */
-    @NotNull(message = "srcGroupId can not be null")
+    @NotEmpty(message = "srcGroupId can not be empty")
     @UcloudParam("SrcGroupId")
-    private Integer srcGroupId;
+    private String srcGroupId;
 
 
     /**
@@ -75,7 +74,7 @@ public class CreateUDBParamGroupParam extends BaseRequestParam {
                                     @NotEmpty(message = "zone can not be empty") String zone,
                                     @NotEmpty(message = "groupName can not be empty") String groupName,
                                     @NotEmpty(message = "description can not be empty") String description,
-                                    @NotNull(message = "srcGroupId can not be null") Integer srcGroupId,
+                                    @NotEmpty(message = "srcGroupId can not be empty") String srcGroupId,
                                     @NotEmpty(message = "dbTypeId can not be empty") String dbTypeId) {
         super("CreateUDBParamGroup");
         this.region = region;
@@ -118,11 +117,11 @@ public class CreateUDBParamGroupParam extends BaseRequestParam {
         this.description = description;
     }
 
-    public Integer getSrcGroupId() {
+    public String getSrcGroupId() {
         return srcGroupId;
     }
 
-    public void setSrcGroupId(Integer srcGroupId) {
+    public void setSrcGroupId(String srcGroupId) {
         this.srcGroupId = srcGroupId;
     }
 
