@@ -24,7 +24,7 @@ public class CreateUDBParamGroupTest {
     public void setUp() throws Exception {
         client = GetUDBClient.getUDBClient();
         param = new CreateUDBParamGroupParam("cn-sh2", "cn-sh2-02", "sdk-java-param-group",
-                "sdk-java", "udb-hzceb3cr", "mongodb-3.2");
+                "sdk-java", 4, "mongodb-3.2");
         param.setProjectId("org-izug1m");
     }
 
