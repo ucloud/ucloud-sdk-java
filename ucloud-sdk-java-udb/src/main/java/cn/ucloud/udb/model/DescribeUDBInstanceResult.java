@@ -15,78 +15,6 @@ import java.util.List;
  **/
 public class DescribeUDBInstanceResult extends BaseResponseResult {
 
-    private static class MongosDB {
-
-        @SerializedName("db_id")
-        private String dbId;
-
-        @SerializedName("virtual_ip")
-        private String virtualIp;
-
-        @SerializedName("port")
-        private Integer port;
-
-        public String getDbId() {
-            return dbId;
-        }
-
-        public void setDbId(String dbId) {
-            this.dbId = dbId;
-        }
-
-        public String getVirtualIp() {
-            return virtualIp;
-        }
-
-        public void setVirtualIp(String virtualIp) {
-            this.virtualIp = virtualIp;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-    }
-
-    private static class ConfigDB {
-
-        @SerializedName("db_id")
-        private String dbId;
-
-        @SerializedName("virtual_ip")
-        private String virtualIp;
-
-        @SerializedName("port")
-        private Integer port;
-
-        public String getDbId() {
-            return dbId;
-        }
-
-        public void setDbId(String dbId) {
-            this.dbId = dbId;
-        }
-
-        public String getVirtualIp() {
-            return virtualIp;
-        }
-
-        public void setVirtualIp(String virtualIp) {
-            this.virtualIp = virtualIp;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-    }
-
     public static class UDBSlaveInstance {
 
         /**
@@ -912,28 +840,6 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
 
         @SerializedName("IsForceDump")
         private Integer isForceDump;
-
-        @SerializedName("MongosDBs")
-        private List<MongosDB> mongosDBs;
-
-        @SerializedName("ConfigDBs")
-        private List<ConfigDB> configDBs;
-
-        public List<MongosDB> getMongosDBs() {
-            return mongosDBs;
-        }
-
-        public void setMongosDBs(List<MongosDB> mongosDBs) {
-            this.mongosDBs = mongosDBs;
-        }
-
-        public List<ConfigDB> getConfigDBs() {
-            return configDBs;
-        }
-
-        public void setConfigDBs(List<ConfigDB> configDBs) {
-            this.configDBs = configDBs;
-        }
 
         public Boolean getEnableRWSplitting() {
             return enableRWSplitting;
