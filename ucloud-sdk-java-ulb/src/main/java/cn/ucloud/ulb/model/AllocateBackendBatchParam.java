@@ -54,7 +54,7 @@ public class AllocateBackendBatchParam extends BaseRequestParam {
          */
         private String ip;
 
-        public Backend(String resourceId, String resourceType,Integer port,Integer enabled,String ip) {
+        public Backend(String resourceId, String resourceType, Integer port, Integer enabled, String ip) {
             this.resourceId = resourceId;
             this.resourceType = resourceType;
             this.port = port;
@@ -134,41 +134,40 @@ public class AllocateBackendBatchParam extends BaseRequestParam {
     @UcloudParam("Backends")
     public List<Param> checkBackends() throws Exception {
         List<Param> list = new ArrayList<>();
-        if (this.backends != null) {
-            int len = this.backends.size();
-            String exceptionFormat = "backend[%d].%s";
-            for (int i = 0; i < len; i++) {
-                Backend backend = this.backends.get(i);
-                StringBuilder valueBuild=new StringBuilder();
-                if (backend.resourceId == null || backend.resourceId.length() <=0 ){
-                    throw new ValidationException(String.format(exceptionFormat,i,"resourceId can not be empty"));
-                }else {
-                    valueBuild.append(backend.resourceId);
-                }
-                if (backend.resourceType == null || backend.resourceType.length() <= 0){
-                    throw new ValidationException(String.format(exceptionFormat,i,"resourceType can not be empty"));
-                }else {
-                    valueBuild.append("|"+backend.resourceType);
-                }
-                if (backend.port != null){
-                    valueBuild.append("|"+backend.port);
-                }else {
-                    throw new ValidationException(String.format(exceptionFormat,i,"port can not be null"));
-                }
-                if (backend.enabled != null){
-                    valueBuild.append("|"+backend.enabled);
-                }else {
-                    throw new ValidationException(String.format(exceptionFormat,i,"enabled can not be null"));
-                }
-                if (backend.ip != null && backend.ip.length() > 0){
-                    valueBuild.append("|"+backend.ip);
-                }else {
-                    throw new ValidationException(String.format(exceptionFormat,i,"ip can not be empty"));
-                }
-                list.add(new Param("Backends."+i,valueBuild.toString()));
-            }
-        } else {
+        if (this.backends == null || this.backends.isEmpty()) {
             throw new ValidationException("backends can not be null");
+        }
+        int size = this.backends.size();
+        String exceptionFormat = "backend[%d].%s";
+        for (int i = 0; i < size; i++) {
+            Backend backend = this.backends.get(i);
+            StringBuilder valueBuild = new StringBuilder();
+            if (backend.resourceId == null || backend.resourceId.length() <= 0) {
+                throw new ValidationException(String.format(exceptionFormat, i, "resourceId can not be empty"));
+            } else {
+                valueBuild.append(backend.resourceId);
+            }
+            if (backend.resourceType == null || backend.resourceType.length() <= 0) {
+                throw new ValidationException(String.format(exceptionFormat, i, "resourceType can not be empty"));
+            } else {
+                valueBuild.append("|" + backend.resourceType);
+            }
+            if (backend.port != null) {
+                valueBuild.append("|" + backend.port);
+            } else {
+                throw new ValidationException(String.format(exceptionFormat, i, "port can not be null"));
+            }
+            if (backend.enabled != null) {
+                valueBuild.append("|" + backend.enabled);
+            } else {
+                throw new ValidationException(String.format(exceptionFormat, i, "enabled can not be null"));
+            }
+            if (backend.ip != null && backend.ip.length() > 0) {
+                valueBuild.append("|" + backend.ip);
+            } else {
+                throw new ValidationException(String.format(exceptionFormat, i, "ip can not be empty"));
+            }
+            list.add(new Param("Backends." + i, valueBuild.toString()));
         }
         return list;
     }
