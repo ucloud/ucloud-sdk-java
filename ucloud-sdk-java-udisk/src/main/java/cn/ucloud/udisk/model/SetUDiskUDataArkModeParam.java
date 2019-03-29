@@ -40,7 +40,6 @@ public class SetUDiskUDataArkModeParam extends BaseRequestParam {
     @UcloudParam("UDataArkMode")
     private String uDataArkMode;
 
-    @NotEmpty(message = "chargeType can not be empty")
     @UcloudParam("ChargeType")
     private String chargeType;
 
