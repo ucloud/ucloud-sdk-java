@@ -31,10 +31,10 @@ public class InsertPathXWhitelistTest {
         client = new DefaultPATHXClient(new PATHXConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        String projectId = "org-izug1m";
-        String instanceId = "uga-eskzpkk2";
+        String projectId = "org-o1ftjk";
+        String instanceId = "uga-bq14khi3";
         List<PathXWhitelist> whitelists = new ArrayList<>();
-        whitelists.add(new PathXWhitelist("192.168.1.2","tcp","22"));
+        whitelists.add(new PathXWhitelist("192.168.1.2","tcp","23"));
         param = new InsertPathXWhitelistParam(projectId, instanceId,whitelists);
     }
 

@@ -40,6 +40,12 @@ public class SetUDiskUDataArkModeParam extends BaseRequestParam {
     @UcloudParam("UDataArkMode")
     private String uDataArkMode;
 
+    @NotEmpty(message = "chargeType can not be empty")
+    @UcloudParam("ChargeType")
+    private String chargeType;
+
+    @UcloudParam("Quantity")
+    private Integer quantity;
 
     public SetUDiskUDataArkModeParam(@NotEmpty(message = "region can not be empty") String region,
                                      @NotEmpty(message = "zone can not be empty") String zone,
@@ -52,6 +58,22 @@ public class SetUDiskUDataArkModeParam extends BaseRequestParam {
         this.uDiskId = uDiskId;
         this.projectId = projectId;
         this.uDataArkMode = uDataArkMode;
+    }
+
+    public String getChargeType() {
+        return chargeType;
+    }
+
+    public void setChargeType(String chargeType) {
+        this.chargeType = chargeType;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public String getRegion() {
