@@ -51,15 +51,13 @@ public class SetUDiskUDataArkModeParam extends BaseRequestParam {
                                      @NotEmpty(message = "zone can not be empty") String zone,
                                      @NotEmpty(message = "uDiskId can not be empty") String uDiskId,
                                      @NotEmpty(message = "projectId can not be empty") String projectId,
-                                     @NotEmpty(message = "uDataArkMode can not be empty") String uDataArkMode,
-                                     @NotEmpty(message = "chargeType can not be empty") String chargeType) {
+                                     @NotEmpty(message = "uDataArkMode can not be empty") String uDataArkMode) {
         super("SetUDiskUDataArkMode");
         this.region = region;
         this.zone = zone;
         this.uDiskId = uDiskId;
         this.projectId = projectId;
         this.uDataArkMode = uDataArkMode;
-        this.chargeType = chargeType;
     }
 
     public String getChargeType() {
