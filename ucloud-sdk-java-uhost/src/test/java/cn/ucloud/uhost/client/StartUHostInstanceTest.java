@@ -63,7 +63,6 @@ public class StartUHostInstanceTest {
                 return null;
             }
         });
-        Thread.sleep(10 * 1000);
     }
 
 }
