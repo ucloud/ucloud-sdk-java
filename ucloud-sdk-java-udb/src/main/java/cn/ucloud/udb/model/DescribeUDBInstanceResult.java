@@ -338,6 +338,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("UDBCId")
         private String udbcId;
 
+        @SerializedName("IsForceDump")
+        private Integer isForceDump;
+
+        public Integer getIsForceDump() {
+            return isForceDump;
+        }
+
+        public void setIsForceDump(Integer isForceDump) {
+            this.isForceDump = isForceDump;
+        }
+
         public String getZone() {
             return zone;
         }
