@@ -18,7 +18,7 @@ public class ReinstallUHostInstanceResult extends BaseResponseResult {
     private String uhostId;
 
     @SerializedName("TotalCount")
-    private String totalCount;
+    private Integer totalCount;
 
     public String getUhostId() {
         return uhostId;
@@ -28,4 +28,11 @@ public class ReinstallUHostInstanceResult extends BaseResponseResult {
         this.uhostId = uhostId;
     }
 
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 }
