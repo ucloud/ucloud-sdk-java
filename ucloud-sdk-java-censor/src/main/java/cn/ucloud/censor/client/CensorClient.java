@@ -4,6 +4,8 @@ import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
+import cn.ucloud.censor.model.GetUAICensorResourceListParam;
+import cn.ucloud.censor.model.GetUAICensorResourceListResult;
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 
@@ -13,6 +15,28 @@ import cn.ucloud.common.handler.UcloudHandler;
  * @Date : 2019-04-17 10:47
  **/
 public interface CensorClient extends UcloudClient {
+
+
+    /**
+     * 获取UAI安全审查资源列表
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    GetUAICensorResourceListResult getUAICensorResourceList(
+            GetUAICensorResourceListParam param) throws Exception;
+
+    /**
+     * 获取UAI安全审查资源列表 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void getUAICensorResourceList(GetUAICensorResourceListParam param,
+                                  UcloudHandler<GetUAICensorResourceListResult> handler,
+                                  Boolean... asyncFlag);
 
     /**
      * 创建UAI安全审查资源
