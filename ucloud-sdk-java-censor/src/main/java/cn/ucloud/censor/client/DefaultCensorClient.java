@@ -6,6 +6,8 @@ import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.model.GetUAICensorResourceListParam;
 import cn.ucloud.censor.model.GetUAICensorResourceListResult;
+import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
+import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
 import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
@@ -21,6 +23,24 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
 
     public DefaultCensorClient(UcloudConfig config) {
         super(config);
+    }
+
+    @Override
+    public ModifyUAICensorResourceMemoResult
+    modifyUAICensorResourceMemo(ModifyUAICensorResourceMemoParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceMemoResult.class);
+        return (ModifyUAICensorResourceMemoResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void modifyUAICensorResourceMemo(ModifyUAICensorResourceMemoParam param,
+                                            UcloudHandler<ModifyUAICensorResourceMemoResult> handler,
+                                            Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceMemoResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
