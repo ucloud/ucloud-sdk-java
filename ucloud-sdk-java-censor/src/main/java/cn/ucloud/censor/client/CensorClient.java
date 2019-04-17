@@ -2,6 +2,8 @@ package cn.ucloud.censor.client;
 
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
+import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
+import cn.ucloud.censor.model.DeleteUAICensorResourceResult;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.model.GetUAICensorResourceListParam;
@@ -19,6 +21,27 @@ import cn.ucloud.common.handler.UcloudHandler;
  * @Date : 2019-04-17 10:47
  **/
 public interface CensorClient extends UcloudClient {
+
+    /**
+     * 删除UAI安全审查资源
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    DeleteUAICensorResourceResult deleteUAICensorResource(
+            DeleteUAICensorResourceParam param) throws Exception;
+
+    /**
+     * 删除UAI安全审查资源 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void deleteUAICensorResource(DeleteUAICensorResourceParam param,
+                                 UcloudHandler<DeleteUAICensorResourceResult> handler,
+                                 Boolean... asyncFlag);
 
 
     /**

@@ -2,6 +2,8 @@ package cn.ucloud.censor.client;
 
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
+import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
+import cn.ucloud.censor.model.DeleteUAICensorResourceResult;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.model.GetUAICensorResourceListParam;
@@ -25,6 +27,24 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
 
     public DefaultCensorClient(UcloudConfig config) {
         super(config);
+    }
+
+    @Override
+    public DeleteUAICensorResourceResult
+    deleteUAICensorResource(DeleteUAICensorResourceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUAICensorResourceResult.class);
+        return (DeleteUAICensorResourceResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void deleteUAICensorResource(DeleteUAICensorResourceParam param,
+                                        UcloudHandler<DeleteUAICensorResourceResult> handler,
+                                        Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUAICensorResourceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
