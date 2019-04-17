@@ -8,6 +8,8 @@ import cn.ucloud.censor.model.GetUAICensorResourceListParam;
 import cn.ucloud.censor.model.GetUAICensorResourceListResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
+import cn.ucloud.censor.model.ModifyUAICensorResourceNameParam;
+import cn.ucloud.censor.model.ModifyUAICensorResourceNameResult;
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 
@@ -17,6 +19,29 @@ import cn.ucloud.common.handler.UcloudHandler;
  * @Date : 2019-04-17 10:47
  **/
 public interface CensorClient extends UcloudClient {
+
+
+    /**
+     * 修改UAI安全审查资源名称
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    ModifyUAICensorResourceNameResult modifyUAICensorResourceName(
+            ModifyUAICensorResourceNameParam param) throws Exception;
+
+    /**
+     * 修改UAI安全审查资源名称 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void modifyUAICensorResourceName(ModifyUAICensorResourceNameParam param,
+                                     UcloudHandler<ModifyUAICensorResourceNameResult> handler,
+                                     Boolean... asyncFlag);
+
 
     /**
      * 修改UAI安全审查资源备注
@@ -36,8 +61,8 @@ public interface CensorClient extends UcloudClient {
      * @param asyncFlag 是否异步
      */
     void modifyUAICensorResourceMemo(ModifyUAICensorResourceMemoParam param,
-                                  UcloudHandler<ModifyUAICensorResourceMemoResult> handler,
-                                  Boolean... asyncFlag);
+                                     UcloudHandler<ModifyUAICensorResourceMemoResult> handler,
+                                     Boolean... asyncFlag);
 
 
     /**
