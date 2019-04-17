@@ -1,24 +1,26 @@
 package cn.ucloud.censor.client;
 
-import cn.ucloud.censor.model.ModifyUAICensorResourceNameParam;
-import cn.ucloud.censor.model.ModifyUAICensorResourceNameResult;
+import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
+import cn.ucloud.censor.model.DeleteUAICensorResourceResult;
+import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
+import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
 import cn.ucloud.censor.pojo.CensorConfig;
 import cn.ucloud.common.pojo.Account;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-04-17 14:36
+ * @Date : 2019-04-17 14:43
  **/
-public class ModifyUAICensorResourceNameTest {
+public class DeleteUAICensorResourceTest {
 
     private CensorClient client;
 
-    private ModifyUAICensorResourceNameParam param;
+    private DeleteUAICensorResourceParam param;
 
     @Before
     public void setUp() throws Exception {
@@ -28,17 +30,16 @@ public class ModifyUAICensorResourceNameTest {
         String projectId = System.getenv("ProjectId");
         String region = "cn-bj2";
         String zone = "cn-bj2-04";
-        String resourceId = "uaicensor-42yuglvf";
-        String resourceName = "demoName";
-        param = new ModifyUAICensorResourceNameParam(region, zone, resourceId, resourceName);
+        String resourceId = "uaicensor-aqlfqidb";
+        param = new DeleteUAICensorResourceParam(region, zone, resourceId);
         param.setProjectId(projectId);
     }
 
     @Test
-    public void modifyUAICensorResourceName() {
+    public void deleteUAICensorResource() {
         try {
-            ModifyUAICensorResourceNameResult result =
-                    client.modifyUAICensorResourceName(param);
+            DeleteUAICensorResourceResult result =
+                    client.deleteUAICensorResource(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
