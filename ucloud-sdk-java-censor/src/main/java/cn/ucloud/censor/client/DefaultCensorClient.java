@@ -1,5 +1,7 @@
 package cn.ucloud.censor.client;
 
+import cn.ucloud.censor.model.CreateUAICensorResourceParam;
+import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.common.client.DefaultUcloudClient;
@@ -17,6 +19,24 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
 
     public DefaultCensorClient(UcloudConfig config) {
         super(config);
+    }
+
+    @Override
+    public CreateUAICensorResourceResult
+    createUAICensorResource(CreateUAICensorResourceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateUAICensorResourceResult.class);
+        return (CreateUAICensorResourceResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void createUAICensorResource(CreateUAICensorResourceParam param,
+                                        UcloudHandler<CreateUAICensorResourceResult> handler,
+                                        Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUAICensorAvailResourceTypeResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
