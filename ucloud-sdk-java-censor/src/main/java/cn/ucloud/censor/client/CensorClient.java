@@ -4,14 +4,22 @@ import cn.ucloud.censor.model.CreateAsyncVideoTaskParam;
 import cn.ucloud.censor.model.CreateAsyncVideoTaskResult;
 import cn.ucloud.censor.model.CreateImageTaskParam;
 import cn.ucloud.censor.model.CreateImageTaskResult;
+import cn.ucloud.censor.model.CreateSyncVideoTaskParam;
+import cn.ucloud.censor.model.CreateSyncVideoTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
 import cn.ucloud.censor.model.DeleteUAICensorResourceResult;
+import cn.ucloud.censor.model.GetAsyncVideoTaskResultParam;
+import cn.ucloud.censor.model.GetAsyncVideoTaskResultResult;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.model.GetUAICensorResourceListParam;
 import cn.ucloud.censor.model.GetUAICensorResourceListResult;
+import cn.ucloud.censor.model.GetUAICensorResourceMetricInfoParam;
+import cn.ucloud.censor.model.GetUAICensorResourceMetricInfoResult;
+import cn.ucloud.censor.model.GetUAICensorResourceRecordInfoParam;
+import cn.ucloud.censor.model.GetUAICensorResourceRecordInfoResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceNameParam;
@@ -27,6 +35,94 @@ import cn.ucloud.common.handler.UcloudHandler;
  * @Date : 2019-04-17 10:47
  **/
 public interface CensorClient extends UcloudClient {
+
+    /**
+     * 获取UAI安全审查资源监控信息
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    GetUAICensorResourceMetricInfoResult
+    getUAICensorResourceMetricInfo(GetUAICensorResourceMetricInfoParam param) throws Exception;
+
+    /**
+     * 获取UAI安全审查资源监控信息 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void getUAICensorResourceMetricInfo(GetUAICensorResourceMetricInfoParam param,
+                                        UcloudHandler<GetUAICensorResourceMetricInfoResult> handler,
+                                        Boolean... asyncFlag);
+
+
+    /**
+     * 获取UAI安全审查资源请求记录
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    GetUAICensorResourceRecordInfoResult
+    getUAICensorResourceRecordInfo(GetUAICensorResourceRecordInfoParam param) throws Exception;
+
+    /**
+     * 获取UAI安全审查资源请求记录 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void getUAICensorResourceRecordInfo(GetUAICensorResourceRecordInfoParam param,
+                                        UcloudHandler<GetUAICensorResourceRecordInfoResult> handler,
+                                        Boolean... asyncFlag);
+
+
+    /**
+     * 创建同步视频任务
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateSyncVideoTaskResult createSyncVideoTask(CreateSyncVideoTaskParam param)
+            throws Exception;
+
+    /**
+     * 创建同步视频任务 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createSyncVideoTask(CreateSyncVideoTaskParam param,
+                             UcloudHandler<CreateSyncVideoTaskResult> handler,
+                             Boolean... asyncFlag);
+
+
+    /**
+     * 查询异步视频任务执行结果
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    GetAsyncVideoTaskResultResult getAsyncVideoTaskResult(GetAsyncVideoTaskResultParam param)
+            throws Exception;
+
+    /**
+     * 查询异步视频任务执行结果 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void getAsyncVideoTaskResult(GetAsyncVideoTaskResultParam param,
+                                 UcloudHandler<GetAsyncVideoTaskResultResult> handler,
+                                 Boolean... asyncFlag);
+
 
     /**
      * 创建异步视频任务
@@ -46,8 +142,8 @@ public interface CensorClient extends UcloudClient {
      * @param asyncFlag 是否异步
      */
     void createAsyncVideoTask(CreateAsyncVideoTaskParam param,
-                         UcloudHandler<CreateAsyncVideoTaskResult> handler,
-                         Boolean... asyncFlag);
+                              UcloudHandler<CreateAsyncVideoTaskResult> handler,
+                              Boolean... asyncFlag);
 
     /**
      * 创建图片任务
@@ -67,8 +163,8 @@ public interface CensorClient extends UcloudClient {
      * @param asyncFlag 是否异步
      */
     void createImageTask(CreateImageTaskParam param,
-                               UcloudHandler<CreateImageTaskResult> handler,
-                               Boolean... asyncFlag);
+                         UcloudHandler<CreateImageTaskResult> handler,
+                         Boolean... asyncFlag);
 
     /**
      * 更改UAI安全审查资源对象存储信息

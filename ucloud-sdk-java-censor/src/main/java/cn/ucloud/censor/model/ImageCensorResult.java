@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * @Author : codezhang
  * @Date : 2019-04-18 10:08
  **/
-public class CensorResult {
+public class ImageCensorResult {
 
     /**
      * Porn结果
