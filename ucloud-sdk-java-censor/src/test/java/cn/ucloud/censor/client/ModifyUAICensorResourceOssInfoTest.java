@@ -2,8 +2,8 @@ package cn.ucloud.censor.client;
 
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
-import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
-import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
+import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoParam;
+import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoResult;
 import cn.ucloud.censor.pojo.CensorConfig;
 import cn.ucloud.common.pojo.Account;
 import org.junit.Before;
@@ -17,13 +17,13 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-04-17 14:05
+ * @Date : 2019-04-17 15:25
  **/
-public class CreateUAICensorResourceTest {
+public class ModifyUAICensorResourceOssInfoTest {
 
     private CensorClient client;
 
-    private CreateUAICensorResourceParam param;
+    private ModifyUAICensorResourceOssInfoParam param;
 
     @Before
     public void setUp() throws Exception {
@@ -33,22 +33,22 @@ public class CreateUAICensorResourceTest {
         String projectId = System.getenv("ProjectId");
         String region = "cn-bj2";
         String zone = "cn-bj2-04";
-        List<Integer> ids = new ArrayList<>();
-        ids.add(0);
-        param = new CreateUAICensorResourceParam(region,zone,ids);
+        String ossPublicKey = "xxx";
+        String ossPrivateKey = "xxxxxx";
+        String resourceId = "uaicensor-chlf1kri";
+        param = new ModifyUAICensorResourceOssInfoParam(region,zone,resourceId,ossPublicKey,ossPrivateKey);
         param.setProjectId(projectId);
-        param.setResourceMemo("demoMemo");
-        param.setResourceName("demoName");
     }
 
     @Test
-    public void createUAICensorResource() {
+    public void modifyUAICensorResourceOssInfo() {
         try {
-            CreateUAICensorResourceResult result =
-                    client.createUAICensorResource(param);
+            ModifyUAICensorResourceOssInfoResult result =
+                    client.modifyUAICensorResourceOssInfo(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
         }
     }
+
 }

@@ -1,9 +1,9 @@
 package cn.ucloud.censor.client;
 
+import cn.ucloud.censor.model.CreateImageTaskParam;
+import cn.ucloud.censor.model.CreateImageTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
-import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
-import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.pojo.CensorConfig;
 import cn.ucloud.common.pojo.Account;
 import org.junit.Before;
@@ -17,37 +17,36 @@ import static org.junit.Assert.*;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-04-17 14:05
+ * @Date : 2019-04-18 10:18
  **/
-public class CreateUAICensorResourceTest {
+public class CreateImageTaskTest {
 
     private CensorClient client;
 
-    private CreateUAICensorResourceParam param;
+    private CreateImageTaskParam param;
 
     @Before
     public void setUp() throws Exception {
         client = new DefaultCensorClient(new CensorConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        String projectId = System.getenv("ProjectId");
-        String region = "cn-bj2";
-        String zone = "cn-bj2-04";
-        List<Integer> ids = new ArrayList<>();
-        ids.add(0);
-        param = new CreateUAICensorResourceParam(region,zone,ids);
-        param.setProjectId(projectId);
-        param.setResourceMemo("demoMemo");
-        param.setResourceName("demoName");
+        String resourceId = "uaicensor-nkh1osfy";
+        List<String> scenes = new ArrayList<>();
+        scenes.add("porn");
+        String method = "url";
+        String url = "https://p.ssl.qhimg.com/dmfd/400_300_/t0120b2f23b554b8402.jpg";
+        param = new CreateImageTaskParam(resourceId,scenes,method);
+        param.setUrl(url);
     }
 
     @Test
-    public void createUAICensorResource() {
+    public void createImageTask() {
         try {
-            CreateUAICensorResourceResult result =
-                    client.createUAICensorResource(param);
+            CreateImageTaskResult result =
+                    client.createImageTask(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
+            e.printStackTrace();
             assertNull(e);
         }
     }

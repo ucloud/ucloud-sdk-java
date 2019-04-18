@@ -1,5 +1,7 @@
 package cn.ucloud.censor.client;
 
+import cn.ucloud.censor.model.CreateImageTaskParam;
+import cn.ucloud.censor.model.CreateImageTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
@@ -12,11 +14,15 @@ import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceNameParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceNameResult;
+import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoParam;
+import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoResult;
+import cn.ucloud.censor.pojo.CensorConfig;
 import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.pojo.UcloudConfig;
+import cn.ucloud.common.http.UcloudRestHttp;
+import cn.ucloud.common.http.UcloudRestHttpImpl;
 
 /**
  * @Description :
@@ -25,8 +31,50 @@ import cn.ucloud.common.pojo.UcloudConfig;
  **/
 public class DefaultCensorClient extends DefaultUcloudClient implements CensorClient {
 
-    public DefaultCensorClient(UcloudConfig config) {
+    private CensorConfig config;
+
+    public DefaultCensorClient(CensorConfig config) {
         super(config);
+        this.config = config;
+    }
+
+    @Override
+    public CreateImageTaskResult
+    createImageTask(CreateImageTaskParam param) throws Exception {
+        UcloudRestHttp http = new UcloudRestHttpImpl(CreateImageTaskResult.class);
+        return (CreateImageTaskResult) http.doPost(param, config, CensorConfig.CREATE_IMAGE_CENSOR_TASK_ADDR,
+                null);
+    }
+
+    @Override
+    public void createImageTask(CreateImageTaskParam param,
+                                      UcloudHandler<CreateImageTaskResult>
+                                              handler, Boolean... asyncFlag) {
+        UcloudRestHttp http = new UcloudRestHttpImpl(CreateImageTaskResult.class);
+        try {
+            http.doPost(param, config, CensorConfig.CREATE_IMAGE_CENSOR_TASK_ADDR,
+                    handler, asyncFlag);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public ModifyUAICensorResourceOssInfoResult
+    modifyUAICensorResourceOssInfo(ModifyUAICensorResourceOssInfoParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceOssInfoResult.class);
+        return (ModifyUAICensorResourceOssInfoResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void modifyUAICensorResourceOssInfo(ModifyUAICensorResourceOssInfoParam param,
+                                               UcloudHandler<ModifyUAICensorResourceOssInfoResult> handler,
+                                               Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceOssInfoResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

@@ -3,6 +3,7 @@ package cn.ucloud.censor.client;
 import cn.ucloud.censor.model.GetUAICensorResourceListParam;
 import cn.ucloud.censor.model.GetUAICensorResourceListResult;
 import cn.ucloud.censor.pojo.CensorConfig;
+import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.Account;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,5 +42,6 @@ public class GetUAICensorResourceListTest {
         } catch (Exception e) {
             assertNull(e);
         }
+
     }
 }
