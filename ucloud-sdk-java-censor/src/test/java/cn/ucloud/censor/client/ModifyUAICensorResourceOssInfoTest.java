@@ -1,7 +1,5 @@
 package cn.ucloud.censor.client;
 
-import cn.ucloud.censor.model.CreateUAICensorResourceParam;
-import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoResult;
 import cn.ucloud.censor.pojo.CensorConfig;
@@ -9,8 +7,6 @@ import cn.ucloud.common.pojo.Account;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -35,7 +31,7 @@ public class ModifyUAICensorResourceOssInfoTest {
         String zone = "cn-bj2-04";
         String ossPublicKey = "xxx";
         String ossPrivateKey = "xxxxxx";
-        String resourceId = "uaicensor-chlf1kri";
+        String resourceId = "uaicensor-tebnw4ae";
         param = new ModifyUAICensorResourceOssInfoParam(region,zone,resourceId,ossPublicKey,ossPrivateKey);
         param.setProjectId(projectId);
     }

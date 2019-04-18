@@ -1,7 +1,5 @@
 package cn.ucloud.censor.client;
 
-import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
-import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.model.GetUAICensorResourceRecordInfoParam;
 import cn.ucloud.censor.model.GetUAICensorResourceRecordInfoResult;
 import cn.ucloud.censor.pojo.CensorConfig;
@@ -24,6 +22,7 @@ public class GetUAICensorResourceRecordInfoTest {
 
     @Before
     public void setUp() throws Exception {
+        // todo 测试
         client = new DefaultCensorClient(new CensorConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
