@@ -1,5 +1,7 @@
 package cn.ucloud.censor.client;
 
+import cn.ucloud.censor.model.CreateImageTaskParam;
+import cn.ucloud.censor.model.CreateImageTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
@@ -12,6 +14,8 @@ import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceNameParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceNameResult;
+import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoParam;
+import cn.ucloud.censor.model.ModifyUAICensorResourceOssInfoResult;
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 
@@ -21,6 +25,49 @@ import cn.ucloud.common.handler.UcloudHandler;
  * @Date : 2019-04-17 10:47
  **/
 public interface CensorClient extends UcloudClient {
+
+    /**
+     * 创建图片任务
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateImageTaskResult createImageTask(CreateImageTaskParam param)
+            throws Exception;
+
+    /**
+     * 创建图片任务 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createImageTask(CreateImageTaskParam param,
+                               UcloudHandler<CreateImageTaskResult> handler,
+                               Boolean... asyncFlag);
+
+    /**
+     * 更改UAI安全审查资源对象存储信息
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    ModifyUAICensorResourceOssInfoResult modifyUAICensorResourceOssInfo(
+            ModifyUAICensorResourceOssInfoParam param) throws Exception;
+
+    /**
+     * 更改UAI安全审查资源对象存储信息 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void modifyUAICensorResourceOssInfo(ModifyUAICensorResourceOssInfoParam param,
+                                        UcloudHandler<ModifyUAICensorResourceOssInfoResult> handler,
+                                        Boolean... asyncFlag);
+
 
     /**
      * 删除UAI安全审查资源
