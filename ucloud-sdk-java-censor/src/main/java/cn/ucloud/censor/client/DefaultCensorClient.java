@@ -24,8 +24,6 @@ import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.common.http.UcloudRestHttp;
-import cn.ucloud.common.http.UcloudRestHttpImpl;
 
 /**
  * @Description :
