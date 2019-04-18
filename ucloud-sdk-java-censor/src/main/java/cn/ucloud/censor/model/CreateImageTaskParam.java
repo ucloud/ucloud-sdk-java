@@ -9,6 +9,7 @@ import cn.ucloud.common.pojo.BaseRestRequestParam;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -57,8 +58,14 @@ public class CreateImageTaskParam extends BaseRestRequestParam {
     /**
      * 图片url
      */
-    @UcloudRestParam(name = "Url", location = ParamLocation.BODY,signature = true)
+    @UcloudRestParam(name = "Url", location = ParamLocation.BODY, signature = true)
     private String url;
+
+    /**
+     * 图片文件
+     */
+    @UcloudRestParam(name = "Image", location = ParamLocation.BODY)
+    private File image;
 
     public CreateImageTaskParam(@NotEmpty(message = "resourceId can not be empty") String resourceId,
                                 @NotEmpty(message = "scenes can not be empty") List<String> scenes,
@@ -66,6 +73,14 @@ public class CreateImageTaskParam extends BaseRestRequestParam {
         this.resourceId = resourceId;
         this.scenes = scenes;
         this.method = method;
+    }
+
+    public File getImage() {
+        return image;
+    }
+
+    public void setImage(File image) {
+        this.image = image;
     }
 
     public String getResourceId() {
