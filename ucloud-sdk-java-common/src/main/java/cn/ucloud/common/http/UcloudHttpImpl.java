@@ -68,14 +68,22 @@ public class UcloudHttpImpl implements UcloudHttp {
 
     private void handlerException(UcloudHandler handler, Exception e, Boolean async) throws Exception {
         if (handler == null) {
-            if (async) {
-                logger.error("handler is null and async is true,but get an error:{}", e.getMessage());
+            if (async != null) {
+                logger.error("handler is null and async is not null,but get an error:{}", e.getMessage());
             } else {
                 throw e;
             }
         } else {
             handler.error(e);
         }
+    }
+
+    private Boolean async(Boolean... asyncFlag) {
+        Boolean async = null;
+        if (asyncFlag != null && asyncFlag.length > 0) {
+            async = asyncFlag[0];
+        }
+        return async;
     }
 
 //    @Override
@@ -245,12 +253,6 @@ public class UcloudHttpImpl implements UcloudHttp {
 //        return ok;
 //    }
 
-    private Boolean async(Boolean... asyncFlag) {
-        Boolean async = false;
-        if (asyncFlag != null && asyncFlag.length > 0) {
-            async = asyncFlag[0];
-        }
-        return async;
-    }
+
 
 }
