@@ -22,6 +22,7 @@ public class GetUAICensorResourceMetricInfoTest {
 
     @Before
     public void setUp() throws Exception {
+        // todo 测试
         client = new DefaultCensorClient(new CensorConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
