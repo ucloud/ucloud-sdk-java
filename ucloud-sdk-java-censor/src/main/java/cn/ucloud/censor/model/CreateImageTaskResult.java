@@ -45,7 +45,7 @@ public class CreateImageTaskResult extends BaseResponseResult {
      * 结果
      */
     @SerializedName("Result")
-    private CensorResult result;
+    private ImageCensorResult result;
 
     /**
      * 状态
@@ -94,11 +94,19 @@ public class CreateImageTaskResult extends BaseResponseResult {
         this.expiredTime = expiredTime;
     }
 
-    public CensorResult getResult() {
+    public ImageCensorResult getResult() {
         return result;
     }
 
-    public void setResult(CensorResult result) {
+    public void setResult(ImageCensorResult result) {
         this.result = result;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

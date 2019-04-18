@@ -37,7 +37,9 @@ public class UcloudRestHttpImpl implements UcloudRestHttp {
         BaseResponseResult result = null;
         try {
             RestParamConstructor constructor = new RestParamConstructor(config.getAccount(), param);
-            Header[] headers = (Header[]) constructor.getHeaders().toArray();
+            List<Header> headerList = constructor.getHeaders();
+            Header[] headers = new Header[headerList.size()];
+            headers = headerList.toArray(headers);
             String restHttpURLParamString = constructor.getRestHttpURLParamString();
             HttpGet get = new HttpGet(String.format("%s?%s", restURL, restHttpURLParamString));
             get.setHeaders(headers);

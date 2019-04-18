@@ -4,12 +4,10 @@ import cn.ucloud.common.pojo.Account;
 import cn.ucloud.common.pojo.BaseRestRequestParam;
 import cn.ucloud.common.pojo.Param;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.message.BasicHeader;
@@ -56,6 +54,7 @@ public class RestParamConstructor {
         this.pathParams = analyzer.getPathParams();
         logger.info("body params:{}", new Gson().toJson(analyzer.getBodyParams()));
         logger.info("path params:{}", new Gson().toJson(analyzer.getPathParams()));
+        logger.info("url params:{}", new Gson().toJson(analyzer.getUrlParams()));
         logger.info("signature params:{}", new Gson().toJson(analyzer.getSignatureParams()));
         logger.info("headers:{}", new Gson().toJson(headers));
         switch (analyzer.getMethod()) {
@@ -134,7 +133,7 @@ public class RestParamConstructor {
                 buildMultiPartFormData();
                 break;
             }
-            case APPLICATION_JSON:{
+            case APPLICATION_JSON: {
                 buildJSONFormData();
                 break;
             }
@@ -153,10 +152,10 @@ public class RestParamConstructor {
         entity = new UrlEncodedFormEntity(pairs, Charset.forName("UTF-8"));
     }
 
-    private void buildJSONFormData(){
+    private void buildJSONFormData() {
         String json = new Gson().toJson(baseRestRequestParam);
         entity = new StringEntity(json, "utf-8");
-}
+    }
 
 
     private void buildMultiPartFormData() {
@@ -165,12 +164,12 @@ public class RestParamConstructor {
         // 添加参数
         if (analyzer.getBodyParams() != null) {
             for (Param param : analyzer.getBodyParams()) {
-                if ( param.getParamValue() == null){
+                if (param.getParamValue() == null) {
                     continue;
                 }
-                if ( param.getParamValue() instanceof File){
+                if (param.getParamValue() instanceof File) {
                     builder.addBinaryBody(param.getParamKey(), (File) param.getParamValue());
-                }else {
+                } else {
                     builder.addTextBody(param.getParamKey(),
                             param.getParamValue().toString());
                 }

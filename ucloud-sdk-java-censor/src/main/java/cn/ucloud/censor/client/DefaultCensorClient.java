@@ -4,14 +4,22 @@ import cn.ucloud.censor.model.CreateAsyncVideoTaskParam;
 import cn.ucloud.censor.model.CreateAsyncVideoTaskResult;
 import cn.ucloud.censor.model.CreateImageTaskParam;
 import cn.ucloud.censor.model.CreateImageTaskResult;
+import cn.ucloud.censor.model.CreateSyncVideoTaskParam;
+import cn.ucloud.censor.model.CreateSyncVideoTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
 import cn.ucloud.censor.model.CreateUAICensorResourceResult;
 import cn.ucloud.censor.model.DeleteUAICensorResourceParam;
 import cn.ucloud.censor.model.DeleteUAICensorResourceResult;
+import cn.ucloud.censor.model.GetAsyncVideoTaskResultParam;
+import cn.ucloud.censor.model.GetAsyncVideoTaskResultResult;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeParam;
 import cn.ucloud.censor.model.GetUAICensorAvailResourceTypeResult;
 import cn.ucloud.censor.model.GetUAICensorResourceListParam;
 import cn.ucloud.censor.model.GetUAICensorResourceListResult;
+import cn.ucloud.censor.model.GetUAICensorResourceMetricInfoParam;
+import cn.ucloud.censor.model.GetUAICensorResourceMetricInfoResult;
+import cn.ucloud.censor.model.GetUAICensorResourceRecordInfoParam;
+import cn.ucloud.censor.model.GetUAICensorResourceRecordInfoResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoParam;
 import cn.ucloud.censor.model.ModifyUAICensorResourceMemoResult;
 import cn.ucloud.censor.model.ModifyUAICensorResourceNameParam;
@@ -41,10 +49,89 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     }
 
     @Override
+    public GetUAICensorResourceMetricInfoResult
+    getUAICensorResourceMetricInfo(GetUAICensorResourceMetricInfoParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceMetricInfoResult.class);
+        return (GetUAICensorResourceMetricInfoResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUAICensorResourceMetricInfo(GetUAICensorResourceMetricInfoParam param,
+                                               UcloudHandler<GetUAICensorResourceMetricInfoResult> handler,
+                                               Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceMetricInfoResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public GetUAICensorResourceRecordInfoResult
+    getUAICensorResourceRecordInfo(GetUAICensorResourceRecordInfoParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceRecordInfoResult.class);
+        return (GetUAICensorResourceRecordInfoResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUAICensorResourceRecordInfo(GetUAICensorResourceRecordInfoParam param,
+                                               UcloudHandler<GetUAICensorResourceRecordInfoResult> handler,
+                                               Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceRecordInfoResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public CreateSyncVideoTaskResult
+    createSyncVideoTask(CreateSyncVideoTaskParam param) throws Exception {
+        UcloudRestHttp http = new UcloudRestHttpImpl(CreateSyncVideoTaskResult.class);
+        return (CreateSyncVideoTaskResult) http.doPost(param, config,
+                CensorConfig.CREATE_SYNC_VIDEO_CENSOR_TASK_ADDR,
+                null);
+    }
+
+    @Override
+    public void createSyncVideoTask(CreateSyncVideoTaskParam param,
+                                    UcloudHandler<CreateSyncVideoTaskResult> handler,
+                                    Boolean... asyncFlag) {
+        UcloudRestHttp http = new UcloudRestHttpImpl(CreateSyncVideoTaskResult.class);
+        try {
+            http.doPost(param, config, CensorConfig.CREATE_SYNC_VIDEO_CENSOR_TASK_ADDR,
+                    handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public GetAsyncVideoTaskResultResult
+    getAsyncVideoTaskResult(GetAsyncVideoTaskResultParam param) throws Exception {
+        UcloudRestHttp http = new UcloudRestHttpImpl(GetAsyncVideoTaskResultResult.class);
+        return (GetAsyncVideoTaskResultResult) http.doGet(param, config,
+                CensorConfig.QUERY_ASYNC_VIDEO_CENSOR_TASK_RESULT_ADDR,
+                null);
+    }
+
+    @Override
+    public void getAsyncVideoTaskResult(GetAsyncVideoTaskResultParam param,
+                                        UcloudHandler<GetAsyncVideoTaskResultResult> handler,
+                                        Boolean... asyncFlag) {
+        UcloudRestHttp http = new UcloudRestHttpImpl(GetAsyncVideoTaskResultResult.class);
+        try {
+            http.doGet(param, config, CensorConfig.QUERY_ASYNC_VIDEO_CENSOR_TASK_RESULT_ADDR,
+                    handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
     public CreateAsyncVideoTaskResult
     createAsyncVideoTask(CreateAsyncVideoTaskParam param) throws Exception {
         UcloudRestHttp http = new UcloudRestHttpImpl(CreateAsyncVideoTaskResult.class);
-        return (CreateAsyncVideoTaskResult) http.doPost(param, config, CensorConfig.CREATE_ASYNC_VIDEO_CENSOR_TASK_ADDR,
+        return (CreateAsyncVideoTaskResult) http.doPost(param, config,
+                CensorConfig.CREATE_ASYNC_VIDEO_CENSOR_TASK_ADDR,
                 null);
     }
 
@@ -71,8 +158,8 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
 
     @Override
     public void createImageTask(CreateImageTaskParam param,
-                                      UcloudHandler<CreateImageTaskResult>
-                                              handler, Boolean... asyncFlag) {
+                                UcloudHandler<CreateImageTaskResult>
+                                        handler, Boolean... asyncFlag) {
         UcloudRestHttp http = new UcloudRestHttpImpl(CreateImageTaskResult.class);
         try {
             http.doPost(param, config, CensorConfig.CREATE_IMAGE_CENSOR_TASK_ADDR,

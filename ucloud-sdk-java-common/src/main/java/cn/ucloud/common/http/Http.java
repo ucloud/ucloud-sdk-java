@@ -34,7 +34,7 @@ public class Http {
         final CloseableHttpClient client = HttpClients.createDefault();
         request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.1.1-release");
         // 执行http get请求
-        logger.info("request line:{}", request.getRequestLine());
+        logger.info("request :{}", new Gson().toJson(request));
         try {
             response = client.execute(request);
             if (response != null) {
