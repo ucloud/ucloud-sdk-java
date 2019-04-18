@@ -4,10 +4,13 @@ import cn.ucloud.common.pojo.Account;
 import cn.ucloud.common.pojo.BaseRestRequestParam;
 import cn.ucloud.common.pojo.Param;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.entity.BasicHttpEntity;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
@@ -131,6 +134,10 @@ public class RestParamConstructor {
                 buildMultiPartFormData();
                 break;
             }
+            case APPLICATION_JSON:{
+                buildJSONFormData();
+                break;
+            }
         }
     }
 
@@ -145,6 +152,11 @@ public class RestParamConstructor {
         }
         entity = new UrlEncodedFormEntity(pairs, Charset.forName("UTF-8"));
     }
+
+    private void buildJSONFormData(){
+        String json = new Gson().toJson(baseRestRequestParam);
+        entity = new StringEntity(json, "utf-8");
+}
 
 
     private void buildMultiPartFormData() {
