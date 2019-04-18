@@ -5,7 +5,6 @@ import cn.ucloud.common.annotation.UcloudRestParam;
 import cn.ucloud.common.http.ParamLocation;
 
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
 
 /**
  * @Description :
@@ -30,8 +29,6 @@ public class BaseRestRequestParam {
     @NotEmpty(message = "publicKey can not be empty")
     protected String publicKey;
 
-    private List<Param> fileParams;
-
 
     public String getSignature() {
         return signature;
@@ -48,13 +45,4 @@ public class BaseRestRequestParam {
     public void setPublicKey(String publicKey) {
         this.publicKey = publicKey;
     }
-
-    public List<Param> getFileParams() {
-        return fileParams;
-    }
-
-    public void setFileParams(List<Param> fileParams) {
-        this.fileParams = fileParams;
-    }
-
 }

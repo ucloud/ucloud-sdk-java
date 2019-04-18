@@ -150,29 +150,23 @@ public class RestParamConstructor {
     private void buildMultiPartFormData() {
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
         builder.setCharset(Charset.forName("UTF-8"));
-        // 添加普通参数
+        // 添加参数
         if (analyzer.getBodyParams() != null) {
             for (Param param : analyzer.getBodyParams()) {
-                builder.addTextBody(param.getParamKey(),
-                        param.getParamValue().toString());
+                if ( param.getParamValue() == null){
+                    continue;
+                }
+                if ( param.getParamValue() instanceof File){
+                    builder.addBinaryBody(param.getParamKey(), (File) param.getParamValue());
+                }else {
+                    builder.addTextBody(param.getParamKey(),
+                            param.getParamValue().toString());
+                }
             }
         }
+        // 设置签名
         builder.addTextBody("Signature", signature);
         builder.addTextBody("PublicKey", account.getPublicKey());
-        // 设置签名
-        logger.info("form:{}", new Gson().toJson(builder));
-        // 增加文件参数
-        if (baseRestRequestParam.getFileParams() != null) {
-            for (Param param : baseRestRequestParam.getFileParams()) {
-                if (param == null) {
-                    continue;
-                }
-                if (!(param.getParamValue() instanceof File)) {
-                    continue;
-                }
-                builder.addBinaryBody(param.getParamKey(), (File) param.getParamValue());
-            }
-        }
         entity = builder.build();
     }
 
