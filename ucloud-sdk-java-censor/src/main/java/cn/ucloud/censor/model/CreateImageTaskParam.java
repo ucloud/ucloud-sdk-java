@@ -13,7 +13,7 @@ import java.io.File;
 import java.util.List;
 
 /**
- * @Description :
+ * @Description :创建图片审查任务
  * @Author : codezhang
  * @Date : 2019-04-18 09:31
  **/

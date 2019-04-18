@@ -1,5 +1,7 @@
 package cn.ucloud.censor.client;
 
+import cn.ucloud.censor.model.CreateAsyncVideoTaskParam;
+import cn.ucloud.censor.model.CreateAsyncVideoTaskResult;
 import cn.ucloud.censor.model.CreateImageTaskParam;
 import cn.ucloud.censor.model.CreateImageTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
@@ -39,6 +41,27 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     }
 
     @Override
+    public CreateAsyncVideoTaskResult
+    createAsyncVideoTask(CreateAsyncVideoTaskParam param) throws Exception {
+        UcloudRestHttp http = new UcloudRestHttpImpl(CreateAsyncVideoTaskResult.class);
+        return (CreateAsyncVideoTaskResult) http.doPost(param, config, CensorConfig.CREATE_ASYNC_VIDEO_CENSOR_TASK_ADDR,
+                null);
+    }
+
+    @Override
+    public void
+    createAsyncVideoTask(CreateAsyncVideoTaskParam param,
+                         UcloudHandler<CreateAsyncVideoTaskResult> handler,
+                         Boolean... asyncFlag) {
+        UcloudRestHttp http = new UcloudRestHttpImpl(CreateAsyncVideoTaskResult.class);
+        try {
+            http.doPost(param, config, CensorConfig.CREATE_ASYNC_VIDEO_CENSOR_TASK_ADDR,
+                    handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
     public CreateImageTaskResult
     createImageTask(CreateImageTaskParam param) throws Exception {
         UcloudRestHttp http = new UcloudRestHttpImpl(CreateImageTaskResult.class);
@@ -55,7 +78,6 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
             http.doPost(param, config, CensorConfig.CREATE_IMAGE_CENSOR_TASK_ADDR,
                     handler, asyncFlag);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

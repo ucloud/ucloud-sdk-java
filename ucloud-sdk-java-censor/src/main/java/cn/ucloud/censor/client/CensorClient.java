@@ -1,5 +1,7 @@
 package cn.ucloud.censor.client;
 
+import cn.ucloud.censor.model.CreateAsyncVideoTaskParam;
+import cn.ucloud.censor.model.CreateAsyncVideoTaskResult;
 import cn.ucloud.censor.model.CreateImageTaskParam;
 import cn.ucloud.censor.model.CreateImageTaskResult;
 import cn.ucloud.censor.model.CreateUAICensorResourceParam;
@@ -25,6 +27,27 @@ import cn.ucloud.common.handler.UcloudHandler;
  * @Date : 2019-04-17 10:47
  **/
 public interface CensorClient extends UcloudClient {
+
+    /**
+     * 创建异步视频任务
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateAsyncVideoTaskResult createAsyncVideoTask(CreateAsyncVideoTaskParam param)
+            throws Exception;
+
+    /**
+     * 创建异步视频任务 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createAsyncVideoTask(CreateAsyncVideoTaskParam param,
+                         UcloudHandler<CreateAsyncVideoTaskResult> handler,
+                         Boolean... asyncFlag);
 
     /**
      * 创建图片任务
