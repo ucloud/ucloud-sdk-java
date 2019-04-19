@@ -37,7 +37,7 @@ public class GetUAICensorResourceMetricInfoTest {
     }
 
     @Test
-    public void createUAICensorResource() {
+    public void getUAICensorResourceMetricInfo() {
         try {
             GetUAICensorResourceMetricInfoResult result =
                     client.getUAICensorResourceMetricInfo(param);
