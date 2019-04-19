@@ -7,10 +7,14 @@ import cn.ucloud.common.http.UcloudHttpImpl;
 import cn.ucloud.common.pojo.UcloudConfig;
 import cn.ucloud.ocr.model.CreateUAIOcrResourceParam;
 import cn.ucloud.ocr.model.CreateUAIOcrResourceResult;
+import cn.ucloud.ocr.model.DeleteUAIOcrResourceParam;
+import cn.ucloud.ocr.model.DeleteUAIOcrResourceResult;
 import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeParam;
 import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeResult;
 import cn.ucloud.ocr.model.GetUAIOcrResourceListParam;
 import cn.ucloud.ocr.model.GetUAIOcrResourceListResult;
+import cn.ucloud.ocr.model.GetUAIOcrResourceRecordInfoParam;
+import cn.ucloud.ocr.model.GetUAIOcrResourceRecordInfoResult;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoParam;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoResult;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameParam;
@@ -27,6 +31,42 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
 
     public DefaultOcrClient(UcloudConfig config) {
         super(config);
+    }
+
+    @Override
+    public DeleteUAIOcrResourceResult
+    deleteUAIOcrResource(DeleteUAIOcrResourceParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUAIOcrResourceResult.class);
+        return (DeleteUAIOcrResourceResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void deleteUAIOcrResource(DeleteUAIOcrResourceParam param,
+                                     UcloudHandler<DeleteUAIOcrResourceResult> handler,
+                                     Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUAIOcrResourceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public GetUAIOcrResourceRecordInfoResult
+    getUAIOcrResourceRecordInfo(GetUAIOcrResourceRecordInfoParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUAIOcrResourceRecordInfoResult.class);
+        return (GetUAIOcrResourceRecordInfoResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUAIOcrResourceRecordInfo(GetUAIOcrResourceRecordInfoParam param,
+                                            UcloudHandler<GetUAIOcrResourceRecordInfoResult> handler,
+                                            Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUAIOcrResourceRecordInfoResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override

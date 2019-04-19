@@ -1,8 +1,8 @@
 package cn.ucloud.ocr.client;
 
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameParam;
-import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameResult;
+import cn.ucloud.ocr.model.DeleteUAIOcrResourceParam;
+import cn.ucloud.ocr.model.DeleteUAIOcrResourceResult;
 import cn.ucloud.ocr.pojo.OcrConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,13 +12,13 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-04-19 16:04
+ * @Date : 2019-04-19 16:41
  **/
-public class ModifyUAIOcrResourceNameTest {
+public class DeleteUAIOcrResourceTest {
 
     private OcrClient client;
 
-    private ModifyUAIOcrResourceNameParam param;
+    private DeleteUAIOcrResourceParam param;
 
     @Before
     public void setUp() throws Exception {
@@ -28,19 +28,19 @@ public class ModifyUAIOcrResourceNameTest {
         String projectId = System.getenv("ProjectId");
         String region = "cn-bj2";
         String resourceId = "uaiocr-uw4cd44y";
-        String resourceName = "sdk-test-name";
-        param = new ModifyUAIOcrResourceNameParam(region,resourceId,resourceName);
+        param = new DeleteUAIOcrResourceParam(region, resourceId);
         param.setProjectId(projectId);
     }
 
     @Test
-    public void modifyUAIOcrResourceName() {
+    public void deleteUAIOcrResource() {
         try {
-            ModifyUAIOcrResourceNameResult result =
-                    client.modifyUAIOcrResourceName(param);
+            DeleteUAIOcrResourceResult result =
+                    client.deleteUAIOcrResource(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
         }
     }
+
 }
