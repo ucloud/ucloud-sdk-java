@@ -21,6 +21,7 @@
         <module>ucloud-sdk-java-pathx</module>
         <module>ucloud-sdk-java-usql</module>
         <module>ucloud-sdk-java-umem</module>
+        <module>ucloud-sdk-java-censor</module>
         <module>ucloud-sdk-java-ocr</module>
     </modules>
 
