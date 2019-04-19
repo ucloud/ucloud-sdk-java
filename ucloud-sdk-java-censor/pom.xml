@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ucloud-sdk-java-uai</artifactId>
+    <artifactId>ucloud-sdk-java-censor</artifactId>
 
     <dependencies>
         <dependency>
