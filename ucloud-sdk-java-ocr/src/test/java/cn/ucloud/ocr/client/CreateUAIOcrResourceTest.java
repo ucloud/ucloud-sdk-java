@@ -3,8 +3,6 @@ package cn.ucloud.ocr.client;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.ocr.model.CreateUAIOcrResourceParam;
 import cn.ucloud.ocr.model.CreateUAIOcrResourceResult;
-import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeParam;
-import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeResult;
 import cn.ucloud.ocr.pojo.OcrConfig;
 import org.junit.Before;
 import org.junit.Test;
