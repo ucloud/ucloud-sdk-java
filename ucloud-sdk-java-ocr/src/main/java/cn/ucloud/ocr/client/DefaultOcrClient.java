@@ -5,6 +5,8 @@ import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
 import cn.ucloud.common.pojo.UcloudConfig;
+import cn.ucloud.ocr.model.CreateUAIOcrResourceParam;
+import cn.ucloud.ocr.model.CreateUAIOcrResourceResult;
 import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeParam;
 import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeResult;
 
@@ -17,6 +19,24 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
 
     public DefaultOcrClient(UcloudConfig config) {
         super(config);
+    }
+
+    @Override
+    public CreateUAIOcrResourceResult createUAIOcrResource(CreateUAIOcrResourceParam param)
+            throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateUAIOcrResourceResult.class);
+        return (CreateUAIOcrResourceResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void createUAIOcrResource(CreateUAIOcrResourceParam param,
+                                     UcloudHandler<CreateUAIOcrResourceResult> handler,
+                                     Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreateUAIOcrResourceResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
