@@ -2,6 +2,8 @@ package cn.ucloud.ocr.client;
 
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.ocr.model.CreateUAIOcrResourceParam;
+import cn.ucloud.ocr.model.CreateUAIOcrResourceResult;
 import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeParam;
 import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeResult;
 
@@ -11,6 +13,29 @@ import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeResult;
  * @Date : 2019-04-19 15:24
  **/
 public interface OcrClient extends UcloudClient {
+
+
+    /**
+     * 创建UAI-OCR资源
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    CreateUAIOcrResourceResult
+    createUAIOcrResource(CreateUAIOcrResourceParam param) throws Exception;
+
+    /**
+     * 创建UAI-OCR资源 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void createUAIOcrResource(CreateUAIOcrResourceParam param,
+                              UcloudHandler<CreateUAIOcrResourceResult> handler,
+                              Boolean... asyncFlag);
+
 
     /**
      * 获取可用UAI-OCR资源类型
