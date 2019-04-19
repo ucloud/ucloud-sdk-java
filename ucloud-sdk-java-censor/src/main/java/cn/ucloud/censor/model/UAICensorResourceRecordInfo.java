@@ -30,8 +30,8 @@ public class UAICensorResourceRecordInfo {
     /**
      * 最新请求记录创建时间，Unix时间戳形式
      */
-    @SerializedName("LastRecordTime")
-    private Long lastRecordTime;
+    @SerializedName("LatestRecordTime")
+    private Long latestRecordTime;
 
 
     public String getResourceId() {
@@ -58,11 +58,11 @@ public class UAICensorResourceRecordInfo {
         this.censorCount = censorCount;
     }
 
-    public Long getLastRecordTime() {
-        return lastRecordTime;
+    public Long getLatestRecordTime() {
+        return latestRecordTime;
     }
 
-    public void setLastRecordTime(Long lastRecordTime) {
-        this.lastRecordTime = lastRecordTime;
+    public void setLatestRecordTime(Long latestRecordTime) {
+        this.latestRecordTime = latestRecordTime;
     }
 }
