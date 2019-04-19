@@ -52,11 +52,11 @@ public class RestParamConstructor {
         analyzer = new RestParamAnalyzer(baseRestRequestParam);
         this.headers = analyzer.getHeaders();
         this.pathParams = analyzer.getPathParams();
-        logger.info("body params:{}", new Gson().toJson(analyzer.getBodyParams()));
-        logger.info("path params:{}", new Gson().toJson(analyzer.getPathParams()));
-        logger.info("url params:{}", new Gson().toJson(analyzer.getUrlParams()));
-        logger.info("signature params:{}", new Gson().toJson(analyzer.getSignatureParams()));
-        logger.info("headers:{}", new Gson().toJson(headers));
+//        logger.info("body params:{}", new Gson().toJson(analyzer.getBodyParams()));
+//        logger.info("path params:{}", new Gson().toJson(analyzer.getPathParams()));
+//        logger.info("url params:{}", new Gson().toJson(analyzer.getUrlParams()));
+//        logger.info("signature params:{}", new Gson().toJson(analyzer.getSignatureParams()));
+//        logger.info("headers:{}", new Gson().toJson(headers));
         switch (analyzer.getMethod()) {
             case POST:
             case PUT:
