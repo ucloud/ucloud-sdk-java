@@ -1,0 +1,39 @@
+package cn.ucloud.ocr.client;
+
+import cn.ucloud.common.client.DefaultUcloudClient;
+import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.common.http.UcloudHttp;
+import cn.ucloud.common.http.UcloudHttpImpl;
+import cn.ucloud.common.pojo.UcloudConfig;
+import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeParam;
+import cn.ucloud.ocr.model.GetUAIOcrAvailResourceTypeResult;
+
+/**
+ * @Description : 默认ocr 客户端
+ * @Author : codezhang
+ * @Date : 2019-04-19 15:25
+ **/
+public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
+
+    public DefaultOcrClient(UcloudConfig config) {
+        super(config);
+    }
+
+    @Override
+    public GetUAIOcrAvailResourceTypeResult
+    getUAIOcrAvailResourceType(GetUAIOcrAvailResourceTypeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUAIOcrAvailResourceTypeResult.class);
+        return (GetUAIOcrAvailResourceTypeResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUAIOcrAvailResourceType(GetUAIOcrAvailResourceTypeParam param,
+                                           UcloudHandler<GetUAIOcrAvailResourceTypeResult> handler,
+                                           Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUAIOcrAvailResourceTypeResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+}
