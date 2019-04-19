@@ -10,6 +10,8 @@ import cn.ucloud.ocr.model.GetUAIOcrResourceListParam;
 import cn.ucloud.ocr.model.GetUAIOcrResourceListResult;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoParam;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoResult;
+import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameParam;
+import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameResult;
 
 /**
  * @Description : ocr 客户端接口
@@ -17,6 +19,29 @@ import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoResult;
  * @Date : 2019-04-19 15:24
  **/
 public interface OcrClient extends UcloudClient {
+
+
+    /**
+     * 修改UAI-OCR资源名称
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception
+     */
+    ModifyUAIOcrResourceNameResult
+    modifyUAIOcrResourceName(ModifyUAIOcrResourceNameParam param) throws Exception;
+
+    /**
+     * 修改UAI-OCR资源名称 (回调)
+     *
+     * @param param     参数对象
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void modifyUAIOcrResourceName(ModifyUAIOcrResourceMemoParam param,
+                                  UcloudHandler<ModifyUAIOcrResourceNameResult> handler,
+                                  Boolean... asyncFlag);
+
 
     /**
      * 修改UAI-OCR资源备注
