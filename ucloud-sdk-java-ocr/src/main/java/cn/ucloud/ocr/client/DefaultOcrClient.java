@@ -15,6 +15,8 @@ import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoParam;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceMemoResult;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameParam;
 import cn.ucloud.ocr.model.ModifyUAIOcrResourceNameResult;
+import cn.ucloud.ocr.model.ModifyUAIOcrResourceOssInfoParam;
+import cn.ucloud.ocr.model.ModifyUAIOcrResourceOssInfoResult;
 
 /**
  * @Description : 默认ocr 客户端
@@ -25,6 +27,24 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
 
     public DefaultOcrClient(UcloudConfig config) {
         super(config);
+    }
+
+    @Override
+    public ModifyUAIOcrResourceOssInfoResult
+    modifyUAIOcrResourceOssInfo(ModifyUAIOcrResourceOssInfoParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceOssInfoResult.class);
+        return (ModifyUAIOcrResourceOssInfoResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void modifyUAIOcrResourceOssInfo(ModifyUAIOcrResourceOssInfoParam param,
+                                            UcloudHandler<ModifyUAIOcrResourceOssInfoResult> handler,
+                                            Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceOssInfoResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
     }
 
     @Override
