@@ -27,6 +27,12 @@ import java.util.List;
  **/
 public class RestParamConstructor {
 
+    private static final String CHARSET = "UTF-8";
+
+    private static final String KEY_SIGNATUR = "Signature";
+
+    private static final String KEY_PUBLIC_KEY = "PublicKey";
+
     private HttpEntity entity;
 
     private String restHttpURLParamString;
@@ -105,12 +111,12 @@ public class RestParamConstructor {
             builder.append(param.getParamKey() + "=" + param.getParamValue() + "&");
         }
         // 设置签名
-        builder.append("Signature" + "=" + signature);
+        builder.append(KEY_SIGNATUR + "=" + signature);
         restHttpURLParamString = builder.toString();
     }
 
     private void buildHeaders() {
-        headers.add(new BasicHeader("Signature", signature));
+        headers.add(new BasicHeader(KEY_SIGNATUR, signature));
         //headers.add(new BasicHeader("PublicKey", account.getPublicKey()));
     }
 
@@ -149,18 +155,18 @@ public class RestParamConstructor {
                 pairs.add(pair);
             }
         }
-        entity = new UrlEncodedFormEntity(pairs, Charset.forName("UTF-8"));
+        entity = new UrlEncodedFormEntity(pairs, Charset.forName(CHARSET));
     }
 
     private void buildJSONFormData() {
         String json = new Gson().toJson(baseRestRequestParam);
-        entity = new StringEntity(json, "utf-8");
+        entity = new StringEntity(json, CHARSET);
     }
 
 
     private void buildMultiPartFormData() {
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        builder.setCharset(Charset.forName("UTF-8"));
+        builder.setCharset(Charset.forName(CHARSET));
         // 添加参数
         if (analyzer.getBodyParams() != null) {
             for (Param param : analyzer.getBodyParams()) {
@@ -176,8 +182,8 @@ public class RestParamConstructor {
             }
         }
         // 设置签名
-        builder.addTextBody("Signature", signature);
-        builder.addTextBody("PublicKey", account.getPublicKey());
+        builder.addTextBody(KEY_SIGNATUR, signature);
+        builder.addTextBody(KEY_PUBLIC_KEY, account.getPublicKey());
         entity = builder.build();
     }
 
