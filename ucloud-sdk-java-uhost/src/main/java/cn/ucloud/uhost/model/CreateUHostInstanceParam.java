@@ -56,12 +56,36 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
          */
         private String backupType;
 
+        /**
+         * 加密：true, 不加密: false 加密必须传入对应的的KmsKeyId
+         */
+        private Boolean encrypted;
+
+        /**
+         * kms的id
+         */
+        private String kmsKeyId;
+
+        /**
+         * 云盘代金券id。不适用于系统盘/本地盘。请通过DescribeCoupon接口查询，或登录用户中心查看
+         */
+        private String couponId;
+
+
         public UhostDisk(@NotEmpty(message = "uhost.disk.size can not be empty") Integer size,
                          @NotEmpty(message = "uhost.disk.type can not be empty") String type,
                          @NotEmpty(message = "uhost.disk.isboot can not be null") Boolean isBoot) {
             this.size = size;
             this.type = type;
             this.isBoot = isBoot;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
         }
 
         public Integer getSize() {
@@ -94,6 +118,110 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
 
         public void setBackupType(String backupType) {
             this.backupType = backupType;
+        }
+
+
+        public Boolean getEncrypted() {
+            return encrypted;
+        }
+
+        public void setEncrypted(Boolean encrypted) {
+            this.encrypted = encrypted;
+        }
+
+        public String getKmsKeyId() {
+            return kmsKeyId;
+        }
+
+        public void setKmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+        }
+    }
+
+
+    public static class EIP {
+
+        /**
+         * 【单个创建该参数无效】
+         * 【如果绑定EIP这个参数必填】
+         * 弹性IP的线路如下:
+         * 国际: International
+         * BGP: Bgp
+         * 各地域允许的线路参数如下:
+         * cn-sh1: Bgp
+         * cn-sh2: Bgp
+         * cn-gd: Bgp
+         * cn-bj1: Bgp
+         * cn-bj2: Bgp
+         * hk: International
+         * us-ca: International
+         * th-bkk: International
+         * kr-seoul:International
+         * us-ws:International
+         * ge-fra:International
+         * sg:International
+         * tw-kh:International.
+         * 其他海外线路均为 International
+         */
+        private String operatorName;
+
+        /**
+         * 【单个创建该参数无效】
+         * 【如果绑定EIP这个参数必填】弹性IP的外网带宽, 单位为Mbps.
+         * 共享带宽模式必须指定0M带宽,
+         * 非共享带宽模式必须指定非0Mbps带宽.
+         * 各地域非共享带宽的带宽范围如下： 流量计费[1-300]，带宽计费[1-800]
+         */
+        private Integer bandwidth;
+
+        /**
+         * 【单个创建该参数无效】弹性IP的计费模式.
+         * 枚举值:
+         * "Traffic", 流量计费;
+         * "Bandwidth", 带宽计费;
+         * "ShareBandwidth",共享带宽模式.
+         * "Free":免费带宽模式.
+         * 默认为 "Bandwidth".
+         */
+        private String payMode;
+
+        /**
+         * 【单个创建该参数无效】
+         * 绑定的共享带宽Id，
+         * 仅当PayMode为ShareBandwidth时有效
+         */
+        private String shareBandwidthId;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
         }
     }
 
@@ -150,9 +278,9 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         if ("Password".equals(this.getLoginMode())) {
             if (this.getPassword() != null && !"".equals(this.getPassword())) {
                 try {
-                    list.add(new Param("Password",  new String( Base64.encodeBase64((password).getBytes("utf-8")))));
+                    list.add(new Param("Password", new String(Base64.encodeBase64((password).getBytes("utf-8")))));
                 } catch (UnsupportedEncodingException e) {
-                    Logger.getGlobal().log(Level.SEVERE,e.getMessage());
+                    Logger.getGlobal().log(Level.SEVERE, e.getMessage());
                 }
             } else {
                 throw new ValidatorException("password can not be empty with loginModel equal Password");
@@ -160,7 +288,6 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         }
         return list;
     }
-
 
 
     /**
@@ -236,24 +363,55 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
             for (int i = 0; i < len; i++) {
                 UhostDisk disk = uhostDisks.get(i);
                 if (disk == null) {
-                    throw new ValidatorException(String.format(exceptionFormat,i ," can not be null"));
+                    throw new ValidatorException(String.format(exceptionFormat, i, " can not be null"));
                 } else {
                     if (disk.getBoot() == null) {
-                        throw new ValidatorException(String.format(exceptionFormat,i ,".isBoot can not be null"));
+                        throw new ValidatorException(String.format(exceptionFormat, i, ".isBoot can not be null"));
                     }
                     if (disk.getSize() == null || disk.getSize() <= 0) {
-                        throw new ValidatorException(String.format(exceptionFormat,i ,".size can not be null or size <= 0"));
+                        throw new ValidatorException(String.format(exceptionFormat, i, ".size can not be null or size <= 0"));
                     }
                     if (disk.getType() == null || disk.getType().length() <= 0) {
-                        throw new ValidatorException(String.format(exceptionFormat,i ,".type can not be null"));
+                        throw new ValidatorException(String.format(exceptionFormat, i, ".type can not be null"));
                     }
-                    list.add(new Param(String.format(disksParamFormat,i,"Size"), disk.getSize()));
-                    list.add(new Param(String.format(disksParamFormat,i,"Type"), disk.getType()));
-                    list.add(new Param(String.format(disksParamFormat,i,"IsBoot"), disk.getBoot()));
-                    if (disk.backupType != null && disk.getBackupType().length() > 0) {
-                        list.add(new Param(String.format(disksParamFormat,i,"BackupType"), disk.getBackupType()));
+                    list.add(new Param(String.format(disksParamFormat, i, "Size"), disk.getSize()));
+                    list.add(new Param(String.format(disksParamFormat, i, "Type"), disk.getType()));
+                    list.add(new Param(String.format(disksParamFormat, i, "IsBoot"), disk.getBoot()));
+                    if (disk.backupType != null && !disk.backupType.isEmpty()) {
+                        list.add(new Param(String.format(disksParamFormat, i, "BackupType"), disk.backupType));
+                    }
+                    if (disk.encrypted != null) {
+                        list.add(new Param(String.format(disksParamFormat, i, "Encrypted"), disk.encrypted));
+                    }
+                    if (disk.kmsKeyId != null && !disk.kmsKeyId.isEmpty()) {
+                        list.add(new Param(String.format(disksParamFormat, i, "KmsKeyId"), disk.kmsKeyId));
+                    }
+                    if (disk.couponId != null && !disk.couponId.isEmpty()) {
+                        list.add(new Param(String.format(disksParamFormat, i, "CouponId"), disk.couponId));
                     }
                 }
+            }
+        }
+        return list;
+    }
+
+
+    @UcloudParam("EIP")
+    public List<Param> checkEIP() throws ValidatorException {
+        List<Param> list = new ArrayList<>();
+        if (eip != null) {
+            String eipParamFormat = "EIP.%s";
+            if (eip.operatorName != null && !eip.operatorName.isEmpty()) {
+                list.add(new Param(String.format(eipParamFormat, "OperatorName"), eip.operatorName));
+            }
+            if (eip.bandwidth != null) {
+                list.add(new Param(String.format(eipParamFormat, "Bandwidth"), eip.bandwidth));
+            }
+            if (eip.payMode != null && !eip.payMode.isEmpty()) {
+                list.add(new Param(String.format(eipParamFormat, "PayMode"), eip.payMode));
+            }
+            if (eip.shareBandwidthId != null && !eip.shareBandwidthId.isEmpty()) {
+                list.add(new Param(String.format(eipParamFormat, "ShareBandwidthId"), eip.shareBandwidthId));
             }
         }
         return list;
@@ -435,6 +593,119 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     @UcloudParam("ResourceType")
     private String resourceType;
 
+    /**
+     * 硬件隔离组id。可通过DescribeIsolationGroup获取。
+     */
+    @UcloudParam("IsolationGroup")
+    private String isolationGroup;
+
+    /**
+     * 告警模板id，如果传了告警模板id，且告警模板id正确，
+     * 则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。
+     */
+    @UcloudParam("AlarmTemplateId")
+    private String alarmTemplateId;
+
+
+    /**
+     * 最低cpu平台，枚举值
+     * ["Intel/Auto",
+     * "Intel/LvyBridge",
+     * "Intel/Haswell",
+     * "Intel/Broadwell",
+     * "Intel/Skylake"]
+     */
+    @UcloudParam("MinimalCpuPlatform")
+    private String minimalCpuPlatform;
+
+    /**
+     * GPU类型，枚举值["K80", "P40", "V100"]
+     */
+    @UcloudParam("GpuType")
+    private String gpuType;
+
+    /**
+     * 云主机类型，枚举值["N", "C", "G", "O"]
+     */
+    @UcloudParam("MachineType")
+    private String machineType;
+
+    /**
+     * 【批量创建主机时必填】最大创建主机数量，取值范围是[1,100];
+     */
+    @UcloudParam("MaxCount")
+    private Integer maxCount;
+
+
+    @UcloudParam("SetId")
+    private Integer setId;
+
+
+    private EIP eip;
+
+    public String getIsolationGroup() {
+        return isolationGroup;
+    }
+
+    public void setIsolationGroup(String isolationGroup) {
+        this.isolationGroup = isolationGroup;
+    }
+
+    public String getAlarmTemplateId() {
+        return alarmTemplateId;
+    }
+
+    public void setAlarmTemplateId(String alarmTemplateId) {
+        this.alarmTemplateId = alarmTemplateId;
+    }
+
+    public String getMinimalCpuPlatform() {
+        return minimalCpuPlatform;
+    }
+
+    public void setMinimalCpuPlatform(String minimalCpuPlatform) {
+        this.minimalCpuPlatform = minimalCpuPlatform;
+    }
+
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
+    }
+
+    public Integer getMaxCount() {
+        return maxCount;
+    }
+
+    public void setMaxCount(Integer maxCount) {
+        this.maxCount = maxCount;
+    }
+
+    public Integer getSetId() {
+        return setId;
+    }
+
+    public void setSetId(Integer setId) {
+        this.setId = setId;
+    }
+
+    public EIP getEip() {
+        return eip;
+    }
+
+    public void setEip(EIP eip) {
+        this.eip = eip;
+    }
 
     public String getRegion() {
         return region;
