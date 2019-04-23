@@ -22,13 +22,11 @@ public class GetUAICensorResourceMetricInfoTest {
 
     @Before
     public void setUp() throws Exception {
-        // todo 测试
         client = new DefaultCensorClient(new CensorConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
         String projectId = System.getenv("ProjectId");
         String region = "cn-bj2";
-        String zone = "cn-bj2-04";
         Long beginTime = 1555557017L;
         Long endTime = 1555578617L;
         String resourceId = "uaicensor-nkh1osfy";
