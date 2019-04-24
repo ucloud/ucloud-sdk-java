@@ -1,5 +1,4 @@
 ## ucloud-sdk-java
-![badge](http://9000.sonar-service.prj-sonarqube.svc.a1.gw.ucloudadmin.com/api/project_badges/measure?project=esl-ipdd-ucloud-sdk-java&metric=alert_status) <br/>
 ucloud开发者工具套件（SDK）。<br/>
 面向UCloud的多个产品服务，目前包括：
 - uhost
@@ -13,6 +12,9 @@ ucloud开发者工具套件（SDK）。<br/>
 - udb
 - udpn
 - umem
+- censor
+- ocr
+
 
 后续将支持更多的UCloud的产品服务。
 
@@ -27,7 +29,7 @@ ucloud开发者工具套件（SDK）。<br/>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.8.1.1-release</version>
+      <version>0.8.2-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -147,4 +149,8 @@ public class Main {
 - 0.8.1.1-release
 
     修复UNet.UpdateFirewall规则错误的bug
+    
+- 0.8.2-release
+    
+    新增UAI的Censor/OCR产品，部分接口更新维护
     

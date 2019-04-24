@@ -4,7 +4,54 @@ import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
-import cn.ucloud.uhost.model.*;
+import cn.ucloud.uhost.model.CopyCustomImageParam;
+import cn.ucloud.uhost.model.CopyCustomImageResult;
+import cn.ucloud.uhost.model.CreateCustomImageParam;
+import cn.ucloud.uhost.model.CreateCustomImageResult;
+import cn.ucloud.uhost.model.CreateUHostInstanceParam;
+import cn.ucloud.uhost.model.CreateUHostInstanceResult;
+import cn.ucloud.uhost.model.DescribeImageParam;
+import cn.ucloud.uhost.model.DescribeImageResult;
+import cn.ucloud.uhost.model.DescribeUHostInstanceParam;
+import cn.ucloud.uhost.model.DescribeUHostInstanceResult;
+import cn.ucloud.uhost.model.DescribeUHostTagsParam;
+import cn.ucloud.uhost.model.DescribeUHostTagsResult;
+import cn.ucloud.uhost.model.GetMetricParam;
+import cn.ucloud.uhost.model.GetMetricResult;
+import cn.ucloud.uhost.model.GetUHostInstancePriceParam;
+import cn.ucloud.uhost.model.GetUHostInstancePriceResult;
+import cn.ucloud.uhost.model.GetUHostUpgradePriceParam;
+import cn.ucloud.uhost.model.GetUHostUpgradePriceResult;
+import cn.ucloud.uhost.model.GetUhostInstanceVncInfoParam;
+import cn.ucloud.uhost.model.GetUhostInstanceVncInfoResult;
+import cn.ucloud.uhost.model.ImportCustomImageParam;
+import cn.ucloud.uhost.model.ImportCustomImageResult;
+import cn.ucloud.uhost.model.ModifyUHostInstanceNameParam;
+import cn.ucloud.uhost.model.ModifyUHostInstanceNameResult;
+import cn.ucloud.uhost.model.ModifyUHostInstanceRemarkParam;
+import cn.ucloud.uhost.model.ModifyUHostInstanceRemarkResult;
+import cn.ucloud.uhost.model.ModifyUHostInstanceTagParam;
+import cn.ucloud.uhost.model.ModifyUHostInstanceTagResult;
+import cn.ucloud.uhost.model.PoweroffUHostInstanceParam;
+import cn.ucloud.uhost.model.PoweroffUHostInstanceResult;
+import cn.ucloud.uhost.model.RebootUHostInstanceParam;
+import cn.ucloud.uhost.model.RebootUHostInstanceResult;
+import cn.ucloud.uhost.model.ReinstallUHostInstanceParam;
+import cn.ucloud.uhost.model.ReinstallUHostInstanceResult;
+import cn.ucloud.uhost.model.ResetUHostInstancePasswordParam;
+import cn.ucloud.uhost.model.ResetUHostInstancePasswordResult;
+import cn.ucloud.uhost.model.ResizeUHostInstanceParam;
+import cn.ucloud.uhost.model.ResizeUHostInstanceResult;
+import cn.ucloud.uhost.model.StartUHostInstanceParam;
+import cn.ucloud.uhost.model.StartUHostInstanceResult;
+import cn.ucloud.uhost.model.StopUHostInstanceParam;
+import cn.ucloud.uhost.model.StopUHostInstanceResult;
+import cn.ucloud.uhost.model.TerminateCustomImageParam;
+import cn.ucloud.uhost.model.TerminateCustomImageResult;
+import cn.ucloud.uhost.model.TerminateUHostInstanceParam;
+import cn.ucloud.uhost.model.TerminateUHostInstanceResult;
+import cn.ucloud.uhost.model.UpgradeToArkUHostInstanceParam;
+import cn.ucloud.uhost.model.UpgradeToArkUHostInstanceResult;
 import cn.ucloud.uhost.pojo.UhostConfig;
 
 /**
@@ -106,7 +153,7 @@ public class DefaultUhostClient extends DefaultUcloudClient implements UhostClie
     public void createUHostInstance(CreateUHostInstanceParam param, UcloudHandler<CreateUHostInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUHostInstanceResult.class);
         try {
-            http.doGet(param, config, null);
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
