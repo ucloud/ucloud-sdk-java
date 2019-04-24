@@ -69,9 +69,7 @@ public class Http {
                 logger.error("response close error:{}", e.getMessage());
             }
             try {
-                if (client != null) {
-                    client.close();
-                }
+                client.close();
             } catch (IOException e) {
                 logger.error("httpClient close error:{}", e.getMessage());
             }
