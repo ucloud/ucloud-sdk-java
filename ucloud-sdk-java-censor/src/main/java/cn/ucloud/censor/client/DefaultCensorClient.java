@@ -32,11 +32,9 @@ import cn.ucloud.common.http.UcloudHttpImpl;
  **/
 public class DefaultCensorClient extends DefaultUcloudClient implements CensorClient {
 
-    private CensorConfig config;
 
     public DefaultCensorClient(CensorConfig config) {
         super(config);
-        this.config = config;
     }
 
     @Override
