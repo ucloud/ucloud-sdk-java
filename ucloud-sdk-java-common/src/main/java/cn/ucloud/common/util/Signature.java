@@ -202,6 +202,9 @@ public class Signature {
         StringBuilder builder = new StringBuilder();
         if (params != null) {
             for (Param param : params) {
+                if (param.getParamValue() == null){
+                    continue;
+                }
                 builder.append(param.getParamKey());
                 builder.append(param.getParamValue());
             }

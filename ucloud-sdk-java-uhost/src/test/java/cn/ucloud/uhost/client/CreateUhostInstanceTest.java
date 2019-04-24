@@ -28,18 +28,25 @@ public class CreateUhostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        // uimage-cjswb5 ubuntu 16.04
-        CreateUHostInstanceParam.UhostDisk disk = new CreateUHostInstanceParam.UhostDisk(25,"LOCAL_SSD",false);
-        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-02","uimage-m1proq");
+        param = new CreateUHostInstanceParam("cn-sh2","cn-sh2-02","uimage-xh0qwn");
         param.setName("java-sdk-test-aaa");
         param.setPassword("123456ab");
-        param.setProjectId("org-izug1m");
+        param.setProjectId("org-o1ftjk");
         param.setLoginMode("Password");
+        param.setChargeType("Dynamic");
+        param.setMaxCount(2);
         List diskList =new ArrayList<CreateUHostInstanceParam.UhostDisk>();
-        diskList.add(new CreateUHostInstanceParam.UhostDisk(10,"LOCAL_NORMAL",false));
+        CreateUHostInstanceParam.UhostDisk disk = new CreateUHostInstanceParam.UhostDisk(25,
+                "LOCAL_SSD",false);
+        diskList.add(disk);
         param.setDisks(diskList);
-        //param.setVpcId("uvnet-dbboih");
-        //param.setSubnetId("subnet-us0fsb");
+        param.setVpcId("uvnet-eeznzuup");
+        param.setSubnetId("subnet-ndvpszog");
+        CreateUHostInstanceParam.EIP eip = new CreateUHostInstanceParam.EIP();
+        eip.setBandwidth(2);
+        eip.setPayMode("Bandwidth");
+        eip.setOperatorName("Bgp");
+        param.setEip(eip);
     }
 
 
