@@ -5,7 +5,6 @@ import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.common.pojo.BaseRestRequestParam;
 import cn.ucloud.common.pojo.UcloudConfig;
 import cn.ucloud.common.util.RestParamConstructor;
-import com.google.gson.Gson;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpGet;
@@ -64,7 +63,6 @@ public class UcloudRestHttpImpl implements UcloudRestHttp {
             HttpEntity entity = constructor.getEntity();
             post.setEntity(entity);
             post.setHeaders(headers);
-            logger.info("post:{}",new Gson().toJson(post));
             Http http = new Http(resultClass);
             result = http.doHttp(post, handler, async(asyncFlag));
         } catch (Exception e) {
