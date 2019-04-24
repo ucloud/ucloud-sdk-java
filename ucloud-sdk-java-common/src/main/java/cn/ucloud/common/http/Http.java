@@ -12,6 +12,8 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 /**
  * @Description :
  * @Author : codezhang
@@ -28,13 +30,14 @@ public class Http {
     private static Logger logger = LoggerFactory.getLogger(Http.class);
 
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {
-        CloseableHttpResponse response ;
+        CloseableHttpResponse response = null;
         BaseResponseResult responseResult = null;
         // 创建HttpClient对象
         final CloseableHttpClient client = HttpClients.createDefault();
         request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2-release");
         // 执行http get请求
-        logger.info("request :{}", new Gson().toJson(request));
+        String requestJson = new Gson().toJson(request);
+        logger.info("request :{}", requestJson);
         try {
             response = client.execute(request);
             if (response != null) {
@@ -56,15 +59,30 @@ public class Http {
                 handlerException(handler, new NullPointerException("response is null"), async);
             }
         } catch (Exception e) {
-            handlerException(handler,e,async);
+            handlerException(handler, e, async);
+        } finally {
+            try {
+                if (response != null) {
+                    response.close();
+                }
+            } catch (IOException e) {
+                logger.error("response close error:{}", e.getMessage());
+            }
+            try {
+                if (client != null) {
+                    client.close();
+                }
+            } catch (IOException e) {
+                logger.error("httpClient close error:{}", e.getMessage());
+            }
         }
         return responseResult;
     }
 
     private void handlerResult(UcloudHandler handler, BaseResponseResult result) {
-        if (result.getRetCode() != 0){
+        if (result.getRetCode() != 0) {
             handler.failed(result);
-        }else {
+        } else {
             handler.success(result);
         }
     }
