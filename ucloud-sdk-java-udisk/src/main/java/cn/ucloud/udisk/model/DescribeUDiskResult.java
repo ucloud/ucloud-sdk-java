@@ -131,6 +131,76 @@ public class DescribeUDiskResult extends BaseResponseResult {
         @SerializedName("CloneEnable")
         private Integer cloneEnable;
 
+        /**
+         * 是否是加密盘快照，是:"Yes", 否:"No"
+         */
+        @SerializedName("UKmsMode")
+        private String uKmsMode;
+
+        /**
+         * 该快照的cmk id
+         */
+        @SerializedName("CmkId")
+        private String cmkId;
+
+        /**
+         * 该快照的密文密钥
+         */
+        @SerializedName("DataKey")
+        private String dataKey;
+
+        /**
+         * 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘)
+         */
+        @SerializedName("CmkIdStatus")
+        private String cmkIdStatus;
+
+        /**
+         * cmk id 别名
+         */
+        @SerializedName("CmkIdAlias")
+        private String cmkIdAlias;
+
+        public String getuKmsMode() {
+            return uKmsMode;
+        }
+
+        public void setuKmsMode(String uKmsMode) {
+            this.uKmsMode = uKmsMode;
+        }
+
+        public String getCmkId() {
+            return cmkId;
+        }
+
+        public void setCmkId(String cmkId) {
+            this.cmkId = cmkId;
+        }
+
+        public String getDataKey() {
+            return dataKey;
+        }
+
+        public void setDataKey(String dataKey) {
+            this.dataKey = dataKey;
+        }
+
+        public String getCmkIdStatus() {
+            return cmkIdStatus;
+        }
+
+        public void setCmkIdStatus(String cmkIdStatus) {
+            this.cmkIdStatus = cmkIdStatus;
+        }
+
+        public String getCmkIdAlias() {
+            return cmkIdAlias;
+        }
+
+        public void setCmkIdAlias(String cmkIdAlias) {
+            this.cmkIdAlias = cmkIdAlias;
+        }
+
         public Integer getArkSwitchEnable() {
             return arkSwitchEnable;
         }
