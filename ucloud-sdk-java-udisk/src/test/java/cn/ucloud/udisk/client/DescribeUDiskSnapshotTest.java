@@ -28,7 +28,7 @@ public class DescribeUDiskSnapshotTest {
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
         param = new DescribeUDiskSnapshotParam("cn-sh2");
-        param.setProjectId("org-4nfe1i");
+        param.setProjectId("org-o1ftjk");
     }
 
     @Test
