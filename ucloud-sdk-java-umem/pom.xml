@@ -7,8 +7,9 @@
         <groupId>cn.ucloud</groupId>
         <version>0.8.2.2-release</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
+    <version>0.8.2.2-release</version>
     <artifactId>ucloud-sdk-java-umem</artifactId>
 
     <dependencies>
