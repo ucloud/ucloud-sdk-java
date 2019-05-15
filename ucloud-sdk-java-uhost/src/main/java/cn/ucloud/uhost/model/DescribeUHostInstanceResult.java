@@ -232,6 +232,34 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("NetCapFeature")
         private Boolean netCapFeature;
 
+        /**
+         * CPU平台
+         */
+        @SerializedName("CpuPlatform")
+        private String cpuPlatform;
+
+        /**
+         * 主机类型
+         */
+        @SerializedName("MachineType")
+        private String machineType;
+
+        public String getCpuPlatform() {
+            return cpuPlatform;
+        }
+
+        public void setCpuPlatform(String cpuPlatform) {
+            this.cpuPlatform = cpuPlatform;
+        }
+
+        public String getMachineType() {
+            return machineType;
+        }
+
+        public void setMachineType(String machineType) {
+            this.machineType = machineType;
+        }
+
         public Boolean getNetCapFeature() {
             return netCapFeature;
         }
