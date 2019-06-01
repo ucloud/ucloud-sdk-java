@@ -341,6 +341,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("IsForceDump")
         private Integer isForceDump;
 
+        @SerializedName("BackupMethod")
+        private Boolean backupMethod;
+
+        public Boolean getBackupMethod() {
+            return backupMethod;
+        }
+
+        public void setBackupMethod(Boolean backupMethod) {
+            this.backupMethod = backupMethod;
+        }
+
         public Integer getIsForceDump() {
             return isForceDump;
         }
@@ -930,6 +941,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
 
         @SerializedName("ConfigDBs")
         private List<ConfigDB> configDBs;
+
+        @SerializedName("BackupMethod")
+        private Boolean backupMethod;
+
+        public Boolean getBackupMethod() {
+            return backupMethod;
+        }
+
+        public void setBackupMethod(Boolean backupMethod) {
+            this.backupMethod = backupMethod;
+        }
 
         public List<MongosDB> getMongosDBs() {
             return mongosDBs;
