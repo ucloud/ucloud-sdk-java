@@ -34,7 +34,7 @@ public class Http {
         BaseResponseResult responseResult = null;
         // 创建HttpClient对象
         final CloseableHttpClient client = HttpClients.createDefault();
-        request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2.2-release");
+        request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2.3-release");
         // 执行http get请求
         String requestJson = new Gson().toJson(request);
         logger.info("request :{}", requestJson);
