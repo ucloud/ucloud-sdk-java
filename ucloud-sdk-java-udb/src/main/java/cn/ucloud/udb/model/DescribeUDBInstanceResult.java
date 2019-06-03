@@ -342,13 +342,13 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         private Integer isForceDump;
 
         @SerializedName("BackupMethod")
-        private Boolean backupMethod;
+        private String backupMethod;
 
-        public Boolean getBackupMethod() {
+        public String getBackupMethod() {
             return backupMethod;
         }
 
-        public void setBackupMethod(Boolean backupMethod) {
+        public void setBackupMethod(String backupMethod) {
             this.backupMethod = backupMethod;
         }
 
@@ -943,13 +943,13 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         private List<ConfigDB> configDBs;
 
         @SerializedName("BackupMethod")
-        private Boolean backupMethod;
+        private String backupMethod;
 
-        public Boolean getBackupMethod() {
+        public String getBackupMethod() {
             return backupMethod;
         }
 
-        public void setBackupMethod(Boolean backupMethod) {
+        public void setBackupMethod(String backupMethod) {
             this.backupMethod = backupMethod;
         }
 
