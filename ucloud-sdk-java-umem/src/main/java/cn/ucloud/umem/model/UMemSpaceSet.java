@@ -82,6 +82,17 @@ public class UMemSpaceSet {
     @SerializedName("VPCId")
     private String vpcId;
 
+    @SerializedName("RewriteTime")
+    private Integer rewriteTime;
+
+    public Integer getRewriteTime() {
+        return rewriteTime;
+    }
+
+    public void setRewriteTime(Integer rewriteTime) {
+        this.rewriteTime = rewriteTime;
+    }
+
     public String getVpcId() {
         return vpcId;
     }
