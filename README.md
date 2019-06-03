@@ -161,4 +161,8 @@ public class Main {
 - 0.8.2.2-release
     
     UHost、UDisk维护更新
+
+- 0.8.2.3-release
+    
+    UDB、UMem维护更新
     
