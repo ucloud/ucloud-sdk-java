@@ -26,4 +26,12 @@ public class UcloudConfig {
     public String getApiServerAddr() {
         return apiServerAddr;
     }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public void setApiServerAddr(String apiServerAddr) {
+        this.apiServerAddr = apiServerAddr;
+    }
 }
