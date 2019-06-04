@@ -1,7 +1,8 @@
 package cn.ucloud.usms.client;
 
 import cn.ucloud.common.pojo.Account;
-import cn.ucloud.usms.model.SendUSMSMessageParam;
+import cn.ucloud.usms.model.GetUSMSSendReceiptParam;
+import cn.ucloud.usms.model.GetUSMSSendReceiptResult;
 import cn.ucloud.usms.model.SendUSMSMessageResult;
 import cn.ucloud.usms.pojo.USMSConfig;
 import org.junit.Before;
@@ -15,13 +16,12 @@ import static org.junit.Assert.assertNull;
 /**
  * @Description :
  * @Author : codezhang
- * @Date : 2019-06-04 17:36
+ * @Date : 2019-06-04 17:58
  **/
-public class SendUSMSMessageTest {
-
+public class GetUSMSSendReceiptTest {
     private USMSClient client;
 
-    private SendUSMSMessageParam param;
+    private GetUSMSSendReceiptParam param;
 
 
     @Before
@@ -29,17 +29,16 @@ public class SendUSMSMessageTest {
         client = new DefaultUSMSClient(new USMSConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        List<String> phoneNumbers = new ArrayList<>();
-        String templateId = System.getenv("USMSSIG");
-        param = new SendUSMSMessageParam(phoneNumbers, templateId);
+        List<String> sessionNos = new ArrayList<>();
+        param = new GetUSMSSendReceiptParam(sessionNos);
         param.setProjectId("org-o1ftjk");
     }
 
 
     @Test
-    public void sendUSMSMessage() {
+    public void getUSMSSendReceipt() {
         try {
-            SendUSMSMessageResult result = client.sendUSMSMessage(param);
+            GetUSMSSendReceiptResult result = client.getUSMSSendReceipt(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
             assertNull(e);
