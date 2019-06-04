@@ -30,6 +30,7 @@ public class GetUSMSSendReceiptTest {
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
         List<String> sessionNos = new ArrayList<>();
+        sessionNos.add("2a9053cf-17e9-462d-8810-29f97684ad4e");
         param = new GetUSMSSendReceiptParam(sessionNos);
         param.setProjectId("org-o1ftjk");
     }
@@ -41,6 +42,7 @@ public class GetUSMSSendReceiptTest {
             GetUSMSSendReceiptResult result = client.getUSMSSendReceipt(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
+            e.printStackTrace();
             assertNull(e);
         }
     }

@@ -30,8 +30,12 @@ public class SendUSMSMessageTest {
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
         List<String> phoneNumbers = new ArrayList<>();
-        String templateId = System.getenv("USMSSIG");
+        phoneNumbers.add("1895509xxxx");
+        //phoneNumbers.add("1851612xxxx");
+        String templateId = "UTN1906040A462x";
+        String sig = System.getenv("USMSSIG");
         param = new SendUSMSMessageParam(phoneNumbers, templateId);
+        //param.setSigContent(sig);
         param.setProjectId("org-o1ftjk");
     }
 
@@ -42,6 +46,7 @@ public class SendUSMSMessageTest {
             SendUSMSMessageResult result = client.sendUSMSMessage(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
+            e.printStackTrace();
             assertNull(e);
         }
     }
