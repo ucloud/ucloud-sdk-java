@@ -23,6 +23,7 @@
         <module>ucloud-sdk-java-umem</module>
         <module>ucloud-sdk-java-censor</module>
         <module>ucloud-sdk-java-ocr</module>
+        <module>ucloud-sdk-java-usms</module>
     </modules>
 
     <name>ucloud-sdk-java</name>

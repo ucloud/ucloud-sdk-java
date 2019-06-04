@@ -40,9 +40,21 @@ public class TerminateUHostInstanceParam extends BaseRequestParam {
     private Integer Destroy;
 
     /**
+     * optional 是否释放绑定的EIP。true: 解绑EIP后，并释放；其他值或不填：解绑EIP。
+     */
+    @UcloudParam("ReleaseEIP")
+    private Boolean releaseEIP;
+
+    /**
+     * 是否删除挂载的数据盘。true删除，其他不删除。
+     */
+    @UcloudParam("ReleaseUDisk")
+    private Boolean releaseUDisk;
+
+    /**
      * optional 是否释放绑定的EIP。yes: 解绑EIP后，并释放；其他值或不填：解绑EIP。
      */
-    @UcloudParam("EIPReleased")
+    @Deprecated
     private String eipReleased;
 
 
@@ -85,10 +97,28 @@ public class TerminateUHostInstanceParam extends BaseRequestParam {
         Destroy = destroy;
     }
 
+    public Boolean getReleaseEIP() {
+        return releaseEIP;
+    }
+
+    public void setReleaseEIP(Boolean releaseEIP) {
+        this.releaseEIP = releaseEIP;
+    }
+
+    public Boolean getReleaseUDisk() {
+        return releaseUDisk;
+    }
+
+    public void setReleaseUDisk(Boolean releaseUDisk) {
+        this.releaseUDisk = releaseUDisk;
+    }
+
+    @Deprecated
     public String getEipReleased() {
         return eipReleased;
     }
 
+    @Deprecated
     public void setEipReleased(String eipReleased) {
         this.eipReleased = eipReleased;
     }

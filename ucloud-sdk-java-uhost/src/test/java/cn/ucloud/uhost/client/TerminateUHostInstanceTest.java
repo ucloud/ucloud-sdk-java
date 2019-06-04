@@ -27,7 +27,9 @@ public class TerminateUHostInstanceTest {
         client = new DefaultUhostClient(new UhostConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        param = new TerminateUHostInstanceParam("cn-sh2","uhost-rjonwb2x");
+        param = new TerminateUHostInstanceParam("cn-sh2","uhost-ohuswafh");
+        param.setReleaseEIP(true);
+        param.setReleaseUDisk(true);
     }
 
 
@@ -38,7 +40,7 @@ public class TerminateUHostInstanceTest {
             TerminateUHostInstanceResult result = client.terminateUHostInstance(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
-           assertNull(e);
+            assertNull(e);
         }
     }
 }
