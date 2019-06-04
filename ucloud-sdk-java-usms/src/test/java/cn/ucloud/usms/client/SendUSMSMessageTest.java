@@ -32,11 +32,15 @@ public class SendUSMSMessageTest {
         List<String> phoneNumbers = new ArrayList<>();
         phoneNumbers.add("1895509xxxx");
         //phoneNumbers.add("1851612xxxx");
-        String templateId = "UTN1906040A462x";
+        String templateId = "UTA190604D47Fxx";
         String sig = System.getenv("USMSSIG");
+
         param = new SendUSMSMessageParam(phoneNumbers, templateId);
         //param.setSigContent(sig);
         param.setProjectId("org-o1ftjk");
+        List<String> templateParams = new ArrayList<>();
+        templateParams.add("param test");
+        param.setTemplateParams(templateParams);
     }
 
 

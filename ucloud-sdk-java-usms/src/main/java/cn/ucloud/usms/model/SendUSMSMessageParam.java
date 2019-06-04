@@ -79,6 +79,24 @@ public class SendUSMSMessageParam extends BaseRequestParam {
         return params;
     }
 
+    @UcloudParam("TemplateParams")
+    public List<Param> checkTemplateParams() throws ValidatorException {
+        List<Param> params = new ArrayList<>();
+        if (templateParams == null || templateParams.isEmpty()) {
+            throw new ValidatorException("templateParams can not be empty");
+        }
+        int size = templateParams.size();
+        String templateParamFormat = "TemplateParams.%d";
+        for (int i = 0; i < size; i++) {
+            String templateParam = templateParams.get(i);
+            if (templateParam == null || templateParam.isEmpty()) {
+                throw new ValidatorException(String.format("templateParams[%d] can not be empty", i));
+            }
+            params.add(new Param(String.format(templateParamFormat, i), templateParam));
+        }
+        return params;
+    }
+
     public String getRegion() {
         return region;
     }
