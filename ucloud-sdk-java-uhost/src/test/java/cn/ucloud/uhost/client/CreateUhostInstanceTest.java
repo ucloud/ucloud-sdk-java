@@ -34,11 +34,13 @@ public class CreateUhostInstanceTest {
         param.setProjectId("org-o1ftjk");
         param.setLoginMode("Password");
         param.setChargeType("Dynamic");
-        param.setMaxCount(2);
         List diskList =new ArrayList<CreateUHostInstanceParam.UhostDisk>();
-        CreateUHostInstanceParam.UhostDisk disk = new CreateUHostInstanceParam.UhostDisk(25,
-                "LOCAL_SSD",false);
-        diskList.add(disk);
+        CreateUHostInstanceParam.UhostDisk diskData = new CreateUHostInstanceParam.UhostDisk(20,
+                "CLOUD_SSD",false);
+        CreateUHostInstanceParam.UhostDisk diskBoot = new CreateUHostInstanceParam.UhostDisk(20,
+                "CLOUD_SSD",true);
+        diskList.add(diskData);
+        diskList.add(diskBoot);
         param.setDisks(diskList);
         param.setVpcId("uvnet-eeznzuup");
         param.setSubnetId("subnet-ndvpszog");
@@ -46,7 +48,9 @@ public class CreateUhostInstanceTest {
         eip.setBandwidth(2);
         eip.setPayMode("Bandwidth");
         eip.setOperatorName("Bgp");
-        param.setEip(eip);
+        List<CreateUHostInstanceParam.EIP> eips = new ArrayList<>();
+        eips.add(eip);
+        param.setEips(eips);
     }
 
 

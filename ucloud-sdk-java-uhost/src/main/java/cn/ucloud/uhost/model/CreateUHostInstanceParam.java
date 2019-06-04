@@ -192,6 +192,60 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
          */
         private String shareBandwidthId;
 
+        /**
+         * 填写支持SSH访问IP的地区名称，
+         * 如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”。
+         * Area和AreaCode两者必填一个
+         */
+        private String globalSSHArea;
+
+        /**
+         * SSH端口，1-65535且不能使用80，443端口
+         */
+        private Integer globalSSHPort;
+
+        /**
+         * AreaCode, 区域航空港国际通用代码。Area和AreaCode两者必填一个
+         */
+        private String globalSSHAreaCode;
+
+        /**
+         * 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看
+         */
+        private String couponId;
+
+        public String getGlobalSSHArea() {
+            return globalSSHArea;
+        }
+
+        public void setGlobalSSHArea(String globalSSHArea) {
+            this.globalSSHArea = globalSSHArea;
+        }
+
+        public Integer getGlobalSSHPort() {
+            return globalSSHPort;
+        }
+
+        public void setGlobalSSHPort(Integer globalSSHPort) {
+            this.globalSSHPort = globalSSHPort;
+        }
+
+        public String getGlobalSSHAreaCode() {
+            return globalSSHAreaCode;
+        }
+
+        public void setGlobalSSHAreaCode(String globalSSHAreaCode) {
+            this.globalSSHAreaCode = globalSSHAreaCode;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+
         public String getOperatorName() {
             return operatorName;
         }
@@ -397,21 +451,41 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
 
 
     @UcloudParam("EIP")
-    public List<Param> checkEIP() throws ValidatorException {
+    public List<Param> checkEIPs() throws ValidatorException {
         List<Param> list = new ArrayList<>();
-        if (eip != null) {
-            String eipParamFormat = "EIP.%s";
+        if (eips == null || eips.isEmpty()) {
+            return list;
+        }
+        int size = eips.size();
+        for (int i = 0; i < size; i++) {
+            EIP eip = eips.get(i);
+            if (eip == null) {
+                throw new ValidatorException(String.format("eips[%d] is null", i));
+            }
+            String eipParamFormat = "NetworkInterface.%d.EIP.%s";
             if (eip.operatorName != null && !eip.operatorName.isEmpty()) {
-                list.add(new Param(String.format(eipParamFormat, "OperatorName"), eip.operatorName));
+                list.add(new Param(String.format(eipParamFormat, i, "OperatorName"), eip.operatorName));
             }
             if (eip.bandwidth != null) {
-                list.add(new Param(String.format(eipParamFormat, "Bandwidth"), eip.bandwidth));
+                list.add(new Param(String.format(eipParamFormat, i, "Bandwidth"), eip.bandwidth));
             }
             if (eip.payMode != null && !eip.payMode.isEmpty()) {
-                list.add(new Param(String.format(eipParamFormat, "PayMode"), eip.payMode));
+                list.add(new Param(String.format(eipParamFormat, i, "PayMode"), eip.payMode));
             }
             if (eip.shareBandwidthId != null && !eip.shareBandwidthId.isEmpty()) {
-                list.add(new Param(String.format(eipParamFormat, "ShareBandwidthId"), eip.shareBandwidthId));
+                list.add(new Param(String.format(eipParamFormat, i, "ShareBandwidthId"), eip.shareBandwidthId));
+            }
+            if (eip.couponId != null && !eip.couponId.isEmpty()) {
+                list.add(new Param(String.format(eipParamFormat, i, "CouponId"), eip.couponId));
+            }
+            if (eip.globalSSHArea != null && !eip.globalSSHArea.isEmpty()) {
+                list.add(new Param(String.format(eipParamFormat, i, "GlobalSSH.Area"), eip.globalSSHArea));
+            }
+            if (eip.globalSSHAreaCode != null && !eip.globalSSHAreaCode.isEmpty()) {
+                list.add(new Param(String.format(eipParamFormat, i, "GlobalSSH.AreaCode"), eip.globalSSHAreaCode));
+            }
+            if (eip.globalSSHPort != null) {
+                list.add(new Param(String.format(eipParamFormat, i, "GlobalSSH.Port"), eip.globalSSHPort));
             }
         }
         return list;
@@ -640,8 +714,18 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
     @UcloudParam("SetId")
     private Integer setId;
 
-
+    @Deprecated
     private EIP eip;
+
+    private List<EIP> eips;
+
+    public List<EIP> getEips() {
+        return eips;
+    }
+
+    public void setEips(List<EIP> eips) {
+        this.eips = eips;
+    }
 
     public String getIsolationGroup() {
         return isolationGroup;
@@ -699,10 +783,12 @@ public class CreateUHostInstanceParam extends BaseRequestParam {
         this.setId = setId;
     }
 
+    @Deprecated
     public EIP getEip() {
         return eip;
     }
 
+    @Deprecated
     public void setEip(EIP eip) {
         this.eip = eip;
     }
