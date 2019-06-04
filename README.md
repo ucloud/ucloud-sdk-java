@@ -14,6 +14,7 @@ ucloud开发者工具套件（SDK）。<br/>
 - umem
 - censor
 - ocr
+- usms
 
 
 后续将支持更多的UCloud的产品服务。
@@ -164,5 +165,6 @@ public class Main {
 
 - 0.8.2.3-release
     
-    UDB、UMem维护更新
+    UDB、UMem维护更新，UHost创建主机时绑定EIP和删除主机时解绑EIP、UDisk功能  
+    维护更新，新增USMS产品
     
