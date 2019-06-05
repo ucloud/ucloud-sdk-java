@@ -17,7 +17,7 @@ import static cn.ucloud.common.util.StringEqual.regionZoneStringEqual;
 public class GetRegionResult extends BaseResponseResult {
 
 
-    private class RealRegion {
+    private static class RealRegion {
         /**
          * region名称，code，地域
          */
@@ -56,7 +56,7 @@ public class GetRegionResult extends BaseResponseResult {
     }
 
 
-    private class Region {
+    public static class Region {
 
         /**
          * region名称，code,地域

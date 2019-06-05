@@ -6,6 +6,8 @@ import cn.ucloud.common.pojo.UcloudConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * @description:
  * @author: codezhang
@@ -24,8 +26,9 @@ public class GetProjectListTest {
     @Test
     public void getProductList() {
         try {
-            GetProjectListResult productList = client.getProductList();
-            System.out.println(productList);
+            GetProjectListResult getProjectListResult = client.getProjectList();
+            List<GetProjectListResult.Project> projectList = getProjectListResult.getProjectList();
+            System.out.println(projectList);
         } catch (Exception e) {
             e.printStackTrace();
         }

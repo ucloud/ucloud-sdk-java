@@ -36,13 +36,14 @@ public interface UcloudClient {
      * @return {@link GetProjectListResult} 结果对象
      * @throws Exception 出错抛出异常
      */
-    GetProjectListResult getProductList() throws Exception;
+    GetProjectListResult getProjectList() throws Exception;
+
 
     /**
      *  获取项目列表-GetProjectList (回调)
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getProductList( UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag);
+    void getProjectList( UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag);
 
 }

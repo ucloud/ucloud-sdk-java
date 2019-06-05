@@ -6,6 +6,8 @@ import cn.ucloud.common.pojo.UcloudConfig;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * @description:
  * @author: codezhang
@@ -25,8 +27,9 @@ public class GetRegionTest {
     @Test
     public void getRegion() {
         try {
-            GetRegionResult region = client.getRegion();
-            System.out.println(region);
+            GetRegionResult getRegionResult = client.getRegion();
+            List<GetRegionResult.Region> regions = getRegionResult.getRegions();
+            System.out.println(regions);
         } catch (Exception e) {
             e.printStackTrace();
         }
