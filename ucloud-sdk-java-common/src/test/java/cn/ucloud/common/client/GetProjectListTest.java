@@ -24,7 +24,7 @@ public class GetProjectListTest {
     }
 
     @Test
-    public void getProductList() {
+    public void getProjectList() {
         try {
             GetProjectListResult getProjectListResult = client.getProjectList();
             List<GetProjectListResult.Project> projectList = getProjectListResult.getProjectList();
