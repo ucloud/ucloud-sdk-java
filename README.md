@@ -134,7 +134,7 @@ public class Main {
     修复了ucloud-sdk-java-common中存在的publicKey编码问题
 - 0.6.2-release
 
-    支持获取基础数据的接口GetRegion和GetProductList
+    支持获取基础数据的接口GetRegion和GetProjectList
 - 0.6.3-release
 
     修复个别接口返回结果和实际有出入的问题
@@ -167,4 +167,8 @@ public class Main {
     
     UDB、UMem维护更新，UHost创建主机时绑定EIP和删除主机时解绑EIP、UDisk功能  
     维护更新，新增USMS产品
+
+- 0.8.2.4-release
+    
+    UDB维护更新，common错误修复
     
