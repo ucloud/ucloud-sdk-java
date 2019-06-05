@@ -38,13 +38,13 @@ public class DefaultUcloudClient implements UcloudClient {
     }
 
     @Override
-    public GetProjectListResult getProductList() throws Exception {
+    public GetProjectListResult getProjectList() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
         return (GetProjectListResult) http.doGet(new GetProjectListParam(), config, null);
     }
 
     @Override
-    public void getProductList(UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag) {
+    public void getProjectList(UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
         try {
             http.doGet(new GetProjectListParam(), config, handler, asyncFlag);
