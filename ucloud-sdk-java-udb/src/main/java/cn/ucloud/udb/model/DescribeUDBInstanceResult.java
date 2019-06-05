@@ -15,7 +15,7 @@ import java.util.List;
  **/
 public class DescribeUDBInstanceResult extends BaseResponseResult {
 
-    private static class MongosDB {
+    public static class MongosDB {
 
         @SerializedName("db_id")
         private String dbId;
@@ -51,7 +51,7 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         }
     }
 
-    private static class ConfigDB {
+    public static class ConfigDB {
 
         @SerializedName("db_id")
         private String dbId;

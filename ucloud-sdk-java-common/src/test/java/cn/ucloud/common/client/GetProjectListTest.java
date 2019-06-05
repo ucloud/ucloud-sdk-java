@@ -6,8 +6,6 @@ import cn.ucloud.common.pojo.UcloudConfig;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
-
 /**
  * @description:
  * @author: codezhang
@@ -16,6 +14,7 @@ import java.util.List;
 public class GetProjectListTest {
 
     private UcloudClient client;
+
     @Before
     public void initData() {
         client = new DefaultUcloudClient(new UcloudConfig(
@@ -27,8 +26,7 @@ public class GetProjectListTest {
     public void getProjectList() {
         try {
             GetProjectListResult getProjectListResult = client.getProjectList();
-            List<GetProjectListResult.Project> projectList = getProjectListResult.getProjectList();
-            System.out.println(projectList);
+            JSONComparator.jsonComparator(getProjectListResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
