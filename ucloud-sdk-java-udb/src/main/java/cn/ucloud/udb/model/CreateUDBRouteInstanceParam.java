@@ -94,7 +94,7 @@ public class CreateUDBRouteInstanceParam extends BaseRequestParam {
      * 是否使用SSD，默认为false
      */
     @UcloudParam("useSSD")
-    private String useSSD;
+    private Boolean useSSD;
 
     /**
      * 使用的代金券id
@@ -226,19 +226,19 @@ public class CreateUDBRouteInstanceParam extends BaseRequestParam {
         this.quantity = quantity;
     }
 
-    public String getUseSSD() {
-        return useSSD;
-    }
-
-    public void setUseSSD(String useSSD) {
-        this.useSSD = useSSD;
-    }
-
     public String getCouponId() {
         return couponId;
     }
 
     public void setCouponId(String couponId) {
         this.couponId = couponId;
+    }
+
+    public Boolean getUseSSD() {
+        return useSSD;
+    }
+
+    public void setUseSSD(Boolean useSSD) {
+        this.useSSD = useSSD;
     }
 }
