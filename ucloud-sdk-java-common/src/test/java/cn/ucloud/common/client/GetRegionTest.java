@@ -29,7 +29,7 @@ public class GetRegionTest {
         try {
             GetRegionResult getRegionResult = client.getRegion();
             List<GetRegionResult.Region> regions = getRegionResult.getRegions();
-            System.out.println(regions);
+            JSONComparator.jsonComparator(getRegionResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
