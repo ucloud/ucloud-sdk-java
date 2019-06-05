@@ -150,6 +150,17 @@ public class GetProjectListResult extends BaseResponseResult {
     @SerializedName("ProjectSet")
     private List<Project> projectList;
 
+    @SerializedName("ProjectCount")
+    private Integer projectCount;
+
+    public Integer getProjectCount() {
+        return projectCount;
+    }
+
+    public void setProjectCount(Integer projectCount) {
+        this.projectCount = projectCount;
+    }
+
     public List<Project> getProjectList() {
         return projectList;
     }
