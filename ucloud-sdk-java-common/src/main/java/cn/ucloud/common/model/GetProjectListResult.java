@@ -13,7 +13,7 @@ import java.util.List;
 
 public class GetProjectListResult extends BaseResponseResult {
 
-    private class Project {
+    public static class Project {
 
         /**
          * 创建时间 时间戳
