@@ -22,6 +22,7 @@ import java.io.IOException;
 public class Http {
 
     private Class<? extends BaseResponseResult> resultClass;
+    private static final String JDK_VER = System.getProperty("java.version");
 
     public Http(Class<? extends BaseResponseResult> resultClass) {
         this.resultClass = resultClass;
@@ -34,7 +35,7 @@ public class Http {
         BaseResponseResult responseResult = null;
         // 创建HttpClient对象
         final CloseableHttpClient client = HttpClients.createDefault();
-        request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2.4-release");
+        request.addHeader("User-Agent", String.format("Java/%s Java-SDK/0.8.2.4-release", JDK_VER == null || JDK_VER.isEmpty() ? "Unknown version" : JDK_VER));
         // 执行http get请求
         String requestJson = new Gson().toJson(request);
         logger.info("request :{}", requestJson);
