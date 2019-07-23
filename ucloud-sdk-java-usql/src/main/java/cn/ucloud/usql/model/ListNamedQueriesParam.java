@@ -29,7 +29,7 @@ public class ListNamedQueriesParam extends BaseRequestParam {
     @UcloudParam("Offset")
     private Integer offset;
     /**
-     * 【非公开】SQL查询类型， 默认为空时，则用户私有的SQL查询， example时，则为示例SQL
+     * SQL查询类型， 默认为空时，则用户私有的SQL查询， example时，则为示例SQL
      */
     @UcloudParam("Type")
     private String type;
