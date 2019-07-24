@@ -244,6 +244,18 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("MachineType")
         private String machineType;
 
+
+        @SerializedName("EncryptedDiskFeature")
+        private Boolean encryptedDiskFeature;
+
+        public Boolean getEncryptedDiskFeature() {
+            return encryptedDiskFeature;
+        }
+
+        public void setEncryptedDiskFeature(Boolean encryptedDiskFeature) {
+            this.encryptedDiskFeature = encryptedDiskFeature;
+        }
+
         public String getCpuPlatform() {
             return cpuPlatform;
         }
