@@ -9,6 +9,7 @@ import com.google.gson.annotations.SerializedName;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/10/8 14:55
  */
+@Deprecated
 public class InitUFSVolumeWhiteListResult extends BaseResponseResult {
     /**
      * 挂载点信息
