@@ -126,18 +126,21 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param)
             throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(InitUFSVolumeWhiteListResult.class);
-        return (InitUFSVolumeWhiteListResult) http.doGet(param, config, null);
+        InitUFSVolumeWhiteListResult result = new InitUFSVolumeWhiteListResult();
+        result.setRetCode(-1);
+        result.setMessage("interface has been deprecated");
+        return result;
     }
 
     @Override
     public void initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param,
                                        UcloudHandler<InitUFSVolumeWhiteListResult> handler,
                                        Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(InitUFSVolumeWhiteListResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
+        if (handler != null){
+            InitUFSVolumeWhiteListResult result = new InitUFSVolumeWhiteListResult();
+            result.setRetCode(-1);
+            result.setMessage("interface has been deprecated");
+            handler.failed(result);
         }
     }
 
