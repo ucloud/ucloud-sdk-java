@@ -945,6 +945,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("BackupMethod")
         private String backupMethod;
 
+        @SerializedName("ClusterId")
+        private String clusterId;
+
+        public String getClusterId() {
+            return clusterId;
+        }
+
+        public void setClusterId(String clusterId) {
+            this.clusterId = clusterId;
+        }
+
         public String getBackupMethod() {
             return backupMethod;
         }
