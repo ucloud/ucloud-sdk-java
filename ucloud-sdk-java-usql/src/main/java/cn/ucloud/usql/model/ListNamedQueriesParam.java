@@ -19,7 +19,7 @@ public class ListNamedQueriesParam extends BaseRequestParam {
     @NotEmpty(message = "region can not be empty")
     private String region;
     /**
-     * 返回的SQL查询记录上限，默认值为20
+     * 返回的SQL查询记录上限，默认值为100,最大1000
      */
     @UcloudParam("Limit")
     private Integer limit;
