@@ -171,4 +171,9 @@ public class Main {
 - 0.8.2.4-release
     
     UDB维护更新，common错误修复
+
+- 0.8.2.5-release
+    
+    UDB、USMS 、UFS、UNET、USQL、VPC维护更新，接口入参和返回参数变动，部分接口废弃
+    
     
