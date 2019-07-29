@@ -132,6 +132,7 @@ public interface UFSClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
+    @Deprecated
     InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param)
             throws Exception;
 
@@ -141,6 +142,7 @@ public interface UFSClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
+    @Deprecated
     void initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param,
                                 UcloudHandler<InitUFSVolumeWhiteListResult> handler,
                                 Boolean... asyncFlag);

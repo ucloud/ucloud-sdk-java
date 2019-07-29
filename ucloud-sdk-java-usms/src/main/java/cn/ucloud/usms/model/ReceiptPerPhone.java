@@ -39,6 +39,20 @@ public class ReceiptPerPhone {
     @SerializedName("ReceiptTime")
     private Integer receiptTime;
 
+    /**
+     * 回执代码
+     */
+    @SerializedName("ReceiptCode")
+    private String receiptCode;
+
+    public String getReceiptCode() {
+        return receiptCode;
+    }
+
+    public void setReceiptCode(String receiptCode) {
+        this.receiptCode = receiptCode;
+    }
+
     public String getPhone() {
         return phone;
     }
