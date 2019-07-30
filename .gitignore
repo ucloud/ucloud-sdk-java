@@ -18,3 +18,4 @@
 *.iml
 */target
 target
+.gitattributes
