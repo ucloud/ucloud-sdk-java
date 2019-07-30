@@ -29,12 +29,23 @@ public class Http {
 
     private static Logger logger = LoggerFactory.getLogger(Http.class);
 
+    private static final String SDK_VERSION = "0.8.2.5-release";
+
+    private static final String USER_AGENT;
+
+    static {
+        String runTimeVersion = System.getProperty("java.runtime.version");
+        runTimeVersion = (runTimeVersion == null || runTimeVersion.isEmpty()) ? "UnKnown RuntimeVersion" : runTimeVersion;
+
+        USER_AGENT = String.format("JAVA_%s/JAVA-SDK_%s", runTimeVersion, SDK_VERSION);
+    }
+
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {
         CloseableHttpResponse response = null;
         BaseResponseResult responseResult = null;
         // 创建HttpClient对象
         final CloseableHttpClient client = HttpClients.createDefault();
-        request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2.5-release");
+        request.addHeader("User-Agent", USER_AGENT);
         // 执行http get请求
         String requestJson = new Gson().toJson(request);
         logger.info("request :{}", requestJson);
