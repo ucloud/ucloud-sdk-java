@@ -147,9 +147,15 @@ public class UMemDataSet {
     @SerializedName("SlaveZone")
     private String slaveZone;
 
+    /**
+     * 子网ID
+     */
     @SerializedName("SubnetId")
     private String subnetId;
 
+    /**
+     * VPC ID
+     */
     @SerializedName("VPCId")
     private String vpcId;
 
