@@ -780,6 +780,39 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("Default")
         private String def;
 
+        @SerializedName("IPId")
+        private String ipId;
+
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        @SerializedName("Weight")
+        private Integer weight;
+
+        public String getIpId() {
+            return ipId;
+        }
+
+        public void setIpId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
+
         public String getDef() {
             return def;
         }
