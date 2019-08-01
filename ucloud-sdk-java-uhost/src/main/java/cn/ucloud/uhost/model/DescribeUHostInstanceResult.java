@@ -780,12 +780,21 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("Default")
         private String def;
 
+        /**
+         * IP ID
+         */
         @SerializedName("IPId")
         private String ipId;
 
+        /**
+         * 带宽
+         */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
+        /**
+         * 权重
+         */
         @SerializedName("Weight")
         private Integer weight;
 
