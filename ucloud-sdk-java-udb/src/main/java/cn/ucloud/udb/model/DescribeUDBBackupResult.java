@@ -38,7 +38,7 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
          * 备份文件大小(字节)
          */
         @SerializedName("BackupSize")
-        private Integer backupSize;
+        private Long backupSize;
 
         /**
          * 备份类型,取值为0或1,0表示自动，1表示手动
@@ -93,7 +93,6 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
         private Integer backupEndTime;
 
 
-
         public String getErrorInfo() {
             return errorInfo;
         }
@@ -126,11 +125,11 @@ public class DescribeUDBBackupResult extends BaseResponseResult {
             this.backupTime = backupTime;
         }
 
-        public Integer getBackupSize() {
+        public Long getBackupSize() {
             return backupSize;
         }
 
-        public void setBackupSize(Integer backupSize) {
+        public void setBackupSize(Long backupSize) {
             this.backupSize = backupSize;
         }
 

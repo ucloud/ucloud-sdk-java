@@ -26,6 +26,17 @@ public class DescribeUDBInstancePriceResult extends BaseResponseResult {
         @SerializedName("Price")
         private Double price;
 
+        @SerializedName("OriginalPrice")
+        private Double originalPrice;
+
+        public Double getOriginalPrice() {
+            return originalPrice;
+        }
+
+        public void setOriginalPrice(Double originalPrice) {
+            this.originalPrice = originalPrice;
+        }
+
         public String getChargeType() {
             return chargeType;
         }
