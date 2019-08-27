@@ -344,6 +344,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("BackupMethod")
         private String backupMethod;
 
+        @SerializedName("CPU")
+        private Integer CPU;
+
+        public Integer getCPU() {
+            return CPU;
+        }
+
+        public void setCPU(Integer CPU) {
+            this.CPU = CPU;
+        }
+
         public String getBackupMethod() {
             return backupMethod;
         }
@@ -947,6 +958,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
 
         @SerializedName("ClusterId")
         private String clusterId;
+
+        @SerializedName("CPU")
+        private Integer CPU;
+
+        public Integer getCPU() {
+            return CPU;
+        }
+
+        public void setCPU(Integer CPU) {
+            this.CPU = CPU;
+        }
 
         public String getClusterId() {
             return clusterId;
