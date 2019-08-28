@@ -2,7 +2,6 @@ package cn.ucloud.ufs.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
-import com.google.gson.annotations.SerializedName;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
