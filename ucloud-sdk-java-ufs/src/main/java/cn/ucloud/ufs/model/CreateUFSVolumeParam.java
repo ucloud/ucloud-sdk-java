@@ -81,7 +81,8 @@ public class CreateUFSVolumeParam extends BaseRequestParam {
     /**
      * 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
      */
-    @SerializedName("ProtocolType")
+    @UcloudParam("ProtocolType")
+    @NotEmpty(message = "protocolType can not be empty")
     private String protocolType;
 
     public CreateUFSVolumeParam(@NotEmpty(message = "region can not be empty") String region,
