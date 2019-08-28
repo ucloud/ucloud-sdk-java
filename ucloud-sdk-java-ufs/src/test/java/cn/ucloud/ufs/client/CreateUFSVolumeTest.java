@@ -25,7 +25,7 @@ public class CreateUFSVolumeTest {
         client = new DefaultUFSClient(new UFSConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        param = new CreateUFSVolumeParam("cn-bj2",1024,"Basic");
+        param = new CreateUFSVolumeParam("cn-bj2",1024,"Basic","NFSv3");
         param.setProjectId("org-izug1m");
     }
     @Test

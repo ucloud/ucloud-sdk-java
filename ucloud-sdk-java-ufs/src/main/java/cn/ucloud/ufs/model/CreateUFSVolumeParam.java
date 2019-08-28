@@ -2,6 +2,7 @@ package cn.ucloud.ufs.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import com.google.gson.annotations.SerializedName;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -77,13 +78,29 @@ public class CreateUFSVolumeParam extends BaseRequestParam {
     @UcloudParam("StorageType")
     private String storageType;
 
+    /**
+     * 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     */
+    @SerializedName("ProtocolType")
+    private String protocolType;
+
     public CreateUFSVolumeParam(@NotEmpty(message = "region can not be empty") String region,
                                 @NotNull(message = "size can not be null") Integer size,
-                                @NotEmpty(message = "storageType can not be empty") String storageType) {
+                                @NotEmpty(message = "storageType can not be empty") String storageType,
+                                @NotEmpty(message = "protocolType can not be empty") String protocolType) {
         super("CreateUFSVolume");
         this.region = region;
         this.size = size;
         this.storageType = storageType;
+        this.protocolType = protocolType;
+    }
+
+    public String getProtocolType() {
+        return protocolType;
+    }
+
+    public void setProtocolType(String protocolType) {
+        this.protocolType = protocolType;
     }
 
     public String getStorageType() {
