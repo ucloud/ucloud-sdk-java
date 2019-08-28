@@ -25,7 +25,7 @@ public class DescribeUFSVolumePriceTest {
         client = new DefaultUFSClient(new UFSConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        param = new DescribeUFSVolumePriceParam("cn-bj2",1024);
+        param = new DescribeUFSVolumePriceParam("cn-bj2",1024,"Basic");
         param.setProjectId("org-izug1m");
     }
 
