@@ -70,11 +70,28 @@ public class CreateUFSVolumeParam extends BaseRequestParam {
     @UcloudParam("CouponId")
     private String couponId;
 
+    /**
+     * 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
+     */
+    @NotEmpty(message = "storageType can not be empty")
+    @UcloudParam("StorageType")
+    private String storageType;
+
     public CreateUFSVolumeParam(@NotEmpty(message = "region can not be empty") String region,
-                                @NotNull(message = "size can not be null") Integer size) {
+                                @NotNull(message = "size can not be null") Integer size,
+                                @NotEmpty(message = "storageType can not be empty") String storageType) {
         super("CreateUFSVolume");
         this.region = region;
         this.size = size;
+        this.storageType = storageType;
+    }
+
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
     }
 
     public String getRegion() {
