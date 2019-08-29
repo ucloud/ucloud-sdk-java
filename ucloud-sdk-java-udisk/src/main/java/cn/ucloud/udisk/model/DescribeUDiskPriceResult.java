@@ -22,7 +22,6 @@ public class DescribeUDiskPriceResult extends BaseResponseResult {
     private List<UDiskPriceDataSet> dataSet;
 
 
-
     public class UDiskPriceDataSet {
         /**
          * Year， Month， Dynamic，Trial
@@ -36,11 +35,23 @@ public class DescribeUDiskPriceResult extends BaseResponseResult {
         @SerializedName("Price")
         private BigDecimal price;
 
+
+        @SerializedName("OriginalPrice")
+        private BigDecimal originalPrice;
+
         /**
          * "UDataArk","UDisk"
          */
         @SerializedName("ChargeName")
         private String chargeName;
+
+        public BigDecimal getOriginalPrice() {
+            return originalPrice;
+        }
+
+        public void setOriginalPrice(BigDecimal originalPrice) {
+            this.originalPrice = originalPrice;
+        }
 
         public String getChargeType() {
             return chargeType;

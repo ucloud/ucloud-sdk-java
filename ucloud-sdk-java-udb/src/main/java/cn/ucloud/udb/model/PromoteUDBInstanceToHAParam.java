@@ -18,7 +18,13 @@ public class PromoteUDBInstanceToHAParam extends BaseRequestParam {
     @NotEmpty(message = "region can not be empty")
     @UcloudParam("Region")
     private String region;
-    
+
+    /**
+     * 可用区。参见 [可用区列表](../summary/regionlist.html)
+     */
+    @UcloudParam("Zone")
+    private String zone;
+
     /**
      * DB实例ID
      */
@@ -31,6 +37,14 @@ public class PromoteUDBInstanceToHAParam extends BaseRequestParam {
         super("PromoteUDBInstanceToHA");
         this.region = region;
         this.dbId = dbId;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public String getRegion() {

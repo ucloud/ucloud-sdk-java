@@ -30,7 +30,7 @@ ucloud开发者工具套件（SDK）。<br/>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.8.2.5-release</version>
+      <version>0.8.2.6-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -175,5 +175,8 @@ public class Main {
 - 0.8.2.5-release
     
     UDB、USMS 、UFS、UNET、USQL、VPC维护更新，接口入参和返回参数变动，部分接口废弃
+
+- 0.8.2.6-release
+    UDB、UMEM、UFS维护更新，UFS部分接口增加必要字段
     
     

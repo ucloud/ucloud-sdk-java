@@ -165,7 +165,7 @@ public class UcloudHttpImpl implements UcloudHttp {
 //        // 创建Httpclient对象
 //        final CloseableHttpClient client = HttpClients.createDefault();
 //        try {
-//            request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2.5-release");
+//            request.addHeader("User-Agent", "Java/1.8.0_191 Java-SDK/0.8.2.6-release");
 //            // 执行http get请求
 //            logger.info("request line:{}",request.getRequestLine());
 //            response = client.execute(request);
