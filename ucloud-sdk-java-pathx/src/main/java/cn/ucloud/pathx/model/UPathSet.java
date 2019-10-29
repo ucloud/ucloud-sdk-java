@@ -32,21 +32,49 @@ public class UPathSet {
     @SerializedName("LineId")
     private String lineId;
     /**
-     * 线路起点名字
+     * 线路起点中文名字，加速区域
      */
     @SerializedName("LineFromName")
     private String lineFromName;
     /**
-     * 线路对端名字
+     * 线路对端中文名字，源站区域
      */
     @SerializedName("LineToName")
     private String lineToName;
+
+    /**
+     * 线路对端英文代号，源站区域
+     */
+    @SerializedName("LineTo")
+    private String lineTo;
+
+    /**
+     * 线路起点英文代号，加速区域
+     */
+    @SerializedName("LineFrom")
+    private String lineFrom;
+
     /**
      * 线路对端IP
      */
     @SerializedName("OutPublicIpList")
     private List<OutPublicIpInfo> outPublicIpList;
 
+    public String getLineFrom() {
+        return lineFrom;
+    }
+
+    public void setLineFrom(String lineFrom) {
+        this.lineFrom = lineFrom;
+    }
+
+    public String getLineTo() {
+        return lineTo;
+    }
+
+    public void setLineTo(String lineTo) {
+        this.lineTo = lineTo;
+    }
 
     public String getuPathName() {
         return this.uPathName;
