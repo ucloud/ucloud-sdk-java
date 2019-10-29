@@ -68,12 +68,14 @@ public class UGAAInfo {
     /**
      * UGA 4层转发器配置，记录接入或回源端口，接入或回源协议信息
      */
+    @SerializedName("L4ForwarderSet")
     private List<UGAL4Forwarder> l4Forwarders;
 
 
     /**
      * UGA 7层转发器配置，记录接入或回源端口，接入或回源协议信息 如绑定证书会返回证书ID
      */
+    @SerializedName("L7ForwarderSet")
     private List<UGAL7Forwarder> l7Forwarders;
 
 
