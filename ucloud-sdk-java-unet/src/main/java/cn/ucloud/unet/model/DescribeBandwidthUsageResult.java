@@ -36,18 +36,18 @@ public class DescribeBandwidthUsageResult extends BaseResponseResult {
          * 最近5分钟带宽用量, 单位Mbps
          */
         @SerializedName("CurBandwidth")
-        private Double curBandwidth;
+        private Integer curBandwidth;
         /**
          * 弹性IP资源ID
          */
         @SerializedName("EIPId")
         private String eIPId;
 
-        public Double getCurBandwidth() {
+        public Integer getCurBandwidth() {
             return curBandwidth;
         }
 
-        public void setCurBandwidth(Double curBandwidth) {
+        public void setCurBandwidth(Integer curBandwidth) {
             this.curBandwidth = curBandwidth;
         }
 
