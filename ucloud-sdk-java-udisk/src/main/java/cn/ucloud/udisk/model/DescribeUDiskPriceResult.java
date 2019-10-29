@@ -30,12 +30,14 @@ public class DescribeUDiskPriceResult extends BaseResponseResult {
         private String chargeType;
 
         /**
-         * 价格
+         * 实际价格 (单位: 分)
          */
         @SerializedName("Price")
         private BigDecimal price;
 
-
+        /**
+         * 用户折后价(对应计费CustomPrice)
+         */
         @SerializedName("OriginalPrice")
         private BigDecimal originalPrice;
 
@@ -44,6 +46,20 @@ public class DescribeUDiskPriceResult extends BaseResponseResult {
          */
         @SerializedName("ChargeName")
         private String chargeName;
+
+        /**
+         * 原价(对应计费OriginalPrice)
+         */
+        @SerializedName("ListPrice")
+        private BigDecimal listPrice;
+
+        public BigDecimal getListPrice() {
+            return listPrice;
+        }
+
+        public void setListPrice(BigDecimal listPrice) {
+            this.listPrice = listPrice;
+        }
 
         public BigDecimal getOriginalPrice() {
             return originalPrice;
