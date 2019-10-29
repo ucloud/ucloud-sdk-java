@@ -58,9 +58,40 @@ public class UGAAInfo {
     @SerializedName("TaskSet")
     private List<UGAATask> taskSet;
 
+    /**
+     * 线路出口IP地址
+     */
     @SerializedName("OutPublicIpList")
     private List<OutPublicIpInfo> outPublicIpInfos;
 
+
+    /**
+     * UGA 4层转发器配置，记录接入或回源端口，接入或回源协议信息
+     */
+    private List<UGAL4Forwarder> l4Forwarders;
+
+
+    /**
+     * UGA 7层转发器配置，记录接入或回源端口，接入或回源协议信息 如绑定证书会返回证书ID
+     */
+    private List<UGAL7Forwarder> l7Forwarders;
+
+
+    public List<UGAL4Forwarder> getL4Forwarders() {
+        return l4Forwarders;
+    }
+
+    public void setL4Forwarders(List<UGAL4Forwarder> l4Forwarders) {
+        this.l4Forwarders = l4Forwarders;
+    }
+
+    public List<UGAL7Forwarder> getL7Forwarders() {
+        return l7Forwarders;
+    }
+
+    public void setL7Forwarders(List<UGAL7Forwarder> l7Forwarders) {
+        this.l7Forwarders = l7Forwarders;
+    }
 
     public List<OutPublicIpInfo> getOutPublicIpInfos() {
         return outPublicIpInfos;
