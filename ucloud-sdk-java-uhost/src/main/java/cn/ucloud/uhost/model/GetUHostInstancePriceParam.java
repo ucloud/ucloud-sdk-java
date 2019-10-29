@@ -250,6 +250,34 @@ public class GetUHostInstancePriceParam extends BaseRequestParam {
     @UcloudParam("Quantity")
     private Integer quantity;
 
+    /**
+     * 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     */
+    @UcloudParam("MachineType")
+    private String machineType;
+
+    /**
+     * GPU类型，枚举值["K80", "P40", "V100"]
+     */
+    @UcloudParam("GpuType")
+    private String gpuType;
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
+    }
+
+    public String getGpuType() {
+        return gpuType;
+    }
+
+    public void setGpuType(String gpuType) {
+        this.gpuType = gpuType;
+    }
+
     public String getRegion() {
         return region;
     }
