@@ -248,6 +248,20 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("EncryptedDiskFeature")
         private Boolean encryptedDiskFeature;
 
+        /**
+         * true，支持cloutinit方式初始化；false,不支持
+         */
+        @SerializedName("CloudInitFeature")
+        private Boolean cloudInitFeature;
+
+        public Boolean getCloudInitFeature() {
+            return cloudInitFeature;
+        }
+
+        public void setCloudInitFeature(Boolean cloudInitFeature) {
+            this.cloudInitFeature = cloudInitFeature;
+        }
+
         public Boolean getEncryptedDiskFeature() {
             return encryptedDiskFeature;
         }
