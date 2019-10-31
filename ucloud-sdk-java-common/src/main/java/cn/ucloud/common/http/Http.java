@@ -37,7 +37,7 @@ public class Http {
         String runTimeVersion = System.getProperty("java.runtime.version");
         runTimeVersion = (runTimeVersion == null || runTimeVersion.isEmpty()) ? "UnKnown RuntimeVersion" : runTimeVersion;
 
-        USER_AGENT = String.format("JAVA_%s/JAVA-SDK_%s", runTimeVersion, SDK_VERSION);
+        USER_AGENT = String.format("JAVA_%s/JAVA-SDK/%s", runTimeVersion, SDK_VERSION);
     }
 
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {
