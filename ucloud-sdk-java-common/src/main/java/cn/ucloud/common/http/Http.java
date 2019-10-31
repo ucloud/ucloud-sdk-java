@@ -29,7 +29,7 @@ public class Http {
 
     private static Logger logger = LoggerFactory.getLogger(Http.class);
 
-    private static final String SDK_VERSION = "0.8.2.6-release";
+    private static final String SDK_VERSION = "0.8.2.7-release";
 
     private static final String USER_AGENT;
 
@@ -37,7 +37,7 @@ public class Http {
         String runTimeVersion = System.getProperty("java.runtime.version");
         runTimeVersion = (runTimeVersion == null || runTimeVersion.isEmpty()) ? "UnKnown RuntimeVersion" : runTimeVersion;
 
-        USER_AGENT = String.format("JAVA_%s/JAVA-SDK_%s", runTimeVersion, SDK_VERSION);
+        USER_AGENT = String.format("JAVA_%s/JAVA-SDK/%s", runTimeVersion, SDK_VERSION);
     }
 
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {

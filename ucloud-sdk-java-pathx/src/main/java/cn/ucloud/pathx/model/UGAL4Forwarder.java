@@ -2,29 +2,46 @@ package cn.ucloud.pathx.model;
 
 import com.google.gson.annotations.SerializedName;
 
-
 /**
- * @Description : 用户在UGAA实例下配置的多端口任务 模型类
- * @Author : ucloud-sdk-generator
- * @Date : 2019-03-13 10:02
+ * Author: codezhang
+ * Date: 2019/10/29 3:04 下午
+ * Describe: UGA实例 4层转发器信息
  **/
-public class UGAATask {
+public class UGAL4Forwarder {
+
     /**
-     * 端口
+     * 接入端口
      */
     @SerializedName("Port")
     private Integer port;
+
     /**
-     * 协议,包括TCP|UDP|HTTP|HTTPS
+     * 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发
      */
     @SerializedName("Protocol")
     private String protocol;
 
     /**
-     * 源站监听端口
+     * RSPort，源站监听端口
      */
     @SerializedName("RSPort")
     private Integer rsPort;
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
 
     public Integer getRsPort() {
         return rsPort;
@@ -33,22 +50,4 @@ public class UGAATask {
     public void setRsPort(Integer rsPort) {
         this.rsPort = rsPort;
     }
-
-    public Integer getPort() {
-        return this.port;
-    }
-
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
-    public String getProtocol() {
-        return this.protocol;
-    }
-
-    public void setProtocol(String protocol) {
-        this.protocol = protocol;
-    }
-
-
 }
