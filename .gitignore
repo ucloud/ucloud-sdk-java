@@ -22,3 +22,5 @@ target
 clean_private.sh
 .gitattributes
 template/
+.gitlab-ci.yml
+sonar_analyze.sh
