@@ -7,6 +7,8 @@ import cn.ucloud.common.model.GetProjectListParam;
 import cn.ucloud.common.model.GetProjectListResult;
 import cn.ucloud.common.model.GetRegionParam;
 import cn.ucloud.common.model.GetRegionResult;
+import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.common.pojo.UcloudConfig;
 
 /**
@@ -51,4 +53,23 @@ public class DefaultUcloudClient implements UcloudClient {
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public BaseResponseResult doAction(BaseRequestParam param,
+                                       Class<? extends BaseResponseResult> clazz) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(clazz);
+        return (BaseResponseResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void doAction(BaseRequestParam param, Class<? extends BaseResponseResult> clazz,
+                         UcloudHandler<? extends BaseResponseResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(clazz);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+
 }
