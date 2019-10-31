@@ -65,7 +65,7 @@ public interface UcloudClient {
      * 适用于调用所有接口,回调方式
      *
      * @param param     请求参数
-     * @param clazz     结果类对象
+     * @param clazz     结果对象类
      * @param handler   回调接口
      * @param asyncFlag 是否异步
      */
