@@ -152,7 +152,6 @@ public interface USMSClient extends UcloudClient {
                             Boolean... asyncFlag);
 
 
-
     /**
      * 查询短信模板申请状态
      *
@@ -170,6 +169,26 @@ public interface USMSClient extends UcloudClient {
      * @param asyncFlag 异步标记位，默认true异步
      */
     void queryUSMSTemplate(QueryUSMSTemplateParam param, UcloudHandler<QueryUSMSTemplateResult> handler,
+                           Boolean... asyncFlag);
+
+
+    /**
+     * 删除短信模板
+     *
+     * @param param 请求参数对象
+     * @return 结果对象
+     * @throws Exception 请求出错则抛出异常
+     */
+    DeleteUSMSTemplateResult deleteUSMSTemplate(DeleteUSMSTemplateParam param) throws Exception;
+
+    /**
+     * 删除短信模板
+     *
+     * @param param     请求参数对象
+     * @param handler   异步处理器
+     * @param asyncFlag 异步标记位，默认true异步
+     */
+    void deleteUSMSTemplate(DeleteUSMSTemplateParam param, UcloudHandler<DeleteUSMSTemplateResult> handler,
                             Boolean... asyncFlag);
 
 

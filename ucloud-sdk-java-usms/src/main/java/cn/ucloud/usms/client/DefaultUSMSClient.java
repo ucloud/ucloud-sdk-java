@@ -139,4 +139,20 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
         } catch (Exception e) {
         }
     }
+
+
+    @Override
+    public DeleteUSMSTemplateResult deleteUSMSTemplate(DeleteUSMSTemplateParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUSMSTemplateResult.class);
+        return (DeleteUSMSTemplateResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void deleteUSMSTemplate(DeleteUSMSTemplateParam param, UcloudHandler<DeleteUSMSTemplateResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUSMSTemplateResult.class);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }
