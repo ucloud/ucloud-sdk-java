@@ -108,4 +108,19 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public CreateUSMSTemplateResult createUSMSTemplate(CreateUSMSTemplateParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateUSMSTemplateResult.class);
+        return (CreateUSMSTemplateResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void createUSMSTemplate(CreateUSMSTemplateParam param, UcloudHandler<CreateUSMSTemplateResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreateUSMSTemplateResult.class);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }
