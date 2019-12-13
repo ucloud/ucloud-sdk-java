@@ -5,10 +5,7 @@ import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
 import cn.ucloud.common.pojo.UcloudConfig;
-import cn.ucloud.usms.model.GetUSMSSendReceiptParam;
-import cn.ucloud.usms.model.GetUSMSSendReceiptResult;
-import cn.ucloud.usms.model.SendUSMSMessageParam;
-import cn.ucloud.usms.model.SendUSMSMessageResult;
+import cn.ucloud.usms.model.*;
 
 /**
  * @Description : USMS 默认客户端
@@ -24,7 +21,7 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     @Override
     public SendUSMSMessageResult sendUSMSMessage(SendUSMSMessageParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(SendUSMSMessageResult.class);
-        return (SendUSMSMessageResult) http.doGet(param, config, null);
+        return (SendUSMSMessageResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -32,7 +29,7 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
                                 Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(SendUSMSMessageResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -40,14 +37,29 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     @Override
     public GetUSMSSendReceiptResult getUSMSSendReceipt(GetUSMSSendReceiptParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUSMSSendReceiptResult.class);
-        return (GetUSMSSendReceiptResult) http.doGet(param, config, null);
+        return (GetUSMSSendReceiptResult) http.doPost(param, config, null);
     }
 
     @Override
     public void getUSMSSendReceipt(GetUSMSSendReceiptParam param, UcloudHandler<GetUSMSSendReceiptResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUSMSSendReceiptResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public CreateUSMSSignatureResult createUSMSSignature(CreateUSMSSignatureParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(CreateUSMSSignatureResult.class);
+        return (CreateUSMSSignatureResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void createUSMSSignature(CreateUSMSSignatureParam param, UcloudHandler<CreateUSMSSignatureResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(CreateUSMSSignatureResult.class);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

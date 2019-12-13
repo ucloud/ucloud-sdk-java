@@ -2,10 +2,7 @@ package cn.ucloud.usms.client;
 
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.usms.model.GetUSMSSendReceiptParam;
-import cn.ucloud.usms.model.GetUSMSSendReceiptResult;
-import cn.ucloud.usms.model.SendUSMSMessageParam;
-import cn.ucloud.usms.model.SendUSMSMessageResult;
+import cn.ucloud.usms.model.*;
 
 /**
  * @Description : USMS 客户端接口
@@ -52,6 +49,26 @@ public interface USMSClient extends UcloudClient {
      * @param asyncFlag 异步标记位，默认true异步
      */
     void getUSMSSendReceipt(GetUSMSSendReceiptParam param, UcloudHandler<GetUSMSSendReceiptResult> handler,
+                            Boolean... asyncFlag);
+
+
+    /**
+     * 申请短信签名
+     *
+     * @param param 请求参数对象
+     * @return 结果对象
+     * @throws Exception 请求出错则抛出异常
+     */
+    CreateUSMSSignatureResult createUSMSSignature(CreateUSMSSignatureParam param) throws Exception;
+
+    /**
+     * 申请短信签名
+     *
+     * @param param     请求参数对象
+     * @param handler   异步处理器
+     * @param asyncFlag 异步标记位，默认true异步
+     */
+    void createUSMSSignature(CreateUSMSSignatureParam param, UcloudHandler<CreateUSMSSignatureResult> handler,
                             Boolean... asyncFlag);
 
 
