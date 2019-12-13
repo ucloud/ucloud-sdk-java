@@ -93,4 +93,19 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public UpdateUSMSSignatureResult updateUSMSSignature(UpdateUSMSSignatureParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateUSMSSignatureResult.class);
+        return (UpdateUSMSSignatureResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void updateUSMSSignature(UpdateUSMSSignatureParam param, UcloudHandler<UpdateUSMSSignatureResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateUSMSSignatureResult.class);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }

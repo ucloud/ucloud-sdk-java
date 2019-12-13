@@ -112,4 +112,25 @@ public interface USMSClient extends UcloudClient {
                              Boolean... asyncFlag);
 
 
+
+    /**
+     * 修改未通过审核的短信签名，并重新提交审核
+     *
+     * @param param 请求参数对象
+     * @return 结果对象
+     * @throws Exception 请求出错则抛出异常
+     */
+    UpdateUSMSSignatureResult updateUSMSSignature(UpdateUSMSSignatureParam param) throws Exception;
+
+    /**
+     * 修改未通过审核的短信签名，并重新提交审核
+     *
+     * @param param     请求参数对象
+     * @param handler   异步处理器
+     * @param asyncFlag 异步标记位，默认true异步
+     */
+    void updateUSMSSignature(UpdateUSMSSignatureParam param, UcloudHandler<UpdateUSMSSignatureResult> handler,
+                             Boolean... asyncFlag);
+
+
 }
