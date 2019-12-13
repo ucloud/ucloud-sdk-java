@@ -69,8 +69,7 @@ public interface USMSClient extends UcloudClient {
      * @param asyncFlag 异步标记位，默认true异步
      */
     void createUSMSSignature(CreateUSMSSignatureParam param, UcloudHandler<CreateUSMSSignatureResult> handler,
-                            Boolean... asyncFlag);
-
+                             Boolean... asyncFlag);
 
 
     /**
@@ -90,6 +89,26 @@ public interface USMSClient extends UcloudClient {
      * @param asyncFlag 异步标记位，默认true异步
      */
     void queryUSMSSignature(QueryUSMSSignatureParam param, UcloudHandler<QueryUSMSSignatureResult> handler,
+                            Boolean... asyncFlag);
+
+
+    /**
+     * 删除短信签名
+     *
+     * @param param 请求参数对象
+     * @return 结果对象
+     * @throws Exception 请求出错则抛出异常
+     */
+    DeleteUSMSSignatureResult deleteUSMSSignature(DeleteUSMSSignatureParam param) throws Exception;
+
+    /**
+     * 删除短信签名
+     *
+     * @param param     请求参数对象
+     * @param handler   异步处理器
+     * @param asyncFlag 异步标记位，默认true异步
+     */
+    void deleteUSMSSignature(DeleteUSMSSignatureParam param, UcloudHandler<DeleteUSMSSignatureResult> handler,
                              Boolean... asyncFlag);
 
 

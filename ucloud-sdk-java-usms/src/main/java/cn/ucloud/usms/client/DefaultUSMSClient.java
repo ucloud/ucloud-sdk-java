@@ -78,4 +78,19 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public DeleteUSMSSignatureResult deleteUSMSSignature(DeleteUSMSSignatureParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUSMSSignatureResult.class);
+        return (DeleteUSMSSignatureResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void deleteUSMSSignature(DeleteUSMSSignatureParam param, UcloudHandler<DeleteUSMSSignatureResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(DeleteUSMSSignatureResult.class);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }

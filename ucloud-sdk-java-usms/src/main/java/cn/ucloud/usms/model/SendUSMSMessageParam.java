@@ -31,13 +31,6 @@ public class SendUSMSMessageParam extends BaseRequestParam {
     private String zone;
 
     /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](../summary/get_project_list.html)
-     */
-    @UcloudParam("ProjectId")
-    private String ProjectId;
-
-    /**
      * 电话号码数组，电话号码格式为(60)1xxxxxxxx，
      * ()中为国际长途区号(如中国为86或0086，两种格式都支持)，
      * 后面为电话号码.若不传入国际区号，如1851623xxxx，则默认为国内手机号
@@ -110,16 +103,6 @@ public class SendUSMSMessageParam extends BaseRequestParam {
             params.add(new Param(String.format(templateParamFormat, i), templateParam));
         }
         return params;
-    }
-
-    @Override
-    public String getProjectId() {
-        return ProjectId;
-    }
-
-    @Override
-    public void setProjectId(String projectId) {
-        ProjectId = projectId;
     }
 
     public String getExtendCode() {

@@ -14,13 +14,6 @@ import javax.validation.constraints.NotNull;
 public class CreateUSMSSignatureParam extends BaseRequestParam {
 
     /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](../summary/get_project_list.html)
-     */
-    @UcloudParam("ProjectId")
-    private String projectId;
-
-    /**
      * 短信签名名称；长度为2-12个字符,
      * 可包含中文、数字和符号；
      * 无需填写【】或[]，系统会自动添加
@@ -100,16 +93,6 @@ public class CreateUSMSSignatureParam extends BaseRequestParam {
         this.certificateType = certificateType;
         this.description = description;
         this.file = file;
-    }
-
-    @Override
-    public String getProjectId() {
-        return projectId;
-    }
-
-    @Override
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     public String getSigContent() {
