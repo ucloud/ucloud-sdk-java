@@ -18,7 +18,7 @@ public class CreateUSMSSignatureParam extends BaseRequestParam {
      * 请参考[GetProjectList接口](../summary/get_project_list.html)
      */
     @UcloudParam("ProjectId")
-    private String ProjectId;
+    private String projectId;
 
     /**
      * 短信签名名称；长度为2-12个字符,
@@ -104,12 +104,12 @@ public class CreateUSMSSignatureParam extends BaseRequestParam {
 
     @Override
     public String getProjectId() {
-        return ProjectId;
+        return projectId;
     }
 
     @Override
     public void setProjectId(String projectId) {
-        ProjectId = projectId;
+        this.projectId = projectId;
     }
 
     public String getSigContent() {
