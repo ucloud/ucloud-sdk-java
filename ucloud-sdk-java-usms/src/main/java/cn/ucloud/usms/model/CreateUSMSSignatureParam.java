@@ -1,10 +1,21 @@
 package cn.ucloud.usms.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
+import cn.ucloud.common.exception.ValidatorException;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+import cn.ucloud.usms.util.FileUtil;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author: codezhang
@@ -63,36 +74,55 @@ public class CreateUSMSSignatureParam extends BaseRequestParam {
     private String description;
 
     /**
-     * 短信签名的资质证明文件，需先进行base64编码格式转换，此处填写转换后的字符串。
-     * 文件大小不超过4 MB
+     * 短信签名的资质证明文件
      */
-    @NotEmpty(message = "file can not be empty")
-    @UcloudParam("File")
-    private String file;
+    private String filePath;
 
     /**
      * 短信签名授权委托文件，需先进行base64编码格式转换，此处填写转换后的字符串。
      * 文件大小不超过4 MB；
      * 当您是代理并使用第三方的签名时（也即SigPurpose为1-他用），该项为必填项；
      */
-    @UcloudParam("ProxyFile")
-    private String proxyFile;
+    private String proxyFilePath;
 
 
-    public CreateUSMSSignatureParam(@NotEmpty(message = "action can not be empty") String action,
-                                    @NotEmpty(message = "sigContent can not be empty") String sigContent,
+    public CreateUSMSSignatureParam(@NotEmpty(message = "sigContent can not be empty") String sigContent,
                                     @NotNull(message = "sigType can not be null") Integer sigType,
                                     @NotNull(message = "sigPurpose can not be null") Integer sigPurpose,
                                     @NotNull(message = "certificateType can not be null") Integer certificateType,
                                     @NotEmpty(message = "description can not be empty") String description,
-                                    @NotEmpty(message = "file can not be empty") String file) {
+                                    @NotEmpty(message = "filePath can not be empty") String filePath) {
         super("CreateUSMSSignature");
         this.sigContent = sigContent;
         this.sigType = sigType;
         this.sigPurpose = sigPurpose;
         this.certificateType = certificateType;
         this.description = description;
-        this.file = file;
+        this.filePath = filePath;
+    }
+
+
+    @UcloudParam("File")
+    public List<Param> checkFile() throws ValidatorException {
+        List<Param> params = new ArrayList<>();
+        if (filePath == null || filePath.isEmpty()) {
+            throw new ValidatorException("file can not be null");
+        } else {
+            params.add(new Param("File",
+                    FileUtil.getFileContent2StringAfterBase64Encode(filePath)));
+        }
+        return params;
+    }
+
+
+    @UcloudParam("ProxyFile")
+    public List<Param> checkProxyFile() throws ValidatorException {
+        List<Param> params = new ArrayList<>();
+        if (proxyFilePath != null && !proxyFilePath.isEmpty()) {
+            params.add(new Param("ProxyFile",
+                    FileUtil.getFileContent2StringAfterBase64Encode(filePath)));
+        }
+        return params;
     }
 
     public String getSigContent() {
@@ -135,19 +165,19 @@ public class CreateUSMSSignatureParam extends BaseRequestParam {
         this.description = description;
     }
 
-    public String getFile() {
-        return file;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setFile(String file) {
-        this.file = file;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
-    public String getProxyFile() {
-        return proxyFile;
+    public String getProxyFilePath() {
+        return proxyFilePath;
     }
 
-    public void setProxyFile(String proxyFile) {
-        this.proxyFile = proxyFile;
+    public void setProxyFilePath(String proxyFilePath) {
+        this.proxyFilePath = proxyFilePath;
     }
 }

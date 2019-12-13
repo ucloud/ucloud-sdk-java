@@ -41,7 +41,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void getUSMSSendReceipt(GetUSMSSendReceiptParam param, UcloudHandler<GetUSMSSendReceiptResult> handler, Boolean... asyncFlag) {
+    public void getUSMSSendReceipt(GetUSMSSendReceiptParam param,
+                                   UcloudHandler<GetUSMSSendReceiptResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUSMSSendReceiptResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -56,7 +57,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void createUSMSSignature(CreateUSMSSignatureParam param, UcloudHandler<CreateUSMSSignatureResult> handler, Boolean... asyncFlag) {
+    public void createUSMSSignature(CreateUSMSSignatureParam param,
+                                    UcloudHandler<CreateUSMSSignatureResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUSMSSignatureResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -71,7 +73,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void queryUSMSSignature(QueryUSMSSignatureParam param, UcloudHandler<QueryUSMSSignatureResult> handler, Boolean... asyncFlag) {
+    public void queryUSMSSignature(QueryUSMSSignatureParam param,
+                                   UcloudHandler<QueryUSMSSignatureResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(QueryUSMSSignatureResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -86,7 +89,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void deleteUSMSSignature(DeleteUSMSSignatureParam param, UcloudHandler<DeleteUSMSSignatureResult> handler, Boolean... asyncFlag) {
+    public void deleteUSMSSignature(DeleteUSMSSignatureParam param,
+                                    UcloudHandler<DeleteUSMSSignatureResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUSMSSignatureResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -101,7 +105,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void updateUSMSSignature(UpdateUSMSSignatureParam param, UcloudHandler<UpdateUSMSSignatureResult> handler, Boolean... asyncFlag) {
+    public void updateUSMSSignature(UpdateUSMSSignatureParam param,
+                                    UcloudHandler<UpdateUSMSSignatureResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateUSMSSignatureResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -116,7 +121,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void createUSMSTemplate(CreateUSMSTemplateParam param, UcloudHandler<CreateUSMSTemplateResult> handler, Boolean... asyncFlag) {
+    public void createUSMSTemplate(CreateUSMSTemplateParam param,
+                                   UcloudHandler<CreateUSMSTemplateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUSMSTemplateResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -132,7 +138,8 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void queryUSMSTemplate(QueryUSMSTemplateParam param, UcloudHandler<QueryUSMSTemplateResult> handler, Boolean... asyncFlag) {
+    public void queryUSMSTemplate(QueryUSMSTemplateParam param,
+                                  UcloudHandler<QueryUSMSTemplateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(QueryUSMSTemplateResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -148,8 +155,25 @@ public class DefaultUSMSClient extends DefaultUcloudClient implements USMSClient
     }
 
     @Override
-    public void deleteUSMSTemplate(DeleteUSMSTemplateParam param, UcloudHandler<DeleteUSMSTemplateResult> handler, Boolean... asyncFlag) {
+    public void deleteUSMSTemplate(DeleteUSMSTemplateParam param,
+                                   UcloudHandler<DeleteUSMSTemplateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUSMSTemplateResult.class);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public UpdateUSMSTemplateResult updateUSMSTemplate(UpdateUSMSTemplateParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(UpdateUSMSTemplateResult.class);
+        return (UpdateUSMSTemplateResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void updateUSMSTemplate(UpdateUSMSTemplateParam param,
+                                   UcloudHandler<UpdateUSMSTemplateResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(UpdateUSMSTemplateResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {

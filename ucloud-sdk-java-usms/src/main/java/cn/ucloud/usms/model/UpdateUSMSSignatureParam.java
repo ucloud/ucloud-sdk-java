@@ -1,10 +1,15 @@
 package cn.ucloud.usms.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
+import cn.ucloud.common.exception.ValidatorException;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
+import cn.ucloud.usms.util.FileUtil;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author: codezhang
@@ -50,14 +55,6 @@ public class UpdateUSMSSignatureParam extends BaseRequestParam {
     private Integer sigPurpose;
 
     /**
-     * 短信签名的资质证明文件，需先进行base64编码格式转换，
-     * 此处填写转换后的字符串。文件大小不超过4 MB
-     */
-    @UcloudParam("File")
-    @NotEmpty(message = "file can not be empty")
-    private String file;
-
-    /**
      * 签名的资质证明文件类型，需与签名类型保持一致，说明如下：
      * 0-三证合一/企业营业执照/组织机构代码证书/社会信用代码证书；
      * 1-应用商店后台开发者管理截图；
@@ -70,24 +67,51 @@ public class UpdateUSMSSignatureParam extends BaseRequestParam {
     private Integer certificateType;
 
     /**
-     * 短信签名授权委托文件，需先进行base64编码格式转换，此处填写转换后的字符串。
-     * 文件大小不超过4 MB；
+     * 短信签名的资质证明文件
+     */
+    private String filePath;
+
+    /**
+     * 短信签名授权委托文件,
      * 当您是代理并使用第三方的签名时（也即SigPurpose为1-他用），该项为必填项；
      */
-    @UcloudParam("ProxyFile")
-    private String proxyFile;
+    private String proxyFilePath;
 
     public UpdateUSMSSignatureParam(@NotEmpty(message = "sigId can not be empty") String sigId,
                                     @NotEmpty(message = "sigContent can not be empty") String sigContent,
                                     @NotNull(message = "sigType can not be null") Integer sigType,
                                     @NotNull(message = "sigPurpose can not be null") Integer sigPurpose,
-                                    @NotEmpty(message = "file can not be empty") String file) {
+                                    @NotEmpty(message = "filePath can not be empty") String filePath) {
         super("UpdateUSMSSignature");
         this.sigId = sigId;
         this.sigContent = sigContent;
         this.sigType = sigType;
         this.sigPurpose = sigPurpose;
-        this.file = file;
+        this.filePath = filePath;
+    }
+
+
+    @UcloudParam("File")
+    public List<Param> checkFile() throws ValidatorException {
+        List<Param> params = new ArrayList<>();
+        if (filePath == null || filePath.isEmpty()) {
+            throw new ValidatorException("file can not be null");
+        } else {
+            params.add(new Param("File",
+                    FileUtil.getFileContent2StringAfterBase64Encode(filePath)));
+        }
+        return params;
+    }
+
+
+    @UcloudParam("ProxyFile")
+    public List<Param> checkProxyFile() throws ValidatorException {
+        List<Param> params = new ArrayList<>();
+        if (proxyFilePath != null && !proxyFilePath.isEmpty()) {
+            params.add(new Param("ProxyFile",
+                    FileUtil.getFileContent2StringAfterBase64Encode(filePath)));
+        }
+        return params;
     }
 
     public String getSigId() {
@@ -122,14 +146,6 @@ public class UpdateUSMSSignatureParam extends BaseRequestParam {
         this.sigPurpose = sigPurpose;
     }
 
-    public String getFile() {
-        return file;
-    }
-
-    public void setFile(String file) {
-        this.file = file;
-    }
-
     public Integer getCertificateType() {
         return certificateType;
     }
@@ -138,11 +154,20 @@ public class UpdateUSMSSignatureParam extends BaseRequestParam {
         this.certificateType = certificateType;
     }
 
-    public String getProxyFile() {
-        return proxyFile;
+
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setProxyFile(String proxyFile) {
-        this.proxyFile = proxyFile;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getProxyFilePath() {
+        return proxyFilePath;
+    }
+
+    public void setProxyFilePath(String proxyFilePath) {
+        this.proxyFilePath = proxyFilePath;
     }
 }
