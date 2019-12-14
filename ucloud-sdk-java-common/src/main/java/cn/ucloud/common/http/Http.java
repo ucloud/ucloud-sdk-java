@@ -45,26 +45,27 @@ public class Http {
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {
         CloseableHttpResponse response = null;
         BaseResponseResult responseResult = null;
-        // 创建HttpClient对象
-        final CloseableHttpClient client = HttpClients.createDefault();
         request.addHeader("User-Agent", USER_AGENT);
-        // 执行http 请求
+
+        String uri = request.getURI().toString();
         if (request instanceof HttpPost) {
             logger.info("http POST request: \n" +
                             "\tURI:{}\n" +
                             "\tBody:{}\n" +
                             "\tHeaders:{}",
-                    request.getURI().toString(),
+                    uri,
                     EntityUtils.toString(((HttpPost) request).getEntity()),
                     new Gson().toJson(request.getAllHeaders()));
         } else if (request instanceof HttpGet) {
             logger.info("http GET request: \n" +
                             "\tURI:{}\n" +
                             "\tHeaders:{}",
-                    request.getURI().toString(),
+                    uri,
                     request.getAllHeaders());
         }
 
+        // 创建HttpClient对象
+        final CloseableHttpClient client = HttpClients.createDefault();
         try {
             response = client.execute(request);
             if (response != null) {
