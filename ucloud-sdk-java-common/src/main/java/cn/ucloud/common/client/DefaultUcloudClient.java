@@ -27,14 +27,14 @@ public class DefaultUcloudClient implements UcloudClient {
     @Override
     public GetRegionResult getRegion() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
-        return (GetRegionResult) http.doGet(new GetRegionParam(), config, null);
+        return (GetRegionResult) http.doPost(new GetRegionParam(), config, null);
     }
 
     @Override
     public void getRegion(UcloudHandler<GetRegionResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
         try {
-            http.doGet(new GetRegionParam(), config, handler, asyncFlag);
+            http.doPost(new GetRegionParam(), config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -42,14 +42,14 @@ public class DefaultUcloudClient implements UcloudClient {
     @Override
     public GetProjectListResult getProjectList() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
-        return (GetProjectListResult) http.doGet(new GetProjectListParam(), config, null);
+        return (GetProjectListResult) http.doPost(new GetProjectListParam(), config, null);
     }
 
     @Override
     public void getProjectList(UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
         try {
-            http.doGet(new GetProjectListParam(), config, handler, asyncFlag);
+            http.doPost(new GetProjectListParam(), config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -58,7 +58,7 @@ public class DefaultUcloudClient implements UcloudClient {
     public BaseResponseResult doAction(BaseRequestParam param,
                                        Class<? extends BaseResponseResult> clazz) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(clazz);
-        return (BaseResponseResult) http.doGet(param, config, null);
+        return (BaseResponseResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class DefaultUcloudClient implements UcloudClient {
                          UcloudHandler<? extends BaseResponseResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(clazz);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

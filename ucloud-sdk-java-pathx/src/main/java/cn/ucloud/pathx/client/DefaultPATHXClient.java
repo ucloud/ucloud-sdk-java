@@ -20,7 +20,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DeleteUPathResult deleteUPath(DeleteUPathParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUPathResult.class);
-        return (DeleteUPathResult) http.doGet(param, config, null);
+        return (DeleteUPathResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                             UcloudHandler<DeleteUPathResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUPathResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -36,7 +36,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public CreateGlobalSSHInstanceResult createGlobalSSHInstance(CreateGlobalSSHInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateGlobalSSHInstanceResult.class);
-        return (CreateGlobalSSHInstanceResult) http.doGet(param, config, null);
+        return (CreateGlobalSSHInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                         UcloudHandler<CreateGlobalSSHInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateGlobalSSHInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -52,7 +52,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetUGAUpdatePriceResult getUGAUpdatePrice(GetUGAUpdatePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUGAUpdatePriceResult.class);
-        return (GetUGAUpdatePriceResult) http.doGet(param, config, null);
+        return (GetUGAUpdatePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                   UcloudHandler<GetUGAUpdatePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUGAUpdatePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -68,7 +68,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public ModifyUPathNameResult modifyUPathName(ModifyUPathNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUPathNameResult.class);
-        return (ModifyUPathNameResult) http.doGet(param, config, null);
+        return (ModifyUPathNameResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                 UcloudHandler<ModifyUPathNameResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUPathNameResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -84,7 +84,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public ModifyUPathBandwidthResult modifyUPathBandwidth(ModifyUPathBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUPathBandwidthResult.class);
-        return (ModifyUPathBandwidthResult) http.doGet(param, config, null);
+        return (ModifyUPathBandwidthResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                      UcloudHandler<ModifyUPathBandwidthResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUPathBandwidthResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -100,7 +100,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribeUPathResult describeUPath(DescribeUPathParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUPathResult.class);
-        return (DescribeUPathResult) http.doGet(param, config, null);
+        return (DescribeUPathResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -108,7 +108,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                               UcloudHandler<DescribeUPathResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUPathResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -116,7 +116,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public UGAUnBindUPathResult uGAUnBindUPath(UGAUnBindUPathParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UGAUnBindUPathResult.class);
-        return (UGAUnBindUPathResult) http.doGet(param, config, null);
+        return (UGAUnBindUPathResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -124,7 +124,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                UcloudHandler<UGAUnBindUPathResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UGAUnBindUPathResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -132,7 +132,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public UGABindUPathResult uGABindUPath(UGABindUPathParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UGABindUPathResult.class);
-        return (UGABindUPathResult) http.doGet(param, config, null);
+        return (UGABindUPathResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -140,7 +140,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                              UcloudHandler<UGABindUPathResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UGABindUPathResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -148,7 +148,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribeUPathTemplateResult describeUPathTemplate(DescribeUPathTemplateParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUPathTemplateResult.class);
-        return (DescribeUPathTemplateResult) http.doGet(param, config, null);
+        return (DescribeUPathTemplateResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -156,7 +156,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                       UcloudHandler<DescribeUPathTemplateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUPathTemplateResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -164,7 +164,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public ModifyUPathTemplateResult modifyUPathTemplate(ModifyUPathTemplateParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUPathTemplateResult.class);
-        return (ModifyUPathTemplateResult) http.doGet(param, config, null);
+        return (ModifyUPathTemplateResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -172,7 +172,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                     UcloudHandler<ModifyUPathTemplateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUPathTemplateResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -180,7 +180,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetUPathUpdatePriceResult getUPathUpdatePrice(GetUPathUpdatePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUPathUpdatePriceResult.class);
-        return (GetUPathUpdatePriceResult) http.doGet(param, config, null);
+        return (GetUPathUpdatePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -188,7 +188,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                     UcloudHandler<GetUPathUpdatePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUPathUpdatePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -196,7 +196,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetCommonUGAPriceResult getCommonUGAPrice(GetCommonUGAPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetCommonUGAPriceResult.class);
-        return (GetCommonUGAPriceResult) http.doGet(param, config, null);
+        return (GetCommonUGAPriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -204,7 +204,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                   UcloudHandler<GetCommonUGAPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetCommonUGAPriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -212,7 +212,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DeleteCommonUGAInstanceResult deleteCommonUGAInstance(DeleteCommonUGAInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteCommonUGAInstanceResult.class);
-        return (DeleteCommonUGAInstanceResult) http.doGet(param, config, null);
+        return (DeleteCommonUGAInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -220,7 +220,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                         UcloudHandler<DeleteCommonUGAInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteCommonUGAInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -228,7 +228,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DeleteUGATaskResult deleteUGATask(DeleteUGATaskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUGATaskResult.class);
-        return (DeleteUGATaskResult) http.doGet(param, config, null);
+        return (DeleteUGATaskResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -236,7 +236,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                               UcloudHandler<DeleteUGATaskResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUGATaskResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -244,7 +244,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public AddUGATaskResult addUGATask(AddUGATaskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AddUGATaskResult.class);
-        return (AddUGATaskResult) http.doGet(param, config, null);
+        return (AddUGATaskResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -252,7 +252,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                            UcloudHandler<AddUGATaskResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AddUGATaskResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -260,7 +260,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public CreateUGAInstanceResult createUGAInstance(CreateUGAInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUGAInstanceResult.class);
-        return (CreateUGAInstanceResult) http.doGet(param, config, null);
+        return (CreateUGAInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -268,7 +268,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                   UcloudHandler<CreateUGAInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUGAInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -276,7 +276,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DeleteUGAInstanceResult deleteUGAInstance(DeleteUGAInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUGAInstanceResult.class);
-        return (DeleteUGAInstanceResult) http.doGet(param, config, null);
+        return (DeleteUGAInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -284,7 +284,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                   UcloudHandler<DeleteUGAInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUGAInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -292,7 +292,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribeUGAInstanceResult describeUGAInstance(DescribeUGAInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUGAInstanceResult.class);
-        return (DescribeUGAInstanceResult) http.doGet(param, config, null);
+        return (DescribeUGAInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -300,7 +300,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                     UcloudHandler<DescribeUGAInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUGAInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -308,7 +308,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribeCommonUGAInstanceResult describeCommonUGAInstance(DescribeCommonUGAInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeCommonUGAInstanceResult.class);
-        return (DescribeCommonUGAInstanceResult) http.doGet(param, config, null);
+        return (DescribeCommonUGAInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -316,7 +316,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                           UcloudHandler<DescribeCommonUGAInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeCommonUGAInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -324,7 +324,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetPathXMetricResult getPathXMetric(GetPathXMetricParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetPathXMetricResult.class);
-        return (GetPathXMetricResult) http.doGet(param, config, null);
+        return (GetPathXMetricResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -332,7 +332,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                UcloudHandler<GetPathXMetricResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetPathXMetricResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -340,7 +340,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribePathXLineConfigResult describePathXLineConfig(DescribePathXLineConfigParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribePathXLineConfigResult.class);
-        return (DescribePathXLineConfigResult) http.doGet(param, config, null);
+        return (DescribePathXLineConfigResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -348,7 +348,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                         UcloudHandler<DescribePathXLineConfigResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribePathXLineConfigResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -356,7 +356,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DeleteGlobalSSHInstanceResult deleteGlobalSSHInstance(DeleteGlobalSSHInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteGlobalSSHInstanceResult.class);
-        return (DeleteGlobalSSHInstanceResult) http.doGet(param, config, null);
+        return (DeleteGlobalSSHInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -364,7 +364,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                         UcloudHandler<DeleteGlobalSSHInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteGlobalSSHInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -372,7 +372,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public InsertPathXWhitelistResult insertPathXWhitelist(InsertPathXWhitelistParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(InsertPathXWhitelistResult.class);
-        return (InsertPathXWhitelistResult) http.doGet(param, config, null);
+        return (InsertPathXWhitelistResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -380,7 +380,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                      UcloudHandler<InsertPathXWhitelistResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(InsertPathXWhitelistResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -388,7 +388,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetUGAPriceResult getUGAPrice(GetUGAPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUGAPriceResult.class);
-        return (GetUGAPriceResult) http.doGet(param, config, null);
+        return (GetUGAPriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -396,7 +396,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                             UcloudHandler<GetUGAPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUGAPriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -405,7 +405,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetUPathPriceResult getUPathPrice(GetUPathPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUPathPriceResult.class);
-        return (GetUPathPriceResult) http.doGet(param, config, null);
+        return (GetUPathPriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -413,7 +413,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                               UcloudHandler<GetUPathPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUPathPriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -421,7 +421,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public ModifyGlobalSSHPortResult modifyGlobalSSHPort(ModifyGlobalSSHPortParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyGlobalSSHPortResult.class);
-        return (ModifyGlobalSSHPortResult) http.doGet(param, config, null);
+        return (ModifyGlobalSSHPortResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -429,7 +429,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                     UcloudHandler<ModifyGlobalSSHPortResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyGlobalSSHPortResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -437,7 +437,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public UpdatePathXWhitelistResult updatePathXWhitelist(UpdatePathXWhitelistParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdatePathXWhitelistResult.class);
-        return (UpdatePathXWhitelistResult) http.doGet(param, config, null);
+        return (UpdatePathXWhitelistResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -445,7 +445,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                      UcloudHandler<UpdatePathXWhitelistResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdatePathXWhitelistResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -453,7 +453,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribePathXWhitelistResult describePathXWhitelist(DescribePathXWhitelistParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribePathXWhitelistResult.class);
-        return (DescribePathXWhitelistResult) http.doGet(param, config, null);
+        return (DescribePathXWhitelistResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -461,7 +461,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                        UcloudHandler<DescribePathXWhitelistResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribePathXWhitelistResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -469,7 +469,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public ModifyGlobalSSHRemarkResult modifyGlobalSSHRemark(ModifyGlobalSSHRemarkParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyGlobalSSHRemarkResult.class);
-        return (ModifyGlobalSSHRemarkResult) http.doGet(param, config, null);
+        return (ModifyGlobalSSHRemarkResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -477,7 +477,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                       UcloudHandler<ModifyGlobalSSHRemarkResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyGlobalSSHRemarkResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -485,7 +485,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetGlobalSSHMetricResult getGlobalSSHMetric(GetGlobalSSHMetricParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHMetricResult.class);
-        return (GetGlobalSSHMetricResult) http.doGet(param, config, null);
+        return (GetGlobalSSHMetricResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -493,7 +493,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                    UcloudHandler<GetGlobalSSHMetricResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHMetricResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -501,7 +501,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribeGlobalSSHAreaResult describeGlobalSSHArea(DescribeGlobalSSHAreaParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeGlobalSSHAreaResult.class);
-        return (DescribeGlobalSSHAreaResult) http.doGet(param, config, null);
+        return (DescribeGlobalSSHAreaResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -509,7 +509,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                       UcloudHandler<DescribeGlobalSSHAreaResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeGlobalSSHAreaResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -517,7 +517,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetGlobalSSHPriceResult getGlobalSSHPrice(GetGlobalSSHPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHPriceResult.class);
-        return (GetGlobalSSHPriceResult) http.doGet(param, config, null);
+        return (GetGlobalSSHPriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -525,7 +525,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                   UcloudHandler<GetGlobalSSHPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHPriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -533,7 +533,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public GetGlobalSSHTrafficResult getGlobalSSHTraffic(GetGlobalSSHTrafficParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHTrafficResult.class);
-        return (GetGlobalSSHTrafficResult) http.doGet(param, config, null);
+        return (GetGlobalSSHTrafficResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -541,7 +541,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                     UcloudHandler<GetGlobalSSHTrafficResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetGlobalSSHTrafficResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -549,7 +549,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public CreateUPathResult createUPath(CreateUPathParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUPathResult.class);
-        return (CreateUPathResult) http.doGet(param, config, null);
+        return (CreateUPathResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -557,7 +557,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                             UcloudHandler<CreateUPathResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUPathResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -565,7 +565,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public CreateCommonUGAInstanceResult createCommonUGAInstance(CreateCommonUGAInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateCommonUGAInstanceResult.class);
-        return (CreateCommonUGAInstanceResult) http.doGet(param, config, null);
+        return (CreateCommonUGAInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -573,7 +573,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                         UcloudHandler<CreateCommonUGAInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateCommonUGAInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -581,7 +581,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
     @Override
     public DescribeGlobalSSHInstanceResult describeGlobalSSHInstance(DescribeGlobalSSHInstanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeGlobalSSHInstanceResult.class);
-        return (DescribeGlobalSSHInstanceResult) http.doGet(param, config, null);
+        return (DescribeGlobalSSHInstanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -589,7 +589,7 @@ public class DefaultPATHXClient extends DefaultUcloudClient implements PATHXClie
                                           UcloudHandler<DescribeGlobalSSHInstanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeGlobalSSHInstanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

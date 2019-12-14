@@ -20,7 +20,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CreateUMemSpaceResult createUMemSpace(CreateUMemSpaceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUMemSpaceResult.class);
-        return (CreateUMemSpaceResult) http.doGet(param, config, null);
+        return (CreateUMemSpaceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                 UcloudHandler<CreateUMemSpaceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUMemSpaceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -36,7 +36,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DeleteUMemSpaceResult deleteUMemSpace(DeleteUMemSpaceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUMemSpaceResult.class);
-        return (DeleteUMemSpaceResult) http.doGet(param, config, null);
+        return (DeleteUMemSpaceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                 UcloudHandler<DeleteUMemSpaceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUMemSpaceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -52,7 +52,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public GetUMemSpaceStateResult getUMemSpaceState(GetUMemSpaceStateParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUMemSpaceStateResult.class);
-        return (GetUMemSpaceStateResult) http.doGet(param, config, null);
+        return (GetUMemSpaceStateResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                   UcloudHandler<GetUMemSpaceStateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUMemSpaceStateResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -68,7 +68,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DeleteURedisGroupResult deleteURedisGroup(DeleteURedisGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteURedisGroupResult.class);
-        return (DeleteURedisGroupResult) http.doGet(param, config, null);
+        return (DeleteURedisGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                   UcloudHandler<DeleteURedisGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteURedisGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -84,7 +84,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisBackupResult describeURedisBackup(DescribeURedisBackupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisBackupResult.class);
-        return (DescribeURedisBackupResult) http.doGet(param, config, null);
+        return (DescribeURedisBackupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                      UcloudHandler<DescribeURedisBackupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisBackupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -100,7 +100,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ModifyURedisGroupNameResult modifyURedisGroupName(ModifyURedisGroupNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyURedisGroupNameResult.class);
-        return (ModifyURedisGroupNameResult) http.doGet(param, config, null);
+        return (ModifyURedisGroupNameResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -108,7 +108,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                       UcloudHandler<ModifyURedisGroupNameResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyURedisGroupNameResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -116,7 +116,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ModifyUMemcacheGroupNameResult modifyUMemcacheGroupName(ModifyUMemcacheGroupNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUMemcacheGroupNameResult.class);
-        return (ModifyUMemcacheGroupNameResult) http.doGet(param, config, null);
+        return (ModifyUMemcacheGroupNameResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -124,7 +124,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                          UcloudHandler<ModifyUMemcacheGroupNameResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUMemcacheGroupNameResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -132,7 +132,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemcacheUpgradePriceResult describeUMemcacheUpgradePrice(DescribeUMemcacheUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcacheUpgradePriceResult.class);
-        return (DescribeUMemcacheUpgradePriceResult) http.doGet(param, config, null);
+        return (DescribeUMemcacheUpgradePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -140,7 +140,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                               UcloudHandler<DescribeUMemcacheUpgradePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcacheUpgradePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -148,7 +148,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CheckURedisAllowanceResult checkURedisAllowance(CheckURedisAllowanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CheckURedisAllowanceResult.class);
-        return (CheckURedisAllowanceResult) http.doGet(param, config, null);
+        return (CheckURedisAllowanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -156,7 +156,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                      UcloudHandler<CheckURedisAllowanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CheckURedisAllowanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -164,7 +164,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DeleteUMemResult deleteUMem(DeleteUMemParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUMemResult.class);
-        return (DeleteUMemResult) http.doGet(param, config, null);
+        return (DeleteUMemResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -172,7 +172,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                            UcloudHandler<DeleteUMemResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUMemResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -180,7 +180,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CheckRegionResourceResult checkRegionResource(CheckRegionResourceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CheckRegionResourceResult.class);
-        return (CheckRegionResourceResult) http.doGet(param, config, null);
+        return (CheckRegionResourceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -188,7 +188,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                     UcloudHandler<CheckRegionResourceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CheckRegionResourceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -196,7 +196,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public RestartUMemcacheGroupResult restartUMemcacheGroup(RestartUMemcacheGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RestartUMemcacheGroupResult.class);
-        return (RestartUMemcacheGroupResult) http.doGet(param, config, null);
+        return (RestartUMemcacheGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -204,7 +204,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                       UcloudHandler<RestartUMemcacheGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RestartUMemcacheGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -212,7 +212,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ModifyURedisConfigResult modifyURedisConfig(ModifyURedisConfigParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyURedisConfigResult.class);
-        return (ModifyURedisConfigResult) http.doGet(param, config, null);
+        return (ModifyURedisConfigResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -220,7 +220,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<ModifyURedisConfigResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyURedisConfigResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -228,7 +228,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CreateURedisConfigResult createURedisConfig(CreateURedisConfigParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateURedisConfigResult.class);
-        return (CreateURedisConfigResult) http.doGet(param, config, null);
+        return (CreateURedisConfigResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -236,7 +236,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<CreateURedisConfigResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateURedisConfigResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -244,7 +244,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DeleteURedisConfigResult deleteURedisConfig(DeleteURedisConfigParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteURedisConfigResult.class);
-        return (DeleteURedisConfigResult) http.doGet(param, config, null);
+        return (DeleteURedisConfigResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -252,7 +252,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<DeleteURedisConfigResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteURedisConfigResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -260,7 +260,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisConfigParamResult describeURedisConfigParam(DescribeURedisConfigParamParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisConfigParamResult.class);
-        return (DescribeURedisConfigParamResult) http.doGet(param, config, null);
+        return (DescribeURedisConfigParamResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -268,7 +268,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                           UcloudHandler<DescribeURedisConfigParamResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisConfigParamResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -276,7 +276,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisConfigResult describeURedisConfig(DescribeURedisConfigParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisConfigResult.class);
-        return (DescribeURedisConfigResult) http.doGet(param, config, null);
+        return (DescribeURedisConfigResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -284,7 +284,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                      UcloudHandler<DescribeURedisConfigResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisConfigResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -292,7 +292,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public RestartURedisGroupResult restartURedisGroup(RestartURedisGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RestartURedisGroupResult.class);
-        return (RestartURedisGroupResult) http.doGet(param, config, null);
+        return (RestartURedisGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -300,7 +300,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<RestartURedisGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RestartURedisGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -308,7 +308,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemcacheVersionResult describeUMemcacheVersion(DescribeUMemcacheVersionParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcacheVersionResult.class);
-        return (DescribeUMemcacheVersionResult) http.doGet(param, config, null);
+        return (DescribeUMemcacheVersionResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -316,7 +316,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                          UcloudHandler<DescribeUMemcacheVersionResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcacheVersionResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -324,7 +324,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DeleteURedisBackupResult deleteURedisBackup(DeleteURedisBackupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteURedisBackupResult.class);
-        return (DeleteURedisBackupResult) http.doGet(param, config, null);
+        return (DeleteURedisBackupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -332,7 +332,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<DeleteURedisBackupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteURedisBackupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -340,7 +340,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemSpaceResult describeUMemSpace(DescribeUMemSpaceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemSpaceResult.class);
-        return (DescribeUMemSpaceResult) http.doGet(param, config, null);
+        return (DescribeUMemSpaceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -348,7 +348,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                   UcloudHandler<DescribeUMemSpaceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemSpaceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -356,7 +356,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisGroupResult describeURedisGroup(DescribeURedisGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisGroupResult.class);
-        return (DescribeURedisGroupResult) http.doGet(param, config, null);
+        return (DescribeURedisGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -364,7 +364,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                     UcloudHandler<DescribeURedisGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -372,7 +372,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisVersionResult describeURedisVersion(DescribeURedisVersionParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisVersionResult.class);
-        return (DescribeURedisVersionResult) http.doGet(param, config, null);
+        return (DescribeURedisVersionResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -380,7 +380,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                       UcloudHandler<DescribeURedisVersionResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisVersionResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -388,7 +388,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DeleteUMemcacheGroupResult deleteUMemcacheGroup(DeleteUMemcacheGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUMemcacheGroupResult.class);
-        return (DeleteUMemcacheGroupResult) http.doGet(param, config, null);
+        return (DeleteUMemcacheGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -396,7 +396,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                      UcloudHandler<DeleteUMemcacheGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUMemcacheGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -404,7 +404,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public UpdateURedisBackupStrategyResult updateURedisBackupStrategy(UpdateURedisBackupStrategyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateURedisBackupStrategyResult.class);
-        return (UpdateURedisBackupStrategyResult) http.doGet(param, config, null);
+        return (UpdateURedisBackupStrategyResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -412,7 +412,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                            UcloudHandler<UpdateURedisBackupStrategyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateURedisBackupStrategyResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -422,7 +422,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemPriceResult describeUMemPrice(DescribeUMemPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemPriceResult.class);
-        return (DescribeUMemPriceResult) http.doGet(param, config, null);
+        return (DescribeUMemPriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -430,7 +430,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                   UcloudHandler<DescribeUMemPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemPriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -438,7 +438,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ResizeUMemSpaceResult resizeUMemSpace(ResizeUMemSpaceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeUMemSpaceResult.class);
-        return (ResizeUMemSpaceResult) http.doGet(param, config, null);
+        return (ResizeUMemSpaceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -446,7 +446,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                 UcloudHandler<ResizeUMemSpaceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ResizeUMemSpaceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -454,7 +454,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CreateURedisGroupResult createURedisGroup(CreateURedisGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateURedisGroupResult.class);
-        return (CreateURedisGroupResult) http.doGet(param, config, null);
+        return (CreateURedisGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -462,7 +462,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                   UcloudHandler<CreateURedisGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateURedisGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -470,7 +470,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisBackupURLResult describeURedisBackupURL(DescribeURedisBackupURLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisBackupURLResult.class);
-        return (DescribeURedisBackupURLResult) http.doGet(param, config, null);
+        return (DescribeURedisBackupURLResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -478,7 +478,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                         UcloudHandler<DescribeURedisBackupURLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisBackupURLResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -486,7 +486,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemcachePriceResult describeUMemcachePrice(DescribeUMemcachePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcachePriceResult.class);
-        return (DescribeUMemcachePriceResult) http.doGet(param, config, null);
+        return (DescribeUMemcachePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -494,7 +494,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                        UcloudHandler<DescribeUMemcachePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcachePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -502,7 +502,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemcacheGroupResult describeUMemcacheGroup(DescribeUMemcacheGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcacheGroupResult.class);
-        return (DescribeUMemcacheGroupResult) http.doGet(param, config, null);
+        return (DescribeUMemcacheGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -510,7 +510,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                        UcloudHandler<DescribeUMemcacheGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemcacheGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -518,7 +518,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeUMemResult describeUMem(DescribeUMemParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemResult.class);
-        return (DescribeUMemResult) http.doGet(param, config, null);
+        return (DescribeUMemResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -526,7 +526,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                              UcloudHandler<DescribeUMemResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUMemResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -534,7 +534,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CheckUMemSpaceAllowanceResult checkUMemSpaceAllowance(CheckUMemSpaceAllowanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CheckUMemSpaceAllowanceResult.class);
-        return (CheckUMemSpaceAllowanceResult) http.doGet(param, config, null);
+        return (CheckUMemSpaceAllowanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -542,7 +542,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                         UcloudHandler<CheckUMemSpaceAllowanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CheckUMemSpaceAllowanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -550,7 +550,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisPriceResult describeURedisPrice(DescribeURedisPriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisPriceResult.class);
-        return (DescribeURedisPriceResult) http.doGet(param, config, null);
+        return (DescribeURedisPriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -558,7 +558,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                     UcloudHandler<DescribeURedisPriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisPriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -566,7 +566,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisSlowlogResult describeURedisSlowlog(DescribeURedisSlowlogParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisSlowlogResult.class);
-        return (DescribeURedisSlowlogResult) http.doGet(param, config, null);
+        return (DescribeURedisSlowlogResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -574,7 +574,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                       UcloudHandler<DescribeURedisSlowlogResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisSlowlogResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -582,7 +582,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ModifyURedisGroupPasswordResult modifyURedisGroupPassword(ModifyURedisGroupPasswordParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyURedisGroupPasswordResult.class);
-        return (ModifyURedisGroupPasswordResult) http.doGet(param, config, null);
+        return (ModifyURedisGroupPasswordResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -590,7 +590,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                           UcloudHandler<ModifyURedisGroupPasswordResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyURedisGroupPasswordResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -598,7 +598,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ResizeUMemcacheGroupResult resizeUMemcacheGroup(ResizeUMemcacheGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeUMemcacheGroupResult.class);
-        return (ResizeUMemcacheGroupResult) http.doGet(param, config, null);
+        return (ResizeUMemcacheGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -606,7 +606,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                      UcloudHandler<ResizeUMemcacheGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ResizeUMemcacheGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -614,7 +614,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisSlaveGroupResult describeURedisSlaveGroup(DescribeURedisSlaveGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisSlaveGroupResult.class);
-        return (DescribeURedisSlaveGroupResult) http.doGet(param, config, null);
+        return (DescribeURedisSlaveGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -622,7 +622,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                          UcloudHandler<DescribeURedisSlaveGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisSlaveGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -630,7 +630,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisUpgradePriceResult describeURedisUpgradePrice(DescribeURedisUpgradePriceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisUpgradePriceResult.class);
-        return (DescribeURedisUpgradePriceResult) http.doGet(param, config, null);
+        return (DescribeURedisUpgradePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -638,7 +638,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                            UcloudHandler<DescribeURedisUpgradePriceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisUpgradePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -646,7 +646,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ResizeURedisGroupResult resizeURedisGroup(ResizeURedisGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ResizeURedisGroupResult.class);
-        return (ResizeURedisGroupResult) http.doGet(param, config, null);
+        return (ResizeURedisGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -654,7 +654,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                   UcloudHandler<ResizeURedisGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ResizeURedisGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -662,7 +662,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CheckUMemcacheAllowanceResult checkUMemcacheAllowance(CheckUMemcacheAllowanceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CheckUMemcacheAllowanceResult.class);
-        return (CheckUMemcacheAllowanceResult) http.doGet(param, config, null);
+        return (CheckUMemcacheAllowanceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -670,7 +670,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                         UcloudHandler<CheckUMemcacheAllowanceResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CheckUMemcacheAllowanceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -678,7 +678,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CreateUMemcacheGroupResult createUMemcacheGroup(CreateUMemcacheGroupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUMemcacheGroupResult.class);
-        return (CreateUMemcacheGroupResult) http.doGet(param, config, null);
+        return (CreateUMemcacheGroupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -686,7 +686,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                      UcloudHandler<CreateUMemcacheGroupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUMemcacheGroupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -694,7 +694,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ChangeURedisConfigResult changeURedisConfig(ChangeURedisConfigParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ChangeURedisConfigResult.class);
-        return (ChangeURedisConfigResult) http.doGet(param, config, null);
+        return (ChangeURedisConfigResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -702,7 +702,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<ChangeURedisConfigResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ChangeURedisConfigResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -710,7 +710,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public ModifyUMemSpaceNameResult modifyUMemSpaceName(ModifyUMemSpaceNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUMemSpaceNameResult.class);
-        return (ModifyUMemSpaceNameResult) http.doGet(param, config, null);
+        return (ModifyUMemSpaceNameResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -718,7 +718,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                     UcloudHandler<ModifyUMemSpaceNameResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUMemSpaceNameResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -726,7 +726,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public DescribeURedisBackupStateResult describeURedisBackupState(DescribeURedisBackupStateParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisBackupStateResult.class);
-        return (DescribeURedisBackupStateResult) http.doGet(param, config, null);
+        return (DescribeURedisBackupStateResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -734,7 +734,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                           UcloudHandler<DescribeURedisBackupStateResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeURedisBackupStateResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -742,7 +742,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
     @Override
     public CreateURedisBackupResult createURedisBackup(CreateURedisBackupParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateURedisBackupResult.class);
-        return (CreateURedisBackupResult) http.doGet(param, config, null);
+        return (CreateURedisBackupResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -750,7 +750,7 @@ public class DefaultUMEMClient extends DefaultUcloudClient implements UMEMClient
                                    UcloudHandler<CreateURedisBackupResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateURedisBackupResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

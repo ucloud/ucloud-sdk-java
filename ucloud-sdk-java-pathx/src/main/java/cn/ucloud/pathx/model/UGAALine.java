@@ -36,12 +36,24 @@ public class UGAALine {
      */
     @SerializedName("LineToName")
     private String lineToName;
+
+    @SerializedName("MaxBandwidth")
+    private Integer maxBandwidth;
+
     /**
      * 子线路信息
      */
     @SerializedName("LineDetail")
     private List<LineDetail> lineDetail;
 
+
+    public Integer getMaxBandwidth() {
+        return maxBandwidth;
+    }
+
+    public void setMaxBandwidth(Integer maxBandwidth) {
+        this.maxBandwidth = maxBandwidth;
+    }
 
     public String getLineFrom() {
         return this.lineFrom;

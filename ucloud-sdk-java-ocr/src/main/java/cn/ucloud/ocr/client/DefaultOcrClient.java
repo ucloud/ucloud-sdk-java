@@ -37,7 +37,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public DeleteUAIOcrResourceResult
     deleteUAIOcrResource(DeleteUAIOcrResourceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUAIOcrResourceResult.class);
-        return (DeleteUAIOcrResourceResult) http.doGet(param, config, null);
+        return (DeleteUAIOcrResourceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                      Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUAIOcrResourceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -55,7 +55,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public GetUAIOcrResourceRecordInfoResult
     getUAIOcrResourceRecordInfo(GetUAIOcrResourceRecordInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAIOcrResourceRecordInfoResult.class);
-        return (GetUAIOcrResourceRecordInfoResult) http.doGet(param, config, null);
+        return (GetUAIOcrResourceRecordInfoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                             Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAIOcrResourceRecordInfoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -73,7 +73,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public ModifyUAIOcrResourceOssInfoResult
     modifyUAIOcrResourceOssInfo(ModifyUAIOcrResourceOssInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceOssInfoResult.class);
-        return (ModifyUAIOcrResourceOssInfoResult) http.doGet(param, config, null);
+        return (ModifyUAIOcrResourceOssInfoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -82,7 +82,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                             Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceOssInfoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -91,7 +91,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public ModifyUAIOcrResourceNameResult
     modifyUAIOcrResourceName(ModifyUAIOcrResourceNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceNameResult.class);
-        return (ModifyUAIOcrResourceNameResult) http.doGet(param, config, null);
+        return (ModifyUAIOcrResourceNameResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -100,7 +100,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceNameResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -109,7 +109,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public ModifyUAIOcrResourceMemoResult
     modifyUAIOcrResourceMemo(ModifyUAIOcrResourceMemoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceMemoResult.class);
-        return (ModifyUAIOcrResourceMemoResult) http.doGet(param, config, null);
+        return (ModifyUAIOcrResourceMemoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -118,7 +118,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAIOcrResourceMemoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -127,7 +127,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public GetUAIOcrResourceListResult
     getUAIOcrResourceList(GetUAIOcrResourceListParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAIOcrResourceListResult.class);
-        return (GetUAIOcrResourceListResult) http.doGet(param, config, null);
+        return (GetUAIOcrResourceListResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -136,7 +136,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                       Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAIOcrResourceListResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -145,7 +145,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public CreateUAIOcrResourceResult createUAIOcrResource(CreateUAIOcrResourceParam param)
             throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUAIOcrResourceResult.class);
-        return (CreateUAIOcrResourceResult) http.doGet(param, config, null);
+        return (CreateUAIOcrResourceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -154,7 +154,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                      Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUAIOcrResourceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -163,7 +163,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
     public GetUAIOcrAvailResourceTypeResult
     getUAIOcrAvailResourceType(GetUAIOcrAvailResourceTypeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAIOcrAvailResourceTypeResult.class);
-        return (GetUAIOcrAvailResourceTypeResult) http.doGet(param, config, null);
+        return (GetUAIOcrAvailResourceTypeResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -172,7 +172,7 @@ public class DefaultOcrClient extends DefaultUcloudClient implements OcrClient {
                                            Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAIOcrAvailResourceTypeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
