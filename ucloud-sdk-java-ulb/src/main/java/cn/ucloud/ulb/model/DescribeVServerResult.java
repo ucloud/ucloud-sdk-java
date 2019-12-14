@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DescribeVServerResult extends BaseResponseResult {
 
-    public static class ULBVServer{
+    public static class ULBVServer {
 
         /**
          * VServer实例的Id
@@ -52,7 +52,6 @@ public class DescribeVServerResult extends BaseResponseResult {
         private String method;
 
         /**
-         *
          * VServer会话保持方式。枚举值为：
          * None -> 关闭会话保持；
          * ServerInsert -> 自动生成；
@@ -124,6 +123,17 @@ public class DescribeVServerResult extends BaseResponseResult {
 
         @SerializedName("Path")
         private String path;
+
+        @SerializedName("Remark")
+        private String remark;
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
 
         public String getPath() {
             return path;
@@ -279,7 +289,7 @@ public class DescribeVServerResult extends BaseResponseResult {
 
     }
 
-    public static class SSL{
+    public static class SSL {
 
         /**
          * SSL证书的Id
@@ -368,7 +378,7 @@ public class DescribeVServerResult extends BaseResponseResult {
 
     }
 
-    public static class SSLBingedTarget{
+    public static class SSLBingedTarget {
 
         /**
          * SSL证书绑定到的VServer的资源ID
@@ -428,7 +438,7 @@ public class DescribeVServerResult extends BaseResponseResult {
 
     }
 
-    public static class ULBBackend{
+    public static class ULBBackend {
         /**
          * 后端资源实例的Id
          */
@@ -486,6 +496,39 @@ public class DescribeVServerResult extends BaseResponseResult {
 
         @SerializedName("Weight")
         private Integer weight;
+
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        @SerializedName("SubResourceType")
+        private String subResourceType;
+
+        public String getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
 
         public Integer getWeight() {
             return weight;
@@ -569,7 +612,7 @@ public class DescribeVServerResult extends BaseResponseResult {
 
     }
 
-    public static class ULBPolicy{
+    public static class ULBPolicy {
 
         /**
          * 内容转发Id，默认内容转发类型下为空。
@@ -688,7 +731,7 @@ public class DescribeVServerResult extends BaseResponseResult {
 
     }
 
-    public static class PolicyBackend{
+    public static class PolicyBackend {
         /**
          * 所添加的后端资源在ULB中的对象ID，
          * （为ULB系统中使用，与资源自身ID无关)
@@ -722,6 +765,39 @@ public class DescribeVServerResult extends BaseResponseResult {
 
         @SerializedName("Weight")
         private Integer weight;
+
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        @SerializedName("SubResourceType")
+        private String subResourceType;
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
 
         public Integer getWeight() {
             return weight;
@@ -773,7 +849,7 @@ public class DescribeVServerResult extends BaseResponseResult {
 
     }
 
-    public static class Metric{
+    public static class Metric {
 
         @SerializedName("MetricId")
         private String metricId;
