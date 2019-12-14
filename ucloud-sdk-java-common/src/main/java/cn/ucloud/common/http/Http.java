@@ -47,21 +47,22 @@ public class Http {
         BaseResponseResult responseResult = null;
         request.addHeader("User-Agent", USER_AGENT);
 
-        String uri = request.getURI().toString();
+        String uriInfo = request.getURI().toString();
+        String headerInfo = new Gson().toJson(request.getAllHeaders());
         if (request instanceof HttpPost) {
             logger.info("http POST request: \n" +
                             "\tURI:{}\n" +
                             "\tBody:{}\n" +
                             "\tHeaders:{}",
-                    uri,
+                    uriInfo,
                     EntityUtils.toString(((HttpPost) request).getEntity()),
-                    new Gson().toJson(request.getAllHeaders()));
+                    headerInfo);
         } else if (request instanceof HttpGet) {
             logger.info("http GET request: \n" +
                             "\tURI:{}\n" +
                             "\tHeaders:{}",
-                    uri,
-                    request.getAllHeaders());
+                    uriInfo,
+                    headerInfo);
         }
 
         // 创建HttpClient对象
