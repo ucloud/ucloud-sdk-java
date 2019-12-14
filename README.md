@@ -186,5 +186,5 @@ public class Main {
 
 - 0.8.2.8-release
 
-    PathX、ULB维护更新，USMS新增接口
+    PathX、ULB、VPC维护更新，USMS新增接口
     
