@@ -2,6 +2,8 @@ package cn.ucloud.umem.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.math.BigDecimal;
+
 
 /**
  * @Description : DescribeUMemcachePrice 模型类
@@ -18,34 +20,44 @@ public class UMemcachePriceSet {
      * 价格，单位: 元，保留小数点后两位有效数字
      */
     @SerializedName("Price")
-    private Double price;
+    private BigDecimal price;
 
     @SerializedName("OriginalPrice")
-    private Double originalPrice;
+    private BigDecimal originalPrice;
 
-    public Double getOriginalPrice() {
-        return originalPrice;
-    }
+    @SerializedName("ListPrice")
+    private BigDecimal listPrice;
 
-    public void setOriginalPrice(Double originalPrice) {
-        this.originalPrice = originalPrice;
-    }
 
     public String getChargeType() {
-        return this.chargeType;
+        return chargeType;
     }
 
     public void setChargeType(String chargeType) {
         this.chargeType = chargeType;
     }
 
-    public Double getPrice() {
-        return this.price;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
+    public BigDecimal getOriginalPrice() {
+        return originalPrice;
+    }
 
+    public void setOriginalPrice(BigDecimal originalPrice) {
+        this.originalPrice = originalPrice;
+    }
+
+    public BigDecimal getListPrice() {
+        return listPrice;
+    }
+
+    public void setListPrice(BigDecimal listPrice) {
+        this.listPrice = listPrice;
+    }
 }
