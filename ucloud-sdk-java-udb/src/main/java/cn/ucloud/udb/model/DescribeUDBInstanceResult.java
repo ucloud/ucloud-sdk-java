@@ -963,6 +963,17 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("CPU")
         private Integer cpu;
 
+        @SerializedName("IPv6Address")
+        private String ipv6Address;
+
+        public String getIpv6Address() {
+            return ipv6Address;
+        }
+
+        public void setIpv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+        }
+
         public Integer getCpu() {
             return cpu;
         }

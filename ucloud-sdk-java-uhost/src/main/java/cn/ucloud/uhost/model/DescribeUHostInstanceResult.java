@@ -254,6 +254,17 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("CloudInitFeature")
         private Boolean cloudInitFeature;
 
+        @SerializedName("IPv6Feature")
+        private Boolean ipv6Feature;
+
+        public Boolean getIpv6Feature() {
+            return ipv6Feature;
+        }
+
+        public void setIpv6Feature(Boolean ipv6Feature) {
+            this.ipv6Feature = ipv6Feature;
+        }
+
         public Boolean getCloudInitFeature() {
             return cloudInitFeature;
         }
@@ -811,6 +822,17 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
          */
         @SerializedName("Weight")
         private Integer weight;
+
+        @SerializedName("IPMode")
+        private String ipMode;
+
+        public String getIpMode() {
+            return ipMode;
+        }
+
+        public void setIpMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
 
         public String getIpId() {
             return ipId;

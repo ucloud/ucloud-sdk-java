@@ -113,6 +113,17 @@ public class DescribeSubnetResult extends BaseResponseResult {
         @SerializedName("Zone")
         private String zone;
 
+        @SerializedName("IPv6Network")
+        private String ipv6Network;
+
+        public String getIpv6Network() {
+            return ipv6Network;
+        }
+
+        public void setIpv6Network(String ipv6Network) {
+            this.ipv6Network = ipv6Network;
+        }
+
         public Integer getCreateTime() {
             return createTime;
         }

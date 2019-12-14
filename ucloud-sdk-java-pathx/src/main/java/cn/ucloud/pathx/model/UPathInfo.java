@@ -52,6 +52,9 @@ public class UPathInfo {
     @SerializedName("ChargeType")
     private String chargeType;
 
+    @SerializedName("PostPaid")
+    private Boolean postPaid;
+
     @SerializedName("LineFromName")
     private String lineFromName;
 
@@ -60,6 +63,14 @@ public class UPathInfo {
 
     @SerializedName("OutPublicIpList")
     private List<OutPublicIpInfo> outPublicIpInfos;
+
+    public Boolean getPostPaid() {
+        return postPaid;
+    }
+
+    public void setPostPaid(Boolean postPaid) {
+        this.postPaid = postPaid;
+    }
 
     public String getLineFromName() {
         return lineFromName;

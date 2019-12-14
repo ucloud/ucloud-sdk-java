@@ -5,6 +5,8 @@ import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.BaseResponseResult;
 import com.google.gson.Gson;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -29,7 +31,7 @@ public class Http {
 
     private static Logger logger = LoggerFactory.getLogger(Http.class);
 
-    private static final String SDK_VERSION = "0.8.2.7-release";
+    private static final String SDK_VERSION = "0.8.2.8-release";
 
     private static final String USER_AGENT;
 
@@ -43,12 +45,29 @@ public class Http {
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {
         CloseableHttpResponse response = null;
         BaseResponseResult responseResult = null;
+        request.addHeader("User-Agent", USER_AGENT);
+
+        String uriInfo = request.getURI().toString();
+        String headerInfo = new Gson().toJson(request.getAllHeaders());
+        if (request instanceof HttpPost) {
+            String bodyInfo = EntityUtils.toString(((HttpPost) request).getEntity());
+            logger.info("http POST request: \n" +
+                            "\tURI:{}\n" +
+                            "\tBody:{}\n" +
+                            "\tHeaders:{}",
+                    uriInfo,
+                    bodyInfo,
+                    headerInfo);
+        } else if (request instanceof HttpGet) {
+            logger.info("http GET request: \n" +
+                            "\tURI:{}\n" +
+                            "\tHeaders:{}",
+                    uriInfo,
+                    headerInfo);
+        }
+
         // 创建HttpClient对象
         final CloseableHttpClient client = HttpClients.createDefault();
-        request.addHeader("User-Agent", USER_AGENT);
-        // 执行http get请求
-        String requestJson = new Gson().toJson(request);
-        logger.info("request :{}", requestJson);
         try {
             response = client.execute(request);
             if (response != null) {
