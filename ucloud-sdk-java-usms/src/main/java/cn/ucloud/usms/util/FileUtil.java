@@ -40,11 +40,13 @@ public class FileUtil {
             fileInputStream = new FileInputStream(path);
             int available = fileInputStream.available();
             byte[] buffer = new byte[available];
-            log.info("file({}) mime-type:{} , size:{}",
+            int readLen = fileInputStream.read(buffer);
+            log.info("file({}) mime-type:{} , size:{} , read size:{}",
                     path,
                     type,
-                    available);
-            fileInputStream.read(buffer);
+                    available,
+                    readLen);
+
             value = String.format("data:%s;base64,%s",
                     type, new String(Base64.encodeBase64(buffer)));
         } catch (IOException e) {
