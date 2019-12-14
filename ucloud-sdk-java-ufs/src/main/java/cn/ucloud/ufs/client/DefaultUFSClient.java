@@ -22,7 +22,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public CreateUFSVolumeResult createUFSVolume(CreateUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUFSVolumeResult.class);
-        return (CreateUFSVolumeResult) http.doGet(param, config, null);
+        return (CreateUFSVolumeResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                 Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateUFSVolumeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -39,7 +39,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public DescribeUFSVolumeResult describeUFSVolume(DescribeUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeResult.class);
-        return (DescribeUFSVolumeResult) http.doGet(param, config, null);
+        return (DescribeUFSVolumeResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                   Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -57,7 +57,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     public DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param)
             throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumePriceResult.class);
-        return (DescribeUFSVolumePriceResult) http.doGet(param, config, null);
+        return (DescribeUFSVolumePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                        Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -75,7 +75,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     public DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param)
             throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeUpgradePriceResult.class);
-        return (DescribeUFSVolumeUpgradePriceResult) http.doGet(param, config, null);
+        return (DescribeUFSVolumeUpgradePriceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                               Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeUpgradePriceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -93,7 +93,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     public DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param)
             throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeWhiteListResult.class);
-        return (DescribeUFSVolumeWhiteListResult) http.doGet(param, config, null);
+        return (DescribeUFSVolumeWhiteListResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -102,7 +102,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                            Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeUFSVolumeWhiteListResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -110,7 +110,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public ExtendUFSVolumeResult extendUFSVolume(ExtendUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ExtendUFSVolumeResult.class);
-        return (ExtendUFSVolumeResult) http.doGet(param, config, null);
+        return (ExtendUFSVolumeResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -118,7 +118,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                 Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ExtendUFSVolumeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -147,7 +147,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public RemoveUFSVolumeResult removeUFSVolume(RemoveUFSVolumeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RemoveUFSVolumeResult.class);
-        return (RemoveUFSVolumeResult) http.doGet(param, config, null);
+        return (RemoveUFSVolumeResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -155,7 +155,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                 Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RemoveUFSVolumeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -163,7 +163,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     @Override
     public UpdateUFSVolumeInfoResult updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeInfoResult.class);
-        return (UpdateUFSVolumeInfoResult) http.doGet(param, config, null);
+        return (UpdateUFSVolumeInfoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -172,7 +172,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                     Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeInfoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -181,7 +181,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
     public UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param)
             throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeWhiteListResult.class);
-        return (UpdateUFSVolumeWhiteListResult) http.doGet(param, config, null);
+        return (UpdateUFSVolumeWhiteListResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -190,7 +190,7 @@ public class DefaultUFSClient extends DefaultUcloudClient implements UFSClient {
                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateUFSVolumeWhiteListResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
