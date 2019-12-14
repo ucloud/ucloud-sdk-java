@@ -50,12 +50,13 @@ public class Http {
         String uriInfo = request.getURI().toString();
         String headerInfo = new Gson().toJson(request.getAllHeaders());
         if (request instanceof HttpPost) {
+            String bodyInfo = EntityUtils.toString(((HttpPost) request).getEntity());
             logger.info("http POST request: \n" +
                             "\tURI:{}\n" +
                             "\tBody:{}\n" +
                             "\tHeaders:{}",
                     uriInfo,
-                    EntityUtils.toString(((HttpPost) request).getEntity()),
+                    bodyInfo,
                     headerInfo);
         } else if (request instanceof HttpGet) {
             logger.info("http GET request: \n" +
