@@ -24,6 +24,7 @@
         <module>ucloud-sdk-java-censor</module>
         <module>ucloud-sdk-java-ocr</module>
         <module>ucloud-sdk-java-usms</module>
+        <module>ucloud-sdk-java-ubill</module>
     </modules>
 
     <name>ucloud-sdk-java</name>
