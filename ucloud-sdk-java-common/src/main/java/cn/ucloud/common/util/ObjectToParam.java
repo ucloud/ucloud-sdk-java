@@ -32,7 +32,7 @@ public class ObjectToParam {
             params.addAll(getMethodParam(objectClass, baseRequestParam));
 
             Class<?> superclass = objectClass.getSuperclass();
-            while (!Object.class.getName().equals(superclass.getName())){
+            while (!superclass.isAssignableFrom(Object.class)){
                 params.addAll(getFieldParam(superclass, baseRequestParam));
                 params.addAll(getMethodParam(superclass, baseRequestParam));
                 superclass = superclass.getSuperclass();
