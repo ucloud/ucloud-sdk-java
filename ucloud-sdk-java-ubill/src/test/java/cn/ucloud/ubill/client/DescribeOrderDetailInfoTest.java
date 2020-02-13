@@ -36,6 +36,7 @@ public class DescribeOrderDetailInfoTest {
             DescribeOrderDetailInfoResult result = client.describeOrderDetailInfo(param);
             JSONComparator.jsonComparator(result);
         } catch (Exception e) {
+            e.printStackTrace();
             assertNull(e);
         }
     }

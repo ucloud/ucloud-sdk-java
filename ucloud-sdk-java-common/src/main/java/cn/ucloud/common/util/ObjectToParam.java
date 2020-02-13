@@ -27,18 +27,28 @@ public class ObjectToParam {
     public static List<Param> objectToParams(BaseRequestParam baseRequestParam) throws Exception {
         List<Param> params = new ArrayList<>();
         if (baseRequestParam != null) {
-            // 参数转化 1. 转化属性
+//            // 参数转化 1. 转化属性
+//            Class<?> objectClass = baseRequestParam.getClass();
+//            Class<?> superclass = objectClass.getSuperclass();
+//            if (superclass != null) {
+//                params.addAll(getFieldParam(superclass, baseRequestParam));
+//            }
+//            params.addAll(getFieldParam(objectClass, baseRequestParam));
+//            // 参数转化 2. 方法转化
+//            if (superclass != null) {
+//                params.addAll(getMethodParam(superclass, baseRequestParam));
+//            }
+//            params.addAll(getMethodParam(objectClass, baseRequestParam));
             Class<?> objectClass = baseRequestParam.getClass();
-            Class<?> superclass = objectClass.getSuperclass();
-            if (superclass != null) {
-                params.addAll(getFieldParam(superclass, baseRequestParam));
-            }
             params.addAll(getFieldParam(objectClass, baseRequestParam));
-            // 参数转化 2. 方法转化
-            if (superclass != null) {
-                params.addAll(getMethodParam(superclass, baseRequestParam));
-            }
             params.addAll(getMethodParam(objectClass, baseRequestParam));
+
+            Class<?> superclass = objectClass.getSuperclass();
+            while (!Object.class.getName().equals(superclass.getName())){
+                params.addAll(getFieldParam(superclass, baseRequestParam));
+                params.addAll(getMethodParam(superclass, baseRequestParam));
+                superclass = superclass.getSuperclass();
+            }
         } else {
             throw new NullPointerException("param object can not be null");
         }
