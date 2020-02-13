@@ -59,7 +59,7 @@ public class CreateFirewallParam extends BaseRequestParam {
             throw new ValidatorException("rule can not be empty");
         }
         List<Rule> rules = this.getRule();
-        String exceptionFormat = "rule[%d].%s";
+        String exceptionFormat = "rule[%d] %s";
         for (int i = 0, len = rules.size(); i < len; i++) {
             Rule rule = rules.get(i);
             if (rule == null) {
@@ -67,9 +67,6 @@ public class CreateFirewallParam extends BaseRequestParam {
             } else {
                 if (StringUtils.isBlank(rule.getProtocol())) {
                     throw new ValidatorException(String.format(exceptionFormat, i, "protocol can not be empty"));
-                }
-                if (rule.getPort() == null || rule.getPort() <= 0) {
-                    throw new ValidatorException(String.format(exceptionFormat, i, "port can not be null or value <= 0"));
                 }
                 if (StringUtils.isBlank(rule.getIp())) {
                     throw new ValidatorException(String.format(exceptionFormat, i, "ip can not be empty"));
@@ -87,9 +84,9 @@ public class CreateFirewallParam extends BaseRequestParam {
     }
 
 
-    public CreateFirewallParam(@NotEmpty(message = "region can not be empty") String region,
-                               @NotNull(message = "rule can not be empty") List<Rule> rule,
-                               @NotNull(message = "name can not be empty") String name) {
+    public CreateFirewallParam(String region,
+                               List<Rule> rule,
+                               String name) {
         super("CreateFirewall");
         this.region = region;
         this.rule = rule;
@@ -139,45 +136,42 @@ public class CreateFirewallParam extends BaseRequestParam {
 
     public static class Rule {
         @SuppressWarnings("squid:S1170")
-        private final String ruleFormat = "%s|%d|%s|%s|%s";
+        private final String ruleFormatWithPort = "%s|%d|%s|%s|%s";
+        @SuppressWarnings("squid:S1170")
+        private final String ruleFormatWithoutPort = "%s||%s|%s|%s";
         @SuppressWarnings("squid:S1700")
         private String rule;
 
         /**
          * 协议: TCP, UDP, ...
          */
-        @NotEmpty(message = "protocol can not be empty")
         private String protocol;
 
         /**
          * 端口号
          */
-        @NotNull(message = "port can not be null")
         private Integer port;
 
         /**
          * IP
          */
-        @NotEmpty(message = "ip can not be empty")
         private String ip;
 
         /**
          * ACCEPT（接受）, DROP（拒绝）
          */
-        @NotEmpty(message = "acceptOrNot can not be empty")
         private String acceptOrNot;
 
         /**
          * 优先级：HIGH（高），MEDIUM（中），LOW（低）
          */
-        @NotEmpty(message = "priority can not be empty")
         private String priority;
 
-        public Rule(@NotEmpty(message = "protocol can not be empty") String protocol,
-                    @NotNull(message = "port can not be null") Integer port,
-                    @NotEmpty(message = "ip can not be empty") String ip,
-                    @NotEmpty(message = "acceptOrNot can not be empty") String acceptOrNot,
-                    @NotEmpty(message = "priority can not be empty") String priority) {
+        public Rule(String protocol,
+                    Integer port,
+                    String ip,
+                    String acceptOrNot,
+                    String priority) {
             this.protocol = protocol;
             this.port = port;
             this.ip = ip;
@@ -186,7 +180,11 @@ public class CreateFirewallParam extends BaseRequestParam {
         }
 
         public String getRule() {
-            rule = String.format(ruleFormat, protocol, port, ip, acceptOrNot, priority);
+            if (port == null){
+                rule = String.format(ruleFormatWithoutPort, protocol, ip, acceptOrNot, priority);
+            }else {
+                rule = String.format(ruleFormatWithPort, protocol, port, ip, acceptOrNot, priority);
+            }
             return rule;
         }
 

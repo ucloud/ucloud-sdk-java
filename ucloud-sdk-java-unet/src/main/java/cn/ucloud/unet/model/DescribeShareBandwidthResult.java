@@ -70,6 +70,17 @@ public class DescribeShareBandwidthResult extends BaseResponseResult {
         @SerializedName("Name")
         private String name;
 
+        @SerializedName("IPVersion")
+        private String ipVersion;
+
+        public String getIpVersion() {
+            return ipVersion;
+        }
+
+        public void setIpVersion(String ipVersion) {
+            this.ipVersion = ipVersion;
+        }
+
         public String getName() {
             return name;
         }

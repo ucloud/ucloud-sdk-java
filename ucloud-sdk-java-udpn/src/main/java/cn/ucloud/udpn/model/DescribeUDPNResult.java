@@ -62,6 +62,17 @@ public class DescribeUDPNResult extends BaseResponseResult {
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
+        @SerializedName("PayMode")
+        private String payMode;
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
         public String getUdpnId() {
             return udpnId;
         }

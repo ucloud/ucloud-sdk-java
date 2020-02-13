@@ -29,11 +29,34 @@ public class GetEIPPriceResult extends BaseResponseResult {
         @SerializedName("Price")
         private BigDecimal price;
 
+
         /**
          * 资源有效期, 以Unix Timestamp表示
          */
         @SerializedName("PurchaseValue")
         private Integer purchaseValue;
+
+        @SerializedName("ListPrice")
+        private BigDecimal listPrice;
+
+        @SerializedName("OriginalPrice")
+        private BigDecimal originalPrice;
+
+        public BigDecimal getOriginalPrice() {
+            return originalPrice;
+        }
+
+        public void setOriginalPrice(BigDecimal originalPrice) {
+            this.originalPrice = originalPrice;
+        }
+
+        public BigDecimal getListPrice() {
+            return listPrice;
+        }
+
+        public void setListPrice(BigDecimal listPrice) {
+            this.listPrice = listPrice;
+        }
 
         public String getChargeType() {
             return chargeType;
