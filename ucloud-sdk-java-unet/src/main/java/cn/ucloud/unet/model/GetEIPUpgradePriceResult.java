@@ -28,6 +28,17 @@ public class GetEIPUpgradePriceResult extends BaseResponseResult {
     @SerializedName("Request_uuid")
     private String requestUuid;
 
+    @SerializedName("OriginalPrice")
+    private BigDecimal originalPrice;
+
+    public BigDecimal getOriginalPrice() {
+        return originalPrice;
+    }
+
+    public void setOriginalPrice(BigDecimal originalPrice) {
+        this.originalPrice = originalPrice;
+    }
+
     public String getRequestUuid() {
         return requestUuid;
     }
