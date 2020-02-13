@@ -439,6 +439,17 @@ public class DescribeEIPResult extends BaseResponseResult {
     @SerializedName("Request_uuid")
     private String requestUuid;
 
+    @SerializedName("UnbindCount")
+    private Integer unbindCount;
+
+    public Integer getUnbindCount() {
+        return unbindCount;
+    }
+
+    public void setUnbindCount(Integer unbindCount) {
+        this.unbindCount = unbindCount;
+    }
+
     public String getRequestUuid() {
         return requestUuid;
     }
