@@ -3,10 +3,8 @@ package cn.ucloud.ubill.model;
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
-import sun.security.krb5.internal.PAData;
 
 import javax.validation.ValidationException;
-import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
