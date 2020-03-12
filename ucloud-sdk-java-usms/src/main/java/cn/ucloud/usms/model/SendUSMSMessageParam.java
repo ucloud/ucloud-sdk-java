@@ -91,7 +91,7 @@ public class SendUSMSMessageParam extends BaseRequestParam {
     public List<Param> checkTemplateParams() throws ValidatorException {
         List<Param> params = new ArrayList<>();
         if (templateParams == null || templateParams.isEmpty()) {
-            throw new ValidatorException("templateParams can not be empty");
+            return params;
         }
         int size = templateParams.size();
         String templateParamFormat = "TemplateParams.%d";

@@ -30,17 +30,14 @@ public class SendUSMSMessageTest {
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
         List<String> phoneNumbers = new ArrayList<>();
-        phoneNumbers.add("1895509xxxx");
-        //phoneNumbers.add("1851612xxxx");
-        String templateId = "UTA190604D47Fxx";
-        String sig = System.getenv("USMSSIG");
-
+        phoneNumbers.add(System.getenv("USMSPhone"));
+        String templateId = System.getenv("USMSTemplateId");
         param = new SendUSMSMessageParam(phoneNumbers, templateId);
-        //param.setSigContent(sig);
-        param.setProjectId("org-o1ftjk");
-        List<String> templateParams = new ArrayList<>();
-        templateParams.add("param test");
-        param.setTemplateParams(templateParams);
+        param.setSigContent(System.getenv("USMSSigId"));
+        param.setProjectId(System.getenv("ProjectId"));
+//      List<String> templateParams = new ArrayList<>();
+//      templateParams.add("param test");
+//      param.setTemplateParams(templateParams);
     }
 
 
