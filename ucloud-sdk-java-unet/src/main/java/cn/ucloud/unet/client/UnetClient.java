@@ -1,4 +1,3 @@
-//不知道从哪里开始吐槽
 package cn.ucloud.unet.client;
 
 import cn.ucloud.common.client.UcloudClient;
