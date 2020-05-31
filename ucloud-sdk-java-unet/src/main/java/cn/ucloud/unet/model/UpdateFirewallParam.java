@@ -54,8 +54,8 @@ public class UpdateFirewallParam extends BaseRequestParam {
                 if (StringUtils.isBlank(rule.getProtocol())) {
                     throw new ValidatorException(String.format(exceptionFormat, i, "protocol can not be empty"));
                 }
-                if (rule.getPort() == null || rule.getPort() <= 0) {
-                    throw new ValidatorException(String.format(exceptionFormat, i, "port can not be null or value <= 0"));
+                if (rule.getPort() == null || !rule.getPort().matches("^$|^[1-9][0-9]*$|^[1-9][0-9]*-[1-9][0-9]*$")) {
+                    throw new ValidatorException(String.format(exceptionFormat, i, "port can not be null or port illegal"));
                 }
                 if (StringUtils.isBlank(rule.getIp())) {
                     throw new ValidatorException(String.format(exceptionFormat, i, "ip can not be empty"));
@@ -107,7 +107,7 @@ public class UpdateFirewallParam extends BaseRequestParam {
 
     public static class Rule {
         @SuppressWarnings("squid:S1170")
-        private final String ruleFormat = "%s|%d|%s|%s|%s";
+        private final String ruleFormat = "%s|%s|%s|%s|%s";
         @SuppressWarnings("squid:S1700")
         private String rule;
 
@@ -121,7 +121,7 @@ public class UpdateFirewallParam extends BaseRequestParam {
          * 端口号
          */
         @NotNull(message = "port can not be null")
-        private Integer port;
+        private String port;
 
         /**
          * IP
@@ -142,7 +142,7 @@ public class UpdateFirewallParam extends BaseRequestParam {
         private String priority;
 
         public Rule(@NotEmpty(message = "protocol can not be empty") String protocol,
-                    @NotNull(message = "port can not be null") Integer port,
+                    @NotNull(message = "port can not be null") String port,
                     @NotEmpty(message = "ip can not be empty") String ip,
                     @NotEmpty(message = "acceptOrNot can not be empty") String acceptOrNot,
                     @NotEmpty(message = "priority can not be empty") String priority) {
@@ -168,11 +168,11 @@ public class UpdateFirewallParam extends BaseRequestParam {
             this.protocol = protocol;
         }
 
-        public Integer getPort() {
+        public String getPort() {
             return port;
         }
 
-        public void setPort(Integer port) {
+        public void setPort(String port) {
             this.port = port;
         }
 
