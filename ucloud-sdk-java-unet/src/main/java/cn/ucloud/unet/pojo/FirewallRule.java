@@ -6,6 +6,10 @@ import com.google.gson.annotations.SerializedName;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+/**
+ * 计划用来替代Firewall中describe和update的pojo
+ */
+@Deprecated
 public class FirewallRule {
     //---------------以下是DescribeFirewallResult.Rule的字段------------------
     /**
@@ -43,7 +47,7 @@ public class FirewallRule {
 
     //-----------------以下是UpdateFirewallParam.Rule的字段-------------------
     @SuppressWarnings("squid:S1170")
-    private final String ruleFormat = "%s|%s|%s|%s|%s";
+    private final String ruleFormat = "%s|%s|%s|%s|%s|%s";
     @SuppressWarnings("squid:S1700")
     private String rule;
 
@@ -52,6 +56,7 @@ public class FirewallRule {
      */
     @NotEmpty(message = "protocol can not be empty")
     private String protocol;
+
 
     /**
      * 端口号
