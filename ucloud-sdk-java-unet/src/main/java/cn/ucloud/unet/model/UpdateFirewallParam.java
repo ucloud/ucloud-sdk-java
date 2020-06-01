@@ -176,6 +176,10 @@ public class UpdateFirewallParam extends BaseRequestParam {
             this.port = port;
         }
 
+        public void setPort(int port) {
+            this.port = Integer.toString(port);
+        }
+
         public String getIp() {
             return ip;
         }
