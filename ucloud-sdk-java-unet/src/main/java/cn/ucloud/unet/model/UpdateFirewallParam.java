@@ -107,7 +107,7 @@ public class UpdateFirewallParam extends BaseRequestParam {
 
     public static class Rule {
         @SuppressWarnings("squid:S1170")
-        private final String ruleFormat = "%s|%s|%s|%s|%s";
+        private final String ruleFormat = "%s|%s|%s|%s|%s|%s";
         @SuppressWarnings("squid:S1700")
         private String rule;
 
@@ -141,6 +141,11 @@ public class UpdateFirewallParam extends BaseRequestParam {
         @NotEmpty(message = "priority can not be empty")
         private String priority;
 
+        /**
+         * 备注：用户自定义备注
+         */
+        private String remark;
+
         public Rule(@NotEmpty(message = "protocol can not be empty") String protocol,
                     @NotNull(message = "port can not be null") String port,
                     @NotEmpty(message = "ip can not be empty") String ip,
@@ -151,12 +156,27 @@ public class UpdateFirewallParam extends BaseRequestParam {
             this.ip = ip;
             this.acceptOrNot = acceptOrNot;
             this.priority = priority;
+            this.remark = "";
+        }
+
+        public Rule(@NotEmpty(message = "protocol can not be empty") String protocol,
+                    @NotNull(message = "port can not be null") String port,
+                    @NotEmpty(message = "ip can not be empty") String ip,
+                    @NotEmpty(message = "acceptOrNot can not be empty") String acceptOrNot,
+                    @NotEmpty(message = "priority can not be empty") String priority,
+                    String remark) {
+            this.protocol = protocol;
+            this.port = port;
+            this.ip = ip;
+            this.acceptOrNot = acceptOrNot;
+            this.priority = priority;
+            this.remark = remark == null ? "" : remark;
         }
 
         @NotEmpty(message = "rule can not be empty")
         @UcloudParam("Rule")
         public String getRule() {
-            rule = String.format(ruleFormat, protocol, port, ip, acceptOrNot, priority);
+            rule = String.format(ruleFormat, protocol, port, ip, acceptOrNot, priority, remark);
             return rule;
         }
 
@@ -202,6 +222,14 @@ public class UpdateFirewallParam extends BaseRequestParam {
 
         public void setPriority(String priority) {
             this.priority = priority;
+        }
+
+        public String getRemark(){
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
         }
     }
 }
