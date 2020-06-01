@@ -28,7 +28,7 @@ public class UpdateFirewallTest {
                         System.getenv("UCloudPublicKey"))));
 
         List<UpdateFirewallParam.Rule> rules = new ArrayList<>();
-        rules.add(new UpdateFirewallParam.Rule("TCP", "24-25", "0.0.0.0/0", "ACCEPT", "MEDIUM"));
+        rules.add(new UpdateFirewallParam.Rule("TCP", "24-25", "0.0.0.0/0", "ACCEPT", "MEDIUM","TestRemark"));
         param = new UpdateFirewallParam("cn-sh2", "firewall-yzb2r03v", rules);
     }
 
