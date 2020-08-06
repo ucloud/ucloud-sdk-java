@@ -70,7 +70,7 @@ public class DescribeNewUcdnRefreshCacheTaskParam extends BaseRequestParam {
     }
 
     protected DescribeNewUcdnRefreshCacheTaskParam() {
-        super("DescribeNewUcdnPrefetchCacheTask");
+        super("DescribeNewUcdnRefreshCacheTask");
     }
 
     public List<String> getTaskIds() {
