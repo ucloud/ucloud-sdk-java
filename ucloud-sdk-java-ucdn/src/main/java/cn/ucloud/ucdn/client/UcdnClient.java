@@ -82,4 +82,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param, UcloudHandler<DescribeNewUcdnRefreshCacheTaskResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取域名带宽数据
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param) throws Exception;
+
+    /**
+     * 获取域名带宽数据
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param, UcloudHandler<GetNewUcdnDomainBandwidthResult> handler, Boolean... asyncFlag);
 }

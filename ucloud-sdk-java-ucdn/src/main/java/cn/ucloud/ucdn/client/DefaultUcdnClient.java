@@ -78,4 +78,19 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainBandwidthResult.class);
+        return (GetNewUcdnDomainBandwidthResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param, UcloudHandler<GetNewUcdnDomainBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }
