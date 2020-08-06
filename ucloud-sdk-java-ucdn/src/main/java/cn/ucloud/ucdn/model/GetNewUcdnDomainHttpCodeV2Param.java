@@ -5,6 +5,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
 
 import javax.validation.ValidationException;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,9 +69,13 @@ public class GetNewUcdnDomainHttpCodeV2Param extends BaseRequestParam {
     @NotNull(message = "EndTime can not be null")
     private Long endTime;
 
-    public GetNewUcdnDomainHttpCodeV2Param(@NotNull(message = "Type can not be null") Integer type) {
+    public GetNewUcdnDomainHttpCodeV2Param(@NotNull(message = "Type can not be null") Integer type,
+                                           @NotNull(message = "BeginTime can not be null") Long beginTime,
+                                           @NotNull(message = "EndTime can not be null") Long endTime) {
         super("GetNewUcdnDomainHttpCodeV2");
         this.type = type;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
     }
 
     public Integer getType() {
