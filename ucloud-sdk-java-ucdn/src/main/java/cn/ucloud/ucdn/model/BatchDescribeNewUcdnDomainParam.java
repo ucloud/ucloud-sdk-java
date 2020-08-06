@@ -57,7 +57,7 @@ public class BatchDescribeNewUcdnDomainParam extends BaseRequestParam {
         return list;
     }
 
-    protected BatchDescribeNewUcdnDomainParam() {
+    public BatchDescribeNewUcdnDomainParam() {
         super("BatchDescribeNewUcdnDomain");
     }
 

@@ -69,7 +69,7 @@ public class DescribeNewUcdnPrefetchCacheTaskParam extends BaseRequestParam {
         return list;
     }
 
-    protected DescribeNewUcdnPrefetchCacheTaskParam() {
+    public DescribeNewUcdnPrefetchCacheTaskParam() {
         super("DescribeNewUcdnPrefetchCacheTask");
     }
 

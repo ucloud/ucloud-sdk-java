@@ -66,8 +66,9 @@ public class GetNewUcdnDomainHitRateParam extends BaseRequestParam {
     @UcloudParam("EndTime")
     private Long endTime;
 
-    protected GetNewUcdnDomainHitRateParam() {
+    public GetNewUcdnDomainHitRateParam(@NotNull(message = "Type can not be null") Integer type) {
         super("GetNewUcdnDomainHitRate");
+        this.type = type;
     }
 
     public Integer getType() {

@@ -28,8 +28,11 @@ public class BatchRefreshNewUcdnDomainCacheParam extends BaseRequestParam {
     @NotEmpty(message = "UrlList can not be empty")
     private String urlList;
 
-    public BatchRefreshNewUcdnDomainCacheParam() {
+    public BatchRefreshNewUcdnDomainCacheParam(@NotEmpty(message = "Type can not be null") String type,
+                                               @NotEmpty(message = "UrlList can not be empty") String urlList) {
         super("BatchRefreshNewUcdnDomainCache");
+        this.type = type;
+        this.urlList = urlList;
     }
 
     public String getType() {

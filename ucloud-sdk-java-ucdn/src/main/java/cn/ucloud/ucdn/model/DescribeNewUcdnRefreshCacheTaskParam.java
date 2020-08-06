@@ -69,7 +69,7 @@ public class DescribeNewUcdnRefreshCacheTaskParam extends BaseRequestParam {
         return list;
     }
 
-    protected DescribeNewUcdnRefreshCacheTaskParam() {
+    public DescribeNewUcdnRefreshCacheTaskParam() {
         super("DescribeNewUcdnRefreshCacheTask");
     }
 

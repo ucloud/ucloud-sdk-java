@@ -68,8 +68,9 @@ public class GetNewUcdnDomainHttpCodeV2Param extends BaseRequestParam {
     @NotNull(message = "EndTime can not be null")
     private Long endTime;
 
-    protected GetNewUcdnDomainHttpCodeV2Param() {
+    public GetNewUcdnDomainHttpCodeV2Param(@NotNull(message = "Type can not be null") Integer type) {
         super("GetNewUcdnDomainHttpCodeV2");
+        this.type = type;
     }
 
     public Integer getType() {

@@ -66,8 +66,9 @@ public class GetNewUcdnDomainHttpCodeParam extends BaseRequestParam {
     @UcloudParam("EndTime")
     private Long endTime;
 
-    protected GetNewUcdnDomainHttpCodeParam() {
+    public GetNewUcdnDomainHttpCodeParam(@NotNull(message = "Type can not be null") Integer type) {
         super("GetNewUcdnDomainHttpCode");
+        this.type = type;
     }
 
     public Integer getType() {

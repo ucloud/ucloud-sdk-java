@@ -5,6 +5,7 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
 
 import javax.validation.ValidationException;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class GetNewUcdnDomainBandwidthParam extends BaseRequestParam {
      * 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度）
      */
     @UcloudParam("Type")
-    @NotNull(message = "Type can not be empty")
+    @NotNull(message = "Type can not be null")
     private Integer type;
 
     /**
@@ -66,8 +67,9 @@ public class GetNewUcdnDomainBandwidthParam extends BaseRequestParam {
     @UcloudParam("EndTime")
     private Long endTime;
 
-    protected GetNewUcdnDomainBandwidthParam() {
+    public GetNewUcdnDomainBandwidthParam(@NotNull(message = "Type can not be null") Integer type) {
         super("GetNewUcdnDomainBandwidth");
+        this.type = type;
     }
 
     public Integer getType() {
