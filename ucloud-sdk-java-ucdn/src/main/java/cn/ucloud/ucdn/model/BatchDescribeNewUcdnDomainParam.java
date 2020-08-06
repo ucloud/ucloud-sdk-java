@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 批量获取加速域名配置 param
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2020/8/6 13:48

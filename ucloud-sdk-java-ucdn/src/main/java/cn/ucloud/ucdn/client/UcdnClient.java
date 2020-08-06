@@ -4,6 +4,8 @@ import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.ucdn.model.BatchDescribeNewUcdnDomainParam;
 import cn.ucloud.ucdn.model.BatchDescribeNewUcdnDomainResult;
+import cn.ucloud.ucdn.model.BatchRefreshNewUcdnDomainCacheParam;
+import cn.ucloud.ucdn.model.BatchRefreshNewUcdnDomainCacheResult;
 
 /**
  * @description:
@@ -29,4 +31,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void batchDescribeNewUcdnDomain(BatchDescribeNewUcdnDomainParam param, UcloudHandler<BatchDescribeNewUcdnDomainResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 批量刷新缓存
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param) throws Exception;
+
+    /**
+     * 批量刷新缓存
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param, UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag);
 }

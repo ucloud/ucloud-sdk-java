@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @description:
+ * @description: 批量获取加速域名配置 result
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2020/8/6 14:03

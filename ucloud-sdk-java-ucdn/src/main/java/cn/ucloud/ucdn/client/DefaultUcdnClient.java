@@ -6,6 +6,8 @@ import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
 import cn.ucloud.ucdn.model.BatchDescribeNewUcdnDomainParam;
 import cn.ucloud.ucdn.model.BatchDescribeNewUcdnDomainResult;
+import cn.ucloud.ucdn.model.BatchRefreshNewUcdnDomainCacheParam;
+import cn.ucloud.ucdn.model.BatchRefreshNewUcdnDomainCacheResult;
 import cn.ucloud.ucdn.pojo.UcdnConfig;
 
 /**
@@ -30,7 +32,22 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     public void batchDescribeNewUcdnDomain(BatchDescribeNewUcdnDomainParam param, UcloudHandler<BatchDescribeNewUcdnDomainResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BatchDescribeNewUcdnDomainResult.class);
         try {
-            http.doPost(param, config, handler, asyncFlag);
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(BatchRefreshNewUcdnDomainCacheResult.class);
+        return (BatchRefreshNewUcdnDomainCacheResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param, UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(BatchRefreshNewUcdnDomainCacheResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
