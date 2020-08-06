@@ -154,4 +154,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param, UcloudHandler<GetNewUcdnDomainHttpCodeV2Result> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取域名请求数
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    GetNewUcdnDomainRequestNumResult getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param) throws Exception;
+
+    /**
+     * 获取域名请求数
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param, UcloudHandler<GetNewUcdnDomainRequestNumResult> handler, Boolean... asyncFlag);
 }
