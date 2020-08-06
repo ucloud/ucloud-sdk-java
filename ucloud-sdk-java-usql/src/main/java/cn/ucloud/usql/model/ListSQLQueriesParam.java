@@ -19,9 +19,20 @@ public class ListSQLQueriesParam extends BaseRequestParam {
     @NotEmpty(message = "region can not be empty")
     private String region;
 
+    /**
+     * 默认100，最大1000
+     */
+    @UcloudParam("Limit")
+    private Integer limit;
 
-    public ListSQLQueriesParam(String region
-    ) {
+    /**
+     * 默认0
+     */
+    @UcloudParam("Offset")
+    private Integer offset;
+
+
+    public ListSQLQueriesParam(String region) {
         super("ListSQLQueries");
         this.region = region;
     }
@@ -35,5 +46,19 @@ public class ListSQLQueriesParam extends BaseRequestParam {
         this.region = region;
     }
 
+    public Integer getLimit() {
+        return limit;
+    }
 
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
 }

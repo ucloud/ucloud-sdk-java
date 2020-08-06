@@ -22,7 +22,6 @@ public class DescribeUDiskPriceResult extends BaseResponseResult {
     private List<UDiskPriceDataSet> dataSet;
 
 
-
     public class UDiskPriceDataSet {
         /**
          * Year， Month， Dynamic，Trial
@@ -31,16 +30,44 @@ public class DescribeUDiskPriceResult extends BaseResponseResult {
         private String chargeType;
 
         /**
-         * 价格
+         * 实际价格 (单位: 分)
          */
         @SerializedName("Price")
         private BigDecimal price;
+
+        /**
+         * 用户折后价(对应计费CustomPrice)
+         */
+        @SerializedName("OriginalPrice")
+        private BigDecimal originalPrice;
 
         /**
          * "UDataArk","UDisk"
          */
         @SerializedName("ChargeName")
         private String chargeName;
+
+        /**
+         * 原价(对应计费OriginalPrice)
+         */
+        @SerializedName("ListPrice")
+        private BigDecimal listPrice;
+
+        public BigDecimal getListPrice() {
+            return listPrice;
+        }
+
+        public void setListPrice(BigDecimal listPrice) {
+            this.listPrice = listPrice;
+        }
+
+        public BigDecimal getOriginalPrice() {
+            return originalPrice;
+        }
+
+        public void setOriginalPrice(BigDecimal originalPrice) {
+            this.originalPrice = originalPrice;
+        }
 
         public String getChargeType() {
             return chargeType;

@@ -65,6 +65,13 @@ public class AllocateBackendParam extends BaseRequestParam {
     @UcloudParam("Enabled")
     private Integer enabled;
 
+    /**
+     * 所添加的后端服务器的资源实例IP
+     * 当ResourceType 为 UHybrid 时，必填
+     */
+    @UcloudParam("ResourceIP")
+    private String resourceIP;
+
     public AllocateBackendParam( @NotEmpty(message = "region can not be empty") String region,
                                  @NotEmpty(message = "ulbId can not be empty") String ulbId,
                                  @NotEmpty(message = "vserverId can not be empty") String vserverId,
@@ -76,6 +83,16 @@ public class AllocateBackendParam extends BaseRequestParam {
         this.vserverId = vserverId;
         this.resourceType = resourceType;
         this.resourceId = resourceId;
+    }
+
+
+
+    public String getResourceIP() {
+        return resourceIP;
+    }
+
+    public void setResourceIP(String resourceIP) {
+        this.resourceIP = resourceIP;
     }
 
     public String getRegion() {

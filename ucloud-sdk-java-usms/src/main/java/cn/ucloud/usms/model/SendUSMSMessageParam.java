@@ -54,12 +54,20 @@ public class SendUSMSMessageParam extends BaseRequestParam {
     @UcloudParam("SigContent")
     private String sigContent;
 
+    /**
+     * 短信扩展码，格式为阿拉伯数字串，默认不开通，
+     * 如需开通请联系 UCloud技术支持
+     */
+    @UcloudParam("ExtendCode")
+    private String extendCode;
+
     public SendUSMSMessageParam(List<String> phoneNumbers,
                                 String templateId) {
         super("SendUSMSMessage");
         this.phoneNumbers = phoneNumbers;
         this.templateId = templateId;
     }
+
 
     @UcloudParam("PhoneNumbers")
     public List<Param> checkPhoneNumbers() throws ValidatorException {
@@ -83,7 +91,7 @@ public class SendUSMSMessageParam extends BaseRequestParam {
     public List<Param> checkTemplateParams() throws ValidatorException {
         List<Param> params = new ArrayList<>();
         if (templateParams == null || templateParams.isEmpty()) {
-            throw new ValidatorException("templateParams can not be empty");
+            return params;
         }
         int size = templateParams.size();
         String templateParamFormat = "TemplateParams.%d";
@@ -95,6 +103,14 @@ public class SendUSMSMessageParam extends BaseRequestParam {
             params.add(new Param(String.format(templateParamFormat, i), templateParam));
         }
         return params;
+    }
+
+    public String getExtendCode() {
+        return extendCode;
+    }
+
+    public void setExtendCode(String extendCode) {
+        this.extendCode = extendCode;
     }
 
     public String getRegion() {

@@ -70,6 +70,28 @@ public class DescribeVPCResult extends BaseResponseResult {
         @SerializedName("Remark")
         private String remark;
 
+        @SerializedName("IPv6Network")
+        private String ipv6Network;
+
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIpv6Network() {
+            return ipv6Network;
+        }
+
+        public void setIpv6Network(String ipv6Network) {
+            this.ipv6Network = ipv6Network;
+        }
+
         public Integer getCreateTime() {
             return createTime;
         }

@@ -344,6 +344,18 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
         @SerializedName("BackupMethod")
         private String backupMethod;
 
+        @SerializedName("CPU")
+        private Integer cpu;
+
+
+        public Integer getCpu() {
+            return cpu;
+        }
+
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
+        }
+
         public String getBackupMethod() {
             return backupMethod;
         }
@@ -944,6 +956,39 @@ public class DescribeUDBInstanceResult extends BaseResponseResult {
 
         @SerializedName("BackupMethod")
         private String backupMethod;
+
+        @SerializedName("ClusterId")
+        private String clusterId;
+
+        @SerializedName("CPU")
+        private Integer cpu;
+
+        @SerializedName("IPv6Address")
+        private String ipv6Address;
+
+        public String getIpv6Address() {
+            return ipv6Address;
+        }
+
+        public void setIpv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+        }
+
+        public Integer getCpu() {
+            return cpu;
+        }
+
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
+        }
+
+        public String getClusterId() {
+            return clusterId;
+        }
+
+        public void setClusterId(String clusterId) {
+            this.clusterId = clusterId;
+        }
 
         public String getBackupMethod() {
             return backupMethod;

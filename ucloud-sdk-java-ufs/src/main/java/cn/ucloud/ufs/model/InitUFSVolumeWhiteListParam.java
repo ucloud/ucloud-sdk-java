@@ -16,6 +16,7 @@ import java.util.List;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2018/10/8 14:55
  */
+@Deprecated
 public class InitUFSVolumeWhiteListParam extends BaseRequestParam {
     /**
      * require 地域。 参见 [地域和可用区列表](../summary/regionlist.html)

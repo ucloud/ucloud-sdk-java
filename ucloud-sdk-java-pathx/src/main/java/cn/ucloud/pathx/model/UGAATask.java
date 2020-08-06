@@ -20,6 +20,19 @@ public class UGAATask {
     @SerializedName("Protocol")
     private String protocol;
 
+    /**
+     * 源站监听端口
+     */
+    @SerializedName("RSPort")
+    private Integer rsPort;
+
+    public Integer getRsPort() {
+        return rsPort;
+    }
+
+    public void setRsPort(Integer rsPort) {
+        this.rsPort = rsPort;
+    }
 
     public Integer getPort() {
         return this.port;

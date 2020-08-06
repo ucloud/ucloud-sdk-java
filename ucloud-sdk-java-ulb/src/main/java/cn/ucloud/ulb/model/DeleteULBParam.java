@@ -27,11 +27,27 @@ public class DeleteULBParam extends BaseRequestParam {
     @UcloudParam("ULBId")
     private String ulbId;
 
+    /**
+     * 删除ulb时是否释放绑定的EIP，
+     * false标识只解绑EIP，
+     * true表示会释放绑定的EIP，默认是false
+     */
+    @UcloudParam("ReleaseEip")
+    private Boolean releaseEip;
+
     public DeleteULBParam( @NotEmpty(message = "region can not be empty") String region,
                            @NotEmpty(message = "ulbId can not be empty") String ulbId) {
         super("DeleteULB");
         this.region = region;
         this.ulbId = ulbId;
+    }
+
+    public Boolean getReleaseEip() {
+        return releaseEip;
+    }
+
+    public void setReleaseEip(Boolean releaseEip) {
+        this.releaseEip = releaseEip;
     }
 
     public String getRegion() {

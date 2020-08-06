@@ -161,6 +161,20 @@ public class DescribeUDiskResult extends BaseResponseResult {
         @SerializedName("CmkIdAlias")
         private String cmkIdAlias;
 
+        /**
+         * 启动盘
+         */
+        @SerializedName("IsBoot")
+        private String isBoot;
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
+        }
+
         public String getuKmsMode() {
             return uKmsMode;
         }
@@ -410,7 +424,6 @@ public class DescribeUDiskResult extends BaseResponseResult {
     public void setDataSet(List<UDiskData> dataSet) {
         this.dataSet = dataSet;
     }
-
 
 
 }

@@ -19,11 +19,25 @@ public class DescribeUDiskUpgradePriceResult extends BaseResponseResult {
     @SerializedName("Price")
     private BigDecimal price;
 
+    /**
+     * 原始价格
+     */
+    @SerializedName("OriginalPrice")
+    private BigDecimal originalPrice;
+
     public BigDecimal getPrice() {
         return price;
     }
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal getOriginalPrice() {
+        return originalPrice;
+    }
+
+    public void setOriginalPrice(BigDecimal originalPrice) {
+        this.originalPrice = originalPrice;
     }
 }

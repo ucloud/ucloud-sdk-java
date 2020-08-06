@@ -12,9 +12,13 @@
 *.zip
 *.tar.gz
 *.rar
+*.jar
 
 .*/
 .DS_Store
 *.iml
 */target
 target
+clean_private.sh
+.gitattributes
+template/

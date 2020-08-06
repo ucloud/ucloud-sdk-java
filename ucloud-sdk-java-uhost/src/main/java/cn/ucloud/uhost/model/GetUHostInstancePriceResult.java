@@ -27,6 +27,12 @@ public class GetUHostInstancePriceResult extends BaseResponseResult {
         @SerializedName("Price")
         private BigDecimal price;
 
+        /**
+         * 原始价格
+         */
+        @SerializedName("OriginalPrice")
+        private BigDecimal originalPrice;
+
         public String getChargeType() {
             return chargeType;
         }
@@ -43,6 +49,13 @@ public class GetUHostInstancePriceResult extends BaseResponseResult {
             this.price = price;
         }
 
+        public BigDecimal getOriginalPrice() {
+            return originalPrice;
+        }
+
+        public void setOriginalPrice(BigDecimal originalPrice) {
+            this.originalPrice = originalPrice;
+        }
     }
 
     /**

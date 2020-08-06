@@ -25,7 +25,7 @@ public class DescribeUFSVolumeUpgradePriceTest {
         client = new DefaultUFSClient(new UFSConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        param = new DescribeUFSVolumeUpgradePriceParam("cn-bj2","ufs-qx1waw",2048);
+        param = new DescribeUFSVolumeUpgradePriceParam("cn-bj2","ufs-qx1waw",1000);
         param.setProjectId("org-izug1m");
     }
 

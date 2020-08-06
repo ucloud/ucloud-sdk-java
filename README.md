@@ -15,6 +15,7 @@ ucloud开发者工具套件（SDK）。<br/>
 - censor
 - ocr
 - usms
+- ubill
 
 
 后续将支持更多的UCloud的产品服务。
@@ -30,7 +31,7 @@ ucloud开发者工具套件（SDK）。<br/>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.8.2.4-release</version>
+      <version>0.8.3.0-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -128,7 +129,7 @@ public class Main {
 ### 版本更新历史
 - 0.6-release
 
-    第一个正式版本，支持了udisk,ufile,uhost,vpc,unet,ulb的产品服务调用
+    第一个正式版本，支持了UHost、VPC、UDisk、UFS、UNet、ULB的产品服务调用
 - 0.6.1-release
 
     修复了ucloud-sdk-java-common中存在的publicKey编码问题
@@ -143,7 +144,7 @@ public class Main {
     修复DescribeEIP接口与实际接口有出入的问题
 - 0.8.0-release
     
-    新增UMem/USQL/UDB/PATHX/UDPN产品，对既有产品接口进行更新维护
+    新增UMem、USQL、UDB、PathX、UDPN产品，对既有产品接口进行更新维护
 - 0.8.1-release
 
     修复UNet.CreateFirewall规则错误的bug以及udb部分接口与实际返回有出入的问题
@@ -153,7 +154,7 @@ public class Main {
     
 - 0.8.2-release
     
-    新增UAI的Censor/OCR产品，部分接口更新维护
+    新增UAI的Censor、OCR产品，部分接口更新维护
 
 - 0.8.2.1-release
 
@@ -171,4 +172,28 @@ public class Main {
 - 0.8.2.4-release
     
     UDB维护更新，common错误修复
+
+- 0.8.2.5-release
+    
+    UDB、USMS 、UFS、UNet、USQL、VPC维护更新，接口入参和返回参数变动，部分接口废弃
+
+- 0.8.2.6-release
+
+    UDB、UMem、UFS维护更新，UFS部分接口增加必要字段
+   
+- 0.8.2.7-release
+    
+    UHost、UDisk、PathX、UNet维护更新，UCloudClient新增doAction方法
+
+- 0.8.2.8-release
+
+    PathX、ULB、VPC、UDB维护更新，USMS新增接口；接口调用改用POST方式
+
+- 0.8.2.9-release
+
+    UNet、ULB、UDPN维护更新；新增UBill模块
+    
+- 0.8.3.0-release
+
+    USMS修复SendUSMSMessage接口模板参数问题
     

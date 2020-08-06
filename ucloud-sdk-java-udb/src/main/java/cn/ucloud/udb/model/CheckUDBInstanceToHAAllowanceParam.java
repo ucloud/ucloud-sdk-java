@@ -20,6 +20,12 @@ public class CheckUDBInstanceToHAAllowanceParam extends BaseRequestParam {
     private String region;
 
     /**
+     * 可用区。参见 [可用区列表](../summary/regionlist.html)
+     */
+    @UcloudParam("Zone")
+    private String zone;
+
+    /**
      * 实例的Id,该值可以通过DescribeUDBInstance获取
      */
     @NotEmpty(message = "dbId can not be empty")
@@ -31,6 +37,14 @@ public class CheckUDBInstanceToHAAllowanceParam extends BaseRequestParam {
         super("CheckUDBInstanceToHAAllowance");
         this.region = region;
         this.dbId = dbId;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public String getRegion() {

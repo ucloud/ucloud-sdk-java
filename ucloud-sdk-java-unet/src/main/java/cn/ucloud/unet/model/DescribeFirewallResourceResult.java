@@ -69,6 +69,48 @@ public class DescribeFirewallResourceResult extends BaseResponseResult {
         @SerializedName("Status")
         private Integer status;
 
+        @SerializedName("SubResourceType")
+        private String subResourceType;
+
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+
+        public void setZone(Integer zone) {
+            this.zone = zone;
+        }
+
+        public void setStatus(Integer status) {
+            this.status = status;
+        }
+
+        public String getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
         public String getResourceType() {
             return resourceType;
         }

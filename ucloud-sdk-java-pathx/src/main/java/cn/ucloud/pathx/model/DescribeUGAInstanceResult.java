@@ -18,6 +18,12 @@ public class DescribeUGAInstanceResult extends BaseResponseResult {
     @SerializedName("UGAList")
     private List<UGAAInfo> uGAList;
 
+    /**
+     * 总数
+     */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
 
     public List<UGAAInfo> getuGAList() {
         return this.uGAList;
@@ -27,5 +33,11 @@ public class DescribeUGAInstanceResult extends BaseResponseResult {
         this.uGAList = uGAList;
     }
 
+    public Integer getTotalCount() {
+        return totalCount;
+    }
 
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 }

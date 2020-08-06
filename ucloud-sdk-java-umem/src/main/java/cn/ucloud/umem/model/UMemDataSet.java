@@ -147,11 +147,28 @@ public class UMemDataSet {
     @SerializedName("SlaveZone")
     private String slaveZone;
 
+    /**
+     * 子网ID
+     */
     @SerializedName("SubnetId")
     private String subnetId;
 
+    /**
+     * VPC ID
+     */
     @SerializedName("VPCId")
     private String vpcId;
+
+    @SerializedName("RewriteTime")
+    private Integer rewriteTime;
+
+    public Integer getRewriteTime() {
+        return rewriteTime;
+    }
+
+    public void setRewriteTime(Integer rewriteTime) {
+        this.rewriteTime = rewriteTime;
+    }
 
     public String getOwnSlave() {
         return ownSlave;

@@ -41,7 +41,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public GetUAICensorResourceMetricInfoResult
     getUAICensorResourceMetricInfo(GetUAICensorResourceMetricInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceMetricInfoResult.class);
-        return (GetUAICensorResourceMetricInfoResult) http.doGet(param, config, null);
+        return (GetUAICensorResourceMetricInfoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceMetricInfoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -59,7 +59,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public GetUAICensorResourceRecordInfoResult
     getUAICensorResourceRecordInfo(GetUAICensorResourceRecordInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceRecordInfoResult.class);
-        return (GetUAICensorResourceRecordInfoResult) http.doGet(param, config, null);
+        return (GetUAICensorResourceRecordInfoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceRecordInfoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -77,7 +77,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public ModifyUAICensorResourceOssInfoResult
     modifyUAICensorResourceOssInfo(ModifyUAICensorResourceOssInfoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceOssInfoResult.class);
-        return (ModifyUAICensorResourceOssInfoResult) http.doGet(param, config, null);
+        return (ModifyUAICensorResourceOssInfoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -86,7 +86,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceOssInfoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -95,7 +95,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public DeleteUAICensorResourceResult
     deleteUAICensorResource(DeleteUAICensorResourceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteUAICensorResourceResult.class);
-        return (DeleteUAICensorResourceResult) http.doGet(param, config, null);
+        return (DeleteUAICensorResourceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -104,7 +104,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                         Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteUAICensorResourceResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -113,7 +113,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public ModifyUAICensorResourceNameResult
     modifyUAICensorResourceName(ModifyUAICensorResourceNameParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceNameResult.class);
-        return (ModifyUAICensorResourceNameResult) http.doGet(param, config, null);
+        return (ModifyUAICensorResourceNameResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -122,7 +122,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                             Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceNameResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -131,7 +131,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public ModifyUAICensorResourceMemoResult
     modifyUAICensorResourceMemo(ModifyUAICensorResourceMemoParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceMemoResult.class);
-        return (ModifyUAICensorResourceMemoResult) http.doGet(param, config, null);
+        return (ModifyUAICensorResourceMemoResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -140,7 +140,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                             Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ModifyUAICensorResourceMemoResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -149,7 +149,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public GetUAICensorResourceListResult
     getUAICensorResourceList(GetUAICensorResourceListParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceListResult.class);
-        return (GetUAICensorResourceListResult) http.doGet(param, config, null);
+        return (GetUAICensorResourceListResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -158,7 +158,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorResourceListResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -167,7 +167,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public CreateUAICensorResourceResult
     createUAICensorResource(CreateUAICensorResourceParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateUAICensorResourceResult.class);
-        return (CreateUAICensorResourceResult) http.doGet(param, config, null);
+        return (CreateUAICensorResourceResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -176,7 +176,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                         Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorAvailResourceTypeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -185,7 +185,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
     public GetUAICensorAvailResourceTypeResult
     getUAICensorAvailResourceType(GetUAICensorAvailResourceTypeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorAvailResourceTypeResult.class);
-        return (GetUAICensorAvailResourceTypeResult) http.doGet(param, config, null);
+        return (GetUAICensorAvailResourceTypeResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -194,7 +194,7 @@ public class DefaultCensorClient extends DefaultUcloudClient implements CensorCl
                                               Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUAICensorAvailResourceTypeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

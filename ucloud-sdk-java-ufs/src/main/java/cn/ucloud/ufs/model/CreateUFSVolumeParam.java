@@ -70,11 +70,45 @@ public class CreateUFSVolumeParam extends BaseRequestParam {
     @UcloudParam("CouponId")
     private String couponId;
 
+    /**
+     * 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型
+     */
+    @NotEmpty(message = "storageType can not be empty")
+    @UcloudParam("StorageType")
+    private String storageType;
+
+    /**
+     * 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议
+     */
+    @UcloudParam("ProtocolType")
+    @NotEmpty(message = "protocolType can not be empty")
+    private String protocolType;
+
     public CreateUFSVolumeParam(@NotEmpty(message = "region can not be empty") String region,
-                                @NotNull(message = "size can not be null") Integer size) {
+                                @NotNull(message = "size can not be null") Integer size,
+                                @NotEmpty(message = "storageType can not be empty") String storageType,
+                                @NotEmpty(message = "protocolType can not be empty") String protocolType) {
         super("CreateUFSVolume");
         this.region = region;
         this.size = size;
+        this.storageType = storageType;
+        this.protocolType = protocolType;
+    }
+
+    public String getProtocolType() {
+        return protocolType;
+    }
+
+    public void setProtocolType(String protocolType) {
+        this.protocolType = protocolType;
+    }
+
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
     }
 
     public String getRegion() {

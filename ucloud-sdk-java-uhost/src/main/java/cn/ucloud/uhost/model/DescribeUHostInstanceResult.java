@@ -244,6 +244,43 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
         @SerializedName("MachineType")
         private String machineType;
 
+
+        @SerializedName("EncryptedDiskFeature")
+        private Boolean encryptedDiskFeature;
+
+        /**
+         * true，支持cloutinit方式初始化；false,不支持
+         */
+        @SerializedName("CloudInitFeature")
+        private Boolean cloudInitFeature;
+
+        @SerializedName("IPv6Feature")
+        private Boolean ipv6Feature;
+
+        public Boolean getIpv6Feature() {
+            return ipv6Feature;
+        }
+
+        public void setIpv6Feature(Boolean ipv6Feature) {
+            this.ipv6Feature = ipv6Feature;
+        }
+
+        public Boolean getCloudInitFeature() {
+            return cloudInitFeature;
+        }
+
+        public void setCloudInitFeature(Boolean cloudInitFeature) {
+            this.cloudInitFeature = cloudInitFeature;
+        }
+
+        public Boolean getEncryptedDiskFeature() {
+            return encryptedDiskFeature;
+        }
+
+        public void setEncryptedDiskFeature(Boolean encryptedDiskFeature) {
+            this.encryptedDiskFeature = encryptedDiskFeature;
+        }
+
         public String getCpuPlatform() {
             return cpuPlatform;
         }
@@ -767,6 +804,59 @@ public class DescribeUHostInstanceResult extends BaseResponseResult {
 
         @SerializedName("Default")
         private String def;
+
+        /**
+         * IP ID
+         */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /**
+         * 带宽
+         */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /**
+         * 权重
+         */
+        @SerializedName("Weight")
+        private Integer weight;
+
+        @SerializedName("IPMode")
+        private String ipMode;
+
+        public String getIpMode() {
+            return ipMode;
+        }
+
+        public void setIpMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
+
+        public String getIpId() {
+            return ipId;
+        }
+
+        public void setIpId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
 
         public String getDef() {
             return def;

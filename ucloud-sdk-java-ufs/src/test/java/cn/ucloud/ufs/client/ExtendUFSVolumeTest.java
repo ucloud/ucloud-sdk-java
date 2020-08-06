@@ -28,7 +28,7 @@ public class ExtendUFSVolumeTest {
         client = new DefaultUFSClient(new UFSConfig(
                 new Account(System.getenv("UCloudPrivateKey"),
                         System.getenv("UCloudPublicKey"))));
-        param = new ExtendUFSVolumeParam("cn-bj2", "ufs-vnc50gpn", 2 * 1024);
+        param = new ExtendUFSVolumeParam("cn-bj2", "ufs-vnc50gpn", 2 * 500);
         param.setProjectId("org-izug1m");
     }
 

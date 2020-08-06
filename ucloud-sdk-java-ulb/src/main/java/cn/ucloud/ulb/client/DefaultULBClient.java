@@ -23,14 +23,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreateULBResult createULB(CreateULBParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateULBResult.class);
-        return (CreateULBResult) http.doGet(param, config, null);
+        return (CreateULBResult) http.doPost(param, config, null);
     }
 
     @Override
     public void createULB(CreateULBParam param, UcloudHandler<CreateULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateULBResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -38,14 +38,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DescribeULBResult describeULB(DescribeULBParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
-        return (DescribeULBResult) http.doGet(param, config, null);
+        return (DescribeULBResult) http.doPost(param, config, null);
     }
 
     @Override
     public void describeULB(DescribeULBParam param, UcloudHandler<DescribeULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeULBResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -53,14 +53,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeleteULBResult deleteULB(DeleteULBParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteULBResult.class);
-        return (DeleteULBResult) http.doGet(param, config, null);
+        return (DeleteULBResult) http.doPost(param, config, null);
     }
 
     @Override
     public void deleteULB(DeleteULBParam param, UcloudHandler<DeleteULBResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteULBResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -68,14 +68,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdateULBAttributeResult updateULBAttribute(UpdateULBAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateULBAttributeResult.class);
-        return (UpdateULBAttributeResult) http.doGet(param, config, null);
+        return (UpdateULBAttributeResult) http.doPost(param, config, null);
     }
 
     @Override
     public void updateULBAttribute(UpdateULBAttributeParam param, UcloudHandler<UpdateULBAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateULBAttributeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -83,14 +83,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreateVServerResult createVServer(CreateVServerParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreateVServerResult.class);
-        return (CreateVServerResult) http.doGet(param, config, null);
+        return (CreateVServerResult) http.doPost(param, config, null);
     }
 
     @Override
     public void createVServer(CreateVServerParam param, UcloudHandler<CreateVServerResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateVServerResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -98,14 +98,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DescribeVServerResult describeVServer(DescribeVServerParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeVServerResult.class);
-        return (DescribeVServerResult) http.doGet(param, config, null);
+        return (DescribeVServerResult) http.doPost(param, config, null);
     }
 
     @Override
     public void describeVServer(DescribeVServerParam param, UcloudHandler<DescribeVServerResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeVServerResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -113,14 +113,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeleteVServerResult deleteVServer(DeleteVServerParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteVServerResult.class);
-        return (DeleteVServerResult) http.doGet(param, config, null);
+        return (DeleteVServerResult) http.doPost(param, config, null);
     }
 
     @Override
     public void deleteVServer(DeleteVServerParam param, UcloudHandler<DeleteVServerResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteVServerResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -128,14 +128,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdateVServerAttributeResult updateVServerAttribute(UpdateVServerAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateVServerAttributeResult.class);
-        return (UpdateVServerAttributeResult) http.doGet(param, config, null);
+        return (UpdateVServerAttributeResult) http.doPost(param, config, null);
     }
 
     @Override
     public void updateVServerAttribute(UpdateVServerAttributeParam param, UcloudHandler<UpdateVServerAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateVServerAttributeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -143,14 +143,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public AllocateBackendResult allocateBackend(AllocateBackendParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendResult.class);
-        return (AllocateBackendResult) http.doGet(param, config, null);
+        return (AllocateBackendResult) http.doPost(param, config, null);
     }
 
     @Override
     public void allocateBackend(AllocateBackendParam param, UcloudHandler<AllocateBackendResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -158,14 +158,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public ReleaseBackendResult releaseBackend(ReleaseBackendParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(ReleaseBackendResult.class);
-        return (ReleaseBackendResult) http.doGet(param, config, null);
+        return (ReleaseBackendResult) http.doPost(param, config, null);
     }
 
     @Override
     public void releaseBackend(ReleaseBackendParam param, UcloudHandler<ReleaseBackendResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(ReleaseBackendResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -174,7 +174,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     public AllocateBackendBatchResult allocateBackendBatch(AllocateBackendBatchParam param) throws Exception {
         // 测试未通过
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
-        return (AllocateBackendBatchResult) http.doGet(param, config, null);
+        return (AllocateBackendBatchResult) http.doPost(param, config, null);
     }
 
     @Override
@@ -182,7 +182,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
         // 测试未通过
         UcloudHttp http = new UcloudHttpImpl(AllocateBackendBatchResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -190,14 +190,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdateBackendAttributeResult updateBackendAttribute(UpdateBackendAttributeParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdateBackendAttributeResult.class);
-        return (UpdateBackendAttributeResult) http.doGet(param, config, null);
+        return (UpdateBackendAttributeResult) http.doPost(param, config, null);
     }
 
     @Override
     public void updateBackendAttribute(UpdateBackendAttributeParam param, UcloudHandler<UpdateBackendAttributeResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdateBackendAttributeResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -205,14 +205,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public CreatePolicyResult createPolicy(CreatePolicyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(CreatePolicyResult.class);
-        return (CreatePolicyResult) http.doGet(param, config, null);
+        return (CreatePolicyResult) http.doPost(param, config, null);
     }
 
     @Override
     public void createPolicy(CreatePolicyParam param, UcloudHandler<CreatePolicyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreatePolicyResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -220,14 +220,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UpdatePolicyResult updatePolicy(UpdatePolicyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UpdatePolicyResult.class);
-        return (UpdatePolicyResult) http.doGet(param, config, null);
+        return (UpdatePolicyResult) http.doPost(param, config, null);
     }
 
     @Override
     public void updatePolicy(UpdatePolicyParam param, UcloudHandler<UpdatePolicyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UpdatePolicyResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -235,14 +235,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeletePolicyResult deletePolicy(DeletePolicyParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeletePolicyResult.class);
-        return (DeletePolicyResult) http.doGet(param, config, null);
+        return (DeletePolicyResult) http.doPost(param, config, null);
     }
 
     @Override
     public void deletePolicy(DeletePolicyParam param, UcloudHandler<DeletePolicyResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeletePolicyResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -250,14 +250,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DeleteSSLResult deleteSSL(DeleteSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DeleteSSLResult.class);
-        return (DeleteSSLResult) http.doGet(param, config, null);
+        return (DeleteSSLResult) http.doPost(param, config, null);
     }
 
     @Override
     public void deleteSSL(DeleteSSLParam param, UcloudHandler<DeleteSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DeleteSSLResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -265,14 +265,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public BindSSLResult bindSSL(BindSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(BindSSLResult.class);
-        return (BindSSLResult) http.doGet(param, config, null);
+        return (BindSSLResult) http.doPost(param, config, null);
     }
 
     @Override
     public void bindSSL(BindSSLParam param, UcloudHandler<BindSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BindSSLResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -280,14 +280,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public UnbindSSLResult unbindSSL(UnbindSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(UnbindSSLResult.class);
-        return (UnbindSSLResult) http.doGet(param, config, null);
+        return (UnbindSSLResult) http.doPost(param, config, null);
     }
 
     @Override
     public void unbindSSL(UnbindSSLParam param, UcloudHandler<UnbindSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(UnbindSSLResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -302,7 +302,7 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     public void createSSL(CreateSSLParam param, UcloudHandler<CreateSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(CreateSSLResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -310,14 +310,14 @@ public class DefaultULBClient extends DefaultUcloudClient implements ULBClient {
     @Override
     public DescribeSSLResult describeSSL(DescribeSSLParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
-        return (DescribeSSLResult) http.doGet(param, config, null);
+        return (DescribeSSLResult) http.doPost(param, config, null);
     }
 
     @Override
     public void describeSSL(DescribeSSLParam param, UcloudHandler<DescribeSSLResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeSSLResult.class);
         try {
-            http.doGet(param, config, handler, asyncFlag);
+            http.doPost(param, config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }

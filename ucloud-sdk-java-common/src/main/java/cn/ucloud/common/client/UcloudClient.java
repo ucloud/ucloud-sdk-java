@@ -4,6 +4,8 @@ package cn.ucloud.common.client;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.model.GetProjectListResult;
 import cn.ucloud.common.model.GetRegionResult;
+import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.BaseResponseResult;
 
 /**
  * @description: ucloud基础服务client
@@ -22,7 +24,7 @@ public interface UcloudClient {
     GetRegionResult getRegion() throws Exception;
 
     /**
-     *  获取地域信息-GetRegion (回调)
+     * 获取地域信息-GetRegion (回调)
      *
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
@@ -40,10 +42,36 @@ public interface UcloudClient {
 
 
     /**
-     *  获取项目列表-GetProjectList (回调)
+     * 获取项目列表-GetProjectList (回调)
+     *
      * @param handler   {@link UcloudHandler}回调callback
      * @param asyncFlag 是否异步
      */
-    void getProjectList( UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag);
+    void getProjectList(UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag);
+
+
+    /**
+     * 适用于调用所有接口
+     *
+     * @param param 请求参数
+     * @param clazz 结果对象类
+     * @return 结果对象
+     * @throws Exception
+     */
+    BaseResponseResult doAction(BaseRequestParam param, Class<? extends BaseResponseResult> clazz) throws Exception;
+
+
+    /**
+     * 适用于调用所有接口,回调方式
+     *
+     * @param param     请求参数
+     * @param clazz     结果对象类
+     * @param handler   回调接口
+     * @param asyncFlag 是否异步
+     */
+    void doAction(BaseRequestParam param,
+                  Class<? extends BaseResponseResult> clazz,
+                  UcloudHandler<? extends BaseResponseResult> handler,
+                  Boolean... asyncFlag);
 
 }

@@ -7,6 +7,8 @@ import cn.ucloud.common.model.GetProjectListParam;
 import cn.ucloud.common.model.GetProjectListResult;
 import cn.ucloud.common.model.GetRegionParam;
 import cn.ucloud.common.model.GetRegionResult;
+import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.common.pojo.UcloudConfig;
 
 /**
@@ -25,14 +27,14 @@ public class DefaultUcloudClient implements UcloudClient {
     @Override
     public GetRegionResult getRegion() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
-        return (GetRegionResult) http.doGet(new GetRegionParam(), config, null);
+        return (GetRegionResult) http.doPost(new GetRegionParam(), config, null);
     }
 
     @Override
     public void getRegion(UcloudHandler<GetRegionResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetRegionResult.class);
         try {
-            http.doGet(new GetRegionParam(), config, handler, asyncFlag);
+            http.doPost(new GetRegionParam(), config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
@@ -40,15 +42,34 @@ public class DefaultUcloudClient implements UcloudClient {
     @Override
     public GetProjectListResult getProjectList() throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
-        return (GetProjectListResult) http.doGet(new GetProjectListParam(), config, null);
+        return (GetProjectListResult) http.doPost(new GetProjectListParam(), config, null);
     }
 
     @Override
     public void getProjectList(UcloudHandler<GetProjectListResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetProjectListResult.class);
         try {
-            http.doGet(new GetProjectListParam(), config, handler, asyncFlag);
+            http.doPost(new GetProjectListParam(), config, handler, asyncFlag);
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public BaseResponseResult doAction(BaseRequestParam param,
+                                       Class<? extends BaseResponseResult> clazz) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(clazz);
+        return (BaseResponseResult) http.doPost(param, config, null);
+    }
+
+    @Override
+    public void doAction(BaseRequestParam param, Class<? extends BaseResponseResult> clazz,
+                         UcloudHandler<? extends BaseResponseResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(clazz);
+        try {
+            http.doPost(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+
 }
