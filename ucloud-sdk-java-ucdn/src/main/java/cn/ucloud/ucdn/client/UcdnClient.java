@@ -172,4 +172,24 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void getUcdnDomainConfig(GetUcdnDomainConfigParam param, UcloudHandler<GetUcdnDomainConfigResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取加速域名原始日志
+     * 日志数据最长保留三个月。
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    GetUcdnDomainLogResult getUcdnDomainLog(GetUcdnDomainLogParam param) throws Exception;
+
+    /**
+     * 获取加速域名原始日志
+     * 日志数据最长保留三个月。
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void getUcdnDomainLog(GetUcdnDomainLogParam param, UcloudHandler<GetUcdnDomainLogResult> handler, Boolean... asyncFlag);
 }

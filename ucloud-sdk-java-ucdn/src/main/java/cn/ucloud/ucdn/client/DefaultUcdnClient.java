@@ -153,4 +153,19 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public GetUcdnDomainLogResult getUcdnDomainLog(GetUcdnDomainLogParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainLogResult.class);
+        return (GetUcdnDomainLogResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUcdnDomainLog(GetUcdnDomainLogParam param, UcloudHandler<GetUcdnDomainLogResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainLogResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }
