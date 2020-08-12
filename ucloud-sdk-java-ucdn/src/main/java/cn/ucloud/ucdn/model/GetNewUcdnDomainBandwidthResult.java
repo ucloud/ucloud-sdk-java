@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class GetNewUcdnDomainBandwidthResult extends BaseResponseResult {
     /**
-     * 带宽信息列表，参见BandwidthInfo
+     * 带宽信息列表，参见{@link BandwidthInfo}
      */
     @SerializedName("BandwidthList")
     private List<BandwidthInfo> bandwidthList;

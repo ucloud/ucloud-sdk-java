@@ -198,4 +198,34 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public GetUcdnDomainTrafficResult getUcdnDomainTraffic(GetUcdnDomainTrafficParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainTrafficResult.class);
+        return (GetUcdnDomainTrafficResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUcdnDomainTraffic(GetUcdnDomainTrafficParam param, UcloudHandler<GetUcdnDomainTrafficResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainTrafficResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public GetUcdnPassBandwidthResult getUcdnPassBandwidth(GetUcdnPassBandwidthParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnPassBandwidthResult.class);
+        return (GetUcdnPassBandwidthResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param, UcloudHandler<GetUcdnPassBandwidthResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnPassBandwidthResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }
