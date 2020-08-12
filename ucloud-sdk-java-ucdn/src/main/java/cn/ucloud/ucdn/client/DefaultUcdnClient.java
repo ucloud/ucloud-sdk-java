@@ -243,4 +243,19 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(PrefetchNewUcdnDomainCacheResult.class);
+        return (PrefetchNewUcdnDomainCacheResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param, UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(PrefetchNewUcdnDomainCacheResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }

@@ -283,4 +283,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void getUcdnTraffic(GetUcdnTrafficParam param, UcloudHandler<GetUcdnTrafficResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 提交预取任务
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param) throws Exception;
+
+    /**
+     * 提交预取任务
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param, UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler, Boolean... asyncFlag);
 }
