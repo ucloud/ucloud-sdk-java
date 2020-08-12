@@ -20,21 +20,6 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public BatchDescribeNewUcdnDomainResult batchDescribeNewUcdnDomain(BatchDescribeNewUcdnDomainParam param) throws Exception {
-        UcloudHttp http = new UcloudHttpImpl(BatchDescribeNewUcdnDomainResult.class);
-        return (BatchDescribeNewUcdnDomainResult) http.doGet(param, config, null);
-    }
-
-    @Override
-    public void batchDescribeNewUcdnDomain(BatchDescribeNewUcdnDomainParam param, UcloudHandler<BatchDescribeNewUcdnDomainResult> handler, Boolean... asyncFlag) {
-        UcloudHttp http = new UcloudHttpImpl(BatchDescribeNewUcdnDomainResult.class);
-        try {
-            http.doGet(param, config, handler, asyncFlag);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
     public BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(BatchRefreshNewUcdnDomainCacheResult.class);
         return (BatchRefreshNewUcdnDomainCacheResult) http.doGet(param, config, null);
@@ -148,6 +133,21 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     @Override
     public void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param, UcloudHandler<GetNewUcdnDomainRequestNumResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainRequestNumResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainConfigResult.class);
+        return (GetUcdnDomainConfigResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUcdnDomainConfig(GetUcdnDomainConfigParam param, UcloudHandler<GetUcdnDomainConfigResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainConfigResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {

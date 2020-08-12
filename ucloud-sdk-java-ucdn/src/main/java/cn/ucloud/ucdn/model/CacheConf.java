@@ -49,7 +49,7 @@ public class CacheConf {
      * 是否优先遵循源站头部缓存策略，0为不优先遵循源站，1为优先遵循源站缓存头部。默认为0
      */
     @SerializedName("FollowOriginRule")
-    private Integer followOriginRule;
+    private Boolean followOriginRule;
 
     public String getHttpCodePattern() {
         return httpCodePattern;
@@ -99,11 +99,11 @@ public class CacheConf {
         this.cacheBehavior = cacheBehavior;
     }
 
-    public Integer getFollowOriginRule() {
+    public Boolean getFollowOriginRule() {
         return followOriginRule;
     }
 
-    public void setFollowOriginRule(Integer followOriginRule) {
+    public void setFollowOriginRule(Boolean followOriginRule) {
         this.followOriginRule = followOriginRule;
     }
 }

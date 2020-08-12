@@ -14,7 +14,7 @@ import java.util.List;
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2020/8/6 13:48
  */
-public class BatchDescribeNewUcdnDomainParam extends BaseRequestParam {
+public class GetUcdnDomainConfigParam extends BaseRequestParam {
 
     /**
      * 数据偏移量，默认0，非负整数
@@ -57,8 +57,8 @@ public class BatchDescribeNewUcdnDomainParam extends BaseRequestParam {
         return list;
     }
 
-    public BatchDescribeNewUcdnDomainParam() {
-        super("BatchDescribeNewUcdnDomain");
+    public GetUcdnDomainConfigParam() {
+        super("GetUcdnDomainConfig");
     }
 
     public Integer getOffset() {

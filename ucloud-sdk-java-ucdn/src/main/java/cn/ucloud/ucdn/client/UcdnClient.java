@@ -12,24 +12,6 @@ import cn.ucloud.ucdn.model.*;
  */
 public interface UcdnClient extends UcloudClient {
     /**
-     * 批量获取加速域名配置
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    BatchDescribeNewUcdnDomainResult batchDescribeNewUcdnDomain(BatchDescribeNewUcdnDomainParam param) throws Exception;
-
-    /**
-     * 批量获取加速域名配置
-     *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void batchDescribeNewUcdnDomain(BatchDescribeNewUcdnDomainParam param, UcloudHandler<BatchDescribeNewUcdnDomainResult> handler, Boolean... asyncFlag);
-
-    /**
      * 批量刷新缓存
      *
      * @param param 参数对象
@@ -172,4 +154,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param, UcloudHandler<GetNewUcdnDomainRequestNumResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 批量获取加速域名配置
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param) throws Exception;
+
+    /**
+     * 批量获取加速域名配置
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void getUcdnDomainConfig(GetUcdnDomainConfigParam param, UcloudHandler<GetUcdnDomainConfigResult> handler, Boolean... asyncFlag);
 }
