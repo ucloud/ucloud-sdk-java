@@ -168,4 +168,19 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
         } catch (Exception e) {
         }
     }
+
+    @Override
+    public GetUcdnDomainPrefetchEnableResult getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainPrefetchEnableResult.class);
+        return (GetUcdnDomainPrefetchEnableResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param, UcloudHandler<GetUcdnDomainPrefetchEnableResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainPrefetchEnableResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
 }
