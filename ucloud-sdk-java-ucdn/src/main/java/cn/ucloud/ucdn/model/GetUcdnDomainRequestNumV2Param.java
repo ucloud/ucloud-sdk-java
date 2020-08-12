@@ -5,18 +5,19 @@ import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
 
 import javax.validation.ValidationException;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 
 /**
- * @description: 获取域名请求数 param
+ * @description: 获取域名请求数V2 param
  * @author: joshua
  * @E-mail: joshua.yin@ucloud.cn
  * @date: 2020/8/6 15:59
  */
-public class GetNewUcdnDomainRequestNumParam extends BaseRequestParam {
+public class GetUcdnDomainRequestNumV2Param extends BaseRequestParam {
     /**
      * 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度）
      */
@@ -58,17 +59,23 @@ public class GetNewUcdnDomainRequestNumParam extends BaseRequestParam {
      * 如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
      */
     @UcloudParam("BeginTime")
+    @NotNull(message = "BeginTime can not be null")
     private Long beginTime;
 
     /**
      * 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      */
     @UcloudParam("EndTime")
+    @NotNull(message = "EndTime can not be null")
     private Long endTime;
 
-    public GetNewUcdnDomainRequestNumParam(@NotNull(message = "Type can not be null") Integer type) {
-        super("GetNewUcdnDomainRequestNum");
+    public GetUcdnDomainRequestNumV2Param(@NotNull(message = "Type can not be null") Integer type,
+                                          @NotNull(message = "BeginTime can not be null") Long beginTime,
+                                          @NotNull(message = "EndTime can not be null") Long endTime) {
+        super("GetUcdnDomainRequestNumV2");
         this.type = type;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
     }
 
     public Integer getType() {
