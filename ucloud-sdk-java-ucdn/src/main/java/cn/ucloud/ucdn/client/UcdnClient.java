@@ -2,6 +2,7 @@ package cn.ucloud.ucdn.client;
 
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
+import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.ucdn.model.*;
 
 /**
@@ -264,4 +265,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param, UcloudHandler<GetUcdnPassBandwidthResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 获取流量信息
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    GetUcdnTrafficResult getUcdnTraffic(GetUcdnTrafficParam param) throws Exception;
+
+    /**
+     * 获取流量信息
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void getUcdnTraffic(GetUcdnTrafficParam param, UcloudHandler<GetUcdnTrafficResult> handler, Boolean... asyncFlag);
 }
