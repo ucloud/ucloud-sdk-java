@@ -4,6 +4,7 @@ import cn.ucloud.common.client.DefaultUcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.http.UcloudHttp;
 import cn.ucloud.common.http.UcloudHttpImpl;
+import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.ucdn.model.*;
 import cn.ucloud.ucdn.pojo.UcdnConfig;
 
@@ -268,6 +269,21 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     @Override
     public void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param, UcloudHandler<RefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RefreshNewUcdnDomainCacheResult.class);
+        try {
+            http.doGet(param, config, handler, asyncFlag);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    public BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param) throws Exception {
+        UcloudHttp http = new UcloudHttpImpl(BaseResponseResult.class);
+        return (BaseResponseResult) http.doGet(param, config, null);
+    }
+
+    @Override
+    public void switchUcdnChargeType(SwitchUcdnChargeTypeParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
+        UcloudHttp http = new UcloudHttpImpl(BaseResponseResult.class);
         try {
             http.doGet(param, config, handler, asyncFlag);
         } catch (Exception e) {

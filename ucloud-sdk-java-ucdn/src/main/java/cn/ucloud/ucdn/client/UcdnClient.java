@@ -3,6 +3,7 @@ package cn.ucloud.ucdn.client;
 import cn.ucloud.common.client.UcloudClient;
 import cn.ucloud.common.handler.UcloudHandler;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.BaseResponseResult;
 import cn.ucloud.ucdn.model.*;
 
 /**
@@ -319,4 +320,22 @@ public interface UcdnClient extends UcloudClient {
      * @param asyncFlag 异步标记，默认异步true
      */
     void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param, UcloudHandler<RefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag);
+
+    /**
+     * 切换账号计费方式
+     *
+     * @param param 参数对象
+     * @return 结果对象
+     * @throws Exception 出错则抛出异常
+     */
+    BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param) throws Exception;
+
+    /**
+     * 切换账号计费方式
+     *
+     * @param param     参数对象
+     * @param handler   回调处理器
+     * @param asyncFlag 异步标记，默认异步true
+     */
+    void switchUcdnChargeType(SwitchUcdnChargeTypeParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
 }
