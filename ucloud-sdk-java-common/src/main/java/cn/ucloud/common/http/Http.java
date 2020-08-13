@@ -31,7 +31,7 @@ public class Http {
 
     private static Logger logger = LoggerFactory.getLogger(Http.class);
 
-    private static final String SDK_VERSION = "0.8.3.0-release";
+    private static final String SDK_VERSION = "0.8.4.0-release";
 
     private static final String USER_AGENT;
 

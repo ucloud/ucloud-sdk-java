@@ -2,8 +2,12 @@ package cn.ucloud.ucdn.model;
 
 import cn.ucloud.common.annotation.UcloudParam;
 import cn.ucloud.common.pojo.BaseRequestParam;
+import cn.ucloud.common.pojo.Param;
 
+import javax.validation.ValidationException;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @description: 批量刷新缓存 param

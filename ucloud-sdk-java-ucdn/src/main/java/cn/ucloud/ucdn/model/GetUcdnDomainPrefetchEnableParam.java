@@ -23,4 +23,12 @@ public class GetUcdnDomainPrefetchEnableParam extends BaseRequestParam {
         super("GetUcdnDomainPrefetchEnable");
         this.domainId = domainId;
     }
+
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
 }

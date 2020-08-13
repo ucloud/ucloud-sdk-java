@@ -82,8 +82,8 @@ public class DomainConfigInfo {
     /**
      * 访问控制配置
      */
-    @SerializedName("AccessConfig")
-    private AccessAllConfig accessConf;
+    @SerializedName("AccessAllConfig")
+    private AccessAllConfig accessAllConfig;
     /**
      * 缓存配置
      */
@@ -207,12 +207,12 @@ public class DomainConfigInfo {
         this.originConf = originConf;
     }
 
-    public AccessAllConfig getAccessConf() {
-        return accessConf;
+    public AccessAllConfig getAccessAllConfig() {
+        return accessAllConfig;
     }
 
-    public void setAccessConf(AccessAllConfig accessConf) {
-        this.accessConf = accessConf;
+    public void setAccessAllConfig(AccessAllConfig accessAllConfig) {
+        this.accessAllConfig = accessAllConfig;
     }
 
     public CacheAllConfig getCacheConf() {

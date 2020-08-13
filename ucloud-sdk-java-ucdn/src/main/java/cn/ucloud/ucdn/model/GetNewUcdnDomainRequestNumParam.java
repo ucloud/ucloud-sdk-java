@@ -32,9 +32,7 @@ public class GetNewUcdnDomainRequestNumParam extends BaseRequestParam {
     @UcloudParam("DomainId")
     public List<Param> checkDomainIds() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (domainIds == null || domainIds.isEmpty()) {
-            throw new ValidationException("domainIds can not be empty");
-        } else {
+        if (domainIds != null && !domainIds.isEmpty()) {
             for (int i = 0, len = domainIds.size(); i < len; i++) {
                 if (domainIds.get(i) == null || domainIds.get(i).length() < 1) {
                     throw new ValidationException(String.format("domainIds[%d] can not be empty", i));
@@ -58,17 +56,23 @@ public class GetNewUcdnDomainRequestNumParam extends BaseRequestParam {
      * 如没有赋值，则返回缺少参 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
      */
     @UcloudParam("BeginTime")
+    @NotNull(message = "beginTime can not be null")
     private Long beginTime;
 
     /**
      * 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。
      */
     @UcloudParam("EndTime")
+    @NotNull(message = "endTime can not be null")
     private Long endTime;
 
-    public GetNewUcdnDomainRequestNumParam(@NotNull(message = "Type can not be null") Integer type) {
+    public GetNewUcdnDomainRequestNumParam(@NotNull(message = "Type can not be null") Integer type,
+                                         @NotNull(message = "beginTime can not be null") Long beginTime,
+                                           @NotNull(message = "endTime can not be null") Long endTime) {
         super("GetNewUcdnDomainRequestNum");
         this.type = type;
+        this.beginTime = beginTime;
+        this.endTime = endTime;
     }
 
     public Integer getType() {

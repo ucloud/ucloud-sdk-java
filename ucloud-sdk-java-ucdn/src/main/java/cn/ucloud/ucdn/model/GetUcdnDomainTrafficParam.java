@@ -31,9 +31,7 @@ public class GetUcdnDomainTrafficParam extends BaseRequestParam {
     @UcloudParam("DomainId")
     public List<Param> checkDomainIds() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (domainIds == null || domainIds.isEmpty()) {
-            throw new ValidationException("domainIds can not be empty");
-        } else {
+        if (domainIds != null && !domainIds.isEmpty()) {
             for (int i = 0, len = domainIds.size(); i < len; i++) {
                 if (domainIds.get(i) == null || domainIds.get(i).length() < 1) {
                     throw new ValidationException(String.format("domainIds[%d] can not be empty", i));
@@ -67,6 +65,14 @@ public class GetUcdnDomainTrafficParam extends BaseRequestParam {
 
     public GetUcdnDomainTrafficParam() {
         super("GetUcdnDomainTraffic");
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
     public List<String> getDomainIds() {

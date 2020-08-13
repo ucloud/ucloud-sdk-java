@@ -33,9 +33,7 @@ public class GetUcdnDomainRequestNumV2Param extends BaseRequestParam {
     @UcloudParam("DomainId")
     public List<Param> checkDomainIds() throws ValidationException {
         List<Param> list = new ArrayList<>();
-        if (domainIds == null || domainIds.isEmpty()) {
-            throw new ValidationException("domainIds can not be empty");
-        } else {
+        if (domainIds != null && !domainIds.isEmpty()) {
             for (int i = 0, len = domainIds.size(); i < len; i++) {
                 if (domainIds.get(i) == null || domainIds.get(i).length() < 1) {
                     throw new ValidationException(String.format("domainIds[%d] can not be empty", i));

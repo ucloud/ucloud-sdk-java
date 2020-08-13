@@ -16,6 +16,7 @@ ucloud开发者工具套件（SDK）。<br/>
 - ocr
 - usms
 - ubill
+- ucdn
 
 
 后续将支持更多的UCloud的产品服务。
@@ -31,7 +32,7 @@ ucloud开发者工具套件（SDK）。<br/>
     <dependency>
       <groupId>cn.ucloud</groupId>
       <artifactId>ucloud-sdk-java-udisk</artifactId>
-      <version>0.8.3.0-release</version>
+      <version>0.8.4.0-release</version>
     </dependency>
 
 方式二、官网下载（暂时无效）
@@ -196,4 +197,8 @@ public class Main {
 - 0.8.3.0-release
 
     USMS修复SendUSMSMessage接口模板参数问题
+    
+- 0.8.4.0-release
+
+    新增业务模块Ucdn
     
