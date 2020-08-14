@@ -40,7 +40,7 @@ public class BaseRequestParam {
     @UcloudParam("ProjectId")
     protected String projectId;
 
-    protected BaseRequestParam(@NotEmpty(message = "action can not be empty") String action) {
+    public BaseRequestParam(@NotEmpty(message = "action can not be empty") String action) {
         this.action = action;
     }
 
