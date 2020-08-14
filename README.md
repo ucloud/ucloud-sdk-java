@@ -200,5 +200,5 @@ public class Main {
     
 - 0.8.4.0-release
 
-    新增业务模块Ucdn
+    新增业务模块UCDN
     
