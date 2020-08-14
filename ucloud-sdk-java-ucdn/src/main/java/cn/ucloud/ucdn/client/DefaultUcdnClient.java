@@ -21,13 +21,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param) throws Exception {
+    public BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(
+            BatchRefreshNewUcdnDomainCacheParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(BatchRefreshNewUcdnDomainCacheResult.class);
         return (BatchRefreshNewUcdnDomainCacheResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param, UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag) {
+    public void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param,
+                                               UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler,
+                                               Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BatchRefreshNewUcdnDomainCacheResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -36,13 +39,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public DescribeNewUcdnPrefetchCacheTaskResult describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param) throws Exception {
+    public DescribeNewUcdnPrefetchCacheTaskResult describeNewUcdnPrefetchCacheTask(
+            DescribeNewUcdnPrefetchCacheTaskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeNewUcdnPrefetchCacheTaskResult.class);
         return (DescribeNewUcdnPrefetchCacheTaskResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param, UcloudHandler<DescribeNewUcdnPrefetchCacheTaskResult> handler, Boolean... asyncFlag) {
+    public void describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param,
+                                                 UcloudHandler<DescribeNewUcdnPrefetchCacheTaskResult> handler,
+                                                 Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeNewUcdnPrefetchCacheTaskResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -51,13 +57,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public DescribeNewUcdnRefreshCacheTaskResult describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param) throws Exception {
+    public DescribeNewUcdnRefreshCacheTaskResult describeNewUcdnRefreshCacheTask(
+            DescribeNewUcdnRefreshCacheTaskParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(DescribeNewUcdnRefreshCacheTaskResult.class);
         return (DescribeNewUcdnRefreshCacheTaskResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param, UcloudHandler<DescribeNewUcdnRefreshCacheTaskResult> handler, Boolean... asyncFlag) {
+    public void describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param,
+                                                UcloudHandler<DescribeNewUcdnRefreshCacheTaskResult> handler,
+                                                Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(DescribeNewUcdnPrefetchCacheTaskResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -66,13 +75,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param) throws Exception {
+    public GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(
+            GetNewUcdnDomainBandwidthParam param) throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainBandwidthResult.class);
         return (GetNewUcdnDomainBandwidthResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param, UcloudHandler<GetNewUcdnDomainBandwidthResult> handler, Boolean... asyncFlag) {
+    public void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param,
+                                          UcloudHandler<GetNewUcdnDomainBandwidthResult> handler,
+                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainBandwidthResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -81,13 +93,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetNewUcdnDomainHitRateResult getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param) throws Exception {
+    public GetNewUcdnDomainHitRateResult getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainHitRateResult.class);
         return (GetNewUcdnDomainHitRateResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param, UcloudHandler<GetNewUcdnDomainHitRateResult> handler, Boolean... asyncFlag) {
+    public void getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param,
+                                        UcloudHandler<GetNewUcdnDomainHitRateResult> handler,
+                                        Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainHitRateResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -96,13 +111,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetNewUcdnDomainHttpCodeResult getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param) throws Exception {
+    public GetNewUcdnDomainHttpCodeResult getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainHttpCodeResult.class);
         return (GetNewUcdnDomainHttpCodeResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param, UcloudHandler<GetNewUcdnDomainHttpCodeResult> handler, Boolean... asyncFlag) {
+    public void getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param,
+                                         UcloudHandler<GetNewUcdnDomainHttpCodeResult> handler,
+                                         Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainHttpCodeResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -111,13 +129,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetNewUcdnDomainHttpCodeV2Result getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param) throws Exception {
+    public GetNewUcdnDomainHttpCodeV2Result getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainHttpCodeV2Result.class);
         return (GetNewUcdnDomainHttpCodeV2Result) http.doPost(param, config, null);
     }
 
     @Override
-    public void getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param, UcloudHandler<GetNewUcdnDomainHttpCodeV2Result> handler, Boolean... asyncFlag) {
+    public void getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param,
+                                           UcloudHandler<GetNewUcdnDomainHttpCodeV2Result> handler,
+                                           Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainHttpCodeV2Result.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -126,13 +147,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetNewUcdnDomainRequestNumResult getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param) throws Exception {
+    public GetNewUcdnDomainRequestNumResult getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainRequestNumResult.class);
         return (GetNewUcdnDomainRequestNumResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param, UcloudHandler<GetNewUcdnDomainRequestNumResult> handler, Boolean... asyncFlag) {
+    public void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param,
+                                           UcloudHandler<GetNewUcdnDomainRequestNumResult> handler,
+                                           Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetNewUcdnDomainRequestNumResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -141,13 +165,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param) throws Exception {
+    public GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainConfigResult.class);
         return (GetUcdnDomainConfigResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnDomainConfig(GetUcdnDomainConfigParam param, UcloudHandler<GetUcdnDomainConfigResult> handler, Boolean... asyncFlag) {
+    public void getUcdnDomainConfig(GetUcdnDomainConfigParam param,
+                                    UcloudHandler<GetUcdnDomainConfigResult> handler,
+                                    Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainConfigResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -156,13 +183,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnDomainLogResult getUcdnDomainLog(GetUcdnDomainLogParam param) throws Exception {
+    public GetUcdnDomainLogResult getUcdnDomainLog(GetUcdnDomainLogParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainLogResult.class);
         return (GetUcdnDomainLogResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnDomainLog(GetUcdnDomainLogParam param, UcloudHandler<GetUcdnDomainLogResult> handler, Boolean... asyncFlag) {
+    public void getUcdnDomainLog(GetUcdnDomainLogParam param,
+                                 UcloudHandler<GetUcdnDomainLogResult> handler,
+                                 Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainLogResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -171,13 +201,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnDomainPrefetchEnableResult getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param) throws Exception {
+    public GetUcdnDomainPrefetchEnableResult getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainPrefetchEnableResult.class);
         return (GetUcdnDomainPrefetchEnableResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param, UcloudHandler<GetUcdnDomainPrefetchEnableResult> handler, Boolean... asyncFlag) {
+    public void getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param,
+                                            UcloudHandler<GetUcdnDomainPrefetchEnableResult> handler,
+                                            Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainPrefetchEnableResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -186,13 +219,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnDomainRequestNumV2Result getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param) throws Exception {
+    public GetUcdnDomainRequestNumV2Result getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainRequestNumV2Result.class);
         return (GetUcdnDomainRequestNumV2Result) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param, UcloudHandler<GetUcdnDomainRequestNumV2Result> handler, Boolean... asyncFlag) {
+    public void getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param,
+                                          UcloudHandler<GetUcdnDomainRequestNumV2Result> handler,
+                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainRequestNumV2Result.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -201,13 +237,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnDomainTrafficResult getUcdnDomainTraffic(GetUcdnDomainTrafficParam param) throws Exception {
+    public GetUcdnDomainTrafficResult getUcdnDomainTraffic(GetUcdnDomainTrafficParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainTrafficResult.class);
         return (GetUcdnDomainTrafficResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnDomainTraffic(GetUcdnDomainTrafficParam param, UcloudHandler<GetUcdnDomainTrafficResult> handler, Boolean... asyncFlag) {
+    public void getUcdnDomainTraffic(GetUcdnDomainTrafficParam param,
+                                     UcloudHandler<GetUcdnDomainTrafficResult> handler,
+                                     Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnDomainTrafficResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -216,13 +255,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnPassBandwidthResult getUcdnPassBandwidth(GetUcdnPassBandwidthParam param) throws Exception {
+    public GetUcdnPassBandwidthResult getUcdnPassBandwidth(GetUcdnPassBandwidthParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnPassBandwidthResult.class);
         return (GetUcdnPassBandwidthResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param, UcloudHandler<GetUcdnPassBandwidthResult> handler, Boolean... asyncFlag) {
+    public void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param,
+                                     UcloudHandler<GetUcdnPassBandwidthResult> handler,
+                                     Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnPassBandwidthResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -231,13 +273,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public GetUcdnTrafficResult getUcdnTraffic(GetUcdnTrafficParam param) throws Exception {
+    public GetUcdnTrafficResult getUcdnTraffic(GetUcdnTrafficParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnTrafficResult.class);
         return (GetUcdnTrafficResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void getUcdnTraffic(GetUcdnTrafficParam param, UcloudHandler<GetUcdnTrafficResult> handler, Boolean... asyncFlag) {
+    public void getUcdnTraffic(GetUcdnTrafficParam param,
+                               UcloudHandler<GetUcdnTrafficResult> handler,
+                               Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(GetUcdnTrafficResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -246,13 +291,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param) throws Exception {
+    public PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(PrefetchNewUcdnDomainCacheResult.class);
         return (PrefetchNewUcdnDomainCacheResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param, UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler, Boolean... asyncFlag) {
+    public void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param,
+                                           UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler,
+                                           Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(PrefetchNewUcdnDomainCacheResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -261,13 +309,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public RefreshNewUcdnDomainCacheResult refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param) throws Exception {
+    public RefreshNewUcdnDomainCacheResult refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(RefreshNewUcdnDomainCacheResult.class);
         return (RefreshNewUcdnDomainCacheResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param, UcloudHandler<RefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag) {
+    public void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param,
+                                          UcloudHandler<RefreshNewUcdnDomainCacheResult> handler,
+                                          Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(RefreshNewUcdnDomainCacheResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
@@ -276,13 +327,16 @@ public class DefaultUcdnClient extends DefaultUcloudClient implements UcdnClient
     }
 
     @Override
-    public BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param) throws Exception {
+    public BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param)
+            throws Exception {
         UcloudHttp http = new UcloudHttpImpl(BaseResponseResult.class);
         return (BaseResponseResult) http.doPost(param, config, null);
     }
 
     @Override
-    public void switchUcdnChargeType(SwitchUcdnChargeTypeParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag) {
+    public void switchUcdnChargeType(SwitchUcdnChargeTypeParam param,
+                                     UcloudHandler<BaseResponseResult> handler,
+                                     Boolean... asyncFlag) {
         UcloudHttp http = new UcloudHttpImpl(BaseResponseResult.class);
         try {
             http.doPost(param, config, handler, asyncFlag);
