@@ -20,7 +20,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param) throws Exception;
+    BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param)
+            throws Exception;
 
     /**
      * 批量刷新缓存
@@ -29,7 +30,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param, UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag);
+    void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param,
+                                        UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler,
+                                        Boolean... asyncFlag);
 
     /**
      * 获取预取任务状态
@@ -38,7 +41,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    DescribeNewUcdnPrefetchCacheTaskResult describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param) throws Exception;
+    DescribeNewUcdnPrefetchCacheTaskResult describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param)
+            throws Exception;
 
     /**
      * 获取预取任务状态
@@ -47,7 +51,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param, UcloudHandler<DescribeNewUcdnPrefetchCacheTaskResult> handler, Boolean... asyncFlag);
+    void describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param,
+                                          UcloudHandler<DescribeNewUcdnPrefetchCacheTaskResult> handler,
+                                          Boolean... asyncFlag);
 
     /**
      * 获取域名刷新任务状态
@@ -56,7 +62,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    DescribeNewUcdnRefreshCacheTaskResult describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param) throws Exception;
+    DescribeNewUcdnRefreshCacheTaskResult describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param)
+            throws Exception;
 
     /**
      * 获取域名刷新任务状态
@@ -65,7 +72,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param, UcloudHandler<DescribeNewUcdnRefreshCacheTaskResult> handler, Boolean... asyncFlag);
+    void describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param,
+                                         UcloudHandler<DescribeNewUcdnRefreshCacheTaskResult> handler,
+                                         Boolean... asyncFlag);
 
     /**
      * 获取域名带宽数据
@@ -74,7 +83,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param) throws Exception;
+    GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param)
+            throws Exception;
 
     /**
      * 获取域名带宽数据
@@ -83,7 +93,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param, UcloudHandler<GetNewUcdnDomainBandwidthResult> handler, Boolean... asyncFlag);
+    void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param,
+                                   UcloudHandler<GetNewUcdnDomainBandwidthResult> handler,
+                                   Boolean... asyncFlag);
 
     /**
      * 获取域名命中率
@@ -101,7 +113,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param, UcloudHandler<GetNewUcdnDomainHitRateResult> handler, Boolean... asyncFlag);
+    void getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param,
+                                 UcloudHandler<GetNewUcdnDomainHitRateResult> handler,
+                                 Boolean... asyncFlag);
 
     /**
      * 获取域名状态码监控
@@ -110,7 +124,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetNewUcdnDomainHttpCodeResult getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param) throws Exception;
+    GetNewUcdnDomainHttpCodeResult getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param)
+            throws Exception;
 
     /**
      * 获取域名状态码监控
@@ -119,7 +134,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param, UcloudHandler<GetNewUcdnDomainHttpCodeResult> handler, Boolean... asyncFlag);
+    void getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param,
+                                  UcloudHandler<GetNewUcdnDomainHttpCodeResult> handler,
+                                  Boolean... asyncFlag);
 
     /**
      * 获取域名详细状态码监控
@@ -128,7 +145,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetNewUcdnDomainHttpCodeV2Result getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param) throws Exception;
+    GetNewUcdnDomainHttpCodeV2Result getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param)
+            throws Exception;
 
     /**
      * 获取域名详细状态码监控
@@ -137,7 +155,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param, UcloudHandler<GetNewUcdnDomainHttpCodeV2Result> handler, Boolean... asyncFlag);
+    void getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param,
+                                    UcloudHandler<GetNewUcdnDomainHttpCodeV2Result> handler,
+                                    Boolean... asyncFlag);
 
     /**
      * 获取域名请求数
@@ -146,7 +166,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetNewUcdnDomainRequestNumResult getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param) throws Exception;
+    GetNewUcdnDomainRequestNumResult getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param)
+            throws Exception;
 
     /**
      * 获取域名请求数
@@ -155,7 +176,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param, UcloudHandler<GetNewUcdnDomainRequestNumResult> handler, Boolean... asyncFlag);
+    void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param,
+                                    UcloudHandler<GetNewUcdnDomainRequestNumResult> handler,
+                                    Boolean... asyncFlag);
 
     /**
      * 批量获取加速域名配置
@@ -164,7 +187,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param) throws Exception;
+    GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param)
+            throws Exception;
 
     /**
      * 批量获取加速域名配置
@@ -173,7 +197,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnDomainConfig(GetUcdnDomainConfigParam param, UcloudHandler<GetUcdnDomainConfigResult> handler, Boolean... asyncFlag);
+    void getUcdnDomainConfig(GetUcdnDomainConfigParam param,
+                             UcloudHandler<GetUcdnDomainConfigResult> handler,
+                             Boolean... asyncFlag);
 
     /**
      * 获取加速域名原始日志
@@ -193,7 +219,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnDomainLog(GetUcdnDomainLogParam param, UcloudHandler<GetUcdnDomainLogResult> handler, Boolean... asyncFlag);
+    void getUcdnDomainLog(GetUcdnDomainLogParam param,
+                          UcloudHandler<GetUcdnDomainLogResult> handler,
+                          Boolean... asyncFlag);
 
     /**
      * 获取域名预取开启状态
@@ -202,7 +230,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUcdnDomainPrefetchEnableResult getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param) throws Exception;
+    GetUcdnDomainPrefetchEnableResult getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param)
+            throws Exception;
 
     /**
      * 获取域名预取开启状态
@@ -211,7 +240,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param, UcloudHandler<GetUcdnDomainPrefetchEnableResult> handler, Boolean... asyncFlag);
+    void getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param,
+                                     UcloudHandler<GetUcdnDomainPrefetchEnableResult> handler,
+                                     Boolean... asyncFlag);
 
     /**
      * 获取域名请求数
@@ -220,7 +251,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUcdnDomainRequestNumV2Result getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param) throws Exception;
+    GetUcdnDomainRequestNumV2Result getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param)
+            throws Exception;
 
     /**
      * 获取域名请求数
@@ -229,7 +261,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param, UcloudHandler<GetUcdnDomainRequestNumV2Result> handler, Boolean... asyncFlag);
+    void getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param,
+                                   UcloudHandler<GetUcdnDomainRequestNumV2Result> handler,
+                                   Boolean... asyncFlag);
 
     /**
      * 获取加速域名流量使用信息
@@ -238,7 +272,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUcdnDomainTrafficResult getUcdnDomainTraffic(GetUcdnDomainTrafficParam param) throws Exception;
+    GetUcdnDomainTrafficResult getUcdnDomainTraffic(GetUcdnDomainTrafficParam param)
+            throws Exception;
 
     /**
      * 获取加速域名流量使用信息
@@ -247,7 +282,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnDomainTraffic(GetUcdnDomainTrafficParam param, UcloudHandler<GetUcdnDomainTrafficResult> handler, Boolean... asyncFlag);
+    void getUcdnDomainTraffic(GetUcdnDomainTrafficParam param,
+                              UcloudHandler<GetUcdnDomainTrafficResult> handler,
+                              Boolean... asyncFlag);
 
     /**
      * 获取回源带宽数据（按时间分类）
@@ -256,7 +293,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    GetUcdnPassBandwidthResult getUcdnPassBandwidth(GetUcdnPassBandwidthParam param) throws Exception;
+    GetUcdnPassBandwidthResult getUcdnPassBandwidth(GetUcdnPassBandwidthParam param)
+            throws Exception;
 
     /**
      * 获取回源带宽数据（按时间分类）
@@ -265,7 +303,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param, UcloudHandler<GetUcdnPassBandwidthResult> handler, Boolean... asyncFlag);
+    void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param,
+                              UcloudHandler<GetUcdnPassBandwidthResult> handler,
+                              Boolean... asyncFlag);
 
     /**
      * 获取流量信息
@@ -283,7 +323,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void getUcdnTraffic(GetUcdnTrafficParam param, UcloudHandler<GetUcdnTrafficResult> handler, Boolean... asyncFlag);
+    void getUcdnTraffic(GetUcdnTrafficParam param,
+                        UcloudHandler<GetUcdnTrafficResult> handler,
+                        Boolean... asyncFlag);
 
     /**
      * 提交预取任务
@@ -292,7 +334,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param) throws Exception;
+    PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param)
+            throws Exception;
 
     /**
      * 提交预取任务
@@ -301,7 +344,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param, UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler, Boolean... asyncFlag);
+    void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param,
+                                    UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler,
+                                    Boolean... asyncFlag);
 
     /**
      * 刷新缓存
@@ -310,7 +355,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    RefreshNewUcdnDomainCacheResult refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param) throws Exception;
+    RefreshNewUcdnDomainCacheResult refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param)
+            throws Exception;
 
     /**
      * 刷新缓存
@@ -319,7 +365,9 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param, UcloudHandler<RefreshNewUcdnDomainCacheResult> handler, Boolean... asyncFlag);
+    void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param,
+                                   UcloudHandler<RefreshNewUcdnDomainCacheResult> handler,
+                                   Boolean... asyncFlag);
 
     /**
      * 切换账号计费方式
@@ -328,7 +376,8 @@ public interface UcdnClient extends UcloudClient {
      * @return 结果对象
      * @throws Exception 出错则抛出异常
      */
-    BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param) throws Exception;
+    BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param)
+            throws Exception;
 
     /**
      * 切换账号计费方式
@@ -337,5 +386,7 @@ public interface UcdnClient extends UcloudClient {
      * @param handler   回调处理器
      * @param asyncFlag 异步标记，默认异步true
      */
-    void switchUcdnChargeType(SwitchUcdnChargeTypeParam param, UcloudHandler<BaseResponseResult> handler, Boolean... asyncFlag);
+    void switchUcdnChargeType(SwitchUcdnChargeTypeParam param,
+                              UcloudHandler<BaseResponseResult> handler,
+                              Boolean... asyncFlag);
 }
