@@ -15,6 +15,17 @@ public class UcloudConfig {
 
     private String apiServerAddr = "https://api.ucloud.cn";
 
+    private boolean enableLog = false;
+
+    public boolean isEnableLog() {
+        return enableLog;
+    }
+
+    public UcloudConfig setEnableLog(boolean enableLog) {
+        this.enableLog = enableLog;
+        return this;
+    }
+
     public UcloudConfig(Account account) {
         this.account = account;
     }
