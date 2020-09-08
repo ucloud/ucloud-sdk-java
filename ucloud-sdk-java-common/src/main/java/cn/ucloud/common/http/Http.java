@@ -25,13 +25,20 @@ public class Http {
 
     private Class<? extends BaseResponseResult> resultClass;
 
+    private boolean enableLog = false;
+
     public Http(Class<? extends BaseResponseResult> resultClass) {
         this.resultClass = resultClass;
     }
 
+    public Http(Class<? extends BaseResponseResult> resultClass, boolean enableLog) {
+        this.resultClass = resultClass;
+        this.enableLog = enableLog;
+    }
+
     private static Logger logger = LoggerFactory.getLogger(Http.class);
 
-    private static final String SDK_VERSION = "0.8.4.1-release";
+    private static final String SDK_VERSION = "0.8.4.2-release";
 
     private static final String USER_AGENT;
 
@@ -47,9 +54,9 @@ public class Http {
         BaseResponseResult responseResult = null;
         request.addHeader("User-Agent", USER_AGENT);
 
-        String uriInfo = request.getURI().toString();
-        String headerInfo = new Gson().toJson(request.getAllHeaders());
-        if (request instanceof HttpPost) {
+        if (enableLog && request instanceof HttpPost) {
+            String uriInfo = request.getURI().toString();
+            String headerInfo = new Gson().toJson(request.getAllHeaders());
             String bodyInfo = EntityUtils.toString(((HttpPost) request).getEntity());
             logger.info("http POST request: \n" +
                             "\tURI:{}\n" +
@@ -58,7 +65,9 @@ public class Http {
                     uriInfo,
                     bodyInfo,
                     headerInfo);
-        } else if (request instanceof HttpGet) {
+        } else if (enableLog && request instanceof HttpGet) {
+            String uriInfo = request.getURI().toString();
+            String headerInfo = new Gson().toJson(request.getAllHeaders());
             logger.info("http GET request: \n" +
                             "\tURI:{}\n" +
                             "\tHeaders:{}",
@@ -73,7 +82,9 @@ public class Http {
             if (response != null) {
                 // 正常响应
                 String content = EntityUtils.toString(response.getEntity(), "UTF-8");
-                logger.info("response content:{}", content);
+                if (enableLog) {
+                    logger.info("response content:{}", content);
+                }
                 if (statusOK(response)) {
                     Gson gson = new Gson();
                     responseResult = gson.fromJson(content, resultClass);
@@ -96,12 +107,16 @@ public class Http {
                     response.close();
                 }
             } catch (IOException e) {
-                logger.error("response close error:{}", e.getMessage());
+                if (enableLog) {
+                    logger.error("response close error:{}", e.getMessage());
+                }
             }
             try {
                 client.close();
             } catch (IOException e) {
-                logger.error("httpClient close error:{}", e.getMessage());
+                if (enableLog) {
+                    logger.error("httpClient close error:{}", e.getMessage());
+                }
             }
         }
         return responseResult;
@@ -126,7 +141,9 @@ public class Http {
     private void handlerException(UcloudHandler handler, Exception e, Boolean async) throws Exception {
         if (handler == null) {
             if (async != null) {
-                logger.error("handler is null and async is not null,but get an error:{}", e.getMessage());
+                if (enableLog) {
+                    logger.error("handler is null and async is not null,but get an error:{}", e.getMessage());
+                }
             } else {
                 throw e;
             }
