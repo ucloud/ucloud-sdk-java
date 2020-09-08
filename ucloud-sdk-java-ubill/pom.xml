@@ -5,7 +5,7 @@
     <parent>
         <artifactId>ucloud-sdk-java</artifactId>
         <groupId>cn.ucloud</groupId>
-        <version>0.8.4.1-release</version>
+        <version>0.8.4.2-release</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>cn.ucloud</groupId>
             <artifactId>ucloud-sdk-java-common</artifactId>
-            <version>0.8.4.1-release</version>
+            <version>0.8.4.2-release</version>
         </dependency>
 
 

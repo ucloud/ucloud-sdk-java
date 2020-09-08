@@ -42,7 +42,7 @@ public class UcloudRestHttpImpl implements UcloudRestHttp {
             String restHttpURLParamString = constructor.getRestHttpURLParamString();
             HttpGet get = new HttpGet(String.format("%s?%s", restURL, restHttpURLParamString));
             get.setHeaders(headers);
-            Http http = new Http(resultClass);
+            Http http = new Http(resultClass,config.isEnableLog());
             result = http.doHttp(get, handler, async(asyncFlag));
         } catch (Exception e) {
             handlerException(handler, e, async(asyncFlag));
@@ -63,7 +63,7 @@ public class UcloudRestHttpImpl implements UcloudRestHttp {
             HttpEntity entity = constructor.getEntity();
             post.setEntity(entity);
             post.setHeaders(headers);
-            Http http = new Http(resultClass);
+            Http http = new Http(resultClass,config.isEnableLog());
             result = http.doHttp(post, handler, async(asyncFlag));
         } catch (Exception e) {
             handlerException(handler, e, async(asyncFlag));

@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>0.8.4.1-release</version>
+    <version>0.8.4.2-release</version>
     <modules>
         <module>ucloud-sdk-java-uhost</module>
         <module>ucloud-sdk-java-unet</module>

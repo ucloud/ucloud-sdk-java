@@ -40,7 +40,7 @@ public class UcloudHttpImpl implements UcloudHttp {
         try {
             String httpGetParamString = ParamConstructor.getHttpGetParamString(param, config.getAccount());
             final HttpGet get = new HttpGet(config.getApiServerAddr() + "?" + httpGetParamString);
-            Http http = new Http(resultClass);
+            Http http = new Http(resultClass,config.isEnableLog());
             result = http.doHttp(get, handler, async(asyncFlag));
         } catch (Exception e) {
             handlerException(handler, e, async(asyncFlag));
@@ -61,7 +61,7 @@ public class UcloudHttpImpl implements UcloudHttp {
             StringEntity entity = new StringEntity(httpPostParamString, StandardCharsets.UTF_8);
             entity.setContentType("application/json");
             post.setEntity(entity);
-            Http http = new Http(resultClass);
+            Http http = new Http(resultClass,config.isEnableLog());
             result = http.doHttp(post, handler, async(asyncFlag));
         } catch (Exception e) {
             handlerException(handler, e, async(asyncFlag));
