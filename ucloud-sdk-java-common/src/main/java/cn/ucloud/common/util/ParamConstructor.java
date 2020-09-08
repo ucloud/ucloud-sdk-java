@@ -3,9 +3,12 @@ package cn.ucloud.common.util;
 import cn.ucloud.common.pojo.Account;
 import cn.ucloud.common.pojo.BaseRequestParam;
 import cn.ucloud.common.pojo.Param;
+import com.google.gson.Gson;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description: http请求参数构造器
@@ -39,7 +42,7 @@ public class ParamConstructor {
         // 构造url参数
         StringBuilder builder = new StringBuilder();
         for (Param param : paramList) {
-            if (StringUtils.isBlank(param.getParamKey())){
+            if (StringUtils.isBlank(param.getParamKey())) {
                 continue;
             }
             builder.append(param.getParamKey() + "=" + param.getParamValue() + "&");
@@ -71,16 +74,13 @@ public class ParamConstructor {
         // url编码
         //Signature.urlEncodeParams(paramList);
         // 设置签名
-        paramList.add(new Param("Signature",signature));
+        paramList.add(new Param("Signature", signature));
         // 构造参数
-        StringBuilder builder = new StringBuilder();
-        builder.append("{");
-        for (Param param : paramList){
-            builder.append("\""+param.getParamKey()+"\":\""+param.getParamValue()+"\",");
+        Map<String, Object> paramMap = new HashMap<>();
+        for (Param param : paramList) {
+            paramMap.put(param.getParamKey(), param.getParamValue());
         }
-        String substring = builder.substring(0, builder.toString().length()-1);
-        substring+="}";
-        return substring;
+        return new Gson().toJson(paramMap);
     }
 
 }
