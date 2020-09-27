@@ -36,17 +36,25 @@ public class Http {
         this.enableLog = enableLog;
     }
 
-    private static Logger logger = LoggerFactory.getLogger(Http.class);
+    private static final Logger logger = LoggerFactory.getLogger(Http.class);
 
-    private static final String SDK_VERSION = "0.8.4.2-release";
+    private static final String SDK_VERSION = "0.8.4.3-release";
 
     private static final String USER_AGENT;
+
+    private static CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
 
     static {
         String runTimeVersion = System.getProperty("java.runtime.version");
         runTimeVersion = (runTimeVersion == null || runTimeVersion.isEmpty()) ? "UnKnown RuntimeVersion" : runTimeVersion;
 
         USER_AGENT = String.format("JAVA_%s/JAVA-SDK/%s", runTimeVersion, SDK_VERSION);
+    }
+
+    public static void setHttpClient(CloseableHttpClient httpClient) {
+        if (httpClient != null) {
+            closeableHttpClient = httpClient;
+        }
     }
 
     public BaseResponseResult doHttp(HttpUriRequest request, UcloudHandler handler, Boolean async) throws Exception {
@@ -75,10 +83,8 @@ public class Http {
                     headerInfo);
         }
 
-        // 创建HttpClient对象
-        final CloseableHttpClient client = HttpClients.createDefault();
         try {
-            response = client.execute(request);
+            response = closeableHttpClient.execute(request);
             if (response != null) {
                 // 正常响应
                 String content = EntityUtils.toString(response.getEntity(), "UTF-8");
@@ -112,7 +118,7 @@ public class Http {
                 }
             }
             try {
-                client.close();
+                closeableHttpClient.close();
             } catch (IOException e) {
                 if (enableLog) {
                     logger.error("httpClient close error:{}", e.getMessage());
