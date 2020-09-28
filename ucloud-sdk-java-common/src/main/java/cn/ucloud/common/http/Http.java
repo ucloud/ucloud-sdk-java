@@ -117,15 +117,12 @@ public class Http {
                     logger.error("response close error:{}", e.getMessage());
                 }
             }
-            try {
-                closeableHttpClient.close();
-            } catch (IOException e) {
-                if (enableLog) {
-                    logger.error("httpClient close error:{}", e.getMessage());
-                }
-            }
         }
         return responseResult;
+    }
+
+    public static void closeHttpClient() throws IOException {
+        closeableHttpClient.close();
     }
 
     private void handlerResult(UcloudHandler handler, BaseResponseResult result) {
