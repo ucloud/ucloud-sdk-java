@@ -497,21 +497,6 @@ public class CreateUHostInstanceRequest extends Request {
         }
     }
 
-    public static class Features extends Request {
-
-        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
-        @UCloudParam("UNI")
-        private Boolean uni;
-
-        public Boolean getUNI() {
-            return uni;
-        }
-
-        public void setUNI(Boolean uni) {
-            this.uni = uni;
-        }
-    }
-
     public static class NetworkInterfaceIPv6 extends Request {}
 
     public static class NetworkInterfaceEIP extends Request {
@@ -597,6 +582,21 @@ public class CreateUHostInstanceRequest extends Request {
 
         public void setCouponId(String couponId) {
             this.couponId = couponId;
+        }
+    }
+
+    public static class Features extends Request {
+
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
+        @UCloudParam("UNI")
+        private Boolean uni;
+
+        public Boolean getUNI() {
+            return uni;
+        }
+
+        public void setUNI(Boolean uni) {
+            this.uni = uni;
         }
     }
 

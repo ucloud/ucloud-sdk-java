@@ -31,33 +31,6 @@ public class DescribeVPCResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class VPCNetworkInfo extends Response {
-
-        /** vpc地址空间 */
-        @SerializedName("Network")
-        private String network;
-
-        /** 地址空间中子网数量 */
-        @SerializedName("SubnetCount")
-        private Integer subnetCount;
-
-        public String getNetwork() {
-            return network;
-        }
-
-        public void setNetwork(String network) {
-            this.network = network;
-        }
-
-        public Integer getSubnetCount() {
-            return subnetCount;
-        }
-
-        public void setSubnetCount(Integer subnetCount) {
-            this.subnetCount = subnetCount;
-        }
-    }
-
     public static class VPCInfo extends Response {
 
         /** */
@@ -178,6 +151,33 @@ public class DescribeVPCResponse extends Response {
 
         public void setOperatorName(String operatorName) {
             this.operatorName = operatorName;
+        }
+    }
+
+    public static class VPCNetworkInfo extends Response {
+
+        /** vpc地址空间 */
+        @SerializedName("Network")
+        private String network;
+
+        /** 地址空间中子网数量 */
+        @SerializedName("SubnetCount")
+        private Integer subnetCount;
+
+        public String getNetwork() {
+            return network;
+        }
+
+        public void setNetwork(String network) {
+            this.network = network;
+        }
+
+        public Integer getSubnetCount() {
+            return subnetCount;
+        }
+
+        public void setSubnetCount(Integer subnetCount) {
+            this.subnetCount = subnetCount;
         }
     }
 }

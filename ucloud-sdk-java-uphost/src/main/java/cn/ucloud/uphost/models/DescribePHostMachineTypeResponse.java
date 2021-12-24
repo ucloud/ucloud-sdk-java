@@ -31,57 +31,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         this.machineTypes = machineTypes;
     }
 
-    public static class PHostCPUSet extends Response {
-
-        /** CPU型号 */
-        @SerializedName("Model")
-        private String model;
-
-        /** CPU主频 */
-        @SerializedName("Frequence")
-        private Double frequence;
-
-        /** CPU个数 */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** CPU核数 */
-        @SerializedName("CoreCount")
-        private Integer coreCount;
-
-        public String getModel() {
-            return model;
-        }
-
-        public void setModel(String model) {
-            this.model = model;
-        }
-
-        public Double getFrequence() {
-            return frequence;
-        }
-
-        public void setFrequence(Double frequence) {
-            this.frequence = frequence;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public Integer getCoreCount() {
-            return coreCount;
-        }
-
-        public void setCoreCount(Integer coreCount) {
-            this.coreCount = coreCount;
-        }
-    }
-
     public static class PHostMachineTypeSet extends Response {
 
         /** 物理云主机机型别名，全网唯一。 */
@@ -196,33 +145,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         }
     }
 
-    public static class PHostComponentSet extends Response {
-
-        /** 组件名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 组件数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-    }
-
     public static class PHostDiskSet extends Response {
 
         /** 单盘大小，单位GB */
@@ -283,6 +205,84 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setIOCap(Integer ioCap) {
             this.ioCap = ioCap;
+        }
+    }
+
+    public static class PHostCPUSet extends Response {
+
+        /** CPU型号 */
+        @SerializedName("Model")
+        private String model;
+
+        /** CPU主频 */
+        @SerializedName("Frequence")
+        private Double frequence;
+
+        /** CPU个数 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** CPU核数 */
+        @SerializedName("CoreCount")
+        private Integer coreCount;
+
+        public String getModel() {
+            return model;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
+        }
+
+        public Double getFrequence() {
+            return frequence;
+        }
+
+        public void setFrequence(Double frequence) {
+            this.frequence = frequence;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public Integer getCoreCount() {
+            return coreCount;
+        }
+
+        public void setCoreCount(Integer coreCount) {
+            this.coreCount = coreCount;
+        }
+    }
+
+    public static class PHostComponentSet extends Response {
+
+        /** 组件名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 组件数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
         }
     }
 }

@@ -43,45 +43,6 @@ public class DescribeWhiteListResourceResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class NatGWWhitelistDataSet extends Response {
-
-        /** NATGateWay Id */
-        @SerializedName("NATGWId")
-        private String natgwId;
-
-        /** 白名单开关标记 */
-        @SerializedName("IfOpen")
-        private Integer ifOpen;
-
-        /** 白名单详情 */
-        @SerializedName("ObjectIPInfo")
-        private List<DescribeWhiteListResourceObjectIPInfo> objectIPInfo;
-
-        public String getNATGWId() {
-            return natgwId;
-        }
-
-        public void setNATGWId(String natgwId) {
-            this.natgwId = natgwId;
-        }
-
-        public Integer getIfOpen() {
-            return ifOpen;
-        }
-
-        public void setIfOpen(Integer ifOpen) {
-            this.ifOpen = ifOpen;
-        }
-
-        public List<DescribeWhiteListResourceObjectIPInfo> getObjectIPInfo() {
-            return objectIPInfo;
-        }
-
-        public void setObjectIPInfo(List<DescribeWhiteListResourceObjectIPInfo> objectIPInfo) {
-            this.objectIPInfo = objectIPInfo;
-        }
-    }
-
     public static class DescribeWhiteListResourceObjectIPInfo extends Response {
 
         /** natgw字符串 */
@@ -190,6 +151,45 @@ public class DescribeWhiteListResourceResponse extends Response {
 
         public void setVPCId(String vpcId) {
             this.vpcId = vpcId;
+        }
+    }
+
+    public static class NatGWWhitelistDataSet extends Response {
+
+        /** NATGateWay Id */
+        @SerializedName("NATGWId")
+        private String natgwId;
+
+        /** 白名单开关标记 */
+        @SerializedName("IfOpen")
+        private Integer ifOpen;
+
+        /** 白名单详情 */
+        @SerializedName("ObjectIPInfo")
+        private List<DescribeWhiteListResourceObjectIPInfo> objectIPInfo;
+
+        public String getNATGWId() {
+            return natgwId;
+        }
+
+        public void setNATGWId(String natgwId) {
+            this.natgwId = natgwId;
+        }
+
+        public Integer getIfOpen() {
+            return ifOpen;
+        }
+
+        public void setIfOpen(Integer ifOpen) {
+            this.ifOpen = ifOpen;
+        }
+
+        public List<DescribeWhiteListResourceObjectIPInfo> getObjectIPInfo() {
+            return objectIPInfo;
+        }
+
+        public void setObjectIPInfo(List<DescribeWhiteListResourceObjectIPInfo> objectIPInfo) {
+            this.objectIPInfo = objectIPInfo;
         }
     }
 }

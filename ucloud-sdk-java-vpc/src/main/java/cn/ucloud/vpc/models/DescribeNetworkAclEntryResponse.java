@@ -31,105 +31,6 @@ public class DescribeNetworkAclEntryResponse extends Response {
         this.entryList = entryList;
     }
 
-    public static class TargetResourceInfo extends Response {
-
-        /** 子网ID */
-        @SerializedName("SubnetworkId")
-        private String subnetworkId;
-
-        /** 资源名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
-
-        /** 资源ID */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        /** 资源类型 */
-        @SerializedName("ResourceType")
-        private Integer resourceType;
-
-        /** 资源绑定的虚拟网卡的名称 */
-        @SerializedName("SubResourceName")
-        private String subResourceName;
-
-        /** 资源绑定的虚拟网卡的ID */
-        @SerializedName("SubResourceId")
-        private String subResourceId;
-
-        /** 资源绑定虚拟网卡的类型 */
-        @SerializedName("SubResourceType")
-        private Integer subResourceType;
-
-        /** 资源内网IP */
-        @SerializedName("PrivateIp")
-        private String privateIp;
-
-        public String getSubnetworkId() {
-            return subnetworkId;
-        }
-
-        public void setSubnetworkId(String subnetworkId) {
-            this.subnetworkId = subnetworkId;
-        }
-
-        public String getResourceName() {
-            return resourceName;
-        }
-
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-
-        public Integer getResourceType() {
-            return resourceType;
-        }
-
-        public void setResourceType(Integer resourceType) {
-            this.resourceType = resourceType;
-        }
-
-        public String getSubResourceName() {
-            return subResourceName;
-        }
-
-        public void setSubResourceName(String subResourceName) {
-            this.subResourceName = subResourceName;
-        }
-
-        public String getSubResourceId() {
-            return subResourceId;
-        }
-
-        public void setSubResourceId(String subResourceId) {
-            this.subResourceId = subResourceId;
-        }
-
-        public Integer getSubResourceType() {
-            return subResourceType;
-        }
-
-        public void setSubResourceType(Integer subResourceType) {
-            this.subResourceType = subResourceType;
-        }
-
-        public String getPrivateIp() {
-            return privateIp;
-        }
-
-        public void setPrivateIp(String privateIp) {
-            this.privateIp = privateIp;
-        }
-    }
-
     public static class AclEntryInfo extends Response {
 
         /** Entry的ID */
@@ -274,6 +175,105 @@ public class DescribeNetworkAclEntryResponse extends Response {
 
         public void setTargetResourceCount(Integer targetResourceCount) {
             this.targetResourceCount = targetResourceCount;
+        }
+    }
+
+    public static class TargetResourceInfo extends Response {
+
+        /** 子网ID */
+        @SerializedName("SubnetworkId")
+        private String subnetworkId;
+
+        /** 资源名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
+
+        /** 资源ID */
+        @SerializedName("ResourceId")
+        private String resourceId;
+
+        /** 资源类型 */
+        @SerializedName("ResourceType")
+        private Integer resourceType;
+
+        /** 资源绑定的虚拟网卡的名称 */
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        /** 资源绑定的虚拟网卡的ID */
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        /** 资源绑定虚拟网卡的类型 */
+        @SerializedName("SubResourceType")
+        private Integer subResourceType;
+
+        /** 资源内网IP */
+        @SerializedName("PrivateIp")
+        private String privateIp;
+
+        public String getSubnetworkId() {
+            return subnetworkId;
+        }
+
+        public void setSubnetworkId(String subnetworkId) {
+            this.subnetworkId = subnetworkId;
+        }
+
+        public String getResourceName() {
+            return resourceName;
+        }
+
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+
+        public Integer getResourceType() {
+            return resourceType;
+        }
+
+        public void setResourceType(Integer resourceType) {
+            this.resourceType = resourceType;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
+
+        public Integer getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(Integer subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getPrivateIp() {
+            return privateIp;
+        }
+
+        public void setPrivateIp(String privateIp) {
+            this.privateIp = privateIp;
         }
     }
 }

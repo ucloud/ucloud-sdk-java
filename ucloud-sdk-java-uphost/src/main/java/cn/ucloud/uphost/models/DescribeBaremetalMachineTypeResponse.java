@@ -31,6 +31,69 @@ public class DescribeBaremetalMachineTypeResponse extends Response {
         this.machineTypes = machineTypes;
     }
 
+    public static class PHostCloudMachineTypeSet extends Response {
+
+        /** 物理云主机机型别名，全网唯一。 */
+        @SerializedName("Type")
+        private String type;
+
+        /** CPU信息 */
+        @SerializedName("CPU")
+        private PHostCPUSet cpu;
+
+        /** 内存大小，单位MB */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** 其他组件信息 */
+        @SerializedName("Components")
+        private PHostComponentSet components;
+
+        /** 集群库存信息 */
+        @SerializedName("Clusters")
+        private List<PHostClusterSet> clusters;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public PHostCPUSet getCPU() {
+            return cpu;
+        }
+
+        public void setCPU(PHostCPUSet cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public PHostComponentSet getComponents() {
+            return components;
+        }
+
+        public void setComponents(PHostComponentSet components) {
+            this.components = components;
+        }
+
+        public List<PHostClusterSet> getClusters() {
+            return clusters;
+        }
+
+        public void setClusters(List<PHostClusterSet> clusters) {
+            this.clusters = clusters;
+        }
+    }
+
     public static class PHostClusterSet extends Response {
 
         /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
@@ -133,69 +196,6 @@ public class DescribeBaremetalMachineTypeResponse extends Response {
 
         public void setCoreCount(Integer coreCount) {
             this.coreCount = coreCount;
-        }
-    }
-
-    public static class PHostCloudMachineTypeSet extends Response {
-
-        /** 物理云主机机型别名，全网唯一。 */
-        @SerializedName("Type")
-        private String type;
-
-        /** CPU信息 */
-        @SerializedName("CPU")
-        private PHostCPUSet cpu;
-
-        /** 内存大小，单位MB */
-        @SerializedName("Memory")
-        private Integer memory;
-
-        /** 其他组件信息 */
-        @SerializedName("Components")
-        private PHostComponentSet components;
-
-        /** 集群库存信息 */
-        @SerializedName("Clusters")
-        private List<PHostClusterSet> clusters;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public PHostCPUSet getCPU() {
-            return cpu;
-        }
-
-        public void setCPU(PHostCPUSet cpu) {
-            this.cpu = cpu;
-        }
-
-        public Integer getMemory() {
-            return memory;
-        }
-
-        public void setMemory(Integer memory) {
-            this.memory = memory;
-        }
-
-        public PHostComponentSet getComponents() {
-            return components;
-        }
-
-        public void setComponents(PHostComponentSet components) {
-            this.components = components;
-        }
-
-        public List<PHostClusterSet> getClusters() {
-            return clusters;
-        }
-
-        public void setClusters(List<PHostClusterSet> clusters) {
-            this.clusters = clusters;
         }
     }
 }
