@@ -61,8 +61,7 @@ public class ClientTest {
         Config config = new Config();
         config.setUserAgent("Demo/0.42");
         Credential credential =
-                new Credential(
-                        System.getenv("UCLOUD_PUBLIC_KEY"), System.getenv("UCLOUD_PRIVATE_KEY"));
+                new Credential("foo", "bar");
         DefaultClient client = new DefaultClient(config, credential);
         DefaultTransport transport = (DefaultTransport) client.getTransport();
 
