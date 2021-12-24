@@ -14,10 +14,6 @@
 
         <module>ucloud-sdk-java-usms</module>
 
-
-        <module>ucloud-sdk-java-udpn</module>
-
-
         <module>ucloud-sdk-java-udisk</module>
 
 
@@ -51,9 +47,6 @@
         <module>ucloud-sdk-java-uec</module>
 
 
-        <module>ucloud-sdk-java-pathx</module>
-
-
         <module>ucloud-sdk-java-ufile</module>
 
 
@@ -67,9 +60,6 @@
 
 
         <module>ucloud-sdk-java-ipsecvpn</module>
-
-
-        <module>ucloud-sdk-java-cube</module>
     </modules>
 
     <name>ucloud-sdk-java</name>
