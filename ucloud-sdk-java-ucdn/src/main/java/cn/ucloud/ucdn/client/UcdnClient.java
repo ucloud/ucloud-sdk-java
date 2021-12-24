@@ -1,392 +1,412 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.ucdn.client;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.common.pojo.BaseResponseResult;
-import cn.ucloud.ucdn.model.*;
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ucdn.models.AddCertificateRequest;
+import cn.ucloud.ucdn.models.AddCertificateResponse;
+import cn.ucloud.ucdn.models.DeleteCertificateRequest;
+import cn.ucloud.ucdn.models.DeleteCertificateResponse;
+import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskRequest;
+import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskResponse;
+import cn.ucloud.ucdn.models.DescribeNewUcdnRefreshCacheTaskRequest;
+import cn.ucloud.ucdn.models.DescribeNewUcdnRefreshCacheTaskResponse;
+import cn.ucloud.ucdn.models.GetCertificateV2Request;
+import cn.ucloud.ucdn.models.GetCertificateV2Response;
+import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateRequest;
+import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateResponse;
+import cn.ucloud.ucdn.models.GetNewUcdnLogRefererStatisticsRequest;
+import cn.ucloud.ucdn.models.GetNewUcdnLogRefererStatisticsResponse;
+import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsRequest;
+import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomain95BandwidthV2Request;
+import cn.ucloud.ucdn.models.GetUcdnDomain95BandwidthV2Response;
+import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthV2Request;
+import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthV2Response;
+import cn.ucloud.ucdn.models.GetUcdnDomainConfigRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainConfigResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainHitRateRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainHitRateResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainHttpCodeV2Request;
+import cn.ucloud.ucdn.models.GetUcdnDomainHttpCodeV2Response;
+import cn.ucloud.ucdn.models.GetUcdnDomainInfoListRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainInfoListResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainLogRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainLogResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainOriginRequestNumRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainOriginRequestNumResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainPrefetchEnableRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainPrefetchEnableResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainRequestNumV3Request;
+import cn.ucloud.ucdn.models.GetUcdnDomainRequestNumV3Response;
+import cn.ucloud.ucdn.models.GetUcdnPassBandwidthV2Request;
+import cn.ucloud.ucdn.models.GetUcdnPassBandwidthV2Response;
+import cn.ucloud.ucdn.models.GetUcdnProIspBandwidthV2Request;
+import cn.ucloud.ucdn.models.GetUcdnProIspBandwidthV2Response;
+import cn.ucloud.ucdn.models.GetUcdnProIspRequestNumV2Request;
+import cn.ucloud.ucdn.models.GetUcdnProIspRequestNumV2Response;
+import cn.ucloud.ucdn.models.GetUcdnTrafficV2Request;
+import cn.ucloud.ucdn.models.GetUcdnTrafficV2Response;
+import cn.ucloud.ucdn.models.PrefetchNewUcdnDomainCacheRequest;
+import cn.ucloud.ucdn.models.PrefetchNewUcdnDomainCacheResponse;
+import cn.ucloud.ucdn.models.QueryIpLocationRequest;
+import cn.ucloud.ucdn.models.QueryIpLocationResponse;
+import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheRequest;
+import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheResponse;
+import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeRequest;
+import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeResponse;
 
-/**
- * @description:
- * @author: joshua
- * @E-mail: joshua.yin@ucloud.cn
- * @date: 2020/8/6 13:43
- */
-public interface UcdnClient extends UcloudClient {
-    /**
-     * 批量刷新缓存
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    BatchRefreshNewUcdnDomainCacheResult batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param)
-            throws Exception;
-
-    /**
-     * 批量刷新缓存
-     *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void batchRefreshNewUcdnDomainCache(BatchRefreshNewUcdnDomainCacheParam param,
-                                        UcloudHandler<BatchRefreshNewUcdnDomainCacheResult> handler,
-                                        Boolean... asyncFlag);
-
-    /**
-     * 获取预取任务状态
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    DescribeNewUcdnPrefetchCacheTaskResult describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param)
-            throws Exception;
-
-    /**
-     * 获取预取任务状态
-     *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void describeNewUcdnPrefetchCacheTask(DescribeNewUcdnPrefetchCacheTaskParam param,
-                                          UcloudHandler<DescribeNewUcdnPrefetchCacheTaskResult> handler,
-                                          Boolean... asyncFlag);
-
-    /**
-     * 获取域名刷新任务状态
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    DescribeNewUcdnRefreshCacheTaskResult describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param)
-            throws Exception;
-
-    /**
-     * 获取域名刷新任务状态
-     *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void describeNewUcdnRefreshCacheTask(DescribeNewUcdnRefreshCacheTaskParam param,
-                                         UcloudHandler<DescribeNewUcdnRefreshCacheTaskResult> handler,
-                                         Boolean... asyncFlag);
+/** This client is used to call actions of **UCDN** service */
+public class UCDNClient extends DefaultClient implements UCDNClientInterface {
+    public UCDNClient(Config config, Credential credential) {
+        super(config, credential);
+    }
 
     /**
-     * 获取域名带宽数据
+     * AddCertificate - 添加证书
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/AddCertificate
      */
-    GetNewUcdnDomainBandwidthResult getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param)
-            throws Exception;
+    public AddCertificateResponse addCertificate(AddCertificateRequest request)
+            throws UCloudException {
+        request.setAction("AddCertificate");
+        return (AddCertificateResponse) this.invoke(request, AddCertificateResponse.class);
+    }
 
     /**
-     * 获取域名带宽数据
+     * DeleteCertificate - 删除证书
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/DeleteCertificate
      */
-    void getNewUcdnDomainBandwidth(GetNewUcdnDomainBandwidthParam param,
-                                   UcloudHandler<GetNewUcdnDomainBandwidthResult> handler,
-                                   Boolean... asyncFlag);
+    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request)
+            throws UCloudException {
+        request.setAction("DeleteCertificate");
+        return (DeleteCertificateResponse) this.invoke(request, DeleteCertificateResponse.class);
+    }
 
     /**
-     * 获取域名命中率
+     * DescribeNewUcdnPrefetchCacheTask - 获取预取任务状态
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/DescribeNewUcdnPrefetchCacheTask
      */
-    GetNewUcdnDomainHitRateResult getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param) throws Exception;
+    public DescribeNewUcdnPrefetchCacheTaskResponse describeNewUcdnPrefetchCacheTask(
+            DescribeNewUcdnPrefetchCacheTaskRequest request) throws UCloudException {
+        request.setAction("DescribeNewUcdnPrefetchCacheTask");
+        return (DescribeNewUcdnPrefetchCacheTaskResponse)
+                this.invoke(request, DescribeNewUcdnPrefetchCacheTaskResponse.class);
+    }
 
     /**
-     * 获取域名命中率
+     * DescribeNewUcdnRefreshCacheTask - 获取域名刷新任务状态
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/DescribeNewUcdnRefreshCacheTask
      */
-    void getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateParam param,
-                                 UcloudHandler<GetNewUcdnDomainHitRateResult> handler,
-                                 Boolean... asyncFlag);
+    public DescribeNewUcdnRefreshCacheTaskResponse describeNewUcdnRefreshCacheTask(
+            DescribeNewUcdnRefreshCacheTaskRequest request) throws UCloudException {
+        request.setAction("DescribeNewUcdnRefreshCacheTask");
+        return (DescribeNewUcdnRefreshCacheTaskResponse)
+                this.invoke(request, DescribeNewUcdnRefreshCacheTaskResponse.class);
+    }
 
     /**
-     * 获取域名状态码监控
+     * GetCertificateV2 - 获取证书列表(新)
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetCertificateV2
      */
-    GetNewUcdnDomainHttpCodeResult getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param)
-            throws Exception;
+    public GetCertificateV2Response getCertificateV2(GetCertificateV2Request request)
+            throws UCloudException {
+        request.setAction("GetCertificateV2");
+        return (GetCertificateV2Response) this.invoke(request, GetCertificateV2Response.class);
+    }
 
     /**
-     * 获取域名状态码监控
+     * GetNewUcdnDomainHitRate - 获取域名命中率
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetNewUcdnDomainHitRate
      */
-    void getNewUcdnDomainHttpCode(GetNewUcdnDomainHttpCodeParam param,
-                                  UcloudHandler<GetNewUcdnDomainHttpCodeResult> handler,
-                                  Boolean... asyncFlag);
+    public GetNewUcdnDomainHitRateResponse getNewUcdnDomainHitRate(
+            GetNewUcdnDomainHitRateRequest request) throws UCloudException {
+        request.setAction("GetNewUcdnDomainHitRate");
+        return (GetNewUcdnDomainHitRateResponse)
+                this.invoke(request, GetNewUcdnDomainHitRateResponse.class);
+    }
 
     /**
-     * 获取域名详细状态码监控
+     * GetNewUcdnLogRefererStatistics - 获取热点referer统计
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetNewUcdnLogRefererStatistics
      */
-    GetNewUcdnDomainHttpCodeV2Result getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param)
-            throws Exception;
+    public GetNewUcdnLogRefererStatisticsResponse getNewUcdnLogRefererStatistics(
+            GetNewUcdnLogRefererStatisticsRequest request) throws UCloudException {
+        request.setAction("GetNewUcdnLogRefererStatistics");
+        return (GetNewUcdnLogRefererStatisticsResponse)
+                this.invoke(request, GetNewUcdnLogRefererStatisticsResponse.class);
+    }
 
     /**
-     * 获取域名详细状态码监控
+     * GetNewUcdnLogUrlStatistics - 获取日志url统计
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetNewUcdnLogUrlStatistics
      */
-    void getNewUcdnDomainHttpCodeV2(GetNewUcdnDomainHttpCodeV2Param param,
-                                    UcloudHandler<GetNewUcdnDomainHttpCodeV2Result> handler,
-                                    Boolean... asyncFlag);
+    public GetNewUcdnLogUrlStatisticsResponse getNewUcdnLogUrlStatistics(
+            GetNewUcdnLogUrlStatisticsRequest request) throws UCloudException {
+        request.setAction("GetNewUcdnLogUrlStatistics");
+        return (GetNewUcdnLogUrlStatisticsResponse)
+                this.invoke(request, GetNewUcdnLogUrlStatisticsResponse.class);
+    }
 
     /**
-     * 获取域名请求数
+     * GetUcdnDomain95BandwidthV2 - 获取域名九五峰值带宽数据
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomain95BandwidthV2
      */
-    GetNewUcdnDomainRequestNumResult getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param)
-            throws Exception;
+    public GetUcdnDomain95BandwidthV2Response getUcdnDomain95BandwidthV2(
+            GetUcdnDomain95BandwidthV2Request request) throws UCloudException {
+        request.setAction("GetUcdnDomain95BandwidthV2");
+        return (GetUcdnDomain95BandwidthV2Response)
+                this.invoke(request, GetUcdnDomain95BandwidthV2Response.class);
+    }
 
     /**
-     * 获取域名请求数
+     * GetUcdnDomainBandwidthV2 - 获取域名带宽数据(新)
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainBandwidthV2
      */
-    void getNewUcdnDomainRequestNum(GetNewUcdnDomainRequestNumParam param,
-                                    UcloudHandler<GetNewUcdnDomainRequestNumResult> handler,
-                                    Boolean... asyncFlag);
+    public GetUcdnDomainBandwidthV2Response getUcdnDomainBandwidthV2(
+            GetUcdnDomainBandwidthV2Request request) throws UCloudException {
+        request.setAction("GetUcdnDomainBandwidthV2");
+        return (GetUcdnDomainBandwidthV2Response)
+                this.invoke(request, GetUcdnDomainBandwidthV2Response.class);
+    }
 
     /**
-     * 批量获取加速域名配置
+     * GetUcdnDomainConfig - 批量获取加速域名配置
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainConfig
      */
-    GetUcdnDomainConfigResult getUcdnDomainConfig(GetUcdnDomainConfigParam param)
-            throws Exception;
+    public GetUcdnDomainConfigResponse getUcdnDomainConfig(GetUcdnDomainConfigRequest request)
+            throws UCloudException {
+        request.setAction("GetUcdnDomainConfig");
+        return (GetUcdnDomainConfigResponse)
+                this.invoke(request, GetUcdnDomainConfigResponse.class);
+    }
 
     /**
-     * 批量获取加速域名配置
+     * GetUcdnDomainHitRate - 获取域名命中率
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainHitRate
      */
-    void getUcdnDomainConfig(GetUcdnDomainConfigParam param,
-                             UcloudHandler<GetUcdnDomainConfigResult> handler,
-                             Boolean... asyncFlag);
+    public GetUcdnDomainHitRateResponse getUcdnDomainHitRate(GetUcdnDomainHitRateRequest request)
+            throws UCloudException {
+        request.setAction("GetUcdnDomainHitRate");
+        return (GetUcdnDomainHitRateResponse)
+                this.invoke(request, GetUcdnDomainHitRateResponse.class);
+    }
 
     /**
-     * 获取加速域名原始日志
-     * 日志数据最长保留三个月。
+     * GetUcdnDomainHttpCodeV2 - 获取域名状态码信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainHttpCodeV2
      */
-    GetUcdnDomainLogResult getUcdnDomainLog(GetUcdnDomainLogParam param) throws Exception;
+    public GetUcdnDomainHttpCodeV2Response getUcdnDomainHttpCodeV2(
+            GetUcdnDomainHttpCodeV2Request request) throws UCloudException {
+        request.setAction("GetUcdnDomainHttpCodeV2");
+        return (GetUcdnDomainHttpCodeV2Response)
+                this.invoke(request, GetUcdnDomainHttpCodeV2Response.class);
+    }
 
     /**
-     * 获取加速域名原始日志
-     * 日志数据最长保留三个月。
+     * GetUcdnDomainInfoList - 获取域名基本信息
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainInfoList
      */
-    void getUcdnDomainLog(GetUcdnDomainLogParam param,
-                          UcloudHandler<GetUcdnDomainLogResult> handler,
-                          Boolean... asyncFlag);
+    public GetUcdnDomainInfoListResponse getUcdnDomainInfoList(GetUcdnDomainInfoListRequest request)
+            throws UCloudException {
+        request.setAction("GetUcdnDomainInfoList");
+        return (GetUcdnDomainInfoListResponse)
+                this.invoke(request, GetUcdnDomainInfoListResponse.class);
+    }
 
     /**
-     * 获取域名预取开启状态
+     * GetUcdnDomainLog - 获取加速域名原始日志
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainLog
      */
-    GetUcdnDomainPrefetchEnableResult getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param)
-            throws Exception;
+    public GetUcdnDomainLogResponse getUcdnDomainLog(GetUcdnDomainLogRequest request)
+            throws UCloudException {
+        request.setAction("GetUcdnDomainLog");
+        return (GetUcdnDomainLogResponse) this.invoke(request, GetUcdnDomainLogResponse.class);
+    }
 
     /**
-     * 获取域名预取开启状态
+     * GetUcdnDomainOriginHttpCode - 获取域名源站状态码监控
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainOriginHttpCode
      */
-    void getUcdnDomainPrefetchEnable(GetUcdnDomainPrefetchEnableParam param,
-                                     UcloudHandler<GetUcdnDomainPrefetchEnableResult> handler,
-                                     Boolean... asyncFlag);
+    public GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
+            GetUcdnDomainOriginHttpCodeRequest request) throws UCloudException {
+        request.setAction("GetUcdnDomainOriginHttpCode");
+        return (GetUcdnDomainOriginHttpCodeResponse)
+                this.invoke(request, GetUcdnDomainOriginHttpCodeResponse.class);
+    }
 
     /**
-     * 获取域名请求数
+     * GetUcdnDomainOriginHttpCodeDetail - 获取域名源站详细状态码监控
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainOriginHttpCodeDetail
      */
-    GetUcdnDomainRequestNumV2Result getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param)
-            throws Exception;
+    public GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
+            GetUcdnDomainOriginHttpCodeDetailRequest request) throws UCloudException {
+        request.setAction("GetUcdnDomainOriginHttpCodeDetail");
+        return (GetUcdnDomainOriginHttpCodeDetailResponse)
+                this.invoke(request, GetUcdnDomainOriginHttpCodeDetailResponse.class);
+    }
 
     /**
-     * 获取域名请求数
+     * GetUcdnDomainOriginRequestNum - 获取域名回源请求数
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainOriginRequestNum
      */
-    void getUcdnDomainRequestNumV2(GetUcdnDomainRequestNumV2Param param,
-                                   UcloudHandler<GetUcdnDomainRequestNumV2Result> handler,
-                                   Boolean... asyncFlag);
+    public GetUcdnDomainOriginRequestNumResponse getUcdnDomainOriginRequestNum(
+            GetUcdnDomainOriginRequestNumRequest request) throws UCloudException {
+        request.setAction("GetUcdnDomainOriginRequestNum");
+        return (GetUcdnDomainOriginRequestNumResponse)
+                this.invoke(request, GetUcdnDomainOriginRequestNumResponse.class);
+    }
 
     /**
-     * 获取加速域名流量使用信息
+     * GetUcdnDomainPrefetchEnable - 获取域名预取开启状态
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainPrefetchEnable
      */
-    GetUcdnDomainTrafficResult getUcdnDomainTraffic(GetUcdnDomainTrafficParam param)
-            throws Exception;
+    public GetUcdnDomainPrefetchEnableResponse getUcdnDomainPrefetchEnable(
+            GetUcdnDomainPrefetchEnableRequest request) throws UCloudException {
+        request.setAction("GetUcdnDomainPrefetchEnable");
+        return (GetUcdnDomainPrefetchEnableResponse)
+                this.invoke(request, GetUcdnDomainPrefetchEnableResponse.class);
+    }
 
     /**
-     * 获取加速域名流量使用信息
+     * GetUcdnDomainRequestNumV3 - 获取域名请求数
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainRequestNumV3
      */
-    void getUcdnDomainTraffic(GetUcdnDomainTrafficParam param,
-                              UcloudHandler<GetUcdnDomainTrafficResult> handler,
-                              Boolean... asyncFlag);
+    public GetUcdnDomainRequestNumV3Response getUcdnDomainRequestNumV3(
+            GetUcdnDomainRequestNumV3Request request) throws UCloudException {
+        request.setAction("GetUcdnDomainRequestNumV3");
+        return (GetUcdnDomainRequestNumV3Response)
+                this.invoke(request, GetUcdnDomainRequestNumV3Response.class);
+    }
 
     /**
-     * 获取回源带宽数据（按时间分类）
+     * GetUcdnPassBandwidthV2 - 获取回源带宽数据（cdn回客户源站部分）
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnPassBandwidthV2
      */
-    GetUcdnPassBandwidthResult getUcdnPassBandwidth(GetUcdnPassBandwidthParam param)
-            throws Exception;
+    public GetUcdnPassBandwidthV2Response getUcdnPassBandwidthV2(
+            GetUcdnPassBandwidthV2Request request) throws UCloudException {
+        request.setAction("GetUcdnPassBandwidthV2");
+        return (GetUcdnPassBandwidthV2Response)
+                this.invoke(request, GetUcdnPassBandwidthV2Response.class);
+    }
 
     /**
-     * 获取回源带宽数据（按时间分类）
+     * GetUcdnProIspBandwidthV2 - 按省份运营商获取域名带宽数据
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnProIspBandwidthV2
      */
-    void getUcdnPassBandwidth(GetUcdnPassBandwidthParam param,
-                              UcloudHandler<GetUcdnPassBandwidthResult> handler,
-                              Boolean... asyncFlag);
+    public GetUcdnProIspBandwidthV2Response getUcdnProIspBandwidthV2(
+            GetUcdnProIspBandwidthV2Request request) throws UCloudException {
+        request.setAction("GetUcdnProIspBandwidthV2");
+        return (GetUcdnProIspBandwidthV2Response)
+                this.invoke(request, GetUcdnProIspBandwidthV2Response.class);
+    }
 
     /**
-     * 获取流量信息
+     * GetUcdnProIspRequestNumV2 - 按省份运营商获取域名请求数
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnProIspRequestNumV2
      */
-    GetUcdnTrafficResult getUcdnTraffic(GetUcdnTrafficParam param) throws Exception;
+    public GetUcdnProIspRequestNumV2Response getUcdnProIspRequestNumV2(
+            GetUcdnProIspRequestNumV2Request request) throws UCloudException {
+        request.setAction("GetUcdnProIspRequestNumV2");
+        return (GetUcdnProIspRequestNumV2Response)
+                this.invoke(request, GetUcdnProIspRequestNumV2Response.class);
+    }
 
     /**
-     * 获取流量信息
+     * GetUcdnTrafficV2 - 获取流量信息
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnTrafficV2
      */
-    void getUcdnTraffic(GetUcdnTrafficParam param,
-                        UcloudHandler<GetUcdnTrafficResult> handler,
-                        Boolean... asyncFlag);
+    public GetUcdnTrafficV2Response getUcdnTrafficV2(GetUcdnTrafficV2Request request)
+            throws UCloudException {
+        request.setAction("GetUcdnTrafficV2");
+        return (GetUcdnTrafficV2Response) this.invoke(request, GetUcdnTrafficV2Response.class);
+    }
 
     /**
-     * 提交预取任务
+     * PrefetchNewUcdnDomainCache - 提交预取任务
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/PrefetchNewUcdnDomainCache
      */
-    PrefetchNewUcdnDomainCacheResult prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param)
-            throws Exception;
+    public PrefetchNewUcdnDomainCacheResponse prefetchNewUcdnDomainCache(
+            PrefetchNewUcdnDomainCacheRequest request) throws UCloudException {
+        request.setAction("PrefetchNewUcdnDomainCache");
+        return (PrefetchNewUcdnDomainCacheResponse)
+                this.invoke(request, PrefetchNewUcdnDomainCacheResponse.class);
+    }
 
     /**
-     * 提交预取任务
+     * QueryIpLocation - 查询IP信息
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/QueryIpLocation
      */
-    void prefetchNewUcdnDomainCache(PrefetchNewUcdnDomainCacheParam param,
-                                    UcloudHandler<PrefetchNewUcdnDomainCacheResult> handler,
-                                    Boolean... asyncFlag);
+    public QueryIpLocationResponse queryIpLocation(QueryIpLocationRequest request)
+            throws UCloudException {
+        request.setAction("QueryIpLocation");
+        return (QueryIpLocationResponse) this.invoke(request, QueryIpLocationResponse.class);
+    }
 
     /**
-     * 刷新缓存
+     * RefreshNewUcdnDomainCache - 刷新缓存
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/RefreshNewUcdnDomainCache
      */
-    RefreshNewUcdnDomainCacheResult refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param)
-            throws Exception;
+    public RefreshNewUcdnDomainCacheResponse refreshNewUcdnDomainCache(
+            RefreshNewUcdnDomainCacheRequest request) throws UCloudException {
+        request.setAction("RefreshNewUcdnDomainCache");
+        return (RefreshNewUcdnDomainCacheResponse)
+                this.invoke(request, RefreshNewUcdnDomainCacheResponse.class);
+    }
 
     /**
-     * 刷新缓存
+     * SwitchUcdnChargeType - 切换账号计费方式
      *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/SwitchUcdnChargeType
      */
-    void refreshNewUcdnDomainCache(RefreshNewUcdnDomainCacheParam param,
-                                   UcloudHandler<RefreshNewUcdnDomainCacheResult> handler,
-                                   Boolean... asyncFlag);
-
-    /**
-     * 切换账号计费方式
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    BaseResponseResult switchUcdnChargeType(SwitchUcdnChargeTypeParam param)
-            throws Exception;
-
-    /**
-     * 切换账号计费方式
-     *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void switchUcdnChargeType(SwitchUcdnChargeTypeParam param,
-                              UcloudHandler<BaseResponseResult> handler,
-                              Boolean... asyncFlag);
+    public SwitchUcdnChargeTypeResponse switchUcdnChargeType(SwitchUcdnChargeTypeRequest request)
+            throws UCloudException {
+        request.setAction("SwitchUcdnChargeType");
+        return (SwitchUcdnChargeTypeResponse)
+                this.invoke(request, SwitchUcdnChargeTypeResponse.class);
+    }
 }

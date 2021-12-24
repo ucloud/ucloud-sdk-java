@@ -5,23 +5,18 @@
     <parent>
         <artifactId>ucloud-sdk-java</artifactId>
         <groupId>cn.ucloud</groupId>
-        <version>0.8.4.4-release</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>ucloud-sdk-java-vpc</artifactId>
-    <version>0.8.4.4-release</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>cn.ucloud</groupId>
             <artifactId>ucloud-sdk-java-common</artifactId>
-            <version>0.8.4.4-release</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
@@ -29,6 +24,10 @@
             <artifactId>gson</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -45,13 +44,5 @@
             <artifactId>slf4j-simple</artifactId>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.skyscreamer</groupId>
-            <artifactId>jsonassert</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
-
-
 </project>

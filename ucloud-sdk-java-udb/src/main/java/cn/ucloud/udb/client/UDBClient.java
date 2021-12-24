@@ -1,1405 +1,814 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.udb.client;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.BaseRequestParam;
-import cn.ucloud.udb.model.*;
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.udb.models.BackupUDBInstanceBinlogRequest;
+import cn.ucloud.udb.models.BackupUDBInstanceBinlogResponse;
+import cn.ucloud.udb.models.BackupUDBInstanceErrorLogRequest;
+import cn.ucloud.udb.models.BackupUDBInstanceErrorLogResponse;
+import cn.ucloud.udb.models.BackupUDBInstanceRequest;
+import cn.ucloud.udb.models.BackupUDBInstanceResponse;
+import cn.ucloud.udb.models.BackupUDBInstanceSlowLogRequest;
+import cn.ucloud.udb.models.BackupUDBInstanceSlowLogResponse;
+import cn.ucloud.udb.models.ChangeUDBParamGroupRequest;
+import cn.ucloud.udb.models.ChangeUDBParamGroupResponse;
+import cn.ucloud.udb.models.CheckRecoverUDBInstanceRequest;
+import cn.ucloud.udb.models.CheckRecoverUDBInstanceResponse;
+import cn.ucloud.udb.models.CheckUDBInstanceToHAAllowanceRequest;
+import cn.ucloud.udb.models.CheckUDBInstanceToHAAllowanceResponse;
+import cn.ucloud.udb.models.ClearUDBLogRequest;
+import cn.ucloud.udb.models.ClearUDBLogResponse;
+import cn.ucloud.udb.models.CreateMongoDBReplicaSetRequest;
+import cn.ucloud.udb.models.CreateMongoDBReplicaSetResponse;
+import cn.ucloud.udb.models.CreateUDBInstanceByRecoveryRequest;
+import cn.ucloud.udb.models.CreateUDBInstanceByRecoveryResponse;
+import cn.ucloud.udb.models.CreateUDBInstanceRequest;
+import cn.ucloud.udb.models.CreateUDBInstanceResponse;
+import cn.ucloud.udb.models.CreateUDBParamGroupRequest;
+import cn.ucloud.udb.models.CreateUDBParamGroupResponse;
+import cn.ucloud.udb.models.CreateUDBReplicationInstanceRequest;
+import cn.ucloud.udb.models.CreateUDBReplicationInstanceResponse;
+import cn.ucloud.udb.models.CreateUDBRouteInstanceRequest;
+import cn.ucloud.udb.models.CreateUDBRouteInstanceResponse;
+import cn.ucloud.udb.models.CreateUDBSlaveRequest;
+import cn.ucloud.udb.models.CreateUDBSlaveResponse;
+import cn.ucloud.udb.models.DeleteUDBInstanceRequest;
+import cn.ucloud.udb.models.DeleteUDBInstanceResponse;
+import cn.ucloud.udb.models.DeleteUDBLogPackageRequest;
+import cn.ucloud.udb.models.DeleteUDBLogPackageResponse;
+import cn.ucloud.udb.models.DeleteUDBParamGroupRequest;
+import cn.ucloud.udb.models.DeleteUDBParamGroupResponse;
+import cn.ucloud.udb.models.DescribeUDBBackupBlacklistRequest;
+import cn.ucloud.udb.models.DescribeUDBBackupBlacklistResponse;
+import cn.ucloud.udb.models.DescribeUDBBackupRequest;
+import cn.ucloud.udb.models.DescribeUDBBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLRequest;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceBackupStateRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceBackupStateResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceBackupURLRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceBackupURLResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceBinlogBackupStateRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceBinlogBackupStateResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceBinlogRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceBinlogResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceLogRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceLogResponse;
+import cn.ucloud.udb.models.DescribeUDBInstancePriceRequest;
+import cn.ucloud.udb.models.DescribeUDBInstancePriceResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceStateRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceStateResponse;
+import cn.ucloud.udb.models.DescribeUDBInstanceUpgradePriceRequest;
+import cn.ucloud.udb.models.DescribeUDBInstanceUpgradePriceResponse;
+import cn.ucloud.udb.models.DescribeUDBLogBackupURLRequest;
+import cn.ucloud.udb.models.DescribeUDBLogBackupURLResponse;
+import cn.ucloud.udb.models.DescribeUDBLogPackageRequest;
+import cn.ucloud.udb.models.DescribeUDBLogPackageResponse;
+import cn.ucloud.udb.models.DescribeUDBParamGroupRequest;
+import cn.ucloud.udb.models.DescribeUDBParamGroupResponse;
+import cn.ucloud.udb.models.DescribeUDBSplittingInfoRequest;
+import cn.ucloud.udb.models.DescribeUDBSplittingInfoResponse;
+import cn.ucloud.udb.models.DescribeUDBTypeRequest;
+import cn.ucloud.udb.models.DescribeUDBTypeResponse;
+import cn.ucloud.udb.models.DisableUDBRWSplittingRequest;
+import cn.ucloud.udb.models.DisableUDBRWSplittingResponse;
+import cn.ucloud.udb.models.EditUDBBackupBlacklistRequest;
+import cn.ucloud.udb.models.EditUDBBackupBlacklistResponse;
+import cn.ucloud.udb.models.EnableUDBRWSplittingRequest;
+import cn.ucloud.udb.models.EnableUDBRWSplittingResponse;
+import cn.ucloud.udb.models.ExtractUDBParamGroupRequest;
+import cn.ucloud.udb.models.ExtractUDBParamGroupResponse;
+import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeRequest;
+import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeResponse;
+import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
+import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
+import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
+import cn.ucloud.udb.models.ModifyUDBInstancePasswordResponse;
+import cn.ucloud.udb.models.PromoteUDBInstanceToHARequest;
+import cn.ucloud.udb.models.PromoteUDBInstanceToHAResponse;
+import cn.ucloud.udb.models.PromoteUDBSlaveRequest;
+import cn.ucloud.udb.models.PromoteUDBSlaveResponse;
+import cn.ucloud.udb.models.ResizeUDBInstanceRequest;
+import cn.ucloud.udb.models.ResizeUDBInstanceResponse;
+import cn.ucloud.udb.models.RestartRWSplittingRequest;
+import cn.ucloud.udb.models.RestartRWSplittingResponse;
+import cn.ucloud.udb.models.RestartUDBInstanceRequest;
+import cn.ucloud.udb.models.RestartUDBInstanceResponse;
+import cn.ucloud.udb.models.SetUDBRWSplittingRequest;
+import cn.ucloud.udb.models.SetUDBRWSplittingResponse;
+import cn.ucloud.udb.models.StartUDBInstanceRequest;
+import cn.ucloud.udb.models.StartUDBInstanceResponse;
+import cn.ucloud.udb.models.StopUDBInstanceRequest;
+import cn.ucloud.udb.models.StopUDBInstanceResponse;
+import cn.ucloud.udb.models.SwitchUDBHAToSentinelRequest;
+import cn.ucloud.udb.models.SwitchUDBHAToSentinelResponse;
+import cn.ucloud.udb.models.SwitchUDBInstanceToHARequest;
+import cn.ucloud.udb.models.SwitchUDBInstanceToHAResponse;
+import cn.ucloud.udb.models.UpdateUDBInstanceBackupStrategyRequest;
+import cn.ucloud.udb.models.UpdateUDBInstanceBackupStrategyResponse;
+import cn.ucloud.udb.models.UpdateUDBInstanceSlaveBackupSwitchRequest;
+import cn.ucloud.udb.models.UpdateUDBInstanceSlaveBackupSwitchResponse;
+import cn.ucloud.udb.models.UpdateUDBParamGroupRequest;
+import cn.ucloud.udb.models.UpdateUDBParamGroupResponse;
+import cn.ucloud.udb.models.UpgradeUDBInstanceToHARequest;
+import cn.ucloud.udb.models.UpgradeUDBInstanceToHAResponse;
+import cn.ucloud.udb.models.UploadUDBParamGroupRequest;
+import cn.ucloud.udb.models.UploadUDBParamGroupResponse;
 
-public interface UDBClient extends UcloudClient {
+/** This client is used to call actions of **UDB** service */
+public class UDBClient extends DefaultClient implements UDBClientInterface {
+    public UDBClient(Config config, Credential credential) {
+        super(config, credential);
+    }
 
     /**
-     * 备份云数据库
+     * BackupUDBInstance - 备份UDB实例
      *
-     * @param param 数据库备份参数对象
-     * @return 数据库备份结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstance
      */
-    BackupUDBInstanceResult backupUDBInstance(BackupUDBInstanceParam param) throws Exception;
+    public BackupUDBInstanceResponse backupUDBInstance(BackupUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("BackupUDBInstance");
+        return (BackupUDBInstanceResponse) this.invoke(request, BackupUDBInstanceResponse.class);
+    }
 
     /**
-     * 备份云数据库 (回调)
+     * BackupUDBInstanceBinlog - 备份UDB指定时间段的binlog列表
      *
-     * @param param     数据库备份参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceBinlog
      */
-    void backupUDBInstance(BackupUDBInstanceParam param, UcloudHandler<BackupUDBInstanceResult> handler,
-                           Boolean... asyncFlag);
+    public BackupUDBInstanceBinlogResponse backupUDBInstanceBinlog(
+            BackupUDBInstanceBinlogRequest request) throws UCloudException {
+        request.setAction("BackupUDBInstanceBinlog");
+        return (BackupUDBInstanceBinlogResponse)
+                this.invoke(request, BackupUDBInstanceBinlogResponse.class);
+    }
 
     /**
-     * 备份UDB指定时间段的binlog列表
+     * BackupUDBInstanceErrorLog - 备份UDB指定时间段的errorlog
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceErrorLog
      */
-    BackupUDBInstanceBinlogResult backupUDBInstanceBinlog(BackupUDBInstanceBinlogParam param) throws Exception;
+    public BackupUDBInstanceErrorLogResponse backupUDBInstanceErrorLog(
+            BackupUDBInstanceErrorLogRequest request) throws UCloudException {
+        request.setAction("BackupUDBInstanceErrorLog");
+        return (BackupUDBInstanceErrorLogResponse)
+                this.invoke(request, BackupUDBInstanceErrorLogResponse.class);
+    }
 
     /**
-     * 备份UDB指定时间段的binlog列表
+     * BackupUDBInstanceSlowLog - 备份UDB指定时间段的slowlog分析结果
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceSlowLog
      */
-    void backupUDBInstanceBinlog(BackupUDBInstanceBinlogParam param, UcloudHandler<BackupUDBInstanceBinlogResult> handler,
-                           Boolean... asyncFlag);
+    public BackupUDBInstanceSlowLogResponse backupUDBInstanceSlowLog(
+            BackupUDBInstanceSlowLogRequest request) throws UCloudException {
+        request.setAction("BackupUDBInstanceSlowLog");
+        return (BackupUDBInstanceSlowLogResponse)
+                this.invoke(request, BackupUDBInstanceSlowLogResponse.class);
+    }
 
     /**
-     * 备份UDB指定时间段的errorlog
+     * ChangeUDBParamGroup - 修改配置文件
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/ChangeUDBParamGroup
      */
-    BackupUDBInstanceErrorLogResult backupUDBInstanceErrorLog(BackupUDBInstanceErrorLogParam param) throws Exception;
+    public ChangeUDBParamGroupResponse changeUDBParamGroup(ChangeUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("ChangeUDBParamGroup");
+        return (ChangeUDBParamGroupResponse)
+                this.invoke(request, ChangeUDBParamGroupResponse.class);
+    }
 
     /**
-     * 备份UDB指定时间段的errorlog
+     * CheckRecoverUDBInstance - 核查db是否可以使用回档功能
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CheckRecoverUDBInstance
      */
-    void backupUDBInstanceErrorLog(BackupUDBInstanceErrorLogParam param,
-                                   UcloudHandler<BackupUDBInstanceErrorLogResult> handler,
-                                   Boolean... asyncFlag);
+    public CheckRecoverUDBInstanceResponse checkRecoverUDBInstance(
+            CheckRecoverUDBInstanceRequest request) throws UCloudException {
+        request.setAction("CheckRecoverUDBInstance");
+        return (CheckRecoverUDBInstanceResponse)
+                this.invoke(request, CheckRecoverUDBInstanceResponse.class);
+    }
 
     /**
-     * 备份UDB指定时间段的slowlog分析结果
+     * CheckUDBInstanceToHAAllowance - 核查db是否可以升级为高可用
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CheckUDBInstanceToHAAllowance
      */
-    BackupUDBInstanceSlowLogResult backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param) throws Exception;
+    public CheckUDBInstanceToHAAllowanceResponse checkUDBInstanceToHAAllowance(
+            CheckUDBInstanceToHAAllowanceRequest request) throws UCloudException {
+        request.setAction("CheckUDBInstanceToHAAllowance");
+        return (CheckUDBInstanceToHAAllowanceResponse)
+                this.invoke(request, CheckUDBInstanceToHAAllowanceResponse.class);
+    }
 
     /**
-     * 备份UDB指定时间段的slowlog分析结果
+     * ClearUDBLog - 清除UDB实例的log
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/ClearUDBLog
      */
-    void backupUDBInstanceSlowLog(BackupUDBInstanceSlowLogParam param,
-                                  UcloudHandler<BackupUDBInstanceSlowLogResult> handler,
-                                  Boolean... asyncFlag);
+    public ClearUDBLogResponse clearUDBLog(ClearUDBLogRequest request) throws UCloudException {
+        request.setAction("ClearUDBLog");
+        return (ClearUDBLogResponse) this.invoke(request, ClearUDBLogResponse.class);
+    }
 
     /**
-     * 修改配置文件
+     * CreateMongoDBReplicaSet - 一键创建DB副本集
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateMongoDBReplicaSet
      */
-    ChangeUDBParamGroupResult changeUDBParamGroup(ChangeUDBParamGroupParam param) throws Exception;
+    public CreateMongoDBReplicaSetResponse createMongoDBReplicaSet(
+            CreateMongoDBReplicaSetRequest request) throws UCloudException {
+        request.setAction("CreateMongoDBReplicaSet");
+        return (CreateMongoDBReplicaSetResponse)
+                this.invoke(request, CreateMongoDBReplicaSetResponse.class);
+    }
 
     /**
-     * 修改配置文件
+     * CreateUDBInstance - 创建UDB实例（包括创建mysql master节点、mongodb primary/configsvr节点和从备份恢复实例）
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBInstance
      */
-    void changeUDBParamGroup(ChangeUDBParamGroupParam param, UcloudHandler<ChangeUDBParamGroupResult> handler,
-                             Boolean... asyncFlag);
+    public CreateUDBInstanceResponse createUDBInstance(CreateUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("CreateUDBInstance");
+        return (CreateUDBInstanceResponse) this.invoke(request, CreateUDBInstanceResponse.class);
+    }
 
-
-    /**
-     * 核查db是否可以使用回档功能
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckRecoverUDBInstanceResult checkRecoverUDBInstance(CheckRecoverUDBInstanceParam param) throws Exception;
-
-    /**
-     * 核查db是否可以使用回档功能
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkRecoverUDBInstance(CheckRecoverUDBInstanceParam param,
-                                 UcloudHandler<CheckRecoverUDBInstanceResult> handler,
-                                 Boolean... asyncFlag);
-
-    /**
-     * 检查数据库是否存在某种引擎的表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckUDBEngineResult checkUDBEngine(CheckUDBEngineParam param) throws Exception;
-
-    /**
-     * 检查数据库是否存在某种引擎的表
-     *
-     * @param param     参数对象
-     * @param handler   回调对象
-     * @param asyncFlag 是否异步
-     */
-    void checkUDBEngine(CheckUDBEngineParam param, UcloudHandler<CheckUDBEngineResult> handler,
-                        Boolean... asyncFlag);
-
-    /**
-     * 核查UDB资源余量
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckUDBInstanceAllowanceResult checkUDBInstanceAllowance(CheckUDBInstanceAllowanceParam param)
-            throws Exception;
-
-    /**
-     * 核查UDB资源余量
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkUDBInstanceAllowance(CheckUDBInstanceAllowanceParam param,
-                                   UcloudHandler<CheckUDBInstanceAllowanceResult> handler,
-                                   Boolean... asyncFlag);
-
-    /**
-     * 检测ucloudbackup账号连通性
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckUDBInstanceConnectionResult checkUDBInstanceConnection(CheckUDBInstanceConnectionParam param)
-            throws Exception;
-
-    /**
-     * 检测ucloudbackup账号连通性
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag
-     */
-    void checkUDBInstanceConnection(CheckUDBInstanceConnectionParam param,
-                                    UcloudHandler<CheckUDBInstanceConnectionResult> handler,
-                                    Boolean... asyncFlag);
-
-    /**
-     * 核查db是否可以升级为高可用
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckUDBInstanceToHAAllowanceResult checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceParam param)
-            throws Exception;
-
-    /**
-     * 核查db是否可以升级为高可用
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkUDBInstanceToHAAllowance(CheckUDBInstanceToHAAllowanceParam param,
-                                       UcloudHandler<CheckUDBInstanceToHAAllowanceResult> handler,
-                                       Boolean... asyncFlag);
-
-    /**
-     * 清除UDB实例的log
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ClearUDBLogResult clearUDBLog(ClearUDBLogParam param) throws Exception;
-
-    /**
-     * 清除UDB实例的log
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void clearUDBLog(ClearUDBLogParam param, UcloudHandler<ClearUDBLogResult> handler, Boolean... asyncFlag);
-
-
-    /**
-     * 创建DB副本集
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateMongoDBReplicaSetResult createMongoDBReplicaSet(CreateMongoDBReplicaSetParam param) throws Exception;
-
-    /**
-     * 创建DB副本集
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createMongoDBReplicaSet(CreateMongoDBReplicaSetParam param,
-                                 UcloudHandler<CreateMongoDBReplicaSetResult> handler,
-                                 Boolean... asyncFlag);
-
-    /**
-     * 创建数据库
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBInstanceResult createUDBInstance(CreateUDBInstanceParam param) throws Exception;
-
-    /**
-     * 创建数据库
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBInstance(CreateUDBInstanceParam param, UcloudHandler<CreateUDBInstanceResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 将新创建的db恢复到指定db某个指定时间点
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBInstanceByRecoveryResult createUDBInstanceByRecovery(CreateUDBInstanceByRecoveryParam param)
-            throws Exception;
-
-    /**
-     * 将新创建的db恢复到指定db某个指定时间点
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBInstanceByRecovery(CreateUDBInstanceByRecoveryParam param,
-                                     UcloudHandler<CreateUDBInstanceByRecoveryResult> handler,
-                                     Boolean... asyncFlag);
-
-
-    /**
-     * 从已有配置文件创建新配置文件
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBParamGroupResult createUDBParamGroup(CreateUDBParamGroupParam param) throws Exception;
-
-
-    /**
-     * 从已有配置文件创建新配置文件
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBParamGroup(CreateUDBParamGroupParam param, UcloudHandler<CreateUDBParamGroupResult> handler,
-                             Boolean... asyncFlag);
-
-    /**
-     * 创建MongoDB的副本节点
-     *
-     * @param param 对象参数
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBReplicationInstanceResult createUDBReplicationInstance(CreateUDBReplicationInstanceParam param)
-            throws Exception;
-
-    /**
-     * 创建MongoDB的副本节点
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBReplicationInstance(CreateUDBReplicationInstanceParam param,
-                                      UcloudHandler<CreateUDBReplicationInstanceResult> handler,
-                                      Boolean... asyncFlag);
-
-    /**
-     * 创建mongos实例
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBRouteInstanceResult createUDBRouteInstance(CreateUDBRouteInstanceParam param) throws Exception;
-
-
-    /**
-     * 创建mongos实例
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBRouteInstance(CreateUDBRouteInstanceParam param,
-                                UcloudHandler<CreateUDBRouteInstanceResult> handler,
-                                Boolean... asyncFlag);
-
-    /**
-     * 创建UDB实例的slave
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUDBSlaveResult createUDBSlave(CreateUDBSlaveParam param) throws Exception;
-
-
-    /**
-     * 创建UDB实例的slave
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUDBSlave(CreateUDBSlaveParam param, UcloudHandler<CreateUDBSlaveResult> handler,
-                        Boolean... asyncFlag);
-
-
-    /**
-     * 删除UDB实例备份
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUDBBackupResult deleteUDBBackup(DeleteUDBBackupParam param) throws Exception;
-
-    /**
-     * 删除UDB实例备份
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUDBBackup(DeleteUDBBackupParam param, UcloudHandler<DeleteUDBBackupResult> handler,
-                         Boolean... asyncFlag);
-
-    /**
-     * 删除云数据库
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUDBInstanceResult deleteUDBInstance(DeleteUDBInstanceParam param) throws Exception;
-
-    /**
-     * 删除云数据库
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUDBInstance(DeleteUDBInstanceParam param, UcloudHandler<DeleteUDBInstanceResult> handler,
-                           Boolean asyncFlag);
-
-
-    /**
-     * 删除UDB日志包
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUDBLogPackageResult deleteUDBLogPackage(DeleteUDBLogPackageParam param) throws Exception;
-
-
-    /**
-     * 删除UDB日志包
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUDBLogPackage(DeleteUDBLogPackageParam param,
-                             UcloudHandler<DeleteUDBLogPackageResult> handler,
-                             Boolean... asyncFlag);
-
-    /**
-     * 删除配置
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUDBParamGroupResult deleteUDBParamGroup(DeleteUDBParamGroupParam param) throws Exception;
-
-    /**
-     * 删除配置
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUDBParamGroup(DeleteUDBParamGroupParam param,
-                             UcloudHandler<DeleteUDBParamGroupResult> handler,
-                             Boolean... asyncFlag);
-
-
-    /**
-     * 获取单点升级高可用实例的差价
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribePromoteToHAPriceResult describePromoteToHAPrice(DescribePromoteToHAPriceParam param) throws Exception;
-
-    /**
-     * 获取单点升级高可用实例的差价
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describePromoteToHAPrice(DescribePromoteToHAPriceParam param,
-                                  UcloudHandler<DescribePromoteToHAPriceResult> handler,
-                                  Boolean... asyncFlag);
-
-    /**
-     * 获取备份列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBBackupResult describeUDBBackup(DescribeUDBBackupParam param) throws Exception;
-
-    /**
-     * 获取备份列表
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBBackup(DescribeUDBBackupParam param, UcloudHandler<DescribeUDBBackupResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 获取UDB实例的备份黑名单
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBBackupBlacklistResult describeUDBBackupBlacklist(DescribeUDBBackupBlacklistParam param) throws Exception;
-
-    /**
-     * 获取UDB实例的备份黑名单
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBBackupBlacklist(DescribeUDBBackupBlacklistParam param,
-                                    UcloudHandler<DescribeUDBBackupBlacklistResult> handler,
-                                    Boolean... asyncFlag);
-
-    /**
-     * 获取UDB的Binlog备份地址
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBBinlogBackupURLResult describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLParam param) throws Exception;
-
-    /**
-     * 获取UDB的Binlog备份地址
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBBinlogBackupURL(DescribeUDBBinlogBackupURLParam param,
-                                    UcloudHandler<DescribeUDBBinlogBackupURLResult> handler,
-                                    Boolean... asyncFlag);
-
-    /**
-     * 获取云数据库信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceResult describeUDBInstance(DescribeUDBInstanceParam param) throws Exception;
-
-    /**
-     * 获取云数据库信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstance(DescribeUDBInstanceParam param, UcloudHandler<DescribeUDBInstanceResult> handler,
-                             Boolean... asyncFlag);
-
-    /**
-     * 获取UDB实例备份状态
-     *
-     * @param param
-     * @return
-     * @throws Exception
-     */
-    DescribeUDBInstanceBackupStateResult describeUDBInstanceBackupState(DescribeUDBInstanceBackupStateParam param)
-            throws Exception;
-
-    /**
-     * 获取UDB实例备份状态
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceBackupState(DescribeUDBInstanceBackupStateParam param,
-                                        UcloudHandler<DescribeUDBInstanceBackupStateResult> handler,
-                                        Boolean... asyncFlag);
-
-    /**
-     * 获取UDB备份下载地址
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceBackupURLResult describeUDBInstanceBackupURL(DescribeUDBInstanceBackupURLParam param)
-            throws Exception;
-
-    /**
-     * 获取UDB备份下载地址
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceBackupURL(DescribeUDBInstanceBackupURLParam param,
-                                      UcloudHandler<DescribeUDBInstanceBackupURLResult> handler,
-                                      Boolean... asyncFlag);
-
-    /**
-     * 获取UDBBinlog列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceBinlogResult describeUDBInstanceBinlog(DescribeUDBInstanceBinlogParam param) throws Exception;
-
-    /**
-     * 获取UDBBinlog列表
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceBinlog(DescribeUDBInstanceBinlogParam param,
-                                   UcloudHandler<DescribeUDBInstanceBinlogResult> handler,
-                                   Boolean... asyncFlag);
-
-    /**
-     * 获取udb实例备份状态
-     *
-     * @param param 参数对象
-     * @return
-     * @throws Exception
-     */
-    DescribeUDBInstanceBinlogBackupStateResult describeUDBInstanceBinlogBackupState(
-            DescribeUDBInstanceBinlogBackupStateParam param) throws Exception;
-
-    /**
-     * 获取udb实例备份状态
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceBinlogBackupState(DescribeUDBInstanceBinlogBackupStateParam param,
-                                              UcloudHandler<DescribeUDBInstanceBinlogBackupStateResult> handler,
-                                              Boolean... asyncFlag);
-
-    /**
-     * 根据备份获取UDB实例信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceByBackupResult describeUDBInstanceByBackup(DescribeUDBInstanceByBackupParam param)
-            throws Exception;
-
-    /**
-     * 根据备份获取UDB实例信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceByBackup(DescribeUDBInstanceByBackupParam param,
-                                              UcloudHandler<DescribeUDBInstanceByBackupResult> handler,
-                                              Boolean... asyncFlag);
-
-    /**
-     * 根据配置文件获取UDB实例信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceByParamGroupResult describeUDBInstanceByParamGroup(DescribeUDBInstanceByParamGroupParam param)
-            throws Exception;
-
-    /**
-     * 根据配置文件获取UDB实例信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceByParamGroup(DescribeUDBInstanceByParamGroupParam param,
-                                         UcloudHandler<DescribeUDBInstanceByParamGroupResult> handler,
-                                         Boolean... asyncFlag);
-
-    /**
-     * 获取UDB错误日志或慢查询日志
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceLogResult describeUDBInstanceLog(DescribeUDBInstanceLogParam param) throws Exception;
-
-    /**
-     * 获取UDB错误日志或慢查询日志
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceLog(DescribeUDBInstanceLogParam param,
-                                     UcloudHandler<DescribeUDBInstanceLogResult> handler,
-                                     Boolean... asyncFlag);
-
-    /**
-     * 获取UDB实例的PhpMyAdmin地址
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstancePhpMyAdminURLResult describeUDBInstancePhpMyAdminURL(DescribeUDBInstancePhpMyAdminURLParam param)
-            throws Exception;
-
-    /**
-     * 获取UDB实例的PhpMyAdmin地址
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstancePhpMyAdminURL(DescribeUDBInstancePhpMyAdminURLParam param,
-                                          UcloudHandler<DescribeUDBInstancePhpMyAdminURLResult> handler,
-                                          Boolean... asyncFlag);
-
-
-    /**
-     * 获取云数据库价格
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstancePriceResult describeUDBInstancePrice(DescribeUDBInstancePriceParam param)
-            throws Exception;
-
-    /**
-     * 获取云数据库价格
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstancePrice(DescribeUDBInstancePriceParam param,
-                                  UcloudHandler<DescribeUDBInstancePriceResult> handler,
-                                  Boolean... asyncFlag);
-
-    /**
-     * 获取UDB实例状态
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceStateResult describeUDBInstanceState(DescribeUDBInstanceStateParam param)
-            throws Exception;
-
-    /**
-     * 获取UDB实例状态
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceState(DescribeUDBInstanceStateParam param,
-                                  UcloudHandler<DescribeUDBInstanceStateResult> handler,
-                                  Boolean... asyncFlag);
-
-    /**
-     * 获取UDB实例升降级价格信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBInstanceUpgradePriceResult describeUDBInstanceUpgradePrice(DescribeUDBInstanceUpgradePriceParam param)
-            throws Exception;
-
-    /**
-     * 获取UDB实例升降级价格信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBInstanceUpgradePrice(DescribeUDBInstanceUpgradePriceParam param,
-                                         UcloudHandler<DescribeUDBInstanceUpgradePriceResult> handler,
-                                         Boolean... asyncFlag);
-
-    /**
-     * 获取UDB的slowlog备份地址
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBLogBackupURLResult describeUDBLogBackupURL(DescribeUDBLogBackupURLParam param)
-            throws Exception;
-
-    /**
-     * 获取UDB的slowlog备份地址
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBLogBackupURL(DescribeUDBLogBackupURLParam param,
-                                 UcloudHandler<DescribeUDBLogBackupURLResult> handler,
-                                 Boolean... asyncFlag);
-
-    /**
-     * UDB实例日志备份信息列表
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBLogPackageResult describeUDBLogPackage(DescribeUDBLogPackageParam param)
-            throws Exception;
-
-    /**
-     * UDB实例日志备份信息列表
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBLogPackage(DescribeUDBLogPackageParam param,
-                               UcloudHandler<DescribeUDBLogPackageResult> handler,
-                               Boolean... asyncFlag);
-
-    /**
-     * 获取参数信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBParamGroupResult describeUDBParamGroup(DescribeUDBParamGroupParam param)
-            throws Exception;
-
-    /**
-     * 获取参数信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBParamGroup(DescribeUDBParamGroupParam param,
-                               UcloudHandler<DescribeUDBParamGroupResult> handler,
-                               Boolean... asyncFlag);
-
-
-    /**
-     * 获取指定ClassType的udb实例从库信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBSlaveOrSecondaryInstanceResult describeUDBSlaveOrSecondaryInstance(
-            DescribeUDBSlaveOrSecondaryInstanceParam param) throws Exception;
-
-    /**
-     * 获取指定ClassType的udb实例从库信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBSlaveOrSecondaryInstance(DescribeUDBSlaveOrSecondaryInstanceParam param,
-                                             UcloudHandler<DescribeUDBSlaveOrSecondaryInstanceResult> handler,
-                                             Boolean... asyncFlag);
-
-
-    /**
-     * 描述读写分离功能
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBSplittingInfoResult describeUDBSplittingInfo(
-            DescribeUDBSplittingInfoParam param) throws Exception;
-
-    /**
-     * 描述读写分离功能
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBSplittingInfo(DescribeUDBSplittingInfoParam param,
-                                  UcloudHandler<DescribeUDBSplittingInfoResult> handler,
-                                  Boolean... asyncFlag);
-
-
-    /**
-     * 获取UDB支持的类型信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUDBTypeResult describeUDBType(DescribeUDBTypeParam param) throws Exception;
-
-    /**
-     * 获取UDB支持的类型信息
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUDBType(DescribeUDBTypeParam param, UcloudHandler<DescribeUDBTypeResult> handler,
-                         Boolean... asyncFlag);
-
-
-    /**
-     * DB实例ID（master)
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DisableUDBRWSplittingResult disableUDBRWSplitting(DisableUDBRWSplittingParam param) throws Exception;
-
-    /**
-     * DB实例ID（master)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void disableUDBRWSplitting(DisableUDBRWSplittingParam param, UcloudHandler<DisableUDBRWSplittingResult> handler,
-                               Boolean... asyncFlag);
-
-
-    /**
-     * 编辑备份黑名单
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    EditUDBBackupBlacklistResult editUDBBackupBlacklist(EditUDBBackupBlacklistParam param) throws Exception;
-
     /**
-     * 编辑备份黑名单
+     * CreateUDBInstanceByRecovery - 创建db，将新创建的db恢复到指定db某个指定时间点
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBInstanceByRecovery
      */
-    void editUDBBackupBlacklist(EditUDBBackupBlacklistParam param, UcloudHandler<EditUDBBackupBlacklistResult> handler,
-                                Boolean... asyncFlag);
-
+    public CreateUDBInstanceByRecoveryResponse createUDBInstanceByRecovery(
+            CreateUDBInstanceByRecoveryRequest request) throws UCloudException {
+        request.setAction("CreateUDBInstanceByRecovery");
+        return (CreateUDBInstanceByRecoveryResponse)
+                this.invoke(request, CreateUDBInstanceByRecoveryResponse.class);
+    }
 
     /**
-     * 开启DB的读写分离功能
+     * CreateUDBParamGroup - 从已有配置文件创建新配置文件
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBParamGroup
      */
-    EnableUDBRWSplittingResult enableUDBRWSplitting(EnableUDBRWSplittingParam param) throws Exception;
+    public CreateUDBParamGroupResponse createUDBParamGroup(CreateUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("CreateUDBParamGroup");
+        return (CreateUDBParamGroupResponse)
+                this.invoke(request, CreateUDBParamGroupResponse.class);
+    }
 
     /**
-     * 开启DB的读写分离功能
+     * CreateUDBReplicationInstance - 创建MongoDB的副本节点（包括仲裁）
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBReplicationInstance
      */
-    void enableUDBRWSplitting(EnableUDBRWSplittingParam param, UcloudHandler<EnableUDBRWSplittingResult> handler,
-                              Boolean... asyncFlag);
+    public CreateUDBReplicationInstanceResponse createUDBReplicationInstance(
+            CreateUDBReplicationInstanceRequest request) throws UCloudException {
+        request.setAction("CreateUDBReplicationInstance");
+        return (CreateUDBReplicationInstanceResponse)
+                this.invoke(request, CreateUDBReplicationInstanceResponse.class);
+    }
 
-
     /**
-     * 获取配置文件内容
+     * CreateUDBRouteInstance - 创建mongos实例
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBRouteInstance
      */
-    ExtractUDBParamGroupResult extractUDBParamGroup(ExtractUDBParamGroupParam param) throws Exception;
+    public CreateUDBRouteInstanceResponse createUDBRouteInstance(
+            CreateUDBRouteInstanceRequest request) throws UCloudException {
+        request.setAction("CreateUDBRouteInstance");
+        return (CreateUDBRouteInstanceResponse)
+                this.invoke(request, CreateUDBRouteInstanceResponse.class);
+    }
 
     /**
-     * 获取配置文件内容
+     * CreateUDBSlave - 创建UDB实例的slave
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBSlave
      */
-    void extractUDBParamGroup(ExtractUDBParamGroupParam param, UcloudHandler<ExtractUDBParamGroupResult> handler,
-                              Boolean... asyncFlag);
+    public CreateUDBSlaveResponse createUDBSlave(CreateUDBSlaveRequest request)
+            throws UCloudException {
+        request.setAction("CreateUDBSlave");
+        return (CreateUDBSlaveResponse) this.invoke(request, CreateUDBSlaveResponse.class);
+    }
 
     /**
-     * 获取UDB最早可回档的时间点
+     * DeleteUDBInstance - 删除UDB实例
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBInstance
      */
-    FetchUDBInstanceEarliestRecoverTimeResult fetchUDBInstanceEarliestRecoverTime(
-            FetchUDBInstanceEarliestRecoverTimeParam param) throws Exception;
+    public DeleteUDBInstanceResponse deleteUDBInstance(DeleteUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUDBInstance");
+        return (DeleteUDBInstanceResponse) this.invoke(request, DeleteUDBInstanceResponse.class);
+    }
 
     /**
-     * 获取UDB最早可回档的时间点
+     * DeleteUDBLogPackage - 删除UDB日志包
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBLogPackage
      */
-    void fetchUDBInstanceEarliestRecoverTime(FetchUDBInstanceEarliestRecoverTimeParam param,
-                                             UcloudHandler<FetchUDBInstanceEarliestRecoverTimeResult> handler,
-                                             Boolean... asyncFlag);
+    public DeleteUDBLogPackageResponse deleteUDBLogPackage(DeleteUDBLogPackageRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUDBLogPackage");
+        return (DeleteUDBLogPackageResponse)
+                this.invoke(request, DeleteUDBLogPackageResponse.class);
+    }
 
-
     /**
-     * 删除资源时的回退差价
+     * DeleteUDBParamGroup - 删除配置参数组
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBParamGroup
      */
-    GetUDBSuspendPriceResult getUDBSuspendPrice(GetUDBSuspendPriceParam param) throws Exception;
+    public DeleteUDBParamGroupResponse deleteUDBParamGroup(DeleteUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUDBParamGroup");
+        return (DeleteUDBParamGroupResponse)
+                this.invoke(request, DeleteUDBParamGroupResponse.class);
+    }
 
     /**
-     * 删除资源时的回退差价
+     * DescribeUDBBackup - 列表UDB实例备份信息
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBackup
      */
-    void getUDBSuspendPrice(GetUDBSuspendPriceParam param,
-                            UcloudHandler<GetUDBSuspendPriceResult> handler,
-                            Boolean... asyncFlag);
+    public DescribeUDBBackupResponse describeUDBBackup(DescribeUDBBackupRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUDBBackup");
+        return (DescribeUDBBackupResponse) this.invoke(request, DescribeUDBBackupResponse.class);
+    }
 
     /**
-     * 获取某DB类型的所有监控项
+     * DescribeUDBBackupBlacklist - 获取UDB实例的备份黑名单
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBackupBlacklist
      */
-    ListMonitorItemsResult listMonitorItems(ListMonitorItemsParam param) throws Exception;
+    public DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
+            DescribeUDBBackupBlacklistRequest request) throws UCloudException {
+        request.setAction("DescribeUDBBackupBlacklist");
+        return (DescribeUDBBackupBlacklistResponse)
+                this.invoke(request, DescribeUDBBackupBlacklistResponse.class);
+    }
 
     /**
-     * 获取某DB类型的所有监控项
+     * DescribeUDBBinlogBackupURL - 获取UDB的Binlog备份地址
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBinlogBackupURL
      */
-    void listMonitorItems(ListMonitorItemsParam param, UcloudHandler<ListMonitorItemsResult> handler,
-                          Boolean... asyncFlag);
-
+    public DescribeUDBBinlogBackupURLResponse describeUDBBinlogBackupURL(
+            DescribeUDBBinlogBackupURLRequest request) throws UCloudException {
+        request.setAction("DescribeUDBBinlogBackupURL");
+        return (DescribeUDBBinlogBackupURLResponse)
+                this.invoke(request, DescribeUDBBinlogBackupURLResponse.class);
+    }
 
     /**
-     * 列出UDB配置节点信息
+     * DescribeUDBInstance -
+     * 获取UDB实例信息，支持两类操作：（1）指定DBId用于获取该db的信息；（2）指定ClassType、Offset、Limit用于列表操作，查询某一个类型db。
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstance
      */
-    ListUDBConfigSvrResult listUDBConfigSvr(ListUDBConfigSvrParam param) throws Exception;
+    public DescribeUDBInstanceResponse describeUDBInstance(DescribeUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUDBInstance");
+        return (DescribeUDBInstanceResponse)
+                this.invoke(request, DescribeUDBInstanceResponse.class);
+    }
 
     /**
-     * 列出UDB配置节点信息
+     * DescribeUDBInstanceBackupState - 获取UDB实例备份状态
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBackupState
      */
-    void listUDBConfigSvr(ListUDBConfigSvrParam param, UcloudHandler<ListUDBConfigSvrResult> handler,
-                          Boolean... asyncFlag);
+    public DescribeUDBInstanceBackupStateResponse describeUDBInstanceBackupState(
+            DescribeUDBInstanceBackupStateRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceBackupState");
+        return (DescribeUDBInstanceBackupStateResponse)
+                this.invoke(request, DescribeUDBInstanceBackupStateResponse.class);
+    }
 
-
     /**
-     * 修改云数据库名称
+     * DescribeUDBInstanceBackupURL - 获取UDB备份下载地址
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBackupURL
      */
-    ModifyUDBInstanceNameResult modifyUDBInstanceName(ModifyUDBInstanceNameParam param) throws Exception;
+    public DescribeUDBInstanceBackupURLResponse describeUDBInstanceBackupURL(
+            DescribeUDBInstanceBackupURLRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceBackupURL");
+        return (DescribeUDBInstanceBackupURLResponse)
+                this.invoke(request, DescribeUDBInstanceBackupURLResponse.class);
+    }
 
     /**
-     * 修改云数据库名称
+     * DescribeUDBInstanceBinlog - 获取UDB指定时间段的binlog列表
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBinlog
      */
-    void modifyUDBInstanceName(ModifyUDBInstanceNameParam param, UcloudHandler<ModifyUDBInstanceNameResult> handler,
-                               Boolean... asyncFlag);
+    public DescribeUDBInstanceBinlogResponse describeUDBInstanceBinlog(
+            DescribeUDBInstanceBinlogRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceBinlog");
+        return (DescribeUDBInstanceBinlogResponse)
+                this.invoke(request, DescribeUDBInstanceBinlogResponse.class);
+    }
 
     /**
-     * 修改DB实例的管理员密码
+     * DescribeUDBInstanceBinlogBackupState - 获取udb实例备份状态
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBinlogBackupState
      */
-    ModifyUDBInstancePasswordResult modifyUDBInstancePassword(ModifyUDBInstancePasswordParam param) throws Exception;
+    public DescribeUDBInstanceBinlogBackupStateResponse describeUDBInstanceBinlogBackupState(
+            DescribeUDBInstanceBinlogBackupStateRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceBinlogBackupState");
+        return (DescribeUDBInstanceBinlogBackupStateResponse)
+                this.invoke(request, DescribeUDBInstanceBinlogBackupStateResponse.class);
+    }
 
     /**
-     * 修改DB实例的管理员密码
+     * DescribeUDBInstanceLog - 查询某一段时间内UDB的错误日志或慢查询日志
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceLog
      */
-    void modifyUDBInstancePassword(ModifyUDBInstancePasswordParam param,
-                                   UcloudHandler<ModifyUDBInstancePasswordResult> handler, Boolean... asyncFlag);
+    public DescribeUDBInstanceLogResponse describeUDBInstanceLog(
+            DescribeUDBInstanceLogRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceLog");
+        return (DescribeUDBInstanceLogResponse)
+                this.invoke(request, DescribeUDBInstanceLogResponse.class);
+    }
 
     /**
-     * 普通db升级为高可用
+     * DescribeUDBInstancePrice - 获取UDB实例价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstancePrice
      */
-    PromoteUDBInstanceToHAResult promoteUDBInstanceToHA(PromoteUDBInstanceToHAParam param) throws Exception;
+    public DescribeUDBInstancePriceResponse describeUDBInstancePrice(
+            DescribeUDBInstancePriceRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstancePrice");
+        return (DescribeUDBInstancePriceResponse)
+                this.invoke(request, DescribeUDBInstancePriceResponse.class);
+    }
 
     /**
-     * 普通db升级为高可用
+     * DescribeUDBInstanceState - 获取UDB实例状态
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceState
      */
-    void promoteUDBInstanceToHA(PromoteUDBInstanceToHAParam param,
-                                UcloudHandler<PromoteUDBInstanceToHAResult> handler, Boolean... asyncFlag);
+    public DescribeUDBInstanceStateResponse describeUDBInstanceState(
+            DescribeUDBInstanceStateRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceState");
+        return (DescribeUDBInstanceStateResponse)
+                this.invoke(request, DescribeUDBInstanceStateResponse.class);
+    }
 
-
     /**
-     * 从库提升为独立库
+     * DescribeUDBInstanceUpgradePrice - 获取UDB实例升降级价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceUpgradePrice
      */
-    PromoteUDBSlaveResult promoteUDBSlave(PromoteUDBSlaveParam param) throws Exception;
+    public DescribeUDBInstanceUpgradePriceResponse describeUDBInstanceUpgradePrice(
+            DescribeUDBInstanceUpgradePriceRequest request) throws UCloudException {
+        request.setAction("DescribeUDBInstanceUpgradePrice");
+        return (DescribeUDBInstanceUpgradePriceResponse)
+                this.invoke(request, DescribeUDBInstanceUpgradePriceResponse.class);
+    }
 
     /**
-     * 从库提升为独立库
+     * DescribeUDBLogBackupURL - 获取UDB的slowlog备份地址
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBLogBackupURL
      */
-    void promoteUDBSlave(PromoteUDBSlaveParam param,
-                         UcloudHandler<PromoteUDBSlaveResult> handler, Boolean... asyncFlag);
+    public DescribeUDBLogBackupURLResponse describeUDBLogBackupURL(
+            DescribeUDBLogBackupURLRequest request) throws UCloudException {
+        request.setAction("DescribeUDBLogBackupURL");
+        return (DescribeUDBLogBackupURLResponse)
+                this.invoke(request, DescribeUDBLogBackupURLResponse.class);
+    }
 
     /**
-     * 将db恢复到某个指定时间点
+     * DescribeUDBLogPackage - 列表UDB实例binlog或slowlog或errorlog备份信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBLogPackage
      */
-    RecoverUDBInstanceResult recoverUDBInstance(RecoverUDBInstanceParam param) throws Exception;
+    public DescribeUDBLogPackageResponse describeUDBLogPackage(DescribeUDBLogPackageRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUDBLogPackage");
+        return (DescribeUDBLogPackageResponse)
+                this.invoke(request, DescribeUDBLogPackageResponse.class);
+    }
 
     /**
-     * 将db恢复到某个指定时间点
+     * DescribeUDBParamGroup - 获取参数组详细参数信息
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBParamGroup
      */
-    void recoverUDBInstance(RecoverUDBInstanceParam param,
-                            UcloudHandler<RecoverUDBInstanceResult> handler, Boolean... asyncFlag);
+    public DescribeUDBParamGroupResponse describeUDBParamGroup(DescribeUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUDBParamGroup");
+        return (DescribeUDBParamGroupResponse)
+                this.invoke(request, DescribeUDBParamGroupResponse.class);
+    }
 
     /**
-     * 修改UDB实例的配置
+     * DescribeUDBSplittingInfo - 描述读写分离功能的详细信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBSplittingInfo
      */
-    ResizeUDBInstanceResult resizeUDBInstance(ResizeUDBInstanceParam param) throws Exception;
+    public DescribeUDBSplittingInfoResponse describeUDBSplittingInfo(
+            DescribeUDBSplittingInfoRequest request) throws UCloudException {
+        request.setAction("DescribeUDBSplittingInfo");
+        return (DescribeUDBSplittingInfoResponse)
+                this.invoke(request, DescribeUDBSplittingInfoResponse.class);
+    }
 
     /**
-     * 修改UDB实例的配置
+     * DescribeUDBType - 获取UDB支持的类型信息
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBType
      */
-    void resizeUDBInstance(ResizeUDBInstanceParam param,
-                           UcloudHandler<ResizeUDBInstanceResult> handler, Boolean... asyncFlag);
-
+    public DescribeUDBTypeResponse describeUDBType(DescribeUDBTypeRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUDBType");
+        return (DescribeUDBTypeResponse) this.invoke(request, DescribeUDBTypeResponse.class);
+    }
 
     /**
-     * 读写分离中间件重启
+     * DisableUDBRWSplitting - 关闭DB的读写分离功能
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/DisableUDBRWSplitting
      */
-    RestartRWSplittingResult restartRWSplitting(RestartRWSplittingParam param) throws Exception;
+    public DisableUDBRWSplittingResponse disableUDBRWSplitting(DisableUDBRWSplittingRequest request)
+            throws UCloudException {
+        request.setAction("DisableUDBRWSplitting");
+        return (DisableUDBRWSplittingResponse)
+                this.invoke(request, DisableUDBRWSplittingResponse.class);
+    }
 
     /**
-     * 读写分离中间件重启
+     * EditUDBBackupBlacklist - 编辑UDB实例的备份黑名单
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/EditUDBBackupBlacklist
      */
-    void restartRWSplitting(RestartRWSplittingParam param,
-                            UcloudHandler<RestartRWSplittingResult> handler, Boolean... asyncFlag);
+    public EditUDBBackupBlacklistResponse editUDBBackupBlacklist(
+            EditUDBBackupBlacklistRequest request) throws UCloudException {
+        request.setAction("EditUDBBackupBlacklist");
+        return (EditUDBBackupBlacklistResponse)
+                this.invoke(request, EditUDBBackupBlacklistResponse.class);
+    }
 
     /**
-     * 重启云数据库
+     * EnableUDBRWSplitting - 开启DB的读写分离功能
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/EnableUDBRWSplitting
      */
-    RestartUDBInstanceResult restartUDBInstance(RestartUDBInstanceParam param) throws Exception;
+    public EnableUDBRWSplittingResponse enableUDBRWSplitting(EnableUDBRWSplittingRequest request)
+            throws UCloudException {
+        request.setAction("EnableUDBRWSplitting");
+        return (EnableUDBRWSplittingResponse)
+                this.invoke(request, EnableUDBRWSplittingResponse.class);
+    }
 
     /**
-     * 重启云数据库
+     * ExtractUDBParamGroup - 获取配置文件内容
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/ExtractUDBParamGroup
      */
-    void restartUDBInstance(RestartUDBInstanceParam param,
-                            UcloudHandler<RestartUDBInstanceResult> handler, Boolean... asyncFlag);
+    public ExtractUDBParamGroupResponse extractUDBParamGroup(ExtractUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("ExtractUDBParamGroup");
+        return (ExtractUDBParamGroupResponse)
+                this.invoke(request, ExtractUDBParamGroupResponse.class);
+    }
 
     /**
-     * 撤销帐号权限
+     * FetchUDBInstanceEarliestRecoverTime - 获取UDB最早可回档的时间点
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/FetchUDBInstanceEarliestRecoverTime
      */
-    RevokeAccountPrivilegesResult revokeAccountPrivileges(RevokeAccountPrivilegesParam param) throws Exception;
+    public FetchUDBInstanceEarliestRecoverTimeResponse fetchUDBInstanceEarliestRecoverTime(
+            FetchUDBInstanceEarliestRecoverTimeRequest request) throws UCloudException {
+        request.setAction("FetchUDBInstanceEarliestRecoverTime");
+        return (FetchUDBInstanceEarliestRecoverTimeResponse)
+                this.invoke(request, FetchUDBInstanceEarliestRecoverTimeResponse.class);
+    }
 
     /**
-     * 撤销帐号权限
+     * ModifyUDBInstanceName - 重命名UDB实例
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/ModifyUDBInstanceName
      */
-    void revokeAccountPrivileges(RevokeAccountPrivilegesParam param,
-                                 UcloudHandler<RevokeAccountPrivilegesResult> handler, Boolean... asyncFlag);
+    public ModifyUDBInstanceNameResponse modifyUDBInstanceName(ModifyUDBInstanceNameRequest request)
+            throws UCloudException {
+        request.setAction("ModifyUDBInstanceName");
+        return (ModifyUDBInstanceNameResponse)
+                this.invoke(request, ModifyUDBInstanceNameResponse.class);
+    }
 
     /**
-     * 设置读写分离
+     * ModifyUDBInstancePassword - 修改DB实例的管理员密码
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/ModifyUDBInstancePassword
      */
-    SetUDBRWSplittingResult setUDBRWSplitting(SetUDBRWSplittingParam param) throws Exception;
+    public ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
+            ModifyUDBInstancePasswordRequest request) throws UCloudException {
+        request.setAction("ModifyUDBInstancePassword");
+        return (ModifyUDBInstancePasswordResponse)
+                this.invoke(request, ModifyUDBInstancePasswordResponse.class);
+    }
 
     /**
-     * 设置读写分离
+     * PromoteUDBInstanceToHA - 普通db升级为高可用(只针对mysql5.5及以上版本SSD机型的实例)
+     * ，对于NVMe机型的单点升级高可用，虽然也能使用该操作再加上SwitchUDBInstanceToHA，但是更建议直接调用新的API接口（UpgradeUDBInstanceToHA）
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/PromoteUDBInstanceToHA
      */
-    void setUDBRWSplitting(SetUDBRWSplittingParam param,
-                           UcloudHandler<SetUDBRWSplittingResult> handler, Boolean... asyncFlag);
+    public PromoteUDBInstanceToHAResponse promoteUDBInstanceToHA(
+            PromoteUDBInstanceToHARequest request) throws UCloudException {
+        request.setAction("PromoteUDBInstanceToHA");
+        return (PromoteUDBInstanceToHAResponse)
+                this.invoke(request, PromoteUDBInstanceToHAResponse.class);
+    }
 
     /**
-     * 启动云数据库
+     * PromoteUDBSlave - 从库提升为独立库
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/PromoteUDBSlave
      */
-    StartUDBInstanceResult startUDBInstance(StartUDBInstanceParam param) throws Exception;
+    public PromoteUDBSlaveResponse promoteUDBSlave(PromoteUDBSlaveRequest request)
+            throws UCloudException {
+        request.setAction("PromoteUDBSlave");
+        return (PromoteUDBSlaveResponse) this.invoke(request, PromoteUDBSlaveResponse.class);
+    }
 
     /**
-     * 启动云数据库
+     * ResizeUDBInstance -
+     * 修改（升级和降级）UDB实例的配置，包括内存和磁盘的配置，对于内存升级无需关闭实例，其他场景需要事先关闭实例。两套参数可以配置升降机：1.配置UseSSD和SSDType
+     * 2.配置InstanceType，不需要配置InstanceMode。这两套第二套参数的优先级更高
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/ResizeUDBInstance
      */
-    void startUDBInstance(StartUDBInstanceParam param,
-                          UcloudHandler<StartUDBInstanceResult> handler, Boolean... asyncFlag);
+    public ResizeUDBInstanceResponse resizeUDBInstance(ResizeUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("ResizeUDBInstance");
+        return (ResizeUDBInstanceResponse) this.invoke(request, ResizeUDBInstanceResponse.class);
+    }
 
-
     /**
-     * 关闭云数据库
+     * RestartRWSplitting - 读写分离中间件重启，对应docker重启，但是ip不变
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/RestartRWSplitting
      */
-    StopUDBInstanceResult stopUDBInstance(StopUDBInstanceParam param) throws Exception;
+    public RestartRWSplittingResponse restartRWSplitting(RestartRWSplittingRequest request)
+            throws UCloudException {
+        request.setAction("RestartRWSplitting");
+        return (RestartRWSplittingResponse) this.invoke(request, RestartRWSplittingResponse.class);
+    }
 
     /**
-     * 关闭云数据库
+     * RestartUDBInstance - 重启UDB实例
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/RestartUDBInstance
      */
-    void stopUDBInstance(StopUDBInstanceParam param,
-                         UcloudHandler<StopUDBInstanceResult> handler, Boolean... asyncFlag);
+    public RestartUDBInstanceResponse restartUDBInstance(RestartUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("RestartUDBInstance");
+        return (RestartUDBInstanceResponse) this.invoke(request, RestartUDBInstanceResponse.class);
+    }
 
     /**
-     * 普通UDB切换为高可用
+     * SetUDBRWSplitting - 设置读写分离的模式
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/SetUDBRWSplitting
      */
-    SwitchUDBInstanceToHAResult switchUDBInstanceToHA(SwitchUDBInstanceToHAParam param) throws Exception;
+    public SetUDBRWSplittingResponse setUDBRWSplitting(SetUDBRWSplittingRequest request)
+            throws UCloudException {
+        request.setAction("SetUDBRWSplitting");
+        return (SetUDBRWSplittingResponse) this.invoke(request, SetUDBRWSplittingResponse.class);
+    }
 
     /**
-     * 普通UDB切换为高可用
+     * StartUDBInstance - 启动UDB实例
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/StartUDBInstance
      */
-    void switchUDBInstanceToHA(SwitchUDBInstanceToHAParam param,
-                               UcloudHandler<SwitchUDBInstanceToHAResult> handler, Boolean... asyncFlag);
+    public StartUDBInstanceResponse startUDBInstance(StartUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("StartUDBInstance");
+        return (StartUDBInstanceResponse) this.invoke(request, StartUDBInstanceResponse.class);
+    }
 
     /**
-     * 修改UDB自动备份策略
+     * StopUDBInstance - 关闭UDB实例
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/StopUDBInstance
      */
-    UpdateUDBInstanceBackupStrategyResult updateUDBInstanceBackupStrategy(
-            UpdateUDBInstanceBackupStrategyParam param) throws Exception;
+    public StopUDBInstanceResponse stopUDBInstance(StopUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("StopUDBInstance");
+        return (StopUDBInstanceResponse) this.invoke(request, StopUDBInstanceResponse.class);
+    }
 
     /**
-     * 修改UDB自动备份策略
+     * SwitchUDBHAToSentinel - UDB高可用实例从HAProxy版本升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/SwitchUDBHAToSentinel
      */
-    void updateUDBInstanceBackupStrategy(UpdateUDBInstanceBackupStrategyParam param,
-                                         UcloudHandler<UpdateUDBInstanceBackupStrategyResult> handler,
-                                         Boolean... asyncFlag);
+    public SwitchUDBHAToSentinelResponse switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest request)
+            throws UCloudException {
+        request.setAction("SwitchUDBHAToSentinel");
+        return (SwitchUDBHAToSentinelResponse)
+                this.invoke(request, SwitchUDBHAToSentinelResponse.class);
+    }
 
     /**
-     * 开启或者关闭UDB从库备份
+     * SwitchUDBInstanceToHA - 普通UDB切换为高可用(只针对mysql5.5及以上版本SSD机型的实例) ，原db状态为WaitForSwitch时，调用该api；
+     * 对于NVMe机型的单点升级高可用，虽然也能使用PromoteUDBInstanceToHA再加上该操作，但是更建议直接调用新的API接口（UpgradeUDBInstanceToHA）
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/SwitchUDBInstanceToHA
      */
-    UpdateUDBInstanceSlaveBackupSwitchResult updateUDBInstanceSlaveBackupSwitch(
-            UpdateUDBInstanceSlaveBackupSwitchParam param) throws Exception;
+    public SwitchUDBInstanceToHAResponse switchUDBInstanceToHA(SwitchUDBInstanceToHARequest request)
+            throws UCloudException {
+        request.setAction("SwitchUDBInstanceToHA");
+        return (SwitchUDBInstanceToHAResponse)
+                this.invoke(request, SwitchUDBInstanceToHAResponse.class);
+    }
 
     /**
-     * 开启或者关闭UDB从库备份
+     * UpdateUDBInstanceBackupStrategy - 修改UDB自动备份策略
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBInstanceBackupStrategy
      */
-    void updateUDBInstanceSlaveBackupSwitch(UpdateUDBInstanceSlaveBackupSwitchParam param,
-                                            UcloudHandler<UpdateUDBInstanceSlaveBackupSwitchResult> handler,
-                                            Boolean... asyncFlag);
+    public UpdateUDBInstanceBackupStrategyResponse updateUDBInstanceBackupStrategy(
+            UpdateUDBInstanceBackupStrategyRequest request) throws UCloudException {
+        request.setAction("UpdateUDBInstanceBackupStrategy");
+        return (UpdateUDBInstanceBackupStrategyResponse)
+                this.invoke(request, UpdateUDBInstanceBackupStrategyResponse.class);
+    }
 
     /**
-     * 更新配置
+     * UpdateUDBInstanceSlaveBackupSwitch - 开启或者关闭UDB从库备份
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBInstanceSlaveBackupSwitch
      */
-    UpdateUDBParamGroupResult updateUDBParamGroup(
-            UpdateUDBParamGroupParam param) throws Exception;
+    public UpdateUDBInstanceSlaveBackupSwitchResponse updateUDBInstanceSlaveBackupSwitch(
+            UpdateUDBInstanceSlaveBackupSwitchRequest request) throws UCloudException {
+        request.setAction("UpdateUDBInstanceSlaveBackupSwitch");
+        return (UpdateUDBInstanceSlaveBackupSwitchResponse)
+                this.invoke(request, UpdateUDBInstanceSlaveBackupSwitchResponse.class);
+    }
 
     /**
-     * 更新配置
+     * UpdateUDBParamGroup - 更新UDB配置参数项
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBParamGroup
      */
-    void updateUDBParamGroup(UpdateUDBParamGroupParam param,
-                             UcloudHandler<UpdateUDBParamGroupResult> handler,
-                             Boolean... asyncFlag);
+    public UpdateUDBParamGroupResponse updateUDBParamGroup(UpdateUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("UpdateUDBParamGroup");
+        return (UpdateUDBParamGroupResponse)
+                this.invoke(request, UpdateUDBParamGroupResponse.class);
+    }
 
     /**
-     * 导入配置
+     * UpgradeUDBInstanceToHA - 快杰普通db升级为高可用(只针对mysql5.5及以上版本Nvme机型的实例)
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpgradeUDBInstanceToHA
      */
-    UploadUDBParamGroupResult uploadUDBParamGroup(UploadUDBParamGroupParam param) throws Exception;
+    public UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(
+            UpgradeUDBInstanceToHARequest request) throws UCloudException {
+        request.setAction("UpgradeUDBInstanceToHA");
+        return (UpgradeUDBInstanceToHAResponse)
+                this.invoke(request, UpgradeUDBInstanceToHAResponse.class);
+    }
 
     /**
-     * 导入配置
+     * UploadUDBParamGroup - 导入UDB配置
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/udb-api/UploadUDBParamGroup
      */
-    void uploadUDBParamGroup(UploadUDBParamGroupParam param,
-                             UcloudHandler<UploadUDBParamGroupResult> handler,
-                             Boolean... asyncFlag);
-
-
+    public UploadUDBParamGroupResponse uploadUDBParamGroup(UploadUDBParamGroupRequest request)
+            throws UCloudException {
+        request.setAction("UploadUDBParamGroup");
+        return (UploadUDBParamGroupResponse)
+                this.invoke(request, UploadUDBParamGroupResponse.class);
+    }
 }

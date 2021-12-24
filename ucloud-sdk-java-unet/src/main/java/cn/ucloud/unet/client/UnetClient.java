@@ -1,681 +1,437 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.unet.client;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.common.pojo.BaseResponseResult;
-import cn.ucloud.unet.model.*;
-
-/**
- * @description: unet客户端
- * @author: codezhang
- * @date: 2018-09-25 11:24
- **/
-
-public interface UnetClient extends UcloudClient {
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.unet.models.AllocateEIPRequest;
+import cn.ucloud.unet.models.AllocateEIPResponse;
+import cn.ucloud.unet.models.AllocateShareBandwidthRequest;
+import cn.ucloud.unet.models.AllocateShareBandwidthResponse;
+import cn.ucloud.unet.models.AssociateEIPWithShareBandwidthRequest;
+import cn.ucloud.unet.models.AssociateEIPWithShareBandwidthResponse;
+import cn.ucloud.unet.models.BindEIPRequest;
+import cn.ucloud.unet.models.BindEIPResponse;
+import cn.ucloud.unet.models.CreateBandwidthPackageRequest;
+import cn.ucloud.unet.models.CreateBandwidthPackageResponse;
+import cn.ucloud.unet.models.CreateFirewallRequest;
+import cn.ucloud.unet.models.CreateFirewallResponse;
+import cn.ucloud.unet.models.DeleteBandwidthPackageRequest;
+import cn.ucloud.unet.models.DeleteBandwidthPackageResponse;
+import cn.ucloud.unet.models.DeleteFirewallRequest;
+import cn.ucloud.unet.models.DeleteFirewallResponse;
+import cn.ucloud.unet.models.DescribeBandwidthPackageRequest;
+import cn.ucloud.unet.models.DescribeBandwidthPackageResponse;
+import cn.ucloud.unet.models.DescribeBandwidthUsageRequest;
+import cn.ucloud.unet.models.DescribeBandwidthUsageResponse;
+import cn.ucloud.unet.models.DescribeEIPRequest;
+import cn.ucloud.unet.models.DescribeEIPResponse;
+import cn.ucloud.unet.models.DescribeFirewallRequest;
+import cn.ucloud.unet.models.DescribeFirewallResourceRequest;
+import cn.ucloud.unet.models.DescribeFirewallResourceResponse;
+import cn.ucloud.unet.models.DescribeFirewallResponse;
+import cn.ucloud.unet.models.DescribeShareBandwidthRequest;
+import cn.ucloud.unet.models.DescribeShareBandwidthResponse;
+import cn.ucloud.unet.models.DisassociateEIPWithShareBandwidthRequest;
+import cn.ucloud.unet.models.DisassociateEIPWithShareBandwidthResponse;
+import cn.ucloud.unet.models.DisassociateFirewallRequest;
+import cn.ucloud.unet.models.DisassociateFirewallResponse;
+import cn.ucloud.unet.models.GetEIPPayModeRequest;
+import cn.ucloud.unet.models.GetEIPPayModeResponse;
+import cn.ucloud.unet.models.GetEIPPriceRequest;
+import cn.ucloud.unet.models.GetEIPPriceResponse;
+import cn.ucloud.unet.models.GetEIPUpgradePriceRequest;
+import cn.ucloud.unet.models.GetEIPUpgradePriceResponse;
+import cn.ucloud.unet.models.GetThroughputDailyBillingInfoRequest;
+import cn.ucloud.unet.models.GetThroughputDailyBillingInfoResponse;
+import cn.ucloud.unet.models.GrantFirewallRequest;
+import cn.ucloud.unet.models.GrantFirewallResponse;
+import cn.ucloud.unet.models.ModifyEIPBandwidthRequest;
+import cn.ucloud.unet.models.ModifyEIPBandwidthResponse;
+import cn.ucloud.unet.models.ModifyEIPWeightRequest;
+import cn.ucloud.unet.models.ModifyEIPWeightResponse;
+import cn.ucloud.unet.models.ReleaseEIPRequest;
+import cn.ucloud.unet.models.ReleaseEIPResponse;
+import cn.ucloud.unet.models.ReleaseShareBandwidthRequest;
+import cn.ucloud.unet.models.ReleaseShareBandwidthResponse;
+import cn.ucloud.unet.models.ResizeShareBandwidthRequest;
+import cn.ucloud.unet.models.ResizeShareBandwidthResponse;
+import cn.ucloud.unet.models.SetEIPPayModeRequest;
+import cn.ucloud.unet.models.SetEIPPayModeResponse;
+import cn.ucloud.unet.models.UnBindEIPRequest;
+import cn.ucloud.unet.models.UnBindEIPResponse;
+import cn.ucloud.unet.models.UpdateEIPAttributeRequest;
+import cn.ucloud.unet.models.UpdateEIPAttributeResponse;
+import cn.ucloud.unet.models.UpdateFirewallAttributeRequest;
+import cn.ucloud.unet.models.UpdateFirewallAttributeResponse;
+import cn.ucloud.unet.models.UpdateFirewallRequest;
+import cn.ucloud.unet.models.UpdateFirewallResponse;
+
+/** This client is used to call actions of **UNet** service */
+public class UNetClient extends DefaultClient implements UNetClientInterface {
+    public UNetClient(Config config, Credential credential) {
+        super(config, credential);
+    }
+
+    /**
+     * AllocateEIP - 根据提供信息, 申请弹性IP
+     *
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/AllocateEIP
+     */
+    public AllocateEIPResponse allocateEIP(AllocateEIPRequest request) throws UCloudException {
+        request.setAction("AllocateEIP");
+        return (AllocateEIPResponse) this.invoke(request, AllocateEIPResponse.class);
+    }
+
+    /**
+     * AllocateShareBandwidth - 开通共享带宽
+     *
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/AllocateShareBandwidth
+     */
+    public AllocateShareBandwidthResponse allocateShareBandwidth(
+            AllocateShareBandwidthRequest request) throws UCloudException {
+        request.setAction("AllocateShareBandwidth");
+        return (AllocateShareBandwidthResponse)
+                this.invoke(request, AllocateShareBandwidthResponse.class);
+    }
+
+    /**
+     * AssociateEIPWithShareBandwidth - 将EIP加入共享带宽
+     *
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/AssociateEIPWithShareBandwidth
+     */
+    public AssociateEIPWithShareBandwidthResponse associateEIPWithShareBandwidth(
+            AssociateEIPWithShareBandwidthRequest request) throws UCloudException {
+        request.setAction("AssociateEIPWithShareBandwidth");
+        return (AssociateEIPWithShareBandwidthResponse)
+                this.invoke(request, AssociateEIPWithShareBandwidthResponse.class);
+    }
 
     /**
-     * 申请弹性IP
+     * BindEIP - 将尚未使用的弹性IP绑定到指定的资源
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/BindEIP
      */
-    AllocateEIPResult allocateEIP(AllocateEIPParam param) throws Exception;
+    public BindEIPResponse bindEIP(BindEIPRequest request) throws UCloudException {
+        request.setAction("BindEIP");
+        return (BindEIPResponse) this.invoke(request, BindEIPResponse.class);
+    }
 
     /**
-     * 申请弹性IP
+     * CreateBandwidthPackage - 为非共享带宽模式下, 已绑定资源实例的带宽计费弹性IP附加临时带宽包
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/CreateBandwidthPackage
      */
-    void allocateEIP(AllocateEIPParam param, UcloudHandler<AllocateEIPResult> handler,
-                     Boolean... asyncFlag);
+    public CreateBandwidthPackageResponse createBandwidthPackage(
+            CreateBandwidthPackageRequest request) throws UCloudException {
+        request.setAction("CreateBandwidthPackage");
+        return (CreateBandwidthPackageResponse)
+                this.invoke(request, CreateBandwidthPackageResponse.class);
+    }
 
-
-    /**
-     * 获取弹性IP信息
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    DescribeEIPResult describeEIP(DescribeEIPParam param) throws Exception;
-
-    /**
-     * 获取弹性IP信息
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void describeEIP(DescribeEIPParam param, UcloudHandler<DescribeEIPResult> handler,
-                     Boolean... asyncFlag);
-
-
-    /**
-     * 更新弹性IP名称，业务组，备注等属性字段
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    UpdateEIPAttributeResult updateEIPAttribute(UpdateEIPAttributeParam param)
-            throws Exception;
-
-    /**
-     * 更新弹性IP名称，业务组，备注等属性字段
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void updateEIPAttribute(UpdateEIPAttributeParam param,
-                            UcloudHandler<UpdateEIPAttributeResult> handler,
-                            Boolean... asyncFlag);
-
-
-    /**
-     * 释放弹性IP资源, 所释放弹性IP必须为非绑定状态.
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    ReleaseEIPResult releaseEIP(ReleaseEIPParam param) throws Exception;
-
-    /**
-     * 释放弹性IP资源, 所释放弹性IP必须为非绑定状态.
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void releaseEIP(ReleaseEIPParam param, UcloudHandler<ReleaseEIPResult> handler,
-                    Boolean... asyncFlag);
-
-
-    /**
-     * 将尚未使用的弹性IP绑定到指定的资源
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    BindEIPResult bindEIP(BindEIPParam param) throws Exception;
-
-    /**
-     * 将尚未使用的弹性IP绑定到指定的资源
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void bindEIP(BindEIPParam param, UcloudHandler<BindEIPResult> handler, Boolean... asyncFlag);
-
-
-    /**
-     * 将弹性IP从资源上解绑
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    UnBindEIPResult unBindEIP(UnBindEIPParam param) throws Exception;
-
-    /**
-     * 将弹性IP从资源上解绑
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void unBindEIP(UnBindEIPParam param, UcloudHandler<UnBindEIPResult> handler,
-                   Boolean... asyncFlag);
-
-
-    /**
-     * 调整弹性IP的外网带宽
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    ModifyEIPBandwidthResult modifyEIPBandwidth(ModifyEIPBandwidthParam param)
-            throws Exception;
-
-    /**
-     * 调整弹性IP的外网带宽
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void modifyEIPBandwidth(ModifyEIPBandwidthParam param,
-                            UcloudHandler<ModifyEIPBandwidthResult> handler,
-                            Boolean... asyncFlag);
-
-
-    /**
-     * 修改弹性IP的外网出口权重
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    ModifyEIPWeightResult modifyEIPWeight(ModifyEIPWeightParam param) throws Exception;
-
-    /**
-     * 修改弹性IP的外网出口权重
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void modifyEIPWeight(ModifyEIPWeightParam param, UcloudHandler<ModifyEIPWeightResult> handler,
-                         Boolean... asyncFlag);
-
-
-    /**
-     * 获取弹性IP价格
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    GetEIPPriceResult getEIPPrice(GetEIPPriceParam param) throws Exception;
-
-    /**
-     * 获取弹性IP价格
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void getEIPPrice(GetEIPPriceParam param, UcloudHandler<GetEIPPriceResult> handler,
-                     Boolean... asyncFlag);
-
-
-    /**
-     * 获取弹性IP带宽改动价格
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    GetEIPUpgradePriceResult getEIPUpgradePrice(GetEIPUpgradePriceParam param) throws Exception;
-
-    /**
-     * 获取弹性IP带宽改动价格
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void getEIPUpgradePrice(GetEIPUpgradePriceParam param, UcloudHandler<GetEIPUpgradePriceResult> handler,
-                            Boolean... asyncFlag);
-
-
-    /**
-     * 获取弹性IP计费方式
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    GetEIPPayModeResult getEIPPayMode(GetEIPPayModeParam param) throws Exception;
-
-    /**
-     * 获取弹性IP计费方式
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void getEIPPayMode(GetEIPPayModeParam param, UcloudHandler<GetEIPPayModeResult> handler,
-                       Boolean... asyncFlag);
-
-
-    /**
-     * 设置弹性IP计费模式, 切换时会涉及付费/退费.
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    SetEIPPayModeResult setEIPPayMode(SetEIPPayModeParam param) throws Exception;
-
-    /**
-     * 设置弹性IP计费模式, 切换时会涉及付费/退费.
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void setEIPPayMode(SetEIPPayModeParam param, UcloudHandler<SetEIPPayModeResult> handler,
-                       Boolean... asyncFlag);
-
-
-    /**
-     * 申请内网虚拟IP
-     * 根据提供信息，申请内网VIP(Virtual IP），多用于高可用程序作为漂移IP。
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    AllocateVIPResult allocateVIP(AllocateVIPParam param) throws Exception;
-
-    /**
-     * 申请内网虚拟IP
-     * 根据提供信息，申请内网VIP(Virtual IP），多用于高可用程序作为漂移IP。
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void allocateVIP(AllocateVIPParam param, UcloudHandler<AllocateVIPResult> handler,
-                     Boolean... asyncFlag);
-
-
-    /**
-     * 获取内网虚拟IP信息
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    DescribeVIPResult describeVIP(DescribeVIPParam param) throws Exception;
-
-    /**
-     * 获取内网虚拟IP信息
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void describeVIP(DescribeVIPParam param, UcloudHandler<DescribeVIPResult> handler,
-                     Boolean... asyncFlag);
-
-
-    /**
-     * 释放内网虚拟IP
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    ReleaseVIPResult releaseVIP(ReleaseVIPParam param) throws Exception;
-
-    /**
-     * 释放内网虚拟IP
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void releaseVIP(ReleaseVIPParam param, UcloudHandler<ReleaseVIPResult> handler, Boolean... asyncFlag);
-
-
-    /**
-     * 创建宽带包
-     * 为非共享带宽模式下, 已绑定资源实例的带宽计费弹性IP附加临时带宽包
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    CreateBandwidthPackageResult createBandwidthPackage(CreateBandwidthPackageParam param)
-            throws Exception;
-
-    /**
-     * 创建宽带包
-     * 为非共享带宽模式下, 已绑定资源实例的带宽计费弹性IP附加临时带宽包
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void createBandwidthPackage(CreateBandwidthPackageParam param,
-                                UcloudHandler<CreateBandwidthPackageResult> handler,
-                                Boolean... asyncFlag);
-
-
-    /**
-     * 获取某地域下的带宽包信息
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    DescribeBandwidthPackageResult describeBandwidthPackage(DescribeBandwidthPackageParam param)
-            throws Exception;
-
-    /**
-     * 获取某地域下的带宽包信息
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void describeBandwidthPackage(DescribeBandwidthPackageParam param,
-                                  UcloudHandler<DescribeBandwidthPackageResult> handler,
-                                  Boolean... asyncFlag);
-
-
-    /**
-     * 删除弹性IP上已附加带宽包
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    DeleteBandwidthPackageResult deleteBandwidthPackage(DeleteBandwidthPackageParam param)
-            throws Exception;
-
-    /**
-     * 删除弹性IP上已附加带宽包
-     *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
-     */
-    void deleteBandwidthPackage(DeleteBandwidthPackageParam param,
-                                UcloudHandler<DeleteBandwidthPackageResult> handler,
-                                Boolean... asyncFlag);
-
-
     /**
-     * 开通共享带宽
+     * CreateFirewall - 创建防火墙
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/CreateFirewall
      */
-    AllocateShareBandwidthResult allocateShareBandwidth(AllocateShareBandwidthParam param)
-            throws Exception;
+    public CreateFirewallResponse createFirewall(CreateFirewallRequest request)
+            throws UCloudException {
+        request.setAction("CreateFirewall");
+        return (CreateFirewallResponse) this.invoke(request, CreateFirewallResponse.class);
+    }
 
     /**
-     * 开通共享带宽
+     * DeleteBandwidthPackage - 删除弹性IP上已附加带宽包
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DeleteBandwidthPackage
      */
-    void allocateShareBandwidth(AllocateShareBandwidthParam param,
-                                UcloudHandler<AllocateShareBandwidthResult> handler,
-                                Boolean... asyncFlag);
+    public DeleteBandwidthPackageResponse deleteBandwidthPackage(
+            DeleteBandwidthPackageRequest request) throws UCloudException {
+        request.setAction("DeleteBandwidthPackage");
+        return (DeleteBandwidthPackageResponse)
+                this.invoke(request, DeleteBandwidthPackageResponse.class);
+    }
 
-
-    /**
-     * 获取共享带宽信息
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    DescribeShareBandwidthResult describeShareBandwidth(DescribeShareBandwidthParam param)
-            throws Exception;
-
     /**
-     * 获取共享带宽信息
+     * DeleteFirewall - 删除防火墙
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DeleteFirewall
      */
-    void describeShareBandwidth(DescribeShareBandwidthParam param,
-                                UcloudHandler<DescribeShareBandwidthResult> handler,
-                                Boolean... asyncFlag);
+    public DeleteFirewallResponse deleteFirewall(DeleteFirewallRequest request)
+            throws UCloudException {
+        request.setAction("DeleteFirewall");
+        return (DeleteFirewallResponse) this.invoke(request, DeleteFirewallResponse.class);
+    }
 
-
-    /**
-     * 调整共享带宽的带宽值
-     *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
-     */
-    ResizeShareBandwidthResult resizeShareBandwidth(ResizeShareBandwidthParam param) throws Exception;
-
     /**
-     * 调整共享带宽的带宽值
+     * DescribeBandwidthPackage - 获取某地域下的带宽包信息
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DescribeBandwidthPackage
      */
-    void resizeShareBandwidth(ResizeShareBandwidthParam param,
-                              UcloudHandler<ResizeShareBandwidthResult> handler,
-                              Boolean... asyncFlag);
-
+    public DescribeBandwidthPackageResponse describeBandwidthPackage(
+            DescribeBandwidthPackageRequest request) throws UCloudException {
+        request.setAction("DescribeBandwidthPackage");
+        return (DescribeBandwidthPackageResponse)
+                this.invoke(request, DescribeBandwidthPackageResponse.class);
+    }
 
     /**
-     * 关闭共享带宽
+     * DescribeBandwidthUsage - 获取带宽用量信息
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DescribeBandwidthUsage
      */
-    ReleaseShareBandwidthResult releaseShareBandwidth(ReleaseShareBandwidthParam param) throws Exception;
+    public DescribeBandwidthUsageResponse describeBandwidthUsage(
+            DescribeBandwidthUsageRequest request) throws UCloudException {
+        request.setAction("DescribeBandwidthUsage");
+        return (DescribeBandwidthUsageResponse)
+                this.invoke(request, DescribeBandwidthUsageResponse.class);
+    }
 
     /**
-     * 关闭共享带宽
+     * DescribeEIP - 获取弹性IP信息
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DescribeEIP
      */
-    void releaseShareBandwidth(ReleaseShareBandwidthParam param,
-                               UcloudHandler<ReleaseShareBandwidthResult> handler,
-                               Boolean... asyncFlag);
+    public DescribeEIPResponse describeEIP(DescribeEIPRequest request) throws UCloudException {
+        request.setAction("DescribeEIP");
+        return (DescribeEIPResponse) this.invoke(request, DescribeEIPResponse.class);
+    }
 
-
     /**
-     * 将EIP加入共享带宽
+     * DescribeFirewall - 获取防火墙组信息
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DescribeFirewall
      */
-    AssociateEIPWithShareBandwidthResult associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param)
-            throws Exception;
+    public DescribeFirewallResponse describeFirewall(DescribeFirewallRequest request)
+            throws UCloudException {
+        request.setAction("DescribeFirewall");
+        return (DescribeFirewallResponse) this.invoke(request, DescribeFirewallResponse.class);
+    }
 
     /**
-     * 将EIP加入共享带宽
+     * DescribeFirewallResource - 获取防火墙组所绑定资源的外网IP
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DescribeFirewallResource
      */
-    void associateEIPWithShareBandwidth(AssociateEIPWithShareBandwidthParam param,
-                                        UcloudHandler<AssociateEIPWithShareBandwidthResult> handler,
-                                        Boolean... asyncFlag);
-
+    public DescribeFirewallResourceResponse describeFirewallResource(
+            DescribeFirewallResourceRequest request) throws UCloudException {
+        request.setAction("DescribeFirewallResource");
+        return (DescribeFirewallResourceResponse)
+                this.invoke(request, DescribeFirewallResourceResponse.class);
+    }
 
     /**
-     * 将EIP移出共享带宽
+     * DescribeShareBandwidth - 获取共享带宽信息
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DescribeShareBandwidth
      */
-    DisassociateEIPWithShareBandwidthResult disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param)
-            throws Exception;
+    public DescribeShareBandwidthResponse describeShareBandwidth(
+            DescribeShareBandwidthRequest request) throws UCloudException {
+        request.setAction("DescribeShareBandwidth");
+        return (DescribeShareBandwidthResponse)
+                this.invoke(request, DescribeShareBandwidthResponse.class);
+    }
 
     /**
-     * 将EIP移出共享带宽
+     * DisassociateEIPWithShareBandwidth - 将EIP移出共享带宽
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DisassociateEIPWithShareBandwidth
      */
-    void disassociateEIPWithShareBandwidth(DisassociateEIPWithShareBandwidthParam param,
-                                           UcloudHandler<DisassociateEIPWithShareBandwidthResult> handler,
-                                           Boolean... asyncFlag);
+    public DisassociateEIPWithShareBandwidthResponse disassociateEIPWithShareBandwidth(
+            DisassociateEIPWithShareBandwidthRequest request) throws UCloudException {
+        request.setAction("DisassociateEIPWithShareBandwidth");
+        return (DisassociateEIPWithShareBandwidthResponse)
+                this.invoke(request, DisassociateEIPWithShareBandwidthResponse.class);
+    }
 
-
     /**
-     * 获取带宽用量
+     * DisassociateFirewall - 解绑资源上的防火墙
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/DisassociateFirewall
      */
-    DescribeBandwidthUsageResult describeBandwidthUsage(DescribeBandwidthUsageParam param)
-            throws Exception;
+    public DisassociateFirewallResponse disassociateFirewall(DisassociateFirewallRequest request)
+            throws UCloudException {
+        request.setAction("DisassociateFirewall");
+        return (DisassociateFirewallResponse)
+                this.invoke(request, DisassociateFirewallResponse.class);
+    }
 
     /**
-     * 获取带宽用量
+     * GetEIPPayMode - 获取弹性IP计费模式
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/GetEIPPayMode
      */
-    void describeBandwidthUsage(DescribeBandwidthUsageParam param,
-                                UcloudHandler<DescribeBandwidthUsageResult> handler,
-                                Boolean... asyncFlag);
+    public GetEIPPayModeResponse getEIPPayMode(GetEIPPayModeRequest request)
+            throws UCloudException {
+        request.setAction("GetEIPPayMode");
+        return (GetEIPPayModeResponse) this.invoke(request, GetEIPPayModeResponse.class);
+    }
 
-
     /**
-     * 删除防火墙
+     * GetEIPPrice - 获取弹性IP价格
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/GetEIPPrice
      */
-    DeleteFirewallResult deleteFirewall(DeleteFirewallParam param) throws Exception;
+    public GetEIPPriceResponse getEIPPrice(GetEIPPriceRequest request) throws UCloudException {
+        request.setAction("GetEIPPrice");
+        return (GetEIPPriceResponse) this.invoke(request, GetEIPPriceResponse.class);
+    }
 
     /**
-     * 删除防火墙
+     * GetEIPUpgradePrice - 获取弹性IP带宽改动价格
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/GetEIPUpgradePrice
      */
-    void deleteFirewall(DeleteFirewallParam param, UcloudHandler<DeleteFirewallResult> handler, Boolean... asyncFlag);
-
+    public GetEIPUpgradePriceResponse getEIPUpgradePrice(GetEIPUpgradePriceRequest request)
+            throws UCloudException {
+        request.setAction("GetEIPUpgradePrice");
+        return (GetEIPUpgradePriceResponse) this.invoke(request, GetEIPUpgradePriceResponse.class);
+    }
 
     /**
-     * 更新防火墙属性
+     * GetThroughputDailyBillingInfo - 获取流量计费EIP每日流量计费信息
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/GetThroughputDailyBillingInfo
      */
-    UpdateFirewallAttributeResult updateFirewallAttribute(UpdateFirewallAttributeParam param) throws Exception;
+    public GetThroughputDailyBillingInfoResponse getThroughputDailyBillingInfo(
+            GetThroughputDailyBillingInfoRequest request) throws UCloudException {
+        request.setAction("GetThroughputDailyBillingInfo");
+        return (GetThroughputDailyBillingInfoResponse)
+                this.invoke(request, GetThroughputDailyBillingInfoResponse.class);
+    }
 
     /**
-     * 更新防火墙属性
+     * GrantFirewall - 将防火墙应用到资源上
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/GrantFirewall
      */
-    void updateFirewallAttribute(UpdateFirewallAttributeParam param,
-                                 UcloudHandler<UpdateFirewallAttributeResult> handler,
-                                 Boolean... asyncFlag);
+    public GrantFirewallResponse grantFirewall(GrantFirewallRequest request)
+            throws UCloudException {
+        request.setAction("GrantFirewall");
+        return (GrantFirewallResponse) this.invoke(request, GrantFirewallResponse.class);
+    }
 
-
     /**
-     * 更新防火墙规则
+     * ModifyEIPBandwidth - 调整弹性IP的外网带宽
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/ModifyEIPBandwidth
      */
-    UpdateFirewallResult updateFirewall(UpdateFirewallParam param) throws Exception;
+    public ModifyEIPBandwidthResponse modifyEIPBandwidth(ModifyEIPBandwidthRequest request)
+            throws UCloudException {
+        request.setAction("ModifyEIPBandwidth");
+        return (ModifyEIPBandwidthResponse) this.invoke(request, ModifyEIPBandwidthResponse.class);
+    }
 
     /**
-     * 更新防火墙规则
+     * ModifyEIPWeight - 修改弹性IP的外网出口权重
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/ModifyEIPWeight
      */
-    void updateFirewall(UpdateFirewallParam param, UcloudHandler<UpdateFirewallResult> handler,
-                        Boolean... asyncFlag);
+    public ModifyEIPWeightResponse modifyEIPWeight(ModifyEIPWeightRequest request)
+            throws UCloudException {
+        request.setAction("ModifyEIPWeight");
+        return (ModifyEIPWeightResponse) this.invoke(request, ModifyEIPWeightResponse.class);
+    }
 
-
     /**
-     * 获取防火墙绑定资源
+     * ReleaseEIP - 释放弹性IP资源, 所释放弹性IP必须为非绑定状态.
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/ReleaseEIP
      */
-    DescribeFirewallResourceResult describeFirewallResource(DescribeFirewallResourceParam param)
-            throws Exception;
+    public ReleaseEIPResponse releaseEIP(ReleaseEIPRequest request) throws UCloudException {
+        request.setAction("ReleaseEIP");
+        return (ReleaseEIPResponse) this.invoke(request, ReleaseEIPResponse.class);
+    }
 
     /**
-     * 获取防火墙绑定资源
+     * ReleaseShareBandwidth - 关闭共享带宽
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/ReleaseShareBandwidth
      */
-    void describeFirewallResource(DescribeFirewallResourceParam param,
-                                  UcloudHandler<DescribeFirewallResourceResult> handler,
-                                  Boolean... asyncFlag);
-
+    public ReleaseShareBandwidthResponse releaseShareBandwidth(ReleaseShareBandwidthRequest request)
+            throws UCloudException {
+        request.setAction("ReleaseShareBandwidth");
+        return (ReleaseShareBandwidthResponse)
+                this.invoke(request, ReleaseShareBandwidthResponse.class);
+    }
 
     /**
-     * 获取防火墙
+     * ResizeShareBandwidth - 调整共享带宽的带宽值
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/ResizeShareBandwidth
      */
-    DescribeFirewallResult describeFirewall(DescribeFirewallParam param) throws Exception;
+    public ResizeShareBandwidthResponse resizeShareBandwidth(ResizeShareBandwidthRequest request)
+            throws UCloudException {
+        request.setAction("ResizeShareBandwidth");
+        return (ResizeShareBandwidthResponse)
+                this.invoke(request, ResizeShareBandwidthResponse.class);
+    }
 
     /**
-     * 获取防火墙
+     * SetEIPPayMode - 设置弹性IP计费模式, 切换时会涉及付费/退费.
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/SetEIPPayMode
      */
-    void describeFirewall(DescribeFirewallParam param, UcloudHandler<BaseResponseResult> handler,
-                          Boolean... asyncFlag);
+    public SetEIPPayModeResponse setEIPPayMode(SetEIPPayModeRequest request)
+            throws UCloudException {
+        request.setAction("SetEIPPayMode");
+        return (SetEIPPayModeResponse) this.invoke(request, SetEIPPayModeResponse.class);
+    }
 
-
     /**
-     * 应用防火墙
+     * UnBindEIP - 将弹性IP从资源上解绑
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/UnBindEIP
      */
-    GrantFirewallResult grantFirewall(GrantFirewallParam param) throws Exception;
+    public UnBindEIPResponse unBindEIP(UnBindEIPRequest request) throws UCloudException {
+        request.setAction("UnBindEIP");
+        return (UnBindEIPResponse) this.invoke(request, UnBindEIPResponse.class);
+    }
 
     /**
-     * 应用防火墙
+     * UpdateEIPAttribute - 更新弹性IP名称，业务组，备注等属性字段
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/UpdateEIPAttribute
      */
-    void grantFirewall(GrantFirewallParam param, UcloudHandler<GrantFirewallResult> handler,
-                       Boolean... asyncFlag);
+    public UpdateEIPAttributeResponse updateEIPAttribute(UpdateEIPAttributeRequest request)
+            throws UCloudException {
+        request.setAction("UpdateEIPAttribute");
+        return (UpdateEIPAttributeResponse) this.invoke(request, UpdateEIPAttributeResponse.class);
+    }
 
     /**
-     * 创建防火墙
+     * UpdateFirewall - 更新防火墙规则
      *
-     * @param param 请求参数对象
-     * @return 结果对象
-     * @throws Exception 请求出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/UpdateFirewall
      */
-    CreateFirewallResult createFirewall(CreateFirewallParam param) throws Exception;
+    public UpdateFirewallResponse updateFirewall(UpdateFirewallRequest request)
+            throws UCloudException {
+        request.setAction("UpdateFirewall");
+        return (UpdateFirewallResponse) this.invoke(request, UpdateFirewallResponse.class);
+    }
 
     /**
-     * 创建防火墙
+     * UpdateFirewallAttribute - 更新防火墙规则
      *
-     * @param param     请求参数对象
-     * @param handler   异步处理器
-     * @param asyncFlag 异步标记位，默认true异步
+     * <p>See also: https://docs.ucloud.cn/api/unet-api/UpdateFirewallAttribute
      */
-    void createFirewall(CreateFirewallParam param, UcloudHandler<CreateFirewallResult> handler,
-                        Boolean... asyncFlag);
-
-
+    public UpdateFirewallAttributeResponse updateFirewallAttribute(
+            UpdateFirewallAttributeRequest request) throws UCloudException {
+        request.setAction("UpdateFirewallAttribute");
+        return (UpdateFirewallAttributeResponse)
+                this.invoke(request, UpdateFirewallAttributeResponse.class);
+    }
 }

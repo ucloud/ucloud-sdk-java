@@ -1,50 +1,51 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.ubill.client;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.ubill.model.DescribeOrderDetailInfoParam;
-import cn.ucloud.ubill.model.DescribeOrderDetailInfoResult;
-import cn.ucloud.ubill.model.GetBillDataFileUrlParam;
-import cn.ucloud.ubill.model.GetBillDataFileUrlResult;
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ubill.models.GetBalanceRequest;
+import cn.ucloud.ubill.models.GetBalanceResponse;
+import cn.ucloud.ubill.models.GetBillDataFileUrlRequest;
+import cn.ucloud.ubill.models.GetBillDataFileUrlResponse;
 
-/**
- * @author: codezhang
- * @date: 2020/2/13 10:12 上午
- * @describe:
- **/
-public interface UBillClient extends UcloudClient {
-
-    /**
-     * 获取订单信息
-     * @param param 获取订单信息参数对象
-     * @return 订单信息
-     * @throws Exception
-     */
-    DescribeOrderDetailInfoResult describeOrderDetailInfo(DescribeOrderDetailInfoParam param) throws Exception;
+/** This client is used to call actions of **UBill** service */
+public class UBillClient extends DefaultClient implements UBillClientInterface {
+    public UBillClient(Config config, Credential credential) {
+        super(config, credential);
+    }
 
     /**
-     * 获取订单信息（回调）
-     * @param param 获取订单信息参数对象
-     * @param handler 回调接口
-     * @param asyncFlag 是否异步
+     * GetBalance - 获取账户余额
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ubill-api/GetBalance
      */
-    void describeOrderDetailInfo(DescribeOrderDetailInfoParam param, UcloudHandler<DescribeOrderDetailInfoResult> handler,
-                           Boolean... asyncFlag);
+    public GetBalanceResponse getBalance(GetBalanceRequest request) throws UCloudException {
+        request.setAction("GetBalance");
+        return (GetBalanceResponse) this.invoke(request, GetBalanceResponse.class);
+    }
 
     /**
-     * 生成账单数据文件下载的 url
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * GetBillDataFileUrl - 生成账单数据文件下载的 url
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ubill-api/GetBillDataFileUrl
      */
-    GetBillDataFileUrlResult getBillDataFileUrl(GetBillDataFileUrlParam param) throws Exception;
-
-    /**
-     * 生成账单数据文件下载的 url(回调)
-     * @param param 参数对象
-     * @param handler 回调接口
-     * @param asyncFlag 是否异步
-     */
-    void getBillDataFileUrl(GetBillDataFileUrlParam param, UcloudHandler<GetBillDataFileUrlResult> handler,
-                                 Boolean... asyncFlag);
+    public GetBillDataFileUrlResponse getBillDataFileUrl(GetBillDataFileUrlRequest request)
+            throws UCloudException {
+        request.setAction("GetBillDataFileUrl");
+        return (GetBillDataFileUrlResponse) this.invoke(request, GetBillDataFileUrlResponse.class);
+    }
 }

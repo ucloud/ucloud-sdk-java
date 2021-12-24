@@ -1,455 +1,493 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.uhost.client;
 
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uhost.models.CopyCustomImageRequest;
+import cn.ucloud.uhost.models.CopyCustomImageResponse;
+import cn.ucloud.uhost.models.CreateCustomImageRequest;
+import cn.ucloud.uhost.models.CreateCustomImageResponse;
+import cn.ucloud.uhost.models.CreateIsolationGroupRequest;
+import cn.ucloud.uhost.models.CreateIsolationGroupResponse;
+import cn.ucloud.uhost.models.CreateUHostInstanceRequest;
+import cn.ucloud.uhost.models.CreateUHostInstanceResponse;
+import cn.ucloud.uhost.models.CreateUHostKeyPairRequest;
+import cn.ucloud.uhost.models.CreateUHostKeyPairResponse;
+import cn.ucloud.uhost.models.DeleteIsolationGroupRequest;
+import cn.ucloud.uhost.models.DeleteIsolationGroupResponse;
+import cn.ucloud.uhost.models.DeleteUHostKeyPairsRequest;
+import cn.ucloud.uhost.models.DeleteUHostKeyPairsResponse;
+import cn.ucloud.uhost.models.DescribeImageRequest;
+import cn.ucloud.uhost.models.DescribeImageResponse;
+import cn.ucloud.uhost.models.DescribeIsolationGroupRequest;
+import cn.ucloud.uhost.models.DescribeIsolationGroupResponse;
+import cn.ucloud.uhost.models.DescribeUHostInstanceRequest;
+import cn.ucloud.uhost.models.DescribeUHostInstanceResponse;
+import cn.ucloud.uhost.models.DescribeUHostKeyPairsRequest;
+import cn.ucloud.uhost.models.DescribeUHostKeyPairsResponse;
+import cn.ucloud.uhost.models.DescribeUHostTagsRequest;
+import cn.ucloud.uhost.models.DescribeUHostTagsResponse;
+import cn.ucloud.uhost.models.GetAttachedDiskUpgradePriceRequest;
+import cn.ucloud.uhost.models.GetAttachedDiskUpgradePriceResponse;
+import cn.ucloud.uhost.models.GetUHostInstancePriceRequest;
+import cn.ucloud.uhost.models.GetUHostInstancePriceResponse;
+import cn.ucloud.uhost.models.GetUHostInstanceVncInfoRequest;
+import cn.ucloud.uhost.models.GetUHostInstanceVncInfoResponse;
+import cn.ucloud.uhost.models.GetUHostUpgradePriceRequest;
+import cn.ucloud.uhost.models.GetUHostUpgradePriceResponse;
+import cn.ucloud.uhost.models.ImportCustomImageRequest;
+import cn.ucloud.uhost.models.ImportCustomImageResponse;
+import cn.ucloud.uhost.models.ImportUHostKeyPairsRequest;
+import cn.ucloud.uhost.models.ImportUHostKeyPairsResponse;
+import cn.ucloud.uhost.models.LeaveIsolationGroupRequest;
+import cn.ucloud.uhost.models.LeaveIsolationGroupResponse;
+import cn.ucloud.uhost.models.ModifyUHostIPRequest;
+import cn.ucloud.uhost.models.ModifyUHostIPResponse;
+import cn.ucloud.uhost.models.ModifyUHostInstanceNameRequest;
+import cn.ucloud.uhost.models.ModifyUHostInstanceNameResponse;
+import cn.ucloud.uhost.models.ModifyUHostInstanceRemarkRequest;
+import cn.ucloud.uhost.models.ModifyUHostInstanceRemarkResponse;
+import cn.ucloud.uhost.models.ModifyUHostInstanceTagRequest;
+import cn.ucloud.uhost.models.ModifyUHostInstanceTagResponse;
+import cn.ucloud.uhost.models.PoweroffUHostInstanceRequest;
+import cn.ucloud.uhost.models.PoweroffUHostInstanceResponse;
+import cn.ucloud.uhost.models.RebootUHostInstanceRequest;
+import cn.ucloud.uhost.models.RebootUHostInstanceResponse;
+import cn.ucloud.uhost.models.ReinstallUHostInstanceRequest;
+import cn.ucloud.uhost.models.ReinstallUHostInstanceResponse;
+import cn.ucloud.uhost.models.ResetUHostInstancePasswordRequest;
+import cn.ucloud.uhost.models.ResetUHostInstancePasswordResponse;
+import cn.ucloud.uhost.models.ResizeAttachedDiskRequest;
+import cn.ucloud.uhost.models.ResizeAttachedDiskResponse;
+import cn.ucloud.uhost.models.ResizeUHostInstanceRequest;
+import cn.ucloud.uhost.models.ResizeUHostInstanceResponse;
+import cn.ucloud.uhost.models.StartUHostInstanceRequest;
+import cn.ucloud.uhost.models.StartUHostInstanceResponse;
+import cn.ucloud.uhost.models.StopUHostInstanceRequest;
+import cn.ucloud.uhost.models.StopUHostInstanceResponse;
+import cn.ucloud.uhost.models.TerminateCustomImageRequest;
+import cn.ucloud.uhost.models.TerminateCustomImageResponse;
+import cn.ucloud.uhost.models.TerminateUHostInstanceRequest;
+import cn.ucloud.uhost.models.TerminateUHostInstanceResponse;
+import cn.ucloud.uhost.models.UpgradeToArkUHostInstanceRequest;
+import cn.ucloud.uhost.models.UpgradeToArkUHostInstanceResponse;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.uhost.model.*;
-
-/**
- * @description: 云主机的client接口
- * @author: codezhang
- * @date: 2018-09-13 10:48
- **/
-
-public interface UhostClient extends UcloudClient {
-
-
-    /**
-     * 获取VNC登录信息（同步）
-     *
-     * @param param GetUhostInstanceVncInfoParam参数对象
-     * @return GetUhostInstanceVncInfoResult结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    GetUhostInstanceVncInfoResult getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param) throws Exception;
-
-    /**
-     * 获取VNC登录信息(回调)；出错则在回调中的error(e)处理
-     *
-     * @param param     GetUhostInstanceVncInfoParam参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void getUHostInstanceVncInfo(GetUhostInstanceVncInfoParam param, UcloudHandler<GetUhostInstanceVncInfoResult> handler, Boolean... asyncFlag);
-
-    /**
-     * 启动主机实例
-     *
-     * @param param 启动主机实例参数对象
-     * @return 启动主机实例结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    StartUHostInstanceResult startUHostInstance(StartUHostInstanceParam param) throws Exception;
-
-    /**
-     * 启动主机实例；出错则在回调中的error(e)处理
-     *
-     * @param param     启动主机实例参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void startUHostInstance(StartUHostInstanceParam param, UcloudHandler<StartUHostInstanceResult> handler, Boolean... asyncFlag);
-
-    /**
-     * 重启主机实例
-     *
-     * @param param 重启主机实例参数对象
-     * @return 重启主机实例的结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    RebootUHostInstanceResult rebootUHostInstance(RebootUHostInstanceParam param) throws Exception;
-
-    /**
-     * 重启主机实例
-     *
-     * @param param     重启主机实例参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void rebootUHostInstance(RebootUHostInstanceParam param, UcloudHandler<RebootUHostInstanceResult> handler, Boolean... asyncFlag);
-
-
-    /**
-     * 关闭主机实例
-     *
-     * @param param 关机参数对象
-     * @return 关闭主机结果对象
-     * @throws Exception 关机出错则抛出异常
-     */
-    StopUHostInstanceResult stopUHostInstance(StopUHostInstanceParam param) throws Exception;
-
-    /**
-     * 关闭主机实例
-     *
-     * @param param     关闭主机实例参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void stopUHostInstance(StopUHostInstanceParam param, UcloudHandler<StopUHostInstanceResult> handler, Boolean... asyncFlag);
-
+/** This client is used to call actions of **UHost** service */
+public class UHostClient extends DefaultClient implements UHostClientInterface {
+    public UHostClient(Config config, Credential credential) {
+        super(config, credential);
+    }
 
     /**
-     * 获取主机业务组列表
+     * CopyCustomImage - 复制自制镜像
      *
-     * @param param 获取主机业务列表参数对象
-     * @return 获取主机业务列表结果对象
-     * @throws Exception 获取出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CopyCustomImage
      */
-    DescribeUHostTagsResult describeUHostTags(DescribeUHostTagsParam param) throws Exception;
+    public CopyCustomImageResponse copyCustomImage(CopyCustomImageRequest request)
+            throws UCloudException {
+        request.setAction("CopyCustomImage");
+        return (CopyCustomImageResponse) this.invoke(request, CopyCustomImageResponse.class);
+    }
 
     /**
-     * 获取主机业务组列表
+     * CreateCustomImage - 从指定UHost实例，生成自定义镜像。
      *
-     * @param param     获取主机业务组列表参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateCustomImage
      */
-    void describeUHostTags(StopUHostInstanceParam param, UcloudHandler<DescribeUHostTagsResult> handler, Boolean... asyncFlag);
+    public CreateCustomImageResponse createCustomImage(CreateCustomImageRequest request)
+            throws UCloudException {
+        request.setAction("CreateCustomImage");
+        return (CreateCustomImageResponse) this.invoke(request, CreateCustomImageResponse.class);
+    }
 
     /**
-     * 创建云主机
+     * CreateIsolationGroup - 创建硬件隔离组，组内机器严格隔离在不同宿主机上。
      *
-     * @param param 创建云主机参数对象
-     * @return 创建云主机结果对象
-     * @throws Exception 创建出错就抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateIsolationGroup
      */
-    CreateUHostInstanceResult createUHostInstance(CreateUHostInstanceParam param) throws Exception;
+    public CreateIsolationGroupResponse createIsolationGroup(CreateIsolationGroupRequest request)
+            throws UCloudException {
+        request.setAction("CreateIsolationGroup");
+        return (CreateIsolationGroupResponse)
+                this.invoke(request, CreateIsolationGroupResponse.class);
+    }
 
     /**
-     * 创建云主机
+     * CreateUHostInstance - 创建UHost实例。
      *
-     * @param param     创建云主机参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateUHostInstance
      */
-    void createUHostInstance(CreateUHostInstanceParam param, UcloudHandler<CreateUHostInstanceResult> handler, Boolean... asyncFlag);
-
+    public CreateUHostInstanceResponse createUHostInstance(CreateUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("CreateUHostInstance");
+        return (CreateUHostInstanceResponse)
+                this.invoke(request, CreateUHostInstanceResponse.class);
+    }
 
     /**
-     * 修改主机业务组名称
+     * CreateUHostKeyPair - 创建主机密钥对信息
      *
-     * @param param 修改主机业务组名称参数对象
-     * @return 修改主机业务组结果对象
-     * @throws Exception 修改出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateUHostKeyPair
      */
-    ModifyUHostInstanceTagResult modifyUHostInstanceTag(ModifyUHostInstanceTagParam param) throws Exception;
+    public CreateUHostKeyPairResponse createUHostKeyPair(CreateUHostKeyPairRequest request)
+            throws UCloudException {
+        request.setAction("CreateUHostKeyPair");
+        return (CreateUHostKeyPairResponse) this.invoke(request, CreateUHostKeyPairResponse.class);
+    }
 
     /**
-     * 修改主机业务组名称
+     * DeleteIsolationGroup - 删除硬件隔离组。
      *
-     * @param param     修改主机业务组名称参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DeleteIsolationGroup
      */
-    void modifyUHostInstanceTag(ModifyUHostInstanceTagParam param, UcloudHandler<ModifyUHostInstanceTagResult> handler, Boolean... asyncFlag);
-
+    public DeleteIsolationGroupResponse deleteIsolationGroup(DeleteIsolationGroupRequest request)
+            throws UCloudException {
+        request.setAction("DeleteIsolationGroup");
+        return (DeleteIsolationGroupResponse)
+                this.invoke(request, DeleteIsolationGroupResponse.class);
+    }
 
     /**
-     * 删除主机实例 非试用的过期资源不可删除； 关机状态下才能执行删除操作
+     * DeleteUHostKeyPairs - 删除一对或者多对密钥对。
      *
-     * @param param 删除主机实例的 参数对象
-     * @return 删除主机实例的结果对象
-     * @throws Exception 删除出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DeleteUHostKeyPairs
      */
-    TerminateUHostInstanceResult terminateUHostInstance(TerminateUHostInstanceParam param) throws Exception;
+    public DeleteUHostKeyPairsResponse deleteUHostKeyPairs(DeleteUHostKeyPairsRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUHostKeyPairs");
+        return (DeleteUHostKeyPairsResponse)
+                this.invoke(request, DeleteUHostKeyPairsResponse.class);
+    }
 
     /**
-     * 删除主机实例  非试用的过期资源不可删除； 关机状态下才能执行删除操作
+     * DescribeImage - 获取指定数据中心镜像列表，用户可通过指定操作系统类型，镜像Id进行过滤。
      *
-     * @param param     删除主机实例 参数对象
-     * @param handler   删除主机实例 结果对象
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeImage
      */
-    void terminateUHostInstance(TerminateUHostInstanceParam param, UcloudHandler<TerminateUHostInstanceResult> handler, Boolean... asyncFlag);
+    public DescribeImageResponse describeImage(DescribeImageRequest request)
+            throws UCloudException {
+        request.setAction("DescribeImage");
+        return (DescribeImageResponse) this.invoke(request, DescribeImageResponse.class);
+    }
 
     /**
-     * 获取主机信息
+     * DescribeIsolationGroup - 查询硬件隔离组列表。
      *
-     * @param param 获取主机信息参数对象
-     * @return 获取主机信息结果对象
-     * @throws Exception 获取出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeIsolationGroup
      */
-    DescribeUHostInstanceResult describeUHostInstance(DescribeUHostInstanceParam param) throws Exception;
+    public DescribeIsolationGroupResponse describeIsolationGroup(
+            DescribeIsolationGroupRequest request) throws UCloudException {
+        request.setAction("DescribeIsolationGroup");
+        return (DescribeIsolationGroupResponse)
+                this.invoke(request, DescribeIsolationGroupResponse.class);
+    }
 
     /**
-     * 获取主机信息
+     * DescribeUHostInstance - 获取主机或主机列表信息，并可根据数据中心，主机ID等参数进行过滤。
      *
-     * @param param     获取主机信息参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostInstance
      */
-    void describeUHostInstance(DescribeUHostInstanceParam param, UcloudHandler<DescribeUHostInstanceResult> handler, Boolean... asyncFlag);
+    public DescribeUHostInstanceResponse describeUHostInstance(DescribeUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUHostInstance");
+        return (DescribeUHostInstanceResponse)
+                this.invoke(request, DescribeUHostInstanceResponse.class);
+    }
 
     /**
-     * 获取主机价格
+     * DescribeUHostKeyPairs - 查询一个或多个密钥对。
      *
-     * @param param 获取主机价格参数对象
-     * @return 获取主机价格结果对象
-     * @throws Exception 获取失败则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostKeyPairs
      */
-    GetUHostInstancePriceResult getUHostInstancePrice(GetUHostInstancePriceParam param) throws Exception;
+    public DescribeUHostKeyPairsResponse describeUHostKeyPairs(DescribeUHostKeyPairsRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUHostKeyPairs");
+        return (DescribeUHostKeyPairsResponse)
+                this.invoke(request, DescribeUHostKeyPairsResponse.class);
+    }
 
     /**
-     * 获取主机价格
+     * DescribeUHostTags - 获取指定数据中心的业务组列表。
      *
-     * @param param     获取主机价格参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostTags
      */
-    void getUHostInstancePrice(GetUHostInstancePriceParam param, UcloudHandler<GetUHostInstancePriceResult> handler, Boolean... asyncFlag);
-
+    public DescribeUHostTagsResponse describeUHostTags(DescribeUHostTagsRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUHostTags");
+        return (DescribeUHostTagsResponse) this.invoke(request, DescribeUHostTagsResponse.class);
+    }
 
     /**
-     * 修改主机配置
+     * GetAttachedDiskUpgradePrice - 获取挂载磁盘的升级价格
      *
-     * @param param 修改主机配置参数对象
-     * @return 修改主机参数结果对象
-     * @throws Exception 修改异常则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetAttachedDiskUpgradePrice
      */
-    ResizeUHostInstanceResult resizeUHostInstance(ResizeUHostInstanceParam param) throws Exception;
+    public GetAttachedDiskUpgradePriceResponse getAttachedDiskUpgradePrice(
+            GetAttachedDiskUpgradePriceRequest request) throws UCloudException {
+        request.setAction("GetAttachedDiskUpgradePrice");
+        return (GetAttachedDiskUpgradePriceResponse)
+                this.invoke(request, GetAttachedDiskUpgradePriceResponse.class);
+    }
 
     /**
-     * 修改主机配置
+     * GetUHostInstancePrice - 根据UHost实例配置，获取UHost实例的价格。
      *
-     * @param param     修改主机配置参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostInstancePrice
      */
-    void resizeUHostInstance(ResizeUHostInstanceParam param, UcloudHandler<ResizeUHostInstanceResult> handler, Boolean... asyncFlag);
+    public GetUHostInstancePriceResponse getUHostInstancePrice(GetUHostInstancePriceRequest request)
+            throws UCloudException {
+        request.setAction("GetUHostInstancePrice");
+        return (GetUHostInstancePriceResponse)
+                this.invoke(request, GetUHostInstancePriceResponse.class);
+    }
 
     /**
-     * 修改主机名称
+     * GetUHostInstanceVncInfo - 获取指定UHost实例的管理VNC配置详细信息。
      *
-     * @param param 修改主机名称参数对象
-     * @return 修改主机结果对象
-     * @throws Exception 修改出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostInstanceVncInfo
      */
-    ModifyUHostInstanceNameResult modifyUHostInstanceName(ModifyUHostInstanceNameParam param) throws Exception;
+    public GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(
+            GetUHostInstanceVncInfoRequest request) throws UCloudException {
+        request.setAction("GetUHostInstanceVncInfo");
+        return (GetUHostInstanceVncInfoResponse)
+                this.invoke(request, GetUHostInstanceVncInfoResponse.class);
+    }
 
     /**
-     * 修改主机名称
+     * GetUHostUpgradePrice - 获取UHost实例升级配置的价格。可选配置范围请参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
-     * @param param     修改主机名称参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostUpgradePrice
      */
-    void modifyUHostInstanceName(ModifyUHostInstanceNameParam param, UcloudHandler<ModifyUHostInstanceNameResult> handler, Boolean... asyncFlag);
+    public GetUHostUpgradePriceResponse getUHostUpgradePrice(GetUHostUpgradePriceRequest request)
+            throws UCloudException {
+        request.setAction("GetUHostUpgradePrice");
+        return (GetUHostUpgradePriceResponse)
+                this.invoke(request, GetUHostUpgradePriceResponse.class);
+    }
 
     /**
-     * 修改主机密码
+     * ImportCustomImage - 把UFile的镜像文件导入到UHost，生成自定义镜像
      *
-     * @param param 修改主机密码参数
-     * @return 修改主机密码结果
-     * @throws Exception 修改出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ImportCustomImage
      */
-    ResetUHostInstancePasswordResult resetUHostInstancePassword(ResetUHostInstancePasswordParam param) throws Exception;
+    public ImportCustomImageResponse importCustomImage(ImportCustomImageRequest request)
+            throws UCloudException {
+        request.setAction("ImportCustomImage");
+        return (ImportCustomImageResponse) this.invoke(request, ImportCustomImageResponse.class);
+    }
 
     /**
-     * 修改主机密码
+     * ImportUHostKeyPairs - 导入密钥对后，仅保管公钥部分，需自行妥善保存密钥对的私钥部分。
      *
-     * @param param     修改主机密码参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ImportUHostKeyPairs
      */
-    void resetUHostInstancePassword(ResetUHostInstancePasswordParam param, UcloudHandler<ResetUHostInstancePasswordResult> handler, Boolean... asyncFlag);
+    public ImportUHostKeyPairsResponse importUHostKeyPairs(ImportUHostKeyPairsRequest request)
+            throws UCloudException {
+        request.setAction("ImportUHostKeyPairs");
+        return (ImportUHostKeyPairsResponse)
+                this.invoke(request, ImportUHostKeyPairsResponse.class);
+    }
 
     /**
-     * 模拟主机掉电
+     * LeaveIsolationGroup - 移除硬件隔离组中的主机
      *
-     * @param param 模拟主机掉电参数对象
-     * @return 模拟主机掉电结果对象
-     * @throws Exception 模拟出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/LeaveIsolationGroup
      */
-    PoweroffUHostInstanceResult poweroffUHostInstance(PoweroffUHostInstanceParam param) throws Exception;
+    public LeaveIsolationGroupResponse leaveIsolationGroup(LeaveIsolationGroupRequest request)
+            throws UCloudException {
+        request.setAction("LeaveIsolationGroup");
+        return (LeaveIsolationGroupResponse)
+                this.invoke(request, LeaveIsolationGroupResponse.class);
+    }
 
     /**
-     * 模拟主机掉电
+     * ModifyUHostIP - 修改云主机内网 IP 地址
      *
-     * @param param     模拟主机掉电参数
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostIP
      */
-    void poweroffUHostInstance(PoweroffUHostInstanceParam param, UcloudHandler<PoweroffUHostInstanceResult> handler, Boolean... asyncFlag);
+    public ModifyUHostIPResponse modifyUHostIP(ModifyUHostIPRequest request)
+            throws UCloudException {
+        request.setAction("ModifyUHostIP");
+        return (ModifyUHostIPResponse) this.invoke(request, ModifyUHostIPResponse.class);
+    }
 
     /**
-     * 导入用户镜像
+     * ModifyUHostInstanceName - 修改指定UHost实例名称，需要给出数据中心，UHostId，及新的实例名称。
      *
-     * @param param 导入用户镜像参数对象
-     * @return 导入用户镜像结果对象
-     * @throws Exception 导入错误则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceName
      */
-    ImportCustomImageResult importCustomImage(ImportCustomImageParam param) throws Exception;
+    public ModifyUHostInstanceNameResponse modifyUHostInstanceName(
+            ModifyUHostInstanceNameRequest request) throws UCloudException {
+        request.setAction("ModifyUHostInstanceName");
+        return (ModifyUHostInstanceNameResponse)
+                this.invoke(request, ModifyUHostInstanceNameResponse.class);
+    }
 
     /**
-     * 导入用户镜像
+     * ModifyUHostInstanceRemark - 修改指定UHost实例备注信息。
      *
-     * @param param     导入用户镜像参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceRemark
      */
-    void importCustomImage(ImportCustomImageParam param, UcloudHandler<ImportCustomImageResult> handler, Boolean... asyncFlag);
+    public ModifyUHostInstanceRemarkResponse modifyUHostInstanceRemark(
+            ModifyUHostInstanceRemarkRequest request) throws UCloudException {
+        request.setAction("ModifyUHostInstanceRemark");
+        return (ModifyUHostInstanceRemarkResponse)
+                this.invoke(request, ModifyUHostInstanceRemarkResponse.class);
+    }
 
     /**
-     * 复制用户镜像
+     * ModifyUHostInstanceTag - 修改指定UHost实例业务组标识。
      *
-     * @param param 复制用户镜像参数
-     * @return 复制用户镜像结果
-     * @throws Exception 复制出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceTag
      */
-    CopyCustomImageResult copyCustomImage(CopyCustomImageParam param) throws Exception;
+    public ModifyUHostInstanceTagResponse modifyUHostInstanceTag(
+            ModifyUHostInstanceTagRequest request) throws UCloudException {
+        request.setAction("ModifyUHostInstanceTag");
+        return (ModifyUHostInstanceTagResponse)
+                this.invoke(request, ModifyUHostInstanceTagResponse.class);
+    }
 
     /**
-     * 复制用户镜像
+     * PoweroffUHostInstance - 直接关闭UHost实例电源，无需等待实例正常关闭。
      *
-     * @param param     复制用户镜像参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/PoweroffUHostInstance
      */
-    void copyCustomImage(CopyCustomImageParam param, UcloudHandler<CopyCustomImageResult> handler, Boolean... asyncFlag);
+    public PoweroffUHostInstanceResponse poweroffUHostInstance(PoweroffUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("PoweroffUHostInstance");
+        return (PoweroffUHostInstanceResponse)
+                this.invoke(request, PoweroffUHostInstanceResponse.class);
+    }
 
     /**
-     * 获取镜像
+     * RebootUHostInstance - 重新启动UHost实例，需要指定数据中心及UHostID两个参数的值。
      *
-     * @param param 获取镜像参数对象
-     * @return 获取镜像结果对象
-     * @throws Exception 获取出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/RebootUHostInstance
      */
-    DescribeImageResult describeImage(DescribeImageParam param) throws Exception;
+    public RebootUHostInstanceResponse rebootUHostInstance(RebootUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("RebootUHostInstance");
+        return (RebootUHostInstanceResponse)
+                this.invoke(request, RebootUHostInstanceResponse.class);
+    }
 
     /**
-     * 获取镜像
+     * ReinstallUHostInstance - 重新安装指定UHost实例的操作系统
      *
-     * @param param     获取镜像参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ReinstallUHostInstance
      */
-    void describeImage(DescribeImageParam param, UcloudHandler<DescribeImageResult> handler, Boolean... asyncFlag);
+    public ReinstallUHostInstanceResponse reinstallUHostInstance(
+            ReinstallUHostInstanceRequest request) throws UCloudException {
+        request.setAction("ReinstallUHostInstance");
+        return (ReinstallUHostInstanceResponse)
+                this.invoke(request, ReinstallUHostInstanceResponse.class);
+    }
 
     /**
-     * 删除用户镜像
+     * ResetUHostInstancePassword - 重置UHost实例的管理员密码。
      *
-     * @param param 删除用户镜像参数对象
-     * @return 删除用户镜像结果对象
-     * @throws Exception 删除出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResetUHostInstancePassword
      */
-    TerminateCustomImageResult terminateCustomImage(TerminateCustomImageParam param) throws Exception;
+    public ResetUHostInstancePasswordResponse resetUHostInstancePassword(
+            ResetUHostInstancePasswordRequest request) throws UCloudException {
+        request.setAction("ResetUHostInstancePassword");
+        return (ResetUHostInstancePasswordResponse)
+                this.invoke(request, ResetUHostInstancePasswordResponse.class);
+    }
 
     /**
-     * 删除用户镜像
+     * ResizeAttachedDisk - 修改挂载的磁盘大小，包含系统盘和数据盘
      *
-     * @param param     删除用户镜像参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResizeAttachedDisk
      */
-    void terminateCustomImage(TerminateCustomImageParam param, UcloudHandler<TerminateCustomImageResult> handler, Boolean... asyncFlag);
+    public ResizeAttachedDiskResponse resizeAttachedDisk(ResizeAttachedDiskRequest request)
+            throws UCloudException {
+        request.setAction("ResizeAttachedDisk");
+        return (ResizeAttachedDiskResponse) this.invoke(request, ResizeAttachedDiskResponse.class);
+    }
 
     /**
-     * 重装系统
+     * ResizeUHostInstance -
+     * 修改指定UHost实例的资源配置，如CPU核心数，内存容量大小，网络增强等。可选配置范围请参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      *
-     * @param param 重装系统参数对象
-     * @return 重装系统结果对象
-     * @throws Exception 重装失败则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResizeUHostInstance
      */
-    ReinstallUHostInstanceResult reinstallUHostInstance(ReinstallUHostInstanceParam param) throws Exception;
+    public ResizeUHostInstanceResponse resizeUHostInstance(ResizeUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("ResizeUHostInstance");
+        return (ResizeUHostInstanceResponse)
+                this.invoke(request, ResizeUHostInstanceResponse.class);
+    }
 
     /**
-     * 重装系统
+     * StartUHostInstance - 启动处于关闭状态的UHost实例，需要指定数据中心及UHostID两个参数的值。
      *
-     * @param param     重装系统参数
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/StartUHostInstance
      */
-    void reinstallUHostInstance(ReinstallUHostInstanceParam param, UcloudHandler<ReinstallUHostInstanceResult> handler, Boolean... asyncFlag);
+    public StartUHostInstanceResponse startUHostInstance(StartUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("StartUHostInstance");
+        return (StartUHostInstanceResponse) this.invoke(request, StartUHostInstanceResponse.class);
+    }
 
     /**
-     * 获取主机升级价格
+     * StopUHostInstance - 指停止处于运行状态的UHost实例，需指定数据中心及UhostID。
      *
-     * @param param 获取主机升级价格参数
-     * @return 升级价格
-     * @throws Exception 获取出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/StopUHostInstance
      */
-    GetUHostUpgradePriceResult getUHostUpgradePrice(GetUHostUpgradePriceParam param) throws Exception;
+    public StopUHostInstanceResponse stopUHostInstance(StopUHostInstanceRequest request)
+            throws UCloudException {
+        request.setAction("StopUHostInstance");
+        return (StopUHostInstanceResponse) this.invoke(request, StopUHostInstanceResponse.class);
+    }
 
     /**
-     * 获取主机升级价格
+     * TerminateCustomImage - 删除用户自定义镜像
      *
-     * @param param     获取主机升级价格参数
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/TerminateCustomImage
      */
-    void getUHostUpgradePrice(GetUHostUpgradePriceParam param, UcloudHandler<GetUHostUpgradePriceResult> handler, Boolean... asyncFlag);
+    public TerminateCustomImageResponse terminateCustomImage(TerminateCustomImageRequest request)
+            throws UCloudException {
+        request.setAction("TerminateCustomImage");
+        return (TerminateCustomImageResponse)
+                this.invoke(request, TerminateCustomImageResponse.class);
+    }
 
     /**
-     * 修改主机备注信息
+     * TerminateUHostInstance - 删除指定数据中心的UHost实例。
      *
-     * @param param 修改主机备注信息参数对象
-     * @return 修改结果
-     * @throws Exception 修改出错则抛出异常
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/TerminateUHostInstance
      */
-    ModifyUHostInstanceRemarkResult modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param) throws Exception;
+    public TerminateUHostInstanceResponse terminateUHostInstance(
+            TerminateUHostInstanceRequest request) throws UCloudException {
+        request.setAction("TerminateUHostInstance");
+        return (TerminateUHostInstanceResponse)
+                this.invoke(request, TerminateUHostInstanceResponse.class);
+    }
 
     /**
-     * 修改主机备注信息
+     * UpgradeToArkUHostInstance - 普通升级为方舟机型
      *
-     * @param param     修改主机备注信息参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
+     * <p>See also: https://docs.ucloud.cn/api/uhost-api/UpgradeToArkUHostInstance
      */
-    void modifyUHostInstanceRemark(ModifyUHostInstanceRemarkParam param, UcloudHandler<ModifyUHostInstanceRemarkResult> handler, Boolean... asyncFlag);
-
-    /**
-     * 创建用户镜像
-     *
-     * @param param 创建用户镜像参数对象
-     * @return 创建结果
-     * @throws Exception 创建出错则抛出异常
-     */
-    CreateCustomImageResult createCustomImage(CreateCustomImageParam param) throws Exception;
-
-    /**
-     * 创建用户镜像
-     *
-     * @param param     创建用户镜像参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void createCustomeImage(CreateCustomImageParam param, UcloudHandler<CreateCustomImageResult> handler, Boolean... asyncFlag);
-
-    /**
-     * 普通升级为方舟机型
-     *
-     * @param param 普通升级为方舟机型参数对象
-     * @return 普通升级为方舟机型结果对象
-     * @throws Exception 升级出错则抛出异常
-     */
-    UpgradeToArkUHostInstanceResult upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param) throws Exception;
-
-    /**
-     * 普通升级为方舟机型
-     *
-     * @param param     普通升级为方舟机型参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void upgradeToArkUHostInstance(UpgradeToArkUHostInstanceParam param, UcloudHandler<UpgradeToArkUHostInstanceResult> handler, Boolean... asyncFlag);
-
-
-    /**
-     * 获取监控信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 升级出错则抛出异常
-     */
-    GetMetricResult getMetric(GetMetricParam param) throws Exception;
-
-    /**
-     * 获取监控信息
-     *
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记位，仅在handler不为NULL的情况下生效，默认为true，异步的
-     */
-    void getMetric(GetMetricParam param, UcloudHandler<GetMetricResult> handler, Boolean... asyncFlag);
-
+    public UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
+            UpgradeToArkUHostInstanceRequest request) throws UCloudException {
+        request.setAction("UpgradeToArkUHostInstance");
+        return (UpgradeToArkUHostInstanceResponse)
+                this.invoke(request, UpgradeToArkUHostInstanceResponse.class);
+    }
 }

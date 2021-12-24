@@ -1,980 +1,599 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.umem.client;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.umem.model.*;
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.umem.models.CheckUDredisSpaceAllowanceRequest;
+import cn.ucloud.umem.models.CheckUDredisSpaceAllowanceResponse;
+import cn.ucloud.umem.models.CheckURedisAllowanceRequest;
+import cn.ucloud.umem.models.CheckURedisAllowanceResponse;
+import cn.ucloud.umem.models.CreateUMemBackupRequest;
+import cn.ucloud.umem.models.CreateUMemBackupResponse;
+import cn.ucloud.umem.models.CreateUMemSpaceRequest;
+import cn.ucloud.umem.models.CreateUMemSpaceResponse;
+import cn.ucloud.umem.models.CreateUMemcacheGroupRequest;
+import cn.ucloud.umem.models.CreateUMemcacheGroupResponse;
+import cn.ucloud.umem.models.CreateURedisBackupRequest;
+import cn.ucloud.umem.models.CreateURedisBackupResponse;
+import cn.ucloud.umem.models.CreateURedisGroupRequest;
+import cn.ucloud.umem.models.CreateURedisGroupResponse;
+import cn.ucloud.umem.models.DeleteUMemSpaceRequest;
+import cn.ucloud.umem.models.DeleteUMemSpaceResponse;
+import cn.ucloud.umem.models.DeleteUMemcacheGroupRequest;
+import cn.ucloud.umem.models.DeleteUMemcacheGroupResponse;
+import cn.ucloud.umem.models.DeleteURedisGroupRequest;
+import cn.ucloud.umem.models.DeleteURedisGroupResponse;
+import cn.ucloud.umem.models.DescribeUDRedisProxyInfoRequest;
+import cn.ucloud.umem.models.DescribeUDRedisProxyInfoResponse;
+import cn.ucloud.umem.models.DescribeUDRedisSlowlogRequest;
+import cn.ucloud.umem.models.DescribeUDRedisSlowlogResponse;
+import cn.ucloud.umem.models.DescribeUMemBackupRequest;
+import cn.ucloud.umem.models.DescribeUMemBackupResponse;
+import cn.ucloud.umem.models.DescribeUMemBackupURLRequest;
+import cn.ucloud.umem.models.DescribeUMemBackupURLResponse;
+import cn.ucloud.umem.models.DescribeUMemBlockInfoRequest;
+import cn.ucloud.umem.models.DescribeUMemBlockInfoResponse;
+import cn.ucloud.umem.models.DescribeUMemPriceRequest;
+import cn.ucloud.umem.models.DescribeUMemPriceResponse;
+import cn.ucloud.umem.models.DescribeUMemRequest;
+import cn.ucloud.umem.models.DescribeUMemResponse;
+import cn.ucloud.umem.models.DescribeUMemSpaceRequest;
+import cn.ucloud.umem.models.DescribeUMemSpaceResponse;
+import cn.ucloud.umem.models.DescribeUMemUpgradePriceRequest;
+import cn.ucloud.umem.models.DescribeUMemUpgradePriceResponse;
+import cn.ucloud.umem.models.DescribeUMemcacheGroupRequest;
+import cn.ucloud.umem.models.DescribeUMemcacheGroupResponse;
+import cn.ucloud.umem.models.DescribeUMemcachePriceRequest;
+import cn.ucloud.umem.models.DescribeUMemcachePriceResponse;
+import cn.ucloud.umem.models.DescribeUMemcacheUpgradePriceRequest;
+import cn.ucloud.umem.models.DescribeUMemcacheUpgradePriceResponse;
+import cn.ucloud.umem.models.DescribeURedisBackupRequest;
+import cn.ucloud.umem.models.DescribeURedisBackupResponse;
+import cn.ucloud.umem.models.DescribeURedisBackupURLRequest;
+import cn.ucloud.umem.models.DescribeURedisBackupURLResponse;
+import cn.ucloud.umem.models.DescribeURedisConfigRequest;
+import cn.ucloud.umem.models.DescribeURedisConfigResponse;
+import cn.ucloud.umem.models.DescribeURedisGroupRequest;
+import cn.ucloud.umem.models.DescribeURedisGroupResponse;
+import cn.ucloud.umem.models.DescribeURedisPriceRequest;
+import cn.ucloud.umem.models.DescribeURedisPriceResponse;
+import cn.ucloud.umem.models.DescribeURedisSlowlogRequest;
+import cn.ucloud.umem.models.DescribeURedisSlowlogResponse;
+import cn.ucloud.umem.models.DescribeURedisUpgradePriceRequest;
+import cn.ucloud.umem.models.DescribeURedisUpgradePriceResponse;
+import cn.ucloud.umem.models.DescribeURedisVersionRequest;
+import cn.ucloud.umem.models.DescribeURedisVersionResponse;
+import cn.ucloud.umem.models.FlushallURedisGroupRequest;
+import cn.ucloud.umem.models.FlushallURedisGroupResponse;
+import cn.ucloud.umem.models.GetUMemSpaceStateRequest;
+import cn.ucloud.umem.models.GetUMemSpaceStateResponse;
+import cn.ucloud.umem.models.ISolationURedisGroupRequest;
+import cn.ucloud.umem.models.ISolationURedisGroupResponse;
+import cn.ucloud.umem.models.ModifyUMemSpaceNameRequest;
+import cn.ucloud.umem.models.ModifyUMemSpaceNameResponse;
+import cn.ucloud.umem.models.ModifyURedisGroupNameRequest;
+import cn.ucloud.umem.models.ModifyURedisGroupNameResponse;
+import cn.ucloud.umem.models.ModifyURedisGroupPasswordRequest;
+import cn.ucloud.umem.models.ModifyURedisGroupPasswordResponse;
+import cn.ucloud.umem.models.RemoveUDRedisDataRequest;
+import cn.ucloud.umem.models.RemoveUDRedisDataResponse;
+import cn.ucloud.umem.models.ResizeUMemSpaceRequest;
+import cn.ucloud.umem.models.ResizeUMemSpaceResponse;
+import cn.ucloud.umem.models.ResizeURedisGroupRequest;
+import cn.ucloud.umem.models.ResizeURedisGroupResponse;
+import cn.ucloud.umem.models.RestartUMemcacheGroupRequest;
+import cn.ucloud.umem.models.RestartUMemcacheGroupResponse;
+import cn.ucloud.umem.models.RestartURedisGroupRequest;
+import cn.ucloud.umem.models.RestartURedisGroupResponse;
+import cn.ucloud.umem.models.UpdateURedisBackupStrategyRequest;
+import cn.ucloud.umem.models.UpdateURedisBackupStrategyResponse;
+
+/** This client is used to call actions of **UMem** service */
+public class UMemClient extends DefaultClient implements UMemClientInterface {
+    public UMemClient(Config config, Credential credential) {
+        super(config, credential);
+    }
+
+    /**
+     * CheckUDredisSpaceAllowance - 检查高性能UMem剩余资源，以及分片扩容前的资源预检查
+     *
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CheckUDredisSpaceAllowance
+     */
+    public CheckUDredisSpaceAllowanceResponse checkUDredisSpaceAllowance(
+            CheckUDredisSpaceAllowanceRequest request) throws UCloudException {
+        request.setAction("CheckUDredisSpaceAllowance");
+        return (CheckUDredisSpaceAllowanceResponse)
+                this.invoke(request, CheckUDredisSpaceAllowanceResponse.class);
+    }
 
-/**
- * @Description : UMEM 客户端接口
- * @Author : ucloud-sdk-generator
- * @Date : 2019-03-15 10:00
- **/
-public interface UMEMClient extends UcloudClient {
-
-    /**
-     * 创建内存空间
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateUMemSpaceResult createUMemSpace(
-            CreateUMemSpaceParam param) throws Exception;
-
-    /**
-     * 创建内存空间 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createUMemSpace(CreateUMemSpaceParam param,
-                         UcloudHandler<CreateUMemSpaceResult> handler,
-                         Boolean... asyncFlag);
-
-    /**
-     * 删除空间
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUMemSpaceResult deleteUMemSpace(
-            DeleteUMemSpaceParam param) throws Exception;
-
-    /**
-     * 删除空间 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUMemSpace(DeleteUMemSpaceParam param,
-                         UcloudHandler<DeleteUMemSpaceResult> handler,
-                         Boolean... asyncFlag);
-
-    /**
-     * 获取空间状态
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    GetUMemSpaceStateResult getUMemSpaceState(
-            GetUMemSpaceStateParam param) throws Exception;
-
-    /**
-     * 获取空间状态 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void getUMemSpaceState(GetUMemSpaceStateParam param,
-                           UcloudHandler<GetUMemSpaceStateResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 删除主备redis
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteURedisGroupResult deleteURedisGroup(
-            DeleteURedisGroupParam param) throws Exception;
-
-    /**
-     * 删除主备redis (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteURedisGroup(DeleteURedisGroupParam param,
-                           UcloudHandler<DeleteURedisGroupResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 查询主备redis备份
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeURedisBackupResult describeURedisBackup(
-            DescribeURedisBackupParam param) throws Exception;
-
-    /**
-     * 查询主备redis备份 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeURedisBackup(DescribeURedisBackupParam param,
-                              UcloudHandler<DescribeURedisBackupResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 修改名称
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ModifyURedisGroupNameResult modifyURedisGroupName(
-            ModifyURedisGroupNameParam param) throws Exception;
-
-    /**
-     * 修改名称 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void modifyURedisGroupName(ModifyURedisGroupNameParam param,
-                               UcloudHandler<ModifyURedisGroupNameResult> handler,
-                               Boolean... asyncFlag);
-
-    /**
-     * 修改UMemcache名称
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ModifyUMemcacheGroupNameResult modifyUMemcacheGroupName(
-            ModifyUMemcacheGroupNameParam param) throws Exception;
-
-    /**
-     * 修改UMemcache名称 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void modifyUMemcacheGroupName(ModifyUMemcacheGroupNameParam param,
-                                  UcloudHandler<ModifyUMemcacheGroupNameResult> handler,
-                                  Boolean... asyncFlag);
-
-    /**
-     * 获取umemcache升级价格
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUMemcacheUpgradePriceResult describeUMemcacheUpgradePrice(
-            DescribeUMemcacheUpgradePriceParam param) throws Exception;
-
-    /**
-     * 获取umemcache升级价格 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUMemcacheUpgradePrice(DescribeUMemcacheUpgradePriceParam param,
-                                       UcloudHandler<DescribeUMemcacheUpgradePriceResult> handler,
-                                       Boolean... asyncFlag);
-
-    /**
-     * 检查URedis资源是否足够
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckURedisAllowanceResult checkURedisAllowance(
-            CheckURedisAllowanceParam param) throws Exception;
-
-    /**
-     * 检查URedis资源是否足够 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkURedisAllowance(CheckURedisAllowanceParam param,
-                              UcloudHandler<CheckURedisAllowanceResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 删除UMem资源
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUMemResult deleteUMem(
-            DeleteUMemParam param) throws Exception;
-
-    /**
-     * 删除UMem资源 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUMem(DeleteUMemParam param,
-                    UcloudHandler<DeleteUMemResult> handler,
-                    Boolean... asyncFlag);
-
-    /**
-     * 检查机房整体资源情况
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CheckRegionResourceResult checkRegionResource(
-            CheckRegionResourceParam param) throws Exception;
-
-    /**
-     * 检查机房整体资源情况 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void checkRegionResource(CheckRegionResourceParam param,
-                             UcloudHandler<CheckRegionResourceResult> handler,
-                             Boolean... asyncFlag);
-
-    /**
-     * 重启单机Memcache
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    RestartUMemcacheGroupResult restartUMemcacheGroup(
-            RestartUMemcacheGroupParam param) throws Exception;
-
-    /**
-     * 重启单机Memcache (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void restartUMemcacheGroup(RestartUMemcacheGroupParam param,
-                               UcloudHandler<RestartUMemcacheGroupResult> handler,
-                               Boolean... asyncFlag);
-
-    /**
-     * 修改主备Redis配置文件参数
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    ModifyURedisConfigResult modifyURedisConfig(
-            ModifyURedisConfigParam param) throws Exception;
-
-    /**
-     * 修改主备Redis配置文件参数 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void modifyURedisConfig(ModifyURedisConfigParam param,
-                            UcloudHandler<ModifyURedisConfigResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
-     * 创建URedis自定义配置文件
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    CreateURedisConfigResult createURedisConfig(
-            CreateURedisConfigParam param) throws Exception;
-
-    /**
-     * 创建URedis自定义配置文件 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void createURedisConfig(CreateURedisConfigParam param,
-                            UcloudHandler<CreateURedisConfigResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
-     * 删除主备Redis自定义配置文件
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteURedisConfigResult deleteURedisConfig(
-            DeleteURedisConfigParam param) throws Exception;
-
-    /**
-     * 删除主备Redis自定义配置文件 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteURedisConfig(DeleteURedisConfigParam param,
-                            UcloudHandler<DeleteURedisConfigResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
-     * 显示主备Redis配置文件参数信息
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeURedisConfigParamResult describeURedisConfigParam(
-            DescribeURedisConfigParamParam param) throws Exception;
-
-    /**
-     * 显示主备Redis配置文件参数信息 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeURedisConfigParam(DescribeURedisConfigParamParam param,
-                                   UcloudHandler<DescribeURedisConfigParamResult> handler,
-                                   Boolean... asyncFlag);
-
-    /**
-     * 查询主备Redis所有配置文件
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeURedisConfigResult describeURedisConfig(
-            DescribeURedisConfigParam param) throws Exception;
-
-    /**
-     * 查询主备Redis所有配置文件 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeURedisConfig(DescribeURedisConfigParam param,
-                              UcloudHandler<DescribeURedisConfigResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 重启主备实例
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    RestartURedisGroupResult restartURedisGroup(
-            RestartURedisGroupParam param) throws Exception;
-
-    /**
-     * 重启主备实例 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void restartURedisGroup(RestartURedisGroupParam param,
-                            UcloudHandler<RestartURedisGroupResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
-     * 获取Memcache可用版本
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUMemcacheVersionResult describeUMemcacheVersion(
-            DescribeUMemcacheVersionParam param) throws Exception;
-
-    /**
-     * 获取Memcache可用版本 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUMemcacheVersion(DescribeUMemcacheVersionParam param,
-                                  UcloudHandler<DescribeUMemcacheVersionResult> handler,
-                                  Boolean... asyncFlag);
-
-    /**
-     * 删除URedis备份
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteURedisBackupResult deleteURedisBackup(
-            DeleteURedisBackupParam param) throws Exception;
-
-    /**
-     * 删除URedis备份 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteURedisBackup(DeleteURedisBackupParam param,
-                            UcloudHandler<DeleteURedisBackupResult> handler,
-                            Boolean... asyncFlag);
-
-    /**
-     * 查询空间
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUMemSpaceResult describeUMemSpace(
-            DescribeUMemSpaceParam param) throws Exception;
-
-    /**
-     * 查询空间 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeUMemSpace(DescribeUMemSpaceParam param,
-                           UcloudHandler<DescribeUMemSpaceResult> handler,
-                           Boolean... asyncFlag);
-
-    /**
-     * 查询主备Redis
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeURedisGroupResult describeURedisGroup(
-            DescribeURedisGroupParam param) throws Exception;
-
-    /**
-     * 查询主备Redis (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeURedisGroup(DescribeURedisGroupParam param,
-                             UcloudHandler<DescribeURedisGroupResult> handler,
-                             Boolean... asyncFlag);
-
-    /**
-     * 获取主Redis可用版本
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeURedisVersionResult describeURedisVersion(
-            DescribeURedisVersionParam param) throws Exception;
-
-    /**
-     * 获取主Redis可用版本 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void describeURedisVersion(DescribeURedisVersionParam param,
-                               UcloudHandler<DescribeURedisVersionResult> handler,
-                               Boolean... asyncFlag);
-
-    /**
-     * 删除单机Memcache
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DeleteUMemcacheGroupResult deleteUMemcacheGroup(
-            DeleteUMemcacheGroupParam param) throws Exception;
-
-    /**
-     * 删除单机Memcache (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void deleteUMemcacheGroup(DeleteUMemcacheGroupParam param,
-                              UcloudHandler<DeleteUMemcacheGroupResult> handler,
-                              Boolean... asyncFlag);
-
-    /**
-     * 更改zhubeiredis的备份策略
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    UpdateURedisBackupStrategyResult updateURedisBackupStrategy(
-            UpdateURedisBackupStrategyParam param) throws Exception;
-
-    /**
-     * 更改zhubeiredis的备份策略 (回调)
-     *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
-     */
-    void updateURedisBackupStrategy(UpdateURedisBackupStrategyParam param,
-                                    UcloudHandler<UpdateURedisBackupStrategyResult> handler,
-                                    Boolean... asyncFlag);
-
-
-    /**
-     * 获取价格
-     *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
-     */
-    DescribeUMemPriceResult describeUMemPrice(
-            DescribeUMemPriceParam param) throws Exception;
-
     /**
-     * 获取价格 (回调)
+     * CheckURedisAllowance - 检查主备Redis的资源是否足够创建新实例，以及主备Redis的扩容资源预检查
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CheckURedisAllowance
      */
-    void describeUMemPrice(DescribeUMemPriceParam param,
-                           UcloudHandler<DescribeUMemPriceResult> handler,
-                           Boolean... asyncFlag);
+    public CheckURedisAllowanceResponse checkURedisAllowance(CheckURedisAllowanceRequest request)
+            throws UCloudException {
+        request.setAction("CheckURedisAllowance");
+        return (CheckURedisAllowanceResponse)
+                this.invoke(request, CheckURedisAllowanceResponse.class);
+    }
 
     /**
-     * 调整容量
+     * CreateUMemBackup - 创建分布式redis备份
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateUMemBackup
      */
-    ResizeUMemSpaceResult resizeUMemSpace(
-            ResizeUMemSpaceParam param) throws Exception;
+    public CreateUMemBackupResponse createUMemBackup(CreateUMemBackupRequest request)
+            throws UCloudException {
+        request.setAction("CreateUMemBackup");
+        return (CreateUMemBackupResponse) this.invoke(request, CreateUMemBackupResponse.class);
+    }
 
     /**
-     * 调整容量 (回调)
+     * CreateUMemSpace - 创建UMem内存空间
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateUMemSpace
      */
-    void resizeUMemSpace(ResizeUMemSpaceParam param,
-                         UcloudHandler<ResizeUMemSpaceResult> handler,
-                         Boolean... asyncFlag);
+    public CreateUMemSpaceResponse createUMemSpace(CreateUMemSpaceRequest request)
+            throws UCloudException {
+        request.setAction("CreateUMemSpace");
+        return (CreateUMemSpaceResponse) this.invoke(request, CreateUMemSpaceResponse.class);
+    }
 
     /**
-     * 创建主备redis
+     * CreateUMemcacheGroup - 创建单机Memcache
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateUMemcacheGroup
      */
-    CreateURedisGroupResult createURedisGroup(
-            CreateURedisGroupParam param) throws Exception;
+    public CreateUMemcacheGroupResponse createUMemcacheGroup(CreateUMemcacheGroupRequest request)
+            throws UCloudException {
+        request.setAction("CreateUMemcacheGroup");
+        return (CreateUMemcacheGroupResponse)
+                this.invoke(request, CreateUMemcacheGroupResponse.class);
+    }
 
     /**
-     * 创建主备redis (回调)
+     * CreateURedisBackup - 创建主备Redis备份
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateURedisBackup
      */
-    void createURedisGroup(CreateURedisGroupParam param,
-                           UcloudHandler<CreateURedisGroupResult> handler,
-                           Boolean... asyncFlag);
+    public CreateURedisBackupResponse createURedisBackup(CreateURedisBackupRequest request)
+            throws UCloudException {
+        request.setAction("CreateURedisBackup");
+        return (CreateURedisBackupResponse) this.invoke(request, CreateURedisBackupResponse.class);
+    }
 
     /**
-     * 获取主备Redis备份下载链接
+     * CreateURedisGroup - 创建主备redis
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateURedisGroup
      */
-    DescribeURedisBackupURLResult describeURedisBackupURL(
-            DescribeURedisBackupURLParam param) throws Exception;
+    public CreateURedisGroupResponse createURedisGroup(CreateURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("CreateURedisGroup");
+        return (CreateURedisGroupResponse) this.invoke(request, CreateURedisGroupResponse.class);
+    }
 
     /**
-     * 获取主备Redis备份下载链接 (回调)
+     * DeleteUMemSpace - 删除UMem内存空间
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DeleteUMemSpace
      */
-    void describeURedisBackupURL(DescribeURedisBackupURLParam param,
-                                 UcloudHandler<DescribeURedisBackupURLResult> handler,
-                                 Boolean... asyncFlag);
+    public DeleteUMemSpaceResponse deleteUMemSpace(DeleteUMemSpaceRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUMemSpace");
+        return (DeleteUMemSpaceResponse) this.invoke(request, DeleteUMemSpaceResponse.class);
+    }
 
     /**
-     * 获取umemcache组价格
+     * DeleteUMemcacheGroup - 删除单机Memcache
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DeleteUMemcacheGroup
      */
-    DescribeUMemcachePriceResult describeUMemcachePrice(
-            DescribeUMemcachePriceParam param) throws Exception;
+    public DeleteUMemcacheGroupResponse deleteUMemcacheGroup(DeleteUMemcacheGroupRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUMemcacheGroup");
+        return (DeleteUMemcacheGroupResponse)
+                this.invoke(request, DeleteUMemcacheGroupResponse.class);
+    }
 
     /**
-     * 获取umemcache组价格 (回调)
+     * DeleteURedisGroup - 删除主备redis
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DeleteURedisGroup
      */
-    void describeUMemcachePrice(DescribeUMemcachePriceParam param,
-                                UcloudHandler<DescribeUMemcachePriceResult> handler,
-                                Boolean... asyncFlag);
+    public DeleteURedisGroupResponse deleteURedisGroup(DeleteURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("DeleteURedisGroup");
+        return (DeleteURedisGroupResponse) this.invoke(request, DeleteURedisGroupResponse.class);
+    }
 
     /**
-     * 显示Memcache
+     * DescribeUDRedisProxyInfo - 拉取udredis所有的代理信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUDRedisProxyInfo
      */
-    DescribeUMemcacheGroupResult describeUMemcacheGroup(
-            DescribeUMemcacheGroupParam param) throws Exception;
+    public DescribeUDRedisProxyInfoResponse describeUDRedisProxyInfo(
+            DescribeUDRedisProxyInfoRequest request) throws UCloudException {
+        request.setAction("DescribeUDRedisProxyInfo");
+        return (DescribeUDRedisProxyInfoResponse)
+                this.invoke(request, DescribeUDRedisProxyInfoResponse.class);
+    }
 
     /**
-     * 显示Memcache (回调)
+     * DescribeUDRedisSlowlog - 查询UDRedis慢日志
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUDRedisSlowlog
      */
-    void describeUMemcacheGroup(DescribeUMemcacheGroupParam param,
-                                UcloudHandler<DescribeUMemcacheGroupResult> handler,
-                                Boolean... asyncFlag);
+    public DescribeUDRedisSlowlogResponse describeUDRedisSlowlog(
+            DescribeUDRedisSlowlogRequest request) throws UCloudException {
+        request.setAction("DescribeUDRedisSlowlog");
+        return (DescribeUDRedisSlowlogResponse)
+                this.invoke(request, DescribeUDRedisSlowlogResponse.class);
+    }
 
     /**
-     * 获取UMem列表
+     * DescribeUMem - 获取UMem列表
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMem
      */
-    DescribeUMemResult describeUMem(
-            DescribeUMemParam param) throws Exception;
+    public DescribeUMemResponse describeUMem(DescribeUMemRequest request) throws UCloudException {
+        request.setAction("DescribeUMem");
+        return (DescribeUMemResponse) this.invoke(request, DescribeUMemResponse.class);
+    }
 
     /**
-     * 获取UMem列表 (回调)
+     * DescribeUMemBackup - 查询分布式redis备份
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemBackup
      */
-    void describeUMem(DescribeUMemParam param,
-                      UcloudHandler<DescribeUMemResult> handler,
-                      Boolean... asyncFlag);
+    public DescribeUMemBackupResponse describeUMemBackup(DescribeUMemBackupRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUMemBackup");
+        return (DescribeUMemBackupResponse) this.invoke(request, DescribeUMemBackupResponse.class);
+    }
 
     /**
-     * 检查分布式UMem剩余资源
+     * DescribeUMemBackupURL - 获取分布式redis 备份下载链接
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemBackupURL
      */
-    CheckUMemSpaceAllowanceResult checkUMemSpaceAllowance(
-            CheckUMemSpaceAllowanceParam param) throws Exception;
+    public DescribeUMemBackupURLResponse describeUMemBackupURL(DescribeUMemBackupURLRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUMemBackupURL");
+        return (DescribeUMemBackupURLResponse)
+                this.invoke(request, DescribeUMemBackupURLResponse.class);
+    }
 
     /**
-     * 检查分布式UMem剩余资源 (回调)
+     * DescribeUMemBlockInfo - 拉取UDRedis分片信息
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemBlockInfo
      */
-    void checkUMemSpaceAllowance(CheckUMemSpaceAllowanceParam param,
-                                 UcloudHandler<CheckUMemSpaceAllowanceResult> handler,
-                                 Boolean... asyncFlag);
+    public DescribeUMemBlockInfoResponse describeUMemBlockInfo(DescribeUMemBlockInfoRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUMemBlockInfo");
+        return (DescribeUMemBlockInfoResponse)
+                this.invoke(request, DescribeUMemBlockInfoResponse.class);
+    }
 
     /**
-     * 取uredis价格信息
+     * DescribeUMemPrice - 获取UMem实例价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemPrice
      */
-    DescribeURedisPriceResult describeURedisPrice(
-            DescribeURedisPriceParam param) throws Exception;
+    public DescribeUMemPriceResponse describeUMemPrice(DescribeUMemPriceRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUMemPrice");
+        return (DescribeUMemPriceResponse) this.invoke(request, DescribeUMemPriceResponse.class);
+    }
 
     /**
-     * 取uredis价格信息 (回调)
+     * DescribeUMemSpace - 获取UMem内存空间列表
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemSpace
      */
-    void describeURedisPrice(DescribeURedisPriceParam param,
-                             UcloudHandler<DescribeURedisPriceResult> handler,
-                             Boolean... asyncFlag);
+    public DescribeUMemSpaceResponse describeUMemSpace(DescribeUMemSpaceRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUMemSpace");
+        return (DescribeUMemSpaceResponse) this.invoke(request, DescribeUMemSpaceResponse.class);
+    }
 
     /**
-     * 查询URedis慢日志
+     * DescribeUMemUpgradePrice - 获取UMem升级价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemUpgradePrice
      */
-    DescribeURedisSlowlogResult describeURedisSlowlog(
-            DescribeURedisSlowlogParam param) throws Exception;
+    public DescribeUMemUpgradePriceResponse describeUMemUpgradePrice(
+            DescribeUMemUpgradePriceRequest request) throws UCloudException {
+        request.setAction("DescribeUMemUpgradePrice");
+        return (DescribeUMemUpgradePriceResponse)
+                this.invoke(request, DescribeUMemUpgradePriceResponse.class);
+    }
 
     /**
-     * 查询URedis慢日志 (回调)
+     * DescribeUMemcacheGroup - 显示Memcache
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemcacheGroup
      */
-    void describeURedisSlowlog(DescribeURedisSlowlogParam param,
-                               UcloudHandler<DescribeURedisSlowlogResult> handler,
-                               Boolean... asyncFlag);
+    public DescribeUMemcacheGroupResponse describeUMemcacheGroup(
+            DescribeUMemcacheGroupRequest request) throws UCloudException {
+        request.setAction("DescribeUMemcacheGroup");
+        return (DescribeUMemcacheGroupResponse)
+                this.invoke(request, DescribeUMemcacheGroupResponse.class);
+    }
 
     /**
-     * 修改主备密码
+     * DescribeUMemcachePrice - 获取umemcache组价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemcachePrice
      */
-    ModifyURedisGroupPasswordResult modifyURedisGroupPassword(
-            ModifyURedisGroupPasswordParam param) throws Exception;
+    public DescribeUMemcachePriceResponse describeUMemcachePrice(
+            DescribeUMemcachePriceRequest request) throws UCloudException {
+        request.setAction("DescribeUMemcachePrice");
+        return (DescribeUMemcachePriceResponse)
+                this.invoke(request, DescribeUMemcachePriceResponse.class);
+    }
 
     /**
-     * 修改主备密码 (回调)
+     * DescribeUMemcacheUpgradePrice - 获取umemcache升级价格信息
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemcacheUpgradePrice
      */
-    void modifyURedisGroupPassword(ModifyURedisGroupPasswordParam param,
-                                   UcloudHandler<ModifyURedisGroupPasswordResult> handler,
-                                   Boolean... asyncFlag);
+    public DescribeUMemcacheUpgradePriceResponse describeUMemcacheUpgradePrice(
+            DescribeUMemcacheUpgradePriceRequest request) throws UCloudException {
+        request.setAction("DescribeUMemcacheUpgradePrice");
+        return (DescribeUMemcacheUpgradePriceResponse)
+                this.invoke(request, DescribeUMemcacheUpgradePriceResponse.class);
+    }
 
     /**
-     * 调整容量
+     * DescribeURedisBackup - 查询主备redis备份
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisBackup
      */
-    ResizeUMemcacheGroupResult resizeUMemcacheGroup(
-            ResizeUMemcacheGroupParam param) throws Exception;
+    public DescribeURedisBackupResponse describeURedisBackup(DescribeURedisBackupRequest request)
+            throws UCloudException {
+        request.setAction("DescribeURedisBackup");
+        return (DescribeURedisBackupResponse)
+                this.invoke(request, DescribeURedisBackupResponse.class);
+    }
 
     /**
-     * 调整容量 (回调)
+     * DescribeURedisBackupURL - 获取主备Redis备份下载链接
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisBackupURL
      */
-    void resizeUMemcacheGroup(ResizeUMemcacheGroupParam param,
-                              UcloudHandler<ResizeUMemcacheGroupResult> handler,
-                              Boolean... asyncFlag);
+    public DescribeURedisBackupURLResponse describeURedisBackupURL(
+            DescribeURedisBackupURLRequest request) throws UCloudException {
+        request.setAction("DescribeURedisBackupURL");
+        return (DescribeURedisBackupURLResponse)
+                this.invoke(request, DescribeURedisBackupURLResponse.class);
+    }
 
     /**
-     * 查询主备Redis关联Slave
+     * DescribeURedisConfig - 查询主备Redis所有配置文件
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisConfig
      */
-    DescribeURedisSlaveGroupResult describeURedisSlaveGroup(
-            DescribeURedisSlaveGroupParam param) throws Exception;
+    public DescribeURedisConfigResponse describeURedisConfig(DescribeURedisConfigRequest request)
+            throws UCloudException {
+        request.setAction("DescribeURedisConfig");
+        return (DescribeURedisConfigResponse)
+                this.invoke(request, DescribeURedisConfigResponse.class);
+    }
 
     /**
-     * 查询主备Redis关联Slave (回调)
+     * DescribeURedisGroup - 查询主备Redis
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisGroup
      */
-    void describeURedisSlaveGroup(DescribeURedisSlaveGroupParam param,
-                                  UcloudHandler<DescribeURedisSlaveGroupResult> handler,
-                                  Boolean... asyncFlag);
+    public DescribeURedisGroupResponse describeURedisGroup(DescribeURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("DescribeURedisGroup");
+        return (DescribeURedisGroupResponse)
+                this.invoke(request, DescribeURedisGroupResponse.class);
+    }
 
     /**
-     * 获取uredis升级价格信息
+     * DescribeURedisPrice - 取uredis价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisPrice
      */
-    DescribeURedisUpgradePriceResult describeURedisUpgradePrice(
-            DescribeURedisUpgradePriceParam param) throws Exception;
+    public DescribeURedisPriceResponse describeURedisPrice(DescribeURedisPriceRequest request)
+            throws UCloudException {
+        request.setAction("DescribeURedisPrice");
+        return (DescribeURedisPriceResponse)
+                this.invoke(request, DescribeURedisPriceResponse.class);
+    }
 
     /**
-     * 获取uredis升级价格信息 (回调)
+     * DescribeURedisSlowlog - 查询URedis慢日志
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisSlowlog
      */
-    void describeURedisUpgradePrice(DescribeURedisUpgradePriceParam param,
-                                    UcloudHandler<DescribeURedisUpgradePriceResult> handler,
-                                    Boolean... asyncFlag);
+    public DescribeURedisSlowlogResponse describeURedisSlowlog(DescribeURedisSlowlogRequest request)
+            throws UCloudException {
+        request.setAction("DescribeURedisSlowlog");
+        return (DescribeURedisSlowlogResponse)
+                this.invoke(request, DescribeURedisSlowlogResponse.class);
+    }
 
     /**
-     * 调整容量
+     * DescribeURedisUpgradePrice - 获取uredis升级价格信息
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisUpgradePrice
      */
-    ResizeURedisGroupResult resizeURedisGroup(
-            ResizeURedisGroupParam param) throws Exception;
+    public DescribeURedisUpgradePriceResponse describeURedisUpgradePrice(
+            DescribeURedisUpgradePriceRequest request) throws UCloudException {
+        request.setAction("DescribeURedisUpgradePrice");
+        return (DescribeURedisUpgradePriceResponse)
+                this.invoke(request, DescribeURedisUpgradePriceResponse.class);
+    }
 
     /**
-     * 调整容量 (回调)
+     * DescribeURedisVersion - 获取主Redis可用版本
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisVersion
      */
-    void resizeURedisGroup(ResizeURedisGroupParam param,
-                           UcloudHandler<ResizeURedisGroupResult> handler,
-                           Boolean... asyncFlag);
+    public DescribeURedisVersionResponse describeURedisVersion(DescribeURedisVersionRequest request)
+            throws UCloudException {
+        request.setAction("DescribeURedisVersion");
+        return (DescribeURedisVersionResponse)
+                this.invoke(request, DescribeURedisVersionResponse.class);
+    }
 
     /**
-     * 检查UMemcache剩余资源
+     * FlushallURedisGroup - 清除主备redis数据
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/FlushallURedisGroup
      */
-    CheckUMemcacheAllowanceResult checkUMemcacheAllowance(
-            CheckUMemcacheAllowanceParam param) throws Exception;
+    public FlushallURedisGroupResponse flushallURedisGroup(FlushallURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("FlushallURedisGroup");
+        return (FlushallURedisGroupResponse)
+                this.invoke(request, FlushallURedisGroupResponse.class);
+    }
 
     /**
-     * 检查UMemcache剩余资源 (回调)
+     * GetUMemSpaceState - 获取UMem内存空间列表
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/GetUMemSpaceState
      */
-    void checkUMemcacheAllowance(CheckUMemcacheAllowanceParam param,
-                                 UcloudHandler<CheckUMemcacheAllowanceResult> handler,
-                                 Boolean... asyncFlag);
+    public GetUMemSpaceStateResponse getUMemSpaceState(GetUMemSpaceStateRequest request)
+            throws UCloudException {
+        request.setAction("GetUMemSpaceState");
+        return (GetUMemSpaceStateResponse) this.invoke(request, GetUMemSpaceStateResponse.class);
+    }
 
     /**
-     * 创建单机Memcache
+     * ISolationURedisGroup - 打开/关闭URedis
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/ISolationURedisGroup
      */
-    CreateUMemcacheGroupResult createUMemcacheGroup(
-            CreateUMemcacheGroupParam param) throws Exception;
+    public ISolationURedisGroupResponse iSolationURedisGroup(ISolationURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("ISolationURedisGroup");
+        return (ISolationURedisGroupResponse)
+                this.invoke(request, ISolationURedisGroupResponse.class);
+    }
 
     /**
-     * 创建单机Memcache (回调)
+     * ModifyUMemSpaceName - 修改UMem内存空间名称
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/ModifyUMemSpaceName
      */
-    void createUMemcacheGroup(CreateUMemcacheGroupParam param,
-                              UcloudHandler<CreateUMemcacheGroupResult> handler,
-                              Boolean... asyncFlag);
+    public ModifyUMemSpaceNameResponse modifyUMemSpaceName(ModifyUMemSpaceNameRequest request)
+            throws UCloudException {
+        request.setAction("ModifyUMemSpaceName");
+        return (ModifyUMemSpaceNameResponse)
+                this.invoke(request, ModifyUMemSpaceNameResponse.class);
+    }
 
     /**
-     * 更换Redis配置文件
+     * ModifyURedisGroupName - 修改主备redis名称
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/ModifyURedisGroupName
      */
-    ChangeURedisConfigResult changeURedisConfig(
-            ChangeURedisConfigParam param) throws Exception;
+    public ModifyURedisGroupNameResponse modifyURedisGroupName(ModifyURedisGroupNameRequest request)
+            throws UCloudException {
+        request.setAction("ModifyURedisGroupName");
+        return (ModifyURedisGroupNameResponse)
+                this.invoke(request, ModifyURedisGroupNameResponse.class);
+    }
 
     /**
-     * 更换Redis配置文件 (回调)
+     * ModifyURedisGroupPassword - 修改主备密码/重置密码
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/ModifyURedisGroupPassword
      */
-    void changeURedisConfig(ChangeURedisConfigParam param,
-                            UcloudHandler<ChangeURedisConfigResult> handler,
-                            Boolean... asyncFlag);
+    public ModifyURedisGroupPasswordResponse modifyURedisGroupPassword(
+            ModifyURedisGroupPasswordRequest request) throws UCloudException {
+        request.setAction("ModifyURedisGroupPassword");
+        return (ModifyURedisGroupPasswordResponse)
+                this.invoke(request, ModifyURedisGroupPasswordResponse.class);
+    }
 
     /**
-     * 修改名称
+     * RemoveUDRedisData - 清除udredis实例数据
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/RemoveUDRedisData
      */
-    ModifyUMemSpaceNameResult modifyUMemSpaceName(
-            ModifyUMemSpaceNameParam param) throws Exception;
+    public RemoveUDRedisDataResponse removeUDRedisData(RemoveUDRedisDataRequest request)
+            throws UCloudException {
+        request.setAction("RemoveUDRedisData");
+        return (RemoveUDRedisDataResponse) this.invoke(request, RemoveUDRedisDataResponse.class);
+    }
 
     /**
-     * 修改名称 (回调)
+     * ResizeUMemSpace - 调整内存空间容量
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/ResizeUMemSpace
      */
-    void modifyUMemSpaceName(ModifyUMemSpaceNameParam param,
-                             UcloudHandler<ModifyUMemSpaceNameResult> handler,
-                             Boolean... asyncFlag);
+    public ResizeUMemSpaceResponse resizeUMemSpace(ResizeUMemSpaceRequest request)
+            throws UCloudException {
+        request.setAction("ResizeUMemSpace");
+        return (ResizeUMemSpaceResponse) this.invoke(request, ResizeUMemSpaceResponse.class);
+    }
 
     /**
-     * 查询备份状态
+     * ResizeURedisGroup -
+     * 通过调用CheckURedisAllowance接口，检查资源情况，根据不同情形来调整主备redis容量，其中主要包括可用区资源不足无法扩容，主备所在宿主机资源不足需要迁移完成扩容（需要主从切换，会闪断及负载升高），以及直接扩容（业务无感知）
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/ResizeURedisGroup
      */
-    DescribeURedisBackupStateResult describeURedisBackupState(
-            DescribeURedisBackupStateParam param) throws Exception;
+    public ResizeURedisGroupResponse resizeURedisGroup(ResizeURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("ResizeURedisGroup");
+        return (ResizeURedisGroupResponse) this.invoke(request, ResizeURedisGroupResponse.class);
+    }
 
     /**
-     * 查询备份状态 (回调)
+     * RestartUMemcacheGroup - 重启单机Memcache
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/RestartUMemcacheGroup
      */
-    void describeURedisBackupState(DescribeURedisBackupStateParam param,
-                                   UcloudHandler<DescribeURedisBackupStateResult> handler,
-                                   Boolean... asyncFlag);
+    public RestartUMemcacheGroupResponse restartUMemcacheGroup(RestartUMemcacheGroupRequest request)
+            throws UCloudException {
+        request.setAction("RestartUMemcacheGroup");
+        return (RestartUMemcacheGroupResponse)
+                this.invoke(request, RestartUMemcacheGroupResponse.class);
+    }
 
     /**
-     * 创建主备Redis备份
+     * RestartURedisGroup - 重启主备实例
      *
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/RestartURedisGroup
      */
-    CreateURedisBackupResult createURedisBackup(
-            CreateURedisBackupParam param) throws Exception;
+    public RestartURedisGroupResponse restartURedisGroup(RestartURedisGroupRequest request)
+            throws UCloudException {
+        request.setAction("RestartURedisGroup");
+        return (RestartURedisGroupResponse) this.invoke(request, RestartURedisGroupResponse.class);
+    }
 
     /**
-     * 创建主备Redis备份 (回调)
+     * UpdateURedisBackupStrategy - URedisBackupStrategy
      *
-     * @param param     参数对象
-     * @param handler   回调接口
-     * @param asyncFlag 是否异步
+     * <p>See also: https://docs.ucloud.cn/api/umem-api/UpdateURedisBackupStrategy
      */
-    void createURedisBackup(CreateURedisBackupParam param,
-                            UcloudHandler<CreateURedisBackupResult> handler,
-                            Boolean... asyncFlag);
+    public UpdateURedisBackupStrategyResponse updateURedisBackupStrategy(
+            UpdateURedisBackupStrategyRequest request) throws UCloudException {
+        request.setAction("UpdateURedisBackupStrategy");
+        return (UpdateURedisBackupStrategyResponse)
+                this.invoke(request, UpdateURedisBackupStrategyResponse.class);
+    }
 }
