@@ -15,7 +15,7 @@
         <module>ucloud-sdk-java-ufile</module>
 
 
-        <module>ucloud-sdk-java-pathx</module>
+        <module>ucloud-sdk-java-ucdn</module>
 
 
         <module>ucloud-sdk-java-usms</module>
