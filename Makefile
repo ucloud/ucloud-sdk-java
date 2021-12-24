@@ -2,9 +2,9 @@ JAVA_FILES=$$(find ./ -name "*.java")
 
 .PHONY: help
 help:
-    @echo "build 制品构建脚"
-    @echo "test-cov 单元测试覆盖率基线"
-    @echo "fmt 格式化"
+	@echo "build 制品构建脚"
+	@echo "test-cov 单元测试覆盖率基线"
+	@echo "fmt 格式化"
 
 .PHONY: build
 build:

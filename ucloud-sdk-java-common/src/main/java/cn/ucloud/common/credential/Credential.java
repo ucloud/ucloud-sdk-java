@@ -42,7 +42,7 @@ public class Credential {
     public String verifyAc(Request request) throws UCloudException {
         Map<String, Object> params = request.encode();
         params.put("PublicKey", this.publicKey);
-        String[] keys = params.keySet().toArray(new String[params.size()]);
+        String[] keys = params.keySet().toArray(new String[0]);
         Arrays.sort(keys);
 
         String s = "";

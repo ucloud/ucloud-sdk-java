@@ -49,7 +49,7 @@ public class Main {
         String imageId = image.getImageId();
 
         CreateUHostInstanceRequest createUHostInstanceRequest = new CreateUHostInstanceRequest();
-        createUHostInstanceRequest.setName("sdk-java-example");
+        createUHostInstanceRequest.setName("sdk-java-示例");
         createUHostInstanceRequest.setZone(zone);
         createUHostInstanceRequest.setImageId(imageId);
         createUHostInstanceRequest.setLoginMode("Password");
