@@ -125,6 +125,8 @@
         <codec.version>1.9</codec.version>
         <slf4j.version>1.7.25</slf4j.version>
         <jsonassert.version>1.5.0</jsonassert.version>
+        <sonar.organization>ucloud</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
@@ -258,7 +260,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.3.0</version>
                 <configuration>
                     <!--指定编码为UTF-8-->
                     <encoding>UTF-8</encoding>
