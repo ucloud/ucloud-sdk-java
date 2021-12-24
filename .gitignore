@@ -14,8 +14,8 @@
 *.rar
 *.jar
 
-.*/
 .DS_Store
+.idea/
 *.iml
 */target
 target
