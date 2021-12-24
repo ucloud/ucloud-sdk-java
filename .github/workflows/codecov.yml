@@ -1,4 +1,4 @@
-name: Build
+name: Codecov
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Run tests
-        run:  ./mvn test
+        run: --batch-mode --update-snapshots test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
