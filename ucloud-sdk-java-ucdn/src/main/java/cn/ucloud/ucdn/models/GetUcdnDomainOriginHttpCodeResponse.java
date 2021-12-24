@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnDomainOriginHttpCodeResponse extends Response {
 
-    /** 状态码实例表。详细见HttpCodeInfo: false */
+    /** 状态码实例表。详细见HttpCodeInfo */
     @SerializedName("HttpCodeDetail")
     private List<HttpCodeInfo> httpCodeDetail;
 
@@ -33,27 +33,27 @@ public class GetUcdnDomainOriginHttpCodeResponse extends Response {
 
     public static class HttpCodeInfo extends Response {
 
-        /** 带宽获取的时间点。格式：时间戳: false */
+        /** 带宽获取的时间点。格式：时间戳 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 1xx数量: false */
+        /** 1xx数量 */
         @SerializedName("HttpOneXX")
         private Integer httpOneXX;
 
-        /** 2xx数量: false */
+        /** 2xx数量 */
         @SerializedName("HttpTwoXX")
         private Integer httpTwoXX;
 
-        /** 3xx数量: false */
+        /** 3xx数量 */
         @SerializedName("HttpThreeXX")
         private Integer httpThreeXX;
 
-        /** 4xx数量: false */
+        /** 4xx数量 */
         @SerializedName("HttpFourXX")
         private Integer httpFourXX;
 
-        /** 5xx数量: false */
+        /** 5xx数量 */
         @SerializedName("HttpFiveXX")
         private Integer httpFiveXX;
 

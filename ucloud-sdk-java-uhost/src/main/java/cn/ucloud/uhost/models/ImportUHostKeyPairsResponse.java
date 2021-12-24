@@ -13,22 +13,21 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ImportUHostKeyPairsResponse extends Response {
 
-    /** 密钥对名称: false */
+    /** 密钥对名称 */
     @SerializedName("KeyPairName")
     private String keyPairName;
 
-    /** 密钥对标识: false */
+    /** 密钥对标识 */
     @SerializedName("KeyPairId")
     private String keyPairId;
 
-    /**
-     * 密钥对指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。算法处理的具体信息格式：`ProjectIdKeyPairId|PublicKeyBody`。: false
-     */
+    /** 密钥对指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。算法处理的具体信息格式：`ProjectIdKeyPairId|PublicKeyBody`。 */
     @SerializedName("KeyPairFingerPrint")
     private String keyPairFingerPrint;
 

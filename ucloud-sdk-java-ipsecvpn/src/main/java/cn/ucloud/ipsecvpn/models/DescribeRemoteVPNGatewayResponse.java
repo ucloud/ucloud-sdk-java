@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeRemoteVPNGatewayResponse extends Response {
 
-    /** 符合条件的客户VPN网关总数: false */
+    /** 符合条件的客户VPN网关总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 客户VPN网关列表, 每项参数详见 RemoteVPNGatewayDataSet: false */
+    /** 客户VPN网关列表, 每项参数详见 RemoteVPNGatewayDataSet */
     @SerializedName("DataSet")
     private List<RemoteVPNGatewayDataSet> dataSet;
 
@@ -45,31 +45,31 @@ public class DescribeRemoteVPNGatewayResponse extends Response {
 
     public static class RemoteVPNGatewayDataSet extends Response {
 
-        /** 客户网关ID: false */
+        /** 客户网关ID */
         @SerializedName("RemoteVPNGatewayId")
         private String remoteVPNGatewayId;
 
-        /** 客户网关名称: false */
+        /** 客户网关名称 */
         @SerializedName("RemoteVPNGatewayName")
         private String remoteVPNGatewayName;
 
-        /** 客户网关IP地址: false */
+        /** 客户网关IP地址 */
         @SerializedName("RemoteVPNGatewayAddr")
         private String remoteVPNGatewayAddr;
 
-        /** 用户组: false */
+        /** 用户组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 备注: false */
+        /** 备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 活跃的隧道数量: false */
+        /** 活跃的隧道数量 */
         @SerializedName("TunnelCount")
         private Integer tunnelCount;
 

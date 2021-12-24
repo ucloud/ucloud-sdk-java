@@ -13,28 +13,29 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ReleaseBackendRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的ID: false */
+    /** 负载均衡实例的ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 后端资源实例的ID(ULB后端ID，非资源自身ID): false */
+    /** 后端资源实例的ID(ULB后端ID，非资源自身ID) */
     @NotEmpty
     @UCloudParam("BackendId")
     private String backendId;

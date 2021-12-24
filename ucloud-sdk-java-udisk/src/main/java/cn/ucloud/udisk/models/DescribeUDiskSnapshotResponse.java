@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUDiskSnapshotResponse extends Response {
 
-    /** JSON 格式的Snapshot列表, 详细参见 UDiskSnapshotSet: false */
+    /** JSON 格式的Snapshot列表, 详细参见 UDiskSnapshotSet */
     @SerializedName("DataSet")
     private List<UDiskSnapshotSet> dataSet;
 
-    /** 根据过滤条件得到的总数: false */
+    /** 根据过滤条件得到的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,79 +45,79 @@ public class DescribeUDiskSnapshotResponse extends Response {
 
     public static class UDiskSnapshotSet extends Response {
 
-        /** 可用区: false */
+        /** 可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 快照Id: false */
+        /** 快照Id */
         @SerializedName("SnapshotId")
         private String snapshotId;
 
-        /** 快照名称: false */
+        /** 快照名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 快照的源UDisk的Id: false */
+        /** 快照的源UDisk的Id */
         @SerializedName("UDiskId")
         private String uDiskId;
 
-        /** 快照的源UDisk的Name: false */
+        /** 快照的源UDisk的Name */
         @SerializedName("UDiskName")
         private String uDiskName;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 快照状态，Normal:正常,Failed:失败,Creating:制作中: false */
+        /** 快照状态，Normal:正常,Failed:失败,Creating:制作中 */
         @SerializedName("Status")
         private String status;
 
-        /** 磁盘类型，0：普通数据盘；1：普通系统盘；2：SSD数据盘；3：SSD系统盘；4：RSSD数据盘；5：RSSD系统盘。: false */
+        /** 磁盘类型，0：普通数据盘；1：普通系统盘；2：SSD数据盘；3：SSD系统盘；4：RSSD数据盘；5：RSSD系统盘。 */
         @SerializedName("DiskType")
         private Integer diskType;
 
-        /** 过期时间: false */
+        /** 过期时间 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** 快照描述: false */
+        /** 快照描述 */
         @SerializedName("Comment")
         private String comment;
 
-        /** 对应磁盘是否处于可用状态: false */
+        /** 对应磁盘是否处于可用状态 */
         @SerializedName("IsUDiskAvailable")
         private Boolean isUDiskAvailable;
 
-        /** 快照版本: false */
+        /** 快照版本 */
         @SerializedName("Version")
         private String version;
 
-        /** 对应磁盘制作快照时所挂载的主机: false */
+        /** 对应磁盘制作快照时所挂载的主机 */
         @SerializedName("UHostId")
         private String uHostId;
 
-        /** 是否是加密盘快照，是:"Yes", 否:"No": false */
+        /** 是否是加密盘快照，是:"Yes", 否:"No" */
         @SerializedName("UKmsMode")
         private String uKmsMode;
 
-        /** 该快照的cmk id: false */
+        /** 该快照的cmk id */
         @SerializedName("CmkId")
         private String cmkId;
 
-        /** 该快照的密文密钥: false */
+        /** 该快照的密文密钥 */
         @SerializedName("DataKey")
         private String dataKey;
 
-        /** 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘): false */
+        /** 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘) */
         @SerializedName("CmkIdStatus")
         private String cmkIdStatus;
 
-        /** cmk id 别名: false */
+        /** cmk id 别名 */
         @SerializedName("CmkIdAlias")
         private String cmkIdAlias;
 

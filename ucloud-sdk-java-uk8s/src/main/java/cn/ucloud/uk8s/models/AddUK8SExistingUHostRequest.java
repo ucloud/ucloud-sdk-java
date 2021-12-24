@@ -13,68 +13,69 @@
  */
 package cn.ucloud.uk8s.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class AddUK8SExistingUHostRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
     /**
      * Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 |
-     * base64: false
+     * base64
      */
     @NotEmpty
     @UCloudParam("Password")
     private String password;
 
-    /** UK8S集群ID。 可从UK8S控制台获取。 : false */
+    /** UK8S集群ID。 可从UK8S控制台获取。 */
     @NotEmpty
     @UCloudParam("ClusterId")
     private String clusterId;
 
-    /** 云主机Id，为了保证节点正常运行，该主机配置不得低于2C4G。: false */
+    /** 云主机Id，为了保证节点正常运行，该主机配置不得低于2C4G。 */
     @NotEmpty
     @UCloudParam("UHostId")
     private String uHostId;
 
-    /** 默认110，生产环境建议小于等于110。: false */
+    /** 默认110，生产环境建议小于等于110。 */
     @UCloudParam("MaxPods")
     private Integer maxPods;
 
-    /** Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game: false */
+    /** Node节点标签。key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game */
     @UCloudParam("Labels")
     private String labels;
 
-    /** 该云主机所属子网Id。: false */
+    /** 该云主机所属子网Id。 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 镜像 Id，不填时后台程序会自动选用一个可用的镜像 Id，支持用户自定义镜像，自定义镜像必须基于基础镜像制作。: false */
+    /** 镜像 Id，不填时后台程序会自动选用一个可用的镜像 Id，支持用户自定义镜像，自定义镜像必须基于基础镜像制作。 */
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 用于标示添加完节点后是否将节点临时禁用. 传入 "true" 表示禁用,传入其它或不传表示不禁用: false */
+    /** 用于标示添加完节点后是否将节点临时禁用. 传入 "true" 表示禁用,传入其它或不传表示不禁用 */
     @UCloudParam("DisableSchedule")
     private Boolean disableSchedule;
 
-    /** 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。: false */
+    /** 用户自定义数据。当镜像支持Cloud-init Feature时可填写此字段。注意：1、总数据量大小不超过 16K；2、使用base64编码。 */
     @UCloudParam("UserData")
     private String userData;
 
-    /** 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。: false */
+    /** 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。 */
     @UCloudParam("InitScript")
     private String initScript;
 

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUDBBackupResponse extends Response {
 
-    /** 备份信息 参照UDBBackupSet: false */
+    /** 备份信息 参照UDBBackupSet */
     @SerializedName("DataSet")
     private List<UDBBackupSet> dataSet;
 
-    /** 满足条件备份总数，如果指定dbid，则是该db备份总数: false */
+    /** 满足条件备份总数，如果指定dbid，则是该db备份总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,47 +45,47 @@ public class DescribeUDBBackupResponse extends Response {
 
     public static class UDBBackupSet extends Response {
 
-        /** 备份id: false */
+        /** 备份id */
         @SerializedName("BackupId")
         private Integer backupId;
 
-        /** 备份名称: false */
+        /** 备份名称 */
         @SerializedName("BackupName")
         private String backupName;
 
-        /** 备份时间(Unix时间戳): false */
+        /** 备份时间(Unix时间戳) */
         @SerializedName("BackupTime")
         private Integer backupTime;
 
-        /** 备份文件大小(字节): false */
+        /** 备份文件大小(字节) */
         @SerializedName("BackupSize")
         private Integer backupSize;
 
-        /** 备份类型,取值为0或1,0表示自动，1表示手动: false */
+        /** 备份类型,取值为0或1,0表示自动，1表示手动 */
         @SerializedName("BackupType")
         private Integer backupType;
 
-        /** 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期: false */
+        /** 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期 */
         @SerializedName("State")
         private String state;
 
-        /** dbid: false */
+        /** dbid */
         @SerializedName("DBId")
         private String dbId;
 
-        /** 对应的db名称: false */
+        /** 对应的db名称 */
         @SerializedName("DBName")
         private String dbName;
 
-        /** 备份所在可用区: false */
+        /** 备份所在可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 跨机房高可用备库所在可用区: false */
+        /** 跨机房高可用备库所在可用区 */
         @SerializedName("BackupZone")
         private String backupZone;
 
-        /** 备份完成时间(Unix时间戳): false */
+        /** 备份完成时间(Unix时间戳) */
         @SerializedName("BackupEndTime")
         private Integer backupEndTime;
 

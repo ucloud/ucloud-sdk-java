@@ -13,81 +13,82 @@
  */
 package cn.ucloud.udisk.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CloneUDiskUDataArkRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例名称: false */
+    /** 实例名称 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 需要克隆的源盘id: false */
+    /** 需要克隆的源盘id */
     @NotEmpty
     @UCloudParam("UDiskId")
     private String uDiskId;
 
-    /** 指定从方舟克隆的备份时间点: false */
+    /** 指定从方舟克隆的备份时间点 */
     @NotEmpty
     @UCloudParam("SnapshotTime")
     private Integer snapshotTime;
 
-    /** Disk注释: false */
+    /** Disk注释 */
     @UCloudParam("Comment")
     private String comment;
 
-    /** Year , Month, Dynamic，Postpay 默认: Dynamic: false */
+    /** Year , Month, Dynamic，Postpay 默认: Dynamic */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长 默认: 1: false */
+    /** 购买时长 默认: 1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No: false */
+    /** 【开启数据方舟入口已关闭】是否开启数据方舟。Yes：开启，No：不开启，默认值：No */
     @UCloudParam("UDataArkMode")
     private String uDataArkMode;
 
-    /** 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No: false */
+    /** 是否开启快照服务（开启快照服务，可免费开启数据方舟）。Yes：开启，No：不开启，默认值：No */
     @UCloudParam("SnapshotService")
     private String snapshotService;
 
-    /** 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘备份有效，对云盘备份无效): false */
+    /** 购买UDisk大小,单位:GB,范围[1~8000]。(UDisk大小设定对本地盘备份有效，对云盘备份无效) */
     @UCloudParam("Size")
     private Integer size;
 
-    /** 业务组 默认：Default: false */
+    /** 业务组 默认：Default */
     @UCloudParam("Tag")
     private String tag;
 
-    /** RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。: false */
+    /** RDMA集群id。指定RSSD云盘克隆到对应的RDMA集群。 */
     @UCloudParam("RdmaClusterId")
     private String rdmaClusterId;
 
-    /** Host实例ID。克隆出的云盘可直接挂载到该主机上。: false */
+    /** Host实例ID。克隆出的云盘可直接挂载到该主机上。 */
     @UCloudParam("HostId")
     private String hostId;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

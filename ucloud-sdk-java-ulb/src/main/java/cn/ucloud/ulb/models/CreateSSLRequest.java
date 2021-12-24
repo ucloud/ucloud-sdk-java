@@ -13,44 +13,45 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateSSLRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** SSL证书的名字，默认值为空: false */
+    /** SSL证书的名字，默认值为空 */
     @NotEmpty
     @UCloudParam("SSLName")
     private String sslName;
 
-    /** 所添加的SSL证书类型，目前只支持Pem格式: false */
+    /** 所添加的SSL证书类型，目前只支持Pem格式 */
     @UCloudParam("SSLType")
     private String sslType;
 
-    /** SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书: false */
+    /** SSL证书的完整内容，包括用户证书、加密证书的私钥、CA证书 */
     @UCloudParam("SSLContent")
     private String sslContent;
 
-    /** 用户的证书: false */
+    /** 用户的证书 */
     @UCloudParam("UserCert")
     private String userCert;
 
-    /** 加密证书的私钥: false */
+    /** 加密证书的私钥 */
     @UCloudParam("PrivateKey")
     private String privateKey;
 
-    /** CA证书: false */
+    /** CA证书 */
     @UCloudParam("CaCert")
     private String caCert;
 

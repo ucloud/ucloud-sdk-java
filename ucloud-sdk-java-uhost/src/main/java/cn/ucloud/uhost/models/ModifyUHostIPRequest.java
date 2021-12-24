@@ -13,40 +13,38 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ModifyUHostIPRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /**
-     * 项目ID。不填写时为默认项目。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list):
-     * false
-     */
+    /** 项目ID。不填写时为默认项目。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要修改为的 IP 地址。新的IP地址和旧IP地址必须属于统一子网，且和主机内部的配置文件一致。: false */
+    /** 需要修改为的 IP 地址。新的IP地址和旧IP地址必须属于统一子网，且和主机内部的配置文件一致。 */
     @NotEmpty
     @UCloudParam("PresentIpAddress")
     private String presentIpAddress;
 
-    /** 指定云主机 ID。: false */
+    /** 指定云主机 ID。 */
     @NotEmpty
     @UCloudParam("UHostId")
     private String uHostId;
 
-    /** 所需修改的原 IP 地址 ，当云主机只有一个IP地址时，此参数不必填写。: false */
+    /** 所需修改的原 IP 地址 ，当云主机只有一个IP地址时，此参数不必填写。 */
     @UCloudParam("PreviousIpAddress")
     private String previousIpAddress;
 

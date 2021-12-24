@@ -13,45 +13,46 @@
  */
 package cn.ucloud.uddb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpgradeUDDBInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UDDB实例ID: false */
+    /** UDDB实例ID */
     @NotEmpty
     @UCloudParam("UDDBId")
     private String uddbId;
 
     /**
      * UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5W FellFree(标准版)：
-     * 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选: false
+     * 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选
      */
     @NotEmpty
     @UCloudParam("RouterVersion")
     private String routerVersion;
 
-    /** 其他版本：该参数可不填；专享版：物理机台数: false */
+    /** 其他版本：该参数可不填；专享版：物理机台数 */
     @NotEmpty
     @UCloudParam("RouterNodeNum")
     private Integer routerNodeNum;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

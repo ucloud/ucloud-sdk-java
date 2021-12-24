@@ -13,49 +13,50 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeImageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像类型。标准镜像：Base，镜像市场：Business， 自定义镜像：Custom，默认返回所有类型: false */
+    /** 镜像类型。标准镜像：Base，镜像市场：Business， 自定义镜像：Custom，默认返回所有类型 */
     @UCloudParam("ImageType")
     private String imageType;
 
-    /** 操作系统类型：Linux， Windows 默认返回所有类型: false */
+    /** 操作系统类型：Linux， Windows 默认返回所有类型 */
     @UCloudParam("OsType")
     private String osType;
 
-    /** 镜像Id: false */
+    /** 镜像Id */
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 列表起始位置偏移量，默认为0: false */
+    /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20: false */
+    /** 返回数据长度，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 是否返回价格：1返回，0不返回；默认不返回: false */
+    /** 是否返回价格：1返回，0不返回；默认不返回 */
     @UCloudParam("PriceSet")
     private Integer priceSet;
 

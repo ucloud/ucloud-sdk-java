@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUHostTagsResponse extends Response {
 
-    /** 已有主机的业务组总数: false */
+    /** 已有主机的业务组总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 业务组集合见 UHostTagSet: false */
+    /** 业务组集合见 UHostTagSet */
     @SerializedName("TagSet")
     private List<UHostTagSet> tagSet;
 
@@ -45,15 +45,15 @@ public class DescribeUHostTagsResponse extends Response {
 
     public static class UHostTagSet extends Response {
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 该业务组中包含的主机个数: false */
+        /** 该业务组中包含的主机个数 */
         @SerializedName("TotalCount")
         private Integer totalCount;
 
-        /** 可用区: false */
+        /** 可用区 */
         @SerializedName("Zone")
         private String zone;
 

@@ -13,22 +13,23 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DeleteIsolationGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目id: false */
+    /** 项目id */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 硬件隔离组id: false */
+    /** 硬件隔离组id */
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;

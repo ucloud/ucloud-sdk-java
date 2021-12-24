@@ -13,12 +13,13 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateBandwidthPackageResponse extends Response {
 
-    /** 所创建带宽包的资源ID: false */
+    /** 所创建带宽包的资源ID */
     @SerializedName("BandwidthPackageId")
     private String bandwidthPackageId;
 

@@ -20,22 +20,22 @@ import java.util.List;
 
 public class UpgradeToArkUHostInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** UHost主机的资源ID，例如UHostIds.0代表希望升级的主机1，UHostIds.1代表主机2。: false */
+    /** UHost主机的资源ID，例如UHostIds.0代表希望升级的主机1，UHostIds.1代表主机2。 */
     @NotEmpty
     @UCloudParam("UHostIds")
     private List<String> uHostIds;
 
-    /** 代金券ID 请参考DescribeCoupon接口: false */
+    /** 代金券ID 请参考DescribeCoupon接口 */
     @UCloudParam("CouponId")
     private String couponId;
 

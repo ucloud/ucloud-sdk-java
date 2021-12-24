@@ -20,39 +20,39 @@ import java.util.List;
 
 public class DescribePHostRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** PHost资源ID，若为空，则返回当前Region所有PHost。: false */
+    /** PHost资源ID，若为空，则返回当前Region所有PHost。 */
     @UCloudParam("PHostId")
     private List<String> pHostId;
 
-    /** 数据偏移量，默认为0: false */
+    /** 数据偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20: false */
+    /** 返回数据长度，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 要挂载的云盘id，过滤返回能被UDiskId挂载的云主机。目前主要针对rssd云盘使用: false */
+    /** 要挂载的云盘id，过滤返回能被UDiskId挂载的云主机。目前主要针对rssd云盘使用 */
     @UCloudParam("UDiskIdForAttachment")
     private String uDiskIdForAttachment;
 
-    /** ULB使用参数，获取同VPC下机器信息。: false */
+    /** ULB使用参数，获取同VPC下机器信息。 */
     @UCloudParam("VPCId")
     private String vpcId;
 

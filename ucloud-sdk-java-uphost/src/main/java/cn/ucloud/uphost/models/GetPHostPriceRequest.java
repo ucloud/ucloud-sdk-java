@@ -20,49 +20,49 @@ import java.util.List;
 
 public class GetPHostPriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 购买数量，范围[1-5]: false */
+    /** 购买数量，范围[1-5] */
     @NotEmpty
     @UCloudParam("Count")
     private Integer count;
 
-    /** 计费模式，枚举值为： Year/Month: false */
+    /** 计费模式，枚举值为： Year/Month */
     @NotEmpty
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。: false */
+    /** 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。 */
     @NotEmpty
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 网络环境，可选千兆：1G ；万兆：10G；25G网络：25G。: false */
+    /** 网络环境，可选千兆：1G ；万兆：10G；25G网络：25G。 */
     @UCloudParam("Cluster")
     private String cluster;
 
     /**
      * 默认为：DB(数据库型)，可以通过接口
-     * [DescribePHostMachineType](api/uphost-api/describe_phost_machine_type.html)获取: false
+     * [DescribePHostMachineType](api/uphost-api/describe_phost_machine_type.html)获取
      */
     @UCloudParam("Type")
     private String type;
 
-    /** : false */
+    /** */
     @UCloudParam("Disks")
     private List<Disks> disks;
 
@@ -140,15 +140,15 @@ public class GetPHostPriceRequest extends Request {
 
     public static class Disks extends Request {
 
-        /** 裸金属机型参数->枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。: false */
+        /** 裸金属机型参数->枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
         @UCloudParam("IsBoot")
         private String isBoot;
 
-        /** 裸金属机型参数->磁盘类型：枚举值：CLOUD_RSSD: false */
+        /** 裸金属机型参数->磁盘类型：枚举值：CLOUD_RSSD */
         @UCloudParam("Type")
         private String type;
 
-        /** 裸金属机型参数->磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB。数据盘是20-32000G。: false */
+        /** 裸金属机型参数->磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB。数据盘是20-32000G。 */
         @UCloudParam("Size")
         private String size;
 

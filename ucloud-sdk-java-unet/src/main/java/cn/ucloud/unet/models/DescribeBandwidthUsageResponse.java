@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeBandwidthUsageResponse extends Response {
 
-    /** EIPSet中的元素个数: false */
+    /** EIPSet中的元素个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 单个弹性IP的带宽用量详细信息, 详见 UnetBandwidthUsageEIPSet, 如没有弹性IP资源则没有该返回值。: false */
+    /** 单个弹性IP的带宽用量详细信息, 详见 UnetBandwidthUsageEIPSet, 如没有弹性IP资源则没有该返回值。 */
     @SerializedName("EIPSet")
     private List<UnetBandwidthUsageEIPSet> eipSet;
 
@@ -45,11 +45,11 @@ public class DescribeBandwidthUsageResponse extends Response {
 
     public static class UnetBandwidthUsageEIPSet extends Response {
 
-        /** 最近5分钟带宽用量, 单位Mbps: false */
+        /** 最近5分钟带宽用量, 单位Mbps */
         @SerializedName("CurBandwidth")
         private Double curBandwidth;
 
-        /** 弹性IP资源ID: false */
+        /** 弹性IP资源ID */
         @SerializedName("EIPId")
         private String eipId;
 

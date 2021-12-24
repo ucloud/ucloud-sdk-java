@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUDiskPriceResponse extends Response {
 
-    /** 价格参数列表，具体说明见 UDiskPriceDataSet: false */
+    /** 价格参数列表，具体说明见 UDiskPriceDataSet */
     @SerializedName("DataSet")
     private List<UDiskPriceDataSet> dataSet;
 
@@ -33,23 +33,23 @@ public class DescribeUDiskPriceResponse extends Response {
 
     public static class UDiskPriceDataSet extends Response {
 
-        /** Year， Month， Dynamic，Trial: false */
+        /** Year， Month， Dynamic，Trial */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 实际价格 (单位: 分): false */
+        /** 实际价格 (单位: 分) */
         @SerializedName("Price")
         private Integer price;
 
-        /** "UDataArk","SnapshotService","UDisk","Total": false */
+        /** "UDataArk","SnapshotService","UDisk","Total" */
         @SerializedName("ChargeName")
         private String chargeName;
 
-        /** 用户折后价(对应计费CustomPrice): false */
+        /** 用户折后价(对应计费CustomPrice) */
         @SerializedName("OriginalPrice")
         private Integer originalPrice;
 
-        /** 原价(对应计费OriginalPrice): false */
+        /** 原价(对应计费OriginalPrice) */
         @SerializedName("ListPrice")
         private Integer listPrice;
 

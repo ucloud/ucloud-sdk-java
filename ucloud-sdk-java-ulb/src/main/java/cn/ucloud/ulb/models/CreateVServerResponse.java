@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateVServerResponse extends Response {
 
-    /** VServer实例的Id: false */
+    /** VServer实例的Id */
     @SerializedName("VServerId")
     private String vServerId;
 

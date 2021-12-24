@@ -13,12 +13,13 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class UpdateFirewallResponse extends Response {
 
-    /** 防火墙id: false */
+    /** 防火墙id */
     @SerializedName("FWId")
     private String fwId;
 

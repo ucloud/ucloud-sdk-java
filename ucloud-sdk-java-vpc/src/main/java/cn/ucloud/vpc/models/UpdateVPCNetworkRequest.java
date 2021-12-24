@@ -20,24 +20,23 @@ import java.util.List;
 
 public class UpdateVPCNetworkRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPC的ID: false */
+    /** VPC的ID */
     @NotEmpty
     @UCloudParam("VPCId")
     private String vpcId;
 
     /**
-     * 需要保留的VPC网段。当前仅支持删除VPC网段，添加网段请参考[AddVPCNetwork](https://docs.ucloud.cn/api/vpc2.0-api/add_vpc_network):
-     * false
+     * 需要保留的VPC网段。当前仅支持删除VPC网段，添加网段请参考[AddVPCNetwork](https://docs.ucloud.cn/api/vpc2.0-api/add_vpc_network)
      */
     @NotEmpty
     @UCloudParam("Network")

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class AllocateEIPResponse extends Response {
 
-    /** 申请到的EIP资源详情 参见 UnetAllocateEIPSet: false */
+    /** 申请到的EIP资源详情 参见 UnetAllocateEIPSet */
     @SerializedName("EIPSet")
     private List<UnetAllocateEIPSet> eipSet;
 
@@ -33,11 +33,11 @@ public class AllocateEIPResponse extends Response {
 
     public static class UnetAllocateEIPSet extends Response {
 
-        /** 申请到的EIP资源ID: false */
+        /** 申请到的EIP资源ID */
         @SerializedName("EIPId")
         private String eipId;
 
-        /** 申请到的IPv4地址. : false */
+        /** 申请到的IPv4地址. */
         @SerializedName("EIPAddr")
         private List<UnetEIPAddrSet> eipAddr;
 
@@ -60,11 +60,11 @@ public class AllocateEIPResponse extends Response {
 
     public static class UnetEIPAddrSet extends Response {
 
-        /** 运营商信息如: 国际: International, BGP: BGP: false */
+        /** 运营商信息如: 国际: International, BGP: BGP */
         @SerializedName("OperatorName")
         private String operatorName;
 
-        /** IP地址: false */
+        /** IP地址 */
         @SerializedName("IP")
         private String ip;
 

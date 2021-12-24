@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnProIspRequestNumV2Response extends Response {
 
-    /** 按省份的请求数实例表。具体参考下面RequestList: false */
+    /** 按省份的请求数实例表。具体参考下面RequestList */
     @SerializedName("RequestNumSet")
     private List<ProIspRequestNumSetV2> requestNumSet;
 
@@ -33,11 +33,11 @@ public class GetUcdnProIspRequestNumV2Response extends Response {
 
     public static class ProIspRequestNumSetV2 extends Response {
 
-        /** 省份代码: false */
+        /** 省份代码 */
         @SerializedName("Province")
         private String province;
 
-        /** 省份请求数实例表 ProIspRequestListV2: false */
+        /** 省份请求数实例表 ProIspRequestListV2 */
         @SerializedName("RequestList")
         private List<ProIspRequestListV2> requestList;
 
@@ -60,11 +60,11 @@ public class GetUcdnProIspRequestNumV2Response extends Response {
 
     public static class ProIspRequestListV2 extends Response {
 
-        /** 带宽获取的时间点。格式：时间戳: false */
+        /** 带宽获取的时间点。格式：时间戳 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 返回值返回指定时间区间内的请求数: false */
+        /** 返回值返回指定时间区间内的请求数 */
         @SerializedName("CdnRequest")
         private Double cdnRequest;
 

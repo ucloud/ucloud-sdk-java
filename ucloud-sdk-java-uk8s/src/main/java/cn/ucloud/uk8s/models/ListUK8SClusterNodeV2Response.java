@@ -19,11 +19,11 @@ import java.util.List;
 
 public class ListUK8SClusterNodeV2Response extends Response {
 
-    /** 节点详细信息，见NodeInfoV2。: false */
+    /** 节点详细信息，见NodeInfoV2。 */
     @SerializedName("NodeSet")
     private List<NodeInfoV2> nodeSet;
 
-    /** 满足条件的节点数量，包括Master。: false */
+    /** 满足条件的节点数量，包括Master。 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,31 +45,31 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
     public static class UHostIPSet extends Response {
 
-        /** 国际: Internation，BGP: Bgp，内网: Private: false */
+        /** 国际: Internation，BGP: Bgp，内网: Private */
         @SerializedName("Type")
         private String type;
 
-        /** IP资源ID (内网IP无对应的资源ID): false */
+        /** IP资源ID (内网IP无对应的资源ID) */
         @SerializedName("IPId")
         private String ipId;
 
-        /** IP地址: false */
+        /** IP地址 */
         @SerializedName("IP")
         private String ip;
 
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息): false */
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** IP地址对应的VPC ID: false */
+        /** IP地址对应的VPC ID */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** IP地址对应的子网 ID: false */
+        /** IP地址对应的子网 ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** Mac地址: false */
+        /** Mac地址 */
         @SerializedName("Mac")
         private String mac;
 
@@ -132,86 +132,86 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
     public static class NodeInfoV2 extends Response {
 
-        /** Node所在可用区: false */
+        /** Node所在可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** NodeId，Node在UK8S处的唯一标示，如uk8s-reewqe5-sdasadsda: false */
+        /** NodeId，Node在UK8S处的唯一标示，如uk8s-reewqe5-sdasadsda */
         @SerializedName("NodeId")
         private String nodeId;
 
-        /** node角色，枚举值为master、node: false */
+        /** node角色，枚举值为master、node */
         @SerializedName("NodeRole")
         private String nodeRole;
 
         /**
          * Node的状态：枚举值：初始化："Initializing"；启动中："Starting"；运行："Running"；停止中："Stopping"；停止："Stopped"；待删除："ToBeDeleted"；删除中："Deleting"；异常："Error"；安装失败："Install
-         * Fail"；: false
+         * Fail"；
          */
         @SerializedName("NodeStatus")
         private String nodeStatus;
 
-        /** Node节点的资源类型，枚举值为UHost或UPHost。: false */
+        /** Node节点的资源类型，枚举值为UHost或UPHost。 */
         @SerializedName("InstanceType")
         private String instanceType;
 
-        /** 资源名称，初始值等于NodeId，用户可在UHost或UPHost处修改。: false */
+        /** 资源名称，初始值等于NodeId，用户可在UHost或UPHost处修改。 */
         @SerializedName("InstanceName")
         private String instanceName;
 
-        /** 资源ID，如uhost-xxxx，或uphost-xxxxx。: false */
+        /** 资源ID，如uhost-xxxx，或uphost-xxxxx。 */
         @SerializedName("InstanceId")
         private String instanceId;
 
-        /** 机型类别，分别对应Uhost的MachineType或PHost的PHostType。: false */
+        /** 机型类别，分别对应Uhost的MachineType或PHost的PHostType。 */
         @SerializedName("MachineType")
         private String machineType;
 
-        /** Node节点的操作系统类别，如Linux或Windows。: false */
+        /** Node节点的操作系统类别，如Linux或Windows。 */
         @SerializedName("OsType")
         private String osType;
 
-        /** Node节点的镜像名称。: false */
+        /** Node节点的镜像名称。 */
         @SerializedName("OsName")
         private String osName;
 
-        /** Node节点CPU核数，单位: 个。: false */
+        /** Node节点CPU核数，单位: 个。 */
         @SerializedName("CPU")
         private Integer cpu;
 
-        /** 内存大小，单位: MB。: false */
+        /** 内存大小，单位: MB。 */
         @SerializedName("Memory")
         private Integer memory;
 
-        /** 节点IP信息，详细信息见 UHostIPSet。: false */
+        /** 节点IP信息，详细信息见 UHostIPSet。 */
         @SerializedName("IPSet")
         private List<UHostIPSet> ipSet;
 
-        /** 节点创建时间: false */
+        /** 节点创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 节点计费到期时间: false */
+        /** 节点计费到期时间 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 节点所属伸缩组ID，非伸缩组创建出来的节点，伸缩组ID为Default。: false */
+        /** 节点所属伸缩组ID，非伸缩组创建出来的节点，伸缩组ID为Default。 */
         @SerializedName("AsgId")
         private String asgId;
 
-        /** 是否允许Pod调度到该节点，枚举值为true或false。: false */
+        /** 是否允许Pod调度到该节点，枚举值为true或false。 */
         @SerializedName("Unschedulable")
         private Boolean unschedulable;
 
-        /** kubeproxy信息，详细信息见KubeProxy。: false */
+        /** kubeproxy信息，详细信息见KubeProxy。 */
         @SerializedName("KubeProxy")
         private KubeProxy kubeProxy;
 
-        /** 加节点时判断是否没有资源，如果返回NORESOURCE则代表没有资源了: false */
+        /** 加节点时判断是否没有资源，如果返回NORESOURCE则代表没有资源了 */
         @SerializedName("NodeLogInfo")
         private String nodeLogInfo;
 
-        /** 节点的GPU颗数。: false */
+        /** 节点的GPU颗数。 */
         @SerializedName("GPU")
         private Integer gpu;
 
@@ -378,7 +378,7 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
     public static class KubeProxy extends Response {
 
-        /** KubeProxy模式，枚举值为[ipvs,iptables]: false */
+        /** KubeProxy模式，枚举值为[ipvs,iptables] */
         @SerializedName("Mode")
         private String mode;
 

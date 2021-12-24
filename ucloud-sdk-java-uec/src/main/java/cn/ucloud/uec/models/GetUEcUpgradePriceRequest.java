@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,33 +22,33 @@ public class GetUEcUpgradePriceRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 虚拟机资源ID: false */
+    /** 虚拟机资源ID */
     @NotEmpty
     @UCloudParam("NodeId")
     private String nodeId;
 
-    /** cpu核心数: false */
+    /** cpu核心数 */
     @UCloudParam("CpuCore")
     private Integer cpuCore;
 
-    /** 内存大小，单位GB: false */
+    /** 内存大小，单位GB */
     @UCloudParam("MemSize")
     private Integer memSize;
 
-    /** 系统盘大小，单位GB: false */
+    /** 系统盘大小，单位GB */
     @UCloudParam("SysDiskSize")
     private Integer sysDiskSize;
 
-    /** 数据盘大小，单位GB: false */
+    /** 数据盘大小，单位GB */
     @UCloudParam("DiskSize")
     private Integer diskSize;
 
-    /** 节点带宽限制，单位Mbs: false */
+    /** 节点带宽限制，单位Mbs */
     @UCloudParam("NetLimit")
     private Integer netLimit;
 

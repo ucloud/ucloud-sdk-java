@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeURedisBackupResponse extends Response {
 
-    /** 用户名下总的备份个数: false */
+    /** 用户名下总的备份个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 备份列表 参见 URedisBackupSet: false */
+    /** 备份列表 参见 URedisBackupSet */
     @SerializedName("DataSet")
     private List<URedisBackupSet> dataSet;
 
@@ -45,39 +45,39 @@ public class DescribeURedisBackupResponse extends Response {
 
     public static class URedisBackupSet extends Response {
 
-        /** 备份ID: false */
+        /** 备份ID */
         @SerializedName("BackupId")
         private String backupId;
 
-        /** 可用区，参见[可用区列表](../summary/regionlist.html): false */
+        /** 可用区，参见[可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
 
-        /** 对应的实例ID: false */
+        /** 对应的实例ID */
         @SerializedName("GroupId")
         private String groupId;
 
-        /** 组名称: false */
+        /** 组名称 */
         @SerializedName("GroupName")
         private String groupName;
 
-        /** 备份的名称: false */
+        /** 备份的名称 */
         @SerializedName("BackupName")
         private String backupName;
 
-        /** 备份时间 (UNIX时间戳): false */
+        /** 备份时间 (UNIX时间戳) */
         @SerializedName("BackupTime")
         private Integer backupTime;
 
-        /** 备份文件大小, 以字节为单位: false */
+        /** 备份文件大小, 以字节为单位 */
         @SerializedName("BackupSize")
         private Integer backupSize;
 
-        /** 备份类型: Manual 手动 Auto 自动: false */
+        /** 备份类型: Manual 手动 Auto 自动 */
         @SerializedName("BackupType")
         private String backupType;
 
-        /** 备份的状态: Backuping 备份中 Success 备份成功 Error 备份失败 Expired 备份过期: false */
+        /** 备份的状态: Backuping 备份中 Success 备份成功 Error 备份失败 Expired 备份过期 */
         @SerializedName("State")
         private String state;
 

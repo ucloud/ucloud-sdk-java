@@ -13,20 +13,21 @@
  */
 package cn.ucloud.ufs.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUFSVolumeResponse extends Response {
 
-    /** 文件系统名称: false */
+    /** 文件系统名称 */
     @SerializedName("VolumeName")
     private String volumeName;
 
-    /** 文件系统ID: false */
+    /** 文件系统ID */
     @SerializedName("VolumeId")
     private String volumeId;
 
-    /** 文件系统挂载点状态: false */
+    /** 文件系统挂载点状态 */
     @SerializedName("VolumeStatus")
     private String volumeStatus;
 

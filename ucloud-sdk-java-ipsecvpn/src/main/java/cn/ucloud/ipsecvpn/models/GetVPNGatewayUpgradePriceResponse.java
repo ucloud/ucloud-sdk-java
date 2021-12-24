@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ipsecvpn.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetVPNGatewayUpgradePriceResponse extends Response {
 
-    /** 调整规格后的VPN网关价格, 单位为"元", 如需退费此处为负值: false */
+    /** 调整规格后的VPN网关价格, 单位为"元", 如需退费此处为负值 */
     @SerializedName("Price")
     private Double price;
 

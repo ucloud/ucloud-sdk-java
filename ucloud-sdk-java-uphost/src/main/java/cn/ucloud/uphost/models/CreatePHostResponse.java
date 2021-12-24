@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CreatePHostResponse extends Response {
 
-    /** PHost的资源ID数组: false */
+    /** PHost的资源ID数组 */
     @SerializedName("PHostId")
     private List<String> pHostId;
 

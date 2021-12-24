@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnProIspBandwidthV2Response extends Response {
 
-    /** 按省份的带宽流量实例表。具体参考下面BandwidthSet: false */
+    /** 按省份的带宽流量实例表。具体参考下面BandwidthSet */
     @SerializedName("BandwidthSet")
     private List<ProIspBandwidthSet> bandwidthSet;
 
@@ -33,11 +33,11 @@ public class GetUcdnProIspBandwidthV2Response extends Response {
 
     public static class ProIspBandwidthSet extends Response {
 
-        /** 省份代码: false */
+        /** 省份代码 */
         @SerializedName("Province")
         private String province;
 
-        /** 省份带宽流量实例表: false */
+        /** 省份带宽流量实例表 */
         @SerializedName("BandwidthTrafficList")
         private List<ProIspBandwidthList> bandwidthTrafficList;
 
@@ -60,15 +60,15 @@ public class GetUcdnProIspBandwidthV2Response extends Response {
 
     public static class ProIspBandwidthList extends Response {
 
-        /** 带宽获取的时间点。格式：时间戳: false */
+        /** 带宽获取的时间点。格式：时间戳 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 返回值返回指定时间区间内CDN的带宽峰值，单位Mbps: false */
+        /** 返回值返回指定时间区间内CDN的带宽峰值，单位Mbps */
         @SerializedName("CdnBandwidth")
         private Double cdnBandwidth;
 
-        /** 对应时间粒度的流量，单位字节: false */
+        /** 对应时间粒度的流量，单位字节 */
         @SerializedName("Traffic")
         private Double traffic;
 

@@ -20,32 +20,31 @@ import java.util.List;
 
 public class DescribeVPNTunnelRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
     /**
-     * VPN隧道的资源ID，例如VPNTunnelIds.0代表希望获取信息的VPN隧道1，VPNTunneIds.1代表VPN隧道2，如果为空，则返回当前Region中所有的VPN隧道实例:
-     * false
+     * VPN隧道的资源ID，例如VPNTunnelIds.0代表希望获取信息的VPN隧道1，VPNTunneIds.1代表VPN隧道2，如果为空，则返回当前Region中所有的VPN隧道实例
      */
     @UCloudParam("VPNTunnelIds")
     private List<String> vpnTunnelIds;
 
-    /** 数据偏移量, 默认为0: false */
+    /** 数据偏移量, 默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 数据分页值, 默认为20: false */
+    /** 数据分页值, 默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 业务组名称，若指定则返回指定的业务组下的所有VPN网关的信息: false */
+    /** 业务组名称，若指定则返回指定的业务组下的所有VPN网关的信息 */
     @UCloudParam("Tag")
     private String tag;
 

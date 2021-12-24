@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetCertificateV2Response extends Response {
 
-    /** 证书数量: false */
+    /** 证书数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 证书信息列表: false */
+    /** 证书信息列表 */
     @SerializedName("CertList")
     private List<CertList> certList;
 
@@ -45,39 +45,39 @@ public class GetCertificateV2Response extends Response {
 
     public static class CertList extends Response {
 
-        /** 证书名: false */
+        /** 证书名 */
         @SerializedName("CertName")
         private String certName;
 
-        /** 通用名: false */
+        /** 通用名 */
         @SerializedName("CommonName")
         private String commonName;
 
-        /** dns名称: false */
+        /** dns名称 */
         @SerializedName("DnsName")
         private String dnsName;
 
-        /** 证书开始时间: false */
+        /** 证书开始时间 */
         @SerializedName("BeginTime")
         private Integer beginTime;
 
-        /** 证书获取时间: false */
+        /** 证书获取时间 */
         @SerializedName("EndTime")
         private Integer endTime;
 
-        /** 已配置域名个数: false */
+        /** 已配置域名个数 */
         @SerializedName("DomainCount")
         private Integer domainCount;
 
-        /** 证书内容: false */
+        /** 证书内容 */
         @SerializedName("UserCert")
         private String userCert;
 
-        /** ca证内容: false */
+        /** ca证内容 */
         @SerializedName("CaCert")
         private String caCert;
 
-        /** 已配置的域名列表: false */
+        /** 已配置的域名列表 */
         @SerializedName("Domains")
         private List<String> domains;
 

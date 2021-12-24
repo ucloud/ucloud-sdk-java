@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CopyCustomImageResponse extends Response {
 
-    /** 目标镜像Id: false */
+    /** 目标镜像Id */
     @SerializedName("TargetImageId")
     private String targetImageId;
 

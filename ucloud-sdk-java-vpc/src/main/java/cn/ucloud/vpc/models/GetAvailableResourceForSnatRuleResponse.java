@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetAvailableResourceForSnatRuleResponse extends Response {
 
-    /** 返回的资源详细信息: false */
+    /** 返回的资源详细信息 */
     @SerializedName("DataSet")
     private List<GetAvailableResourceForSnatRuleDataSet> dataSet;
 
-    /** 总数: false */
+    /** 总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,27 +45,27 @@ public class GetAvailableResourceForSnatRuleResponse extends Response {
 
     public static class GetAvailableResourceForSnatRuleDataSet extends Response {
 
-        /** 资源ID: false */
+        /** 资源ID */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("ResourceName")
         private String resourceName;
 
-        /** 资源内网IP: false */
+        /** 资源内网IP */
         @SerializedName("PrivateIP")
         private String privateIP;
 
-        /** 资源类型: false */
+        /** 资源类型 */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 资源所属VPC的ID: false */
+        /** 资源所属VPC的ID */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 资源所属子网的ID: false */
+        /** 资源所属子网的ID */
         @SerializedName("VPCId")
         private String vpcId;
 

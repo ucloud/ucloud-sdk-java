@@ -13,22 +13,23 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class SetNetworkMaskRequest extends Request {
 
-    /** 短信验证码: false */
+    /** 短信验证码 */
     @NotEmpty
     @UCloudParam("Code")
     private String code;
 
-    /** API调用网络掩码，多个IP以英文逗号分隔。默认空字符串，不限制登录IP。: false */
+    /** API调用网络掩码，多个IP以英文逗号分隔。默认空字符串，不限制登录IP。 */
     @UCloudParam("APINetworkMask")
     private String apiNetworkMask;
 
-    /** 登录网络掩码，多个IP以英文逗号分隔。默认空字符串，不限制登录IP。: false */
+    /** 登录网络掩码，多个IP以英文逗号分隔。默认空字符串，不限制登录IP。 */
     @UCloudParam("LoginNetworkMask")
     private String loginNetworkMask;
 

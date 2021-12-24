@@ -13,40 +13,41 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateURedisBackupStrategyRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 组的ID: false */
+    /** 组的ID */
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;
 
-    /** 备份时间，默认为0: false */
+    /** 备份时间，默认为0 */
     @NotEmpty
     @UCloudParam("BackupTime")
     private String backupTime;
 
-    /** 是否打开默认备份功能。enable(打开)，disable(关闭)，默认enable: false */
+    /** 是否打开默认备份功能。enable(打开)，disable(关闭)，默认enable */
     @UCloudParam("AutoBackup")
     private String autoBackup;
 
-    /** 跨机房URedis，slave所在可用区（必须和Zone在同一Region，且不可相同）: false */
+    /** 跨机房URedis，slave所在可用区（必须和Zone在同一Region，且不可相同） */
     @UCloudParam("SlaveZone")
     private String slaveZone;
 

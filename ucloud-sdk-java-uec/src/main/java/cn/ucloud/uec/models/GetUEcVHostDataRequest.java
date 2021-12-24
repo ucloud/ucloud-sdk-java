@@ -22,26 +22,26 @@ public class GetUEcVHostDataRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 节点id: false */
+    /** 节点id */
     @NotEmpty
     @UCloudParam("NodeId")
     private String nodeId;
 
-    /** 0CPU使用率, 1内存使用率, 2 网卡出流量, 3网卡入流量, 4网卡出包量, 5网卡入包量, 6磁盘读流量, 7磁盘写流量, 8磁盘读次数, 9磁盘写次数: false */
+    /** 0CPU使用率, 1内存使用率, 2 网卡出流量, 3网卡入流量, 4网卡出包量, 5网卡入包量, 6磁盘读流量, 7磁盘写流量, 8磁盘读次数, 9磁盘写次数 */
     @NotEmpty
     @UCloudParam("Type")
     private List<Integer> type;
 
-    /** 查询起始时间: false */
+    /** 查询起始时间 */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询结束时间: false */
+    /** 查询结束时间 */
     @UCloudParam("EndTime")
     private Integer endTime;
 

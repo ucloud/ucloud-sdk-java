@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CloneRouteTableResponse extends Response {
 
-    /** 复制后新的路由表资源ID: false */
+    /** 复制后新的路由表资源ID */
     @SerializedName("RouteTableId")
     private String routeTableId;
 

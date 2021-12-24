@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUMemBackupResponse extends Response {
 
-    /** 分布式redis 备份，数组的每个元素为每个分片的备份: false */
+    /** 分布式redis 备份，数组的每个元素为每个分片的备份 */
     @SerializedName("DataSet")
     private List<UMemBackupSet> dataSet;
 
@@ -33,27 +33,27 @@ public class DescribeUMemBackupResponse extends Response {
 
     public static class UMemBackupSet extends Response {
 
-        /** 备份名称: false */
+        /** 备份名称 */
         @SerializedName("BackupName")
         private String backupName;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** Starting:备份中 Done:完成: false */
+        /** Starting:备份中 Done:完成 */
         @SerializedName("State")
         private String state;
 
-        /** 空间的备份ID: false */
+        /** 空间的备份ID */
         @SerializedName("BackupId")
         private String backupId;
 
-        /** 备份类型: auto(自动) ,manual(手动): false */
+        /** 备份类型: auto(自动) ,manual(手动) */
         @SerializedName("BackupType")
         private String backupType;
 
-        /** 本次备份，分片的数量: false */
+        /** 本次备份，分片的数量 */
         @SerializedName("BlockCount")
         private Integer blockCount;
 

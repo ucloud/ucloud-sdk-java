@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUDBInstanceResponse extends Response {
 
-    /** BD实例id: false */
+    /** BD实例id */
     @SerializedName("DBId")
     private String dbId;
 

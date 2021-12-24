@@ -20,29 +20,29 @@ import java.util.List;
 
 public class DescribeVPCRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPCId: false */
+    /** VPCId */
     @UCloudParam("VPCIds")
     private List<String> vpcIds;
 
-    /** 业务组名称: false */
+    /** 业务组名称 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** : false */
+    /** */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** : false */
+    /** */
     @UCloudParam("Limit")
     private Integer limit;
 

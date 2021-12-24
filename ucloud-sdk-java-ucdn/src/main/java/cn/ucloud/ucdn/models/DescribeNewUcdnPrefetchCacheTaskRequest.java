@@ -21,32 +21,32 @@ public class DescribeNewUcdnPrefetchCacheTaskRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 提交任务时返回的任务ID: false */
+    /** 提交任务时返回的任务ID */
     @UCloudParam("TaskId")
     private List<String> taskId;
 
-    /** 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值: false */
+    /** 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值 */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。: false */
+    /** 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 */
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 需要获取的内容预热的状态，枚举值：success：成功；wait：等待处理；process：正在处理；failure：失败； unknow：未知，默认选择所有状态: false */
+    /** 需要获取的内容预热的状态，枚举值：success：成功；wait：等待处理；process：正在处理；failure：失败； unknow：未知，默认选择所有状态 */
     @UCloudParam("Status")
     private String status;
 
-    /** 数据偏移量，默认为0，自然数: false */
+    /** 数据偏移量，默认为0，自然数 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度,默认全部，自然数: false */
+    /** 返回数据长度,默认全部，自然数 */
     @UCloudParam("Limit")
     private Integer limit;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uphost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ResetPHostPasswordResponse extends Response {
 
-    /** 裸金属实例ID: false */
+    /** 裸金属实例ID */
     @SerializedName("PHostId")
     private String pHostId;
 

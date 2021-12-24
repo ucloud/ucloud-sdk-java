@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDBInstanceUpgradePriceResponse extends Response {
 
-    /** 价格，单位为分: false */
+    /** 价格，单位为分 */
     @SerializedName("Price")
     private Integer price;
 

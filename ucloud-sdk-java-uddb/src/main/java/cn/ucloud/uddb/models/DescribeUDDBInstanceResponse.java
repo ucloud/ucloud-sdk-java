@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUDDBInstanceResponse extends Response {
 
-    /** UDDB实例信息列表, 参见DataSetUDDB项定义: false */
+    /** UDDB实例信息列表, 参见DataSetUDDB项定义 */
     @SerializedName("DataSet")
     private List<DataSetUDDB> dataSet;
 
@@ -33,31 +33,31 @@ public class DescribeUDDBInstanceResponse extends Response {
 
     public static class DataSetUDDB extends Response {
 
-        /** UDDB实例对应的可用区: false */
+        /** UDDB实例对应的可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** UDDB实例ID: false */
+        /** UDDB实例ID */
         @SerializedName("UDDBId")
         private String uddbId;
 
-        /** UDDB实例名称: false */
+        /** UDDB实例名称 */
         @SerializedName("Name")
         private String name;
 
-        /** UDDB的数据库版本: false */
+        /** UDDB的数据库版本 */
         @SerializedName("DBTypeId")
         private String dbTypeId;
 
-        /** 管理员帐户名，默认root: false */
+        /** 管理员帐户名，默认root */
         @SerializedName("AdminUser")
         private String adminUser;
 
-        /** UDDB实例访问的虚IP: false */
+        /** UDDB实例访问的虚IP */
         @SerializedName("VirtualIP")
         private String virtualIP;
 
-        /** UDDB实例访问的端口号: false */
+        /** UDDB实例访问的端口号 */
         @SerializedName("Port")
         private Integer port;
 
@@ -65,63 +65,63 @@ public class DescribeUDDBInstanceResponse extends Response {
          * UDDB状态, 状态列表如下: Init: 初始化中 InitFail: 初始化失败 Starting: 启动中 Running: 系统正常运行中 Abnormal:
          * 系统运行中, 有异常, 还能提供服务 Error: 系统运行中, 但不能正常提供服务 Shutdown: 关闭中 Shutoff: 已关闭 Deleted: 已删除
          * UpgradingUDDB: 升降级UDDB配置中 UpgradingDataNode: 升降级UDDB节点配置中 ChangingSlaveCount: 改变只读实例数量中
-         * ScalingOutUDDB: 水平扩展中: false
+         * ScalingOutUDDB: 水平扩展中
          */
         @SerializedName("State")
         private String state;
 
-        /** UDDB实例创建时间，采用UTC计时时间戳: false */
+        /** UDDB实例创建时间，采用UTC计时时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** UDDB实例过期时间，采用UTC计时时间戳: false */
+        /** UDDB实例过期时间，采用UTC计时时间戳 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** 付费类型，可选值如下: Year: 按年付费 Month: 按月付费 Dynamic: 按需付费(单位: 小时) Trial: 免费试用: false */
+        /** 付费类型，可选值如下: Year: 按年付费 Month: 按月付费 Dynamic: 按需付费(单位: 小时) Trial: 免费试用 */
         @SerializedName("ChargeType")
         private String chargeType;
 
         /**
          * UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5W FellFree(标准版)：
-         * 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选: false
+         * 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选
          */
         @SerializedName("RouterVersion")
         private String routerVersion;
 
-        /** 各版本下的节点个数。体验版： 固定为2节点； 畅享版：固定为4节点（后续可通过管理API调整）；专享版：物理机台数: false */
+        /** 各版本下的节点个数。体验版： 固定为2节点； 畅享版：固定为4节点（后续可通过管理API调整）；专享版：物理机台数 */
         @SerializedName("RouterNodeNum")
         private Integer routerNodeNum;
 
-        /** 参考QPS。 免费版： 15000； 畅享版： 30000 - 100000 （根据节点数而定）； 专享版： 节点数 * 10w qps: false */
+        /** 参考QPS。 免费版： 15000； 畅享版： 30000 - 100000 （根据节点数而定）； 专享版： 节点数 * 10w qps */
         @SerializedName("RefQps")
         private Integer refQps;
 
-        /** 数据节点个数: false */
+        /** 数据节点个数 */
         @SerializedName("DataNodeCount")
         private Integer dataNodeCount;
 
-        /** 数据节点的内存配置, 单位：MB: false */
+        /** 数据节点的内存配置, 单位：MB */
         @SerializedName("DataNodeMemory")
         private Integer dataNodeMemory;
 
-        /** 数据节点的磁盘大小配置. 单位: GB: false */
+        /** 数据节点的磁盘大小配置. 单位: GB */
         @SerializedName("DataNodeDiskSpace")
         private Integer dataNodeDiskSpace;
 
-        /** 每个数据节点的只读实例个数.: false */
+        /** 每个数据节点的只读实例个数. */
         @SerializedName("DataNodeSlaveCount")
         private Integer dataNodeSlaveCount;
 
-        /** UDDB实例的数据节点的信息列表: false */
+        /** UDDB实例的数据节点的信息列表 */
         @SerializedName("DataNodeList")
         private List<DataNodeInfo> dataNodeList;
 
-        /** 存储节点的高可用模式， 分为高可用UDB（HA）和普通UDB（Normal），如果不填， 则默认为HA: false */
+        /** 存储节点的高可用模式， 分为高可用UDB（HA）和普通UDB（Normal），如果不填， 则默认为HA */
         @SerializedName("InstanceMode")
         private String instanceMode;
 
-        /** 存储节点和只读实例的磁盘类型。分为：SSD磁盘（SATA_SSD）或普通磁盘(Normal)。 如果不填，则默认为SATA_SSD: false */
+        /** 存储节点和只读实例的磁盘类型。分为：SSD磁盘（SATA_SSD）或普通磁盘(Normal)。 如果不填，则默认为SATA_SSD */
         @SerializedName("InstanceType")
         private String instanceType;
 
@@ -296,38 +296,38 @@ public class DescribeUDDBInstanceResponse extends Response {
 
     public static class DataNodeInfo extends Response {
 
-        /** 数据节点ID: false */
+        /** 数据节点ID */
         @SerializedName("Id")
         private String id;
 
-        /** 数据节点的内存配置, 单位：MB: false */
+        /** 数据节点的内存配置, 单位：MB */
         @SerializedName("Memory")
         private Integer memory;
 
-        /** 数据节点的磁盘大小配置. 单位: GB: false */
+        /** 数据节点的磁盘大小配置. 单位: GB */
         @SerializedName("DiskSpace")
         private Integer diskSpace;
 
-        /** 数据节点的只读实例个数.: false */
+        /** 数据节点的只读实例个数. */
         @SerializedName("SlaveCount")
         private Integer slaveCount;
 
         /**
          * 数据分片状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
-         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中: false
+         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
          */
         @SerializedName("State")
         private String state;
 
-        /** 只读实例信息列表: false */
+        /** 只读实例信息列表 */
         @SerializedName("SlaveInfos")
         private List<SlaveInfo> slaveInfos;
 
-        /** 最近一次数据迁移任务id: false */
+        /** 最近一次数据迁移任务id */
         @SerializedName("LastTransTaskId")
         private String lastTransTaskId;
 
-        /** 节点的创建时间: false */
+        /** 节点的创建时间 */
         @SerializedName("CreateTime")
         private String createTime;
 
@@ -398,17 +398,17 @@ public class DescribeUDDBInstanceResponse extends Response {
 
     public static class SlaveInfo extends Response {
 
-        /** 只读实例ID: false */
+        /** 只读实例ID */
         @SerializedName("Id")
         private String id;
 
-        /** 对应数据节点的ID: false */
+        /** 对应数据节点的ID */
         @SerializedName("DataNodeId")
         private String dataNodeId;
 
         /**
          * 只读实例状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
-         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中: false
+         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
          */
         @SerializedName("State")
         private String state;

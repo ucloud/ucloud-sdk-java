@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CreateUEcVHostResponse extends Response {
 
-    /** 节点id（详情参考NodeList）: false */
+    /** 节点id（详情参考NodeList） */
     @SerializedName("NodeList")
     private List<NodeList> nodeList;
 
@@ -33,7 +33,7 @@ public class CreateUEcVHostResponse extends Response {
 
     public static class NodeList extends Response {
 
-        /** 虚拟机资源id: false */
+        /** 虚拟机资源id */
         @SerializedName("NodeId")
         private String nodeId;
 

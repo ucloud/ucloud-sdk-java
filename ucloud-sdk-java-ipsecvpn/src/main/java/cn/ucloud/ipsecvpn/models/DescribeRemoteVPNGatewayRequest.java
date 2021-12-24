@@ -20,35 +20,34 @@ import java.util.List;
 
 public class DescribeRemoteVPNGatewayRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
     /**
-     * 客户VPN网关的资源ID，例如RemoteVPNGatewayIds.0代表希望获取客户VPN网关1的信息，RemoteVPNGatewayIds.1代表客户VPN网关2，如果为空，则返回当前Region中所有客户VPN网关实例的信息:
-     * false
+     * 客户VPN网关的资源ID，例如RemoteVPNGatewayIds.0代表希望获取客户VPN网关1的信息，RemoteVPNGatewayIds.1代表客户VPN网关2，如果为空，则返回当前Region中所有客户VPN网关实例的信息
      */
     @UCloudParam("RemoteVPNGatewayIds")
     private List<String> remoteVPNGatewayIds;
 
-    /** 业务组名称，若指定则返回业务组下所有客户VPN网关信息: false */
+    /** 业务组名称，若指定则返回业务组下所有客户VPN网关信息 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 数据偏移量, 默认为0: false */
+    /** 数据偏移量, 默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 数据分页值, 默认为20: false */
+    /** 数据分页值, 默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 

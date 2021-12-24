@@ -13,38 +13,39 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class SwitchUDBInstanceToHARequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id,该值可以通过DescribeUDBInstance获取: false */
+    /** 实例的Id,该值可以通过DescribeUDBInstance获取 */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
 
-    /** Year， Month， Dynamic，Trial，不填则按现在单点计费执行 : false */
+    /** Year， Month， Dynamic，Trial，不填则按现在单点计费执行 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，需要和 ChargeType 搭配使用，否则使用单点计费策略的值: false */
+    /** 购买时长，需要和 ChargeType 搭配使用，否则使用单点计费策略的值 */
     @UCloudParam("Quantity")
     private String quantity;
 
-    /** 业务组: false */
+    /** 业务组 */
     @UCloudParam("Tag")
     private String tag;
 

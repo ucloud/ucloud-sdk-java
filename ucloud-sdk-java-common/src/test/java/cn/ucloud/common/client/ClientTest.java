@@ -46,22 +46,21 @@ public class ClientTest {
         this.testInvoke(request, response, new HttpException("some exception occurs") {}, true);
     }
 
-//    @Test
-//    public void testCaseRemote() {
-//        Request request = new Request();
-//        request.setAction("GetRegion");
-//
-//        Response response = new Response();
-//        response.setRetCode(0);
-//        this.testInvoke(request, null, null, false);
-//    }
+    //    @Test
+    //    public void testCaseRemote() {
+    //        Request request = new Request();
+    //        request.setAction("GetRegion");
+    //
+    //        Response response = new Response();
+    //        response.setRetCode(0);
+    //        this.testInvoke(request, null, null, false);
+    //    }
 
     public void testInvoke(
             Request request, Response response, Exception injectedException, Boolean hasException) {
         Config config = new Config();
         config.setUserAgent("Demo/0.42");
-        Credential credential =
-                new Credential("foo", "bar");
+        Credential credential = new Credential("foo", "bar");
         DefaultClient client = new DefaultClient(config, credential);
         DefaultTransport transport = (DefaultTransport) client.getTransport();
 

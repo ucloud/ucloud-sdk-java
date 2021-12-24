@@ -22,26 +22,26 @@ public class GetUcdnDomain95BandwidthV2Request extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 查询的起始日期，格式为Unix Timestamp : false */
+    /** 查询的起始日期，格式为Unix Timestamp */
     @NotEmpty
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询的结束日期，格式为Unix Timestamp : false */
+    /** 查询的结束日期，格式为Unix Timestamp */
     @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 域名id，创建域名时生成的id。默认全部域名: false */
+    /** 域名id，创建域名时生成的id。默认全部域名 */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
-    /** 查询带宽区域 cn代表国内 abroad代表海外 不填默认为全部区域: false */
+    /** 查询带宽区域 cn代表国内 abroad代表海外 不填默认为全部区域 */
     @UCloudParam("Areacode")
     private String areacode;
 

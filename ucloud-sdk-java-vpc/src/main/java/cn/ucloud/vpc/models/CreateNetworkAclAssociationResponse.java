@@ -13,16 +13,17 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateNetworkAclAssociationResponse extends Response {
 
-    /** 创建的绑定关系的ID: false */
+    /** 创建的绑定关系的ID */
     @SerializedName("AssociationId")
     private String associationId;
 
-    /** 该子网之前的绑定关系信息: false */
+    /** 该子网之前的绑定关系信息 */
     @SerializedName("PrevAssociation")
     private AssociationInfo prevAssociation;
 
@@ -44,19 +45,19 @@ public class CreateNetworkAclAssociationResponse extends Response {
 
     public static class AssociationInfo extends Response {
 
-        /** 绑定ID: false */
+        /** 绑定ID */
         @SerializedName("AssociationId")
         private String associationId;
 
-        /** ACL的ID: false */
+        /** ACL的ID */
         @SerializedName("AclId")
         private String aclId;
 
-        /** 绑定的子网ID: false */
+        /** 绑定的子网ID */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 创建的Unix时间戳: false */
+        /** 创建的Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 

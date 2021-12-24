@@ -13,22 +13,23 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UnBindEIPRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 弹性IP的资源Id: false */
+    /** 弹性IP的资源Id */
     @NotEmpty
     @UCloudParam("EIPId")
     private String eipId;
@@ -36,13 +37,13 @@ public class UnBindEIPRequest extends Request {
     /**
      * 弹性IP请求解绑的资源类型, 枚举值为: uhost: 云主机; ulb, 负载均衡器 upm: 物理机; hadoophost:
      * 大数据集群;fortresshost：堡垒机；udockhost：容器；udhost：私有专区主机；natgw：NAT网关；udb：udb；vpngw：ipsec
-     * vpn；ucdr：云灾备；dbaudit：数据库审计；: false
+     * vpn；ucdr：云灾备；dbaudit：数据库审计；
      */
     @NotEmpty
     @UCloudParam("ResourceType")
     private String resourceType;
 
-    /** 弹性IP请求解绑的资源ID: false */
+    /** 弹性IP请求解绑的资源ID */
     @NotEmpty
     @UCloudParam("ResourceId")
     private String resourceId;

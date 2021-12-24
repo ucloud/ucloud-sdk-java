@@ -13,30 +13,31 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeIsolationGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目id: false */
+    /** 项目id */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 待查的硬件隔离组id: false */
+    /** 待查的硬件隔离组id */
     @UCloudParam("GroupId")
     private String groupId;
 
-    /** 列表起始位置偏移量，默认为0: false */
+    /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20，最大100: false */
+    /** 返回数据长度，默认为20，最大100 */
     @UCloudParam("Limit")
     private Integer limit;
 

@@ -13,44 +13,45 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ResizeURedisGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 组ID: false */
+    /** 组ID */
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;
 
-    /** 内存大小, 单位:GB (需要大于原size,且小于等于32) 目前仅支持1/2/4/8/16/32 G 六种容量规格: false */
+    /** 内存大小, 单位:GB (需要大于原size,且小于等于32) 目前仅支持1/2/4/8/16/32 G 六种容量规格 */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** : false */
+    /** */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 空间类型:single(无热备),double(热备)(默认: double): false */
+    /** 空间类型:single(无热备),double(热备)(默认: double) */
     @UCloudParam("Type")
     private String type;
 
-    /** 代金券ID 请参考DescribeCoupon接口: false */
+    /** 代金券ID 请参考DescribeCoupon接口 */
     @UCloudParam("CouponId")
     private Integer couponId;
 

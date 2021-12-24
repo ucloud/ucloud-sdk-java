@@ -13,27 +13,28 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeURedisUpgradePriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 购买uredis大小,单位:GB,范围是[1-32]: false */
+    /** 购买uredis大小,单位:GB,范围是[1-32] */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 要升级的空间的GroupId,请参考DescribeURedisGroup接口: false */
+    /** 要升级的空间的GroupId,请参考DescribeURedisGroup接口 */
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;

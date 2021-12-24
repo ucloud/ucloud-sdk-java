@@ -21,24 +21,24 @@ public class DescribeUEcVHostRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** Idc机房id。默认全部机房: false */
+    /** Idc机房id。默认全部机房 */
     @UCloudParam("IdcId")
     private List<String> idcId;
 
-    /** 节点id，创建节点时生成的id。默认全部节点: false */
+    /** 节点id，创建节点时生成的id。默认全部节点 */
     @UCloudParam("NodeId")
     private List<String> nodeId;
 
-    /** 数据偏移量，默认0，非负整数: false */
+    /** 数据偏移量，默认0，非负整数 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度， 默认20，非负整数: false */
+    /** 返回数据长度， 默认20，非负整数 */
     @UCloudParam("Limit")
     private Integer limit;
 

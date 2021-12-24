@@ -13,34 +13,35 @@
  */
 package cn.ucloud.ufs.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateUFSVolumeInfoRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 文件系统ID: false */
+    /** 文件系统ID */
     @NotEmpty
     @UCloudParam("VolumeId")
     private String volumeId;
 
-    /** 文件系统名称（文件系统名称／备注至少传入其中一个）: false */
+    /** 文件系统名称（文件系统名称／备注至少传入其中一个） */
     @UCloudParam("VolumeName")
     private String volumeName;
 
-    /** 文件系统备注（文件系统名称／备注至少传入其中一个）: false */
+    /** 文件系统备注（文件系统名称／备注至少传入其中一个） */
     @UCloudParam("Remark")
     private String remark;
 

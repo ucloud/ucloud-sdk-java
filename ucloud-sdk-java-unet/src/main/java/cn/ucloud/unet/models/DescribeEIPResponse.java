@@ -19,19 +19,19 @@ import java.util.List;
 
 public class DescribeEIPResponse extends Response {
 
-    /** 满足条件的弹性IP总数: false */
+    /** 满足条件的弹性IP总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 未绑定的弹性IP总数: false */
+    /** 未绑定的弹性IP总数 */
     @SerializedName("UnbindCount")
     private Integer unbindCount;
 
-    /** 满足条件的弹性IP带宽总和, 单位Mbps: false */
+    /** 满足条件的弹性IP带宽总和, 单位Mbps */
     @SerializedName("TotalBandwidth")
     private Integer totalBandwidth;
 
-    /** 弹性IP列表, 每项参数详见 UnetEIPSet: false */
+    /** 弹性IP列表, 每项参数详见 UnetEIPSet */
     @SerializedName("EIPSet")
     private List<UnetEIPSet> eipSet;
 
@@ -67,37 +67,103 @@ public class DescribeEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
+    public static class ShareBandwidthSet extends Response {
+
+        /** 共享带宽带宽值 */
+        @SerializedName("ShareBandwidth")
+        private Integer shareBandwidth;
+
+        /** 共享带宽的资源名称 */
+        @SerializedName("ShareBandwidthName")
+        private String shareBandwidthName;
+
+        /** 共享带宽ID */
+        @SerializedName("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        public Integer getShareBandwidth() {
+            return shareBandwidth;
+        }
+
+        public void setShareBandwidth(Integer shareBandwidth) {
+            this.shareBandwidth = shareBandwidth;
+        }
+
+        public String getShareBandwidthName() {
+            return shareBandwidthName;
+        }
+
+        public void setShareBandwidthName(String shareBandwidthName) {
+            this.shareBandwidthName = shareBandwidthName;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+    }
+
+    public static class UnetEIPAddrSet extends Response {
+
+        /** 运营商信息如: 国际: International, BGP: BGP */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+    }
+
     public static class UnetEIPResourceSet extends Response {
 
         /**
          * 已绑定的资源类型, 枚举值为: uhost, 云主机；natgw：NAT网关；ulb：负载均衡器；upm: 物理机; hadoophost:
          * 大数据集群;fortresshost：堡垒机；udockhost：容器；udhost：私有专区主机；vpngw：IPSec
-         * VPN；ucdr：云灾备；dbaudit：数据库审计，uni：虚拟网卡。: false
+         * VPN；ucdr：云灾备；dbaudit：数据库审计，uni：虚拟网卡。
          */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 已绑定的资源名称: false */
+        /** 已绑定的资源名称 */
         @SerializedName("ResourceName")
         private String resourceName;
 
-        /** 已绑定资源的资源ID: false */
+        /** 已绑定资源的资源ID */
         @SerializedName("ResourceID")
         private String resourceID;
 
-        /** 资源绑定的虚拟网卡的类型。uni，虚拟网卡。: false */
+        /** 资源绑定的虚拟网卡的类型。uni，虚拟网卡。 */
         @SerializedName("SubResourceType")
         private String subResourceType;
 
-        /** 资源绑定的虚拟网卡的名称: false */
+        /** 资源绑定的虚拟网卡的名称 */
         @SerializedName("SubResourceName")
         private String subResourceName;
 
-        /** 资源绑定的虚拟网卡的ID: false */
+        /** 资源绑定的虚拟网卡的ID */
         @SerializedName("SubResourceId")
         private String subResourceId;
 
-        /** 弹性IP的资源ID: false */
+        /** 弹性IP的资源ID */
         @SerializedName("EIPId")
         private String eipId;
 
@@ -160,75 +226,72 @@ public class DescribeEIPResponse extends Response {
 
     public static class UnetEIPSet extends Response {
 
-        /** 弹性IP的资源ID: false */
+        /** 弹性IP的资源ID */
         @SerializedName("EIPId")
         private String eipId;
 
-        /** 外网出口权重, 默认为50, 范围[0-100]: false */
+        /** 外网出口权重, 默认为50, 范围[0-100] */
         @SerializedName("Weight")
         private Integer weight;
 
-        /** 带宽模式, 枚举值为: 0: 非共享带宽模式, 1: 共享带宽模式: false */
+        /** 带宽模式, 枚举值为: 0: 非共享带宽模式, 1: 共享带宽模式 */
         @SerializedName("BandwidthType")
         private Integer bandwidthType;
 
-        /**
-         * 弹性IP的带宽, 单位为Mbps, 当BandwidthType=1时, 该处显示为共享带宽值. 当BandwidthType=0时, 该处显示这个弹性IP的带宽.: false
-         */
+        /** 弹性IP的带宽, 单位为Mbps, 当BandwidthType=1时, 该处显示为共享带宽值. 当BandwidthType=0时, 该处显示这个弹性IP的带宽. */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** 弹性IP的资源绑定状态, 枚举值为: used: 已绑定, free: 未绑定, freeze: 已冻结: false */
+        /** 弹性IP的资源绑定状态, 枚举值为: used: 已绑定, free: 未绑定, freeze: 已冻结 */
         @SerializedName("Status")
         private String status;
 
         /**
-         * 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按小时付费; Trial, 试用. 按小时付费和试用这两种付费模式需要开通权限.:
-         * false
+         * 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按小时付费; Trial, 试用. 按小时付费和试用这两种付费模式需要开通权限.
          */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 弹性IP的创建时间, 格式为Unix Timestamp: false */
+        /** 弹性IP的创建时间, 格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 弹性IP的到期时间, 格式为Unix Timestamp: false */
+        /** 弹性IP的到期时间, 格式为Unix Timestamp */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 弹性IP的详细信息列表, 具体结构见下方 UnetEIPResourceSet: false */
+        /** 弹性IP的详细信息列表, 具体结构见下方 UnetEIPResourceSet */
         @SerializedName("Resource")
         private UnetEIPResourceSet resource;
 
-        /** 弹性IP的详细信息列表, 具体结构见下方 UnetEIPAddrSet: false */
+        /** 弹性IP的详细信息列表, 具体结构见下方 UnetEIPAddrSet */
         @SerializedName("EIPAddr")
         private List<UnetEIPAddrSet> eipAddr;
 
-        /** 弹性IP的名称,缺省值为 "EIP": false */
+        /** 弹性IP的名称,缺省值为 "EIP" */
         @SerializedName("Name")
         private String name;
 
-        /** 弹性IP的业务组标识, 缺省值为 "Default": false */
+        /** 弹性IP的业务组标识, 缺省值为 "Default" */
         @SerializedName("Tag")
         private String tag;
 
-        /** 弹性IP的备注, 缺省值为 "": false */
+        /** 弹性IP的备注, 缺省值为 "" */
         @SerializedName("Remark")
         private String remark;
 
         /**
          * 弹性IP的计费模式, 枚举值为: "Bandwidth", 带宽计费; "Traffic", 流量计费; "ShareBandwidth",共享带宽模式. 默认为
-         * "Bandwidth".: false
+         * "Bandwidth".
          */
         @SerializedName("PayMode")
         private String payMode;
 
-        /** 共享带宽信息 参见 ShareBandwidthSet: false */
+        /** 共享带宽信息 参见 ShareBandwidthSet */
         @SerializedName("ShareBandwidthSet")
         private ShareBandwidthSet shareBandwidthSet;
 
-        /** 弹性IP是否到期: false */
+        /** 弹性IP是否到期 */
         @SerializedName("Expire")
         private Boolean expire;
 
@@ -358,72 +421,6 @@ public class DescribeEIPResponse extends Response {
 
         public void setExpire(Boolean expire) {
             this.expire = expire;
-        }
-    }
-
-    public static class ShareBandwidthSet extends Response {
-
-        /** 共享带宽带宽值: false */
-        @SerializedName("ShareBandwidth")
-        private Integer shareBandwidth;
-
-        /** 共享带宽的资源名称: false */
-        @SerializedName("ShareBandwidthName")
-        private String shareBandwidthName;
-
-        /** 共享带宽ID: false */
-        @SerializedName("ShareBandwidthId")
-        private String shareBandwidthId;
-
-        public Integer getShareBandwidth() {
-            return shareBandwidth;
-        }
-
-        public void setShareBandwidth(Integer shareBandwidth) {
-            this.shareBandwidth = shareBandwidth;
-        }
-
-        public String getShareBandwidthName() {
-            return shareBandwidthName;
-        }
-
-        public void setShareBandwidthName(String shareBandwidthName) {
-            this.shareBandwidthName = shareBandwidthName;
-        }
-
-        public String getShareBandwidthId() {
-            return shareBandwidthId;
-        }
-
-        public void setShareBandwidthId(String shareBandwidthId) {
-            this.shareBandwidthId = shareBandwidthId;
-        }
-    }
-
-    public static class UnetEIPAddrSet extends Response {
-
-        /** 运营商信息如: 国际: International, BGP: BGP: false */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** IP地址: false */
-        @SerializedName("IP")
-        private String ip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
         }
     }
 }

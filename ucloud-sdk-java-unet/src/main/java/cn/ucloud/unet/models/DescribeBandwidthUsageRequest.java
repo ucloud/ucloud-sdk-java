@@ -20,24 +20,24 @@ import java.util.List;
 
 public class DescribeBandwidthUsageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20: false */
+    /** 返回数据分页值, 取值范围为 [0,10000000] 之间的整数, 默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 返回数据偏移量, 默认为0: false */
+    /** 返回数据偏移量, 默认为0 */
     @UCloudParam("OffSet")
     private Integer offSet;
 
-    /** 弹性IP的资源Id. 如果为空, 则返回当前 Region中符合条件的所有EIP的带宽用量, n为自然数: false */
+    /** 弹性IP的资源Id. 如果为空, 则返回当前 Region中符合条件的所有EIP的带宽用量, n为自然数 */
     @UCloudParam("EIPIds")
     private List<String> eipIds;
 

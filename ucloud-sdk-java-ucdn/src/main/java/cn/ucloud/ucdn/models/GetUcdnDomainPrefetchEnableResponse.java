@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ucdn.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUcdnDomainPrefetchEnableResponse extends Response {
 
-    /** 0表示该域名未开启预取，1表示该域名已开启预取: false */
+    /** 0表示该域名未开启预取，1表示该域名已开启预取 */
     @SerializedName("Enable")
     private Integer enable;
 

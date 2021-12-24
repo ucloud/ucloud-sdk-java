@@ -20,30 +20,30 @@ import java.util.List;
 
 public class CreateVPCRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPC名称: false */
+    /** VPC名称 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** VPC网段: false */
+    /** VPC网段 */
     @NotEmpty
     @UCloudParam("Network")
     private List<String> network;
 
-    /** 业务组名称: false */
+    /** 业务组名称 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 备注: false */
+    /** 备注 */
     @UCloudParam("Remark")
     private String remark;
 

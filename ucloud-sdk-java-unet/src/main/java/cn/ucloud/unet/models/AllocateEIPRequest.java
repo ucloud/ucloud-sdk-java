@@ -13,25 +13,26 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class AllocateEIPRequest extends Request {
 
-    /** 地域。: false */
+    /** 地域。 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 : false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 */
     @UCloudParam("ProjectId")
     private String projectId;
 
     /**
      * 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。
      *
-     * <p>使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。: false
+     * <p>使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
      */
     @NotEmpty
     @UCloudParam("OperatorName")
@@ -39,44 +40,44 @@ public class AllocateEIPRequest extends Request {
 
     /**
      * 弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
-     * 流量计费[1-300]，带宽计费[1-10000]: false
+     * 流量计费[1-300]，带宽计费[1-10000]
      */
     @NotEmpty
     @UCloudParam("Bandwidth")
     private Integer bandwidth;
 
-    /** 业务组名称, 默认为 "Default": false */
+    /** 业务组名称, 默认为 "Default" */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按时付费，默认为按月付费。: false */
+    /** 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按时付费，默认为按月付费。 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买的时长, 默认: 1: false */
+    /** 购买的时长, 默认: 1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
     /**
      * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式. 默认为
-     * "Bandwidth".“PostAccurateBandwidth”：带宽后付费模式: false
+     * "Bandwidth".“PostAccurateBandwidth”：带宽后付费模式
      */
     @UCloudParam("PayMode")
     private String payMode;
 
-    /** 绑定的共享带宽Id,仅当PayMode为ShareBandwidth时有效: false */
+    /** 绑定的共享带宽Id,仅当PayMode为ShareBandwidth时有效 */
     @UCloudParam("ShareBandwidthId")
     private String shareBandwidthId;
 
-    /** 弹性IP的名称, 默认为 "EIP": false */
+    /** 弹性IP的名称, 默认为 "EIP" */
     @UCloudParam("Name")
     private String name;
 
-    /** 弹性IP的备注, 默认为空: false */
+    /** 弹性IP的备注, 默认为空 */
     @UCloudParam("Remark")
     private String remark;
 
-    /** 代金券ID, 默认不使用: false */
+    /** 代金券ID, 默认不使用 */
     @UCloudParam("CouponId")
     private String couponId;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateNATGWPolicyResponse extends Response {
 
-    /** 创建时分配的策略Id: false */
+    /** 创建时分配的策略Id */
     @SerializedName("PolicyId")
     private String policyId;
 

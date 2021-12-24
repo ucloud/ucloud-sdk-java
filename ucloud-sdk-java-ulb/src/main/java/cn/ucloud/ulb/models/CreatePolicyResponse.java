@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreatePolicyResponse extends Response {
 
-    /** 内容转发策略ID: false */
+    /** 内容转发策略ID */
     @SerializedName("PolicyId")
     private String policyId;
 

@@ -13,36 +13,37 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateRouteTableRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 所属的VPC资源ID: false */
+    /** 所属的VPC资源ID */
     @NotEmpty
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 路由表名称。默认为RouteTable: false */
+    /** 路由表名称。默认为RouteTable */
     @UCloudParam("Name")
     private String name;
 
-    /** 路由表所属业务组: false */
+    /** 路由表所属业务组 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 备注: false */
+    /** 备注 */
     @UCloudParam("Remark")
     private String remark;
 

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeNATGWPolicyResponse extends Response {
 
-    /** 满足条件的转发策略总数: false */
+    /** 满足条件的转发策略总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 查到的NATGW 转发策略的详细信息: false */
+    /** 查到的NATGW 转发策略的详细信息 */
     @SerializedName("DataSet")
     private List<NATGWPolicyDataSet> dataSet;
 
@@ -45,39 +45,39 @@ public class DescribeNATGWPolicyResponse extends Response {
 
     public static class NATGWPolicyDataSet extends Response {
 
-        /** NAT网关Id: false */
+        /** NAT网关Id */
         @SerializedName("NATGWId")
         private String natgwId;
 
-        /** 转发策略Id: false */
+        /** 转发策略Id */
         @SerializedName("PolicyId")
         private String policyId;
 
-        /** 协议类型: false */
+        /** 协议类型 */
         @SerializedName("Protocol")
         private String protocol;
 
-        /** 端口转发前端EIP: false */
+        /** 端口转发前端EIP */
         @SerializedName("SrcEIP")
         private String srcEIP;
 
-        /** 端口转发前端EIP Id: false */
+        /** 端口转发前端EIP Id */
         @SerializedName("SrcEIPId")
         private String srcEIPId;
 
-        /** 源端口: false */
+        /** 源端口 */
         @SerializedName("SrcPort")
         private String srcPort;
 
-        /** 目的地址: false */
+        /** 目的地址 */
         @SerializedName("DstIP")
         private String dstIP;
 
-        /** 目的端口: false */
+        /** 目的端口 */
         @SerializedName("DstPort")
         private String dstPort;
 
-        /** 转发策略名称: false */
+        /** 转发策略名称 */
         @SerializedName("PolicyName")
         private String policyName;
 

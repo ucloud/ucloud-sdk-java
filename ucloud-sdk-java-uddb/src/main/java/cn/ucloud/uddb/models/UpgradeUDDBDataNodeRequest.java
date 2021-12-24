@@ -13,42 +13,43 @@
  */
 package cn.ucloud.uddb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpgradeUDDBDataNodeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UDDB实例ID: false */
+    /** UDDB实例ID */
     @NotEmpty
     @UCloudParam("UDDBId")
     private String uddbId;
 
-    /** 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值: false */
+    /** 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值 */
     @NotEmpty
     @UCloudParam("DataNodeMemory")
     private Integer dataNodeMemory;
 
-    /** 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.: false */
+    /** 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值. */
     @NotEmpty
     @UCloudParam("DataNodeDiskSpace")
     private Integer dataNodeDiskSpace;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

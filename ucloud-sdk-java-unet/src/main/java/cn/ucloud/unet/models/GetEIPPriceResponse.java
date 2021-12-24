@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetEIPPriceResponse extends Response {
 
-    /** 弹性IP价格详情 详情见 EIPPriceDetailSet: false */
+    /** 弹性IP价格详情 详情见 EIPPriceDetailSet */
     @SerializedName("PriceSet")
     private List<EIPPriceDetailSet> priceSet;
 
@@ -33,19 +33,19 @@ public class GetEIPPriceResponse extends Response {
 
     public static class EIPPriceDetailSet extends Response {
 
-        /** 弹性IP付费方式: false */
+        /** 弹性IP付费方式 */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 购买弹性IP的实际价格, 单位"元": false */
+        /** 购买弹性IP的实际价格, 单位"元" */
         @SerializedName("Price")
         private Double price;
 
-        /** 弹性IP的原价，单位“元”: false */
+        /** 弹性IP的原价，单位“元” */
         @SerializedName("OriginalPrice")
         private Double originalPrice;
 
-        /** 资源有效期, 以Unix Timestamp表示: false */
+        /** 资源有效期, 以Unix Timestamp表示 */
         @SerializedName("PurchaseValue")
         private Integer purchaseValue;
 

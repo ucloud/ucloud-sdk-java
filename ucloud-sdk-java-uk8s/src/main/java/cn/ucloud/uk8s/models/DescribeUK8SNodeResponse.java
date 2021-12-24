@@ -19,115 +19,115 @@ import java.util.List;
 
 public class DescribeUK8SNodeResponse extends Response {
 
-    /** 节点名称: false */
+    /** 节点名称 */
     @SerializedName("Name")
     private String name;
 
-    /** 字符串数组，每一项是类似 "kubernetes.io/arch=amd64" 的标签: false */
+    /** 字符串数组，每一项是类似 "kubernetes.io/arch=amd64" 的标签 */
     @SerializedName("Labels")
     private List<String> labels;
 
-    /** 字符串数组，每一项是类似 "node.alpha.kubernetes.io/ttl=0" 的注解: false */
+    /** 字符串数组，每一项是类似 "node.alpha.kubernetes.io/ttl=0" 的注解 */
     @SerializedName("Annotations")
     private List<String> annotations;
 
-    /** 时间戳，单位是 秒: false */
+    /** 时间戳，单位是 秒 */
     @SerializedName("CreationTimestamp")
     private Integer creationTimestamp;
 
-    /** 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc" : false */
+    /** 字符串，如："UCloud://cn-sh2-02//uk8s-vsc0vgob-n-mpzxc" */
     @SerializedName("ProviderID")
     private String providerID;
 
-    /** 内核版本，如："4.19.0-6.el7.ucloud.x86_64": false */
+    /** 内核版本，如："4.19.0-6.el7.ucloud.x86_64" */
     @SerializedName("KernelVersion")
     private String kernelVersion;
 
-    /** 操作系统类型，如："CentOS Linux 7 (Core)": false */
+    /** 操作系统类型，如："CentOS Linux 7 (Core)" */
     @SerializedName("OSImage")
     private String osImage;
 
-    /** 容器运行时版本，如："docker://18.9.9": false */
+    /** 容器运行时版本，如："docker://18.9.9" */
     @SerializedName("ContainerRuntimeVersion")
     private String containerRuntimeVersion;
 
-    /** kubelet 版本: false */
+    /** kubelet 版本 */
     @SerializedName("KubeletVersion")
     private String kubeletVersion;
 
-    /** kubeproxy 版本: false */
+    /** kubeproxy 版本 */
     @SerializedName("KubeProxyVersion")
     private String kubeProxyVersion;
 
-    /** 内部 IP 地址: false */
+    /** 内部 IP 地址 */
     @SerializedName("InternalIP")
     private String internalIP;
 
-    /** 主机名: false */
+    /** 主机名 */
     @SerializedName("Hostname")
     private String hostname;
 
-    /** 已分配到当前节点的 Pod 数量: false */
+    /** 已分配到当前节点的 Pod 数量 */
     @SerializedName("AllocatedPodCount")
     private Integer allocatedPodCount;
 
-    /** 节点允许的可分配 Pod 最大数量: false */
+    /** 节点允许的可分配 Pod 最大数量 */
     @SerializedName("PodCapacity")
     private Integer podCapacity;
 
-    /** 是否禁止调度: false */
+    /** 是否禁止调度 */
     @SerializedName("Unschedulable")
     private Boolean unschedulable;
 
-    /** 节点 CPU 总量: false */
+    /** 节点 CPU 总量 */
     @SerializedName("CPUCapacity")
     private String cpuCapacity;
 
-    /** 节点内存总量: false */
+    /** 节点内存总量 */
     @SerializedName("MemoryCapacity")
     private String memoryCapacity;
 
-    /** 节点上已分配 Pod 的内存请求量: false */
+    /** 节点上已分配 Pod 的内存请求量 */
     @SerializedName("MemoryRequests")
     private String memoryRequests;
 
-    /** 节点上已分配 Pod 的内存请求量占内存总量的比例，如返回值为 "4.5"，则意味着请求量占总量的 4.5%: false */
+    /** 节点上已分配 Pod 的内存请求量占内存总量的比例，如返回值为 "4.5"，则意味着请求量占总量的 4.5% */
     @SerializedName("MemoryRequestsFraction")
     private String memoryRequestsFraction;
 
-    /** 节点上已分配 Pod 的内存限制量: false */
+    /** 节点上已分配 Pod 的内存限制量 */
     @SerializedName("MemoryLimits")
     private String memoryLimits;
 
-    /** 节点上已分配 Pod 的内存限制量占内存总量的比例，如返回值为 "18"，则意味着限制量占总量的 18%: false */
+    /** 节点上已分配 Pod 的内存限制量占内存总量的比例，如返回值为 "18"，则意味着限制量占总量的 18% */
     @SerializedName("MemoryLimitsFraction")
     private String memoryLimitsFraction;
 
-    /** 节点上已分配 Pod 的 CPU 请求量: false */
+    /** 节点上已分配 Pod 的 CPU 请求量 */
     @SerializedName("CPURequests")
     private String cpuRequests;
 
-    /** 节点上已分配 Pod 的 CPU 请求量占 CPU 总量的比例: false */
+    /** 节点上已分配 Pod 的 CPU 请求量占 CPU 总量的比例 */
     @SerializedName("CPURequestsFraction")
     private String cpuRequestsFraction;
 
-    /** 节点上已分配 Pod 的 CPU 限制值: false */
+    /** 节点上已分配 Pod 的 CPU 限制值 */
     @SerializedName("CPULimits")
     private String cpuLimits;
 
-    /** 节点上已分配 Pod 的 CPU 限制值占 CPU 总量的比例: false */
+    /** 节点上已分配 Pod 的 CPU 限制值占 CPU 总量的比例 */
     @SerializedName("CPULimitsFraction")
     private String cpuLimitsFraction;
 
-    /** 节点状态数组: false */
+    /** 节点状态数组 */
     @SerializedName("Conditions")
     private List<K8SNodeCondition> conditions;
 
-    /** 节点上镜像名称数组: false */
+    /** 节点上镜像名称数组 */
     @SerializedName("ContainerImages")
     private List<String> containerImages;
 
-    /** 字符串数组，每一项是类似 "node-role.kubernetes.io/master:NoSchedule" 的污点: false */
+    /** 字符串数组，每一项是类似 "node-role.kubernetes.io/master:NoSchedule" 的污点 */
     @SerializedName("Taints")
     private List<String> taints;
 
@@ -357,27 +357,27 @@ public class DescribeUK8SNodeResponse extends Response {
 
     public static class K8SNodeCondition extends Response {
 
-        /** Condition 类型，如 MemoryPressure、DiskPressure、PIDPressure、Ready: false */
+        /** Condition 类型，如 MemoryPressure、DiskPressure、PIDPressure、Ready */
         @SerializedName("Type")
         private String type;
 
-        /** 状态，False、True: false */
+        /** 状态，False、True */
         @SerializedName("Status")
         private String status;
 
-        /** 最后一次上报状态的时间: false */
+        /** 最后一次上报状态的时间 */
         @SerializedName("LastProbeTime")
         private String lastProbeTime;
 
-        /** 最后一次状态转变时间: false */
+        /** 最后一次状态转变时间 */
         @SerializedName("LastTransitionTime")
         private String lastTransitionTime;
 
-        /** 状态变化的原因: false */
+        /** 状态变化的原因 */
         @SerializedName("Reason")
         private String reason;
 
-        /** 状态变化的描述信息: false */
+        /** 状态变化的描述信息 */
         @SerializedName("Message")
         private String message;
 

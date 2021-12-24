@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetEIPPayModeResponse extends Response {
 
-    /** EIP的计费模式, 参见 EIPPayModeSet: false */
+    /** EIP的计费模式, 参见 EIPPayModeSet */
     @SerializedName("EIPPayMode")
     private List<EIPPayModeSet> eipPayMode;
 
@@ -33,11 +33,11 @@ public class GetEIPPayModeResponse extends Response {
 
     public static class EIPPayModeSet extends Response {
 
-        /** EIP的资源ID: false */
+        /** EIP的资源ID */
         @SerializedName("EIPId")
         private String eipId;
 
-        /** EIP的计费模式. 枚举值为：Bandwidth, 带宽计费;Traffic, 流量计费; "ShareBandwidth",共享带宽模式: false */
+        /** EIP的计费模式. 枚举值为：Bandwidth, 带宽计费;Traffic, 流量计费; "ShareBandwidth",共享带宽模式 */
         @SerializedName("EIPPayMode")
         private String eipPayMode;
 

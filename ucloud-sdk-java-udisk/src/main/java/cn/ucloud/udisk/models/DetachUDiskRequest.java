@@ -13,35 +13,36 @@
  */
 package cn.ucloud.udisk.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DetachUDiskRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要卸载的UDisk实例ID: false */
+    /** 需要卸载的UDisk实例ID */
     @NotEmpty
     @UCloudParam("UDiskId")
     private String uDiskId;
 
-    /** UHost实例ID。【UHostId和HostId必须选填一个，本字段即将废弃，建议使用HostId】: false */
+    /** UHost实例ID。【UHostId和HostId必须选填一个，本字段即将废弃，建议使用HostId】 */
     @UCloudParam("UHostId")
     private String uHostId;
 
-    /** Host实例ID: false */
+    /** Host实例ID */
     @UCloudParam("HostId")
     private String hostId;
 

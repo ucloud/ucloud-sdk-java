@@ -13,42 +13,43 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateVServerRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例ID: false */
+    /** 负载均衡实例ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** VServer实例名称，默认为"VServer": false */
+    /** VServer实例名称，默认为"VServer" */
     @UCloudParam("VServerName")
     private String vServerName;
 
-    /** 监听器类型，枚举值，RequestProxy ，请求代理；PacketsTransmit ，报文转发。默认为RequestProxy: false */
+    /** 监听器类型，枚举值，RequestProxy ，请求代理；PacketsTransmit ，报文转发。默认为RequestProxy */
     @UCloudParam("ListenType")
     private String listenType;
 
-    /** VServer实例的协议，请求代理模式下有 HTTP、HTTPS、TCP，报文转发下有 TCP，UDP。默认为“HTTP": false */
+    /** VServer实例的协议，请求代理模式下有 HTTP、HTTPS、TCP，报文转发下有 TCP，UDP。默认为“HTTP" */
     @UCloudParam("Protocol")
     private String protocol;
 
-    /** VServer后端端口，取值范围[1-65535]；默认值为80: false */
+    /** VServer后端端口，取值范围[1-65535]；默认值为80 */
     @UCloudParam("FrontendPort")
     private Integer frontendPort;
 
@@ -57,24 +58,22 @@ public class CreateVServerRequest extends Request {
      * 源地址（计算端口）；ConsistentHashPort -> 一致性哈希（计算端口）; WeightRoundrobin -> 加权轮询; Leastconn ->
      * 最小连接数;Backup ->主备模式。 ConsistentHash，SourcePort，ConsistentHashPort
      * 只在报文转发中使用；Leastconn只在请求代理中使用；Roundrobin、Source和WeightRoundrobin,Backup在请求代理和报文转发中使用。
-     * 默认为："Roundrobin": false
+     * 默认为："Roundrobin"
      */
     @UCloudParam("Method")
     private String method;
 
-    /**
-     * VServer会话保持方式，默认关闭会话保持。枚举值：None -> 关闭；ServerInsert -> 自动生成KEY；UserDefined -> 用户自定义KEY。: false
-     */
+    /** VServer会话保持方式，默认关闭会话保持。枚举值：None -> 关闭；ServerInsert -> 自动生成KEY；UserDefined -> 用户自定义KEY。 */
     @UCloudParam("PersistenceType")
     private String persistenceType;
 
-    /** 根据PersistenceType确认； None和ServerInsert： 此字段无意义； UserDefined：此字段传入自定义会话保持String: false */
+    /** 根据PersistenceType确认； None和ServerInsert： 此字段无意义； UserDefined：此字段传入自定义会话保持String */
     @UCloudParam("PersistenceInfo")
     private String persistenceInfo;
 
     /**
      * ListenType为RequestProxy时表示空闲连接的回收时间，单位：秒，取值范围：时(0，86400]，默认值为60；ListenType为PacketsTransmit时表示连接保持的时间，单位：秒，取值范围：[60，900]，0
-     * 表示禁用连接保持: false
+     * 表示禁用连接保持
      */
     @UCloudParam("ClientTimeout")
     private Integer clientTimeout;
@@ -82,24 +81,24 @@ public class CreateVServerRequest extends Request {
     /**
      * 健康检查类型，枚举值：Port -> 端口检查；Path -> 路径检查；Ping -> Ping探测；Customize -> UDP检查
      * 请求代理型默认值为Port，其中TCP协议仅支持Port，其他协议支持Port和Path;
-     * 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize，默认值为Ping: false
+     * 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize，默认值为Ping
      */
     @UCloudParam("MonitorType")
     private String monitorType;
 
-    /** 根据MonitorType确认； 当MonitorType为Path时，此字段有意义，代表HTTP检查域名: false */
+    /** 根据MonitorType确认； 当MonitorType为Path时，此字段有意义，代表HTTP检查域名 */
     @UCloudParam("Domain")
     private String domain;
 
-    /** 根据MonitorType确认； 当MonitorType为Path时，此字段有意义，代表HTTP检查路径: false */
+    /** 根据MonitorType确认； 当MonitorType为Path时，此字段有意义，代表HTTP检查路径 */
     @UCloudParam("Path")
     private String path;
 
-    /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文: false */
+    /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文 */
     @UCloudParam("RequestMsg")
     private String requestMsg;
 
-    /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查请求应收到的响应报文: false */
+    /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查请求应收到的响应报文 */
     @UCloudParam("ResponseMsg")
     private String responseMsg;
 

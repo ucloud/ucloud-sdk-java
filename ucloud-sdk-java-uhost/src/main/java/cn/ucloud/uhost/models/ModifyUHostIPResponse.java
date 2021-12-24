@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ModifyUHostIPResponse extends Response {
 
-    /** 目标云主机 ID: false */
+    /** 目标云主机 ID */
     @SerializedName("UHostId")
     private String uHostId;
 

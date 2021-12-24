@@ -13,16 +13,17 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class EnableUDBRWSplittingResponse extends Response {
 
-    /** DB实例ID（主库）: false */
+    /** DB实例ID（主库） */
     @SerializedName("MasterDBId")
     private String masterDBId;
 
-    /** 读写分离访问IP: false */
+    /** 读写分离访问IP */
     @SerializedName("RWIp")
     private String rwIp;
 

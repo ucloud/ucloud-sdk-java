@@ -20,50 +20,50 @@ import java.util.List;
 
 public class CreateNATGWRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目Id。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** NAT网关名称: false */
+    /** NAT网关名称 */
     @NotEmpty
     @UCloudParam("NATGWName")
     private String natgwName;
 
-    /** NAT网关绑定的EIPId: false */
+    /** NAT网关绑定的EIPId */
     @NotEmpty
     @UCloudParam("EIPIds")
     private List<String> eipIds;
 
-    /** NAT网关绑定的防火墙Id: false */
+    /** NAT网关绑定的防火墙Id */
     @NotEmpty
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** NAT网关绑定的子网Id，默认为空。: false */
+    /** NAT网关绑定的子网Id，默认为空。 */
     @UCloudParam("SubnetworkIds")
     private List<String> subnetworkIds;
 
-    /** NAT网关所属的VPC Id。默认为Default VPC Id: false */
+    /** NAT网关所属的VPC Id。默认为Default VPC Id */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 白名单开关标记。0表示关闭，1表示开启。默认为0: false */
+    /** 白名单开关标记。0表示关闭，1表示开启。默认为0 */
     @UCloudParam("IfOpen")
     private Integer ifOpen;
 
-    /** 业务组。默认为空: false */
+    /** 业务组。默认为空 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 备注。默认为空: false */
+    /** 备注。默认为空 */
     @UCloudParam("Remark")
     private String remark;
 

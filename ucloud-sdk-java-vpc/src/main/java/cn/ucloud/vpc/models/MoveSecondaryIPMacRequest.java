@@ -13,40 +13,41 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class MoveSecondaryIPMacRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** Secondary IP: false */
+    /** Secondary IP */
     @NotEmpty
     @UCloudParam("Ip")
     private String ip;
 
-    /** 旧 Mac。Secondary IP 当前所绑定的 Mac: false */
+    /** 旧 Mac。Secondary IP 当前所绑定的 Mac */
     @NotEmpty
     @UCloudParam("OldMac")
     private String oldMac;
 
-    /** 新 Mac。Secondary IP 迁移的目的 Mac: false */
+    /** 新 Mac。Secondary IP 迁移的目的 Mac */
     @NotEmpty
     @UCloudParam("NewMac")
     private String newMac;
 
-    /** 子网 ID。IP/OldMac/NewMac 三者必须在同一子网: false */
+    /** 子网 ID。IP/OldMac/NewMac 三者必须在同一子网 */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;

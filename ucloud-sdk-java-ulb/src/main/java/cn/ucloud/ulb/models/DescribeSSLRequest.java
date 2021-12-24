@@ -13,31 +13,32 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeSSLRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** SSL证书的Id: false */
+    /** SSL证书的Id */
     @UCloudParam("SSLId")
     private String sslId;
 
-    /** 数据分页值，默认为20: false */
+    /** 数据分页值，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 数据偏移量，默认值为0: false */
+    /** 数据偏移量，默认值为0 */
     @UCloudParam("Offset")
     private Integer offset;
 

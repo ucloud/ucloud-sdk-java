@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeSubnetResourceResponse extends Response {
 
-    /** 总数: false */
+    /** 总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 返回数据集，请见SubnetResource: false */
+    /** 返回数据集，请见SubnetResource */
     @SerializedName("DataSet")
     private List<SubnetResource> dataSet;
 
@@ -45,22 +45,21 @@ public class DescribeSubnetResourceResponse extends Response {
 
     public static class SubnetResource extends Response {
 
-        /** 名称: false */
+        /** 名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 资源Id: false */
+        /** 资源Id */
         @SerializedName("ResourceId")
         private String resourceId;
 
         /**
-         * 资源类型。对应的资源类型：UHOST，云主机；PHOST，物理云主机；ULB，负载均衡；UHADOOP_HOST，hadoop节点；UFORTRESS_HOST，堡垒机；UNATGW，NAT网关；UKAFKA，分布式消息系统；UMEM，内存存储；DOCKER，容器集群；UDB，数据库；UDW，数据仓库；VIP，内网VIP.:
-         * false
+         * 资源类型。对应的资源类型：UHOST，云主机；PHOST，物理云主机；ULB，负载均衡；UHADOOP_HOST，hadoop节点；UFORTRESS_HOST，堡垒机；UNATGW，NAT网关；UKAFKA，分布式消息系统；UMEM，内存存储；DOCKER，容器集群；UDB，数据库；UDW，数据仓库；VIP，内网VIP.
          */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 资源ip: false */
+        /** 资源ip */
         @SerializedName("IP")
         private String ip;
 

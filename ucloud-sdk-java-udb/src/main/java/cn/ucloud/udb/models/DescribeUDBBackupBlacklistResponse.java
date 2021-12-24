@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDBBackupBlacklistResponse extends Response {
 
-    /** DB的黑名单列表, db.%为指定库 dbname.tablename为指定表: false */
+    /** DB的黑名单列表, db.%为指定库 dbname.tablename为指定表 */
     @SerializedName("Blacklist")
     private String blacklist;
 

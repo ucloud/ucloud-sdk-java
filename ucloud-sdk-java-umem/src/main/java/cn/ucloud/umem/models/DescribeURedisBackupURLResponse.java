@@ -13,16 +13,17 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeURedisBackupURLResponse extends Response {
 
-    /** 备份文件公网的地址: false */
+    /** 备份文件公网的地址 */
     @SerializedName("BackupURL")
     private String backupURL;
 
-    /** 备份文件公网的地址: false */
+    /** 备份文件公网的地址 */
     @SerializedName("BackupPath")
     private String backupPath;
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUEcIDCResponse extends Response {
 
-    /** 获取的机房信息，具体参考下面IdcInfo: false */
+    /** 获取的机房信息，具体参考下面IdcInfo */
     @SerializedName("IdcList")
     private List<IdcInfo> idcList;
 
@@ -33,31 +33,31 @@ public class DescribeUEcIDCResponse extends Response {
 
     public static class IdcInfo extends Response {
 
-        /** 机房ID: false */
+        /** 机房ID */
         @SerializedName("IdcId")
         private String idcId;
 
-        /** 机房名称: false */
+        /** 机房名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 运营商: false */
+        /** 运营商 */
         @SerializedName("Isp")
         private String isp;
 
-        /** 省份: false */
+        /** 省份 */
         @SerializedName("Province")
         private String province;
 
-        /** 城市: false */
+        /** 城市 */
         @SerializedName("City")
         private String city;
 
-        /** 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通: false */
+        /** 运营商类型：0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 */
         @SerializedName("Type")
         private Integer type;
 
-        /** 机房可创建节点最大数量: false */
+        /** 机房可创建节点最大数量 */
         @SerializedName("MaxNodeCnt")
         private Integer maxNodeCnt;
 

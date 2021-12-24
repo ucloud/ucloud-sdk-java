@@ -22,94 +22,94 @@ public class CreateUEcVHostRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 机房id: false */
+    /** 机房id */
     @NotEmpty
     @UCloudParam("IdcId")
     private String idcId;
 
-    /** cpu核心数: false */
+    /** cpu核心数 */
     @NotEmpty
     @UCloudParam("CpuCore")
     private Integer cpuCore;
 
-    /** 内存大小，单位GB: false */
+    /** 内存大小，单位GB */
     @NotEmpty
     @UCloudParam("MemSize")
     private Integer memSize;
 
-    /** 数据盘大小，单位GB: false */
+    /** 数据盘大小，单位GB */
     @NotEmpty
     @UCloudParam("DiskSize")
     private Integer diskSize;
 
-    /** 镜像ID: false */
+    /** 镜像ID */
     @NotEmpty
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 节点带宽限制，单位Mbs: false */
+    /** 节点带宽限制，单位Mbs */
     @NotEmpty
     @UCloudParam("NetLimit")
     private Integer netLimit;
 
-    /** 节点名称: false */
+    /** 节点名称 */
     @UCloudParam("NodeName")
     private String nodeName;
 
-    /** 系统盘大小，单位GB， 默认20GB: false */
+    /** 系统盘大小，单位GB， 默认20GB */
     @UCloudParam("SysDiskSize")
     private Integer sysDiskSize;
 
-    /** 账户名，默认root: false */
+    /** 账户名，默认root */
     @UCloudParam("AccountName")
     private String accountName;
 
-    /** 密码: false */
+    /** 密码 */
     @UCloudParam("PassWord")
     private String passWord;
 
-    /** 创建节点数量，默认1: false */
+    /** 创建节点数量，默认1 */
     @UCloudParam("NodeCount")
     private Integer nodeCount;
 
-    /** 付费方式，1按时，2按月，3按年，默认2: false */
+    /** 付费方式，1按时，2按月，3按年，默认2 */
     @UCloudParam("ChargeType")
     private Integer chargeType;
 
-    /** 月数或者年数，0计费到月底， 默认0: false */
+    /** 月数或者年数，0计费到月底， 默认0 */
     @UCloudParam("ChargeQuantity")
     private Integer chargeQuantity;
 
-    /** 子网ID: false */
+    /** 子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 产品类型：normal（经济型），hf（标准型）,g(Gpu型): false */
+    /** 产品类型：normal（经济型），hf（标准型）,g(Gpu型) */
     @UCloudParam("ProductType")
     private String productType;
 
-    /** 外网防护墙规则组，默认: false */
+    /** 外网防护墙规则组，默认 */
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** 运营商（1-电信，2-联通，4移动）: false */
+    /** 运营商（1-电信，2-联通，4移动） */
     @UCloudParam("Isp")
     private List<Integer> isp;
 
-    /** 是否需要外网ip（no-否）: false */
+    /** 是否需要外网ip（no-否） */
     @UCloudParam("IsNeedOuterIp")
     private String isNeedOuterIp;
 
-    /** Gpu卡核心数。仅Gpu机型支持此字段: false */
+    /** Gpu卡核心数。仅Gpu机型支持此字段 */
     @UCloudParam("Gpu")
     private Integer gpu;
 
-    /** Gpu类型，枚举值["T4S"],ProductType为G时必填: false */
+    /** Gpu类型，枚举值["T4S"],ProductType为G时必填 */
     @UCloudParam("GpuType")
     private String gpuType;
 

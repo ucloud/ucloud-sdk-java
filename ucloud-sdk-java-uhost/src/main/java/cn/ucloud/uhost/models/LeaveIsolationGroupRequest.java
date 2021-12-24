@@ -13,31 +13,32 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class LeaveIsolationGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区信息: false */
+    /** 可用区信息 */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目id: false */
+    /** 项目id */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 硬件隔离组id: false */
+    /** 硬件隔离组id */
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;
 
-    /** 主机id: false */
+    /** 主机id */
     @NotEmpty
     @UCloudParam("UHostId")
     private String uHostId;

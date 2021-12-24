@@ -13,42 +13,42 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeFirewallRequest extends Request {
 
-    /** 地域: false */
+    /** 地域 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写: false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 防火墙ID，默认为返回所有防火墙: false */
+    /** 防火墙ID，默认为返回所有防火墙 */
     @UCloudParam("FWId")
     private String fwId;
 
     /**
      * 绑定防火墙组的资源类型，默认为全部资源类型。枚举值为："unatgw"，NAT网关； "uhost"，云主机；“uni”，虚拟网卡； "upm"，物理云主机；
-     * "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.:
-     * false
+     * "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
      */
     @UCloudParam("ResourceType")
     private String resourceType;
 
-    /** 绑定防火墙组的资源ID: false */
+    /** 绑定防火墙组的资源ID */
     @UCloudParam("ResourceId")
     private String resourceId;
 
-    /** 返回数据长度，默认为20，最大10000000: false */
+    /** 返回数据长度，默认为20，最大10000000 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 列表起始位置偏移量，默认为0: false */
+    /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 

@@ -13,62 +13,63 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class GetUEcVHostPriceRequest extends Request {
 
-    /** 机房Id: false */
+    /** 机房Id */
     @NotEmpty
     @UCloudParam("IdcId")
     private String idcId;
 
-    /** 节点数量，默认1: false */
+    /** 节点数量，默认1 */
     @UCloudParam("NodeCount")
     private Integer nodeCount;
 
-    /** CPU核数: false */
+    /** CPU核数 */
     @UCloudParam("CpuCore")
     private Integer cpuCore;
 
-    /** 内存大小，单位GB: false */
+    /** 内存大小，单位GB */
     @UCloudParam("MemSize")
     private Integer memSize;
 
-    /** 系统盘大小，单位GB: false */
+    /** 系统盘大小，单位GB */
     @UCloudParam("SysDiskSize")
     private Integer sysDiskSize;
 
-    /** 数据盘大小，单位GB: false */
+    /** 数据盘大小，单位GB */
     @UCloudParam("DiskSize")
     private Integer diskSize;
 
-    /** 网络带宽限速，单位Mbs: false */
+    /** 网络带宽限速，单位Mbs */
     @UCloudParam("NetLimit")
     private Integer netLimit;
 
-    /** 付费方式，1按时，2按月，3按年，默认2: false */
+    /** 付费方式，1按时，2按月，3按年，默认2 */
     @UCloudParam("ChargeType")
     private Integer chargeType;
 
-    /** 月数或者年数，0计费到月底， 默认0: false */
+    /** 月数或者年数，0计费到月底， 默认0 */
     @UCloudParam("ChargeQuantity")
     private Integer chargeQuantity;
 
-    /** 产品类型：normal（经济型），hf（标准型），g(Gpu型),默认normal: false */
+    /** 产品类型：normal（经济型），hf（标准型），g(Gpu型),默认normal */
     @UCloudParam("ProductType")
     private String productType;
 
-    /** 外网IP的数量，默认1: false */
+    /** 外网IP的数量，默认1 */
     @UCloudParam("IpCount")
     private Integer ipCount;
 
-    /** Gpu卡核心数。仅Gpu机型支持此字段: false */
+    /** Gpu卡核心数。仅Gpu机型支持此字段 */
     @UCloudParam("Gpu")
     private Integer gpu;
 
-    /** Gpu类型，枚举值["T4"],ProductType为g时必填: false */
+    /** Gpu类型，枚举值["T4"],ProductType为g时必填 */
     @UCloudParam("GpuType")
     private String gpuType;
 

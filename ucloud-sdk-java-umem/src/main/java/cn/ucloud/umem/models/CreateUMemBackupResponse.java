@@ -13,12 +13,13 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUMemBackupResponse extends Response {
 
-    /** 备份Id: false */
+    /** 备份Id */
     @SerializedName("BackupId")
     private String backupId;
 

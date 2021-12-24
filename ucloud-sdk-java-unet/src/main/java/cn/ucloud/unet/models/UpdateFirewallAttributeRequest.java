@@ -13,35 +13,36 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateFirewallAttributeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 防火墙资源ID: false */
+    /** 防火墙资源ID */
     @NotEmpty
     @UCloudParam("FWId")
     private String fwId;
 
-    /** 防火墙名称，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上: false */
+    /** 防火墙名称，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上 */
     @UCloudParam("Name")
     private String name;
 
-    /** 防火墙业务组，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上: false */
+    /** 防火墙业务组，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 防火墙备注，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上: false */
+    /** 防火墙备注，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上 */
     @UCloudParam("Remark")
     private String remark;
 

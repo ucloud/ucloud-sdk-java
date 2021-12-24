@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeSnatRuleResponse extends Response {
 
-    /** 某个NAT网关的所有Snat规则: false */
+    /** 某个NAT网关的所有Snat规则 */
     @SerializedName("DataSet")
     private List<NATGWSnatRule> dataSet;
 
-    /** 规则数量: false */
+    /** 规则数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,19 +45,19 @@ public class DescribeSnatRuleResponse extends Response {
 
     public static class NATGWSnatRule extends Response {
 
-        /** EIP地址，如106.76.xx.xx: false */
+        /** EIP地址，如106.76.xx.xx */
         @SerializedName("SnatIp")
         private String snatIp;
 
-        /** 资源的内网IP地址: false */
+        /** 资源的内网IP地址 */
         @SerializedName("SourceIp")
         private String sourceIp;
 
-        /** SourceIp所属的子网id: false */
+        /** SourceIp所属的子网id */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** snat规则名称: false */
+        /** snat规则名称 */
         @SerializedName("Name")
         private String name;
 

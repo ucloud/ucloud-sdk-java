@@ -13,28 +13,29 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class EnableUDBRWSplittingRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** DB实例ID（主库）: false */
+    /** DB实例ID（主库） */
     @NotEmpty
     @UCloudParam("MasterDBId")
     private String masterDBId;
 
-    /** 备份的可用区。用于创建跨可用区读写分离的一个节点，跨机房的读写分离必须有这个参数: false */
+    /** 备份的可用区。用于创建跨可用区读写分离的一个节点，跨机房的读写分离必须有这个参数 */
     @UCloudParam("BackupZone")
     private String backupZone;
 

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeRouteTableResponse extends Response {
 
-    /** 路由表信息: false */
+    /** 路由表信息 */
     @SerializedName("RouteTables")
     private List<RouteTableInfo> routeTables;
 
-    /** RouteTables字段的数量: false */
+    /** RouteTables字段的数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,39 +45,39 @@ public class DescribeRouteTableResponse extends Response {
 
     public static class RouteTableInfo extends Response {
 
-        /** 路由表资源ID: false */
+        /** 路由表资源ID */
         @SerializedName("RouteTableId")
         private String routeTableId;
 
-        /** 路由表类型。1为默认路由表，0为自定义路由表: false */
+        /** 路由表类型。1为默认路由表，0为自定义路由表 */
         @SerializedName("RouteTableType")
         private Integer routeTableType;
 
-        /** 绑定该路由表的子网数量: false */
+        /** 绑定该路由表的子网数量 */
         @SerializedName("SubnetCount")
         private Integer subnetCount;
 
-        /** 路由表所属的VPC资源ID: false */
+        /** 路由表所属的VPC资源ID */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 路由表所属的VPC资源名称: false */
+        /** 路由表所属的VPC资源名称 */
         @SerializedName("VPCName")
         private String vpcName;
 
-        /** 路由表所属业务组: false */
+        /** 路由表所属业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 路由表备注: false */
+        /** 路由表备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 创建时间戳: false */
+        /** 创建时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 路由规则: false */
+        /** 路由规则 */
         @SerializedName("RouteRules")
         private List<RouteRuleInfo> routeRules;
 
@@ -156,62 +156,62 @@ public class DescribeRouteTableResponse extends Response {
 
     public static class RouteRuleInfo extends Response {
 
-        /** 项目ID信息: false */
+        /** 项目ID信息 */
         @SerializedName("AccountId")
         private Integer accountId;
 
-        /** 目的地址: false */
+        /** 目的地址 */
         @SerializedName("DstAddr")
         private String dstAddr;
 
-        /** 保留字段，暂未使用: false */
+        /** 保留字段，暂未使用 */
         @SerializedName("DstPort")
         private Integer dstPort;
 
-        /** 路由下一跳资源ID: false */
+        /** 路由下一跳资源ID */
         @SerializedName("NexthopId")
         private String nexthopId;
 
         /**
          * 路由表下一跳类型。LOCAL，本VPC内部通信路由；PUBLIC，公共服务路由；CNAT，外网路由；UDPN，跨域高速通道路由；HYBRIDGW，混合云路由；INSTANCE，实例路由；VNET，VPC联通路由；IPSEC
-         * VPN，指向VPN网关的路由。: false
+         * VPN，指向VPN网关的路由。
          */
         @SerializedName("NexthopType")
         private String nexthopType;
 
-        /** 保留字段，暂未使用: false */
+        /** 保留字段，暂未使用 */
         @SerializedName("OriginAddr")
         private String originAddr;
 
-        /** 保留字段，暂未使用: false */
+        /** 保留字段，暂未使用 */
         @SerializedName("Priority")
         private Integer priority;
 
-        /** 路由规则备注: false */
+        /** 路由规则备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 规则ID: false */
+        /** 规则ID */
         @SerializedName("RouteRuleId")
         private String routeRuleId;
 
-        /** 路由表资源ID: false */
+        /** 路由表资源ID */
         @SerializedName("RouteTableId")
         private String routeTableId;
 
-        /** 路由规则类型。0，系统路由规则；1，自定义路由规则: false */
+        /** 路由规则类型。0，系统路由规则；1，自定义路由规则 */
         @SerializedName("RuleType")
         private Integer ruleType;
 
-        /** 保留字段，暂未使用: false */
+        /** 保留字段，暂未使用 */
         @SerializedName("SrcAddr")
         private String srcAddr;
 
-        /** 保留字段，暂未使用: false */
+        /** 保留字段，暂未使用 */
         @SerializedName("SrcPort")
         private Integer srcPort;
 
-        /** 所属的VPC: false */
+        /** 所属的VPC */
         @SerializedName("VNetId")
         private String vNetId;
 

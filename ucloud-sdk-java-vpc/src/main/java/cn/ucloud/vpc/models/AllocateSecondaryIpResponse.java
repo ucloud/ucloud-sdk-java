@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class AllocateSecondaryIpResponse extends Response {
 
-    /** : false */
+    /** */
     @SerializedName("IpInfo")
     private IpInfo ipInfo;
 
@@ -32,27 +33,27 @@ public class AllocateSecondaryIpResponse extends Response {
 
     public static class IpInfo extends Response {
 
-        /** : false */
+        /** */
         @SerializedName("Ip")
         private String ip;
 
-        /** : false */
+        /** */
         @SerializedName("Mask")
         private String mask;
 
-        /** : false */
+        /** */
         @SerializedName("Gateway")
         private String gateway;
 
-        /** : false */
+        /** */
         @SerializedName("Mac")
         private String mac;
 
-        /** : false */
+        /** */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** : false */
+        /** */
         @SerializedName("VPCId")
         private String vpcId;
 

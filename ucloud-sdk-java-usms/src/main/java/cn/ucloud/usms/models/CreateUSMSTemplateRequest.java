@@ -13,6 +13,7 @@
  */
 package cn.ucloud.usms.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,41 +22,39 @@ public class CreateUSMSTemplateRequest extends Request {
 
     /**
      * 项目ID，不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板；: false */
+    /** 短信模板用途类型：1-验证码类短信模板；2-系统通知类短信模板；3-会员推广类短信模板； */
     @NotEmpty
     @UCloudParam("Purpose")
     private Integer purpose;
 
-    /** 短信模板名称，不超过32个字符，每个中文、符号、英文、数字等都计为1个字。: false */
+    /** 短信模板名称，不超过32个字符，每个中文、符号、英文、数字等都计为1个字。 */
     @NotEmpty
     @UCloudParam("TemplateName")
     private String templateName;
 
     /**
-     * 短信模板内容，说明如下：字数不超过500，每个中文、符号、英文、数组等都计为一个字；模板中的变量填写格式：{N}，其中N为大于1的整数，有多个参数时，建议N从1开始顺次，例如：{1}、{2}等；短信模板禁止仅包括变量的情况；:
-     * false
+     * 短信模板内容，说明如下：字数不超过500，每个中文、符号、英文、数组等都计为一个字；模板中的变量填写格式：{N}，其中N为大于1的整数，有多个参数时，建议N从1开始顺次，例如：{1}、{2}等；短信模板禁止仅包括变量的情况；
      */
     @NotEmpty
     @UCloudParam("Template")
     private String template;
 
-    /** 标记是否为国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false: false */
+    /** 标记是否为国际短信。true:国际短信，false:国内短信，若不传值则默认该值为false */
     @UCloudParam("International")
     private Boolean international;
 
-    /** 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。: false */
+    /** 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。 */
     @UCloudParam("Remark")
     private String remark;
 
     /**
-     * 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T:
-     * false
+     * 当Purpose为3时，也即会员推广类短信模板，该项必填。枚举值：TD退订、回T退订、回N退订、回TD退订、退订回T、退订回D、退订回TD、退订回复T、退订回复D、退订回复N、退订回复TD、拒收回T
      */
     @UCloudParam("UnsubscribeInfo")
     private String unsubscribeInfo;

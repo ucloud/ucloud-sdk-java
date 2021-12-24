@@ -20,34 +20,34 @@ import java.util.List;
 
 public class DisassociateEIPWithShareBandwidthRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 共享带宽ID: false */
+    /** 共享带宽ID */
     @NotEmpty
     @UCloudParam("ShareBandwidthId")
     private String shareBandwidthId;
 
-    /** 移出共享带宽后，EIP的外网带宽, 单位为Mbps. 各地域带宽范围如下： 流量计费[1-200],带宽计费[1-800]: false */
+    /** 移出共享带宽后，EIP的外网带宽, 单位为Mbps. 各地域带宽范围如下： 流量计费[1-200],带宽计费[1-800] */
     @NotEmpty
     @UCloudParam("Bandwidth")
     private Integer bandwidth;
 
-    /** EIP的资源Id；默认移出该共享带宽下所有的EIP: false */
+    /** EIP的资源Id；默认移出该共享带宽下所有的EIP */
     @UCloudParam("EIPIds")
     private List<String> eipIds;
 
-    /** 移出共享带宽后，EIP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; 默认为 "Bandwidth".: false */
+    /** 移出共享带宽后，EIP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; 默认为 "Bandwidth". */
     @UCloudParam("PayMode")
     private String payMode;
 
-    /** 共享带宽类型，IPv4或者IPv6，不传默认IPv4: false */
+    /** 共享带宽类型，IPv4或者IPv6，不传默认IPv4 */
     @UCloudParam("IPVersion")
     private String ipVersion;
 

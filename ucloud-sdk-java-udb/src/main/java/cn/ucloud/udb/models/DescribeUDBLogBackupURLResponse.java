@@ -13,16 +13,17 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDBLogBackupURLResponse extends Response {
 
-    /** 备份外网URL: false */
+    /** 备份外网URL */
     @SerializedName("BackupPath")
     private String backupPath;
 
-    /** 备份用户网URL: false */
+    /** 备份用户网URL */
     @SerializedName("UsernetPath")
     private String usernetPath;
 

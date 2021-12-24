@@ -13,16 +13,17 @@
  */
 package cn.ucloud.ufile.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class UpdateBucketResponse extends Response {
 
-    /** Bucket的名称: false */
+    /** Bucket的名称 */
     @SerializedName("BucketName")
     private String bucketName;
 
-    /** Bucket的ID: false */
+    /** Bucket的ID */
     @SerializedName("BucketId")
     private String bucketId;
 

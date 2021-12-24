@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ufile.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUFileQuotaResponse extends Response {
 
-    /** 剩余的配额数值: false */
+    /** 剩余的配额数值 */
     @SerializedName("LeftQuota")
     private Double leftQuota;
 

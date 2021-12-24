@@ -13,12 +13,13 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUMemcacheGroupResponse extends Response {
 
-    /** 创建的组ID: false */
+    /** 创建的组ID */
     @SerializedName("GroupId")
     private String groupId;
 

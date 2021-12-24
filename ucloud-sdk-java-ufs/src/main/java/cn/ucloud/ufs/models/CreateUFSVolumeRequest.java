@@ -13,60 +13,61 @@
  */
 package cn.ucloud.ufs.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateUFSVolumeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB: false */
+    /** 文件系统大小，单位为GB，必须为100的整数倍，容量型Size最小为500GB，性能型文件系统Size最小为100GB */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 文件系统存储类型，Basic表示容量型，Advanced表示性能型: false */
+    /** 文件系统存储类型，Basic表示容量型，Advanced表示性能型 */
     @NotEmpty
     @UCloudParam("StorageType")
     private String storageType;
 
-    /** 文件系统协议，目前仅支持NFSv4: false */
+    /** 文件系统协议，目前仅支持NFSv4 */
     @NotEmpty
     @UCloudParam("ProtocolType")
     private String protocolType;
 
-    /** 文件系统名称: false */
+    /** 文件系统名称 */
     @UCloudParam("VolumeName")
     private String volumeName;
 
-    /** 备注: false */
+    /** 备注 */
     @UCloudParam("Remark")
     private String remark;
 
-    /** 文件系统所属业务组: false */
+    /** 文件系统所属业务组 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）； Trial，试用（需开启权限） 默认为Dynamic: false */
+    /** 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）； Trial，试用（需开启权限） 默认为Dynamic */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长 默认: 1: false */
+    /** 购买时长 默认: 1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

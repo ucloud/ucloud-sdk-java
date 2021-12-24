@@ -13,32 +13,33 @@
  */
 package cn.ucloud.ucdn.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class GetNewUcdnLogRefererStatisticsRequest extends Request {
 
-    /** 域名id，创建域名时生成的id: false */
+    /** 域名id，创建域名时生成的id */
     @UCloudParam("DomainId")
     private String domainId;
 
-    /** 查询带宽区域 cn代表国内 abroad代表海外 ；目前只支持国内: false */
+    /** 查询带宽区域 cn代表国内 abroad代表海外 ；目前只支持国内 */
     @UCloudParam("Areacode")
     private String areacode;
 
-    /** 查询带宽的起始时间，格式：时间戳: false */
+    /** 查询带宽的起始时间，格式：时间戳 */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询统计日志的结束时间，格式：时间戳。最大时间间隔30天: false */
+    /** 查询统计日志的结束时间，格式：时间戳。最大时间间隔30天 */
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 0表示按流量降序排列，1表示按照下载次数降序排列，默认为0: false */
+    /** 0表示按流量降序排列，1表示按照下载次数降序排列，默认为0 */
     @UCloudParam("OrderBy")
     private Integer orderBy;
 
-    /** 返回的结果数量限制，默认1000: false */
+    /** 返回的结果数量限制，默认1000 */
     @UCloudParam("Limit")
     private Integer limit;
 

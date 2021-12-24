@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUEcFirewallResourceResponse extends Response {
 
-    /** 资源列表，详情参见ResourceInfo: false */
+    /** 资源列表，详情参见ResourceInfo */
     @SerializedName("ResourceSet")
     private List<ResourceInfo> resourceSet;
 
-    /** 资源总数: false */
+    /** 资源总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,23 +45,23 @@ public class DescribeUEcFirewallResourceResponse extends Response {
 
     public static class ResourceInfo extends Response {
 
-        /** 资源Id: false */
+        /** 资源Id */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 节点公网Ip列表: false */
+        /** 节点公网Ip列表 */
         @SerializedName("PublicIpList")
         private List<String> publicIpList;
 
-        /** 节点名称: false */
+        /** 节点名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常: false */
+        /** 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常 */
         @SerializedName("State")
         private Integer state;
 
-        /** 节点备注: false */
+        /** 节点备注 */
         @SerializedName("Remark")
         private String remark;
 

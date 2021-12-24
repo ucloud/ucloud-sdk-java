@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetProjectListResponse extends Response {
 
-    /** 项目总数: false */
+    /** 项目总数 */
     @SerializedName("ProjectCount")
     private Integer projectCount;
 
-    /** JSON格式的项目列表实例: false */
+    /** JSON格式的项目列表实例 */
     @SerializedName("ProjectSet")
     private List<ProjectListInfo> projectSet;
 
@@ -45,35 +45,35 @@ public class GetProjectListResponse extends Response {
 
     public static class ProjectListInfo extends Response {
 
-        /** 项目ID: false */
+        /** 项目ID */
         @SerializedName("ProjectId")
         private String projectId;
 
-        /** 项目名称: false */
+        /** 项目名称 */
         @SerializedName("ProjectName")
         private String projectName;
 
-        /** 创建时间(Unix时间戳): false */
+        /** 创建时间(Unix时间戳) */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 是否为默认项目: false */
+        /** 是否为默认项目 */
         @SerializedName("IsDefault")
         private Boolean isDefault;
 
-        /** 项目下资源数量（已废弃，不建议使用）: false */
+        /** 项目下资源数量（已废弃，不建议使用） */
         @SerializedName("ResourceCount")
         private Integer resourceCount;
 
-        /** 项目下成员数量: false */
+        /** 项目下成员数量 */
         @SerializedName("MemberCount")
         private Integer memberCount;
 
-        /** 父项目ID（已废弃）: false */
+        /** 父项目ID（已废弃） */
         @SerializedName("ParentId")
         private String parentId;
 
-        /** 父项目名称（已废弃）: false */
+        /** 父项目名称（已废弃） */
         @SerializedName("ParentName")
         private String parentName;
 

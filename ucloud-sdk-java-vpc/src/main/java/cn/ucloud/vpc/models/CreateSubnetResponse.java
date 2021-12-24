@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateSubnetResponse extends Response {
 
-    /** 子网ID: false */
+    /** 子网ID */
     @SerializedName("SubnetId")
     private String subnetId;
 

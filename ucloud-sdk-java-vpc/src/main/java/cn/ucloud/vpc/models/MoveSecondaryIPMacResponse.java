@@ -13,6 +13,8 @@
  */
 package cn.ucloud.vpc.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class MoveSecondaryIPMacResponse extends Response {}

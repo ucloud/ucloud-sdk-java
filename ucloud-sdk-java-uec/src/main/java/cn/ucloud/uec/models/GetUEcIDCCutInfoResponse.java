@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetUEcIDCCutInfoResponse extends Response {
 
-    /** 机房割接信息: false */
+    /** 机房割接信息 */
     @SerializedName("IDCCutInfo")
     private List<IDCCutInfo> idcCutInfo;
 
-    /** 满足条件的机房总数: false */
+    /** 满足条件的机房总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,31 +45,31 @@ public class GetUEcIDCCutInfoResponse extends Response {
 
     public static class IDCCutInfo extends Response {
 
-        /** 机房名称: false */
+        /** 机房名称 */
         @SerializedName("IDCName")
         private String idcName;
 
-        /** 省份: false */
+        /** 省份 */
         @SerializedName("Province")
         private String province;
 
-        /** 城市: false */
+        /** 城市 */
         @SerializedName("City")
         private String city;
 
-        /** 割接开始时间: false */
+        /** 割接开始时间 */
         @SerializedName("StartTime")
         private Integer startTime;
 
-        /** 割接结束时间: false */
+        /** 割接结束时间 */
         @SerializedName("EndTime")
         private Integer endTime;
 
-        /** 割接类型（中断、抖动、断电）: false */
+        /** 割接类型（中断、抖动、断电） */
         @SerializedName("CutType")
         private String cutType;
 
-        /** 受影响的资源信息列表: false */
+        /** 受影响的资源信息列表 */
         @SerializedName("ResourceSet")
         private List<ResourceSet> resourceSet;
 
@@ -132,11 +132,11 @@ public class GetUEcIDCCutInfoResponse extends Response {
 
     public static class ResourceSet extends Response {
 
-        /** 节点id: false */
+        /** 节点id */
         @SerializedName("NodeId")
         private String nodeId;
 
-        /** 机器外网ip集合: false */
+        /** 机器外网ip集合 */
         @SerializedName("OuterIps")
         private List<String> outerIps;
 

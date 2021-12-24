@@ -13,20 +13,21 @@
  */
 package cn.ucloud.udisk.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DetachUDiskResponse extends Response {
 
-    /** 卸载的UHost实例ID。【即将废弃，建议使用HostId】: false */
+    /** 卸载的UHost实例ID。【即将废弃，建议使用HostId】 */
     @SerializedName("UHostId")
     private String uHostId;
 
-    /** 卸载的UDisk实例ID: false */
+    /** 卸载的UDisk实例ID */
     @SerializedName("UDiskId")
     private String uDiskId;
 
-    /** 卸载的Host实例ID: false */
+    /** 卸载的Host实例ID */
     @SerializedName("HostId")
     private String hostId;
 

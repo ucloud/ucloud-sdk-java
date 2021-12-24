@@ -13,16 +13,17 @@
  */
 package cn.ucloud.uphost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetPHostDiskUpgradePriceResponse extends Response {
 
-    /** 升级差价。精度为小数点后2位。: false */
+    /** 升级差价。精度为小数点后2位。 */
     @SerializedName("Price")
     private Double price;
 
-    /** 升价差价原价。精度为小数点后2位。: false */
+    /** 升价差价原价。精度为小数点后2位。 */
     @SerializedName("OriginalPrice")
     private Double originalPrice;
 

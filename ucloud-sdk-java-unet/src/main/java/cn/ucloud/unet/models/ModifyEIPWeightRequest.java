@@ -13,29 +13,30 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ModifyEIPWeightRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 弹性IP的资源ID: false */
+    /** 弹性IP的资源ID */
     @NotEmpty
     @UCloudParam("EIPId")
     private String eipId;
 
     /**
      * 外网出口权重, 范围[0-100] 取值为0时, 该弹性IP不会被使用. 取值为100时, 同主机下只会使用这个弹性IP，其他弹性IP不会被使用
-     * 请勿将多个绑定在同一资源的弹性IP设置为相同权重: false
+     * 请勿将多个绑定在同一资源的弹性IP设置为相同权重
      */
     @NotEmpty
     @UCloudParam("Weight")

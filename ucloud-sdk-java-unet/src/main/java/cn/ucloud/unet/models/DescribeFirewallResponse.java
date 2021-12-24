@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeFirewallResponse extends Response {
 
-    /** 获取的防火墙组详细信息 参见 FirewallDataSet: false */
+    /** 获取的防火墙组详细信息 参见 FirewallDataSet */
     @SerializedName("DataSet")
     private List<FirewallDataSet> dataSet;
 
-    /** 防火墙资源数量: false */
+    /** 防火墙资源数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,42 +45,42 @@ public class DescribeFirewallResponse extends Response {
 
     public static class FirewallDataSet extends Response {
 
-        /** 防火墙ID: false */
+        /** 防火墙ID */
         @SerializedName("FWId")
         private String fwId;
 
-        /** 安全组ID（即将废弃）: false */
+        /** 安全组ID（即将废弃） */
         @SerializedName("GroupId")
         private String groupId;
 
-        /** 防火墙名称: false */
+        /** 防火墙名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 防火墙业务组: false */
+        /** 防火墙业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 防火墙备注: false */
+        /** 防火墙备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 防火墙绑定资源数量: false */
+        /** 防火墙绑定资源数量 */
         @SerializedName("ResourceCount")
         private Integer resourceCount;
 
-        /** 防火墙组创建时间，格式为Unix Timestamp: false */
+        /** 防火墙组创建时间，格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
         /**
          * 防火墙组类型，枚举值为： "user defined", 用户自定义防火墙； "recommend web", 默认Web防火墙； "recommend non web",
-         * 默认非Web防火墙: false
+         * 默认非Web防火墙
          */
         @SerializedName("Type")
         private String type;
 
-        /** 防火墙组中的规则列表，参见 FirewallRuleSet: false */
+        /** 防火墙组中的规则列表，参见 FirewallRuleSet */
         @SerializedName("Rule")
         private List<FirewallRuleSet> rule;
 
@@ -159,27 +159,27 @@ public class DescribeFirewallResponse extends Response {
 
     public static class FirewallRuleSet extends Response {
 
-        /** 源地址: false */
+        /** 源地址 */
         @SerializedName("SrcIP")
         private String srcIP;
 
-        /** 优先级: false */
+        /** 优先级 */
         @SerializedName("Priority")
         private String priority;
 
-        /** 协议类型: false */
+        /** 协议类型 */
         @SerializedName("ProtocolType")
         private String protocolType;
 
-        /** 目标端口: false */
+        /** 目标端口 */
         @SerializedName("DstPort")
         private String dstPort;
 
-        /** 防火墙动作: false */
+        /** 防火墙动作 */
         @SerializedName("RuleAction")
         private String ruleAction;
 
-        /** 防火墙规则备注: false */
+        /** 防火墙规则备注 */
         @SerializedName("Remark")
         private String remark;
 

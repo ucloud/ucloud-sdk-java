@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uphost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class PoweroffPHostResponse extends Response {
 
-    /** PHost 的资源ID: false */
+    /** PHost 的资源ID */
     @SerializedName("PHostId")
     private String pHostId;
 

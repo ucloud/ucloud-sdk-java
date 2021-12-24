@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnTrafficV2Response extends Response {
 
-    /** 用户不同区域的流量信息, 具体结构参见TrafficSet部分: false */
+    /** 用户不同区域的流量信息, 具体结构参见TrafficSet部分 */
     @SerializedName("TrafficSet")
     private List<TrafficSet> trafficSet;
 
@@ -33,19 +33,19 @@ public class GetUcdnTrafficV2Response extends Response {
 
     public static class TrafficSet extends Response {
 
-        /** 购买流量的区域, cn: 国内; abroad: 国外: false */
+        /** 购买流量的区域, cn: 国内; abroad: 国外 */
         @SerializedName("Areacode")
         private String areacode;
 
-        /** Areacode区域内总购买流量, 单位GB: false */
+        /** Areacode区域内总购买流量, 单位GB */
         @SerializedName("TrafficTotal")
         private Double trafficTotal;
 
-        /** Areacode区域内总剩余流量, 单位GB: false */
+        /** Areacode区域内总剩余流量, 单位GB */
         @SerializedName("TrafficLeft")
         private Double trafficLeft;
 
-        /** Areacode区域内总使用流量, 单位GB: false */
+        /** Areacode区域内总使用流量, 单位GB */
         @SerializedName("TrafficUsed")
         private Double trafficUsed;
 

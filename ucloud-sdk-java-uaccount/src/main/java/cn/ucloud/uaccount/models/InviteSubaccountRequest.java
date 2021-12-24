@@ -13,28 +13,29 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class InviteSubaccountRequest extends Request {
 
-    /** 受邀成员邮箱地址，不得重复: false */
+    /** 受邀成员邮箱地址，不得重复 */
     @NotEmpty
     @UCloudParam("UserEmail")
     private String userEmail;
 
-    /** 受邀成员手机号码: false */
+    /** 受邀成员手机号码 */
     @NotEmpty
     @UCloudParam("UserPhone")
     private String userPhone;
 
-    /** 受邀成员姓名: false */
+    /** 受邀成员姓名 */
     @NotEmpty
     @UCloudParam("UserName")
     private String userName;
 
-    /** 是否有财务权限(true:是,false:否,默认为否): false */
+    /** 是否有财务权限(true:是,false:否,默认为否) */
     @NotEmpty
     @UCloudParam("IsFinance")
     private String isFinance;

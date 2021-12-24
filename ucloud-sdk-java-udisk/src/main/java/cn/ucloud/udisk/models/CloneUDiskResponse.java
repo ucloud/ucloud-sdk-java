@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CloneUDiskResponse extends Response {
 
-    /** 创建UDisk Id: false */
+    /** 创建UDisk Id */
     @SerializedName("UDiskId")
     private List<String> uDiskId;
 

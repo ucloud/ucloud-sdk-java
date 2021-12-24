@@ -19,7 +19,7 @@ import java.util.List;
 
 public class ListSubnetForNATGWResponse extends Response {
 
-    /** 具体参数请见NatgwSubnetDataSet: false */
+    /** 具体参数请见NatgwSubnetDataSet */
     @SerializedName("DataSet")
     private List<NatgwSubnetDataSet> dataSet;
 
@@ -33,23 +33,23 @@ public class ListSubnetForNATGWResponse extends Response {
 
     public static class NatgwSubnetDataSet extends Response {
 
-        /** 子网id: false */
+        /** 子网id */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** 子网网段: false */
+        /** 子网网段 */
         @SerializedName("Subnet")
         private String subnet;
 
-        /** 掩码: false */
+        /** 掩码 */
         @SerializedName("Netmask")
         private String netmask;
 
-        /** 子网名字: false */
+        /** 子网名字 */
         @SerializedName("SubnetName")
         private String subnetName;
 
-        /** 是否绑定NATGW: false */
+        /** 是否绑定NATGW */
         @SerializedName("HasNATGW")
         private Boolean hasNATGW;
 

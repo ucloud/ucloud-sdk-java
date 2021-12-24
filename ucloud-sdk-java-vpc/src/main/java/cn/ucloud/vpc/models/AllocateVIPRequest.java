@@ -13,56 +13,57 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class AllocateVIPRequest extends Request {
 
-    /** 地域: false */
+    /** 地域 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区: false */
+    /** 可用区 */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 指定vip所属的VPC: false */
+    /** 指定vip所属的VPC */
     @NotEmpty
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 子网id: false */
+    /** 子网id */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 指定ip: false */
+    /** 指定ip */
     @UCloudParam("Ip")
     private String ip;
 
-    /** 申请数量，默认: 1: false */
+    /** 申请数量，默认: 1 */
     @UCloudParam("Count")
     private Integer count;
 
-    /** vip名，默认：VIP: false */
+    /** vip名，默认：VIP */
     @UCloudParam("Name")
     private String name;
 
-    /** 业务组名称，默认为Default: false */
+    /** 业务组名称，默认为Default */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 备注: false */
+    /** 备注 */
     @UCloudParam("Remark")
     private String remark;
 
-    /** 业务组: false */
+    /** 业务组 */
     @UCloudParam("BusinessId")
     private String businessId;
 

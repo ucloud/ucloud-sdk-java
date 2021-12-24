@@ -13,28 +13,29 @@
  */
 package cn.ucloud.ufile.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUFileTokenRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 令牌ID，只返回指定ID信息，否则拉取所有令牌: false */
+    /** 令牌ID，只返回指定ID信息，否则拉取所有令牌 */
     @UCloudParam("TokenId")
     private String tokenId;
 
-    /** 令牌名称，只返回指定令牌名称信息，否则拉取所有令牌: false */
+    /** 令牌名称，只返回指定令牌名称信息，否则拉取所有令牌 */
     @UCloudParam("TokenName")
     private String tokenName;
 
-    /** 0表示显示部分token信息；不传递和其他情况表示显示全部token信息: false */
+    /** 0表示显示部分token信息；不传递和其他情况表示显示全部token信息 */
     @UCloudParam("Display")
     private Integer display;
 

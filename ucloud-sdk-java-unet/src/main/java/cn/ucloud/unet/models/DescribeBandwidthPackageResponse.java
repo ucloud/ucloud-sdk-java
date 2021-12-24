@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeBandwidthPackageResponse extends Response {
 
-    /** 满足条件的带宽包总数: false */
+    /** 满足条件的带宽包总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 带宽包详细信息, 参见 UnetBandwidthPackageSet: false */
+    /** 带宽包详细信息, 参见 UnetBandwidthPackageSet */
     @SerializedName("DataSets")
     private List<UnetBandwidthPackageSet> dataSets;
 
@@ -45,11 +45,11 @@ public class DescribeBandwidthPackageResponse extends Response {
 
     public static class EIPAddrSet extends Response {
 
-        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际.: false */
+        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际. */
         @SerializedName("OperatorName")
         private String operatorName;
 
-        /** 弹性IP地址: false */
+        /** 弹性IP地址 */
         @SerializedName("IP")
         private String ip;
 
@@ -72,33 +72,31 @@ public class DescribeBandwidthPackageResponse extends Response {
 
     public static class UnetBandwidthPackageSet extends Response {
 
-        /** 带宽包的资源ID: false */
+        /** 带宽包的资源ID */
         @SerializedName("BandwidthPackageId")
         private String bandwidthPackageId;
 
-        /** 生效时间, 格式为 Unix Timestamp: false */
+        /** 生效时间, 格式为 Unix Timestamp */
         @SerializedName("EnableTime")
         private Integer enableTime;
 
-        /** 失效时间, 格式为 Unix Timestamp: false */
+        /** 失效时间, 格式为 Unix Timestamp */
         @SerializedName("DisableTime")
         private Integer disableTime;
 
-        /** 创建时间, 格式为 Unix Timestamp: false */
+        /** 创建时间, 格式为 Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 带宽包的临时带宽值, 单位Mbps: false */
+        /** 带宽包的临时带宽值, 单位Mbps */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** 带宽包所绑定弹性IP的资源ID: false */
+        /** 带宽包所绑定弹性IP的资源ID */
         @SerializedName("EIPId")
         private String eipId;
 
-        /**
-         * 带宽包所绑定弹性IP的详细信息,只有当EIPId对应双线IP时, EIPAddr的长度为2, 其他情况, EIPAddr长度均为1.参见 EIPAddrSet: false
-         */
+        /** 带宽包所绑定弹性IP的详细信息,只有当EIPId对应双线IP时, EIPAddr的长度为2, 其他情况, EIPAddr长度均为1.参见 EIPAddrSet */
         @SerializedName("EIPAddr")
         private List<EIPAddrSet> eipAddr;
 

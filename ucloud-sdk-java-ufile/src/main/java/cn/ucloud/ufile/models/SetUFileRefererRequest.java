@@ -20,39 +20,36 @@ import java.util.List;
 
 public class SetUFileRefererRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 存储空间名称: false */
+    /** 存储空间名称 */
     @NotEmpty
     @UCloudParam("BucketName")
     private String bucketName;
 
-    /** 开启关闭referer防盗链;关闭防盗链会清空防盗链参数设置，开启防盗链必须指定 RefererType、Referers；开启：on， 关闭：off;: false */
+    /** 开启关闭referer防盗链;关闭防盗链会清空防盗链参数设置，开启防盗链必须指定 RefererType、Referers；开启：on， 关闭：off; */
     @NotEmpty
     @UCloudParam("RefererStatus")
     private String refererStatus;
 
-    /**
-     * RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问; 此参数默认为 true; :
-     * false
-     */
+    /** RefererType为白名单时，RefererAllowNull为false代表不允许空referer访问，为true代表允许空referer访问; 此参数默认为 true; */
     @UCloudParam("RefererAllowNull")
     private Boolean refererAllowNull;
 
-    /** 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填；: false */
+    /** 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填； */
     @UCloudParam("RefererType")
     private Integer refererType;
 
-    /** 防盗链Referer规则，支持正则表达式（不支持符号';'): false */
+    /** 防盗链Referer规则，支持正则表达式（不支持符号';') */
     @UCloudParam("Referers")
     private List<String> referers;
 

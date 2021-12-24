@@ -13,22 +13,23 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class AddMemberToProjectRequest extends Request {
 
-    /** 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 : false */
+    /** 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为创建时间最早的项目。 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 被加入成员Email: false */
+    /** 被加入成员Email */
     @NotEmpty
     @UCloudParam("MemberEmail")
     private String memberEmail;
 
-    /** 被加入成员归属角色ID: false */
+    /** 被加入成员归属角色ID */
     @NotEmpty
     @UCloudParam("CharacterId")
     private String characterId;

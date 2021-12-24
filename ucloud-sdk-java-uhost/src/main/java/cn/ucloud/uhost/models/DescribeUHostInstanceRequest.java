@@ -20,54 +20,53 @@ import java.util.List;
 
 public class DescribeUHostInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
     /**
-     * 【数组】UHost主机的资源ID，例如UHostIds.0代表希望获取信息 的主机1，UHostIds.1代表主机2。 如果不传入，则返回当前Region
-     * 所有符合条件的UHost实例。: false
+     * 【数组】UHost主机的资源ID，例如UHostIds.0代表希望获取信息 的主机1，UHostIds.1代表主机2。 如果不传入，则返回当前Region 所有符合条件的UHost实例。
      */
     @UCloudParam("UHostIds")
     private List<String> uHostIds;
 
-    /** 要查询的业务组名称: false */
+    /** 要查询的业务组名称 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 列表起始位置偏移量，默认为0: false */
+    /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20，最大100: false */
+    /** 返回数据长度，默认为20，最大100 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 硬件隔离组id。通过硬件隔离组筛选主机。: false */
+    /** 硬件隔离组id。通过硬件隔离组筛选主机。 */
     @UCloudParam("IsolationGroup")
     private String isolationGroup;
 
-    /** vpc id。通过VPC筛选主机。北京一地域无效。: false */
+    /** vpc id。通过VPC筛选主机。北京一地域无效。 */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 子网id。通过子网筛选主机。北京一地域无效。: false */
+    /** 子网id。通过子网筛选主机。北京一地域无效。 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 要挂载的云盘id，过滤返回能被UDiskId挂载的云主机。目前主要针对rssd云盘使用: false */
+    /** 要挂载的云盘id，过滤返回能被UDiskId挂载的云主机。目前主要针对rssd云盘使用 */
     @UCloudParam("UDiskIdForAttachment")
     private String uDiskIdForAttachment;
 

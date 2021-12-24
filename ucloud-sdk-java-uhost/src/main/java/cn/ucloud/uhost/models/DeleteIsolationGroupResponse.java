@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DeleteIsolationGroupResponse extends Response {
 
-    /** 硬件隔离组id: false */
+    /** 硬件隔离组id */
     @SerializedName("GroupId")
     private String groupId;
 

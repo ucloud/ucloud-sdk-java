@@ -13,6 +13,8 @@
  */
 package cn.ucloud.uaccount.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class RemoveMemberFromProjectResponse extends Response {}

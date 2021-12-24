@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUDBParamGroupResponse extends Response {
 
-    /** 新配置参数组id: false */
+    /** 新配置参数组id */
     @SerializedName("GroupId")
     private Integer groupId;
 

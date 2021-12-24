@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUEcVHostISPResponse extends Response {
 
-    /** 节点运营商列表: false */
+    /** 节点运营商列表 */
     @SerializedName("NodeIspList")
     private List<NodeIspList> nodeIspList;
 
@@ -33,23 +33,23 @@ public class DescribeUEcVHostISPResponse extends Response {
 
     public static class NodeIspList extends Response {
 
-        /** 省份: false */
+        /** 省份 */
         @SerializedName("Province")
         private String province;
 
-        /** 城市: false */
+        /** 城市 */
         @SerializedName("City")
         private String city;
 
-        /** 线路类型: false */
+        /** 线路类型 */
         @SerializedName("LineType")
         private String lineType;
 
-        /** 机房运营商名称: false */
+        /** 机房运营商名称 */
         @SerializedName("IspName")
         private String ispName;
 
-        /** 机房名称: false */
+        /** 机房名称 */
         @SerializedName("IdcName")
         private String idcName;
 

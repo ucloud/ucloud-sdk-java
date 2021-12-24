@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,21 +22,21 @@ public class UpdateUEcFirewallAttributeRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 防火墙Id: false */
+    /** 防火墙Id */
     @NotEmpty
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** 防火墙名称: false */
+    /** 防火墙名称 */
     @UCloudParam("Name")
     private String name;
 
-    /** 描述: false */
+    /** 描述 */
     @UCloudParam("Remark")
     private String remark;
 

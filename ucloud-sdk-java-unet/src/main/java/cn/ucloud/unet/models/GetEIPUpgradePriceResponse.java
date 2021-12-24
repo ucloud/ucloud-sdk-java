@@ -13,12 +13,13 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetEIPUpgradePriceResponse extends Response {
 
-    /** 调整带宽后的EIP价格, 单位为"元", 如需退费此处为负值: false */
+    /** 调整带宽后的EIP价格, 单位为"元", 如需退费此处为负值 */
     @SerializedName("Price")
     private Double price;
 

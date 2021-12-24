@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,26 +22,26 @@ public class CreateUEcSubnetRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 机房ID: false */
+    /** 机房ID */
     @NotEmpty
     @UCloudParam("IdcId")
     private String idcId;
 
-    /** 子网cidr: false */
+    /** 子网cidr */
     @NotEmpty
     @UCloudParam("CIDR")
     private String cidr;
 
-    /** 子网名称: false */
+    /** 子网名称 */
     @UCloudParam("SubnetName")
     private String subnetName;
 
-    /** 备注: false */
+    /** 备注 */
     @UCloudParam("Comment")
     private String comment;
 

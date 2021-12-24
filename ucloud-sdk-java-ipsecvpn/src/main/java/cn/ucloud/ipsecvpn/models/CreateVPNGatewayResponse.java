@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ipsecvpn.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateVPNGatewayResponse extends Response {
 
-    /** 新建VPN网关的资源ID: false */
+    /** 新建VPN网关的资源ID */
     @SerializedName("VPNGatewayId")
     private String vpnGatewayId;
 

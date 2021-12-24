@@ -20,26 +20,26 @@ import java.util.List;
 
 public class DescribeWhiteListResourceRequest extends Request {
 
-    /** 项目id: false */
+    /** 项目id */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** NAT网关的Id: false */
+    /** NAT网关的Id */
     @NotEmpty
     @UCloudParam("NATGWIds")
     private List<String> natgwIds;
 
-    /** 数据偏移量, 默认为0: false */
+    /** 数据偏移量, 默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 数据分页值, 默认为20: false */
+    /** 数据分页值, 默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 

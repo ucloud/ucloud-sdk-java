@@ -13,12 +13,13 @@
  */
 package cn.ucloud.usms.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class QueryUSMSSignatureResponse extends Response {
 
-    /** 签名信息: false */
+    /** 签名信息 */
     @SerializedName("Data")
     private OutSignature data;
 
@@ -32,19 +33,19 @@ public class QueryUSMSSignatureResponse extends Response {
 
     public static class OutSignature extends Response {
 
-        /** 短信签名ID: false */
+        /** 短信签名ID */
         @SerializedName("SigId")
         private String sigId;
 
-        /** 短信签名内容: false */
+        /** 短信签名内容 */
         @SerializedName("SigContent")
         private String sigContent;
 
-        /** 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 : false */
+        /** 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 */
         @SerializedName("Status")
         private Integer status;
 
-        /** 短信签名未通过审核原因: false */
+        /** 短信签名未通过审核原因 */
         @SerializedName("ErrDesc")
         private String errDesc;
 

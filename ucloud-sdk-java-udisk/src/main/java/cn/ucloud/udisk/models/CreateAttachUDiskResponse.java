@@ -13,24 +13,25 @@
  */
 package cn.ucloud.udisk.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateAttachUDiskResponse extends Response {
 
-    /** 挂载的UDisk实例ID: false */
+    /** 挂载的UDisk实例ID */
     @SerializedName("UDiskId")
     private String uDiskId;
 
-    /** 挂载的UHost实例ID。【即将废弃，建议使用HostId】: false */
+    /** 挂载的UHost实例ID。【即将废弃，建议使用HostId】 */
     @SerializedName("UHostId")
     private String uHostId;
 
-    /** 挂载的Host实例ID: false */
+    /** 挂载的Host实例ID */
     @SerializedName("HostId")
     private String hostId;
 
-    /** 挂载设备名称: false */
+    /** 挂载设备名称 */
     @SerializedName("DeviceName")
     private String deviceName;
 

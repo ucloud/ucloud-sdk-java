@@ -13,50 +13,51 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDBInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区，不填时默认全部可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区，不填时默认全部可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** DB种类，如果是列表操作，则需要指定,不区分大小写，其取值如下：mysql: SQL；mongo: NOSQL；postgresql: postgresql: false */
+    /** DB种类，如果是列表操作，则需要指定,不区分大小写，其取值如下：mysql: SQL；mongo: NOSQL；postgresql: postgresql */
     @UCloudParam("ClassType")
     private String classType;
 
-    /** 分页显示起始偏移位置，列表操作时必填: false */
+    /** 分页显示起始偏移位置，列表操作时必填 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 分页显示数量，列表操作时必填: false */
+    /** 分页显示数量，列表操作时必填 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** DB实例id，如果指定则获取单个db实例的描述，否则为列表操作。 指定DBId时无需填写ClassType、Offset、Limit: false */
+    /** DB实例id，如果指定则获取单个db实例的描述，否则为列表操作。 指定DBId时无需填写ClassType、Offset、Limit */
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 是否查看专区里面DB: false */
+    /** 是否查看专区里面DB */
     @UCloudParam("IsInUDBC")
     private Boolean isInUDBC;
 
-    /** IsInUDBC为True,UDBCId为空，说明查看整个可用区的专区的db，如果UDBId不为空则只查看此专区下面的db: false */
+    /** IsInUDBC为True,UDBCId为空，说明查看整个可用区的专区的db，如果UDBId不为空则只查看此专区下面的db */
     @UCloudParam("UDBCId")
     private String udbcId;
 
-    /** 当只获取这个特定DBId的信息时，如果有该选项，那么把这个DBId实例的所有从库信息一起拉取并返回: false */
+    /** 当只获取这个特定DBId的信息时，如果有该选项，那么把这个DBId实例的所有从库信息一起拉取并返回 */
     @UCloudParam("IncludeSlaves")
     private Boolean includeSlaves;
 

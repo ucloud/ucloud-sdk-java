@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ucdn.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class PrefetchNewUcdnDomainCacheResponse extends Response {
 
-    /** 本次提交url对应的任务id: false */
+    /** 本次提交url对应的任务id */
     @SerializedName("TaskId")
     private String taskId;
 

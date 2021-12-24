@@ -20,116 +20,116 @@ import java.util.List;
 
 public class CreateUK8SClusterV2Request extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 集群Node及Pod所属VPC: false */
+    /** 集群Node及Pod所属VPC */
     @NotEmpty
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 集群Node及Pod所属子网: false */
+    /** 集群Node及Pod所属子网 */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** Service 网段，用于分配ClusterIP，如172.17.0.0/16。该网段不能与集群所属VPC网段重叠。: false */
+    /** Service 网段，用于分配ClusterIP，如172.17.0.0/16。该网段不能与集群所属VPC网段重叠。 */
     @NotEmpty
     @UCloudParam("ServiceCIDR")
     private String serviceCIDR;
 
-    /** 集群名称: false */
+    /** 集群名称 */
     @NotEmpty
     @UCloudParam("ClusterName")
     private String clusterName;
 
-    /** 集群节点密码，包括Master和Node。密码需包含最少一个大写字母，请使用base64进行编码，举例如下：# echo -n Password1 | base64: false */
+    /** 集群节点密码，包括Master和Node。密码需包含最少一个大写字母，请使用base64进行编码，举例如下：# echo -n Password1 | base64 */
     @NotEmpty
     @UCloudParam("Password")
     private String password;
 
-    /** : false */
+    /** */
     @UCloudParam("Master")
     private List<Master> master;
 
-    /** Master节点的云主机机型（V2.0），如["N", "C", "O", "OS"]，具体请参照云主机机型。: false */
+    /** Master节点的云主机机型（V2.0），如["N", "C", "O", "OS"]，具体请参照云主机机型。 */
     @NotEmpty
     @UCloudParam("MasterMachineType")
     private String masterMachineType;
 
-    /** Master节点的虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。: false */
+    /** Master节点的虚拟CPU核数。可选参数：2-64（具体机型与CPU的对应关系参照控制台）。 */
     @NotEmpty
     @UCloudParam("MasterCPU")
     private Integer masterCPU;
 
-    /** Master节点的内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。: false */
+    /** Master节点的内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。 */
     @NotEmpty
     @UCloudParam("MasterMem")
     private Integer masterMem;
 
-    /** : false */
+    /** */
     @UCloudParam("Nodes")
     private List<Nodes> nodes;
 
-    /** Master节点系统盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘: false */
+    /** Master节点系统盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
     @UCloudParam("MasterBootDiskType")
     private String masterBootDiskType;
 
-    /** Master节点数据盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘: false */
+    /** Master节点数据盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
     @UCloudParam("MasterDataDiskType")
     private String masterDataDiskType;
 
     /**
      * Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
-     * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。: false
+     * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
      */
     @UCloudParam("MasterMinmalCpuPlatform")
     private String masterMinmalCpuPlatform;
 
-    /** Master节点的数据盘大小，单位GB，默认为0。范围 ：[20, 1000]: false */
+    /** Master节点的数据盘大小，单位GB，默认为0。范围 ：[20, 1000] */
     @UCloudParam("MasterDataDiskSize")
     private Integer masterDataDiskSize;
 
-    /** 集群所有节点的付费模式。枚举值为： Year，按年付费； Month，按月付费； Dynamic，按小时付费（需开启权限），默认按月。: false */
+    /** 集群所有节点的付费模式。枚举值为： Year，按年付费； Month，按月付费； Dynamic，按小时付费（需开启权限），默认按月。 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** k8s集群的版本，版本信息请参考UK8S集群创建页，不指定的话默认为当前支持的最高版本。: false */
+    /** k8s集群的版本，版本信息请参考UK8S集群创建页，不指定的话默认为当前支持的最高版本。 */
     @UCloudParam("K8sVersion")
     private String k8sVersion;
 
-    /** 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。: false */
+    /** 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 是否允许外网访问apiserver，开启：Yes 不开启：No。默认为No。: false */
+    /** 是否允许外网访问apiserver，开启：Yes 不开启：No。默认为No。 */
     @UCloudParam("ExternalApiServer")
     private String externalApiServer;
 
-    /** 【无效，已删除】当前将自动为Master节点创建隔离组，确保Master节点归属于不同物理机。: false */
+    /** 【无效，已删除】当前将自动为Master节点创建隔离组，确保Master节点归属于不同物理机。 */
     @UCloudParam("MasterIsolationGroup")
     private String masterIsolationGroup;
 
-    /** : false */
+    /** */
     @UCloudParam("KubeProxy")
     private KubeProxy kubeProxy;
 
-    /** Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。: false */
+    /** Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。 */
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 用户自定义数据。注意：1、总数据量大小不超多16K；2、使用base64编码。: false */
+    /** 用户自定义数据。注意：1、总数据量大小不超多16K；2、使用base64编码。 */
     @UCloudParam("UserData")
     private String userData;
 
-    /** 用户自定义脚本，与UserData不同，自定义脚本将在集群安装完毕后执行。 注意：1、总数据量大小不超多16K；2、使用base64编码。: false */
+    /** 用户自定义脚本，与UserData不同，自定义脚本将在集群安装完毕后执行。 注意：1、总数据量大小不超多16K；2、使用base64编码。 */
     @UCloudParam("InitScript")
     private String initScript;
 
@@ -333,28 +333,9 @@ public class CreateUK8SClusterV2Request extends Request {
         this.initScript = initScript;
     }
 
-    public static class Master extends Request {
-
-        /**
-         * Master节点所属可用区，需要设置 Master.0.Zone、 Master.1.Zone、Master.2.Zone 三个 Master 节点的可用区。
-         * 三个节点可部署在不同可用区。参见 [可用区列表](../summary/regionlist.html): false
-         */
-        @NotEmpty
-        @UCloudParam("Zone")
-        private String zone;
-
-        public String getZone() {
-            return zone;
-        }
-
-        public void setZone(String zone) {
-            this.zone = zone;
-        }
-    }
-
     public static class KubeProxy extends Request {
 
-        /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。: false */
+        /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。 */
         @UCloudParam("Mode")
         private String mode;
 
@@ -371,70 +352,68 @@ public class CreateUK8SClusterV2Request extends Request {
 
         /**
          * 一组Nodes节点所属可用区，可创建多组Nodes节点，如一组是CPU Nodes节点，另一组是GPU Nodes节点。参见
-         * [可用区列表](../summary/regionlist.html): false
+         * [可用区列表](../summary/regionlist.html)
          */
         @NotEmpty
         @UCloudParam("Zone")
         private String zone;
 
-        /** 一组Nodes节点云主机机型，如["N", "C", "O", "OS"]，具体请参照云主机机型。: false */
+        /** 一组Nodes节点云主机机型，如["N", "C", "O", "OS"]，具体请参照云主机机型。 */
         @NotEmpty
         @UCloudParam("MachineType")
         private String machineType;
 
-        /** 一组Node节点的虚拟CPU核数。单位：核，范围：[2, 64]，可选范围参考控制台。: false */
+        /** 一组Node节点的虚拟CPU核数。单位：核，范围：[2, 64]，可选范围参考控制台。 */
         @NotEmpty
         @UCloudParam("CPU")
         private Integer cpu;
 
-        /** 一组Node节点的内存大小。单位：MB,范围 ：[4096, 262144]，取值为1024的倍数，可选范围参考控制台。: false */
+        /** 一组Node节点的内存大小。单位：MB,范围 ：[4096, 262144]，取值为1024的倍数，可选范围参考控制台。 */
         @NotEmpty
         @UCloudParam("Mem")
         private Integer mem;
 
-        /** 一组Node节点的数量，范围：[1,10]。: false */
+        /** 一组Node节点的数量，范围：[1,10]。 */
         @NotEmpty
         @UCloudParam("Count")
         private Integer count;
 
-        /**
-         * 一组Node节点的隔离组Id，归属于同一隔离组的虚拟机节点将落在不同的物理机上，单个隔离组最多只能容纳8个节点。参见DescribeIsolationGroup。: false
-         */
+        /** 一组Node节点的隔离组Id，归属于同一隔离组的虚拟机节点将落在不同的物理机上，单个隔离组最多只能容纳8个节点。参见DescribeIsolationGroup。 */
         @UCloudParam("IsolationGroup")
         private String isolationGroup;
 
-        /** Node节点上可运行最大节点数，默认为110。: false */
+        /** Node节点上可运行最大节点数，默认为110。 */
         @UCloudParam("MaxPods")
         private Integer maxPods;
 
-        /** Node节点标签，形式为key=value，多组Labels用”,“隔开,最多支持五组。: false */
+        /** Node节点标签，形式为key=value，多组Labels用”,“隔开,最多支持五组。 */
         @UCloudParam("Labels")
         private String labels;
 
-        /** 一组Node节点的系统盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘: false */
+        /** 一组Node节点的系统盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
         @UCloudParam("BootDiskType")
         private String bootDiskType;
 
-        /** 一组Node节点的数据盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘: false */
+        /** 一组Node节点的数据盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
         @UCloudParam("DataDiskType")
         private String dataDiskType;
 
         /**
          * Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
-         * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。: false
+         * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
          */
         @UCloudParam("MinmalCpuPlatform")
         private String minmalCpuPlatform;
 
-        /** 一组Node节点的GPU类型，枚举值["K80", "P40", "V100"]，最新值参考Console。: false */
+        /** 一组Node节点的GPU类型，枚举值["K80", "P40", "V100"]，最新值参考Console。 */
         @UCloudParam("GpuType")
         private String gpuType;
 
-        /** 一组Node节点的GPU卡核心数，仅GPU机型支持此字段。: false */
+        /** 一组Node节点的GPU卡核心数，仅GPU机型支持此字段。 */
         @UCloudParam("GPU")
         private Integer gpu;
 
-        /** 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000]: false */
+        /** 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000] */
         @UCloudParam("DataDiskSize")
         private Integer dataDiskSize;
 
@@ -548,6 +527,25 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setDataDiskSize(Integer dataDiskSize) {
             this.dataDiskSize = dataDiskSize;
+        }
+    }
+
+    public static class Master extends Request {
+
+        /**
+         * Master节点所属可用区，需要设置 Master.0.Zone、 Master.1.Zone、Master.2.Zone 三个 Master 节点的可用区。
+         * 三个节点可部署在不同可用区。参见 [可用区列表](../summary/regionlist.html)
+         */
+        @NotEmpty
+        @UCloudParam("Zone")
+        private String zone;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
         }
     }
 }

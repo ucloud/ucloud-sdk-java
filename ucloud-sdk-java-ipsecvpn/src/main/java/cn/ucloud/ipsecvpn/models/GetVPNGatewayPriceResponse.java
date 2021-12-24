@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetVPNGatewayPriceResponse extends Response {
 
-    /** 获取的VPN网关价格信息列表，每项参数详见 VPNGatewayPriceSet: false */
+    /** 获取的VPN网关价格信息列表，每项参数详见 VPNGatewayPriceSet */
     @SerializedName("PriceSet")
     private List<VPNGatewayPriceSet> priceSet;
 
@@ -33,15 +33,15 @@ public class GetVPNGatewayPriceResponse extends Response {
 
     public static class VPNGatewayPriceSet extends Response {
 
-        /** VPN网关付费方式: false */
+        /** VPN网关付费方式 */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** VPN网关价格, 单位"元": false */
+        /** VPN网关价格, 单位"元" */
         @SerializedName("Price")
         private Double price;
 
-        /** 资源有效期, 以Unix Timestamp表示: false */
+        /** 资源有效期, 以Unix Timestamp表示 */
         @SerializedName("PurchaseValue")
         private Integer purchaseValue;
 

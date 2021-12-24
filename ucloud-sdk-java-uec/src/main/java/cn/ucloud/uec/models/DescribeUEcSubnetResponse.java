@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUEcSubnetResponse extends Response {
 
-    /** 子网信息列表: false */
+    /** 子网信息列表 */
     @SerializedName("SubnetList")
     private List<SubnetInfo> subnetList;
 
@@ -33,35 +33,35 @@ public class DescribeUEcSubnetResponse extends Response {
 
     public static class SubnetInfo extends Response {
 
-        /** 子网ID: false */
+        /** 子网ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** 子网名称: false */
+        /** 子网名称 */
         @SerializedName("SubnetName")
         private String subnetName;
 
-        /** 机房ID: false */
+        /** 机房ID */
         @SerializedName("IdcId")
         private String idcId;
 
-        /** 子网cidr: false */
+        /** 子网cidr */
         @SerializedName("CIDR")
         private String cidr;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 备注: false */
+        /** 备注 */
         @SerializedName("Comment")
         private String comment;
 
-        /** 总ip数: false */
+        /** 总ip数 */
         @SerializedName("TotalIpCnt")
         private Integer totalIpCnt;
 
-        /** 可用ip数: false */
+        /** 可用ip数 */
         @SerializedName("AvailableIPCnt")
         private Integer availableIPCnt;
 

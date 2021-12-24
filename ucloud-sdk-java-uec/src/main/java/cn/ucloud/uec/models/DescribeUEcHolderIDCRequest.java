@@ -22,30 +22,30 @@ public class DescribeUEcHolderIDCRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 容器组Cpu核数: false */
+    /** 容器组Cpu核数 */
     @NotEmpty
     @UCloudParam("Cpu")
     private Double cpu;
 
-    /** 容器组内存大小（单位MB）: false */
+    /** 容器组内存大小（单位MB） */
     @NotEmpty
     @UCloudParam("Memory")
     private Integer memory;
 
-    /** Idc机房id。默认全部机房: false */
+    /** Idc机房id。默认全部机房 */
     @UCloudParam("IdcId")
     private List<String> idcId;
 
-    /** 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通: false */
+    /** 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 */
     @UCloudParam("Type")
     private Integer type;
 
-    /** 产品类型，normal标准型，hf高性能型: false */
+    /** 产品类型，normal标准型，hf高性能型 */
     @UCloudParam("ProductType")
     private String productType;
 

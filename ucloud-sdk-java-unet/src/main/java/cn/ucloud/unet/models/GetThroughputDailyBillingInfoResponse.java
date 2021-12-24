@@ -19,15 +19,15 @@ import java.util.List;
 
 public class GetThroughputDailyBillingInfoResponse extends Response {
 
-    /** EIP流量计费信息，详见模型ThroughputDailyBillingInfo: false */
+    /** EIP流量计费信息，详见模型ThroughputDailyBillingInfo */
     @SerializedName("Stats")
     private List<ThroughputDailyBillingInfo> stats;
 
-    /** 计费总流量: false */
+    /** 计费总流量 */
     @SerializedName("TotalOut")
     private Integer totalOut;
 
-    /** 资源ID: false */
+    /** 资源ID */
     @SerializedName("EIPId")
     private String eipId;
 
@@ -57,19 +57,19 @@ public class GetThroughputDailyBillingInfoResponse extends Response {
 
     public static class ThroughputDailyBillingInfo extends Response {
 
-        /** 计费开始时间: false */
+        /** 计费开始时间 */
         @SerializedName("StartTime")
         private Integer startTime;
 
-        /** 计费结束时间: false */
+        /** 计费结束时间 */
         @SerializedName("EndTime")
         private Integer endTime;
 
-        /** 计费流量，单位“GB”: false */
+        /** 计费流量，单位“GB” */
         @SerializedName("QuantityOut")
         private Integer quantityOut;
 
-        /** 是否已计费，“Yes”或者“No”: false */
+        /** 是否已计费，“Yes”或者“No” */
         @SerializedName("BillingState")
         private String billingState;
 

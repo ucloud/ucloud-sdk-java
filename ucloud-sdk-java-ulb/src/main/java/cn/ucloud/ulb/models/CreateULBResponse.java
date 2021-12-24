@@ -13,16 +13,17 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateULBResponse extends Response {
 
-    /** 负载均衡实例的Id: false */
+    /** 负载均衡实例的Id */
     @SerializedName("ULBId")
     private String ulbId;
 
-    /** IPv6地址Id: false */
+    /** IPv6地址Id */
     @SerializedName("IPv6AddressId")
     private String iPv6AddressId;
 

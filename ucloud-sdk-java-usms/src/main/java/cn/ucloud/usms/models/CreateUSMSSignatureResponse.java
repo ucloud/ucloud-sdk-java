@@ -13,12 +13,13 @@
  */
 package cn.ucloud.usms.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUSMSSignatureResponse extends Response {
 
-    /** 短信签名ID（短信签名申请时的工单ID）: false */
+    /** 短信签名ID（短信签名申请时的工单ID） */
     @SerializedName("SigId")
     private String sigId;
 

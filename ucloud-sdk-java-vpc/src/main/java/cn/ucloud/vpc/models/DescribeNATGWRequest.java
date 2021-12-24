@@ -20,24 +20,24 @@ import java.util.List;
 
 public class DescribeNATGWRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** NAT网关Id。默认为该项目下所有NAT网关: false */
+    /** NAT网关Id。默认为该项目下所有NAT网关 */
     @UCloudParam("NATGWIds")
     private List<String> natgwIds;
 
-    /** 数据偏移量。默认为0: false */
+    /** 数据偏移量。默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 数据分页值。默认为20: false */
+    /** 数据分页值。默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 

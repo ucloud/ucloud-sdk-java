@@ -13,22 +13,23 @@
  */
 package cn.ucloud.uk8s.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUK8SClusterRequest extends Request {
 
-    /** 所属区域: false */
+    /** 所属区域 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目id: false */
+    /** 项目id */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** k8s集群ID: false */
+    /** k8s集群ID */
     @NotEmpty
     @UCloudParam("ClusterId")
     private String clusterId;

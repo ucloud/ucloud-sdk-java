@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetRegionResponse extends Response {
 
-    /** 各数据中心信息: false */
+    /** 各数据中心信息 */
     @SerializedName("Regions")
     private List<RegionInfo> regions;
 
@@ -33,27 +33,27 @@ public class GetRegionResponse extends Response {
 
     public static class RegionInfo extends Response {
 
-        /** 数据中心ID: false */
+        /** 数据中心ID */
         @SerializedName("RegionId")
         private Integer regionId;
 
-        /** 数据中心名称: false */
+        /** 数据中心名称 */
         @SerializedName("RegionName")
         private String regionName;
 
-        /** 是否用户当前默认数据中心: false */
+        /** 是否用户当前默认数据中心 */
         @SerializedName("IsDefault")
         private Boolean isDefault;
 
-        /** 用户在此数据中心的权限位: false */
+        /** 用户在此数据中心的权限位 */
         @SerializedName("BitMaps")
         private String bitMaps;
 
-        /** 地域名字，如cn-bj: false */
+        /** 地域名字，如cn-bj */
         @SerializedName("Region")
         private String region;
 
-        /** 可用区名字，如cn-bj-01: false */
+        /** 可用区名字，如cn-bj-01 */
         @SerializedName("Zone")
         private String zone;
 

@@ -13,37 +13,38 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class BackupUDBInstanceSlowLogRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** DB实例Id,该值可以通过DescribeUDBInstance获取: false */
+    /** DB实例Id,该值可以通过DescribeUDBInstance获取 */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 过滤条件:起始时间(时间戳): false */
+    /** 过滤条件:起始时间(时间戳) */
     @NotEmpty
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 过滤条件:结束时间(时间戳): false */
+    /** 过滤条件:结束时间(时间戳) */
     @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 备份文件名称: false */
+    /** 备份文件名称 */
     @NotEmpty
     @UCloudParam("BackupName")
     private String backupName;

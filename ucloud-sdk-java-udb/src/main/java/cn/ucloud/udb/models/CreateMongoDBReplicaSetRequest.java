@@ -20,111 +20,111 @@ import java.util.List;
 
 public class CreateMongoDBReplicaSetRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** PrimaryDB实例名称，至少6位: false */
+    /** PrimaryDB实例名称，至少6位 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 管理员密码: false */
+    /** 管理员密码 */
     @NotEmpty
     @UCloudParam("AdminPassword")
     private String adminPassword;
 
-    /** DB类型id对应的字符串形式（例如：mongodb-2.6） 注意：当前仅支持mongodb: false */
+    /** DB类型id对应的字符串形式（例如：mongodb-2.6） 注意：当前仅支持mongodb */
     @NotEmpty
     @UCloudParam("DBTypeId")
     private String dbTypeId;
 
-    /** 磁盘空间(GB), 暂时支持20G - 3000G: false */
+    /** 磁盘空间(GB), 暂时支持20G - 3000G */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** DB实例使用的配置参数组id: false */
+    /** DB实例使用的配置参数组id */
     @NotEmpty
     @UCloudParam("ParamGroupId")
     private Integer paramGroupId;
 
     /**
      * 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
-     * 64000M/96000M: false
+     * 64000M/96000M
      */
     @NotEmpty
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
 
-    /** 端口号: false */
+    /** 端口号 */
     @NotEmpty
     @UCloudParam("Port")
     private Integer port;
 
-    /** Year， Month， Dynamic，Trial，默认: Month: false */
+    /** Year， Month， Dynamic，Trial，默认: Month */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长(N个月)，默认值1个月。如果为0，代表购买到月底。: false */
+    /** 购买时长(N个月)，默认值1个月。如果为0，代表购买到月底。 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 管理员帐户名，默认root: false */
+    /** 管理员帐户名，默认root */
     @UCloudParam("AdminUser")
     private String adminUser;
 
-    /** 备份策略，每周备份数量，默认7次: false */
+    /** 备份策略，每周备份数量，默认7次 */
     @UCloudParam("BackupCount")
     private Integer backupCount;
 
-    /** 备份策略，备份开始时间，单位小时计，默认1点: false */
+    /** 备份策略，备份开始时间，单位小时计，默认1点 */
     @UCloudParam("BackupTime")
     private Integer backupTime;
 
-    /** 备份策略，备份时间间隔，单位小时计，默认24小时: false */
+    /** 备份策略，备份时间间隔，单位小时计，默认24小时 */
     @UCloudParam("BackupDuration")
     private Integer backupDuration;
 
-    /** 是否使用SSD，默认为true: false */
+    /** 是否使用SSD，默认为true */
     @UCloudParam("UseSSD")
     private Boolean useSSD;
 
-    /** SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选: false */
+    /** SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选 */
     @UCloudParam("SSDType")
     private String ssdType;
 
-    /** cpu核数: false */
+    /** cpu核数 */
     @UCloudParam("CPU")
     private Integer cpu;
 
-    /** UDB数据库机型: false */
+    /** UDB数据库机型 */
     @UCloudParam("InstanceType")
     private String instanceType;
 
-    /** 子网ID: false */
+    /** 子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPC的ID: false */
+    /** VPC的ID */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 所属分片集群的ID: false */
+    /** 所属分片集群的ID */
     @UCloudParam("ClusterId")
     private String clusterId;
 
-    /** CouponId.0 代表第一个代金券id，对于传入多个代金券id，后面为 CouponId.1, CouponId.2 以此类推: false */
+    /** CouponId.0 代表第一个代金券id，对于传入多个代金券id，后面为 CouponId.1, CouponId.2 以此类推 */
     @UCloudParam("CouponId")
     private List<String> couponId;
 

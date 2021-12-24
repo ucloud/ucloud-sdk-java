@@ -13,18 +13,19 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class RemoveMemberFromProjectRequest extends Request {
 
-    /** 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 : false */
+    /** 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要被移除成员Email: false */
+    /** 需要被移除成员Email */
     @NotEmpty
     @UCloudParam("MemberEmail")
     private String memberEmail;

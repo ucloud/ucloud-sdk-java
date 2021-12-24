@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class LeaveIsolationGroupResponse extends Response {
 
-    /** 主机id: false */
+    /** 主机id */
     @SerializedName("UHostId")
     private String uHostId;
 

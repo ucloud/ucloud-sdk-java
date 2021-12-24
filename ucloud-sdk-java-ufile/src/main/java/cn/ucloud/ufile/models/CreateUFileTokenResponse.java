@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ufile.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUFileTokenResponse extends Response {
 
-    /** 创建令牌的token_id: false */
+    /** 创建令牌的token_id */
     @SerializedName("TokenId")
     private String tokenId;
 

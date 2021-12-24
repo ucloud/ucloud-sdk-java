@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uk8s.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUK8SClusterV2Response extends Response {
 
-    /** 集群ID: false */
+    /** 集群ID */
     @SerializedName("ClusterId")
     private String clusterId;
 

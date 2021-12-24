@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeURedisPriceResponse extends Response {
 
-    /** 价格 参数见 UMemPriceSet: false */
+    /** 价格 参数见 UMemPriceSet */
     @SerializedName("DataSet")
     private List<URedisPriceSet> dataSet;
 
@@ -33,19 +33,19 @@ public class DescribeURedisPriceResponse extends Response {
 
     public static class URedisPriceSet extends Response {
 
-        /** 原价: false */
+        /** 原价 */
         @SerializedName("OriginalPrice")
         private Integer originalPrice;
 
-        /** Year， Month， Dynamic，Trial: false */
+        /** Year， Month， Dynamic，Trial */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 产品列表价: false */
+        /** 产品列表价 */
         @SerializedName("ListPrice")
         private Integer listPrice;
 
-        /** 总价格: false */
+        /** 总价格 */
         @SerializedName("Price")
         private Integer price;
 

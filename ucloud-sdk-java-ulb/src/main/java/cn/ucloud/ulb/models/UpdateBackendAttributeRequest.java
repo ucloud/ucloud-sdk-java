@@ -13,48 +13,49 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateBackendAttributeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡资源ID: false */
+    /** 负载均衡资源ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 后端资源实例的ID(ULB后端ID，非资源自身ID): false */
+    /** 后端资源实例的ID(ULB后端ID，非资源自身ID) */
     @NotEmpty
     @UCloudParam("BackendId")
     private String backendId;
 
-    /** 后端资源服务端口，取值范围[1-65535]: false */
+    /** 后端资源服务端口，取值范围[1-65535] */
     @UCloudParam("Port")
     private Integer port;
 
-    /** 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1: false */
+    /** 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1 */
     @UCloudParam("Weight")
     private Integer weight;
 
-    /** 后端实例状态开关: false */
+    /** 后端实例状态开关 */
     @UCloudParam("Enabled")
     private Integer enabled;
 
-    /** 是否为backup 0：主rs 1：备rs 默认为0: false */
+    /** 是否为backup 0：主rs 1：备rs 默认为0 */
     @UCloudParam("IsBackup")
     private Integer isBackup;
 

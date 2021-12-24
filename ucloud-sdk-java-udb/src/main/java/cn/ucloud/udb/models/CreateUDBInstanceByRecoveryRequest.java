@@ -13,69 +13,70 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateUDBInstanceByRecoveryRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例名称，至少6位: false */
+    /** 实例名称，至少6位 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 源实例的Id: false */
+    /** 源实例的Id */
     @NotEmpty
     @UCloudParam("SrcDBId")
     private String srcDBId;
 
-    /** 恢复到某个时间点的时间戳(UTC时间格式，默认单位秒): false */
+    /** 恢复到某个时间点的时间戳(UTC时间格式，默认单位秒) */
     @NotEmpty
     @UCloudParam("RecoveryTime")
     private Integer recoveryTime;
 
-    /** Year， Month， Dynamic，Trial，默认: Dynamic: false */
+    /** Year， Month， Dynamic，Trial，默认: Dynamic */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，默认值1: false */
+    /** 购买时长，默认值1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 指定是否是否使用SSD，默认使用主库的配置: false */
+    /** 指定是否是否使用SSD，默认使用主库的配置 */
     @UCloudParam("UseSSD")
     private Boolean useSSD;
 
-    /** 专区的Id: false */
+    /** 专区的Id */
     @UCloudParam("UDBCId")
     private String udbcId;
 
-    /** 子网ID : false */
+    /** 子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPC的ID: false */
+    /** VPC的ID */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true: false */
+    /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true */
     @UCloudParam("EnableIpV6")
     private Boolean enableIpV6;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

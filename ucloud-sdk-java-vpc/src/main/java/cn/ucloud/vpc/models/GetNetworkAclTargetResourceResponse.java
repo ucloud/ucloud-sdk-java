@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetNetworkAclTargetResourceResponse extends Response {
 
-    /** ACL规则应用目标资源列表，具体结构见下方TargetResourceInfo: false */
+    /** ACL规则应用目标资源列表，具体结构见下方TargetResourceInfo */
     @SerializedName("TargetResourceList")
     private List<TargetResourceInfo> targetResourceList;
 
-    /** ACL规则应用目标资源总数: false */
+    /** ACL规则应用目标资源总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,35 +45,35 @@ public class GetNetworkAclTargetResourceResponse extends Response {
 
     public static class TargetResourceInfo extends Response {
 
-        /** 子网ID: false */
+        /** 子网ID */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("ResourceName")
         private String resourceName;
 
-        /** 资源ID: false */
+        /** 资源ID */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 资源类型: false */
+        /** 资源类型 */
         @SerializedName("ResourceType")
         private Integer resourceType;
 
-        /** 资源绑定的虚拟网卡的名称: false */
+        /** 资源绑定的虚拟网卡的名称 */
         @SerializedName("SubResourceName")
         private String subResourceName;
 
-        /** 资源绑定的虚拟网卡的ID: false */
+        /** 资源绑定的虚拟网卡的ID */
         @SerializedName("SubResourceId")
         private String subResourceId;
 
-        /** 资源绑定虚拟网卡的类型: false */
+        /** 资源绑定虚拟网卡的类型 */
         @SerializedName("SubResourceType")
         private Integer subResourceType;
 
-        /** 资源内网IP: false */
+        /** 资源内网IP */
         @SerializedName("PrivateIp")
         private String privateIp;
 

@@ -13,27 +13,28 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class EnableWhiteListRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** NAT网关Id: false */
+    /** NAT网关Id */
     @NotEmpty
     @UCloudParam("NATGWId")
     private String natgwId;
 
-    /** 白名单开关标记。0：关闭；1：开启。默认为0: false */
+    /** 白名单开关标记。0：关闭；1：开启。默认为0 */
     @NotEmpty
     @UCloudParam("IfOpen")
     private Integer ifOpen;

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class AllocateShareBandwidthResponse extends Response {
 
-    /** 共享带宽资源Id: false */
+    /** 共享带宽资源Id */
     @SerializedName("ShareBandwidthId")
     private String shareBandwidthId;
 

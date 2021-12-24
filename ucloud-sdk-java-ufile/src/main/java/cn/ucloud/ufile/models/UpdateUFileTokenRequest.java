@@ -20,40 +20,40 @@ import java.util.List;
 
 public class UpdateUFileTokenRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 令牌ID: false */
+    /** 令牌ID */
     @NotEmpty
     @UCloudParam("TokenId")
     private String tokenId;
 
-    /** 令牌名称: false */
+    /** 令牌名称 */
     @UCloudParam("TokenName")
     private String tokenName;
 
     /**
      * 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE ,
-     * TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]: false
+     * TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
      */
     @UCloudParam("AllowedOps")
     private List<String> allowedOps;
 
-    /** 令牌允许操作的key前缀: false */
+    /** 令牌允许操作的key前缀 */
     @UCloudParam("AllowedPrefixes")
     private List<String> allowedPrefixes;
 
-    /** 令牌允许操作的bucket: false */
+    /** 令牌允许操作的bucket */
     @UCloudParam("AllowedBuckets")
     private List<String> allowedBuckets;
 
-    /** 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000: false */
+    /** 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000 */
     @UCloudParam("ExpireTime")
     private Integer expireTime;
 

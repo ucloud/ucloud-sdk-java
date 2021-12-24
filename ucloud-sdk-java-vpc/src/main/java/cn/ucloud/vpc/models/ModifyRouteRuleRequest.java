@@ -20,17 +20,17 @@ import java.util.List;
 
 public class ModifyRouteRuleRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 通过DescribeRouteTable拿到: false */
+    /** 通过DescribeRouteTable拿到 */
     @NotEmpty
     @UCloudParam("RouteTableId")
     private String routeTableId;
@@ -41,7 +41,7 @@ public class ModifyRouteRuleRequest extends Request {
      * Default Route Rule| add (添加的RouteRuleId填任意非空字符串) 。"删除"示例: routerule-xk3jxa | 10.8.0.0/16 |
      * instance | uhost-xd8ja | 0 | Default Route Rule| delete (RouteRuleId来自DescribeRouteTable中)
      * 。“修改”示例: routerule-xk3jxa | 10.8.0.0/16 | instance | uhost-cjksa2 | 0 | Default Route Rule|
-     * update (RouteRuleId来自DescribeRouteTable中) : false
+     * update (RouteRuleId来自DescribeRouteTable中)
      */
     @NotEmpty
     @UCloudParam("RouteRule")

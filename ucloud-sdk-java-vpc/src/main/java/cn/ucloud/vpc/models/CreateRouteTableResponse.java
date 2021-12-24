@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateRouteTableResponse extends Response {
 
-    /** 路由表ID: false */
+    /** 路由表ID */
     @SerializedName("RouteTableId")
     private String routeTableId;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetNetworkMaskResponse extends Response {
 
-    /** 接口返回数据: false */
+    /** 接口返回数据 */
     @SerializedName("Data")
     private NetworkMask data;
 
@@ -32,11 +33,11 @@ public class GetNetworkMaskResponse extends Response {
 
     public static class NetworkMask extends Response {
 
-        /** API调用网络掩码，默认空字符串，不限制登录IP，多个IP以英文逗号分隔。: false */
+        /** API调用网络掩码，默认空字符串，不限制登录IP，多个IP以英文逗号分隔。 */
         @SerializedName("APINetworkMask")
         private String apiNetworkMask;
 
-        /** 登录网络掩码，默认空字符串，不限制登录IP，多个IP以英文逗号分隔。: false */
+        /** 登录网络掩码，默认空字符串，不限制登录IP，多个IP以英文逗号分隔。 */
         @SerializedName("LoginNetworkMask")
         private String loginNetworkMask;
 

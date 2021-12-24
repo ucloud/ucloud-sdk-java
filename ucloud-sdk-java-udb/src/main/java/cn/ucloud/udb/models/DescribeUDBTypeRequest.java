@@ -13,39 +13,40 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDBTypeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("BackupZone")
     private String backupZone;
 
-    /** DB实例类型，如mysql，sqlserver，mongo，postgresql: false */
+    /** DB实例类型，如mysql，sqlserver，mongo，postgresql */
     @UCloudParam("DBClusterType")
     private String dbClusterType;
 
-    /** 返回支持某种实例类型的DB类型。如果没传，则表示任何实例类型均可。 normal:单点,ha:高可用,sharded_cluster:分片集群: false */
+    /** 返回支持某种实例类型的DB类型。如果没传，则表示任何实例类型均可。 normal:单点,ha:高可用,sharded_cluster:分片集群 */
     @UCloudParam("InstanceMode")
     private String instanceMode;
 
-    /** 返回支持某种磁盘类型的DB类型，如Normal、SSD、NVMe_SSD。如果没传，则表示任何磁盘类型均可。: false */
+    /** 返回支持某种磁盘类型的DB类型，如Normal、SSD、NVMe_SSD。如果没传，则表示任何磁盘类型均可。 */
     @UCloudParam("DiskType")
     private String diskType;
 
-    /** 返回从备份创建实例时，该版本号所支持的备份创建版本。如果没传，则表示不是从备份创建。: false */
+    /** 返回从备份创建实例时，该版本号所支持的备份创建版本。如果没传，则表示不是从备份创建。 */
     @UCloudParam("CompatibleWithDBType")
     private String compatibleWithDBType;
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUMemBlockInfoResponse extends Response {
 
-    /** 分布式redis 分片信息: false */
+    /** 分布式redis 分片信息 */
     @SerializedName("DataSet")
     private List<UMemBlockInfo> dataSet;
 
@@ -33,39 +33,39 @@ public class DescribeUMemBlockInfoResponse extends Response {
 
     public static class UMemBlockInfo extends Response {
 
-        /** 分片id: false */
+        /** 分片id */
         @SerializedName("BlockId")
         private String blockId;
 
-        /** 分片ip: false */
+        /** 分片ip */
         @SerializedName("BlockVip")
         private String blockVip;
 
-        /** 分片端口: false */
+        /** 分片端口 */
         @SerializedName("BlockPort")
         private Integer blockPort;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("BlockSize")
         private Integer blockSize;
 
-        /** 使用量单位MB: false */
+        /** 使用量单位MB */
         @SerializedName("BlockUsedSize")
         private Integer blockUsedSize;
 
         /**
          * 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中
          * DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中
-         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败: false
+         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
          */
         @SerializedName("BlockState")
         private String blockState;
 
-        /** 分片维护的键槽起始值: false */
+        /** 分片维护的键槽起始值 */
         @SerializedName("BlockSlotBegin")
         private Integer blockSlotBegin;
 
-        /** 分片维护的键槽结束值: false */
+        /** 分片维护的键槽结束值 */
         @SerializedName("BlockSlotEnd")
         private Integer blockSlotEnd;
 

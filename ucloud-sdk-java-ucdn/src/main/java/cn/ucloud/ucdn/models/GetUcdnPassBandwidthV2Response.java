@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnPassBandwidthV2Response extends Response {
 
-    /** 回源带宽数据: false */
+    /** 回源带宽数据 */
     @SerializedName("BandwidthList")
     private List<BandwidthInfoDetail> bandwidthList;
 
@@ -33,11 +33,11 @@ public class GetUcdnPassBandwidthV2Response extends Response {
 
     public static class BandwidthInfoDetail extends Response {
 
-        /** 宽获取的时间点。格式：时间戳: false */
+        /** 宽获取的时间点。格式：时间戳 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 返回值带宽值数据。: false */
+        /** 返回值带宽值数据。 */
         @SerializedName("Bandwidth")
         private Double bandwidth;
 

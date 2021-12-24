@@ -13,16 +13,17 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUHostUpgradePriceResponse extends Response {
 
-    /** 规格调整差价。精确到小数点后2位。: false */
+    /** 规格调整差价。精确到小数点后2位。 */
     @SerializedName("Price")
     private Double price;
 
-    /** 限时优惠的折前原价: false */
+    /** 限时优惠的折前原价 */
     @SerializedName("OriginalPrice")
     private Double originalPrice;
 

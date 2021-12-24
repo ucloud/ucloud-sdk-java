@@ -13,39 +13,40 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeSecondaryIpRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 子网Id: false */
+    /** 子网Id */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPCId: false */
+    /** VPCId */
     @NotEmpty
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** Ip: false */
+    /** Ip */
     @UCloudParam("Ip")
     private String ip;
 
-    /** Mac: false */
+    /** Mac */
     @UCloudParam("Mac")
     private String mac;
 

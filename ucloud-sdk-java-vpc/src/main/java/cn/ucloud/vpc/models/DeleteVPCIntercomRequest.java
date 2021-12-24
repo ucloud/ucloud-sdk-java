@@ -13,38 +13,37 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DeleteVPCIntercomRequest extends Request {
 
-    /** 源VPC所在地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 源VPC所在地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /**
-     * 源VPC所在项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false
-     */
+    /** 源VPC所在项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 源VPC短ID: false */
+    /** 源VPC短ID */
     @NotEmpty
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 目的VPC短ID: false */
+    /** 目的VPC短ID */
     @NotEmpty
     @UCloudParam("DstVPCId")
     private String dstVPCId;
 
-    /** 目的VPC所在地域，默认为源VPC所在地域: false */
+    /** 目的VPC所在地域，默认为源VPC所在地域 */
     @UCloudParam("DstRegion")
     private String dstRegion;
 
-    /** 目的VPC所在项目ID，默认为源VPC所在项目ID: false */
+    /** 目的VPC所在项目ID，默认为源VPC所在项目ID */
     @UCloudParam("DstProjectId")
     private String dstProjectId;
 

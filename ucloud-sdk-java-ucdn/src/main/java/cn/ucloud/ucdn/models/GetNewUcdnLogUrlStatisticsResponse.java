@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetNewUcdnLogUrlStatisticsResponse extends Response {
 
-    /** 按天统计实例。: false */
+    /** 按天统计实例。 */
     @SerializedName("UrlStatisticsList")
     private List<UrlStatistics> urlStatisticsList;
 
@@ -33,11 +33,11 @@ public class GetNewUcdnLogUrlStatisticsResponse extends Response {
 
     public static class UrlStatistics extends Response {
 
-        /** : false */
+        /** */
         @SerializedName("UrlList")
         private List<DownloadStatisticInfo> urlList;
 
-        /** 日期: false */
+        /** 日期 */
         @SerializedName("Date")
         private String date;
 
@@ -60,19 +60,19 @@ public class GetNewUcdnLogUrlStatisticsResponse extends Response {
 
     public static class DownloadStatisticInfo extends Response {
 
-        /** 下载链接的url: false */
+        /** 下载链接的url */
         @SerializedName("Url")
         private String url;
 
-        /** 流量（单位为G）: false */
+        /** 流量（单位为G） */
         @SerializedName("Traffic")
         private Double traffic;
 
-        /** 下载次数: false */
+        /** 下载次数 */
         @SerializedName("DownloadTimes")
         private Integer downloadTimes;
 
-        /** 流量占比，单位%: false */
+        /** 流量占比，单位% */
         @SerializedName("Percent")
         private Double percent;
 

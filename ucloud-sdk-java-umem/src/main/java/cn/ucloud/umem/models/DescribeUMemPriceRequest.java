@@ -13,45 +13,46 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUMemPriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 购买umem大小,单位:GB,范围[1~1024]: false */
+    /** 购买umem大小,单位:GB,范围[1~1024] */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 空间类型:single(无热备),double(热备)(默认: double): false */
+    /** 空间类型:single(无热备),double(热备)(默认: double) */
     @NotEmpty
     @UCloudParam("Type")
     private String type;
 
-    /** Year， Month， Dynamic 如果不指定，则一次性获取三种计费: false */
+    /** Year， Month， Dynamic 如果不指定，则一次性获取三种计费 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买UMem的时长，默认值为1: false */
+    /** 购买UMem的时长，默认值为1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 

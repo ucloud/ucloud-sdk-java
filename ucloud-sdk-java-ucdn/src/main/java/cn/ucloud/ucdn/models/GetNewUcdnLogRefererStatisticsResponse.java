@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetNewUcdnLogRefererStatisticsResponse extends Response {
 
-    /** 按天统计实例: false */
+    /** 按天统计实例 */
     @SerializedName("RefererStatistics")
     private List<RefererStatistics> refererStatistics;
 
@@ -33,11 +33,11 @@ public class GetNewUcdnLogRefererStatisticsResponse extends Response {
 
     public static class RefererStatistics extends Response {
 
-        /** 日期: false */
+        /** 日期 */
         @SerializedName("Date")
         private String date;
 
-        /** Referer实例表: false */
+        /** Referer实例表 */
         @SerializedName("RefererList")
         private List<RefererList> refererList;
 
@@ -60,15 +60,15 @@ public class GetNewUcdnLogRefererStatisticsResponse extends Response {
 
     public static class RefererList extends Response {
 
-        /** 客户端请求的referer: false */
+        /** 客户端请求的referer */
         @SerializedName("Referer")
         private String referer;
 
-        /** 次数: false */
+        /** 次数 */
         @SerializedName("RequestTimes")
         private Integer requestTimes;
 
-        /** 次数占比，单位%: false */
+        /** 次数占比，单位% */
         @SerializedName("Percent")
         private Double percent;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class GetProjectListRequest extends Request {
 
-    /** 是否是财务账号（Yes：是，No：否）: false */
+    /** 是否是财务账号（Yes：是，No：否） */
     @UCloudParam("IsFinance")
     private String isFinance;
 

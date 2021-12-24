@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeSSLResponse extends Response {
 
-    /** 满足条件的SSL证书总数: false */
+    /** 满足条件的SSL证书总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** SSL证书详细信息，具体结构见 ULBSSLSet: false */
+    /** SSL证书详细信息，具体结构见 ULBSSLSet */
     @SerializedName("DataSet")
     private List<ULBSSLSet> dataSet;
 
@@ -45,31 +45,31 @@ public class DescribeSSLResponse extends Response {
 
     public static class ULBSSLSet extends Response {
 
-        /** SSL证书的Id: false */
+        /** SSL证书的Id */
         @SerializedName("SSLId")
         private String sslId;
 
-        /** SSL证书的名字: false */
+        /** SSL证书的名字 */
         @SerializedName("SSLName")
         private String sslName;
 
-        /** SSL证书类型，暂时只有 Pem 一种类型: false */
+        /** SSL证书类型，暂时只有 Pem 一种类型 */
         @SerializedName("SSLType")
         private String sslType;
 
-        /** SSL证书的内容: false */
+        /** SSL证书的内容 */
         @SerializedName("SSLContent")
         private String sslContent;
 
-        /** SSL证书的创建时间: false */
+        /** SSL证书的创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** SSL证书的HASH值: false */
+        /** SSL证书的HASH值 */
         @SerializedName("HashValue")
         private String hashValue;
 
-        /** SSL证书绑定到的对象: false */
+        /** SSL证书绑定到的对象 */
         @SerializedName("BindedTargetSet")
         private List<SSLBindedTargetSet> bindedTargetSet;
 
@@ -132,19 +132,19 @@ public class DescribeSSLResponse extends Response {
 
     public static class SSLBindedTargetSet extends Response {
 
-        /** SSL证书绑定到的VServer的资源ID: false */
+        /** SSL证书绑定到的VServer的资源ID */
         @SerializedName("VServerId")
         private String vServerId;
 
-        /** 对应的VServer的名字: false */
+        /** 对应的VServer的名字 */
         @SerializedName("VServerName")
         private String vServerName;
 
-        /** VServer 所属的ULB实例的资源ID: false */
+        /** VServer 所属的ULB实例的资源ID */
         @SerializedName("ULBId")
         private String ulbId;
 
-        /** ULB实例的名称: false */
+        /** ULB实例的名称 */
         @SerializedName("ULBName")
         private String ulbName;
 

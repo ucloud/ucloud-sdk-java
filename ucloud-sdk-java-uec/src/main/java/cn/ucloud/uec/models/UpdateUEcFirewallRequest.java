@@ -22,17 +22,17 @@ public class UpdateUEcFirewallRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 防火墙Id: false */
+    /** 防火墙Id */
     @NotEmpty
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** : false */
+    /** */
     @UCloudParam("Rule")
     private List<Rule> rule;
 
@@ -62,32 +62,32 @@ public class UpdateUEcFirewallRequest extends Request {
 
     public static class Rule extends Request {
 
-        /** 协议，可选值：TCP，UDP，ICMP: false */
+        /** 协议，可选值：TCP，UDP，ICMP */
         @NotEmpty
         @UCloudParam("ProtocolType")
         private String protocolType;
 
-        /** 端口，范围用"-"符号分隔，如：1-65535: false */
+        /** 端口，范围用"-"符号分隔，如：1-65535 */
         @NotEmpty
         @UCloudParam("Port")
         private String port;
 
-        /** 源ip: false */
+        /** 源ip */
         @NotEmpty
         @UCloudParam("SrcIp")
         private String srcIp;
 
-        /** ACCEPT（接受）和DROP（拒绝）: false */
+        /** ACCEPT（接受）和DROP（拒绝） */
         @NotEmpty
         @UCloudParam("Action")
         private String action;
 
-        /** 优先级：HIGH（高），MEDIUM（中），LOW（低）: false */
+        /** 优先级：HIGH（高），MEDIUM（中），LOW（低） */
         @NotEmpty
         @UCloudParam("Priority")
         private String priority;
 
-        /** 备注: false */
+        /** 备注 */
         @NotEmpty
         @UCloudParam("Remark")
         private String remark;

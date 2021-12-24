@@ -13,16 +13,17 @@
  */
 package cn.ucloud.ubill.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetBillDataFileUrlResponse extends Response {
 
-    /** 交易账单数据下载URL: false */
+    /** 交易账单数据下载URL */
     @SerializedName("FileUrl")
     private String fileUrl;
 
-    /** 生成的 URL是否有效，即有对应数据文件: false */
+    /** 生成的 URL是否有效，即有对应数据文件 */
     @SerializedName("IsValid")
     private String isValid;
 

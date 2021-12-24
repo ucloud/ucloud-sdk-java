@@ -22,72 +22,72 @@ public class CreateUEcHolderRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 机房id: false */
+    /** 机房id */
     @NotEmpty
     @UCloudParam("IdcId")
     private String idcId;
 
-    /** 容器组Cpu总核数: false */
+    /** 容器组Cpu总核数 */
     @NotEmpty
     @UCloudParam("CpuCore")
     private Double cpuCore;
 
-    /** 容器组总内存，单位MB: false */
+    /** 容器组总内存，单位MB */
     @NotEmpty
     @UCloudParam("MemSize")
     private Integer memSize;
 
-    /** 子网ID: false */
+    /** 子网ID */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 容器组名称（默认default）: false */
+    /** 容器组名称（默认default） */
     @UCloudParam("Name")
     private String name;
 
-    /** 机型（normal-经济型，hf-标准型，默认normal）: false */
+    /** 机型（normal-经济型，hf-标准型，默认normal） */
     @UCloudParam("ProductType")
     private String productType;
 
-    /** 重启策略（0总是，1失败是，2永不，默认0）: false */
+    /** 重启策略（0总是，1失败是，2永不，默认0） */
     @UCloudParam("RestartStrategy")
     private Integer restartStrategy;
 
-    /** 绑定外网ip（yes-绑定，no-不绑定，默认no）: false */
+    /** 绑定外网ip（yes-绑定，no-不绑定，默认no） */
     @UCloudParam("ElasticIp")
     private String elasticIp;
 
-    /** 外网绑定的带宽（单位M，默认0，只有当ElasticIp为yes时，默认1）: false */
+    /** 外网绑定的带宽（单位M，默认0，只有当ElasticIp为yes时，默认1） */
     @UCloudParam("Bandwidth")
     private Integer bandwidth;
 
-    /** 防火墙ID: false */
+    /** 防火墙ID */
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** 付费方式（2按月、3按年。默认2，默认月付）: false */
+    /** 付费方式（2按月、3按年。默认2，默认月付） */
     @UCloudParam("ChargeType")
     private Integer chargeType;
 
-    /** 月数或者年数（默认值：1，当为按月计费时，0表示计费到月底，默认值为0）: false */
+    /** 月数或者年数（默认值：1，当为按月计费时，0表示计费到月底，默认值为0） */
     @UCloudParam("ChargeQuantity")
     private Integer chargeQuantity;
 
-    /** : false */
+    /** */
     @UCloudParam("Pack")
     private List<Pack> pack;
 
-    /** : false */
+    /** */
     @UCloudParam("Image")
     private List<Image> image;
 
-    /** : false */
+    /** */
     @UCloudParam("Storage")
     private List<Storage> storage;
 
@@ -219,95 +219,41 @@ public class CreateUEcHolderRequest extends Request {
         this.storage = storage;
     }
 
-    public static class Storage extends Request {
-
-        /** 存储卷挂载路径: false */
-        @UCloudParam("Path")
-        private String path;
-
-        /** 存储卷资源id: false */
-        @UCloudParam("ResourceId")
-        private String resourceId;
-
-        public String getPath() {
-            return path;
-        }
-
-        public void setPath(String path) {
-            this.path = path;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-    }
-
-    public static class Image extends Request {
-
-        /** 镜像用户名和密码（如镜像名：密码）: false */
-        @UCloudParam("Message")
-        private String message;
-
-        /** 镜像仓库地址: false */
-        @UCloudParam("StoreAddress")
-        private String storeAddress;
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
-        public String getStoreAddress() {
-            return storeAddress;
-        }
-
-        public void setStoreAddress(String storeAddress) {
-            this.storeAddress = storeAddress;
-        }
-    }
-
     public static class Pack extends Request {
 
-        /** 容器名称: false */
+        /** 容器名称 */
         @UCloudParam("Name")
         private String name;
 
-        /** 容器Cpu核数: false */
+        /** 容器Cpu核数 */
         @UCloudParam("CpuCore")
         private Double cpuCore;
 
-        /** 容器内存，单位MB: false */
+        /** 容器内存，单位MB */
         @UCloudParam("MemSize")
         private Integer memSize;
 
-        /** 容器镜像名称: false */
+        /** 容器镜像名称 */
         @UCloudParam("ImageName")
         private String imageName;
 
-        /** 容器工作目录: false */
+        /** 容器工作目录 */
         @UCloudParam("WorkDir")
         private String workDir;
 
-        /** 开启容器的命令: false */
+        /** 开启容器的命令 */
         @UCloudParam("Cmd")
         private String cmd;
 
-        /** 容器参数（多个用；隔开）: false */
+        /** 容器参数（多个用；隔开） */
         @UCloudParam("Args")
         private String args;
 
-        /** 容器环境变量（多个用；隔开,如：key1:value1;key2:value2）: false */
+        /** 容器环境变量（多个用；隔开,如：key1:value1;key2:value2） */
         @UCloudParam("Environment")
         private String environment;
 
-        /** 容器配置字典（多个用；隔开，如：/data1:resId1;/data2:resId2）: false */
+        /** 容器配置字典（多个用；隔开，如：/data1:resId1;/data2:resId2） */
         @UCloudParam("ConfigDict")
         private String configDict;
 
@@ -381,6 +327,60 @@ public class CreateUEcHolderRequest extends Request {
 
         public void setConfigDict(String configDict) {
             this.configDict = configDict;
+        }
+    }
+
+    public static class Storage extends Request {
+
+        /** 存储卷挂载路径 */
+        @UCloudParam("Path")
+        private String path;
+
+        /** 存储卷资源id */
+        @UCloudParam("ResourceId")
+        private String resourceId;
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+    }
+
+    public static class Image extends Request {
+
+        /** 镜像用户名和密码（如镜像名：密码） */
+        @UCloudParam("Message")
+        private String message;
+
+        /** 镜像仓库地址 */
+        @UCloudParam("StoreAddress")
+        private String storeAddress;
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+
+        public String getStoreAddress() {
+            return storeAddress;
+        }
+
+        public void setStoreAddress(String storeAddress) {
+            this.storeAddress = storeAddress;
         }
     }
 }

@@ -13,38 +13,39 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateEIPAttributeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** EIP资源ID: false */
+    /** EIP资源ID */
     @NotEmpty
     @UCloudParam("EIPId")
     private String eipId;
 
-    /** 名字（Name Tag Remark都为空则报错）: false */
+    /** 名字（Name Tag Remark都为空则报错） */
     @UCloudParam("Name")
     private String name;
 
-    /** 业务: false */
+    /** 业务 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 备注: false */
+    /** 备注 */
     @UCloudParam("Remark")
     private String remark;
 

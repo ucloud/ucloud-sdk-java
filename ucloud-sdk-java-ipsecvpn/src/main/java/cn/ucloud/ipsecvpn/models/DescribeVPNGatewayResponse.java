@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeVPNGatewayResponse extends Response {
 
-    /** 满足条件的VPN网关总数: false */
+    /** 满足条件的VPN网关总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 获取的VPN网关信息列表，每项参数详见 VPNGatewayDataSet: false */
+    /** 获取的VPN网关信息列表，每项参数详见 VPNGatewayDataSet */
     @SerializedName("DataSet")
     private List<VPNGatewayDataSet> dataSet;
 
@@ -45,59 +45,59 @@ public class DescribeVPNGatewayResponse extends Response {
 
     public static class VPNGatewayDataSet extends Response {
 
-        /** 网关Id: false */
+        /** 网关Id */
         @SerializedName("VPNGatewayId")
         private String vpnGatewayId;
 
-        /** 网关名字: false */
+        /** 网关名字 */
         @SerializedName("VPNGatewayName")
         private String vpnGatewayName;
 
-        /** 网关业务组: false */
+        /** 网关业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 网关备注: false */
+        /** 网关备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 所属VPCId: false */
+        /** 所属VPCId */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 所属VPC名字: false */
+        /** 所属VPC名字 */
         @SerializedName("VPCName")
         private String vpcName;
 
-        /** 付费类型: false */
+        /** 付费类型 */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 到期时间: false */
+        /** 到期时间 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 是否自动续费: false */
+        /** 是否自动续费 */
         @SerializedName("AutoRenew")
         private String autoRenew;
 
-        /** 网关类型: false */
+        /** 网关类型 */
         @SerializedName("Grade")
         private String grade;
 
-        /** 绑定EIP的IP地址: false */
+        /** 绑定EIP的IP地址 */
         @SerializedName("EIP")
         private String eip;
 
-        /** EIP类型: false */
+        /** EIP类型 */
         @SerializedName("EIPType")
         private String eipType;
 
-        /** EIPID: false */
+        /** EIPID */
         @SerializedName("EIPId")
         private String eipId;
 

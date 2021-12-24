@@ -13,45 +13,46 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDBInstanceUpgradePriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id: false */
+    /** 实例的Id */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 内存限制(MB): false */
+    /** 内存限制(MB) */
     @NotEmpty
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
 
-    /** 磁盘空间(GB), 暂时支持20G - 500G: false */
+    /** 磁盘空间(GB), 暂时支持20G - 500G */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** 是否使用SSD，默认为false: false */
+    /** 是否使用SSD，默认为false */
     @UCloudParam("UseSSD")
     private Boolean useSSD;
 
-    /** SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选: false */
+    /** SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选 */
     @UCloudParam("SSDType")
     private String ssdType;
 

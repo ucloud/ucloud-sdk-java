@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeURedisVersionResponse extends Response {
 
-    /** 组列表 参见 URedisVersionSet: false */
+    /** 组列表 参见 URedisVersionSet */
     @SerializedName("DataSet")
     private List<URedisVersionSet> dataSet;
 
-    /** 总版本个数: false */
+    /** 总版本个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,7 +45,7 @@ public class DescribeURedisVersionResponse extends Response {
 
     public static class URedisVersionSet extends Response {
 
-        /** Redis版本: false */
+        /** Redis版本 */
         @SerializedName("Version")
         private String version;
 

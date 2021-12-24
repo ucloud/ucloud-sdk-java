@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ExtractUDBParamGroupResponse extends Response {
 
-    /** 配置文件内容: false */
+    /** 配置文件内容 */
     @SerializedName("Content")
     private String content;
 

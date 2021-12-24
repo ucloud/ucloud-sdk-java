@@ -20,41 +20,41 @@ import java.util.List;
 
 public class CreatePolicyRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要添加内容转发策略的负载均衡实例ID: false */
+    /** 需要添加内容转发策略的负载均衡实例ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 需要添加内容转发策略的VServer实例ID: false */
+    /** 需要添加内容转发策略的VServer实例ID */
     @NotEmpty
     @UCloudParam("VServerId")
     private String vServerId;
 
-    /** 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId: false */
+    /** 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId */
     @NotEmpty
     @UCloudParam("BackendId")
     private List<String> backendId;
 
-    /** 内容转发匹配字段: false */
+    /** 内容转发匹配字段 */
     @NotEmpty
     @UCloudParam("Match")
     private String match;
 
-    /** 内容转发匹配字段的类型: false */
+    /** 内容转发匹配字段的类型 */
     @UCloudParam("Type")
     private String type;
 
-    /** 策略优先级，1-9999: false */
+    /** 策略优先级，1-9999 */
     @UCloudParam("PolicyPriority")
     private Integer policyPriority;
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeSecondaryIpResponse extends Response {
 
-    /** : false */
+    /** */
     @SerializedName("DataSet")
     private List<IpInfo> dataSet;
 
@@ -33,27 +33,27 @@ public class DescribeSecondaryIpResponse extends Response {
 
     public static class IpInfo extends Response {
 
-        /** : false */
+        /** */
         @SerializedName("Ip")
         private String ip;
 
-        /** : false */
+        /** */
         @SerializedName("Mask")
         private String mask;
 
-        /** : false */
+        /** */
         @SerializedName("Gateway")
         private String gateway;
 
-        /** : false */
+        /** */
         @SerializedName("Mac")
         private String mac;
 
-        /** : false */
+        /** */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** : false */
+        /** */
         @SerializedName("VPCId")
         private String vpcId;
 

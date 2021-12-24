@@ -13,39 +13,40 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUHostKeyPairsRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 密钥对名称。: false */
+    /** 密钥对名称。 */
     @UCloudParam("KeyPairName")
     private String keyPairName;
 
-    /** 密钥对的指纹。: false */
+    /** 密钥对的指纹。 */
     @UCloudParam("KeyPairFingerPrint")
     private String keyPairFingerPrint;
 
-    /** 列表起始位置偏移量，默认为0: false */
+    /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20，最大100: false */
+    /** 返回数据长度，默认为20，最大100 */
     @UCloudParam("Limit")
     private Integer limit;
 

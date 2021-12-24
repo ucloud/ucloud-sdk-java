@@ -13,38 +13,39 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeVServerRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的Id: false */
+    /** 负载均衡实例的Id */
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前负载均衡实例下所有VServer的信息: false */
+    /** VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前负载均衡实例下所有VServer的信息 */
     @UCloudParam("VServerId")
     private String vServerId;
 
-    /** 数据分页值: false */
+    /** 数据分页值 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 数据偏移量: false */
+    /** 数据偏移量 */
     @UCloudParam("Offset")
     private Integer offset;
 

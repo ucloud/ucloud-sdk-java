@@ -13,27 +13,28 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDBBinlogBackupURLRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** DB实例Id: false */
+    /** DB实例Id */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
 
-    /** DB实例binlog备份ID，可以从DescribeUDBLogPackage结果当中获得: false */
+    /** DB实例binlog备份ID，可以从DescribeUDBLogPackage结果当中获得 */
     @NotEmpty
     @UCloudParam("BackupId")
     private Integer backupId;

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeWhiteListResourceResponse extends Response {
 
-    /** 白名单资源的详细信息，详见DescribeResourceWhiteListDataSet: false */
+    /** 白名单资源的详细信息，详见DescribeResourceWhiteListDataSet */
     @SerializedName("DataSet")
     private List<NatGWWhitelistDataSet> dataSet;
 
-    /** 上述DataSet总数量: false */
+    /** 上述DataSet总数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,15 +45,15 @@ public class DescribeWhiteListResourceResponse extends Response {
 
     public static class NatGWWhitelistDataSet extends Response {
 
-        /** NATGateWay Id: false */
+        /** NATGateWay Id */
         @SerializedName("NATGWId")
         private String natgwId;
 
-        /** 白名单开关标记: false */
+        /** 白名单开关标记 */
         @SerializedName("IfOpen")
         private Integer ifOpen;
 
-        /** 白名单详情: false */
+        /** 白名单详情 */
         @SerializedName("ObjectIPInfo")
         private List<DescribeWhiteListResourceObjectIPInfo> objectIPInfo;
 
@@ -84,39 +84,39 @@ public class DescribeWhiteListResourceResponse extends Response {
 
     public static class DescribeWhiteListResourceObjectIPInfo extends Response {
 
-        /** natgw字符串: false */
+        /** natgw字符串 */
         @SerializedName("GwType")
         private String gwType;
 
-        /** 白名单资源的内网IP: false */
+        /** 白名单资源的内网IP */
         @SerializedName("PrivateIP")
         private String privateIP;
 
-        /** 白名单资源Id信息: false */
+        /** 白名单资源Id信息 */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 白名单资源名称: false */
+        /** 白名单资源名称 */
         @SerializedName("ResourceName")
         private String resourceName;
 
-        /** 白名单资源类型: false */
+        /** 白名单资源类型 */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 资源绑定的虚拟网卡的实例ID: false */
+        /** 资源绑定的虚拟网卡的实例ID */
         @SerializedName("SubResourceId")
         private String subResourceId;
 
-        /** 资源绑定的虚拟网卡的实例名称: false */
+        /** 资源绑定的虚拟网卡的实例名称 */
         @SerializedName("SubResourceName")
         private String subResourceName;
 
-        /** 资源绑定的虚拟网卡的类型: false */
+        /** 资源绑定的虚拟网卡的类型 */
         @SerializedName("SubResourceType")
         private String subResourceType;
 
-        /** 白名单资源所属VPCId: false */
+        /** 白名单资源所属VPCId */
         @SerializedName("VPCId")
         private String vpcId;
 

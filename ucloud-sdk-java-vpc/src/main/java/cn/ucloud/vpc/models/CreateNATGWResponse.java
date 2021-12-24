@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateNATGWResponse extends Response {
 
-    /** 申请到的NATGateWay Id: false */
+    /** 申请到的NATGateWay Id */
     @SerializedName("NATGWId")
     private String natgwId;
 

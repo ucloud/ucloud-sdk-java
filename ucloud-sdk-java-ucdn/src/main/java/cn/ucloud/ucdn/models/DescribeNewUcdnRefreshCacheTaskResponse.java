@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
 
-    /** 刷新任务的总数: false */
+    /** 刷新任务的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 刷新任务信息，参考TaskInfo: false */
+    /** 刷新任务信息，参考TaskInfo */
     @SerializedName("TaskList")
     private List<TaskInfo> taskList;
 
@@ -45,19 +45,19 @@ public class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
 
     public static class TaskInfo extends Response {
 
-        /** 提交任务时返回的任务ID: false */
+        /** 提交任务时返回的任务ID */
         @SerializedName("TaskId")
         private String taskId;
 
-        /** 任务url的信息列表，参考UrlProgressInfo: false */
+        /** 任务url的信息列表，参考UrlProgressInfo */
         @SerializedName("UrlLists")
         private List<UrlProgressInfo> urlLists;
 
-        /** 刷新任务创建的时间。格式为Unix Timestamp: false */
+        /** 刷新任务创建的时间。格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知: false */
+        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知 */
         @SerializedName("Status")
         private String status;
 
@@ -96,23 +96,23 @@ public class DescribeNewUcdnRefreshCacheTaskResponse extends Response {
 
     public static class UrlProgressInfo extends Response {
 
-        /** 刷新的单条url: false */
+        /** 刷新的单条url */
         @SerializedName("Url")
         private String url;
 
-        /** 刷新任务创建的时间。格式为Unix Timestamp: false */
+        /** 刷新任务创建的时间。格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 任务完成时间。格式为Unix Timestamp: false */
+        /** 任务完成时间。格式为Unix Timestamp */
         @SerializedName("FinishTime")
         private Integer finishTime;
 
-        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知: false */
+        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知 */
         @SerializedName("Status")
         private String status;
 
-        /** 刷新进度，单位%: false */
+        /** 刷新进度，单位% */
         @SerializedName("Progress")
         private Integer progress;
 

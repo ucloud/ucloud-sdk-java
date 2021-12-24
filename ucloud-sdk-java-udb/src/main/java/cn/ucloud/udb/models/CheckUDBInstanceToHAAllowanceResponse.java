@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CheckUDBInstanceToHAAllowanceResponse extends Response {
 
-    /** Yes ，No ，Yes即可以升级，No为不可以升级: false */
+    /** Yes ，No ，Yes即可以升级，No为不可以升级 */
     @SerializedName("Allowance")
     private String allowance;
 

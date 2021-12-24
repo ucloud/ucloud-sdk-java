@@ -13,72 +13,73 @@
  */
 package cn.ucloud.uddb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDDBInstancePriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
     /**
      * UDDB路由节点的版本。分为三种： Trival(免费版)： 2中间件节点； QPS：1.5W FeelFree(标准版)：
-     * 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选: false
+     * 固定为4中间件节点，后续将根据业务请求量自动扩展，最多扩展到12个节点，QPS为3w - 10w； EnjoyAlone(物理机版)：专享物理机，节点数让客户可选
      */
     @NotEmpty
     @UCloudParam("RouterVersion")
     private String routerVersion;
 
-    /** 其他版本：该参数可不填；专享版：物理机节点个数。一台物理机有2个节点: false */
+    /** 其他版本：该参数可不填；专享版：物理机节点个数。一台物理机有2个节点 */
     @NotEmpty
     @UCloudParam("RouterNodeNum")
     private Integer routerNodeNum;
 
-    /** 初始的数据节点个数 取值必须>0.: false */
+    /** 初始的数据节点个数 取值必须>0. */
     @NotEmpty
     @UCloudParam("DataNodeCount")
     private Integer dataNodeCount;
 
-    /** 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值.: false */
+    /** 新的数据节点的内存配置, 单位：MB 具体数值参考UDB的内存取值. */
     @NotEmpty
     @UCloudParam("DataNodeMemory")
     private String dataNodeMemory;
 
-    /** 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值.: false */
+    /** 新的数据节点的磁盘大小配置. 单位: GB 具体数值参考UDB的磁盘大小取值. */
     @NotEmpty
     @UCloudParam("DataNodeDiskSpace")
     private Integer dataNodeDiskSpace;
 
-    /** 付费类型，可选值如下: Year: 按年付费 Month: 按月付费 Dynamic: 按需付费(单位: 小时) Trial: 免费试用 默认值为: Dynamic: false */
+    /** 付费类型，可选值如下: Year: 按年付费 Month: 按月付费 Dynamic: 按需付费(单位: 小时) Trial: 免费试用 默认值为: Dynamic */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，默认值1: false */
+    /** 购买时长，默认值1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 每个数据节点的只读实例个数, 取值必须>=0. 默认取值为0.: false */
+    /** 每个数据节点的只读实例个数, 取值必须>=0. 默认取值为0. */
     @UCloudParam("DataNodeSlaveCount")
     private Integer dataNodeSlaveCount;
 
-    /** 存储节点的高可用模式， 分为高可用UDB（HA）和普通UDB（Normal），如果不填， 则默认为HA: false */
+    /** 存储节点的高可用模式， 分为高可用UDB（HA）和普通UDB（Normal），如果不填， 则默认为HA */
     @UCloudParam("InstanceMode")
     private String instanceMode;
 
-    /** 存储节点和只读实例的磁盘类型。分为：SSD磁盘（SATA_SSD）或普通磁盘(Normal)。 如果不填，则默认为SATA_SSD: false */
+    /** 存储节点和只读实例的磁盘类型。分为：SSD磁盘（SATA_SSD）或普通磁盘(Normal)。 如果不填，则默认为SATA_SSD */
     @UCloudParam("InstanceType")
     private String instanceType;
 

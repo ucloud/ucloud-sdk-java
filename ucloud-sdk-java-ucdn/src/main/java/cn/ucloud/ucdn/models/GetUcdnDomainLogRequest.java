@@ -21,24 +21,24 @@ public class GetUcdnDomainLogRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 域名ID，创建加速域名时生成。默认全部域名: false */
+    /** 域名ID，创建加速域名时生成。默认全部域名 */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
-    /** 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。: false */
+    /** 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。 */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。: false */
+    /** 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 */
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 查询粒度 0=default(没有粒度) 1=按小时 2=按天: false */
+    /** 查询粒度 0=default(没有粒度) 1=按小时 2=按天 */
     @UCloudParam("Type")
     private Integer type;
 

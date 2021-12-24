@@ -13,12 +13,13 @@
  */
 package cn.ucloud.usms.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class QueryUSMSTemplateResponse extends Response {
 
-    /** 短信模板明细信息，各字段说明详见OutTemplate: false */
+    /** 短信模板明细信息，各字段说明详见OutTemplate */
     @SerializedName("Data")
     private OutTemplate data;
 
@@ -32,39 +33,39 @@ public class QueryUSMSTemplateResponse extends Response {
 
     public static class OutTemplate extends Response {
 
-        /** 短信模板ID: false */
+        /** 短信模板ID */
         @SerializedName("TemplateId")
         private String templateId;
 
-        /** 模板类型，选项：1-验证码类 2-通知类 3-会员推广类: false */
+        /** 模板类型，选项：1-验证码类 2-通知类 3-会员推广类 */
         @SerializedName("Purpose")
         private Integer purpose;
 
-        /** 短信模板名称: false */
+        /** 短信模板名称 */
         @SerializedName("TemplateName")
         private String templateName;
 
-        /** 短信模板内容: false */
+        /** 短信模板内容 */
         @SerializedName("Template")
         private String template;
 
-        /** 退订信息；一般填写方式“回T退订”，当purpose为3（也即会员推广类）时，为必填项: false */
+        /** 退订信息；一般填写方式“回T退订”，当purpose为3（也即会员推广类）时，为必填项 */
         @SerializedName("UnsubscribeInfo")
         private String unsubscribeInfo;
 
-        /** 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用: false */
+        /** 短信模板状态；状态说明：0-待审核，1-审核中，2-审核通过，3-审核未通过，4-被禁用 */
         @SerializedName("Status")
         private Integer status;
 
-        /** 模板说明: false */
+        /** 模板说明 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 审核失败原因: false */
+        /** 审核失败原因 */
         @SerializedName("ErrDesc")
         private String errDesc;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 

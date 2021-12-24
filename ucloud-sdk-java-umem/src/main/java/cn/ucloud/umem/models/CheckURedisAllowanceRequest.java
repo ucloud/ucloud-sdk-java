@@ -13,48 +13,49 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CheckURedisAllowanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 创建实例的容量大小, 单位:GB 目前仅支持1/2/4/8/16/32六种规格；扩缩容时，表示实例的目标资源大小: false */
+    /** 创建实例的容量大小, 单位:GB 目前仅支持1/2/4/8/16/32六种规格；扩缩容时，表示实例的目标资源大小 */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 创建实例的数量，[1-10]: false */
+    /** 创建实例的数量，[1-10] */
     @NotEmpty
     @UCloudParam("Count")
     private Integer count;
 
-    /** : false */
+    /** */
     @UCloudParam("Protocol")
     private String protocol;
 
-    /** 是否是跨机房URedis(默认false): false */
+    /** 是否是跨机房URedis(默认false) */
     @UCloudParam("RegionFlag")
     private Boolean regionFlag;
 
-    /** 资源ID，扩容实例资源时的必传参数: false */
+    /** 资源ID，扩容实例资源时的必传参数 */
     @UCloudParam("GroupId")
     private String groupId;
 

@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,30 +22,30 @@ public class ReinstallUEcVHostRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 虚拟机资源ID: false */
+    /** 虚拟机资源ID */
     @NotEmpty
     @UCloudParam("NodeId")
     private String nodeId;
 
-    /** 镜像ID: false */
+    /** 镜像ID */
     @NotEmpty
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 是否保留数据盘数据， 0-不保留，1-保留，默认为1: false */
+    /** 是否保留数据盘数据， 0-不保留，1-保留，默认为1 */
     @UCloudParam("KeepData")
     private Integer keepData;
 
-    /** 节点密码: false */
+    /** 节点密码 */
     @UCloudParam("Password")
     private String password;
 
-    /** 系统盘大小，单位GB: false */
+    /** 系统盘大小，单位GB */
     @UCloudParam("SysDiskSize")
     private Integer sysDiskSize;
 

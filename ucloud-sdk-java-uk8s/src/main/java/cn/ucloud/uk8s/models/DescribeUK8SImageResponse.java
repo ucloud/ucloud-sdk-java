@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUK8SImageResponse extends Response {
 
-    /** 虚拟机可用镜像集合, 详见ImageInfo 数组: false */
+    /** 虚拟机可用镜像集合, 详见ImageInfo 数组 */
     @SerializedName("ImageSet")
     private List<ImageInfo> imageSet;
 
-    /** 物理机可用镜像集合, 详见ImageInfo 数组: false */
+    /** 物理机可用镜像集合, 详见ImageInfo 数组 */
     @SerializedName("PHostImageSet")
     private List<ImageInfo> pHostImageSet;
 
@@ -45,19 +45,19 @@ public class DescribeUK8SImageResponse extends Response {
 
     public static class ImageInfo extends Response {
 
-        /** 可用区 Id: false */
+        /** 可用区 Id */
         @SerializedName("ZoneId")
         private Integer zoneId;
 
-        /** 镜像 Id: false */
+        /** 镜像 Id */
         @SerializedName("ImageId")
         private String imageId;
 
-        /** 镜像名称: false */
+        /** 镜像名称 */
         @SerializedName("ImageName")
         private String imageName;
 
-        /** 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。: false */
+        /** 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。 */
         @SerializedName("NotSupportGPU")
         private Boolean notSupportGPU;
 

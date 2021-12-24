@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateNetworkAclEntryResponse extends Response {
 
-    /** 创建的Entry的ID: false */
+    /** 创建的Entry的ID */
     @SerializedName("EntryId")
     private String entryId;
 

@@ -13,48 +13,49 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateUDBParamGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 配置参数组id，使用DescribeUDBParamGroup获得: false */
+    /** 配置参数组id，使用DescribeUDBParamGroup获得 */
     @NotEmpty
     @UCloudParam("GroupId")
     private Integer groupId;
 
-    /** 参数名称（与Value配合使用）: false */
+    /** 参数名称（与Value配合使用） */
     @UCloudParam("Key")
     private String key;
 
-    /** 参数值（与Key配合使用）: false */
+    /** 参数值（与Key配合使用） */
     @UCloudParam("Value")
     private String value;
 
-    /** 配置文件的名字，不传时认为不修改名字，传了则不能为空: false */
+    /** 配置文件的名字，不传时认为不修改名字，传了则不能为空 */
     @UCloudParam("Name")
     private String name;
 
-    /** 配置文件的描述，不传时认为不修改: false */
+    /** 配置文件的描述，不传时认为不修改 */
     @UCloudParam("Description")
     private String description;
 
-    /** 该配置文件是否是地域级别配置文件， 默认是false: false */
+    /** 该配置文件是否是地域级别配置文件， 默认是false */
     @UCloudParam("RegionFlag")
     private Boolean regionFlag;
 

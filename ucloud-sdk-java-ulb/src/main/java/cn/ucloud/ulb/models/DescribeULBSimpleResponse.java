@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeULBSimpleResponse extends Response {
 
-    /** 满足条件的ULB总数: false */
+    /** 满足条件的ULB总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** ULB列表，每项参数详见 ULBSimpleSet: false */
+    /** ULB列表，每项参数详见 ULBSimpleSet */
     @SerializedName("DataSet")
     private List<ULBSimpleSet> dataSet;
 
@@ -43,174 +43,81 @@ public class DescribeULBSimpleResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class FirewallSet extends Response {
-
-        /** 防火墙名称: false */
-        @SerializedName("FirewallName")
-        private String firewallName;
-
-        /** 防火墙ID: false */
-        @SerializedName("FirewallId")
-        private String firewallId;
-
-        public String getFirewallName() {
-            return firewallName;
-        }
-
-        public void setFirewallName(String firewallName) {
-            this.firewallName = firewallName;
-        }
-
-        public String getFirewallId() {
-            return firewallId;
-        }
-
-        public void setFirewallId(String firewallId) {
-            this.firewallId = firewallId;
-        }
-    }
-
-    public static class ULBIPSet extends Response {
-
-        /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP: false */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** 弹性IP地址: false */
-        @SerializedName("EIP")
-        private String eip;
-
-        /** 弹性IP的ID: false */
-        @SerializedName("EIPId")
-        private String eipId;
-
-        /** 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放）: false */
-        @SerializedName("BandwidthType")
-        private Integer bandwidthType;
-
-        /** 弹性IP的带宽值（暂未对外开放）: false */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getEIP() {
-            return eip;
-        }
-
-        public void setEIP(String eip) {
-            this.eip = eip;
-        }
-
-        public String getEIPId() {
-            return eipId;
-        }
-
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
-        }
-
-        public Integer getBandwidthType() {
-            return bandwidthType;
-        }
-
-        public void setBandwidthType(Integer bandwidthType) {
-            this.bandwidthType = bandwidthType;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-    }
-
     public static class ULBSimpleSet extends Response {
 
-        /**
-         * ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发；Comprehensive，兼容型；Pending，未定型:
-         * false
-         */
+        /** ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发；Comprehensive，兼容型；Pending，未定型 */
         @SerializedName("ListenType")
         private String listenType;
 
-        /** ULB提供服务的IP类型。枚举值，“IPv4”,"IPv6"。默认为“IPv4”: false */
+        /** ULB提供服务的IP类型。枚举值，“IPv4”,"IPv6"。默认为“IPv4” */
         @SerializedName("IPVersion")
         private String ipVersion;
 
-        /** 负载均衡的资源ID : false */
+        /** 负载均衡的资源ID */
         @SerializedName("ULBId")
         private String ulbId;
 
-        /** 负载均衡的资源名称: false */
+        /** 负载均衡的资源名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 负载均衡的业务组名称: false */
+        /** 负载均衡的业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 负载均衡的备注: false */
+        /** 负载均衡的备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** ULB的创建时间，格式为Unix Timestamp: false */
+        /** ULB的创建时间，格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** ULB所在的VPC的ID: false */
+        /** ULB所在的VPC的ID */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** ULB 为 InnerMode 时，ULB 所属的子网ID: false */
+        /** ULB 为 InnerMode 时，ULB 所属的子网ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** ULB 所属的业务组ID: false */
+        /** ULB 所属的业务组ID */
         @SerializedName("BusinessId")
         private String businessId;
 
-        /** ULB的内网IP，当ULBType为OuterMode时，该值为空 : false */
+        /** ULB的内网IP，当ULBType为OuterMode时，该值为空 */
         @SerializedName("PrivateIP")
         private String privateIP;
 
-        /** 带宽类型，枚举值为： 0，非共享带宽； 1，共享带宽 : false */
+        /** 带宽类型，枚举值为： 0，非共享带宽； 1，共享带宽 */
         @SerializedName("BandwidthType")
         private Integer bandwidthType;
 
-        /** 带宽: false */
+        /** 带宽 */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** ULB的详细信息列表，具体结构见下方 ULBIPSet: false */
+        /** ULB的详细信息列表，具体结构见下方 ULBIPSet */
         @SerializedName("IPSet")
         private List<ULBIPSet> ipSet;
 
-        /** ulb下vserver数量: false */
+        /** ulb下vserver数量 */
         @SerializedName("VServerCount")
         private Integer vServerCount;
 
-        /** ULB 的类型（InnerMode or OuterMode）: false */
+        /** ULB 的类型（InnerMode or OuterMode） */
         @SerializedName("ULBType")
         private String ulbType;
 
-        /** 防火墙信息，具体结构见下方 FirewallSet: false */
+        /** 防火墙信息，具体结构见下方 FirewallSet */
         @SerializedName("FirewallSet")
         private List<FirewallSet> firewallSet;
 
-        /** ULB是否开启日志功能。0，关闭；1，开启: false */
+        /** ULB是否开启日志功能。0，关闭；1，开启 */
         @SerializedName("EnableLog")
         private Integer enableLog;
 
-        /** 日志功能相关信息，仅当EnableLog为true时会返回，具体结构见下方 LoggerSet: false */
+        /** 日志功能相关信息，仅当EnableLog为true时会返回，具体结构见下方 LoggerSet */
         @SerializedName("LogSet")
         private LoggerSet logSet;
 
@@ -369,15 +276,15 @@ public class DescribeULBSimpleResponse extends Response {
 
     public static class LoggerSet extends Response {
 
-        /** ulb日志上传的bucket: false */
+        /** ulb日志上传的bucket */
         @SerializedName("BucketName")
         private String bucketName;
 
-        /** 上传到bucket使用的token的tokenid: false */
+        /** 上传到bucket使用的token的tokenid */
         @SerializedName("TokenID")
         private String tokenID;
 
-        /** bucket的token名称: false */
+        /** bucket的token名称 */
         @SerializedName("TokenName")
         private String tokenName;
 
@@ -403,6 +310,96 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setTokenName(String tokenName) {
             this.tokenName = tokenName;
+        }
+    }
+
+    public static class FirewallSet extends Response {
+
+        /** 防火墙名称 */
+        @SerializedName("FirewallName")
+        private String firewallName;
+
+        /** 防火墙ID */
+        @SerializedName("FirewallId")
+        private String firewallId;
+
+        public String getFirewallName() {
+            return firewallName;
+        }
+
+        public void setFirewallName(String firewallName) {
+            this.firewallName = firewallName;
+        }
+
+        public String getFirewallId() {
+            return firewallId;
+        }
+
+        public void setFirewallId(String firewallId) {
+            this.firewallId = firewallId;
+        }
+    }
+
+    public static class ULBIPSet extends Response {
+
+        /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** 弹性IP地址 */
+        @SerializedName("EIP")
+        private String eip;
+
+        /** 弹性IP的ID */
+        @SerializedName("EIPId")
+        private String eipId;
+
+        /** 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放） */
+        @SerializedName("BandwidthType")
+        private Integer bandwidthType;
+
+        /** 弹性IP的带宽值（暂未对外开放） */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getEIP() {
+            return eip;
+        }
+
+        public void setEIP(String eip) {
+            this.eip = eip;
+        }
+
+        public String getEIPId() {
+            return eipId;
+        }
+
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
+        }
+
+        public Integer getBandwidthType() {
+            return bandwidthType;
+        }
+
+        public void setBandwidthType(Integer bandwidthType) {
+            this.bandwidthType = bandwidthType;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
         }
     }
 }

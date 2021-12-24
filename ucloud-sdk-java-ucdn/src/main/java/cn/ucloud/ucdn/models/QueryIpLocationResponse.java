@@ -19,7 +19,7 @@ import java.util.List;
 
 public class QueryIpLocationResponse extends Response {
 
-    /** IP信息列表: false */
+    /** IP信息列表 */
     @SerializedName("Data")
     private List<IpLocationInfo> data;
 
@@ -33,23 +33,23 @@ public class QueryIpLocationResponse extends Response {
 
     public static class IpLocationInfo extends Response {
 
-        /** 客户端请求的ip: false */
+        /** 客户端请求的ip */
         @SerializedName("Ip")
         private String ip;
 
-        /** 地区: false */
+        /** 地区 */
         @SerializedName("Area")
         private String area;
 
-        /** 运营商: false */
+        /** 运营商 */
         @SerializedName("Isp")
         private String isp;
 
-        /** 城市: false */
+        /** 城市 */
         @SerializedName("City")
         private String city;
 
-        /** ip是否存在: false */
+        /** ip是否存在 */
         @SerializedName("Exist")
         private Boolean exist;
 

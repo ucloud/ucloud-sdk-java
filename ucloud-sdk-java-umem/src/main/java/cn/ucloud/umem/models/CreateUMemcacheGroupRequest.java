@@ -13,59 +13,60 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateUMemcacheGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 请求创建组的名称 范围[6-60]: false */
+    /** 请求创建组的名称 范围[6-60] */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 每个节点的内存大小,单位GB,默认1GB 目前仅支持1/2/4/8/16/32这几档: false */
+    /** 每个节点的内存大小,单位GB,默认1GB 目前仅支持1/2/4/8/16/32这几档 */
     @UCloudParam("Size")
     private Integer size;
 
-    /** 配置ID,目前仅支持默认配置id 默认配置id:"9a891891-c245-4b66-bce8-67e59430d67c": false */
+    /** 配置ID,目前仅支持默认配置id 默认配置id:"9a891891-c245-4b66-bce8-67e59430d67c" */
     @UCloudParam("ConfigId")
     private String configId;
 
-    /** Memcache版本信息,默认为1.4.31: false */
+    /** Memcache版本信息,默认为1.4.31 */
     @UCloudParam("Version")
     private String version;
 
-    /** 计费模式，Year , Month, Dynamic 默认: Month: false */
+    /** 计费模式，Year , Month, Dynamic 默认: Month */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，默认为1: false */
+    /** 购买时长，默认为1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 业务组 默认：Default: false */
+    /** 业务组 默认：Default */
     @UCloudParam("Tag")
     private String tag;
 
-    /** : false */
+    /** */
     @UCloudParam("Protocol")
     private String protocol;
 
-    /** 代金券ID: false */
+    /** 代金券ID */
     @UCloudParam("CouponId")
     private String couponId;
 

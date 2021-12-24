@@ -19,83 +19,83 @@ import java.util.List;
 
 public class DescribeUK8SClusterResponse extends Response {
 
-    /** 资源名字: false */
+    /** 资源名字 */
     @SerializedName("ClusterName")
     private String clusterName;
 
-    /** 集群ID: false */
+    /** 集群ID */
     @SerializedName("ClusterId")
     private String clusterId;
 
-    /** 所属VPC: false */
+    /** 所属VPC */
     @SerializedName("VPCId")
     private String vpcId;
 
-    /** 所属子网: false */
+    /** 所属子网 */
     @SerializedName("SubnetId")
     private String subnetId;
 
-    /** Pod网段: false */
+    /** Pod网段 */
     @SerializedName("PodCIDR")
     private String podCIDR;
 
-    /** 服务网段: false */
+    /** 服务网段 */
     @SerializedName("ServiceCIDR")
     private String serviceCIDR;
 
-    /** Master节点配置信息，具体参考UhostInfo。托管版不返回该信息: false */
+    /** Master节点配置信息，具体参考UhostInfo。托管版不返回该信息 */
     @SerializedName("MasterList")
     private List<UhostInfo> masterList;
 
-    /** Master 节点数量: false */
+    /** Master 节点数量 */
     @SerializedName("MasterCount")
     private Integer masterCount;
 
-    /** Node节点配置信息,具体参考UhostInfo: false */
+    /** Node节点配置信息,具体参考UhostInfo */
     @SerializedName("NodeList")
     private List<UhostInfo> nodeList;
 
-    /** 创建时间: false */
+    /** 创建时间 */
     @SerializedName("CreateTime")
     private Integer createTime;
 
-    /** Node节点数量: false */
+    /** Node节点数量 */
     @SerializedName("NodeCount")
     private Integer nodeCount;
 
-    /** 集群apiserver地址: false */
+    /** 集群apiserver地址 */
     @SerializedName("ApiServer")
     private String apiServer;
 
-    /** 状态: false */
+    /** 状态 */
     @SerializedName("Status")
     private String status;
 
-    /** 集群外部apiserver地址: false */
+    /** 集群外部apiserver地址 */
     @SerializedName("ExternalApiServer")
     private String externalApiServer;
 
-    /** kube-proxy配置: false */
+    /** kube-proxy配置 */
     @SerializedName("KubeProxy")
     private Object kubeProxy;
 
-    /** K8S版本: false */
+    /** K8S版本 */
     @SerializedName("Version")
     private String version;
 
-    /** 自定义或者默认的clusterdomain: false */
+    /** 自定义或者默认的clusterdomain */
     @SerializedName("ClusterDomain")
     private String clusterDomain;
 
-    /** 集群etcd服务证书: false */
+    /** 集群etcd服务证书 */
     @SerializedName("EtcdCert")
     private String etcdCert;
 
-    /** 集群etcd服务密钥: false */
+    /** 集群etcd服务密钥 */
     @SerializedName("EtcdKey")
     private String etcdKey;
 
-    /** 集群CA根证书: false */
+    /** 集群CA根证书 */
     @SerializedName("CACert")
     private String caCert;
 
@@ -261,51 +261,51 @@ public class DescribeUK8SClusterResponse extends Response {
 
     public static class UhostInfo extends Response {
 
-        /** 所在机房: false */
+        /** 所在机房 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 主机名称: false */
+        /** 主机名称 */
         @SerializedName("Name")
         private String name;
 
-        /** Cpu数量: false */
+        /** Cpu数量 */
         @SerializedName("CPU")
         private Integer cpu;
 
-        /** 内存: false */
+        /** 内存 */
         @SerializedName("Memory")
         private Integer memory;
 
-        /** 节点IP信息: false */
+        /** 节点IP信息 */
         @SerializedName("IPSet")
         private List<IPSet> ipSet;
 
-        /** 节点磁盘信息: false */
+        /** 节点磁盘信息 */
         @SerializedName("DiskSet")
         private List<DiskSet> diskSet;
 
-        /** 主机ID: false */
+        /** 主机ID */
         @SerializedName("NodeId")
         private String nodeId;
 
-        /** 镜像信息: false */
+        /** 镜像信息 */
         @SerializedName("OsName")
         private String osName;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 到期时间: false */
+        /** 到期时间 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 主机状态: false */
+        /** 主机状态 */
         @SerializedName("State")
         private String state;
 
-        /** 节点类型：uhost表示云主机;uphost表示物理云主机: false */
+        /** 节点类型：uhost表示云主机;uphost表示物理云主机 */
         @SerializedName("NodeType")
         private String nodeType;
 
@@ -408,43 +408,43 @@ public class DescribeUK8SClusterResponse extends Response {
 
     public static class DiskSet extends Response {
 
-        /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk: false */
+        /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
         @SerializedName("Type")
         private String type;
 
-        /** 磁盘长ID: false */
+        /** 磁盘长ID */
         @SerializedName("DiskId")
         private String diskId;
 
-        /** UDisk名字（仅当磁盘是UDisk时返回）: false */
+        /** UDisk名字（仅当磁盘是UDisk时返回） */
         @SerializedName("Name")
         private String name;
 
-        /** 磁盘盘符: false */
+        /** 磁盘盘符 */
         @SerializedName("Drive")
         private String drive;
 
-        /** 磁盘大小，单位: GB: false */
+        /** 磁盘大小，单位: GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。: false */
+        /** 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。 */
         @SerializedName("BackupType")
         private String backupType;
 
-        /** 当前主机的IOPS值: false */
+        /** 当前主机的IOPS值 */
         @SerializedName("IOPS")
         private Integer iops;
 
-        /** Yes: 加密 No: 非加密: false */
+        /** Yes: 加密 No: 非加密 */
         @SerializedName("Encrypted")
         private String encrypted;
 
-        /** LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK: false */
+        /** LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK */
         @SerializedName("DiskType")
         private String diskType;
 
-        /** True| False: false */
+        /** True| False */
         @SerializedName("IsBoot")
         private String isBoot;
 
@@ -531,23 +531,23 @@ public class DescribeUK8SClusterResponse extends Response {
 
     public static class IPSet extends Response {
 
-        /** 国际: Internation，BGP: Bgp，内网: Private: false */
+        /** 国际: Internation，BGP: Bgp，内网: Private */
         @SerializedName("Type")
         private String type;
 
-        /** IP资源ID (内网IP无对应的资源ID): false */
+        /** IP资源ID (内网IP无对应的资源ID) */
         @SerializedName("IPId")
         private String ipId;
 
-        /** IP地址: false */
+        /** IP地址 */
         @SerializedName("IP")
         private String ip;
 
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息): false */
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。: false */
+        /** 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。 */
         @SerializedName("Default")
         private String fDefault;
 

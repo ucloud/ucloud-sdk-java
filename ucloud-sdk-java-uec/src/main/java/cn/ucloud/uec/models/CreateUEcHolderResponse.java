@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUEcHolderResponse extends Response {
 
-    /** 容器组资源id: false */
+    /** 容器组资源id */
     @SerializedName("ResourceId")
     private String resourceId;
 

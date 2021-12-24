@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ubill.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetBalanceResponse extends Response {
 
-    /** 账户余额信息: false */
+    /** 账户余额信息 */
     @SerializedName("AccountInfo")
     private AccountInfo accountInfo;
 
@@ -32,23 +33,23 @@ public class GetBalanceResponse extends Response {
 
     public static class AccountInfo extends Response {
 
-        /** 冻结账户金额: false */
+        /** 冻结账户金额 */
         @SerializedName("AmountFreeze")
         private String amountFreeze;
 
-        /** 信用账户余额: false */
+        /** 信用账户余额 */
         @SerializedName("AmountCredit")
         private String amountCredit;
 
-        /** 赠送账户余额: false */
+        /** 赠送账户余额 */
         @SerializedName("AmountFree")
         private String amountFree;
 
-        /** 账户余额: false */
+        /** 账户余额 */
         @SerializedName("Amount")
         private String amount;
 
-        /** 账户可用余额: false */
+        /** 账户可用余额 */
         @SerializedName("AmountAvailable")
         private String amountAvailable;
 

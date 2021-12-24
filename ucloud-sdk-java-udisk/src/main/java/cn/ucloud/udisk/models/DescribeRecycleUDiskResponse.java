@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeRecycleUDiskResponse extends Response {
 
-    /** 磁盘数量: false */
+    /** 磁盘数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 回收站磁盘列表: false */
+    /** 回收站磁盘列表 */
     @SerializedName("DataSet")
     private List<RecycleUDiskSet> dataSet;
 
@@ -45,35 +45,35 @@ public class DescribeRecycleUDiskResponse extends Response {
 
     public static class RecycleUDiskSet extends Response {
 
-        /** 磁盘id: false */
+        /** 磁盘id */
         @SerializedName("UDiskId")
         private String uDiskId;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 过期时间: false */
+        /** 过期时间 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** 销毁倒计时: false */
+        /** 销毁倒计时 */
         @SerializedName("CountdownTime")
         private Integer countdownTime;
 
-        /** 磁盘名称: false */
+        /** 磁盘名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 磁盘容量: false */
+        /** 磁盘容量 */
         @SerializedName("Size")
         private Integer size;
 
-        /** 业务组: false */
+        /** 业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 可用区: false */
+        /** 可用区 */
         @SerializedName("Zone")
         private String zone;
 

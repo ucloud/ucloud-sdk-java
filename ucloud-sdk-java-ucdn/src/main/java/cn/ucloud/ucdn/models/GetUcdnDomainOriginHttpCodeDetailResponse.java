@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnDomainOriginHttpCodeDetailResponse extends Response {
 
-    /** 状态码详情: false */
+    /** 状态码详情 */
     @SerializedName("HttpCodeV2Detail")
     private List<HttpCodeV2Detail> httpCodeV2Detail;
 
@@ -33,235 +33,235 @@ public class GetUcdnDomainOriginHttpCodeDetailResponse extends Response {
 
     public static class HttpCodeV2Detail extends Response {
 
-        /** 时间: false */
+        /** 时间 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 当前分组的总状态码数: false */
+        /** 当前分组的总状态码数 */
         @SerializedName("Total")
         private Integer total;
 
-        /** http100数量: false */
+        /** http100数量 */
         @SerializedName("Http100")
         private Integer http100;
 
-        /** http101数量: false */
+        /** http101数量 */
         @SerializedName("Http101")
         private Integer http101;
 
-        /** http102数量: false */
+        /** http102数量 */
         @SerializedName("Http102")
         private Integer http102;
 
-        /** http200数量: false */
+        /** http200数量 */
         @SerializedName("Http200")
         private Integer http200;
 
-        /** http201数量: false */
+        /** http201数量 */
         @SerializedName("Http201")
         private Integer http201;
 
-        /** http202数量: false */
+        /** http202数量 */
         @SerializedName("Http202")
         private Integer http202;
 
-        /** http203数量: false */
+        /** http203数量 */
         @SerializedName("Http203")
         private Integer http203;
 
-        /** http204数量: false */
+        /** http204数量 */
         @SerializedName("Http204")
         private Integer http204;
 
-        /** http205数量: false */
+        /** http205数量 */
         @SerializedName("Http205")
         private Integer http205;
 
-        /** http206数量: false */
+        /** http206数量 */
         @SerializedName("Http206")
         private Integer http206;
 
-        /** http207数量: false */
+        /** http207数量 */
         @SerializedName("Http207")
         private Integer http207;
 
-        /** http300数量: false */
+        /** http300数量 */
         @SerializedName("Http300")
         private Integer http300;
 
-        /** http301数量: false */
+        /** http301数量 */
         @SerializedName("Http301")
         private Integer http301;
 
-        /** http302数量: false */
+        /** http302数量 */
         @SerializedName("Http302")
         private Integer http302;
 
-        /** http303数量: false */
+        /** http303数量 */
         @SerializedName("Http303")
         private Integer http303;
 
-        /** http304数量: false */
+        /** http304数量 */
         @SerializedName("Http304")
         private Integer http304;
 
-        /** http305数量: false */
+        /** http305数量 */
         @SerializedName("Http305")
         private Integer http305;
 
-        /** http306数量: false */
+        /** http306数量 */
         @SerializedName("Http306")
         private Integer http306;
 
-        /** http307数量: false */
+        /** http307数量 */
         @SerializedName("Http307")
         private Integer http307;
 
-        /** http400数量: false */
+        /** http400数量 */
         @SerializedName("Http400")
         private Integer http400;
 
-        /** http401数量: false */
+        /** http401数量 */
         @SerializedName("Http401")
         private Integer http401;
 
-        /** http402数量: false */
+        /** http402数量 */
         @SerializedName("Http402")
         private Integer http402;
 
-        /** http403数量: false */
+        /** http403数量 */
         @SerializedName("Http403")
         private Integer http403;
 
-        /** http404数量: false */
+        /** http404数量 */
         @SerializedName("Http404")
         private Integer http404;
 
-        /** http405数量: false */
+        /** http405数量 */
         @SerializedName("Http405")
         private Integer http405;
 
-        /** http406数量: false */
+        /** http406数量 */
         @SerializedName("Http406")
         private Integer http406;
 
-        /** http407数量: false */
+        /** http407数量 */
         @SerializedName("Http407")
         private Integer http407;
 
-        /** http408数量: false */
+        /** http408数量 */
         @SerializedName("Http408")
         private Integer http408;
 
-        /** http409数量: false */
+        /** http409数量 */
         @SerializedName("Http409")
         private Integer http409;
 
-        /** http410数量: false */
+        /** http410数量 */
         @SerializedName("Http410")
         private Integer http410;
 
-        /** http411数量: false */
+        /** http411数量 */
         @SerializedName("Http411")
         private Integer http411;
 
-        /** http412数量: false */
+        /** http412数量 */
         @SerializedName("Http412")
         private Integer http412;
 
-        /** http413数量: false */
+        /** http413数量 */
         @SerializedName("Http413")
         private Integer http413;
 
-        /** http414数量: false */
+        /** http414数量 */
         @SerializedName("Http414")
         private Integer http414;
 
-        /** http415数量: false */
+        /** http415数量 */
         @SerializedName("Http415")
         private Integer http415;
 
-        /** http416数量: false */
+        /** http416数量 */
         @SerializedName("Http416")
         private Integer http416;
 
-        /** http417数量: false */
+        /** http417数量 */
         @SerializedName("Http417")
         private Integer http417;
 
-        /** http418数量: false */
+        /** http418数量 */
         @SerializedName("Http418")
         private Integer http418;
 
-        /** http421数量: false */
+        /** http421数量 */
         @SerializedName("Http421")
         private Integer http421;
 
-        /** http422数量: false */
+        /** http422数量 */
         @SerializedName("Http422")
         private Integer http422;
 
-        /** http423数量: false */
+        /** http423数量 */
         @SerializedName("Http423")
         private Integer http423;
 
-        /** http424数量: false */
+        /** http424数量 */
         @SerializedName("Http424")
         private Integer http424;
 
-        /** http425数量: false */
+        /** http425数量 */
         @SerializedName("Http425")
         private Integer http425;
 
-        /** http426数量: false */
+        /** http426数量 */
         @SerializedName("Http426")
         private Integer http426;
 
-        /** http449数量: false */
+        /** http449数量 */
         @SerializedName("Http449")
         private Integer http449;
 
-        /** http451数量: false */
+        /** http451数量 */
         @SerializedName("Http451")
         private Integer http451;
 
-        /** http500数量: false */
+        /** http500数量 */
         @SerializedName("Http500")
         private Integer http500;
 
-        /** http501数量: false */
+        /** http501数量 */
         @SerializedName("Http501")
         private Integer http501;
 
-        /** http502数量: false */
+        /** http502数量 */
         @SerializedName("Http502")
         private Integer http502;
 
-        /** http503数量: false */
+        /** http503数量 */
         @SerializedName("Http503")
         private Integer http503;
 
-        /** http504数量: false */
+        /** http504数量 */
         @SerializedName("Http504")
         private Integer http504;
 
-        /** http505数量: false */
+        /** http505数量 */
         @SerializedName("Http505")
         private Integer http505;
 
-        /** http506数量: false */
+        /** http506数量 */
         @SerializedName("Http506")
         private Integer http506;
 
-        /** http507数量: false */
+        /** http507数量 */
         @SerializedName("Http507")
         private Integer http507;
 
-        /** http509数量: false */
+        /** http509数量 */
         @SerializedName("Http509")
         private Integer http509;
 
-        /** http510数量: false */
+        /** http510数量 */
         @SerializedName("Http510")
         private Integer http510;
 

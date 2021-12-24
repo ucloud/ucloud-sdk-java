@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uphost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ResizePHostAttachedDiskResponse extends Response {
 
-    /** 改配成功的磁盘id: false */
+    /** 改配成功的磁盘id */
     @SerializedName("UDiskId")
     private String uDiskId;
 

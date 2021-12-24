@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUEcHolderLogResponse extends Response {
 
-    /** 返回的日志数据: false */
+    /** 返回的日志数据 */
     @SerializedName("Data")
     private String data;
 

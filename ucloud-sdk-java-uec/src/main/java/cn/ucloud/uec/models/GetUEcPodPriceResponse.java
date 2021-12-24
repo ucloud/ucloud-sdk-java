@@ -13,16 +13,17 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUEcPodPriceResponse extends Response {
 
-    /** 容器组价格: false */
+    /** 容器组价格 */
     @SerializedName("HolderPrice")
     private Double holderPrice;
 
-    /** IP和带宽价格: false */
+    /** IP和带宽价格 */
     @SerializedName("IpPrice")
     private Double ipPrice;
 

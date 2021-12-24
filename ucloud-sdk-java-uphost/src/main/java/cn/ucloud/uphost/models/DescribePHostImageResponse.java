@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribePHostImageResponse extends Response {
 
-    /** 满足条件的镜像总数: false */
+    /** 满足条件的镜像总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 镜像列表 PHostImageSet: false */
+    /** 镜像列表 PHostImageSet */
     @SerializedName("ImageSet")
     private List<PHostImageSet> imageSet;
 
@@ -45,27 +45,27 @@ public class DescribePHostImageResponse extends Response {
 
     public static class PHostImageSet extends Response {
 
-        /** 镜像ID: false */
+        /** 镜像ID */
         @SerializedName("ImageId")
         private String imageId;
 
-        /** 镜像名称: false */
+        /** 镜像名称 */
         @SerializedName("ImageName")
         private String imageName;
 
-        /** 操作系统名称: false */
+        /** 操作系统名称 */
         @SerializedName("OsName")
         private String osName;
 
-        /** 操作系统类型: false */
+        /** 操作系统类型 */
         @SerializedName("OsType")
         private String osType;
 
-        /** 支持的机型: false */
+        /** 支持的机型 */
         @SerializedName("Support")
         private List<String> support;
 
-        /** 当前版本: false */
+        /** 当前版本 */
         @SerializedName("Version")
         private String version;
 

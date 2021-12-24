@@ -13,48 +13,49 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDBBackupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 分页显示的起始偏移，列表操作则指定: false */
+    /** 分页显示的起始偏移，列表操作则指定 */
     @NotEmpty
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 分页显示的条目数，列表操作则指定: false */
+    /** 分页显示的条目数，列表操作则指定 */
     @NotEmpty
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** DB实例Id，如果指定，则只获取该db的备份信息 该值可以通过DescribeUDBInstance获取: false */
+    /** DB实例Id，如果指定，则只获取该db的备份信息 该值可以通过DescribeUDBInstance获取 */
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 备份类型,取值为0或1，0表示自动，1表示手动: false */
+    /** 备份类型,取值为0或1，0表示自动，1表示手动 */
     @UCloudParam("BackupType")
     private Integer backupType;
 
-    /** 过滤条件:起始时间(Unix时间戳): false */
+    /** 过滤条件:起始时间(Unix时间戳) */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 过滤条件:结束时间(Unix时间戳): false */
+    /** 过滤条件:结束时间(Unix时间戳) */
     @UCloudParam("EndTime")
     private Integer endTime;
 

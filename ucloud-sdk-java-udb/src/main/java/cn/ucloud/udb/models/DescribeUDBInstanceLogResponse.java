@@ -13,16 +13,17 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDBInstanceLogResponse extends Response {
 
-    /** 查询到的日志内容，一段纯文本: false */
+    /** 查询到的日志内容，一段纯文本 */
     @SerializedName("Log")
     private String log;
 
-    /** 此次查询到的日志的下一个时间，用于下一次轮询时的BeginTime参数；如果日志查询结束则返回为空，前端结束查询: false */
+    /** 此次查询到的日志的下一个时间，用于下一次轮询时的BeginTime参数；如果日志查询结束则返回为空，前端结束查询 */
     @SerializedName("NextTime")
     private String nextTime;
 

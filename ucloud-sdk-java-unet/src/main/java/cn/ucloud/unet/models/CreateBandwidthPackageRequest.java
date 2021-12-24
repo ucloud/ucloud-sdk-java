@@ -13,37 +13,38 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateBandwidthPackageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 带宽大小(单位Mbps), 取值范围[2,800] (最大值受地域限制): false */
+    /** 带宽大小(单位Mbps), 取值范围[2,800] (最大值受地域限制) */
     @NotEmpty
     @UCloudParam("Bandwidth")
     private Integer bandwidth;
 
-    /** 所绑定弹性IP的资源ID: false */
+    /** 所绑定弹性IP的资源ID */
     @NotEmpty
     @UCloudParam("EIPId")
     private String eipId;
 
-    /** 带宽包有效时长, 取值范围为大于0的整数, 即该带宽包在EnableTime到 EnableTime+TimeRange时间段内生效: false */
+    /** 带宽包有效时长, 取值范围为大于0的整数, 即该带宽包在EnableTime到 EnableTime+TimeRange时间段内生效 */
     @NotEmpty
     @UCloudParam("TimeRange")
     private Integer timeRange;
 
-    /** 生效时间, 格式为 Unix timestamp, 默认为立即开通: false */
+    /** 生效时间, 格式为 Unix timestamp, 默认为立即开通 */
     @UCloudParam("EnableTime")
     private Integer enableTime;
 
-    /** 代金券ID: false */
+    /** 代金券ID */
     @UCloudParam("CouponId")
     private String couponId;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ResizeUHostInstanceResponse extends Response {
 
-    /** UHost实例ID: false */
+    /** UHost实例ID */
     @SerializedName("UHostId")
     private String uHostId;
 

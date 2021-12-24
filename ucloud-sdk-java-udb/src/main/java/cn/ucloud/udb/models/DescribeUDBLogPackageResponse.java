@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUDBLogPackageResponse extends Response {
 
-    /** 备份信息 参见LogPackageDataSet: false */
+    /** 备份信息 参见LogPackageDataSet */
     @SerializedName("DataSet")
     private List<LogPackageDataSet> dataSet;
 
-    /** 备份总数，如果指定dbid，则是该db备份总数: false */
+    /** 备份总数，如果指定dbid，则是该db备份总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,43 +45,43 @@ public class DescribeUDBLogPackageResponse extends Response {
 
     public static class LogPackageDataSet extends Response {
 
-        /** 备份id: false */
+        /** 备份id */
         @SerializedName("BackupId")
         private Integer backupId;
 
-        /** 备份名称: false */
+        /** 备份名称 */
         @SerializedName("BackupName")
         private String backupName;
 
-        /** 备份时间: false */
+        /** 备份时间 */
         @SerializedName("BackupTime")
         private Integer backupTime;
 
-        /** 备份文件大小: false */
+        /** 备份文件大小 */
         @SerializedName("BackupSize")
         private Integer backupSize;
 
-        /** 备份类型，包括2-binlog备份，3-slowlog备份: false */
+        /** 备份类型，包括2-binlog备份，3-slowlog备份 */
         @SerializedName("BackupType")
         private Integer backupType;
 
-        /** 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期: false */
+        /** 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期 */
         @SerializedName("State")
         private String state;
 
-        /** dbid: false */
+        /** dbid */
         @SerializedName("DBId")
         private String dbId;
 
-        /** 对应的db名称: false */
+        /** 对应的db名称 */
         @SerializedName("DBName")
         private String dbName;
 
-        /** 所在可用区: false */
+        /** 所在可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 跨可用区高可用备库所在可用区: false */
+        /** 跨可用区高可用备库所在可用区 */
         @SerializedName("BackupZone")
         private String backupZone;
 

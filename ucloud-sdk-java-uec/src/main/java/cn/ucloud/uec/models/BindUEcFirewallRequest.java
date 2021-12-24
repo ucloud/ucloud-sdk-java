@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,17 +22,17 @@ public class BindUEcFirewallRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 防火墙Id: false */
+    /** 防火墙Id */
     @NotEmpty
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** 虚拟机资源Id或容器组资源id: false */
+    /** 虚拟机资源Id或容器组资源id */
     @NotEmpty
     @UCloudParam("ResourceId")
     private String resourceId;

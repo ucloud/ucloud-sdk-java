@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeVPCResponse extends Response {
 
-    /** vpc信息，具体结构见下方VPCInfo: false */
+    /** vpc信息，具体结构见下方VPCInfo */
     @SerializedName("DataSet")
     private List<VPCInfo> dataSet;
 
@@ -31,45 +31,72 @@ public class DescribeVPCResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class VPCInfo extends Response {
+    public static class VPCNetworkInfo extends Response {
 
-        /** : false */
-        @SerializedName("NetworkInfo")
-        private List<VPCNetworkInfo> networkInfo;
+        /** vpc地址空间 */
+        @SerializedName("Network")
+        private String network;
 
-        /** : false */
+        /** 地址空间中子网数量 */
         @SerializedName("SubnetCount")
         private Integer subnetCount;
 
-        /** : false */
+        public String getNetwork() {
+            return network;
+        }
+
+        public void setNetwork(String network) {
+            this.network = network;
+        }
+
+        public Integer getSubnetCount() {
+            return subnetCount;
+        }
+
+        public void setSubnetCount(Integer subnetCount) {
+            this.subnetCount = subnetCount;
+        }
+    }
+
+    public static class VPCInfo extends Response {
+
+        /** */
+        @SerializedName("NetworkInfo")
+        private List<VPCNetworkInfo> networkInfo;
+
+        /** */
+        @SerializedName("SubnetCount")
+        private Integer subnetCount;
+
+        /** */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** : false */
+        /** */
         @SerializedName("UpdateTime")
         private Integer updateTime;
 
-        /** : false */
+        /** */
         @SerializedName("Tag")
         private String tag;
 
-        /** : false */
+        /** */
         @SerializedName("Name")
         private String name;
 
-        /** VPCId: false */
+        /** VPCId */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** : false */
+        /** */
         @SerializedName("Network")
         private List<String> network;
 
-        /** VPC关联的IPv6网段: false */
+        /** VPC关联的IPv6网段 */
         @SerializedName("IPv6Network")
         private String iPv6Network;
 
-        /** VPC关联的IPv6网段所属运营商: false */
+        /** VPC关联的IPv6网段所属运营商 */
         @SerializedName("OperatorName")
         private String operatorName;
 
@@ -151,33 +178,6 @@ public class DescribeVPCResponse extends Response {
 
         public void setOperatorName(String operatorName) {
             this.operatorName = operatorName;
-        }
-    }
-
-    public static class VPCNetworkInfo extends Response {
-
-        /** vpc地址空间: false */
-        @SerializedName("Network")
-        private String network;
-
-        /** 地址空间中子网数量: false */
-        @SerializedName("SubnetCount")
-        private Integer subnetCount;
-
-        public String getNetwork() {
-            return network;
-        }
-
-        public void setNetwork(String network) {
-            this.network = network;
-        }
-
-        public Integer getSubnetCount() {
-            return subnetCount;
-        }
-
-        public void setSubnetCount(Integer subnetCount) {
-            this.subnetCount = subnetCount;
         }
     }
 }

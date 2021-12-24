@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUDBInstanceResponse extends Response {
 
-    /** DB实例信息列表 UDBInstanceSet: false */
+    /** DB实例信息列表 UDBInstanceSet */
     @SerializedName("DataSet")
     private List<UDBInstanceSet> dataSet;
 
-    /** 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量: false */
+    /** 用户db组的数量，对于 mysql: 主从结对数量，没有slave，则只有master mongodb: 副本集数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -43,182 +43,208 @@ public class DescribeUDBInstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class UFileDataSet extends Response {
+
+        /** Ufile的令牌tokenid */
+        @SerializedName("TokenID")
+        private String tokenID;
+
+        /** bucket名称 */
+        @SerializedName("Bucket")
+        private String bucket;
+
+        public String getTokenID() {
+            return tokenID;
+        }
+
+        public void setTokenID(String tokenID) {
+            this.tokenID = tokenID;
+        }
+
+        public String getBucket() {
+            return bucket;
+        }
+
+        public void setBucket(String bucket) {
+            this.bucket = bucket;
+        }
+    }
+
     public static class UDBInstanceSet extends Response {
 
-        /** DB实例所在可用区: false */
+        /** DB实例所在可用区 */
         @SerializedName("Zone")
         private String zone;
 
         /**
-         * 当DB类型为mongodb时，返回该实例所在集群中的角色，包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式:
-         * false
+         * 当DB类型为mongodb时，返回该实例所在集群中的角色，包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式
          */
         @SerializedName("ClusterRole")
         private String clusterRole;
 
-        /** DB实例id: false */
+        /** DB实例id */
         @SerializedName("DBId")
         private String dbId;
 
-        /** 实例名称，至少6位: false */
+        /** 实例名称，至少6位 */
         @SerializedName("Name")
         private String name;
 
         /**
          * DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下：
          * 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6，
-         * 7：percona-5.6: false
+         * 7：percona-5.6
          */
         @SerializedName("DBTypeId")
         private String dbTypeId;
 
-        /** DB实例使用的配置参数组id: false */
+        /** DB实例使用的配置参数组id */
         @SerializedName("ParamGroupId")
         private Integer paramGroupId;
 
-        /** 管理员帐户名，默认root: false */
+        /** 管理员帐户名，默认root */
         @SerializedName("AdminUser")
         private String adminUser;
 
-        /** DB实例虚ip: false */
+        /** DB实例虚ip */
         @SerializedName("VirtualIP")
         private String virtualIP;
 
-        /** DB实例虚ip的mac地址: false */
+        /** DB实例虚ip的mac地址 */
         @SerializedName("VirtualIPMac")
         private String virtualIPMac;
 
-        /** VPC的ID: false */
+        /** VPC的ID */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 子网ID: false */
+        /** 子网ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** UDB数据库机型: false */
+        /** UDB数据库机型 */
         @SerializedName("InstanceType")
         private String instanceType;
 
-        /** UDB数据库机型ID: false */
+        /** UDB数据库机型ID */
         @SerializedName("InstanceTypeId")
         private Integer instanceTypeId;
 
-        /** 获取资源其他信息: false */
+        /** 获取资源其他信息 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 端口号，mysql默认3306，mongodb默认27017: false */
+        /** 端口号，mysql默认3306，mongodb默认27017 */
         @SerializedName("Port")
         private Integer port;
 
-        /** 对mysql的slave而言是master的DBId，对master则为空， 对mongodb则是副本集id: false */
+        /** 对mysql的slave而言是master的DBId，对master则为空， 对mongodb则是副本集id */
         @SerializedName("SrcDBId")
         private String srcDBId;
 
-        /** 备份策略，不可修改，备份文件保留的数量，默认7次: false */
+        /** 备份策略，不可修改，备份文件保留的数量，默认7次 */
         @SerializedName("BackupCount")
         private Integer backupCount;
 
-        /** 备份策略，不可修改，开始时间，单位小时计，默认3点: false */
+        /** 备份策略，不可修改，开始时间，单位小时计，默认3点 */
         @SerializedName("BackupBeginTime")
         private Integer backupBeginTime;
 
-        /** 备份策略，一天内备份时间间隔，单位小时，默认24小时: false */
+        /** 备份策略，一天内备份时间间隔，单位小时，默认24小时 */
         @SerializedName("BackupDuration")
         private Integer backupDuration;
 
-        /** 备份策略，备份黑名单，mongodb则不适用: false */
+        /** 备份策略，备份黑名单，mongodb则不适用 */
         @SerializedName("BackupBlacklist")
         private String backupBlacklist;
 
         /**
          * DB状态标记
          * Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover
-         * fail：恢复失败: false
+         * fail：恢复失败
          */
         @SerializedName("State")
         private String state;
 
-        /** DB实例创建时间，采用UTC计时时间戳: false */
+        /** DB实例创建时间，采用UTC计时时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** DB实例修改时间，采用UTC计时时间戳: false */
+        /** DB实例修改时间，采用UTC计时时间戳 */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** DB实例过期时间，采用UTC计时时间戳: false */
+        /** DB实例过期时间，采用UTC计时时间戳 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** Year， Month， Dynamic，Trial，默认: Dynamic: false */
+        /** Year， Month， Dynamic，Trial，默认: Dynamic */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 内存限制(MB)，默认根据配置机型: false */
+        /** 内存限制(MB)，默认根据配置机型 */
         @SerializedName("MemoryLimit")
         private Integer memoryLimit;
 
-        /** 磁盘空间(GB), 默认根据配置机型: false */
+        /** 磁盘空间(GB), 默认根据配置机型 */
         @SerializedName("DiskSpace")
         private Integer diskSpace;
 
-        /** 是否使用SSD: false */
+        /** 是否使用SSD */
         @SerializedName("UseSSD")
         private Boolean useSSD;
 
-        /** SSD类型，SATA/PCI-E/NVMe: false */
+        /** SSD类型，SATA/PCI-E/NVMe */
         @SerializedName("SSDType")
         private String ssdType;
 
-        /** DB实例角色，mysql区分master/slave，mongodb多种角色: false */
+        /** DB实例角色，mysql区分master/slave，mongodb多种角色 */
         @SerializedName("Role")
         private String role;
 
-        /** DB实例磁盘已使用空间，单位GB: false */
+        /** DB实例磁盘已使用空间，单位GB */
         @SerializedName("DiskUsedSize")
         private Double diskUsedSize;
 
-        /** DB实例数据文件大小，单位GB: false */
+        /** DB实例数据文件大小，单位GB */
         @SerializedName("DataFileSize")
         private Double dataFileSize;
 
-        /** DB实例系统文件大小，单位GB: false */
+        /** DB实例系统文件大小，单位GB */
         @SerializedName("SystemFileSize")
         private Double systemFileSize;
 
-        /** DB实例日志文件大小，单位GB: false */
+        /** DB实例日志文件大小，单位GB */
         @SerializedName("LogFileSize")
         private Double logFileSize;
 
         /**
          * 备份日期标记位。共7位,每一位为一周中一天的备份情况 0表示关闭当天备份,1表示打开当天备份。最右边的一位 为星期天的备份开关，其余从右到左依次为星期一到星期
-         * 六的备份配置开关，每周必须至少设置两天备份。 例如：1100000 表示打开星期六和星期五的自动备份功能: false
+         * 六的备份配置开关，每周必须至少设置两天备份。 例如：1100000 表示打开星期六和星期五的自动备份功能
          */
         @SerializedName("BackupDate")
         private String backupDate;
 
-        /** UDB实例模式类型, 可选值如下: “Normal”： 普通版UDB实例 “HA”: 高可用版UDB实例: false */
+        /** UDB实例模式类型, 可选值如下: “Normal”： 普通版UDB实例 “HA”: 高可用版UDB实例 */
         @SerializedName("InstanceMode")
         private String instanceMode;
 
         /**
          * 如果在需要返回从库的场景下，返回该DB实例的所有从库DB实例信息列表。列表中每一个元素的内容同UDBSlaveInstanceSet
-         * 。如果这个DB实例没有从库的情况下，此时返回一个空的列表: false
+         * 。如果这个DB实例没有从库的情况下，此时返回一个空的列表
          */
         @SerializedName("DataSet")
         private List<UDBSlaveInstanceSet> dataSet;
 
-        /** 跨可用区高可用备库所在可用区: false */
+        /** 跨可用区高可用备库所在可用区 */
         @SerializedName("BackupZone")
         private String backupZone;
 
-        /** 该实例的ipv6地址: false */
+        /** 该实例的ipv6地址 */
         @SerializedName("IPv6Address")
         private String iPv6Address;
 
-        /** 用户转存备份到自己的UFILE配置, 结构参考UFileDataSet: false */
+        /** 用户转存备份到自己的UFILE配置, 结构参考UFileDataSet */
         @SerializedName("UserUFileData")
         private UFileDataSet userUFileData;
 
@@ -545,165 +571,164 @@ public class DescribeUDBInstanceResponse extends Response {
 
     public static class UDBSlaveInstanceSet extends Response {
 
-        /** 可用区: false */
+        /** 可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** DB实例id: false */
+        /** DB实例id */
         @SerializedName("DBId")
         private String dbId;
 
-        /** 实例名称，至少6位: false */
+        /** 实例名称，至少6位 */
         @SerializedName("Name")
         private String name;
 
         /**
          * DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下：
          * 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6，
-         * 7：percona-5.6: false
+         * 7：percona-5.6
          */
         @SerializedName("DBTypeId")
         private String dbTypeId;
 
-        /** DB实例使用的配置参数组id: false */
+        /** DB实例使用的配置参数组id */
         @SerializedName("ParamGroupId")
         private Integer paramGroupId;
 
-        /** 管理员帐户名，默认root: false */
+        /** 管理员帐户名，默认root */
         @SerializedName("AdminUser")
         private String adminUser;
 
-        /** DB实例虚ip: false */
+        /** DB实例虚ip */
         @SerializedName("VirtualIP")
         private String virtualIP;
 
-        /** DB实例虚ip的mac地址: false */
+        /** DB实例虚ip的mac地址 */
         @SerializedName("VirtualIPMac")
         private String virtualIPMac;
 
-        /** 端口号，mysql默认3306，mongodb默认27017: false */
+        /** 端口号，mysql默认3306，mongodb默认27017 */
         @SerializedName("Port")
         private Integer port;
 
-        /** 对mysql的slave而言是master的DBId，对master则为空， 对mongodb则是副本集id: false */
+        /** 对mysql的slave而言是master的DBId，对master则为空， 对mongodb则是副本集id */
         @SerializedName("SrcDBId")
         private String srcDBId;
 
-        /** 备份策略，不可修改，备份文件保留的数量，默认7次: false */
+        /** 备份策略，不可修改，备份文件保留的数量，默认7次 */
         @SerializedName("BackupCount")
         private Integer backupCount;
 
-        /** 备份策略，不可修改，开始时间，单位小时计，默认3点: false */
+        /** 备份策略，不可修改，开始时间，单位小时计，默认3点 */
         @SerializedName("BackupBeginTime")
         private Integer backupBeginTime;
 
-        /** 备份策略，一天内备份时间间隔，单位小时，默认24小时: false */
+        /** 备份策略，一天内备份时间间隔，单位小时，默认24小时 */
         @SerializedName("BackupDuration")
         private Integer backupDuration;
 
-        /** 备份策略，备份黑名单，mongodb则不适用: false */
+        /** 备份策略，备份黑名单，mongodb则不适用 */
         @SerializedName("BackupBlacklist")
         private String backupBlacklist;
 
         /**
          * DB状态标记
          * Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover
-         * fail：恢复失败: false
+         * fail：恢复失败
          */
         @SerializedName("State")
         private String state;
 
-        /** DB实例创建时间，采用UTC计时时间戳: false */
+        /** DB实例创建时间，采用UTC计时时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** DB实例修改时间，采用UTC计时时间戳: false */
+        /** DB实例修改时间，采用UTC计时时间戳 */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** DB实例过期时间，采用UTC计时时间戳: false */
+        /** DB实例过期时间，采用UTC计时时间戳 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** Year， Month， Dynamic，Trial，默认: Dynamic: false */
+        /** Year， Month， Dynamic，Trial，默认: Dynamic */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 内存限制(MB)，默认根据配置机型: false */
+        /** 内存限制(MB)，默认根据配置机型 */
         @SerializedName("MemoryLimit")
         private Integer memoryLimit;
 
-        /** 磁盘空间(GB), 默认根据配置机型: false */
+        /** 磁盘空间(GB), 默认根据配置机型 */
         @SerializedName("DiskSpace")
         private Integer diskSpace;
 
-        /** 是否使用SSD: false */
+        /** 是否使用SSD */
         @SerializedName("UseSSD")
         private Boolean useSSD;
 
-        /** SSD类型，SATA/PCI-E: false */
+        /** SSD类型，SATA/PCI-E */
         @SerializedName("SSDType")
         private String ssdType;
 
-        /** DB实例角色，mysql区分master/slave，mongodb多种角色: false */
+        /** DB实例角色，mysql区分master/slave，mongodb多种角色 */
         @SerializedName("Role")
         private String role;
 
-        /** DB实例磁盘已使用空间，单位GB: false */
+        /** DB实例磁盘已使用空间，单位GB */
         @SerializedName("DiskUsedSize")
         private Double diskUsedSize;
 
-        /** DB实例数据文件大小，单位GB: false */
+        /** DB实例数据文件大小，单位GB */
         @SerializedName("DataFileSize")
         private Double dataFileSize;
 
-        /** DB实例系统文件大小，单位GB: false */
+        /** DB实例系统文件大小，单位GB */
         @SerializedName("SystemFileSize")
         private Double systemFileSize;
 
-        /** DB实例日志文件大小，单位GB: false */
+        /** DB实例日志文件大小，单位GB */
         @SerializedName("LogFileSize")
         private Double logFileSize;
 
         /**
          * 备份日期标记位。共7位,每一位为一周中一天的备份情况 0表示关闭当天备份,1表示打开当天备份。最右边的一位 为星期天的备份开关，其余从右到左依次为星期一到星期
-         * 六的备份配置开关，每周必须至少设置两天备份。 例如：1100000 表示打开星期六和星期五的自动备份功能: false
+         * 六的备份配置开关，每周必须至少设置两天备份。 例如：1100000 表示打开星期六和星期五的自动备份功能
          */
         @SerializedName("BackupDate")
         private String backupDate;
 
-        /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例;"HA": 高可用版UDB实例: false */
+        /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例;"HA": 高可用版UDB实例 */
         @SerializedName("InstanceMode")
         private String instanceMode;
 
         /**
-         * 当DB类型为mongodb时，返回该实例所在集群中的角色，包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式:
-         * false
+         * 当DB类型为mongodb时，返回该实例所在集群中的角色，包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式
          */
         @SerializedName("ClusterRole")
         private String clusterRole;
 
-        /** 子网ID: false */
+        /** 子网ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** VPC的ID: false */
+        /** VPC的ID */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** UDB数据库机型: false */
+        /** UDB数据库机型 */
         @SerializedName("InstanceType")
         private String instanceType;
 
-        /** UDB数据库机型ID: false */
+        /** UDB数据库机型ID */
         @SerializedName("InstanceTypeId")
         private Integer instanceTypeId;
 
-        /** 获取资源其他信息: false */
+        /** 获取资源其他信息 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 获取该实例的IPv6地址: false */
+        /** 获取该实例的IPv6地址 */
         @SerializedName("IPv6Address")
         private String iPv6Address;
 
@@ -1001,33 +1026,6 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setIPv6Address(String iPv6Address) {
             this.iPv6Address = iPv6Address;
-        }
-    }
-
-    public static class UFileDataSet extends Response {
-
-        /** Ufile的令牌tokenid: false */
-        @SerializedName("TokenID")
-        private String tokenID;
-
-        /** bucket名称: false */
-        @SerializedName("Bucket")
-        private String bucket;
-
-        public String getTokenID() {
-            return tokenID;
-        }
-
-        public void setTokenID(String tokenID) {
-            this.tokenID = tokenID;
-        }
-
-        public String getBucket() {
-            return bucket;
-        }
-
-        public void setBucket(String bucket) {
-            this.bucket = bucket;
         }
     }
 }

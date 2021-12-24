@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeURedisSlowlogResponse extends Response {
 
-    /** 总条目数: false */
+    /** 总条目数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 条目数据: false */
+    /** 条目数据 */
     @SerializedName("DataSet")
     private List<URedisSlowlogSet> dataSet;
 
@@ -45,15 +45,15 @@ public class DescribeURedisSlowlogResponse extends Response {
 
     public static class URedisSlowlogSet extends Response {
 
-        /** 查询发生的时间: false */
+        /** 查询发生的时间 */
         @SerializedName("StartTime")
         private Integer startTime;
 
-        /** 查询消耗的时间: false */
+        /** 查询消耗的时间 */
         @SerializedName("SpendTime")
         private Integer spendTime;
 
-        /** 查询命令: false */
+        /** 查询命令 */
         @SerializedName("Command")
         private String command;
 

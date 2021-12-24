@@ -13,55 +13,56 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ImportCustomImageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像名称: false */
+    /** 镜像名称 */
     @NotEmpty
     @UCloudParam("ImageName")
     private String imageName;
 
-    /** UFile私有空间地址: false */
+    /** UFile私有空间地址 */
     @NotEmpty
     @UCloudParam("UFileUrl")
     private String uFileUrl;
 
-    /** 操作系统平台，比如CentOS、Ubuntu、Windows、RedHat等，请参考控制台的镜像版本；若导入控制台上没有的操作系统，参数为Other: false */
+    /** 操作系统平台，比如CentOS、Ubuntu、Windows、RedHat等，请参考控制台的镜像版本；若导入控制台上没有的操作系统，参数为Other */
     @NotEmpty
     @UCloudParam("OsType")
     private String osType;
 
-    /** 操作系统详细版本，请参考控制台的镜像版本；OsType为Other时，输入参数为Other: false */
+    /** 操作系统详细版本，请参考控制台的镜像版本；OsType为Other时，输入参数为Other */
     @NotEmpty
     @UCloudParam("OsName")
     private String osName;
 
-    /** 镜像格式，可选RAW、VHD、VMDK、qcow2: false */
+    /** 镜像格式，可选RAW、VHD、VMDK、qcow2 */
     @NotEmpty
     @UCloudParam("Format")
     private String format;
 
-    /** 是否授权。必须填true: false */
+    /** 是否授权。必须填true */
     @NotEmpty
     @UCloudParam("Auth")
     private Boolean auth;
 
-    /** 镜像描述: false */
+    /** 镜像描述 */
     @UCloudParam("ImageDescription")
     private String imageDescription;
 

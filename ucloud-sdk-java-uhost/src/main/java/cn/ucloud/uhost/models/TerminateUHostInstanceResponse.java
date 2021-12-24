@@ -13,16 +13,17 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class TerminateUHostInstanceResponse extends Response {
 
-    /** 用于判断主机删除时是否进入回收站。放入回收站:"Yes", 彻底删除：“No”。: false */
+    /** 用于判断主机删除时是否进入回收站。放入回收站:"Yes", 彻底删除：“No”。 */
     @SerializedName("InRecycle")
     private String inRecycle;
 
-    /** UHost 实例 Id: false */
+    /** UHost 实例 Id */
     @SerializedName("UHostId")
     private String uHostId;
 

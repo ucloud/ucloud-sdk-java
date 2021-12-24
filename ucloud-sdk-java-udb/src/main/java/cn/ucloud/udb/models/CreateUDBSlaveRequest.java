@@ -13,91 +13,92 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateUDBSlaveRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** master实例的DBId,该值可以通过DescribeUDBInstance获取: false */
+    /** master实例的DBId,该值可以通过DescribeUDBInstance获取 */
     @NotEmpty
     @UCloudParam("SrcId")
     private String srcId;
 
-    /** 实例名称，至少6位: false */
+    /** 实例名称，至少6位 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 端口号: false */
+    /** 端口号 */
     @UCloudParam("Port")
     private Integer port;
 
-    /** 是否使用SSD，默认为true: false */
+    /** 是否使用SSD，默认为true */
     @UCloudParam("UseSSD")
     private Boolean useSSD;
 
-    /** SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选: false */
+    /** SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选 */
     @UCloudParam("SSDType")
     private String ssdType;
 
-    /** 是否锁主库，默认为true: false */
+    /** 是否锁主库，默认为true */
     @UCloudParam("IsLock")
     private Boolean isLock;
 
-    /** UDB实例部署模式，可选值如下： Normal: 普通单点实例 HA: 高可用部署实例: false */
+    /** UDB实例部署模式，可选值如下： Normal: 普通单点实例 HA: 高可用部署实例 */
     @UCloudParam("InstanceMode")
     private String instanceMode;
 
     /**
      * 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
-     * 64000M/96000M/128000M/192000M/256000M/320000M: false
+     * 64000M/96000M/128000M/192000M/256000M/320000M
      */
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
 
-    /** 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制）: false */
+    /** 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制） */
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** UDB实例类型：Normal、SATA_SSD、NVMe_SSD: false */
+    /** UDB实例类型：Normal、SATA_SSD、NVMe_SSD */
     @UCloudParam("InstanceType")
     private String instanceType;
 
-    /** 子网ID（如果不传用默认子网）: false */
+    /** 子网ID（如果不传用默认子网） */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPCID（如果不传用默认的VPC）: false */
+    /** VPCID（如果不传用默认的VPC） */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** Year， Month， Dynamic，Trial，默认和主库保持一致: false */
+    /** Year， Month， Dynamic，Trial，默认和主库保持一致 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，默认默认和主库保持一致: false */
+    /** 购买时长，默认默认和主库保持一致 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** DB实例使用的配置参数组id，默认和主库保持一致: false */
+    /** DB实例使用的配置参数组id，默认和主库保持一致 */
     @UCloudParam("ParamGroupId")
     private Integer paramGroupId;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

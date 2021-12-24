@@ -13,149 +13,149 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateUDBInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例名称，至少6位: false */
+    /** 实例名称，至少6位 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 管理员密码: false */
+    /** 管理员密码 */
     @NotEmpty
     @UCloudParam("AdminPassword")
     private String adminPassword;
 
     /**
      * DB类型id，mysql/mongodb/postgesql按版本细分
-     * 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4:
-     * false
+     * 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4
      */
     @NotEmpty
     @UCloudParam("DBTypeId")
     private String dbTypeId;
 
-    /** 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432: false */
+    /** 端口号，mysql默认3306，mongodb默认27017，postgresql默认5432 */
     @NotEmpty
     @UCloudParam("Port")
     private Integer port;
 
-    /** 磁盘空间(GB), 暂时支持20G - 32T: false */
+    /** 磁盘空间(GB), 暂时支持20G - 32T */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** DB实例使用的配置参数组id: false */
+    /** DB实例使用的配置参数组id */
     @NotEmpty
     @UCloudParam("ParamGroupId")
     private Integer paramGroupId;
 
     /**
      * 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
-     * 64000M/96000M/128000M/192000M/256000M/320000M: false
+     * 64000M/96000M/128000M/192000M/256000M/320000M
      */
     @NotEmpty
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
 
-    /** Year， Month， Dynamic，Trial，默认: Month: false */
+    /** Year， Month， Dynamic，Trial，默认: Month */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，默认值1: false */
+    /** 购买时长，默认值1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 管理员帐户名，默认root: false */
+    /** 管理员帐户名，默认root */
     @UCloudParam("AdminUser")
     private String adminUser;
 
-    /** 备份策略，每周备份数量，默认7次: false */
+    /** 备份策略，每周备份数量，默认7次 */
     @UCloudParam("BackupCount")
     private Integer backupCount;
 
-    /** 备份策略，备份开始时间，单位小时计，默认1点: false */
+    /** 备份策略，备份开始时间，单位小时计，默认1点 */
     @UCloudParam("BackupTime")
     private Integer backupTime;
 
-    /** 备份策略，备份时间间隔，单位小时计，默认24小时: false */
+    /** 备份策略，备份时间间隔，单位小时计，默认24小时 */
     @UCloudParam("BackupDuration")
     private Integer backupDuration;
 
-    /** 备份id，如果指定，则表明从备份恢复实例: false */
+    /** 备份id，如果指定，则表明从备份恢复实例 */
     @UCloudParam("BackupId")
     private Integer backupId;
 
-    /** 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。: false */
+    /** 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。 */
     @UCloudParam("UseSSD")
     private Boolean useSSD;
 
-    /** SSD类型，可选值为"SATA"、“NVMe”，如果UseSSD为true ，则必选: false */
+    /** SSD类型，可选值为"SATA"、“NVMe”，如果UseSSD为true ，则必选 */
     @UCloudParam("SSDType")
     private String ssdType;
 
-    /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal": false */
+    /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal" */
     @UCloudParam("InstanceMode")
     private String instanceMode;
 
-    /** 专区ID信息（如果这个参数存在这说明是在专区中创建DB）: false */
+    /** 专区ID信息（如果这个参数存在这说明是在专区中创建DB） */
     @UCloudParam("UDBCId")
     private String udbcId;
 
-    /** cpu核数: false */
+    /** cpu核数 */
     @UCloudParam("CPU")
     private Integer cpu;
 
-    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](../summary/regionlist.html): false */
+    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("BackupZone")
     private String backupZone;
 
-    /** 子网ID: false */
+    /** 子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPC的ID: false */
+    /** VPC的ID */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 是否开启异步高可用，默认不填，可置为true: false */
+    /** 是否开启异步高可用，默认不填，可置为true */
     @UCloudParam("DisableSemisync")
     private Boolean disableSemisync;
 
-    /** 当DB类型(DBTypeId)为mongodb时，需要指定mongo的角色，可选值为 configsrv (配置节点)，shardsrv (数据节点): false */
+    /** 当DB类型(DBTypeId)为mongodb时，需要指定mongo的角色，可选值为 configsrv (配置节点)，shardsrv (数据节点) */
     @UCloudParam("ClusterRole")
     private String clusterRole;
 
-    /** 高可用架构: 1） haproxy（默认）: 当前仅支持mysql。 2） sentinel: 基于vip和哨兵节点的架构，当前支持mysql和pg。: false */
+    /** 高可用架构: 1） haproxy（默认）: 当前仅支持mysql。 2） sentinel: 基于vip和哨兵节点的架构，当前支持mysql和pg。 */
     @UCloudParam("HAArch")
     private String haArch;
 
-    /** 实例所在的业务组名称: false */
+    /** 实例所在的业务组名称 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true: false */
+    /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true */
     @UCloudParam("EnableIpV6")
     private Boolean enableIpV6;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

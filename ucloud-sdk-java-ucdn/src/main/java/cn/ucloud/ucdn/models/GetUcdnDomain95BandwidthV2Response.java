@@ -13,16 +13,17 @@
  */
 package cn.ucloud.ucdn.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUcdnDomain95BandwidthV2Response extends Response {
 
-    /** 查询时间期间的95带宽时间点 Unix时间戳: false */
+    /** 查询时间期间的95带宽时间点 Unix时间戳 */
     @SerializedName("Time")
     private Integer time;
 
-    /** 查询期间的CDN的95带宽值，单位Mbps: false */
+    /** 查询期间的CDN的95带宽值，单位Mbps */
     @SerializedName("CdnBandwidth")
     private Double cdnBandwidth;
 

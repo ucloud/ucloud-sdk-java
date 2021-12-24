@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,22 +22,22 @@ public class CreateUEcCustomImageRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 虚拟机实例ID: false */
+    /** 虚拟机实例ID */
     @NotEmpty
     @UCloudParam("NodeId")
     private String nodeId;
 
-    /** 镜像名称: false */
+    /** 镜像名称 */
     @NotEmpty
     @UCloudParam("ImageName")
     private String imageName;
 
-    /** 镜像描述: false */
+    /** 镜像描述 */
     @UCloudParam("ImageDescription")
     private String imageDescription;
 

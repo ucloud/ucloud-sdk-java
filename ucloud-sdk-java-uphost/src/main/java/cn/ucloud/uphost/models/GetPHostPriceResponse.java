@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetPHostPriceResponse extends Response {
 
-    /** 价格列表 见 PHostPriceSet: false */
+    /** 价格列表 见 PHostPriceSet */
     @SerializedName("PriceSet")
     private List<PHostPriceSet> priceSet;
 
@@ -33,19 +33,19 @@ public class GetPHostPriceResponse extends Response {
 
     public static class PHostPriceSet extends Response {
 
-        /** Year/Month: false */
+        /** Year/Month */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 价格, 单位:元, 保留小数点后两位有效数字: false */
+        /** 价格, 单位:元, 保留小数点后两位有效数字 */
         @SerializedName("Price")
         private Double price;
 
-        /** 枚举值：phost=>为主机价格，如果是云盘包括了系统盘价格。cloudDisk=>所有数据盘价格，只是裸金属机型才返回此参数。: false */
+        /** 枚举值：phost=>为主机价格，如果是云盘包括了系统盘价格。cloudDisk=>所有数据盘价格，只是裸金属机型才返回此参数。 */
         @SerializedName("Product")
         private String product;
 
-        /** 原价格, 单位:元, 保留小数点后两位有效数字: false */
+        /** 原价格, 单位:元, 保留小数点后两位有效数字 */
         @SerializedName("OriginalPrice")
         private Double originalPrice;
 

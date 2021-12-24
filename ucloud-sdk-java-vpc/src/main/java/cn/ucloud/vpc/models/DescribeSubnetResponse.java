@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeSubnetResponse extends Response {
 
-    /** 子网总数量: false */
+    /** 子网总数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 子网信息数组，具体资源见下方SubnetInfo: false */
+    /** 子网信息数组，具体资源见下方SubnetInfo */
     @SerializedName("DataSet")
     private List<SubnetInfo> dataSet;
 
@@ -45,67 +45,67 @@ public class DescribeSubnetResponse extends Response {
 
     public static class SubnetInfo extends Response {
 
-        /** 可用区名称: false */
+        /** 可用区名称 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 子网关联的IPv6网段: false */
+        /** 子网关联的IPv6网段 */
         @SerializedName("IPv6Network")
         private String iPv6Network;
 
-        /** VPCId: false */
+        /** VPCId */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** VPC名称: false */
+        /** VPC名称 */
         @SerializedName("VPCName")
         private String vpcName;
 
-        /** 子网Id: false */
+        /** 子网Id */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** 子网名称: false */
+        /** 子网名称 */
         @SerializedName("SubnetName")
         private String subnetName;
 
-        /** 备注: false */
+        /** 备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 业务组: false */
+        /** 业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 子网类型: false */
+        /** 子网类型 */
         @SerializedName("SubnetType")
         private Integer subnetType;
 
-        /** 子网网段: false */
+        /** 子网网段 */
         @SerializedName("Subnet")
         private String subnet;
 
-        /** 子网掩码: false */
+        /** 子网掩码 */
         @SerializedName("Netmask")
         private String netmask;
 
-        /** 子网网关: false */
+        /** 子网网关 */
         @SerializedName("Gateway")
         private String gateway;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 是否有natgw: false */
+        /** 是否有natgw */
         @SerializedName("HasNATGW")
         private Boolean hasNATGW;
 
-        /** 路由表Id: false */
+        /** 路由表Id */
         @SerializedName("RouteTableId")
         private String routeTableId;
 
-        /** 可用IP数量: false */
+        /** 可用IP数量 */
         @SerializedName("AvailableIPs")
         private Integer availableIPs;
 

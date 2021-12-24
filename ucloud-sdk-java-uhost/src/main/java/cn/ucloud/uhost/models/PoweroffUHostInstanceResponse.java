@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class PoweroffUHostInstanceResponse extends Response {
 
-    /** UHost的实例ID: false */
+    /** UHost的实例ID */
     @SerializedName("UHostId")
     private String uHostId;
 

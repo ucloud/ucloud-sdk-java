@@ -13,36 +13,37 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateUDBInstanceSlaveBackupSwitchRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 主库的Id: false */
+    /** 主库的Id */
     @NotEmpty
     @UCloudParam("MasterDBId")
     private String masterDBId;
 
-    /** 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。: false */
+    /** 从库的备份开关，范围[0,1],0表示从库备份功能关闭,1 表示从库备份开关打开。 */
     @NotEmpty
     @UCloudParam("BackupSwitch")
     private Integer backupSwitch;
 
-    /** 从库的Id,如果从库备份开关设定为打开，则必须赋值。: false */
+    /** 从库的Id,如果从库备份开关设定为打开，则必须赋值。 */
     @UCloudParam("SlaveDBId")
     private String slaveDBId;
 

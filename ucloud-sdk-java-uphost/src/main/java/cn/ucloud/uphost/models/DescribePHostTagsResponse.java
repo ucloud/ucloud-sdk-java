@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribePHostTagsResponse extends Response {
 
-    /** Tag的个数: false */
+    /** Tag的个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 具体参见 PHostTagSet: false */
+    /** 具体参见 PHostTagSet */
     @SerializedName("TagSet")
     private List<PHostTagSet> tagSet;
 
@@ -45,11 +45,11 @@ public class DescribePHostTagsResponse extends Response {
 
     public static class PHostTagSet extends Response {
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 该业务组中包含的主机个数: false */
+        /** 该业务组中包含的主机个数 */
         @SerializedName("TotalCount")
         private Integer totalCount;
 

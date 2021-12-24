@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUHostInstanceResponse extends Response {
 
-    /** UHostInstance总数: false */
+    /** UHostInstance总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 云主机实例列表，每项参数可见下面 UHostInstanceSet: false */
+    /** 云主机实例列表，每项参数可见下面 UHostInstanceSet */
     @SerializedName("UHostSet")
     private List<UHostInstanceSet> uHostSet;
 
@@ -43,312 +43,168 @@ public class DescribeUHostInstanceResponse extends Response {
         this.uHostSet = uHostSet;
     }
 
-    public static class UHostDiskSet extends Response {
-
-        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。: false */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。: false */
-        @SerializedName("IsBoot")
-        private String isBoot;
-
-        /** "true": 加密盘 "false"：非加密盘: false */
-        @SerializedName("Encrypted")
-        private String encrypted;
-
-        /** 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk: false */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘ID: false */
-        @SerializedName("DiskId")
-        private String diskId;
-
-        /** UDisk名字（仅当磁盘是UDisk时返回）: false */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘盘符: false */
-        @SerializedName("Drive")
-        private String drive;
-
-        /** 磁盘大小，单位: GB: false */
-        @SerializedName("Size")
-        private Integer size;
-
-        /** 备份方案。若开通了数据方舟，则为DATAARK: false */
-        @SerializedName("BackupType")
-        private String backupType;
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-
-        public String getEncrypted() {
-            return encrypted;
-        }
-
-        public void setEncrypted(String encrypted) {
-            this.encrypted = encrypted;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getDiskId() {
-            return diskId;
-        }
-
-        public void setDiskId(String diskId) {
-            this.diskId = diskId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDrive() {
-            return drive;
-        }
-
-        public void setDrive(String drive) {
-            this.drive = drive;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
-        }
-    }
-
-    public static class UHostKeyPair extends Response {
-
-        /** 密钥对ID: false */
-        @SerializedName("KeyPairId")
-        private String keyPairId;
-
-        /** 主机密钥对状态，Normal 正常，Deleted 删除: false */
-        @SerializedName("KeyPairState")
-        private String keyPairState;
-
-        public String getKeyPairId() {
-            return keyPairId;
-        }
-
-        public void setKeyPairId(String keyPairId) {
-            this.keyPairId = keyPairId;
-        }
-
-        public String getKeyPairState() {
-            return keyPairState;
-        }
-
-        public void setKeyPairState(String keyPairState) {
-            this.keyPairState = keyPairState;
-        }
-    }
-
     public static class UHostInstanceSet extends Response {
 
-        /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+        /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
 
-        /** true:有ipv6特性；false，没有ipv6特性: false */
+        /** true:有ipv6特性；false，没有ipv6特性 */
         @SerializedName("IPv6Feature")
         private Boolean iPv6Feature;
 
-        /** UHost实例ID: false */
+        /** UHost实例ID */
         @SerializedName("UHostId")
         private String uHostId;
 
-        /** 【建议不再使用】云主机机型（旧）。参考[[api:uhost-api:uhost_type|云主机机型说明]]。: false */
+        /** 【建议不再使用】云主机机型（旧）。参考[[api:uhost-api:uhost_type|云主机机型说明]]。 */
         @SerializedName("UHostType")
         private String uHostType;
 
-        /** 云主机机型（新）。参考[[api:uhost-api:uhost_type#主机概念20版本|云主机机型说明]]。: false */
+        /** 云主机机型（新）。参考[[api:uhost-api:uhost_type#主机概念20版本|云主机机型说明]]。 */
         @SerializedName("MachineType")
         private String machineType;
 
-        /** 云主机CPU平台。参考[[api:uhost-api:uhost_type#主机概念20版本|云主机机型说明]]。: false */
+        /** 云主机CPU平台。参考[[api:uhost-api:uhost_type#主机概念20版本|云主机机型说明]]。 */
         @SerializedName("CpuPlatform")
         private String cpuPlatform;
 
-        /**
-         * 【建议不再使用】主机磁盘类型。 枚举值为：\\ > LocalDisk，本地磁盘; \\ > UDisk 云盘。\\只要有一块磁盘为本地盘，即返回LocalDisk。:
-         * false
-         */
+        /** 【建议不再使用】主机磁盘类型。 枚举值为：\\ > LocalDisk，本地磁盘; \\ > UDisk 云盘。\\只要有一块磁盘为本地盘，即返回LocalDisk。 */
         @SerializedName("StorageType")
         private String storageType;
 
-        /** 【建议不再使用】主机的系统盘ID。: false */
+        /** 【建议不再使用】主机的系统盘ID。 */
         @SerializedName("ImageId")
         private String imageId;
 
-        /** 基础镜像ID（指当前自定义镜像的来源镜像）: false */
+        /** 基础镜像ID（指当前自定义镜像的来源镜像） */
         @SerializedName("BasicImageId")
         private String basicImageId;
 
-        /** 基础镜像名称（指当前自定义镜像的来源镜像）: false */
+        /** 基础镜像名称（指当前自定义镜像的来源镜像） */
         @SerializedName("BasicImageName")
         private String basicImageName;
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 备注: false */
+        /** 备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** UHost实例名称: false */
+        /** UHost实例名称 */
         @SerializedName("Name")
         private String name;
 
         /**
          * 实例状态，枚举值：\\ >初始化: Initializing; \\ >启动中: Starting; \\> 运行中: Running; \\> 关机中: Stopping;
-         * \\ >关机: Stopped \\ >安装失败: Install Fail; \\ >重启中: Rebooting; \\ > 未知(空字符串，获取状态超时或出错)："":
-         * false
+         * \\ >关机: Stopped \\ >安装失败: Install Fail; \\ >重启中: Rebooting; \\ > 未知(空字符串，获取状态超时或出错)：""
          */
         @SerializedName("State")
         private String state;
 
-        /** 创建时间，格式为Unix时间戳: false */
+        /** 创建时间，格式为Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）；Preemptive 为抢占式实例；: false */
+        /** 计费模式，枚举值为： Year，按年付费； Month，按月付费； Dynamic，按需付费（需开启权限）；Preemptive 为抢占式实例； */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 到期时间，格式为Unix时间戳: false */
+        /** 到期时间，格式为Unix时间戳 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 虚拟CPU核数，单位: 个: false */
+        /** 虚拟CPU核数，单位: 个 */
         @SerializedName("CPU")
         private Integer cpu;
 
-        /** 内存大小，单位: MB: false */
+        /** 内存大小，单位: MB */
         @SerializedName("Memory")
         private Integer memory;
 
-        /** 是否自动续费，自动续费：“Yes”，不自动续费：“No”: false */
+        /** 是否自动续费，自动续费：“Yes”，不自动续费：“No” */
         @SerializedName("AutoRenew")
         private String autoRenew;
 
-        /** 磁盘信息见 UHostDiskSet: false */
+        /** 磁盘信息见 UHostDiskSet */
         @SerializedName("DiskSet")
         private List<UHostDiskSet> diskSet;
 
-        /** 详细信息见 UHostIPSet: false */
+        /** 详细信息见 UHostIPSet */
         @SerializedName("IPSet")
         private List<UHostIPSet> ipSet;
 
-        /** 网络增强。Normal: 无；Super： 网络增强1.0； Ultra: 网络增强2.0: false */
+        /** 网络增强。Normal: 无；Super： 网络增强1.0； Ultra: 网络增强2.0 */
         @SerializedName("NetCapability")
         private String netCapability;
 
-        /** 【建议不再使用】网络状态。 连接：Connected， 断开：NotConnected: false */
+        /** 【建议不再使用】网络状态。 连接：Connected， 断开：NotConnected */
         @SerializedName("NetworkState")
         private String networkState;
 
-        /** 【建议不再使用】数据方舟模式。枚举值：\\ > Yes: 开启方舟； \\ > no，未开启方舟: false */
+        /** 【建议不再使用】数据方舟模式。枚举值：\\ > Yes: 开启方舟； \\ > no，未开启方舟 */
         @SerializedName("TimemachineFeature")
         private String timemachineFeature;
 
-        /** true: 开启热升级； false，未开启热升级: false */
+        /** true: 开启热升级； false，未开启热升级 */
         @SerializedName("HotplugFeature")
         private Boolean hotplugFeature;
 
-        /** 【建议不再使用】仅北京A的云主机会返回此字段。基础网络模式：Default；子网模式：Private: false */
+        /** 【建议不再使用】仅北京A的云主机会返回此字段。基础网络模式：Default；子网模式：Private */
         @SerializedName("SubnetType")
         private String subnetType;
 
-        /** 创建主机的最初来源镜像的操作系统名称（若直接通过基础镜像创建，此处返回和BasicImageName一致）: false */
+        /** 创建主机的最初来源镜像的操作系统名称（若直接通过基础镜像创建，此处返回和BasicImageName一致） */
         @SerializedName("OsName")
         private String osName;
 
-        /** 操作系统类别。返回"Linux"或者"Windows": false */
+        /** 操作系统类别。返回"Linux"或者"Windows" */
         @SerializedName("OsType")
         private String osType;
 
-        /** 【建议不再使用】主机系列：N2，表示系列2；N1，表示系列1: false */
+        /** 【建议不再使用】主机系列：N2，表示系列2；N1，表示系列1 */
         @SerializedName("HostType")
         private String hostType;
 
-        /** 主机的生命周期类型。目前仅支持Normal：普通；: false */
+        /** 主机的生命周期类型。目前仅支持Normal：普通； */
         @SerializedName("LifeCycle")
         private String lifeCycle;
 
-        /** GPU个数: false */
+        /** GPU个数 */
         @SerializedName("GPU")
         private Integer gpu;
 
-        /** 系统盘状态 Normal表示初始化完成；Initializing表示在初始化。仍在初始化的系统盘无法制作镜像。: false */
+        /** 系统盘状态 Normal表示初始化完成；Initializing表示在初始化。仍在初始化的系统盘无法制作镜像。 */
         @SerializedName("BootDiskState")
         private String bootDiskState;
 
-        /** 总的数据盘存储空间。: false */
+        /** 总的数据盘存储空间。 */
         @SerializedName("TotalDiskSpace")
         private Integer totalDiskSpace;
 
-        /** 隔离组id，不在隔离组则返回"": false */
+        /** 隔离组id，不在隔离组则返回"" */
         @SerializedName("IsolationGroup")
         private String isolationGroup;
 
-        /** true，支持cloutinit方式初始化；false,不支持: false */
+        /** true，支持cloutinit方式初始化；false,不支持 */
         @SerializedName("CloudInitFeature")
         private Boolean cloudInitFeature;
 
-        /**
-         * RDMA集群id，仅快杰云主机返回该值；其他类型云主机返回""。当云主机的此值与RSSD云盘的RdmaClusterId相同时，RSSD可以挂载到这台云主机。: false
-         */
+        /** RDMA集群id，仅快杰云主机返回该值；其他类型云主机返回""。当云主机的此值与RSSD云盘的RdmaClusterId相同时，RSSD可以挂载到这台云主机。 */
         @SerializedName("RdmaClusterId")
         private String rdmaClusterId;
 
-        /** 仅抢占式实例返回，LowSpeed为低速模式，PowerOff为关机模式: false */
+        /** 仅抢占式实例返回，LowSpeed为低速模式，PowerOff为关机模式 */
         @SerializedName("RestrictMode")
         private String restrictMode;
 
-        /** true: 开启 hpc 系列功能；false: 未开启: false */
+        /** true: 开启 hpc 系列功能；false: 未开启 */
         @SerializedName("HpcFeature")
         private Boolean hpcFeature;
 
-        /** 密钥信息见 UHostKeyPair: false */
+        /** 密钥信息见 UHostKeyPair */
         @SerializedName("KeyPair")
         private UHostKeyPair keyPair;
 
@@ -675,47 +531,47 @@ public class DescribeUHostInstanceResponse extends Response {
 
     public static class UHostIPSet extends Response {
 
-        /** IPv4/IPv6；: false */
+        /** IPv4/IPv6； */
         @SerializedName("IPMode")
         private String ipMode;
 
-        /** 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。: false */
+        /** 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。 */
         @SerializedName("Default")
         private String fDefault;
 
-        /** 内网 Private 类型下，当前网卡的Mac。: false */
+        /** 内网 Private 类型下，当前网卡的Mac。 */
         @SerializedName("Mac")
         private String mac;
 
-        /** 当前EIP的权重。权重最大的为当前的出口IP。: false */
+        /** 当前EIP的权重。权重最大的为当前的出口IP。 */
         @SerializedName("Weight")
         private Integer weight;
 
-        /** 国际: Internation，BGP: Bgp，内网: Private: false */
+        /** 国际: Internation，BGP: Bgp，内网: Private */
         @SerializedName("Type")
         private String type;
 
-        /** 外网IP资源ID 。(内网IP无对应的资源ID): false */
+        /** 外网IP资源ID 。(内网IP无对应的资源ID) */
         @SerializedName("IPId")
         private String ipId;
 
-        /** IP地址: false */
+        /** IP地址 */
         @SerializedName("IP")
         private String ip;
 
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息): false */
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** IP地址对应的VPC ID。（北京一不支持，字段返回为空）: false */
+        /** IP地址对应的VPC ID。（北京一不支持，字段返回为空） */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** IP地址对应的子网 ID。（北京一不支持，字段返回为空）: false */
+        /** IP地址对应的子网 ID。（北京一不支持，字段返回为空） */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** 弹性网卡为默认网卡时，返回对应的 ID 值: false */
+        /** 弹性网卡为默认网卡时，返回对应的 ID 值 */
         @SerializedName("NetworkInterfaceId")
         private String networkInterfaceId;
 
@@ -805,6 +661,144 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setNetworkInterfaceId(String networkInterfaceId) {
             this.networkInterfaceId = networkInterfaceId;
+        }
+    }
+
+    public static class UHostDiskSet extends Response {
+
+        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
+        @SerializedName("DiskType")
+        private String diskType;
+
+        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
+        @SerializedName("IsBoot")
+        private String isBoot;
+
+        /** "true": 加密盘 "false"：非加密盘 */
+        @SerializedName("Encrypted")
+        private String encrypted;
+
+        /** 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘ID */
+        @SerializedName("DiskId")
+        private String diskId;
+
+        /** UDisk名字（仅当磁盘是UDisk时返回） */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘盘符 */
+        @SerializedName("Drive")
+        private String drive;
+
+        /** 磁盘大小，单位: GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        /** 备份方案。若开通了数据方舟，则为DATAARK */
+        @SerializedName("BackupType")
+        private String backupType;
+
+        public String getDiskType() {
+            return diskType;
+        }
+
+        public void setDiskType(String diskType) {
+            this.diskType = diskType;
+        }
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public String getEncrypted() {
+            return encrypted;
+        }
+
+        public void setEncrypted(String encrypted) {
+            this.encrypted = encrypted;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getDiskId() {
+            return diskId;
+        }
+
+        public void setDiskId(String diskId) {
+            this.diskId = diskId;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getDrive() {
+            return drive;
+        }
+
+        public void setDrive(String drive) {
+            this.drive = drive;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        public String getBackupType() {
+            return backupType;
+        }
+
+        public void setBackupType(String backupType) {
+            this.backupType = backupType;
+        }
+    }
+
+    public static class UHostKeyPair extends Response {
+
+        /** 密钥对ID */
+        @SerializedName("KeyPairId")
+        private String keyPairId;
+
+        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
+        @SerializedName("KeyPairState")
+        private String keyPairState;
+
+        public String getKeyPairId() {
+            return keyPairId;
+        }
+
+        public void setKeyPairId(String keyPairId) {
+            this.keyPairId = keyPairId;
+        }
+
+        public String getKeyPairState() {
+            return keyPairState;
+        }
+
+        public void setKeyPairState(String keyPairState) {
+            this.keyPairState = keyPairState;
         }
     }
 }

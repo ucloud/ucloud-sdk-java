@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeNetworkAclResponse extends Response {
 
-    /** ACL的信息，具体结构见下方AclInfo: false */
+    /** ACL的信息，具体结构见下方AclInfo */
     @SerializedName("AclList")
     private List<AclInfo> aclList;
 
@@ -33,35 +33,35 @@ public class DescribeNetworkAclResponse extends Response {
 
     public static class AclInfo extends Response {
 
-        /** ACL所属的VPC ID: false */
+        /** ACL所属的VPC ID */
         @SerializedName("VpcId")
         private String vpcId;
 
-        /** ACL的ID: false */
+        /** ACL的ID */
         @SerializedName("AclId")
         private String aclId;
 
-        /** 名称: false */
+        /** 名称 */
         @SerializedName("AclName")
         private String aclName;
 
-        /** 描述: false */
+        /** 描述 */
         @SerializedName("Description")
         private String description;
 
-        /** 所有的规则: false */
+        /** 所有的规则 */
         @SerializedName("Entries")
         private List<AclEntryInfo> entries;
 
-        /** 所有的绑定关系，具体结构见下方AssociationInfo: false */
+        /** 所有的绑定关系，具体结构见下方AssociationInfo */
         @SerializedName("Associations")
         private List<AssociationInfo> associations;
 
-        /** 创建的Unix时间戳: false */
+        /** 创建的Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 更改的Unix时间戳: false */
+        /** 更改的Unix时间戳 */
         @SerializedName("UpdateTime")
         private Integer updateTime;
 
@@ -132,19 +132,19 @@ public class DescribeNetworkAclResponse extends Response {
 
     public static class AssociationInfo extends Response {
 
-        /** 绑定ID: false */
+        /** 绑定ID */
         @SerializedName("AssociationId")
         private String associationId;
 
-        /** ACL的ID: false */
+        /** ACL的ID */
         @SerializedName("AclId")
         private String aclId;
 
-        /** 绑定的子网ID: false */
+        /** 绑定的子网ID */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 创建的Unix时间戳: false */
+        /** 创建的Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
@@ -183,51 +183,51 @@ public class DescribeNetworkAclResponse extends Response {
 
     public static class AclEntryInfo extends Response {
 
-        /** Entry的ID: false */
+        /** Entry的ID */
         @SerializedName("EntryId")
         private String entryId;
 
-        /** 优先级: false */
+        /** 优先级 */
         @SerializedName("Priority")
         private String priority;
 
-        /** 出向或者入向: false */
+        /** 出向或者入向 */
         @SerializedName("Direction")
         private String direction;
 
-        /** 针对的IP协议: false */
+        /** 针对的IP协议 */
         @SerializedName("IpProtocol")
         private String ipProtocol;
 
-        /** IP段的CIDR信息: false */
+        /** IP段的CIDR信息 */
         @SerializedName("CidrBlock")
         private String cidrBlock;
 
-        /** Port的段信息: false */
+        /** Port的段信息 */
         @SerializedName("PortRange")
         private String portRange;
 
-        /** 匹配规则的动作: false */
+        /** 匹配规则的动作 */
         @SerializedName("EntryAction")
         private String entryAction;
 
-        /** 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。: false */
+        /** 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。 */
         @SerializedName("TargetType")
         private Integer targetType;
 
-        /** 创建的Unix时间戳: false */
+        /** 创建的Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 更改的Unix时间戳: false */
+        /** 更改的Unix时间戳 */
         @SerializedName("UpdateTime")
         private Integer updateTime;
 
-        /** 应用目标资源信息。TargetType为0时不返回该值。具体结构见下方TargetResourceInfo: false */
+        /** 应用目标资源信息。TargetType为0时不返回该值。具体结构见下方TargetResourceInfo */
         @SerializedName("TargetResourceList")
         private List<TargetResourceInfo> targetResourceList;
 
-        /** 应用目标资源数量。TargetType为0时不返回该值。: false */
+        /** 应用目标资源数量。TargetType为0时不返回该值。 */
         @SerializedName("TargetResourceCount")
         private Integer targetResourceCount;
 
@@ -330,35 +330,35 @@ public class DescribeNetworkAclResponse extends Response {
 
     public static class TargetResourceInfo extends Response {
 
-        /** 子网ID: false */
+        /** 子网ID */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("ResourceName")
         private String resourceName;
 
-        /** 资源ID: false */
+        /** 资源ID */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 资源类型: false */
+        /** 资源类型 */
         @SerializedName("ResourceType")
         private Integer resourceType;
 
-        /** 资源绑定的虚拟网卡的名称: false */
+        /** 资源绑定的虚拟网卡的名称 */
         @SerializedName("SubResourceName")
         private String subResourceName;
 
-        /** 资源绑定的虚拟网卡的ID: false */
+        /** 资源绑定的虚拟网卡的ID */
         @SerializedName("SubResourceId")
         private String subResourceId;
 
-        /** 资源绑定虚拟网卡的类型: false */
+        /** 资源绑定虚拟网卡的类型 */
         @SerializedName("SubResourceType")
         private Integer subResourceType;
 
-        /** 资源内网IP: false */
+        /** 资源内网IP */
         @SerializedName("PrivateIp")
         private String privateIp;
 

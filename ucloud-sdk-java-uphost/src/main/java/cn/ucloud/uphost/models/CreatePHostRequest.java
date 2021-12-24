@@ -20,89 +20,89 @@ import java.util.List;
 
 public class CreatePHostRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** ImageId，可以通过接口 [DescribePHostImage](api/uphost-api/describe_phost_image.html)获取: false */
+    /** ImageId，可以通过接口 [DescribePHostImage](api/uphost-api/describe_phost_image.html)获取 */
     @NotEmpty
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 密码（密码需使用base64进行编码）: false */
+    /** 密码（密码需使用base64进行编码） */
     @NotEmpty
     @UCloudParam("Password")
     private String password;
 
-    /** 物理机类型，默认为：db-2(基础型-SAS-V3): false */
+    /** 物理机类型，默认为：db-2(基础型-SAS-V3) */
     @UCloudParam("Type")
     private String type;
 
-    /** 物理机名称，默认为phost: false */
+    /** 物理机名称，默认为phost */
     @UCloudParam("Name")
     private String name;
 
-    /** 物理机备注，默认为空: false */
+    /** 物理机备注，默认为空 */
     @UCloudParam("Remark")
     private String remark;
 
-    /** 业务组，默认为default: false */
+    /** 业务组，默认为default */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 计费模式，枚举值为：year, 按年付费； month,按月付费；默认为按月付费: false */
+    /** 计费模式，枚举值为：year, 按年付费； month,按月付费；默认为按月付费 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。: false */
+    /** 购买时长，1-10个月或1-10年；默认值为1。月付时，此参数传0，代表购买至月末，1代表整月。 */
     @UCloudParam("Quantity")
     private String quantity;
 
     /**
      * 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见
-     * [DescribeFirewall](api/unet-api/describe_firewall.html)。: false
+     * [DescribeFirewall](api/unet-api/describe_firewall.html)。
      */
     @UCloudParam("SecurityGroupId")
     private String securityGroupId;
 
-    /** Raid配置，默认Raid10 支持:Raid0、Raid1、Raid5、Raid10，NoRaid: false */
+    /** Raid配置，默认Raid10 支持:Raid0、Raid1、Raid5、Raid10，NoRaid */
     @UCloudParam("Raid")
     private String raid;
 
-    /** VPC ID，不填为默认，VPC2.0下需要填写此字段。: false */
+    /** VPC ID，不填为默认，VPC2.0下需要填写此字段。 */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 子网ID，不填为默认，VPC2.0下需要填写此字段。: false */
+    /** 子网ID，不填为默认，VPC2.0下需要填写此字段。 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 网络环境，可选千兆：1G ，万兆：10G， 默认1G。智能网卡可以选择25G。: false */
+    /** 网络环境，可选千兆：1G ，万兆：10G， 默认1G。智能网卡可以选择25G。 */
     @UCloudParam("Cluster")
     private String cluster;
 
-    /** : false */
+    /** */
     @UCloudParam("Disks")
     private List<Disks> disks;
 
-    /** 指定内网ip创建: false */
+    /** 指定内网ip创建 */
     @UCloudParam("VpcIp")
     private String vpcIp;
 
-    /** 代金券: false */
+    /** 代金券 */
     @UCloudParam("CouponId")
     private String couponId;
 
@@ -260,19 +260,19 @@ public class CreatePHostRequest extends Request {
 
     public static class Disks extends Request {
 
-        /** 裸金属机型参数->是否是系统盘。枚举值： True，是系统盘。 False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。: false */
+        /** 裸金属机型参数->是否是系统盘。枚举值： True，是系统盘。 False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
         @UCloudParam("IsBoot")
         private String isBoot;
 
-        /** 裸金属机型参数->磁盘类型：枚举值：CLOUD_RSSD: false */
+        /** 裸金属机型参数->磁盘类型：枚举值：CLOUD_RSSD */
         @UCloudParam("Type")
         private String type;
 
-        /** 裸金属机型参数->磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。: false */
+        /** 裸金属机型参数->磁盘大小，单位GB，必须是10GB的整数倍。系统盘20-500GB，数据盘单块盘20-32000GB。 */
         @UCloudParam("Size")
         private Integer size;
 
-        /** 裸金属机型参数->云盘代金券id。不适用于系统盘。请通过DescribeCoupon接口查询，或登录用户中心查看: false */
+        /** 裸金属机型参数->云盘代金券id。不适用于系统盘。请通过DescribeCoupon接口查询，或登录用户中心查看 */
         @UCloudParam("CouponId")
         private String couponId;
 

@@ -19,15 +19,15 @@ import java.util.List;
 
 public class DescribeVIPResponse extends Response {
 
-    /** 内网VIP详情，请见VIPDetailSet: false */
+    /** 内网VIP详情，请见VIPDetailSet */
     @SerializedName("VIPSet")
     private List<VIPDetailSet> vipSet;
 
-    /** 内网VIP地址列表: false */
+    /** 内网VIP地址列表 */
     @SerializedName("DataSet")
     private List<String> dataSet;
 
-    /** vip数量: false */
+    /** vip数量 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -57,43 +57,43 @@ public class DescribeVIPResponse extends Response {
 
     public static class VIPDetailSet extends Response {
 
-        /** 地域: false */
+        /** 地域 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 虚拟ip id: false */
+        /** 虚拟ip id */
         @SerializedName("VIPId")
         private String vipId;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 真实主机ip: false */
+        /** 真实主机ip */
         @SerializedName("RealIp")
         private String realIp;
 
-        /** 虚拟ip: false */
+        /** 虚拟ip */
         @SerializedName("VIP")
         private String vip;
 
-        /** 子网id: false */
+        /** 子网id */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** VPC id: false */
+        /** VPC id */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** VIP名称: false */
+        /** VIP名称 */
         @SerializedName("Name")
         private String name;
 
-        /** VIP备注: false */
+        /** VIP备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** VIP所属业务组: false */
+        /** VIP所属业务组 */
         @SerializedName("Tag")
         private String tag;
 

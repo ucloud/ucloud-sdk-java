@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUFileTokenResponse extends Response {
 
-    /** 令牌描述信息: false */
+    /** 令牌描述信息 */
     @SerializedName("DataSet")
     private List<UFileTokenSet> dataSet;
 
@@ -33,50 +33,50 @@ public class DescribeUFileTokenResponse extends Response {
 
     public static class UFileTokenSet extends Response {
 
-        /** 令牌ID: false */
+        /** 令牌ID */
         @SerializedName("TokenId")
         private String tokenId;
 
-        /** 令牌名称: false */
+        /** 令牌名称 */
         @SerializedName("TokenName")
         private String tokenName;
 
-        /** 令牌公钥: false */
+        /** 令牌公钥 */
         @SerializedName("PublicKey")
         private String publicKey;
 
-        /** 令牌私钥: false */
+        /** 令牌私钥 */
         @SerializedName("PrivateKey")
         private String privateKey;
 
         /**
          * 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE
-         * , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]: false
+         * , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
          */
         @SerializedName("AllowedOps")
         private List<String> allowedOps;
 
-        /** 令牌允许操作的key前缀: false */
+        /** 令牌允许操作的key前缀 */
         @SerializedName("AllowedPrefixes")
         private List<String> allowedPrefixes;
 
-        /** 令牌允许操作的bucket: false */
+        /** 令牌允许操作的bucket */
         @SerializedName("AllowedBuckets")
         private List<String> allowedBuckets;
 
-        /** 令牌的超时时间点: false */
+        /** 令牌的超时时间点 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 修改时间: false */
+        /** 修改时间 */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** 所属地区: false */
+        /** 所属地区 */
         @SerializedName("Region")
         private String region;
 

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUMemResponse extends Response {
 
-    /** 根据过滤条件得到的总数: false */
+    /** 根据过滤条件得到的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** UMem实例列表, 详细参见UMemDataSet: false */
+    /** UMem实例列表, 详细参见UMemDataSet */
     @SerializedName("DataSet")
     private List<UMemDataSet> dataSet;
 
@@ -45,113 +45,111 @@ public class DescribeUMemResponse extends Response {
 
     public static class UMemDataSet extends Response {
 
-        /** 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html): false */
+        /** 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
 
-        /** 是否拥有只读Slave “Yes” 包含 “No” 不包含: false */
+        /** 是否拥有只读Slave “Yes” 包含 “No” 不包含 */
         @SerializedName("OwnSlave")
         private String ownSlave;
 
-        /** UMEM实例列表 UMemSlaveDataSet 如果没有slave，则没有该字段: false */
+        /** UMEM实例列表 UMemSlaveDataSet 如果没有slave，则没有该字段 */
         @SerializedName("DataSet")
         private List<UMemSlaveDataSet> dataSet;
 
-        /** 表示实例是主库还是从库,master,slave 仅主备redis返回该项参数: false */
+        /** 表示实例是主库还是从库,master,slave 仅主备redis返回该项参数 */
         @SerializedName("Role")
         private String role;
 
-        /** 主备redis和分布式redis运维时间 0 //0点 1 //1点 以此类推 单机版memcache不返回该项: false */
+        /** 主备redis和分布式redis运维时间 0 //0点 1 //1点 以此类推 单机版memcache不返回该项 */
         @SerializedName("RewriteTime")
         private Integer rewriteTime;
 
-        /** vpc: false */
+        /** vpc */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 子网: false */
+        /** 子网 */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** 资源ID: false */
+        /** 资源ID */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 到期时间: false */
+        /** 到期时间 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 空间类型:single(无热备),double(热备): false */
+        /** 空间类型:single(无热备),double(热备) */
         @SerializedName("Type")
         private String type;
 
-        /** 协议类型: memcache, redis: false */
+        /** 协议类型: memcache, redis */
         @SerializedName("Protocol")
         private String protocol;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 使用量单位MB: false */
+        /** 使用量单位MB */
         @SerializedName("UsedSize")
         private Integer usedSize;
 
         /**
          * 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中
          * DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中
-         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败: false
+         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
          */
         @SerializedName("State")
         private String state;
 
-        /** 计费模式，Year, Month, Dynamic, Trial: false */
+        /** 计费模式，Year, Month, Dynamic, Trial */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** IP端口信息请，参见UMemSpaceAddressSet: false */
+        /** IP端口信息请，参见UMemSpaceAddressSet */
         @SerializedName("Address")
         private List<UMemSpaceAddressSet> address;
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /**
-         * distributed: 分布式版Redis,或者分布式Memcache；single：主备版Redis,或者单机Memcache；performance：高性能版: false
-         */
+        /** distributed: 分布式版Redis,或者分布式Memcache；single：主备版Redis,或者单机Memcache；performance：高性能版 */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 节点的配置ID: false */
+        /** 节点的配置ID */
         @SerializedName("ConfigId")
         private String configId;
 
-        /** 是否需要自动备份,enable,disable: false */
+        /** 是否需要自动备份,enable,disable */
         @SerializedName("AutoBackup")
         private String autoBackup;
 
-        /** 自动备份开始时间,单位小时计,范围[0-23]: false */
+        /** 自动备份开始时间,单位小时计,范围[0-23] */
         @SerializedName("BackupTime")
         private Integer backupTime;
 
-        /** 是否开启高可用,enable,disable: false */
+        /** 是否开启高可用,enable,disable */
         @SerializedName("HighAvailability")
         private String highAvailability;
 
-        /** Redis版本信息: false */
+        /** Redis版本信息 */
         @SerializedName("Version")
         private String version;
 
-        /** 跨机房URedis，slave redis所在可用区，参见 [可用区列表](../summary/regionlist.html): false */
+        /** 跨机房URedis，slave redis所在可用区，参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("SlaveZone")
         private String slaveZone;
 
@@ -366,11 +364,11 @@ public class DescribeUMemResponse extends Response {
 
     public static class UMemSpaceAddressSet extends Response {
 
-        /** UMem实例访问IP: false */
+        /** UMem实例访问IP */
         @SerializedName("IP")
         private String ip;
 
-        /** UMem实例访问Port: false */
+        /** UMem实例访问Port */
         @SerializedName("Port")
         private Integer port;
 
@@ -393,101 +391,99 @@ public class DescribeUMemResponse extends Response {
 
     public static class UMemSlaveDataSet extends Response {
 
-        /** 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html): false */
+        /** 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
 
-        /** 子网: false */
+        /** 子网 */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** vpc: false */
+        /** vpc */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** : false */
+        /** */
         @SerializedName("VirtualIP")
         private String virtualIP;
 
-        /** 主备Redis返回运维时间 0//0点 1 //1点 以此类推: false */
+        /** 主备Redis返回运维时间 0//0点 1 //1点 以此类推 */
         @SerializedName("RewriteTime")
         private Integer rewriteTime;
 
-        /** 主实例id: false */
+        /** 主实例id */
         @SerializedName("MasterGroupId")
         private String masterGroupId;
 
-        /** 资源id: false */
+        /** 资源id */
         @SerializedName("GroupId")
         private String groupId;
 
-        /** 端口: false */
+        /** 端口 */
         @SerializedName("Port")
         private Integer port;
 
-        /** 实力大小: false */
+        /** 实力大小 */
         @SerializedName("MemorySize")
         private Integer memorySize;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("GroupName")
         private String groupName;
 
-        /** 表示实例是主库还是从库,master,slave: false */
+        /** 表示实例是主库还是从库,master,slave */
         @SerializedName("Role")
         private String role;
 
-        /** 修改时间: false */
+        /** 修改时间 */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 到期时间: false */
+        /** 到期时间 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 使用量单位MB: false */
+        /** 使用量单位MB */
         @SerializedName("UsedSize")
         private Integer usedSize;
 
         /**
          * 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中
          * DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中
-         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败: false
+         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
          */
         @SerializedName("State")
         private String state;
 
-        /** 计费模式，Year, Month, Dynamic, Trial: false */
+        /** 计费模式，Year, Month, Dynamic, Trial */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /**
-         * distributed: 分布式版Redis,或者分布式Memcache；single：主备版Redis,或者单机Memcache；performance：高性能版: false
-         */
+        /** distributed: 分布式版Redis,或者分布式Memcache；single：主备版Redis,或者单机Memcache；performance：高性能版 */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 节点的配置ID: false */
+        /** 节点的配置ID */
         @SerializedName("ConfigId")
         private String configId;
 
-        /** Redis版本信息: false */
+        /** Redis版本信息 */
         @SerializedName("Version")
         private String version;
 

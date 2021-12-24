@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetAvailableResourceForPolicyResponse extends Response {
 
-    /** 支持资源类型的信息: false */
+    /** 支持资源类型的信息 */
     @SerializedName("DataSet")
     private List<GetAvailableResourceForPolicyDataSet> dataSet;
 
@@ -33,17 +33,16 @@ public class GetAvailableResourceForPolicyResponse extends Response {
 
     public static class GetAvailableResourceForPolicyDataSet extends Response {
 
-        /** 资源的Id: false */
+        /** 资源的Id */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 资源对应的内网Ip: false */
+        /** 资源对应的内网Ip */
         @SerializedName("PrivateIP")
         private String privateIP;
 
         /**
-         * 资源类型。"uhost"：云主机； "upm"，物理云主机； "hadoophost"：hadoop节点； "fortresshost"：堡垒机： "udockhost"，容器:
-         * false
+         * 资源类型。"uhost"：云主机； "upm"，物理云主机； "hadoophost"：hadoop节点； "fortresshost"：堡垒机： "udockhost"，容器
          */
         @SerializedName("ResourceType")
         private String resourceType;

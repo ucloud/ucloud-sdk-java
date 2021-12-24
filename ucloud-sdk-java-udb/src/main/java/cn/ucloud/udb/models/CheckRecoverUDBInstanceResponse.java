@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CheckRecoverUDBInstanceResponse extends Response {
 
-    /** 核查成功返回值为可以回档到的最近时刻,核查失败不返回: false */
+    /** 核查成功返回值为可以回档到的最近时刻,核查失败不返回 */
     @SerializedName("LastestTime")
     private Integer lastestTime;
 

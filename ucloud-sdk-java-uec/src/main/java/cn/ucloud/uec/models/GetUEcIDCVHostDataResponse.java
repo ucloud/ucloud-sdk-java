@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUEcIDCVHostDataResponse extends Response {
 
-    /** 监控数据集合: false */
+    /** 监控数据集合 */
     @SerializedName("DataSets")
     private DataSet dataSets;
 
@@ -33,43 +33,43 @@ public class GetUEcIDCVHostDataResponse extends Response {
 
     public static class DataSet extends Response {
 
-        /** cpu使用率: false */
+        /** cpu使用率 */
         @SerializedName("CPUUtilization")
         private List<MonitorInfo> cpuUtilization;
 
-        /** 内存使用率: false */
+        /** 内存使用率 */
         @SerializedName("MemUtilization")
         private List<MonitorInfo> memUtilization;
 
-        /** 网卡出带宽: false */
+        /** 网卡出带宽 */
         @SerializedName("NICOut")
         private List<MonitorInfo> nicOut;
 
-        /** 网卡入带宽: false */
+        /** 网卡入带宽 */
         @SerializedName("NICIn")
         private List<MonitorInfo> nicIn;
 
-        /** 网卡出包量: false */
+        /** 网卡出包量 */
         @SerializedName("NetPacketOut")
         private List<MonitorInfo> netPacketOut;
 
-        /** 网卡入包量: false */
+        /** 网卡入包量 */
         @SerializedName("NetPacketIn")
         private List<MonitorInfo> netPacketIn;
 
-        /** 磁盘读取量: false */
+        /** 磁盘读取量 */
         @SerializedName("IORead")
         private List<MonitorInfo> ioRead;
 
-        /** 磁盘写入量: false */
+        /** 磁盘写入量 */
         @SerializedName("IOWrite")
         private List<MonitorInfo> ioWrite;
 
-        /** 磁盘读取次数: false */
+        /** 磁盘读取次数 */
         @SerializedName("DiskReadOps")
         private List<MonitorInfo> diskReadOps;
 
-        /** 磁盘写入次数: false */
+        /** 磁盘写入次数 */
         @SerializedName("DiskWriteOps")
         private List<MonitorInfo> diskWriteOps;
 
@@ -156,11 +156,11 @@ public class GetUEcIDCVHostDataResponse extends Response {
 
     public static class MonitorInfo extends Response {
 
-        /** 时间戳: false */
+        /** 时间戳 */
         @SerializedName("TimeStamp")
         private Integer timeStamp;
 
-        /** 值: false */
+        /** 值 */
         @SerializedName("Value")
         private Integer value;
 

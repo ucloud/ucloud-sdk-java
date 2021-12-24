@@ -13,24 +13,25 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUHostInstanceVncInfoResponse extends Response {
 
-    /** UHost实例ID: false */
+    /** UHost实例ID */
     @SerializedName("UHostId")
     private String uHostId;
 
-    /** Vnc登录IP: false */
+    /** Vnc登录IP */
     @SerializedName("VncIP")
     private String vncIP;
 
-    /** Vnc登录端口: false */
+    /** Vnc登录端口 */
     @SerializedName("VncPort")
     private Integer vncPort;
 
-    /** Vnc 登录密码: false */
+    /** Vnc 登录密码 */
     @SerializedName("VncPassword")
     private String vncPassword;
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUMemcachePriceResponse extends Response {
 
-    /** 价格列表, 参见 UMemcachePriceSet: false */
+    /** 价格列表, 参见 UMemcachePriceSet */
     @SerializedName("DataSet")
     private List<UMemcachePriceSet> dataSet;
 
@@ -33,19 +33,19 @@ public class DescribeUMemcachePriceResponse extends Response {
 
     public static class UMemcachePriceSet extends Response {
 
-        /** 计费模式，Year, Month, Dynamic: false */
+        /** 计费模式，Year, Month, Dynamic */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 总价格: false */
+        /** 总价格 */
         @SerializedName("Price")
         private Integer price;
 
-        /** 产品列表价: false */
+        /** 产品列表价 */
         @SerializedName("ListPrice")
         private Integer listPrice;
 
-        /** 原价: false */
+        /** 原价 */
         @SerializedName("OriginalPrice")
         private Integer originalPrice;
 

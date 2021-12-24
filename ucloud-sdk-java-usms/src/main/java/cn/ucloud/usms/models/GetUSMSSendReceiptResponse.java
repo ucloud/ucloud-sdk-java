@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUSMSSendReceiptResponse extends Response {
 
-    /** 回执信息集合: false */
+    /** 回执信息集合 */
     @SerializedName("Data")
     private List<ReceiptPerSession> data;
 
@@ -33,11 +33,11 @@ public class GetUSMSSendReceiptResponse extends Response {
 
     public static class ReceiptPerSession extends Response {
 
-        /** 发送短信时返回的SessionNo: false */
+        /** 发送短信时返回的SessionNo */
         @SerializedName("SessionNo")
         private String sessionNo;
 
-        /** 每个手机号的短信回执信息集合: false */
+        /** 每个手机号的短信回执信息集合 */
         @SerializedName("ReceiptSet")
         private List<ReceiptPerPhone> receiptSet;
 
@@ -60,34 +60,34 @@ public class GetUSMSSendReceiptResponse extends Response {
 
     public static class ReceiptPerPhone extends Response {
 
-        /** 手机号码: false */
+        /** 手机号码 */
         @SerializedName("Phone")
         private String phone;
 
-        /** 消耗短信条数: false */
+        /** 消耗短信条数 */
         @SerializedName("CostCount")
         private Integer costCount;
 
         /**
          * 回执结果，枚举值：\\ > 发送成功: 代表成功 \\ > Success: 代表成功 \\ > 发送失败: 代表失败 \\ > Fail: 代表失败 \\ > 状态未知:
-         * 代表未知 \\ > Unknow: 代表未知: false
+         * 代表未知 \\ > Unknow: 代表未知
          */
         @SerializedName("ReceiptResult")
         private String receiptResult;
 
-        /** 状态报告编码: false */
+        /** 状态报告编码 */
         @SerializedName("ReceiptCode")
         private String receiptCode;
 
-        /** 回执结果描述: false */
+        /** 回执结果描述 */
         @SerializedName("ReceiptDesc")
         private String receiptDesc;
 
-        /** 回执返回时间: false */
+        /** 回执返回时间 */
         @SerializedName("ReceiptTime")
         private Integer receiptTime;
 
-        /** 自定义的业务标识ID，字符串: false */
+        /** 自定义的业务标识ID，字符串 */
         @SerializedName("UserId")
         private String userId;
 

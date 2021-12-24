@@ -13,53 +13,54 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateUMemSpaceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 内存大小, 单位:GB, 范围[1~1024]: false */
+    /** 内存大小, 单位:GB, 范围[1~1024] */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 空间名称,长度(6<=size<=63): false */
+    /** 空间名称,长度(6<=size<=63) */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 协议:memcache, redis (默认redis).注意:redis无single类型: false */
+    /** 协议:memcache, redis (默认redis).注意:redis无single类型 */
     @UCloudParam("Protocol")
     private String protocol;
 
-    /** 空间类型:single(无热备),double(热备)(默认: double): false */
+    /** 空间类型:single(无热备),double(热备)(默认: double) */
     @UCloudParam("Type")
     private String type;
 
-    /** Year , Month, Dynamic, Trial 默认: Month: false */
+    /** Year , Month, Dynamic, Trial 默认: Month */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长 默认: 1: false */
+    /** 购买时长 默认: 1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 使用的代金券id: false */
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
 

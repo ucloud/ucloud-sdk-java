@@ -13,26 +13,27 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ReleaseVIPRequest extends Request {
 
-    /** 地域: false */
+    /** 地域 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区: false */
+    /** 可用区 */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写: false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 内网VIP的id: false */
+    /** 内网VIP的id */
     @NotEmpty
     @UCloudParam("VIPId")
     private String vipId;

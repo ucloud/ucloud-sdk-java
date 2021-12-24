@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUDBParamGroupResponse extends Response {
 
-    /** 参数组列表 参照UDBParamGroupSet: false */
+    /** 参数组列表 参照UDBParamGroupSet */
     @SerializedName("DataSet")
     private List<UDBParamGroupSet> dataSet;
 
-    /** 参数组总数，列表操作时才会有该参数: false */
+    /** 参数组总数，列表操作时才会有该参数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,31 +45,31 @@ public class DescribeUDBParamGroupResponse extends Response {
 
     public static class UDBParamGroupSet extends Response {
 
-        /** 参数组id: false */
+        /** 参数组id */
         @SerializedName("GroupId")
         private Integer groupId;
 
-        /** 参数组名称: false */
+        /** 参数组名称 */
         @SerializedName("GroupName")
         private String groupName;
 
         /**
          * DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下
          * 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6
-         * 7：percona-5.6: false
+         * 7：percona-5.6
          */
         @SerializedName("DBTypeId")
         private String dbTypeId;
 
-        /** 参数组描述: false */
+        /** 参数组描述 */
         @SerializedName("Description")
         private String description;
 
-        /** 参数组是否可修改: false */
+        /** 参数组是否可修改 */
         @SerializedName("Modifiable")
         private Boolean modifiable;
 
-        /** 参数的键值对表 UDBParamMemberSet: false */
+        /** 参数的键值对表 UDBParamMemberSet */
         @SerializedName("ParamMember")
         private List<UDBParamMemberSet> paramMember;
 
@@ -124,31 +124,31 @@ public class DescribeUDBParamGroupResponse extends Response {
 
     public static class UDBParamMemberSet extends Response {
 
-        /** 参数名称: false */
+        /** 参数名称 */
         @SerializedName("Key")
         private String key;
 
-        /** 参数值: false */
+        /** 参数值 */
         @SerializedName("Value")
         private String value;
 
-        /** 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool: false */
+        /** 参数值应用类型，取值范围为{0,10,20,30},各值 代表意义为 0-unknown、10-int、20-string、 30-bool */
         @SerializedName("ValueType")
         private Integer valueType;
 
-        /** 允许的值(根据参数类型，用分隔符表示): false */
+        /** 允许的值(根据参数类型，用分隔符表示) */
         @SerializedName("AllowedVal")
         private String allowedVal;
 
-        /** 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic: false */
+        /** 参数值应用类型,取值范围为{0,10,20}，各值代表 意义为0-unknown、10-static、20-dynamic */
         @SerializedName("ApplyType")
         private Integer applyType;
 
-        /** 是否可更改，默认为false: false */
+        /** 是否可更改，默认为false */
         @SerializedName("Modifiable")
         private Boolean modifiable;
 
-        /** 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20: false */
+        /** 允许值的格式类型，取值范围为{0,10,20}，意义分 别为PVFT_UNKOWN=0,PVFT_RANGE=10, PVFT_ENUM=20 */
         @SerializedName("FormatType")
         private Integer formatType;
 

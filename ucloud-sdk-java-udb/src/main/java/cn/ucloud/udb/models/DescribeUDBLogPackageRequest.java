@@ -20,48 +20,46 @@ import java.util.List;
 
 public class DescribeUDBLogPackageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 分页显示的起始偏移，列表操作则指定: false */
+    /** 分页显示的起始偏移，列表操作则指定 */
     @NotEmpty
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 分页显示的条目数，列表操作则指定: false */
+    /** 分页显示的条目数，列表操作则指定 */
     @NotEmpty
     @UCloudParam("Limit")
     private Integer limit;
 
-    /**
-     * 需要列出的备份文件类型，每种文件的值如下 2 : BINLOG\_BACKUP 3 : SLOW\_QUERY\_BACKUP 4 : ERRORLOG\_BACKUP: false
-     */
+    /** 需要列出的备份文件类型，每种文件的值如下 2 : BINLOG\_BACKUP 3 : SLOW\_QUERY\_BACKUP 4 : ERRORLOG\_BACKUP */
     @UCloudParam("Type")
     private Integer type;
 
-    /** Types作为Type的补充，支持多值传入，可以获取多个类型的日志记录，如：Types.0=2&Types.1=3: false */
+    /** Types作为Type的补充，支持多值传入，可以获取多个类型的日志记录，如：Types.0=2&Types.1=3 */
     @UCloudParam("Types")
     private List<Integer> types;
 
-    /** DB实例Id，如果指定，则只获取该db的备份信息: false */
+    /** DB实例Id，如果指定，则只获取该db的备份信息 */
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 过滤条件:起始时间(时间戳): false */
+    /** 过滤条件:起始时间(时间戳) */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 过滤条件:结束时间(时间戳): false */
+    /** 过滤条件:结束时间(时间戳) */
     @UCloudParam("EndTime")
     private Integer endTime;
 

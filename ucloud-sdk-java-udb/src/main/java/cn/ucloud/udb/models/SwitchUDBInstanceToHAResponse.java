@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class SwitchUDBInstanceToHAResponse extends Response {
 
-    /** 切换后高可用db实例的Id: false */
+    /** 切换后高可用db实例的Id */
     @SerializedName("DBId")
     private String dbId;
 

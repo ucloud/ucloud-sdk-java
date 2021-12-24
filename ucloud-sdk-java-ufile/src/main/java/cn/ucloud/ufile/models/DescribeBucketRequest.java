@@ -13,28 +13,29 @@
  */
 package cn.ucloud.ufile.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeBucketRequest extends Request {
 
-    /** 如果提供此参数，则获取相应地域下所有空间的空间名称(只返回空间名称信息): false */
+    /** 如果提供此参数，则获取相应地域下所有空间的空间名称(只返回空间名称信息) */
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 待获取Bucket的名称，若不提供，则获取所有Bucket: false */
+    /** 待获取Bucket的名称，若不提供，则获取所有Bucket */
     @UCloudParam("BucketName")
     private String bucketName;
 
-    /** 获取所有Bucket列表的偏移数目，默认为0: false */
+    /** 获取所有Bucket列表的偏移数目，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 获取所有Bucket列表的限制数目，默认为20: false */
+    /** 获取所有Bucket列表的限制数目，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 

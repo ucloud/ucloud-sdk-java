@@ -13,12 +13,13 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeURedisUpgradePriceResponse extends Response {
 
-    /** 扩容差价，单位: 元，保留小数点后两位有效数字: false */
+    /** 扩容差价，单位: 元，保留小数点后两位有效数字 */
     @SerializedName("Price")
     private Double price;
 

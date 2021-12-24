@@ -13,13 +13,14 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class FreezeMemberRequest extends Request {
 
-    /** 需要被冻结的成员Email: false */
+    /** 需要被冻结的成员Email */
     @NotEmpty
     @UCloudParam("MemberEmail")
     private String memberEmail;

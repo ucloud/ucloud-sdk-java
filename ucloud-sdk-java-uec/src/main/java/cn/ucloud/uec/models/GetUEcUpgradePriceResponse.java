@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUEcUpgradePriceResponse extends Response {
 
-    /** 规格调整差价: false */
+    /** 规格调整差价 */
     @SerializedName("Price")
     private Integer price;
 

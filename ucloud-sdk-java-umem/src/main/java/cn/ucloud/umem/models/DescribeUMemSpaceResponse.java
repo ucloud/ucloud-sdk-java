@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUMemSpaceResponse extends Response {
 
-    /** JSON 格式的UMem内存空间实例列表, 详细参见 UMemSpaceSet: false */
+    /** JSON 格式的UMem内存空间实例列表, 详细参见 UMemSpaceSet */
     @SerializedName("DataSet")
     private List<UMemSpaceSet> dataSet;
 
-    /** 根据过滤条件得到的总数: false */
+    /** 根据过滤条件得到的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,67 +45,67 @@ public class DescribeUMemSpaceResponse extends Response {
 
     public static class UMemSpaceSet extends Response {
 
-        /** 可用区，参见[可用区列表](../summary/regionlist.html): false */
+        /** 可用区，参见[可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
 
-        /** : false */
+        /** */
         @SerializedName("Tag")
         private String tag;
 
-        /** 运维时间 0 //0点 1 //1点 依次类推: false */
+        /** 运维时间 0 //0点 1 //1点 依次类推 */
         @SerializedName("RewriteTime")
         private Integer rewriteTime;
 
-        /** 内存空间ID: false */
+        /** 内存空间ID */
         @SerializedName("SpaceId")
         private String spaceId;
 
-        /** : false */
+        /** */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** : false */
+        /** */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 内存空间名称: false */
+        /** 内存空间名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 到期时间: false */
+        /** 到期时间 */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 空间类型:single(无热备),double(热备): false */
+        /** 空间类型:single(无热备),double(热备) */
         @SerializedName("Type")
         private String type;
 
-        /** 协议类型: memcache, redis: false */
+        /** 协议类型: memcache, redis */
         @SerializedName("Protocol")
         private String protocol;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 使用量单位MB: false */
+        /** 使用量单位MB */
         @SerializedName("UsedSize")
         private Integer usedSize;
 
-        /** Starting:创建中 Running:运行中 Fail:失败: false */
+        /** Starting:创建中 Running:运行中 Fail:失败 */
         @SerializedName("State")
         private String state;
 
-        /** Year, Month, Dynamic, Trial: false */
+        /** Year, Month, Dynamic, Trial */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** IP端口信息请参见 UMemSpaceAddressSet: false */
+        /** IP端口信息请参见 UMemSpaceAddressSet */
         @SerializedName("Address")
         private List<UMemSpaceAddressSet> address;
 
@@ -240,11 +240,11 @@ public class DescribeUMemSpaceResponse extends Response {
 
     public static class UMemSpaceAddressSet extends Response {
 
-        /** UMem实例访问IP: false */
+        /** UMem实例访问IP */
         @SerializedName("IP")
         private String ip;
 
-        /** UMem实例访问Port: false */
+        /** UMem实例访问Port */
         @SerializedName("Port")
         private Integer port;
 

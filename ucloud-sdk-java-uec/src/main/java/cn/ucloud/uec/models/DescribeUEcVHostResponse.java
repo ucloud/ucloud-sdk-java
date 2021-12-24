@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUEcVHostResponse extends Response {
 
-    /** 满足条件的节点总数: false */
+    /** 满足条件的节点总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 节点列表: false */
+    /** 节点列表 */
     @SerializedName("NodeList")
     private List<NodeInfo> nodeList;
 
@@ -45,87 +45,87 @@ public class DescribeUEcVHostResponse extends Response {
 
     public static class NodeInfo extends Response {
 
-        /** 节点名称: false */
+        /** 节点名称 */
         @SerializedName("NodeName")
         private String nodeName;
 
-        /** 节点ID: false */
+        /** 节点ID */
         @SerializedName("NodeId")
         private String nodeId;
 
-        /** Cpu核数: false */
+        /** Cpu核数 */
         @SerializedName("CoreNum")
         private Integer coreNum;
 
-        /** 节点内存大小，单位GB: false */
+        /** 节点内存大小，单位GB */
         @SerializedName("MemSize")
         private Integer memSize;
 
-        /** 系统盘大小， 单位GB: false */
+        /** 系统盘大小， 单位GB */
         @SerializedName("SysDiskSize")
         private Integer sysDiskSize;
 
-        /** 数据盘大小， 单位GB: false */
+        /** 数据盘大小， 单位GB */
         @SerializedName("DiskSize")
         private Integer diskSize;
 
-        /** 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常: false */
+        /** 节点状态，1部署中，2待启动，3启动中，4运行中，5正在停止，6已停止，7正在更新，8正在重启，9正在删除， 10已经删除,11异常 */
         @SerializedName("State")
         private Integer state;
 
-        /** 节点带宽限制， 单位Mbs: false */
+        /** 节点带宽限制， 单位Mbs */
         @SerializedName("NetLimit")
         private Integer netLimit;
 
-        /** 机房ID: false */
+        /** 机房ID */
         @SerializedName("IdcId")
         private String idcId;
 
-        /** 机房名称: false */
+        /** 机房名称 */
         @SerializedName("OcName")
         private String ocName;
 
-        /** 省份: false */
+        /** 省份 */
         @SerializedName("Province")
         private String province;
 
-        /** 城市: false */
+        /** 城市 */
         @SerializedName("City")
         private String city;
 
-        /** 运营商类型： 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通: false */
+        /** 运营商类型： 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 */
         @SerializedName("Type")
         private Integer type;
 
-        /** 付费类型：1按时, 2按月,3按年: false */
+        /** 付费类型：1按时, 2按月,3按年 */
         @SerializedName("ChargeType")
         private Integer chargeType;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 过期时间: false */
+        /** 过期时间 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** 镜像名称: false */
+        /** 镜像名称 */
         @SerializedName("ImageName")
         private String imageName;
 
-        /** 外网ip集合（详情参考NodeIpList）: false */
+        /** 外网ip集合（详情参考NodeIpList） */
         @SerializedName("NodeIpList")
         private List<NodeIpList> nodeIpList;
 
-        /** 防火墙Id: false */
+        /** 防火墙Id */
         @SerializedName("FirewallId")
         private String firewallId;
 
-        /** 机器类型(normal-经济型,hf-标准型,g-GPU型): false */
+        /** 机器类型(normal-经济型,hf-标准型,g-GPU型) */
         @SerializedName("ProductType")
         private String productType;
 
-        /** 内网ip列表: false */
+        /** 内网ip列表 */
         @SerializedName("InnerIps")
         private List<String> innerIps;
 
@@ -300,15 +300,15 @@ public class DescribeUEcVHostResponse extends Response {
 
     public static class NodeIpList extends Response {
 
-        /** 外网ip: false */
+        /** 外网ip */
         @SerializedName("Ip")
         private String ip;
 
-        /** 运营商: false */
+        /** 运营商 */
         @SerializedName("Isp")
         private String isp;
 
-        /** 运营商名称: false */
+        /** 运营商名称 */
         @SerializedName("IspName")
         private String ispName;
 

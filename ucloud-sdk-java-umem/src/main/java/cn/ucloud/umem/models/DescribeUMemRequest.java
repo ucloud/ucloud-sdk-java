@@ -13,42 +13,43 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUMemRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 协议类型: memcache, redis: false */
+    /** 协议类型: memcache, redis */
     @NotEmpty
     @UCloudParam("Protocol")
     private String protocol;
 
-    /** 分页显示的起始偏移, 默认值为0: false */
+    /** 分页显示的起始偏移, 默认值为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 分页显示的条目数, 默认值为20: false */
+    /** 分页显示的条目数, 默认值为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 资源ID: false */
+    /** 资源ID */
     @UCloudParam("ResourceId")
     private String resourceId;
 

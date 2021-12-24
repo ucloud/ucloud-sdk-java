@@ -20,37 +20,37 @@ import java.util.List;
 
 public class DescribePHostImageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像类别，枚举值，Base是基础镜像；: false */
+    /** 镜像类别，枚举值，Base是基础镜像； */
     @UCloudParam("ImageType")
     private String imageType;
 
-    /** 镜像ID: false */
+    /** 镜像ID */
     @UCloudParam("ImageId")
     private List<String> imageId;
 
-    /** 数据偏移量，默认为0: false */
+    /** 数据偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20: false */
+    /** 返回数据长度，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 机器型号，只支持当前zone的展示机型: false */
+    /** 机器型号，只支持当前zone的展示机型 */
     @UCloudParam("MachineType")
     private String machineType;
 

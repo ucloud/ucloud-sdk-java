@@ -13,20 +13,21 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUEcVHostISPRequest extends Request {
 
-    /** 运营商名称: false */
+    /** 运营商名称 */
     @UCloudParam("IspName")
     private String ispName;
 
-    /** 省份: false */
+    /** 省份 */
     @UCloudParam("Province")
     private String province;
 
-    /** 城市: false */
+    /** 城市 */
     @UCloudParam("City")
     private String city;
 

@@ -22,35 +22,35 @@ public class GetUcdnProIspBandwidthV2Request extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 查询的起始日期，格式为Unix Timestamp : false */
+    /** 查询的起始日期，格式为Unix Timestamp */
     @NotEmpty
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询的结束日期，格式为Unix Timestamp : false */
+    /** 查询的结束日期，格式为Unix Timestamp */
     @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 时间粒度 0 (按5分钟粒度) 1 (按小时粒度) 2(按天粒度) 3(按分钟粒度）: false */
+    /** 时间粒度 0 (按5分钟粒度) 1 (按小时粒度) 2(按天粒度) 3(按分钟粒度） */
     @NotEmpty
     @UCloudParam("Type")
     private Integer type;
 
-    /** 域名id，创建域名时生成的id。默认全部域名: false */
+    /** 域名id，创建域名时生成的id。默认全部域名 */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
-    /** 省份代码（省份拼音），可以传多个，不传则查询所有省份: false */
+    /** 省份代码（省份拼音），可以传多个，不传则查询所有省份 */
     @UCloudParam("Province")
     private List<String> province;
 
-    /** 运营商代码（运营商拼音），一次只能查询一个运营商，不传递默认取所有运营商: false */
+    /** 运营商代码（运营商拼音），一次只能查询一个运营商，不传递默认取所有运营商 */
     @UCloudParam("Isp")
     private String isp;
 

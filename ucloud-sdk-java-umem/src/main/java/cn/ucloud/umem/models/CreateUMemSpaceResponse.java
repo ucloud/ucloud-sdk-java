@@ -13,12 +13,13 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUMemSpaceResponse extends Response {
 
-    /** 创建内存空间ID列表: false */
+    /** 创建内存空间ID列表 */
     @SerializedName("SpaceId")
     private String spaceId;
 

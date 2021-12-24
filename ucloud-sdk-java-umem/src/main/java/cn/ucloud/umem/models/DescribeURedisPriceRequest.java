@@ -13,44 +13,45 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeURedisPriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 量大小,单位:GB 取值范围[1-32]: false */
+    /** 量大小,单位:GB 取值范围[1-32] */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 计费模式，Year， Month， Dynamic；如果不指定，则一次性获取三种计费: false */
+    /** 计费模式，Year， Month， Dynamic；如果不指定，则一次性获取三种计费 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 计费模式为Dynamic时，购买的时长, 默认为1: false */
+    /** 计费模式为Dynamic时，购买的时长, 默认为1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 是否是跨机房URedis(默认false): false */
+    /** 是否是跨机房URedis(默认false) */
     @UCloudParam("RegionFlag")
     private Boolean regionFlag;
 
-    /** 产品类型：MS_Redis（标准主备版），S_Redis（从库），默认为MS_Redis: false */
+    /** 产品类型：MS_Redis（标准主备版），S_Redis（从库），默认为MS_Redis */
     @UCloudParam("ProductType")
     private String productType;
 

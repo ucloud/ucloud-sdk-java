@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -21,17 +22,17 @@ public class DeleteUEcCustomImageRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像ID: false */
+    /** 镜像ID */
     @NotEmpty
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 机房ID，带机房ID表示只删除指定机房镜像: false */
+    /** 机房ID，带机房ID表示只删除指定机房镜像 */
     @UCloudParam("IdcId")
     private String idcId;
 

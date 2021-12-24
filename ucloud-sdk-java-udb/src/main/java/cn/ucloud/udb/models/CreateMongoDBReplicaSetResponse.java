@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CreateMongoDBReplicaSetResponse extends Response {
 
-    /** 返回所有副本集成员的Id: false */
+    /** 返回所有副本集成员的Id */
     @SerializedName("DBIds")
     private List<String> dbIds;
 

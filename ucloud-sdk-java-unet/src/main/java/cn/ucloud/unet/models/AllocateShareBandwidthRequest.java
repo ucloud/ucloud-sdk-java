@@ -13,41 +13,42 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class AllocateShareBandwidthRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。: false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 共享带宽名字: false */
+    /** 共享带宽名字 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 付费方式:Year 按年,Month 按月,Dynamic 按时;: false */
+    /** 付费方式:Year 按年,Month 按月,Dynamic 按时; */
     @NotEmpty
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 共享带宽值: false */
+    /** 共享带宽值 */
     @NotEmpty
     @UCloudParam("ShareBandwidth")
     private Integer shareBandwidth;
 
-    /** 购买时长: false */
+    /** 购买时长 */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 共享带宽类型，IPv4或者IPv6，不传默认IPv4: false */
+    /** 共享带宽类型，IPv4或者IPv6，不传默认IPv4 */
     @UCloudParam("IPVersion")
     private String ipVersion;
 

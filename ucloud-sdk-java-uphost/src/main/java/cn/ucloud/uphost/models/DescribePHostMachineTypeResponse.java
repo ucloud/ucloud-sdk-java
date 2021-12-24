@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribePHostMachineTypeResponse extends Response {
 
-    /** 机型列表，模型：PHostMachineTypeSet: false */
+    /** 机型列表，模型：PHostMachineTypeSet */
     @SerializedName("MachineTypes")
     private List<PHostMachineTypeSet> machineTypes;
 
@@ -31,111 +31,21 @@ public class DescribePHostMachineTypeResponse extends Response {
         this.machineTypes = machineTypes;
     }
 
-    public static class PHostComponentSet extends Response {
-
-        /** 组件名称: false */
-        @SerializedName("Name")
-        private String name;
-
-        /** 组件数量: false */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-    }
-
-    public static class PHostDiskSet extends Response {
-
-        /** 单盘大小，单位GB: false */
-        @SerializedName("Space")
-        private Integer space;
-
-        /** 磁盘数量: false */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** 磁盘属性: false */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘名称，sys/data: false */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘IO性能，单位MB/s（待废弃）: false */
-        @SerializedName("IOCap")
-        private Integer ioCap;
-
-        public Integer getSpace() {
-            return space;
-        }
-
-        public void setSpace(Integer space) {
-            this.space = space;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getIOCap() {
-            return ioCap;
-        }
-
-        public void setIOCap(Integer ioCap) {
-            this.ioCap = ioCap;
-        }
-    }
-
     public static class PHostCPUSet extends Response {
 
-        /** CPU型号: false */
+        /** CPU型号 */
         @SerializedName("Model")
         private String model;
 
-        /** CPU主频: false */
+        /** CPU主频 */
         @SerializedName("Frequence")
         private Double frequence;
 
-        /** CPU个数: false */
+        /** CPU个数 */
         @SerializedName("Count")
         private Integer count;
 
-        /** CPU核数: false */
+        /** CPU核数 */
         @SerializedName("CoreCount")
         private Integer coreCount;
 
@@ -174,31 +84,31 @@ public class DescribePHostMachineTypeResponse extends Response {
 
     public static class PHostMachineTypeSet extends Response {
 
-        /** 物理云主机机型别名，全网唯一。: false */
+        /** 物理云主机机型别名，全网唯一。 */
         @SerializedName("Type")
         private String type;
 
-        /** CPU信息: false */
+        /** CPU信息 */
         @SerializedName("CPU")
         private PHostCPUSet cpu;
 
-        /** 内存大小，单位MB: false */
+        /** 内存大小，单位MB */
         @SerializedName("Memory")
         private Integer memory;
 
-        /** 磁盘信息: false */
+        /** 磁盘信息 */
         @SerializedName("Disks")
         private List<PHostDiskSet> disks;
 
-        /** 其他组件信息: false */
+        /** 其他组件信息 */
         @SerializedName("Components")
         private PHostComponentSet components;
 
-        /** 集群库存信息: false */
+        /** 集群库存信息 */
         @SerializedName("Clusters")
         private List<PHostClusterSet> clusters;
 
-        /** 是否支持Raid。枚举值：支持：YES；不支持：NO: false */
+        /** 是否支持Raid。枚举值：支持：YES；不支持：NO */
         @SerializedName("RaidSupported")
         private String raidSupported;
 
@@ -261,11 +171,11 @@ public class DescribePHostMachineTypeResponse extends Response {
 
     public static class PHostClusterSet extends Response {
 
-        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G；: false */
+        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
         @SerializedName("Name")
         private String name;
 
-        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut: false */
+        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
         @SerializedName("StockStatus")
         private String stockStatus;
 
@@ -283,6 +193,96 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setStockStatus(String stockStatus) {
             this.stockStatus = stockStatus;
+        }
+    }
+
+    public static class PHostComponentSet extends Response {
+
+        /** 组件名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 组件数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+    }
+
+    public static class PHostDiskSet extends Response {
+
+        /** 单盘大小，单位GB */
+        @SerializedName("Space")
+        private Integer space;
+
+        /** 磁盘数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** 磁盘属性 */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘名称，sys/data */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘IO性能，单位MB/s（待废弃） */
+        @SerializedName("IOCap")
+        private Integer ioCap;
+
+        public Integer getSpace() {
+            return space;
+        }
+
+        public void setSpace(Integer space) {
+            this.space = space;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getIOCap() {
+            return ioCap;
+        }
+
+        public void setIOCap(Integer ioCap) {
+            this.ioCap = ioCap;
         }
     }
 }

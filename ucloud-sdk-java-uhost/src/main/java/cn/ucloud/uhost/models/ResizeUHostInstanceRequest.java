@@ -13,42 +13,43 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ResizeUHostInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UHost实例ID 参见 [DescribeUHostInstance](describe_uhost_instance.html): false */
+    /** UHost实例ID 参见 [DescribeUHostInstance](describe_uhost_instance.html) */
     @NotEmpty
     @UCloudParam("UHostId")
     private String uHostId;
 
-    /** 虚拟CPU核数。可选参数：1-240（可选范围与UHostType相关）。默认值为当前实例的CPU核数: false */
+    /** 虚拟CPU核数。可选参数：1-240（可选范围与UHostType相关）。默认值为当前实例的CPU核数 */
     @UCloudParam("CPU")
     private Integer cpu;
 
-    /** 内存大小。单位：MB。范围 ：[1024, 1966080]，取值为1024的倍数（可选范围与UHostType相关）。默认值为当前实例的内存大小。: false */
+    /** 内存大小。单位：MB。范围 ：[1024, 1966080]，取值为1024的倍数（可选范围与UHostType相关）。默认值为当前实例的内存大小。 */
     @UCloudParam("Memory")
     private Integer memory;
 
-    /** 网卡升降级（1，表示升级，2表示降级，0表示不变）: false */
+    /** 网卡升降级（1，表示升级，2表示降级，0表示不变） */
     @UCloudParam("NetCapValue")
     private Integer netCapValue;
 

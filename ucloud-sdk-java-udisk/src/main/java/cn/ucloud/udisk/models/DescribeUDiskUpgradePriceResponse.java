@@ -13,16 +13,17 @@
  */
 package cn.ucloud.udisk.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDiskUpgradePriceResponse extends Response {
 
-    /** 价格: false */
+    /** 价格 */
     @SerializedName("Price")
     private Integer price;
 
-    /** 用户折后价 (对应计费CustomPrice): false */
+    /** 用户折后价 (对应计费CustomPrice) */
     @SerializedName("OriginalPrice")
     private Integer originalPrice;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.usms.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUSMSTemplateResponse extends Response {
 
-    /** 短信模板ID（短信模板申请时的工单ID）: false */
+    /** 短信模板ID（短信模板申请时的工单ID） */
     @SerializedName("TemplateId")
     private String templateId;
 

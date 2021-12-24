@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
@@ -20,24 +21,24 @@ public class DescribeUEcFirewallRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 防火墙ID，默认为返回所有防火墙: false */
+    /** 防火墙ID，默认为返回所有防火墙 */
     @UCloudParam("FirewallId")
     private String firewallId;
 
-    /** 绑定防火墙组的虚拟机资源ID: false */
+    /** 绑定防火墙组的虚拟机资源ID */
     @UCloudParam("ResourceId")
     private String resourceId;
 
-    /** 返回数据长度，默认为20: false */
+    /** 返回数据长度，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 列表起始位置偏移量，默认为0: false */
+    /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 

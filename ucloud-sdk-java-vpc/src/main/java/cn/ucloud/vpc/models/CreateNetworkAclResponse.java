@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateNetworkAclResponse extends Response {
 
-    /** 创建的ACL的ID: false */
+    /** 创建的ACL的ID */
     @SerializedName("AclId")
     private String aclId;
 

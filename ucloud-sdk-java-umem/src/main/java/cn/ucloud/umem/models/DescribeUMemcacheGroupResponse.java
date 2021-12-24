@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUMemcacheGroupResponse extends Response {
 
-    /** 组的总的节点个数: false */
+    /** 组的总的节点个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 组列表,参见 UMemcacheGroupSet: false */
+    /** 组列表,参见 UMemcacheGroupSet */
     @SerializedName("DataSet")
     private List<UMemcacheGroupSet> dataSet;
 
@@ -45,63 +45,63 @@ public class DescribeUMemcacheGroupResponse extends Response {
 
     public static class UMemcacheGroupSet extends Response {
 
-        /** 组ID: false */
+        /** 组ID */
         @SerializedName("GroupId")
         private String groupId;
 
-        /** 组名称: false */
+        /** 组名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 节点的配置ID: false */
+        /** 节点的配置ID */
         @SerializedName("ConfigId")
         private String configId;
 
-        /** 节点的虚拟IP地址: false */
+        /** 节点的虚拟IP地址 */
         @SerializedName("VirtualIP")
         private String virtualIP;
 
-        /** 节点分配的服务端口: false */
+        /** 节点分配的服务端口 */
         @SerializedName("Port")
         private Integer port;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 使用量单位MB: false */
+        /** 使用量单位MB */
         @SerializedName("UsedSize")
         private Integer usedSize;
 
-        /** Memcache版本信息,默认为1.4.31: false */
+        /** Memcache版本信息,默认为1.4.31 */
         @SerializedName("Version")
         private String version;
 
         /**
          * 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行
          * Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败Restarting //
-         * 重启中: false
+         * 重启中
          */
         @SerializedName("State")
         private String state;
 
-        /** 创建时间 (UNIX时间戳): false */
+        /** 创建时间 (UNIX时间戳) */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 修改时间 (UNIX时间戳): false */
+        /** 修改时间 (UNIX时间戳) */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** 过期时间 (UNIX时间戳): false */
+        /** 过期时间 (UNIX时间戳) */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** 计费类型:Year,Month,Dynamic 默认Dynamic: false */
+        /** 计费类型:Year,Month,Dynamic 默认Dynamic */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 

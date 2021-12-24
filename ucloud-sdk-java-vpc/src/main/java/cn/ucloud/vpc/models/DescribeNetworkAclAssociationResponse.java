@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeNetworkAclAssociationResponse extends Response {
 
-    /** 绑定信息列表: false */
+    /** 绑定信息列表 */
     @SerializedName("AssociationList")
     private List<AssociationInfo> associationList;
 
@@ -33,19 +33,19 @@ public class DescribeNetworkAclAssociationResponse extends Response {
 
     public static class AssociationInfo extends Response {
 
-        /** 绑定ID: false */
+        /** 绑定ID */
         @SerializedName("AssociationId")
         private String associationId;
 
-        /** ACL的ID: false */
+        /** ACL的ID */
         @SerializedName("AclId")
         private String aclId;
 
-        /** 绑定的子网ID: false */
+        /** 绑定的子网ID */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 创建的Unix时间戳: false */
+        /** 创建的Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 

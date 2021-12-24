@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeShareBandwidthResponse extends Response {
 
-    /** 共享带宽信息组 参见 UnetShareBandwidthSet: false */
+    /** 共享带宽信息组 参见 UnetShareBandwidthSet */
     @SerializedName("DataSet")
     private List<UnetShareBandwidthSet> dataSet;
 
-    /** 符合条件的共享带宽总数，大于等于返回DataSet长度: false */
+    /** 符合条件的共享带宽总数，大于等于返回DataSet长度 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,35 +45,35 @@ public class DescribeShareBandwidthResponse extends Response {
 
     public static class UnetShareBandwidthSet extends Response {
 
-        /** 共享带宽类型: false */
+        /** 共享带宽类型 */
         @SerializedName("IPVersion")
         private String ipVersion;
 
-        /** 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps: false */
+        /** 共享带宽值(预付费)/共享带宽峰值(后付费), 单位Mbps */
         @SerializedName("ShareBandwidth")
         private Integer shareBandwidth;
 
-        /** 共享带宽的资源ID: false */
+        /** 共享带宽的资源ID */
         @SerializedName("ShareBandwidthId")
         private String shareBandwidthId;
 
-        /** 付费方式, 预付费:Year 按年,Month 按月,Dynamic 按需;后付费:PostPay(按月): false */
+        /** 付费方式, 预付费:Year 按年,Month 按月,Dynamic 按需;后付费:PostPay(按月) */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 创建时间, 格式为Unix Timestamp: false */
+        /** 创建时间, 格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 过期时间, 格式为Unix Timestamp: false */
+        /** 过期时间, 格式为Unix Timestamp */
         @SerializedName("ExpireTime")
         private Integer expireTime;
 
-        /** EIP信息,详情见 EIPSetData: false */
+        /** EIP信息,详情见 EIPSetData */
         @SerializedName("EIPSet")
         private List<EIPSetData> eipSet;
 
-        /** 共享带宽名称: false */
+        /** 共享带宽名称 */
         @SerializedName("Name")
         private String name;
 
@@ -144,15 +144,15 @@ public class DescribeShareBandwidthResponse extends Response {
 
     public static class EIPSetData extends Response {
 
-        /** EIP带宽值: false */
+        /** EIP带宽值 */
         @SerializedName("Bandwidth")
         private Integer bandwidth;
 
-        /** EIP的IP信息，详情见EIPAddrSet: false */
+        /** EIP的IP信息，详情见EIPAddrSet */
         @SerializedName("EIPAddr")
         private List<EIPAddrSet> eipAddr;
 
-        /** EIP资源Id: false */
+        /** EIP资源Id */
         @SerializedName("EIPId")
         private String eipId;
 
@@ -183,11 +183,11 @@ public class DescribeShareBandwidthResponse extends Response {
 
     public static class EIPAddrSet extends Response {
 
-        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际.: false */
+        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际. */
         @SerializedName("OperatorName")
         private String operatorName;
 
-        /** 弹性IP地址: false */
+        /** 弹性IP地址 */
         @SerializedName("IP")
         private String ip;
 

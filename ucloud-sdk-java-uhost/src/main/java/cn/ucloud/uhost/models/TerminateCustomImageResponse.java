@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class TerminateCustomImageResponse extends Response {
 
-    /** 自制镜像Id: false */
+    /** 自制镜像Id */
     @SerializedName("ImageId")
     private String imageId;
 

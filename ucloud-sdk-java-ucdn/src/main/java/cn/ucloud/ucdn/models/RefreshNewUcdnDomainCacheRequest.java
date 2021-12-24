@@ -22,12 +22,12 @@ public class RefreshNewUcdnDomainCacheRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 刷新类型，file代表文件刷新，dir 代表路径刷新: false */
+    /** 刷新类型，file代表文件刷新，dir 代表路径刷新 */
     @NotEmpty
     @UCloudParam("Type")
     private String type;
@@ -35,7 +35,7 @@ public class RefreshNewUcdnDomainCacheRequest extends Request {
     /**
      * 需要刷新的URL，n 从自然数0开始，刷新多个URL列表时，一次最多提交30个。必须以”http://域名/”开始。目录要以”/”结尾，
      * 如刷新目录a下所有文件，格式为：http://abc.ucloud.cn/a/；如刷新文件目录a下面img.png文件，
-     * 格式为http://abc.ucloud.cn/a/img.png。请正确提交需要刷新的域名: false
+     * 格式为http://abc.ucloud.cn/a/img.png。请正确提交需要刷新的域名
      */
     @NotEmpty
     @UCloudParam("UrlList")

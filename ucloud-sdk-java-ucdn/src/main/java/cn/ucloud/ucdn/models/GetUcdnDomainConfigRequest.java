@@ -21,24 +21,24 @@ public class GetUcdnDomainConfigRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 数据偏移量，默认0，非负整数: false */
+    /** 数据偏移量，默认0，非负整数 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度， 默认全部，非负整数: false */
+    /** 返回数据长度， 默认全部，非负整数 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 域名id，创建域名时生成的id。默认获取账号下的所有域名信息,n为自然数,从DomainId.0开始。: false */
+    /** 域名id，创建域名时生成的id。默认获取账号下的所有域名信息,n为自然数,从DomainId.0开始。 */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
-    /** 产品类型ucdn，可不填，默认为ucdn: false */
+    /** 产品类型ucdn，可不填，默认为ucdn */
     @UCloudParam("ChannelType")
     private String channelType;
 

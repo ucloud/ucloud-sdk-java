@@ -22,34 +22,34 @@ public class GetUcdnProIspRequestNumV2Request extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 查询的起始日期，格式为Unix Timestamp 忽略时间部分: false */
+    /** 查询的起始日期，格式为Unix Timestamp 忽略时间部分 */
     @NotEmpty
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 查询的结束日期，格式为Unix Timestamp 忽略时间部分: false */
+    /** 查询的结束日期，格式为Unix Timestamp 忽略时间部分 */
     @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 域名id，创建域名时生成的id。默认全部域名: false */
+    /** 域名id，创建域名时生成的id。默认全部域名 */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
-    /** 省份代码，可以传多个，不传则查询所有省份: false */
+    /** 省份代码，可以传多个，不传则查询所有省份 */
     @UCloudParam("Province")
     private List<String> province;
 
-    /** 运营商代码，一次只能查询一个运营商，不传递默认取所有运营商: false */
+    /** 运营商代码，一次只能查询一个运营商，不传递默认取所有运营商 */
     @UCloudParam("Isp")
     private String isp;
 
-    /** 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度）: false */
+    /** 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天粒度，3表示按照一分钟粒度） */
     @UCloudParam("Type")
     private Integer type;
 

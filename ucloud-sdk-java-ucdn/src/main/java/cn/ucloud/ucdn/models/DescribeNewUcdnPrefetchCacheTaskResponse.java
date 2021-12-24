@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeNewUcdnPrefetchCacheTaskResponse extends Response {
 
-    /** 预热任务的总数: false */
+    /** 预热任务的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 预热任务信息，参考TaskInfo: false */
+    /** 预热任务信息，参考TaskInfo */
     @SerializedName("TaskList")
     private List<TaskInfo> taskList;
 
@@ -43,76 +43,25 @@ public class DescribeNewUcdnPrefetchCacheTaskResponse extends Response {
         this.taskList = taskList;
     }
 
-    public static class TaskInfo extends Response {
-
-        /** 提交任务时返回的任务ID: false */
-        @SerializedName("TaskId")
-        private String taskId;
-
-        /** 任务url的信息列表，参考UrlProgressInfo: false */
-        @SerializedName("UrlLists")
-        private List<UrlProgressInfo> urlLists;
-
-        /** 刷新任务创建的时间。格式为Unix Timestamp: false */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知: false */
-        @SerializedName("Status")
-        private String status;
-
-        public String getTaskId() {
-            return taskId;
-        }
-
-        public void setTaskId(String taskId) {
-            this.taskId = taskId;
-        }
-
-        public List<UrlProgressInfo> getUrlLists() {
-            return urlLists;
-        }
-
-        public void setUrlLists(List<UrlProgressInfo> urlLists) {
-            this.urlLists = urlLists;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public String getStatus() {
-            return status;
-        }
-
-        public void setStatus(String status) {
-            this.status = status;
-        }
-    }
-
     public static class UrlProgressInfo extends Response {
 
-        /** 刷新的单条url: false */
+        /** 刷新的单条url */
         @SerializedName("Url")
         private String url;
 
-        /** 刷新任务创建的时间。格式为Unix Timestamp: false */
+        /** 刷新任务创建的时间。格式为Unix Timestamp */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 任务完成时间。格式为Unix Timestamp: false */
+        /** 任务完成时间。格式为Unix Timestamp */
         @SerializedName("FinishTime")
         private Integer finishTime;
 
-        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知: false */
+        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知 */
         @SerializedName("Status")
         private String status;
 
-        /** 刷新进度，单位%: false */
+        /** 刷新进度，单位% */
         @SerializedName("Progress")
         private Integer progress;
 
@@ -154,6 +103,57 @@ public class DescribeNewUcdnPrefetchCacheTaskResponse extends Response {
 
         public void setProgress(Integer progress) {
             this.progress = progress;
+        }
+    }
+
+    public static class TaskInfo extends Response {
+
+        /** 提交任务时返回的任务ID */
+        @SerializedName("TaskId")
+        private String taskId;
+
+        /** 任务url的信息列表，参考UrlProgressInfo */
+        @SerializedName("UrlLists")
+        private List<UrlProgressInfo> urlLists;
+
+        /** 刷新任务创建的时间。格式为Unix Timestamp */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 刷新任务的当前状态，枚举值：success：成功；wait：排队中；process：处理中；failure：失败； unknow：未知 */
+        @SerializedName("Status")
+        private String status;
+
+        public String getTaskId() {
+            return taskId;
+        }
+
+        public void setTaskId(String taskId) {
+            this.taskId = taskId;
+        }
+
+        public List<UrlProgressInfo> getUrlLists() {
+            return urlLists;
+        }
+
+        public void setUrlLists(List<UrlProgressInfo> urlLists) {
+            this.urlLists = urlLists;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
         }
     }
 }

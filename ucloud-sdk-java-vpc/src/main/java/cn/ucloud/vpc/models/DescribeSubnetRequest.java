@@ -20,44 +20,44 @@ import java.util.List;
 
 public class DescribeSubnetRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 子网id数组，适用于一次查询多个子网信息: false */
+    /** 子网id数组，适用于一次查询多个子网信息 */
     @UCloudParam("SubnetIds")
     private List<String> subnetIds;
 
-    /** 子网id，适用于一次查询一个子网信息: false */
+    /** 子网id，适用于一次查询一个子网信息 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 路由表Id: false */
+    /** 路由表Id */
     @UCloudParam("RouteTableId")
     private String routeTableId;
 
-    /** VPC资源id: false */
+    /** VPC资源id */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 业务组名称，默认为Default: false */
+    /** 业务组名称，默认为Default */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 偏移量，默认为0: false */
+    /** 偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 列表长度，默认为20: false */
+    /** 列表长度，默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 是否返回子网的可用IP数，true为是，false为否，默认不返回: false */
+    /** 是否返回子网的可用IP数，true为是，false为否，默认不返回 */
     @UCloudParam("ShowAvailableIPs")
     private Boolean showAvailableIPs;
 

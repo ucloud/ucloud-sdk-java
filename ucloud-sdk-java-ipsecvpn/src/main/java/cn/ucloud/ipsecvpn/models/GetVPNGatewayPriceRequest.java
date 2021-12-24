@@ -13,32 +13,33 @@
  */
 package cn.ucloud.ipsecvpn.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class GetVPNGatewayPriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPN网关规格。枚举值，包括：标准型：Standard，增强型：Enhanced。: false */
+    /** VPN网关规格。枚举值，包括：标准型：Standard，增强型：Enhanced。 */
     @NotEmpty
     @UCloudParam("Grade")
     private String grade;
 
-    /** 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按需付费(需开启权限); 默认为获取三种价格: false */
+    /** 付费方式, 枚举值为: Year, 按年付费; Month, 按月付费; Dynamic, 按需付费(需开启权限); 默认为获取三种价格 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买时长, 默认: 1: false */
+    /** 购买时长, 默认: 1 */
     @UCloudParam("Quantity")
     private Integer quantity;
 

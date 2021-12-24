@@ -13,22 +13,23 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class BindEIPRequest extends Request {
 
-    /** 地域: false */
+    /** 地域 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写: false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 弹性IP的资源Id: false */
+    /** 弹性IP的资源Id */
     @NotEmpty
     @UCloudParam("EIPId")
     private String eipId;
@@ -36,14 +37,13 @@ public class BindEIPRequest extends Request {
     /**
      * 弹性IP请求绑定的资源类型, 枚举值为: uhost: 云主机; ulb, 负载均衡器 upm: 物理机; hadoophost:
      * 大数据集群;fortresshost：堡垒机；udockhost：容器；udhost：私有专区主机；natgw：natgw；udb：udb；vpngw：ipsec
-     * vpn；ucdr：云灾备；dbaudit：数据库审计；uni：虚拟网卡；cube，Cube容器。如果EIP为普通带宽计费，且带宽值高于2G，则只允许绑定在快杰型云主机和ULB:
-     * false
+     * vpn；ucdr：云灾备；dbaudit：数据库审计；uni：虚拟网卡；cube，Cube容器。如果EIP为普通带宽计费，且带宽值高于2G，则只允许绑定在快杰型云主机和ULB
      */
     @NotEmpty
     @UCloudParam("ResourceType")
     private String resourceType;
 
-    /** 弹性IP请求绑定的资源ID: false */
+    /** 弹性IP请求绑定的资源ID */
     @NotEmpty
     @UCloudParam("ResourceId")
     private String resourceId;

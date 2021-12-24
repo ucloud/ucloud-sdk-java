@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnDomainLogResponse extends Response {
 
-    /** 获取日志的连接地址。具体参考下面LogSetList: false */
+    /** 获取日志的连接地址。具体参考下面LogSetList */
     @SerializedName("LogSet")
     private List<LogSetList> logSet;
 
@@ -33,11 +33,11 @@ public class GetUcdnDomainLogResponse extends Response {
 
     public static class LogSetList extends Response {
 
-        /** 域名: false */
+        /** 域名 */
         @SerializedName("Domain")
         private String domain;
 
-        /** 域名信息列表，参考LogSetInfo: false */
+        /** 域名信息列表，参考LogSetInfo */
         @SerializedName("Logs")
         private List<LogSetInfo> logs;
 
@@ -60,15 +60,15 @@ public class GetUcdnDomainLogResponse extends Response {
 
     public static class LogSetInfo extends Response {
 
-        /** 日志时间UnixTime: false */
+        /** 日志时间UnixTime */
         @SerializedName("Time")
         private Integer time;
 
-        /** 国内日志url列表: false */
+        /** 国内日志url列表 */
         @SerializedName("CnLog")
         private List<String> cnLog;
 
-        /** 国外日志url列表: false */
+        /** 国外日志url列表 */
         @SerializedName("AbroadLog")
         private List<String> abroadLog;
 

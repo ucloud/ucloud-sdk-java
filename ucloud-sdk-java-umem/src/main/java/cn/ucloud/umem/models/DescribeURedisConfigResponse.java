@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeURedisConfigResponse extends Response {
 
-    /** 根据过滤条件得到的总数: false */
+    /** 根据过滤条件得到的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 配置文件列表 参见 URedisConfigSet: false */
+    /** 配置文件列表 参见 URedisConfigSet */
     @SerializedName("DataSet")
     private List<URedisConfigSet> dataSet;
 
@@ -45,43 +45,43 @@ public class DescribeURedisConfigResponse extends Response {
 
     public static class URedisConfigSet extends Response {
 
-        /** Zone: false */
+        /** Zone */
         @SerializedName("Zone")
         private String zone;
 
-        /** 配置ID: false */
+        /** 配置ID */
         @SerializedName("ConfigId")
         private String configId;
 
-        /** 配置名称: false */
+        /** 配置名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 配置描述: false */
+        /** 配置描述 */
         @SerializedName("Description")
         private String description;
 
-        /** 配置对应的Redis版本: false */
+        /** 配置对应的Redis版本 */
         @SerializedName("Version")
         private String version;
 
-        /** 置是否可以修改: false */
+        /** 置是否可以修改 */
         @SerializedName("IsModify")
         private String isModify;
 
-        /** 配置所处的状态: false */
+        /** 配置所处的状态 */
         @SerializedName("State")
         private String state;
 
-        /** 创建时间 (UNIX时间戳): false */
+        /** 创建时间 (UNIX时间戳) */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 修改时间 (UNIX时间戳): false */
+        /** 修改时间 (UNIX时间戳) */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** 是否是跨机房URedis(默认false): false */
+        /** 是否是跨机房URedis(默认false) */
         @SerializedName("RegionFlag")
         private Boolean regionFlag;
 

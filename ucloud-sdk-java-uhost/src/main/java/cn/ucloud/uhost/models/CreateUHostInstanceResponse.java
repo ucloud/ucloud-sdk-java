@@ -19,11 +19,11 @@ import java.util.List;
 
 public class CreateUHostInstanceResponse extends Response {
 
-    /** UHost实例Id集合: false */
+    /** UHost实例Id集合 */
     @SerializedName("UHostIds")
     private List<String> uHostIds;
 
-    /** 【批量创建不会返回】IP信息: false */
+    /** 【批量创建不会返回】IP信息 */
     @SerializedName("IPs")
     private List<String> iPs;
 

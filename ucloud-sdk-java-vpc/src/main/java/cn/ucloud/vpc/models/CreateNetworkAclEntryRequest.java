@@ -20,59 +20,59 @@ import java.util.List;
 
 public class CreateNetworkAclEntryRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** ACL的ID: false */
+    /** ACL的ID */
     @NotEmpty
     @UCloudParam("AclId")
     private String aclId;
 
-    /** Entry的优先级，对于同样的Direction来说，不能重复: false */
+    /** Entry的优先级，对于同样的Direction来说，不能重复 */
     @NotEmpty
     @UCloudParam("Priority")
     private Integer priority;
 
-    /** 出向或者入向（“Ingress”, "Egress"): false */
+    /** 出向或者入向（“Ingress”, "Egress") */
     @NotEmpty
     @UCloudParam("Direction")
     private String direction;
 
-    /** 协议规则描述: false */
+    /** 协议规则描述 */
     @NotEmpty
     @UCloudParam("IpProtocol")
     private String ipProtocol;
 
-    /** IPv4段的CIDR表示: false */
+    /** IPv4段的CIDR表示 */
     @NotEmpty
     @UCloudParam("CidrBlock")
     private String cidrBlock;
 
-    /** 针对的端口范围: false */
+    /** 针对的端口范围 */
     @NotEmpty
     @UCloudParam("PortRange")
     private String portRange;
 
-    /** 规则的行为("Accept", "Reject"): false */
+    /** 规则的行为("Accept", "Reject") */
     @NotEmpty
     @UCloudParam("EntryAction")
     private String entryAction;
 
-    /** 描述。长度限制为不超过32字节。: false */
+    /** 描述。长度限制为不超过32字节。 */
     @UCloudParam("Description")
     private String description;
 
-    /** 应用目标类型。0代表“子网内全部资源”，1代表“子网内指定资源”，默认为0: false */
+    /** 应用目标类型。0代表“子网内全部资源”，1代表“子网内指定资源”，默认为0 */
     @UCloudParam("TargetType")
     private Integer targetType;
 
-    /** 应用目标资源列表。默认为全部资源生效。TargetType为0时不用填写该值。: false */
+    /** 应用目标资源列表。默认为全部资源生效。TargetType为0时不用填写该值。 */
     @UCloudParam("TargetResourceIds")
     private List<String> targetResourceIds;
 

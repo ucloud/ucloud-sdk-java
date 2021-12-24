@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUFSVolume2Response extends Response {
 
-    /** 文件系统总数: false */
+    /** 文件系统总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 文件系统详细信息列表: false */
+    /** 文件系统详细信息列表 */
     @SerializedName("DataSet")
     private List<UFSVolumeInfo2> dataSet;
 
@@ -45,55 +45,55 @@ public class DescribeUFSVolume2Response extends Response {
 
     public static class UFSVolumeInfo2 extends Response {
 
-        /** 文件系统名称: false */
+        /** 文件系统名称 */
         @SerializedName("VolumeName")
         private String volumeName;
 
-        /** 文件系统ID: false */
+        /** 文件系统ID */
         @SerializedName("VolumeId")
         private String volumeId;
 
-        /** 当前文件系统已创建的挂载点数目: false */
+        /** 当前文件系统已创建的挂载点数目 */
         @SerializedName("TotalMountPointNum")
         private Integer totalMountPointNum;
 
-        /** 文件系统允许创建的最大挂载点数目: false */
+        /** 文件系统允许创建的最大挂载点数目 */
         @SerializedName("MaxMountPointNum")
         private Integer maxMountPointNum;
 
-        /** 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型: false */
+        /** 文件系统存储类型，枚举值，Basic表示容量型，Advanced表示性能型 */
         @SerializedName("StorageType")
         private String storageType;
 
-        /** 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议: false */
+        /** 文件系统协议，枚举值，NFSv3表示NFS V3协议，NFSv4表示NFS V4协议 */
         @SerializedName("ProtocolType")
         private String protocolType;
 
-        /** 文件系统备注信息: false */
+        /** 文件系统备注信息 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 文件系统所属业务组: false */
+        /** 文件系统所属业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 文件系统创建时间（unix时间戳）: false */
+        /** 文件系统创建时间（unix时间戳） */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 文件系统过期时间（unix时间戳）: false */
+        /** 文件系统过期时间（unix时间戳） */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** 文件系统大小，单位GB: false */
+        /** 文件系统大小，单位GB */
         @SerializedName("Size")
         private Integer size;
 
-        /** 文件系统当前使用容量，单位GB: false */
+        /** 文件系统当前使用容量，单位GB */
         @SerializedName("UsedSize")
         private Integer usedSize;
 
-        /** 是否过期: false */
+        /** 是否过期 */
         @SerializedName("IsExpired")
         private String isExpired;
 

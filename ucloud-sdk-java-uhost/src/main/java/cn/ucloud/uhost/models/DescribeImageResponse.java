@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeImageResponse extends Response {
 
-    /** 满足条件的镜像总数: false */
+    /** 满足条件的镜像总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 镜像列表详见 UHostImageSet: false */
+    /** 镜像列表详见 UHostImageSet */
     @SerializedName("ImageSet")
     private List<UHostImageSet> imageSet;
 
@@ -45,70 +45,70 @@ public class DescribeImageResponse extends Response {
 
     public static class UHostImageSet extends Response {
 
-        /** 可用区，参见 [可用区列表](../summary/regionlist.html) : false */
+        /** 可用区，参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
 
-        /** 镜像ID: false */
+        /** 镜像ID */
         @SerializedName("ImageId")
         private String imageId;
 
-        /** 镜像名称: false */
+        /** 镜像名称 */
         @SerializedName("ImageName")
         private String imageName;
 
-        /** 操作系统类型：Linux，Windows: false */
+        /** 操作系统类型：Linux，Windows */
         @SerializedName("OsType")
         private String osType;
 
-        /** 操作系统名称: false */
+        /** 操作系统名称 */
         @SerializedName("OsName")
         private String osName;
 
-        /** 镜像类型 标准镜像：Base， 行业镜像：Business，自定义镜像：Custom: false */
+        /** 镜像类型 标准镜像：Base， 行业镜像：Business，自定义镜像：Custom */
         @SerializedName("ImageType")
         private String imageType;
 
         /**
          * 特殊状态标识， 目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra]（网络增强2.0）, HotPlug(热升级), CloudInit,
-         * IPv6: false
+         * IPv6
          */
         @SerializedName("Features")
         private List<String> features;
 
-        /** 行业镜像类型（仅行业镜像将返回这个值）: false */
+        /** 行业镜像类型（仅行业镜像将返回这个值） */
         @SerializedName("FuncType")
         private String funcType;
 
-        /** 集成软件名称（仅行业镜像将返回这个值）: false */
+        /** 集成软件名称（仅行业镜像将返回这个值） */
         @SerializedName("IntegratedSoftware")
         private String integratedSoftware;
 
-        /** 供应商（仅行业镜像将返回这个值）: false */
+        /** 供应商（仅行业镜像将返回这个值） */
         @SerializedName("Vendor")
         private String vendor;
 
-        /** 介绍链接（仅行业镜像将返回这个值）: false */
+        /** 介绍链接（仅行业镜像将返回这个值） */
         @SerializedName("Links")
         private String links;
 
-        /** 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable: false */
+        /** 镜像状态， 可用：Available，制作中：Making， 不可用：Unavailable */
         @SerializedName("State")
         private String state;
 
-        /** 镜像描述: false */
+        /** 镜像描述 */
         @SerializedName("ImageDescription")
         private String imageDescription;
 
-        /** 创建时间，格式为Unix时间戳: false */
+        /** 创建时间，格式为Unix时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 镜像大小: false */
+        /** 镜像大小 */
         @SerializedName("ImageSize")
         private Integer imageSize;
 
-        /** 默认值为空'''。当CentOS 7.3/7.4/7.5等镜像会标记为“Broadwell”: false */
+        /** 默认值为空'''。当CentOS 7.3/7.4/7.5等镜像会标记为“Broadwell” */
         @SerializedName("MinimalCPU")
         private String minimalCPU;
 

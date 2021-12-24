@@ -13,39 +13,40 @@
  */
 package cn.ucloud.uphost.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ModifyPHostInfoRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 物理机资源ID: false */
+    /** 物理机资源ID */
     @NotEmpty
     @UCloudParam("PHostId")
     private String pHostId;
 
-    /** 物理机名称，默认不更改: false */
+    /** 物理机名称，默认不更改 */
     @UCloudParam("Name")
     private String name;
 
-    /** 物理机备注，默认不更改: false */
+    /** 物理机备注，默认不更改 */
     @UCloudParam("Remark")
     private String remark;
 
-    /** 业务组，默认不更改: false */
+    /** 业务组，默认不更改 */
     @UCloudParam("Tag")
     private String tag;
 

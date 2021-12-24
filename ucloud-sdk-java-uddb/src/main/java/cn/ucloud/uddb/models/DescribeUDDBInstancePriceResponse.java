@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uddb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDDBInstancePriceResponse extends Response {
 
-    /** 价格明细, 参考PriceDetailInfo对象定义: false */
+    /** 价格明细, 参考PriceDetailInfo对象定义 */
     @SerializedName("PriceInfo")
     private PriceDetailInfo priceInfo;
 
@@ -32,15 +33,15 @@ public class DescribeUDDBInstancePriceResponse extends Response {
 
     public static class PriceDetailInfo extends Response {
 
-        /** 中间件路由节点费用: false */
+        /** 中间件路由节点费用 */
         @SerializedName("MiddlewarePrice")
         private Double middlewarePrice;
 
-        /** 存储节点费用: false */
+        /** 存储节点费用 */
         @SerializedName("DataNodePrice")
         private Double dataNodePrice;
 
-        /** 只读实例费用: false */
+        /** 只读实例费用 */
         @SerializedName("DataNodeSlavePrice")
         private Double dataNodeSlavePrice;
 

@@ -13,18 +13,19 @@
  */
 package cn.ucloud.usms.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class QueryUSMSTemplateRequest extends Request {
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 模板ID: false */
+    /** 模板ID */
     @NotEmpty
     @UCloudParam("TemplateId")
     private String templateId;

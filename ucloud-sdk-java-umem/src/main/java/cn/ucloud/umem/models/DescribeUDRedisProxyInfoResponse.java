@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUDRedisProxyInfoResponse extends Response {
 
-    /** 代理数据集: false */
+    /** 代理数据集 */
     @SerializedName("DataSet")
     private List<UDRedisProxyInfo> dataSet;
 
@@ -33,19 +33,19 @@ public class DescribeUDRedisProxyInfoResponse extends Response {
 
     public static class UDRedisProxyInfo extends Response {
 
-        /** 代理资源id: false */
+        /** 代理资源id */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 代理id: false */
+        /** 代理id */
         @SerializedName("ProxyId")
         private String proxyId;
 
-        /** 代理ip: false */
+        /** 代理ip */
         @SerializedName("Vip")
         private String vip;
 
-        /** 代理状态: false */
+        /** 代理状态 */
         @SerializedName("State")
         private String state;
 

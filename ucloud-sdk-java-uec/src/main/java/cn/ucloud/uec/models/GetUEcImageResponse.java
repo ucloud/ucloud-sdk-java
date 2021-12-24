@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetUEcImageResponse extends Response {
 
-    /** 获取的镜像信息，具体参考下面ImageInfo: false */
+    /** 获取的镜像信息，具体参考下面ImageInfo */
     @SerializedName("ImageList")
     private List<ImageInfo> imageList;
 
-    /** 镜像总数: false */
+    /** 镜像总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,43 +45,43 @@ public class GetUEcImageResponse extends Response {
 
     public static class ImageInfo extends Response {
 
-        /** 镜像ID: false */
+        /** 镜像ID */
         @SerializedName("ImageId")
         private String imageId;
 
-        /** 镜像名称: false */
+        /** 镜像名称 */
         @SerializedName("ImageName")
         private String imageName;
 
-        /** 镜像类型：1标准镜像，2行业镜像，3自定义镜像: false */
+        /** 镜像类型：1标准镜像，2行业镜像，3自定义镜像 */
         @SerializedName("ImageType")
         private Integer imageType;
 
-        /** 系统类型：unix, windows: false */
+        /** 系统类型：unix, windows */
         @SerializedName("OcType")
         private String ocType;
 
-        /** 镜像描述: false */
+        /** 镜像描述 */
         @SerializedName("ImageDesc")
         private String imageDesc;
 
-        /** 镜像状态：镜像状态 1可用，2不可用，3制作中: false */
+        /** 镜像状态：镜像状态 1可用，2不可用，3制作中 */
         @SerializedName("State")
         private Integer state;
 
-        /** 镜像大小，单位GB: false */
+        /** 镜像大小，单位GB */
         @SerializedName("ImageSize")
         private Integer imageSize;
 
-        /** 镜像创建时间戳: false */
+        /** 镜像创建时间戳 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 部署详情列表: false */
+        /** 部署详情列表 */
         @SerializedName("DeployInfoList")
         private List<DeployImageInfo> deployInfoList;
 
-        /** 是否支持Gpu(1-支持,0-不支持): false */
+        /** 是否支持Gpu(1-支持,0-不支持) */
         @SerializedName("Gpu")
         private Integer gpu;
 
@@ -168,11 +168,11 @@ public class GetUEcImageResponse extends Response {
 
     public static class DeployImageInfo extends Response {
 
-        /** 机房ID: false */
+        /** 机房ID */
         @SerializedName("IdcId")
         private String idcId;
 
-        /** 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中: false */
+        /** 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中 */
         @SerializedName("State")
         private Integer state;
 

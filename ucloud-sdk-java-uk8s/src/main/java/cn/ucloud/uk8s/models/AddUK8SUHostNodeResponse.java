@@ -19,7 +19,7 @@ import java.util.List;
 
 public class AddUK8SUHostNodeResponse extends Response {
 
-    /** Node实例Id集合 : false */
+    /** Node实例Id集合 */
     @SerializedName("NodeIds")
     private List<String> nodeIds;
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUDBInstancePriceResponse extends Response {
 
-    /** 价格 参照UDBInstancePriceSet: false */
+    /** 价格 参照UDBInstancePriceSet */
     @SerializedName("DataSet")
     private List<UDBInstancePriceSet> dataSet;
 
@@ -33,11 +33,11 @@ public class DescribeUDBInstancePriceResponse extends Response {
 
     public static class UDBInstancePriceSet extends Response {
 
-        /** Year， Month， Dynamic，Trial: false */
+        /** Year， Month， Dynamic，Trial */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 价格，单位为分: false */
+        /** 价格，单位为分 */
         @SerializedName("Price")
         private Integer price;
 

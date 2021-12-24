@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeIsolationGroupResponse extends Response {
 
-    /** 硬件隔离组集合。参见数据结构IsolationGroup。: false */
+    /** 硬件隔离组集合。参见数据结构IsolationGroup。 */
     @SerializedName("IsolationGroupSet")
     private List<IsolationGroup> isolationGroupSet;
 
-    /** 硬件隔离组总数: false */
+    /** 硬件隔离组总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,19 +45,19 @@ public class DescribeIsolationGroupResponse extends Response {
 
     public static class IsolationGroup extends Response {
 
-        /** 硬件隔离组名称: false */
+        /** 硬件隔离组名称 */
         @SerializedName("GroupName")
         private String groupName;
 
-        /** 硬件隔离组id: false */
+        /** 硬件隔离组id */
         @SerializedName("GroupId")
         private String groupId;
 
-        /** 每个可用区中的机器数量。参见数据结构SpreadInfo。: false */
+        /** 每个可用区中的机器数量。参见数据结构SpreadInfo。 */
         @SerializedName("SpreadInfoSet")
         private List<SpreadInfo> spreadInfoSet;
 
-        /** 备注: false */
+        /** 备注 */
         @SerializedName("Remark")
         private String remark;
 
@@ -96,11 +96,11 @@ public class DescribeIsolationGroupResponse extends Response {
 
     public static class SpreadInfo extends Response {
 
-        /** 可用区信息: false */
+        /** 可用区信息 */
         @SerializedName("Zone")
         private String zone;
 
-        /** 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。: false */
+        /** 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。 */
         @SerializedName("UHostCount")
         private Integer uHostCount;
 

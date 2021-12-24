@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeVPCIntercomResponse extends Response {
 
-    /** 联通VPC信息数组: false */
+    /** 联通VPC信息数组 */
     @SerializedName("DataSet")
     private List<VPCIntercomInfo> dataSet;
 
@@ -33,35 +33,35 @@ public class DescribeVPCIntercomResponse extends Response {
 
     public static class VPCIntercomInfo extends Response {
 
-        /** 项目Id: false */
+        /** 项目Id */
         @SerializedName("ProjectId")
         private String projectId;
 
-        /** vpc类型（1表示托管VPC，0表示公有云VPC）: false */
+        /** vpc类型（1表示托管VPC，0表示公有云VPC） */
         @SerializedName("VPCType")
         private Integer vpcType;
 
-        /** 项目Id（数字）: false */
+        /** 项目Id（数字） */
         @SerializedName("AccountId")
         private Integer accountId;
 
-        /** VPC的地址空间 : false */
+        /** VPC的地址空间 */
         @SerializedName("Network")
         private List<String> network;
 
-        /** 所属地域: false */
+        /** 所属地域 */
         @SerializedName("DstRegion")
         private String dstRegion;
 
-        /** VPC名字: false */
+        /** VPC名字 */
         @SerializedName("Name")
         private String name;
 
-        /** VPCId: false */
+        /** VPCId */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 业务组（未分组显示为 Default）: false */
+        /** 业务组（未分组显示为 Default） */
         @SerializedName("Tag")
         private String tag;
 

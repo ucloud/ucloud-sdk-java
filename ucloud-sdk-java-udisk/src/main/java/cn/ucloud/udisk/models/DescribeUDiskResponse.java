@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUDiskResponse extends Response {
 
-    /** JSON 格式的UDisk数据列表, 每项参数可见下面 UDiskDataSet: false */
+    /** JSON 格式的UDisk数据列表, 每项参数可见下面 UDiskDataSet */
     @SerializedName("DataSet")
     private List<UDiskDataSet> dataSet;
 
-    /** 根据过滤条件得到的总数: false */
+    /** 根据过滤条件得到的总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,142 +45,141 @@ public class DescribeUDiskResponse extends Response {
 
     public static class UDiskDataSet extends Response {
 
-        /** 可用区: false */
+        /** 可用区 */
         @SerializedName("Zone")
         private String zone;
 
-        /** UDisk实例Id: false */
+        /** UDisk实例Id */
         @SerializedName("UDiskId")
         private String uDiskId;
 
-        /** 实例名称: false */
+        /** 实例名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 容量单位GB: false */
+        /** 容量单位GB */
         @SerializedName("Size")
         private Integer size;
 
         /**
          * 状态:Available(可用),Attaching(挂载中), InUse(已挂载), Detaching(卸载中), Initializating(分配中),
-         * Failed(创建失败),Cloning(克隆中),Restoring(恢复中),RestoreFailed(恢复失败),: false
+         * Failed(创建失败),Cloning(克隆中),Restoring(恢复中),RestoreFailed(恢复失败),
          */
         @SerializedName("Status")
         private String status;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 过期时间: false */
+        /** 过期时间 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
-        /** 挂载的UHost的Id。【即将废弃，建议使用HostId】: false */
+        /** 挂载的UHost的Id。【即将废弃，建议使用HostId】 */
         @SerializedName("UHostId")
         private String uHostId;
 
-        /** 挂载的UHost的Name。【即将废弃，建议使用HostName】: false */
+        /** 挂载的UHost的Name。【即将废弃，建议使用HostName】 */
         @SerializedName("UHostName")
         private String uHostName;
 
-        /** 挂载的UHost的IP。【即将废弃，建议使用HostIP】: false */
+        /** 挂载的UHost的IP。【即将废弃，建议使用HostIP】 */
         @SerializedName("UHostIP")
         private String uHostIP;
 
-        /** 挂载的Host的Id: false */
+        /** 挂载的Host的Id */
         @SerializedName("HostId")
         private String hostId;
 
-        /** 挂载的Host的Name: false */
+        /** 挂载的Host的Name */
         @SerializedName("HostName")
         private String hostName;
 
-        /** 挂载的Host的IP: false */
+        /** 挂载的Host的IP */
         @SerializedName("HostIP")
         private String hostIP;
 
-        /** 挂载的设备名称: false */
+        /** 挂载的设备名称 */
         @SerializedName("DeviceName")
         private String deviceName;
 
-        /** Year,Month,Dynamic,Trial,Postpay: false */
+        /** Year,Month,Dynamic,Trial,Postpay */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 业务组名称: false */
+        /** 业务组名称 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 资源是否过期，过期:"Yes", 未过期:"No": false */
+        /** 资源是否过期，过期:"Yes", 未过期:"No" */
         @SerializedName("IsExpire")
         private String isExpire;
 
-        /** 是否支持数据方舟，支持:"2.0", 不支持:"1.0": false */
+        /** 是否支持数据方舟，支持:"2.0", 不支持:"1.0" */
         @SerializedName("Version")
         private String version;
 
-        /** 是否开启数据方舟，开启:"Yes", 不支持:"No": false */
+        /** 是否开启数据方舟，开启:"Yes", 不支持:"No" */
         @SerializedName("UDataArkMode")
         private String uDataArkMode;
 
-        /** 该盘快照个数: false */
+        /** 该盘快照个数 */
         @SerializedName("SnapshotCount")
         private Integer snapshotCount;
 
-        /** 该盘快照上限: false */
+        /** 该盘快照上限 */
         @SerializedName("SnapshotLimit")
         private Integer snapshotLimit;
 
         /**
          * 请求中的ProtocolVersion字段为1时，需结合IsBoot确定具体磁盘类型:普通数据盘：DiskType:"CLOUD_NORMAL",IsBoot:"False"；
-         * 普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；RSSD系统盘：DiskType:"CLOUD_RSSD",IsBoot:"True"；高效数据盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"False"；高效系统盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"True"。请求中的ProtocolVersion字段为0或没有该字段时，云硬盘类型参照如下:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；RSSD系统盘：RSSDSystemDisk；高效数据盘：EfficiencyDataDisk；高效系统盘：EfficiencySystemDisk。:
-         * false
+         * 普通系统盘：DiskType:"CLOUD_NORMAL",IsBoot:"True"；SSD数据盘：DiskType:"CLOUD_SSD",IsBoot:"False"；SSD系统盘：DiskType:"CLOUD_SSD",IsBoot:"True"；RSSD数据盘：DiskType:"CLOUD_RSSD",IsBoot:"False"；RSSD系统盘：DiskType:"CLOUD_RSSD",IsBoot:"True"；高效数据盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"False"；高效系统盘：DiskType:"CLOUD_EFFICIENCY",IsBoot:"True"。请求中的ProtocolVersion字段为0或没有该字段时，云硬盘类型参照如下:普通数据盘：DataDisk；普通系统盘：SystemDisk；SSD数据盘：SSDDataDisk；SSD系统盘：SSDSystemDisk；RSSD数据盘：RSSDDataDisk；RSSD系统盘：RSSDSystemDisk；高效数据盘：EfficiencyDataDisk；高效系统盘：EfficiencySystemDisk。
          */
         @SerializedName("DiskType")
         private String diskType;
 
-        /** 是否支持克隆，1支持 ，0不支持: false */
+        /** 是否支持克隆，1支持 ，0不支持 */
         @SerializedName("CloneEnable")
         private Integer cloneEnable;
 
-        /** 是否支持快照，1支持 ，0不支持: false */
+        /** 是否支持快照，1支持 ，0不支持 */
         @SerializedName("SnapEnable")
         private Integer snapEnable;
 
-        /** 是否支持开启方舟，1支持 ，0不支持: false */
+        /** 是否支持开启方舟，1支持 ，0不支持 */
         @SerializedName("ArkSwitchEnable")
         private Integer arkSwitchEnable;
 
-        /** 是否是加密盘，是:"Yes", 否:"No": false */
+        /** 是否是加密盘，是:"Yes", 否:"No" */
         @SerializedName("UKmsMode")
         private String uKmsMode;
 
-        /** 该盘的cmk id: false */
+        /** 该盘的cmk id */
         @SerializedName("CmkId")
         private String cmkId;
 
-        /** 该盘的密文密钥: false */
+        /** 该盘的密文密钥 */
         @SerializedName("DataKey")
         private String dataKey;
 
-        /** 该盘cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘): false */
+        /** 该盘cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘) */
         @SerializedName("CmkIdStatus")
         private String cmkIdStatus;
 
-        /** cmk id 别名: false */
+        /** cmk id 别名 */
         @SerializedName("CmkIdAlias")
         private String cmkIdAlias;
 
-        /** 是否是系统盘，是："True", 否："False": false */
+        /** 是否是系统盘，是："True", 否："False" */
         @SerializedName("IsBoot")
         private String isBoot;
 
-        /** 该盘的备份方式。快照服务："SnapshotService"；数据方舟："UDataArk"；无备份方式："": false */
+        /** 该盘的备份方式。快照服务："SnapshotService"；数据方舟："UDataArk"；无备份方式："" */
         @SerializedName("BackupMode")
         private String backupMode;
 
-        /** RDMA集群id，仅RSSD返回该值；其他类型云盘返回""。当云盘的此值与快杰云主机的RdmaClusterId相同时，RSSD可以挂载到这台云主机。: false */
+        /** RDMA集群id，仅RSSD返回该值；其他类型云盘返回""。当云盘的此值与快杰云主机的RdmaClusterId相同时，RSSD可以挂载到这台云主机。 */
         @SerializedName("RdmaClusterId")
         private String rdmaClusterId;
 

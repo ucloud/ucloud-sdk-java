@@ -20,28 +20,28 @@ import java.util.List;
 
 public class DescribeEIPRequest extends Request {
 
-    /** 地域: false */
+    /** 地域 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写: false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 弹性IP的资源ID如果为空, 则返回当前 Region中符合条件的的所有EIP: false */
+    /** 弹性IP的资源ID如果为空, 则返回当前 Region中符合条件的的所有EIP */
     @UCloudParam("EIPIds")
     private List<String> eipIds;
 
-    /** 数据偏移量, 默认为0: false */
+    /** 数据偏移量, 默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 数据分页值, 默认为20: false */
+    /** 数据分页值, 默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** IP地址，支持通过ip查询，如果ip与EIP都传，会取并集查询: false */
+    /** IP地址，支持通过ip查询，如果ip与EIP都传，会取并集查询 */
     @UCloudParam("IPs")
     private List<String> iPs;
 

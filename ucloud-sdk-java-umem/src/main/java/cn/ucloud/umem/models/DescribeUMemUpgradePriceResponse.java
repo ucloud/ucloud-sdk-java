@@ -13,16 +13,17 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUMemUpgradePriceResponse extends Response {
 
-    /** 价格: false */
+    /** 价格 */
     @SerializedName("Price")
     private Integer price;
 
-    /** 原价: false */
+    /** 原价 */
     @SerializedName("OriginalPrice")
     private Integer originalPrice;
 

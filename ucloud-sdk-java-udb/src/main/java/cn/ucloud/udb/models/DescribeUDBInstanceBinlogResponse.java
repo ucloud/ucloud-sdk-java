@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUDBInstanceBinlogResponse extends Response {
 
-    /** 获取的Binlog信息列表 UDBInstanceBinlogSet: false */
+    /** 获取的Binlog信息列表 UDBInstanceBinlogSet */
     @SerializedName("DataSet")
     private List<UDBInstanceBinlogSet> dataSet;
 
@@ -33,19 +33,19 @@ public class DescribeUDBInstanceBinlogResponse extends Response {
 
     public static class UDBInstanceBinlogSet extends Response {
 
-        /** Binlog文件名: false */
+        /** Binlog文件名 */
         @SerializedName("Name")
         private String name;
 
-        /** Binlog文件大小: false */
+        /** Binlog文件大小 */
         @SerializedName("Size")
         private Integer size;
 
-        /** Binlog文件生成时间(时间戳): false */
+        /** Binlog文件生成时间(时间戳) */
         @SerializedName("BeginTime")
         private Integer beginTime;
 
-        /** Binlog文件结束时间(时间戳): false */
+        /** Binlog文件结束时间(时间戳) */
         @SerializedName("EndTime")
         private Integer endTime;
 

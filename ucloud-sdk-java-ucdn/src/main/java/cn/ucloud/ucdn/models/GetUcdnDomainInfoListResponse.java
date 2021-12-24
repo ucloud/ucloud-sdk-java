@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetUcdnDomainInfoListResponse extends Response {
 
-    /** 账户下域名总个数: false */
+    /** 账户下域名总个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 域名基本信息: false */
+    /** 域名基本信息 */
     @SerializedName("DomainInfoList")
     private List<DomainBaseInfo> domainInfoList;
 
@@ -45,11 +45,11 @@ public class GetUcdnDomainInfoListResponse extends Response {
 
     public static class DomainBaseInfo extends Response {
 
-        /** 域名: false */
+        /** 域名 */
         @SerializedName("Domain")
         private String domain;
 
-        /** 域名的资源id: false */
+        /** 域名的资源id */
         @SerializedName("DomainId")
         private String domainId;
 

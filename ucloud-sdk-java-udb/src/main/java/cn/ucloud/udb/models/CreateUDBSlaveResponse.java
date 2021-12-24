@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUDBSlaveResponse extends Response {
 
-    /** 创建slave的DBId: false */
+    /** 创建slave的DBId */
     @SerializedName("DBId")
     private String dbId;
 

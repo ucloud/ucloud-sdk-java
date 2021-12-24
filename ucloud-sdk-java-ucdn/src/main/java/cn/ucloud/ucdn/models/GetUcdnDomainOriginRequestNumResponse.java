@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnDomainOriginRequestNumResponse extends Response {
 
-    /** 请求数实例表。: false */
+    /** 请求数实例表。 */
     @SerializedName("RequestList")
     private List<RequestInfoV2> requestList;
 
@@ -33,11 +33,11 @@ public class GetUcdnDomainOriginRequestNumResponse extends Response {
 
     public static class RequestInfoV2 extends Response {
 
-        /** 带宽获取的时间点。格式：时间戳: false */
+        /** 带宽获取的时间点。格式：时间戳 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 返回值返回指定时间区间内的cdn收到的请求次数之和: false */
+        /** 返回值返回指定时间区间内的cdn收到的请求次数之和 */
         @SerializedName("CdnRequest")
         private Double cdnRequest;
 

@@ -19,11 +19,11 @@ import java.util.List;
 
 public class ListUK8SClusterV2Response extends Response {
 
-    /** 满足条件的集群数量: false */
+    /** 满足条件的集群数量 */
     @SerializedName("ClusterCount")
     private Integer clusterCount;
 
-    /** 集群信息，具体参考ClusterSet: false */
+    /** 集群信息，具体参考ClusterSet */
     @SerializedName("ClusterSet")
     private List<ClusterSet> clusterSet;
 
@@ -45,61 +45,60 @@ public class ListUK8SClusterV2Response extends Response {
 
     public static class ClusterSet extends Response {
 
-        /** 资源名字: false */
+        /** 资源名字 */
         @SerializedName("ClusterName")
         private String clusterName;
 
-        /** 集群ID: false */
+        /** 集群ID */
         @SerializedName("ClusterId")
         private String clusterId;
 
-        /** 所属VPC: false */
+        /** 所属VPC */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 所属子网: false */
+        /** 所属子网 */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** Pod网段: false */
+        /** Pod网段 */
         @SerializedName("PodCIDR")
         private String podCIDR;
 
-        /** 服务网段: false */
+        /** 服务网段 */
         @SerializedName("ServiceCIDR")
         private String serviceCIDR;
 
-        /** Master 节点数量: false */
+        /** Master 节点数量 */
         @SerializedName("MasterCount")
         private Integer masterCount;
 
-        /** 集群apiserver地址: false */
+        /** 集群apiserver地址 */
         @SerializedName("ApiServer")
         private String apiServer;
 
-        /** 集群版本: false */
+        /** 集群版本 */
         @SerializedName("K8sVersion")
         private String k8sVersion;
 
-        /** 创建集群时判断如果为NORESOURCE则为没资源，否则为空: false */
+        /** 创建集群时判断如果为NORESOURCE则为没资源，否则为空 */
         @SerializedName("ClusterLogInfo")
         private String clusterLogInfo;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** Node节点数量: false */
+        /** Node节点数量 */
         @SerializedName("NodeCount")
         private Integer nodeCount;
 
-        /** 集群外部apiserver地址 : false */
+        /** 集群外部apiserver地址 */
         @SerializedName("ExternalApiServer")
         private String externalApiServer;
 
         /**
-         * 集群状态，枚举值：初始化："INITIALIZING"；启动中："STARTING"；创建失败："CREATEFAILED"；正常运行："RUNNING"；添加节点："ADDNODE"；删除节点："DELNODE"；删除中："DELETING"；删除失败："DELETEFAILED"；错误："ERROR"；升级插件："UPDATE_PLUGIN"；更新插件信息："UPDATE_PLUGIN_INFO"；异常："ABNORMAL"；升级集群中："UPGRADING"；容器运行时切换："CONVERTING":
-         * false
+         * 集群状态，枚举值：初始化："INITIALIZING"；启动中："STARTING"；创建失败："CREATEFAILED"；正常运行："RUNNING"；添加节点："ADDNODE"；删除节点："DELNODE"；删除中："DELETING"；删除失败："DELETEFAILED"；错误："ERROR"；升级插件："UPDATE_PLUGIN"；更新插件信息："UPDATE_PLUGIN_INFO"；异常："ABNORMAL"；升级集群中："UPGRADING"；容器运行时切换："CONVERTING"
          */
         @SerializedName("Status")
         private String status;

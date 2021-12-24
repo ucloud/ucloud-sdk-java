@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUHostKeyPairResponse extends Response {
 
-    /** 密钥信息: false */
+    /** 密钥信息 */
     @SerializedName("KeyPair")
     private KeyPair keyPair;
 
@@ -32,27 +33,27 @@ public class CreateUHostKeyPairResponse extends Response {
 
     public static class KeyPair extends Response {
 
-        /** 项目ID。: false */
+        /** 项目ID。 */
         @SerializedName("ProjectId")
         private String projectId;
 
-        /** 密钥对ID。: false */
+        /** 密钥对ID。 */
         @SerializedName("KeyPairId")
         private String keyPairId;
 
-        /** 密钥对名称。 长度为1~63个英文或中文字符。: false */
+        /** 密钥对名称。 长度为1~63个英文或中文字符。 */
         @SerializedName("KeyPairName")
         private String keyPairName;
 
-        /** 密钥对指纹。md5(ProjectId|KeyPairId|PublicKey): false */
+        /** 密钥对指纹。md5(ProjectId|KeyPairId|PublicKey) */
         @SerializedName("KeyPairFingerPrint")
         private String keyPairFingerPrint;
 
-        /** 密钥对的私钥内容。只有创建接口才会返回。: false */
+        /** 密钥对的私钥内容。只有创建接口才会返回。 */
         @SerializedName("PrivateKeyBody")
         private String privateKeyBody;
 
-        /** 密钥对的创建时间，格式为Unix Timestamp。: false */
+        /** 密钥对的创建时间，格式为Unix Timestamp。 */
         @SerializedName("CreateTime")
         private Integer createTime;
 

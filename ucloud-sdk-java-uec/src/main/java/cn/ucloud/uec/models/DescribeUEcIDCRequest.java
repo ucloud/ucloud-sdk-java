@@ -22,34 +22,34 @@ public class DescribeUEcIDCRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 节点cpu核数: false */
+    /** 节点cpu核数 */
     @NotEmpty
     @UCloudParam("Cpu")
     private Integer cpu;
 
-    /** 节点内存大小， 单位GB: false */
+    /** 节点内存大小， 单位GB */
     @NotEmpty
     @UCloudParam("Memory")
     private Integer memory;
 
-    /** Idc机房id。默认全部机房: false */
+    /** Idc机房id。默认全部机房 */
     @UCloudParam("IdcId")
     private List<String> idcId;
 
-    /** 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通: false */
+    /** 0-其它, 1-一线城市单线,2-二线城市单线, 3-全国教育网, 4-全国三通 */
     @UCloudParam("Type")
     private Integer type;
 
-    /** 产品类型：normal（经济型），hf（标准型）,g(GPU型): false */
+    /** 产品类型：normal（经济型），hf（标准型）,g(GPU型) */
     @UCloudParam("ProductType")
     private String productType;
 
-    /** Gpu卡核心数: false */
+    /** Gpu卡核心数 */
     @UCloudParam("Gpu")
     private Integer gpu;
 

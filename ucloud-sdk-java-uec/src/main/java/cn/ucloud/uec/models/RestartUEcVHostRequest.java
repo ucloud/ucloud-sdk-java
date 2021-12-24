@@ -22,12 +22,12 @@ public class RestartUEcVHostRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 节点id: false */
+    /** 节点id */
     @NotEmpty
     @UCloudParam("NodeId")
     private List<String> nodeId;

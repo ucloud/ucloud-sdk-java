@@ -22,26 +22,26 @@ public class GetUEcIDCVHostDataRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 节点资源id；n为0，1，2...: false */
+    /** 节点资源id；n为0，1，2... */
     @NotEmpty
     @UCloudParam("NodeId")
     private List<String> nodeId;
 
-    /** 监控数据类型；n为0,1,2,3,4...,9: false */
+    /** 监控数据类型；n为0,1,2,3,4...,9 */
     @NotEmpty
     @UCloudParam("Type")
     private List<String> type;
 
-    /** 开始时间戳: false */
+    /** 开始时间戳 */
     @UCloudParam("BeginTime")
     private Integer beginTime;
 
-    /** 结束时间戳: false */
+    /** 结束时间戳 */
     @UCloudParam("EndTime")
     private Integer endTime;
 

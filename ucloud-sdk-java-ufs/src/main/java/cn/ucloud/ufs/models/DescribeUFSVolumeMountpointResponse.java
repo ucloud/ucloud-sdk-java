@@ -19,15 +19,15 @@ import java.util.List;
 
 public class DescribeUFSVolumeMountpointResponse extends Response {
 
-    /** : false */
+    /** */
     @SerializedName("DataSet")
     private List<MountPointInfo> dataSet;
 
-    /** 目前的挂载点总数: false */
+    /** 目前的挂载点总数 */
     @SerializedName("TotalMountPointNum")
     private Integer totalMountPointNum;
 
-    /** 文件系统能创建的最大挂载点数目: false */
+    /** 文件系统能创建的最大挂载点数目 */
     @SerializedName("MaxMountPointNum")
     private Integer maxMountPointNum;
 
@@ -57,27 +57,27 @@ public class DescribeUFSVolumeMountpointResponse extends Response {
 
     public static class MountPointInfo extends Response {
 
-        /** 挂载点名称: false */
+        /** 挂载点名称 */
         @SerializedName("MountPointName")
         private String mountPointName;
 
-        /** Vpc ID: false */
+        /** Vpc ID */
         @SerializedName("VpcId")
         private String vpcId;
 
-        /** Subnet ID: false */
+        /** Subnet ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** ${挂载点IP}:/: false */
+        /** ${挂载点IP}:/ */
         @SerializedName("MountPointIp")
         private String mountPointIp;
 
-        /** 文件系统创建时间（unix时间戳）: false */
+        /** 文件系统创建时间（unix时间戳） */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** Subnet ID + 网段的形式，方便前端展示: false */
+        /** Subnet ID + 网段的形式，方便前端展示 */
         @SerializedName("SubnetDescription")
         private String subnetDescription;
 

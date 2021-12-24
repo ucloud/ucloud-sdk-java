@@ -13,12 +13,13 @@
  */
 package cn.ucloud.ufile.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class GetUFileQuotaPriceResponse extends Response {
 
-    /** 待支付价格，单位：分: false */
+    /** 待支付价格，单位：分 */
     @SerializedName("Price")
     private Double price;
 

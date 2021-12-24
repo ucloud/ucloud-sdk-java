@@ -13,32 +13,33 @@
  */
 package cn.ucloud.unet.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class ReleaseShareBandwidthRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 共享带宽ID: false */
+    /** 共享带宽ID */
     @NotEmpty
     @UCloudParam("ShareBandwidthId")
     private String shareBandwidthId;
 
-    /** 关闭共享带宽后，各EIP恢复为的带宽值: false */
+    /** 关闭共享带宽后，各EIP恢复为的带宽值 */
     @NotEmpty
     @UCloudParam("EIPBandwidth")
     private Integer eipBandwidth;
 
-    /** 默认为 Bandwidth 带宽计费: false */
+    /** 默认为 Bandwidth 带宽计费 */
     @UCloudParam("PayMode")
     private String payMode;
 

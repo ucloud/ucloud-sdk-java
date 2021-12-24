@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUFileReportResponse extends Response {
 
-    /** 报表内容 参数见 UFileReportSet: false */
+    /** 报表内容 参数见 UFileReportSet */
     @SerializedName("DataSet")
     private List<UFileReportSet> dataSet;
 
@@ -33,19 +33,19 @@ public class GetUFileReportResponse extends Response {
 
     public static class UFileReportSet extends Response {
 
-        /** 配额消费时间，unix时间戳，精确到日期: false */
+        /** 配额消费时间，unix时间戳，精确到日期 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 配额消费当日使用的存储容量，单位：GB*天: false */
+        /** 配额消费当日使用的存储容量，单位：GB*天 */
         @SerializedName("StorageVolume")
         private Double storageVolume;
 
-        /** 配额消费当日使用的下载流量，单位：GB: false */
+        /** 配额消费当日使用的下载流量，单位：GB */
         @SerializedName("DownloadTraffic")
         private Double downloadTraffic;
 
-        /** 配额消费当日使用的请求次数，单位：万次: false */
+        /** 配额消费当日使用的请求次数，单位：万次 */
         @SerializedName("RequestCount")
         private Double requestCount;
 

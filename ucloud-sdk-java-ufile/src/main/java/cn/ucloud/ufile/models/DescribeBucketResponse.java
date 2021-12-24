@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeBucketResponse extends Response {
 
-    /** Bucket的描述信息 参数见 UFileBucketSet: false */
+    /** Bucket的描述信息 参数见 UFileBucketSet */
     @SerializedName("DataSet")
     private List<UFileBucketSet> dataSet;
 
@@ -31,100 +31,49 @@ public class DescribeBucketResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class UFileDomainSet extends Response {
-
-        /** 源站域名: false */
-        @SerializedName("Src")
-        private List<String> src;
-
-        /** UCDN加速域名: false */
-        @SerializedName("Cdn")
-        private List<String> cdn;
-
-        /** 用户自定义源站域名: false */
-        @SerializedName("CustomSrc")
-        private List<String> customSrc;
-
-        /** 用户自定义CDN加速域名: false */
-        @SerializedName("CustomCdn")
-        private List<String> customCdn;
-
-        public List<String> getSrc() {
-            return src;
-        }
-
-        public void setSrc(List<String> src) {
-            this.src = src;
-        }
-
-        public List<String> getCdn() {
-            return cdn;
-        }
-
-        public void setCdn(List<String> cdn) {
-            this.cdn = cdn;
-        }
-
-        public List<String> getCustomSrc() {
-            return customSrc;
-        }
-
-        public void setCustomSrc(List<String> customSrc) {
-            this.customSrc = customSrc;
-        }
-
-        public List<String> getCustomCdn() {
-            return customCdn;
-        }
-
-        public void setCustomCdn(List<String> customCdn) {
-            this.customCdn = customCdn;
-        }
-    }
-
     public static class UFileBucketSet extends Response {
 
-        /** Bucket所属地域: false */
+        /** Bucket所属地域 */
         @SerializedName("Region")
         private String region;
 
-        /** Bucket名称: false */
+        /** Bucket名称 */
         @SerializedName("BucketName")
         private String bucketName;
 
-        /** Bucket的ID: false */
+        /** Bucket的ID */
         @SerializedName("BucketId")
         private String bucketId;
 
-        /** Bucket的域名集合 参数见 UFileDomainSet: false */
+        /** Bucket的域名集合 参数见 UFileDomainSet */
         @SerializedName("Domain")
         private UFileDomainSet domain;
 
-        /** 与Bucket关联的CND加速域名的ID列表: false */
+        /** 与Bucket关联的CND加速域名的ID列表 */
         @SerializedName("CdnDomainId")
         private List<String> cdnDomainId;
 
-        /** Bucket访问类型: false */
+        /** Bucket访问类型 */
         @SerializedName("Type")
         private String type;
 
-        /** Bucket的创建时间: false */
+        /** Bucket的创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** Bucket的修改时间: false */
+        /** Bucket的修改时间 */
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** Bucket所属业务, general或vod或udb general: 普通业务； vod: 视频云业务; udb: 云数据库业务: false */
+        /** Bucket所属业务, general或vod或udb general: 普通业务； vod: 视频云业务; udb: 云数据库业务 */
         @SerializedName("Biz")
         private String biz;
 
-        /** 所属业务组: false */
+        /** 所属业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** 是否存在自定义域名。0不存在，1存在，2错误: false */
+        /** 是否存在自定义域名。0不存在，1存在，2错误 */
         @SerializedName("HasUserDomain")
         private Integer hasUserDomain;
 
@@ -214,6 +163,57 @@ public class DescribeBucketResponse extends Response {
 
         public void setHasUserDomain(Integer hasUserDomain) {
             this.hasUserDomain = hasUserDomain;
+        }
+    }
+
+    public static class UFileDomainSet extends Response {
+
+        /** 源站域名 */
+        @SerializedName("Src")
+        private List<String> src;
+
+        /** UCDN加速域名 */
+        @SerializedName("Cdn")
+        private List<String> cdn;
+
+        /** 用户自定义源站域名 */
+        @SerializedName("CustomSrc")
+        private List<String> customSrc;
+
+        /** 用户自定义CDN加速域名 */
+        @SerializedName("CustomCdn")
+        private List<String> customCdn;
+
+        public List<String> getSrc() {
+            return src;
+        }
+
+        public void setSrc(List<String> src) {
+            this.src = src;
+        }
+
+        public List<String> getCdn() {
+            return cdn;
+        }
+
+        public void setCdn(List<String> cdn) {
+            this.cdn = cdn;
+        }
+
+        public List<String> getCustomSrc() {
+            return customSrc;
+        }
+
+        public void setCustomSrc(List<String> customSrc) {
+            this.customSrc = customSrc;
+        }
+
+        public List<String> getCustomCdn() {
+            return customCdn;
+        }
+
+        public void setCustomCdn(List<String> customCdn) {
+            this.customCdn = customCdn;
         }
     }
 }

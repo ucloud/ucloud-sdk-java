@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUEcFirewallResponse extends Response {
 
-    /** 防火墙Id: false */
+    /** 防火墙Id */
     @SerializedName("FirewallId")
     private String firewallId;
 

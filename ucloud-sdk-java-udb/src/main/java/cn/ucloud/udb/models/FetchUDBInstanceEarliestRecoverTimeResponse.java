@@ -13,12 +13,13 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class FetchUDBInstanceEarliestRecoverTimeResponse extends Response {
 
-    /** 获取最早可回档时间点: false */
+    /** 获取最早可回档时间点 */
     @SerializedName("EarliestTime")
     private Integer earliestTime;
 

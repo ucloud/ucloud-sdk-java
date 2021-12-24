@@ -19,11 +19,11 @@ import java.util.List;
 
 public class GetAvailableResourceForWhiteListResponse extends Response {
 
-    /** 返回白名单列表的详细信息: false */
+    /** 返回白名单列表的详细信息 */
     @SerializedName("DataSet")
     private List<GetAvailableResourceForWhiteListDataSet> dataSet;
 
-    /** 白名单资源列表的总的个数: false */
+    /** 白名单资源列表的总的个数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,42 +45,41 @@ public class GetAvailableResourceForWhiteListResponse extends Response {
 
     public static class GetAvailableResourceForWhiteListDataSet extends Response {
 
-        /** 资源类型Id: false */
+        /** 资源类型Id */
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** 资源名称: false */
+        /** 资源名称 */
         @SerializedName("ResourceName")
         private String resourceName;
 
-        /** 资源的内网Ip: false */
+        /** 资源的内网Ip */
         @SerializedName("PrivateIP")
         private String privateIP;
 
         /**
-         * 资源类型。"uhost"：云主机； "upm"，物理云主机； "hadoophost"：hadoop节点； "fortresshost"：堡垒机： "udockhost"，容器:
-         * false
+         * 资源类型。"uhost"：云主机； "upm"，物理云主机； "hadoophost"：hadoop节点； "fortresshost"：堡垒机： "udockhost"，容器
          */
         @SerializedName("ResourceType")
         private String resourceType;
 
-        /** 资源绑定的虚拟网卡的实例名称: false */
+        /** 资源绑定的虚拟网卡的实例名称 */
         @SerializedName("SubResourceName")
         private String subResourceName;
 
-        /** 资源所属VPCId: false */
+        /** 资源所属VPCId */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** 资源所属子网Id: false */
+        /** 资源所属子网Id */
         @SerializedName("SubnetworkId")
         private String subnetworkId;
 
-        /** 资源绑定的虚拟网卡的实例ID: false */
+        /** 资源绑定的虚拟网卡的实例ID */
         @SerializedName("SubResourceId")
         private String subResourceId;
 
-        /** 资源绑定的虚拟网卡的实例类型: false */
+        /** 资源绑定的虚拟网卡的实例类型 */
         @SerializedName("SubResourceType")
         private String subResourceType;
 

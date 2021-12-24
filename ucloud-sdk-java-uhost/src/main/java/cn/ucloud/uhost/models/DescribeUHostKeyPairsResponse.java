@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUHostKeyPairsResponse extends Response {
 
-    /** 密钥对信息集合: false */
+    /** 密钥对信息集合 */
     @SerializedName("KeyPairs")
     private List<KeyPairDesc> keyPairs;
 
-    /** 密钥对总数: false */
+    /** 密钥对总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,23 +45,23 @@ public class DescribeUHostKeyPairsResponse extends Response {
 
     public static class KeyPairDesc extends Response {
 
-        /** 项目ID。: false */
+        /** 项目ID。 */
         @SerializedName("ProjectId")
         private String projectId;
 
-        /** 密钥对ID。: false */
+        /** 密钥对ID。 */
         @SerializedName("KeyPairId")
         private String keyPairId;
 
-        /** 密钥对名称。 长度为1~63个英文或中文字符。: false */
+        /** 密钥对名称。 长度为1~63个英文或中文字符。 */
         @SerializedName("KeyPairName")
         private String keyPairName;
 
-        /** 密钥对指纹。md5(ProjectId|KeyPairId|PublicKey): false */
+        /** 密钥对指纹。md5(ProjectId|KeyPairId|PublicKey) */
         @SerializedName("KeyPairFingerPrint")
         private String keyPairFingerPrint;
 
-        /** 密钥对的创建时间，格式为Unix Timestamp。: false */
+        /** 密钥对的创建时间，格式为Unix Timestamp。 */
         @SerializedName("CreateTime")
         private Integer createTime;
 

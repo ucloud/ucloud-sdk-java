@@ -20,93 +20,93 @@ import java.util.List;
 
 public class UpdateVPNTunnelAttributeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPN隧道的资源ID: false */
+    /** VPN隧道的资源ID */
     @NotEmpty
     @UCloudParam("VPNTunnelId")
     private String vpnTunnelId;
 
-    /** 预共享密钥: false */
+    /** 预共享密钥 */
     @UCloudParam("IKEPreSharedKey")
     private String ikePreSharedKey;
 
-    /** IKE协商过程中使用的加密算法: false */
+    /** IKE协商过程中使用的加密算法 */
     @UCloudParam("IKEEncryptionAlgorithm")
     private String ikeEncryptionAlgorithm;
 
-    /** IKE协商过程中使用的认证算法: false */
+    /** IKE协商过程中使用的认证算法 */
     @UCloudParam("IKEAuthenticationAlgorithm")
     private String ikeAuthenticationAlgorithm;
 
-    /** IKE协商过程中使用的模式，可选“主动模式”与“野蛮模式”。IKEV2不使用该参数。: false */
+    /** IKE协商过程中使用的模式，可选“主动模式”与“野蛮模式”。IKEV2不使用该参数。 */
     @UCloudParam("IKEExchangeMode")
     private String ikeExchangeMode;
 
-    /** 本端标识。不填时默认使用之前的参数，结合IKEversion进行校验，IKEV2时不能为auto。: false */
+    /** 本端标识。不填时默认使用之前的参数，结合IKEversion进行校验，IKEV2时不能为auto。 */
     @UCloudParam("IKELocalId")
     private String ikeLocalId;
 
-    /** 客户端标识。不填时默认使用之前的参数，结合IKEversion进行校验，IKEV2时不能为auto。: false */
+    /** 客户端标识。不填时默认使用之前的参数，结合IKEversion进行校验，IKEV2时不能为auto。 */
     @UCloudParam("IKERemoteId")
     private String ikeRemoteId;
 
-    /** IKE协商过程中使用的DH组: false */
+    /** IKE协商过程中使用的DH组 */
     @UCloudParam("IKEDhGroup")
     private String ikeDhGroup;
 
-    /** IKE中SA的生存时间: false */
+    /** IKE中SA的生存时间 */
     @UCloudParam("IKESALifetime")
     private String ikesaLifetime;
 
-    /** 使用的安全协议，ESP或AH: false */
+    /** 使用的安全协议，ESP或AH */
     @UCloudParam("IPSecProtocol")
     private String ipSecProtocol;
 
-    /** 指定VPN连接的本地子网的id，用逗号分隔: false */
+    /** 指定VPN连接的本地子网的id，用逗号分隔 */
     @UCloudParam("IPSecLocalSubnetIds")
     private List<String> ipSecLocalSubnetIds;
 
-    /** 指定VPN连接的客户网段，用逗号分隔: false */
+    /** 指定VPN连接的客户网段，用逗号分隔 */
     @UCloudParam("IPSecRemoteSubnets")
     private List<String> ipSecRemoteSubnets;
 
-    /** IPSec隧道中使用的加密算法: false */
+    /** IPSec隧道中使用的加密算法 */
     @UCloudParam("IPSecEncryptionAlgorithm")
     private String ipSecEncryptionAlgorithm;
 
-    /** IPSec隧道中使用的认证算法: false */
+    /** IPSec隧道中使用的认证算法 */
     @UCloudParam("IPSecAuthenticationAlgorithm")
     private String ipSecAuthenticationAlgorithm;
 
-    /** IPSec中SA的生存时间: false */
+    /** IPSec中SA的生存时间 */
     @UCloudParam("IPSecSALifetime")
     private String ipSecSALifetime;
 
-    /** IPSec中SA的生存时间（以字节计）: false */
+    /** IPSec中SA的生存时间（以字节计） */
     @UCloudParam("IPSecSALifetimeBytes")
     private String ipSecSALifetimeBytes;
 
-    /** IPSec中的PFS是否开启: false */
+    /** IPSec中的PFS是否开启 */
     @UCloudParam("IPSecPFSDhGroup")
     private String ipSecPFSDhGroup;
 
-    /** 枚举值："IKE V1","IKE V2": false */
+    /** 枚举值："IKE V1","IKE V2" */
     @UCloudParam("IKEVersion")
     private String ikeVersion;
 
-    /** IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建: false */
+    /** IPSec隧道关闭后的处理动作，默认与原本一致，若原本为空，必传。枚举值：“none”,不处理（推荐为none，流量会自动触发隧道重建）；“restart”重建 */
     @UCloudParam("IPSecCloseAction")
     private String ipSecCloseAction;
 

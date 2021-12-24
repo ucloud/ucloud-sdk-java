@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUcdnDomainHitRateResponse extends Response {
 
-    /** 请求数实例表。: false */
+    /** 请求数实例表。 */
     @SerializedName("HitRateList")
     private List<HitRateInfoV2> hitRateList;
 
@@ -33,15 +33,15 @@ public class GetUcdnDomainHitRateResponse extends Response {
 
     public static class HitRateInfoV2 extends Response {
 
-        /** 带宽获取的时间点。格式：时间戳: false */
+        /** 带宽获取的时间点。格式：时间戳 */
         @SerializedName("Time")
         private Integer time;
 
-        /** 总流量命中率，单位%: false */
+        /** 总流量命中率，单位% */
         @SerializedName("FlowHitRate")
         private Double flowHitRate;
 
-        /** 请求数命中率，单位%: false */
+        /** 请求数命中率，单位% */
         @SerializedName("RequestHitRate")
         private Double requestHitRate;
 

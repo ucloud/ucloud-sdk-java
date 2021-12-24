@@ -22,31 +22,31 @@ public class GetUEcHolderMetricsRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 容器名称: false */
+    /** 容器名称 */
     @NotEmpty
     @UCloudParam("PackName")
     private String packName;
 
-    /** n为0 CPU利用率, 1内存使用率, 2网卡出带宽, 3网卡入带宽, 4网卡出包数, 5网卡入包数: false */
+    /** n为0 CPU利用率, 1内存使用率, 2网卡出带宽, 3网卡入带宽, 4网卡出包数, 5网卡入包数 */
     @NotEmpty
     @UCloudParam("Type")
     private List<String> type;
 
-    /** 容器组资源id: false */
+    /** 容器组资源id */
     @NotEmpty
     @UCloudParam("ResourceId")
     private String resourceId;
 
-    /** 开始时间: false */
+    /** 开始时间 */
     @UCloudParam("StartTime")
     private Integer startTime;
 
-    /** 结束时间: false */
+    /** 结束时间 */
     @UCloudParam("EndTime")
     private Integer endTime;
 

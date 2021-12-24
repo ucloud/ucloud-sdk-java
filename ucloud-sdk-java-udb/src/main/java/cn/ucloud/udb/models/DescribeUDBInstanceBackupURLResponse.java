@@ -13,16 +13,17 @@
  */
 package cn.ucloud.udb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class DescribeUDBInstanceBackupURLResponse extends Response {
 
-    /** DB实例备份文件公网的地址: false */
+    /** DB实例备份文件公网的地址 */
     @SerializedName("BackupPath")
     private String backupPath;
 
-    /** DB实例备份文件内网的地址: false */
+    /** DB实例备份文件内网的地址 */
     @SerializedName("InnerBackupPath")
     private String innerBackupPath;
 

@@ -13,12 +13,13 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreateVPCResponse extends Response {
 
-    /** VPC资源Id: false */
+    /** VPC资源Id */
     @SerializedName("VPCId")
     private String vpcId;
 

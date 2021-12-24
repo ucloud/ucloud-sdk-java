@@ -19,11 +19,11 @@ import java.util.List;
 
 public class AllocateVIPResponse extends Response {
 
-    /** 申请到的VIP资源相关信息: false */
+    /** 申请到的VIP资源相关信息 */
     @SerializedName("VIPSet")
     private List<VIPSet> vipSet;
 
-    /** 申请到的VIP地址: false */
+    /** 申请到的VIP地址 */
     @SerializedName("DataSet")
     private List<String> dataSet;
 
@@ -45,15 +45,15 @@ public class AllocateVIPResponse extends Response {
 
     public static class VIPSet extends Response {
 
-        /** 虚拟ip: false */
+        /** 虚拟ip */
         @SerializedName("VIP")
         private String vip;
 
-        /** 虚拟ip id: false */
+        /** 虚拟ip id */
         @SerializedName("VIPId")
         private String vipId;
 
-        /** VPC id: false */
+        /** VPC id */
         @SerializedName("VPCId")
         private String vpcId;
 

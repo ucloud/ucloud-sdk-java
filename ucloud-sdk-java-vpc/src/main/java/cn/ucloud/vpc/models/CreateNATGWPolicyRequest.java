@@ -13,52 +13,53 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CreateNATGWPolicyRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目Id。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** NAT网关Id: false */
+    /** NAT网关Id */
     @NotEmpty
     @UCloudParam("NATGWId")
     private String natgwId;
 
-    /** 协议类型。枚举值为：TCP、UDP: false */
+    /** 协议类型。枚举值为：TCP、UDP */
     @NotEmpty
     @UCloudParam("Protocol")
     private String protocol;
 
-    /** 源IP。填写对应的EIP Id: false */
+    /** 源IP。填写对应的EIP Id */
     @NotEmpty
     @UCloudParam("SrcEIPId")
     private String srcEIPId;
 
-    /** 源端口。可填写固定端口，也可填写端口范围。支持的端口范围为1-65535: false */
+    /** 源端口。可填写固定端口，也可填写端口范围。支持的端口范围为1-65535 */
     @NotEmpty
     @UCloudParam("SrcPort")
     private String srcPort;
 
-    /** 目标IP。填写对应的目标IP地址: false */
+    /** 目标IP。填写对应的目标IP地址 */
     @NotEmpty
     @UCloudParam("DstIP")
     private String dstIP;
 
-    /** 目标端口。可填写固定端口，也可填写端口范围。支持的端口范围为1-65535: false */
+    /** 目标端口。可填写固定端口，也可填写端口范围。支持的端口范围为1-65535 */
     @NotEmpty
     @UCloudParam("DstPort")
     private String dstPort;
 
-    /** 转发策略名称。默认为空: false */
+    /** 转发策略名称。默认为空 */
     @UCloudParam("PolicyName")
     private String policyName;
 

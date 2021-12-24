@@ -20,26 +20,26 @@ import java.util.List;
 
 public class AssociateEIPWithShareBandwidthRequest extends Request {
 
-    /** 地域。: false */
+    /** 地域。 */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 : false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 要加入共享带宽的EIP的资源Id: false */
+    /** 要加入共享带宽的EIP的资源Id */
     @NotEmpty
     @UCloudParam("EIPIds")
     private List<String> eipIds;
 
-    /** 共享带宽ID: false */
+    /** 共享带宽ID */
     @NotEmpty
     @UCloudParam("ShareBandwidthId")
     private String shareBandwidthId;
 
-    /** 共享带宽类型，IPv4或者IPv6，不传默认IPv4: false */
+    /** 共享带宽类型，IPv4或者IPv6，不传默认IPv4 */
     @UCloudParam("IPVersion")
     private String ipVersion;
 

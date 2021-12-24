@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DescribeUMemBackupURLResponse extends Response {
 
-    /** 备份url，每个分片一个下载URL: false */
+    /** 备份url，每个分片一个下载URL */
     @SerializedName("BackupURL")
     private List<String> backupURL;
 

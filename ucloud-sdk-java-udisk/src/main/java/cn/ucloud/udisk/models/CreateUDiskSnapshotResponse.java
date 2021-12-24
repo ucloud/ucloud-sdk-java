@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CreateUDiskSnapshotResponse extends Response {
 
-    /** 快照Id: false */
+    /** 快照Id */
     @SerializedName("SnapshotId")
     private List<String> snapshotId;
 

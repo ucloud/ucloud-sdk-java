@@ -13,12 +13,13 @@
  */
 package cn.ucloud.uphost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class CreatePHostImageResponse extends Response {
 
-    /** 镜像ID: false */
+    /** 镜像ID */
     @SerializedName("ImageId")
     private String imageId;
 

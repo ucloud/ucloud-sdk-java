@@ -13,6 +13,7 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,7 +21,7 @@ public class AllocateBackendResponse extends Response {
 
     /**
      * 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关），可用于
-     * UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend: false
+     * UpdateBackendAttribute/UpdateBackendAttributeBatch/ReleaseBackend
      */
     @SerializedName("BackendId")
     private String backendId;

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CreateUDiskResponse extends Response {
 
-    /** UDisk实例Id: false */
+    /** UDisk实例Id */
     @SerializedName("UDiskId")
     private List<String> uDiskId;
 

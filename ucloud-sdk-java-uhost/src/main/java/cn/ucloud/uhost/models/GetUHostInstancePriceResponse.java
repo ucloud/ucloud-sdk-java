@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUHostInstancePriceResponse extends Response {
 
-    /** 价格列表 UHostPriceSet: false */
+    /** 价格列表 UHostPriceSet */
     @SerializedName("PriceSet")
     private List<UHostPriceSet> priceSet;
 
@@ -33,19 +33,19 @@ public class GetUHostInstancePriceResponse extends Response {
 
     public static class UHostPriceSet extends Response {
 
-        /** 计费类型。Year，Month，Dynamic: false */
+        /** 计费类型。Year，Month，Dynamic */
         @SerializedName("ChargeType")
         private String chargeType;
 
-        /** 价格，单位: 元，保留小数点后两位有效数字: false */
+        /** 价格，单位: 元，保留小数点后两位有效数字 */
         @SerializedName("Price")
         private Double price;
 
-        /** 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。: false */
+        /** 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。 */
         @SerializedName("OriginalPrice")
         private Double originalPrice;
 
-        /** 产品列表价。: false */
+        /** 产品列表价。 */
         @SerializedName("ListPrice")
         private Double listPrice;
 

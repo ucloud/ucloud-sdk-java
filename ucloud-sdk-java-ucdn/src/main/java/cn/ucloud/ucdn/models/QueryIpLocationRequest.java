@@ -20,7 +20,7 @@ import java.util.List;
 
 public class QueryIpLocationRequest extends Request {
 
-    /** ip列表: false */
+    /** ip列表 */
     @NotEmpty
     @UCloudParam("Ip")
     private List<String> ip;

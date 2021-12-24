@@ -13,20 +13,21 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginUEcDockerResponse extends Response {
 
-    /** 返回的token: false */
+    /** 返回的token */
     @SerializedName("SessionId")
     private String sessionId;
 
-    /** 登录地址: false */
+    /** 登录地址 */
     @SerializedName("Link")
     private String link;
 
-    /** 登录端口: false */
+    /** 登录端口 */
     @SerializedName("LinkPort")
     private Integer linkPort;
 

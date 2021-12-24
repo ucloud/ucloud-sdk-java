@@ -13,31 +13,32 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class UpdateSubnetAttributeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 子网ID: false */
+    /** 子网ID */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** 子网名称(如果Name不填写，Tag必须填写): false */
+    /** 子网名称(如果Name不填写，Tag必须填写) */
     @UCloudParam("Name")
     private String name;
 
-    /** 业务组名称(如果Tag不填写，Name必须填写): false */
+    /** 业务组名称(如果Tag不填写，Name必须填写) */
     @UCloudParam("Tag")
     private String tag;
 

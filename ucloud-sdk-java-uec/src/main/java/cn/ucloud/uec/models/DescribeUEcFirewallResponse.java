@@ -19,11 +19,11 @@ import java.util.List;
 
 public class DescribeUEcFirewallResponse extends Response {
 
-    /** 防火墙组详细信息，参见 FirewallInfo: false */
+    /** 防火墙组详细信息，参见 FirewallInfo */
     @SerializedName("FirewallSet")
     private List<FirewallInfo> firewallSet;
 
-    /** 满足条件的节点总数: false */
+    /** 满足条件的节点总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
@@ -45,34 +45,34 @@ public class DescribeUEcFirewallResponse extends Response {
 
     public static class FirewallInfo extends Response {
 
-        /** 防火墙Id: false */
+        /** 防火墙Id */
         @SerializedName("FirewallId")
         private String firewallId;
 
-        /** 防火墙名称: false */
+        /** 防火墙名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 创建时间: false */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 防火墙规则组，详情参见RuleInfo: false */
+        /** 防火墙规则组，详情参见RuleInfo */
         @SerializedName("Rule")
         private List<RuleInfo> rule;
 
-        /** 防火墙绑定资源数量: false */
+        /** 防火墙绑定资源数量 */
         @SerializedName("ResourceCount")
         private Integer resourceCount;
 
         /**
          * 防火墙组类型，枚举值为： "user defined", 用户自定义防火墙； "recommend web", 默认Web防火墙； "recommend non web",
-         * 默认非Web防火墙: false
+         * 默认非Web防火墙
          */
         @SerializedName("Type")
         private String type;
 
-        /** 描述: false */
+        /** 描述 */
         @SerializedName("Remark")
         private String remark;
 
@@ -135,27 +135,27 @@ public class DescribeUEcFirewallResponse extends Response {
 
     public static class RuleInfo extends Response {
 
-        /** 协议，可选值：TCP，UDP，ICMP: false */
+        /** 协议，可选值：TCP，UDP，ICMP */
         @SerializedName("ProtocolType")
         private String protocolType;
 
-        /** 端口，范围用"-"符号分隔，如：1-65535: false */
+        /** 端口，范围用"-"符号分隔，如：1-65535 */
         @SerializedName("Port")
         private String port;
 
-        /** 源ip: false */
+        /** 源ip */
         @SerializedName("SrcIp")
         private String srcIp;
 
-        /** ACCEPT（接受）和DROP（拒绝）: false */
+        /** ACCEPT（接受）和DROP（拒绝） */
         @SerializedName("Action")
         private String action;
 
-        /** 优先级：HIGH（高），MEDIUM（中），LOW（低）: false */
+        /** 优先级：HIGH（高），MEDIUM（中），LOW（低） */
         @SerializedName("Priority")
         private String priority;
 
-        /** 备注: false */
+        /** 备注 */
         @SerializedName("Remark")
         private String remark;
 

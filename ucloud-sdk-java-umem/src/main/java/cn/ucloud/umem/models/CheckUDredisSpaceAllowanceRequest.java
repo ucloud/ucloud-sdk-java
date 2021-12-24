@@ -13,33 +13,34 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class CheckUDredisSpaceAllowanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 创建实例的容量大小,，扩容时的分片目标容量大小: false */
+    /** 创建实例的容量大小,，扩容时的分片目标容量大小 */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 创建实例的数量，[1-10]: false */
+    /** 创建实例的数量，[1-10] */
     @NotEmpty
     @UCloudParam("Count")
     private String count;
 
-    /** 资源ID，扩缩容时的必传参数: false */
+    /** 资源ID，扩缩容时的必传参数 */
     @UCloudParam("GroupId")
     private String groupId;
 

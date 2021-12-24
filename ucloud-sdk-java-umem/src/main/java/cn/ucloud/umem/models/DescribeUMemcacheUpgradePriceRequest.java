@@ -13,18 +13,19 @@
  */
 package cn.ucloud.umem.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUMemcacheUpgradePriceRequest extends Request {
 
-    /** 购买umemcache大小,单位:GB: false */
+    /** 购买umemcache大小,单位:GB */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
 
-    /** 需要升级的空间的GroupId,请参考DescribeUMemcacheGroup接口: false */
+    /** 需要升级的空间的GroupId,请参考DescribeUMemcacheGroup接口 */
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;

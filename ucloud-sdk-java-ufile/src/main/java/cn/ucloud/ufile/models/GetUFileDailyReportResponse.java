@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUFileDailyReportResponse extends Response {
 
-    /** 消费情况: false */
+    /** 消费情况 */
     @SerializedName("DataSet")
     private List<UFileReportItem> dataSet;
 
@@ -33,11 +33,11 @@ public class GetUFileDailyReportResponse extends Response {
 
     public static class UFileReportItem extends Response {
 
-        /** 总消费情况: false */
+        /** 总消费情况 */
         @SerializedName("Total")
         private List<UFileTotalReportItem> total;
 
-        /** 日消费情况: false */
+        /** 日消费情况 */
         @SerializedName("Daily")
         private List<UFileDailyReportItem> daily;
 
@@ -60,47 +60,47 @@ public class GetUFileDailyReportResponse extends Response {
 
     public static class UFileDailyReportItem extends Response {
 
-        /** 标准存储量；单位byte: false */
+        /** 标准存储量；单位byte */
         @SerializedName("Storage")
         private Double storage;
 
-        /** 低频存储量；单位byte: false */
+        /** 低频存储量；单位byte */
         @SerializedName("IaStorage")
         private Double iaStorage;
 
-        /** 冷存（归档）存储量；单位byte: false */
+        /** 冷存（归档）存储量；单位byte */
         @SerializedName("AcStorage")
         private Double acStorage;
 
-        /** 低频数据取回量；单位byte: false */
+        /** 低频数据取回量；单位byte */
         @SerializedName("IaGetSize")
         private Double iaGetSize;
 
-        /** 冷存激活量，即归档数据取回量；单位byte: false */
+        /** 冷存激活量，即归档数据取回量；单位byte */
         @SerializedName("AcRestore")
         private Double acRestore;
 
-        /** 忙时流量；单位byte；海外无此字段: false */
+        /** 忙时流量；单位byte；海外无此字段 */
         @SerializedName("BusyFlow")
         private Double busyFlow;
 
-        /** 闲时流量；单位byte；海外无此字段: false */
+        /** 闲时流量；单位byte；海外无此字段 */
         @SerializedName("IdleFlow")
         private Double idleFlow;
 
-        /** cdn回源流量;单位byte: false */
+        /** cdn回源流量;单位byte */
         @SerializedName("CdnFlow")
         private Double cdnFlow;
 
-        /** 下载流量：单位byte；国内无此字段: false */
+        /** 下载流量：单位byte；国内无此字段 */
         @SerializedName("Flow")
         private Double flow;
 
-        /** 配额消费时间，unix时间戳（单位s），精确到日期: false */
+        /** 配额消费时间，unix时间戳（单位s），精确到日期 */
         @SerializedName("Date")
         private Integer date;
 
-        /** API请求次数（次）: false */
+        /** API请求次数（次） */
         @SerializedName("ApiTimes")
         private Double apiTimes;
 
@@ -195,23 +195,23 @@ public class GetUFileDailyReportResponse extends Response {
 
     public static class UFileTotalReportItem extends Response {
 
-        /** 下载流量：单位byte；国内无此字段: false */
+        /** 下载流量：单位byte；国内无此字段 */
         @SerializedName("Flow")
         private Double flow;
 
-        /** 闲时流量；单位byte；海外无此字段: false */
+        /** 闲时流量；单位byte；海外无此字段 */
         @SerializedName("IdleFlow")
         private Double idleFlow;
 
-        /** 忙时流量；单位byte；海外无此字段: false */
+        /** 忙时流量；单位byte；海外无此字段 */
         @SerializedName("BusyFlow")
         private Double busyFlow;
 
-        /** cdn回源流量;单位byte: false */
+        /** cdn回源流量;单位byte */
         @SerializedName("CdnFlow")
         private Double cdnFlow;
 
-        /** API请求次数（次）: false */
+        /** API请求次数（次） */
         @SerializedName("ApiTimes")
         private Double apiTimes;
 

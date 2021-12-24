@@ -19,7 +19,7 @@ import java.util.List;
 
 public class UpgradeToArkUHostInstanceResponse extends Response {
 
-    /** UHost主机的资源ID数组: false */
+    /** UHost主机的资源ID数组 */
     @SerializedName("UHostSet")
     private List<String> uHostSet;
 

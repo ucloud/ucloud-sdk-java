@@ -13,16 +13,17 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
 public class ResizeAttachedDiskResponse extends Response {
 
-    /** 改配成功的磁盘id: false */
+    /** 改配成功的磁盘id */
     @SerializedName("DiskId")
     private String diskId;
 
-    /** 扩容后的状态。NeedRestart = true，必须关闭后启动实例才能使用扩容的磁盘空间。NeedRestart = false,磁盘扩容后无需重启操作。: false */
+    /** 扩容后的状态。NeedRestart = true，必须关闭后启动实例才能使用扩容的磁盘空间。NeedRestart = false,磁盘扩容后无需重启操作。 */
     @SerializedName("NeedRestart")
     private Boolean needRestart;
 

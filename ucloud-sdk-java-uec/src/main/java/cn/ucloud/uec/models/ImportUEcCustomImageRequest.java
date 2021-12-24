@@ -21,36 +21,36 @@ public class ImportUEcCustomImageRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像需要导入机房，默认分发到所有机房: false */
+    /** 镜像需要导入机房，默认分发到所有机房 */
     @UCloudParam("IdcId")
     private List<String> idcId;
 
-    /** 镜像Id，不传参表示新导入镜像，传参表示已有镜像分发到指定机房: false */
+    /** 镜像Id，不传参表示新导入镜像，传参表示已有镜像分发到指定机房 */
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 镜像名称，不带镜像ID时必填: false */
+    /** 镜像名称，不带镜像ID时必填 */
     @UCloudParam("ImageName")
     private String imageName;
 
-    /** UFile镜像文件下载地址，不带镜像ID时必填: false */
+    /** UFile镜像文件下载地址，不带镜像ID时必填 */
     @UCloudParam("UFileUrl")
     private String uFileUrl;
 
-    /** 操作系统平台，linux、windows(当前版本暂不支持windows)，不带镜像ID时必填: false */
+    /** 操作系统平台，linux、windows(当前版本暂不支持windows)，不带镜像ID时必填 */
     @UCloudParam("OsType")
     private String osType;
 
-    /** 镜像格式，可选RAW、qcow2， 不带镜像ID时必填: false */
+    /** 镜像格式，可选RAW、qcow2， 不带镜像ID时必填 */
     @UCloudParam("Format")
     private String format;
 
-    /** 镜像描述: false */
+    /** 镜像描述 */
     @UCloudParam("ImageDesc")
     private String imageDesc;
 

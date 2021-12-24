@@ -13,42 +13,43 @@
  */
 package cn.ucloud.ulb.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeULBSimpleRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html): false */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 数据偏移量，默认为0: false */
+    /** 数据偏移量，默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 数据分页值，默认为10000: false */
+    /** 数据分页值，默认为10000 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 负载均衡实例的Id。 若指定则返回指定的负载均衡实例的信息； 若不指定则返回当前数据中心中所有的负载均衡实例的信息: false */
+    /** 负载均衡实例的Id。 若指定则返回指定的负载均衡实例的信息； 若不指定则返回当前数据中心中所有的负载均衡实例的信息 */
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** ULB所属的VPC: false */
+    /** ULB所属的VPC */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** ULB所属的子网ID: false */
+    /** ULB所属的子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** ULB所属的业务组ID: false */
+    /** ULB所属的业务组ID */
     @UCloudParam("BusinessId")
     private String businessId;
 

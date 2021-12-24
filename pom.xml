@@ -11,46 +11,53 @@
     <modules>
         <module>ucloud-sdk-java-common</module>
 
-
-        <module>ucloud-sdk-java-usms</module>
-
-        <module>ucloud-sdk-java-udisk</module>
-
-
-        <module>ucloud-sdk-java-uaccount</module>
-
-
-        <module>ucloud-sdk-java-uk8s</module>
-
-
-        <module>ucloud-sdk-java-ufs</module>
-
-
-        <module>ucloud-sdk-java-unet</module>
+        
+        <module>ucloud-sdk-java-ucdn</module>
 
 
         <module>ucloud-sdk-java-ubill</module>
 
 
-        <module>ucloud-sdk-java-uhost</module>
+        <module>ucloud-sdk-java-uk8s</module>
 
 
-        <module>ucloud-sdk-java-ucdn</module>
+        <module>ucloud-sdk-java-uaccount</module>
 
 
-        <module>ucloud-sdk-java-uphost</module>
+        <module>ucloud-sdk-java-ipsecvpn</module>
 
 
-        <module>ucloud-sdk-java-uddb</module>
+        <module>ucloud-sdk-java-unet</module>
+
+
+        <module>ucloud-sdk-java-udpn</module>
+
+
+        <module>ucloud-sdk-java-umem</module>
+
+
+        <module>ucloud-sdk-java-udisk</module>
+
+
+        <module>ucloud-sdk-java-ufs</module>
+
+
+        <module>ucloud-sdk-java-pathx</module>
 
 
         <module>ucloud-sdk-java-uec</module>
 
 
-        <module>ucloud-sdk-java-ufile</module>
+        <module>ucloud-sdk-java-uhost</module>
 
 
-        <module>ucloud-sdk-java-umem</module>
+        <module>ucloud-sdk-java-uphost</module>
+
+
+        <module>ucloud-sdk-java-usms</module>
+
+
+        <module>ucloud-sdk-java-uddb</module>
 
 
         <module>ucloud-sdk-java-udb</module>
@@ -59,7 +66,12 @@
         <module>ucloud-sdk-java-ulb</module>
 
 
-        <module>ucloud-sdk-java-ipsecvpn</module>
+        <module>ucloud-sdk-java-ufile</module>
+
+
+        <module>ucloud-sdk-java-cube</module>
+
+
     </modules>
 
     <name>ucloud-sdk-java</name>
@@ -122,8 +134,6 @@
         <codec.version>1.9</codec.version>
         <slf4j.version>1.7.25</slf4j.version>
         <jsonassert.version>1.5.0</jsonassert.version>
-        <sonar.organization>ucloud</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
@@ -288,20 +298,20 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            &lt;!&ndash; GPG 验签 &ndash;&gt;-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                <version>1.6</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>sign</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <!-- GPG 验签 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

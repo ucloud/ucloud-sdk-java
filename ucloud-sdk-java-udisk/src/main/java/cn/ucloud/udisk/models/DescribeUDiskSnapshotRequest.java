@@ -13,41 +13,42 @@
  */
 package cn.ucloud.udisk.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribeUDiskSnapshotRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist): false */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list): false
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 数据偏移量, 默认为0: false */
+    /** 数据偏移量, 默认为0 */
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度, 默认为20: false */
+    /** 返回数据长度, 默认为20 */
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** UDiskId,返回该盘所做快照.(必须同时传Zone): false */
+    /** UDiskId,返回该盘所做快照.(必须同时传Zone) */
     @UCloudParam("UDiskId")
     private String uDiskId;
 
-    /** 快照id，SnapshotId , UDiskId 同时传SnapshotId优先: false */
+    /** 快照id，SnapshotId , UDiskId 同时传SnapshotId优先 */
     @UCloudParam("SnapshotId")
     private String snapshotId;
 

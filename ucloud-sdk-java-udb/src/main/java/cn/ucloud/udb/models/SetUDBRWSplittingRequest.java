@@ -20,36 +20,36 @@ import java.util.List;
 
 public class SetUDBRWSplittingRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html): false */
+    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html): false */
+    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** DB实例ID（master): false */
+    /** DB实例ID（master) */
     @NotEmpty
     @UCloudParam("MasterDBId")
     private String masterDBId;
 
-    /** 读写分离策略: false */
+    /** 读写分离策略 */
     @NotEmpty
     @UCloudParam("ReadModel")
     private String readModel;
 
-    /** DBIds.0 代表UDB主节点， DBIds.1 到DBIds.n 代表1到N个从节点: false */
+    /** DBIds.0 代表UDB主节点， DBIds.1 到DBIds.n 代表1到N个从节点 */
     @NotEmpty
     @UCloudParam("DBIds")
     private List<String> dbIds;
 
-    /** udb主从节点的只读比例。ReadPercents.0代表主节点的只读比例，ReadPercents.1代表从节点1的读写比例， 以此类推: false */
+    /** udb主从节点的只读比例。ReadPercents.0代表主节点的只读比例，ReadPercents.1代表从节点1的读写比例， 以此类推 */
     @UCloudParam("ReadPercents")
     private List<String> readPercents;
 
-    /** 时间阙值: false */
+    /** 时间阙值 */
     @UCloudParam("DelayThreshold")
     private Integer delayThreshold;
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GetUFileQuotaInfoResponse extends Response {
 
-    /** 配额信息数据集: false */
+    /** 配额信息数据集 */
     @SerializedName("DataSet")
     private List<UFileQuotaDataSetItem> dataSet;
 
@@ -33,23 +33,23 @@ public class GetUFileQuotaInfoResponse extends Response {
 
     public static class UFileQuotaDataSetItem extends Response {
 
-        /** 可用地域: false */
+        /** 可用地域 */
         @SerializedName("Region")
         private String region;
 
-        /** 是否欠费：1表示欠费；0表示未欠费: false */
+        /** 是否欠费：1表示欠费；0表示未欠费 */
         @SerializedName("Owe")
         private Integer owe;
 
-        /** 剩余存储容量: false */
+        /** 剩余存储容量 */
         @SerializedName("Storage")
         private UFileQuotaLeft storage;
 
-        /** 剩余下载流量: false */
+        /** 剩余下载流量 */
         @SerializedName("DownloadFlow")
         private UFileQuotaLeft downloadFlow;
 
-        /** 剩余请求次数: false */
+        /** 剩余请求次数 */
         @SerializedName("RequestCnt")
         private UFileQuotaLeft requestCnt;
 
@@ -96,7 +96,7 @@ public class GetUFileQuotaInfoResponse extends Response {
 
     public static class UFileQuotaLeft extends Response {
 
-        /** 配额剩余量: false */
+        /** 配额剩余量 */
         @SerializedName("Left")
         private Double left;
 
