@@ -1,206 +1,134 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.ucloud.ufs.client;
 
-import cn.ucloud.common.client.UcloudClient;
-import cn.ucloud.common.handler.UcloudHandler;
-import cn.ucloud.ufs.model.*;
+import cn.ucloud.common.client.DefaultClient;
+import cn.ucloud.common.config.Config;
+import cn.ucloud.common.credential.Credential;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ufs.models.AddUFSVolumeMountPointRequest;
+import cn.ucloud.ufs.models.AddUFSVolumeMountPointResponse;
+import cn.ucloud.ufs.models.CreateUFSVolumeRequest;
+import cn.ucloud.ufs.models.CreateUFSVolumeResponse;
+import cn.ucloud.ufs.models.DescribeUFSVolume2Request;
+import cn.ucloud.ufs.models.DescribeUFSVolume2Response;
+import cn.ucloud.ufs.models.DescribeUFSVolumeMountpointRequest;
+import cn.ucloud.ufs.models.DescribeUFSVolumeMountpointResponse;
+import cn.ucloud.ufs.models.ExtendUFSVolumeRequest;
+import cn.ucloud.ufs.models.ExtendUFSVolumeResponse;
+import cn.ucloud.ufs.models.RemoveUFSVolumeMountPointRequest;
+import cn.ucloud.ufs.models.RemoveUFSVolumeMountPointResponse;
+import cn.ucloud.ufs.models.RemoveUFSVolumeRequest;
+import cn.ucloud.ufs.models.RemoveUFSVolumeResponse;
+import cn.ucloud.ufs.models.UpdateUFSVolumeInfoRequest;
+import cn.ucloud.ufs.models.UpdateUFSVolumeInfoResponse;
 
-/**
- * @description: 文件存储接口
- * @author: codezhang
- * @date: 2018-10-08 14:31
- **/
-public interface UFSClient extends UcloudClient {
-
-    /**
-     * 创建文件系统
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    CreateUFSVolumeResult createUFSVolume(CreateUFSVolumeParam param) throws Exception;
-
-    /**
-     * 创建文件系统
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void createUFSVolume(CreateUFSVolumeParam param, UcloudHandler<CreateUFSVolumeResult> handler,
-                         Boolean... asyncFlag);
-
+/** This client is used to call actions of **UFS** service */
+public class UFSClient extends DefaultClient implements UFSClientInterface {
+    public UFSClient(Config config, Credential credential) {
+        super(config, credential);
+    }
 
     /**
-     * 获取文件系统列表
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * AddUFSVolumeMountPoint - 添加文件系统挂载点
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/AddUFSVolumeMountPoint
      */
-    DescribeUFSVolumeResult describeUFSVolume(DescribeUFSVolumeParam param) throws Exception;
+    public AddUFSVolumeMountPointResponse addUFSVolumeMountPoint(
+            AddUFSVolumeMountPointRequest request) throws UCloudException {
+        request.setAction("AddUFSVolumeMountPoint");
+        return (AddUFSVolumeMountPointResponse)
+                this.invoke(request, AddUFSVolumeMountPointResponse.class);
+    }
 
     /**
-     * 获取文件系统列表
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * CreateUFSVolume - 创建文件系统
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/CreateUFSVolume
      */
-    void describeUFSVolume(DescribeUFSVolumeParam param, UcloudHandler<DescribeUFSVolumeResult> handler,
-                           Boolean... asyncFlag);
-
+    public CreateUFSVolumeResponse createUFSVolume(CreateUFSVolumeRequest request)
+            throws UCloudException {
+        request.setAction("CreateUFSVolume");
+        return (CreateUFSVolumeResponse) this.invoke(request, CreateUFSVolumeResponse.class);
+    }
 
     /**
-     * 获取文件系统价格
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * DescribeUFSVolume2 - 获取文件系统列表
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/DescribeUFSVolume2
      */
-    DescribeUFSVolumePriceResult describeUFSVolumePrice(DescribeUFSVolumePriceParam param)
-            throws Exception;
+    public DescribeUFSVolume2Response describeUFSVolume2(DescribeUFSVolume2Request request)
+            throws UCloudException {
+        request.setAction("DescribeUFSVolume2");
+        return (DescribeUFSVolume2Response) this.invoke(request, DescribeUFSVolume2Response.class);
+    }
 
     /**
-     * 获取文件系统价格
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * DescribeUFSVolumeMountpoint - 获取文件系统挂载点信息
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/DescribeUFSVolumeMountpoint
      */
-    void describeUFSVolumePrice(DescribeUFSVolumePriceParam param,
-                                UcloudHandler<DescribeUFSVolumePriceResult> handler,
-                                Boolean... asyncFlag);
-
-
+    public DescribeUFSVolumeMountpointResponse describeUFSVolumeMountpoint(
+            DescribeUFSVolumeMountpointRequest request) throws UCloudException {
+        request.setAction("DescribeUFSVolumeMountpoint");
+        return (DescribeUFSVolumeMountpointResponse)
+                this.invoke(request, DescribeUFSVolumeMountpointResponse.class);
+    }
 
     /**
-     * 文件系统扩容价格
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * ExtendUFSVolume - 文件系统扩容
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/ExtendUFSVolume
      */
-    DescribeUFSVolumeUpgradePriceResult describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param)
-            throws Exception;
+    public ExtendUFSVolumeResponse extendUFSVolume(ExtendUFSVolumeRequest request)
+            throws UCloudException {
+        request.setAction("ExtendUFSVolume");
+        return (ExtendUFSVolumeResponse) this.invoke(request, ExtendUFSVolumeResponse.class);
+    }
 
     /**
-     * 文件系统扩容价格
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * RemoveUFSVolume - 删除UFS文件系统
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/RemoveUFSVolume
      */
-    void describeUFSVolumeUpgradePrice(DescribeUFSVolumeUpgradePriceParam param,
-                                       UcloudHandler<DescribeUFSVolumeUpgradePriceResult> handler,
-                                       Boolean... asyncFlag);
-
+    public RemoveUFSVolumeResponse removeUFSVolume(RemoveUFSVolumeRequest request)
+            throws UCloudException {
+        request.setAction("RemoveUFSVolume");
+        return (RemoveUFSVolumeResponse) this.invoke(request, RemoveUFSVolumeResponse.class);
+    }
 
     /**
-     * 获取文件系统白名单
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
+     * RemoveUFSVolumeMountPoint - 删除文件系统挂载点
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/RemoveUFSVolumeMountPoint
      */
-    DescribeUFSVolumeWhiteListResult describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param)
-            throws Exception;
+    public RemoveUFSVolumeMountPointResponse removeUFSVolumeMountPoint(
+            RemoveUFSVolumeMountPointRequest request) throws UCloudException {
+        request.setAction("RemoveUFSVolumeMountPoint");
+        return (RemoveUFSVolumeMountPointResponse)
+                this.invoke(request, RemoveUFSVolumeMountPointResponse.class);
+    }
 
     /**
-     * 获取文件系统白名单
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
+     * UpdateUFSVolumeInfo - 更改文件系统相关信息（名称／备注）
+     *
+     * <p>See also: https://docs.ucloud.cn/api/ufs-api/UpdateUFSVolumeInfo
      */
-    void describeUFSVolumeWhiteList(DescribeUFSVolumeWhiteListParam param,
-                                    UcloudHandler<DescribeUFSVolumeWhiteListResult> handler,
-                                    Boolean... asyncFlag);
-
-
-    /**
-     * 文件系统扩容
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    ExtendUFSVolumeResult extendUFSVolume(ExtendUFSVolumeParam param) throws Exception;
-
-    /**
-     * 文件系统扩容
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void extendUFSVolume(ExtendUFSVolumeParam param, UcloudHandler<ExtendUFSVolumeResult> handler,
-                         Boolean... asyncFlag);
-
-
-    /**
-     * 初始化文件系统白名单
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    @Deprecated
-    InitUFSVolumeWhiteListResult initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param)
-            throws Exception;
-
-    /**
-     * 初始化文件系统白名单
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    @Deprecated
-    void initUFSVolumeWhiteList(InitUFSVolumeWhiteListParam param,
-                                UcloudHandler<InitUFSVolumeWhiteListResult> handler,
-                                Boolean... asyncFlag);
-
-
-    /**
-     * 删除文件系统
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    RemoveUFSVolumeResult removeUFSVolume(RemoveUFSVolumeParam param) throws Exception;
-
-    /**
-     * 删除文件系统
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void removeUFSVolume(RemoveUFSVolumeParam param, UcloudHandler<RemoveUFSVolumeResult> handler,
-                         Boolean... asyncFlag);
-
-
-    /**
-     * 更改文件系统相关信息（名称／备注）
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    UpdateUFSVolumeInfoResult updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param) throws Exception;
-
-    /**
-     * 更改文件系统相关信息（名称／备注）
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void updateUFSVolumeInfo(UpdateUFSVolumeInfoParam param,
-                             UcloudHandler<UpdateUFSVolumeInfoResult> handler,
-                             Boolean... asyncFlag);
-
-    /**
-     * 更新文件系统白名单
-     * @param param 参数对象
-     * @return 结果对象
-     * @throws Exception 出错则抛出异常
-     */
-    UpdateUFSVolumeWhiteListResult updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param)
-            throws Exception;
-
-    /**
-     * 更新文件系统白名单
-     * @param param     参数对象
-     * @param handler   回调处理器
-     * @param asyncFlag 异步标记，默认异步true
-     */
-    void updateUFSVolumeWhiteList(UpdateUFSVolumeWhiteListParam param,
-                                  UcloudHandler<UpdateUFSVolumeWhiteListResult> handler,
-                                  Boolean... asyncFlag);
-
+    public UpdateUFSVolumeInfoResponse updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest request)
+            throws UCloudException {
+        request.setAction("UpdateUFSVolumeInfo");
+        return (UpdateUFSVolumeInfoResponse)
+                this.invoke(request, UpdateUFSVolumeInfoResponse.class);
+    }
 }

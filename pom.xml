@@ -7,29 +7,66 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>0.8.4.4-release</version>
+    <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>ucloud-sdk-java-uhost</module>
-        <module>ucloud-sdk-java-unet</module>
-        <module>ucloud-sdk-java-ulb</module>
-        <module>ucloud-sdk-java-udisk</module>
-        <module>ucloud-sdk-java-vpc</module>
         <module>ucloud-sdk-java-common</module>
-        <module>ucloud-sdk-java-ufs</module>
-        <module>ucloud-sdk-java-udb</module>
-        <module>ucloud-sdk-java-udpn</module>
-        <module>ucloud-sdk-java-pathx</module>
-        <module>ucloud-sdk-java-usql</module>
-        <module>ucloud-sdk-java-umem</module>
-        <module>ucloud-sdk-java-censor</module>
-        <module>ucloud-sdk-java-ocr</module>
-        <module>ucloud-sdk-java-usms</module>
-        <module>ucloud-sdk-java-ubill</module>
+
+
+        <module>ucloud-sdk-java-uddb</module>
+
+
         <module>ucloud-sdk-java-ucdn</module>
+
+
+        <module>ucloud-sdk-java-uec</module>
+
+
+        <module>ucloud-sdk-java-uk8s</module>
+
+
+        <module>ucloud-sdk-java-udisk</module>
+
+
+        <module>ucloud-sdk-java-ufs</module>
+
+
+        <module>ucloud-sdk-java-uphost</module>
+
+
+        <module>ucloud-sdk-java-ulb</module>
+
+
+        <module>ucloud-sdk-java-ipsecvpn</module>
+
+
+        <module>ucloud-sdk-java-unet</module>
+
+
+        <module>ucloud-sdk-java-udb</module>
+
+
+        <module>ucloud-sdk-java-uaccount</module>
+
+
+        <module>ucloud-sdk-java-usms</module>
+
+
+        <module>ucloud-sdk-java-ubill</module>
+
+
+        <module>ucloud-sdk-java-uhost</module>
+
+
+        <module>ucloud-sdk-java-umem</module>
+
+
+        <module>ucloud-sdk-java-ufile</module>
+
+
     </modules>
 
     <name>ucloud-sdk-java</name>
-    <url>http://www.ucloud.cn</url>
+    <url>https://www.ucloud.cn</url>
     <description>ucloud-sdk-java</description>
 
     <licenses>
@@ -56,6 +93,11 @@
             <email>joshua.yin@ucloud.cn</email>
             <url>https://github.com/ucloud/ucloud-sdk-java</url>
         </developer>
+        <developer>
+            <name>liyufei</name>
+            <email>yufei.li@ucloud.cn</email>
+            <url>https://github.com/ucloud/ucloud-sdk-java</url>
+        </developer>
     </developers>
 
     <distributionManagement>
@@ -68,7 +110,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,6 +125,8 @@
         <codec.version>1.9</codec.version>
         <slf4j.version>1.7.25</slf4j.version>
         <jsonassert.version>1.5.0</jsonassert.version>
+        <sonar.organization>ucloud</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
@@ -119,7 +162,6 @@
             </dependency>
 
 
-
             <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -135,13 +177,11 @@
                 <scope>provided</scope>
             </dependency>
 
-
-
-            <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
             <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-validator</artifactId>
-                <version>${validator.version}</version>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>4.1.0</version>
+                <scope>test</scope>
             </dependency>
 
             <dependency>
@@ -188,20 +228,39 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!-- 跳过单测的部分插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-                    <skipTests>true</skipTests>
+                    <skipTests>false</skipTests>
                 </configuration>
+            </plugin>
+            <!-- Code Coverage report generation -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-code-coverage-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <!--java doc-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.3.0</version>
                 <configuration>
                     <!--指定编码为UTF-8-->
                     <encoding>UTF-8</encoding>
@@ -232,22 +291,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- GPG 验签 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
-
-
 </project>

@@ -14,13 +14,12 @@
 *.rar
 *.jar
 
-.*/
 .DS_Store
+.idea/
 *.iml
 */target
 target
 clean_private.sh
-.gitattributes
 template/
-.gitlab-ci.yml
 sonar_analyze.sh
+cache/
