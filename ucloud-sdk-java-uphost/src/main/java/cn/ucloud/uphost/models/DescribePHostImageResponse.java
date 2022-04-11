@@ -69,6 +69,26 @@ public class DescribePHostImageResponse extends Response {
         @SerializedName("Version")
         private String version;
 
+        /** 枚举值：Base=>基础镜像，Custom=>自制镜像。 */
+        @SerializedName("ImageType")
+        private String imageType;
+
+        /** 裸金属2.0参数。镜像创建时间。 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 裸金属2.0参数。镜像当前状态。 */
+        @SerializedName("State")
+        private String state;
+
+        /** 裸金属2.0参数。镜像大小。 */
+        @SerializedName("ImageSize")
+        private Integer imageSize;
+
+        /** 镜像描述 */
+        @SerializedName("ImageDescription")
+        private String imageDescription;
+
         public String getImageId() {
             return imageId;
         }
@@ -115,6 +135,46 @@ public class DescribePHostImageResponse extends Response {
 
         public void setVersion(String version) {
             this.version = version;
+        }
+
+        public String getImageType() {
+            return imageType;
+        }
+
+        public void setImageType(String imageType) {
+            this.imageType = imageType;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public Integer getImageSize() {
+            return imageSize;
+        }
+
+        public void setImageSize(Integer imageSize) {
+            this.imageSize = imageSize;
+        }
+
+        public String getImageDescription() {
+            return imageDescription;
+        }
+
+        public void setImageDescription(String imageDescription) {
+            this.imageDescription = imageDescription;
         }
     }
 }

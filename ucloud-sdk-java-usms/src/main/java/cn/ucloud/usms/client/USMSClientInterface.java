@@ -44,88 +44,98 @@ public interface USMSClientInterface extends Client {
     /**
      * CreateUSMSSignature - 申请短信签名
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/CreateUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUSMSSignatureResponse createUSMSSignature(CreateUSMSSignatureRequest request)
+    CreateUSMSSignatureResponse createUSMSSignature(CreateUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
      * CreateUSMSTemplate - 申请短信模板
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/CreateUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUSMSTemplateResponse createUSMSTemplate(CreateUSMSTemplateRequest request)
+    CreateUSMSTemplateResponse createUSMSTemplate(CreateUSMSTemplateRequest request)
             throws UCloudException;
 
     /**
      * DeleteUSMSSignature - 删除短信签名
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/DeleteUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUSMSSignatureResponse deleteUSMSSignature(DeleteUSMSSignatureRequest request)
+    DeleteUSMSSignatureResponse deleteUSMSSignature(DeleteUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
      * DeleteUSMSTemplate - 删除短信模板
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/DeleteUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUSMSTemplateResponse deleteUSMSTemplate(DeleteUSMSTemplateRequest request)
+    DeleteUSMSTemplateResponse deleteUSMSTemplate(DeleteUSMSTemplateRequest request)
             throws UCloudException;
 
     /**
      * GetUSMSSendReceipt - 获取短信发送状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/GetUSMSSendReceipt
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUSMSSendReceiptResponse getUSMSSendReceipt(GetUSMSSendReceiptRequest request)
+    GetUSMSSendReceiptResponse getUSMSSendReceipt(GetUSMSSendReceiptRequest request)
             throws UCloudException;
 
     /**
      * QueryUSMSSignature - 查询短信签名申请状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/QueryUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public QueryUSMSSignatureResponse queryUSMSSignature(QueryUSMSSignatureRequest request)
+    QueryUSMSSignatureResponse queryUSMSSignature(QueryUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
      * QueryUSMSTemplate - 查询短信模板申请状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/QueryUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public QueryUSMSTemplateResponse queryUSMSTemplate(QueryUSMSTemplateRequest request)
+    QueryUSMSTemplateResponse queryUSMSTemplate(QueryUSMSTemplateRequest request)
             throws UCloudException;
 
     /**
      * SendBatchUSMSMessage - 批量发送短信
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/SendBatchUSMSMessage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SendBatchUSMSMessageResponse sendBatchUSMSMessage(SendBatchUSMSMessageRequest request)
+    SendBatchUSMSMessageResponse sendBatchUSMSMessage(SendBatchUSMSMessageRequest request)
             throws UCloudException;
 
     /**
      * SendUSMSMessage - 发送短信
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/SendUSMSMessage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SendUSMSMessageResponse sendUSMSMessage(SendUSMSMessageRequest request)
-            throws UCloudException;
+    SendUSMSMessageResponse sendUSMSMessage(SendUSMSMessageRequest request) throws UCloudException;
 
     /**
      * UpdateUSMSSignature - 修改短信签名
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/UpdateUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUSMSSignatureResponse updateUSMSSignature(UpdateUSMSSignatureRequest request)
+    UpdateUSMSSignatureResponse updateUSMSSignature(UpdateUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
      * UpdateUSMSTemplate - 修改短信模板
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/UpdateUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUSMSTemplateResponse updateUSMSTemplate(UpdateUSMSTemplateRequest request)
+    UpdateUSMSTemplateResponse updateUSMSTemplate(UpdateUSMSTemplateRequest request)
             throws UCloudException;
 }

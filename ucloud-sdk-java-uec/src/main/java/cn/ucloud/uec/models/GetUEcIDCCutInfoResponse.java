@@ -43,6 +43,33 @@ public class GetUEcIDCCutInfoResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class ResourceSet extends Response {
+
+        /** 节点id */
+        @SerializedName("NodeId")
+        private String nodeId;
+
+        /** 机器外网ip集合 */
+        @SerializedName("OuterIps")
+        private List<String> outerIps;
+
+        public String getNodeId() {
+            return nodeId;
+        }
+
+        public void setNodeId(String nodeId) {
+            this.nodeId = nodeId;
+        }
+
+        public List<String> getOuterIps() {
+            return outerIps;
+        }
+
+        public void setOuterIps(List<String> outerIps) {
+            this.outerIps = outerIps;
+        }
+    }
+
     public static class IDCCutInfo extends Response {
 
         /** 机房名称 */
@@ -127,33 +154,6 @@ public class GetUEcIDCCutInfoResponse extends Response {
 
         public void setResourceSet(List<ResourceSet> resourceSet) {
             this.resourceSet = resourceSet;
-        }
-    }
-
-    public static class ResourceSet extends Response {
-
-        /** 节点id */
-        @SerializedName("NodeId")
-        private String nodeId;
-
-        /** 机器外网ip集合 */
-        @SerializedName("OuterIps")
-        private List<String> outerIps;
-
-        public String getNodeId() {
-            return nodeId;
-        }
-
-        public void setNodeId(String nodeId) {
-            this.nodeId = nodeId;
-        }
-
-        public List<String> getOuterIps() {
-            return outerIps;
-        }
-
-        public void setOuterIps(List<String> outerIps) {
-            this.outerIps = outerIps;
         }
     }
 }

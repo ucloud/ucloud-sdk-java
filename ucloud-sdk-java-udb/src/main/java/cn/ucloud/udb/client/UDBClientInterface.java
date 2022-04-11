@@ -95,6 +95,8 @@ import cn.ucloud.udb.models.ExtractUDBParamGroupRequest;
 import cn.ucloud.udb.models.ExtractUDBParamGroupResponse;
 import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeRequest;
 import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeResponse;
+import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
+import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
@@ -136,455 +138,517 @@ public interface UDBClientInterface extends Client {
     /**
      * BackupUDBInstance - 备份云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public BackupUDBInstanceResponse backupUDBInstance(BackupUDBInstanceRequest request)
+    BackupUDBInstanceResponse backupUDBInstance(BackupUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * BackupUDBInstanceBinlog - 备份UDB指定时间段的binlog列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceBinlog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public BackupUDBInstanceBinlogResponse backupUDBInstanceBinlog(
-            BackupUDBInstanceBinlogRequest request) throws UCloudException;
+    BackupUDBInstanceBinlogResponse backupUDBInstanceBinlog(BackupUDBInstanceBinlogRequest request)
+            throws UCloudException;
 
     /**
      * BackupUDBInstanceErrorLog - 备份UDB指定时间段的errorlog
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceErrorLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public BackupUDBInstanceErrorLogResponse backupUDBInstanceErrorLog(
+    BackupUDBInstanceErrorLogResponse backupUDBInstanceErrorLog(
             BackupUDBInstanceErrorLogRequest request) throws UCloudException;
 
     /**
      * BackupUDBInstanceSlowLog - 备份UDB指定时间段的slowlog分析结果
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceSlowLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public BackupUDBInstanceSlowLogResponse backupUDBInstanceSlowLog(
+    BackupUDBInstanceSlowLogResponse backupUDBInstanceSlowLog(
             BackupUDBInstanceSlowLogRequest request) throws UCloudException;
 
     /**
      * ChangeUDBParamGroup - 修改配置文件
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ChangeUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ChangeUDBParamGroupResponse changeUDBParamGroup(ChangeUDBParamGroupRequest request)
+    ChangeUDBParamGroupResponse changeUDBParamGroup(ChangeUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
      * CheckRecoverUDBInstance - 核查db是否可以使用回档功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CheckRecoverUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CheckRecoverUDBInstanceResponse checkRecoverUDBInstance(
-            CheckRecoverUDBInstanceRequest request) throws UCloudException;
+    CheckRecoverUDBInstanceResponse checkRecoverUDBInstance(CheckRecoverUDBInstanceRequest request)
+            throws UCloudException;
 
     /**
      * CheckUDBInstanceToHAAllowance - 核查db是否可以升级为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CheckUDBInstanceToHAAllowance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CheckUDBInstanceToHAAllowanceResponse checkUDBInstanceToHAAllowance(
+    CheckUDBInstanceToHAAllowanceResponse checkUDBInstanceToHAAllowance(
             CheckUDBInstanceToHAAllowanceRequest request) throws UCloudException;
 
     /**
      * ClearUDBLog - 清除日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ClearUDBLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ClearUDBLogResponse clearUDBLog(ClearUDBLogRequest request) throws UCloudException;
+    ClearUDBLogResponse clearUDBLog(ClearUDBLogRequest request) throws UCloudException;
 
     /**
      * CreateMongoDBReplicaSet - 创建DB副本集
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateMongoDBReplicaSet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateMongoDBReplicaSetResponse createMongoDBReplicaSet(
-            CreateMongoDBReplicaSetRequest request) throws UCloudException;
+    CreateMongoDBReplicaSetResponse createMongoDBReplicaSet(CreateMongoDBReplicaSetRequest request)
+            throws UCloudException;
 
     /**
      * CreateUDBInstance - 创建数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDBInstanceResponse createUDBInstance(CreateUDBInstanceRequest request)
+    CreateUDBInstanceResponse createUDBInstance(CreateUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * CreateUDBInstanceByRecovery - 将新建的db恢复到指定db某个指定时间点
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBInstanceByRecovery
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDBInstanceByRecoveryResponse createUDBInstanceByRecovery(
+    CreateUDBInstanceByRecoveryResponse createUDBInstanceByRecovery(
             CreateUDBInstanceByRecoveryRequest request) throws UCloudException;
 
     /**
      * CreateUDBParamGroup - 创建配置文件
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDBParamGroupResponse createUDBParamGroup(CreateUDBParamGroupRequest request)
+    CreateUDBParamGroupResponse createUDBParamGroup(CreateUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
      * CreateUDBReplicationInstance - 创建副本
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBReplicationInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDBReplicationInstanceResponse createUDBReplicationInstance(
+    CreateUDBReplicationInstanceResponse createUDBReplicationInstance(
             CreateUDBReplicationInstanceRequest request) throws UCloudException;
 
     /**
      * CreateUDBRouteInstance - 创建mongos实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBRouteInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDBRouteInstanceResponse createUDBRouteInstance(
-            CreateUDBRouteInstanceRequest request) throws UCloudException;
+    CreateUDBRouteInstanceResponse createUDBRouteInstance(CreateUDBRouteInstanceRequest request)
+            throws UCloudException;
 
     /**
      * CreateUDBSlave - 创建从库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBSlave
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDBSlaveResponse createUDBSlave(CreateUDBSlaveRequest request)
-            throws UCloudException;
+    CreateUDBSlaveResponse createUDBSlave(CreateUDBSlaveRequest request) throws UCloudException;
 
     /**
      * DeleteUDBInstance - 删除云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUDBInstanceResponse deleteUDBInstance(DeleteUDBInstanceRequest request)
+    DeleteUDBInstanceResponse deleteUDBInstance(DeleteUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * DeleteUDBLogPackage - 删除UDB日志包
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBLogPackage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUDBLogPackageResponse deleteUDBLogPackage(DeleteUDBLogPackageRequest request)
+    DeleteUDBLogPackageResponse deleteUDBLogPackage(DeleteUDBLogPackageRequest request)
             throws UCloudException;
 
     /**
      * DeleteUDBParamGroup - 删除配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUDBParamGroupResponse deleteUDBParamGroup(DeleteUDBParamGroupRequest request)
+    DeleteUDBParamGroupResponse deleteUDBParamGroup(DeleteUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDBBackup - 获取备份列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBackup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBBackupResponse describeUDBBackup(DescribeUDBBackupRequest request)
+    DescribeUDBBackupResponse describeUDBBackup(DescribeUDBBackupRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDBBackupBlacklist - 获取备份黑名单
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBackupBlacklist
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
+    DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
             DescribeUDBBackupBlacklistRequest request) throws UCloudException;
 
     /**
      * DescribeUDBBinlogBackupURL - 获取UDB的Binlog备份地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBinlogBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBBinlogBackupURLResponse describeUDBBinlogBackupURL(
+    DescribeUDBBinlogBackupURLResponse describeUDBBinlogBackupURL(
             DescribeUDBBinlogBackupURLRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstance - 获取云数据库信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceResponse describeUDBInstance(DescribeUDBInstanceRequest request)
+    DescribeUDBInstanceResponse describeUDBInstance(DescribeUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDBInstanceBackupState - 获取实例备份状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBackupState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceBackupStateResponse describeUDBInstanceBackupState(
+    DescribeUDBInstanceBackupStateResponse describeUDBInstanceBackupState(
             DescribeUDBInstanceBackupStateRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstanceBackupURL - 获取UDB备份下载地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceBackupURLResponse describeUDBInstanceBackupURL(
+    DescribeUDBInstanceBackupURLResponse describeUDBInstanceBackupURL(
             DescribeUDBInstanceBackupURLRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstanceBinlog - 获取UDBbinlog列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBinlog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceBinlogResponse describeUDBInstanceBinlog(
+    DescribeUDBInstanceBinlogResponse describeUDBInstanceBinlog(
             DescribeUDBInstanceBinlogRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstanceBinlogBackupState - 获取udb实例备份状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBinlogBackupState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceBinlogBackupStateResponse describeUDBInstanceBinlogBackupState(
+    DescribeUDBInstanceBinlogBackupStateResponse describeUDBInstanceBinlogBackupState(
             DescribeUDBInstanceBinlogBackupStateRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstanceLog - 获取UDB错误日志或慢查询日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceLogResponse describeUDBInstanceLog(
-            DescribeUDBInstanceLogRequest request) throws UCloudException;
+    DescribeUDBInstanceLogResponse describeUDBInstanceLog(DescribeUDBInstanceLogRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUDBInstancePrice - 获取云数据库价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstancePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstancePriceResponse describeUDBInstancePrice(
+    DescribeUDBInstancePriceResponse describeUDBInstancePrice(
             DescribeUDBInstancePriceRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstanceState - 获取云数据库状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceStateResponse describeUDBInstanceState(
+    DescribeUDBInstanceStateResponse describeUDBInstanceState(
             DescribeUDBInstanceStateRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstanceUpgradePrice - 获取UDB实例升降级价格信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBInstanceUpgradePriceResponse describeUDBInstanceUpgradePrice(
+    DescribeUDBInstanceUpgradePriceResponse describeUDBInstanceUpgradePrice(
             DescribeUDBInstanceUpgradePriceRequest request) throws UCloudException;
 
     /**
      * DescribeUDBLogBackupURL - 获取UDB的slowlog备份地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBLogBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBLogBackupURLResponse describeUDBLogBackupURL(
-            DescribeUDBLogBackupURLRequest request) throws UCloudException;
+    DescribeUDBLogBackupURLResponse describeUDBLogBackupURL(DescribeUDBLogBackupURLRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUDBLogPackage - 列表UDB实例日志备份信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBLogPackage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBLogPackageResponse describeUDBLogPackage(DescribeUDBLogPackageRequest request)
+    DescribeUDBLogPackageResponse describeUDBLogPackage(DescribeUDBLogPackageRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDBParamGroup - 获取参数信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBParamGroupResponse describeUDBParamGroup(DescribeUDBParamGroupRequest request)
+    DescribeUDBParamGroupResponse describeUDBParamGroup(DescribeUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDBSplittingInfo - 描述读写分离功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBSplittingInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBSplittingInfoResponse describeUDBSplittingInfo(
+    DescribeUDBSplittingInfoResponse describeUDBSplittingInfo(
             DescribeUDBSplittingInfoRequest request) throws UCloudException;
 
     /**
      * DescribeUDBType - 获取云数据库支持类型
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDBTypeResponse describeUDBType(DescribeUDBTypeRequest request)
-            throws UCloudException;
+    DescribeUDBTypeResponse describeUDBType(DescribeUDBTypeRequest request) throws UCloudException;
 
     /**
      * DisableUDBRWSplitting - 关闭读写分离功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DisableUDBRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DisableUDBRWSplittingResponse disableUDBRWSplitting(DisableUDBRWSplittingRequest request)
+    DisableUDBRWSplittingResponse disableUDBRWSplitting(DisableUDBRWSplittingRequest request)
             throws UCloudException;
 
     /**
      * EditUDBBackupBlacklist - 编辑备份黑名单
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/EditUDBBackupBlacklist
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public EditUDBBackupBlacklistResponse editUDBBackupBlacklist(
-            EditUDBBackupBlacklistRequest request) throws UCloudException;
+    EditUDBBackupBlacklistResponse editUDBBackupBlacklist(EditUDBBackupBlacklistRequest request)
+            throws UCloudException;
 
     /**
      * EnableUDBRWSplitting - 启用读写分离功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/EnableUDBRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public EnableUDBRWSplittingResponse enableUDBRWSplitting(EnableUDBRWSplittingRequest request)
+    EnableUDBRWSplittingResponse enableUDBRWSplitting(EnableUDBRWSplittingRequest request)
             throws UCloudException;
 
     /**
      * ExtractUDBParamGroup - 获取配置文件内容
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ExtractUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ExtractUDBParamGroupResponse extractUDBParamGroup(ExtractUDBParamGroupRequest request)
+    ExtractUDBParamGroupResponse extractUDBParamGroup(ExtractUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
      * FetchUDBInstanceEarliestRecoverTime - 获取最早可回档时间
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/FetchUDBInstanceEarliestRecoverTime
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public FetchUDBInstanceEarliestRecoverTimeResponse fetchUDBInstanceEarliestRecoverTime(
+    FetchUDBInstanceEarliestRecoverTimeResponse fetchUDBInstanceEarliestRecoverTime(
             FetchUDBInstanceEarliestRecoverTimeRequest request) throws UCloudException;
+
+    /**
+     * GetUDBClientConnNum - 获取连接实例客户端Ip和连接数
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    GetUDBClientConnNumResponse getUDBClientConnNum(GetUDBClientConnNumRequest request)
+            throws UCloudException;
 
     /**
      * ModifyUDBInstanceName - 修改云数据库名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ModifyUDBInstanceName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUDBInstanceNameResponse modifyUDBInstanceName(ModifyUDBInstanceNameRequest request)
+    ModifyUDBInstanceNameResponse modifyUDBInstanceName(ModifyUDBInstanceNameRequest request)
             throws UCloudException;
 
     /**
      * ModifyUDBInstancePassword - 修改DB实例的管理员密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ModifyUDBInstancePassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
+    ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
             ModifyUDBInstancePasswordRequest request) throws UCloudException;
 
     /**
      * PromoteUDBInstanceToHA - 普通db升级为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/PromoteUDBInstanceToHA
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public PromoteUDBInstanceToHAResponse promoteUDBInstanceToHA(
-            PromoteUDBInstanceToHARequest request) throws UCloudException;
+    PromoteUDBInstanceToHAResponse promoteUDBInstanceToHA(PromoteUDBInstanceToHARequest request)
+            throws UCloudException;
 
     /**
      * PromoteUDBSlave - 提升从库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/PromoteUDBSlave
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public PromoteUDBSlaveResponse promoteUDBSlave(PromoteUDBSlaveRequest request)
-            throws UCloudException;
+    PromoteUDBSlaveResponse promoteUDBSlave(PromoteUDBSlaveRequest request) throws UCloudException;
 
     /**
      * ResizeUDBInstance - 修改UDB实例的配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ResizeUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ResizeUDBInstanceResponse resizeUDBInstance(ResizeUDBInstanceRequest request)
+    ResizeUDBInstanceResponse resizeUDBInstance(ResizeUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * RestartRWSplitting - 读写分离中间件重启
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/RestartRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RestartRWSplittingResponse restartRWSplitting(RestartRWSplittingRequest request)
+    RestartRWSplittingResponse restartRWSplitting(RestartRWSplittingRequest request)
             throws UCloudException;
 
     /**
      * RestartUDBInstance - 重启云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/RestartUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RestartUDBInstanceResponse restartUDBInstance(RestartUDBInstanceRequest request)
+    RestartUDBInstanceResponse restartUDBInstance(RestartUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * SetUDBRWSplitting - 设置读写分离
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/SetUDBRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SetUDBRWSplittingResponse setUDBRWSplitting(SetUDBRWSplittingRequest request)
+    SetUDBRWSplittingResponse setUDBRWSplitting(SetUDBRWSplittingRequest request)
             throws UCloudException;
 
     /**
      * StartUDBInstance - 启动云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/StartUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StartUDBInstanceResponse startUDBInstance(StartUDBInstanceRequest request)
+    StartUDBInstanceResponse startUDBInstance(StartUDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * StopUDBInstance - 关闭云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/StopUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StopUDBInstanceResponse stopUDBInstance(StopUDBInstanceRequest request)
-            throws UCloudException;
+    StopUDBInstanceResponse stopUDBInstance(StopUDBInstanceRequest request) throws UCloudException;
 
     /**
      * SwitchUDBHAToSentinel - UDB高可用实例升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/SwitchUDBHAToSentinel
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SwitchUDBHAToSentinelResponse switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest request)
+    SwitchUDBHAToSentinelResponse switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest request)
             throws UCloudException;
 
     /**
      * SwitchUDBInstanceToHA - 普通UDB切换为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/SwitchUDBInstanceToHA
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SwitchUDBInstanceToHAResponse switchUDBInstanceToHA(SwitchUDBInstanceToHARequest request)
+    SwitchUDBInstanceToHAResponse switchUDBInstanceToHA(SwitchUDBInstanceToHARequest request)
             throws UCloudException;
 
     /**
      * UpdateUDBInstanceBackupStrategy - 修改UDB自动备份策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBInstanceBackupStrategy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUDBInstanceBackupStrategyResponse updateUDBInstanceBackupStrategy(
+    UpdateUDBInstanceBackupStrategyResponse updateUDBInstanceBackupStrategy(
             UpdateUDBInstanceBackupStrategyRequest request) throws UCloudException;
 
     /**
      * UpdateUDBInstanceSlaveBackupSwitch - 开启或者关闭UDB从库备份
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBInstanceSlaveBackupSwitch
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUDBInstanceSlaveBackupSwitchResponse updateUDBInstanceSlaveBackupSwitch(
+    UpdateUDBInstanceSlaveBackupSwitchResponse updateUDBInstanceSlaveBackupSwitch(
             UpdateUDBInstanceSlaveBackupSwitchRequest request) throws UCloudException;
 
     /**
      * UpdateUDBParamGroup - 更新配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUDBParamGroupResponse updateUDBParamGroup(UpdateUDBParamGroupRequest request)
+    UpdateUDBParamGroupResponse updateUDBParamGroup(UpdateUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
      * UpgradeUDBInstanceToHA - 快杰普通db升级为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpgradeUDBInstanceToHA
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(
-            UpgradeUDBInstanceToHARequest request) throws UCloudException;
+    UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(UpgradeUDBInstanceToHARequest request)
+            throws UCloudException;
 
     /**
      * UploadUDBParamGroup - 导入配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UploadUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UploadUDBParamGroupResponse uploadUDBParamGroup(UploadUDBParamGroupRequest request)
+    UploadUDBParamGroupResponse uploadUDBParamGroup(UploadUDBParamGroupRequest request)
             throws UCloudException;
 }

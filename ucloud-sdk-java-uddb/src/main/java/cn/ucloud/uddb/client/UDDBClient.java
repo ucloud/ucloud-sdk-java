@@ -51,7 +51,8 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     /**
      * ChangeUDDBInstanceName - 修改分布式数据库中间件名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/ChangeUDDBInstanceName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ChangeUDDBInstanceNameResponse changeUDDBInstanceName(
             ChangeUDDBInstanceNameRequest request) throws UCloudException {
@@ -62,14 +63,9 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
 
     /**
      * ChangeUDDBSlaveCount - 改变分布式数据库数据节点的只读实例个数
-     * 每一个UDDB的数据节点负责处理所有的写入请求。与此同时，每一个数据节点可以配置若干个该节点的只读实例。当主节点的数据写入完毕后，只读实例把这次的写入操作进行更新，从而和数据节点保持一致。
-     * 只读实例可以使得数据由多份复制，在数据节点和只读实例之间，可以做请求的读写分离, 也就是说, 主节点写入数据之后, 数据的读操作可以由数据只读实例进行分担, 这样减少主节点的压力,
-     * 增加性能 当改变了数据节点的只读实例个数之后，对于现有的和以后的每一个数据节点都采用这个配置。如果UDDB实例有现有的数据节点,
-     * 那么它会根据新配置的参数，自动创建或删除数据节点的只读实例 如下状态的UDDB实例可以进行这个操作: Running: 系统正常运行中
-     * 当请求返回成功之后，UDDB实例的状态变成"ChangingSlaveCount"; 如果返回失败, UDDB实例状态保持不变 当UDDB更改数据分区的只读实例个数成功之后,
-     * UDDB实例的状态变成"Running"(正常运行中); 如果更改过程中出现异常, 状态变成"Abnormal"(异常运行中)或者"Error"(运行错误)
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/ChangeUDDBSlaveCount
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ChangeUDDBSlaveCountResponse changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest request)
             throws UCloudException {
@@ -79,9 +75,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * CreateUDDBInstance - 创建创建分布式数据库UDDB实例, 简称UDDB实例。
+     * CreateUDDBInstance - 创建分布式数据库UDDB
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/CreateUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDDBInstanceResponse createUDDBInstance(CreateUDDBInstanceRequest request)
             throws UCloudException {
@@ -90,10 +87,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * DeleteUDDBInstance - 删除UDDB实例。 如下状态的UDDB实例可以进行这个操作: InitFail: 初始化失败 Shutoff: 已关闭
-     * 当请求返回成功之后，UDDB实例就已经被删除, 列表上看不到对应的UDDB实例
+     * DeleteUDDBInstance - 删除UDDB实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DeleteUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUDDBInstanceResponse deleteUDDBInstance(DeleteUDDBInstanceRequest request)
             throws UCloudException {
@@ -104,7 +101,8 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     /**
      * DescribeUDDBInstance - 获取分布式数据库UDDB的详细信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DescribeUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDDBInstanceResponse describeUDDBInstance(DescribeUDDBInstanceRequest request)
             throws UCloudException {
@@ -116,7 +114,8 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     /**
      * DescribeUDDBInstancePrice - 获取分布式数据库UDDB价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DescribeUDDBInstancePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDDBInstancePriceResponse describeUDDBInstancePrice(
             DescribeUDDBInstancePriceRequest request) throws UCloudException {
@@ -128,7 +127,8 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     /**
      * DescribeUDDBInstanceUpgradePrice - 升级UDDB时，获取升级后的价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DescribeUDDBInstanceUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDDBInstanceUpgradePriceResponse describeUDDBInstanceUpgradePrice(
             DescribeUDDBInstanceUpgradePriceRequest request) throws UCloudException {
@@ -138,15 +138,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * RestartUDDBInstance - 重启UDDB实例，开始提供服务。
+     * RestartUDDBInstance - 重启UDDB实例
      *
-     * <p>如下状态的UDDB实例可以进行这个操作:
-     *
-     * <p>Running: 正常运行中 Abnormal: 异常运行中 当请求返回成功之后，UDDB实例的状态变成"Starting"(启动中); 如果返回失败, UDDB实例状态保持不变
-     * UDDB实例在重启过程中, 当UDDB实例启动成功之后, UDDB实例的状态变成"Running"(正常运行中); 如果启动过程中出现异常, 状态变成"Abnormal"(异常运行中),
-     * 或者"Shutoff"(已关闭
-     *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/RestartUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartUDDBInstanceResponse restartUDDBInstance(RestartUDDBInstanceRequest request)
             throws UCloudException {
@@ -156,15 +151,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * StartUDDBInstance - 启动UDDB实例，开始提供服务。
+     * StartUDDBInstance - 启动UDDB实例
      *
-     * <p>如下状态的UDDB实例可以进行这个操作:
-     *
-     * <p>Shutoff: 已关闭 当请求返回成功之后，UDDB实例的状态变成"Starting"(启动中); 如果返回失败, UDDB实例状态保持不变 UDDB实例在启动过程中,
-     * 当UDDB实例启动成功之后, UDDB实例的状态变成"Running"(正常运行中); 如果启动过程中出现异常, 状态变成"Abnormal"(异常运行中),
-     * 或者"Shutoff"(已关闭)
-     *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/StartUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StartUDDBInstanceResponse startUDDBInstance(StartUDDBInstanceRequest request)
             throws UCloudException {
@@ -173,15 +163,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * StopUDDBInstance - 关闭UDDB实例，停止提供服务。
+     * StopUDDBInstance - 关闭UDDB实例
      *
-     * <p>如下状态的UDDB实例可以进行这个操作:
-     *
-     * <p>Running: 正常运行中 Abnormal: 异常运行中 当请求返回成功之后，UDDB实例的状态变成"Shutdown"(关闭中); 如果返回失败, UDDB实例状态保持不变
-     * UDDB实例在关闭过程中, 当UDDB实例关闭成功之后, UDDB实例的状态变成"Shutoff"(已关闭); 如果关闭过程中出现异常, 根据UDDB实例的情况,
-     * 状态变成"Abnormal"(异常运行中), 或者"Running"(正常运行中)
-     *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/StopUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StopUDDBInstanceResponse stopUDDBInstance(StopUDDBInstanceRequest request)
             throws UCloudException {
@@ -190,18 +175,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * UpgradeUDDBDataNode - 升降级分布式数据库数据节点的配置, 提高/降低数据节点的数据容量和内存
+     * UpgradeUDDBDataNode - 升降级分布式数据库数据节点的配置
      *
-     * <p>所有数据节点以及其所挂载的只读实例的配置都受到影响
-     *
-     * <p>升降级数据节点的配置之后之后, 会按照数据节点新的磁盘和内存大小重新计费
-     *
-     * <p>如下状态的数据节点实例可以进行这个操作:
-     *
-     * <p>Shutoff: 已关闭 当请求返回成功之后，UDDB实例的状态变成"UpgradingDataNode"，相关数据节点的状态变成"Upgrading"; 如果返回失败,
-     * UDDB实例状态保持不变 当UDDB实例升级结束之后, UDDB实例的状态变成"Shutoff"
-     *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/UpgradeUDDBDataNode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpgradeUDDBDataNodeResponse upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest request)
             throws UCloudException {
@@ -211,16 +188,10 @@ public class UDDBClient extends DefaultClient implements UDDBClientInterface {
     }
 
     /**
-     * UpgradeUDDBInstance - 升降级分布式数据库中间件的配置, 提高/降低请求处理的并发性
+     * UpgradeUDDBInstance - 升降级分布式数据库中间件的配置
      *
-     * <p>修改请求处理节点个数之后, 按照所有请求处理节点的总内存容量和CPU核数重新计费
-     *
-     * <p>如下状态的UDDB实例可以进行这个操作:
-     *
-     * <p>Running: 系统正常运行中 当请求返回成功之后，UDDB实例的状态变成"UpgradingUDDB"; 如果返回失败, UDDB实例状态保持不变 当UDDB实例升级成功之后,
-     * UDDB实例的状态变成"Running"; 如果更改过程中出现异常, 状态变成"Abnormal", 或者"Error"
-     *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/UpgradeUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpgradeUDDBInstanceResponse upgradeUDDBInstance(UpgradeUDDBInstanceRequest request)
             throws UCloudException {

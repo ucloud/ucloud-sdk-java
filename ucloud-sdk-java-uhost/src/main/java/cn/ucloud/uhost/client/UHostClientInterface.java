@@ -90,270 +90,303 @@ public interface UHostClientInterface extends Client {
     /**
      * CopyCustomImage - 复制自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CopyCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CopyCustomImageResponse copyCustomImage(CopyCustomImageRequest request)
-            throws UCloudException;
+    CopyCustomImageResponse copyCustomImage(CopyCustomImageRequest request) throws UCloudException;
 
     /**
      * CreateCustomImage - 创建自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateCustomImageResponse createCustomImage(CreateCustomImageRequest request)
+    CreateCustomImageResponse createCustomImage(CreateCustomImageRequest request)
             throws UCloudException;
 
     /**
      * CreateIsolationGroup - 创建硬件隔离组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateIsolationGroupResponse createIsolationGroup(CreateIsolationGroupRequest request)
+    CreateIsolationGroupResponse createIsolationGroup(CreateIsolationGroupRequest request)
             throws UCloudException;
 
     /**
      * CreateUHostInstance - 创建云主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUHostInstanceResponse createUHostInstance(CreateUHostInstanceRequest request)
+    CreateUHostInstanceResponse createUHostInstance(CreateUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * CreateUHostKeyPair - 创建主机密钥对
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateUHostKeyPair
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUHostKeyPairResponse createUHostKeyPair(CreateUHostKeyPairRequest request)
+    CreateUHostKeyPairResponse createUHostKeyPair(CreateUHostKeyPairRequest request)
             throws UCloudException;
 
     /**
      * DeleteIsolationGroup - 删除硬件隔离组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DeleteIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteIsolationGroupResponse deleteIsolationGroup(DeleteIsolationGroupRequest request)
+    DeleteIsolationGroupResponse deleteIsolationGroup(DeleteIsolationGroupRequest request)
             throws UCloudException;
 
     /**
      * DeleteUHostKeyPairs - 删除主机密钥
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DeleteUHostKeyPairs
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUHostKeyPairsResponse deleteUHostKeyPairs(DeleteUHostKeyPairsRequest request)
+    DeleteUHostKeyPairsResponse deleteUHostKeyPairs(DeleteUHostKeyPairsRequest request)
             throws UCloudException;
 
     /**
      * DescribeImage - 获取镜像列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeImageResponse describeImage(DescribeImageRequest request) throws UCloudException;
+    DescribeImageResponse describeImage(DescribeImageRequest request) throws UCloudException;
 
     /**
      * DescribeIsolationGroup - 查询硬件隔离组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeIsolationGroupResponse describeIsolationGroup(
-            DescribeIsolationGroupRequest request) throws UCloudException;
+    DescribeIsolationGroupResponse describeIsolationGroup(DescribeIsolationGroupRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUHostInstance - 获取主机信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUHostInstanceResponse describeUHostInstance(DescribeUHostInstanceRequest request)
+    DescribeUHostInstanceResponse describeUHostInstance(DescribeUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * DescribeUHostKeyPairs - 查询主机密钥信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostKeyPairs
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUHostKeyPairsResponse describeUHostKeyPairs(DescribeUHostKeyPairsRequest request)
+    DescribeUHostKeyPairsResponse describeUHostKeyPairs(DescribeUHostKeyPairsRequest request)
             throws UCloudException;
 
     /**
      * DescribeUHostTags - 获取主机业务组列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostTags
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUHostTagsResponse describeUHostTags(DescribeUHostTagsRequest request)
+    DescribeUHostTagsResponse describeUHostTags(DescribeUHostTagsRequest request)
             throws UCloudException;
 
     /**
      * GetAttachedDiskUpgradePrice - 获取挂载磁盘的升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetAttachedDiskUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetAttachedDiskUpgradePriceResponse getAttachedDiskUpgradePrice(
+    GetAttachedDiskUpgradePriceResponse getAttachedDiskUpgradePrice(
             GetAttachedDiskUpgradePriceRequest request) throws UCloudException;
 
     /**
      * GetUHostInstancePrice - 获取主机价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostInstancePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUHostInstancePriceResponse getUHostInstancePrice(GetUHostInstancePriceRequest request)
+    GetUHostInstancePriceResponse getUHostInstancePrice(GetUHostInstancePriceRequest request)
             throws UCloudException;
 
     /**
      * GetUHostInstanceVncInfo - 获取VNC登录信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostInstanceVncInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(
-            GetUHostInstanceVncInfoRequest request) throws UCloudException;
+    GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(GetUHostInstanceVncInfoRequest request)
+            throws UCloudException;
 
     /**
      * GetUHostUpgradePrice - 获取主机规格调整差价
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUHostUpgradePriceResponse getUHostUpgradePrice(GetUHostUpgradePriceRequest request)
+    GetUHostUpgradePriceResponse getUHostUpgradePrice(GetUHostUpgradePriceRequest request)
             throws UCloudException;
 
     /**
      * ImportCustomImage - 导入镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ImportCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ImportCustomImageResponse importCustomImage(ImportCustomImageRequest request)
+    ImportCustomImageResponse importCustomImage(ImportCustomImageRequest request)
             throws UCloudException;
 
     /**
      * ImportUHostKeyPairs - 导入密钥对的公钥部分
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ImportUHostKeyPairs
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ImportUHostKeyPairsResponse importUHostKeyPairs(ImportUHostKeyPairsRequest request)
+    ImportUHostKeyPairsResponse importUHostKeyPairs(ImportUHostKeyPairsRequest request)
             throws UCloudException;
 
     /**
      * LeaveIsolationGroup - 移除硬件隔离组中的主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/LeaveIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public LeaveIsolationGroupResponse leaveIsolationGroup(LeaveIsolationGroupRequest request)
+    LeaveIsolationGroupResponse leaveIsolationGroup(LeaveIsolationGroupRequest request)
             throws UCloudException;
 
     /**
      * ModifyUHostIP - 修改云主机内部 IP 地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostIP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUHostIPResponse modifyUHostIP(ModifyUHostIPRequest request) throws UCloudException;
+    ModifyUHostIPResponse modifyUHostIP(ModifyUHostIPRequest request) throws UCloudException;
 
     /**
      * ModifyUHostInstanceName - 修改主机名
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUHostInstanceNameResponse modifyUHostInstanceName(
-            ModifyUHostInstanceNameRequest request) throws UCloudException;
+    ModifyUHostInstanceNameResponse modifyUHostInstanceName(ModifyUHostInstanceNameRequest request)
+            throws UCloudException;
 
     /**
      * ModifyUHostInstanceRemark - 修改主机备注
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceRemark
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUHostInstanceRemarkResponse modifyUHostInstanceRemark(
+    ModifyUHostInstanceRemarkResponse modifyUHostInstanceRemark(
             ModifyUHostInstanceRemarkRequest request) throws UCloudException;
 
     /**
      * ModifyUHostInstanceTag - 修改主机业务组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceTag
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUHostInstanceTagResponse modifyUHostInstanceTag(
-            ModifyUHostInstanceTagRequest request) throws UCloudException;
+    ModifyUHostInstanceTagResponse modifyUHostInstanceTag(ModifyUHostInstanceTagRequest request)
+            throws UCloudException;
 
     /**
      * PoweroffUHostInstance - 模拟主机掉电
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/PoweroffUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public PoweroffUHostInstanceResponse poweroffUHostInstance(PoweroffUHostInstanceRequest request)
+    PoweroffUHostInstanceResponse poweroffUHostInstance(PoweroffUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * RebootUHostInstance - 重启主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/RebootUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RebootUHostInstanceResponse rebootUHostInstance(RebootUHostInstanceRequest request)
+    RebootUHostInstanceResponse rebootUHostInstance(RebootUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * ReinstallUHostInstance - 重装系统
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ReinstallUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ReinstallUHostInstanceResponse reinstallUHostInstance(
-            ReinstallUHostInstanceRequest request) throws UCloudException;
+    ReinstallUHostInstanceResponse reinstallUHostInstance(ReinstallUHostInstanceRequest request)
+            throws UCloudException;
 
     /**
      * ResetUHostInstancePassword - 重置主机密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResetUHostInstancePassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ResetUHostInstancePasswordResponse resetUHostInstancePassword(
+    ResetUHostInstancePasswordResponse resetUHostInstancePassword(
             ResetUHostInstancePasswordRequest request) throws UCloudException;
 
     /**
      * ResizeAttachedDisk - 修改挂载的磁盘大小
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResizeAttachedDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ResizeAttachedDiskResponse resizeAttachedDisk(ResizeAttachedDiskRequest request)
+    ResizeAttachedDiskResponse resizeAttachedDisk(ResizeAttachedDiskRequest request)
             throws UCloudException;
 
     /**
      * ResizeUHostInstance - 修改主机规格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResizeUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ResizeUHostInstanceResponse resizeUHostInstance(ResizeUHostInstanceRequest request)
+    ResizeUHostInstanceResponse resizeUHostInstance(ResizeUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * StartUHostInstance - 启动主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/StartUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StartUHostInstanceResponse startUHostInstance(StartUHostInstanceRequest request)
+    StartUHostInstanceResponse startUHostInstance(StartUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * StopUHostInstance - 关闭主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/StopUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StopUHostInstanceResponse stopUHostInstance(StopUHostInstanceRequest request)
+    StopUHostInstanceResponse stopUHostInstance(StopUHostInstanceRequest request)
             throws UCloudException;
 
     /**
      * TerminateCustomImage - 删除自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/TerminateCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public TerminateCustomImageResponse terminateCustomImage(TerminateCustomImageRequest request)
+    TerminateCustomImageResponse terminateCustomImage(TerminateCustomImageRequest request)
             throws UCloudException;
 
     /**
      * TerminateUHostInstance - 删除云主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/TerminateUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public TerminateUHostInstanceResponse terminateUHostInstance(
-            TerminateUHostInstanceRequest request) throws UCloudException;
+    TerminateUHostInstanceResponse terminateUHostInstance(TerminateUHostInstanceRequest request)
+            throws UCloudException;
 
     /**
      * UpgradeToArkUHostInstance - 普通升级为方舟机型
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/UpgradeToArkUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
+    UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
             UpgradeToArkUHostInstanceRequest request) throws UCloudException;
 }

@@ -59,6 +59,10 @@ public class CreateUSMSTemplateRequest extends Request {
     @UCloudParam("UnsubscribeInfo")
     private String unsubscribeInfo;
 
+    /** 模板变量属性说明 */
+    @UCloudParam("Instruction")
+    private String instruction;
+
     public String getProjectId() {
         return projectId;
     }
@@ -113,5 +117,13 @@ public class CreateUSMSTemplateRequest extends Request {
 
     public void setUnsubscribeInfo(String unsubscribeInfo) {
         this.unsubscribeInfo = unsubscribeInfo;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
     }
 }

@@ -62,147 +62,164 @@ public interface ULBClientInterface extends Client {
     /**
      * AllocateBackend - 添加后端实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/AllocateBackend
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public AllocateBackendResponse allocateBackend(AllocateBackendRequest request)
-            throws UCloudException;
+    AllocateBackendResponse allocateBackend(AllocateBackendRequest request) throws UCloudException;
 
     /**
      * BindSSL - 绑定SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/BindSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
+    BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
 
     /**
      * CreatePolicy - 创建转发策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreatePolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException;
+    CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException;
 
     /**
      * CreateSSL - 创建SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreateSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateSSLResponse createSSL(CreateSSLRequest request) throws UCloudException;
+    CreateSSLResponse createSSL(CreateSSLRequest request) throws UCloudException;
 
     /**
      * CreateULB - 创建负载均衡
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreateULB
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateULBResponse createULB(CreateULBRequest request) throws UCloudException;
+    CreateULBResponse createULB(CreateULBRequest request) throws UCloudException;
 
     /**
      * CreateVServer - 创建VServer
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreateVServer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateVServerResponse createVServer(CreateVServerRequest request) throws UCloudException;
+    CreateVServerResponse createVServer(CreateVServerRequest request) throws UCloudException;
 
     /**
      * DeletePolicy - 删除转发策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeletePolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException;
+    DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException;
 
     /**
      * DeleteSSL - 删除SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeleteSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteSSLResponse deleteSSL(DeleteSSLRequest request) throws UCloudException;
+    DeleteSSLResponse deleteSSL(DeleteSSLRequest request) throws UCloudException;
 
     /**
      * DeleteULB - 删除负载均衡
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeleteULB
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteULBResponse deleteULB(DeleteULBRequest request) throws UCloudException;
+    DeleteULBResponse deleteULB(DeleteULBRequest request) throws UCloudException;
 
     /**
      * DeleteVServer - 删除VServer
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeleteVServer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteVServerResponse deleteVServer(DeleteVServerRequest request) throws UCloudException;
+    DeleteVServerResponse deleteVServer(DeleteVServerRequest request) throws UCloudException;
 
     /**
      * DescribeSSL - 获取SSL证书信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException;
+    DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException;
 
     /**
      * DescribeULB - 获取负载均衡信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeULB
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeULBResponse describeULB(DescribeULBRequest request) throws UCloudException;
+    DescribeULBResponse describeULB(DescribeULBRequest request) throws UCloudException;
 
     /**
      * DescribeULBSimple - 获取负载均衡信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeULBSimple
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeULBSimpleResponse describeULBSimple(DescribeULBSimpleRequest request)
+    DescribeULBSimpleResponse describeULBSimple(DescribeULBSimpleRequest request)
             throws UCloudException;
 
     /**
      * DescribeVServer - 获取VServer信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeVServer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeVServerResponse describeVServer(DescribeVServerRequest request)
-            throws UCloudException;
+    DescribeVServerResponse describeVServer(DescribeVServerRequest request) throws UCloudException;
 
     /**
      * ReleaseBackend - 释放后端实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/ReleaseBackend
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ReleaseBackendResponse releaseBackend(ReleaseBackendRequest request)
-            throws UCloudException;
+    ReleaseBackendResponse releaseBackend(ReleaseBackendRequest request) throws UCloudException;
 
     /**
      * UnbindSSL - 解绑SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UnbindSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UnbindSSLResponse unbindSSL(UnbindSSLRequest request) throws UCloudException;
+    UnbindSSLResponse unbindSSL(UnbindSSLRequest request) throws UCloudException;
 
     /**
      * UpdateBackendAttribute - 更新后端实例属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdateBackendAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateBackendAttributeResponse updateBackendAttribute(
-            UpdateBackendAttributeRequest request) throws UCloudException;
+    UpdateBackendAttributeResponse updateBackendAttribute(UpdateBackendAttributeRequest request)
+            throws UCloudException;
 
     /**
      * UpdatePolicy - 更新内容转发规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdatePolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
+    UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
 
     /**
      * UpdateULBAttribute - 更新负载均衡属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdateULBAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateULBAttributeResponse updateULBAttribute(UpdateULBAttributeRequest request)
+    UpdateULBAttributeResponse updateULBAttribute(UpdateULBAttributeRequest request)
             throws UCloudException;
 
     /**
      * UpdateVServerAttribute - 更新VServer属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdateVServerAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateVServerAttributeResponse updateVServerAttribute(
-            UpdateVServerAttributeRequest request) throws UCloudException;
+    UpdateVServerAttributeResponse updateVServerAttribute(UpdateVServerAttributeRequest request)
+            throws UCloudException;
 }

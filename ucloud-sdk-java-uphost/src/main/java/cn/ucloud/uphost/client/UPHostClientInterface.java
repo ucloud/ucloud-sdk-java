@@ -62,153 +62,170 @@ public interface UPHostClientInterface extends Client {
     /**
      * CreatePHost - 创建物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/CreatePHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreatePHostResponse createPHost(CreatePHostRequest request) throws UCloudException;
+    CreatePHostResponse createPHost(CreatePHostRequest request) throws UCloudException;
 
     /**
      * CreatePHostImage - 创建裸金属2.0用户自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/CreatePHostImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreatePHostImageResponse createPHostImage(CreatePHostImageRequest request)
+    CreatePHostImageResponse createPHostImage(CreatePHostImageRequest request)
             throws UCloudException;
 
     /**
      * DescribeBaremetalMachineType - 获取裸金属机型的详细信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribeBaremetalMachineType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeBaremetalMachineTypeResponse describeBaremetalMachineType(
+    DescribeBaremetalMachineTypeResponse describeBaremetalMachineType(
             DescribeBaremetalMachineTypeRequest request) throws UCloudException;
 
     /**
      * DescribePHost - 获取物理机信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribePHostResponse describePHost(DescribePHostRequest request) throws UCloudException;
+    DescribePHostResponse describePHost(DescribePHostRequest request) throws UCloudException;
 
     /**
      * DescribePHostImage - 获取物理机镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHostImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribePHostImageResponse describePHostImage(DescribePHostImageRequest request)
+    DescribePHostImageResponse describePHostImage(DescribePHostImageRequest request)
             throws UCloudException;
 
     /**
      * DescribePHostMachineType - 获取物理云机型信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHostMachineType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribePHostMachineTypeResponse describePHostMachineType(
+    DescribePHostMachineTypeResponse describePHostMachineType(
             DescribePHostMachineTypeRequest request) throws UCloudException;
 
     /**
      * DescribePHostTags - 获取物理机业务组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHostTags
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribePHostTagsResponse describePHostTags(DescribePHostTagsRequest request)
+    DescribePHostTagsResponse describePHostTags(DescribePHostTagsRequest request)
             throws UCloudException;
 
     /**
      * GetPHostDiskUpgradePrice - 获取物理云裸金属挂载云盘的升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/GetPHostDiskUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetPHostDiskUpgradePriceResponse getPHostDiskUpgradePrice(
+    GetPHostDiskUpgradePriceResponse getPHostDiskUpgradePrice(
             GetPHostDiskUpgradePriceRequest request) throws UCloudException;
 
     /**
      * GetPHostPrice - 获取物理机价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/GetPHostPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetPHostPriceResponse getPHostPrice(GetPHostPriceRequest request) throws UCloudException;
+    GetPHostPriceResponse getPHostPrice(GetPHostPriceRequest request) throws UCloudException;
 
     /**
      * ModifyPHostImageInfo - 修改物理云自定义镜像信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ModifyPHostImageInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyPHostImageInfoResponse modifyPHostImageInfo(ModifyPHostImageInfoRequest request)
+    ModifyPHostImageInfoResponse modifyPHostImageInfo(ModifyPHostImageInfoRequest request)
             throws UCloudException;
 
     /**
      * ModifyPHostInfo - 更改物理机信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ModifyPHostInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyPHostInfoResponse modifyPHostInfo(ModifyPHostInfoRequest request)
-            throws UCloudException;
+    ModifyPHostInfoResponse modifyPHostInfo(ModifyPHostInfoRequest request) throws UCloudException;
 
     /**
      * PoweroffPHost - 断电物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/PoweroffPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public PoweroffPHostResponse poweroffPHost(PoweroffPHostRequest request) throws UCloudException;
+    PoweroffPHostResponse poweroffPHost(PoweroffPHostRequest request) throws UCloudException;
 
     /**
      * RebootPHost - 重启物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/RebootPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RebootPHostResponse rebootPHost(RebootPHostRequest request) throws UCloudException;
+    RebootPHostResponse rebootPHost(RebootPHostRequest request) throws UCloudException;
 
     /**
      * ReinstallPHost - 重装物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ReinstallPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ReinstallPHostResponse reinstallPHost(ReinstallPHostRequest request)
-            throws UCloudException;
+    ReinstallPHostResponse reinstallPHost(ReinstallPHostRequest request) throws UCloudException;
 
     /**
      * ResetPHostPassword - 重置实例密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ResetPHostPassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ResetPHostPasswordResponse resetPHostPassword(ResetPHostPasswordRequest request)
+    ResetPHostPasswordResponse resetPHostPassword(ResetPHostPasswordRequest request)
             throws UCloudException;
 
     /**
      * ResizePHostAttachedDisk - 修改挂载的磁盘大小
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ResizePHostAttachedDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ResizePHostAttachedDiskResponse resizePHostAttachedDisk(
-            ResizePHostAttachedDiskRequest request) throws UCloudException;
+    ResizePHostAttachedDiskResponse resizePHostAttachedDisk(ResizePHostAttachedDiskRequest request)
+            throws UCloudException;
 
     /**
      * StartPHost - 启动物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/StartPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StartPHostResponse startPHost(StartPHostRequest request) throws UCloudException;
+    StartPHostResponse startPHost(StartPHostRequest request) throws UCloudException;
 
     /**
      * StopPHost - 关闭物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/StopPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StopPHostResponse stopPHost(StopPHostRequest request) throws UCloudException;
+    StopPHostResponse stopPHost(StopPHostRequest request) throws UCloudException;
 
     /**
      * TerminatePHost - 删除物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/TerminatePHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public TerminatePHostResponse terminatePHost(TerminatePHostRequest request)
-            throws UCloudException;
+    TerminatePHostResponse terminatePHost(TerminatePHostRequest request) throws UCloudException;
 
     /**
      * TerminatePHostImage - 删除裸金属2.0用户自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/TerminatePHostImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public TerminatePHostImageResponse terminatePHostImage(TerminatePHostImageRequest request)
+    TerminatePHostImageResponse terminatePHostImage(TerminatePHostImageRequest request)
             throws UCloudException;
 }

@@ -349,6 +349,93 @@ public class DescribePHostResponse extends Response {
         }
     }
 
+    public static class PHostIPSet extends Response {
+
+        /** 国际: Internation， BGP: BGP， 内网: Private */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** IP资源ID(内网IP无资源ID)（待废弃） */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /** IP地址， */
+        @SerializedName("IPAddr")
+        private String ipAddr;
+
+        /** MAC地址 */
+        @SerializedName("MACAddr")
+        private String macAddr;
+
+        /** IP对应带宽，单位Mb，内网IP不显示带宽信息 */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** 子网ID */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /** VPC ID */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIPId() {
+            return ipId;
+        }
+
+        public void setIPId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public String getIPAddr() {
+            return ipAddr;
+        }
+
+        public void setIPAddr(String ipAddr) {
+            this.ipAddr = ipAddr;
+        }
+
+        public String getMACAddr() {
+            return macAddr;
+        }
+
+        public void setMACAddr(String macAddr) {
+            this.macAddr = macAddr;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+    }
+
     public static class PHostDescDiskSet extends Response {
 
         /** 单盘大小，单位GB */
@@ -496,93 +583,6 @@ public class DescribePHostResponse extends Response {
 
         public void setCoreCount(Integer coreCount) {
             this.coreCount = coreCount;
-        }
-    }
-
-    public static class PHostIPSet extends Response {
-
-        /** 国际: Internation， BGP: BGP， 内网: Private */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** IP资源ID(内网IP无资源ID)（待废弃） */
-        @SerializedName("IPId")
-        private String ipId;
-
-        /** IP地址， */
-        @SerializedName("IPAddr")
-        private String ipAddr;
-
-        /** MAC地址 */
-        @SerializedName("MACAddr")
-        private String macAddr;
-
-        /** IP对应带宽，单位Mb，内网IP不显示带宽信息 */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** 子网ID */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /** VPC ID */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIPId() {
-            return ipId;
-        }
-
-        public void setIPId(String ipId) {
-            this.ipId = ipId;
-        }
-
-        public String getIPAddr() {
-            return ipAddr;
-        }
-
-        public void setIPAddr(String ipAddr) {
-            this.ipAddr = ipAddr;
-        }
-
-        public String getMACAddr() {
-            return macAddr;
-        }
-
-        public void setMACAddr(String macAddr) {
-            this.macAddr = macAddr;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
         }
     }
 }

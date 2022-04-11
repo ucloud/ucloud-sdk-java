@@ -17,14 +17,20 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ufile.models.CreateBucketRequest;
 import cn.ucloud.ufile.models.CreateBucketResponse;
+import cn.ucloud.ufile.models.CreateUFileLifeCycleRequest;
+import cn.ucloud.ufile.models.CreateUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.CreateUFileTokenRequest;
 import cn.ucloud.ufile.models.CreateUFileTokenResponse;
 import cn.ucloud.ufile.models.DeleteBucketRequest;
 import cn.ucloud.ufile.models.DeleteBucketResponse;
+import cn.ucloud.ufile.models.DeleteUFileLifeCycleRequest;
+import cn.ucloud.ufile.models.DeleteUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DeleteUFileTokenRequest;
 import cn.ucloud.ufile.models.DeleteUFileTokenResponse;
 import cn.ucloud.ufile.models.DescribeBucketRequest;
 import cn.ucloud.ufile.models.DescribeBucketResponse;
+import cn.ucloud.ufile.models.DescribeUFileLifeCycleRequest;
+import cn.ucloud.ufile.models.DescribeUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
 import cn.ucloud.ufile.models.DescribeUFileTokenResponse;
 import cn.ucloud.ufile.models.GetUFileDailyReportRequest;
@@ -41,6 +47,8 @@ import cn.ucloud.ufile.models.SetUFileRefererRequest;
 import cn.ucloud.ufile.models.SetUFileRefererResponse;
 import cn.ucloud.ufile.models.UpdateBucketRequest;
 import cn.ucloud.ufile.models.UpdateBucketResponse;
+import cn.ucloud.ufile.models.UpdateUFileLifeCycleRequest;
+import cn.ucloud.ufile.models.UpdateUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.UpdateUFileTokenRequest;
 import cn.ucloud.ufile.models.UpdateUFileTokenResponse;
 
@@ -50,108 +58,155 @@ public interface UFileClientInterface extends Client {
     /**
      * CreateBucket - 创建Bucket
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/CreateBucket
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateBucketResponse createBucket(CreateBucketRequest request) throws UCloudException;
+    CreateBucketResponse createBucket(CreateBucketRequest request) throws UCloudException;
+
+    /**
+     * CreateUFileLifeCycle - 创建生命周期管理
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    CreateUFileLifeCycleResponse createUFileLifeCycle(CreateUFileLifeCycleRequest request)
+            throws UCloudException;
 
     /**
      * CreateUFileToken - 创建US3令牌
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/CreateUFileToken
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUFileTokenResponse createUFileToken(CreateUFileTokenRequest request)
+    CreateUFileTokenResponse createUFileToken(CreateUFileTokenRequest request)
             throws UCloudException;
 
     /**
      * DeleteBucket - 删除Bucket
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/DeleteBucket
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) throws UCloudException;
+    DeleteBucketResponse deleteBucket(DeleteBucketRequest request) throws UCloudException;
+
+    /**
+     * DeleteUFileLifeCycle - 删除生命周期管理
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    DeleteUFileLifeCycleResponse deleteUFileLifeCycle(DeleteUFileLifeCycleRequest request)
+            throws UCloudException;
 
     /**
      * DeleteUFileToken - 删除令牌
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/DeleteUFileToken
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUFileTokenResponse deleteUFileToken(DeleteUFileTokenRequest request)
+    DeleteUFileTokenResponse deleteUFileToken(DeleteUFileTokenRequest request)
             throws UCloudException;
 
     /**
      * DescribeBucket - 获取Bucket信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/DescribeBucket
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeBucketResponse describeBucket(DescribeBucketRequest request)
+    DescribeBucketResponse describeBucket(DescribeBucketRequest request) throws UCloudException;
+
+    /**
+     * DescribeUFileLifeCycle - 获取生命周期信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    DescribeUFileLifeCycleResponse describeUFileLifeCycle(DescribeUFileLifeCycleRequest request)
             throws UCloudException;
 
     /**
      * DescribeUFileToken - 获取令牌信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/DescribeUFileToken
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUFileTokenResponse describeUFileToken(DescribeUFileTokenRequest request)
+    DescribeUFileTokenResponse describeUFileToken(DescribeUFileTokenRequest request)
             throws UCloudException;
 
     /**
      * GetUFileDailyReport - 查看日消费报表
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/GetUFileDailyReport
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUFileDailyReportResponse getUFileDailyReport(GetUFileDailyReportRequest request)
+    GetUFileDailyReportResponse getUFileDailyReport(GetUFileDailyReportRequest request)
             throws UCloudException;
 
     /**
      * GetUFileQuota - 查看配额状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/GetUFileQuota
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUFileQuotaResponse getUFileQuota(GetUFileQuotaRequest request) throws UCloudException;
+    GetUFileQuotaResponse getUFileQuota(GetUFileQuotaRequest request) throws UCloudException;
 
     /**
      * GetUFileQuotaInfo - 获取配额信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/GetUFileQuotaInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUFileQuotaInfoResponse getUFileQuotaInfo(GetUFileQuotaInfoRequest request)
+    GetUFileQuotaInfoResponse getUFileQuotaInfo(GetUFileQuotaInfoRequest request)
             throws UCloudException;
 
     /**
      * GetUFileQuotaPrice - 查询配额支付价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/GetUFileQuotaPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUFileQuotaPriceResponse getUFileQuotaPrice(GetUFileQuotaPriceRequest request)
+    GetUFileQuotaPriceResponse getUFileQuotaPrice(GetUFileQuotaPriceRequest request)
             throws UCloudException;
 
     /**
      * GetUFileReport - 查看配额使用报表
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/GetUFileReport
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUFileReportResponse getUFileReport(GetUFileReportRequest request)
-            throws UCloudException;
+    GetUFileReportResponse getUFileReport(GetUFileReportRequest request) throws UCloudException;
 
     /**
      * SetUFileReferer - 设置对象存储防盗链
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/SetUFileReferer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SetUFileRefererResponse setUFileReferer(SetUFileRefererRequest request)
-            throws UCloudException;
+    SetUFileRefererResponse setUFileReferer(SetUFileRefererRequest request) throws UCloudException;
 
     /**
      * UpdateBucket - 更改Bucket属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/UpdateBucket
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException;
+    UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException;
+
+    /**
+     * UpdateUFileLifeCycle - 更新生命周期管理
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    UpdateUFileLifeCycleResponse updateUFileLifeCycle(UpdateUFileLifeCycleRequest request)
+            throws UCloudException;
 
     /**
      * UpdateUFileToken - 更新令牌
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufile-api/UpdateUFileToken
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUFileTokenResponse updateUFileToken(UpdateUFileTokenRequest request)
+    UpdateUFileTokenResponse updateUFileToken(UpdateUFileTokenRequest request)
             throws UCloudException;
 }

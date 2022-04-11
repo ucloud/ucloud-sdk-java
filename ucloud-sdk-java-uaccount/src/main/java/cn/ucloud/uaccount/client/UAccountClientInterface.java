@@ -38,62 +38,67 @@ public interface UAccountClientInterface extends Client {
     /**
      * AddMemberToProject - 添加成员到项目
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/AddMemberToProject
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public AddMemberToProjectResponse addMemberToProject(AddMemberToProjectRequest request)
+    AddMemberToProjectResponse addMemberToProject(AddMemberToProjectRequest request)
             throws UCloudException;
 
     /**
      * FreezeMember - 冻结成员
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/FreezeMember
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public FreezeMemberResponse freezeMember(FreezeMemberRequest request) throws UCloudException;
+    FreezeMemberResponse freezeMember(FreezeMemberRequest request) throws UCloudException;
 
     /**
      * GetNetworkMask - 查询登录与API调用的网络掩码
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/GetNetworkMask
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetNetworkMaskResponse getNetworkMask(GetNetworkMaskRequest request)
-            throws UCloudException;
+    GetNetworkMaskResponse getNetworkMask(GetNetworkMaskRequest request) throws UCloudException;
 
     /**
      * GetProjectList - 获取帐号下的项目列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/GetProjectList
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetProjectListResponse getProjectList(GetProjectListRequest request)
-            throws UCloudException;
+    GetProjectListResponse getProjectList(GetProjectListRequest request) throws UCloudException;
 
     /**
      * GetRegion - 获取地域和可用区列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/GetRegion
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetRegionResponse getRegion(GetRegionRequest request) throws UCloudException;
+    GetRegionResponse getRegion(GetRegionRequest request) throws UCloudException;
 
     /**
      * InviteSubaccount - 邀请子帐号成员
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/InviteSubaccount
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public InviteSubaccountResponse inviteSubaccount(InviteSubaccountRequest request)
+    InviteSubaccountResponse inviteSubaccount(InviteSubaccountRequest request)
             throws UCloudException;
 
     /**
      * RemoveMemberFromProject - 从项目中移除成员
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/RemoveMemberFromProject
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RemoveMemberFromProjectResponse removeMemberFromProject(
-            RemoveMemberFromProjectRequest request) throws UCloudException;
+    RemoveMemberFromProjectResponse removeMemberFromProject(RemoveMemberFromProjectRequest request)
+            throws UCloudException;
 
     /**
      * SetNetworkMask - 设置登录与API调用的网络掩码
      *
-     * <p>See also: https://docs.ucloud.cn/api/uaccount-api/SetNetworkMask
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SetNetworkMaskResponse setNetworkMask(SetNetworkMaskRequest request)
-            throws UCloudException;
+    SetNetworkMaskResponse setNetworkMask(SetNetworkMaskRequest request) throws UCloudException;
 }

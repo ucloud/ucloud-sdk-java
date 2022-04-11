@@ -106,333 +106,361 @@ public interface UECClientInterface extends Client {
     /**
      * BindUEcFirewall - 绑定防火墙
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/BindUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public BindUEcFirewallResponse bindUEcFirewall(BindUEcFirewallRequest request)
-            throws UCloudException;
+    BindUEcFirewallResponse bindUEcFirewall(BindUEcFirewallRequest request) throws UCloudException;
 
     /**
      * CreateUEcCustomImage - 创建自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUEcCustomImageResponse createUEcCustomImage(CreateUEcCustomImageRequest request)
+    CreateUEcCustomImageResponse createUEcCustomImage(CreateUEcCustomImageRequest request)
             throws UCloudException;
 
     /**
      * CreateUEcFirewall - 创建外网防火墙
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUEcFirewallResponse createUEcFirewall(CreateUEcFirewallRequest request)
+    CreateUEcFirewallResponse createUEcFirewall(CreateUEcFirewallRequest request)
             throws UCloudException;
 
     /**
      * CreateUEcHolder - 创建容器组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUEcHolderResponse createUEcHolder(CreateUEcHolderRequest request)
-            throws UCloudException;
+    CreateUEcHolderResponse createUEcHolder(CreateUEcHolderRequest request) throws UCloudException;
 
     /**
      * CreateUEcSubnet - 创建子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUEcSubnetResponse createUEcSubnet(CreateUEcSubnetRequest request)
-            throws UCloudException;
+    CreateUEcSubnetResponse createUEcSubnet(CreateUEcSubnetRequest request) throws UCloudException;
 
     /**
      * CreateUEcVHost - 创建虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUEcVHostResponse createUEcVHost(CreateUEcVHostRequest request)
-            throws UCloudException;
+    CreateUEcVHostResponse createUEcVHost(CreateUEcVHostRequest request) throws UCloudException;
 
     /**
      * DeleteUEcCustomImage - 删除UEC客户自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUEcCustomImageResponse deleteUEcCustomImage(DeleteUEcCustomImageRequest request)
+    DeleteUEcCustomImageResponse deleteUEcCustomImage(DeleteUEcCustomImageRequest request)
             throws UCloudException;
 
     /**
      * DeleteUEcHolder - 删除容器组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUEcHolderResponse deleteUEcHolder(DeleteUEcHolderRequest request)
-            throws UCloudException;
+    DeleteUEcHolderResponse deleteUEcHolder(DeleteUEcHolderRequest request) throws UCloudException;
 
     /**
      * DeleteUEcSubnet - 删除子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUEcSubnetResponse deleteUEcSubnet(DeleteUEcSubnetRequest request)
-            throws UCloudException;
+    DeleteUEcSubnetResponse deleteUEcSubnet(DeleteUEcSubnetRequest request) throws UCloudException;
 
     /**
      * DeleteUEcVHost - 删除vhost虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUEcVHostResponse deleteUEcVHost(DeleteUEcVHostRequest request)
-            throws UCloudException;
+    DeleteUEcVHostResponse deleteUEcVHost(DeleteUEcVHostRequest request) throws UCloudException;
 
     /**
      * DescribeUEcFirewall - 获取防火墙信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcFirewallResponse describeUEcFirewall(DescribeUEcFirewallRequest request)
+    DescribeUEcFirewallResponse describeUEcFirewall(DescribeUEcFirewallRequest request)
             throws UCloudException;
 
     /**
      * DescribeUEcFirewallResource - 防火墙绑定的资源列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcFirewallResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcFirewallResourceResponse describeUEcFirewallResource(
+    DescribeUEcFirewallResourceResponse describeUEcFirewallResource(
             DescribeUEcFirewallResourceRequest request) throws UCloudException;
 
     /**
      * DescribeUEcHolder - 获得容器组信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcHolderResponse describeUEcHolder(DescribeUEcHolderRequest request)
+    DescribeUEcHolderResponse describeUEcHolder(DescribeUEcHolderRequest request)
             throws UCloudException;
 
     /**
      * DescribeUEcHolderIDC - 获取容器组机房信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcHolderIDC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcHolderIDCResponse describeUEcHolderIDC(DescribeUEcHolderIDCRequest request)
+    DescribeUEcHolderIDCResponse describeUEcHolderIDC(DescribeUEcHolderIDCRequest request)
             throws UCloudException;
 
     /**
      * DescribeUEcIDC - 获取IDC机房列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcIDC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcIDCResponse describeUEcIDC(DescribeUEcIDCRequest request)
-            throws UCloudException;
+    DescribeUEcIDCResponse describeUEcIDC(DescribeUEcIDCRequest request) throws UCloudException;
 
     /**
      * DescribeUEcSubnet - 获取子网列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcSubnetResponse describeUEcSubnet(DescribeUEcSubnetRequest request)
+    DescribeUEcSubnetResponse describeUEcSubnet(DescribeUEcSubnetRequest request)
             throws UCloudException;
 
     /**
      * DescribeUEcVHost - 获取虚拟机列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcVHostResponse describeUEcVHost(DescribeUEcVHostRequest request)
+    DescribeUEcVHostResponse describeUEcVHost(DescribeUEcVHostRequest request)
             throws UCloudException;
 
     /**
      * DescribeUEcVHostISP - 获取虚拟机运营商信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcVHostISP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUEcVHostISPResponse describeUEcVHostISP(DescribeUEcVHostISPRequest request)
+    DescribeUEcVHostISPResponse describeUEcVHostISP(DescribeUEcVHostISPRequest request)
             throws UCloudException;
 
     /**
      * GetUEcHolderLog - 获取容器日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcHolderLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcHolderLogResponse getUEcHolderLog(GetUEcHolderLogRequest request)
-            throws UCloudException;
+    GetUEcHolderLogResponse getUEcHolderLog(GetUEcHolderLogRequest request) throws UCloudException;
 
     /**
      * GetUEcHolderMetrics - 获取容器监控数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcHolderMetrics
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcHolderMetricsResponse getUEcHolderMetrics(GetUEcHolderMetricsRequest request)
+    GetUEcHolderMetricsResponse getUEcHolderMetrics(GetUEcHolderMetricsRequest request)
             throws UCloudException;
 
     /**
      * GetUEcIDCCutInfo - 获得机房割接信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcIDCCutInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcIDCCutInfoResponse getUEcIDCCutInfo(GetUEcIDCCutInfoRequest request)
+    GetUEcIDCCutInfoResponse getUEcIDCCutInfo(GetUEcIDCCutInfoRequest request)
             throws UCloudException;
 
     /**
      * GetUEcIDCVHostData - 获取机房虚拟机监控数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcIDCVHostData
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcIDCVHostDataResponse getUEcIDCVHostData(GetUEcIDCVHostDataRequest request)
+    GetUEcIDCVHostDataResponse getUEcIDCVHostData(GetUEcIDCVHostDataRequest request)
             throws UCloudException;
 
     /**
      * GetUEcImage - 获取镜像列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcImageResponse getUEcImage(GetUEcImageRequest request) throws UCloudException;
+    GetUEcImageResponse getUEcImage(GetUEcImageRequest request) throws UCloudException;
 
     /**
      * GetUEcPodPrice - 获得容器组价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcPodPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcPodPriceResponse getUEcPodPrice(GetUEcPodPriceRequest request)
-            throws UCloudException;
+    GetUEcPodPriceResponse getUEcPodPrice(GetUEcPodPriceRequest request) throws UCloudException;
 
     /**
      * GetUEcUpgradePrice - 获取虚拟机调整差价
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcUpgradePriceResponse getUEcUpgradePrice(GetUEcUpgradePriceRequest request)
+    GetUEcUpgradePriceResponse getUEcUpgradePrice(GetUEcUpgradePriceRequest request)
             throws UCloudException;
 
     /**
      * GetUEcVHostData - 获取虚拟机监控数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcVHostData
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcVHostDataResponse getUEcVHostData(GetUEcVHostDataRequest request)
-            throws UCloudException;
+    GetUEcVHostDataResponse getUEcVHostData(GetUEcVHostDataRequest request) throws UCloudException;
 
     /**
      * GetUEcVHostPrice - 获取虚拟机价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcVHostPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUEcVHostPriceResponse getUEcVHostPrice(GetUEcVHostPriceRequest request)
+    GetUEcVHostPriceResponse getUEcVHostPrice(GetUEcVHostPriceRequest request)
             throws UCloudException;
 
     /**
      * ImportUEcCustomImage - 导入自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ImportUEcCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ImportUEcCustomImageResponse importUEcCustomImage(ImportUEcCustomImageRequest request)
+    ImportUEcCustomImageResponse importUEcCustomImage(ImportUEcCustomImageRequest request)
             throws UCloudException;
 
     /**
      * LoginUEcDocker - 登录容器
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/LoginUEcDocker
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public LoginUEcDockerResponse loginUEcDocker(LoginUEcDockerRequest request)
-            throws UCloudException;
+    LoginUEcDockerResponse loginUEcDocker(LoginUEcDockerRequest request) throws UCloudException;
 
     /**
      * ModifyUEcBandwidth - 修改节点带宽限制
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ModifyUEcBandwidth
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUEcBandwidthResponse modifyUEcBandwidth(ModifyUEcBandwidthRequest request)
+    ModifyUEcBandwidthResponse modifyUEcBandwidth(ModifyUEcBandwidthRequest request)
             throws UCloudException;
 
     /**
      * ModifyUEcHolderName - 修改容器组名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ModifyUEcHolderName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUEcHolderNameResponse modifyUEcHolderName(ModifyUEcHolderNameRequest request)
+    ModifyUEcHolderNameResponse modifyUEcHolderName(ModifyUEcHolderNameRequest request)
             throws UCloudException;
 
     /**
      * ModifyUEcImageName - 修改镜像名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ModifyUEcImageName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ModifyUEcImageNameResponse modifyUEcImageName(ModifyUEcImageNameRequest request)
+    ModifyUEcImageNameResponse modifyUEcImageName(ModifyUEcImageNameRequest request)
             throws UCloudException;
 
     /**
      * PoweroffUEcVHost - 虚拟机断电
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/PoweroffUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public PoweroffUEcVHostResponse poweroffUEcVHost(PoweroffUEcVHostRequest request)
+    PoweroffUEcVHostResponse poweroffUEcVHost(PoweroffUEcVHostRequest request)
             throws UCloudException;
 
     /**
      * ReinstallUEcVHost - 虚拟机重装系统
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ReinstallUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ReinstallUEcVHostResponse reinstallUEcVHost(ReinstallUEcVHostRequest request)
+    ReinstallUEcVHostResponse reinstallUEcVHost(ReinstallUEcVHostRequest request)
             throws UCloudException;
 
     /**
      * RestartUEcHolder - 重启容器组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/RestartUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RestartUEcHolderResponse restartUEcHolder(RestartUEcHolderRequest request)
+    RestartUEcHolderResponse restartUEcHolder(RestartUEcHolderRequest request)
             throws UCloudException;
 
     /**
      * RestartUEcVHost - 重启虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/RestartUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RestartUEcVHostResponse restartUEcVHost(RestartUEcVHostRequest request)
-            throws UCloudException;
+    RestartUEcVHostResponse restartUEcVHost(RestartUEcVHostRequest request) throws UCloudException;
 
     /**
      * StartUEcVHost - 启动UEC虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/StartUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StartUEcVHostResponse startUEcVHost(StartUEcVHostRequest request) throws UCloudException;
+    StartUEcVHostResponse startUEcVHost(StartUEcVHostRequest request) throws UCloudException;
 
     /**
      * StopUEcVHost - 停止UEC虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/StopUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StopUEcVHostResponse stopUEcVHost(StopUEcVHostRequest request) throws UCloudException;
+    StopUEcVHostResponse stopUEcVHost(StopUEcVHostRequest request) throws UCloudException;
 
     /**
      * UnBindUEcFirewall - 解绑防火墙
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UnBindUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UnBindUEcFirewallResponse unBindUEcFirewall(UnBindUEcFirewallRequest request)
+    UnBindUEcFirewallResponse unBindUEcFirewall(UnBindUEcFirewallRequest request)
             throws UCloudException;
 
     /**
      * UpdateUEcFirewall - 更新防火墙信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UpdateUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUEcFirewallResponse updateUEcFirewall(UpdateUEcFirewallRequest request)
+    UpdateUEcFirewallResponse updateUEcFirewall(UpdateUEcFirewallRequest request)
             throws UCloudException;
 
     /**
      * UpdateUEcFirewallAttribute - 更新防火墙属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UpdateUEcFirewallAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUEcFirewallAttributeResponse updateUEcFirewallAttribute(
+    UpdateUEcFirewallAttributeResponse updateUEcFirewallAttribute(
             UpdateUEcFirewallAttributeRequest request) throws UCloudException;
 
     /**
      * UpdateUEcSubnet - 更新子网信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UpdateUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUEcSubnetResponse updateUEcSubnet(UpdateUEcSubnetRequest request)
-            throws UCloudException;
+    UpdateUEcSubnetResponse updateUEcSubnet(UpdateUEcSubnetRequest request) throws UCloudException;
 }

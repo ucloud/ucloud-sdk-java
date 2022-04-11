@@ -43,6 +43,153 @@ public class DescribeNATGWResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class NatGatewayDataSet extends Response {
+
+        /** natgw id */
+        @SerializedName("NATGWId")
+        private String natgwId;
+
+        /** natgw名称 */
+        @SerializedName("NATGWName")
+        private String natgwName;
+
+        /** 业务组 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** 备注 */
+        @SerializedName("Remark")
+        private String remark;
+
+        /** natgw创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 绑定的防火墙Id */
+        @SerializedName("FirewallId")
+        private String firewallId;
+
+        /** 所属VPC Id */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** 子网 Id */
+        @SerializedName("SubnetSet")
+        private List<NatGatewaySubnetSet> subnetSet;
+
+        /** 绑定的EIP 信息 */
+        @SerializedName("IPSet")
+        private List<NatGatewayIPSet> ipSet;
+
+        /** VPC名称 */
+        @SerializedName("VPCName")
+        private String vpcName;
+
+        /** 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。 */
+        @SerializedName("IsSnatpoolEnabled")
+        private String isSnatpoolEnabled;
+
+        /** 转发策略Id */
+        @SerializedName("PolicyId")
+        private List<String> policyId;
+
+        public String getNATGWId() {
+            return natgwId;
+        }
+
+        public void setNATGWId(String natgwId) {
+            this.natgwId = natgwId;
+        }
+
+        public String getNATGWName() {
+            return natgwName;
+        }
+
+        public void setNATGWName(String natgwName) {
+            this.natgwName = natgwName;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getFirewallId() {
+            return firewallId;
+        }
+
+        public void setFirewallId(String firewallId) {
+            this.firewallId = firewallId;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public List<NatGatewaySubnetSet> getSubnetSet() {
+            return subnetSet;
+        }
+
+        public void setSubnetSet(List<NatGatewaySubnetSet> subnetSet) {
+            this.subnetSet = subnetSet;
+        }
+
+        public List<NatGatewayIPSet> getIPSet() {
+            return ipSet;
+        }
+
+        public void setIPSet(List<NatGatewayIPSet> ipSet) {
+            this.ipSet = ipSet;
+        }
+
+        public String getVPCName() {
+            return vpcName;
+        }
+
+        public void setVPCName(String vpcName) {
+            this.vpcName = vpcName;
+        }
+
+        public String getIsSnatpoolEnabled() {
+            return isSnatpoolEnabled;
+        }
+
+        public void setIsSnatpoolEnabled(String isSnatpoolEnabled) {
+            this.isSnatpoolEnabled = isSnatpoolEnabled;
+        }
+
+        public List<String> getPolicyId() {
+            return policyId;
+        }
+
+        public void setPolicyId(List<String> policyId) {
+            this.policyId = policyId;
+        }
+    }
+
     public static class NatGatewayIPSet extends Response {
 
         /** 外网IP的 EIPId */
@@ -169,129 +316,6 @@ public class DescribeNATGWResponse extends Response {
 
         public void setSubnetName(String subnetName) {
             this.subnetName = subnetName;
-        }
-    }
-
-    public static class NatGatewayDataSet extends Response {
-
-        /** natgw id */
-        @SerializedName("NATGWId")
-        private String natgwId;
-
-        /** natgw名称 */
-        @SerializedName("NATGWName")
-        private String natgwName;
-
-        /** natgw创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** 业务组 */
-        @SerializedName("Tag")
-        private String tag;
-
-        /** 备注 */
-        @SerializedName("Remark")
-        private String remark;
-
-        /** 绑定的防火墙Id */
-        @SerializedName("FirewallId")
-        private String firewallId;
-
-        /** 所属VPC Id */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        /** 子网 Id */
-        @SerializedName("SubnetSet")
-        private List<NatGatewaySubnetSet> subnetSet;
-
-        /** 绑定的EIP 信息 */
-        @SerializedName("IPSet")
-        private List<NatGatewayIPSet> ipSet;
-
-        /** 转发策略Id */
-        @SerializedName("PolicyId")
-        private List<String> policyId;
-
-        public String getNATGWId() {
-            return natgwId;
-        }
-
-        public void setNATGWId(String natgwId) {
-            this.natgwId = natgwId;
-        }
-
-        public String getNATGWName() {
-            return natgwName;
-        }
-
-        public void setNATGWName(String natgwName) {
-            this.natgwName = natgwName;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public void setTag(String tag) {
-            this.tag = tag;
-        }
-
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
-        }
-
-        public String getFirewallId() {
-            return firewallId;
-        }
-
-        public void setFirewallId(String firewallId) {
-            this.firewallId = firewallId;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public List<NatGatewaySubnetSet> getSubnetSet() {
-            return subnetSet;
-        }
-
-        public void setSubnetSet(List<NatGatewaySubnetSet> subnetSet) {
-            this.subnetSet = subnetSet;
-        }
-
-        public List<NatGatewayIPSet> getIPSet() {
-            return ipSet;
-        }
-
-        public void setIPSet(List<NatGatewayIPSet> ipSet) {
-            this.ipSet = ipSet;
-        }
-
-        public List<String> getPolicyId() {
-            return policyId;
-        }
-
-        public void setPolicyId(List<String> policyId) {
-            this.policyId = policyId;
         }
     }
 }

@@ -17,6 +17,8 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ucdn.models.AddCertificateRequest;
 import cn.ucloud.ucdn.models.AddCertificateResponse;
+import cn.ucloud.ucdn.models.ControlUcdnDomainCacheAccessRequest;
+import cn.ucloud.ucdn.models.ControlUcdnDomainCacheAccessResponse;
 import cn.ucloud.ucdn.models.DeleteCertificateRequest;
 import cn.ucloud.ucdn.models.DeleteCertificateResponse;
 import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskRequest;
@@ -45,6 +47,8 @@ import cn.ucloud.ucdn.models.GetUcdnDomainInfoListRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainInfoListResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogResponse;
+import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Request;
+import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Response;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeRequest;
@@ -78,224 +82,268 @@ public interface UCDNClientInterface extends Client {
     /**
      * AddCertificate - 添加证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/AddCertificate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public AddCertificateResponse addCertificate(AddCertificateRequest request)
-            throws UCloudException;
+    AddCertificateResponse addCertificate(AddCertificateRequest request) throws UCloudException;
+
+    /**
+     * ControlUcdnDomainCacheAccess - 封禁解封缓存访问
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    ControlUcdnDomainCacheAccessResponse controlUcdnDomainCacheAccess(
+            ControlUcdnDomainCacheAccessRequest request) throws UCloudException;
 
     /**
      * DeleteCertificate - 删除证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/DeleteCertificate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request)
+    DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request)
             throws UCloudException;
 
     /**
      * DescribeNewUcdnPrefetchCacheTask - 获取预取任务状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/DescribeNewUcdnPrefetchCacheTask
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeNewUcdnPrefetchCacheTaskResponse describeNewUcdnPrefetchCacheTask(
+    DescribeNewUcdnPrefetchCacheTaskResponse describeNewUcdnPrefetchCacheTask(
             DescribeNewUcdnPrefetchCacheTaskRequest request) throws UCloudException;
 
     /**
      * DescribeNewUcdnRefreshCacheTask - 获取域名刷新任务状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/DescribeNewUcdnRefreshCacheTask
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeNewUcdnRefreshCacheTaskResponse describeNewUcdnRefreshCacheTask(
+    DescribeNewUcdnRefreshCacheTaskResponse describeNewUcdnRefreshCacheTask(
             DescribeNewUcdnRefreshCacheTaskRequest request) throws UCloudException;
 
     /**
      * GetCertificateV2 - 获取证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetCertificateV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetCertificateV2Response getCertificateV2(GetCertificateV2Request request)
+    GetCertificateV2Response getCertificateV2(GetCertificateV2Request request)
             throws UCloudException;
 
     /**
      * GetNewUcdnDomainHitRate - 获取域名命中率
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetNewUcdnDomainHitRate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetNewUcdnDomainHitRateResponse getNewUcdnDomainHitRate(
-            GetNewUcdnDomainHitRateRequest request) throws UCloudException;
+    GetNewUcdnDomainHitRateResponse getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateRequest request)
+            throws UCloudException;
 
     /**
      * GetNewUcdnLogRefererStatistics - 获取热点referer统计
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetNewUcdnLogRefererStatistics
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetNewUcdnLogRefererStatisticsResponse getNewUcdnLogRefererStatistics(
+    GetNewUcdnLogRefererStatisticsResponse getNewUcdnLogRefererStatistics(
             GetNewUcdnLogRefererStatisticsRequest request) throws UCloudException;
 
     /**
      * GetNewUcdnLogUrlStatistics - 获取日志url统计
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetNewUcdnLogUrlStatistics
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetNewUcdnLogUrlStatisticsResponse getNewUcdnLogUrlStatistics(
+    GetNewUcdnLogUrlStatisticsResponse getNewUcdnLogUrlStatistics(
             GetNewUcdnLogUrlStatisticsRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomain95BandwidthV2 - 获取域名九五峰值带宽数据【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomain95BandwidthV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomain95BandwidthV2Response getUcdnDomain95BandwidthV2(
+    GetUcdnDomain95BandwidthV2Response getUcdnDomain95BandwidthV2(
             GetUcdnDomain95BandwidthV2Request request) throws UCloudException;
 
     /**
      * GetUcdnDomainBandwidthV2 - 获取域名带宽数据【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainBandwidthV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainBandwidthV2Response getUcdnDomainBandwidthV2(
+    GetUcdnDomainBandwidthV2Response getUcdnDomainBandwidthV2(
             GetUcdnDomainBandwidthV2Request request) throws UCloudException;
 
     /**
      * GetUcdnDomainConfig - 批量获取加速域名配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainConfig
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainConfigResponse getUcdnDomainConfig(GetUcdnDomainConfigRequest request)
+    GetUcdnDomainConfigResponse getUcdnDomainConfig(GetUcdnDomainConfigRequest request)
             throws UCloudException;
 
     /**
      * GetUcdnDomainHitRate - 获取域名命中率(新）
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainHitRate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainHitRateResponse getUcdnDomainHitRate(GetUcdnDomainHitRateRequest request)
+    GetUcdnDomainHitRateResponse getUcdnDomainHitRate(GetUcdnDomainHitRateRequest request)
             throws UCloudException;
 
     /**
      * GetUcdnDomainHttpCodeV2 - 获取域名状态码信息【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainHttpCodeV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainHttpCodeV2Response getUcdnDomainHttpCodeV2(
-            GetUcdnDomainHttpCodeV2Request request) throws UCloudException;
+    GetUcdnDomainHttpCodeV2Response getUcdnDomainHttpCodeV2(GetUcdnDomainHttpCodeV2Request request)
+            throws UCloudException;
 
     /**
      * GetUcdnDomainInfoList - 获取域名基本信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainInfoList
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainInfoListResponse getUcdnDomainInfoList(GetUcdnDomainInfoListRequest request)
+    GetUcdnDomainInfoListResponse getUcdnDomainInfoList(GetUcdnDomainInfoListRequest request)
             throws UCloudException;
 
     /**
      * GetUcdnDomainLog - 获取加速域名原始日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainLogResponse getUcdnDomainLog(GetUcdnDomainLogRequest request)
+    GetUcdnDomainLogResponse getUcdnDomainLog(GetUcdnDomainLogRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUcdnDomainLogV2 - 获取域名5分钟日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    GetUcdnDomainLogV2Response getUcdnDomainLogV2(GetUcdnDomainLogV2Request request)
             throws UCloudException;
 
     /**
      * GetUcdnDomainOriginHttpCode - 获取域名源站状态码监控
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainOriginHttpCode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
+    GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
             GetUcdnDomainOriginHttpCodeRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomainOriginHttpCodeDetail - 获取域名源站详细状态码监控
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainOriginHttpCodeDetail
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
+    GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
             GetUcdnDomainOriginHttpCodeDetailRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomainOriginRequestNum - 获取域名回源请求数【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainOriginRequestNum
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainOriginRequestNumResponse getUcdnDomainOriginRequestNum(
+    GetUcdnDomainOriginRequestNumResponse getUcdnDomainOriginRequestNum(
             GetUcdnDomainOriginRequestNumRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomainPrefetchEnable - 获取域名预取开启状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainPrefetchEnable
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainPrefetchEnableResponse getUcdnDomainPrefetchEnable(
+    GetUcdnDomainPrefetchEnableResponse getUcdnDomainPrefetchEnable(
             GetUcdnDomainPrefetchEnableRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomainRequestNumV3 - 获取域名请求数【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnDomainRequestNumV3
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnDomainRequestNumV3Response getUcdnDomainRequestNumV3(
+    GetUcdnDomainRequestNumV3Response getUcdnDomainRequestNumV3(
             GetUcdnDomainRequestNumV3Request request) throws UCloudException;
 
     /**
      * GetUcdnPassBandwidthV2 - 获取回源带宽数据（按时间分类）【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnPassBandwidthV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnPassBandwidthV2Response getUcdnPassBandwidthV2(
-            GetUcdnPassBandwidthV2Request request) throws UCloudException;
+    GetUcdnPassBandwidthV2Response getUcdnPassBandwidthV2(GetUcdnPassBandwidthV2Request request)
+            throws UCloudException;
 
     /**
      * GetUcdnProIspBandwidthV2 - 按省份运营商获取域名带宽数据【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnProIspBandwidthV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnProIspBandwidthV2Response getUcdnProIspBandwidthV2(
+    GetUcdnProIspBandwidthV2Response getUcdnProIspBandwidthV2(
             GetUcdnProIspBandwidthV2Request request) throws UCloudException;
 
     /**
      * GetUcdnProIspRequestNumV2 - 按省份运营商获取域名请求数【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnProIspRequestNumV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnProIspRequestNumV2Response getUcdnProIspRequestNumV2(
+    GetUcdnProIspRequestNumV2Response getUcdnProIspRequestNumV2(
             GetUcdnProIspRequestNumV2Request request) throws UCloudException;
 
     /**
      * GetUcdnTrafficV2 - 获取账户总流量信息【新】
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/GetUcdnTrafficV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public GetUcdnTrafficV2Response getUcdnTrafficV2(GetUcdnTrafficV2Request request)
+    GetUcdnTrafficV2Response getUcdnTrafficV2(GetUcdnTrafficV2Request request)
             throws UCloudException;
 
     /**
      * PrefetchNewUcdnDomainCache - 提交预取任务
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/PrefetchNewUcdnDomainCache
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public PrefetchNewUcdnDomainCacheResponse prefetchNewUcdnDomainCache(
+    PrefetchNewUcdnDomainCacheResponse prefetchNewUcdnDomainCache(
             PrefetchNewUcdnDomainCacheRequest request) throws UCloudException;
 
     /**
      * QueryIpLocation - 查询IP信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/QueryIpLocation
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public QueryIpLocationResponse queryIpLocation(QueryIpLocationRequest request)
-            throws UCloudException;
+    QueryIpLocationResponse queryIpLocation(QueryIpLocationRequest request) throws UCloudException;
 
     /**
      * RefreshNewUcdnDomainCache - 刷新缓存
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/RefreshNewUcdnDomainCache
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RefreshNewUcdnDomainCacheResponse refreshNewUcdnDomainCache(
+    RefreshNewUcdnDomainCacheResponse refreshNewUcdnDomainCache(
             RefreshNewUcdnDomainCacheRequest request) throws UCloudException;
 
     /**
      * SwitchUcdnChargeType - 切换账号计费方式
      *
-     * <p>See also: https://docs.ucloud.cn/api/ucdn-api/SwitchUcdnChargeType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public SwitchUcdnChargeTypeResponse switchUcdnChargeType(SwitchUcdnChargeTypeRequest request)
+    SwitchUcdnChargeTypeResponse switchUcdnChargeType(SwitchUcdnChargeTypeRequest request)
             throws UCloudException;
 }

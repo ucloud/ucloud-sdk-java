@@ -95,7 +95,8 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     /**
      * CopyCustomImage - 复制自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CopyCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CopyCustomImageResponse copyCustomImage(CopyCustomImageRequest request)
             throws UCloudException {
@@ -104,9 +105,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * CreateCustomImage - 从指定UHost实例，生成自定义镜像。
+     * CreateCustomImage - 创建自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateCustomImageResponse createCustomImage(CreateCustomImageRequest request)
             throws UCloudException {
@@ -115,9 +117,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * CreateIsolationGroup - 创建硬件隔离组，组内机器严格隔离在不同宿主机上。
+     * CreateIsolationGroup - 创建硬件隔离组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateIsolationGroupResponse createIsolationGroup(CreateIsolationGroupRequest request)
             throws UCloudException {
@@ -127,9 +130,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * CreateUHostInstance - 创建UHost实例。
+     * CreateUHostInstance - 创建云主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUHostInstanceResponse createUHostInstance(CreateUHostInstanceRequest request)
             throws UCloudException {
@@ -139,9 +143,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * CreateUHostKeyPair - 创建主机密钥对信息
+     * CreateUHostKeyPair - 创建主机密钥对
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/CreateUHostKeyPair
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUHostKeyPairResponse createUHostKeyPair(CreateUHostKeyPairRequest request)
             throws UCloudException {
@@ -150,9 +155,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DeleteIsolationGroup - 删除硬件隔离组。
+     * DeleteIsolationGroup - 删除硬件隔离组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DeleteIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteIsolationGroupResponse deleteIsolationGroup(DeleteIsolationGroupRequest request)
             throws UCloudException {
@@ -162,9 +168,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DeleteUHostKeyPairs - 删除一对或者多对密钥对。
+     * DeleteUHostKeyPairs - 删除主机密钥
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DeleteUHostKeyPairs
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUHostKeyPairsResponse deleteUHostKeyPairs(DeleteUHostKeyPairsRequest request)
             throws UCloudException {
@@ -174,9 +181,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DescribeImage - 获取指定数据中心镜像列表，用户可通过指定操作系统类型，镜像Id进行过滤。
+     * DescribeImage - 获取镜像列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeImageResponse describeImage(DescribeImageRequest request)
             throws UCloudException {
@@ -185,9 +193,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DescribeIsolationGroup - 查询硬件隔离组列表。
+     * DescribeIsolationGroup - 查询硬件隔离组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeIsolationGroupResponse describeIsolationGroup(
             DescribeIsolationGroupRequest request) throws UCloudException {
@@ -197,9 +206,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DescribeUHostInstance - 获取主机或主机列表信息，并可根据数据中心，主机ID等参数进行过滤。
+     * DescribeUHostInstance - 获取主机信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUHostInstanceResponse describeUHostInstance(DescribeUHostInstanceRequest request)
             throws UCloudException {
@@ -209,9 +219,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DescribeUHostKeyPairs - 查询一个或多个密钥对。
+     * DescribeUHostKeyPairs - 查询主机密钥信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostKeyPairs
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUHostKeyPairsResponse describeUHostKeyPairs(DescribeUHostKeyPairsRequest request)
             throws UCloudException {
@@ -221,9 +232,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * DescribeUHostTags - 获取指定数据中心的业务组列表。
+     * DescribeUHostTags - 获取主机业务组列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/DescribeUHostTags
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUHostTagsResponse describeUHostTags(DescribeUHostTagsRequest request)
             throws UCloudException {
@@ -234,7 +246,8 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     /**
      * GetAttachedDiskUpgradePrice - 获取挂载磁盘的升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetAttachedDiskUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetAttachedDiskUpgradePriceResponse getAttachedDiskUpgradePrice(
             GetAttachedDiskUpgradePriceRequest request) throws UCloudException {
@@ -244,9 +257,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * GetUHostInstancePrice - 根据UHost实例配置，获取UHost实例的价格。
+     * GetUHostInstancePrice - 获取主机价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostInstancePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUHostInstancePriceResponse getUHostInstancePrice(GetUHostInstancePriceRequest request)
             throws UCloudException {
@@ -256,9 +270,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * GetUHostInstanceVncInfo - 获取指定UHost实例的管理VNC配置详细信息。
+     * GetUHostInstanceVncInfo - 获取VNC登录信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostInstanceVncInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(
             GetUHostInstanceVncInfoRequest request) throws UCloudException {
@@ -268,9 +283,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * GetUHostUpgradePrice - 获取UHost实例升级配置的价格。可选配置范围请参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * GetUHostUpgradePrice - 获取主机规格调整差价
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/GetUHostUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUHostUpgradePriceResponse getUHostUpgradePrice(GetUHostUpgradePriceRequest request)
             throws UCloudException {
@@ -280,9 +296,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ImportCustomImage - 把UFile的镜像文件导入到UHost，生成自定义镜像
+     * ImportCustomImage - 导入镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ImportCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ImportCustomImageResponse importCustomImage(ImportCustomImageRequest request)
             throws UCloudException {
@@ -291,9 +308,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ImportUHostKeyPairs - 导入密钥对后，仅保管公钥部分，需自行妥善保存密钥对的私钥部分。
+     * ImportUHostKeyPairs - 导入密钥对的公钥部分
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ImportUHostKeyPairs
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ImportUHostKeyPairsResponse importUHostKeyPairs(ImportUHostKeyPairsRequest request)
             throws UCloudException {
@@ -305,7 +323,8 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     /**
      * LeaveIsolationGroup - 移除硬件隔离组中的主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/LeaveIsolationGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public LeaveIsolationGroupResponse leaveIsolationGroup(LeaveIsolationGroupRequest request)
             throws UCloudException {
@@ -315,9 +334,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ModifyUHostIP - 修改云主机内网 IP 地址
+     * ModifyUHostIP - 修改云主机内部 IP 地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostIP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUHostIPResponse modifyUHostIP(ModifyUHostIPRequest request)
             throws UCloudException {
@@ -326,9 +346,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ModifyUHostInstanceName - 修改指定UHost实例名称，需要给出数据中心，UHostId，及新的实例名称。
+     * ModifyUHostInstanceName - 修改主机名
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUHostInstanceNameResponse modifyUHostInstanceName(
             ModifyUHostInstanceNameRequest request) throws UCloudException {
@@ -338,9 +359,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ModifyUHostInstanceRemark - 修改指定UHost实例备注信息。
+     * ModifyUHostInstanceRemark - 修改主机备注
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceRemark
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUHostInstanceRemarkResponse modifyUHostInstanceRemark(
             ModifyUHostInstanceRemarkRequest request) throws UCloudException {
@@ -350,9 +372,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ModifyUHostInstanceTag - 修改指定UHost实例业务组标识。
+     * ModifyUHostInstanceTag - 修改主机业务组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ModifyUHostInstanceTag
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUHostInstanceTagResponse modifyUHostInstanceTag(
             ModifyUHostInstanceTagRequest request) throws UCloudException {
@@ -362,9 +385,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * PoweroffUHostInstance - 直接关闭UHost实例电源，无需等待实例正常关闭。
+     * PoweroffUHostInstance - 模拟主机掉电
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/PoweroffUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public PoweroffUHostInstanceResponse poweroffUHostInstance(PoweroffUHostInstanceRequest request)
             throws UCloudException {
@@ -374,9 +398,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * RebootUHostInstance - 重新启动UHost实例，需要指定数据中心及UHostID两个参数的值。
+     * RebootUHostInstance - 重启主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/RebootUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RebootUHostInstanceResponse rebootUHostInstance(RebootUHostInstanceRequest request)
             throws UCloudException {
@@ -386,9 +411,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ReinstallUHostInstance - 重新安装指定UHost实例的操作系统
+     * ReinstallUHostInstance - 重装系统
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ReinstallUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ReinstallUHostInstanceResponse reinstallUHostInstance(
             ReinstallUHostInstanceRequest request) throws UCloudException {
@@ -398,9 +424,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ResetUHostInstancePassword - 重置UHost实例的管理员密码。
+     * ResetUHostInstancePassword - 重置主机密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResetUHostInstancePassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResetUHostInstancePasswordResponse resetUHostInstancePassword(
             ResetUHostInstancePasswordRequest request) throws UCloudException {
@@ -410,9 +437,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ResizeAttachedDisk - 修改挂载的磁盘大小，包含系统盘和数据盘
+     * ResizeAttachedDisk - 修改挂载的磁盘大小
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResizeAttachedDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizeAttachedDiskResponse resizeAttachedDisk(ResizeAttachedDiskRequest request)
             throws UCloudException {
@@ -421,10 +449,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * ResizeUHostInstance -
-     * 修改指定UHost实例的资源配置，如CPU核心数，内存容量大小，网络增强等。可选配置范围请参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * ResizeUHostInstance - 修改主机规格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/ResizeUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizeUHostInstanceResponse resizeUHostInstance(ResizeUHostInstanceRequest request)
             throws UCloudException {
@@ -434,9 +462,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * StartUHostInstance - 启动处于关闭状态的UHost实例，需要指定数据中心及UHostID两个参数的值。
+     * StartUHostInstance - 启动主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/StartUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StartUHostInstanceResponse startUHostInstance(StartUHostInstanceRequest request)
             throws UCloudException {
@@ -445,9 +474,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * StopUHostInstance - 指停止处于运行状态的UHost实例，需指定数据中心及UhostID。
+     * StopUHostInstance - 关闭主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/StopUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StopUHostInstanceResponse stopUHostInstance(StopUHostInstanceRequest request)
             throws UCloudException {
@@ -456,9 +486,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * TerminateCustomImage - 删除用户自定义镜像
+     * TerminateCustomImage - 删除自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/TerminateCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public TerminateCustomImageResponse terminateCustomImage(TerminateCustomImageRequest request)
             throws UCloudException {
@@ -468,9 +499,10 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     }
 
     /**
-     * TerminateUHostInstance - 删除指定数据中心的UHost实例。
+     * TerminateUHostInstance - 删除云主机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/TerminateUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public TerminateUHostInstanceResponse terminateUHostInstance(
             TerminateUHostInstanceRequest request) throws UCloudException {
@@ -482,7 +514,8 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
     /**
      * UpgradeToArkUHostInstance - 普通升级为方舟机型
      *
-     * <p>See also: https://docs.ucloud.cn/api/uhost-api/UpgradeToArkUHostInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
             UpgradeToArkUHostInstanceRequest request) throws UCloudException {

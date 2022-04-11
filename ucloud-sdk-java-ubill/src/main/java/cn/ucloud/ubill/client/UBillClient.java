@@ -21,6 +21,10 @@ import cn.ucloud.ubill.models.GetBalanceRequest;
 import cn.ucloud.ubill.models.GetBalanceResponse;
 import cn.ucloud.ubill.models.GetBillDataFileUrlRequest;
 import cn.ucloud.ubill.models.GetBillDataFileUrlResponse;
+import cn.ucloud.ubill.models.ListUBillDetailRequest;
+import cn.ucloud.ubill.models.ListUBillDetailResponse;
+import cn.ucloud.ubill.models.ListUBillOverviewRequest;
+import cn.ucloud.ubill.models.ListUBillOverviewResponse;
 
 /** This client is used to call actions of **UBill** service */
 public class UBillClient extends DefaultClient implements UBillClientInterface {
@@ -31,7 +35,8 @@ public class UBillClient extends DefaultClient implements UBillClientInterface {
     /**
      * GetBalance - 获取账户余额
      *
-     * <p>See also: https://docs.ucloud.cn/api/ubill-api/GetBalance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetBalanceResponse getBalance(GetBalanceRequest request) throws UCloudException {
         request.setAction("GetBalance");
@@ -41,11 +46,36 @@ public class UBillClient extends DefaultClient implements UBillClientInterface {
     /**
      * GetBillDataFileUrl - 生成账单数据文件下载的 url
      *
-     * <p>See also: https://docs.ucloud.cn/api/ubill-api/GetBillDataFileUrl
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetBillDataFileUrlResponse getBillDataFileUrl(GetBillDataFileUrlRequest request)
             throws UCloudException {
         request.setAction("GetBillDataFileUrl");
         return (GetBillDataFileUrlResponse) this.invoke(request, GetBillDataFileUrlResponse.class);
+    }
+
+    /**
+     * ListUBillDetail - 获取账单明细
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUBillDetailResponse listUBillDetail(ListUBillDetailRequest request)
+            throws UCloudException {
+        request.setAction("ListUBillDetail");
+        return (ListUBillDetailResponse) this.invoke(request, ListUBillDetailResponse.class);
+    }
+
+    /**
+     * ListUBillOverview - 获取账单总览
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUBillOverviewResponse listUBillOverview(ListUBillOverviewRequest request)
+            throws UCloudException {
+        request.setAction("ListUBillOverview");
+        return (ListUBillOverviewResponse) this.invoke(request, ListUBillOverviewResponse.class);
     }
 }

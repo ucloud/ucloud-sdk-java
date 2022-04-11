@@ -46,6 +46,10 @@ public class UpdateUSMSTemplateRequest extends Request {
     @UCloudParam("Remark")
     private String remark;
 
+    /** 模板变量属性说明 */
+    @UCloudParam("Instruction")
+    private String instruction;
+
     public String getProjectId() {
         return projectId;
     }
@@ -84,5 +88,13 @@ public class UpdateUSMSTemplateRequest extends Request {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
     }
 }

@@ -97,6 +97,8 @@ import cn.ucloud.udb.models.ExtractUDBParamGroupRequest;
 import cn.ucloud.udb.models.ExtractUDBParamGroupResponse;
 import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeRequest;
 import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeResponse;
+import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
+import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
@@ -139,9 +141,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * BackupUDBInstance - 备份UDB实例
+     * BackupUDBInstance - 备份云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public BackupUDBInstanceResponse backupUDBInstance(BackupUDBInstanceRequest request)
             throws UCloudException {
@@ -152,7 +155,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * BackupUDBInstanceBinlog - 备份UDB指定时间段的binlog列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceBinlog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public BackupUDBInstanceBinlogResponse backupUDBInstanceBinlog(
             BackupUDBInstanceBinlogRequest request) throws UCloudException {
@@ -164,7 +168,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * BackupUDBInstanceErrorLog - 备份UDB指定时间段的errorlog
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceErrorLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public BackupUDBInstanceErrorLogResponse backupUDBInstanceErrorLog(
             BackupUDBInstanceErrorLogRequest request) throws UCloudException {
@@ -176,7 +181,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * BackupUDBInstanceSlowLog - 备份UDB指定时间段的slowlog分析结果
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/BackupUDBInstanceSlowLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public BackupUDBInstanceSlowLogResponse backupUDBInstanceSlowLog(
             BackupUDBInstanceSlowLogRequest request) throws UCloudException {
@@ -188,7 +194,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * ChangeUDBParamGroup - 修改配置文件
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ChangeUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ChangeUDBParamGroupResponse changeUDBParamGroup(ChangeUDBParamGroupRequest request)
             throws UCloudException {
@@ -200,7 +207,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * CheckRecoverUDBInstance - 核查db是否可以使用回档功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CheckRecoverUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CheckRecoverUDBInstanceResponse checkRecoverUDBInstance(
             CheckRecoverUDBInstanceRequest request) throws UCloudException {
@@ -212,7 +220,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * CheckUDBInstanceToHAAllowance - 核查db是否可以升级为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CheckUDBInstanceToHAAllowance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CheckUDBInstanceToHAAllowanceResponse checkUDBInstanceToHAAllowance(
             CheckUDBInstanceToHAAllowanceRequest request) throws UCloudException {
@@ -222,9 +231,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * ClearUDBLog - 清除UDB实例的log
+     * ClearUDBLog - 清除日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ClearUDBLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ClearUDBLogResponse clearUDBLog(ClearUDBLogRequest request) throws UCloudException {
         request.setAction("ClearUDBLog");
@@ -232,9 +242,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * CreateMongoDBReplicaSet - 一键创建DB副本集
+     * CreateMongoDBReplicaSet - 创建DB副本集
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateMongoDBReplicaSet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateMongoDBReplicaSetResponse createMongoDBReplicaSet(
             CreateMongoDBReplicaSetRequest request) throws UCloudException {
@@ -244,9 +255,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * CreateUDBInstance - 创建UDB实例（包括创建mysql master节点、mongodb primary/configsvr节点和从备份恢复实例）
+     * CreateUDBInstance - 创建数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDBInstanceResponse createUDBInstance(CreateUDBInstanceRequest request)
             throws UCloudException {
@@ -255,9 +267,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * CreateUDBInstanceByRecovery - 创建db，将新创建的db恢复到指定db某个指定时间点
+     * CreateUDBInstanceByRecovery - 将新建的db恢复到指定db某个指定时间点
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBInstanceByRecovery
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDBInstanceByRecoveryResponse createUDBInstanceByRecovery(
             CreateUDBInstanceByRecoveryRequest request) throws UCloudException {
@@ -267,9 +280,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * CreateUDBParamGroup - 从已有配置文件创建新配置文件
+     * CreateUDBParamGroup - 创建配置文件
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDBParamGroupResponse createUDBParamGroup(CreateUDBParamGroupRequest request)
             throws UCloudException {
@@ -279,9 +293,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * CreateUDBReplicationInstance - 创建MongoDB的副本节点（包括仲裁）
+     * CreateUDBReplicationInstance - 创建副本
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBReplicationInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDBReplicationInstanceResponse createUDBReplicationInstance(
             CreateUDBReplicationInstanceRequest request) throws UCloudException {
@@ -293,7 +308,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * CreateUDBRouteInstance - 创建mongos实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBRouteInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDBRouteInstanceResponse createUDBRouteInstance(
             CreateUDBRouteInstanceRequest request) throws UCloudException {
@@ -303,9 +319,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * CreateUDBSlave - 创建UDB实例的slave
+     * CreateUDBSlave - 创建从库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/CreateUDBSlave
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDBSlaveResponse createUDBSlave(CreateUDBSlaveRequest request)
             throws UCloudException {
@@ -314,9 +331,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DeleteUDBInstance - 删除UDB实例
+     * DeleteUDBInstance - 删除云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUDBInstanceResponse deleteUDBInstance(DeleteUDBInstanceRequest request)
             throws UCloudException {
@@ -327,7 +345,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * DeleteUDBLogPackage - 删除UDB日志包
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBLogPackage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUDBLogPackageResponse deleteUDBLogPackage(DeleteUDBLogPackageRequest request)
             throws UCloudException {
@@ -337,9 +356,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DeleteUDBParamGroup - 删除配置参数组
+     * DeleteUDBParamGroup - 删除配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DeleteUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUDBParamGroupResponse deleteUDBParamGroup(DeleteUDBParamGroupRequest request)
             throws UCloudException {
@@ -349,9 +369,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBBackup - 列表UDB实例备份信息
+     * DescribeUDBBackup - 获取备份列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBackup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBBackupResponse describeUDBBackup(DescribeUDBBackupRequest request)
             throws UCloudException {
@@ -360,9 +381,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBBackupBlacklist - 获取UDB实例的备份黑名单
+     * DescribeUDBBackupBlacklist - 获取备份黑名单
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBackupBlacklist
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
             DescribeUDBBackupBlacklistRequest request) throws UCloudException {
@@ -374,7 +396,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * DescribeUDBBinlogBackupURL - 获取UDB的Binlog备份地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBBinlogBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBBinlogBackupURLResponse describeUDBBinlogBackupURL(
             DescribeUDBBinlogBackupURLRequest request) throws UCloudException {
@@ -384,10 +407,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBInstance -
-     * 获取UDB实例信息，支持两类操作：（1）指定DBId用于获取该db的信息；（2）指定ClassType、Offset、Limit用于列表操作，查询某一个类型db。
+     * DescribeUDBInstance - 获取云数据库信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceResponse describeUDBInstance(DescribeUDBInstanceRequest request)
             throws UCloudException {
@@ -397,9 +420,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBInstanceBackupState - 获取UDB实例备份状态
+     * DescribeUDBInstanceBackupState - 获取实例备份状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBackupState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceBackupStateResponse describeUDBInstanceBackupState(
             DescribeUDBInstanceBackupStateRequest request) throws UCloudException {
@@ -411,7 +435,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * DescribeUDBInstanceBackupURL - 获取UDB备份下载地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceBackupURLResponse describeUDBInstanceBackupURL(
             DescribeUDBInstanceBackupURLRequest request) throws UCloudException {
@@ -421,9 +446,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBInstanceBinlog - 获取UDB指定时间段的binlog列表
+     * DescribeUDBInstanceBinlog - 获取UDBbinlog列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBinlog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceBinlogResponse describeUDBInstanceBinlog(
             DescribeUDBInstanceBinlogRequest request) throws UCloudException {
@@ -435,7 +461,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * DescribeUDBInstanceBinlogBackupState - 获取udb实例备份状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceBinlogBackupState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceBinlogBackupStateResponse describeUDBInstanceBinlogBackupState(
             DescribeUDBInstanceBinlogBackupStateRequest request) throws UCloudException {
@@ -445,9 +472,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBInstanceLog - 查询某一段时间内UDB的错误日志或慢查询日志
+     * DescribeUDBInstanceLog - 获取UDB错误日志或慢查询日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceLogResponse describeUDBInstanceLog(
             DescribeUDBInstanceLogRequest request) throws UCloudException {
@@ -457,9 +485,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBInstancePrice - 获取UDB实例价格信息
+     * DescribeUDBInstancePrice - 获取云数据库价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstancePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstancePriceResponse describeUDBInstancePrice(
             DescribeUDBInstancePriceRequest request) throws UCloudException {
@@ -469,9 +498,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBInstanceState - 获取UDB实例状态
+     * DescribeUDBInstanceState - 获取云数据库状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceStateResponse describeUDBInstanceState(
             DescribeUDBInstanceStateRequest request) throws UCloudException {
@@ -483,7 +513,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * DescribeUDBInstanceUpgradePrice - 获取UDB实例升降级价格信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBInstanceUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBInstanceUpgradePriceResponse describeUDBInstanceUpgradePrice(
             DescribeUDBInstanceUpgradePriceRequest request) throws UCloudException {
@@ -495,7 +526,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * DescribeUDBLogBackupURL - 获取UDB的slowlog备份地址
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBLogBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBLogBackupURLResponse describeUDBLogBackupURL(
             DescribeUDBLogBackupURLRequest request) throws UCloudException {
@@ -505,9 +537,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBLogPackage - 列表UDB实例binlog或slowlog或errorlog备份信息
+     * DescribeUDBLogPackage - 列表UDB实例日志备份信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBLogPackage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBLogPackageResponse describeUDBLogPackage(DescribeUDBLogPackageRequest request)
             throws UCloudException {
@@ -517,9 +550,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBParamGroup - 获取参数组详细参数信息
+     * DescribeUDBParamGroup - 获取参数信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBParamGroupResponse describeUDBParamGroup(DescribeUDBParamGroupRequest request)
             throws UCloudException {
@@ -529,9 +563,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBSplittingInfo - 描述读写分离功能的详细信息
+     * DescribeUDBSplittingInfo - 描述读写分离功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBSplittingInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBSplittingInfoResponse describeUDBSplittingInfo(
             DescribeUDBSplittingInfoRequest request) throws UCloudException {
@@ -541,9 +576,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBType - 获取UDB支持的类型信息
+     * DescribeUDBType - 获取云数据库支持类型
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DescribeUDBType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDBTypeResponse describeUDBType(DescribeUDBTypeRequest request)
             throws UCloudException {
@@ -552,9 +588,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DisableUDBRWSplitting - 关闭DB的读写分离功能
+     * DisableUDBRWSplitting - 关闭读写分离功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/DisableUDBRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DisableUDBRWSplittingResponse disableUDBRWSplitting(DisableUDBRWSplittingRequest request)
             throws UCloudException {
@@ -564,9 +601,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * EditUDBBackupBlacklist - 编辑UDB实例的备份黑名单
+     * EditUDBBackupBlacklist - 编辑备份黑名单
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/EditUDBBackupBlacklist
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public EditUDBBackupBlacklistResponse editUDBBackupBlacklist(
             EditUDBBackupBlacklistRequest request) throws UCloudException {
@@ -576,9 +614,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * EnableUDBRWSplitting - 开启DB的读写分离功能
+     * EnableUDBRWSplitting - 启用读写分离功能
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/EnableUDBRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public EnableUDBRWSplittingResponse enableUDBRWSplitting(EnableUDBRWSplittingRequest request)
             throws UCloudException {
@@ -590,7 +629,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * ExtractUDBParamGroup - 获取配置文件内容
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ExtractUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ExtractUDBParamGroupResponse extractUDBParamGroup(ExtractUDBParamGroupRequest request)
             throws UCloudException {
@@ -600,9 +640,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * FetchUDBInstanceEarliestRecoverTime - 获取UDB最早可回档的时间点
+     * FetchUDBInstanceEarliestRecoverTime - 获取最早可回档时间
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/FetchUDBInstanceEarliestRecoverTime
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public FetchUDBInstanceEarliestRecoverTimeResponse fetchUDBInstanceEarliestRecoverTime(
             FetchUDBInstanceEarliestRecoverTimeRequest request) throws UCloudException {
@@ -612,9 +653,23 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * ModifyUDBInstanceName - 重命名UDB实例
+     * GetUDBClientConnNum - 获取连接实例客户端Ip和连接数
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ModifyUDBInstanceName
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUDBClientConnNumResponse getUDBClientConnNum(GetUDBClientConnNumRequest request)
+            throws UCloudException {
+        request.setAction("GetUDBClientConnNum");
+        return (GetUDBClientConnNumResponse)
+                this.invoke(request, GetUDBClientConnNumResponse.class);
+    }
+
+    /**
+     * ModifyUDBInstanceName - 修改云数据库名称
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUDBInstanceNameResponse modifyUDBInstanceName(ModifyUDBInstanceNameRequest request)
             throws UCloudException {
@@ -626,7 +681,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * ModifyUDBInstancePassword - 修改DB实例的管理员密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ModifyUDBInstancePassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
             ModifyUDBInstancePasswordRequest request) throws UCloudException {
@@ -636,10 +692,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * PromoteUDBInstanceToHA - 普通db升级为高可用(只针对mysql5.5及以上版本SSD机型的实例)
-     * ，对于NVMe机型的单点升级高可用，虽然也能使用该操作再加上SwitchUDBInstanceToHA，但是更建议直接调用新的API接口（UpgradeUDBInstanceToHA）
+     * PromoteUDBInstanceToHA - 普通db升级为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/PromoteUDBInstanceToHA
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public PromoteUDBInstanceToHAResponse promoteUDBInstanceToHA(
             PromoteUDBInstanceToHARequest request) throws UCloudException {
@@ -649,9 +705,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * PromoteUDBSlave - 从库提升为独立库
+     * PromoteUDBSlave - 提升从库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/PromoteUDBSlave
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public PromoteUDBSlaveResponse promoteUDBSlave(PromoteUDBSlaveRequest request)
             throws UCloudException {
@@ -660,11 +717,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * ResizeUDBInstance -
-     * 修改（升级和降级）UDB实例的配置，包括内存和磁盘的配置，对于内存升级无需关闭实例，其他场景需要事先关闭实例。两套参数可以配置升降机：1.配置UseSSD和SSDType
-     * 2.配置InstanceType，不需要配置InstanceMode。这两套第二套参数的优先级更高
+     * ResizeUDBInstance - 修改UDB实例的配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/ResizeUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizeUDBInstanceResponse resizeUDBInstance(ResizeUDBInstanceRequest request)
             throws UCloudException {
@@ -673,9 +729,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * RestartRWSplitting - 读写分离中间件重启，对应docker重启，但是ip不变
+     * RestartRWSplitting - 读写分离中间件重启
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/RestartRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartRWSplittingResponse restartRWSplitting(RestartRWSplittingRequest request)
             throws UCloudException {
@@ -684,9 +741,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * RestartUDBInstance - 重启UDB实例
+     * RestartUDBInstance - 重启云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/RestartUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartUDBInstanceResponse restartUDBInstance(RestartUDBInstanceRequest request)
             throws UCloudException {
@@ -695,9 +753,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * SetUDBRWSplitting - 设置读写分离的模式
+     * SetUDBRWSplitting - 设置读写分离
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/SetUDBRWSplitting
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SetUDBRWSplittingResponse setUDBRWSplitting(SetUDBRWSplittingRequest request)
             throws UCloudException {
@@ -706,9 +765,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * StartUDBInstance - 启动UDB实例
+     * StartUDBInstance - 启动云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/StartUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StartUDBInstanceResponse startUDBInstance(StartUDBInstanceRequest request)
             throws UCloudException {
@@ -717,9 +777,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * StopUDBInstance - 关闭UDB实例
+     * StopUDBInstance - 关闭云数据库
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/StopUDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StopUDBInstanceResponse stopUDBInstance(StopUDBInstanceRequest request)
             throws UCloudException {
@@ -728,9 +789,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * SwitchUDBHAToSentinel - UDB高可用实例从HAProxy版本升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
+     * SwitchUDBHAToSentinel - UDB高可用实例升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/SwitchUDBHAToSentinel
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SwitchUDBHAToSentinelResponse switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest request)
             throws UCloudException {
@@ -740,10 +802,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * SwitchUDBInstanceToHA - 普通UDB切换为高可用(只针对mysql5.5及以上版本SSD机型的实例) ，原db状态为WaitForSwitch时，调用该api；
-     * 对于NVMe机型的单点升级高可用，虽然也能使用PromoteUDBInstanceToHA再加上该操作，但是更建议直接调用新的API接口（UpgradeUDBInstanceToHA）
+     * SwitchUDBInstanceToHA - 普通UDB切换为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/SwitchUDBInstanceToHA
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SwitchUDBInstanceToHAResponse switchUDBInstanceToHA(SwitchUDBInstanceToHARequest request)
             throws UCloudException {
@@ -755,7 +817,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * UpdateUDBInstanceBackupStrategy - 修改UDB自动备份策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBInstanceBackupStrategy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUDBInstanceBackupStrategyResponse updateUDBInstanceBackupStrategy(
             UpdateUDBInstanceBackupStrategyRequest request) throws UCloudException {
@@ -767,7 +830,8 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     /**
      * UpdateUDBInstanceSlaveBackupSwitch - 开启或者关闭UDB从库备份
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBInstanceSlaveBackupSwitch
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUDBInstanceSlaveBackupSwitchResponse updateUDBInstanceSlaveBackupSwitch(
             UpdateUDBInstanceSlaveBackupSwitchRequest request) throws UCloudException {
@@ -777,9 +841,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * UpdateUDBParamGroup - 更新UDB配置参数项
+     * UpdateUDBParamGroup - 更新配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpdateUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUDBParamGroupResponse updateUDBParamGroup(UpdateUDBParamGroupRequest request)
             throws UCloudException {
@@ -789,9 +854,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * UpgradeUDBInstanceToHA - 快杰普通db升级为高可用(只针对mysql5.5及以上版本Nvme机型的实例)
+     * UpgradeUDBInstanceToHA - 快杰普通db升级为高可用
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UpgradeUDBInstanceToHA
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(
             UpgradeUDBInstanceToHARequest request) throws UCloudException {
@@ -801,9 +867,10 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * UploadUDBParamGroup - 导入UDB配置
+     * UploadUDBParamGroup - 导入配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/udb-api/UploadUDBParamGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UploadUDBParamGroupResponse uploadUDBParamGroup(UploadUDBParamGroupRequest request)
             throws UCloudException {

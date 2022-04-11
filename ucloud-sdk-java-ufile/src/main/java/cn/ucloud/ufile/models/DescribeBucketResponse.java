@@ -31,6 +31,57 @@ public class DescribeBucketResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class UFileDomainSet extends Response {
+
+        /** 源站域名 */
+        @SerializedName("Src")
+        private List<String> src;
+
+        /** UCDN加速域名 */
+        @SerializedName("Cdn")
+        private List<String> cdn;
+
+        /** 用户自定义源站域名 */
+        @SerializedName("CustomSrc")
+        private List<String> customSrc;
+
+        /** 用户自定义CDN加速域名 */
+        @SerializedName("CustomCdn")
+        private List<String> customCdn;
+
+        public List<String> getSrc() {
+            return src;
+        }
+
+        public void setSrc(List<String> src) {
+            this.src = src;
+        }
+
+        public List<String> getCdn() {
+            return cdn;
+        }
+
+        public void setCdn(List<String> cdn) {
+            this.cdn = cdn;
+        }
+
+        public List<String> getCustomSrc() {
+            return customSrc;
+        }
+
+        public void setCustomSrc(List<String> customSrc) {
+            this.customSrc = customSrc;
+        }
+
+        public List<String> getCustomCdn() {
+            return customCdn;
+        }
+
+        public void setCustomCdn(List<String> customCdn) {
+            this.customCdn = customCdn;
+        }
+    }
+
     public static class UFileBucketSet extends Response {
 
         /** Bucket所属地域 */
@@ -163,57 +214,6 @@ public class DescribeBucketResponse extends Response {
 
         public void setHasUserDomain(Integer hasUserDomain) {
             this.hasUserDomain = hasUserDomain;
-        }
-    }
-
-    public static class UFileDomainSet extends Response {
-
-        /** 源站域名 */
-        @SerializedName("Src")
-        private List<String> src;
-
-        /** UCDN加速域名 */
-        @SerializedName("Cdn")
-        private List<String> cdn;
-
-        /** 用户自定义源站域名 */
-        @SerializedName("CustomSrc")
-        private List<String> customSrc;
-
-        /** 用户自定义CDN加速域名 */
-        @SerializedName("CustomCdn")
-        private List<String> customCdn;
-
-        public List<String> getSrc() {
-            return src;
-        }
-
-        public void setSrc(List<String> src) {
-            this.src = src;
-        }
-
-        public List<String> getCdn() {
-            return cdn;
-        }
-
-        public void setCdn(List<String> cdn) {
-            this.cdn = cdn;
-        }
-
-        public List<String> getCustomSrc() {
-            return customSrc;
-        }
-
-        public void setCustomSrc(List<String> customSrc) {
-            this.customSrc = customSrc;
-        }
-
-        public List<String> getCustomCdn() {
-            return customCdn;
-        }
-
-        public void setCustomCdn(List<String> customCdn) {
-            this.customCdn = customCdn;
         }
     }
 }

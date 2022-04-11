@@ -23,6 +23,8 @@ import cn.ucloud.ufs.models.DescribeUFSVolume2Request;
 import cn.ucloud.ufs.models.DescribeUFSVolume2Response;
 import cn.ucloud.ufs.models.DescribeUFSVolumeMountpointRequest;
 import cn.ucloud.ufs.models.DescribeUFSVolumeMountpointResponse;
+import cn.ucloud.ufs.models.DescribeUFSVolumePriceRequest;
+import cn.ucloud.ufs.models.DescribeUFSVolumePriceResponse;
 import cn.ucloud.ufs.models.ExtendUFSVolumeRequest;
 import cn.ucloud.ufs.models.ExtendUFSVolumeResponse;
 import cn.ucloud.ufs.models.RemoveUFSVolumeMountPointRequest;
@@ -38,64 +40,78 @@ public interface UFSClientInterface extends Client {
     /**
      * AddUFSVolumeMountPoint - 添加文件系统挂载点
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/AddUFSVolumeMountPoint
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public AddUFSVolumeMountPointResponse addUFSVolumeMountPoint(
-            AddUFSVolumeMountPointRequest request) throws UCloudException;
+    AddUFSVolumeMountPointResponse addUFSVolumeMountPoint(AddUFSVolumeMountPointRequest request)
+            throws UCloudException;
 
     /**
      * CreateUFSVolume - 创建文件系统
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/CreateUFSVolume
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUFSVolumeResponse createUFSVolume(CreateUFSVolumeRequest request)
-            throws UCloudException;
+    CreateUFSVolumeResponse createUFSVolume(CreateUFSVolumeRequest request) throws UCloudException;
 
     /**
      * DescribeUFSVolume2 - 获取文件系统列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/DescribeUFSVolume2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUFSVolume2Response describeUFSVolume2(DescribeUFSVolume2Request request)
+    DescribeUFSVolume2Response describeUFSVolume2(DescribeUFSVolume2Request request)
             throws UCloudException;
 
     /**
      * DescribeUFSVolumeMountpoint - 获取文件系统挂载点信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/DescribeUFSVolumeMountpoint
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUFSVolumeMountpointResponse describeUFSVolumeMountpoint(
+    DescribeUFSVolumeMountpointResponse describeUFSVolumeMountpoint(
             DescribeUFSVolumeMountpointRequest request) throws UCloudException;
+
+    /**
+     * DescribeUFSVolumePrice - 获取文件系统价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    DescribeUFSVolumePriceResponse describeUFSVolumePrice(DescribeUFSVolumePriceRequest request)
+            throws UCloudException;
 
     /**
      * ExtendUFSVolume - 文件系统扩容
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/ExtendUFSVolume
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ExtendUFSVolumeResponse extendUFSVolume(ExtendUFSVolumeRequest request)
-            throws UCloudException;
+    ExtendUFSVolumeResponse extendUFSVolume(ExtendUFSVolumeRequest request) throws UCloudException;
 
     /**
      * RemoveUFSVolume - 删除文件系统
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/RemoveUFSVolume
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RemoveUFSVolumeResponse removeUFSVolume(RemoveUFSVolumeRequest request)
-            throws UCloudException;
+    RemoveUFSVolumeResponse removeUFSVolume(RemoveUFSVolumeRequest request) throws UCloudException;
 
     /**
      * RemoveUFSVolumeMountPoint - 删除文件系统挂载点
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/RemoveUFSVolumeMountPoint
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RemoveUFSVolumeMountPointResponse removeUFSVolumeMountPoint(
+    RemoveUFSVolumeMountPointResponse removeUFSVolumeMountPoint(
             RemoveUFSVolumeMountPointRequest request) throws UCloudException;
 
     /**
      * UpdateUFSVolumeInfo - 更改文件系统相关信息（名称／备注）
      *
-     * <p>See also: https://docs.ucloud.cn/api/ufs-api/UpdateUFSVolumeInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpdateUFSVolumeInfoResponse updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest request)
+    UpdateUFSVolumeInfoResponse updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest request)
             throws UCloudException;
 }

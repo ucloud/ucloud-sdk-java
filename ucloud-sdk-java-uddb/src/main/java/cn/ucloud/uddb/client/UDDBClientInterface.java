@@ -46,96 +46,108 @@ public interface UDDBClientInterface extends Client {
     /**
      * ChangeUDDBInstanceName - 修改分布式数据库中间件名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/ChangeUDDBInstanceName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ChangeUDDBInstanceNameResponse changeUDDBInstanceName(
-            ChangeUDDBInstanceNameRequest request) throws UCloudException;
+    ChangeUDDBInstanceNameResponse changeUDDBInstanceName(ChangeUDDBInstanceNameRequest request)
+            throws UCloudException;
 
     /**
      * ChangeUDDBSlaveCount - 改变分布式数据库数据节点的只读实例个数
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/ChangeUDDBSlaveCount
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public ChangeUDDBSlaveCountResponse changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest request)
+    ChangeUDDBSlaveCountResponse changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest request)
             throws UCloudException;
 
     /**
      * CreateUDDBInstance - 创建分布式数据库UDDB
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/CreateUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public CreateUDDBInstanceResponse createUDDBInstance(CreateUDDBInstanceRequest request)
+    CreateUDDBInstanceResponse createUDDBInstance(CreateUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * DeleteUDDBInstance - 删除UDDB实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DeleteUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DeleteUDDBInstanceResponse deleteUDDBInstance(DeleteUDDBInstanceRequest request)
+    DeleteUDDBInstanceResponse deleteUDDBInstance(DeleteUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDDBInstance - 获取分布式数据库UDDB的详细信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DescribeUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDDBInstanceResponse describeUDDBInstance(DescribeUDDBInstanceRequest request)
+    DescribeUDDBInstanceResponse describeUDDBInstance(DescribeUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * DescribeUDDBInstancePrice - 获取分布式数据库UDDB价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DescribeUDDBInstancePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDDBInstancePriceResponse describeUDDBInstancePrice(
+    DescribeUDDBInstancePriceResponse describeUDDBInstancePrice(
             DescribeUDDBInstancePriceRequest request) throws UCloudException;
 
     /**
      * DescribeUDDBInstanceUpgradePrice - 升级UDDB时，获取升级后的价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/DescribeUDDBInstanceUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public DescribeUDDBInstanceUpgradePriceResponse describeUDDBInstanceUpgradePrice(
+    DescribeUDDBInstanceUpgradePriceResponse describeUDDBInstanceUpgradePrice(
             DescribeUDDBInstanceUpgradePriceRequest request) throws UCloudException;
 
     /**
      * RestartUDDBInstance - 重启UDDB实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/RestartUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public RestartUDDBInstanceResponse restartUDDBInstance(RestartUDDBInstanceRequest request)
+    RestartUDDBInstanceResponse restartUDDBInstance(RestartUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * StartUDDBInstance - 启动UDDB实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/StartUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StartUDDBInstanceResponse startUDDBInstance(StartUDDBInstanceRequest request)
+    StartUDDBInstanceResponse startUDDBInstance(StartUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * StopUDDBInstance - 关闭UDDB实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/StopUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public StopUDDBInstanceResponse stopUDDBInstance(StopUDDBInstanceRequest request)
+    StopUDDBInstanceResponse stopUDDBInstance(StopUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
      * UpgradeUDDBDataNode - 升降级分布式数据库数据节点的配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/UpgradeUDDBDataNode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpgradeUDDBDataNodeResponse upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest request)
+    UpgradeUDDBDataNodeResponse upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest request)
             throws UCloudException;
 
     /**
      * UpgradeUDDBInstance - 升降级分布式数据库中间件的配置
      *
-     * <p>See also: https://docs.ucloud.cn/api/uddb-api/UpgradeUDDBInstance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
-    public UpgradeUDDBInstanceResponse upgradeUDDBInstance(UpgradeUDDBInstanceRequest request)
+    UpgradeUDDBInstanceResponse upgradeUDDBInstance(UpgradeUDDBInstanceRequest request)
             throws UCloudException;
 }

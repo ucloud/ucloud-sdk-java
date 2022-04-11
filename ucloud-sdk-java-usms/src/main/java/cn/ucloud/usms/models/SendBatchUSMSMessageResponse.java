@@ -67,6 +67,57 @@ public class SendBatchUSMSMessageResponse extends Response {
         this.failContent = failContent;
     }
 
+    public static class BatchInfo extends Response {
+
+        /** 模板ID */
+        @SerializedName("TemplateId")
+        private String templateId;
+
+        /** 签名 */
+        @SerializedName("SigContent")
+        private String sigContent;
+
+        /** 具体号码信息 */
+        @SerializedName("Target")
+        private List<FailPhoneDetail> target;
+
+        /** 未能成功发送的详情。注：模板/签名检验失败时，该字段有效 */
+        @SerializedName("FailureDetails")
+        private String failureDetails;
+
+        public String getTemplateId() {
+            return templateId;
+        }
+
+        public void setTemplateId(String templateId) {
+            this.templateId = templateId;
+        }
+
+        public String getSigContent() {
+            return sigContent;
+        }
+
+        public void setSigContent(String sigContent) {
+            this.sigContent = sigContent;
+        }
+
+        public List<FailPhoneDetail> getTarget() {
+            return target;
+        }
+
+        public void setTarget(List<FailPhoneDetail> target) {
+            this.target = target;
+        }
+
+        public String getFailureDetails() {
+            return failureDetails;
+        }
+
+        public void setFailureDetails(String failureDetails) {
+            this.failureDetails = failureDetails;
+        }
+    }
+
     public static class FailPhoneDetail extends Response {
 
         /** 模板参数 */
@@ -119,57 +170,6 @@ public class SendBatchUSMSMessageResponse extends Response {
 
         public void setUserId(String userId) {
             this.userId = userId;
-        }
-
-        public String getFailureDetails() {
-            return failureDetails;
-        }
-
-        public void setFailureDetails(String failureDetails) {
-            this.failureDetails = failureDetails;
-        }
-    }
-
-    public static class BatchInfo extends Response {
-
-        /** 模板ID */
-        @SerializedName("TemplateId")
-        private String templateId;
-
-        /** 签名 */
-        @SerializedName("SigContent")
-        private String sigContent;
-
-        /** 具体号码信息 */
-        @SerializedName("Target")
-        private List<FailPhoneDetail> target;
-
-        /** 未能成功发送的详情。注：模板/签名检验失败时，该字段有效 */
-        @SerializedName("FailureDetails")
-        private String failureDetails;
-
-        public String getTemplateId() {
-            return templateId;
-        }
-
-        public void setTemplateId(String templateId) {
-            this.templateId = templateId;
-        }
-
-        public String getSigContent() {
-            return sigContent;
-        }
-
-        public void setSigContent(String sigContent) {
-            this.sigContent = sigContent;
-        }
-
-        public List<FailPhoneDetail> getTarget() {
-            return target;
-        }
-
-        public void setTarget(List<FailPhoneDetail> target) {
-            this.target = target;
         }
 
         public String getFailureDetails() {

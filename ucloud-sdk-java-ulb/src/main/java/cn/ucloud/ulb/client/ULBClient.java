@@ -65,9 +65,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * AllocateBackend - 添加ULB后端资源实例
+     * AllocateBackend - 添加后端实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/AllocateBackend
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AllocateBackendResponse allocateBackend(AllocateBackendRequest request)
             throws UCloudException {
@@ -76,9 +77,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * BindSSL - 将SSL证书绑定到VServer
+     * BindSSL - 绑定SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/BindSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException {
         request.setAction("BindSSL");
@@ -86,9 +88,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * CreatePolicy - 创建VServer内容转发策略
+     * CreatePolicy - 创建转发策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreatePolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException {
         request.setAction("CreatePolicy");
@@ -96,9 +99,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * CreateSSL - 创建SSL证书，可以把整个 Pem 证书内容传过来，或者把证书、私钥、CA证书分别传过来
+     * CreateSSL - 创建SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreateSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateSSLResponse createSSL(CreateSSLRequest request) throws UCloudException {
         request.setAction("CreateSSL");
@@ -106,9 +110,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * CreateULB - 创建负载均衡实例，可以选择内网或者外网
+     * CreateULB - 创建负载均衡
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreateULB
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateULBResponse createULB(CreateULBRequest request) throws UCloudException {
         request.setAction("CreateULB");
@@ -116,9 +121,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * CreateVServer - 创建VServer实例，定义监听的协议和端口以及负载均衡算法
+     * CreateVServer - 创建VServer
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/CreateVServer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateVServerResponse createVServer(CreateVServerRequest request)
             throws UCloudException {
@@ -127,9 +133,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * DeletePolicy - 删除内容转发策略
+     * DeletePolicy - 删除转发策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeletePolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException {
         request.setAction("DeletePolicy");
@@ -139,7 +146,8 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     /**
      * DeleteSSL - 删除SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeleteSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteSSLResponse deleteSSL(DeleteSSLRequest request) throws UCloudException {
         request.setAction("DeleteSSL");
@@ -147,9 +155,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * DeleteULB - 删除负载均衡实例
+     * DeleteULB - 删除负载均衡
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeleteULB
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteULBResponse deleteULB(DeleteULBRequest request) throws UCloudException {
         request.setAction("DeleteULB");
@@ -157,9 +166,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * DeleteVServer - 删除VServer实例
+     * DeleteVServer - 删除VServer
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DeleteVServer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteVServerResponse deleteVServer(DeleteVServerRequest request)
             throws UCloudException {
@@ -170,7 +180,8 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     /**
      * DescribeSSL - 获取SSL证书信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException {
         request.setAction("DescribeSSL");
@@ -178,9 +189,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * DescribeULB - 获取ULB详细信息
+     * DescribeULB - 获取负载均衡信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeULB
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeULBResponse describeULB(DescribeULBRequest request) throws UCloudException {
         request.setAction("DescribeULB");
@@ -188,9 +200,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * DescribeULBSimple - 获取ULB信息
+     * DescribeULBSimple - 获取负载均衡信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeULBSimple
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeULBSimpleResponse describeULBSimple(DescribeULBSimpleRequest request)
             throws UCloudException {
@@ -199,9 +212,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * DescribeVServer - 获取ULB下的VServer的详细信息
+     * DescribeVServer - 获取VServer信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/DescribeVServer
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeVServerResponse describeVServer(DescribeVServerRequest request)
             throws UCloudException {
@@ -210,9 +224,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * ReleaseBackend - 从VServer释放后端资源实例
+     * ReleaseBackend - 释放后端实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/ReleaseBackend
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ReleaseBackendResponse releaseBackend(ReleaseBackendRequest request)
             throws UCloudException {
@@ -221,9 +236,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * UnbindSSL - 从VServer解绑SSL证书
+     * UnbindSSL - 解绑SSL证书
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UnbindSSL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UnbindSSLResponse unbindSSL(UnbindSSLRequest request) throws UCloudException {
         request.setAction("UnbindSSL");
@@ -231,9 +247,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * UpdateBackendAttribute - 更新ULB后端资源实例(服务节点)属性
+     * UpdateBackendAttribute - 更新后端实例属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdateBackendAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateBackendAttributeResponse updateBackendAttribute(
             UpdateBackendAttributeRequest request) throws UCloudException {
@@ -243,9 +260,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * UpdatePolicy - 更新内容转发规则，包括转发规则后的服务节点
+     * UpdatePolicy - 更新内容转发规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdatePolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException {
         request.setAction("UpdatePolicy");
@@ -253,9 +271,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * UpdateULBAttribute - 更新ULB名字业务组备注等属性字段
+     * UpdateULBAttribute - 更新负载均衡属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdateULBAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateULBAttributeResponse updateULBAttribute(UpdateULBAttributeRequest request)
             throws UCloudException {
@@ -264,9 +283,10 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * UpdateVServerAttribute - 更新VServer实例属性
+     * UpdateVServerAttribute - 更新VServer属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ulb-api/UpdateVServerAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateVServerAttributeResponse updateVServerAttribute(
             UpdateVServerAttributeRequest request) throws UCloudException {

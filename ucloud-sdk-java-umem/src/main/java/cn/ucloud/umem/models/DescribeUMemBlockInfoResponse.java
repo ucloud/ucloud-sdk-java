@@ -37,10 +37,6 @@ public class DescribeUMemBlockInfoResponse extends Response {
         @SerializedName("BlockId")
         private String blockId;
 
-        /** 分片ip */
-        @SerializedName("BlockVip")
-        private String blockVip;
-
         /** 分片端口 */
         @SerializedName("BlockPort")
         private Integer blockPort;
@@ -48,10 +44,6 @@ public class DescribeUMemBlockInfoResponse extends Response {
         /** 容量单位GB */
         @SerializedName("BlockSize")
         private Integer blockSize;
-
-        /** 使用量单位MB */
-        @SerializedName("BlockUsedSize")
-        private Integer blockUsedSize;
 
         /**
          * 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中
@@ -69,20 +61,20 @@ public class DescribeUMemBlockInfoResponse extends Response {
         @SerializedName("BlockSlotEnd")
         private Integer blockSlotEnd;
 
+        /** 分片ip */
+        @SerializedName("BlockVip")
+        private String blockVip;
+
+        /** 使用量单位MB */
+        @SerializedName("BlockUsedSize")
+        private Integer blockUsedSize;
+
         public String getBlockId() {
             return blockId;
         }
 
         public void setBlockId(String blockId) {
             this.blockId = blockId;
-        }
-
-        public String getBlockVip() {
-            return blockVip;
-        }
-
-        public void setBlockVip(String blockVip) {
-            this.blockVip = blockVip;
         }
 
         public Integer getBlockPort() {
@@ -99,14 +91,6 @@ public class DescribeUMemBlockInfoResponse extends Response {
 
         public void setBlockSize(Integer blockSize) {
             this.blockSize = blockSize;
-        }
-
-        public Integer getBlockUsedSize() {
-            return blockUsedSize;
-        }
-
-        public void setBlockUsedSize(Integer blockUsedSize) {
-            this.blockUsedSize = blockUsedSize;
         }
 
         public String getBlockState() {
@@ -131,6 +115,22 @@ public class DescribeUMemBlockInfoResponse extends Response {
 
         public void setBlockSlotEnd(Integer blockSlotEnd) {
             this.blockSlotEnd = blockSlotEnd;
+        }
+
+        public String getBlockVip() {
+            return blockVip;
+        }
+
+        public void setBlockVip(String blockVip) {
+            this.blockVip = blockVip;
+        }
+
+        public Integer getBlockUsedSize() {
+            return blockUsedSize;
+        }
+
+        public void setBlockUsedSize(Integer blockUsedSize) {
+            this.blockUsedSize = blockUsedSize;
         }
     }
 }

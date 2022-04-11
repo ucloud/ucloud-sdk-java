@@ -456,145 +456,9 @@ public class CreateUHostInstanceRequest extends Request {
         this.couponId = couponId;
     }
 
-    public static class NetworkInterfaceEIP extends Request {
+    public static class NetworkInterfaceIPv6 extends Request {}
 
-        /**
-         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
-         * 流量计费[1-300]，带宽计费[1-800]
-         */
-        @UCloudParam("Bandwidth")
-        private Integer bandwidth;
-
-        /**
-         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
-         * "Free":免费带宽模式,默认为 "Bandwidth"
-         */
-        @UCloudParam("PayMode")
-        private String payMode;
-
-        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
-        @UCloudParam("ShareBandwidthId")
-        private String shareBandwidthId;
-
-        /** */
-        @UCloudParam("GlobalSSH")
-        private NetworkInterfaceEIPGlobalSSH globalSSH;
-
-        /**
-         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
-         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
-         * International kr-seoul:International us-ws:International ge-fra:International
-         * sg:International tw-kh:International.其他海外线路均为 International
-         */
-        @UCloudParam("OperatorName")
-        private String operatorName;
-
-        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
-        @UCloudParam("CouponId")
-        private String couponId;
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getPayMode() {
-            return payMode;
-        }
-
-        public void setPayMode(String payMode) {
-            this.payMode = payMode;
-        }
-
-        public String getShareBandwidthId() {
-            return shareBandwidthId;
-        }
-
-        public void setShareBandwidthId(String shareBandwidthId) {
-            this.shareBandwidthId = shareBandwidthId;
-        }
-
-        public NetworkInterfaceEIPGlobalSSH getGlobalSSH() {
-            return globalSSH;
-        }
-
-        public void setGlobalSSH(NetworkInterfaceEIPGlobalSSH globalSSH) {
-            this.globalSSH = globalSSH;
-        }
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getCouponId() {
-            return couponId;
-        }
-
-        public void setCouponId(String couponId) {
-            this.couponId = couponId;
-        }
-    }
-
-    public static class NetworkInterfaceEIPGlobalSSH extends Request {
-
-        /** 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”。Area和AreaCode两者必填其中之一。 */
-        @UCloudParam("Area")
-        private String area;
-
-        /** SSH端口，1-65535且不能使用80，443端口 */
-        @UCloudParam("Port")
-        private Integer port;
-
-        /** GlobalSSH的地区编码，格式为区域航空港国际通用代码。Area和AreaCode两者必填其中之一。 */
-        @UCloudParam("AreaCode")
-        private String areaCode;
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getAreaCode() {
-            return areaCode;
-        }
-
-        public void setAreaCode(String areaCode) {
-            this.areaCode = areaCode;
-        }
-    }
-
-    public static class Features extends Request {
-
-        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
-        @UCloudParam("UNI")
-        private Boolean uni;
-
-        public Boolean getUNI() {
-            return uni;
-        }
-
-        public void setUNI(Boolean uni) {
-            this.uni = uni;
-        }
-    }
+    public static class Volumes extends Request {}
 
     public static class NetworkInterface extends Request {
 
@@ -635,7 +499,94 @@ public class CreateUHostInstanceRequest extends Request {
         }
     }
 
-    public static class NetworkInterfaceIPv6 extends Request {}
+    public static class Features extends Request {
+
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
+        @UCloudParam("UNI")
+        private Boolean uni;
+
+        public Boolean getUNI() {
+            return uni;
+        }
+
+        public void setUNI(Boolean uni) {
+            this.uni = uni;
+        }
+    }
+
+    public static class NetworkInterfaceEIP extends Request {
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
+         * 流量计费[1-300]，带宽计费[1-800]
+         */
+        @UCloudParam("Bandwidth")
+        private Integer bandwidth;
+
+        /**
+         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
+         * "Free":免费带宽模式,默认为 "Bandwidth"
+         */
+        @UCloudParam("PayMode")
+        private String payMode;
+
+        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
+        @UCloudParam("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
+         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
+         * International kr-seoul:International us-ws:International ge-fra:International
+         * sg:International tw-kh:International.其他海外线路均为 International
+         */
+        @UCloudParam("OperatorName")
+        private String operatorName;
+
+        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
+        @UCloudParam("CouponId")
+        private String couponId;
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+    }
 
     public static class Disks extends Request {
 
@@ -655,8 +606,8 @@ public class CreateUHostInstanceRequest extends Request {
         private Integer size;
 
         /**
-         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT（SNAPSHOT模式目前仅在上海C支持），快照
-         * \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
+         * [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
          */
         @UCloudParam("BackupType")
         private String backupType;
@@ -729,6 +680,4 @@ public class CreateUHostInstanceRequest extends Request {
             this.couponId = couponId;
         }
     }
-
-    public static class Volumes extends Request {}
 }

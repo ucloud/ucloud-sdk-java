@@ -109,9 +109,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * BindUEcFirewall - 绑定防火墙，应用防火墙规则
+     * BindUEcFirewall - 绑定防火墙
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/BindUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public BindUEcFirewallResponse bindUEcFirewall(BindUEcFirewallRequest request)
             throws UCloudException {
@@ -120,9 +121,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * CreateUEcCustomImage - 从指定虚拟机，生成自定义镜像。
+     * CreateUEcCustomImage - 创建自制镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUEcCustomImageResponse createUEcCustomImage(CreateUEcCustomImageRequest request)
             throws UCloudException {
@@ -134,7 +136,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * CreateUEcFirewall - 创建外网防火墙
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUEcFirewallResponse createUEcFirewall(CreateUEcFirewallRequest request)
             throws UCloudException {
@@ -145,7 +148,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * CreateUEcHolder - 创建容器组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUEcHolderResponse createUEcHolder(CreateUEcHolderRequest request)
             throws UCloudException {
@@ -156,7 +160,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * CreateUEcSubnet - 创建子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUEcSubnetResponse createUEcSubnet(CreateUEcSubnetRequest request)
             throws UCloudException {
@@ -165,9 +170,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * CreateUEcVHost - 创建虚拟机v2.0
+     * CreateUEcVHost - 创建虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/CreateUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUEcVHostResponse createUEcVHost(CreateUEcVHostRequest request)
             throws UCloudException {
@@ -176,9 +182,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * DeleteUEcCustomImage - 删除UEDN客户自定义镜像
+     * DeleteUEcCustomImage - 删除UEC客户自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUEcCustomImageResponse deleteUEcCustomImage(DeleteUEcCustomImageRequest request)
             throws UCloudException {
@@ -190,7 +197,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DeleteUEcHolder - 删除容器组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUEcHolderResponse deleteUEcHolder(DeleteUEcHolderRequest request)
             throws UCloudException {
@@ -201,7 +209,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DeleteUEcSubnet - 删除子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUEcSubnetResponse deleteUEcSubnet(DeleteUEcSubnetRequest request)
             throws UCloudException {
@@ -210,9 +219,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * DeleteUEcVHost - 删除vhost虚拟机 v2.0
+     * DeleteUEcVHost - 删除vhost虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DeleteUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUEcVHostResponse deleteUEcVHost(DeleteUEcVHostRequest request)
             throws UCloudException {
@@ -223,7 +233,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcFirewall - 获取防火墙信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcFirewallResponse describeUEcFirewall(DescribeUEcFirewallRequest request)
             throws UCloudException {
@@ -235,7 +246,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcFirewallResource - 防火墙绑定的资源列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcFirewallResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcFirewallResourceResponse describeUEcFirewallResource(
             DescribeUEcFirewallResourceRequest request) throws UCloudException {
@@ -247,7 +259,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcHolder - 获得容器组信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcHolderResponse describeUEcHolder(DescribeUEcHolderRequest request)
             throws UCloudException {
@@ -258,7 +271,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcHolderIDC - 获取容器组机房信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcHolderIDC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcHolderIDCResponse describeUEcHolderIDC(DescribeUEcHolderIDCRequest request)
             throws UCloudException {
@@ -270,7 +284,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcIDC - 获取IDC机房列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcIDC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcIDCResponse describeUEcIDC(DescribeUEcIDCRequest request)
             throws UCloudException {
@@ -281,7 +296,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcSubnet - 获取子网列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcSubnetResponse describeUEcSubnet(DescribeUEcSubnetRequest request)
             throws UCloudException {
@@ -290,9 +306,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * DescribeUEcVHost - 获取虚拟机列表 2.0
+     * DescribeUEcVHost - 获取虚拟机列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcVHostResponse describeUEcVHost(DescribeUEcVHostRequest request)
             throws UCloudException {
@@ -303,7 +320,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * DescribeUEcVHostISP - 获取虚拟机运营商信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/DescribeUEcVHostISP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUEcVHostISPResponse describeUEcVHostISP(DescribeUEcVHostISPRequest request)
             throws UCloudException {
@@ -313,9 +331,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * GetUEcHolderLog - 获取单个容器日志
+     * GetUEcHolderLog - 获取容器日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcHolderLog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcHolderLogResponse getUEcHolderLog(GetUEcHolderLogRequest request)
             throws UCloudException {
@@ -324,9 +343,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * GetUEcHolderMetrics - 获取容器（CPU利用率，带宽，内存）数据
+     * GetUEcHolderMetrics - 获取容器监控数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcHolderMetrics
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcHolderMetricsResponse getUEcHolderMetrics(GetUEcHolderMetricsRequest request)
             throws UCloudException {
@@ -336,9 +356,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * GetUEcIDCCutInfo - 获取机房割接信息
+     * GetUEcIDCCutInfo - 获得机房割接信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcIDCCutInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcIDCCutInfoResponse getUEcIDCCutInfo(GetUEcIDCCutInfoRequest request)
             throws UCloudException {
@@ -349,7 +370,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * GetUEcIDCVHostData - 获取机房虚拟机监控数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcIDCVHostData
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcIDCVHostDataResponse getUEcIDCVHostData(GetUEcIDCVHostDataRequest request)
             throws UCloudException {
@@ -358,9 +380,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * GetUEcImage - uec2.0
+     * GetUEcImage - 获取镜像列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcImageResponse getUEcImage(GetUEcImageRequest request) throws UCloudException {
         request.setAction("GetUEcImage");
@@ -370,7 +393,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * GetUEcPodPrice - 获得容器组价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcPodPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcPodPriceResponse getUEcPodPrice(GetUEcPodPriceRequest request)
             throws UCloudException {
@@ -381,7 +405,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * GetUEcUpgradePrice - 获取虚拟机调整差价
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcUpgradePriceResponse getUEcUpgradePrice(GetUEcUpgradePriceRequest request)
             throws UCloudException {
@@ -392,7 +417,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * GetUEcVHostData - 获取虚拟机监控数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcVHostData
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcVHostDataResponse getUEcVHostData(GetUEcVHostDataRequest request)
             throws UCloudException {
@@ -403,7 +429,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * GetUEcVHostPrice - 获取虚拟机价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/GetUEcVHostPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUEcVHostPriceResponse getUEcVHostPrice(GetUEcVHostPriceRequest request)
             throws UCloudException {
@@ -414,7 +441,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * ImportUEcCustomImage - 导入自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ImportUEcCustomImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ImportUEcCustomImageResponse importUEcCustomImage(ImportUEcCustomImageRequest request)
             throws UCloudException {
@@ -426,7 +454,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * LoginUEcDocker - 登录容器
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/LoginUEcDocker
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public LoginUEcDockerResponse loginUEcDocker(LoginUEcDockerRequest request)
             throws UCloudException {
@@ -437,7 +466,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * ModifyUEcBandwidth - 修改节点带宽限制
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ModifyUEcBandwidth
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUEcBandwidthResponse modifyUEcBandwidth(ModifyUEcBandwidthRequest request)
             throws UCloudException {
@@ -448,7 +478,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * ModifyUEcHolderName - 修改容器组名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ModifyUEcHolderName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUEcHolderNameResponse modifyUEcHolderName(ModifyUEcHolderNameRequest request)
             throws UCloudException {
@@ -460,7 +491,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * ModifyUEcImageName - 修改镜像名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ModifyUEcImageName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUEcImageNameResponse modifyUEcImageName(ModifyUEcImageNameRequest request)
             throws UCloudException {
@@ -471,7 +503,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * PoweroffUEcVHost - 虚拟机断电
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/PoweroffUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public PoweroffUEcVHostResponse poweroffUEcVHost(PoweroffUEcVHostRequest request)
             throws UCloudException {
@@ -482,7 +515,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * ReinstallUEcVHost - 虚拟机重装系统
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/ReinstallUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ReinstallUEcVHostResponse reinstallUEcVHost(ReinstallUEcVHostRequest request)
             throws UCloudException {
@@ -493,7 +527,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * RestartUEcHolder - 重启容器组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/RestartUEcHolder
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartUEcHolderResponse restartUEcHolder(RestartUEcHolderRequest request)
             throws UCloudException {
@@ -502,9 +537,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * RestartUEcVHost - 重启虚拟机v2.0
+     * RestartUEcVHost - 重启虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/RestartUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartUEcVHostResponse restartUEcVHost(RestartUEcVHostRequest request)
             throws UCloudException {
@@ -515,7 +551,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * StartUEcVHost - 启动UEC虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/StartUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StartUEcVHostResponse startUEcVHost(StartUEcVHostRequest request)
             throws UCloudException {
@@ -526,7 +563,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * StopUEcVHost - 停止UEC虚拟机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/StopUEcVHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StopUEcVHostResponse stopUEcVHost(StopUEcVHostRequest request) throws UCloudException {
         request.setAction("StopUEcVHost");
@@ -536,7 +574,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * UnBindUEcFirewall - 解绑防火墙
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UnBindUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UnBindUEcFirewallResponse unBindUEcFirewall(UnBindUEcFirewallRequest request)
             throws UCloudException {
@@ -545,9 +584,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * UpdateUEcFirewall - 更新防火墙信息，新增和删除规则
+     * UpdateUEcFirewall - 更新防火墙信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UpdateUEcFirewall
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUEcFirewallResponse updateUEcFirewall(UpdateUEcFirewallRequest request)
             throws UCloudException {
@@ -556,9 +596,10 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     }
 
     /**
-     * UpdateUEcFirewallAttribute - 更新防火墙名称及描述
+     * UpdateUEcFirewallAttribute - 更新防火墙属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UpdateUEcFirewallAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUEcFirewallAttributeResponse updateUEcFirewallAttribute(
             UpdateUEcFirewallAttributeRequest request) throws UCloudException {
@@ -570,7 +611,8 @@ public class UECClient extends DefaultClient implements UECClientInterface {
     /**
      * UpdateUEcSubnet - 更新子网信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uec-api/UpdateUEcSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUEcSubnetResponse updateUEcSubnet(UpdateUEcSubnetRequest request)
             throws UCloudException {

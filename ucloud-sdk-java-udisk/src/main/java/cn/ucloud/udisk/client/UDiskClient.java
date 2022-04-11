@@ -65,9 +65,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * AttachUDisk - 将一个可用的UDisk挂载到某台主机上，当UDisk挂载成功后，还需要在主机内部进行文件系统操作
+     * AttachUDisk - 挂载云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/AttachUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AttachUDiskResponse attachUDisk(AttachUDiskRequest request) throws UCloudException {
         request.setAction("AttachUDisk");
@@ -75,9 +76,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * CloneUDisk - 从UDisk创建UDisk克隆
+     * CloneUDisk - 克隆云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/CloneUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CloneUDiskResponse cloneUDisk(CloneUDiskRequest request) throws UCloudException {
         request.setAction("CloneUDisk");
@@ -85,9 +87,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * CloneUDiskSnapshot - 从快照创建UDisk克隆
+     * CloneUDiskSnapshot - 克隆快照
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/CloneUDiskSnapshot
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CloneUDiskSnapshotResponse cloneUDiskSnapshot(CloneUDiskSnapshotRequest request)
             throws UCloudException {
@@ -98,7 +101,8 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     /**
      * CloneUDiskUDataArk - 从数据方舟的备份创建UDisk
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/CloneUDiskUDataArk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CloneUDiskUDataArkResponse cloneUDiskUDataArk(CloneUDiskUDataArkRequest request)
             throws UCloudException {
@@ -107,9 +111,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * CreateAttachUDisk - 创建并挂载UDisk磁盘
+     * CreateAttachUDisk - 创建并挂载云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/CreateAttachUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateAttachUDiskResponse createAttachUDisk(CreateAttachUDiskRequest request)
             throws UCloudException {
@@ -118,9 +123,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * CreateUDisk - 创建UDisk磁盘
+     * CreateUDisk - 创建云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/CreateUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDiskResponse createUDisk(CreateUDiskRequest request) throws UCloudException {
         request.setAction("CreateUDisk");
@@ -128,9 +134,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * CreateUDiskSnapshot - 创建snapshot快照
+     * CreateUDiskSnapshot - 创建快照
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/CreateUDiskSnapshot
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUDiskSnapshotResponse createUDiskSnapshot(CreateUDiskSnapshotRequest request)
             throws UCloudException {
@@ -140,9 +147,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DeleteUDisk - 删除UDisk
+     * DeleteUDisk - 删除云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DeleteUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUDiskResponse deleteUDisk(DeleteUDiskRequest request) throws UCloudException {
         request.setAction("DeleteUDisk");
@@ -150,9 +158,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DeleteUDiskSnapshot - 删除Snapshot
+     * DeleteUDiskSnapshot - 删除快照
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DeleteUDiskSnapshot
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUDiskSnapshotResponse deleteUDiskSnapshot(DeleteUDiskSnapshotRequest request)
             throws UCloudException {
@@ -162,9 +171,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DescribeRecycleUDisk - 拉取回收站中云硬盘列表
+     * DescribeRecycleUDisk - 【已废弃】拉取回收站中云硬盘列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DescribeRecycleUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeRecycleUDiskResponse describeRecycleUDisk(DescribeRecycleUDiskRequest request)
             throws UCloudException {
@@ -174,9 +184,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DescribeUDisk - 获取UDisk实例
+     * DescribeUDisk - 获取云硬盘列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DescribeUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDiskResponse describeUDisk(DescribeUDiskRequest request)
             throws UCloudException {
@@ -185,9 +196,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DescribeUDiskPrice - 获取UDisk实例价格信息
+     * DescribeUDiskPrice - 获取云硬盘价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DescribeUDiskPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDiskPriceResponse describeUDiskPrice(DescribeUDiskPriceRequest request)
             throws UCloudException {
@@ -196,9 +208,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DescribeUDiskSnapshot - 获取UDisk快照
+     * DescribeUDiskSnapshot - 获取快照列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DescribeUDiskSnapshot
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDiskSnapshotResponse describeUDiskSnapshot(DescribeUDiskSnapshotRequest request)
             throws UCloudException {
@@ -208,9 +221,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DescribeUDiskUpgradePrice - 获取UDisk升级价格信息
+     * DescribeUDiskUpgradePrice - 获取云硬盘升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DescribeUDiskUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDiskUpgradePriceResponse describeUDiskUpgradePrice(
             DescribeUDiskUpgradePriceRequest request) throws UCloudException {
@@ -220,9 +234,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DetachUDisk - 卸载某个已经挂载在指定UHost实例上的UDisk
+     * DetachUDisk - 卸载云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/DetachUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DetachUDiskResponse detachUDisk(DetachUDiskRequest request) throws UCloudException {
         request.setAction("DetachUDisk");
@@ -230,9 +245,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * RecoverUDisk - 从回收站中恢复云硬盘
+     * RecoverUDisk - 【已废弃】恢复云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/RecoverUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RecoverUDiskResponse recoverUDisk(RecoverUDiskRequest request) throws UCloudException {
         request.setAction("RecoverUDisk");
@@ -240,9 +256,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * RenameUDisk - 重命名UDisk
+     * RenameUDisk - 重命名云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/RenameUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RenameUDiskResponse renameUDisk(RenameUDiskRequest request) throws UCloudException {
         request.setAction("RenameUDisk");
@@ -250,9 +267,10 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * ResizeUDisk - 调整UDisk容量
+     * ResizeUDisk - 调整云硬盘
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/ResizeUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizeUDiskResponse resizeUDisk(ResizeUDiskRequest request) throws UCloudException {
         request.setAction("ResizeUDisk");
@@ -262,7 +280,8 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     /**
      * RestoreUDisk - 从备份恢复数据至UDisk
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/RestoreUDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestoreUDiskResponse restoreUDisk(RestoreUDiskRequest request) throws UCloudException {
         request.setAction("RestoreUDisk");
@@ -272,7 +291,8 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     /**
      * SetUDiskUDataArkMode - 设置UDisk数据方舟的状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/udisk-api/SetUDiskUDataArkMode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SetUDiskUDataArkModeResponse setUDiskUDataArkMode(SetUDiskUDataArkModeRequest request)
             throws UCloudException {
