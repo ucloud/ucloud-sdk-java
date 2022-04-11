@@ -13,7 +13,6 @@
  */
 package cn.ucloud.unet.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -30,9 +29,9 @@ public class AllocateEIPRequest extends Request {
     private String projectId;
 
     /**
-     * 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp。
+     * 弹性IP线路，枚举值：国际线路， International；BGP线路：Bgp；精品BGP：BGPPro。
      *
-     * <p>使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。
+     * <p>使用BGP线路的地域：北京二、上海金融云、上海二、广州等，其他地域均使用国际线路。 使用BGPPro线路的地域：香港
      */
     @NotEmpty
     @UCloudParam("OperatorName")
@@ -72,6 +71,10 @@ public class AllocateEIPRequest extends Request {
     /** 弹性IP的名称, 默认为 "EIP" */
     @UCloudParam("Name")
     private String name;
+
+    /** 购买EIP数量，默认值为1 */
+    @UCloudParam("Count")
+    private Integer count;
 
     /** 弹性IP的备注, 默认为空 */
     @UCloudParam("Remark")
@@ -159,6 +162,14 @@ public class AllocateEIPRequest extends Request {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     public String getRemark() {

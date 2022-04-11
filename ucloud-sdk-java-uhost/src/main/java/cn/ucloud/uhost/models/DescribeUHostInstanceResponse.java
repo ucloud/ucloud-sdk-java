@@ -154,33 +154,6 @@ public class DescribeUHostInstanceResponse extends Response {
         }
     }
 
-    public static class UHostKeyPair extends Response {
-
-        /** 密钥对ID */
-        @SerializedName("KeyPairId")
-        private String keyPairId;
-
-        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
-        @SerializedName("KeyPairState")
-        private String keyPairState;
-
-        public String getKeyPairId() {
-            return keyPairId;
-        }
-
-        public void setKeyPairId(String keyPairId) {
-            this.keyPairId = keyPairId;
-        }
-
-        public String getKeyPairState() {
-            return keyPairState;
-        }
-
-        public void setKeyPairState(String keyPairState) {
-            this.keyPairState = keyPairState;
-        }
-    }
-
     public static class UHostInstanceSet extends Response {
 
         /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
@@ -664,6 +637,33 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setKeyPair(UHostKeyPair keyPair) {
             this.keyPair = keyPair;
+        }
+    }
+
+    public static class UHostKeyPair extends Response {
+
+        /** 密钥对ID */
+        @SerializedName("KeyPairId")
+        private String keyPairId;
+
+        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
+        @SerializedName("KeyPairState")
+        private String keyPairState;
+
+        public String getKeyPairId() {
+            return keyPairId;
+        }
+
+        public void setKeyPairId(String keyPairId) {
+            this.keyPairId = keyPairId;
+        }
+
+        public String getKeyPairState() {
+            return keyPairState;
+        }
+
+        public void setKeyPairState(String keyPairState) {
+            this.keyPairState = keyPairState;
         }
     }
 

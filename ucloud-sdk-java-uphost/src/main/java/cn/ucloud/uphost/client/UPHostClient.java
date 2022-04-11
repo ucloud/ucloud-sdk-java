@@ -65,9 +65,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * CreatePHost - 指定数据中心，根据资源使用量创建指定数量的UPHost物理云主机实例。
+     * CreatePHost - 创建物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/CreatePHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreatePHostResponse createPHost(CreatePHostRequest request) throws UCloudException {
         request.setAction("CreatePHost");
@@ -77,7 +78,8 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     /**
      * CreatePHostImage - 创建裸金属2.0用户自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/CreatePHostImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreatePHostImageResponse createPHostImage(CreatePHostImageRequest request)
             throws UCloudException {
@@ -86,9 +88,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * DescribeBaremetalMachineType - 获取裸金属机型的详细描述信息
+     * DescribeBaremetalMachineType - 获取裸金属机型的详细信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribeBaremetalMachineType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeBaremetalMachineTypeResponse describeBaremetalMachineType(
             DescribeBaremetalMachineTypeRequest request) throws UCloudException {
@@ -98,9 +101,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * DescribePHost - 获取物理机详细信息
+     * DescribePHost - 获取物理机信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribePHostResponse describePHost(DescribePHostRequest request)
             throws UCloudException {
@@ -109,9 +113,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * DescribePHostImage - 获取物理云主机镜像列表
+     * DescribePHostImage - 获取物理机镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHostImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribePHostImageResponse describePHostImage(DescribePHostImageRequest request)
             throws UCloudException {
@@ -120,9 +125,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * DescribePHostMachineType - 获取物理云机型的详细描述信息
+     * DescribePHostMachineType - 获取物理云机型信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHostMachineType
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribePHostMachineTypeResponse describePHostMachineType(
             DescribePHostMachineTypeRequest request) throws UCloudException {
@@ -132,9 +138,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * DescribePHostTags - 获取物理机tag列表（业务组）
+     * DescribePHostTags - 获取物理机业务组
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/DescribePHostTags
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribePHostTagsResponse describePHostTags(DescribePHostTagsRequest request)
             throws UCloudException {
@@ -143,9 +150,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * GetPHostDiskUpgradePrice - 获取物理云裸金属挂载磁盘的升级价格
+     * GetPHostDiskUpgradePrice - 获取物理云裸金属挂载云盘的升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/GetPHostDiskUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetPHostDiskUpgradePriceResponse getPHostDiskUpgradePrice(
             GetPHostDiskUpgradePriceRequest request) throws UCloudException {
@@ -155,9 +163,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * GetPHostPrice - 获取物理机价格列表
+     * GetPHostPrice - 获取物理机价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/GetPHostPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetPHostPriceResponse getPHostPrice(GetPHostPriceRequest request)
             throws UCloudException {
@@ -166,9 +175,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * ModifyPHostImageInfo - 修改自定义镜像名称和备注
+     * ModifyPHostImageInfo - 修改物理云自定义镜像信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ModifyPHostImageInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyPHostImageInfoResponse modifyPHostImageInfo(ModifyPHostImageInfoRequest request)
             throws UCloudException {
@@ -180,7 +190,8 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     /**
      * ModifyPHostInfo - 更改物理机信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ModifyPHostInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyPHostInfoResponse modifyPHostInfo(ModifyPHostInfoRequest request)
             throws UCloudException {
@@ -189,9 +200,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * PoweroffPHost - 断电物理云主机
+     * PoweroffPHost - 断电物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/PoweroffPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public PoweroffPHostResponse poweroffPHost(PoweroffPHostRequest request)
             throws UCloudException {
@@ -202,7 +214,8 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     /**
      * RebootPHost - 重启物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/RebootPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RebootPHostResponse rebootPHost(RebootPHostRequest request) throws UCloudException {
         request.setAction("RebootPHost");
@@ -210,9 +223,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * ReinstallPHost - 重装物理机操作系统
+     * ReinstallPHost - 重装物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ReinstallPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ReinstallPHostResponse reinstallPHost(ReinstallPHostRequest request)
             throws UCloudException {
@@ -221,9 +235,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * ResetPHostPassword - 重置裸金属实例的管理员密码
+     * ResetPHostPassword - 重置实例密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ResetPHostPassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResetPHostPasswordResponse resetPHostPassword(ResetPHostPasswordRequest request)
             throws UCloudException {
@@ -232,9 +247,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * ResizePHostAttachedDisk - 修改裸金属物理云已经挂载的云盘容量大小
+     * ResizePHostAttachedDisk - 修改挂载的磁盘大小
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/ResizePHostAttachedDisk
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizePHostAttachedDiskResponse resizePHostAttachedDisk(
             ResizePHostAttachedDiskRequest request) throws UCloudException {
@@ -246,7 +262,8 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     /**
      * StartPHost - 启动物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/StartPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StartPHostResponse startPHost(StartPHostRequest request) throws UCloudException {
         request.setAction("StartPHost");
@@ -256,7 +273,8 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     /**
      * StopPHost - 关闭物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/StopPHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public StopPHostResponse stopPHost(StopPHostRequest request) throws UCloudException {
         request.setAction("StopPHost");
@@ -264,9 +282,10 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     }
 
     /**
-     * TerminatePHost - 删除物理云主机
+     * TerminatePHost - 删除物理机
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/TerminatePHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public TerminatePHostResponse terminatePHost(TerminatePHostRequest request)
             throws UCloudException {
@@ -277,7 +296,8 @@ public class UPHostClient extends DefaultClient implements UPHostClientInterface
     /**
      * TerminatePHostImage - 删除裸金属2.0用户自定义镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uphost-api/TerminatePHostImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public TerminatePHostImageResponse terminatePHostImage(TerminatePHostImageRequest request)
             throws UCloudException {

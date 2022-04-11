@@ -48,7 +48,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * CreateRemoteVPNGateway - 创建客户VPN网关
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/CreateRemoteVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateRemoteVPNGatewayResponse createRemoteVPNGateway(
             CreateRemoteVPNGatewayRequest request) throws UCloudException;
@@ -56,7 +57,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * CreateVPNGateway - 创建VPN网关
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/CreateVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateVPNGatewayResponse createVPNGateway(CreateVPNGatewayRequest request)
             throws UCloudException;
@@ -64,7 +66,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * CreateVPNTunnel - 创建VPN隧道
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/CreateVPNTunnel
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateVPNTunnelResponse createVPNTunnel(CreateVPNTunnelRequest request)
             throws UCloudException;
@@ -72,7 +75,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * DeleteRemoteVPNGateway - 删除客户VPN网关
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/DeleteRemoteVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteRemoteVPNGatewayResponse deleteRemoteVPNGateway(
             DeleteRemoteVPNGatewayRequest request) throws UCloudException;
@@ -80,7 +84,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * DeleteVPNGateway - 删除VPN网关
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/DeleteVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteVPNGatewayResponse deleteVPNGateway(DeleteVPNGatewayRequest request)
             throws UCloudException;
@@ -88,7 +93,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * DeleteVPNTunnel - 删除VPN隧道
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/DeleteVPNTunnel
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteVPNTunnelResponse deleteVPNTunnel(DeleteVPNTunnelRequest request)
             throws UCloudException;
@@ -96,7 +102,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * DescribeRemoteVPNGateway - 获取客户VPN网关信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/DescribeRemoteVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeRemoteVPNGatewayResponse describeRemoteVPNGateway(
             DescribeRemoteVPNGatewayRequest request) throws UCloudException;
@@ -104,7 +111,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * DescribeVPNGateway - 获取VPN网关信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/DescribeVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeVPNGatewayResponse describeVPNGateway(DescribeVPNGatewayRequest request)
             throws UCloudException;
@@ -112,7 +120,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * DescribeVPNTunnel - 获取VPN隧道信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/DescribeVPNTunnel
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeVPNTunnelResponse describeVPNTunnel(DescribeVPNTunnelRequest request)
             throws UCloudException;
@@ -120,7 +129,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * GetVPNGatewayPrice - 获取VPN价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/GetVPNGatewayPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetVPNGatewayPriceResponse getVPNGatewayPrice(GetVPNGatewayPriceRequest request)
             throws UCloudException;
@@ -128,7 +138,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * GetVPNGatewayUpgradePrice - 获取VPN网关规格改动价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/GetVPNGatewayUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetVPNGatewayUpgradePriceResponse getVPNGatewayUpgradePrice(
             GetVPNGatewayUpgradePriceRequest request) throws UCloudException;
@@ -136,7 +147,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * UpdateVPNGateway - 更改VPN网关规格
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/UpdateVPNGateway
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateVPNGatewayResponse updateVPNGateway(UpdateVPNGatewayRequest request)
             throws UCloudException;
@@ -144,7 +156,8 @@ public interface IPSecVPNClientInterface extends Client {
     /**
      * UpdateVPNTunnelAttribute - 更新VPN隧道属性
      *
-     * <p>See also: https://docs.ucloud.cn/api/ipsecvpn-api/UpdateVPNTunnelAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateVPNTunnelAttributeResponse updateVPNTunnelAttribute(
             UpdateVPNTunnelAttributeRequest request) throws UCloudException;

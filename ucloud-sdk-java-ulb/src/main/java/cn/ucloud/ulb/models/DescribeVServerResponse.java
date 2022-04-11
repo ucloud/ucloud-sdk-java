@@ -43,245 +43,6 @@ public class DescribeVServerResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class ULBVServerSet extends Response {
-
-        /**
-         * 健康检查类型，枚举值：Port -> 端口检查；Path -> 路径检查；Ping -> Ping探测， Customize -> UDP检查
-         *
-         * <p>请求代理型默认值为Port，其中TCP协议仅支持Port，其他协议支持Port和Path;
-         * 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize
-         */
-        @SerializedName("MonitorType")
-        private String monitorType;
-
-        /** 负载均衡实例的Id */
-        @SerializedName("ULBId")
-        private String ulbId;
-
-        /** 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查域名 */
-        @SerializedName("Domain")
-        private String domain;
-
-        /** 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查路径 */
-        @SerializedName("Path")
-        private String path;
-
-        /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文 */
-        @SerializedName("RequestMsg")
-        private String requestMsg;
-
-        /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查请求应收到的响应报文 */
-        @SerializedName("ResponseMsg")
-        private String responseMsg;
-
-        /** VServer实例的Id */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** VServer实例的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
-
-        /** VServer实例的协议。 枚举值为：HTTP，TCP，UDP，HTTPS。 */
-        @SerializedName("Protocol")
-        private String protocol;
-
-        /** VServer服务端口 */
-        @SerializedName("FrontendPort")
-        private Integer frontendPort;
-
-        /**
-         * VServer负载均衡的模式，枚举值：Roundrobin -> 轮询;Source -> 源地址；ConsistentHash -> 一致性哈希；SourcePort ->
-         * 源地址（计算端口）；ConsistentHashPort -> 一致性哈希（计算端口）。
-         */
-        @SerializedName("Method")
-        private String method;
-
-        /** VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。 */
-        @SerializedName("PersistenceType")
-        private String persistenceType;
-
-        /** 根据PersistenceType确定： None或ServerInsert，此字段为空； UserDefined，此字段展示用户自定义会话string。 */
-        @SerializedName("PersistenceInfo")
-        private String persistenceInfo;
-
-        /** 空闲连接的回收时间，单位：秒。 */
-        @SerializedName("ClientTimeout")
-        private Integer clientTimeout;
-
-        /** VServer的运行状态。枚举值： 0 -> rs全部运行正常;1 -> rs全部运行异常；2 -> rs部分运行异常。 */
-        @SerializedName("Status")
-        private Integer status;
-
-        /** VServer绑定的SSL证书信息，具体结构见下方 ULBSSLSet。 */
-        @SerializedName("SSLSet")
-        private List<ULBSSLSet> sslSet;
-
-        /** 后端资源信息列表，具体结构见下方 ULBBackendSet */
-        @SerializedName("BackendSet")
-        private List<ULBBackendSet> backendSet;
-
-        /** 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发 */
-        @SerializedName("ListenType")
-        private String listenType;
-
-        /** 内容转发信息列表，具体结构见下方 ULBPolicySet */
-        @SerializedName("PolicySet")
-        private List<ULBPolicySet> policySet;
-
-        public String getMonitorType() {
-            return monitorType;
-        }
-
-        public void setMonitorType(String monitorType) {
-            this.monitorType = monitorType;
-        }
-
-        public String getULBId() {
-            return ulbId;
-        }
-
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
-        }
-
-        public String getDomain() {
-            return domain;
-        }
-
-        public void setDomain(String domain) {
-            this.domain = domain;
-        }
-
-        public String getPath() {
-            return path;
-        }
-
-        public void setPath(String path) {
-            this.path = path;
-        }
-
-        public String getRequestMsg() {
-            return requestMsg;
-        }
-
-        public void setRequestMsg(String requestMsg) {
-            this.requestMsg = requestMsg;
-        }
-
-        public String getResponseMsg() {
-            return responseMsg;
-        }
-
-        public void setResponseMsg(String responseMsg) {
-            this.responseMsg = responseMsg;
-        }
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public String getVServerName() {
-            return vServerName;
-        }
-
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
-        }
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-
-        public Integer getFrontendPort() {
-            return frontendPort;
-        }
-
-        public void setFrontendPort(Integer frontendPort) {
-            this.frontendPort = frontendPort;
-        }
-
-        public String getMethod() {
-            return method;
-        }
-
-        public void setMethod(String method) {
-            this.method = method;
-        }
-
-        public String getPersistenceType() {
-            return persistenceType;
-        }
-
-        public void setPersistenceType(String persistenceType) {
-            this.persistenceType = persistenceType;
-        }
-
-        public String getPersistenceInfo() {
-            return persistenceInfo;
-        }
-
-        public void setPersistenceInfo(String persistenceInfo) {
-            this.persistenceInfo = persistenceInfo;
-        }
-
-        public Integer getClientTimeout() {
-            return clientTimeout;
-        }
-
-        public void setClientTimeout(Integer clientTimeout) {
-            this.clientTimeout = clientTimeout;
-        }
-
-        public Integer getStatus() {
-            return status;
-        }
-
-        public void setStatus(Integer status) {
-            this.status = status;
-        }
-
-        public List<ULBSSLSet> getSSLSet() {
-            return sslSet;
-        }
-
-        public void setSSLSet(List<ULBSSLSet> sslSet) {
-            this.sslSet = sslSet;
-        }
-
-        public List<ULBBackendSet> getBackendSet() {
-            return backendSet;
-        }
-
-        public void setBackendSet(List<ULBBackendSet> backendSet) {
-            this.backendSet = backendSet;
-        }
-
-        public String getListenType() {
-            return listenType;
-        }
-
-        public void setListenType(String listenType) {
-            this.listenType = listenType;
-        }
-
-        public List<ULBPolicySet> getPolicySet() {
-            return policySet;
-        }
-
-        public void setPolicySet(List<ULBPolicySet> policySet) {
-            this.policySet = policySet;
-        }
-    }
-
     public static class ULBSSLSet extends Response {
 
         /** SSL证书的Id */
@@ -366,57 +127,6 @@ public class DescribeVServerResponse extends Response {
 
         public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
             this.bindedTargetSet = bindedTargetSet;
-        }
-    }
-
-    public static class SSLBindedTargetSet extends Response {
-
-        /** SSL证书绑定到的VServer的资源ID */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** 对应的VServer的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
-
-        /** VServer 所属的ULB实例的资源ID */
-        @SerializedName("ULBId")
-        private String ulbId;
-
-        /** ULB实例的名称 */
-        @SerializedName("ULBName")
-        private String ulbName;
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public String getVServerName() {
-            return vServerName;
-        }
-
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
-        }
-
-        public String getULBId() {
-            return ulbId;
-        }
-
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
-        }
-
-        public String getULBName() {
-            return ulbName;
-        }
-
-        public void setULBName(String ulbName) {
-            this.ulbName = ulbName;
         }
     }
 
@@ -805,6 +515,296 @@ public class DescribeVServerResponse extends Response {
 
         public void setIsBackup(Integer isBackup) {
             this.isBackup = isBackup;
+        }
+    }
+
+    public static class ULBVServerSet extends Response {
+
+        /**
+         * 健康检查类型，枚举值：Port -> 端口检查；Path -> 路径检查；Ping -> Ping探测， Customize -> UDP检查
+         *
+         * <p>请求代理型默认值为Port，其中TCP协议仅支持Port，其他协议支持Port和Path;
+         * 报文转发型TCP协议仅支持Port，UDP协议支持Ping、Port和Customize
+         */
+        @SerializedName("MonitorType")
+        private String monitorType;
+
+        /** 负载均衡实例的Id */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查域名 */
+        @SerializedName("Domain")
+        private String domain;
+
+        /** 根据MonitorType确认； 当MonitorType为Port时，此字段无意义。当MonitorType为Path时，代表HTTP检查路径 */
+        @SerializedName("Path")
+        private String path;
+
+        /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查发出的请求报文 */
+        @SerializedName("RequestMsg")
+        private String requestMsg;
+
+        /** 根据MonitorType确认； 当MonitorType为Customize时，此字段有意义，代表UDP检查请求应收到的响应报文 */
+        @SerializedName("ResponseMsg")
+        private String responseMsg;
+
+        /** VServer实例的Id */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** VServer实例的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer实例的协议。 枚举值为：HTTP，TCP，UDP，HTTPS。 */
+        @SerializedName("Protocol")
+        private String protocol;
+
+        /** VServer服务端口 */
+        @SerializedName("FrontendPort")
+        private Integer frontendPort;
+
+        /**
+         * VServer负载均衡的模式，枚举值：Roundrobin -> 轮询;Source -> 源地址；ConsistentHash -> 一致性哈希；SourcePort ->
+         * 源地址（计算端口）；ConsistentHashPort -> 一致性哈希（计算端口）。
+         */
+        @SerializedName("Method")
+        private String method;
+
+        /** VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。 */
+        @SerializedName("PersistenceType")
+        private String persistenceType;
+
+        /** 根据PersistenceType确定： None或ServerInsert，此字段为空； UserDefined，此字段展示用户自定义会话string。 */
+        @SerializedName("PersistenceInfo")
+        private String persistenceInfo;
+
+        /** 空闲连接的回收时间，单位：秒。 */
+        @SerializedName("ClientTimeout")
+        private Integer clientTimeout;
+
+        /** VServer的运行状态。枚举值： 0 -> rs全部运行正常;1 -> rs全部运行异常；2 -> rs部分运行异常。 */
+        @SerializedName("Status")
+        private Integer status;
+
+        /** VServer绑定的SSL证书信息，具体结构见下方 ULBSSLSet。 */
+        @SerializedName("SSLSet")
+        private List<ULBSSLSet> sslSet;
+
+        /** 后端资源信息列表，具体结构见下方 ULBBackendSet */
+        @SerializedName("BackendSet")
+        private List<ULBBackendSet> backendSet;
+
+        /** 监听器类型，枚举值为: RequestProxy -> 请求代理；PacketsTransmit -> 报文转发 */
+        @SerializedName("ListenType")
+        private String listenType;
+
+        /** 内容转发信息列表，具体结构见下方 ULBPolicySet */
+        @SerializedName("PolicySet")
+        private List<ULBPolicySet> policySet;
+
+        public String getMonitorType() {
+            return monitorType;
+        }
+
+        public void setMonitorType(String monitorType) {
+            this.monitorType = monitorType;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        public String getRequestMsg() {
+            return requestMsg;
+        }
+
+        public void setRequestMsg(String requestMsg) {
+            this.requestMsg = requestMsg;
+        }
+
+        public String getResponseMsg() {
+            return responseMsg;
+        }
+
+        public void setResponseMsg(String responseMsg) {
+            this.responseMsg = responseMsg;
+        }
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getProtocol() {
+            return protocol;
+        }
+
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+
+        public Integer getFrontendPort() {
+            return frontendPort;
+        }
+
+        public void setFrontendPort(Integer frontendPort) {
+            this.frontendPort = frontendPort;
+        }
+
+        public String getMethod() {
+            return method;
+        }
+
+        public void setMethod(String method) {
+            this.method = method;
+        }
+
+        public String getPersistenceType() {
+            return persistenceType;
+        }
+
+        public void setPersistenceType(String persistenceType) {
+            this.persistenceType = persistenceType;
+        }
+
+        public String getPersistenceInfo() {
+            return persistenceInfo;
+        }
+
+        public void setPersistenceInfo(String persistenceInfo) {
+            this.persistenceInfo = persistenceInfo;
+        }
+
+        public Integer getClientTimeout() {
+            return clientTimeout;
+        }
+
+        public void setClientTimeout(Integer clientTimeout) {
+            this.clientTimeout = clientTimeout;
+        }
+
+        public Integer getStatus() {
+            return status;
+        }
+
+        public void setStatus(Integer status) {
+            this.status = status;
+        }
+
+        public List<ULBSSLSet> getSSLSet() {
+            return sslSet;
+        }
+
+        public void setSSLSet(List<ULBSSLSet> sslSet) {
+            this.sslSet = sslSet;
+        }
+
+        public List<ULBBackendSet> getBackendSet() {
+            return backendSet;
+        }
+
+        public void setBackendSet(List<ULBBackendSet> backendSet) {
+            this.backendSet = backendSet;
+        }
+
+        public String getListenType() {
+            return listenType;
+        }
+
+        public void setListenType(String listenType) {
+            this.listenType = listenType;
+        }
+
+        public List<ULBPolicySet> getPolicySet() {
+            return policySet;
+        }
+
+        public void setPolicySet(List<ULBPolicySet> policySet) {
+            this.policySet = policySet;
+        }
+    }
+
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的VServer的资源ID */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 对应的VServer的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer 所属的ULB实例的资源ID */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** ULB实例的名称 */
+        @SerializedName("ULBName")
+        private String ulbName;
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getULBName() {
+            return ulbName;
+        }
+
+        public void setULBName(String ulbName) {
+            this.ulbName = ulbName;
         }
     }
 }

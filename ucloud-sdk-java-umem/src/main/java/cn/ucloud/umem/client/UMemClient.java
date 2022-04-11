@@ -109,9 +109,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * CheckUDredisSpaceAllowance - 检查高性能UMem剩余资源，以及分片扩容前的资源预检查
+     * CheckUDredisSpaceAllowance - 检查高性能UMem剩余资源
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CheckUDredisSpaceAllowance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CheckUDredisSpaceAllowanceResponse checkUDredisSpaceAllowance(
             CheckUDredisSpaceAllowanceRequest request) throws UCloudException {
@@ -121,9 +122,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * CheckURedisAllowance - 检查主备Redis的资源是否足够创建新实例，以及主备Redis的扩容资源预检查
+     * CheckURedisAllowance - 检查URedis资源是否足够
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CheckURedisAllowance
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CheckURedisAllowanceResponse checkURedisAllowance(CheckURedisAllowanceRequest request)
             throws UCloudException {
@@ -135,7 +137,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * CreateUMemBackup - 创建分布式redis备份
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateUMemBackup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUMemBackupResponse createUMemBackup(CreateUMemBackupRequest request)
             throws UCloudException {
@@ -144,9 +147,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * CreateUMemSpace - 创建UMem内存空间
+     * CreateUMemSpace - 创建内存空间
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateUMemSpace
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUMemSpaceResponse createUMemSpace(CreateUMemSpaceRequest request)
             throws UCloudException {
@@ -157,7 +161,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * CreateUMemcacheGroup - 创建单机Memcache
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateUMemcacheGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUMemcacheGroupResponse createUMemcacheGroup(CreateUMemcacheGroupRequest request)
             throws UCloudException {
@@ -169,7 +174,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * CreateURedisBackup - 创建主备Redis备份
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateURedisBackup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateURedisBackupResponse createURedisBackup(CreateURedisBackupRequest request)
             throws UCloudException {
@@ -180,7 +186,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * CreateURedisGroup - 创建主备redis
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/CreateURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateURedisGroupResponse createURedisGroup(CreateURedisGroupRequest request)
             throws UCloudException {
@@ -189,9 +196,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DeleteUMemSpace - 删除UMem内存空间
+     * DeleteUMemSpace - 删除空间
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DeleteUMemSpace
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUMemSpaceResponse deleteUMemSpace(DeleteUMemSpaceRequest request)
             throws UCloudException {
@@ -202,7 +210,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DeleteUMemcacheGroup - 删除单机Memcache
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DeleteUMemcacheGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUMemcacheGroupResponse deleteUMemcacheGroup(DeleteUMemcacheGroupRequest request)
             throws UCloudException {
@@ -214,7 +223,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DeleteURedisGroup - 删除主备redis
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DeleteURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteURedisGroupResponse deleteURedisGroup(DeleteURedisGroupRequest request)
             throws UCloudException {
@@ -223,9 +233,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeUDRedisProxyInfo - 拉取udredis所有的代理信息
+     * DescribeUDRedisProxyInfo - 拉取udredis代理信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUDRedisProxyInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDRedisProxyInfoResponse describeUDRedisProxyInfo(
             DescribeUDRedisProxyInfoRequest request) throws UCloudException {
@@ -237,7 +248,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeUDRedisSlowlog - 查询UDRedis慢日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUDRedisSlowlog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUDRedisSlowlogResponse describeUDRedisSlowlog(
             DescribeUDRedisSlowlogRequest request) throws UCloudException {
@@ -249,7 +261,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeUMem - 获取UMem列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMem
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemResponse describeUMem(DescribeUMemRequest request) throws UCloudException {
         request.setAction("DescribeUMem");
@@ -259,7 +272,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeUMemBackup - 查询分布式redis备份
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemBackup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemBackupResponse describeUMemBackup(DescribeUMemBackupRequest request)
             throws UCloudException {
@@ -270,7 +284,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeUMemBackupURL - 获取分布式redis 备份下载链接
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemBackupURLResponse describeUMemBackupURL(DescribeUMemBackupURLRequest request)
             throws UCloudException {
@@ -282,7 +297,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeUMemBlockInfo - 拉取UDRedis分片信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemBlockInfo
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemBlockInfoResponse describeUMemBlockInfo(DescribeUMemBlockInfoRequest request)
             throws UCloudException {
@@ -292,9 +308,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeUMemPrice - 获取UMem实例价格信息
+     * DescribeUMemPrice - 获取价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemPriceResponse describeUMemPrice(DescribeUMemPriceRequest request)
             throws UCloudException {
@@ -303,9 +320,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeUMemSpace - 获取UMem内存空间列表
+     * DescribeUMemSpace - 查询空间
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemSpace
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemSpaceResponse describeUMemSpace(DescribeUMemSpaceRequest request)
             throws UCloudException {
@@ -314,9 +332,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeUMemUpgradePrice - 获取UMem升级价格信息
+     * DescribeUMemUpgradePrice - 获取升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemUpgradePriceResponse describeUMemUpgradePrice(
             DescribeUMemUpgradePriceRequest request) throws UCloudException {
@@ -328,7 +347,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeUMemcacheGroup - 显示Memcache
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemcacheGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemcacheGroupResponse describeUMemcacheGroup(
             DescribeUMemcacheGroupRequest request) throws UCloudException {
@@ -338,9 +358,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeUMemcachePrice - 获取umemcache组价格信息
+     * DescribeUMemcachePrice - 获取umemcache组价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemcachePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemcachePriceResponse describeUMemcachePrice(
             DescribeUMemcachePriceRequest request) throws UCloudException {
@@ -350,9 +371,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeUMemcacheUpgradePrice - 获取umemcache升级价格信息
+     * DescribeUMemcacheUpgradePrice - 获取umemcache升级价格
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeUMemcacheUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUMemcacheUpgradePriceResponse describeUMemcacheUpgradePrice(
             DescribeUMemcacheUpgradePriceRequest request) throws UCloudException {
@@ -364,7 +386,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisBackup - 查询主备redis备份
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisBackup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisBackupResponse describeURedisBackup(DescribeURedisBackupRequest request)
             throws UCloudException {
@@ -376,7 +399,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisBackupURL - 获取主备Redis备份下载链接
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisBackupURL
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisBackupURLResponse describeURedisBackupURL(
             DescribeURedisBackupURLRequest request) throws UCloudException {
@@ -388,7 +412,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisConfig - 查询主备Redis所有配置文件
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisConfig
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisConfigResponse describeURedisConfig(DescribeURedisConfigRequest request)
             throws UCloudException {
@@ -400,7 +425,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisGroup - 查询主备Redis
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisGroupResponse describeURedisGroup(DescribeURedisGroupRequest request)
             throws UCloudException {
@@ -412,7 +438,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisPrice - 取uredis价格信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisPrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisPriceResponse describeURedisPrice(DescribeURedisPriceRequest request)
             throws UCloudException {
@@ -424,7 +451,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisSlowlog - 查询URedis慢日志
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisSlowlog
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisSlowlogResponse describeURedisSlowlog(DescribeURedisSlowlogRequest request)
             throws UCloudException {
@@ -436,7 +464,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisUpgradePrice - 获取uredis升级价格信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisUpgradePrice
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisUpgradePriceResponse describeURedisUpgradePrice(
             DescribeURedisUpgradePriceRequest request) throws UCloudException {
@@ -448,7 +477,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * DescribeURedisVersion - 获取主Redis可用版本
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/DescribeURedisVersion
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeURedisVersionResponse describeURedisVersion(DescribeURedisVersionRequest request)
             throws UCloudException {
@@ -460,7 +490,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * FlushallURedisGroup - 清除主备redis数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/FlushallURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public FlushallURedisGroupResponse flushallURedisGroup(FlushallURedisGroupRequest request)
             throws UCloudException {
@@ -470,9 +501,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * GetUMemSpaceState - 获取UMem内存空间列表
+     * GetUMemSpaceState - 获取空间状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/GetUMemSpaceState
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUMemSpaceStateResponse getUMemSpaceState(GetUMemSpaceStateRequest request)
             throws UCloudException {
@@ -483,7 +515,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * ISolationURedisGroup - 打开/关闭URedis
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/ISolationURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ISolationURedisGroupResponse iSolationURedisGroup(ISolationURedisGroupRequest request)
             throws UCloudException {
@@ -493,9 +526,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * ModifyUMemSpaceName - 修改UMem内存空间名称
+     * ModifyUMemSpaceName - 修改名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/ModifyUMemSpaceName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyUMemSpaceNameResponse modifyUMemSpaceName(ModifyUMemSpaceNameRequest request)
             throws UCloudException {
@@ -505,9 +539,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * ModifyURedisGroupName - 修改主备redis名称
+     * ModifyURedisGroupName - 修改名称
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/ModifyURedisGroupName
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyURedisGroupNameResponse modifyURedisGroupName(ModifyURedisGroupNameRequest request)
             throws UCloudException {
@@ -517,9 +552,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * ModifyURedisGroupPassword - 修改主备密码/重置密码
+     * ModifyURedisGroupPassword - 修改主备密码
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/ModifyURedisGroupPassword
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyURedisGroupPasswordResponse modifyURedisGroupPassword(
             ModifyURedisGroupPasswordRequest request) throws UCloudException {
@@ -531,7 +567,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * RemoveUDRedisData - 清除udredis实例数据
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/RemoveUDRedisData
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RemoveUDRedisDataResponse removeUDRedisData(RemoveUDRedisDataRequest request)
             throws UCloudException {
@@ -540,9 +577,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * ResizeUMemSpace - 调整内存空间容量
+     * ResizeUMemSpace - 调整容量
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/ResizeUMemSpace
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizeUMemSpaceResponse resizeUMemSpace(ResizeUMemSpaceRequest request)
             throws UCloudException {
@@ -551,10 +589,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * ResizeURedisGroup -
-     * 通过调用CheckURedisAllowance接口，检查资源情况，根据不同情形来调整主备redis容量，其中主要包括可用区资源不足无法扩容，主备所在宿主机资源不足需要迁移完成扩容（需要主从切换，会闪断及负载升高），以及直接扩容（业务无感知）
+     * ResizeURedisGroup - 调整容量
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/ResizeURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ResizeURedisGroupResponse resizeURedisGroup(ResizeURedisGroupRequest request)
             throws UCloudException {
@@ -565,7 +603,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * RestartUMemcacheGroup - 重启单机Memcache
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/RestartUMemcacheGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartUMemcacheGroupResponse restartUMemcacheGroup(RestartUMemcacheGroupRequest request)
             throws UCloudException {
@@ -577,7 +616,8 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     /**
      * RestartURedisGroup - 重启主备实例
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/RestartURedisGroup
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public RestartURedisGroupResponse restartURedisGroup(RestartURedisGroupRequest request)
             throws UCloudException {
@@ -586,9 +626,10 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * UpdateURedisBackupStrategy - URedisBackupStrategy
+     * UpdateURedisBackupStrategy - 更改zhubeiredis的备份策略
      *
-     * <p>See also: https://docs.ucloud.cn/api/umem-api/UpdateURedisBackupStrategy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateURedisBackupStrategyResponse updateURedisBackupStrategy(
             UpdateURedisBackupStrategyRequest request) throws UCloudException {

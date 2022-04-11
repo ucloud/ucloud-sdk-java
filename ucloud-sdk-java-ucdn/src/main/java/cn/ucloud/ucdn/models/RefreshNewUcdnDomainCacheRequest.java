@@ -27,7 +27,7 @@ public class RefreshNewUcdnDomainCacheRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 刷新类型，file代表文件刷新，dir 代表路径刷新 */
+    /** 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新 */
     @NotEmpty
     @UCloudParam("Type")
     private String type;

@@ -219,33 +219,6 @@ public class CreateUEcHolderRequest extends Request {
         this.storage = storage;
     }
 
-    public static class Image extends Request {
-
-        /** 镜像用户名和密码（如镜像名：密码） */
-        @UCloudParam("Message")
-        private String message;
-
-        /** 镜像仓库地址 */
-        @UCloudParam("StoreAddress")
-        private String storeAddress;
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
-        public String getStoreAddress() {
-            return storeAddress;
-        }
-
-        public void setStoreAddress(String storeAddress) {
-            this.storeAddress = storeAddress;
-        }
-    }
-
     public static class Pack extends Request {
 
         /** 容器名称 */
@@ -381,6 +354,33 @@ public class CreateUEcHolderRequest extends Request {
 
         public void setResourceId(String resourceId) {
             this.resourceId = resourceId;
+        }
+    }
+
+    public static class Image extends Request {
+
+        /** 镜像用户名和密码（如镜像名：密码） */
+        @UCloudParam("Message")
+        private String message;
+
+        /** 镜像仓库地址 */
+        @UCloudParam("StoreAddress")
+        private String storeAddress;
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+
+        public String getStoreAddress() {
+            return storeAddress;
+        }
+
+        public void setStoreAddress(String storeAddress) {
+            this.storeAddress = storeAddress;
         }
     }
 }

@@ -13,8 +13,6 @@
  */
 package cn.ucloud.ufs.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class RemoveUFSVolumeMountPointResponse extends Response {}

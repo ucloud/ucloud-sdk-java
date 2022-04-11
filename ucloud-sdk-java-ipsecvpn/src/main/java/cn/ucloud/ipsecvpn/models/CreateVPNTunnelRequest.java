@@ -58,6 +58,11 @@ public class CreateVPNTunnelRequest extends Request {
     @UCloudParam("VPCId")
     private String vpcId;
 
+    /** ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1 */
+    @NotEmpty
+    @UCloudParam("IKEVersion")
+    private String ikeVersion;
+
     /** 指定VPN连接的本地子网的资源ID，最多可填写10个。 */
     @NotEmpty
     @UCloudParam("IPSecLocalSubnetIds")
@@ -67,11 +72,6 @@ public class CreateVPNTunnelRequest extends Request {
     @NotEmpty
     @UCloudParam("IPSecRemoteSubnets")
     private List<String> ipSecRemoteSubnets;
-
-    /** ike版本，枚举值： "IKE V1"，"IKE V2"，默认v1 */
-    @NotEmpty
-    @UCloudParam("IKEVersion")
-    private String ikeVersion;
 
     /** 业务组，默认为“Default” */
     @UCloudParam("Tag")
@@ -117,7 +117,7 @@ public class CreateVPNTunnelRequest extends Request {
     @UCloudParam("IPSecEncryptionAlgorithm")
     private String ipSecEncryptionAlgorithm;
 
-    /** IPSec隧道中使用的认证算法，枚举值，"md5", "sha1","sha256"。默认值为“sha1” */
+    /** IPSec隧道中使用的认证算法，枚举值，"md5", "sha1","sha2-256"。默认值为“sha1” */
     @UCloudParam("IPSecAuthenticationAlgorithm")
     private String ipSecAuthenticationAlgorithm;
 
@@ -193,6 +193,14 @@ public class CreateVPNTunnelRequest extends Request {
         this.vpcId = vpcId;
     }
 
+    public String getIKEVersion() {
+        return ikeVersion;
+    }
+
+    public void setIKEVersion(String ikeVersion) {
+        this.ikeVersion = ikeVersion;
+    }
+
     public List<String> getIPSecLocalSubnetIds() {
         return ipSecLocalSubnetIds;
     }
@@ -207,14 +215,6 @@ public class CreateVPNTunnelRequest extends Request {
 
     public void setIPSecRemoteSubnets(List<String> ipSecRemoteSubnets) {
         this.ipSecRemoteSubnets = ipSecRemoteSubnets;
-    }
-
-    public String getIKEVersion() {
-        return ikeVersion;
-    }
-
-    public void setIKEVersion(String ikeVersion) {
-        this.ikeVersion = ikeVersion;
     }
 
     public String getTag() {

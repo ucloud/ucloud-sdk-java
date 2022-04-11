@@ -17,6 +17,8 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.uk8s.models.AddUK8SExistingUHostRequest;
 import cn.ucloud.uk8s.models.AddUK8SExistingUHostResponse;
+import cn.ucloud.uk8s.models.AddUK8SNodeGroupRequest;
+import cn.ucloud.uk8s.models.AddUK8SNodeGroupResponse;
 import cn.ucloud.uk8s.models.AddUK8SPHostNodeRequest;
 import cn.ucloud.uk8s.models.AddUK8SPHostNodeResponse;
 import cn.ucloud.uk8s.models.AddUK8SUHostNodeRequest;
@@ -37,6 +39,10 @@ import cn.ucloud.uk8s.models.ListUK8SClusterNodeV2Request;
 import cn.ucloud.uk8s.models.ListUK8SClusterNodeV2Response;
 import cn.ucloud.uk8s.models.ListUK8SClusterV2Request;
 import cn.ucloud.uk8s.models.ListUK8SClusterV2Response;
+import cn.ucloud.uk8s.models.ListUK8SNodeGroupRequest;
+import cn.ucloud.uk8s.models.ListUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupRequest;
+import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupResponse;
 
 /** This client is used to call actions of **UK8S** service */
 public interface UK8SClientInterface extends Client {
@@ -44,15 +50,26 @@ public interface UK8SClientInterface extends Client {
     /**
      * AddUK8SExistingUHost - 添加Node节点（已有云主机）
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/AddUK8SExistingUHost
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AddUK8SExistingUHostResponse addUK8SExistingUHost(AddUK8SExistingUHostRequest request)
             throws UCloudException;
 
     /**
+     * AddUK8SNodeGroup - 添加UK8S节点池
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddUK8SNodeGroupResponse addUK8SNodeGroup(AddUK8SNodeGroupRequest request)
+            throws UCloudException;
+
+    /**
      * AddUK8SPHostNode - 添加Node节点（物理云主机）
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/AddUK8SPHostNode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AddUK8SPHostNodeResponse addUK8SPHostNode(AddUK8SPHostNodeRequest request)
             throws UCloudException;
@@ -60,7 +77,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * AddUK8SUHostNode - 添加Node节点（云主机）
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/AddUK8SUHostNode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AddUK8SUHostNodeResponse addUK8SUHostNode(AddUK8SUHostNodeRequest request)
             throws UCloudException;
@@ -68,7 +86,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * CreateUK8SClusterV2 - 创建UK8S集群V2版
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/CreateUK8SClusterV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUK8SClusterV2Response createUK8SClusterV2(CreateUK8SClusterV2Request request)
             throws UCloudException;
@@ -76,7 +95,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * DelUK8SCluster - 删除UK8S集群
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/DelUK8SCluster
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DelUK8SClusterResponse delUK8SCluster(DelUK8SClusterRequest request)
             throws UCloudException;
@@ -84,7 +104,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * DelUK8SClusterNodeV2 - 删除Node节点
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/DelUK8SClusterNodeV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DelUK8SClusterNodeV2Response delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request request)
             throws UCloudException;
@@ -92,7 +113,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * DescribeUK8SCluster - 获取集群信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/DescribeUK8SCluster
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUK8SClusterResponse describeUK8SCluster(DescribeUK8SClusterRequest request)
             throws UCloudException;
@@ -100,7 +122,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * DescribeUK8SImage - 获取可用镜像
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/DescribeUK8SImage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUK8SImageResponse describeUK8SImage(DescribeUK8SImageRequest request)
             throws UCloudException;
@@ -108,7 +131,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * DescribeUK8SNode - 获取 UK8S 节点详情
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/DescribeUK8SNode
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeUK8SNodeResponse describeUK8SNode(DescribeUK8SNodeRequest request)
             throws UCloudException;
@@ -116,7 +140,8 @@ public interface UK8SClientInterface extends Client {
     /**
      * ListUK8SClusterNodeV2 - 获取UK8S集群节点信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/ListUK8SClusterNodeV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ListUK8SClusterNodeV2Response listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request request)
             throws UCloudException;
@@ -124,8 +149,27 @@ public interface UK8SClientInterface extends Client {
     /**
      * ListUK8SClusterV2 - 获取UK8S集群信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/uk8s-api/ListUK8SClusterV2
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ListUK8SClusterV2Response listUK8SClusterV2(ListUK8SClusterV2Request request)
+            throws UCloudException;
+
+    /**
+     * ListUK8SNodeGroup - 列出UK8S节点池
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUK8SNodeGroupResponse listUK8SNodeGroup(ListUK8SNodeGroupRequest request)
+            throws UCloudException;
+
+    /**
+     * RemoveUK8SNodeGroup - 删除UK8S节点池
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RemoveUK8SNodeGroupResponse removeUK8SNodeGroup(RemoveUK8SNodeGroupRequest request)
             throws UCloudException;
 }

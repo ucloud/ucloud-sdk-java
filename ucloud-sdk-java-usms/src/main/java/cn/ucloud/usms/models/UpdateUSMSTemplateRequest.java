@@ -13,7 +13,6 @@
  */
 package cn.ucloud.usms.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
@@ -45,6 +44,10 @@ public class UpdateUSMSTemplateRequest extends Request {
     /** 短信模板申请原因说明，字数不超过128，每个中文、符号、英文、数字等都计为1个字。 */
     @UCloudParam("Remark")
     private String remark;
+
+    /** 模板变量属性说明 */
+    @UCloudParam("Instruction")
+    private String instruction;
 
     public String getProjectId() {
         return projectId;
@@ -84,5 +87,13 @@ public class UpdateUSMSTemplateRequest extends Request {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
     }
 }

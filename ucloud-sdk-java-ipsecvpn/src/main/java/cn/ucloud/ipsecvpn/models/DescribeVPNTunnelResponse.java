@@ -43,114 +43,102 @@ public class DescribeVPNTunnelResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class IKEData extends Response {
+    public static class IPSecData extends Response {
 
-        /** IKE认证算法 */
-        @SerializedName("IKEAuthenticationAlgorithm")
-        private String ikeAuthenticationAlgorithm;
+        /** IPSec通道中使用的认证算法 */
+        @SerializedName("IPSecAuthenticationAlgorithm")
+        private String ipSecAuthenticationAlgorithm;
 
-        /** IKEDH组 */
-        @SerializedName("IKEDhGroup")
-        private String ikeDhGroup;
+        /** IPSec通道中使用的加密算法 */
+        @SerializedName("IPSecEncryptionAlgorithm")
+        private String ipSecEncryptionAlgorithm;
 
-        /** IKE加密算法 */
-        @SerializedName("IKEEncryptionAlgorithm")
-        private String ikeEncryptionAlgorithm;
+        /** 指定VPN连接的本地子网，用逗号分隔 */
+        @SerializedName("IPSecLocalSubnetIds")
+        private List<String> ipSecLocalSubnetIds;
 
-        /** IKEv1协商模式 */
-        @SerializedName("IKEExchangeMode")
-        private String ikeExchangeMode;
+        /** 使用的安全协议，ESP或AH */
+        @SerializedName("IPSecProtocol")
+        private String ipSecProtocol;
 
-        /** IKE本地ID标识 */
-        @SerializedName("IKELocalId")
-        private String ikeLocalId;
+        /** 指定VPN连接的客户网段，用逗号分隔 */
+        @SerializedName("IPSecRemoteSubnets")
+        private List<String> ipSecRemoteSubnets;
 
-        /** IKE预共享秘钥 */
-        @SerializedName("IKEPreSharedKey")
-        private String ikePreSharedKey;
+        /** IPSec中SA的生存时间 */
+        @SerializedName("IPSecSALifetime")
+        private String ipSecSALifetime;
 
-        /** IKE对端ID标识 */
-        @SerializedName("IKERemoteId")
-        private String ikeRemoteId;
+        /** IPSec中SA的生存时间（以字节计） */
+        @SerializedName("IPSecSALifetimeBytes")
+        private String ipSecSALifetimeBytes;
 
-        /** IKE秘钥生存时间 */
-        @SerializedName("IKESALifetime")
-        private String ikesaLifetime;
+        /** 是否开启PFS功能,Disable表示关闭，数字表示DH组 */
+        @SerializedName("IPSecPFSDhGroup")
+        private String ipSecPFSDhGroup;
 
-        /** IKE版本 */
-        @SerializedName("IKEVersion")
-        private String ikeVersion;
-
-        public String getIKEAuthenticationAlgorithm() {
-            return ikeAuthenticationAlgorithm;
+        public String getIPSecAuthenticationAlgorithm() {
+            return ipSecAuthenticationAlgorithm;
         }
 
-        public void setIKEAuthenticationAlgorithm(String ikeAuthenticationAlgorithm) {
-            this.ikeAuthenticationAlgorithm = ikeAuthenticationAlgorithm;
+        public void setIPSecAuthenticationAlgorithm(String ipSecAuthenticationAlgorithm) {
+            this.ipSecAuthenticationAlgorithm = ipSecAuthenticationAlgorithm;
         }
 
-        public String getIKEDhGroup() {
-            return ikeDhGroup;
+        public String getIPSecEncryptionAlgorithm() {
+            return ipSecEncryptionAlgorithm;
         }
 
-        public void setIKEDhGroup(String ikeDhGroup) {
-            this.ikeDhGroup = ikeDhGroup;
+        public void setIPSecEncryptionAlgorithm(String ipSecEncryptionAlgorithm) {
+            this.ipSecEncryptionAlgorithm = ipSecEncryptionAlgorithm;
         }
 
-        public String getIKEEncryptionAlgorithm() {
-            return ikeEncryptionAlgorithm;
+        public List<String> getIPSecLocalSubnetIds() {
+            return ipSecLocalSubnetIds;
         }
 
-        public void setIKEEncryptionAlgorithm(String ikeEncryptionAlgorithm) {
-            this.ikeEncryptionAlgorithm = ikeEncryptionAlgorithm;
+        public void setIPSecLocalSubnetIds(List<String> ipSecLocalSubnetIds) {
+            this.ipSecLocalSubnetIds = ipSecLocalSubnetIds;
         }
 
-        public String getIKEExchangeMode() {
-            return ikeExchangeMode;
+        public String getIPSecProtocol() {
+            return ipSecProtocol;
         }
 
-        public void setIKEExchangeMode(String ikeExchangeMode) {
-            this.ikeExchangeMode = ikeExchangeMode;
+        public void setIPSecProtocol(String ipSecProtocol) {
+            this.ipSecProtocol = ipSecProtocol;
         }
 
-        public String getIKELocalId() {
-            return ikeLocalId;
+        public List<String> getIPSecRemoteSubnets() {
+            return ipSecRemoteSubnets;
         }
 
-        public void setIKELocalId(String ikeLocalId) {
-            this.ikeLocalId = ikeLocalId;
+        public void setIPSecRemoteSubnets(List<String> ipSecRemoteSubnets) {
+            this.ipSecRemoteSubnets = ipSecRemoteSubnets;
         }
 
-        public String getIKEPreSharedKey() {
-            return ikePreSharedKey;
+        public String getIPSecSALifetime() {
+            return ipSecSALifetime;
         }
 
-        public void setIKEPreSharedKey(String ikePreSharedKey) {
-            this.ikePreSharedKey = ikePreSharedKey;
+        public void setIPSecSALifetime(String ipSecSALifetime) {
+            this.ipSecSALifetime = ipSecSALifetime;
         }
 
-        public String getIKERemoteId() {
-            return ikeRemoteId;
+        public String getIPSecSALifetimeBytes() {
+            return ipSecSALifetimeBytes;
         }
 
-        public void setIKERemoteId(String ikeRemoteId) {
-            this.ikeRemoteId = ikeRemoteId;
+        public void setIPSecSALifetimeBytes(String ipSecSALifetimeBytes) {
+            this.ipSecSALifetimeBytes = ipSecSALifetimeBytes;
         }
 
-        public String getIKESALifetime() {
-            return ikesaLifetime;
+        public String getIPSecPFSDhGroup() {
+            return ipSecPFSDhGroup;
         }
 
-        public void setIKESALifetime(String ikesaLifetime) {
-            this.ikesaLifetime = ikesaLifetime;
-        }
-
-        public String getIKEVersion() {
-            return ikeVersion;
-        }
-
-        public void setIKEVersion(String ikeVersion) {
-            this.ikeVersion = ikeVersion;
+        public void setIPSecPFSDhGroup(String ipSecPFSDhGroup) {
+            this.ipSecPFSDhGroup = ipSecPFSDhGroup;
         }
     }
 
@@ -313,102 +301,114 @@ public class DescribeVPNTunnelResponse extends Response {
         }
     }
 
-    public static class IPSecData extends Response {
+    public static class IKEData extends Response {
 
-        /** IPSec通道中使用的认证算法 */
-        @SerializedName("IPSecAuthenticationAlgorithm")
-        private String ipSecAuthenticationAlgorithm;
+        /** IKE认证算法 */
+        @SerializedName("IKEAuthenticationAlgorithm")
+        private String ikeAuthenticationAlgorithm;
 
-        /** IPSec通道中使用的加密算法 */
-        @SerializedName("IPSecEncryptionAlgorithm")
-        private String ipSecEncryptionAlgorithm;
+        /** IKEDH组 */
+        @SerializedName("IKEDhGroup")
+        private String ikeDhGroup;
 
-        /** 指定VPN连接的本地子网，用逗号分隔 */
-        @SerializedName("IPSecLocalSubnetIds")
-        private List<String> ipSecLocalSubnetIds;
+        /** IKE加密算法 */
+        @SerializedName("IKEEncryptionAlgorithm")
+        private String ikeEncryptionAlgorithm;
 
-        /** 使用的安全协议，ESP或AH */
-        @SerializedName("IPSecProtocol")
-        private String ipSecProtocol;
+        /** IKEv1协商模式 */
+        @SerializedName("IKEExchangeMode")
+        private String ikeExchangeMode;
 
-        /** 指定VPN连接的客户网段，用逗号分隔 */
-        @SerializedName("IPSecRemoteSubnets")
-        private List<String> ipSecRemoteSubnets;
+        /** IKE本地ID标识 */
+        @SerializedName("IKELocalId")
+        private String ikeLocalId;
 
-        /** IPSec中SA的生存时间 */
-        @SerializedName("IPSecSALifetime")
-        private String ipSecSALifetime;
+        /** IKE预共享秘钥 */
+        @SerializedName("IKEPreSharedKey")
+        private String ikePreSharedKey;
 
-        /** IPSec中SA的生存时间（以字节计） */
-        @SerializedName("IPSecSALifetimeBytes")
-        private String ipSecSALifetimeBytes;
+        /** IKE对端ID标识 */
+        @SerializedName("IKERemoteId")
+        private String ikeRemoteId;
 
-        /** 是否开启PFS功能,Disable表示关闭，数字表示DH组 */
-        @SerializedName("IPSecPFSDhGroup")
-        private String ipSecPFSDhGroup;
+        /** IKE秘钥生存时间 */
+        @SerializedName("IKESALifetime")
+        private String ikesaLifetime;
 
-        public String getIPSecAuthenticationAlgorithm() {
-            return ipSecAuthenticationAlgorithm;
+        /** IKE版本 */
+        @SerializedName("IKEVersion")
+        private String ikeVersion;
+
+        public String getIKEAuthenticationAlgorithm() {
+            return ikeAuthenticationAlgorithm;
         }
 
-        public void setIPSecAuthenticationAlgorithm(String ipSecAuthenticationAlgorithm) {
-            this.ipSecAuthenticationAlgorithm = ipSecAuthenticationAlgorithm;
+        public void setIKEAuthenticationAlgorithm(String ikeAuthenticationAlgorithm) {
+            this.ikeAuthenticationAlgorithm = ikeAuthenticationAlgorithm;
         }
 
-        public String getIPSecEncryptionAlgorithm() {
-            return ipSecEncryptionAlgorithm;
+        public String getIKEDhGroup() {
+            return ikeDhGroup;
         }
 
-        public void setIPSecEncryptionAlgorithm(String ipSecEncryptionAlgorithm) {
-            this.ipSecEncryptionAlgorithm = ipSecEncryptionAlgorithm;
+        public void setIKEDhGroup(String ikeDhGroup) {
+            this.ikeDhGroup = ikeDhGroup;
         }
 
-        public List<String> getIPSecLocalSubnetIds() {
-            return ipSecLocalSubnetIds;
+        public String getIKEEncryptionAlgorithm() {
+            return ikeEncryptionAlgorithm;
         }
 
-        public void setIPSecLocalSubnetIds(List<String> ipSecLocalSubnetIds) {
-            this.ipSecLocalSubnetIds = ipSecLocalSubnetIds;
+        public void setIKEEncryptionAlgorithm(String ikeEncryptionAlgorithm) {
+            this.ikeEncryptionAlgorithm = ikeEncryptionAlgorithm;
         }
 
-        public String getIPSecProtocol() {
-            return ipSecProtocol;
+        public String getIKEExchangeMode() {
+            return ikeExchangeMode;
         }
 
-        public void setIPSecProtocol(String ipSecProtocol) {
-            this.ipSecProtocol = ipSecProtocol;
+        public void setIKEExchangeMode(String ikeExchangeMode) {
+            this.ikeExchangeMode = ikeExchangeMode;
         }
 
-        public List<String> getIPSecRemoteSubnets() {
-            return ipSecRemoteSubnets;
+        public String getIKELocalId() {
+            return ikeLocalId;
         }
 
-        public void setIPSecRemoteSubnets(List<String> ipSecRemoteSubnets) {
-            this.ipSecRemoteSubnets = ipSecRemoteSubnets;
+        public void setIKELocalId(String ikeLocalId) {
+            this.ikeLocalId = ikeLocalId;
         }
 
-        public String getIPSecSALifetime() {
-            return ipSecSALifetime;
+        public String getIKEPreSharedKey() {
+            return ikePreSharedKey;
         }
 
-        public void setIPSecSALifetime(String ipSecSALifetime) {
-            this.ipSecSALifetime = ipSecSALifetime;
+        public void setIKEPreSharedKey(String ikePreSharedKey) {
+            this.ikePreSharedKey = ikePreSharedKey;
         }
 
-        public String getIPSecSALifetimeBytes() {
-            return ipSecSALifetimeBytes;
+        public String getIKERemoteId() {
+            return ikeRemoteId;
         }
 
-        public void setIPSecSALifetimeBytes(String ipSecSALifetimeBytes) {
-            this.ipSecSALifetimeBytes = ipSecSALifetimeBytes;
+        public void setIKERemoteId(String ikeRemoteId) {
+            this.ikeRemoteId = ikeRemoteId;
         }
 
-        public String getIPSecPFSDhGroup() {
-            return ipSecPFSDhGroup;
+        public String getIKESALifetime() {
+            return ikesaLifetime;
         }
 
-        public void setIPSecPFSDhGroup(String ipSecPFSDhGroup) {
-            this.ipSecPFSDhGroup = ipSecPFSDhGroup;
+        public void setIKESALifetime(String ikesaLifetime) {
+            this.ikesaLifetime = ikesaLifetime;
+        }
+
+        public String getIKEVersion() {
+            return ikeVersion;
+        }
+
+        public void setIKEVersion(String ikeVersion) {
+            this.ikeVersion = ikeVersion;
         }
     }
 }

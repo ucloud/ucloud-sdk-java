@@ -13,7 +13,6 @@
  */
 package cn.ucloud.ubill.models;
 
-
 import cn.ucloud.common.request.Request;
 
 public class GetBalanceRequest extends Request {}

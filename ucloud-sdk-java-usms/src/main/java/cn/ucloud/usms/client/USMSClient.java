@@ -47,9 +47,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * CreateUSMSSignature - 调用接口CreateUSMSSignature申请短信签名
+     * CreateUSMSSignature - 申请短信签名
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/CreateUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUSMSSignatureResponse createUSMSSignature(CreateUSMSSignatureRequest request)
             throws UCloudException {
@@ -59,9 +60,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * CreateUSMSTemplate - 调用接口CreateUSMSTemplate申请短信模板
+     * CreateUSMSTemplate - 申请短信模板
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/CreateUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateUSMSTemplateResponse createUSMSTemplate(CreateUSMSTemplateRequest request)
             throws UCloudException {
@@ -70,9 +72,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * DeleteUSMSSignature - 调用接口DeleteUSMSSignature删除短信签名
+     * DeleteUSMSSignature - 删除短信签名
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/DeleteUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUSMSSignatureResponse deleteUSMSSignature(DeleteUSMSSignatureRequest request)
             throws UCloudException {
@@ -82,9 +85,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * DeleteUSMSTemplate - 调用接口DeleteUSMSTemplate删除短信模板
+     * DeleteUSMSTemplate - 删除短信模板
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/DeleteUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteUSMSTemplateResponse deleteUSMSTemplate(DeleteUSMSTemplateRequest request)
             throws UCloudException {
@@ -93,9 +97,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * GetUSMSSendReceipt - 调用接口GetUSMSSendReceipt短信发送状态信息
+     * GetUSMSSendReceipt - 获取短信发送状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/GetUSMSSendReceipt
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetUSMSSendReceiptResponse getUSMSSendReceipt(GetUSMSSendReceiptRequest request)
             throws UCloudException {
@@ -104,9 +109,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * QueryUSMSSignature - 调用接口QueryUSMSSignature查询短信签名申请状态
+     * QueryUSMSSignature - 查询短信签名申请状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/QueryUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public QueryUSMSSignatureResponse queryUSMSSignature(QueryUSMSSignatureRequest request)
             throws UCloudException {
@@ -115,9 +121,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * QueryUSMSTemplate - 调用接口QueryUSMSTemplate查询短信模板申请状态
+     * QueryUSMSTemplate - 查询短信模板申请状态
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/QueryUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public QueryUSMSTemplateResponse queryUSMSTemplate(QueryUSMSTemplateRequest request)
             throws UCloudException {
@@ -126,9 +133,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * SendBatchUSMSMessage - 调用SendBatchUSMSMessage接口批量发送短信
+     * SendBatchUSMSMessage - 批量发送短信
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/SendBatchUSMSMessage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SendBatchUSMSMessageResponse sendBatchUSMSMessage(SendBatchUSMSMessageRequest request)
             throws UCloudException {
@@ -138,9 +146,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * SendUSMSMessage - 调用接口SendUSMSMessage发送短信
+     * SendUSMSMessage - 发送短信
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/SendUSMSMessage
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SendUSMSMessageResponse sendUSMSMessage(SendUSMSMessageRequest request)
             throws UCloudException {
@@ -149,9 +158,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * UpdateUSMSSignature - 调用接口UpdateUSMSSignature修改未通过审核的短信签名，并重新提交审核
+     * UpdateUSMSSignature - 修改短信签名
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/UpdateUSMSSignature
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUSMSSignatureResponse updateUSMSSignature(UpdateUSMSSignatureRequest request)
             throws UCloudException {
@@ -161,9 +171,10 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
-     * UpdateUSMSTemplate - 调用接口UpdateUSMSTemplate修改未通过审核的短信模板，并重新提交审核
+     * UpdateUSMSTemplate - 修改短信模板
      *
-     * <p>See also: https://docs.ucloud.cn/api/usms-api/UpdateUSMSTemplate
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateUSMSTemplateResponse updateUSMSTemplate(UpdateUSMSTemplateRequest request)
             throws UCloudException {

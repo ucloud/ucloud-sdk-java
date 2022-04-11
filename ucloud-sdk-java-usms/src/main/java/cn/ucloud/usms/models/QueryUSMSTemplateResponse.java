@@ -13,7 +13,6 @@
  */
 package cn.ucloud.usms.models;
 
-
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
@@ -68,6 +67,10 @@ public class QueryUSMSTemplateResponse extends Response {
         /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
+
+        /** 模板变量属性说明 */
+        @SerializedName("Instruction")
+        private String instruction;
 
         public String getTemplateId() {
             return templateId;
@@ -139,6 +142,14 @@ public class QueryUSMSTemplateResponse extends Response {
 
         public void setCreateTime(Integer createTime) {
             this.createTime = createTime;
+        }
+
+        public String getInstruction() {
+            return instruction;
+        }
+
+        public void setInstruction(String instruction) {
+            this.instruction = instruction;
         }
     }
 }

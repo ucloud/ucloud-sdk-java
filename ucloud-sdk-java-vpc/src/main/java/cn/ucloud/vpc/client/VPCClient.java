@@ -43,6 +43,8 @@ import cn.ucloud.vpc.models.CreateNetworkAclRequest;
 import cn.ucloud.vpc.models.CreateNetworkAclResponse;
 import cn.ucloud.vpc.models.CreateRouteTableRequest;
 import cn.ucloud.vpc.models.CreateRouteTableResponse;
+import cn.ucloud.vpc.models.CreateSnatDnatRuleRequest;
+import cn.ucloud.vpc.models.CreateSnatDnatRuleResponse;
 import cn.ucloud.vpc.models.CreateSubnetRequest;
 import cn.ucloud.vpc.models.CreateSubnetResponse;
 import cn.ucloud.vpc.models.CreateVPCIntercomRequest;
@@ -63,6 +65,8 @@ import cn.ucloud.vpc.models.DeleteRouteTableRequest;
 import cn.ucloud.vpc.models.DeleteRouteTableResponse;
 import cn.ucloud.vpc.models.DeleteSecondaryIpRequest;
 import cn.ucloud.vpc.models.DeleteSecondaryIpResponse;
+import cn.ucloud.vpc.models.DeleteSnatDnatRuleRequest;
+import cn.ucloud.vpc.models.DeleteSnatDnatRuleResponse;
 import cn.ucloud.vpc.models.DeleteSnatRuleRequest;
 import cn.ucloud.vpc.models.DeleteSnatRuleResponse;
 import cn.ucloud.vpc.models.DeleteSubnetRequest;
@@ -73,6 +77,8 @@ import cn.ucloud.vpc.models.DeleteVPCRequest;
 import cn.ucloud.vpc.models.DeleteVPCResponse;
 import cn.ucloud.vpc.models.DeleteWhiteListResourceRequest;
 import cn.ucloud.vpc.models.DeleteWhiteListResourceResponse;
+import cn.ucloud.vpc.models.DescribeInstanceNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.DescribeInstanceNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.DescribeNATGWPolicyRequest;
 import cn.ucloud.vpc.models.DescribeNATGWPolicyResponse;
 import cn.ucloud.vpc.models.DescribeNATGWRequest;
@@ -85,10 +91,14 @@ import cn.ucloud.vpc.models.DescribeNetworkAclEntryRequest;
 import cn.ucloud.vpc.models.DescribeNetworkAclEntryResponse;
 import cn.ucloud.vpc.models.DescribeNetworkAclRequest;
 import cn.ucloud.vpc.models.DescribeNetworkAclResponse;
+import cn.ucloud.vpc.models.DescribeNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.DescribeNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.DescribeRouteTableRequest;
 import cn.ucloud.vpc.models.DescribeRouteTableResponse;
 import cn.ucloud.vpc.models.DescribeSecondaryIpRequest;
 import cn.ucloud.vpc.models.DescribeSecondaryIpResponse;
+import cn.ucloud.vpc.models.DescribeSnatDnatRuleRequest;
+import cn.ucloud.vpc.models.DescribeSnatDnatRuleResponse;
 import cn.ucloud.vpc.models.DescribeSnatRuleRequest;
 import cn.ucloud.vpc.models.DescribeSnatRuleResponse;
 import cn.ucloud.vpc.models.DescribeSubnetRequest;
@@ -149,9 +159,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * AddSnatRule - 对于绑定了多个EIP的NAT网关，您可以将一个子网下的某台云主机映射到某个特定的EIP上，规则生效后，则该云主机通过该特定的EIP访问互联网。
+     * AddSnatRule - 添加出口规则（SNAT规则）
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/AddSnatRule
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AddSnatRuleResponse addSnatRule(AddSnatRuleRequest request) throws UCloudException {
         request.setAction("AddSnatRule");
@@ -161,7 +172,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * AddVPCNetwork - 添加VPC网段
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/AddVPCNetwork
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AddVPCNetworkResponse addVPCNetwork(AddVPCNetworkRequest request)
             throws UCloudException {
@@ -172,7 +184,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * AddWhiteListResource - 添加NAT网关白名单
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/AddWhiteListResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AddWhiteListResourceResponse addWhiteListResource(AddWhiteListResourceRequest request)
             throws UCloudException {
@@ -182,9 +195,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * AllocateSecondaryIp - 分配ip（用于uk8s使用）
+     * AllocateSecondaryIp - 分配ip
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/AllocateSecondaryIp
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AllocateSecondaryIpResponse allocateSecondaryIp(AllocateSecondaryIpRequest request)
             throws UCloudException {
@@ -194,9 +208,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * AllocateVIP - 根据提供信息，申请内网VIP(Virtual IP），多用于高可用程序作为漂移IP。
+     * AllocateVIP - 申请内网虚拟IP
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/AllocateVIP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AllocateVIPResponse allocateVIP(AllocateVIPRequest request) throws UCloudException {
         request.setAction("AllocateVIP");
@@ -206,7 +221,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * AssociateRouteTable - 绑定子网的路由表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/AssociateRouteTable
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public AssociateRouteTableResponse associateRouteTable(AssociateRouteTableRequest request)
             throws UCloudException {
@@ -216,9 +232,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * CloneRouteTable - 将现有的路由表复制为一张新的路由表
+     * CloneRouteTable - 克隆路由表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CloneRouteTable
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CloneRouteTableResponse cloneRouteTable(CloneRouteTableRequest request)
             throws UCloudException {
@@ -229,7 +246,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateNATGW - 创建NAT网关
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateNATGW
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateNATGWResponse createNATGW(CreateNATGWRequest request) throws UCloudException {
         request.setAction("CreateNATGW");
@@ -239,7 +257,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateNATGWPolicy - 添加NAT网关端口转发规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateNATGWPolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateNATGWPolicyResponse createNATGWPolicy(CreateNATGWPolicyRequest request)
             throws UCloudException {
@@ -250,7 +269,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateNetworkAcl - 创建网络ACL
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateNetworkAcl
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateNetworkAclResponse createNetworkAcl(CreateNetworkAclRequest request)
             throws UCloudException {
@@ -261,7 +281,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateNetworkAclAssociation - 创建ACL的绑定关系
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateNetworkAclAssociation
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateNetworkAclAssociationResponse createNetworkAclAssociation(
             CreateNetworkAclAssociationRequest request) throws UCloudException {
@@ -273,7 +294,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateNetworkAclEntry - 创建ACL的规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateNetworkAclEntry
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateNetworkAclEntryResponse createNetworkAclEntry(CreateNetworkAclEntryRequest request)
             throws UCloudException {
@@ -285,7 +307,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateRouteTable - 创建路由表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateRouteTable
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request)
             throws UCloudException {
@@ -294,9 +317,22 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
+     * CreateSnatDnatRule - 使用NAT创建内外网IP映射
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateSnatDnatRuleResponse createSnatDnatRule(CreateSnatDnatRuleRequest request)
+            throws UCloudException {
+        request.setAction("CreateSnatDnatRule");
+        return (CreateSnatDnatRuleResponse) this.invoke(request, CreateSnatDnatRuleResponse.class);
+    }
+
+    /**
      * CreateSubnet - 创建子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateSubnetResponse createSubnet(CreateSubnetRequest request) throws UCloudException {
         request.setAction("CreateSubnet");
@@ -306,7 +342,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * CreateVPC - 创建VPC
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateVPC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateVPCResponse createVPC(CreateVPCRequest request) throws UCloudException {
         request.setAction("CreateVPC");
@@ -314,9 +351,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * CreateVPCIntercom - 新建VPC互通关系
+     * CreateVPCIntercom - 新建VPC互通
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/CreateVPCIntercom
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public CreateVPCIntercomResponse createVPCIntercom(CreateVPCIntercomRequest request)
             throws UCloudException {
@@ -327,7 +365,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteNATGW - 删除NAT网关
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteNATGW
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteNATGWResponse deleteNATGW(DeleteNATGWRequest request) throws UCloudException {
         request.setAction("DeleteNATGW");
@@ -337,7 +376,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteNATGWPolicy - 删除NAT网关端口转发规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteNATGWPolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteNATGWPolicyResponse deleteNATGWPolicy(DeleteNATGWPolicyRequest request)
             throws UCloudException {
@@ -348,7 +388,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteNetworkAcl - 删除网络ACL
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteNetworkAcl
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteNetworkAclResponse deleteNetworkAcl(DeleteNetworkAclRequest request)
             throws UCloudException {
@@ -359,7 +400,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteNetworkAclAssociation - 删除网络ACL绑定关系
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteNetworkAclAssociation
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteNetworkAclAssociationResponse deleteNetworkAclAssociation(
             DeleteNetworkAclAssociationRequest request) throws UCloudException {
@@ -371,7 +413,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteNetworkAclEntry - 删除ACL的规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteNetworkAclEntry
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteNetworkAclEntryResponse deleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
             throws UCloudException {
@@ -383,7 +426,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteRouteTable - 删除自定义路由表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteRouteTable
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request)
             throws UCloudException {
@@ -392,9 +436,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * DeleteSecondaryIp - 删除ip（用于uk8s使用）
+     * DeleteSecondaryIp - 删除Ip
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteSecondaryIp
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteSecondaryIpResponse deleteSecondaryIp(DeleteSecondaryIpRequest request)
             throws UCloudException {
@@ -403,9 +448,22 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * DeleteSnatRule - 删除指定的出口规则（SNAT规则）
+     * DeleteSnatDnatRule - 删除NAT创建内外网IP映射规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteSnatRule
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteSnatDnatRuleResponse deleteSnatDnatRule(DeleteSnatDnatRuleRequest request)
+            throws UCloudException {
+        request.setAction("DeleteSnatDnatRule");
+        return (DeleteSnatDnatRuleResponse) this.invoke(request, DeleteSnatDnatRuleResponse.class);
+    }
+
+    /**
+     * DeleteSnatRule - 删除出口规则（SNAT规则）
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteSnatRuleResponse deleteSnatRule(DeleteSnatRuleRequest request)
             throws UCloudException {
@@ -416,7 +474,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteSubnet - 删除子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) throws UCloudException {
         request.setAction("DeleteSubnet");
@@ -426,7 +485,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteVPC - 删除VPC
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteVPC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteVPCResponse deleteVPC(DeleteVPCRequest request) throws UCloudException {
         request.setAction("DeleteVPC");
@@ -434,9 +494,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * DeleteVPCIntercom - 删除VPC互通关系
+     * DeleteVPCIntercom - 删除VPC互通
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteVPCIntercom
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteVPCIntercomResponse deleteVPCIntercom(DeleteVPCIntercomRequest request)
             throws UCloudException {
@@ -447,7 +508,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DeleteWhiteListResource - 删除NAT网关白名单列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DeleteWhiteListResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DeleteWhiteListResourceResponse deleteWhiteListResource(
             DeleteWhiteListResourceRequest request) throws UCloudException {
@@ -457,9 +519,23 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
+     * DescribeInstanceNetworkInterface - 展示云主机绑定的网卡信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeInstanceNetworkInterfaceResponse describeInstanceNetworkInterface(
+            DescribeInstanceNetworkInterfaceRequest request) throws UCloudException {
+        request.setAction("DescribeInstanceNetworkInterface");
+        return (DescribeInstanceNetworkInterfaceResponse)
+                this.invoke(request, DescribeInstanceNetworkInterfaceResponse.class);
+    }
+
+    /**
      * DescribeNATGW - 获取NAT网关信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeNATGW
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeNATGWResponse describeNATGW(DescribeNATGWRequest request)
             throws UCloudException {
@@ -470,7 +546,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeNATGWPolicy - 展示NAT网关端口转发规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeNATGWPolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeNATGWPolicyResponse describeNATGWPolicy(DescribeNATGWPolicyRequest request)
             throws UCloudException {
@@ -482,7 +559,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeNetworkAcl - 获取网络ACL
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeNetworkAcl
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeNetworkAclResponse describeNetworkAcl(DescribeNetworkAclRequest request)
             throws UCloudException {
@@ -493,7 +571,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeNetworkAclAssociation - 获取网络ACL的绑定关系列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeNetworkAclAssociation
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeNetworkAclAssociationResponse describeNetworkAclAssociation(
             DescribeNetworkAclAssociationRequest request) throws UCloudException {
@@ -505,7 +584,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeNetworkAclAssociationBySubnet - 获取子网的ACL绑定信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeNetworkAclAssociationBySubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeNetworkAclAssociationBySubnetResponse describeNetworkAclAssociationBySubnet(
             DescribeNetworkAclAssociationBySubnetRequest request) throws UCloudException {
@@ -517,7 +597,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeNetworkAclEntry - 获取ACL的规则信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeNetworkAclEntry
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeNetworkAclEntryResponse describeNetworkAclEntry(
             DescribeNetworkAclEntryRequest request) throws UCloudException {
@@ -527,9 +608,23 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
+     * DescribeNetworkInterface - 展示虚拟网卡信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeNetworkInterfaceResponse describeNetworkInterface(
+            DescribeNetworkInterfaceRequest request) throws UCloudException {
+        request.setAction("DescribeNetworkInterface");
+        return (DescribeNetworkInterfaceResponse)
+                this.invoke(request, DescribeNetworkInterfaceResponse.class);
+    }
+
+    /**
      * DescribeRouteTable - 获取路由表详细信息(包括路由策略)
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeRouteTable
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeRouteTableResponse describeRouteTable(DescribeRouteTableRequest request)
             throws UCloudException {
@@ -538,9 +633,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * DescribeSecondaryIp - 查询SecondaryIp（uk8s使用）
+     * DescribeSecondaryIp - 查询SecondaryIp
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeSecondaryIp
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeSecondaryIpResponse describeSecondaryIp(DescribeSecondaryIpRequest request)
             throws UCloudException {
@@ -550,9 +646,23 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
+     * DescribeSnatDnatRule - 获取基于NAT创建的内外网IP映射规则信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeSnatDnatRuleResponse describeSnatDnatRule(DescribeSnatDnatRuleRequest request)
+            throws UCloudException {
+        request.setAction("DescribeSnatDnatRule");
+        return (DescribeSnatDnatRuleResponse)
+                this.invoke(request, DescribeSnatDnatRuleResponse.class);
+    }
+
+    /**
      * DescribeSnatRule - 获取Nat网关的出口规则（SNAT规则）
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeSnatRule
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeSnatRuleResponse describeSnatRule(DescribeSnatRuleRequest request)
             throws UCloudException {
@@ -563,7 +673,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeSubnet - 获取子网信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeSubnetResponse describeSubnet(DescribeSubnetRequest request)
             throws UCloudException {
@@ -574,7 +685,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeSubnetResource - 展示子网资源
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeSubnetResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeSubnetResourceResponse describeSubnetResource(
             DescribeSubnetResourceRequest request) throws UCloudException {
@@ -584,9 +696,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * DescribeVIP - 获取内网VIP详细信息
+     * DescribeVIP - 获取内网虚拟IP信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeVIP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeVIPResponse describeVIP(DescribeVIPRequest request) throws UCloudException {
         request.setAction("DescribeVIP");
@@ -596,7 +709,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeVPC - 获取VPC信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeVPC
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeVPCResponse describeVPC(DescribeVPCRequest request) throws UCloudException {
         request.setAction("DescribeVPC");
@@ -606,7 +720,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeVPCIntercom - 获取VPC互通信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeVPCIntercom
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeVPCIntercomResponse describeVPCIntercom(DescribeVPCIntercomRequest request)
             throws UCloudException {
@@ -618,7 +733,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * DescribeWhiteListResource - 展示NAT网关白名单资源列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/DescribeWhiteListResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public DescribeWhiteListResourceResponse describeWhiteListResource(
             DescribeWhiteListResourceRequest request) throws UCloudException {
@@ -630,7 +746,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * EnableWhiteList - 修改NAT网关白名单开关
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/EnableWhiteList
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public EnableWhiteListResponse enableWhiteList(EnableWhiteListRequest request)
             throws UCloudException {
@@ -641,7 +758,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * GetAvailableResourceForPolicy - 获取NAT网关可配置端口转发规则的资源信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/GetAvailableResourceForPolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetAvailableResourceForPolicyResponse getAvailableResourceForPolicy(
             GetAvailableResourceForPolicyRequest request) throws UCloudException {
@@ -651,9 +769,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * GetAvailableResourceForSnatRule - 获取可用于添加snat规则（出口规则）的资源列表
+     * GetAvailableResourceForSnatRule - 获得可添加snat规则（出口规则）的资源列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/GetAvailableResourceForSnatRule
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetAvailableResourceForSnatRuleResponse getAvailableResourceForSnatRule(
             GetAvailableResourceForSnatRuleRequest request) throws UCloudException {
@@ -665,7 +784,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * GetAvailableResourceForWhiteList - 获取NAT网关可添加白名单的资源
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/GetAvailableResourceForWhiteList
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetAvailableResourceForWhiteListResponse getAvailableResourceForWhiteList(
             GetAvailableResourceForWhiteListRequest request) throws UCloudException {
@@ -677,7 +797,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * GetNetworkAclTargetResource - 获取ACL规则应用目标列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/GetNetworkAclTargetResource
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public GetNetworkAclTargetResourceResponse getNetworkAclTargetResource(
             GetNetworkAclTargetResourceRequest request) throws UCloudException {
@@ -689,7 +810,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * ListSubnetForNATGW - 展示NAT网关可绑定的子网列表
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/ListSubnetForNATGW
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ListSubnetForNATGWResponse listSubnetForNATGW(ListSubnetForNATGWRequest request)
             throws UCloudException {
@@ -700,7 +822,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * ModifyRouteRule - 路由策略增、删、改
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/ModifyRouteRule
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ModifyRouteRuleResponse modifyRouteRule(ModifyRouteRuleRequest request)
             throws UCloudException {
@@ -709,9 +832,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * MoveSecondaryIPMac - 把 Secondary IP 从旧 MAC 迁移到新 MAC
+     * MoveSecondaryIPMac - 迁移SecondaryIP
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/MoveSecondaryIPMac
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public MoveSecondaryIPMacResponse moveSecondaryIPMac(MoveSecondaryIPMacRequest request)
             throws UCloudException {
@@ -720,9 +844,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * ReleaseVIP - 释放VIP资源
+     * ReleaseVIP - 释放内网虚拟IP
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/ReleaseVIP
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public ReleaseVIPResponse releaseVIP(ReleaseVIPRequest request) throws UCloudException {
         request.setAction("ReleaseVIP");
@@ -732,7 +857,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * SetGwDefaultExport - 设置NAT网关的默认出口
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/SetGwDefaultExport
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public SetGwDefaultExportResponse setGwDefaultExport(SetGwDefaultExportRequest request)
             throws UCloudException {
@@ -743,7 +869,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateNATGWPolicy - 更新NAT网关端口转发规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateNATGWPolicy
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateNATGWPolicyResponse updateNATGWPolicy(UpdateNATGWPolicyRequest request)
             throws UCloudException {
@@ -754,7 +881,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateNATGWSubnet - 更新NAT网关绑定的子网
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateNATGWSubnet
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateNATGWSubnetResponse updateNATGWSubnet(UpdateNATGWSubnetRequest request)
             throws UCloudException {
@@ -765,7 +893,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateNetworkAcl - 更改ACL
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateNetworkAcl
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateNetworkAclResponse updateNetworkAcl(UpdateNetworkAclRequest request)
             throws UCloudException {
@@ -776,7 +905,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateNetworkAclEntry - 更新ACL的规则
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateNetworkAclEntry
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateNetworkAclEntryResponse updateNetworkAclEntry(UpdateNetworkAclEntryRequest request)
             throws UCloudException {
@@ -788,7 +918,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateRouteTableAttribute - 更新路由表基本信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateRouteTableAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateRouteTableAttributeResponse updateRouteTableAttribute(
             UpdateRouteTableAttributeRequest request) throws UCloudException {
@@ -798,9 +929,10 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
-     * UpdateSnatRule - 更新指定的出口规则（SNAT规则）
+     * UpdateSnatRule - 更新出口规则（SNAT规则）
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateSnatRule
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateSnatRuleResponse updateSnatRule(UpdateSnatRuleRequest request)
             throws UCloudException {
@@ -811,7 +943,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateSubnetAttribute - 更新子网信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateSubnetAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateSubnetAttributeResponse updateSubnetAttribute(UpdateSubnetAttributeRequest request)
             throws UCloudException {
@@ -823,7 +956,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateVIPAttribute - 更新VIP信息
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateVIPAttribute
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateVIPAttributeResponse updateVIPAttribute(UpdateVIPAttributeRequest request)
             throws UCloudException {
@@ -834,7 +968,8 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     /**
      * UpdateVPCNetwork - 更新VPC网段
      *
-     * <p>See also: https://docs.ucloud.cn/api/vpc-api/UpdateVPCNetwork
+     * @param request Request object
+     * @throws UCloudException Exception
      */
     public UpdateVPCNetworkResponse updateVPCNetwork(UpdateVPCNetworkRequest request)
             throws UCloudException {

@@ -13,8 +13,6 @@
  */
 package cn.ucloud.uddb.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class RestartUDDBInstanceResponse extends Response {}

@@ -476,10 +476,6 @@ public class CreateUHostInstanceRequest extends Request {
         @UCloudParam("ShareBandwidthId")
         private String shareBandwidthId;
 
-        /** */
-        @UCloudParam("GlobalSSH")
-        private NetworkInterfaceEIPGlobalSSH globalSSH;
-
         /**
          * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
          * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
@@ -517,14 +513,6 @@ public class CreateUHostInstanceRequest extends Request {
             this.shareBandwidthId = shareBandwidthId;
         }
 
-        public NetworkInterfaceEIPGlobalSSH getGlobalSSH() {
-            return globalSSH;
-        }
-
-        public void setGlobalSSH(NetworkInterfaceEIPGlobalSSH globalSSH) {
-            this.globalSSH = globalSSH;
-        }
-
         public String getOperatorName() {
             return operatorName;
         }
@@ -539,60 +527,6 @@ public class CreateUHostInstanceRequest extends Request {
 
         public void setCouponId(String couponId) {
             this.couponId = couponId;
-        }
-    }
-
-    public static class NetworkInterfaceEIPGlobalSSH extends Request {
-
-        /** 填写支持SSH访问IP的地区名称，如“洛杉矶”，“新加坡”，“香港”，“东京”，“华盛顿”，“法兰克福”。Area和AreaCode两者必填其中之一。 */
-        @UCloudParam("Area")
-        private String area;
-
-        /** SSH端口，1-65535且不能使用80，443端口 */
-        @UCloudParam("Port")
-        private Integer port;
-
-        /** GlobalSSH的地区编码，格式为区域航空港国际通用代码。Area和AreaCode两者必填其中之一。 */
-        @UCloudParam("AreaCode")
-        private String areaCode;
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getAreaCode() {
-            return areaCode;
-        }
-
-        public void setAreaCode(String areaCode) {
-            this.areaCode = areaCode;
-        }
-    }
-
-    public static class Features extends Request {
-
-        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
-        @UCloudParam("UNI")
-        private Boolean uni;
-
-        public Boolean getUNI() {
-            return uni;
-        }
-
-        public void setUNI(Boolean uni) {
-            this.uni = uni;
         }
     }
 
@@ -655,8 +589,8 @@ public class CreateUHostInstanceRequest extends Request {
         private Integer size;
 
         /**
-         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT（SNAPSHOT模式目前仅在上海C支持），快照
-         * \\当前磁盘支持的备份模式参考 [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
+         * [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
          */
         @UCloudParam("BackupType")
         private String backupType;
@@ -727,6 +661,21 @@ public class CreateUHostInstanceRequest extends Request {
 
         public void setCouponId(String couponId) {
             this.couponId = couponId;
+        }
+    }
+
+    public static class Features extends Request {
+
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
+        @UCloudParam("UNI")
+        private Boolean uni;
+
+        public Boolean getUNI() {
+            return uni;
+        }
+
+        public void setUNI(Boolean uni) {
+            this.uni = uni;
         }
     }
 

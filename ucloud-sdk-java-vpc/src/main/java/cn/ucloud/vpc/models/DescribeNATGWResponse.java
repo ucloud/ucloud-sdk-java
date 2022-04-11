@@ -182,10 +182,6 @@ public class DescribeNATGWResponse extends Response {
         @SerializedName("NATGWName")
         private String natgwName;
 
-        /** natgw创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
         /** 业务组 */
         @SerializedName("Tag")
         private String tag;
@@ -193,6 +189,10 @@ public class DescribeNATGWResponse extends Response {
         /** 备注 */
         @SerializedName("Remark")
         private String remark;
+
+        /** natgw创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
 
         /** 绑定的防火墙Id */
         @SerializedName("FirewallId")
@@ -209,6 +209,14 @@ public class DescribeNATGWResponse extends Response {
         /** 绑定的EIP 信息 */
         @SerializedName("IPSet")
         private List<NatGatewayIPSet> ipSet;
+
+        /** VPC名称 */
+        @SerializedName("VPCName")
+        private String vpcName;
+
+        /** 枚举值，“enable”，默认出口规则使用了负载均衡；“disable”，默认出口规则未使用负载均衡。 */
+        @SerializedName("IsSnatpoolEnabled")
+        private String isSnatpoolEnabled;
 
         /** 转发策略Id */
         @SerializedName("PolicyId")
@@ -230,14 +238,6 @@ public class DescribeNATGWResponse extends Response {
             this.natgwName = natgwName;
         }
 
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
         public String getTag() {
             return tag;
         }
@@ -252,6 +252,14 @@ public class DescribeNATGWResponse extends Response {
 
         public void setRemark(String remark) {
             this.remark = remark;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
         }
 
         public String getFirewallId() {
@@ -284,6 +292,22 @@ public class DescribeNATGWResponse extends Response {
 
         public void setIPSet(List<NatGatewayIPSet> ipSet) {
             this.ipSet = ipSet;
+        }
+
+        public String getVPCName() {
+            return vpcName;
+        }
+
+        public void setVPCName(String vpcName) {
+            this.vpcName = vpcName;
+        }
+
+        public String getIsSnatpoolEnabled() {
+            return isSnatpoolEnabled;
+        }
+
+        public void setIsSnatpoolEnabled(String isSnatpoolEnabled) {
+            this.isSnatpoolEnabled = isSnatpoolEnabled;
         }
 
         public List<String> getPolicyId() {
