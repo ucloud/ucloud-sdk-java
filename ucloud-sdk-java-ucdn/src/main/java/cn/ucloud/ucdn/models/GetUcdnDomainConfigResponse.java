@@ -31,42 +31,30 @@ public class GetUcdnDomainConfigResponse extends Response {
         this.domainList = domainList;
     }
 
-    public static class ReferConf extends Response {
+    public static class AccessControlConf extends Response {
 
-        /** Refer防盗链配置 0白名单，1黑名单 */
-        @SerializedName("ReferType")
-        private Integer referType;
+        /** ip黑名单，多个ip，可表示为： IpBlackList.0=1.1.1.1，IpBlackList.1=2.2.2.2 */
+        @SerializedName("IpBlackList")
+        private List<String> ipBlackList;
 
-        /** ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问 */
-        @SerializedName("NullRefer")
-        private Integer nullRefer;
+        /** refer配置 */
+        @SerializedName("ReferConf")
+        private ReferConf referConf;
 
-        /** Refer防盗链规则列表，支持正则表达式 */
-        @SerializedName("ReferList")
-        private List<String> referList;
-
-        public Integer getReferType() {
-            return referType;
+        public List<String> getIpBlackList() {
+            return ipBlackList;
         }
 
-        public void setReferType(Integer referType) {
-            this.referType = referType;
+        public void setIpBlackList(List<String> ipBlackList) {
+            this.ipBlackList = ipBlackList;
         }
 
-        public Integer getNullRefer() {
-            return nullRefer;
+        public ReferConf getReferConf() {
+            return referConf;
         }
 
-        public void setNullRefer(Integer nullRefer) {
-            this.nullRefer = nullRefer;
-        }
-
-        public List<String> getReferList() {
-            return referList;
-        }
-
-        public void setReferList(List<String> referList) {
-            this.referList = referList;
+        public void setReferConf(ReferConf referConf) {
+            this.referConf = referConf;
         }
     }
 
@@ -121,156 +109,129 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class AccessControlConf extends Response {
+    public static class CacheConf extends Response {
 
-        /** ip黑名单，多个ip，可表示为： IpBlackList.0=1.1.1.1，IpBlackList.1=2.2.2.2 */
-        @SerializedName("IpBlackList")
-        private List<String> ipBlackList;
+        /** 路径模式，支持正则 */
+        @SerializedName("PathPattern")
+        private String pathPattern;
 
-        /** refer配置 */
-        @SerializedName("ReferConf")
-        private ReferConf referConf;
+        /** 缓存时间 */
+        @SerializedName("CacheTTL")
+        private Integer cacheTTL;
 
-        public List<String> getIpBlackList() {
-            return ipBlackList;
+        /** 缓存时间的单位。sec（秒），min（分钟），hour（小时），day（天）。上限1年。 */
+        @SerializedName("CacheUnit")
+        private String cacheUnit;
+
+        /** 是否缓存，true为缓存，flase为不缓存。为flase的情况下，CacheTTL和CacheUnit强制不生效 */
+        @SerializedName("CacheBehavior")
+        private Boolean cacheBehavior;
+
+        /** 状态码模式，非200，206状态码，多个状态码用竖线(|)分隔，该属性仅仅在状态码缓存配置列表中返回 */
+        @SerializedName("HttpCodePattern")
+        private String httpCodePattern;
+
+        /** 缓存规则描述 */
+        @SerializedName("Description")
+        private String description;
+
+        /** 是否优先遵循源站头部缓存策略，false为不优先遵循源站，true为优先遵循源站缓存头部。默认为0 */
+        @SerializedName("FollowOriginRule")
+        private Boolean followOriginRule;
+
+        public String getPathPattern() {
+            return pathPattern;
         }
 
-        public void setIpBlackList(List<String> ipBlackList) {
-            this.ipBlackList = ipBlackList;
+        public void setPathPattern(String pathPattern) {
+            this.pathPattern = pathPattern;
         }
 
-        public ReferConf getReferConf() {
-            return referConf;
+        public Integer getCacheTTL() {
+            return cacheTTL;
         }
 
-        public void setReferConf(ReferConf referConf) {
-            this.referConf = referConf;
+        public void setCacheTTL(Integer cacheTTL) {
+            this.cacheTTL = cacheTTL;
+        }
+
+        public String getCacheUnit() {
+            return cacheUnit;
+        }
+
+        public void setCacheUnit(String cacheUnit) {
+            this.cacheUnit = cacheUnit;
+        }
+
+        public Boolean getCacheBehavior() {
+            return cacheBehavior;
+        }
+
+        public void setCacheBehavior(Boolean cacheBehavior) {
+            this.cacheBehavior = cacheBehavior;
+        }
+
+        public String getHttpCodePattern() {
+            return httpCodePattern;
+        }
+
+        public void setHttpCodePattern(String httpCodePattern) {
+            this.httpCodePattern = httpCodePattern;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Boolean getFollowOriginRule() {
+            return followOriginRule;
+        }
+
+        public void setFollowOriginRule(Boolean followOriginRule) {
+            this.followOriginRule = followOriginRule;
         }
     }
 
-    public static class OriginConf extends Response {
+    public static class AdvancedConf extends Response {
 
-        /** 源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"] */
-        @SerializedName("OriginIpList")
-        private List<String> originIpList;
+        /** 客户端响应http头列表 */
+        @SerializedName("HttpClientHeader")
+        private List<String> httpClientHeader;
 
-        /** 回源Http请求头部Host，默认是加速域名 */
-        @SerializedName("OriginHost")
-        private String originHost;
+        /** 源站http头列表 */
+        @SerializedName("HttpOriginHeader")
+        private List<String> httpOriginHeader;
 
-        /** 回源端口 */
-        @SerializedName("OriginPort")
-        private Integer originPort;
+        /** http转https回源 true是，false否 */
+        @SerializedName("Http2Https")
+        private Boolean http2Https;
 
-        /**
-         * 1如果为false表示BackupOriginIp为空，表示没有备份源站，忽略BackupOriginIp，BackupOriginHost字段
-         * 2如果为true表示BackupOriginIp.n必须至少有一个备份源站地址
-         */
-        @SerializedName("BackupOriginEnable")
-        private Boolean backupOriginEnable;
-
-        /** 备份源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"] */
-        @SerializedName("BackupOriginIpList")
-        private List<String> backupOriginIpList;
-
-        /** 备份回源Http请求头部Host，默认是加速域名 */
-        @SerializedName("BackupOriginHost")
-        private String backupOriginHost;
-
-        /** 主源响应的回源错误码（如：404|500），默认空字符串 */
-        @SerializedName("OriginErrorCode")
-        private String originErrorCode;
-
-        /** 回主源的回源失败数，默认1 */
-        @SerializedName("OriginErrorNum")
-        private Integer originErrorNum;
-
-        /** 源站协议http，http|https 默认http */
-        @SerializedName("OriginProtocol")
-        private String originProtocol;
-
-        /** 跟随301跳转 0=不跟随 1=跟随 */
-        @SerializedName("OriginFollow301")
-        private Integer originFollow301;
-
-        public List<String> getOriginIpList() {
-            return originIpList;
+        public List<String> getHttpClientHeader() {
+            return httpClientHeader;
         }
 
-        public void setOriginIpList(List<String> originIpList) {
-            this.originIpList = originIpList;
+        public void setHttpClientHeader(List<String> httpClientHeader) {
+            this.httpClientHeader = httpClientHeader;
         }
 
-        public String getOriginHost() {
-            return originHost;
+        public List<String> getHttpOriginHeader() {
+            return httpOriginHeader;
         }
 
-        public void setOriginHost(String originHost) {
-            this.originHost = originHost;
+        public void setHttpOriginHeader(List<String> httpOriginHeader) {
+            this.httpOriginHeader = httpOriginHeader;
         }
 
-        public Integer getOriginPort() {
-            return originPort;
+        public Boolean getHttp2Https() {
+            return http2Https;
         }
 
-        public void setOriginPort(Integer originPort) {
-            this.originPort = originPort;
-        }
-
-        public Boolean getBackupOriginEnable() {
-            return backupOriginEnable;
-        }
-
-        public void setBackupOriginEnable(Boolean backupOriginEnable) {
-            this.backupOriginEnable = backupOriginEnable;
-        }
-
-        public List<String> getBackupOriginIpList() {
-            return backupOriginIpList;
-        }
-
-        public void setBackupOriginIpList(List<String> backupOriginIpList) {
-            this.backupOriginIpList = backupOriginIpList;
-        }
-
-        public String getBackupOriginHost() {
-            return backupOriginHost;
-        }
-
-        public void setBackupOriginHost(String backupOriginHost) {
-            this.backupOriginHost = backupOriginHost;
-        }
-
-        public String getOriginErrorCode() {
-            return originErrorCode;
-        }
-
-        public void setOriginErrorCode(String originErrorCode) {
-            this.originErrorCode = originErrorCode;
-        }
-
-        public Integer getOriginErrorNum() {
-            return originErrorNum;
-        }
-
-        public void setOriginErrorNum(Integer originErrorNum) {
-            this.originErrorNum = originErrorNum;
-        }
-
-        public String getOriginProtocol() {
-            return originProtocol;
-        }
-
-        public void setOriginProtocol(String originProtocol) {
-            this.originProtocol = originProtocol;
-        }
-
-        public Integer getOriginFollow301() {
-            return originFollow301;
-        }
-
-        public void setOriginFollow301(Integer originFollow301) {
-            this.originFollow301 = originFollow301;
+        public void setHttp2Https(Boolean http2Https) {
+            this.http2Https = http2Https;
         }
     }
 
@@ -484,129 +445,168 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class CacheConf extends Response {
+    public static class ReferConf extends Response {
 
-        /** 路径模式，支持正则 */
-        @SerializedName("PathPattern")
-        private String pathPattern;
+        /** Refer防盗链配置 0白名单，1黑名单 */
+        @SerializedName("ReferType")
+        private Integer referType;
 
-        /** 缓存时间 */
-        @SerializedName("CacheTTL")
-        private Integer cacheTTL;
+        /** ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问 */
+        @SerializedName("NullRefer")
+        private Integer nullRefer;
 
-        /** 缓存时间的单位。sec（秒），min（分钟），hour（小时），day（天）。上限1年。 */
-        @SerializedName("CacheUnit")
-        private String cacheUnit;
+        /** Refer防盗链规则列表，支持正则表达式 */
+        @SerializedName("ReferList")
+        private List<String> referList;
 
-        /** 是否缓存，true为缓存，flase为不缓存。为flase的情况下，CacheTTL和CacheUnit强制不生效 */
-        @SerializedName("CacheBehavior")
-        private Boolean cacheBehavior;
-
-        /** 状态码模式，非200，206状态码，多个状态码用竖线(|)分隔，该属性仅仅在状态码缓存配置列表中返回 */
-        @SerializedName("HttpCodePattern")
-        private String httpCodePattern;
-
-        /** 缓存规则描述 */
-        @SerializedName("Description")
-        private String description;
-
-        /** 是否优先遵循源站头部缓存策略，false为不优先遵循源站，true为优先遵循源站缓存头部。默认为0 */
-        @SerializedName("FollowOriginRule")
-        private Boolean followOriginRule;
-
-        public String getPathPattern() {
-            return pathPattern;
+        public Integer getReferType() {
+            return referType;
         }
 
-        public void setPathPattern(String pathPattern) {
-            this.pathPattern = pathPattern;
+        public void setReferType(Integer referType) {
+            this.referType = referType;
         }
 
-        public Integer getCacheTTL() {
-            return cacheTTL;
+        public Integer getNullRefer() {
+            return nullRefer;
         }
 
-        public void setCacheTTL(Integer cacheTTL) {
-            this.cacheTTL = cacheTTL;
+        public void setNullRefer(Integer nullRefer) {
+            this.nullRefer = nullRefer;
         }
 
-        public String getCacheUnit() {
-            return cacheUnit;
+        public List<String> getReferList() {
+            return referList;
         }
 
-        public void setCacheUnit(String cacheUnit) {
-            this.cacheUnit = cacheUnit;
-        }
-
-        public Boolean getCacheBehavior() {
-            return cacheBehavior;
-        }
-
-        public void setCacheBehavior(Boolean cacheBehavior) {
-            this.cacheBehavior = cacheBehavior;
-        }
-
-        public String getHttpCodePattern() {
-            return httpCodePattern;
-        }
-
-        public void setHttpCodePattern(String httpCodePattern) {
-            this.httpCodePattern = httpCodePattern;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public Boolean getFollowOriginRule() {
-            return followOriginRule;
-        }
-
-        public void setFollowOriginRule(Boolean followOriginRule) {
-            this.followOriginRule = followOriginRule;
+        public void setReferList(List<String> referList) {
+            this.referList = referList;
         }
     }
 
-    public static class AdvancedConf extends Response {
+    public static class OriginConf extends Response {
 
-        /** 客户端响应http头列表 */
-        @SerializedName("HttpClientHeader")
-        private List<String> httpClientHeader;
+        /** 源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"] */
+        @SerializedName("OriginIpList")
+        private List<String> originIpList;
 
-        /** 源站http头列表 */
-        @SerializedName("HttpOriginHeader")
-        private List<String> httpOriginHeader;
+        /** 回源Http请求头部Host，默认是加速域名 */
+        @SerializedName("OriginHost")
+        private String originHost;
 
-        /** http转https回源 true是，false否 */
-        @SerializedName("Http2Https")
-        private Boolean http2Https;
+        /** 回源端口 */
+        @SerializedName("OriginPort")
+        private Integer originPort;
 
-        public List<String> getHttpClientHeader() {
-            return httpClientHeader;
+        /**
+         * 1如果为false表示BackupOriginIp为空，表示没有备份源站，忽略BackupOriginIp，BackupOriginHost字段
+         * 2如果为true表示BackupOriginIp.n必须至少有一个备份源站地址
+         */
+        @SerializedName("BackupOriginEnable")
+        private Boolean backupOriginEnable;
+
+        /** 备份源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"] */
+        @SerializedName("BackupOriginIpList")
+        private List<String> backupOriginIpList;
+
+        /** 备份回源Http请求头部Host，默认是加速域名 */
+        @SerializedName("BackupOriginHost")
+        private String backupOriginHost;
+
+        /** 主源响应的回源错误码（如：404|500），默认空字符串 */
+        @SerializedName("OriginErrorCode")
+        private String originErrorCode;
+
+        /** 回主源的回源失败数，默认1 */
+        @SerializedName("OriginErrorNum")
+        private Integer originErrorNum;
+
+        /** 源站协议http，http|https 默认http */
+        @SerializedName("OriginProtocol")
+        private String originProtocol;
+
+        /** 跟随301跳转 0=不跟随 1=跟随 */
+        @SerializedName("OriginFollow301")
+        private Integer originFollow301;
+
+        public List<String> getOriginIpList() {
+            return originIpList;
         }
 
-        public void setHttpClientHeader(List<String> httpClientHeader) {
-            this.httpClientHeader = httpClientHeader;
+        public void setOriginIpList(List<String> originIpList) {
+            this.originIpList = originIpList;
         }
 
-        public List<String> getHttpOriginHeader() {
-            return httpOriginHeader;
+        public String getOriginHost() {
+            return originHost;
         }
 
-        public void setHttpOriginHeader(List<String> httpOriginHeader) {
-            this.httpOriginHeader = httpOriginHeader;
+        public void setOriginHost(String originHost) {
+            this.originHost = originHost;
         }
 
-        public Boolean getHttp2Https() {
-            return http2Https;
+        public Integer getOriginPort() {
+            return originPort;
         }
 
-        public void setHttp2Https(Boolean http2Https) {
-            this.http2Https = http2Https;
+        public void setOriginPort(Integer originPort) {
+            this.originPort = originPort;
+        }
+
+        public Boolean getBackupOriginEnable() {
+            return backupOriginEnable;
+        }
+
+        public void setBackupOriginEnable(Boolean backupOriginEnable) {
+            this.backupOriginEnable = backupOriginEnable;
+        }
+
+        public List<String> getBackupOriginIpList() {
+            return backupOriginIpList;
+        }
+
+        public void setBackupOriginIpList(List<String> backupOriginIpList) {
+            this.backupOriginIpList = backupOriginIpList;
+        }
+
+        public String getBackupOriginHost() {
+            return backupOriginHost;
+        }
+
+        public void setBackupOriginHost(String backupOriginHost) {
+            this.backupOriginHost = backupOriginHost;
+        }
+
+        public String getOriginErrorCode() {
+            return originErrorCode;
+        }
+
+        public void setOriginErrorCode(String originErrorCode) {
+            this.originErrorCode = originErrorCode;
+        }
+
+        public Integer getOriginErrorNum() {
+            return originErrorNum;
+        }
+
+        public void setOriginErrorNum(Integer originErrorNum) {
+            this.originErrorNum = originErrorNum;
+        }
+
+        public String getOriginProtocol() {
+            return originProtocol;
+        }
+
+        public void setOriginProtocol(String originProtocol) {
+            this.originProtocol = originProtocol;
+        }
+
+        public Integer getOriginFollow301() {
+            return originFollow301;
+        }
+
+        public void setOriginFollow301(Integer originFollow301) {
+            this.originFollow301 = originFollow301;
         }
     }
 

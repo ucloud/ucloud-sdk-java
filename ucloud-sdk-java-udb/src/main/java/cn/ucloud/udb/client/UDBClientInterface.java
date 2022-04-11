@@ -141,7 +141,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BackupUDBInstanceResponse backupUDBInstance(BackupUDBInstanceRequest request)
+    public BackupUDBInstanceResponse backupUDBInstance(BackupUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -150,8 +150,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BackupUDBInstanceBinlogResponse backupUDBInstanceBinlog(BackupUDBInstanceBinlogRequest request)
-            throws UCloudException;
+    public BackupUDBInstanceBinlogResponse backupUDBInstanceBinlog(
+            BackupUDBInstanceBinlogRequest request) throws UCloudException;
 
     /**
      * BackupUDBInstanceErrorLog - 备份UDB指定时间段的errorlog
@@ -159,7 +159,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BackupUDBInstanceErrorLogResponse backupUDBInstanceErrorLog(
+    public BackupUDBInstanceErrorLogResponse backupUDBInstanceErrorLog(
             BackupUDBInstanceErrorLogRequest request) throws UCloudException;
 
     /**
@@ -168,7 +168,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BackupUDBInstanceSlowLogResponse backupUDBInstanceSlowLog(
+    public BackupUDBInstanceSlowLogResponse backupUDBInstanceSlowLog(
             BackupUDBInstanceSlowLogRequest request) throws UCloudException;
 
     /**
@@ -177,7 +177,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ChangeUDBParamGroupResponse changeUDBParamGroup(ChangeUDBParamGroupRequest request)
+    public ChangeUDBParamGroupResponse changeUDBParamGroup(ChangeUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
@@ -186,8 +186,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CheckRecoverUDBInstanceResponse checkRecoverUDBInstance(CheckRecoverUDBInstanceRequest request)
-            throws UCloudException;
+    public CheckRecoverUDBInstanceResponse checkRecoverUDBInstance(
+            CheckRecoverUDBInstanceRequest request) throws UCloudException;
 
     /**
      * CheckUDBInstanceToHAAllowance - 核查db是否可以升级为高可用
@@ -195,7 +195,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CheckUDBInstanceToHAAllowanceResponse checkUDBInstanceToHAAllowance(
+    public CheckUDBInstanceToHAAllowanceResponse checkUDBInstanceToHAAllowance(
             CheckUDBInstanceToHAAllowanceRequest request) throws UCloudException;
 
     /**
@@ -204,7 +204,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ClearUDBLogResponse clearUDBLog(ClearUDBLogRequest request) throws UCloudException;
+    public ClearUDBLogResponse clearUDBLog(ClearUDBLogRequest request) throws UCloudException;
 
     /**
      * CreateMongoDBReplicaSet - 创建DB副本集
@@ -212,8 +212,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateMongoDBReplicaSetResponse createMongoDBReplicaSet(CreateMongoDBReplicaSetRequest request)
-            throws UCloudException;
+    public CreateMongoDBReplicaSetResponse createMongoDBReplicaSet(
+            CreateMongoDBReplicaSetRequest request) throws UCloudException;
 
     /**
      * CreateUDBInstance - 创建数据库
@@ -221,7 +221,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDBInstanceResponse createUDBInstance(CreateUDBInstanceRequest request)
+    public CreateUDBInstanceResponse createUDBInstance(CreateUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -230,7 +230,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDBInstanceByRecoveryResponse createUDBInstanceByRecovery(
+    public CreateUDBInstanceByRecoveryResponse createUDBInstanceByRecovery(
             CreateUDBInstanceByRecoveryRequest request) throws UCloudException;
 
     /**
@@ -239,7 +239,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDBParamGroupResponse createUDBParamGroup(CreateUDBParamGroupRequest request)
+    public CreateUDBParamGroupResponse createUDBParamGroup(CreateUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
@@ -248,7 +248,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDBReplicationInstanceResponse createUDBReplicationInstance(
+    public CreateUDBReplicationInstanceResponse createUDBReplicationInstance(
             CreateUDBReplicationInstanceRequest request) throws UCloudException;
 
     /**
@@ -257,8 +257,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDBRouteInstanceResponse createUDBRouteInstance(CreateUDBRouteInstanceRequest request)
-            throws UCloudException;
+    public CreateUDBRouteInstanceResponse createUDBRouteInstance(
+            CreateUDBRouteInstanceRequest request) throws UCloudException;
 
     /**
      * CreateUDBSlave - 创建从库
@@ -266,7 +266,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDBSlaveResponse createUDBSlave(CreateUDBSlaveRequest request) throws UCloudException;
+    public CreateUDBSlaveResponse createUDBSlave(CreateUDBSlaveRequest request)
+            throws UCloudException;
 
     /**
      * DeleteUDBInstance - 删除云数据库
@@ -274,7 +275,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUDBInstanceResponse deleteUDBInstance(DeleteUDBInstanceRequest request)
+    public DeleteUDBInstanceResponse deleteUDBInstance(DeleteUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -283,7 +284,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUDBLogPackageResponse deleteUDBLogPackage(DeleteUDBLogPackageRequest request)
+    public DeleteUDBLogPackageResponse deleteUDBLogPackage(DeleteUDBLogPackageRequest request)
             throws UCloudException;
 
     /**
@@ -292,7 +293,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUDBParamGroupResponse deleteUDBParamGroup(DeleteUDBParamGroupRequest request)
+    public DeleteUDBParamGroupResponse deleteUDBParamGroup(DeleteUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
@@ -301,7 +302,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBBackupResponse describeUDBBackup(DescribeUDBBackupRequest request)
+    public DescribeUDBBackupResponse describeUDBBackup(DescribeUDBBackupRequest request)
             throws UCloudException;
 
     /**
@@ -310,7 +311,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
+    public DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
             DescribeUDBBackupBlacklistRequest request) throws UCloudException;
 
     /**
@@ -319,7 +320,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBBinlogBackupURLResponse describeUDBBinlogBackupURL(
+    public DescribeUDBBinlogBackupURLResponse describeUDBBinlogBackupURL(
             DescribeUDBBinlogBackupURLRequest request) throws UCloudException;
 
     /**
@@ -328,7 +329,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceResponse describeUDBInstance(DescribeUDBInstanceRequest request)
+    public DescribeUDBInstanceResponse describeUDBInstance(DescribeUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -337,7 +338,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceBackupStateResponse describeUDBInstanceBackupState(
+    public DescribeUDBInstanceBackupStateResponse describeUDBInstanceBackupState(
             DescribeUDBInstanceBackupStateRequest request) throws UCloudException;
 
     /**
@@ -346,7 +347,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceBackupURLResponse describeUDBInstanceBackupURL(
+    public DescribeUDBInstanceBackupURLResponse describeUDBInstanceBackupURL(
             DescribeUDBInstanceBackupURLRequest request) throws UCloudException;
 
     /**
@@ -355,7 +356,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceBinlogResponse describeUDBInstanceBinlog(
+    public DescribeUDBInstanceBinlogResponse describeUDBInstanceBinlog(
             DescribeUDBInstanceBinlogRequest request) throws UCloudException;
 
     /**
@@ -364,7 +365,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceBinlogBackupStateResponse describeUDBInstanceBinlogBackupState(
+    public DescribeUDBInstanceBinlogBackupStateResponse describeUDBInstanceBinlogBackupState(
             DescribeUDBInstanceBinlogBackupStateRequest request) throws UCloudException;
 
     /**
@@ -373,8 +374,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceLogResponse describeUDBInstanceLog(DescribeUDBInstanceLogRequest request)
-            throws UCloudException;
+    public DescribeUDBInstanceLogResponse describeUDBInstanceLog(
+            DescribeUDBInstanceLogRequest request) throws UCloudException;
 
     /**
      * DescribeUDBInstancePrice - 获取云数据库价格
@@ -382,7 +383,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstancePriceResponse describeUDBInstancePrice(
+    public DescribeUDBInstancePriceResponse describeUDBInstancePrice(
             DescribeUDBInstancePriceRequest request) throws UCloudException;
 
     /**
@@ -391,7 +392,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceStateResponse describeUDBInstanceState(
+    public DescribeUDBInstanceStateResponse describeUDBInstanceState(
             DescribeUDBInstanceStateRequest request) throws UCloudException;
 
     /**
@@ -400,7 +401,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBInstanceUpgradePriceResponse describeUDBInstanceUpgradePrice(
+    public DescribeUDBInstanceUpgradePriceResponse describeUDBInstanceUpgradePrice(
             DescribeUDBInstanceUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -409,8 +410,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBLogBackupURLResponse describeUDBLogBackupURL(DescribeUDBLogBackupURLRequest request)
-            throws UCloudException;
+    public DescribeUDBLogBackupURLResponse describeUDBLogBackupURL(
+            DescribeUDBLogBackupURLRequest request) throws UCloudException;
 
     /**
      * DescribeUDBLogPackage - 列表UDB实例日志备份信息
@@ -418,7 +419,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBLogPackageResponse describeUDBLogPackage(DescribeUDBLogPackageRequest request)
+    public DescribeUDBLogPackageResponse describeUDBLogPackage(DescribeUDBLogPackageRequest request)
             throws UCloudException;
 
     /**
@@ -427,7 +428,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBParamGroupResponse describeUDBParamGroup(DescribeUDBParamGroupRequest request)
+    public DescribeUDBParamGroupResponse describeUDBParamGroup(DescribeUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
@@ -436,7 +437,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBSplittingInfoResponse describeUDBSplittingInfo(
+    public DescribeUDBSplittingInfoResponse describeUDBSplittingInfo(
             DescribeUDBSplittingInfoRequest request) throws UCloudException;
 
     /**
@@ -445,7 +446,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDBTypeResponse describeUDBType(DescribeUDBTypeRequest request) throws UCloudException;
+    public DescribeUDBTypeResponse describeUDBType(DescribeUDBTypeRequest request)
+            throws UCloudException;
 
     /**
      * DisableUDBRWSplitting - 关闭读写分离功能
@@ -453,7 +455,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DisableUDBRWSplittingResponse disableUDBRWSplitting(DisableUDBRWSplittingRequest request)
+    public DisableUDBRWSplittingResponse disableUDBRWSplitting(DisableUDBRWSplittingRequest request)
             throws UCloudException;
 
     /**
@@ -462,8 +464,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    EditUDBBackupBlacklistResponse editUDBBackupBlacklist(EditUDBBackupBlacklistRequest request)
-            throws UCloudException;
+    public EditUDBBackupBlacklistResponse editUDBBackupBlacklist(
+            EditUDBBackupBlacklistRequest request) throws UCloudException;
 
     /**
      * EnableUDBRWSplitting - 启用读写分离功能
@@ -471,7 +473,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    EnableUDBRWSplittingResponse enableUDBRWSplitting(EnableUDBRWSplittingRequest request)
+    public EnableUDBRWSplittingResponse enableUDBRWSplitting(EnableUDBRWSplittingRequest request)
             throws UCloudException;
 
     /**
@@ -480,7 +482,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ExtractUDBParamGroupResponse extractUDBParamGroup(ExtractUDBParamGroupRequest request)
+    public ExtractUDBParamGroupResponse extractUDBParamGroup(ExtractUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
@@ -489,7 +491,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    FetchUDBInstanceEarliestRecoverTimeResponse fetchUDBInstanceEarliestRecoverTime(
+    public FetchUDBInstanceEarliestRecoverTimeResponse fetchUDBInstanceEarliestRecoverTime(
             FetchUDBInstanceEarliestRecoverTimeRequest request) throws UCloudException;
 
     /**
@@ -498,7 +500,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUDBClientConnNumResponse getUDBClientConnNum(GetUDBClientConnNumRequest request)
+    public GetUDBClientConnNumResponse getUDBClientConnNum(GetUDBClientConnNumRequest request)
             throws UCloudException;
 
     /**
@@ -507,7 +509,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUDBInstanceNameResponse modifyUDBInstanceName(ModifyUDBInstanceNameRequest request)
+    public ModifyUDBInstanceNameResponse modifyUDBInstanceName(ModifyUDBInstanceNameRequest request)
             throws UCloudException;
 
     /**
@@ -516,7 +518,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
+    public ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
             ModifyUDBInstancePasswordRequest request) throws UCloudException;
 
     /**
@@ -525,8 +527,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    PromoteUDBInstanceToHAResponse promoteUDBInstanceToHA(PromoteUDBInstanceToHARequest request)
-            throws UCloudException;
+    public PromoteUDBInstanceToHAResponse promoteUDBInstanceToHA(
+            PromoteUDBInstanceToHARequest request) throws UCloudException;
 
     /**
      * PromoteUDBSlave - 提升从库
@@ -534,7 +536,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    PromoteUDBSlaveResponse promoteUDBSlave(PromoteUDBSlaveRequest request) throws UCloudException;
+    public PromoteUDBSlaveResponse promoteUDBSlave(PromoteUDBSlaveRequest request)
+            throws UCloudException;
 
     /**
      * ResizeUDBInstance - 修改UDB实例的配置
@@ -542,7 +545,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeUDBInstanceResponse resizeUDBInstance(ResizeUDBInstanceRequest request)
+    public ResizeUDBInstanceResponse resizeUDBInstance(ResizeUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -551,7 +554,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartRWSplittingResponse restartRWSplitting(RestartRWSplittingRequest request)
+    public RestartRWSplittingResponse restartRWSplitting(RestartRWSplittingRequest request)
             throws UCloudException;
 
     /**
@@ -560,7 +563,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartUDBInstanceResponse restartUDBInstance(RestartUDBInstanceRequest request)
+    public RestartUDBInstanceResponse restartUDBInstance(RestartUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -569,7 +572,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SetUDBRWSplittingResponse setUDBRWSplitting(SetUDBRWSplittingRequest request)
+    public SetUDBRWSplittingResponse setUDBRWSplitting(SetUDBRWSplittingRequest request)
             throws UCloudException;
 
     /**
@@ -578,7 +581,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StartUDBInstanceResponse startUDBInstance(StartUDBInstanceRequest request)
+    public StartUDBInstanceResponse startUDBInstance(StartUDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -587,7 +590,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StopUDBInstanceResponse stopUDBInstance(StopUDBInstanceRequest request) throws UCloudException;
+    public StopUDBInstanceResponse stopUDBInstance(StopUDBInstanceRequest request)
+            throws UCloudException;
 
     /**
      * SwitchUDBHAToSentinel - UDB高可用实例升级为Sentinel版本（不带HAProxy）升级耗时5-10秒
@@ -595,7 +599,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SwitchUDBHAToSentinelResponse switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest request)
+    public SwitchUDBHAToSentinelResponse switchUDBHAToSentinel(SwitchUDBHAToSentinelRequest request)
             throws UCloudException;
 
     /**
@@ -604,7 +608,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SwitchUDBInstanceToHAResponse switchUDBInstanceToHA(SwitchUDBInstanceToHARequest request)
+    public SwitchUDBInstanceToHAResponse switchUDBInstanceToHA(SwitchUDBInstanceToHARequest request)
             throws UCloudException;
 
     /**
@@ -613,7 +617,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUDBInstanceBackupStrategyResponse updateUDBInstanceBackupStrategy(
+    public UpdateUDBInstanceBackupStrategyResponse updateUDBInstanceBackupStrategy(
             UpdateUDBInstanceBackupStrategyRequest request) throws UCloudException;
 
     /**
@@ -622,7 +626,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUDBInstanceSlaveBackupSwitchResponse updateUDBInstanceSlaveBackupSwitch(
+    public UpdateUDBInstanceSlaveBackupSwitchResponse updateUDBInstanceSlaveBackupSwitch(
             UpdateUDBInstanceSlaveBackupSwitchRequest request) throws UCloudException;
 
     /**
@@ -631,7 +635,7 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUDBParamGroupResponse updateUDBParamGroup(UpdateUDBParamGroupRequest request)
+    public UpdateUDBParamGroupResponse updateUDBParamGroup(UpdateUDBParamGroupRequest request)
             throws UCloudException;
 
     /**
@@ -640,8 +644,8 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(UpgradeUDBInstanceToHARequest request)
-            throws UCloudException;
+    public UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(
+            UpgradeUDBInstanceToHARequest request) throws UCloudException;
 
     /**
      * UploadUDBParamGroup - 导入配置
@@ -649,6 +653,6 @@ public interface UDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UploadUDBParamGroupResponse uploadUDBParamGroup(UploadUDBParamGroupRequest request)
+    public UploadUDBParamGroupResponse uploadUDBParamGroup(UploadUDBParamGroupRequest request)
             throws UCloudException;
 }

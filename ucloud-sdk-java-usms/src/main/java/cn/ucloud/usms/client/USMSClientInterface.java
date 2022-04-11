@@ -47,7 +47,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUSMSSignatureResponse createUSMSSignature(CreateUSMSSignatureRequest request)
+    public CreateUSMSSignatureResponse createUSMSSignature(CreateUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
@@ -56,7 +56,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUSMSTemplateResponse createUSMSTemplate(CreateUSMSTemplateRequest request)
+    public CreateUSMSTemplateResponse createUSMSTemplate(CreateUSMSTemplateRequest request)
             throws UCloudException;
 
     /**
@@ -65,7 +65,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUSMSSignatureResponse deleteUSMSSignature(DeleteUSMSSignatureRequest request)
+    public DeleteUSMSSignatureResponse deleteUSMSSignature(DeleteUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
@@ -74,7 +74,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUSMSTemplateResponse deleteUSMSTemplate(DeleteUSMSTemplateRequest request)
+    public DeleteUSMSTemplateResponse deleteUSMSTemplate(DeleteUSMSTemplateRequest request)
             throws UCloudException;
 
     /**
@@ -83,7 +83,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUSMSSendReceiptResponse getUSMSSendReceipt(GetUSMSSendReceiptRequest request)
+    public GetUSMSSendReceiptResponse getUSMSSendReceipt(GetUSMSSendReceiptRequest request)
             throws UCloudException;
 
     /**
@@ -92,7 +92,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    QueryUSMSSignatureResponse queryUSMSSignature(QueryUSMSSignatureRequest request)
+    public QueryUSMSSignatureResponse queryUSMSSignature(QueryUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
@@ -101,7 +101,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    QueryUSMSTemplateResponse queryUSMSTemplate(QueryUSMSTemplateRequest request)
+    public QueryUSMSTemplateResponse queryUSMSTemplate(QueryUSMSTemplateRequest request)
             throws UCloudException;
 
     /**
@@ -110,7 +110,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SendBatchUSMSMessageResponse sendBatchUSMSMessage(SendBatchUSMSMessageRequest request)
+    public SendBatchUSMSMessageResponse sendBatchUSMSMessage(SendBatchUSMSMessageRequest request)
             throws UCloudException;
 
     /**
@@ -119,7 +119,8 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SendUSMSMessageResponse sendUSMSMessage(SendUSMSMessageRequest request) throws UCloudException;
+    public SendUSMSMessageResponse sendUSMSMessage(SendUSMSMessageRequest request)
+            throws UCloudException;
 
     /**
      * UpdateUSMSSignature - 修改短信签名
@@ -127,7 +128,7 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUSMSSignatureResponse updateUSMSSignature(UpdateUSMSSignatureRequest request)
+    public UpdateUSMSSignatureResponse updateUSMSSignature(UpdateUSMSSignatureRequest request)
             throws UCloudException;
 
     /**
@@ -136,6 +137,6 @@ public interface USMSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUSMSTemplateResponse updateUSMSTemplate(UpdateUSMSTemplateRequest request)
+    public UpdateUSMSTemplateResponse updateUSMSTemplate(UpdateUSMSTemplateRequest request)
             throws UCloudException;
 }

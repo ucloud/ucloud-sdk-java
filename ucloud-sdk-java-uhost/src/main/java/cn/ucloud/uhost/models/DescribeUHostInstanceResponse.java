@@ -43,141 +43,6 @@ public class DescribeUHostInstanceResponse extends Response {
         this.uHostSet = uHostSet;
     }
 
-    public static class UHostIPSet extends Response {
-
-        /** IPv4/IPv6； */
-        @SerializedName("IPMode")
-        private String ipMode;
-
-        /** 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。 */
-        @SerializedName("Default")
-        private String fDefault;
-
-        /** 内网 Private 类型下，当前网卡的Mac。 */
-        @SerializedName("Mac")
-        private String mac;
-
-        /** 当前EIP的权重。权重最大的为当前的出口IP。 */
-        @SerializedName("Weight")
-        private Integer weight;
-
-        /** 国际: Internation，BGP: Bgp，内网: Private */
-        @SerializedName("Type")
-        private String type;
-
-        /** 外网IP资源ID 。(内网IP无对应的资源ID) */
-        @SerializedName("IPId")
-        private String ipId;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** IP地址对应的VPC ID。（北京一不支持，字段返回为空） */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        /** IP地址对应的子网 ID。（北京一不支持，字段返回为空） */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /** 弹性网卡为默认网卡时，返回对应的 ID 值 */
-        @SerializedName("NetworkInterfaceId")
-        private String networkInterfaceId;
-
-        public String getIPMode() {
-            return ipMode;
-        }
-
-        public void setIPMode(String ipMode) {
-            this.ipMode = ipMode;
-        }
-
-        public String getDefault() {
-            return fDefault;
-        }
-
-        public void setDefault(String fDefault) {
-            this.fDefault = fDefault;
-        }
-
-        public String getMac() {
-            return mac;
-        }
-
-        public void setMac(String mac) {
-            this.mac = mac;
-        }
-
-        public Integer getWeight() {
-            return weight;
-        }
-
-        public void setWeight(Integer weight) {
-            this.weight = weight;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getIPId() {
-            return ipId;
-        }
-
-        public void setIPId(String ipId) {
-            this.ipId = ipId;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public String getNetworkInterfaceId() {
-            return networkInterfaceId;
-        }
-
-        public void setNetworkInterfaceId(String networkInterfaceId) {
-            this.networkInterfaceId = networkInterfaceId;
-        }
-    }
-
     public static class UHostDiskSet extends Response {
 
         /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
@@ -799,6 +664,141 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setKeyPairState(String keyPairState) {
             this.keyPairState = keyPairState;
+        }
+    }
+
+    public static class UHostIPSet extends Response {
+
+        /** IPv4/IPv6； */
+        @SerializedName("IPMode")
+        private String ipMode;
+
+        /** 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。 */
+        @SerializedName("Default")
+        private String fDefault;
+
+        /** 内网 Private 类型下，当前网卡的Mac。 */
+        @SerializedName("Mac")
+        private String mac;
+
+        /** 当前EIP的权重。权重最大的为当前的出口IP。 */
+        @SerializedName("Weight")
+        private Integer weight;
+
+        /** 国际: Internation，BGP: Bgp，内网: Private */
+        @SerializedName("Type")
+        private String type;
+
+        /** 外网IP资源ID 。(内网IP无对应的资源ID) */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** IP地址对应的VPC ID。（北京一不支持，字段返回为空） */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** IP地址对应的子网 ID。（北京一不支持，字段返回为空） */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /** 弹性网卡为默认网卡时，返回对应的 ID 值 */
+        @SerializedName("NetworkInterfaceId")
+        private String networkInterfaceId;
+
+        public String getIPMode() {
+            return ipMode;
+        }
+
+        public void setIPMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
+
+        public String getDefault() {
+            return fDefault;
+        }
+
+        public void setDefault(String fDefault) {
+            this.fDefault = fDefault;
+        }
+
+        public String getMac() {
+            return mac;
+        }
+
+        public void setMac(String mac) {
+            this.mac = mac;
+        }
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getIPId() {
+            return ipId;
+        }
+
+        public void setIPId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getNetworkInterfaceId() {
+            return networkInterfaceId;
+        }
+
+        public void setNetworkInterfaceId(String networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
         }
     }
 }

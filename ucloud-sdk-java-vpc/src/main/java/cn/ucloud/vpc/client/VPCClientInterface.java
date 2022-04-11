@@ -159,7 +159,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddSnatRuleResponse addSnatRule(AddSnatRuleRequest request) throws UCloudException;
+    public AddSnatRuleResponse addSnatRule(AddSnatRuleRequest request) throws UCloudException;
 
     /**
      * AddVPCNetwork - 添加VPC网段
@@ -167,7 +167,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddVPCNetworkResponse addVPCNetwork(AddVPCNetworkRequest request) throws UCloudException;
+    public AddVPCNetworkResponse addVPCNetwork(AddVPCNetworkRequest request) throws UCloudException;
 
     /**
      * AddWhiteListResource - 添加NAT网关白名单
@@ -175,7 +175,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddWhiteListResourceResponse addWhiteListResource(AddWhiteListResourceRequest request)
+    public AddWhiteListResourceResponse addWhiteListResource(AddWhiteListResourceRequest request)
             throws UCloudException;
 
     /**
@@ -184,7 +184,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AllocateSecondaryIpResponse allocateSecondaryIp(AllocateSecondaryIpRequest request)
+    public AllocateSecondaryIpResponse allocateSecondaryIp(AllocateSecondaryIpRequest request)
             throws UCloudException;
 
     /**
@@ -193,7 +193,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AllocateVIPResponse allocateVIP(AllocateVIPRequest request) throws UCloudException;
+    public AllocateVIPResponse allocateVIP(AllocateVIPRequest request) throws UCloudException;
 
     /**
      * AssociateRouteTable - 绑定子网的路由表
@@ -201,7 +201,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AssociateRouteTableResponse associateRouteTable(AssociateRouteTableRequest request)
+    public AssociateRouteTableResponse associateRouteTable(AssociateRouteTableRequest request)
             throws UCloudException;
 
     /**
@@ -210,7 +210,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CloneRouteTableResponse cloneRouteTable(CloneRouteTableRequest request) throws UCloudException;
+    public CloneRouteTableResponse cloneRouteTable(CloneRouteTableRequest request)
+            throws UCloudException;
 
     /**
      * CreateNATGW - 创建NAT网关
@@ -218,7 +219,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateNATGWResponse createNATGW(CreateNATGWRequest request) throws UCloudException;
+    public CreateNATGWResponse createNATGW(CreateNATGWRequest request) throws UCloudException;
 
     /**
      * CreateNATGWPolicy - 添加NAT网关端口转发规则
@@ -226,7 +227,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateNATGWPolicyResponse createNATGWPolicy(CreateNATGWPolicyRequest request)
+    public CreateNATGWPolicyResponse createNATGWPolicy(CreateNATGWPolicyRequest request)
             throws UCloudException;
 
     /**
@@ -235,7 +236,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateNetworkAclResponse createNetworkAcl(CreateNetworkAclRequest request)
+    public CreateNetworkAclResponse createNetworkAcl(CreateNetworkAclRequest request)
             throws UCloudException;
 
     /**
@@ -244,7 +245,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateNetworkAclAssociationResponse createNetworkAclAssociation(
+    public CreateNetworkAclAssociationResponse createNetworkAclAssociation(
             CreateNetworkAclAssociationRequest request) throws UCloudException;
 
     /**
@@ -253,7 +254,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateNetworkAclEntryResponse createNetworkAclEntry(CreateNetworkAclEntryRequest request)
+    public CreateNetworkAclEntryResponse createNetworkAclEntry(CreateNetworkAclEntryRequest request)
             throws UCloudException;
 
     /**
@@ -262,7 +263,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request)
+    public CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request)
             throws UCloudException;
 
     /**
@@ -271,7 +272,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateSnatDnatRuleResponse createSnatDnatRule(CreateSnatDnatRuleRequest request)
+    public CreateSnatDnatRuleResponse createSnatDnatRule(CreateSnatDnatRuleRequest request)
             throws UCloudException;
 
     /**
@@ -280,7 +281,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateSubnetResponse createSubnet(CreateSubnetRequest request) throws UCloudException;
+    public CreateSubnetResponse createSubnet(CreateSubnetRequest request) throws UCloudException;
 
     /**
      * CreateVPC - 创建VPC
@@ -288,7 +289,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateVPCResponse createVPC(CreateVPCRequest request) throws UCloudException;
+    public CreateVPCResponse createVPC(CreateVPCRequest request) throws UCloudException;
 
     /**
      * CreateVPCIntercom - 新建VPC互通
@@ -296,7 +297,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateVPCIntercomResponse createVPCIntercom(CreateVPCIntercomRequest request)
+    public CreateVPCIntercomResponse createVPCIntercom(CreateVPCIntercomRequest request)
             throws UCloudException;
 
     /**
@@ -305,7 +306,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteNATGWResponse deleteNATGW(DeleteNATGWRequest request) throws UCloudException;
+    public DeleteNATGWResponse deleteNATGW(DeleteNATGWRequest request) throws UCloudException;
 
     /**
      * DeleteNATGWPolicy - 删除NAT网关端口转发规则
@@ -313,7 +314,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteNATGWPolicyResponse deleteNATGWPolicy(DeleteNATGWPolicyRequest request)
+    public DeleteNATGWPolicyResponse deleteNATGWPolicy(DeleteNATGWPolicyRequest request)
             throws UCloudException;
 
     /**
@@ -322,7 +323,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteNetworkAclResponse deleteNetworkAcl(DeleteNetworkAclRequest request)
+    public DeleteNetworkAclResponse deleteNetworkAcl(DeleteNetworkAclRequest request)
             throws UCloudException;
 
     /**
@@ -331,7 +332,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteNetworkAclAssociationResponse deleteNetworkAclAssociation(
+    public DeleteNetworkAclAssociationResponse deleteNetworkAclAssociation(
             DeleteNetworkAclAssociationRequest request) throws UCloudException;
 
     /**
@@ -340,7 +341,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteNetworkAclEntryResponse deleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
+    public DeleteNetworkAclEntryResponse deleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
             throws UCloudException;
 
     /**
@@ -349,7 +350,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request)
+    public DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request)
             throws UCloudException;
 
     /**
@@ -358,7 +359,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteSecondaryIpResponse deleteSecondaryIp(DeleteSecondaryIpRequest request)
+    public DeleteSecondaryIpResponse deleteSecondaryIp(DeleteSecondaryIpRequest request)
             throws UCloudException;
 
     /**
@@ -367,7 +368,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteSnatDnatRuleResponse deleteSnatDnatRule(DeleteSnatDnatRuleRequest request)
+    public DeleteSnatDnatRuleResponse deleteSnatDnatRule(DeleteSnatDnatRuleRequest request)
             throws UCloudException;
 
     /**
@@ -376,7 +377,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteSnatRuleResponse deleteSnatRule(DeleteSnatRuleRequest request) throws UCloudException;
+    public DeleteSnatRuleResponse deleteSnatRule(DeleteSnatRuleRequest request)
+            throws UCloudException;
 
     /**
      * DeleteSubnet - 删除子网
@@ -384,7 +386,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) throws UCloudException;
+    public DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) throws UCloudException;
 
     /**
      * DeleteVPC - 删除VPC
@@ -392,7 +394,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteVPCResponse deleteVPC(DeleteVPCRequest request) throws UCloudException;
+    public DeleteVPCResponse deleteVPC(DeleteVPCRequest request) throws UCloudException;
 
     /**
      * DeleteVPCIntercom - 删除VPC互通
@@ -400,7 +402,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteVPCIntercomResponse deleteVPCIntercom(DeleteVPCIntercomRequest request)
+    public DeleteVPCIntercomResponse deleteVPCIntercom(DeleteVPCIntercomRequest request)
             throws UCloudException;
 
     /**
@@ -409,8 +411,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteWhiteListResourceResponse deleteWhiteListResource(DeleteWhiteListResourceRequest request)
-            throws UCloudException;
+    public DeleteWhiteListResourceResponse deleteWhiteListResource(
+            DeleteWhiteListResourceRequest request) throws UCloudException;
 
     /**
      * DescribeInstanceNetworkInterface - 展示云主机绑定的网卡信息
@@ -418,7 +420,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeInstanceNetworkInterfaceResponse describeInstanceNetworkInterface(
+    public DescribeInstanceNetworkInterfaceResponse describeInstanceNetworkInterface(
             DescribeInstanceNetworkInterfaceRequest request) throws UCloudException;
 
     /**
@@ -427,7 +429,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNATGWResponse describeNATGW(DescribeNATGWRequest request) throws UCloudException;
+    public DescribeNATGWResponse describeNATGW(DescribeNATGWRequest request) throws UCloudException;
 
     /**
      * DescribeNATGWPolicy - 展示NAT网关端口转发规则
@@ -435,7 +437,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNATGWPolicyResponse describeNATGWPolicy(DescribeNATGWPolicyRequest request)
+    public DescribeNATGWPolicyResponse describeNATGWPolicy(DescribeNATGWPolicyRequest request)
             throws UCloudException;
 
     /**
@@ -444,7 +446,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNetworkAclResponse describeNetworkAcl(DescribeNetworkAclRequest request)
+    public DescribeNetworkAclResponse describeNetworkAcl(DescribeNetworkAclRequest request)
             throws UCloudException;
 
     /**
@@ -453,7 +455,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNetworkAclAssociationResponse describeNetworkAclAssociation(
+    public DescribeNetworkAclAssociationResponse describeNetworkAclAssociation(
             DescribeNetworkAclAssociationRequest request) throws UCloudException;
 
     /**
@@ -462,7 +464,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNetworkAclAssociationBySubnetResponse describeNetworkAclAssociationBySubnet(
+    public DescribeNetworkAclAssociationBySubnetResponse describeNetworkAclAssociationBySubnet(
             DescribeNetworkAclAssociationBySubnetRequest request) throws UCloudException;
 
     /**
@@ -471,8 +473,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNetworkAclEntryResponse describeNetworkAclEntry(DescribeNetworkAclEntryRequest request)
-            throws UCloudException;
+    public DescribeNetworkAclEntryResponse describeNetworkAclEntry(
+            DescribeNetworkAclEntryRequest request) throws UCloudException;
 
     /**
      * DescribeNetworkInterface - 展示虚拟网卡信息
@@ -480,7 +482,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNetworkInterfaceResponse describeNetworkInterface(
+    public DescribeNetworkInterfaceResponse describeNetworkInterface(
             DescribeNetworkInterfaceRequest request) throws UCloudException;
 
     /**
@@ -489,7 +491,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeRouteTableResponse describeRouteTable(DescribeRouteTableRequest request)
+    public DescribeRouteTableResponse describeRouteTable(DescribeRouteTableRequest request)
             throws UCloudException;
 
     /**
@@ -498,7 +500,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeSecondaryIpResponse describeSecondaryIp(DescribeSecondaryIpRequest request)
+    public DescribeSecondaryIpResponse describeSecondaryIp(DescribeSecondaryIpRequest request)
             throws UCloudException;
 
     /**
@@ -507,7 +509,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeSnatDnatRuleResponse describeSnatDnatRule(DescribeSnatDnatRuleRequest request)
+    public DescribeSnatDnatRuleResponse describeSnatDnatRule(DescribeSnatDnatRuleRequest request)
             throws UCloudException;
 
     /**
@@ -516,7 +518,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeSnatRuleResponse describeSnatRule(DescribeSnatRuleRequest request)
+    public DescribeSnatRuleResponse describeSnatRule(DescribeSnatRuleRequest request)
             throws UCloudException;
 
     /**
@@ -525,7 +527,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeSubnetResponse describeSubnet(DescribeSubnetRequest request) throws UCloudException;
+    public DescribeSubnetResponse describeSubnet(DescribeSubnetRequest request)
+            throws UCloudException;
 
     /**
      * DescribeSubnetResource - 展示子网资源
@@ -533,8 +536,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeSubnetResourceResponse describeSubnetResource(DescribeSubnetResourceRequest request)
-            throws UCloudException;
+    public DescribeSubnetResourceResponse describeSubnetResource(
+            DescribeSubnetResourceRequest request) throws UCloudException;
 
     /**
      * DescribeVIP - 获取内网虚拟IP信息
@@ -542,7 +545,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeVIPResponse describeVIP(DescribeVIPRequest request) throws UCloudException;
+    public DescribeVIPResponse describeVIP(DescribeVIPRequest request) throws UCloudException;
 
     /**
      * DescribeVPC - 获取VPC信息
@@ -550,7 +553,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeVPCResponse describeVPC(DescribeVPCRequest request) throws UCloudException;
+    public DescribeVPCResponse describeVPC(DescribeVPCRequest request) throws UCloudException;
 
     /**
      * DescribeVPCIntercom - 获取VPC互通信息
@@ -558,7 +561,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeVPCIntercomResponse describeVPCIntercom(DescribeVPCIntercomRequest request)
+    public DescribeVPCIntercomResponse describeVPCIntercom(DescribeVPCIntercomRequest request)
             throws UCloudException;
 
     /**
@@ -567,7 +570,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeWhiteListResourceResponse describeWhiteListResource(
+    public DescribeWhiteListResourceResponse describeWhiteListResource(
             DescribeWhiteListResourceRequest request) throws UCloudException;
 
     /**
@@ -576,7 +579,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    EnableWhiteListResponse enableWhiteList(EnableWhiteListRequest request) throws UCloudException;
+    public EnableWhiteListResponse enableWhiteList(EnableWhiteListRequest request)
+            throws UCloudException;
 
     /**
      * GetAvailableResourceForPolicy - 获取NAT网关可配置端口转发规则的资源信息
@@ -584,7 +588,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetAvailableResourceForPolicyResponse getAvailableResourceForPolicy(
+    public GetAvailableResourceForPolicyResponse getAvailableResourceForPolicy(
             GetAvailableResourceForPolicyRequest request) throws UCloudException;
 
     /**
@@ -593,7 +597,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetAvailableResourceForSnatRuleResponse getAvailableResourceForSnatRule(
+    public GetAvailableResourceForSnatRuleResponse getAvailableResourceForSnatRule(
             GetAvailableResourceForSnatRuleRequest request) throws UCloudException;
 
     /**
@@ -602,7 +606,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetAvailableResourceForWhiteListResponse getAvailableResourceForWhiteList(
+    public GetAvailableResourceForWhiteListResponse getAvailableResourceForWhiteList(
             GetAvailableResourceForWhiteListRequest request) throws UCloudException;
 
     /**
@@ -611,7 +615,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetNetworkAclTargetResourceResponse getNetworkAclTargetResource(
+    public GetNetworkAclTargetResourceResponse getNetworkAclTargetResource(
             GetNetworkAclTargetResourceRequest request) throws UCloudException;
 
     /**
@@ -620,7 +624,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ListSubnetForNATGWResponse listSubnetForNATGW(ListSubnetForNATGWRequest request)
+    public ListSubnetForNATGWResponse listSubnetForNATGW(ListSubnetForNATGWRequest request)
             throws UCloudException;
 
     /**
@@ -629,7 +633,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyRouteRuleResponse modifyRouteRule(ModifyRouteRuleRequest request) throws UCloudException;
+    public ModifyRouteRuleResponse modifyRouteRule(ModifyRouteRuleRequest request)
+            throws UCloudException;
 
     /**
      * MoveSecondaryIPMac - 迁移SecondaryIP
@@ -637,7 +642,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    MoveSecondaryIPMacResponse moveSecondaryIPMac(MoveSecondaryIPMacRequest request)
+    public MoveSecondaryIPMacResponse moveSecondaryIPMac(MoveSecondaryIPMacRequest request)
             throws UCloudException;
 
     /**
@@ -646,7 +651,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReleaseVIPResponse releaseVIP(ReleaseVIPRequest request) throws UCloudException;
+    public ReleaseVIPResponse releaseVIP(ReleaseVIPRequest request) throws UCloudException;
 
     /**
      * SetGwDefaultExport - 设置NAT网关的默认出口
@@ -654,7 +659,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SetGwDefaultExportResponse setGwDefaultExport(SetGwDefaultExportRequest request)
+    public SetGwDefaultExportResponse setGwDefaultExport(SetGwDefaultExportRequest request)
             throws UCloudException;
 
     /**
@@ -663,7 +668,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateNATGWPolicyResponse updateNATGWPolicy(UpdateNATGWPolicyRequest request)
+    public UpdateNATGWPolicyResponse updateNATGWPolicy(UpdateNATGWPolicyRequest request)
             throws UCloudException;
 
     /**
@@ -672,7 +677,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateNATGWSubnetResponse updateNATGWSubnet(UpdateNATGWSubnetRequest request)
+    public UpdateNATGWSubnetResponse updateNATGWSubnet(UpdateNATGWSubnetRequest request)
             throws UCloudException;
 
     /**
@@ -681,7 +686,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateNetworkAclResponse updateNetworkAcl(UpdateNetworkAclRequest request)
+    public UpdateNetworkAclResponse updateNetworkAcl(UpdateNetworkAclRequest request)
             throws UCloudException;
 
     /**
@@ -690,7 +695,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateNetworkAclEntryResponse updateNetworkAclEntry(UpdateNetworkAclEntryRequest request)
+    public UpdateNetworkAclEntryResponse updateNetworkAclEntry(UpdateNetworkAclEntryRequest request)
             throws UCloudException;
 
     /**
@@ -699,7 +704,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateRouteTableAttributeResponse updateRouteTableAttribute(
+    public UpdateRouteTableAttributeResponse updateRouteTableAttribute(
             UpdateRouteTableAttributeRequest request) throws UCloudException;
 
     /**
@@ -708,7 +713,8 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateSnatRuleResponse updateSnatRule(UpdateSnatRuleRequest request) throws UCloudException;
+    public UpdateSnatRuleResponse updateSnatRule(UpdateSnatRuleRequest request)
+            throws UCloudException;
 
     /**
      * UpdateSubnetAttribute - 更新子网信息
@@ -716,7 +722,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateSubnetAttributeResponse updateSubnetAttribute(UpdateSubnetAttributeRequest request)
+    public UpdateSubnetAttributeResponse updateSubnetAttribute(UpdateSubnetAttributeRequest request)
             throws UCloudException;
 
     /**
@@ -725,7 +731,7 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateVIPAttributeResponse updateVIPAttribute(UpdateVIPAttributeRequest request)
+    public UpdateVIPAttributeResponse updateVIPAttribute(UpdateVIPAttributeRequest request)
             throws UCloudException;
 
     /**
@@ -734,6 +740,6 @@ public interface VPCClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateVPCNetworkResponse updateVPCNetwork(UpdateVPCNetworkRequest request)
+    public UpdateVPCNetworkResponse updateVPCNetwork(UpdateVPCNetworkRequest request)
             throws UCloudException;
 }

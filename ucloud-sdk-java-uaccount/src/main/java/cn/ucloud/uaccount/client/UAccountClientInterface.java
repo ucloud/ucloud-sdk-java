@@ -41,7 +41,7 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddMemberToProjectResponse addMemberToProject(AddMemberToProjectRequest request)
+    public AddMemberToProjectResponse addMemberToProject(AddMemberToProjectRequest request)
             throws UCloudException;
 
     /**
@@ -50,7 +50,7 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    FreezeMemberResponse freezeMember(FreezeMemberRequest request) throws UCloudException;
+    public FreezeMemberResponse freezeMember(FreezeMemberRequest request) throws UCloudException;
 
     /**
      * GetNetworkMask - 查询登录与API调用的网络掩码
@@ -58,7 +58,8 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetNetworkMaskResponse getNetworkMask(GetNetworkMaskRequest request) throws UCloudException;
+    public GetNetworkMaskResponse getNetworkMask(GetNetworkMaskRequest request)
+            throws UCloudException;
 
     /**
      * GetProjectList - 获取帐号下的项目列表
@@ -66,7 +67,8 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetProjectListResponse getProjectList(GetProjectListRequest request) throws UCloudException;
+    public GetProjectListResponse getProjectList(GetProjectListRequest request)
+            throws UCloudException;
 
     /**
      * GetRegion - 获取地域和可用区列表
@@ -74,7 +76,7 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetRegionResponse getRegion(GetRegionRequest request) throws UCloudException;
+    public GetRegionResponse getRegion(GetRegionRequest request) throws UCloudException;
 
     /**
      * InviteSubaccount - 邀请子帐号成员
@@ -82,7 +84,7 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    InviteSubaccountResponse inviteSubaccount(InviteSubaccountRequest request)
+    public InviteSubaccountResponse inviteSubaccount(InviteSubaccountRequest request)
             throws UCloudException;
 
     /**
@@ -91,8 +93,8 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RemoveMemberFromProjectResponse removeMemberFromProject(RemoveMemberFromProjectRequest request)
-            throws UCloudException;
+    public RemoveMemberFromProjectResponse removeMemberFromProject(
+            RemoveMemberFromProjectRequest request) throws UCloudException;
 
     /**
      * SetNetworkMask - 设置登录与API调用的网络掩码
@@ -100,5 +102,6 @@ public interface UAccountClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SetNetworkMaskResponse setNetworkMask(SetNetworkMaskRequest request) throws UCloudException;
+    public SetNetworkMaskResponse setNetworkMask(SetNetworkMaskRequest request)
+            throws UCloudException;
 }

@@ -61,7 +61,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateBucketResponse createBucket(CreateBucketRequest request) throws UCloudException;
+    public CreateBucketResponse createBucket(CreateBucketRequest request) throws UCloudException;
 
     /**
      * CreateUFileLifeCycle - 创建生命周期管理
@@ -69,7 +69,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUFileLifeCycleResponse createUFileLifeCycle(CreateUFileLifeCycleRequest request)
+    public CreateUFileLifeCycleResponse createUFileLifeCycle(CreateUFileLifeCycleRequest request)
             throws UCloudException;
 
     /**
@@ -78,7 +78,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUFileTokenResponse createUFileToken(CreateUFileTokenRequest request)
+    public CreateUFileTokenResponse createUFileToken(CreateUFileTokenRequest request)
             throws UCloudException;
 
     /**
@@ -87,7 +87,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteBucketResponse deleteBucket(DeleteBucketRequest request) throws UCloudException;
+    public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) throws UCloudException;
 
     /**
      * DeleteUFileLifeCycle - 删除生命周期管理
@@ -95,7 +95,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUFileLifeCycleResponse deleteUFileLifeCycle(DeleteUFileLifeCycleRequest request)
+    public DeleteUFileLifeCycleResponse deleteUFileLifeCycle(DeleteUFileLifeCycleRequest request)
             throws UCloudException;
 
     /**
@@ -104,7 +104,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUFileTokenResponse deleteUFileToken(DeleteUFileTokenRequest request)
+    public DeleteUFileTokenResponse deleteUFileToken(DeleteUFileTokenRequest request)
             throws UCloudException;
 
     /**
@@ -113,7 +113,8 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeBucketResponse describeBucket(DescribeBucketRequest request) throws UCloudException;
+    public DescribeBucketResponse describeBucket(DescribeBucketRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUFileLifeCycle - 获取生命周期信息
@@ -121,8 +122,8 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUFileLifeCycleResponse describeUFileLifeCycle(DescribeUFileLifeCycleRequest request)
-            throws UCloudException;
+    public DescribeUFileLifeCycleResponse describeUFileLifeCycle(
+            DescribeUFileLifeCycleRequest request) throws UCloudException;
 
     /**
      * DescribeUFileToken - 获取令牌信息
@@ -130,7 +131,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUFileTokenResponse describeUFileToken(DescribeUFileTokenRequest request)
+    public DescribeUFileTokenResponse describeUFileToken(DescribeUFileTokenRequest request)
             throws UCloudException;
 
     /**
@@ -139,7 +140,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUFileDailyReportResponse getUFileDailyReport(GetUFileDailyReportRequest request)
+    public GetUFileDailyReportResponse getUFileDailyReport(GetUFileDailyReportRequest request)
             throws UCloudException;
 
     /**
@@ -148,7 +149,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUFileQuotaResponse getUFileQuota(GetUFileQuotaRequest request) throws UCloudException;
+    public GetUFileQuotaResponse getUFileQuota(GetUFileQuotaRequest request) throws UCloudException;
 
     /**
      * GetUFileQuotaInfo - 获取配额信息
@@ -156,7 +157,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUFileQuotaInfoResponse getUFileQuotaInfo(GetUFileQuotaInfoRequest request)
+    public GetUFileQuotaInfoResponse getUFileQuotaInfo(GetUFileQuotaInfoRequest request)
             throws UCloudException;
 
     /**
@@ -165,7 +166,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUFileQuotaPriceResponse getUFileQuotaPrice(GetUFileQuotaPriceRequest request)
+    public GetUFileQuotaPriceResponse getUFileQuotaPrice(GetUFileQuotaPriceRequest request)
             throws UCloudException;
 
     /**
@@ -174,7 +175,8 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUFileReportResponse getUFileReport(GetUFileReportRequest request) throws UCloudException;
+    public GetUFileReportResponse getUFileReport(GetUFileReportRequest request)
+            throws UCloudException;
 
     /**
      * SetUFileReferer - 设置对象存储防盗链
@@ -182,7 +184,8 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SetUFileRefererResponse setUFileReferer(SetUFileRefererRequest request) throws UCloudException;
+    public SetUFileRefererResponse setUFileReferer(SetUFileRefererRequest request)
+            throws UCloudException;
 
     /**
      * UpdateBucket - 更改Bucket属性
@@ -190,7 +193,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException;
+    public UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException;
 
     /**
      * UpdateUFileLifeCycle - 更新生命周期管理
@@ -198,7 +201,7 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUFileLifeCycleResponse updateUFileLifeCycle(UpdateUFileLifeCycleRequest request)
+    public UpdateUFileLifeCycleResponse updateUFileLifeCycle(UpdateUFileLifeCycleRequest request)
             throws UCloudException;
 
     /**
@@ -207,6 +210,6 @@ public interface UFileClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUFileTokenResponse updateUFileToken(UpdateUFileTokenRequest request)
+    public UpdateUFileTokenResponse updateUFileToken(UpdateUFileTokenRequest request)
             throws UCloudException;
 }

@@ -109,7 +109,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BindUEcFirewallResponse bindUEcFirewall(BindUEcFirewallRequest request) throws UCloudException;
+    public BindUEcFirewallResponse bindUEcFirewall(BindUEcFirewallRequest request)
+            throws UCloudException;
 
     /**
      * CreateUEcCustomImage - 创建自制镜像
@@ -117,7 +118,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUEcCustomImageResponse createUEcCustomImage(CreateUEcCustomImageRequest request)
+    public CreateUEcCustomImageResponse createUEcCustomImage(CreateUEcCustomImageRequest request)
             throws UCloudException;
 
     /**
@@ -126,7 +127,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUEcFirewallResponse createUEcFirewall(CreateUEcFirewallRequest request)
+    public CreateUEcFirewallResponse createUEcFirewall(CreateUEcFirewallRequest request)
             throws UCloudException;
 
     /**
@@ -135,7 +136,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUEcHolderResponse createUEcHolder(CreateUEcHolderRequest request) throws UCloudException;
+    public CreateUEcHolderResponse createUEcHolder(CreateUEcHolderRequest request)
+            throws UCloudException;
 
     /**
      * CreateUEcSubnet - 创建子网
@@ -143,7 +145,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUEcSubnetResponse createUEcSubnet(CreateUEcSubnetRequest request) throws UCloudException;
+    public CreateUEcSubnetResponse createUEcSubnet(CreateUEcSubnetRequest request)
+            throws UCloudException;
 
     /**
      * CreateUEcVHost - 创建虚拟机
@@ -151,7 +154,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUEcVHostResponse createUEcVHost(CreateUEcVHostRequest request) throws UCloudException;
+    public CreateUEcVHostResponse createUEcVHost(CreateUEcVHostRequest request)
+            throws UCloudException;
 
     /**
      * DeleteUEcCustomImage - 删除UEC客户自定义镜像
@@ -159,7 +163,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUEcCustomImageResponse deleteUEcCustomImage(DeleteUEcCustomImageRequest request)
+    public DeleteUEcCustomImageResponse deleteUEcCustomImage(DeleteUEcCustomImageRequest request)
             throws UCloudException;
 
     /**
@@ -168,7 +172,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUEcHolderResponse deleteUEcHolder(DeleteUEcHolderRequest request) throws UCloudException;
+    public DeleteUEcHolderResponse deleteUEcHolder(DeleteUEcHolderRequest request)
+            throws UCloudException;
 
     /**
      * DeleteUEcSubnet - 删除子网
@@ -176,7 +181,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUEcSubnetResponse deleteUEcSubnet(DeleteUEcSubnetRequest request) throws UCloudException;
+    public DeleteUEcSubnetResponse deleteUEcSubnet(DeleteUEcSubnetRequest request)
+            throws UCloudException;
 
     /**
      * DeleteUEcVHost - 删除vhost虚拟机
@@ -184,7 +190,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUEcVHostResponse deleteUEcVHost(DeleteUEcVHostRequest request) throws UCloudException;
+    public DeleteUEcVHostResponse deleteUEcVHost(DeleteUEcVHostRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUEcFirewall - 获取防火墙信息
@@ -192,7 +199,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcFirewallResponse describeUEcFirewall(DescribeUEcFirewallRequest request)
+    public DescribeUEcFirewallResponse describeUEcFirewall(DescribeUEcFirewallRequest request)
             throws UCloudException;
 
     /**
@@ -201,7 +208,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcFirewallResourceResponse describeUEcFirewallResource(
+    public DescribeUEcFirewallResourceResponse describeUEcFirewallResource(
             DescribeUEcFirewallResourceRequest request) throws UCloudException;
 
     /**
@@ -210,7 +217,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcHolderResponse describeUEcHolder(DescribeUEcHolderRequest request)
+    public DescribeUEcHolderResponse describeUEcHolder(DescribeUEcHolderRequest request)
             throws UCloudException;
 
     /**
@@ -219,7 +226,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcHolderIDCResponse describeUEcHolderIDC(DescribeUEcHolderIDCRequest request)
+    public DescribeUEcHolderIDCResponse describeUEcHolderIDC(DescribeUEcHolderIDCRequest request)
             throws UCloudException;
 
     /**
@@ -228,7 +235,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcIDCResponse describeUEcIDC(DescribeUEcIDCRequest request) throws UCloudException;
+    public DescribeUEcIDCResponse describeUEcIDC(DescribeUEcIDCRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUEcSubnet - 获取子网列表
@@ -236,7 +244,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcSubnetResponse describeUEcSubnet(DescribeUEcSubnetRequest request)
+    public DescribeUEcSubnetResponse describeUEcSubnet(DescribeUEcSubnetRequest request)
             throws UCloudException;
 
     /**
@@ -245,7 +253,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcVHostResponse describeUEcVHost(DescribeUEcVHostRequest request)
+    public DescribeUEcVHostResponse describeUEcVHost(DescribeUEcVHostRequest request)
             throws UCloudException;
 
     /**
@@ -254,7 +262,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUEcVHostISPResponse describeUEcVHostISP(DescribeUEcVHostISPRequest request)
+    public DescribeUEcVHostISPResponse describeUEcVHostISP(DescribeUEcVHostISPRequest request)
             throws UCloudException;
 
     /**
@@ -263,7 +271,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcHolderLogResponse getUEcHolderLog(GetUEcHolderLogRequest request) throws UCloudException;
+    public GetUEcHolderLogResponse getUEcHolderLog(GetUEcHolderLogRequest request)
+            throws UCloudException;
 
     /**
      * GetUEcHolderMetrics - 获取容器监控数据
@@ -271,7 +280,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcHolderMetricsResponse getUEcHolderMetrics(GetUEcHolderMetricsRequest request)
+    public GetUEcHolderMetricsResponse getUEcHolderMetrics(GetUEcHolderMetricsRequest request)
             throws UCloudException;
 
     /**
@@ -280,7 +289,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcIDCCutInfoResponse getUEcIDCCutInfo(GetUEcIDCCutInfoRequest request)
+    public GetUEcIDCCutInfoResponse getUEcIDCCutInfo(GetUEcIDCCutInfoRequest request)
             throws UCloudException;
 
     /**
@@ -289,7 +298,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcIDCVHostDataResponse getUEcIDCVHostData(GetUEcIDCVHostDataRequest request)
+    public GetUEcIDCVHostDataResponse getUEcIDCVHostData(GetUEcIDCVHostDataRequest request)
             throws UCloudException;
 
     /**
@@ -298,7 +307,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcImageResponse getUEcImage(GetUEcImageRequest request) throws UCloudException;
+    public GetUEcImageResponse getUEcImage(GetUEcImageRequest request) throws UCloudException;
 
     /**
      * GetUEcPodPrice - 获得容器组价格
@@ -306,7 +315,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcPodPriceResponse getUEcPodPrice(GetUEcPodPriceRequest request) throws UCloudException;
+    public GetUEcPodPriceResponse getUEcPodPrice(GetUEcPodPriceRequest request)
+            throws UCloudException;
 
     /**
      * GetUEcUpgradePrice - 获取虚拟机调整差价
@@ -314,7 +324,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcUpgradePriceResponse getUEcUpgradePrice(GetUEcUpgradePriceRequest request)
+    public GetUEcUpgradePriceResponse getUEcUpgradePrice(GetUEcUpgradePriceRequest request)
             throws UCloudException;
 
     /**
@@ -323,7 +333,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcVHostDataResponse getUEcVHostData(GetUEcVHostDataRequest request) throws UCloudException;
+    public GetUEcVHostDataResponse getUEcVHostData(GetUEcVHostDataRequest request)
+            throws UCloudException;
 
     /**
      * GetUEcVHostPrice - 获取虚拟机价格
@@ -331,7 +342,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUEcVHostPriceResponse getUEcVHostPrice(GetUEcVHostPriceRequest request)
+    public GetUEcVHostPriceResponse getUEcVHostPrice(GetUEcVHostPriceRequest request)
             throws UCloudException;
 
     /**
@@ -340,7 +351,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ImportUEcCustomImageResponse importUEcCustomImage(ImportUEcCustomImageRequest request)
+    public ImportUEcCustomImageResponse importUEcCustomImage(ImportUEcCustomImageRequest request)
             throws UCloudException;
 
     /**
@@ -349,7 +360,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    LoginUEcDockerResponse loginUEcDocker(LoginUEcDockerRequest request) throws UCloudException;
+    public LoginUEcDockerResponse loginUEcDocker(LoginUEcDockerRequest request)
+            throws UCloudException;
 
     /**
      * ModifyUEcBandwidth - 修改节点带宽限制
@@ -357,7 +369,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUEcBandwidthResponse modifyUEcBandwidth(ModifyUEcBandwidthRequest request)
+    public ModifyUEcBandwidthResponse modifyUEcBandwidth(ModifyUEcBandwidthRequest request)
             throws UCloudException;
 
     /**
@@ -366,7 +378,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUEcHolderNameResponse modifyUEcHolderName(ModifyUEcHolderNameRequest request)
+    public ModifyUEcHolderNameResponse modifyUEcHolderName(ModifyUEcHolderNameRequest request)
             throws UCloudException;
 
     /**
@@ -375,7 +387,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUEcImageNameResponse modifyUEcImageName(ModifyUEcImageNameRequest request)
+    public ModifyUEcImageNameResponse modifyUEcImageName(ModifyUEcImageNameRequest request)
             throws UCloudException;
 
     /**
@@ -384,7 +396,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    PoweroffUEcVHostResponse poweroffUEcVHost(PoweroffUEcVHostRequest request)
+    public PoweroffUEcVHostResponse poweroffUEcVHost(PoweroffUEcVHostRequest request)
             throws UCloudException;
 
     /**
@@ -393,7 +405,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReinstallUEcVHostResponse reinstallUEcVHost(ReinstallUEcVHostRequest request)
+    public ReinstallUEcVHostResponse reinstallUEcVHost(ReinstallUEcVHostRequest request)
             throws UCloudException;
 
     /**
@@ -402,7 +414,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartUEcHolderResponse restartUEcHolder(RestartUEcHolderRequest request)
+    public RestartUEcHolderResponse restartUEcHolder(RestartUEcHolderRequest request)
             throws UCloudException;
 
     /**
@@ -411,7 +423,8 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartUEcVHostResponse restartUEcVHost(RestartUEcVHostRequest request) throws UCloudException;
+    public RestartUEcVHostResponse restartUEcVHost(RestartUEcVHostRequest request)
+            throws UCloudException;
 
     /**
      * StartUEcVHost - 启动UEC虚拟机
@@ -419,7 +432,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StartUEcVHostResponse startUEcVHost(StartUEcVHostRequest request) throws UCloudException;
+    public StartUEcVHostResponse startUEcVHost(StartUEcVHostRequest request) throws UCloudException;
 
     /**
      * StopUEcVHost - 停止UEC虚拟机
@@ -427,7 +440,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StopUEcVHostResponse stopUEcVHost(StopUEcVHostRequest request) throws UCloudException;
+    public StopUEcVHostResponse stopUEcVHost(StopUEcVHostRequest request) throws UCloudException;
 
     /**
      * UnBindUEcFirewall - 解绑防火墙
@@ -435,7 +448,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UnBindUEcFirewallResponse unBindUEcFirewall(UnBindUEcFirewallRequest request)
+    public UnBindUEcFirewallResponse unBindUEcFirewall(UnBindUEcFirewallRequest request)
             throws UCloudException;
 
     /**
@@ -444,7 +457,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUEcFirewallResponse updateUEcFirewall(UpdateUEcFirewallRequest request)
+    public UpdateUEcFirewallResponse updateUEcFirewall(UpdateUEcFirewallRequest request)
             throws UCloudException;
 
     /**
@@ -453,7 +466,7 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUEcFirewallAttributeResponse updateUEcFirewallAttribute(
+    public UpdateUEcFirewallAttributeResponse updateUEcFirewallAttribute(
             UpdateUEcFirewallAttributeRequest request) throws UCloudException;
 
     /**
@@ -462,5 +475,6 @@ public interface UECClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUEcSubnetResponse updateUEcSubnet(UpdateUEcSubnetRequest request) throws UCloudException;
+    public UpdateUEcSubnetResponse updateUEcSubnet(UpdateUEcSubnetRequest request)
+            throws UCloudException;
 }

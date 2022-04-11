@@ -91,7 +91,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AllocateEIPResponse allocateEIP(AllocateEIPRequest request) throws UCloudException;
+    public AllocateEIPResponse allocateEIP(AllocateEIPRequest request) throws UCloudException;
 
     /**
      * AllocateShareBandwidth - 开通共享带宽
@@ -99,8 +99,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AllocateShareBandwidthResponse allocateShareBandwidth(AllocateShareBandwidthRequest request)
-            throws UCloudException;
+    public AllocateShareBandwidthResponse allocateShareBandwidth(
+            AllocateShareBandwidthRequest request) throws UCloudException;
 
     /**
      * AssociateEIPWithShareBandwidth - 将EIP加入共享带宽
@@ -108,7 +108,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AssociateEIPWithShareBandwidthResponse associateEIPWithShareBandwidth(
+    public AssociateEIPWithShareBandwidthResponse associateEIPWithShareBandwidth(
             AssociateEIPWithShareBandwidthRequest request) throws UCloudException;
 
     /**
@@ -117,7 +117,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BindEIPResponse bindEIP(BindEIPRequest request) throws UCloudException;
+    public BindEIPResponse bindEIP(BindEIPRequest request) throws UCloudException;
 
     /**
      * CreateBandwidthPackage - 创建带宽包
@@ -125,8 +125,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateBandwidthPackageResponse createBandwidthPackage(CreateBandwidthPackageRequest request)
-            throws UCloudException;
+    public CreateBandwidthPackageResponse createBandwidthPackage(
+            CreateBandwidthPackageRequest request) throws UCloudException;
 
     /**
      * CreateFirewall - 创建防火墙
@@ -134,7 +134,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateFirewallResponse createFirewall(CreateFirewallRequest request) throws UCloudException;
+    public CreateFirewallResponse createFirewall(CreateFirewallRequest request)
+            throws UCloudException;
 
     /**
      * DeleteBandwidthPackage - 删除带宽包
@@ -142,8 +143,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteBandwidthPackageResponse deleteBandwidthPackage(DeleteBandwidthPackageRequest request)
-            throws UCloudException;
+    public DeleteBandwidthPackageResponse deleteBandwidthPackage(
+            DeleteBandwidthPackageRequest request) throws UCloudException;
 
     /**
      * DeleteFirewall - 删除防火墙
@@ -151,7 +152,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteFirewallResponse deleteFirewall(DeleteFirewallRequest request) throws UCloudException;
+    public DeleteFirewallResponse deleteFirewall(DeleteFirewallRequest request)
+            throws UCloudException;
 
     /**
      * DescribeBandwidthPackage - 获取带宽包信息
@@ -159,7 +161,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeBandwidthPackageResponse describeBandwidthPackage(
+    public DescribeBandwidthPackageResponse describeBandwidthPackage(
             DescribeBandwidthPackageRequest request) throws UCloudException;
 
     /**
@@ -168,8 +170,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeBandwidthUsageResponse describeBandwidthUsage(DescribeBandwidthUsageRequest request)
-            throws UCloudException;
+    public DescribeBandwidthUsageResponse describeBandwidthUsage(
+            DescribeBandwidthUsageRequest request) throws UCloudException;
 
     /**
      * DescribeEIP - 获取弹性IP信息
@@ -177,7 +179,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeEIPResponse describeEIP(DescribeEIPRequest request) throws UCloudException;
+    public DescribeEIPResponse describeEIP(DescribeEIPRequest request) throws UCloudException;
 
     /**
      * DescribeFirewall - 获取防火墙信息
@@ -185,7 +187,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeFirewallResponse describeFirewall(DescribeFirewallRequest request)
+    public DescribeFirewallResponse describeFirewall(DescribeFirewallRequest request)
             throws UCloudException;
 
     /**
@@ -194,7 +196,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeFirewallResourceResponse describeFirewallResource(
+    public DescribeFirewallResourceResponse describeFirewallResource(
             DescribeFirewallResourceRequest request) throws UCloudException;
 
     /**
@@ -203,8 +205,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeShareBandwidthResponse describeShareBandwidth(DescribeShareBandwidthRequest request)
-            throws UCloudException;
+    public DescribeShareBandwidthResponse describeShareBandwidth(
+            DescribeShareBandwidthRequest request) throws UCloudException;
 
     /**
      * DescribeShareBandwidthPrice - 获取共享带宽价格
@@ -212,7 +214,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeShareBandwidthPriceResponse describeShareBandwidthPrice(
+    public DescribeShareBandwidthPriceResponse describeShareBandwidthPrice(
             DescribeShareBandwidthPriceRequest request) throws UCloudException;
 
     /**
@@ -221,7 +223,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeShareBandwidthUpdatePriceResponse describeShareBandwidthUpdatePrice(
+    public DescribeShareBandwidthUpdatePriceResponse describeShareBandwidthUpdatePrice(
             DescribeShareBandwidthUpdatePriceRequest request) throws UCloudException;
 
     /**
@@ -230,7 +232,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DisassociateEIPWithShareBandwidthResponse disassociateEIPWithShareBandwidth(
+    public DisassociateEIPWithShareBandwidthResponse disassociateEIPWithShareBandwidth(
             DisassociateEIPWithShareBandwidthRequest request) throws UCloudException;
 
     /**
@@ -239,7 +241,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DisassociateFirewallResponse disassociateFirewall(DisassociateFirewallRequest request)
+    public DisassociateFirewallResponse disassociateFirewall(DisassociateFirewallRequest request)
             throws UCloudException;
 
     /**
@@ -248,7 +250,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetEIPPayModeResponse getEIPPayMode(GetEIPPayModeRequest request) throws UCloudException;
+    public GetEIPPayModeResponse getEIPPayMode(GetEIPPayModeRequest request) throws UCloudException;
 
     /**
      * GetEIPPrice - 获取弹性IP价格
@@ -256,7 +258,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetEIPPriceResponse getEIPPrice(GetEIPPriceRequest request) throws UCloudException;
+    public GetEIPPriceResponse getEIPPrice(GetEIPPriceRequest request) throws UCloudException;
 
     /**
      * GetEIPUpgradePrice - 获取弹性IP带宽改动价格
@@ -264,7 +266,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetEIPUpgradePriceResponse getEIPUpgradePrice(GetEIPUpgradePriceRequest request)
+    public GetEIPUpgradePriceResponse getEIPUpgradePrice(GetEIPUpgradePriceRequest request)
             throws UCloudException;
 
     /**
@@ -273,7 +275,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetThroughputDailyBillingInfoResponse getThroughputDailyBillingInfo(
+    public GetThroughputDailyBillingInfoResponse getThroughputDailyBillingInfo(
             GetThroughputDailyBillingInfoRequest request) throws UCloudException;
 
     /**
@@ -282,7 +284,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GrantFirewallResponse grantFirewall(GrantFirewallRequest request) throws UCloudException;
+    public GrantFirewallResponse grantFirewall(GrantFirewallRequest request) throws UCloudException;
 
     /**
      * ModifyEIPBandwidth - 调整弹性IP带宽
@@ -290,7 +292,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyEIPBandwidthResponse modifyEIPBandwidth(ModifyEIPBandwidthRequest request)
+    public ModifyEIPBandwidthResponse modifyEIPBandwidth(ModifyEIPBandwidthRequest request)
             throws UCloudException;
 
     /**
@@ -299,7 +301,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyEIPWeightResponse modifyEIPWeight(ModifyEIPWeightRequest request) throws UCloudException;
+    public ModifyEIPWeightResponse modifyEIPWeight(ModifyEIPWeightRequest request)
+            throws UCloudException;
 
     /**
      * ReleaseEIP - 释放弹性IP
@@ -307,7 +310,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReleaseEIPResponse releaseEIP(ReleaseEIPRequest request) throws UCloudException;
+    public ReleaseEIPResponse releaseEIP(ReleaseEIPRequest request) throws UCloudException;
 
     /**
      * ReleaseShareBandwidth - 关闭共享带宽
@@ -315,7 +318,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReleaseShareBandwidthResponse releaseShareBandwidth(ReleaseShareBandwidthRequest request)
+    public ReleaseShareBandwidthResponse releaseShareBandwidth(ReleaseShareBandwidthRequest request)
             throws UCloudException;
 
     /**
@@ -324,7 +327,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeShareBandwidthResponse resizeShareBandwidth(ResizeShareBandwidthRequest request)
+    public ResizeShareBandwidthResponse resizeShareBandwidth(ResizeShareBandwidthRequest request)
             throws UCloudException;
 
     /**
@@ -333,7 +336,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SetEIPPayModeResponse setEIPPayMode(SetEIPPayModeRequest request) throws UCloudException;
+    public SetEIPPayModeResponse setEIPPayMode(SetEIPPayModeRequest request) throws UCloudException;
 
     /**
      * UnBindEIP - 解绑弹性IP
@@ -341,7 +344,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UnBindEIPResponse unBindEIP(UnBindEIPRequest request) throws UCloudException;
+    public UnBindEIPResponse unBindEIP(UnBindEIPRequest request) throws UCloudException;
 
     /**
      * UpdateEIPAttribute - 更新弹性IP属性
@@ -349,7 +352,7 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateEIPAttributeResponse updateEIPAttribute(UpdateEIPAttributeRequest request)
+    public UpdateEIPAttributeResponse updateEIPAttribute(UpdateEIPAttributeRequest request)
             throws UCloudException;
 
     /**
@@ -358,7 +361,8 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateFirewallResponse updateFirewall(UpdateFirewallRequest request) throws UCloudException;
+    public UpdateFirewallResponse updateFirewall(UpdateFirewallRequest request)
+            throws UCloudException;
 
     /**
      * UpdateFirewallAttribute - 更新防火墙属性
@@ -366,6 +370,6 @@ public interface UNetClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateFirewallAttributeResponse updateFirewallAttribute(UpdateFirewallAttributeRequest request)
-            throws UCloudException;
+    public UpdateFirewallAttributeResponse updateFirewallAttribute(
+            UpdateFirewallAttributeRequest request) throws UCloudException;
 }

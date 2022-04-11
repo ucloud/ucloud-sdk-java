@@ -65,7 +65,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreatePHostResponse createPHost(CreatePHostRequest request) throws UCloudException;
+    public CreatePHostResponse createPHost(CreatePHostRequest request) throws UCloudException;
 
     /**
      * CreatePHostImage - 创建裸金属2.0用户自定义镜像
@@ -73,7 +73,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreatePHostImageResponse createPHostImage(CreatePHostImageRequest request)
+    public CreatePHostImageResponse createPHostImage(CreatePHostImageRequest request)
             throws UCloudException;
 
     /**
@@ -82,7 +82,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeBaremetalMachineTypeResponse describeBaremetalMachineType(
+    public DescribeBaremetalMachineTypeResponse describeBaremetalMachineType(
             DescribeBaremetalMachineTypeRequest request) throws UCloudException;
 
     /**
@@ -91,7 +91,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribePHostResponse describePHost(DescribePHostRequest request) throws UCloudException;
+    public DescribePHostResponse describePHost(DescribePHostRequest request) throws UCloudException;
 
     /**
      * DescribePHostImage - 获取物理机镜像
@@ -99,7 +99,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribePHostImageResponse describePHostImage(DescribePHostImageRequest request)
+    public DescribePHostImageResponse describePHostImage(DescribePHostImageRequest request)
             throws UCloudException;
 
     /**
@@ -108,7 +108,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribePHostMachineTypeResponse describePHostMachineType(
+    public DescribePHostMachineTypeResponse describePHostMachineType(
             DescribePHostMachineTypeRequest request) throws UCloudException;
 
     /**
@@ -117,7 +117,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribePHostTagsResponse describePHostTags(DescribePHostTagsRequest request)
+    public DescribePHostTagsResponse describePHostTags(DescribePHostTagsRequest request)
             throws UCloudException;
 
     /**
@@ -126,7 +126,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetPHostDiskUpgradePriceResponse getPHostDiskUpgradePrice(
+    public GetPHostDiskUpgradePriceResponse getPHostDiskUpgradePrice(
             GetPHostDiskUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -135,7 +135,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetPHostPriceResponse getPHostPrice(GetPHostPriceRequest request) throws UCloudException;
+    public GetPHostPriceResponse getPHostPrice(GetPHostPriceRequest request) throws UCloudException;
 
     /**
      * ModifyPHostImageInfo - 修改物理云自定义镜像信息
@@ -143,7 +143,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyPHostImageInfoResponse modifyPHostImageInfo(ModifyPHostImageInfoRequest request)
+    public ModifyPHostImageInfoResponse modifyPHostImageInfo(ModifyPHostImageInfoRequest request)
             throws UCloudException;
 
     /**
@@ -152,7 +152,8 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyPHostInfoResponse modifyPHostInfo(ModifyPHostInfoRequest request) throws UCloudException;
+    public ModifyPHostInfoResponse modifyPHostInfo(ModifyPHostInfoRequest request)
+            throws UCloudException;
 
     /**
      * PoweroffPHost - 断电物理机
@@ -160,7 +161,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    PoweroffPHostResponse poweroffPHost(PoweroffPHostRequest request) throws UCloudException;
+    public PoweroffPHostResponse poweroffPHost(PoweroffPHostRequest request) throws UCloudException;
 
     /**
      * RebootPHost - 重启物理机
@@ -168,7 +169,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RebootPHostResponse rebootPHost(RebootPHostRequest request) throws UCloudException;
+    public RebootPHostResponse rebootPHost(RebootPHostRequest request) throws UCloudException;
 
     /**
      * ReinstallPHost - 重装物理机
@@ -176,7 +177,8 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReinstallPHostResponse reinstallPHost(ReinstallPHostRequest request) throws UCloudException;
+    public ReinstallPHostResponse reinstallPHost(ReinstallPHostRequest request)
+            throws UCloudException;
 
     /**
      * ResetPHostPassword - 重置实例密码
@@ -184,7 +186,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResetPHostPasswordResponse resetPHostPassword(ResetPHostPasswordRequest request)
+    public ResetPHostPasswordResponse resetPHostPassword(ResetPHostPasswordRequest request)
             throws UCloudException;
 
     /**
@@ -193,8 +195,8 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizePHostAttachedDiskResponse resizePHostAttachedDisk(ResizePHostAttachedDiskRequest request)
-            throws UCloudException;
+    public ResizePHostAttachedDiskResponse resizePHostAttachedDisk(
+            ResizePHostAttachedDiskRequest request) throws UCloudException;
 
     /**
      * StartPHost - 启动物理机
@@ -202,7 +204,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StartPHostResponse startPHost(StartPHostRequest request) throws UCloudException;
+    public StartPHostResponse startPHost(StartPHostRequest request) throws UCloudException;
 
     /**
      * StopPHost - 关闭物理机
@@ -210,7 +212,7 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StopPHostResponse stopPHost(StopPHostRequest request) throws UCloudException;
+    public StopPHostResponse stopPHost(StopPHostRequest request) throws UCloudException;
 
     /**
      * TerminatePHost - 删除物理机
@@ -218,7 +220,8 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    TerminatePHostResponse terminatePHost(TerminatePHostRequest request) throws UCloudException;
+    public TerminatePHostResponse terminatePHost(TerminatePHostRequest request)
+            throws UCloudException;
 
     /**
      * TerminatePHostImage - 删除裸金属2.0用户自定义镜像
@@ -226,6 +229,6 @@ public interface UPHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    TerminatePHostImageResponse terminatePHostImage(TerminatePHostImageRequest request)
+    public TerminatePHostImageResponse terminatePHostImage(TerminatePHostImageRequest request)
             throws UCloudException;
 }

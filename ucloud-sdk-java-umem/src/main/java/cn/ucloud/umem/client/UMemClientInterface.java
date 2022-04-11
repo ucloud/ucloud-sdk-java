@@ -109,7 +109,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CheckUDredisSpaceAllowanceResponse checkUDredisSpaceAllowance(
+    public CheckUDredisSpaceAllowanceResponse checkUDredisSpaceAllowance(
             CheckUDredisSpaceAllowanceRequest request) throws UCloudException;
 
     /**
@@ -118,7 +118,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CheckURedisAllowanceResponse checkURedisAllowance(CheckURedisAllowanceRequest request)
+    public CheckURedisAllowanceResponse checkURedisAllowance(CheckURedisAllowanceRequest request)
             throws UCloudException;
 
     /**
@@ -127,7 +127,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUMemBackupResponse createUMemBackup(CreateUMemBackupRequest request)
+    public CreateUMemBackupResponse createUMemBackup(CreateUMemBackupRequest request)
             throws UCloudException;
 
     /**
@@ -136,7 +136,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUMemSpaceResponse createUMemSpace(CreateUMemSpaceRequest request) throws UCloudException;
+    public CreateUMemSpaceResponse createUMemSpace(CreateUMemSpaceRequest request)
+            throws UCloudException;
 
     /**
      * CreateUMemcacheGroup - 创建单机Memcache
@@ -144,7 +145,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUMemcacheGroupResponse createUMemcacheGroup(CreateUMemcacheGroupRequest request)
+    public CreateUMemcacheGroupResponse createUMemcacheGroup(CreateUMemcacheGroupRequest request)
             throws UCloudException;
 
     /**
@@ -153,7 +154,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateURedisBackupResponse createURedisBackup(CreateURedisBackupRequest request)
+    public CreateURedisBackupResponse createURedisBackup(CreateURedisBackupRequest request)
             throws UCloudException;
 
     /**
@@ -162,7 +163,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateURedisGroupResponse createURedisGroup(CreateURedisGroupRequest request)
+    public CreateURedisGroupResponse createURedisGroup(CreateURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -171,7 +172,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUMemSpaceResponse deleteUMemSpace(DeleteUMemSpaceRequest request) throws UCloudException;
+    public DeleteUMemSpaceResponse deleteUMemSpace(DeleteUMemSpaceRequest request)
+            throws UCloudException;
 
     /**
      * DeleteUMemcacheGroup - 删除单机Memcache
@@ -179,7 +181,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUMemcacheGroupResponse deleteUMemcacheGroup(DeleteUMemcacheGroupRequest request)
+    public DeleteUMemcacheGroupResponse deleteUMemcacheGroup(DeleteUMemcacheGroupRequest request)
             throws UCloudException;
 
     /**
@@ -188,7 +190,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteURedisGroupResponse deleteURedisGroup(DeleteURedisGroupRequest request)
+    public DeleteURedisGroupResponse deleteURedisGroup(DeleteURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -197,7 +199,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDRedisProxyInfoResponse describeUDRedisProxyInfo(
+    public DescribeUDRedisProxyInfoResponse describeUDRedisProxyInfo(
             DescribeUDRedisProxyInfoRequest request) throws UCloudException;
 
     /**
@@ -206,8 +208,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDRedisSlowlogResponse describeUDRedisSlowlog(DescribeUDRedisSlowlogRequest request)
-            throws UCloudException;
+    public DescribeUDRedisSlowlogResponse describeUDRedisSlowlog(
+            DescribeUDRedisSlowlogRequest request) throws UCloudException;
 
     /**
      * DescribeUMem - 获取UMem列表
@@ -215,7 +217,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemResponse describeUMem(DescribeUMemRequest request) throws UCloudException;
+    public DescribeUMemResponse describeUMem(DescribeUMemRequest request) throws UCloudException;
 
     /**
      * DescribeUMemBackup - 查询分布式redis备份
@@ -223,7 +225,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemBackupResponse describeUMemBackup(DescribeUMemBackupRequest request)
+    public DescribeUMemBackupResponse describeUMemBackup(DescribeUMemBackupRequest request)
             throws UCloudException;
 
     /**
@@ -232,7 +234,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemBackupURLResponse describeUMemBackupURL(DescribeUMemBackupURLRequest request)
+    public DescribeUMemBackupURLResponse describeUMemBackupURL(DescribeUMemBackupURLRequest request)
             throws UCloudException;
 
     /**
@@ -241,7 +243,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemBlockInfoResponse describeUMemBlockInfo(DescribeUMemBlockInfoRequest request)
+    public DescribeUMemBlockInfoResponse describeUMemBlockInfo(DescribeUMemBlockInfoRequest request)
             throws UCloudException;
 
     /**
@@ -250,7 +252,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemPriceResponse describeUMemPrice(DescribeUMemPriceRequest request)
+    public DescribeUMemPriceResponse describeUMemPrice(DescribeUMemPriceRequest request)
             throws UCloudException;
 
     /**
@@ -259,7 +261,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemSpaceResponse describeUMemSpace(DescribeUMemSpaceRequest request)
+    public DescribeUMemSpaceResponse describeUMemSpace(DescribeUMemSpaceRequest request)
             throws UCloudException;
 
     /**
@@ -268,7 +270,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemUpgradePriceResponse describeUMemUpgradePrice(
+    public DescribeUMemUpgradePriceResponse describeUMemUpgradePrice(
             DescribeUMemUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -277,8 +279,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemcacheGroupResponse describeUMemcacheGroup(DescribeUMemcacheGroupRequest request)
-            throws UCloudException;
+    public DescribeUMemcacheGroupResponse describeUMemcacheGroup(
+            DescribeUMemcacheGroupRequest request) throws UCloudException;
 
     /**
      * DescribeUMemcachePrice - 获取umemcache组价格
@@ -286,8 +288,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemcachePriceResponse describeUMemcachePrice(DescribeUMemcachePriceRequest request)
-            throws UCloudException;
+    public DescribeUMemcachePriceResponse describeUMemcachePrice(
+            DescribeUMemcachePriceRequest request) throws UCloudException;
 
     /**
      * DescribeUMemcacheUpgradePrice - 获取umemcache升级价格
@@ -295,7 +297,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUMemcacheUpgradePriceResponse describeUMemcacheUpgradePrice(
+    public DescribeUMemcacheUpgradePriceResponse describeUMemcacheUpgradePrice(
             DescribeUMemcacheUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -304,7 +306,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisBackupResponse describeURedisBackup(DescribeURedisBackupRequest request)
+    public DescribeURedisBackupResponse describeURedisBackup(DescribeURedisBackupRequest request)
             throws UCloudException;
 
     /**
@@ -313,8 +315,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisBackupURLResponse describeURedisBackupURL(DescribeURedisBackupURLRequest request)
-            throws UCloudException;
+    public DescribeURedisBackupURLResponse describeURedisBackupURL(
+            DescribeURedisBackupURLRequest request) throws UCloudException;
 
     /**
      * DescribeURedisConfig - 查询主备Redis所有配置文件
@@ -322,7 +324,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisConfigResponse describeURedisConfig(DescribeURedisConfigRequest request)
+    public DescribeURedisConfigResponse describeURedisConfig(DescribeURedisConfigRequest request)
             throws UCloudException;
 
     /**
@@ -331,7 +333,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisGroupResponse describeURedisGroup(DescribeURedisGroupRequest request)
+    public DescribeURedisGroupResponse describeURedisGroup(DescribeURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -340,7 +342,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisPriceResponse describeURedisPrice(DescribeURedisPriceRequest request)
+    public DescribeURedisPriceResponse describeURedisPrice(DescribeURedisPriceRequest request)
             throws UCloudException;
 
     /**
@@ -349,7 +351,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisSlowlogResponse describeURedisSlowlog(DescribeURedisSlowlogRequest request)
+    public DescribeURedisSlowlogResponse describeURedisSlowlog(DescribeURedisSlowlogRequest request)
             throws UCloudException;
 
     /**
@@ -358,7 +360,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisUpgradePriceResponse describeURedisUpgradePrice(
+    public DescribeURedisUpgradePriceResponse describeURedisUpgradePrice(
             DescribeURedisUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -367,7 +369,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeURedisVersionResponse describeURedisVersion(DescribeURedisVersionRequest request)
+    public DescribeURedisVersionResponse describeURedisVersion(DescribeURedisVersionRequest request)
             throws UCloudException;
 
     /**
@@ -376,7 +378,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    FlushallURedisGroupResponse flushallURedisGroup(FlushallURedisGroupRequest request)
+    public FlushallURedisGroupResponse flushallURedisGroup(FlushallURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -385,7 +387,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUMemSpaceStateResponse getUMemSpaceState(GetUMemSpaceStateRequest request)
+    public GetUMemSpaceStateResponse getUMemSpaceState(GetUMemSpaceStateRequest request)
             throws UCloudException;
 
     /**
@@ -394,7 +396,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ISolationURedisGroupResponse iSolationURedisGroup(ISolationURedisGroupRequest request)
+    public ISolationURedisGroupResponse iSolationURedisGroup(ISolationURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -403,7 +405,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUMemSpaceNameResponse modifyUMemSpaceName(ModifyUMemSpaceNameRequest request)
+    public ModifyUMemSpaceNameResponse modifyUMemSpaceName(ModifyUMemSpaceNameRequest request)
             throws UCloudException;
 
     /**
@@ -412,7 +414,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyURedisGroupNameResponse modifyURedisGroupName(ModifyURedisGroupNameRequest request)
+    public ModifyURedisGroupNameResponse modifyURedisGroupName(ModifyURedisGroupNameRequest request)
             throws UCloudException;
 
     /**
@@ -421,7 +423,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyURedisGroupPasswordResponse modifyURedisGroupPassword(
+    public ModifyURedisGroupPasswordResponse modifyURedisGroupPassword(
             ModifyURedisGroupPasswordRequest request) throws UCloudException;
 
     /**
@@ -430,7 +432,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RemoveUDRedisDataResponse removeUDRedisData(RemoveUDRedisDataRequest request)
+    public RemoveUDRedisDataResponse removeUDRedisData(RemoveUDRedisDataRequest request)
             throws UCloudException;
 
     /**
@@ -439,7 +441,8 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeUMemSpaceResponse resizeUMemSpace(ResizeUMemSpaceRequest request) throws UCloudException;
+    public ResizeUMemSpaceResponse resizeUMemSpace(ResizeUMemSpaceRequest request)
+            throws UCloudException;
 
     /**
      * ResizeURedisGroup - 调整容量
@@ -447,7 +450,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeURedisGroupResponse resizeURedisGroup(ResizeURedisGroupRequest request)
+    public ResizeURedisGroupResponse resizeURedisGroup(ResizeURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -456,7 +459,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartUMemcacheGroupResponse restartUMemcacheGroup(RestartUMemcacheGroupRequest request)
+    public RestartUMemcacheGroupResponse restartUMemcacheGroup(RestartUMemcacheGroupRequest request)
             throws UCloudException;
 
     /**
@@ -465,7 +468,7 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartURedisGroupResponse restartURedisGroup(RestartURedisGroupRequest request)
+    public RestartURedisGroupResponse restartURedisGroup(RestartURedisGroupRequest request)
             throws UCloudException;
 
     /**
@@ -474,6 +477,6 @@ public interface UMemClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateURedisBackupStrategyResponse updateURedisBackupStrategy(
+    public UpdateURedisBackupStrategyResponse updateURedisBackupStrategy(
             UpdateURedisBackupStrategyRequest request) throws UCloudException;
 }

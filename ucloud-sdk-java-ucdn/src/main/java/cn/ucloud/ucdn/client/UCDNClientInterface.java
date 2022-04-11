@@ -85,7 +85,8 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddCertificateResponse addCertificate(AddCertificateRequest request) throws UCloudException;
+    public AddCertificateResponse addCertificate(AddCertificateRequest request)
+            throws UCloudException;
 
     /**
      * ControlUcdnDomainCacheAccess - 封禁解封缓存访问
@@ -93,7 +94,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ControlUcdnDomainCacheAccessResponse controlUcdnDomainCacheAccess(
+    public ControlUcdnDomainCacheAccessResponse controlUcdnDomainCacheAccess(
             ControlUcdnDomainCacheAccessRequest request) throws UCloudException;
 
     /**
@@ -102,7 +103,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request)
+    public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request)
             throws UCloudException;
 
     /**
@@ -111,7 +112,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNewUcdnPrefetchCacheTaskResponse describeNewUcdnPrefetchCacheTask(
+    public DescribeNewUcdnPrefetchCacheTaskResponse describeNewUcdnPrefetchCacheTask(
             DescribeNewUcdnPrefetchCacheTaskRequest request) throws UCloudException;
 
     /**
@@ -120,7 +121,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeNewUcdnRefreshCacheTaskResponse describeNewUcdnRefreshCacheTask(
+    public DescribeNewUcdnRefreshCacheTaskResponse describeNewUcdnRefreshCacheTask(
             DescribeNewUcdnRefreshCacheTaskRequest request) throws UCloudException;
 
     /**
@@ -129,7 +130,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetCertificateV2Response getCertificateV2(GetCertificateV2Request request)
+    public GetCertificateV2Response getCertificateV2(GetCertificateV2Request request)
             throws UCloudException;
 
     /**
@@ -138,8 +139,8 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetNewUcdnDomainHitRateResponse getNewUcdnDomainHitRate(GetNewUcdnDomainHitRateRequest request)
-            throws UCloudException;
+    public GetNewUcdnDomainHitRateResponse getNewUcdnDomainHitRate(
+            GetNewUcdnDomainHitRateRequest request) throws UCloudException;
 
     /**
      * GetNewUcdnLogRefererStatistics - 获取热点referer统计
@@ -147,7 +148,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetNewUcdnLogRefererStatisticsResponse getNewUcdnLogRefererStatistics(
+    public GetNewUcdnLogRefererStatisticsResponse getNewUcdnLogRefererStatistics(
             GetNewUcdnLogRefererStatisticsRequest request) throws UCloudException;
 
     /**
@@ -156,7 +157,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetNewUcdnLogUrlStatisticsResponse getNewUcdnLogUrlStatistics(
+    public GetNewUcdnLogUrlStatisticsResponse getNewUcdnLogUrlStatistics(
             GetNewUcdnLogUrlStatisticsRequest request) throws UCloudException;
 
     /**
@@ -165,7 +166,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomain95BandwidthV2Response getUcdnDomain95BandwidthV2(
+    public GetUcdnDomain95BandwidthV2Response getUcdnDomain95BandwidthV2(
             GetUcdnDomain95BandwidthV2Request request) throws UCloudException;
 
     /**
@@ -174,7 +175,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainBandwidthV2Response getUcdnDomainBandwidthV2(
+    public GetUcdnDomainBandwidthV2Response getUcdnDomainBandwidthV2(
             GetUcdnDomainBandwidthV2Request request) throws UCloudException;
 
     /**
@@ -183,7 +184,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainConfigResponse getUcdnDomainConfig(GetUcdnDomainConfigRequest request)
+    public GetUcdnDomainConfigResponse getUcdnDomainConfig(GetUcdnDomainConfigRequest request)
             throws UCloudException;
 
     /**
@@ -192,7 +193,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainHitRateResponse getUcdnDomainHitRate(GetUcdnDomainHitRateRequest request)
+    public GetUcdnDomainHitRateResponse getUcdnDomainHitRate(GetUcdnDomainHitRateRequest request)
             throws UCloudException;
 
     /**
@@ -201,8 +202,8 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainHttpCodeV2Response getUcdnDomainHttpCodeV2(GetUcdnDomainHttpCodeV2Request request)
-            throws UCloudException;
+    public GetUcdnDomainHttpCodeV2Response getUcdnDomainHttpCodeV2(
+            GetUcdnDomainHttpCodeV2Request request) throws UCloudException;
 
     /**
      * GetUcdnDomainInfoList - 获取域名基本信息
@@ -210,7 +211,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainInfoListResponse getUcdnDomainInfoList(GetUcdnDomainInfoListRequest request)
+    public GetUcdnDomainInfoListResponse getUcdnDomainInfoList(GetUcdnDomainInfoListRequest request)
             throws UCloudException;
 
     /**
@@ -219,7 +220,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainLogResponse getUcdnDomainLog(GetUcdnDomainLogRequest request)
+    public GetUcdnDomainLogResponse getUcdnDomainLog(GetUcdnDomainLogRequest request)
             throws UCloudException;
 
     /**
@@ -228,7 +229,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainLogV2Response getUcdnDomainLogV2(GetUcdnDomainLogV2Request request)
+    public GetUcdnDomainLogV2Response getUcdnDomainLogV2(GetUcdnDomainLogV2Request request)
             throws UCloudException;
 
     /**
@@ -237,7 +238,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
+    public GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
             GetUcdnDomainOriginHttpCodeRequest request) throws UCloudException;
 
     /**
@@ -246,7 +247,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
+    public GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
             GetUcdnDomainOriginHttpCodeDetailRequest request) throws UCloudException;
 
     /**
@@ -255,7 +256,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainOriginRequestNumResponse getUcdnDomainOriginRequestNum(
+    public GetUcdnDomainOriginRequestNumResponse getUcdnDomainOriginRequestNum(
             GetUcdnDomainOriginRequestNumRequest request) throws UCloudException;
 
     /**
@@ -264,7 +265,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainPrefetchEnableResponse getUcdnDomainPrefetchEnable(
+    public GetUcdnDomainPrefetchEnableResponse getUcdnDomainPrefetchEnable(
             GetUcdnDomainPrefetchEnableRequest request) throws UCloudException;
 
     /**
@@ -273,7 +274,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnDomainRequestNumV3Response getUcdnDomainRequestNumV3(
+    public GetUcdnDomainRequestNumV3Response getUcdnDomainRequestNumV3(
             GetUcdnDomainRequestNumV3Request request) throws UCloudException;
 
     /**
@@ -282,8 +283,8 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnPassBandwidthV2Response getUcdnPassBandwidthV2(GetUcdnPassBandwidthV2Request request)
-            throws UCloudException;
+    public GetUcdnPassBandwidthV2Response getUcdnPassBandwidthV2(
+            GetUcdnPassBandwidthV2Request request) throws UCloudException;
 
     /**
      * GetUcdnProIspBandwidthV2 - 按省份运营商获取域名带宽数据【新】
@@ -291,7 +292,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnProIspBandwidthV2Response getUcdnProIspBandwidthV2(
+    public GetUcdnProIspBandwidthV2Response getUcdnProIspBandwidthV2(
             GetUcdnProIspBandwidthV2Request request) throws UCloudException;
 
     /**
@@ -300,7 +301,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnProIspRequestNumV2Response getUcdnProIspRequestNumV2(
+    public GetUcdnProIspRequestNumV2Response getUcdnProIspRequestNumV2(
             GetUcdnProIspRequestNumV2Request request) throws UCloudException;
 
     /**
@@ -309,7 +310,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUcdnTrafficV2Response getUcdnTrafficV2(GetUcdnTrafficV2Request request)
+    public GetUcdnTrafficV2Response getUcdnTrafficV2(GetUcdnTrafficV2Request request)
             throws UCloudException;
 
     /**
@@ -318,7 +319,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    PrefetchNewUcdnDomainCacheResponse prefetchNewUcdnDomainCache(
+    public PrefetchNewUcdnDomainCacheResponse prefetchNewUcdnDomainCache(
             PrefetchNewUcdnDomainCacheRequest request) throws UCloudException;
 
     /**
@@ -327,7 +328,8 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    QueryIpLocationResponse queryIpLocation(QueryIpLocationRequest request) throws UCloudException;
+    public QueryIpLocationResponse queryIpLocation(QueryIpLocationRequest request)
+            throws UCloudException;
 
     /**
      * RefreshNewUcdnDomainCache - 刷新缓存
@@ -335,7 +337,7 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RefreshNewUcdnDomainCacheResponse refreshNewUcdnDomainCache(
+    public RefreshNewUcdnDomainCacheResponse refreshNewUcdnDomainCache(
             RefreshNewUcdnDomainCacheRequest request) throws UCloudException;
 
     /**
@@ -344,6 +346,6 @@ public interface UCDNClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SwitchUcdnChargeTypeResponse switchUcdnChargeType(SwitchUcdnChargeTypeRequest request)
+    public SwitchUcdnChargeTypeResponse switchUcdnChargeType(SwitchUcdnChargeTypeRequest request)
             throws UCloudException;
 }

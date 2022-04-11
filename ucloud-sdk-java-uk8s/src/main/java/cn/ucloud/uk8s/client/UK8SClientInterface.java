@@ -53,7 +53,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddUK8SExistingUHostResponse addUK8SExistingUHost(AddUK8SExistingUHostRequest request)
+    public AddUK8SExistingUHostResponse addUK8SExistingUHost(AddUK8SExistingUHostRequest request)
             throws UCloudException;
 
     /**
@@ -62,7 +62,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddUK8SNodeGroupResponse addUK8SNodeGroup(AddUK8SNodeGroupRequest request)
+    public AddUK8SNodeGroupResponse addUK8SNodeGroup(AddUK8SNodeGroupRequest request)
             throws UCloudException;
 
     /**
@@ -71,7 +71,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddUK8SPHostNodeResponse addUK8SPHostNode(AddUK8SPHostNodeRequest request)
+    public AddUK8SPHostNodeResponse addUK8SPHostNode(AddUK8SPHostNodeRequest request)
             throws UCloudException;
 
     /**
@@ -80,7 +80,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddUK8SUHostNodeResponse addUK8SUHostNode(AddUK8SUHostNodeRequest request)
+    public AddUK8SUHostNodeResponse addUK8SUHostNode(AddUK8SUHostNodeRequest request)
             throws UCloudException;
 
     /**
@@ -89,7 +89,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUK8SClusterV2Response createUK8SClusterV2(CreateUK8SClusterV2Request request)
+    public CreateUK8SClusterV2Response createUK8SClusterV2(CreateUK8SClusterV2Request request)
             throws UCloudException;
 
     /**
@@ -98,7 +98,8 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DelUK8SClusterResponse delUK8SCluster(DelUK8SClusterRequest request) throws UCloudException;
+    public DelUK8SClusterResponse delUK8SCluster(DelUK8SClusterRequest request)
+            throws UCloudException;
 
     /**
      * DelUK8SClusterNodeV2 - 删除Node节点
@@ -106,7 +107,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DelUK8SClusterNodeV2Response delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request request)
+    public DelUK8SClusterNodeV2Response delUK8SClusterNodeV2(DelUK8SClusterNodeV2Request request)
             throws UCloudException;
 
     /**
@@ -115,7 +116,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUK8SClusterResponse describeUK8SCluster(DescribeUK8SClusterRequest request)
+    public DescribeUK8SClusterResponse describeUK8SCluster(DescribeUK8SClusterRequest request)
             throws UCloudException;
 
     /**
@@ -124,7 +125,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUK8SImageResponse describeUK8SImage(DescribeUK8SImageRequest request)
+    public DescribeUK8SImageResponse describeUK8SImage(DescribeUK8SImageRequest request)
             throws UCloudException;
 
     /**
@@ -133,7 +134,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUK8SNodeResponse describeUK8SNode(DescribeUK8SNodeRequest request)
+    public DescribeUK8SNodeResponse describeUK8SNode(DescribeUK8SNodeRequest request)
             throws UCloudException;
 
     /**
@@ -142,7 +143,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ListUK8SClusterNodeV2Response listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request request)
+    public ListUK8SClusterNodeV2Response listUK8SClusterNodeV2(ListUK8SClusterNodeV2Request request)
             throws UCloudException;
 
     /**
@@ -151,7 +152,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ListUK8SClusterV2Response listUK8SClusterV2(ListUK8SClusterV2Request request)
+    public ListUK8SClusterV2Response listUK8SClusterV2(ListUK8SClusterV2Request request)
             throws UCloudException;
 
     /**
@@ -160,7 +161,7 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ListUK8SNodeGroupResponse listUK8SNodeGroup(ListUK8SNodeGroupRequest request)
+    public ListUK8SNodeGroupResponse listUK8SNodeGroup(ListUK8SNodeGroupRequest request)
             throws UCloudException;
 
     /**
@@ -169,6 +170,6 @@ public interface UK8SClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RemoveUK8SNodeGroupResponse removeUK8SNodeGroup(RemoveUK8SNodeGroupRequest request)
+    public RemoveUK8SNodeGroupResponse removeUK8SNodeGroup(RemoveUK8SNodeGroupRequest request)
             throws UCloudException;
 }

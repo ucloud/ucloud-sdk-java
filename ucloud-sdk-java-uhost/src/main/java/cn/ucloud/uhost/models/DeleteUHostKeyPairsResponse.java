@@ -13,8 +13,6 @@
  */
 package cn.ucloud.uhost.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class DeleteUHostKeyPairsResponse extends Response {}

@@ -43,6 +43,33 @@ public class DescribeULBSimpleResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class FirewallSet extends Response {
+
+        /** 防火墙名称 */
+        @SerializedName("FirewallName")
+        private String firewallName;
+
+        /** 防火墙ID */
+        @SerializedName("FirewallId")
+        private String firewallId;
+
+        public String getFirewallName() {
+            return firewallName;
+        }
+
+        public void setFirewallName(String firewallName) {
+            this.firewallName = firewallName;
+        }
+
+        public String getFirewallId() {
+            return firewallId;
+        }
+
+        public void setFirewallId(String firewallId) {
+            this.firewallId = firewallId;
+        }
+    }
+
     public static class ULBIPSet extends Response {
 
         /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP */
@@ -373,33 +400,6 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setLogSet(LoggerSet logSet) {
             this.logSet = logSet;
-        }
-    }
-
-    public static class FirewallSet extends Response {
-
-        /** 防火墙名称 */
-        @SerializedName("FirewallName")
-        private String firewallName;
-
-        /** 防火墙ID */
-        @SerializedName("FirewallId")
-        private String firewallId;
-
-        public String getFirewallName() {
-            return firewallName;
-        }
-
-        public void setFirewallName(String firewallName) {
-            this.firewallName = firewallName;
-        }
-
-        public String getFirewallId() {
-            return firewallId;
-        }
-
-        public void setFirewallId(String firewallId) {
-            this.firewallId = firewallId;
         }
     }
 }

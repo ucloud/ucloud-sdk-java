@@ -13,8 +13,6 @@
  */
 package cn.ucloud.ufile.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class DeleteUFileTokenResponse extends Response {}

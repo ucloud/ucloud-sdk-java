@@ -65,7 +65,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AttachUDiskResponse attachUDisk(AttachUDiskRequest request) throws UCloudException;
+    public AttachUDiskResponse attachUDisk(AttachUDiskRequest request) throws UCloudException;
 
     /**
      * CloneUDisk - 克隆云硬盘
@@ -73,7 +73,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CloneUDiskResponse cloneUDisk(CloneUDiskRequest request) throws UCloudException;
+    public CloneUDiskResponse cloneUDisk(CloneUDiskRequest request) throws UCloudException;
 
     /**
      * CloneUDiskSnapshot - 克隆快照
@@ -81,7 +81,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CloneUDiskSnapshotResponse cloneUDiskSnapshot(CloneUDiskSnapshotRequest request)
+    public CloneUDiskSnapshotResponse cloneUDiskSnapshot(CloneUDiskSnapshotRequest request)
             throws UCloudException;
 
     /**
@@ -90,7 +90,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CloneUDiskUDataArkResponse cloneUDiskUDataArk(CloneUDiskUDataArkRequest request)
+    public CloneUDiskUDataArkResponse cloneUDiskUDataArk(CloneUDiskUDataArkRequest request)
             throws UCloudException;
 
     /**
@@ -99,7 +99,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateAttachUDiskResponse createAttachUDisk(CreateAttachUDiskRequest request)
+    public CreateAttachUDiskResponse createAttachUDisk(CreateAttachUDiskRequest request)
             throws UCloudException;
 
     /**
@@ -108,7 +108,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDiskResponse createUDisk(CreateUDiskRequest request) throws UCloudException;
+    public CreateUDiskResponse createUDisk(CreateUDiskRequest request) throws UCloudException;
 
     /**
      * CreateUDiskSnapshot - 创建快照
@@ -116,7 +116,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDiskSnapshotResponse createUDiskSnapshot(CreateUDiskSnapshotRequest request)
+    public CreateUDiskSnapshotResponse createUDiskSnapshot(CreateUDiskSnapshotRequest request)
             throws UCloudException;
 
     /**
@@ -125,7 +125,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUDiskResponse deleteUDisk(DeleteUDiskRequest request) throws UCloudException;
+    public DeleteUDiskResponse deleteUDisk(DeleteUDiskRequest request) throws UCloudException;
 
     /**
      * DeleteUDiskSnapshot - 删除快照
@@ -133,7 +133,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUDiskSnapshotResponse deleteUDiskSnapshot(DeleteUDiskSnapshotRequest request)
+    public DeleteUDiskSnapshotResponse deleteUDiskSnapshot(DeleteUDiskSnapshotRequest request)
             throws UCloudException;
 
     /**
@@ -142,7 +142,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeRecycleUDiskResponse describeRecycleUDisk(DescribeRecycleUDiskRequest request)
+    public DescribeRecycleUDiskResponse describeRecycleUDisk(DescribeRecycleUDiskRequest request)
             throws UCloudException;
 
     /**
@@ -151,7 +151,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDiskResponse describeUDisk(DescribeUDiskRequest request) throws UCloudException;
+    public DescribeUDiskResponse describeUDisk(DescribeUDiskRequest request) throws UCloudException;
 
     /**
      * DescribeUDiskPrice - 获取云硬盘价格
@@ -159,7 +159,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDiskPriceResponse describeUDiskPrice(DescribeUDiskPriceRequest request)
+    public DescribeUDiskPriceResponse describeUDiskPrice(DescribeUDiskPriceRequest request)
             throws UCloudException;
 
     /**
@@ -168,7 +168,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDiskSnapshotResponse describeUDiskSnapshot(DescribeUDiskSnapshotRequest request)
+    public DescribeUDiskSnapshotResponse describeUDiskSnapshot(DescribeUDiskSnapshotRequest request)
             throws UCloudException;
 
     /**
@@ -177,7 +177,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDiskUpgradePriceResponse describeUDiskUpgradePrice(
+    public DescribeUDiskUpgradePriceResponse describeUDiskUpgradePrice(
             DescribeUDiskUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -186,7 +186,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DetachUDiskResponse detachUDisk(DetachUDiskRequest request) throws UCloudException;
+    public DetachUDiskResponse detachUDisk(DetachUDiskRequest request) throws UCloudException;
 
     /**
      * RecoverUDisk - 【已废弃】恢复云硬盘
@@ -194,7 +194,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RecoverUDiskResponse recoverUDisk(RecoverUDiskRequest request) throws UCloudException;
+    public RecoverUDiskResponse recoverUDisk(RecoverUDiskRequest request) throws UCloudException;
 
     /**
      * RenameUDisk - 重命名云硬盘
@@ -202,7 +202,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RenameUDiskResponse renameUDisk(RenameUDiskRequest request) throws UCloudException;
+    public RenameUDiskResponse renameUDisk(RenameUDiskRequest request) throws UCloudException;
 
     /**
      * ResizeUDisk - 调整云硬盘
@@ -210,7 +210,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeUDiskResponse resizeUDisk(ResizeUDiskRequest request) throws UCloudException;
+    public ResizeUDiskResponse resizeUDisk(ResizeUDiskRequest request) throws UCloudException;
 
     /**
      * RestoreUDisk - 从备份恢复数据至UDisk
@@ -218,7 +218,7 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestoreUDiskResponse restoreUDisk(RestoreUDiskRequest request) throws UCloudException;
+    public RestoreUDiskResponse restoreUDisk(RestoreUDiskRequest request) throws UCloudException;
 
     /**
      * SetUDiskUDataArkMode - 设置UDisk数据方舟的状态
@@ -226,6 +226,6 @@ public interface UDiskClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    SetUDiskUDataArkModeResponse setUDiskUDataArkMode(SetUDiskUDataArkModeRequest request)
+    public SetUDiskUDataArkModeResponse setUDiskUDataArkMode(SetUDiskUDataArkModeRequest request)
             throws UCloudException;
 }

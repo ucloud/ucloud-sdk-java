@@ -43,8 +43,8 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AddUFSVolumeMountPointResponse addUFSVolumeMountPoint(AddUFSVolumeMountPointRequest request)
-            throws UCloudException;
+    public AddUFSVolumeMountPointResponse addUFSVolumeMountPoint(
+            AddUFSVolumeMountPointRequest request) throws UCloudException;
 
     /**
      * CreateUFSVolume - 创建文件系统
@@ -52,7 +52,8 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUFSVolumeResponse createUFSVolume(CreateUFSVolumeRequest request) throws UCloudException;
+    public CreateUFSVolumeResponse createUFSVolume(CreateUFSVolumeRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUFSVolume2 - 获取文件系统列表
@@ -60,7 +61,7 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUFSVolume2Response describeUFSVolume2(DescribeUFSVolume2Request request)
+    public DescribeUFSVolume2Response describeUFSVolume2(DescribeUFSVolume2Request request)
             throws UCloudException;
 
     /**
@@ -69,7 +70,7 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUFSVolumeMountpointResponse describeUFSVolumeMountpoint(
+    public DescribeUFSVolumeMountpointResponse describeUFSVolumeMountpoint(
             DescribeUFSVolumeMountpointRequest request) throws UCloudException;
 
     /**
@@ -78,8 +79,8 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUFSVolumePriceResponse describeUFSVolumePrice(DescribeUFSVolumePriceRequest request)
-            throws UCloudException;
+    public DescribeUFSVolumePriceResponse describeUFSVolumePrice(
+            DescribeUFSVolumePriceRequest request) throws UCloudException;
 
     /**
      * ExtendUFSVolume - 文件系统扩容
@@ -87,7 +88,8 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ExtendUFSVolumeResponse extendUFSVolume(ExtendUFSVolumeRequest request) throws UCloudException;
+    public ExtendUFSVolumeResponse extendUFSVolume(ExtendUFSVolumeRequest request)
+            throws UCloudException;
 
     /**
      * RemoveUFSVolume - 删除文件系统
@@ -95,7 +97,8 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RemoveUFSVolumeResponse removeUFSVolume(RemoveUFSVolumeRequest request) throws UCloudException;
+    public RemoveUFSVolumeResponse removeUFSVolume(RemoveUFSVolumeRequest request)
+            throws UCloudException;
 
     /**
      * RemoveUFSVolumeMountPoint - 删除文件系统挂载点
@@ -103,7 +106,7 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RemoveUFSVolumeMountPointResponse removeUFSVolumeMountPoint(
+    public RemoveUFSVolumeMountPointResponse removeUFSVolumeMountPoint(
             RemoveUFSVolumeMountPointRequest request) throws UCloudException;
 
     /**
@@ -112,6 +115,6 @@ public interface UFSClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateUFSVolumeInfoResponse updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest request)
+    public UpdateUFSVolumeInfoResponse updateUFSVolumeInfo(UpdateUFSVolumeInfoRequest request)
             throws UCloudException;
 }

@@ -33,7 +33,7 @@ public interface UBillClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetBalanceResponse getBalance(GetBalanceRequest request) throws UCloudException;
+    public GetBalanceResponse getBalance(GetBalanceRequest request) throws UCloudException;
 
     /**
      * GetBillDataFileUrl - 生成账单数据文件下载的 url
@@ -41,7 +41,7 @@ public interface UBillClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetBillDataFileUrlResponse getBillDataFileUrl(GetBillDataFileUrlRequest request)
+    public GetBillDataFileUrlResponse getBillDataFileUrl(GetBillDataFileUrlRequest request)
             throws UCloudException;
 
     /**
@@ -50,7 +50,8 @@ public interface UBillClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ListUBillDetailResponse listUBillDetail(ListUBillDetailRequest request) throws UCloudException;
+    public ListUBillDetailResponse listUBillDetail(ListUBillDetailRequest request)
+            throws UCloudException;
 
     /**
      * ListUBillOverview - 获取账单总览
@@ -58,6 +59,6 @@ public interface UBillClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ListUBillOverviewResponse listUBillOverview(ListUBillOverviewRequest request)
+    public ListUBillOverviewResponse listUBillOverview(ListUBillOverviewRequest request)
             throws UCloudException;
 }

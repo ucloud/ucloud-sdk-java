@@ -65,7 +65,8 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    AllocateBackendResponse allocateBackend(AllocateBackendRequest request) throws UCloudException;
+    public AllocateBackendResponse allocateBackend(AllocateBackendRequest request)
+            throws UCloudException;
 
     /**
      * BindSSL - 绑定SSL证书
@@ -73,7 +74,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
+    public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
 
     /**
      * CreatePolicy - 创建转发策略
@@ -81,7 +82,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException;
+    public CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException;
 
     /**
      * CreateSSL - 创建SSL证书
@@ -89,7 +90,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateSSLResponse createSSL(CreateSSLRequest request) throws UCloudException;
+    public CreateSSLResponse createSSL(CreateSSLRequest request) throws UCloudException;
 
     /**
      * CreateULB - 创建负载均衡
@@ -97,7 +98,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateULBResponse createULB(CreateULBRequest request) throws UCloudException;
+    public CreateULBResponse createULB(CreateULBRequest request) throws UCloudException;
 
     /**
      * CreateVServer - 创建VServer
@@ -105,7 +106,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateVServerResponse createVServer(CreateVServerRequest request) throws UCloudException;
+    public CreateVServerResponse createVServer(CreateVServerRequest request) throws UCloudException;
 
     /**
      * DeletePolicy - 删除转发策略
@@ -113,7 +114,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException;
+    public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException;
 
     /**
      * DeleteSSL - 删除SSL证书
@@ -121,7 +122,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteSSLResponse deleteSSL(DeleteSSLRequest request) throws UCloudException;
+    public DeleteSSLResponse deleteSSL(DeleteSSLRequest request) throws UCloudException;
 
     /**
      * DeleteULB - 删除负载均衡
@@ -129,7 +130,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteULBResponse deleteULB(DeleteULBRequest request) throws UCloudException;
+    public DeleteULBResponse deleteULB(DeleteULBRequest request) throws UCloudException;
 
     /**
      * DeleteVServer - 删除VServer
@@ -137,7 +138,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteVServerResponse deleteVServer(DeleteVServerRequest request) throws UCloudException;
+    public DeleteVServerResponse deleteVServer(DeleteVServerRequest request) throws UCloudException;
 
     /**
      * DescribeSSL - 获取SSL证书信息
@@ -145,7 +146,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException;
+    public DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException;
 
     /**
      * DescribeULB - 获取负载均衡信息
@@ -153,7 +154,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeULBResponse describeULB(DescribeULBRequest request) throws UCloudException;
+    public DescribeULBResponse describeULB(DescribeULBRequest request) throws UCloudException;
 
     /**
      * DescribeULBSimple - 获取负载均衡信息
@@ -161,7 +162,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeULBSimpleResponse describeULBSimple(DescribeULBSimpleRequest request)
+    public DescribeULBSimpleResponse describeULBSimple(DescribeULBSimpleRequest request)
             throws UCloudException;
 
     /**
@@ -170,7 +171,8 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeVServerResponse describeVServer(DescribeVServerRequest request) throws UCloudException;
+    public DescribeVServerResponse describeVServer(DescribeVServerRequest request)
+            throws UCloudException;
 
     /**
      * ReleaseBackend - 释放后端实例
@@ -178,7 +180,8 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReleaseBackendResponse releaseBackend(ReleaseBackendRequest request) throws UCloudException;
+    public ReleaseBackendResponse releaseBackend(ReleaseBackendRequest request)
+            throws UCloudException;
 
     /**
      * UnbindSSL - 解绑SSL证书
@@ -186,7 +189,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UnbindSSLResponse unbindSSL(UnbindSSLRequest request) throws UCloudException;
+    public UnbindSSLResponse unbindSSL(UnbindSSLRequest request) throws UCloudException;
 
     /**
      * UpdateBackendAttribute - 更新后端实例属性
@@ -194,8 +197,8 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateBackendAttributeResponse updateBackendAttribute(UpdateBackendAttributeRequest request)
-            throws UCloudException;
+    public UpdateBackendAttributeResponse updateBackendAttribute(
+            UpdateBackendAttributeRequest request) throws UCloudException;
 
     /**
      * UpdatePolicy - 更新内容转发规则
@@ -203,7 +206,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
+    public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
 
     /**
      * UpdateULBAttribute - 更新负载均衡属性
@@ -211,7 +214,7 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateULBAttributeResponse updateULBAttribute(UpdateULBAttributeRequest request)
+    public UpdateULBAttributeResponse updateULBAttribute(UpdateULBAttributeRequest request)
             throws UCloudException;
 
     /**
@@ -220,6 +223,6 @@ public interface ULBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpdateVServerAttributeResponse updateVServerAttribute(UpdateVServerAttributeRequest request)
-            throws UCloudException;
+    public UpdateVServerAttributeResponse updateVServerAttribute(
+            UpdateVServerAttributeRequest request) throws UCloudException;
 }

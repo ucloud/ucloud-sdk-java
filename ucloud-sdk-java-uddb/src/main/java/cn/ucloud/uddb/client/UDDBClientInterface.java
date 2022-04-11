@@ -49,8 +49,8 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ChangeUDDBInstanceNameResponse changeUDDBInstanceName(ChangeUDDBInstanceNameRequest request)
-            throws UCloudException;
+    public ChangeUDDBInstanceNameResponse changeUDDBInstanceName(
+            ChangeUDDBInstanceNameRequest request) throws UCloudException;
 
     /**
      * ChangeUDDBSlaveCount - 改变分布式数据库数据节点的只读实例个数
@@ -58,7 +58,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ChangeUDDBSlaveCountResponse changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest request)
+    public ChangeUDDBSlaveCountResponse changeUDDBSlaveCount(ChangeUDDBSlaveCountRequest request)
             throws UCloudException;
 
     /**
@@ -67,7 +67,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUDDBInstanceResponse createUDDBInstance(CreateUDDBInstanceRequest request)
+    public CreateUDDBInstanceResponse createUDDBInstance(CreateUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -76,7 +76,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUDDBInstanceResponse deleteUDDBInstance(DeleteUDDBInstanceRequest request)
+    public DeleteUDDBInstanceResponse deleteUDDBInstance(DeleteUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -85,7 +85,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDDBInstanceResponse describeUDDBInstance(DescribeUDDBInstanceRequest request)
+    public DescribeUDDBInstanceResponse describeUDDBInstance(DescribeUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -94,7 +94,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDDBInstancePriceResponse describeUDDBInstancePrice(
+    public DescribeUDDBInstancePriceResponse describeUDDBInstancePrice(
             DescribeUDDBInstancePriceRequest request) throws UCloudException;
 
     /**
@@ -103,7 +103,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUDDBInstanceUpgradePriceResponse describeUDDBInstanceUpgradePrice(
+    public DescribeUDDBInstanceUpgradePriceResponse describeUDDBInstanceUpgradePrice(
             DescribeUDDBInstanceUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -112,7 +112,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RestartUDDBInstanceResponse restartUDDBInstance(RestartUDDBInstanceRequest request)
+    public RestartUDDBInstanceResponse restartUDDBInstance(RestartUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -121,7 +121,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StartUDDBInstanceResponse startUDDBInstance(StartUDDBInstanceRequest request)
+    public StartUDDBInstanceResponse startUDDBInstance(StartUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -130,7 +130,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StopUDDBInstanceResponse stopUDDBInstance(StopUDDBInstanceRequest request)
+    public StopUDDBInstanceResponse stopUDDBInstance(StopUDDBInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -139,7 +139,7 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpgradeUDDBDataNodeResponse upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest request)
+    public UpgradeUDDBDataNodeResponse upgradeUDDBDataNode(UpgradeUDDBDataNodeRequest request)
             throws UCloudException;
 
     /**
@@ -148,6 +148,6 @@ public interface UDDBClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpgradeUDDBInstanceResponse upgradeUDDBInstance(UpgradeUDDBInstanceRequest request)
+    public UpgradeUDDBInstanceResponse upgradeUDDBInstance(UpgradeUDDBInstanceRequest request)
             throws UCloudException;
 }

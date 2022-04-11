@@ -93,7 +93,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CopyCustomImageResponse copyCustomImage(CopyCustomImageRequest request) throws UCloudException;
+    public CopyCustomImageResponse copyCustomImage(CopyCustomImageRequest request)
+            throws UCloudException;
 
     /**
      * CreateCustomImage - 创建自制镜像
@@ -101,7 +102,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateCustomImageResponse createCustomImage(CreateCustomImageRequest request)
+    public CreateCustomImageResponse createCustomImage(CreateCustomImageRequest request)
             throws UCloudException;
 
     /**
@@ -110,7 +111,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateIsolationGroupResponse createIsolationGroup(CreateIsolationGroupRequest request)
+    public CreateIsolationGroupResponse createIsolationGroup(CreateIsolationGroupRequest request)
             throws UCloudException;
 
     /**
@@ -119,7 +120,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUHostInstanceResponse createUHostInstance(CreateUHostInstanceRequest request)
+    public CreateUHostInstanceResponse createUHostInstance(CreateUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -128,7 +129,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    CreateUHostKeyPairResponse createUHostKeyPair(CreateUHostKeyPairRequest request)
+    public CreateUHostKeyPairResponse createUHostKeyPair(CreateUHostKeyPairRequest request)
             throws UCloudException;
 
     /**
@@ -137,7 +138,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteIsolationGroupResponse deleteIsolationGroup(DeleteIsolationGroupRequest request)
+    public DeleteIsolationGroupResponse deleteIsolationGroup(DeleteIsolationGroupRequest request)
             throws UCloudException;
 
     /**
@@ -146,7 +147,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DeleteUHostKeyPairsResponse deleteUHostKeyPairs(DeleteUHostKeyPairsRequest request)
+    public DeleteUHostKeyPairsResponse deleteUHostKeyPairs(DeleteUHostKeyPairsRequest request)
             throws UCloudException;
 
     /**
@@ -155,7 +156,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeImageResponse describeImage(DescribeImageRequest request) throws UCloudException;
+    public DescribeImageResponse describeImage(DescribeImageRequest request) throws UCloudException;
 
     /**
      * DescribeIsolationGroup - 查询硬件隔离组
@@ -163,8 +164,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeIsolationGroupResponse describeIsolationGroup(DescribeIsolationGroupRequest request)
-            throws UCloudException;
+    public DescribeIsolationGroupResponse describeIsolationGroup(
+            DescribeIsolationGroupRequest request) throws UCloudException;
 
     /**
      * DescribeUHostInstance - 获取主机信息
@@ -172,7 +173,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUHostInstanceResponse describeUHostInstance(DescribeUHostInstanceRequest request)
+    public DescribeUHostInstanceResponse describeUHostInstance(DescribeUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -181,7 +182,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUHostKeyPairsResponse describeUHostKeyPairs(DescribeUHostKeyPairsRequest request)
+    public DescribeUHostKeyPairsResponse describeUHostKeyPairs(DescribeUHostKeyPairsRequest request)
             throws UCloudException;
 
     /**
@@ -190,7 +191,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    DescribeUHostTagsResponse describeUHostTags(DescribeUHostTagsRequest request)
+    public DescribeUHostTagsResponse describeUHostTags(DescribeUHostTagsRequest request)
             throws UCloudException;
 
     /**
@@ -199,7 +200,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetAttachedDiskUpgradePriceResponse getAttachedDiskUpgradePrice(
+    public GetAttachedDiskUpgradePriceResponse getAttachedDiskUpgradePrice(
             GetAttachedDiskUpgradePriceRequest request) throws UCloudException;
 
     /**
@@ -208,7 +209,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUHostInstancePriceResponse getUHostInstancePrice(GetUHostInstancePriceRequest request)
+    public GetUHostInstancePriceResponse getUHostInstancePrice(GetUHostInstancePriceRequest request)
             throws UCloudException;
 
     /**
@@ -217,8 +218,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(GetUHostInstanceVncInfoRequest request)
-            throws UCloudException;
+    public GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(
+            GetUHostInstanceVncInfoRequest request) throws UCloudException;
 
     /**
      * GetUHostUpgradePrice - 获取主机规格调整差价
@@ -226,7 +227,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    GetUHostUpgradePriceResponse getUHostUpgradePrice(GetUHostUpgradePriceRequest request)
+    public GetUHostUpgradePriceResponse getUHostUpgradePrice(GetUHostUpgradePriceRequest request)
             throws UCloudException;
 
     /**
@@ -235,7 +236,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ImportCustomImageResponse importCustomImage(ImportCustomImageRequest request)
+    public ImportCustomImageResponse importCustomImage(ImportCustomImageRequest request)
             throws UCloudException;
 
     /**
@@ -244,7 +245,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ImportUHostKeyPairsResponse importUHostKeyPairs(ImportUHostKeyPairsRequest request)
+    public ImportUHostKeyPairsResponse importUHostKeyPairs(ImportUHostKeyPairsRequest request)
             throws UCloudException;
 
     /**
@@ -253,7 +254,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    LeaveIsolationGroupResponse leaveIsolationGroup(LeaveIsolationGroupRequest request)
+    public LeaveIsolationGroupResponse leaveIsolationGroup(LeaveIsolationGroupRequest request)
             throws UCloudException;
 
     /**
@@ -262,7 +263,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUHostIPResponse modifyUHostIP(ModifyUHostIPRequest request) throws UCloudException;
+    public ModifyUHostIPResponse modifyUHostIP(ModifyUHostIPRequest request) throws UCloudException;
 
     /**
      * ModifyUHostInstanceName - 修改主机名
@@ -270,8 +271,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUHostInstanceNameResponse modifyUHostInstanceName(ModifyUHostInstanceNameRequest request)
-            throws UCloudException;
+    public ModifyUHostInstanceNameResponse modifyUHostInstanceName(
+            ModifyUHostInstanceNameRequest request) throws UCloudException;
 
     /**
      * ModifyUHostInstanceRemark - 修改主机备注
@@ -279,7 +280,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUHostInstanceRemarkResponse modifyUHostInstanceRemark(
+    public ModifyUHostInstanceRemarkResponse modifyUHostInstanceRemark(
             ModifyUHostInstanceRemarkRequest request) throws UCloudException;
 
     /**
@@ -288,8 +289,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ModifyUHostInstanceTagResponse modifyUHostInstanceTag(ModifyUHostInstanceTagRequest request)
-            throws UCloudException;
+    public ModifyUHostInstanceTagResponse modifyUHostInstanceTag(
+            ModifyUHostInstanceTagRequest request) throws UCloudException;
 
     /**
      * PoweroffUHostInstance - 模拟主机掉电
@@ -297,7 +298,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    PoweroffUHostInstanceResponse poweroffUHostInstance(PoweroffUHostInstanceRequest request)
+    public PoweroffUHostInstanceResponse poweroffUHostInstance(PoweroffUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -306,7 +307,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    RebootUHostInstanceResponse rebootUHostInstance(RebootUHostInstanceRequest request)
+    public RebootUHostInstanceResponse rebootUHostInstance(RebootUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -315,8 +316,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ReinstallUHostInstanceResponse reinstallUHostInstance(ReinstallUHostInstanceRequest request)
-            throws UCloudException;
+    public ReinstallUHostInstanceResponse reinstallUHostInstance(
+            ReinstallUHostInstanceRequest request) throws UCloudException;
 
     /**
      * ResetUHostInstancePassword - 重置主机密码
@@ -324,7 +325,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResetUHostInstancePasswordResponse resetUHostInstancePassword(
+    public ResetUHostInstancePasswordResponse resetUHostInstancePassword(
             ResetUHostInstancePasswordRequest request) throws UCloudException;
 
     /**
@@ -333,7 +334,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeAttachedDiskResponse resizeAttachedDisk(ResizeAttachedDiskRequest request)
+    public ResizeAttachedDiskResponse resizeAttachedDisk(ResizeAttachedDiskRequest request)
             throws UCloudException;
 
     /**
@@ -342,7 +343,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    ResizeUHostInstanceResponse resizeUHostInstance(ResizeUHostInstanceRequest request)
+    public ResizeUHostInstanceResponse resizeUHostInstance(ResizeUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -351,7 +352,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StartUHostInstanceResponse startUHostInstance(StartUHostInstanceRequest request)
+    public StartUHostInstanceResponse startUHostInstance(StartUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -360,7 +361,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    StopUHostInstanceResponse stopUHostInstance(StopUHostInstanceRequest request)
+    public StopUHostInstanceResponse stopUHostInstance(StopUHostInstanceRequest request)
             throws UCloudException;
 
     /**
@@ -369,7 +370,7 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    TerminateCustomImageResponse terminateCustomImage(TerminateCustomImageRequest request)
+    public TerminateCustomImageResponse terminateCustomImage(TerminateCustomImageRequest request)
             throws UCloudException;
 
     /**
@@ -378,8 +379,8 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    TerminateUHostInstanceResponse terminateUHostInstance(TerminateUHostInstanceRequest request)
-            throws UCloudException;
+    public TerminateUHostInstanceResponse terminateUHostInstance(
+            TerminateUHostInstanceRequest request) throws UCloudException;
 
     /**
      * UpgradeToArkUHostInstance - 普通升级为方舟机型
@@ -387,6 +388,6 @@ public interface UHostClientInterface extends Client {
      * @param request Request object
      * @throws UCloudException Exception
      */
-    UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
+    public UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
             UpgradeToArkUHostInstanceRequest request) throws UCloudException;
 }
