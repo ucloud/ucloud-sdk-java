@@ -14,7 +14,9 @@
 package cn.ucloud.ipsecvpn.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeVPNGatewayResponse extends Response {

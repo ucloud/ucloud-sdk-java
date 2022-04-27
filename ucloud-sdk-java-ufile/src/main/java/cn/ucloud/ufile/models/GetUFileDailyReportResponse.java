@@ -14,7 +14,9 @@
 package cn.ucloud.ufile.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetUFileDailyReportResponse extends Response {
@@ -55,6 +57,69 @@ public class GetUFileDailyReportResponse extends Response {
 
         public void setDaily(List<UFileDailyReportItem> daily) {
             this.daily = daily;
+        }
+    }
+
+    public static class UFileTotalReportItem extends Response {
+
+        /** 下载流量：单位byte；国内无此字段 */
+        @SerializedName("Flow")
+        private Double flow;
+
+        /** 闲时流量；单位byte；海外无此字段 */
+        @SerializedName("IdleFlow")
+        private Double idleFlow;
+
+        /** 忙时流量；单位byte；海外无此字段 */
+        @SerializedName("BusyFlow")
+        private Double busyFlow;
+
+        /** cdn回源流量;单位byte */
+        @SerializedName("CdnFlow")
+        private Double cdnFlow;
+
+        /** API请求次数（万次） */
+        @SerializedName("ApiTimes")
+        private Double apiTimes;
+
+        public Double getFlow() {
+            return flow;
+        }
+
+        public void setFlow(Double flow) {
+            this.flow = flow;
+        }
+
+        public Double getIdleFlow() {
+            return idleFlow;
+        }
+
+        public void setIdleFlow(Double idleFlow) {
+            this.idleFlow = idleFlow;
+        }
+
+        public Double getBusyFlow() {
+            return busyFlow;
+        }
+
+        public void setBusyFlow(Double busyFlow) {
+            this.busyFlow = busyFlow;
+        }
+
+        public Double getCdnFlow() {
+            return cdnFlow;
+        }
+
+        public void setCdnFlow(Double cdnFlow) {
+            this.cdnFlow = cdnFlow;
+        }
+
+        public Double getApiTimes() {
+            return apiTimes;
+        }
+
+        public void setApiTimes(Double apiTimes) {
+            this.apiTimes = apiTimes;
         }
     }
 
@@ -182,69 +247,6 @@ public class GetUFileDailyReportResponse extends Response {
 
         public void setDate(Integer date) {
             this.date = date;
-        }
-
-        public Double getApiTimes() {
-            return apiTimes;
-        }
-
-        public void setApiTimes(Double apiTimes) {
-            this.apiTimes = apiTimes;
-        }
-    }
-
-    public static class UFileTotalReportItem extends Response {
-
-        /** 下载流量：单位byte；国内无此字段 */
-        @SerializedName("Flow")
-        private Double flow;
-
-        /** 闲时流量；单位byte；海外无此字段 */
-        @SerializedName("IdleFlow")
-        private Double idleFlow;
-
-        /** 忙时流量；单位byte；海外无此字段 */
-        @SerializedName("BusyFlow")
-        private Double busyFlow;
-
-        /** cdn回源流量;单位byte */
-        @SerializedName("CdnFlow")
-        private Double cdnFlow;
-
-        /** API请求次数（万次） */
-        @SerializedName("ApiTimes")
-        private Double apiTimes;
-
-        public Double getFlow() {
-            return flow;
-        }
-
-        public void setFlow(Double flow) {
-            this.flow = flow;
-        }
-
-        public Double getIdleFlow() {
-            return idleFlow;
-        }
-
-        public void setIdleFlow(Double idleFlow) {
-            this.idleFlow = idleFlow;
-        }
-
-        public Double getBusyFlow() {
-            return busyFlow;
-        }
-
-        public void setBusyFlow(Double busyFlow) {
-            this.busyFlow = busyFlow;
-        }
-
-        public Double getCdnFlow() {
-            return cdnFlow;
-        }
-
-        public void setCdnFlow(Double cdnFlow) {
-            this.cdnFlow = cdnFlow;
         }
 
         public Double getApiTimes() {

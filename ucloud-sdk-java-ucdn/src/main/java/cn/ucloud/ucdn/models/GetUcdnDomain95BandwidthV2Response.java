@@ -13,7 +13,9 @@
  */
 package cn.ucloud.ucdn.models;
 
+
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
 
 public class GetUcdnDomain95BandwidthV2Response extends Response {

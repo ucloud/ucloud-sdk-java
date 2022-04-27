@@ -16,6 +16,7 @@ package cn.ucloud.uhost.models;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
 import java.util.List;
 
 public class CreateUHostInstanceRequest extends Request {
@@ -456,6 +457,47 @@ public class CreateUHostInstanceRequest extends Request {
         this.couponId = couponId;
     }
 
+    public static class NetworkInterface extends Request {
+
+        /** */
+        @UCloudParam("EIP")
+        private NetworkInterfaceEIP eip;
+
+        /** */
+        @UCloudParam("IPv6")
+        private NetworkInterfaceIPv6 iPv6;
+
+        /** 申请并绑定一个教育网EIP。True为申请并绑定，False为不会申请绑定，默认False。当前只支持具有HPC特性的机型。 */
+        @UCloudParam("CreateCernetIp")
+        private Boolean createCernetIp;
+
+        public NetworkInterfaceEIP getEIP() {
+            return eip;
+        }
+
+        public void setEIP(NetworkInterfaceEIP eip) {
+            this.eip = eip;
+        }
+
+        public NetworkInterfaceIPv6 getIPv6() {
+            return iPv6;
+        }
+
+        public void setIPv6(NetworkInterfaceIPv6 iPv6) {
+            this.iPv6 = iPv6;
+        }
+
+        public Boolean getCreateCernetIp() {
+            return createCernetIp;
+        }
+
+        public void setCreateCernetIp(Boolean createCernetIp) {
+            this.createCernetIp = createCernetIp;
+        }
+    }
+
+    public static class NetworkInterfaceIPv6 extends Request {}
+
     public static class NetworkInterfaceEIP extends Request {
 
         /**
@@ -530,46 +572,22 @@ public class CreateUHostInstanceRequest extends Request {
         }
     }
 
-    public static class NetworkInterface extends Request {
+    public static class Features extends Request {
 
-        /** */
-        @UCloudParam("EIP")
-        private NetworkInterfaceEIP eip;
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
+        @UCloudParam("UNI")
+        private Boolean uni;
 
-        /** */
-        @UCloudParam("IPv6")
-        private NetworkInterfaceIPv6 iPv6;
-
-        /** 申请并绑定一个教育网EIP。True为申请并绑定，False为不会申请绑定，默认False。当前只支持具有HPC特性的机型。 */
-        @UCloudParam("CreateCernetIp")
-        private Boolean createCernetIp;
-
-        public NetworkInterfaceEIP getEIP() {
-            return eip;
+        public Boolean getUNI() {
+            return uni;
         }
 
-        public void setEIP(NetworkInterfaceEIP eip) {
-            this.eip = eip;
-        }
-
-        public NetworkInterfaceIPv6 getIPv6() {
-            return iPv6;
-        }
-
-        public void setIPv6(NetworkInterfaceIPv6 iPv6) {
-            this.iPv6 = iPv6;
-        }
-
-        public Boolean getCreateCernetIp() {
-            return createCernetIp;
-        }
-
-        public void setCreateCernetIp(Boolean createCernetIp) {
-            this.createCernetIp = createCernetIp;
+        public void setUNI(Boolean uni) {
+            this.uni = uni;
         }
     }
 
-    public static class NetworkInterfaceIPv6 extends Request {}
+    public static class Volumes extends Request {}
 
     public static class Disks extends Request {
 
@@ -663,21 +681,4 @@ public class CreateUHostInstanceRequest extends Request {
             this.couponId = couponId;
         }
     }
-
-    public static class Features extends Request {
-
-        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
-        @UCloudParam("UNI")
-        private Boolean uni;
-
-        public Boolean getUNI() {
-            return uni;
-        }
-
-        public void setUNI(Boolean uni) {
-            this.uni = uni;
-        }
-    }
-
-    public static class Volumes extends Request {}
 }

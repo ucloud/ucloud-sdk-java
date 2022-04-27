@@ -51,6 +51,8 @@ import cn.ucloud.ulb.models.UpdateBackendAttributeRequest;
 import cn.ucloud.ulb.models.UpdateBackendAttributeResponse;
 import cn.ucloud.ulb.models.UpdatePolicyRequest;
 import cn.ucloud.ulb.models.UpdatePolicyResponse;
+import cn.ucloud.ulb.models.UpdateSSLAttributeRequest;
+import cn.ucloud.ulb.models.UpdateSSLAttributeResponse;
 import cn.ucloud.ulb.models.UpdateULBAttributeRequest;
 import cn.ucloud.ulb.models.UpdateULBAttributeResponse;
 import cn.ucloud.ulb.models.UpdateVServerAttributeRequest;
@@ -207,6 +209,15 @@ public interface ULBClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
+
+    /**
+     * UpdateSSLAttribute - 更新SSL属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateSSLAttributeResponse updateSSLAttribute(UpdateSSLAttributeRequest request)
+            throws UCloudException;
 
     /**
      * UpdateULBAttribute - 更新负载均衡属性

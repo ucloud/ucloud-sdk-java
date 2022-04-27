@@ -14,7 +14,9 @@
 package cn.ucloud.uaccount.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetProjectListResponse extends Response {

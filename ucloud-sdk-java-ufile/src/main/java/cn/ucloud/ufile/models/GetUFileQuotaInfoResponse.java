@@ -14,7 +14,9 @@
 package cn.ucloud.ufile.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetUFileQuotaInfoResponse extends Response {
@@ -29,6 +31,21 @@ public class GetUFileQuotaInfoResponse extends Response {
 
     public void setDataSet(List<UFileQuotaDataSetItem> dataSet) {
         this.dataSet = dataSet;
+    }
+
+    public static class UFileQuotaLeft extends Response {
+
+        /** 配额剩余量 */
+        @SerializedName("Left")
+        private Double left;
+
+        public Double getLeft() {
+            return left;
+        }
+
+        public void setLeft(Double left) {
+            this.left = left;
+        }
     }
 
     public static class UFileQuotaDataSetItem extends Response {
@@ -91,21 +108,6 @@ public class GetUFileQuotaInfoResponse extends Response {
 
         public void setRequestCnt(UFileQuotaLeft requestCnt) {
             this.requestCnt = requestCnt;
-        }
-    }
-
-    public static class UFileQuotaLeft extends Response {
-
-        /** 配额剩余量 */
-        @SerializedName("Left")
-        private Double left;
-
-        public Double getLeft() {
-            return left;
-        }
-
-        public void setLeft(Double left) {
-            this.left = left;
         }
     }
 }

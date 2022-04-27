@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.common.request.Request;
+
 import org.junit.Assert;
 import org.junit.Test;
 

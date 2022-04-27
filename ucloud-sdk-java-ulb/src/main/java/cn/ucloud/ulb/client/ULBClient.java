@@ -53,6 +53,8 @@ import cn.ucloud.ulb.models.UpdateBackendAttributeRequest;
 import cn.ucloud.ulb.models.UpdateBackendAttributeResponse;
 import cn.ucloud.ulb.models.UpdatePolicyRequest;
 import cn.ucloud.ulb.models.UpdatePolicyResponse;
+import cn.ucloud.ulb.models.UpdateSSLAttributeRequest;
+import cn.ucloud.ulb.models.UpdateSSLAttributeResponse;
 import cn.ucloud.ulb.models.UpdateULBAttributeRequest;
 import cn.ucloud.ulb.models.UpdateULBAttributeResponse;
 import cn.ucloud.ulb.models.UpdateVServerAttributeRequest;
@@ -268,6 +270,18 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException {
         request.setAction("UpdatePolicy");
         return (UpdatePolicyResponse) this.invoke(request, UpdatePolicyResponse.class);
+    }
+
+    /**
+     * UpdateSSLAttribute - 更新SSL属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateSSLAttributeResponse updateSSLAttribute(UpdateSSLAttributeRequest request)
+            throws UCloudException {
+        request.setAction("UpdateSSLAttribute");
+        return (UpdateSSLAttributeResponse) this.invoke(request, UpdateSSLAttributeResponse.class);
     }
 
     /**

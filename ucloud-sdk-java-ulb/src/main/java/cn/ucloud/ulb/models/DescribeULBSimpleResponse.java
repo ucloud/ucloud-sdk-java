@@ -14,7 +14,9 @@
 package cn.ucloud.ulb.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeULBSimpleResponse extends Response {
@@ -130,45 +132,6 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setBandwidth(Integer bandwidth) {
             this.bandwidth = bandwidth;
-        }
-    }
-
-    public static class LoggerSet extends Response {
-
-        /** ulb日志上传的bucket */
-        @SerializedName("BucketName")
-        private String bucketName;
-
-        /** 上传到bucket使用的token的tokenid */
-        @SerializedName("TokenID")
-        private String tokenID;
-
-        /** bucket的token名称 */
-        @SerializedName("TokenName")
-        private String tokenName;
-
-        public String getBucketName() {
-            return bucketName;
-        }
-
-        public void setBucketName(String bucketName) {
-            this.bucketName = bucketName;
-        }
-
-        public String getTokenID() {
-            return tokenID;
-        }
-
-        public void setTokenID(String tokenID) {
-            this.tokenID = tokenID;
-        }
-
-        public String getTokenName() {
-            return tokenName;
-        }
-
-        public void setTokenName(String tokenName) {
-            this.tokenName = tokenName;
         }
     }
 
@@ -400,6 +363,45 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setLogSet(LoggerSet logSet) {
             this.logSet = logSet;
+        }
+    }
+
+    public static class LoggerSet extends Response {
+
+        /** ulb日志上传的bucket */
+        @SerializedName("BucketName")
+        private String bucketName;
+
+        /** 上传到bucket使用的token的tokenid */
+        @SerializedName("TokenID")
+        private String tokenID;
+
+        /** bucket的token名称 */
+        @SerializedName("TokenName")
+        private String tokenName;
+
+        public String getBucketName() {
+            return bucketName;
+        }
+
+        public void setBucketName(String bucketName) {
+            this.bucketName = bucketName;
+        }
+
+        public String getTokenID() {
+            return tokenID;
+        }
+
+        public void setTokenID(String tokenID) {
+            this.tokenID = tokenID;
+        }
+
+        public String getTokenName() {
+            return tokenName;
+        }
+
+        public void setTokenName(String tokenName) {
+            this.tokenName = tokenName;
         }
     }
 }

@@ -14,7 +14,9 @@
 package cn.ucloud.uec.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetUEcVHostDataResponse extends Response {
@@ -29,33 +31,6 @@ public class GetUEcVHostDataResponse extends Response {
 
     public void setDataSets(DataSet dataSets) {
         this.dataSets = dataSets;
-    }
-
-    public static class MonitorInfo extends Response {
-
-        /** 时间戳 */
-        @SerializedName("TimeStamp")
-        private Integer timeStamp;
-
-        /** 值 */
-        @SerializedName("Value")
-        private Integer value;
-
-        public Integer getTimeStamp() {
-            return timeStamp;
-        }
-
-        public void setTimeStamp(Integer timeStamp) {
-            this.timeStamp = timeStamp;
-        }
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
     }
 
     public static class DataSet extends Response {
@@ -178,6 +153,33 @@ public class GetUEcVHostDataResponse extends Response {
 
         public void setDiskWriteOps(List<MonitorInfo> diskWriteOps) {
             this.diskWriteOps = diskWriteOps;
+        }
+    }
+
+    public static class MonitorInfo extends Response {
+
+        /** 时间戳 */
+        @SerializedName("TimeStamp")
+        private Integer timeStamp;
+
+        /** 值 */
+        @SerializedName("Value")
+        private Integer value;
+
+        public Integer getTimeStamp() {
+            return timeStamp;
+        }
+
+        public void setTimeStamp(Integer timeStamp) {
+            this.timeStamp = timeStamp;
+        }
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
         }
     }
 }

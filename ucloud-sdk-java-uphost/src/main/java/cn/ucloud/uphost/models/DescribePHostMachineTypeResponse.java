@@ -14,7 +14,9 @@
 package cn.ucloud.uphost.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribePHostMachineTypeResponse extends Response {
@@ -55,6 +57,33 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setStockStatus(String stockStatus) {
             this.stockStatus = stockStatus;
+        }
+    }
+
+    public static class PHostComponentSet extends Response {
+
+        /** 组件名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 组件数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
         }
     }
 
@@ -142,33 +171,6 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setRaidSupported(String raidSupported) {
             this.raidSupported = raidSupported;
-        }
-    }
-
-    public static class PHostComponentSet extends Response {
-
-        /** 组件名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 组件数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
         }
     }
 

@@ -14,7 +14,9 @@
 package cn.ucloud.ucdn.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetNewUcdnLogUrlStatisticsResponse extends Response {
@@ -29,6 +31,33 @@ public class GetNewUcdnLogUrlStatisticsResponse extends Response {
 
     public void setUrlStatisticsList(List<UrlStatistics> urlStatisticsList) {
         this.urlStatisticsList = urlStatisticsList;
+    }
+
+    public static class UrlStatistics extends Response {
+
+        /** */
+        @SerializedName("UrlList")
+        private List<DownloadStatisticInfo> urlList;
+
+        /** 日期 */
+        @SerializedName("Date")
+        private String date;
+
+        public List<DownloadStatisticInfo> getUrlList() {
+            return urlList;
+        }
+
+        public void setUrlList(List<DownloadStatisticInfo> urlList) {
+            this.urlList = urlList;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
     }
 
     public static class DownloadStatisticInfo extends Response {
@@ -79,33 +108,6 @@ public class GetNewUcdnLogUrlStatisticsResponse extends Response {
 
         public void setPercent(Double percent) {
             this.percent = percent;
-        }
-    }
-
-    public static class UrlStatistics extends Response {
-
-        /** */
-        @SerializedName("UrlList")
-        private List<DownloadStatisticInfo> urlList;
-
-        /** 日期 */
-        @SerializedName("Date")
-        private String date;
-
-        public List<DownloadStatisticInfo> getUrlList() {
-            return urlList;
-        }
-
-        public void setUrlList(List<DownloadStatisticInfo> urlList) {
-            this.urlList = urlList;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
         }
     }
 }

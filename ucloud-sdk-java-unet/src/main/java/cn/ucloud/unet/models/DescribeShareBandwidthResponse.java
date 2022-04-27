@@ -14,7 +14,9 @@
 package cn.ucloud.unet.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeShareBandwidthResponse extends Response {
@@ -41,33 +43,6 @@ public class DescribeShareBandwidthResponse extends Response {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
-    }
-
-    public static class EIPAddrSet extends Response {
-
-        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际. */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** 弹性IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
     }
 
     public static class UnetShareBandwidthSet extends Response {
@@ -205,6 +180,33 @@ public class DescribeShareBandwidthResponse extends Response {
 
         public void setEIPId(String eipId) {
             this.eipId = eipId;
+        }
+    }
+
+    public static class EIPAddrSet extends Response {
+
+        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际. */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** 弹性IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
         }
     }
 }

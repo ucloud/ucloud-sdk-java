@@ -14,7 +14,9 @@
 package cn.ucloud.uec.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeUEcVHostResponse extends Response {
@@ -41,45 +43,6 @@ public class DescribeUEcVHostResponse extends Response {
 
     public void setNodeList(List<NodeInfo> nodeList) {
         this.nodeList = nodeList;
-    }
-
-    public static class NodeIpList extends Response {
-
-        /** 外网ip */
-        @SerializedName("Ip")
-        private String ip;
-
-        /** 运营商 */
-        @SerializedName("Isp")
-        private String isp;
-
-        /** 运营商名称 */
-        @SerializedName("IspName")
-        private String ispName;
-
-        public String getIp() {
-            return ip;
-        }
-
-        public void setIp(String ip) {
-            this.ip = ip;
-        }
-
-        public String getIsp() {
-            return isp;
-        }
-
-        public void setIsp(String isp) {
-            this.isp = isp;
-        }
-
-        public String getIspName() {
-            return ispName;
-        }
-
-        public void setIspName(String ispName) {
-            this.ispName = ispName;
-        }
     }
 
     public static class NodeInfo extends Response {
@@ -334,6 +297,45 @@ public class DescribeUEcVHostResponse extends Response {
 
         public void setInnerIps(List<String> innerIps) {
             this.innerIps = innerIps;
+        }
+    }
+
+    public static class NodeIpList extends Response {
+
+        /** 外网ip */
+        @SerializedName("Ip")
+        private String ip;
+
+        /** 运营商 */
+        @SerializedName("Isp")
+        private String isp;
+
+        /** 运营商名称 */
+        @SerializedName("IspName")
+        private String ispName;
+
+        public String getIp() {
+            return ip;
+        }
+
+        public void setIp(String ip) {
+            this.ip = ip;
+        }
+
+        public String getIsp() {
+            return isp;
+        }
+
+        public void setIsp(String isp) {
+            this.isp = isp;
+        }
+
+        public String getIspName() {
+            return ispName;
+        }
+
+        public void setIspName(String ispName) {
+            this.ispName = ispName;
         }
     }
 }

@@ -14,7 +14,9 @@
 package cn.ucloud.vpc.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeNATGWResponse extends Response {
@@ -41,96 +43,6 @@ public class DescribeNATGWResponse extends Response {
 
     public void setDataSet(List<NatGatewayDataSet> dataSet) {
         this.dataSet = dataSet;
-    }
-
-    public static class NatGatewayIPSet extends Response {
-
-        /** 外网IP的 EIPId */
-        @SerializedName("EIPId")
-        private String eipId;
-
-        /** 权重为100的为出口 */
-        @SerializedName("Weight")
-        private Integer weight;
-
-        /** EIP带宽类型 */
-        @SerializedName("BandwidthType")
-        private String bandwidthType;
-
-        /** 带宽 */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** 外网IP信息 */
-        @SerializedName("IPResInfo")
-        private List<NatGWIPResInfo> ipResInfo;
-
-        public String getEIPId() {
-            return eipId;
-        }
-
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
-        }
-
-        public Integer getWeight() {
-            return weight;
-        }
-
-        public void setWeight(Integer weight) {
-            this.weight = weight;
-        }
-
-        public String getBandwidthType() {
-            return bandwidthType;
-        }
-
-        public void setBandwidthType(String bandwidthType) {
-            this.bandwidthType = bandwidthType;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public List<NatGWIPResInfo> getIPResInfo() {
-            return ipResInfo;
-        }
-
-        public void setIPResInfo(List<NatGWIPResInfo> ipResInfo) {
-            this.ipResInfo = ipResInfo;
-        }
-    }
-
-    public static class NatGWIPResInfo extends Response {
-
-        /** IP的运营商信息 */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** 外网IP */
-        @SerializedName("EIP")
-        private String eip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getEIP() {
-            return eip;
-        }
-
-        public void setEIP(String eip) {
-            this.eip = eip;
-        }
     }
 
     public static class NatGatewaySubnetSet extends Response {
@@ -316,6 +228,96 @@ public class DescribeNATGWResponse extends Response {
 
         public void setPolicyId(List<String> policyId) {
             this.policyId = policyId;
+        }
+    }
+
+    public static class NatGatewayIPSet extends Response {
+
+        /** 外网IP的 EIPId */
+        @SerializedName("EIPId")
+        private String eipId;
+
+        /** 权重为100的为出口 */
+        @SerializedName("Weight")
+        private Integer weight;
+
+        /** EIP带宽类型 */
+        @SerializedName("BandwidthType")
+        private String bandwidthType;
+
+        /** 带宽 */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** 外网IP信息 */
+        @SerializedName("IPResInfo")
+        private List<NatGWIPResInfo> ipResInfo;
+
+        public String getEIPId() {
+            return eipId;
+        }
+
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
+        }
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
+
+        public String getBandwidthType() {
+            return bandwidthType;
+        }
+
+        public void setBandwidthType(String bandwidthType) {
+            this.bandwidthType = bandwidthType;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public List<NatGWIPResInfo> getIPResInfo() {
+            return ipResInfo;
+        }
+
+        public void setIPResInfo(List<NatGWIPResInfo> ipResInfo) {
+            this.ipResInfo = ipResInfo;
+        }
+    }
+
+    public static class NatGWIPResInfo extends Response {
+
+        /** IP的运营商信息 */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** 外网IP */
+        @SerializedName("EIP")
+        private String eip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getEIP() {
+            return eip;
+        }
+
+        public void setEIP(String eip) {
+            this.eip = eip;
         }
     }
 }

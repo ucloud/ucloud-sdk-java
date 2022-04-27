@@ -16,6 +16,7 @@ package cn.ucloud.uhost.models;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
 import java.util.List;
 
 public class GetUHostInstancePriceRequest extends Request {
@@ -249,8 +250,6 @@ public class GetUHostInstancePriceRequest extends Request {
         this.virtualGpu = virtualGpu;
     }
 
-    public static class VirtualGpu extends Request {}
-
     public static class Volumes extends Request {}
 
     public static class Disks extends Request {
@@ -309,4 +308,6 @@ public class GetUHostInstancePriceRequest extends Request {
             this.backupType = backupType;
         }
     }
+
+    public static class VirtualGpu extends Request {}
 }
