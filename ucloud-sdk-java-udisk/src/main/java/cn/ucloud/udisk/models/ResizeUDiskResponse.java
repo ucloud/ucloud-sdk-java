@@ -13,6 +13,8 @@
  */
 package cn.ucloud.udisk.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class ResizeUDiskResponse extends Response {}

@@ -67,6 +67,33 @@ public class DescribeEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
+    public static class UnetEIPAddrSet extends Response {
+
+        /** 运营商信息如: 国际: International, BGP: BGP */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+    }
+
     public static class UnetEIPResourceSet extends Response {
 
         /**
@@ -394,33 +421,6 @@ public class DescribeEIPResponse extends Response {
 
         public void setShareBandwidthId(String shareBandwidthId) {
             this.shareBandwidthId = shareBandwidthId;
-        }
-    }
-
-    public static class UnetEIPAddrSet extends Response {
-
-        /** 运营商信息如: 国际: International, BGP: BGP */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
         }
     }
 }

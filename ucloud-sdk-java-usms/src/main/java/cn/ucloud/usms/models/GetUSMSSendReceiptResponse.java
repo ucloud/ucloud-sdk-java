@@ -31,6 +31,33 @@ public class GetUSMSSendReceiptResponse extends Response {
         this.data = data;
     }
 
+    public static class ReceiptPerSession extends Response {
+
+        /** 发送短信时返回的SessionNo */
+        @SerializedName("SessionNo")
+        private String sessionNo;
+
+        /** 每个手机号的短信回执信息集合 */
+        @SerializedName("ReceiptSet")
+        private List<ReceiptPerPhone> receiptSet;
+
+        public String getSessionNo() {
+            return sessionNo;
+        }
+
+        public void setSessionNo(String sessionNo) {
+            this.sessionNo = sessionNo;
+        }
+
+        public List<ReceiptPerPhone> getReceiptSet() {
+            return receiptSet;
+        }
+
+        public void setReceiptSet(List<ReceiptPerPhone> receiptSet) {
+            this.receiptSet = receiptSet;
+        }
+    }
+
     public static class ReceiptPerPhone extends Response {
 
         /** 手机号码 */
@@ -118,33 +145,6 @@ public class GetUSMSSendReceiptResponse extends Response {
 
         public void setUserId(String userId) {
             this.userId = userId;
-        }
-    }
-
-    public static class ReceiptPerSession extends Response {
-
-        /** 发送短信时返回的SessionNo */
-        @SerializedName("SessionNo")
-        private String sessionNo;
-
-        /** 每个手机号的短信回执信息集合 */
-        @SerializedName("ReceiptSet")
-        private List<ReceiptPerPhone> receiptSet;
-
-        public String getSessionNo() {
-            return sessionNo;
-        }
-
-        public void setSessionNo(String sessionNo) {
-            this.sessionNo = sessionNo;
-        }
-
-        public List<ReceiptPerPhone> getReceiptSet() {
-            return receiptSet;
-        }
-
-        public void setReceiptSet(List<ReceiptPerPhone> receiptSet) {
-            this.receiptSet = receiptSet;
         }
     }
 }

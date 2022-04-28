@@ -43,6 +43,81 @@ public class DescribeFirewallResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class FirewallRuleSet extends Response {
+
+        /** 源地址 */
+        @SerializedName("SrcIP")
+        private String srcIP;
+
+        /** 优先级 */
+        @SerializedName("Priority")
+        private String priority;
+
+        /** 协议类型 */
+        @SerializedName("ProtocolType")
+        private String protocolType;
+
+        /** 目标端口 */
+        @SerializedName("DstPort")
+        private String dstPort;
+
+        /** 防火墙动作 */
+        @SerializedName("RuleAction")
+        private String ruleAction;
+
+        /** 防火墙规则备注 */
+        @SerializedName("Remark")
+        private String remark;
+
+        public String getSrcIP() {
+            return srcIP;
+        }
+
+        public void setSrcIP(String srcIP) {
+            this.srcIP = srcIP;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
+        }
+
+        public String getProtocolType() {
+            return protocolType;
+        }
+
+        public void setProtocolType(String protocolType) {
+            this.protocolType = protocolType;
+        }
+
+        public String getDstPort() {
+            return dstPort;
+        }
+
+        public void setDstPort(String dstPort) {
+            this.dstPort = dstPort;
+        }
+
+        public String getRuleAction() {
+            return ruleAction;
+        }
+
+        public void setRuleAction(String ruleAction) {
+            this.ruleAction = ruleAction;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+    }
+
     public static class FirewallDataSet extends Response {
 
         /** 防火墙ID */
@@ -154,81 +229,6 @@ public class DescribeFirewallResponse extends Response {
 
         public void setRule(List<FirewallRuleSet> rule) {
             this.rule = rule;
-        }
-    }
-
-    public static class FirewallRuleSet extends Response {
-
-        /** 源地址 */
-        @SerializedName("SrcIP")
-        private String srcIP;
-
-        /** 优先级 */
-        @SerializedName("Priority")
-        private String priority;
-
-        /** 协议类型 */
-        @SerializedName("ProtocolType")
-        private String protocolType;
-
-        /** 目标端口 */
-        @SerializedName("DstPort")
-        private String dstPort;
-
-        /** 防火墙动作 */
-        @SerializedName("RuleAction")
-        private String ruleAction;
-
-        /** 防火墙规则备注 */
-        @SerializedName("Remark")
-        private String remark;
-
-        public String getSrcIP() {
-            return srcIP;
-        }
-
-        public void setSrcIP(String srcIP) {
-            this.srcIP = srcIP;
-        }
-
-        public String getPriority() {
-            return priority;
-        }
-
-        public void setPriority(String priority) {
-            this.priority = priority;
-        }
-
-        public String getProtocolType() {
-            return protocolType;
-        }
-
-        public void setProtocolType(String protocolType) {
-            this.protocolType = protocolType;
-        }
-
-        public String getDstPort() {
-            return dstPort;
-        }
-
-        public void setDstPort(String dstPort) {
-            this.dstPort = dstPort;
-        }
-
-        public String getRuleAction() {
-            return ruleAction;
-        }
-
-        public void setRuleAction(String ruleAction) {
-            this.ruleAction = ruleAction;
-        }
-
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
         }
     }
 }
