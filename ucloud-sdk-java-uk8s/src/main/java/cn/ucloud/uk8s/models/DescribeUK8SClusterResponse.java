@@ -43,13 +43,13 @@ public class DescribeUK8SClusterResponse extends Response {
     @SerializedName("ServiceCIDR")
     private String serviceCIDR;
 
-    /** Master节点配置信息，具体参考UhostInfo。托管版不返回该信息 */
-    @SerializedName("MasterList")
-    private List<UhostInfo> masterList;
-
     /** Master 节点数量 */
     @SerializedName("MasterCount")
     private Integer masterCount;
+
+    /** Master节点配置信息，具体参考UhostInfo。托管版不返回该信息 */
+    @SerializedName("MasterList")
+    private List<UhostInfo> masterList;
 
     /** Node节点配置信息,具体参考UhostInfo */
     @SerializedName("NodeList")
@@ -77,7 +77,7 @@ public class DescribeUK8SClusterResponse extends Response {
 
     /** kube-proxy配置 */
     @SerializedName("KubeProxy")
-    private Object kubeProxy;
+    private KubeProxy kubeProxy;
 
     /** K8S版本 */
     @SerializedName("Version")
@@ -98,6 +98,10 @@ public class DescribeUK8SClusterResponse extends Response {
     /** 集群CA根证书 */
     @SerializedName("CACert")
     private String caCert;
+
+    /** Master配置预警：Normal正常； Warning 需要升级； Error 需要紧急升级； */
+    @SerializedName("MasterResourceStatus")
+    private String masterResourceStatus;
 
     public String getClusterName() {
         return clusterName;
@@ -147,20 +151,20 @@ public class DescribeUK8SClusterResponse extends Response {
         this.serviceCIDR = serviceCIDR;
     }
 
-    public List<UhostInfo> getMasterList() {
-        return masterList;
-    }
-
-    public void setMasterList(List<UhostInfo> masterList) {
-        this.masterList = masterList;
-    }
-
     public Integer getMasterCount() {
         return masterCount;
     }
 
     public void setMasterCount(Integer masterCount) {
         this.masterCount = masterCount;
+    }
+
+    public List<UhostInfo> getMasterList() {
+        return masterList;
+    }
+
+    public void setMasterList(List<UhostInfo> masterList) {
+        this.masterList = masterList;
     }
 
     public List<UhostInfo> getNodeList() {
@@ -211,11 +215,11 @@ public class DescribeUK8SClusterResponse extends Response {
         this.externalApiServer = externalApiServer;
     }
 
-    public Object getKubeProxy() {
+    public KubeProxy getKubeProxy() {
         return kubeProxy;
     }
 
-    public void setKubeProxy(Object kubeProxy) {
+    public void setKubeProxy(KubeProxy kubeProxy) {
         this.kubeProxy = kubeProxy;
     }
 
@@ -257,6 +261,29 @@ public class DescribeUK8SClusterResponse extends Response {
 
     public void setCACert(String caCert) {
         this.caCert = caCert;
+    }
+
+    public String getMasterResourceStatus() {
+        return masterResourceStatus;
+    }
+
+    public void setMasterResourceStatus(String masterResourceStatus) {
+        this.masterResourceStatus = masterResourceStatus;
+    }
+
+    public static class KubeProxy extends Response {
+
+        /** KubeProxy模式，枚举值为[ipvs,iptables] */
+        @SerializedName("Mode")
+        private String mode;
+
+        public String getMode() {
+            return mode;
+        }
+
+        public void setMode(String mode) {
+            this.mode = mode;
+        }
     }
 
     public static class UhostInfo extends Response {

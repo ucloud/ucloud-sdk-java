@@ -12,7 +12,11 @@ build:
 
 .PHONY: fmt
 fmt:
-	java -jar ./cache/google-java-format-1.7-all-deps.jar --aosp -r ${JAVA_FILES}
+	google-java-format --aosp -r ${JAVA_FILES}
+
+.PHONY: lint
+lint:
+	echo "skipped"
 
 .PHONY: test-cov
 test-cov:
