@@ -31,105 +31,6 @@ public class DescribeNetworkAclResponse extends Response {
         this.aclList = aclList;
     }
 
-    public static class AclInfo extends Response {
-
-        /** ACL所属的VPC ID */
-        @SerializedName("VpcId")
-        private String vpcId;
-
-        /** ACL的ID */
-        @SerializedName("AclId")
-        private String aclId;
-
-        /** 名称 */
-        @SerializedName("AclName")
-        private String aclName;
-
-        /** 描述 */
-        @SerializedName("Description")
-        private String description;
-
-        /** 所有的规则 */
-        @SerializedName("Entries")
-        private List<AclEntryInfo> entries;
-
-        /** 所有的绑定关系，具体结构见下方AssociationInfo */
-        @SerializedName("Associations")
-        private List<AssociationInfo> associations;
-
-        /** 创建的Unix时间戳 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** 更改的Unix时间戳 */
-        @SerializedName("UpdateTime")
-        private Integer updateTime;
-
-        public String getVpcId() {
-            return vpcId;
-        }
-
-        public void setVpcId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public String getAclId() {
-            return aclId;
-        }
-
-        public void setAclId(String aclId) {
-            this.aclId = aclId;
-        }
-
-        public String getAclName() {
-            return aclName;
-        }
-
-        public void setAclName(String aclName) {
-            this.aclName = aclName;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public List<AclEntryInfo> getEntries() {
-            return entries;
-        }
-
-        public void setEntries(List<AclEntryInfo> entries) {
-            this.entries = entries;
-        }
-
-        public List<AssociationInfo> getAssociations() {
-            return associations;
-        }
-
-        public void setAssociations(List<AssociationInfo> associations) {
-            this.associations = associations;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public Integer getUpdateTime() {
-            return updateTime;
-        }
-
-        public void setUpdateTime(Integer updateTime) {
-            this.updateTime = updateTime;
-        }
-    }
-
     public static class AssociationInfo extends Response {
 
         /** 绑定ID */
@@ -424,6 +325,105 @@ public class DescribeNetworkAclResponse extends Response {
 
         public void setPrivateIp(String privateIp) {
             this.privateIp = privateIp;
+        }
+    }
+
+    public static class AclInfo extends Response {
+
+        /** ACL所属的VPC ID */
+        @SerializedName("VpcId")
+        private String vpcId;
+
+        /** ACL的ID */
+        @SerializedName("AclId")
+        private String aclId;
+
+        /** 名称 */
+        @SerializedName("AclName")
+        private String aclName;
+
+        /** 描述 */
+        @SerializedName("Description")
+        private String description;
+
+        /** 所有的规则 */
+        @SerializedName("Entries")
+        private List<AclEntryInfo> entries;
+
+        /** 所有的绑定关系，具体结构见下方AssociationInfo */
+        @SerializedName("Associations")
+        private List<AssociationInfo> associations;
+
+        /** 创建的Unix时间戳 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 更改的Unix时间戳 */
+        @SerializedName("UpdateTime")
+        private Integer updateTime;
+
+        public String getVpcId() {
+            return vpcId;
+        }
+
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getAclId() {
+            return aclId;
+        }
+
+        public void setAclId(String aclId) {
+            this.aclId = aclId;
+        }
+
+        public String getAclName() {
+            return aclName;
+        }
+
+        public void setAclName(String aclName) {
+            this.aclName = aclName;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public List<AclEntryInfo> getEntries() {
+            return entries;
+        }
+
+        public void setEntries(List<AclEntryInfo> entries) {
+            this.entries = entries;
+        }
+
+        public List<AssociationInfo> getAssociations() {
+            return associations;
+        }
+
+        public void setAssociations(List<AssociationInfo> associations) {
+            this.associations = associations;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public Integer getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(Integer updateTime) {
+            this.updateTime = updateTime;
         }
     }
 }

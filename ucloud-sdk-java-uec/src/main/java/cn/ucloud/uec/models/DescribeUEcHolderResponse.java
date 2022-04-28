@@ -43,42 +43,54 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class ImageList extends Response {
+    public static class StorVolumeInfo extends Response {
 
-        /** 仓库地址 */
-        @SerializedName("StoreAddr")
-        private String storeAddr;
+        /** 名称 */
+        @SerializedName("Name")
+        private String name;
 
-        /** 用户名称 */
-        @SerializedName("UserName")
-        private String userName;
+        /** 资源id */
+        @SerializedName("ResourceId")
+        private String resourceId;
 
-        /** 镜像密钥 */
-        @SerializedName("ImageKey")
-        private String imageKey;
+        /** 挂载点 */
+        @SerializedName("MountPoint")
+        private String mountPoint;
 
-        public String getStoreAddr() {
-            return storeAddr;
+        /** 容量（单位GB） */
+        @SerializedName("DiskSize")
+        private Integer diskSize;
+
+        public String getName() {
+            return name;
         }
 
-        public void setStoreAddr(String storeAddr) {
-            this.storeAddr = storeAddr;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public String getUserName() {
-            return userName;
+        public String getResourceId() {
+            return resourceId;
         }
 
-        public void setUserName(String userName) {
-            this.userName = userName;
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
         }
 
-        public String getImageKey() {
-            return imageKey;
+        public String getMountPoint() {
+            return mountPoint;
         }
 
-        public void setImageKey(String imageKey) {
-            this.imageKey = imageKey;
+        public void setMountPoint(String mountPoint) {
+            this.mountPoint = mountPoint;
+        }
+
+        public Integer getDiskSize() {
+            return diskSize;
+        }
+
+        public void setDiskSize(Integer diskSize) {
+            this.diskSize = diskSize;
         }
     }
 
@@ -118,129 +130,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setResourceId(String resourceId) {
             this.resourceId = resourceId;
-        }
-    }
-
-    public static class DockerInfo extends Response {
-
-        /** CPU核数（/核）精度0.1核 */
-        @SerializedName("CpuCores")
-        private Double cpuCores;
-
-        /** 内存大小（Gi） */
-        @SerializedName("MemSize")
-        private Double memSize;
-
-        /** 容器名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止； 6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常 */
-        @SerializedName("State")
-        private Integer state;
-
-        /** 镜像名称 */
-        @SerializedName("ImageName")
-        private String imageName;
-
-        /** 工作目录 */
-        @SerializedName("WorkDir")
-        private String workDir;
-
-        /** 命令 */
-        @SerializedName("Command")
-        private String command;
-
-        /** 参数 */
-        @SerializedName("Args")
-        private String args;
-
-        /** 环境变量（详情参考EnvList） */
-        @SerializedName("EnvList")
-        private List<EnvList> envList;
-
-        /** 容器配置字典（详情参考CfgDictList） */
-        @SerializedName("CfgDictList")
-        private List<CfgDictList> cfgDictList;
-
-        public Double getCpuCores() {
-            return cpuCores;
-        }
-
-        public void setCpuCores(Double cpuCores) {
-            this.cpuCores = cpuCores;
-        }
-
-        public Double getMemSize() {
-            return memSize;
-        }
-
-        public void setMemSize(Double memSize) {
-            this.memSize = memSize;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getState() {
-            return state;
-        }
-
-        public void setState(Integer state) {
-            this.state = state;
-        }
-
-        public String getImageName() {
-            return imageName;
-        }
-
-        public void setImageName(String imageName) {
-            this.imageName = imageName;
-        }
-
-        public String getWorkDir() {
-            return workDir;
-        }
-
-        public void setWorkDir(String workDir) {
-            this.workDir = workDir;
-        }
-
-        public String getCommand() {
-            return command;
-        }
-
-        public void setCommand(String command) {
-            this.command = command;
-        }
-
-        public String getArgs() {
-            return args;
-        }
-
-        public void setArgs(String args) {
-            this.args = args;
-        }
-
-        public List<EnvList> getEnvList() {
-            return envList;
-        }
-
-        public void setEnvList(List<EnvList> envList) {
-            this.envList = envList;
-        }
-
-        public List<CfgDictList> getCfgDictList() {
-            return cfgDictList;
-        }
-
-        public void setCfgDictList(List<CfgDictList> cfgDictList) {
-            this.cfgDictList = cfgDictList;
         }
     }
 
@@ -295,6 +184,45 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setIsp(String isp) {
             this.isp = isp;
+        }
+    }
+
+    public static class ImageList extends Response {
+
+        /** 仓库地址 */
+        @SerializedName("StoreAddr")
+        private String storeAddr;
+
+        /** 用户名称 */
+        @SerializedName("UserName")
+        private String userName;
+
+        /** 镜像密钥 */
+        @SerializedName("ImageKey")
+        private String imageKey;
+
+        public String getStoreAddr() {
+            return storeAddr;
+        }
+
+        public void setStoreAddr(String storeAddr) {
+            this.storeAddr = storeAddr;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getImageKey() {
+            return imageKey;
+        }
+
+        public void setImageKey(String imageKey) {
+            this.imageKey = imageKey;
         }
     }
 
@@ -565,23 +493,63 @@ public class DescribeUEcHolderResponse extends Response {
         }
     }
 
-    public static class StorVolumeInfo extends Response {
+    public static class DockerInfo extends Response {
 
-        /** 名称 */
+        /** CPU核数（/核）精度0.1核 */
+        @SerializedName("CpuCores")
+        private Double cpuCores;
+
+        /** 内存大小（Gi） */
+        @SerializedName("MemSize")
+        private Double memSize;
+
+        /** 容器名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 资源id */
-        @SerializedName("ResourceId")
-        private String resourceId;
+        /** 容器状态，0：初始化；1：拉取镜像；2：拉取镜像失败；3：启动中；4：运行中；5：正在停止； 6：已停止；7：已删除；8：镜像拉取成功；9：启动失败；99：异常 */
+        @SerializedName("State")
+        private Integer state;
 
-        /** 挂载点 */
-        @SerializedName("MountPoint")
-        private String mountPoint;
+        /** 镜像名称 */
+        @SerializedName("ImageName")
+        private String imageName;
 
-        /** 容量（单位GB） */
-        @SerializedName("DiskSize")
-        private Integer diskSize;
+        /** 工作目录 */
+        @SerializedName("WorkDir")
+        private String workDir;
+
+        /** 命令 */
+        @SerializedName("Command")
+        private String command;
+
+        /** 参数 */
+        @SerializedName("Args")
+        private String args;
+
+        /** 环境变量（详情参考EnvList） */
+        @SerializedName("EnvList")
+        private List<EnvList> envList;
+
+        /** 容器配置字典（详情参考CfgDictList） */
+        @SerializedName("CfgDictList")
+        private List<CfgDictList> cfgDictList;
+
+        public Double getCpuCores() {
+            return cpuCores;
+        }
+
+        public void setCpuCores(Double cpuCores) {
+            this.cpuCores = cpuCores;
+        }
+
+        public Double getMemSize() {
+            return memSize;
+        }
+
+        public void setMemSize(Double memSize) {
+            this.memSize = memSize;
+        }
 
         public String getName() {
             return name;
@@ -591,28 +559,60 @@ public class DescribeUEcHolderResponse extends Response {
             this.name = name;
         }
 
-        public String getResourceId() {
-            return resourceId;
+        public Integer getState() {
+            return state;
         }
 
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
+        public void setState(Integer state) {
+            this.state = state;
         }
 
-        public String getMountPoint() {
-            return mountPoint;
+        public String getImageName() {
+            return imageName;
         }
 
-        public void setMountPoint(String mountPoint) {
-            this.mountPoint = mountPoint;
+        public void setImageName(String imageName) {
+            this.imageName = imageName;
         }
 
-        public Integer getDiskSize() {
-            return diskSize;
+        public String getWorkDir() {
+            return workDir;
         }
 
-        public void setDiskSize(Integer diskSize) {
-            this.diskSize = diskSize;
+        public void setWorkDir(String workDir) {
+            this.workDir = workDir;
+        }
+
+        public String getCommand() {
+            return command;
+        }
+
+        public void setCommand(String command) {
+            this.command = command;
+        }
+
+        public String getArgs() {
+            return args;
+        }
+
+        public void setArgs(String args) {
+            this.args = args;
+        }
+
+        public List<EnvList> getEnvList() {
+            return envList;
+        }
+
+        public void setEnvList(List<EnvList> envList) {
+            this.envList = envList;
+        }
+
+        public List<CfgDictList> getCfgDictList() {
+            return cfgDictList;
+        }
+
+        public void setCfgDictList(List<CfgDictList> cfgDictList) {
+            this.cfgDictList = cfgDictList;
         }
     }
 }

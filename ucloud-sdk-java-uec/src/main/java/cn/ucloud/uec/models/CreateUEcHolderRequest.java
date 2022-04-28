@@ -219,33 +219,6 @@ public class CreateUEcHolderRequest extends Request {
         this.storage = storage;
     }
 
-    public static class Storage extends Request {
-
-        /** 存储卷挂载路径 */
-        @UCloudParam("Path")
-        private String path;
-
-        /** 存储卷资源id */
-        @UCloudParam("ResourceId")
-        private String resourceId;
-
-        public String getPath() {
-            return path;
-        }
-
-        public void setPath(String path) {
-            this.path = path;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-    }
-
     public static class Image extends Request {
 
         /** 镜像用户名和密码（如镜像名：密码） */
@@ -381,6 +354,33 @@ public class CreateUEcHolderRequest extends Request {
 
         public void setConfigDict(String configDict) {
             this.configDict = configDict;
+        }
+    }
+
+    public static class Storage extends Request {
+
+        /** 存储卷挂载路径 */
+        @UCloudParam("Path")
+        private String path;
+
+        /** 存储卷资源id */
+        @UCloudParam("ResourceId")
+        private String resourceId;
+
+        public String getPath() {
+            return path;
+        }
+
+        public void setPath(String path) {
+            this.path = path;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
         }
     }
 }

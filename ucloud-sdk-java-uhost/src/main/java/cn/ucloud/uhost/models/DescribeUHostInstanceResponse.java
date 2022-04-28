@@ -43,117 +43,6 @@ public class DescribeUHostInstanceResponse extends Response {
         this.uHostSet = uHostSet;
     }
 
-    public static class UHostDiskSet extends Response {
-
-        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
-        @SerializedName("IsBoot")
-        private String isBoot;
-
-        /** "true": 加密盘 "false"：非加密盘 */
-        @SerializedName("Encrypted")
-        private String encrypted;
-
-        /** 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘ID */
-        @SerializedName("DiskId")
-        private String diskId;
-
-        /** UDisk名字（仅当磁盘是UDisk时返回） */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘盘符 */
-        @SerializedName("Drive")
-        private String drive;
-
-        /** 磁盘大小，单位: GB */
-        @SerializedName("Size")
-        private Integer size;
-
-        /** 备份方案。若开通了数据方舟，则为DATAARK */
-        @SerializedName("BackupType")
-        private String backupType;
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-
-        public String getEncrypted() {
-            return encrypted;
-        }
-
-        public void setEncrypted(String encrypted) {
-            this.encrypted = encrypted;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getDiskId() {
-            return diskId;
-        }
-
-        public void setDiskId(String diskId) {
-            this.diskId = diskId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDrive() {
-            return drive;
-        }
-
-        public void setDrive(String drive) {
-            this.drive = drive;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
-        }
-    }
-
     public static class UHostInstanceSet extends Response {
 
         /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
@@ -640,33 +529,6 @@ public class DescribeUHostInstanceResponse extends Response {
         }
     }
 
-    public static class UHostKeyPair extends Response {
-
-        /** 密钥对ID */
-        @SerializedName("KeyPairId")
-        private String keyPairId;
-
-        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
-        @SerializedName("KeyPairState")
-        private String keyPairState;
-
-        public String getKeyPairId() {
-            return keyPairId;
-        }
-
-        public void setKeyPairId(String keyPairId) {
-            this.keyPairId = keyPairId;
-        }
-
-        public String getKeyPairState() {
-            return keyPairState;
-        }
-
-        public void setKeyPairState(String keyPairState) {
-            this.keyPairState = keyPairState;
-        }
-    }
-
     public static class UHostIPSet extends Response {
 
         /** IPv4/IPv6； */
@@ -799,6 +661,144 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setNetworkInterfaceId(String networkInterfaceId) {
             this.networkInterfaceId = networkInterfaceId;
+        }
+    }
+
+    public static class UHostDiskSet extends Response {
+
+        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
+        @SerializedName("DiskType")
+        private String diskType;
+
+        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
+        @SerializedName("IsBoot")
+        private String isBoot;
+
+        /** "true": 加密盘 "false"：非加密盘 */
+        @SerializedName("Encrypted")
+        private String encrypted;
+
+        /** 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘ID */
+        @SerializedName("DiskId")
+        private String diskId;
+
+        /** UDisk名字（仅当磁盘是UDisk时返回） */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘盘符 */
+        @SerializedName("Drive")
+        private String drive;
+
+        /** 磁盘大小，单位: GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        /** 备份方案。若开通了数据方舟，则为DATAARK */
+        @SerializedName("BackupType")
+        private String backupType;
+
+        public String getDiskType() {
+            return diskType;
+        }
+
+        public void setDiskType(String diskType) {
+            this.diskType = diskType;
+        }
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public String getEncrypted() {
+            return encrypted;
+        }
+
+        public void setEncrypted(String encrypted) {
+            this.encrypted = encrypted;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getDiskId() {
+            return diskId;
+        }
+
+        public void setDiskId(String diskId) {
+            this.diskId = diskId;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getDrive() {
+            return drive;
+        }
+
+        public void setDrive(String drive) {
+            this.drive = drive;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        public String getBackupType() {
+            return backupType;
+        }
+
+        public void setBackupType(String backupType) {
+            this.backupType = backupType;
+        }
+    }
+
+    public static class UHostKeyPair extends Response {
+
+        /** 密钥对ID */
+        @SerializedName("KeyPairId")
+        private String keyPairId;
+
+        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
+        @SerializedName("KeyPairState")
+        private String keyPairState;
+
+        public String getKeyPairId() {
+            return keyPairId;
+        }
+
+        public void setKeyPairId(String keyPairId) {
+            this.keyPairId = keyPairId;
+        }
+
+        public String getKeyPairState() {
+            return keyPairState;
+        }
+
+        public void setKeyPairState(String keyPairState) {
+            this.keyPairState = keyPairState;
         }
     }
 }

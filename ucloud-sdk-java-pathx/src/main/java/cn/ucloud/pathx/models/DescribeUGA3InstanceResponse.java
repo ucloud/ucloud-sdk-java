@@ -43,30 +43,30 @@ public class DescribeUGA3InstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class OutPublicIpInfo extends Response {
+    public static class AccelerationAreaInfos extends Response {
 
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
+        /** 加速区code */
+        @SerializedName("AccelerationArea")
+        private String accelerationArea;
 
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
+        /** 加速节点信息 */
+        @SerializedName("AccelerationNodes")
+        private List<SrcAreaInfo> accelerationNodes;
 
-        public String getIP() {
-            return ip;
+        public String getAccelerationArea() {
+            return accelerationArea;
         }
 
-        public void setIP(String ip) {
-            this.ip = ip;
+        public void setAccelerationArea(String accelerationArea) {
+            this.accelerationArea = accelerationArea;
         }
 
-        public String getArea() {
-            return area;
+        public List<SrcAreaInfo> getAccelerationNodes() {
+            return accelerationNodes;
         }
 
-        public void setArea(String area) {
-            this.area = area;
+        public void setAccelerationNodes(List<SrcAreaInfo> accelerationNodes) {
+            this.accelerationNodes = accelerationNodes;
         }
     }
 
@@ -118,6 +118,33 @@ public class DescribeUGA3InstanceResponse extends Response {
 
         public void setFlagUnicode(String flagUnicode) {
             this.flagUnicode = flagUnicode;
+        }
+    }
+
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
+        @SerializedName("Area")
+        private String area;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
         }
     }
 
@@ -366,33 +393,6 @@ public class DescribeUGA3InstanceResponse extends Response {
 
         public void setPort(Integer port) {
             this.port = port;
-        }
-    }
-
-    public static class AccelerationAreaInfos extends Response {
-
-        /** 加速区code */
-        @SerializedName("AccelerationArea")
-        private String accelerationArea;
-
-        /** 加速节点信息 */
-        @SerializedName("AccelerationNodes")
-        private List<SrcAreaInfo> accelerationNodes;
-
-        public String getAccelerationArea() {
-            return accelerationArea;
-        }
-
-        public void setAccelerationArea(String accelerationArea) {
-            this.accelerationArea = accelerationArea;
-        }
-
-        public List<SrcAreaInfo> getAccelerationNodes() {
-            return accelerationNodes;
-        }
-
-        public void setAccelerationNodes(List<SrcAreaInfo> accelerationNodes) {
-            this.accelerationNodes = accelerationNodes;
         }
     }
 }

@@ -43,72 +43,6 @@ public class DescribeShareBandwidthResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class EIPSetData extends Response {
-
-        /** EIP带宽值 */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** EIP的IP信息，详情见EIPAddrSet */
-        @SerializedName("EIPAddr")
-        private List<EIPAddrSet> eipAddr;
-
-        /** EIP资源Id */
-        @SerializedName("EIPId")
-        private String eipId;
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public List<EIPAddrSet> getEIPAddr() {
-            return eipAddr;
-        }
-
-        public void setEIPAddr(List<EIPAddrSet> eipAddr) {
-            this.eipAddr = eipAddr;
-        }
-
-        public String getEIPId() {
-            return eipId;
-        }
-
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
-        }
-    }
-
-    public static class EIPAddrSet extends Response {
-
-        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际. */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** 弹性IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-    }
-
     public static class UnetShareBandwidthSet extends Response {
 
         /** 共享带宽类型 */
@@ -205,6 +139,72 @@ public class DescribeShareBandwidthResponse extends Response {
 
         public void setName(String name) {
             this.name = name;
+        }
+    }
+
+    public static class EIPSetData extends Response {
+
+        /** EIP带宽值 */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** EIP的IP信息，详情见EIPAddrSet */
+        @SerializedName("EIPAddr")
+        private List<EIPAddrSet> eipAddr;
+
+        /** EIP资源Id */
+        @SerializedName("EIPId")
+        private String eipId;
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public List<EIPAddrSet> getEIPAddr() {
+            return eipAddr;
+        }
+
+        public void setEIPAddr(List<EIPAddrSet> eipAddr) {
+            this.eipAddr = eipAddr;
+        }
+
+        public String getEIPId() {
+            return eipId;
+        }
+
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
+        }
+    }
+
+    public static class EIPAddrSet extends Response {
+
+        /** 运营商信息, 枚举值为: BGP: BGP; International: 国际. */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** 弹性IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
         }
     }
 }
