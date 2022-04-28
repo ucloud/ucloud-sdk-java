@@ -31,33 +31,6 @@ public class GetUEcHolderMetricsResponse extends Response {
         this.dataSets = dataSets;
     }
 
-    public static class MonitorInfo extends Response {
-
-        /** 时间戳 */
-        @SerializedName("TimeStamp")
-        private Integer timeStamp;
-
-        /** 值 */
-        @SerializedName("Value")
-        private Integer value;
-
-        public Integer getTimeStamp() {
-            return timeStamp;
-        }
-
-        public void setTimeStamp(Integer timeStamp) {
-            this.timeStamp = timeStamp;
-        }
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
-    }
-
     public static class MetricisDataSet extends Response {
 
         /** cpu利用率（详情参考MonitorInfo） */
@@ -130,6 +103,33 @@ public class GetUEcHolderMetricsResponse extends Response {
 
         public void setNICIn(List<MonitorInfo> nicIn) {
             this.nicIn = nicIn;
+        }
+    }
+
+    public static class MonitorInfo extends Response {
+
+        /** 时间戳 */
+        @SerializedName("TimeStamp")
+        private Integer timeStamp;
+
+        /** 值 */
+        @SerializedName("Value")
+        private Integer value;
+
+        public Integer getTimeStamp() {
+            return timeStamp;
+        }
+
+        public void setTimeStamp(Integer timeStamp) {
+            this.timeStamp = timeStamp;
+        }
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
         }
     }
 }

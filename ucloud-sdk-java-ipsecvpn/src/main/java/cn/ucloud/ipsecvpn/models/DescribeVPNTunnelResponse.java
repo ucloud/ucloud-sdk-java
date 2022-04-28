@@ -43,105 +43,6 @@ public class DescribeVPNTunnelResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class IPSecData extends Response {
-
-        /** IPSec通道中使用的认证算法 */
-        @SerializedName("IPSecAuthenticationAlgorithm")
-        private String ipSecAuthenticationAlgorithm;
-
-        /** IPSec通道中使用的加密算法 */
-        @SerializedName("IPSecEncryptionAlgorithm")
-        private String ipSecEncryptionAlgorithm;
-
-        /** 指定VPN连接的本地子网，用逗号分隔 */
-        @SerializedName("IPSecLocalSubnetIds")
-        private List<String> ipSecLocalSubnetIds;
-
-        /** 使用的安全协议，ESP或AH */
-        @SerializedName("IPSecProtocol")
-        private String ipSecProtocol;
-
-        /** 指定VPN连接的客户网段，用逗号分隔 */
-        @SerializedName("IPSecRemoteSubnets")
-        private List<String> ipSecRemoteSubnets;
-
-        /** IPSec中SA的生存时间 */
-        @SerializedName("IPSecSALifetime")
-        private String ipSecSALifetime;
-
-        /** IPSec中SA的生存时间（以字节计） */
-        @SerializedName("IPSecSALifetimeBytes")
-        private String ipSecSALifetimeBytes;
-
-        /** 是否开启PFS功能,Disable表示关闭，数字表示DH组 */
-        @SerializedName("IPSecPFSDhGroup")
-        private String ipSecPFSDhGroup;
-
-        public String getIPSecAuthenticationAlgorithm() {
-            return ipSecAuthenticationAlgorithm;
-        }
-
-        public void setIPSecAuthenticationAlgorithm(String ipSecAuthenticationAlgorithm) {
-            this.ipSecAuthenticationAlgorithm = ipSecAuthenticationAlgorithm;
-        }
-
-        public String getIPSecEncryptionAlgorithm() {
-            return ipSecEncryptionAlgorithm;
-        }
-
-        public void setIPSecEncryptionAlgorithm(String ipSecEncryptionAlgorithm) {
-            this.ipSecEncryptionAlgorithm = ipSecEncryptionAlgorithm;
-        }
-
-        public List<String> getIPSecLocalSubnetIds() {
-            return ipSecLocalSubnetIds;
-        }
-
-        public void setIPSecLocalSubnetIds(List<String> ipSecLocalSubnetIds) {
-            this.ipSecLocalSubnetIds = ipSecLocalSubnetIds;
-        }
-
-        public String getIPSecProtocol() {
-            return ipSecProtocol;
-        }
-
-        public void setIPSecProtocol(String ipSecProtocol) {
-            this.ipSecProtocol = ipSecProtocol;
-        }
-
-        public List<String> getIPSecRemoteSubnets() {
-            return ipSecRemoteSubnets;
-        }
-
-        public void setIPSecRemoteSubnets(List<String> ipSecRemoteSubnets) {
-            this.ipSecRemoteSubnets = ipSecRemoteSubnets;
-        }
-
-        public String getIPSecSALifetime() {
-            return ipSecSALifetime;
-        }
-
-        public void setIPSecSALifetime(String ipSecSALifetime) {
-            this.ipSecSALifetime = ipSecSALifetime;
-        }
-
-        public String getIPSecSALifetimeBytes() {
-            return ipSecSALifetimeBytes;
-        }
-
-        public void setIPSecSALifetimeBytes(String ipSecSALifetimeBytes) {
-            this.ipSecSALifetimeBytes = ipSecSALifetimeBytes;
-        }
-
-        public String getIPSecPFSDhGroup() {
-            return ipSecPFSDhGroup;
-        }
-
-        public void setIPSecPFSDhGroup(String ipSecPFSDhGroup) {
-            this.ipSecPFSDhGroup = ipSecPFSDhGroup;
-        }
-    }
-
     public static class VPNTunnelDataSet extends Response {
 
         /** 隧道id */
@@ -298,6 +199,105 @@ public class DescribeVPNTunnelResponse extends Response {
 
         public void setIPSecData(IPSecData ipSecData) {
             this.ipSecData = ipSecData;
+        }
+    }
+
+    public static class IPSecData extends Response {
+
+        /** IPSec通道中使用的认证算法 */
+        @SerializedName("IPSecAuthenticationAlgorithm")
+        private String ipSecAuthenticationAlgorithm;
+
+        /** IPSec通道中使用的加密算法 */
+        @SerializedName("IPSecEncryptionAlgorithm")
+        private String ipSecEncryptionAlgorithm;
+
+        /** 指定VPN连接的本地子网，用逗号分隔 */
+        @SerializedName("IPSecLocalSubnetIds")
+        private List<String> ipSecLocalSubnetIds;
+
+        /** 使用的安全协议，ESP或AH */
+        @SerializedName("IPSecProtocol")
+        private String ipSecProtocol;
+
+        /** 指定VPN连接的客户网段，用逗号分隔 */
+        @SerializedName("IPSecRemoteSubnets")
+        private List<String> ipSecRemoteSubnets;
+
+        /** IPSec中SA的生存时间 */
+        @SerializedName("IPSecSALifetime")
+        private String ipSecSALifetime;
+
+        /** IPSec中SA的生存时间（以字节计） */
+        @SerializedName("IPSecSALifetimeBytes")
+        private String ipSecSALifetimeBytes;
+
+        /** 是否开启PFS功能,Disable表示关闭，数字表示DH组 */
+        @SerializedName("IPSecPFSDhGroup")
+        private String ipSecPFSDhGroup;
+
+        public String getIPSecAuthenticationAlgorithm() {
+            return ipSecAuthenticationAlgorithm;
+        }
+
+        public void setIPSecAuthenticationAlgorithm(String ipSecAuthenticationAlgorithm) {
+            this.ipSecAuthenticationAlgorithm = ipSecAuthenticationAlgorithm;
+        }
+
+        public String getIPSecEncryptionAlgorithm() {
+            return ipSecEncryptionAlgorithm;
+        }
+
+        public void setIPSecEncryptionAlgorithm(String ipSecEncryptionAlgorithm) {
+            this.ipSecEncryptionAlgorithm = ipSecEncryptionAlgorithm;
+        }
+
+        public List<String> getIPSecLocalSubnetIds() {
+            return ipSecLocalSubnetIds;
+        }
+
+        public void setIPSecLocalSubnetIds(List<String> ipSecLocalSubnetIds) {
+            this.ipSecLocalSubnetIds = ipSecLocalSubnetIds;
+        }
+
+        public String getIPSecProtocol() {
+            return ipSecProtocol;
+        }
+
+        public void setIPSecProtocol(String ipSecProtocol) {
+            this.ipSecProtocol = ipSecProtocol;
+        }
+
+        public List<String> getIPSecRemoteSubnets() {
+            return ipSecRemoteSubnets;
+        }
+
+        public void setIPSecRemoteSubnets(List<String> ipSecRemoteSubnets) {
+            this.ipSecRemoteSubnets = ipSecRemoteSubnets;
+        }
+
+        public String getIPSecSALifetime() {
+            return ipSecSALifetime;
+        }
+
+        public void setIPSecSALifetime(String ipSecSALifetime) {
+            this.ipSecSALifetime = ipSecSALifetime;
+        }
+
+        public String getIPSecSALifetimeBytes() {
+            return ipSecSALifetimeBytes;
+        }
+
+        public void setIPSecSALifetimeBytes(String ipSecSALifetimeBytes) {
+            this.ipSecSALifetimeBytes = ipSecSALifetimeBytes;
+        }
+
+        public String getIPSecPFSDhGroup() {
+            return ipSecPFSDhGroup;
+        }
+
+        public void setIPSecPFSDhGroup(String ipSecPFSDhGroup) {
+            this.ipSecPFSDhGroup = ipSecPFSDhGroup;
         }
     }
 

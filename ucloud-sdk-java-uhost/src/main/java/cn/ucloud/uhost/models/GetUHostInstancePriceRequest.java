@@ -249,8 +249,6 @@ public class GetUHostInstancePriceRequest extends Request {
         this.virtualGpu = virtualGpu;
     }
 
-    public static class VirtualGpu extends Request {}
-
     public static class Volumes extends Request {}
 
     public static class Disks extends Request {
@@ -309,4 +307,6 @@ public class GetUHostInstancePriceRequest extends Request {
             this.backupType = backupType;
         }
     }
+
+    public static class VirtualGpu extends Request {}
 }

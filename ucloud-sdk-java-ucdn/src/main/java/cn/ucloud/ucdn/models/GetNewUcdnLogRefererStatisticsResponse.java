@@ -31,6 +31,33 @@ public class GetNewUcdnLogRefererStatisticsResponse extends Response {
         this.refererStatistics = refererStatistics;
     }
 
+    public static class RefererStatistics extends Response {
+
+        /** 日期 */
+        @SerializedName("Date")
+        private String date;
+
+        /** Referer实例表 */
+        @SerializedName("RefererList")
+        private List<RefererList> refererList;
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+
+        public List<RefererList> getRefererList() {
+            return refererList;
+        }
+
+        public void setRefererList(List<RefererList> refererList) {
+            this.refererList = refererList;
+        }
+    }
+
     public static class RefererList extends Response {
 
         /** 客户端请求的referer */
@@ -67,33 +94,6 @@ public class GetNewUcdnLogRefererStatisticsResponse extends Response {
 
         public void setPercent(Double percent) {
             this.percent = percent;
-        }
-    }
-
-    public static class RefererStatistics extends Response {
-
-        /** 日期 */
-        @SerializedName("Date")
-        private String date;
-
-        /** Referer实例表 */
-        @SerializedName("RefererList")
-        private List<RefererList> refererList;
-
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
-        }
-
-        public List<RefererList> getRefererList() {
-            return refererList;
-        }
-
-        public void setRefererList(List<RefererList> refererList) {
-            this.refererList = refererList;
         }
     }
 }

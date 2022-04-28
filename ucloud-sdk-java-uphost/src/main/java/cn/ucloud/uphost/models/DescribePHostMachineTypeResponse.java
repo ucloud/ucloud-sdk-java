@@ -58,93 +58,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         }
     }
 
-    public static class PHostMachineTypeSet extends Response {
-
-        /** 物理云主机机型别名，全网唯一。 */
-        @SerializedName("Type")
-        private String type;
-
-        /** CPU信息 */
-        @SerializedName("CPU")
-        private PHostCPUSet cpu;
-
-        /** 内存大小，单位MB */
-        @SerializedName("Memory")
-        private Integer memory;
-
-        /** 磁盘信息 */
-        @SerializedName("Disks")
-        private List<PHostDiskSet> disks;
-
-        /** 其他组件信息 */
-        @SerializedName("Components")
-        private PHostComponentSet components;
-
-        /** 集群库存信息 */
-        @SerializedName("Clusters")
-        private List<PHostClusterSet> clusters;
-
-        /** 是否支持Raid。枚举值：支持：YES；不支持：NO */
-        @SerializedName("RaidSupported")
-        private String raidSupported;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public PHostCPUSet getCPU() {
-            return cpu;
-        }
-
-        public void setCPU(PHostCPUSet cpu) {
-            this.cpu = cpu;
-        }
-
-        public Integer getMemory() {
-            return memory;
-        }
-
-        public void setMemory(Integer memory) {
-            this.memory = memory;
-        }
-
-        public List<PHostDiskSet> getDisks() {
-            return disks;
-        }
-
-        public void setDisks(List<PHostDiskSet> disks) {
-            this.disks = disks;
-        }
-
-        public PHostComponentSet getComponents() {
-            return components;
-        }
-
-        public void setComponents(PHostComponentSet components) {
-            this.components = components;
-        }
-
-        public List<PHostClusterSet> getClusters() {
-            return clusters;
-        }
-
-        public void setClusters(List<PHostClusterSet> clusters) {
-            this.clusters = clusters;
-        }
-
-        public String getRaidSupported() {
-            return raidSupported;
-        }
-
-        public void setRaidSupported(String raidSupported) {
-            this.raidSupported = raidSupported;
-        }
-    }
-
     public static class PHostComponentSet extends Response {
 
         /** 组件名称 */
@@ -232,6 +145,93 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setIOCap(Integer ioCap) {
             this.ioCap = ioCap;
+        }
+    }
+
+    public static class PHostMachineTypeSet extends Response {
+
+        /** 物理云主机机型别名，全网唯一。 */
+        @SerializedName("Type")
+        private String type;
+
+        /** CPU信息 */
+        @SerializedName("CPU")
+        private PHostCPUSet cpu;
+
+        /** 内存大小，单位MB */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** 磁盘信息 */
+        @SerializedName("Disks")
+        private List<PHostDiskSet> disks;
+
+        /** 其他组件信息 */
+        @SerializedName("Components")
+        private PHostComponentSet components;
+
+        /** 集群库存信息 */
+        @SerializedName("Clusters")
+        private List<PHostClusterSet> clusters;
+
+        /** 是否支持Raid。枚举值：支持：YES；不支持：NO */
+        @SerializedName("RaidSupported")
+        private String raidSupported;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public PHostCPUSet getCPU() {
+            return cpu;
+        }
+
+        public void setCPU(PHostCPUSet cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public List<PHostDiskSet> getDisks() {
+            return disks;
+        }
+
+        public void setDisks(List<PHostDiskSet> disks) {
+            this.disks = disks;
+        }
+
+        public PHostComponentSet getComponents() {
+            return components;
+        }
+
+        public void setComponents(PHostComponentSet components) {
+            this.components = components;
+        }
+
+        public List<PHostClusterSet> getClusters() {
+            return clusters;
+        }
+
+        public void setClusters(List<PHostClusterSet> clusters) {
+            this.clusters = clusters;
+        }
+
+        public String getRaidSupported() {
+            return raidSupported;
+        }
+
+        public void setRaidSupported(String raidSupported) {
+            this.raidSupported = raidSupported;
         }
     }
 

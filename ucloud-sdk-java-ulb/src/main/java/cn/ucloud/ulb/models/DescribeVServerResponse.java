@@ -130,6 +130,57 @@ public class DescribeVServerResponse extends Response {
         }
     }
 
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的VServer的资源ID */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 对应的VServer的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer 所属的ULB实例的资源ID */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** ULB实例的名称 */
+        @SerializedName("ULBName")
+        private String ulbName;
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getULBName() {
+            return ulbName;
+        }
+
+        public void setULBName(String ulbName) {
+            this.ulbName = ulbName;
+        }
+    }
+
     public static class ULBPolicySet extends Response {
 
         /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
@@ -352,169 +403,6 @@ public class DescribeVServerResponse extends Response {
 
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
-        }
-    }
-
-    public static class ULBBackendSet extends Response {
-
-        /** 后端资源实例的Id */
-        @SerializedName("BackendId")
-        private String backendId;
-
-        /** 资源实例的类型 */
-        @SerializedName("ResourceType")
-        private String resourceType;
-
-        /** 资源实例的资源Id */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        /** 资源实例的资源名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
-
-        /** 资源绑定的虚拟网卡实例的类型 */
-        @SerializedName("SubResourceType")
-        private String subResourceType;
-
-        /** 资源绑定的虚拟网卡实例的资源Id */
-        @SerializedName("SubResourceId")
-        private String subResourceId;
-
-        /** 资源绑定的虚拟网卡实例的资源名称 */
-        @SerializedName("SubResourceName")
-        private String subResourceName;
-
-        /** 后端提供服务的内网IP */
-        @SerializedName("PrivateIP")
-        private String privateIP;
-
-        /** 后端提供服务的端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用 */
-        @SerializedName("Enabled")
-        private Integer enabled;
-
-        /** 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常 */
-        @SerializedName("Status")
-        private Integer status;
-
-        /** 后端提供服务的资源所在的子网的ID */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /**
-         * 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：
-         *
-         * <p>0：主rs 1：备rs
-         */
-        @SerializedName("IsBackup")
-        private Integer isBackup;
-
-        public String getBackendId() {
-            return backendId;
-        }
-
-        public void setBackendId(String backendId) {
-            this.backendId = backendId;
-        }
-
-        public String getResourceType() {
-            return resourceType;
-        }
-
-        public void setResourceType(String resourceType) {
-            this.resourceType = resourceType;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-
-        public String getResourceName() {
-            return resourceName;
-        }
-
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
-        }
-
-        public String getSubResourceType() {
-            return subResourceType;
-        }
-
-        public void setSubResourceType(String subResourceType) {
-            this.subResourceType = subResourceType;
-        }
-
-        public String getSubResourceId() {
-            return subResourceId;
-        }
-
-        public void setSubResourceId(String subResourceId) {
-            this.subResourceId = subResourceId;
-        }
-
-        public String getSubResourceName() {
-            return subResourceName;
-        }
-
-        public void setSubResourceName(String subResourceName) {
-            this.subResourceName = subResourceName;
-        }
-
-        public String getPrivateIP() {
-            return privateIP;
-        }
-
-        public void setPrivateIP(String privateIP) {
-            this.privateIP = privateIP;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public Integer getEnabled() {
-            return enabled;
-        }
-
-        public void setEnabled(Integer enabled) {
-            this.enabled = enabled;
-        }
-
-        public Integer getStatus() {
-            return status;
-        }
-
-        public void setStatus(Integer status) {
-            this.status = status;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public Integer getIsBackup() {
-            return isBackup;
-        }
-
-        public void setIsBackup(Integer isBackup) {
-            this.isBackup = isBackup;
         }
     }
 
@@ -757,54 +645,166 @@ public class DescribeVServerResponse extends Response {
         }
     }
 
-    public static class SSLBindedTargetSet extends Response {
+    public static class ULBBackendSet extends Response {
 
-        /** SSL证书绑定到的VServer的资源ID */
-        @SerializedName("VServerId")
-        private String vServerId;
+        /** 后端资源实例的Id */
+        @SerializedName("BackendId")
+        private String backendId;
 
-        /** 对应的VServer的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
+        /** 资源实例的类型 */
+        @SerializedName("ResourceType")
+        private String resourceType;
 
-        /** VServer 所属的ULB实例的资源ID */
-        @SerializedName("ULBId")
-        private String ulbId;
+        /** 资源实例的资源Id */
+        @SerializedName("ResourceId")
+        private String resourceId;
 
-        /** ULB实例的名称 */
-        @SerializedName("ULBName")
-        private String ulbName;
+        /** 资源实例的资源名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
 
-        public String getVServerId() {
-            return vServerId;
+        /** 资源绑定的虚拟网卡实例的类型 */
+        @SerializedName("SubResourceType")
+        private String subResourceType;
+
+        /** 资源绑定的虚拟网卡实例的资源Id */
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        /** 资源绑定的虚拟网卡实例的资源名称 */
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        /** 后端提供服务的内网IP */
+        @SerializedName("PrivateIP")
+        private String privateIP;
+
+        /** 后端提供服务的端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用 */
+        @SerializedName("Enabled")
+        private Integer enabled;
+
+        /** 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常 */
+        @SerializedName("Status")
+        private Integer status;
+
+        /** 后端提供服务的资源所在的子网的ID */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /**
+         * 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：
+         *
+         * <p>0：主rs 1：备rs
+         */
+        @SerializedName("IsBackup")
+        private Integer isBackup;
+
+        public String getBackendId() {
+            return backendId;
         }
 
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
+        public void setBackendId(String backendId) {
+            this.backendId = backendId;
         }
 
-        public String getVServerName() {
-            return vServerName;
+        public String getResourceType() {
+            return resourceType;
         }
 
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
         }
 
-        public String getULBId() {
-            return ulbId;
+        public String getResourceId() {
+            return resourceId;
         }
 
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
         }
 
-        public String getULBName() {
-            return ulbName;
+        public String getResourceName() {
+            return resourceName;
         }
 
-        public void setULBName(String ulbName) {
-            this.ulbName = ulbName;
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+        }
+
+        public String getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getPrivateIP() {
+            return privateIP;
+        }
+
+        public void setPrivateIP(String privateIP) {
+            this.privateIP = privateIP;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public Integer getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Integer enabled) {
+            this.enabled = enabled;
+        }
+
+        public Integer getStatus() {
+            return status;
+        }
+
+        public void setStatus(Integer status) {
+            this.status = status;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public Integer getIsBackup() {
+            return isBackup;
+        }
+
+        public void setIsBackup(Integer isBackup) {
+            this.isBackup = isBackup;
         }
     }
 }
