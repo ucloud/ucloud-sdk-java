@@ -13,7 +13,6 @@
  */
 package cn.ucloud.udisk.models;
 
-
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 

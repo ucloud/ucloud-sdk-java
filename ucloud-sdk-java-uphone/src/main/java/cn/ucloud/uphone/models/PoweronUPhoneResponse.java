@@ -13,8 +13,6 @@
  */
 package cn.ucloud.uphone.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class PoweronUPhoneResponse extends Response {}

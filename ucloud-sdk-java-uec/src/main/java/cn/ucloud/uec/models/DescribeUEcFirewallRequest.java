@@ -13,7 +13,6 @@
  */
 package cn.ucloud.uec.models;
 
-
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 

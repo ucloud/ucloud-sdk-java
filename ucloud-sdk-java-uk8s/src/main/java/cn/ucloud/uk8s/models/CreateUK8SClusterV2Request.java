@@ -333,6 +333,21 @@ public class CreateUK8SClusterV2Request extends Request {
         this.initScript = initScript;
     }
 
+    public static class KubeProxy extends Request {
+
+        /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。 */
+        @UCloudParam("Mode")
+        private String mode;
+
+        public String getMode() {
+            return mode;
+        }
+
+        public void setMode(String mode) {
+            this.mode = mode;
+        }
+    }
+
     public static class Nodes extends Request {
 
         /**
@@ -531,21 +546,6 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setZone(String zone) {
             this.zone = zone;
-        }
-    }
-
-    public static class KubeProxy extends Request {
-
-        /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。 */
-        @UCloudParam("Mode")
-        private String mode;
-
-        public String getMode() {
-            return mode;
-        }
-
-        public void setMode(String mode) {
-            this.mode = mode;
         }
     }
 }

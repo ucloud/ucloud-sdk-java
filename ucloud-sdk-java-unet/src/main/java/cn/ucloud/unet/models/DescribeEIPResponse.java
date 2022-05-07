@@ -67,6 +67,45 @@ public class DescribeEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
+    public static class ShareBandwidthSet extends Response {
+
+        /** 共享带宽带宽值 */
+        @SerializedName("ShareBandwidth")
+        private Integer shareBandwidth;
+
+        /** 共享带宽的资源名称 */
+        @SerializedName("ShareBandwidthName")
+        private String shareBandwidthName;
+
+        /** 共享带宽ID */
+        @SerializedName("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        public Integer getShareBandwidth() {
+            return shareBandwidth;
+        }
+
+        public void setShareBandwidth(Integer shareBandwidth) {
+            this.shareBandwidth = shareBandwidth;
+        }
+
+        public String getShareBandwidthName() {
+            return shareBandwidthName;
+        }
+
+        public void setShareBandwidthName(String shareBandwidthName) {
+            this.shareBandwidthName = shareBandwidthName;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+    }
+
     public static class UnetEIPAddrSet extends Response {
 
         /** 运营商信息如: 国际: International, BGP: BGP */
@@ -382,45 +421,6 @@ public class DescribeEIPResponse extends Response {
 
         public void setExpire(Boolean expire) {
             this.expire = expire;
-        }
-    }
-
-    public static class ShareBandwidthSet extends Response {
-
-        /** 共享带宽带宽值 */
-        @SerializedName("ShareBandwidth")
-        private Integer shareBandwidth;
-
-        /** 共享带宽的资源名称 */
-        @SerializedName("ShareBandwidthName")
-        private String shareBandwidthName;
-
-        /** 共享带宽ID */
-        @SerializedName("ShareBandwidthId")
-        private String shareBandwidthId;
-
-        public Integer getShareBandwidth() {
-            return shareBandwidth;
-        }
-
-        public void setShareBandwidth(Integer shareBandwidth) {
-            this.shareBandwidth = shareBandwidth;
-        }
-
-        public String getShareBandwidthName() {
-            return shareBandwidthName;
-        }
-
-        public void setShareBandwidthName(String shareBandwidthName) {
-            this.shareBandwidthName = shareBandwidthName;
-        }
-
-        public String getShareBandwidthId() {
-            return shareBandwidthId;
-        }
-
-        public void setShareBandwidthId(String shareBandwidthId) {
-            this.shareBandwidthId = shareBandwidthId;
         }
     }
 }

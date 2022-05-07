@@ -13,8 +13,6 @@
  */
 package cn.ucloud.pathx.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class ModifyUGA3BandwidthResponse extends Response {}

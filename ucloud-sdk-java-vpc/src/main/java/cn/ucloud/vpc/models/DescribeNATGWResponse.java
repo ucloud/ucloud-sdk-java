@@ -43,6 +43,33 @@ public class DescribeNATGWResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class NatGWIPResInfo extends Response {
+
+        /** IP的运营商信息 */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** 外网IP */
+        @SerializedName("EIP")
+        private String eip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getEIP() {
+            return eip;
+        }
+
+        public void setEIP(String eip) {
+            this.eip = eip;
+        }
+    }
+
     public static class NatGatewayDataSet extends Response {
 
         /** natgw id */
@@ -190,6 +217,45 @@ public class DescribeNATGWResponse extends Response {
         }
     }
 
+    public static class NatGatewaySubnetSet extends Response {
+
+        /** 子网id */
+        @SerializedName("SubnetworkId")
+        private String subnetworkId;
+
+        /** 子网网段 */
+        @SerializedName("Subnet")
+        private String subnet;
+
+        /** 子网名字 */
+        @SerializedName("SubnetName")
+        private String subnetName;
+
+        public String getSubnetworkId() {
+            return subnetworkId;
+        }
+
+        public void setSubnetworkId(String subnetworkId) {
+            this.subnetworkId = subnetworkId;
+        }
+
+        public String getSubnet() {
+            return subnet;
+        }
+
+        public void setSubnet(String subnet) {
+            this.subnet = subnet;
+        }
+
+        public String getSubnetName() {
+            return subnetName;
+        }
+
+        public void setSubnetName(String subnetName) {
+            this.subnetName = subnetName;
+        }
+    }
+
     public static class NatGatewayIPSet extends Response {
 
         /** 外网IP的 EIPId */
@@ -250,72 +316,6 @@ public class DescribeNATGWResponse extends Response {
 
         public void setIPResInfo(List<NatGWIPResInfo> ipResInfo) {
             this.ipResInfo = ipResInfo;
-        }
-    }
-
-    public static class NatGWIPResInfo extends Response {
-
-        /** IP的运营商信息 */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** 外网IP */
-        @SerializedName("EIP")
-        private String eip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getEIP() {
-            return eip;
-        }
-
-        public void setEIP(String eip) {
-            this.eip = eip;
-        }
-    }
-
-    public static class NatGatewaySubnetSet extends Response {
-
-        /** 子网id */
-        @SerializedName("SubnetworkId")
-        private String subnetworkId;
-
-        /** 子网网段 */
-        @SerializedName("Subnet")
-        private String subnet;
-
-        /** 子网名字 */
-        @SerializedName("SubnetName")
-        private String subnetName;
-
-        public String getSubnetworkId() {
-            return subnetworkId;
-        }
-
-        public void setSubnetworkId(String subnetworkId) {
-            this.subnetworkId = subnetworkId;
-        }
-
-        public String getSubnet() {
-            return subnet;
-        }
-
-        public void setSubnet(String subnet) {
-            this.subnet = subnet;
-        }
-
-        public String getSubnetName() {
-            return subnetName;
-        }
-
-        public void setSubnetName(String subnetName) {
-            this.subnetName = subnetName;
         }
     }
 }
