@@ -86,33 +86,6 @@ public class DescribeUGA3InstanceResponse extends Response {
         }
     }
 
-    public static class OutPublicIpInfo extends Response {
-
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-    }
-
     public static class AccelerationAreaInfos extends Response {
 
         /** 加速区code */
@@ -188,6 +161,33 @@ public class DescribeUGA3InstanceResponse extends Response {
 
         public void setFlagUnicode(String flagUnicode) {
             this.flagUnicode = flagUnicode;
+        }
+    }
+
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
+        @SerializedName("Area")
+        private String area;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
         }
     }
 

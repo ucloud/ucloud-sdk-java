@@ -45,93 +45,6 @@ public class DescribeVServerResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class ULBSSLSet extends Response {
-
-        /** SSL证书的Id */
-        @SerializedName("SSLId")
-        private String sslId;
-
-        /** SSL证书的名字 */
-        @SerializedName("SSLName")
-        private String sslName;
-
-        /** SSL证书类型，暂时只有 Pem 一种类型 */
-        @SerializedName("SSLType")
-        private String sslType;
-
-        /** SSL证书的内容 */
-        @SerializedName("SSLContent")
-        private String sslContent;
-
-        /** SSL证书的创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** SSL证书的HASH值 */
-        @SerializedName("HashValue")
-        private String hashValue;
-
-        /** SSL证书绑定到的对象 */
-        @SerializedName("BindedTargetSet")
-        private List<SSLBindedTargetSet> bindedTargetSet;
-
-        public String getSSLId() {
-            return sslId;
-        }
-
-        public void setSSLId(String sslId) {
-            this.sslId = sslId;
-        }
-
-        public String getSSLName() {
-            return sslName;
-        }
-
-        public void setSSLName(String sslName) {
-            this.sslName = sslName;
-        }
-
-        public String getSSLType() {
-            return sslType;
-        }
-
-        public void setSSLType(String sslType) {
-            this.sslType = sslType;
-        }
-
-        public String getSSLContent() {
-            return sslContent;
-        }
-
-        public void setSSLContent(String sslContent) {
-            this.sslContent = sslContent;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public String getHashValue() {
-            return hashValue;
-        }
-
-        public void setHashValue(String hashValue) {
-            this.hashValue = hashValue;
-        }
-
-        public List<SSLBindedTargetSet> getBindedTargetSet() {
-            return bindedTargetSet;
-        }
-
-        public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
-            this.bindedTargetSet = bindedTargetSet;
-        }
-    }
-
     public static class ULBVServerSet extends Response {
 
         /**
@@ -371,6 +284,93 @@ public class DescribeVServerResponse extends Response {
         }
     }
 
+    public static class ULBSSLSet extends Response {
+
+        /** SSL证书的Id */
+        @SerializedName("SSLId")
+        private String sslId;
+
+        /** SSL证书的名字 */
+        @SerializedName("SSLName")
+        private String sslName;
+
+        /** SSL证书类型，暂时只有 Pem 一种类型 */
+        @SerializedName("SSLType")
+        private String sslType;
+
+        /** SSL证书的内容 */
+        @SerializedName("SSLContent")
+        private String sslContent;
+
+        /** SSL证书的创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** SSL证书的HASH值 */
+        @SerializedName("HashValue")
+        private String hashValue;
+
+        /** SSL证书绑定到的对象 */
+        @SerializedName("BindedTargetSet")
+        private List<SSLBindedTargetSet> bindedTargetSet;
+
+        public String getSSLId() {
+            return sslId;
+        }
+
+        public void setSSLId(String sslId) {
+            this.sslId = sslId;
+        }
+
+        public String getSSLName() {
+            return sslName;
+        }
+
+        public void setSSLName(String sslName) {
+            this.sslName = sslName;
+        }
+
+        public String getSSLType() {
+            return sslType;
+        }
+
+        public void setSSLType(String sslType) {
+            this.sslType = sslType;
+        }
+
+        public String getSSLContent() {
+            return sslContent;
+        }
+
+        public void setSSLContent(String sslContent) {
+            this.sslContent = sslContent;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getHashValue() {
+            return hashValue;
+        }
+
+        public void setHashValue(String hashValue) {
+            this.hashValue = hashValue;
+        }
+
+        public List<SSLBindedTargetSet> getBindedTargetSet() {
+            return bindedTargetSet;
+        }
+
+        public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
+            this.bindedTargetSet = bindedTargetSet;
+        }
+    }
+
     public static class ULBPolicySet extends Response {
 
         /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
@@ -479,6 +479,57 @@ public class DescribeVServerResponse extends Response {
 
         public void setBackendSet(List<PolicyBackendSet> backendSet) {
             this.backendSet = backendSet;
+        }
+    }
+
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的VServer的资源ID */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 对应的VServer的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer 所属的ULB实例的资源ID */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** ULB实例的名称 */
+        @SerializedName("ULBName")
+        private String ulbName;
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getULBName() {
+            return ulbName;
+        }
+
+        public void setULBName(String ulbName) {
+            this.ulbName = ulbName;
         }
     }
 
@@ -756,57 +807,6 @@ public class DescribeVServerResponse extends Response {
 
         public void setIsBackup(Integer isBackup) {
             this.isBackup = isBackup;
-        }
-    }
-
-    public static class SSLBindedTargetSet extends Response {
-
-        /** SSL证书绑定到的VServer的资源ID */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** 对应的VServer的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
-
-        /** VServer 所属的ULB实例的资源ID */
-        @SerializedName("ULBId")
-        private String ulbId;
-
-        /** ULB实例的名称 */
-        @SerializedName("ULBName")
-        private String ulbName;
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public String getVServerName() {
-            return vServerName;
-        }
-
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
-        }
-
-        public String getULBId() {
-            return ulbId;
-        }
-
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
-        }
-
-        public String getULBName() {
-            return ulbName;
-        }
-
-        public void setULBName(String ulbName) {
-            this.ulbName = ulbName;
         }
     }
 }

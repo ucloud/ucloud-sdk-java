@@ -45,42 +45,57 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class ImageList extends Response {
+    public static class EnvList extends Response {
 
-        /** 仓库地址 */
-        @SerializedName("StoreAddr")
-        private String storeAddr;
+        /** 环境变量key值 */
+        @SerializedName("Key")
+        private String key;
 
-        /** 用户名称 */
-        @SerializedName("UserName")
-        private String userName;
+        /** 环境变量Value值 */
+        @SerializedName("Value")
+        private String value;
 
-        /** 镜像密钥 */
-        @SerializedName("ImageKey")
-        private String imageKey;
-
-        public String getStoreAddr() {
-            return storeAddr;
+        public String getKey() {
+            return key;
         }
 
-        public void setStoreAddr(String storeAddr) {
-            this.storeAddr = storeAddr;
+        public void setKey(String key) {
+            this.key = key;
         }
 
-        public String getUserName() {
-            return userName;
+        public String getValue() {
+            return value;
         }
 
-        public void setUserName(String userName) {
-            this.userName = userName;
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    public static class IpList extends Response {
+
+        /** 外网ip */
+        @SerializedName("Ip")
+        private String ip;
+
+        /** 运营商 */
+        @SerializedName("Isp")
+        private String isp;
+
+        public String getIp() {
+            return ip;
         }
 
-        public String getImageKey() {
-            return imageKey;
+        public void setIp(String ip) {
+            this.ip = ip;
         }
 
-        public void setImageKey(String imageKey) {
-            this.imageKey = imageKey;
+        public String getIsp() {
+            return isp;
+        }
+
+        public void setIsp(String isp) {
+            this.isp = isp;
         }
     }
 
@@ -297,30 +312,42 @@ public class DescribeUEcHolderResponse extends Response {
         }
     }
 
-    public static class IpList extends Response {
+    public static class ImageList extends Response {
 
-        /** 外网ip */
-        @SerializedName("Ip")
-        private String ip;
+        /** 仓库地址 */
+        @SerializedName("StoreAddr")
+        private String storeAddr;
 
-        /** 运营商 */
-        @SerializedName("Isp")
-        private String isp;
+        /** 用户名称 */
+        @SerializedName("UserName")
+        private String userName;
 
-        public String getIp() {
-            return ip;
+        /** 镜像密钥 */
+        @SerializedName("ImageKey")
+        private String imageKey;
+
+        public String getStoreAddr() {
+            return storeAddr;
         }
 
-        public void setIp(String ip) {
-            this.ip = ip;
+        public void setStoreAddr(String storeAddr) {
+            this.storeAddr = storeAddr;
         }
 
-        public String getIsp() {
-            return isp;
+        public String getUserName() {
+            return userName;
         }
 
-        public void setIsp(String isp) {
-            this.isp = isp;
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getImageKey() {
+            return imageKey;
+        }
+
+        public void setImageKey(String imageKey) {
+            this.imageKey = imageKey;
         }
     }
 
@@ -588,33 +615,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setImageList(List<ImageList> imageList) {
             this.imageList = imageList;
-        }
-    }
-
-    public static class EnvList extends Response {
-
-        /** 环境变量key值 */
-        @SerializedName("Key")
-        private String key;
-
-        /** 环境变量Value值 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
         }
     }
 }

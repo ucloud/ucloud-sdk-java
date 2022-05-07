@@ -45,33 +45,6 @@ public class DescribeULBResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class FirewallSet extends Response {
-
-        /** 防火墙名称 */
-        @SerializedName("FirewallName")
-        private String firewallName;
-
-        /** 防火墙ID */
-        @SerializedName("FirewallId")
-        private String firewallId;
-
-        public String getFirewallName() {
-            return firewallName;
-        }
-
-        public void setFirewallName(String firewallName) {
-            this.firewallName = firewallName;
-        }
-
-        public String getFirewallId() {
-            return firewallId;
-        }
-
-        public void setFirewallId(String firewallId) {
-            this.firewallId = firewallId;
-        }
-    }
-
     public static class ULBPolicySet extends Response {
 
         /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
@@ -231,45 +204,6 @@ public class DescribeULBResponse extends Response {
 
         public void setULBName(String ulbName) {
             this.ulbName = ulbName;
-        }
-    }
-
-    public static class LoggerSet extends Response {
-
-        /** ulb日志上传的bucket */
-        @SerializedName("BucketName")
-        private String bucketName;
-
-        /** 上传到bucket使用的token的tokenid */
-        @SerializedName("TokenID")
-        private String tokenID;
-
-        /** bucket的token名称 */
-        @SerializedName("TokenName")
-        private String tokenName;
-
-        public String getBucketName() {
-            return bucketName;
-        }
-
-        public void setBucketName(String bucketName) {
-            this.bucketName = bucketName;
-        }
-
-        public String getTokenID() {
-            return tokenID;
-        }
-
-        public void setTokenID(String tokenID) {
-            this.tokenID = tokenID;
-        }
-
-        public String getTokenName() {
-            return tokenName;
-        }
-
-        public void setTokenName(String tokenName) {
-            this.tokenName = tokenName;
         }
     }
 
@@ -512,6 +446,45 @@ public class DescribeULBResponse extends Response {
         }
     }
 
+    public static class LoggerSet extends Response {
+
+        /** ulb日志上传的bucket */
+        @SerializedName("BucketName")
+        private String bucketName;
+
+        /** 上传到bucket使用的token的tokenid */
+        @SerializedName("TokenID")
+        private String tokenID;
+
+        /** bucket的token名称 */
+        @SerializedName("TokenName")
+        private String tokenName;
+
+        public String getBucketName() {
+            return bucketName;
+        }
+
+        public void setBucketName(String bucketName) {
+            this.bucketName = bucketName;
+        }
+
+        public String getTokenID() {
+            return tokenID;
+        }
+
+        public void setTokenID(String tokenID) {
+            this.tokenID = tokenID;
+        }
+
+        public String getTokenName() {
+            return tokenName;
+        }
+
+        public void setTokenName(String tokenName) {
+            this.tokenName = tokenName;
+        }
+    }
+
     public static class ULBSSLSet extends Response {
 
         /** SSL证书的Id */
@@ -599,66 +572,193 @@ public class DescribeULBResponse extends Response {
         }
     }
 
-    public static class ULBIPSet extends Response {
+    public static class ULBBackendSet extends Response {
 
-        /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP */
-        @SerializedName("OperatorName")
-        private String operatorName;
+        /** 后端资源实例的Id */
+        @SerializedName("BackendId")
+        private String backendId;
 
-        /** 弹性IP地址 */
-        @SerializedName("EIP")
-        private String eip;
+        /** 资源实例的类型 */
+        @SerializedName("ResourceType")
+        private String resourceType;
 
-        /** 弹性IP的ID */
-        @SerializedName("EIPId")
-        private String eipId;
+        /** 资源实例的资源Id */
+        @SerializedName("ResourceId")
+        private String resourceId;
 
-        /** 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放） */
-        @SerializedName("BandwidthType")
-        private Integer bandwidthType;
+        /** 资源实例的资源名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
 
-        /** 弹性IP的带宽值（暂未对外开放） */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
+        /** 资源绑定的虚拟网卡实例的类型 */
+        @SerializedName("SubResourceType")
+        private String subResourceType;
 
-        public String getOperatorName() {
-            return operatorName;
+        /** 资源绑定的虚拟网卡实例的资源Id */
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        /** 资源绑定的虚拟网卡实例的资源名称 */
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        /** 后端提供服务的内网IP */
+        @SerializedName("PrivateIP")
+        private String privateIP;
+
+        /** 后端提供服务的端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用 */
+        @SerializedName("Enabled")
+        private Integer enabled;
+
+        /** 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常 */
+        @SerializedName("Status")
+        private Integer status;
+
+        /** 后端提供服务的资源所在的子网的ID */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /**
+         * 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：
+         *
+         * <p>0：主rs 1：备rs
+         */
+        @SerializedName("IsBackup")
+        private Integer isBackup;
+
+        public String getBackendId() {
+            return backendId;
         }
 
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
+        public void setBackendId(String backendId) {
+            this.backendId = backendId;
         }
 
-        public String getEIP() {
-            return eip;
+        public String getResourceType() {
+            return resourceType;
         }
 
-        public void setEIP(String eip) {
-            this.eip = eip;
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
         }
 
-        public String getEIPId() {
-            return eipId;
+        public String getResourceId() {
+            return resourceId;
         }
 
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
         }
 
-        public Integer getBandwidthType() {
-            return bandwidthType;
+        public String getResourceName() {
+            return resourceName;
         }
 
-        public void setBandwidthType(Integer bandwidthType) {
-            this.bandwidthType = bandwidthType;
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
         }
 
-        public Integer getBandwidth() {
-            return bandwidth;
+        public String getSubResourceType() {
+            return subResourceType;
         }
 
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getPrivateIP() {
+            return privateIP;
+        }
+
+        public void setPrivateIP(String privateIP) {
+            this.privateIP = privateIP;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public Integer getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Integer enabled) {
+            this.enabled = enabled;
+        }
+
+        public Integer getStatus() {
+            return status;
+        }
+
+        public void setStatus(Integer status) {
+            this.status = status;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public Integer getIsBackup() {
+            return isBackup;
+        }
+
+        public void setIsBackup(Integer isBackup) {
+            this.isBackup = isBackup;
+        }
+    }
+
+    public static class FirewallSet extends Response {
+
+        /** 防火墙名称 */
+        @SerializedName("FirewallName")
+        private String firewallName;
+
+        /** 防火墙ID */
+        @SerializedName("FirewallId")
+        private String firewallId;
+
+        public String getFirewallName() {
+            return firewallName;
+        }
+
+        public void setFirewallName(String firewallName) {
+            this.firewallName = firewallName;
+        }
+
+        public String getFirewallId() {
+            return firewallId;
+        }
+
+        public void setFirewallId(String firewallId) {
+            this.firewallId = firewallId;
         }
     }
 
@@ -1007,166 +1107,66 @@ public class DescribeULBResponse extends Response {
         }
     }
 
-    public static class ULBBackendSet extends Response {
+    public static class ULBIPSet extends Response {
 
-        /** 后端资源实例的Id */
-        @SerializedName("BackendId")
-        private String backendId;
+        /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP */
+        @SerializedName("OperatorName")
+        private String operatorName;
 
-        /** 资源实例的类型 */
-        @SerializedName("ResourceType")
-        private String resourceType;
+        /** 弹性IP地址 */
+        @SerializedName("EIP")
+        private String eip;
 
-        /** 资源实例的资源Id */
-        @SerializedName("ResourceId")
-        private String resourceId;
+        /** 弹性IP的ID */
+        @SerializedName("EIPId")
+        private String eipId;
 
-        /** 资源实例的资源名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
+        /** 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放） */
+        @SerializedName("BandwidthType")
+        private Integer bandwidthType;
 
-        /** 资源绑定的虚拟网卡实例的类型 */
-        @SerializedName("SubResourceType")
-        private String subResourceType;
+        /** 弹性IP的带宽值（暂未对外开放） */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
 
-        /** 资源绑定的虚拟网卡实例的资源Id */
-        @SerializedName("SubResourceId")
-        private String subResourceId;
-
-        /** 资源绑定的虚拟网卡实例的资源名称 */
-        @SerializedName("SubResourceName")
-        private String subResourceName;
-
-        /** 后端提供服务的内网IP */
-        @SerializedName("PrivateIP")
-        private String privateIP;
-
-        /** 后端提供服务的端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用 */
-        @SerializedName("Enabled")
-        private Integer enabled;
-
-        /** 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常 */
-        @SerializedName("Status")
-        private Integer status;
-
-        /** 后端提供服务的资源所在的子网的ID */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /**
-         * 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：
-         *
-         * <p>0：主rs 1：备rs
-         */
-        @SerializedName("IsBackup")
-        private Integer isBackup;
-
-        public String getBackendId() {
-            return backendId;
+        public String getOperatorName() {
+            return operatorName;
         }
 
-        public void setBackendId(String backendId) {
-            this.backendId = backendId;
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
         }
 
-        public String getResourceType() {
-            return resourceType;
+        public String getEIP() {
+            return eip;
         }
 
-        public void setResourceType(String resourceType) {
-            this.resourceType = resourceType;
+        public void setEIP(String eip) {
+            this.eip = eip;
         }
 
-        public String getResourceId() {
-            return resourceId;
+        public String getEIPId() {
+            return eipId;
         }
 
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
         }
 
-        public String getResourceName() {
-            return resourceName;
+        public Integer getBandwidthType() {
+            return bandwidthType;
         }
 
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
+        public void setBandwidthType(Integer bandwidthType) {
+            this.bandwidthType = bandwidthType;
         }
 
-        public String getSubResourceType() {
-            return subResourceType;
+        public Integer getBandwidth() {
+            return bandwidth;
         }
 
-        public void setSubResourceType(String subResourceType) {
-            this.subResourceType = subResourceType;
-        }
-
-        public String getSubResourceId() {
-            return subResourceId;
-        }
-
-        public void setSubResourceId(String subResourceId) {
-            this.subResourceId = subResourceId;
-        }
-
-        public String getSubResourceName() {
-            return subResourceName;
-        }
-
-        public void setSubResourceName(String subResourceName) {
-            this.subResourceName = subResourceName;
-        }
-
-        public String getPrivateIP() {
-            return privateIP;
-        }
-
-        public void setPrivateIP(String privateIP) {
-            this.privateIP = privateIP;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public Integer getEnabled() {
-            return enabled;
-        }
-
-        public void setEnabled(Integer enabled) {
-            this.enabled = enabled;
-        }
-
-        public Integer getStatus() {
-            return status;
-        }
-
-        public void setStatus(Integer status) {
-            this.status = status;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public Integer getIsBackup() {
-            return isBackup;
-        }
-
-        public void setIsBackup(Integer isBackup) {
-            this.isBackup = isBackup;
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
         }
     }
 }

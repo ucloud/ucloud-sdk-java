@@ -45,33 +45,6 @@ public class ListUBillDetailResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class ResourceExtendInfo extends Response {
-
-        /** 资源标识健 */
-        @SerializedName("KeyId")
-        private String keyId;
-
-        /** 资源标识值 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getKeyId() {
-            return keyId;
-        }
-
-        public void setKeyId(String keyId) {
-            this.keyId = keyId;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
-
     public static class ItemDetail extends Response {
 
         /** 产品小类名称 */
@@ -362,6 +335,33 @@ public class ListUBillDetailResponse extends Response {
 
         public void setAdmin(Integer admin) {
             this.admin = admin;
+        }
+    }
+
+    public static class ResourceExtendInfo extends Response {
+
+        /** 资源标识健 */
+        @SerializedName("KeyId")
+        private String keyId;
+
+        /** 资源标识值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKeyId() {
+            return keyId;
+        }
+
+        public void setKeyId(String keyId) {
+            this.keyId = keyId;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 }
