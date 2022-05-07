@@ -33,30 +33,42 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         this.availableInstanceTypes = availableInstanceTypes;
     }
 
-    public static class Performance extends Response {
+    public static class CpuPlatforms extends Response {
 
-        /** 值，单位是TFlops */
-        @SerializedName("Value")
-        private Integer value;
+        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
+        @SerializedName("Intel")
+        private List<String> intel;
 
-        /** 交互展示参数，可忽略 */
-        @SerializedName("Rate")
-        private Integer rate;
+        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
+        @SerializedName("Amd")
+        private List<String> amd;
 
-        public Integer getValue() {
-            return value;
+        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
+        @SerializedName("Ampere")
+        private List<String> ampere;
+
+        public List<String> getIntel() {
+            return intel;
         }
 
-        public void setValue(Integer value) {
-            this.value = value;
+        public void setIntel(List<String> intel) {
+            this.intel = intel;
         }
 
-        public Integer getRate() {
-            return rate;
+        public List<String> getAmd() {
+            return amd;
         }
 
-        public void setRate(Integer rate) {
-            this.rate = rate;
+        public void setAmd(List<String> amd) {
+            this.amd = amd;
+        }
+
+        public List<String> getAmpere() {
+            return ampere;
+        }
+
+        public void setAmpere(List<String> ampere) {
+            this.ampere = ampere;
         }
     }
 
@@ -87,25 +99,19 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class BootDiskInfo extends Response {
+    public static class FeatureModes extends Response {
 
-        /**
-         * 系统盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
-         */
+        /** 模式|特性名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。 */
-        @SerializedName("InstantResize")
-        private Boolean instantResize;
+        /** 为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。 */
+        @SerializedName("RelatedToImageFeature")
+        private List<String> relatedToImageFeature;
 
-        /** MaximalSize为磁盘最大值 */
-        @SerializedName("MaximalSize")
-        private Integer maximalSize;
-
-        /** 磁盘可支持的服务 */
-        @SerializedName("Features")
-        private List<String> features;
+        /** 这个特性必须是列出来的CPU平台及以上的CPU才支持 */
+        @SerializedName("MinimalCpuPlatform")
+        private List<String> minimalCpuPlatform;
 
         public String getName() {
             return name;
@@ -115,28 +121,47 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
             this.name = name;
         }
 
-        public Boolean getInstantResize() {
-            return instantResize;
+        public List<String> getRelatedToImageFeature() {
+            return relatedToImageFeature;
         }
 
-        public void setInstantResize(Boolean instantResize) {
-            this.instantResize = instantResize;
+        public void setRelatedToImageFeature(List<String> relatedToImageFeature) {
+            this.relatedToImageFeature = relatedToImageFeature;
         }
 
-        public Integer getMaximalSize() {
-            return maximalSize;
+        public List<String> getMinimalCpuPlatform() {
+            return minimalCpuPlatform;
         }
 
-        public void setMaximalSize(Integer maximalSize) {
-            this.maximalSize = maximalSize;
+        public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
+            this.minimalCpuPlatform = minimalCpuPlatform;
+        }
+    }
+
+    public static class MachineSizes extends Response {
+
+        /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
+        @SerializedName("Gpu")
+        private Integer gpu;
+
+        /** CPU和内存可支持的规格 */
+        @SerializedName("Collection")
+        private List<Collection> collection;
+
+        public Integer getGpu() {
+            return gpu;
         }
 
-        public List<String> getFeatures() {
-            return features;
+        public void setGpu(Integer gpu) {
+            this.gpu = gpu;
         }
 
-        public void setFeatures(List<String> features) {
-            this.features = features;
+        public List<Collection> getCollection() {
+            return collection;
+        }
+
+        public void setCollection(List<Collection> collection) {
+            this.collection = collection;
         }
     }
 
@@ -167,56 +192,42 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class DataDiskInfo extends Response {
+    public static class Collection extends Response {
 
-        /** 磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。 */
-        @SerializedName("MinimalSize")
-        private Integer minimalSize;
+        /** CPU规格 */
+        @SerializedName("Cpu")
+        private Integer cpu;
 
-        /**
-         * 数据盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
-         */
-        @SerializedName("Name")
-        private String name;
+        /** 内存规格 */
+        @SerializedName("Memory")
+        private List<Integer> memory;
 
-        /** MaximalSize为磁盘最大值 */
-        @SerializedName("MaximalSize")
-        private Integer maximalSize;
+        /** CPU和内存规格只能在列出来的CPU平台支持 */
+        @SerializedName("MinimalCpuPlatform")
+        private List<String> minimalCpuPlatform;
 
-        /** 数据盘可支持的服务 */
-        @SerializedName("Features")
-        private List<String> features;
-
-        public Integer getMinimalSize() {
-            return minimalSize;
+        public Integer getCpu() {
+            return cpu;
         }
 
-        public void setMinimalSize(Integer minimalSize) {
-            this.minimalSize = minimalSize;
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
         }
 
-        public String getName() {
-            return name;
+        public List<Integer> getMemory() {
+            return memory;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setMemory(List<Integer> memory) {
+            this.memory = memory;
         }
 
-        public Integer getMaximalSize() {
-            return maximalSize;
+        public List<String> getMinimalCpuPlatform() {
+            return minimalCpuPlatform;
         }
 
-        public void setMaximalSize(Integer maximalSize) {
-            this.maximalSize = maximalSize;
-        }
-
-        public List<String> getFeatures() {
-            return features;
-        }
-
-        public void setFeatures(List<String> features) {
-            this.features = features;
+        public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
+            this.minimalCpuPlatform = minimalCpuPlatform;
         }
     }
 
@@ -353,108 +364,56 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class Collection extends Response {
+    public static class BootDiskInfo extends Response {
 
-        /** CPU规格 */
-        @SerializedName("Cpu")
-        private Integer cpu;
+        /**
+         * 系统盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
+         */
+        @SerializedName("Name")
+        private String name;
 
-        /** 内存规格 */
-        @SerializedName("Memory")
-        private List<Integer> memory;
+        /** 系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。 */
+        @SerializedName("InstantResize")
+        private Boolean instantResize;
 
-        /** CPU和内存规格只能在列出来的CPU平台支持 */
-        @SerializedName("MinimalCpuPlatform")
-        private List<String> minimalCpuPlatform;
+        /** MaximalSize为磁盘最大值 */
+        @SerializedName("MaximalSize")
+        private Integer maximalSize;
 
-        public Integer getCpu() {
-            return cpu;
+        /** 磁盘可支持的服务 */
+        @SerializedName("Features")
+        private List<String> features;
+
+        public String getName() {
+            return name;
         }
 
-        public void setCpu(Integer cpu) {
-            this.cpu = cpu;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public List<Integer> getMemory() {
-            return memory;
+        public Boolean getInstantResize() {
+            return instantResize;
         }
 
-        public void setMemory(List<Integer> memory) {
-            this.memory = memory;
+        public void setInstantResize(Boolean instantResize) {
+            this.instantResize = instantResize;
         }
 
-        public List<String> getMinimalCpuPlatform() {
-            return minimalCpuPlatform;
+        public Integer getMaximalSize() {
+            return maximalSize;
         }
 
-        public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
-            this.minimalCpuPlatform = minimalCpuPlatform;
-        }
-    }
-
-    public static class MachineSizes extends Response {
-
-        /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
-        @SerializedName("Gpu")
-        private Integer gpu;
-
-        /** CPU和内存可支持的规格 */
-        @SerializedName("Collection")
-        private List<Collection> collection;
-
-        public Integer getGpu() {
-            return gpu;
+        public void setMaximalSize(Integer maximalSize) {
+            this.maximalSize = maximalSize;
         }
 
-        public void setGpu(Integer gpu) {
-            this.gpu = gpu;
+        public List<String> getFeatures() {
+            return features;
         }
 
-        public List<Collection> getCollection() {
-            return collection;
-        }
-
-        public void setCollection(List<Collection> collection) {
-            this.collection = collection;
-        }
-    }
-
-    public static class CpuPlatforms extends Response {
-
-        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
-        @SerializedName("Intel")
-        private List<String> intel;
-
-        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
-        @SerializedName("Amd")
-        private List<String> amd;
-
-        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
-        @SerializedName("Ampere")
-        private List<String> ampere;
-
-        public List<String> getIntel() {
-            return intel;
-        }
-
-        public void setIntel(List<String> intel) {
-            this.intel = intel;
-        }
-
-        public List<String> getAmd() {
-            return amd;
-        }
-
-        public void setAmd(List<String> amd) {
-            this.amd = amd;
-        }
-
-        public List<String> getAmpere() {
-            return ampere;
-        }
-
-        public void setAmpere(List<String> ampere) {
-            this.ampere = ampere;
+        public void setFeatures(List<String> features) {
+            this.features = features;
         }
     }
 
@@ -497,19 +456,60 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class FeatureModes extends Response {
+    public static class Performance extends Response {
 
-        /** 模式|特性名称 */
+        /** 值，单位是TFlops */
+        @SerializedName("Value")
+        private Integer value;
+
+        /** 交互展示参数，可忽略 */
+        @SerializedName("Rate")
+        private Integer rate;
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
+        }
+
+        public Integer getRate() {
+            return rate;
+        }
+
+        public void setRate(Integer rate) {
+            this.rate = rate;
+        }
+    }
+
+    public static class DataDiskInfo extends Response {
+
+        /** 磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。 */
+        @SerializedName("MinimalSize")
+        private Integer minimalSize;
+
+        /**
+         * 数据盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
+         */
         @SerializedName("Name")
         private String name;
 
-        /** 为镜像上支持这个特性的标签。例如DescribeImage返回的字段Features包含HotPlug，说明该镜像支持热升级。 */
-        @SerializedName("RelatedToImageFeature")
-        private List<String> relatedToImageFeature;
+        /** MaximalSize为磁盘最大值 */
+        @SerializedName("MaximalSize")
+        private Integer maximalSize;
 
-        /** 这个特性必须是列出来的CPU平台及以上的CPU才支持 */
-        @SerializedName("MinimalCpuPlatform")
-        private List<String> minimalCpuPlatform;
+        /** 数据盘可支持的服务 */
+        @SerializedName("Features")
+        private List<String> features;
+
+        public Integer getMinimalSize() {
+            return minimalSize;
+        }
+
+        public void setMinimalSize(Integer minimalSize) {
+            this.minimalSize = minimalSize;
+        }
 
         public String getName() {
             return name;
@@ -519,20 +519,20 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
             this.name = name;
         }
 
-        public List<String> getRelatedToImageFeature() {
-            return relatedToImageFeature;
+        public Integer getMaximalSize() {
+            return maximalSize;
         }
 
-        public void setRelatedToImageFeature(List<String> relatedToImageFeature) {
-            this.relatedToImageFeature = relatedToImageFeature;
+        public void setMaximalSize(Integer maximalSize) {
+            this.maximalSize = maximalSize;
         }
 
-        public List<String> getMinimalCpuPlatform() {
-            return minimalCpuPlatform;
+        public List<String> getFeatures() {
+            return features;
         }
 
-        public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
-            this.minimalCpuPlatform = minimalCpuPlatform;
+        public void setFeatures(List<String> features) {
+            this.features = features;
         }
     }
 }

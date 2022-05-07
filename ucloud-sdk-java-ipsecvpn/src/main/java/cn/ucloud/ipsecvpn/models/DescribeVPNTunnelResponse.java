@@ -45,117 +45,6 @@ public class DescribeVPNTunnelResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class IKEData extends Response {
-
-        /** IKE认证算法 */
-        @SerializedName("IKEAuthenticationAlgorithm")
-        private String ikeAuthenticationAlgorithm;
-
-        /** IKEDH组 */
-        @SerializedName("IKEDhGroup")
-        private String ikeDhGroup;
-
-        /** IKE加密算法 */
-        @SerializedName("IKEEncryptionAlgorithm")
-        private String ikeEncryptionAlgorithm;
-
-        /** IKEv1协商模式 */
-        @SerializedName("IKEExchangeMode")
-        private String ikeExchangeMode;
-
-        /** IKE本地ID标识 */
-        @SerializedName("IKELocalId")
-        private String ikeLocalId;
-
-        /** IKE预共享秘钥 */
-        @SerializedName("IKEPreSharedKey")
-        private String ikePreSharedKey;
-
-        /** IKE对端ID标识 */
-        @SerializedName("IKERemoteId")
-        private String ikeRemoteId;
-
-        /** IKE秘钥生存时间 */
-        @SerializedName("IKESALifetime")
-        private String ikesaLifetime;
-
-        /** IKE版本 */
-        @SerializedName("IKEVersion")
-        private String ikeVersion;
-
-        public String getIKEAuthenticationAlgorithm() {
-            return ikeAuthenticationAlgorithm;
-        }
-
-        public void setIKEAuthenticationAlgorithm(String ikeAuthenticationAlgorithm) {
-            this.ikeAuthenticationAlgorithm = ikeAuthenticationAlgorithm;
-        }
-
-        public String getIKEDhGroup() {
-            return ikeDhGroup;
-        }
-
-        public void setIKEDhGroup(String ikeDhGroup) {
-            this.ikeDhGroup = ikeDhGroup;
-        }
-
-        public String getIKEEncryptionAlgorithm() {
-            return ikeEncryptionAlgorithm;
-        }
-
-        public void setIKEEncryptionAlgorithm(String ikeEncryptionAlgorithm) {
-            this.ikeEncryptionAlgorithm = ikeEncryptionAlgorithm;
-        }
-
-        public String getIKEExchangeMode() {
-            return ikeExchangeMode;
-        }
-
-        public void setIKEExchangeMode(String ikeExchangeMode) {
-            this.ikeExchangeMode = ikeExchangeMode;
-        }
-
-        public String getIKELocalId() {
-            return ikeLocalId;
-        }
-
-        public void setIKELocalId(String ikeLocalId) {
-            this.ikeLocalId = ikeLocalId;
-        }
-
-        public String getIKEPreSharedKey() {
-            return ikePreSharedKey;
-        }
-
-        public void setIKEPreSharedKey(String ikePreSharedKey) {
-            this.ikePreSharedKey = ikePreSharedKey;
-        }
-
-        public String getIKERemoteId() {
-            return ikeRemoteId;
-        }
-
-        public void setIKERemoteId(String ikeRemoteId) {
-            this.ikeRemoteId = ikeRemoteId;
-        }
-
-        public String getIKESALifetime() {
-            return ikesaLifetime;
-        }
-
-        public void setIKESALifetime(String ikesaLifetime) {
-            this.ikesaLifetime = ikesaLifetime;
-        }
-
-        public String getIKEVersion() {
-            return ikeVersion;
-        }
-
-        public void setIKEVersion(String ikeVersion) {
-            this.ikeVersion = ikeVersion;
-        }
-    }
-
     public static class VPNTunnelDataSet extends Response {
 
         /** 隧道id */
@@ -411,6 +300,117 @@ public class DescribeVPNTunnelResponse extends Response {
 
         public void setIPSecPFSDhGroup(String ipSecPFSDhGroup) {
             this.ipSecPFSDhGroup = ipSecPFSDhGroup;
+        }
+    }
+
+    public static class IKEData extends Response {
+
+        /** IKE认证算法 */
+        @SerializedName("IKEAuthenticationAlgorithm")
+        private String ikeAuthenticationAlgorithm;
+
+        /** IKEDH组 */
+        @SerializedName("IKEDhGroup")
+        private String ikeDhGroup;
+
+        /** IKE加密算法 */
+        @SerializedName("IKEEncryptionAlgorithm")
+        private String ikeEncryptionAlgorithm;
+
+        /** IKEv1协商模式 */
+        @SerializedName("IKEExchangeMode")
+        private String ikeExchangeMode;
+
+        /** IKE本地ID标识 */
+        @SerializedName("IKELocalId")
+        private String ikeLocalId;
+
+        /** IKE预共享秘钥 */
+        @SerializedName("IKEPreSharedKey")
+        private String ikePreSharedKey;
+
+        /** IKE对端ID标识 */
+        @SerializedName("IKERemoteId")
+        private String ikeRemoteId;
+
+        /** IKE秘钥生存时间 */
+        @SerializedName("IKESALifetime")
+        private String ikesaLifetime;
+
+        /** IKE版本 */
+        @SerializedName("IKEVersion")
+        private String ikeVersion;
+
+        public String getIKEAuthenticationAlgorithm() {
+            return ikeAuthenticationAlgorithm;
+        }
+
+        public void setIKEAuthenticationAlgorithm(String ikeAuthenticationAlgorithm) {
+            this.ikeAuthenticationAlgorithm = ikeAuthenticationAlgorithm;
+        }
+
+        public String getIKEDhGroup() {
+            return ikeDhGroup;
+        }
+
+        public void setIKEDhGroup(String ikeDhGroup) {
+            this.ikeDhGroup = ikeDhGroup;
+        }
+
+        public String getIKEEncryptionAlgorithm() {
+            return ikeEncryptionAlgorithm;
+        }
+
+        public void setIKEEncryptionAlgorithm(String ikeEncryptionAlgorithm) {
+            this.ikeEncryptionAlgorithm = ikeEncryptionAlgorithm;
+        }
+
+        public String getIKEExchangeMode() {
+            return ikeExchangeMode;
+        }
+
+        public void setIKEExchangeMode(String ikeExchangeMode) {
+            this.ikeExchangeMode = ikeExchangeMode;
+        }
+
+        public String getIKELocalId() {
+            return ikeLocalId;
+        }
+
+        public void setIKELocalId(String ikeLocalId) {
+            this.ikeLocalId = ikeLocalId;
+        }
+
+        public String getIKEPreSharedKey() {
+            return ikePreSharedKey;
+        }
+
+        public void setIKEPreSharedKey(String ikePreSharedKey) {
+            this.ikePreSharedKey = ikePreSharedKey;
+        }
+
+        public String getIKERemoteId() {
+            return ikeRemoteId;
+        }
+
+        public void setIKERemoteId(String ikeRemoteId) {
+            this.ikeRemoteId = ikeRemoteId;
+        }
+
+        public String getIKESALifetime() {
+            return ikesaLifetime;
+        }
+
+        public void setIKESALifetime(String ikesaLifetime) {
+            this.ikesaLifetime = ikesaLifetime;
+        }
+
+        public String getIKEVersion() {
+            return ikeVersion;
+        }
+
+        public void setIKEVersion(String ikeVersion) {
+            this.ikeVersion = ikeVersion;
         }
     }
 }

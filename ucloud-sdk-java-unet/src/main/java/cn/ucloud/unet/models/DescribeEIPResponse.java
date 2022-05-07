@@ -69,163 +69,6 @@ public class DescribeEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
-    public static class UnetEIPResourceSet extends Response {
-
-        /**
-         * 已绑定的资源类型, 枚举值为: uhost, 云主机；natgw：NAT网关；ulb：负载均衡器；upm: 物理机; hadoophost:
-         * 大数据集群;fortresshost：堡垒机；udockhost：容器；udhost：私有专区主机；vpngw：IPSec
-         * VPN；ucdr：云灾备；dbaudit：数据库审计，uni：虚拟网卡。
-         */
-        @SerializedName("ResourceType")
-        private String resourceType;
-
-        /** 已绑定的资源名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
-
-        /** 已绑定资源的资源ID */
-        @SerializedName("ResourceID")
-        private String resourceID;
-
-        /** 资源绑定的虚拟网卡的类型。uni，虚拟网卡。 */
-        @SerializedName("SubResourceType")
-        private String subResourceType;
-
-        /** 资源绑定的虚拟网卡的名称 */
-        @SerializedName("SubResourceName")
-        private String subResourceName;
-
-        /** 资源绑定的虚拟网卡的ID */
-        @SerializedName("SubResourceId")
-        private String subResourceId;
-
-        /** 弹性IP的资源ID */
-        @SerializedName("EIPId")
-        private String eipId;
-
-        public String getResourceType() {
-            return resourceType;
-        }
-
-        public void setResourceType(String resourceType) {
-            this.resourceType = resourceType;
-        }
-
-        public String getResourceName() {
-            return resourceName;
-        }
-
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
-        }
-
-        public String getResourceID() {
-            return resourceID;
-        }
-
-        public void setResourceID(String resourceID) {
-            this.resourceID = resourceID;
-        }
-
-        public String getSubResourceType() {
-            return subResourceType;
-        }
-
-        public void setSubResourceType(String subResourceType) {
-            this.subResourceType = subResourceType;
-        }
-
-        public String getSubResourceName() {
-            return subResourceName;
-        }
-
-        public void setSubResourceName(String subResourceName) {
-            this.subResourceName = subResourceName;
-        }
-
-        public String getSubResourceId() {
-            return subResourceId;
-        }
-
-        public void setSubResourceId(String subResourceId) {
-            this.subResourceId = subResourceId;
-        }
-
-        public String getEIPId() {
-            return eipId;
-        }
-
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
-        }
-    }
-
-    public static class ShareBandwidthSet extends Response {
-
-        /** 共享带宽带宽值 */
-        @SerializedName("ShareBandwidth")
-        private Integer shareBandwidth;
-
-        /** 共享带宽的资源名称 */
-        @SerializedName("ShareBandwidthName")
-        private String shareBandwidthName;
-
-        /** 共享带宽ID */
-        @SerializedName("ShareBandwidthId")
-        private String shareBandwidthId;
-
-        public Integer getShareBandwidth() {
-            return shareBandwidth;
-        }
-
-        public void setShareBandwidth(Integer shareBandwidth) {
-            this.shareBandwidth = shareBandwidth;
-        }
-
-        public String getShareBandwidthName() {
-            return shareBandwidthName;
-        }
-
-        public void setShareBandwidthName(String shareBandwidthName) {
-            this.shareBandwidthName = shareBandwidthName;
-        }
-
-        public String getShareBandwidthId() {
-            return shareBandwidthId;
-        }
-
-        public void setShareBandwidthId(String shareBandwidthId) {
-            this.shareBandwidthId = shareBandwidthId;
-        }
-    }
-
-    public static class UnetEIPAddrSet extends Response {
-
-        /** 运营商信息如: 国际: International, BGP: BGP */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-    }
-
     public static class UnetEIPSet extends Response {
 
         /** 弹性IP的资源ID */
@@ -423,6 +266,163 @@ public class DescribeEIPResponse extends Response {
 
         public void setExpire(Boolean expire) {
             this.expire = expire;
+        }
+    }
+
+    public static class UnetEIPResourceSet extends Response {
+
+        /**
+         * 已绑定的资源类型, 枚举值为: uhost, 云主机；natgw：NAT网关；ulb：负载均衡器；upm: 物理机; hadoophost:
+         * 大数据集群;fortresshost：堡垒机；udockhost：容器；udhost：私有专区主机；vpngw：IPSec
+         * VPN；ucdr：云灾备；dbaudit：数据库审计，uni：虚拟网卡。
+         */
+        @SerializedName("ResourceType")
+        private String resourceType;
+
+        /** 已绑定的资源名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
+
+        /** 已绑定资源的资源ID */
+        @SerializedName("ResourceID")
+        private String resourceID;
+
+        /** 资源绑定的虚拟网卡的类型。uni，虚拟网卡。 */
+        @SerializedName("SubResourceType")
+        private String subResourceType;
+
+        /** 资源绑定的虚拟网卡的名称 */
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        /** 资源绑定的虚拟网卡的ID */
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        /** 弹性IP的资源ID */
+        @SerializedName("EIPId")
+        private String eipId;
+
+        public String getResourceType() {
+            return resourceType;
+        }
+
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
+        }
+
+        public String getResourceName() {
+            return resourceName;
+        }
+
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+        }
+
+        public String getResourceID() {
+            return resourceID;
+        }
+
+        public void setResourceID(String resourceID) {
+            this.resourceID = resourceID;
+        }
+
+        public String getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
+
+        public String getEIPId() {
+            return eipId;
+        }
+
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
+        }
+    }
+
+    public static class ShareBandwidthSet extends Response {
+
+        /** 共享带宽带宽值 */
+        @SerializedName("ShareBandwidth")
+        private Integer shareBandwidth;
+
+        /** 共享带宽的资源名称 */
+        @SerializedName("ShareBandwidthName")
+        private String shareBandwidthName;
+
+        /** 共享带宽ID */
+        @SerializedName("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        public Integer getShareBandwidth() {
+            return shareBandwidth;
+        }
+
+        public void setShareBandwidth(Integer shareBandwidth) {
+            this.shareBandwidth = shareBandwidth;
+        }
+
+        public String getShareBandwidthName() {
+            return shareBandwidthName;
+        }
+
+        public void setShareBandwidthName(String shareBandwidthName) {
+            this.shareBandwidthName = shareBandwidthName;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+    }
+
+    public static class UnetEIPAddrSet extends Response {
+
+        /** 运营商信息如: 国际: International, BGP: BGP */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
         }
     }
 }
