@@ -31,6 +31,93 @@ public class GetUcdnDomainHttpCodeV2Response extends Response {
         this.httpCodeDetail = httpCodeDetail;
     }
 
+    public static class HttpCodeInfoV2 extends Response {
+
+        /** 带宽获取的时间点。格式：时间戳 */
+        @SerializedName("Time")
+        private Integer time;
+
+        /** 1xx信息，参考HttpCodeV2Detail结构 */
+        @SerializedName("Http1XX")
+        private HttpCodeV2Detail http1XX;
+
+        /** 2xx信息，参考HttpCodeV2Detail结构 */
+        @SerializedName("Http2XX")
+        private HttpCodeV2Detail http2XX;
+
+        /** 3xx信息，参考HttpCodeV2Detail结构 */
+        @SerializedName("Http3XX")
+        private HttpCodeV2Detail http3XX;
+
+        /** 4xx信息，参考HttpCodeV2Detail结构 */
+        @SerializedName("Http4XX")
+        private HttpCodeV2Detail http4XX;
+
+        /** 5xx信息，参考HttpCodeV2Detail结构 */
+        @SerializedName("Http5XX")
+        private HttpCodeV2Detail http5XX;
+
+        /** 6xx信息，参考HttpCodeV2Detail结构 */
+        @SerializedName("Http6XX")
+        private HttpCodeV2Detail http6XX;
+
+        public Integer getTime() {
+            return time;
+        }
+
+        public void setTime(Integer time) {
+            this.time = time;
+        }
+
+        public HttpCodeV2Detail getHttp1XX() {
+            return http1XX;
+        }
+
+        public void setHttp1XX(HttpCodeV2Detail http1XX) {
+            this.http1XX = http1XX;
+        }
+
+        public HttpCodeV2Detail getHttp2XX() {
+            return http2XX;
+        }
+
+        public void setHttp2XX(HttpCodeV2Detail http2XX) {
+            this.http2XX = http2XX;
+        }
+
+        public HttpCodeV2Detail getHttp3XX() {
+            return http3XX;
+        }
+
+        public void setHttp3XX(HttpCodeV2Detail http3XX) {
+            this.http3XX = http3XX;
+        }
+
+        public HttpCodeV2Detail getHttp4XX() {
+            return http4XX;
+        }
+
+        public void setHttp4XX(HttpCodeV2Detail http4XX) {
+            this.http4XX = http4XX;
+        }
+
+        public HttpCodeV2Detail getHttp5XX() {
+            return http5XX;
+        }
+
+        public void setHttp5XX(HttpCodeV2Detail http5XX) {
+            this.http5XX = http5XX;
+        }
+
+        public HttpCodeV2Detail getHttp6XX() {
+            return http6XX;
+        }
+
+        public void setHttp6XX(HttpCodeV2Detail http6XX) {
+            this.http6XX = http6XX;
+        }
+    }
+
     public static class HttpCodeV2Detail extends Response {
 
         /** 时间 */
@@ -727,93 +814,6 @@ public class GetUcdnDomainHttpCodeV2Response extends Response {
 
         public void setHttp510(Integer http510) {
             this.http510 = http510;
-        }
-    }
-
-    public static class HttpCodeInfoV2 extends Response {
-
-        /** 带宽获取的时间点。格式：时间戳 */
-        @SerializedName("Time")
-        private Integer time;
-
-        /** 1xx信息，参考HttpCodeV2Detail结构 */
-        @SerializedName("Http1XX")
-        private HttpCodeV2Detail http1XX;
-
-        /** 2xx信息，参考HttpCodeV2Detail结构 */
-        @SerializedName("Http2XX")
-        private HttpCodeV2Detail http2XX;
-
-        /** 3xx信息，参考HttpCodeV2Detail结构 */
-        @SerializedName("Http3XX")
-        private HttpCodeV2Detail http3XX;
-
-        /** 4xx信息，参考HttpCodeV2Detail结构 */
-        @SerializedName("Http4XX")
-        private HttpCodeV2Detail http4XX;
-
-        /** 5xx信息，参考HttpCodeV2Detail结构 */
-        @SerializedName("Http5XX")
-        private HttpCodeV2Detail http5XX;
-
-        /** 6xx信息，参考HttpCodeV2Detail结构 */
-        @SerializedName("Http6XX")
-        private HttpCodeV2Detail http6XX;
-
-        public Integer getTime() {
-            return time;
-        }
-
-        public void setTime(Integer time) {
-            this.time = time;
-        }
-
-        public HttpCodeV2Detail getHttp1XX() {
-            return http1XX;
-        }
-
-        public void setHttp1XX(HttpCodeV2Detail http1XX) {
-            this.http1XX = http1XX;
-        }
-
-        public HttpCodeV2Detail getHttp2XX() {
-            return http2XX;
-        }
-
-        public void setHttp2XX(HttpCodeV2Detail http2XX) {
-            this.http2XX = http2XX;
-        }
-
-        public HttpCodeV2Detail getHttp3XX() {
-            return http3XX;
-        }
-
-        public void setHttp3XX(HttpCodeV2Detail http3XX) {
-            this.http3XX = http3XX;
-        }
-
-        public HttpCodeV2Detail getHttp4XX() {
-            return http4XX;
-        }
-
-        public void setHttp4XX(HttpCodeV2Detail http4XX) {
-            this.http4XX = http4XX;
-        }
-
-        public HttpCodeV2Detail getHttp5XX() {
-            return http5XX;
-        }
-
-        public void setHttp5XX(HttpCodeV2Detail http5XX) {
-            this.http5XX = http5XX;
-        }
-
-        public HttpCodeV2Detail getHttp6XX() {
-            return http6XX;
-        }
-
-        public void setHttp6XX(HttpCodeV2Detail http6XX) {
-            this.http6XX = http6XX;
         }
     }
 }

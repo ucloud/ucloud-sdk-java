@@ -31,6 +31,33 @@ public class GetNewUcdnLogUrlStatisticsResponse extends Response {
         this.urlStatisticsList = urlStatisticsList;
     }
 
+    public static class UrlStatistics extends Response {
+
+        /** */
+        @SerializedName("UrlList")
+        private List<DownloadStatisticInfo> urlList;
+
+        /** 日期 */
+        @SerializedName("Date")
+        private String date;
+
+        public List<DownloadStatisticInfo> getUrlList() {
+            return urlList;
+        }
+
+        public void setUrlList(List<DownloadStatisticInfo> urlList) {
+            this.urlList = urlList;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+    }
+
     public static class DownloadStatisticInfo extends Response {
 
         /** 下载链接的url */
@@ -79,33 +106,6 @@ public class GetNewUcdnLogUrlStatisticsResponse extends Response {
 
         public void setPercent(Double percent) {
             this.percent = percent;
-        }
-    }
-
-    public static class UrlStatistics extends Response {
-
-        /** */
-        @SerializedName("UrlList")
-        private List<DownloadStatisticInfo> urlList;
-
-        /** 日期 */
-        @SerializedName("Date")
-        private String date;
-
-        public List<DownloadStatisticInfo> getUrlList() {
-            return urlList;
-        }
-
-        public void setUrlList(List<DownloadStatisticInfo> urlList) {
-            this.urlList = urlList;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
         }
     }
 }

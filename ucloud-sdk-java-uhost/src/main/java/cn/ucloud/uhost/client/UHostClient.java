@@ -31,6 +31,8 @@ import cn.ucloud.uhost.models.DeleteIsolationGroupRequest;
 import cn.ucloud.uhost.models.DeleteIsolationGroupResponse;
 import cn.ucloud.uhost.models.DeleteUHostKeyPairsRequest;
 import cn.ucloud.uhost.models.DeleteUHostKeyPairsResponse;
+import cn.ucloud.uhost.models.DescribeAvailableInstanceTypesRequest;
+import cn.ucloud.uhost.models.DescribeAvailableInstanceTypesResponse;
 import cn.ucloud.uhost.models.DescribeImageRequest;
 import cn.ucloud.uhost.models.DescribeImageResponse;
 import cn.ucloud.uhost.models.DescribeIsolationGroupRequest;
@@ -178,6 +180,19 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
         request.setAction("DeleteUHostKeyPairs");
         return (DeleteUHostKeyPairsResponse)
                 this.invoke(request, DeleteUHostKeyPairsResponse.class);
+    }
+
+    /**
+     * DescribeAvailableInstanceTypes - 获取某个地域下可售/售罄的所有机型信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeAvailableInstanceTypesResponse describeAvailableInstanceTypes(
+            DescribeAvailableInstanceTypesRequest request) throws UCloudException {
+        request.setAction("DescribeAvailableInstanceTypes");
+        return (DescribeAvailableInstanceTypesResponse)
+                this.invoke(request, DescribeAvailableInstanceTypesResponse.class);
     }
 
     /**

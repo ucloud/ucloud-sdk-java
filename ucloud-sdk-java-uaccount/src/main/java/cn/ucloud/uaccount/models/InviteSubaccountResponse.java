@@ -13,8 +13,6 @@
  */
 package cn.ucloud.uaccount.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class InviteSubaccountResponse extends Response {}

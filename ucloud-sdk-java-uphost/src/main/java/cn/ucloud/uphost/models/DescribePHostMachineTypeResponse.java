@@ -31,123 +31,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         this.machineTypes = machineTypes;
     }
 
-    public static class PHostClusterSet extends Response {
-
-        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
-        @SerializedName("Name")
-        private String name;
-
-        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
-        @SerializedName("StockStatus")
-        private String stockStatus;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getStockStatus() {
-            return stockStatus;
-        }
-
-        public void setStockStatus(String stockStatus) {
-            this.stockStatus = stockStatus;
-        }
-    }
-
-    public static class PHostComponentSet extends Response {
-
-        /** 组件名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 组件数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-    }
-
-    public static class PHostDiskSet extends Response {
-
-        /** 单盘大小，单位GB */
-        @SerializedName("Space")
-        private Integer space;
-
-        /** 磁盘数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** 磁盘属性 */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘名称，sys/data */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘IO性能，单位MB/s（待废弃） */
-        @SerializedName("IOCap")
-        private Integer ioCap;
-
-        public Integer getSpace() {
-            return space;
-        }
-
-        public void setSpace(Integer space) {
-            this.space = space;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getIOCap() {
-            return ioCap;
-        }
-
-        public void setIOCap(Integer ioCap) {
-            this.ioCap = ioCap;
-        }
-    }
-
     public static class PHostMachineTypeSet extends Response {
 
         /** 物理云主机机型别名，全网唯一。 */
@@ -232,6 +115,123 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setRaidSupported(String raidSupported) {
             this.raidSupported = raidSupported;
+        }
+    }
+
+    public static class PHostDiskSet extends Response {
+
+        /** 单盘大小，单位GB */
+        @SerializedName("Space")
+        private Integer space;
+
+        /** 磁盘数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** 磁盘属性 */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘名称，sys/data */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘IO性能，单位MB/s（待废弃） */
+        @SerializedName("IOCap")
+        private Integer ioCap;
+
+        public Integer getSpace() {
+            return space;
+        }
+
+        public void setSpace(Integer space) {
+            this.space = space;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getIOCap() {
+            return ioCap;
+        }
+
+        public void setIOCap(Integer ioCap) {
+            this.ioCap = ioCap;
+        }
+    }
+
+    public static class PHostClusterSet extends Response {
+
+        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
+        @SerializedName("Name")
+        private String name;
+
+        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
+        @SerializedName("StockStatus")
+        private String stockStatus;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getStockStatus() {
+            return stockStatus;
+        }
+
+        public void setStockStatus(String stockStatus) {
+            this.stockStatus = stockStatus;
+        }
+    }
+
+    public static class PHostComponentSet extends Response {
+
+        /** 组件名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 组件数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
         }
     }
 

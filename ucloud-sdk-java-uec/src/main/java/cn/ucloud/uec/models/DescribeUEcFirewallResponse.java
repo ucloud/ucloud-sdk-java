@@ -43,81 +43,6 @@ public class DescribeUEcFirewallResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class RuleInfo extends Response {
-
-        /** 协议，可选值：TCP，UDP，ICMP */
-        @SerializedName("ProtocolType")
-        private String protocolType;
-
-        /** 端口，范围用"-"符号分隔，如：1-65535 */
-        @SerializedName("Port")
-        private String port;
-
-        /** 源ip */
-        @SerializedName("SrcIp")
-        private String srcIp;
-
-        /** ACCEPT（接受）和DROP（拒绝） */
-        @SerializedName("Action")
-        private String action;
-
-        /** 优先级：HIGH（高），MEDIUM（中），LOW（低） */
-        @SerializedName("Priority")
-        private String priority;
-
-        /** 备注 */
-        @SerializedName("Remark")
-        private String remark;
-
-        public String getProtocolType() {
-            return protocolType;
-        }
-
-        public void setProtocolType(String protocolType) {
-            this.protocolType = protocolType;
-        }
-
-        public String getPort() {
-            return port;
-        }
-
-        public void setPort(String port) {
-            this.port = port;
-        }
-
-        public String getSrcIp() {
-            return srcIp;
-        }
-
-        public void setSrcIp(String srcIp) {
-            this.srcIp = srcIp;
-        }
-
-        public String getAction() {
-            return action;
-        }
-
-        public void setAction(String action) {
-            this.action = action;
-        }
-
-        public String getPriority() {
-            return priority;
-        }
-
-        public void setPriority(String priority) {
-            this.priority = priority;
-        }
-
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
-        }
-    }
-
     public static class FirewallInfo extends Response {
 
         /** 防火墙Id */
@@ -197,6 +122,81 @@ public class DescribeUEcFirewallResponse extends Response {
 
         public void setType(String type) {
             this.type = type;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+    }
+
+    public static class RuleInfo extends Response {
+
+        /** 协议，可选值：TCP，UDP，ICMP */
+        @SerializedName("ProtocolType")
+        private String protocolType;
+
+        /** 端口，范围用"-"符号分隔，如：1-65535 */
+        @SerializedName("Port")
+        private String port;
+
+        /** 源ip */
+        @SerializedName("SrcIp")
+        private String srcIp;
+
+        /** ACCEPT（接受）和DROP（拒绝） */
+        @SerializedName("Action")
+        private String action;
+
+        /** 优先级：HIGH（高），MEDIUM（中），LOW（低） */
+        @SerializedName("Priority")
+        private String priority;
+
+        /** 备注 */
+        @SerializedName("Remark")
+        private String remark;
+
+        public String getProtocolType() {
+            return protocolType;
+        }
+
+        public void setProtocolType(String protocolType) {
+            this.protocolType = protocolType;
+        }
+
+        public String getPort() {
+            return port;
+        }
+
+        public void setPort(String port) {
+            this.port = port;
+        }
+
+        public String getSrcIp() {
+            return srcIp;
+        }
+
+        public void setSrcIp(String srcIp) {
+            this.srcIp = srcIp;
+        }
+
+        public String getAction() {
+            return action;
+        }
+
+        public void setAction(String action) {
+            this.action = action;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
         }
 
         public String getRemark() {

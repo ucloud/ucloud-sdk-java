@@ -13,8 +13,6 @@
  */
 package cn.ucloud.pathx.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class UpdatePathXWhitelistResponse extends Response {}

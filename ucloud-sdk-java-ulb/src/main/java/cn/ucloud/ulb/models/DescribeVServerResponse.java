@@ -43,114 +43,253 @@ public class DescribeVServerResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class ULBPolicySet extends Response {
+    public static class ULBBackendSet extends Response {
 
-        /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
-        @SerializedName("DomainMatchMode")
-        private String domainMatchMode;
+        /** 后端资源实例的Id */
+        @SerializedName("BackendId")
+        private String backendId;
 
-        /** 内容转发Id，默认内容转发类型下为空。 */
-        @SerializedName("PolicyId")
-        private String policyId;
+        /** 资源实例的类型 */
+        @SerializedName("ResourceType")
+        private String resourceType;
 
-        /** 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发 */
-        @SerializedName("PolicyType")
-        private String policyType;
+        /** 资源实例的资源Id */
+        @SerializedName("ResourceId")
+        private String resourceId;
 
-        /** 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空 */
-        @SerializedName("Type")
-        private String type;
+        /** 资源实例的资源名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
 
-        /** 内容转发匹配字段;默认内容转发类型下为空。 */
-        @SerializedName("Match")
-        private String match;
+        /** 资源绑定的虚拟网卡实例的类型 */
+        @SerializedName("SubResourceType")
+        private String subResourceType;
 
-        /** 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。 */
-        @SerializedName("PolicyPriority")
-        private Integer policyPriority;
+        /** 资源绑定的虚拟网卡实例的资源Id */
+        @SerializedName("SubResourceId")
+        private String subResourceId;
 
-        /** 所属VServerId */
-        @SerializedName("VServerId")
-        private String vServerId;
+        /** 资源绑定的虚拟网卡实例的资源名称 */
+        @SerializedName("SubResourceName")
+        private String subResourceName;
 
-        /** 默认内容转发类型下返回当前rs总数 */
-        @SerializedName("TotalCount")
-        private Integer totalCount;
+        /** 后端提供服务的内网IP */
+        @SerializedName("PrivateIP")
+        private String privateIP;
 
-        /** 内容转发下rs的详细信息，参考PolicyBackendSet */
-        @SerializedName("BackendSet")
-        private List<PolicyBackendSet> backendSet;
+        /** 后端提供服务的端口 */
+        @SerializedName("Port")
+        private Integer port;
 
-        public String getDomainMatchMode() {
-            return domainMatchMode;
+        /** 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用 */
+        @SerializedName("Enabled")
+        private Integer enabled;
+
+        /** 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常 */
+        @SerializedName("Status")
+        private Integer status;
+
+        /** 后端提供服务的资源所在的子网的ID */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /**
+         * 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：
+         *
+         * <p>0：主rs 1：备rs
+         */
+        @SerializedName("IsBackup")
+        private Integer isBackup;
+
+        public String getBackendId() {
+            return backendId;
         }
 
-        public void setDomainMatchMode(String domainMatchMode) {
-            this.domainMatchMode = domainMatchMode;
+        public void setBackendId(String backendId) {
+            this.backendId = backendId;
         }
 
-        public String getPolicyId() {
-            return policyId;
+        public String getResourceType() {
+            return resourceType;
         }
 
-        public void setPolicyId(String policyId) {
-            this.policyId = policyId;
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
         }
 
-        public String getPolicyType() {
-            return policyType;
+        public String getResourceId() {
+            return resourceId;
         }
 
-        public void setPolicyType(String policyType) {
-            this.policyType = policyType;
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
         }
 
-        public String getType() {
-            return type;
+        public String getResourceName() {
+            return resourceName;
         }
 
-        public void setType(String type) {
-            this.type = type;
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
         }
 
-        public String getMatch() {
-            return match;
+        public String getSubResourceType() {
+            return subResourceType;
         }
 
-        public void setMatch(String match) {
-            this.match = match;
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
         }
 
-        public Integer getPolicyPriority() {
-            return policyPriority;
+        public String getSubResourceId() {
+            return subResourceId;
         }
 
-        public void setPolicyPriority(Integer policyPriority) {
-            this.policyPriority = policyPriority;
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
         }
 
-        public String getVServerId() {
-            return vServerId;
+        public String getSubResourceName() {
+            return subResourceName;
         }
 
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
         }
 
-        public Integer getTotalCount() {
-            return totalCount;
+        public String getPrivateIP() {
+            return privateIP;
         }
 
-        public void setTotalCount(Integer totalCount) {
-            this.totalCount = totalCount;
+        public void setPrivateIP(String privateIP) {
+            this.privateIP = privateIP;
         }
 
-        public List<PolicyBackendSet> getBackendSet() {
-            return backendSet;
+        public Integer getPort() {
+            return port;
         }
 
-        public void setBackendSet(List<PolicyBackendSet> backendSet) {
-            this.backendSet = backendSet;
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public Integer getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Integer enabled) {
+            this.enabled = enabled;
+        }
+
+        public Integer getStatus() {
+            return status;
+        }
+
+        public void setStatus(Integer status) {
+            this.status = status;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public Integer getIsBackup() {
+            return isBackup;
+        }
+
+        public void setIsBackup(Integer isBackup) {
+            this.isBackup = isBackup;
+        }
+    }
+
+    public static class ULBSSLSet extends Response {
+
+        /** SSL证书的Id */
+        @SerializedName("SSLId")
+        private String sslId;
+
+        /** SSL证书的名字 */
+        @SerializedName("SSLName")
+        private String sslName;
+
+        /** SSL证书类型，暂时只有 Pem 一种类型 */
+        @SerializedName("SSLType")
+        private String sslType;
+
+        /** SSL证书的内容 */
+        @SerializedName("SSLContent")
+        private String sslContent;
+
+        /** SSL证书的创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** SSL证书的HASH值 */
+        @SerializedName("HashValue")
+        private String hashValue;
+
+        /** SSL证书绑定到的对象 */
+        @SerializedName("BindedTargetSet")
+        private List<SSLBindedTargetSet> bindedTargetSet;
+
+        public String getSSLId() {
+            return sslId;
+        }
+
+        public void setSSLId(String sslId) {
+            this.sslId = sslId;
+        }
+
+        public String getSSLName() {
+            return sslName;
+        }
+
+        public void setSSLName(String sslName) {
+            this.sslName = sslName;
+        }
+
+        public String getSSLType() {
+            return sslType;
+        }
+
+        public void setSSLType(String sslType) {
+            this.sslType = sslType;
+        }
+
+        public String getSSLContent() {
+            return sslContent;
+        }
+
+        public void setSSLContent(String sslContent) {
+            this.sslContent = sslContent;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getHashValue() {
+            return hashValue;
+        }
+
+        public void setHashValue(String hashValue) {
+            this.hashValue = hashValue;
+        }
+
+        public List<SSLBindedTargetSet> getBindedTargetSet() {
+            return bindedTargetSet;
+        }
+
+        public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
+            this.bindedTargetSet = bindedTargetSet;
         }
     }
 
@@ -444,90 +583,114 @@ public class DescribeVServerResponse extends Response {
         }
     }
 
-    public static class ULBSSLSet extends Response {
+    public static class ULBPolicySet extends Response {
 
-        /** SSL证书的Id */
-        @SerializedName("SSLId")
-        private String sslId;
+        /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
+        @SerializedName("DomainMatchMode")
+        private String domainMatchMode;
 
-        /** SSL证书的名字 */
-        @SerializedName("SSLName")
-        private String sslName;
+        /** 内容转发Id，默认内容转发类型下为空。 */
+        @SerializedName("PolicyId")
+        private String policyId;
 
-        /** SSL证书类型，暂时只有 Pem 一种类型 */
-        @SerializedName("SSLType")
-        private String sslType;
+        /** 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发 */
+        @SerializedName("PolicyType")
+        private String policyType;
 
-        /** SSL证书的内容 */
-        @SerializedName("SSLContent")
-        private String sslContent;
+        /** 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空 */
+        @SerializedName("Type")
+        private String type;
 
-        /** SSL证书的创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
+        /** 内容转发匹配字段;默认内容转发类型下为空。 */
+        @SerializedName("Match")
+        private String match;
 
-        /** SSL证书的HASH值 */
-        @SerializedName("HashValue")
-        private String hashValue;
+        /** 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。 */
+        @SerializedName("PolicyPriority")
+        private Integer policyPriority;
 
-        /** SSL证书绑定到的对象 */
-        @SerializedName("BindedTargetSet")
-        private List<SSLBindedTargetSet> bindedTargetSet;
+        /** 所属VServerId */
+        @SerializedName("VServerId")
+        private String vServerId;
 
-        public String getSSLId() {
-            return sslId;
+        /** 默认内容转发类型下返回当前rs总数 */
+        @SerializedName("TotalCount")
+        private Integer totalCount;
+
+        /** 内容转发下rs的详细信息，参考PolicyBackendSet */
+        @SerializedName("BackendSet")
+        private List<PolicyBackendSet> backendSet;
+
+        public String getDomainMatchMode() {
+            return domainMatchMode;
         }
 
-        public void setSSLId(String sslId) {
-            this.sslId = sslId;
+        public void setDomainMatchMode(String domainMatchMode) {
+            this.domainMatchMode = domainMatchMode;
         }
 
-        public String getSSLName() {
-            return sslName;
+        public String getPolicyId() {
+            return policyId;
         }
 
-        public void setSSLName(String sslName) {
-            this.sslName = sslName;
+        public void setPolicyId(String policyId) {
+            this.policyId = policyId;
         }
 
-        public String getSSLType() {
-            return sslType;
+        public String getPolicyType() {
+            return policyType;
         }
 
-        public void setSSLType(String sslType) {
-            this.sslType = sslType;
+        public void setPolicyType(String policyType) {
+            this.policyType = policyType;
         }
 
-        public String getSSLContent() {
-            return sslContent;
+        public String getType() {
+            return type;
         }
 
-        public void setSSLContent(String sslContent) {
-            this.sslContent = sslContent;
+        public void setType(String type) {
+            this.type = type;
         }
 
-        public Integer getCreateTime() {
-            return createTime;
+        public String getMatch() {
+            return match;
         }
 
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
+        public void setMatch(String match) {
+            this.match = match;
         }
 
-        public String getHashValue() {
-            return hashValue;
+        public Integer getPolicyPriority() {
+            return policyPriority;
         }
 
-        public void setHashValue(String hashValue) {
-            this.hashValue = hashValue;
+        public void setPolicyPriority(Integer policyPriority) {
+            this.policyPriority = policyPriority;
         }
 
-        public List<SSLBindedTargetSet> getBindedTargetSet() {
-            return bindedTargetSet;
+        public String getVServerId() {
+            return vServerId;
         }
 
-        public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
-            this.bindedTargetSet = bindedTargetSet;
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public Integer getTotalCount() {
+            return totalCount;
+        }
+
+        public void setTotalCount(Integer totalCount) {
+            this.totalCount = totalCount;
+        }
+
+        public List<PolicyBackendSet> getBackendSet() {
+            return backendSet;
+        }
+
+        public void setBackendSet(List<PolicyBackendSet> backendSet) {
+            this.backendSet = backendSet;
         }
     }
 
@@ -642,169 +805,6 @@ public class DescribeVServerResponse extends Response {
 
         public void setPrivateIP(String privateIP) {
             this.privateIP = privateIP;
-        }
-    }
-
-    public static class ULBBackendSet extends Response {
-
-        /** 后端资源实例的Id */
-        @SerializedName("BackendId")
-        private String backendId;
-
-        /** 资源实例的类型 */
-        @SerializedName("ResourceType")
-        private String resourceType;
-
-        /** 资源实例的资源Id */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        /** 资源实例的资源名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
-
-        /** 资源绑定的虚拟网卡实例的类型 */
-        @SerializedName("SubResourceType")
-        private String subResourceType;
-
-        /** 资源绑定的虚拟网卡实例的资源Id */
-        @SerializedName("SubResourceId")
-        private String subResourceId;
-
-        /** 资源绑定的虚拟网卡实例的资源名称 */
-        @SerializedName("SubResourceName")
-        private String subResourceName;
-
-        /** 后端提供服务的内网IP */
-        @SerializedName("PrivateIP")
-        private String privateIP;
-
-        /** 后端提供服务的端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 后端提供服务的实例启用与否，枚举值：0 禁用 1 启用 */
-        @SerializedName("Enabled")
-        private Integer enabled;
-
-        /** 后端提供服务的实例运行状态，枚举值：0健康检查健康状态 1 健康检查异常 */
-        @SerializedName("Status")
-        private Integer status;
-
-        /** 后端提供服务的资源所在的子网的ID */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /**
-         * 是否为backup，只有当vserver的Backup属性为1时才会有此字段，说明：
-         *
-         * <p>0：主rs 1：备rs
-         */
-        @SerializedName("IsBackup")
-        private Integer isBackup;
-
-        public String getBackendId() {
-            return backendId;
-        }
-
-        public void setBackendId(String backendId) {
-            this.backendId = backendId;
-        }
-
-        public String getResourceType() {
-            return resourceType;
-        }
-
-        public void setResourceType(String resourceType) {
-            this.resourceType = resourceType;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-
-        public String getResourceName() {
-            return resourceName;
-        }
-
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
-        }
-
-        public String getSubResourceType() {
-            return subResourceType;
-        }
-
-        public void setSubResourceType(String subResourceType) {
-            this.subResourceType = subResourceType;
-        }
-
-        public String getSubResourceId() {
-            return subResourceId;
-        }
-
-        public void setSubResourceId(String subResourceId) {
-            this.subResourceId = subResourceId;
-        }
-
-        public String getSubResourceName() {
-            return subResourceName;
-        }
-
-        public void setSubResourceName(String subResourceName) {
-            this.subResourceName = subResourceName;
-        }
-
-        public String getPrivateIP() {
-            return privateIP;
-        }
-
-        public void setPrivateIP(String privateIP) {
-            this.privateIP = privateIP;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public Integer getEnabled() {
-            return enabled;
-        }
-
-        public void setEnabled(Integer enabled) {
-            this.enabled = enabled;
-        }
-
-        public Integer getStatus() {
-            return status;
-        }
-
-        public void setStatus(Integer status) {
-            this.status = status;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public Integer getIsBackup() {
-            return isBackup;
-        }
-
-        public void setIsBackup(Integer isBackup) {
-            this.isBackup = isBackup;
         }
     }
 }

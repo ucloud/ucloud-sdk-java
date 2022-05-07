@@ -43,6 +43,57 @@ public class DescribePHostResponse extends Response {
         this.pHostSet = pHostSet;
     }
 
+    public static class PHostCPUSet extends Response {
+
+        /** CPU型号 */
+        @SerializedName("Model")
+        private String model;
+
+        /** CPU主频 */
+        @SerializedName("Frequence")
+        private Double frequence;
+
+        /** CPU个数 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** CPU核数 */
+        @SerializedName("CoreCount")
+        private Integer coreCount;
+
+        public String getModel() {
+            return model;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
+        }
+
+        public Double getFrequence() {
+            return frequence;
+        }
+
+        public void setFrequence(Double frequence) {
+            this.frequence = frequence;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public Integer getCoreCount() {
+            return coreCount;
+        }
+
+        public void setCoreCount(Integer coreCount) {
+            this.coreCount = coreCount;
+        }
+    }
+
     public static class PHostSet extends Response {
 
         /** 可用区，参见 [可用区列表](../summary/regionlist.html) */
@@ -346,57 +397,6 @@ public class DescribePHostResponse extends Response {
 
         public void setPhostClass(String phostClass) {
             this.phostClass = phostClass;
-        }
-    }
-
-    public static class PHostCPUSet extends Response {
-
-        /** CPU型号 */
-        @SerializedName("Model")
-        private String model;
-
-        /** CPU主频 */
-        @SerializedName("Frequence")
-        private Double frequence;
-
-        /** CPU个数 */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** CPU核数 */
-        @SerializedName("CoreCount")
-        private Integer coreCount;
-
-        public String getModel() {
-            return model;
-        }
-
-        public void setModel(String model) {
-            this.model = model;
-        }
-
-        public Double getFrequence() {
-            return frequence;
-        }
-
-        public void setFrequence(Double frequence) {
-            this.frequence = frequence;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public Integer getCoreCount() {
-            return coreCount;
-        }
-
-        public void setCoreCount(Integer coreCount) {
-            this.coreCount = coreCount;
         }
     }
 

@@ -13,8 +13,6 @@
  */
 package cn.ucloud.cube.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class RebootCubePodResponse extends Response {}

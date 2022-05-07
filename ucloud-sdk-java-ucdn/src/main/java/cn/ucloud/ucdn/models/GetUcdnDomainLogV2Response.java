@@ -31,33 +31,6 @@ public class GetUcdnDomainLogV2Response extends Response {
         this.domainLogSet = domainLogSet;
     }
 
-    public static class LogInfo extends Response {
-
-        /** Unix时间戳 */
-        @SerializedName("LogTime")
-        private Integer logTime;
-
-        /** 日志url地址 */
-        @SerializedName("LogUrl")
-        private String logUrl;
-
-        public Integer getLogTime() {
-            return logTime;
-        }
-
-        public void setLogTime(Integer logTime) {
-            this.logTime = logTime;
-        }
-
-        public String getLogUrl() {
-            return logUrl;
-        }
-
-        public void setLogUrl(String logUrl) {
-            this.logUrl = logUrl;
-        }
-    }
-
     public static class DomanLogList extends Response {
 
         /** 域名 */
@@ -82,6 +55,33 @@ public class GetUcdnDomainLogV2Response extends Response {
 
         public void setLogList(List<LogInfo> logList) {
             this.logList = logList;
+        }
+    }
+
+    public static class LogInfo extends Response {
+
+        /** Unix时间戳 */
+        @SerializedName("LogTime")
+        private Integer logTime;
+
+        /** 日志url地址 */
+        @SerializedName("LogUrl")
+        private String logUrl;
+
+        public Integer getLogTime() {
+            return logTime;
+        }
+
+        public void setLogTime(Integer logTime) {
+            this.logTime = logTime;
+        }
+
+        public String getLogUrl() {
+            return logUrl;
+        }
+
+        public void setLogUrl(String logUrl) {
+            this.logUrl = logUrl;
         }
     }
 }

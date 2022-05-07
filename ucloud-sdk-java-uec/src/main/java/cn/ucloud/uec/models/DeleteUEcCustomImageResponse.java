@@ -13,7 +13,6 @@
  */
 package cn.ucloud.uec.models;
 
-
 import cn.ucloud.common.response.Response;
 import com.google.gson.annotations.SerializedName;
 
