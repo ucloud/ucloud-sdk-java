@@ -16,6 +16,7 @@ package cn.ucloud.uec.models;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
 import java.util.List;
 
 public class DescribeUEcHolderIDCRequest extends Request {

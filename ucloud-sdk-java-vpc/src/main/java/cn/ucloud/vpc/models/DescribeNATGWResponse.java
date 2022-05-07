@@ -14,7 +14,9 @@
 package cn.ucloud.vpc.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeNATGWResponse extends Response {
@@ -67,6 +69,45 @@ public class DescribeNATGWResponse extends Response {
 
         public void setEIP(String eip) {
             this.eip = eip;
+        }
+    }
+
+    public static class NatGatewaySubnetSet extends Response {
+
+        /** 子网id */
+        @SerializedName("SubnetworkId")
+        private String subnetworkId;
+
+        /** 子网网段 */
+        @SerializedName("Subnet")
+        private String subnet;
+
+        /** 子网名字 */
+        @SerializedName("SubnetName")
+        private String subnetName;
+
+        public String getSubnetworkId() {
+            return subnetworkId;
+        }
+
+        public void setSubnetworkId(String subnetworkId) {
+            this.subnetworkId = subnetworkId;
+        }
+
+        public String getSubnet() {
+            return subnet;
+        }
+
+        public void setSubnet(String subnet) {
+            this.subnet = subnet;
+        }
+
+        public String getSubnetName() {
+            return subnetName;
+        }
+
+        public void setSubnetName(String subnetName) {
+            this.subnetName = subnetName;
         }
     }
 
@@ -214,45 +255,6 @@ public class DescribeNATGWResponse extends Response {
 
         public void setPolicyId(List<String> policyId) {
             this.policyId = policyId;
-        }
-    }
-
-    public static class NatGatewaySubnetSet extends Response {
-
-        /** 子网id */
-        @SerializedName("SubnetworkId")
-        private String subnetworkId;
-
-        /** 子网网段 */
-        @SerializedName("Subnet")
-        private String subnet;
-
-        /** 子网名字 */
-        @SerializedName("SubnetName")
-        private String subnetName;
-
-        public String getSubnetworkId() {
-            return subnetworkId;
-        }
-
-        public void setSubnetworkId(String subnetworkId) {
-            this.subnetworkId = subnetworkId;
-        }
-
-        public String getSubnet() {
-            return subnet;
-        }
-
-        public void setSubnet(String subnet) {
-            this.subnet = subnet;
-        }
-
-        public String getSubnetName() {
-            return subnetName;
-        }
-
-        public void setSubnetName(String subnetName) {
-            this.subnetName = subnetName;
         }
     }
 

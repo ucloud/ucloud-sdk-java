@@ -15,11 +15,13 @@ package cn.ucloud.common.credential;
 
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.common.request.Request;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Map;
-import org.apache.commons.codec.digest.DigestUtils;
 
 /** Credential is an object to represent the credential information */
 public class Credential {

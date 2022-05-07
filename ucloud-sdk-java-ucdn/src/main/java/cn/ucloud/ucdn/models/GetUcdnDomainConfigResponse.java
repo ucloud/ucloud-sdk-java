@@ -14,7 +14,9 @@
 package cn.ucloud.ucdn.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetUcdnDomainConfigResponse extends Response {
@@ -29,33 +31,6 @@ public class GetUcdnDomainConfigResponse extends Response {
 
     public void setDomainList(List<DomainConfigInfo> domainList) {
         this.domainList = domainList;
-    }
-
-    public static class AccessControlConf extends Response {
-
-        /** ip黑名单，多个ip，可表示为： IpBlackList.0=1.1.1.1，IpBlackList.1=2.2.2.2 */
-        @SerializedName("IpBlackList")
-        private List<String> ipBlackList;
-
-        /** refer配置 */
-        @SerializedName("ReferConf")
-        private ReferConf referConf;
-
-        public List<String> getIpBlackList() {
-            return ipBlackList;
-        }
-
-        public void setIpBlackList(List<String> ipBlackList) {
-            this.ipBlackList = ipBlackList;
-        }
-
-        public ReferConf getReferConf() {
-            return referConf;
-        }
-
-        public void setReferConf(ReferConf referConf) {
-            this.referConf = referConf;
-        }
     }
 
     public static class OriginConf extends Response {
@@ -184,42 +159,93 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class AdvancedConf extends Response {
+    public static class CacheAllConfig extends Response {
 
-        /** 客户端响应http头列表 */
-        @SerializedName("HttpClientHeader")
-        private List<String> httpClientHeader;
+        /** 缓存Host，不同的域名可以配置为同一个CacheHost来实现缓存共享，默认为加速域名 */
+        @SerializedName("CacheHost")
+        private String cacheHost;
 
-        /** 源站http头列表 */
-        @SerializedName("HttpOriginHeader")
-        private List<String> httpOriginHeader;
+        /** 缓存配置列表，参见CacheConf */
+        @SerializedName("CacheList")
+        private List<CacheConf> cacheList;
 
-        /** http转https回源 true是，false否 */
-        @SerializedName("Http2Https")
-        private Boolean http2Https;
+        /** 状态码缓存配置列表，参见CacheConf */
+        @SerializedName("HttpCodeCacheList")
+        private List<CacheConf> httpCodeCacheList;
 
-        public List<String> getHttpClientHeader() {
-            return httpClientHeader;
+        /** 忽略参数缓存配置列表，参见CacheKeyInfo */
+        @SerializedName("CacheKeyList")
+        private List<CacheKeyInfo> cacheKeyList;
+
+        public String getCacheHost() {
+            return cacheHost;
         }
 
-        public void setHttpClientHeader(List<String> httpClientHeader) {
-            this.httpClientHeader = httpClientHeader;
+        public void setCacheHost(String cacheHost) {
+            this.cacheHost = cacheHost;
         }
 
-        public List<String> getHttpOriginHeader() {
-            return httpOriginHeader;
+        public List<CacheConf> getCacheList() {
+            return cacheList;
         }
 
-        public void setHttpOriginHeader(List<String> httpOriginHeader) {
-            this.httpOriginHeader = httpOriginHeader;
+        public void setCacheList(List<CacheConf> cacheList) {
+            this.cacheList = cacheList;
         }
 
-        public Boolean getHttp2Https() {
-            return http2Https;
+        public List<CacheConf> getHttpCodeCacheList() {
+            return httpCodeCacheList;
         }
 
-        public void setHttp2Https(Boolean http2Https) {
-            this.http2Https = http2Https;
+        public void setHttpCodeCacheList(List<CacheConf> httpCodeCacheList) {
+            this.httpCodeCacheList = httpCodeCacheList;
+        }
+
+        public List<CacheKeyInfo> getCacheKeyList() {
+            return cacheKeyList;
+        }
+
+        public void setCacheKeyList(List<CacheKeyInfo> cacheKeyList) {
+            this.cacheKeyList = cacheKeyList;
+        }
+    }
+
+    public static class CacheKeyInfo extends Response {
+
+        /** 是否忽略 */
+        @SerializedName("Ignore")
+        private Boolean ignore;
+
+        /** 路径模式，支持正则 */
+        @SerializedName("PathPattern")
+        private String pathPattern;
+
+        /** 自定义变量,以$符号开头，多个变量用加号(+)连接，$querystring表示所有变量 */
+        @SerializedName("QueryString")
+        private String queryString;
+
+        public Boolean getIgnore() {
+            return ignore;
+        }
+
+        public void setIgnore(Boolean ignore) {
+            this.ignore = ignore;
+        }
+
+        public String getPathPattern() {
+            return pathPattern;
+        }
+
+        public void setPathPattern(String pathPattern) {
+            this.pathPattern = pathPattern;
+        }
+
+        public String getQueryString() {
+            return queryString;
+        }
+
+        public void setQueryString(String queryString) {
+            this.queryString = queryString;
         }
     }
 
@@ -433,96 +459,6 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class ReferConf extends Response {
-
-        /** Refer防盗链配置 0白名单，1黑名单 */
-        @SerializedName("ReferType")
-        private Integer referType;
-
-        /** ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问 */
-        @SerializedName("NullRefer")
-        private Integer nullRefer;
-
-        /** Refer防盗链规则列表，支持正则表达式 */
-        @SerializedName("ReferList")
-        private List<String> referList;
-
-        public Integer getReferType() {
-            return referType;
-        }
-
-        public void setReferType(Integer referType) {
-            this.referType = referType;
-        }
-
-        public Integer getNullRefer() {
-            return nullRefer;
-        }
-
-        public void setNullRefer(Integer nullRefer) {
-            this.nullRefer = nullRefer;
-        }
-
-        public List<String> getReferList() {
-            return referList;
-        }
-
-        public void setReferList(List<String> referList) {
-            this.referList = referList;
-        }
-    }
-
-    public static class CacheAllConfig extends Response {
-
-        /** 缓存Host，不同的域名可以配置为同一个CacheHost来实现缓存共享，默认为加速域名 */
-        @SerializedName("CacheHost")
-        private String cacheHost;
-
-        /** 缓存配置列表，参见CacheConf */
-        @SerializedName("CacheList")
-        private List<CacheConf> cacheList;
-
-        /** 状态码缓存配置列表，参见CacheConf */
-        @SerializedName("HttpCodeCacheList")
-        private List<CacheConf> httpCodeCacheList;
-
-        /** 忽略参数缓存配置列表，参见CacheKeyInfo */
-        @SerializedName("CacheKeyList")
-        private List<CacheKeyInfo> cacheKeyList;
-
-        public String getCacheHost() {
-            return cacheHost;
-        }
-
-        public void setCacheHost(String cacheHost) {
-            this.cacheHost = cacheHost;
-        }
-
-        public List<CacheConf> getCacheList() {
-            return cacheList;
-        }
-
-        public void setCacheList(List<CacheConf> cacheList) {
-            this.cacheList = cacheList;
-        }
-
-        public List<CacheConf> getHttpCodeCacheList() {
-            return httpCodeCacheList;
-        }
-
-        public void setHttpCodeCacheList(List<CacheConf> httpCodeCacheList) {
-            this.httpCodeCacheList = httpCodeCacheList;
-        }
-
-        public List<CacheKeyInfo> getCacheKeyList() {
-            return cacheKeyList;
-        }
-
-        public void setCacheKeyList(List<CacheKeyInfo> cacheKeyList) {
-            this.cacheKeyList = cacheKeyList;
-        }
-    }
-
     public static class CacheConf extends Response {
 
         /** 路径模式，支持正则 */
@@ -610,42 +546,108 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class CacheKeyInfo extends Response {
+    public static class ReferConf extends Response {
 
-        /** 是否忽略 */
-        @SerializedName("Ignore")
-        private Boolean ignore;
+        /** Refer防盗链配置 0白名单，1黑名单 */
+        @SerializedName("ReferType")
+        private Integer referType;
 
-        /** 路径模式，支持正则 */
-        @SerializedName("PathPattern")
-        private String pathPattern;
+        /** ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问 */
+        @SerializedName("NullRefer")
+        private Integer nullRefer;
 
-        /** 自定义变量,以$符号开头，多个变量用加号(+)连接，$querystring表示所有变量 */
-        @SerializedName("QueryString")
-        private String queryString;
+        /** Refer防盗链规则列表，支持正则表达式 */
+        @SerializedName("ReferList")
+        private List<String> referList;
 
-        public Boolean getIgnore() {
-            return ignore;
+        public Integer getReferType() {
+            return referType;
         }
 
-        public void setIgnore(Boolean ignore) {
-            this.ignore = ignore;
+        public void setReferType(Integer referType) {
+            this.referType = referType;
         }
 
-        public String getPathPattern() {
-            return pathPattern;
+        public Integer getNullRefer() {
+            return nullRefer;
         }
 
-        public void setPathPattern(String pathPattern) {
-            this.pathPattern = pathPattern;
+        public void setNullRefer(Integer nullRefer) {
+            this.nullRefer = nullRefer;
         }
 
-        public String getQueryString() {
-            return queryString;
+        public List<String> getReferList() {
+            return referList;
         }
 
-        public void setQueryString(String queryString) {
-            this.queryString = queryString;
+        public void setReferList(List<String> referList) {
+            this.referList = referList;
+        }
+    }
+
+    public static class AccessControlConf extends Response {
+
+        /** ip黑名单，多个ip，可表示为： IpBlackList.0=1.1.1.1，IpBlackList.1=2.2.2.2 */
+        @SerializedName("IpBlackList")
+        private List<String> ipBlackList;
+
+        /** refer配置 */
+        @SerializedName("ReferConf")
+        private ReferConf referConf;
+
+        public List<String> getIpBlackList() {
+            return ipBlackList;
+        }
+
+        public void setIpBlackList(List<String> ipBlackList) {
+            this.ipBlackList = ipBlackList;
+        }
+
+        public ReferConf getReferConf() {
+            return referConf;
+        }
+
+        public void setReferConf(ReferConf referConf) {
+            this.referConf = referConf;
+        }
+    }
+
+    public static class AdvancedConf extends Response {
+
+        /** 客户端响应http头列表 */
+        @SerializedName("HttpClientHeader")
+        private List<String> httpClientHeader;
+
+        /** 源站http头列表 */
+        @SerializedName("HttpOriginHeader")
+        private List<String> httpOriginHeader;
+
+        /** http转https回源 true是，false否 */
+        @SerializedName("Http2Https")
+        private Boolean http2Https;
+
+        public List<String> getHttpClientHeader() {
+            return httpClientHeader;
+        }
+
+        public void setHttpClientHeader(List<String> httpClientHeader) {
+            this.httpClientHeader = httpClientHeader;
+        }
+
+        public List<String> getHttpOriginHeader() {
+            return httpOriginHeader;
+        }
+
+        public void setHttpOriginHeader(List<String> httpOriginHeader) {
+            this.httpOriginHeader = httpOriginHeader;
+        }
+
+        public Boolean getHttp2Https() {
+            return http2Https;
+        }
+
+        public void setHttp2Https(Boolean http2Https) {
+            this.http2Https = http2Https;
         }
     }
 }

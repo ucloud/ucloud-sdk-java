@@ -13,7 +13,9 @@
  */
 package cn.ucloud.uvms.models;
 
+
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
 
 public class SendUVMSMessageResponse extends Response {

@@ -13,7 +13,9 @@
  */
 package cn.ucloud.uhost.models;
 
+
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
 
 public class ModifyUHostIPResponse extends Response {

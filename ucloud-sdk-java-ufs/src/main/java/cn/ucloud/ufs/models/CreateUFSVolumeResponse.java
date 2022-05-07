@@ -13,7 +13,9 @@
  */
 package cn.ucloud.ufs.models;
 
+
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
 
 public class CreateUFSVolumeResponse extends Response {

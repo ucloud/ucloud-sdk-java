@@ -13,7 +13,9 @@
  */
 package cn.ucloud.udpn.models;
 
+
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
 
 public class AllocateUDPNResponse extends Response {

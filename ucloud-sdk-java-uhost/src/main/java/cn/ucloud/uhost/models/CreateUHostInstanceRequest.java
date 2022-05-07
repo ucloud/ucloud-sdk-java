@@ -16,6 +16,7 @@ package cn.ucloud.uhost.models;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
 import java.util.List;
 
 public class CreateUHostInstanceRequest extends Request {
@@ -471,7 +472,122 @@ public class CreateUHostInstanceRequest extends Request {
         }
     }
 
+    public static class Volumes extends Request {}
+
+    public static class NetworkInterface extends Request {
+
+        /** */
+        @UCloudParam("EIP")
+        private NetworkInterfaceEIP eip;
+
+        /** */
+        @UCloudParam("IPv6")
+        private NetworkInterfaceIPv6 iPv6;
+
+        /** 申请并绑定一个教育网EIP。True为申请并绑定，False为不会申请绑定，默认False。当前只支持具有HPC特性的机型。 */
+        @UCloudParam("CreateCernetIp")
+        private Boolean createCernetIp;
+
+        public NetworkInterfaceEIP getEIP() {
+            return eip;
+        }
+
+        public void setEIP(NetworkInterfaceEIP eip) {
+            this.eip = eip;
+        }
+
+        public NetworkInterfaceIPv6 getIPv6() {
+            return iPv6;
+        }
+
+        public void setIPv6(NetworkInterfaceIPv6 iPv6) {
+            this.iPv6 = iPv6;
+        }
+
+        public Boolean getCreateCernetIp() {
+            return createCernetIp;
+        }
+
+        public void setCreateCernetIp(Boolean createCernetIp) {
+            this.createCernetIp = createCernetIp;
+        }
+    }
+
     public static class NetworkInterfaceIPv6 extends Request {}
+
+    public static class NetworkInterfaceEIP extends Request {
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
+         * 流量计费[1-300]，带宽计费[1-800]
+         */
+        @UCloudParam("Bandwidth")
+        private Integer bandwidth;
+
+        /**
+         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
+         * "Free":免费带宽模式,默认为 "Bandwidth"
+         */
+        @UCloudParam("PayMode")
+        private String payMode;
+
+        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
+        @UCloudParam("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
+         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
+         * International kr-seoul:International us-ws:International ge-fra:International
+         * sg:International tw-kh:International.其他海外线路均为 International
+         */
+        @UCloudParam("OperatorName")
+        private String operatorName;
+
+        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
+        @UCloudParam("CouponId")
+        private String couponId;
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+    }
 
     public static class Disks extends Request {
 
@@ -555,121 +671,6 @@ public class CreateUHostInstanceRequest extends Request {
 
         public void setKmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
-        }
-
-        public String getCouponId() {
-            return couponId;
-        }
-
-        public void setCouponId(String couponId) {
-            this.couponId = couponId;
-        }
-    }
-
-    public static class Volumes extends Request {}
-
-    public static class NetworkInterface extends Request {
-
-        /** */
-        @UCloudParam("EIP")
-        private NetworkInterfaceEIP eip;
-
-        /** */
-        @UCloudParam("IPv6")
-        private NetworkInterfaceIPv6 iPv6;
-
-        /** 申请并绑定一个教育网EIP。True为申请并绑定，False为不会申请绑定，默认False。当前只支持具有HPC特性的机型。 */
-        @UCloudParam("CreateCernetIp")
-        private Boolean createCernetIp;
-
-        public NetworkInterfaceEIP getEIP() {
-            return eip;
-        }
-
-        public void setEIP(NetworkInterfaceEIP eip) {
-            this.eip = eip;
-        }
-
-        public NetworkInterfaceIPv6 getIPv6() {
-            return iPv6;
-        }
-
-        public void setIPv6(NetworkInterfaceIPv6 iPv6) {
-            this.iPv6 = iPv6;
-        }
-
-        public Boolean getCreateCernetIp() {
-            return createCernetIp;
-        }
-
-        public void setCreateCernetIp(Boolean createCernetIp) {
-            this.createCernetIp = createCernetIp;
-        }
-    }
-
-    public static class NetworkInterfaceEIP extends Request {
-
-        /**
-         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
-         * 流量计费[1-300]，带宽计费[1-800]
-         */
-        @UCloudParam("Bandwidth")
-        private Integer bandwidth;
-
-        /**
-         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
-         * "Free":免费带宽模式,默认为 "Bandwidth"
-         */
-        @UCloudParam("PayMode")
-        private String payMode;
-
-        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
-        @UCloudParam("ShareBandwidthId")
-        private String shareBandwidthId;
-
-        /**
-         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
-         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
-         * International kr-seoul:International us-ws:International ge-fra:International
-         * sg:International tw-kh:International.其他海外线路均为 International
-         */
-        @UCloudParam("OperatorName")
-        private String operatorName;
-
-        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
-        @UCloudParam("CouponId")
-        private String couponId;
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getPayMode() {
-            return payMode;
-        }
-
-        public void setPayMode(String payMode) {
-            this.payMode = payMode;
-        }
-
-        public String getShareBandwidthId() {
-            return shareBandwidthId;
-        }
-
-        public void setShareBandwidthId(String shareBandwidthId) {
-            this.shareBandwidthId = shareBandwidthId;
-        }
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
         }
 
         public String getCouponId() {

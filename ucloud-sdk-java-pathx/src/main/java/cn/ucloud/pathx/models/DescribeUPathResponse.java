@@ -14,7 +14,9 @@
 package cn.ucloud.pathx.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeUPathResponse extends Response {
@@ -29,45 +31,6 @@ public class DescribeUPathResponse extends Response {
 
     public void setUPathSet(List<UPathInfo> uPathSet) {
         this.uPathSet = uPathSet;
-    }
-
-    public static class PathXUGAInfo extends Response {
-
-        /** 加速配置ID */
-        @SerializedName("UGAId")
-        private String ugaId;
-
-        /** 源站IP列表，多个值由半角英文逗号相隔 */
-        @SerializedName("IPList")
-        private List<String> ipList;
-
-        /** 源站域名 */
-        @SerializedName("Domain")
-        private String domain;
-
-        public String getUGAId() {
-            return ugaId;
-        }
-
-        public void setUGAId(String ugaId) {
-            this.ugaId = ugaId;
-        }
-
-        public List<String> getIPList() {
-            return ipList;
-        }
-
-        public void setIPList(List<String> ipList) {
-            this.ipList = ipList;
-        }
-
-        public String getDomain() {
-            return domain;
-        }
-
-        public void setDomain(String domain) {
-            this.domain = domain;
-        }
     }
 
     public static class UPathInfo extends Response {
@@ -241,6 +204,45 @@ public class DescribeUPathResponse extends Response {
 
         public void setArea(String area) {
             this.area = area;
+        }
+    }
+
+    public static class PathXUGAInfo extends Response {
+
+        /** 加速配置ID */
+        @SerializedName("UGAId")
+        private String ugaId;
+
+        /** 源站IP列表，多个值由半角英文逗号相隔 */
+        @SerializedName("IPList")
+        private List<String> ipList;
+
+        /** 源站域名 */
+        @SerializedName("Domain")
+        private String domain;
+
+        public String getUGAId() {
+            return ugaId;
+        }
+
+        public void setUGAId(String ugaId) {
+            this.ugaId = ugaId;
+        }
+
+        public List<String> getIPList() {
+            return ipList;
+        }
+
+        public void setIPList(List<String> ipList) {
+            this.ipList = ipList;
+        }
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
         }
     }
 }
