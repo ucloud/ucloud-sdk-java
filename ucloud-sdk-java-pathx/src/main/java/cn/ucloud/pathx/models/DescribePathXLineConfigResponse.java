@@ -14,7 +14,9 @@
 package cn.ucloud.pathx.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribePathXLineConfigResponse extends Response {
@@ -29,69 +31,6 @@ public class DescribePathXLineConfigResponse extends Response {
 
     public void setLineSet(List<UGAALine> lineSet) {
         this.lineSet = lineSet;
-    }
-
-    public static class LineDetail extends Response {
-
-        /** 线路源 */
-        @SerializedName("LineFrom")
-        private String lineFrom;
-
-        /** 线路目的 */
-        @SerializedName("LineTo")
-        private String lineTo;
-
-        /** 线路计费Id */
-        @SerializedName("LineId")
-        private String lineId;
-
-        /** 线路源中文名称 */
-        @SerializedName("LineFromName")
-        private String lineFromName;
-
-        /** 线路目的中文名称 */
-        @SerializedName("LineToName")
-        private String lineToName;
-
-        public String getLineFrom() {
-            return lineFrom;
-        }
-
-        public void setLineFrom(String lineFrom) {
-            this.lineFrom = lineFrom;
-        }
-
-        public String getLineTo() {
-            return lineTo;
-        }
-
-        public void setLineTo(String lineTo) {
-            this.lineTo = lineTo;
-        }
-
-        public String getLineId() {
-            return lineId;
-        }
-
-        public void setLineId(String lineId) {
-            this.lineId = lineId;
-        }
-
-        public String getLineFromName() {
-            return lineFromName;
-        }
-
-        public void setLineFromName(String lineFromName) {
-            this.lineFromName = lineFromName;
-        }
-
-        public String getLineToName() {
-            return lineToName;
-        }
-
-        public void setLineToName(String lineToName) {
-            this.lineToName = lineToName;
-        }
     }
 
     public static class UGAALine extends Response {
@@ -178,6 +117,69 @@ public class DescribePathXLineConfigResponse extends Response {
 
         public void setLineDetail(List<LineDetail> lineDetail) {
             this.lineDetail = lineDetail;
+        }
+    }
+
+    public static class LineDetail extends Response {
+
+        /** 线路源 */
+        @SerializedName("LineFrom")
+        private String lineFrom;
+
+        /** 线路目的 */
+        @SerializedName("LineTo")
+        private String lineTo;
+
+        /** 线路计费Id */
+        @SerializedName("LineId")
+        private String lineId;
+
+        /** 线路源中文名称 */
+        @SerializedName("LineFromName")
+        private String lineFromName;
+
+        /** 线路目的中文名称 */
+        @SerializedName("LineToName")
+        private String lineToName;
+
+        public String getLineFrom() {
+            return lineFrom;
+        }
+
+        public void setLineFrom(String lineFrom) {
+            this.lineFrom = lineFrom;
+        }
+
+        public String getLineTo() {
+            return lineTo;
+        }
+
+        public void setLineTo(String lineTo) {
+            this.lineTo = lineTo;
+        }
+
+        public String getLineId() {
+            return lineId;
+        }
+
+        public void setLineId(String lineId) {
+            this.lineId = lineId;
+        }
+
+        public String getLineFromName() {
+            return lineFromName;
+        }
+
+        public void setLineFromName(String lineFromName) {
+            this.lineFromName = lineFromName;
+        }
+
+        public String getLineToName() {
+            return lineToName;
+        }
+
+        public void setLineToName(String lineToName) {
+            this.lineToName = lineToName;
         }
     }
 }

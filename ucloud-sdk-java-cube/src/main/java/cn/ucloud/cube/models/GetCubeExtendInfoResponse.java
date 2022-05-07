@@ -14,7 +14,9 @@
 package cn.ucloud.cube.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetCubeExtendInfoResponse extends Response {
@@ -29,33 +31,6 @@ public class GetCubeExtendInfoResponse extends Response {
 
     public void setExtendInfo(List<CubeExtendInfo> extendInfo) {
         this.extendInfo = extendInfo;
-    }
-
-    public static class EIPAddr extends Response {
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路名称BGP或者internalation */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
     }
 
     public static class CubeExtendInfo extends Response {
@@ -229,6 +204,33 @@ public class GetCubeExtendInfoResponse extends Response {
 
         public void setWeight(Integer weight) {
             this.weight = weight;
+        }
+    }
+
+    public static class EIPAddr extends Response {
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路名称BGP或者internalation */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
         }
     }
 }

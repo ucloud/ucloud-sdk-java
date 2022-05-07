@@ -14,7 +14,9 @@
 package cn.ucloud.ulb.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeULBSimpleResponse extends Response {
@@ -41,69 +43,6 @@ public class DescribeULBSimpleResponse extends Response {
 
     public void setDataSet(List<ULBSimpleSet> dataSet) {
         this.dataSet = dataSet;
-    }
-
-    public static class ULBIPSet extends Response {
-
-        /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** 弹性IP地址 */
-        @SerializedName("EIP")
-        private String eip;
-
-        /** 弹性IP的ID */
-        @SerializedName("EIPId")
-        private String eipId;
-
-        /** 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放） */
-        @SerializedName("BandwidthType")
-        private Integer bandwidthType;
-
-        /** 弹性IP的带宽值（暂未对外开放） */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getEIP() {
-            return eip;
-        }
-
-        public void setEIP(String eip) {
-            this.eip = eip;
-        }
-
-        public String getEIPId() {
-            return eipId;
-        }
-
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
-        }
-
-        public Integer getBandwidthType() {
-            return bandwidthType;
-        }
-
-        public void setBandwidthType(Integer bandwidthType) {
-            this.bandwidthType = bandwidthType;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
     }
 
     public static class ULBSimpleSet extends Response {
@@ -400,6 +339,69 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setFirewallId(String firewallId) {
             this.firewallId = firewallId;
+        }
+    }
+
+    public static class ULBIPSet extends Response {
+
+        /** 弹性IP的运营商信息，枚举值为： Bgp：BGP IP International：国际IP */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** 弹性IP地址 */
+        @SerializedName("EIP")
+        private String eip;
+
+        /** 弹性IP的ID */
+        @SerializedName("EIPId")
+        private String eipId;
+
+        /** 弹性IP的带宽类型，枚举值：1 表示是共享带宽，0 普通带宽类型（暂未对外开放） */
+        @SerializedName("BandwidthType")
+        private Integer bandwidthType;
+
+        /** 弹性IP的带宽值（暂未对外开放） */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getEIP() {
+            return eip;
+        }
+
+        public void setEIP(String eip) {
+            this.eip = eip;
+        }
+
+        public String getEIPId() {
+            return eipId;
+        }
+
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
+        }
+
+        public Integer getBandwidthType() {
+            return bandwidthType;
+        }
+
+        public void setBandwidthType(Integer bandwidthType) {
+            this.bandwidthType = bandwidthType;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
         }
     }
 }

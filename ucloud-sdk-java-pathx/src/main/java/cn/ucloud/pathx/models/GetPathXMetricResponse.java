@@ -14,7 +14,9 @@
 package cn.ucloud.pathx.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetPathXMetricResponse extends Response {
@@ -29,33 +31,6 @@ public class GetPathXMetricResponse extends Response {
 
     public void setDataSet(MetricPeriod dataSet) {
         this.dataSet = dataSet;
-    }
-
-    public static class MatricPoint extends Response {
-
-        /** 时间戳 */
-        @SerializedName("Timestamp")
-        private Integer timestamp;
-
-        /** 监控点数值 */
-        @SerializedName("Value")
-        private Integer value;
-
-        public Integer getTimestamp() {
-            return timestamp;
-        }
-
-        public void setTimestamp(Integer timestamp) {
-            this.timestamp = timestamp;
-        }
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
     }
 
     public static class MetricPeriod extends Response {
@@ -106,6 +81,33 @@ public class GetPathXMetricResponse extends Response {
 
         public void setNetworkInUsage(List<MatricPoint> networkInUsage) {
             this.networkInUsage = networkInUsage;
+        }
+    }
+
+    public static class MatricPoint extends Response {
+
+        /** 时间戳 */
+        @SerializedName("Timestamp")
+        private Integer timestamp;
+
+        /** 监控点数值 */
+        @SerializedName("Value")
+        private Integer value;
+
+        public Integer getTimestamp() {
+            return timestamp;
+        }
+
+        public void setTimestamp(Integer timestamp) {
+            this.timestamp = timestamp;
+        }
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
         }
     }
 }

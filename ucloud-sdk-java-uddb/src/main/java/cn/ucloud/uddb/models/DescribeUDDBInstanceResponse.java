@@ -14,7 +14,9 @@
 package cn.ucloud.uddb.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeUDDBInstanceResponse extends Response {
@@ -29,48 +31,6 @@ public class DescribeUDDBInstanceResponse extends Response {
 
     public void setDataSet(List<DataSetUDDB> dataSet) {
         this.dataSet = dataSet;
-    }
-
-    public static class SlaveInfo extends Response {
-
-        /** 只读实例ID */
-        @SerializedName("Id")
-        private String id;
-
-        /** 对应数据节点的ID */
-        @SerializedName("DataNodeId")
-        private String dataNodeId;
-
-        /**
-         * 只读实例状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
-         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
-         */
-        @SerializedName("State")
-        private String state;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getDataNodeId() {
-            return dataNodeId;
-        }
-
-        public void setDataNodeId(String dataNodeId) {
-            this.dataNodeId = dataNodeId;
-        }
-
-        public String getState() {
-            return state;
-        }
-
-        public void setState(String state) {
-            this.state = state;
-        }
     }
 
     public static class DataSetUDDB extends Response {
@@ -435,6 +395,48 @@ public class DescribeUDDBInstanceResponse extends Response {
 
         public void setCreateTime(String createTime) {
             this.createTime = createTime;
+        }
+    }
+
+    public static class SlaveInfo extends Response {
+
+        /** 只读实例ID */
+        @SerializedName("Id")
+        private String id;
+
+        /** 对应数据节点的ID */
+        @SerializedName("DataNodeId")
+        private String dataNodeId;
+
+        /**
+         * 只读实例状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
+         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
+         */
+        @SerializedName("State")
+        private String state;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getDataNodeId() {
+            return dataNodeId;
+        }
+
+        public void setDataNodeId(String dataNodeId) {
+            this.dataNodeId = dataNodeId;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
         }
     }
 }

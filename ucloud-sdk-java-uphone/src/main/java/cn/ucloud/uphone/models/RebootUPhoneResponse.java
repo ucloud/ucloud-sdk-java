@@ -13,6 +13,8 @@
  */
 package cn.ucloud.uphone.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class RebootUPhoneResponse extends Response {}

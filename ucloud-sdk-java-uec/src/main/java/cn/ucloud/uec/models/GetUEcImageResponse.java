@@ -14,7 +14,9 @@
 package cn.ucloud.uec.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class GetUEcImageResponse extends Response {
@@ -41,6 +43,33 @@ public class GetUEcImageResponse extends Response {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
+    }
+
+    public static class DeployImageInfo extends Response {
+
+        /** 机房ID */
+        @SerializedName("IdcId")
+        private String idcId;
+
+        /** 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中 */
+        @SerializedName("State")
+        private Integer state;
+
+        public String getIdcId() {
+            return idcId;
+        }
+
+        public void setIdcId(String idcId) {
+            this.idcId = idcId;
+        }
+
+        public Integer getState() {
+            return state;
+        }
+
+        public void setState(Integer state) {
+            this.state = state;
+        }
     }
 
     public static class ImageInfo extends Response {
@@ -163,33 +192,6 @@ public class GetUEcImageResponse extends Response {
 
         public void setGpu(Integer gpu) {
             this.gpu = gpu;
-        }
-    }
-
-    public static class DeployImageInfo extends Response {
-
-        /** 机房ID */
-        @SerializedName("IdcId")
-        private String idcId;
-
-        /** 镜像状态 1-可用, 2-不可用, 3-获取中, 4-转换中, 5-部署中 */
-        @SerializedName("State")
-        private Integer state;
-
-        public String getIdcId() {
-            return idcId;
-        }
-
-        public void setIdcId(String idcId) {
-            this.idcId = idcId;
-        }
-
-        public Integer getState() {
-            return state;
-        }
-
-        public void setState(Integer state) {
-            this.state = state;
         }
     }
 }

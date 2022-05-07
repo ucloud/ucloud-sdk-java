@@ -15,6 +15,7 @@ package cn.ucloud.ucdn.models;
 
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
 import java.util.List;
 
 public class DescribeNewUcdnRefreshCacheTaskRequest extends Request {

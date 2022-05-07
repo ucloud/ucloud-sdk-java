@@ -14,7 +14,9 @@
 package cn.ucloud.uhost.models;
 
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DescribeIsolationGroupResponse extends Response {
@@ -41,33 +43,6 @@ public class DescribeIsolationGroupResponse extends Response {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
-    }
-
-    public static class SpreadInfo extends Response {
-
-        /** 可用区信息 */
-        @SerializedName("Zone")
-        private String zone;
-
-        /** 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。 */
-        @SerializedName("UHostCount")
-        private Integer uHostCount;
-
-        public String getZone() {
-            return zone;
-        }
-
-        public void setZone(String zone) {
-            this.zone = zone;
-        }
-
-        public Integer getUHostCount() {
-            return uHostCount;
-        }
-
-        public void setUHostCount(Integer uHostCount) {
-            this.uHostCount = uHostCount;
-        }
     }
 
     public static class IsolationGroup extends Response {
@@ -118,6 +93,33 @@ public class DescribeIsolationGroupResponse extends Response {
 
         public void setRemark(String remark) {
             this.remark = remark;
+        }
+    }
+
+    public static class SpreadInfo extends Response {
+
+        /** 可用区信息 */
+        @SerializedName("Zone")
+        private String zone;
+
+        /** 当前地域所有可用区中硬件隔离组中云主机的数量，不超过7。 */
+        @SerializedName("UHostCount")
+        private Integer uHostCount;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        public Integer getUHostCount() {
+            return uHostCount;
+        }
+
+        public void setUHostCount(Integer uHostCount) {
+            this.uHostCount = uHostCount;
         }
     }
 }
