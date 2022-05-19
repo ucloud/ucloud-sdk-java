@@ -45,6 +45,45 @@ public class DescribeUEcVHostResponse extends Response {
         this.nodeList = nodeList;
     }
 
+    public static class NodeIpList extends Response {
+
+        /** 外网ip */
+        @SerializedName("Ip")
+        private String ip;
+
+        /** 运营商 */
+        @SerializedName("Isp")
+        private String isp;
+
+        /** 运营商名称 */
+        @SerializedName("IspName")
+        private String ispName;
+
+        public String getIp() {
+            return ip;
+        }
+
+        public void setIp(String ip) {
+            this.ip = ip;
+        }
+
+        public String getIsp() {
+            return isp;
+        }
+
+        public void setIsp(String isp) {
+            this.isp = isp;
+        }
+
+        public String getIspName() {
+            return ispName;
+        }
+
+        public void setIspName(String ispName) {
+            this.ispName = ispName;
+        }
+    }
+
     public static class NodeInfo extends Response {
 
         /** 节点名称 */
@@ -297,45 +336,6 @@ public class DescribeUEcVHostResponse extends Response {
 
         public void setInnerIps(List<String> innerIps) {
             this.innerIps = innerIps;
-        }
-    }
-
-    public static class NodeIpList extends Response {
-
-        /** 外网ip */
-        @SerializedName("Ip")
-        private String ip;
-
-        /** 运营商 */
-        @SerializedName("Isp")
-        private String isp;
-
-        /** 运营商名称 */
-        @SerializedName("IspName")
-        private String ispName;
-
-        public String getIp() {
-            return ip;
-        }
-
-        public void setIp(String ip) {
-            this.ip = ip;
-        }
-
-        public String getIsp() {
-            return isp;
-        }
-
-        public void setIsp(String isp) {
-            this.isp = isp;
-        }
-
-        public String getIspName() {
-            return ispName;
-        }
-
-        public void setIspName(String ispName) {
-            this.ispName = ispName;
         }
     }
 }

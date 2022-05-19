@@ -33,45 +33,6 @@ public class DescribeUGA3OptimizationResponse extends Response {
         this.accelerationInfos = accelerationInfos;
     }
 
-    public static class AccelerationInfo extends Response {
-
-        /** 加速大区代码 */
-        @SerializedName("AccelerationArea")
-        private String accelerationArea;
-
-        /** 加速大区名称 */
-        @SerializedName("AccelerationName")
-        private String accelerationName;
-
-        /** 加速提升情况 */
-        @SerializedName("NodeInfo")
-        private List<NodeDelays> nodeInfo;
-
-        public String getAccelerationArea() {
-            return accelerationArea;
-        }
-
-        public void setAccelerationArea(String accelerationArea) {
-            this.accelerationArea = accelerationArea;
-        }
-
-        public String getAccelerationName() {
-            return accelerationName;
-        }
-
-        public void setAccelerationName(String accelerationName) {
-            this.accelerationName = accelerationName;
-        }
-
-        public List<NodeDelays> getNodeInfo() {
-            return nodeInfo;
-        }
-
-        public void setNodeInfo(List<NodeDelays> nodeInfo) {
-            this.nodeInfo = nodeInfo;
-        }
-    }
-
     public static class NodeDelays extends Response {
 
         /** 加速区域 */
@@ -204,6 +165,45 @@ public class DescribeUGA3OptimizationResponse extends Response {
 
         public void setLossOptimization(Double lossOptimization) {
             this.lossOptimization = lossOptimization;
+        }
+    }
+
+    public static class AccelerationInfo extends Response {
+
+        /** 加速大区代码 */
+        @SerializedName("AccelerationArea")
+        private String accelerationArea;
+
+        /** 加速大区名称 */
+        @SerializedName("AccelerationName")
+        private String accelerationName;
+
+        /** 加速提升情况 */
+        @SerializedName("NodeInfo")
+        private List<NodeDelays> nodeInfo;
+
+        public String getAccelerationArea() {
+            return accelerationArea;
+        }
+
+        public void setAccelerationArea(String accelerationArea) {
+            this.accelerationArea = accelerationArea;
+        }
+
+        public String getAccelerationName() {
+            return accelerationName;
+        }
+
+        public void setAccelerationName(String accelerationName) {
+            this.accelerationName = accelerationName;
+        }
+
+        public List<NodeDelays> getNodeInfo() {
+            return nodeInfo;
+        }
+
+        public void setNodeInfo(List<NodeDelays> nodeInfo) {
+            this.nodeInfo = nodeInfo;
         }
     }
 }

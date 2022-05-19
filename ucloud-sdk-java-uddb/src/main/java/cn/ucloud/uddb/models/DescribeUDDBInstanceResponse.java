@@ -33,6 +33,150 @@ public class DescribeUDDBInstanceResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class DataNodeInfo extends Response {
+
+        /** 数据节点ID */
+        @SerializedName("Id")
+        private String id;
+
+        /** 数据节点的内存配置, 单位：MB */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** 数据节点的磁盘大小配置. 单位: GB */
+        @SerializedName("DiskSpace")
+        private Integer diskSpace;
+
+        /** 数据节点的只读实例个数. */
+        @SerializedName("SlaveCount")
+        private Integer slaveCount;
+
+        /**
+         * 数据分片状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
+         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
+         */
+        @SerializedName("State")
+        private String state;
+
+        /** 只读实例信息列表 */
+        @SerializedName("SlaveInfos")
+        private List<SlaveInfo> slaveInfos;
+
+        /** 最近一次数据迁移任务id */
+        @SerializedName("LastTransTaskId")
+        private String lastTransTaskId;
+
+        /** 节点的创建时间 */
+        @SerializedName("CreateTime")
+        private String createTime;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public Integer getDiskSpace() {
+            return diskSpace;
+        }
+
+        public void setDiskSpace(Integer diskSpace) {
+            this.diskSpace = diskSpace;
+        }
+
+        public Integer getSlaveCount() {
+            return slaveCount;
+        }
+
+        public void setSlaveCount(Integer slaveCount) {
+            this.slaveCount = slaveCount;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public List<SlaveInfo> getSlaveInfos() {
+            return slaveInfos;
+        }
+
+        public void setSlaveInfos(List<SlaveInfo> slaveInfos) {
+            this.slaveInfos = slaveInfos;
+        }
+
+        public String getLastTransTaskId() {
+            return lastTransTaskId;
+        }
+
+        public void setLastTransTaskId(String lastTransTaskId) {
+            this.lastTransTaskId = lastTransTaskId;
+        }
+
+        public String getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(String createTime) {
+            this.createTime = createTime;
+        }
+    }
+
+    public static class SlaveInfo extends Response {
+
+        /** 只读实例ID */
+        @SerializedName("Id")
+        private String id;
+
+        /** 对应数据节点的ID */
+        @SerializedName("DataNodeId")
+        private String dataNodeId;
+
+        /**
+         * 只读实例状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
+         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
+         */
+        @SerializedName("State")
+        private String state;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getDataNodeId() {
+            return dataNodeId;
+        }
+
+        public void setDataNodeId(String dataNodeId) {
+            this.dataNodeId = dataNodeId;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+    }
+
     public static class DataSetUDDB extends Response {
 
         /** UDDB实例对应的可用区 */
@@ -293,150 +437,6 @@ public class DescribeUDDBInstanceResponse extends Response {
 
         public void setInstanceType(String instanceType) {
             this.instanceType = instanceType;
-        }
-    }
-
-    public static class DataNodeInfo extends Response {
-
-        /** 数据节点ID */
-        @SerializedName("Id")
-        private String id;
-
-        /** 数据节点的内存配置, 单位：MB */
-        @SerializedName("Memory")
-        private Integer memory;
-
-        /** 数据节点的磁盘大小配置. 单位: GB */
-        @SerializedName("DiskSpace")
-        private Integer diskSpace;
-
-        /** 数据节点的只读实例个数. */
-        @SerializedName("SlaveCount")
-        private Integer slaveCount;
-
-        /**
-         * 数据分片状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
-         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
-         */
-        @SerializedName("State")
-        private String state;
-
-        /** 只读实例信息列表 */
-        @SerializedName("SlaveInfos")
-        private List<SlaveInfo> slaveInfos;
-
-        /** 最近一次数据迁移任务id */
-        @SerializedName("LastTransTaskId")
-        private String lastTransTaskId;
-
-        /** 节点的创建时间 */
-        @SerializedName("CreateTime")
-        private String createTime;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public Integer getMemory() {
-            return memory;
-        }
-
-        public void setMemory(Integer memory) {
-            this.memory = memory;
-        }
-
-        public Integer getDiskSpace() {
-            return diskSpace;
-        }
-
-        public void setDiskSpace(Integer diskSpace) {
-            this.diskSpace = diskSpace;
-        }
-
-        public Integer getSlaveCount() {
-            return slaveCount;
-        }
-
-        public void setSlaveCount(Integer slaveCount) {
-            this.slaveCount = slaveCount;
-        }
-
-        public String getState() {
-            return state;
-        }
-
-        public void setState(String state) {
-            this.state = state;
-        }
-
-        public List<SlaveInfo> getSlaveInfos() {
-            return slaveInfos;
-        }
-
-        public void setSlaveInfos(List<SlaveInfo> slaveInfos) {
-            this.slaveInfos = slaveInfos;
-        }
-
-        public String getLastTransTaskId() {
-            return lastTransTaskId;
-        }
-
-        public void setLastTransTaskId(String lastTransTaskId) {
-            this.lastTransTaskId = lastTransTaskId;
-        }
-
-        public String getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(String createTime) {
-            this.createTime = createTime;
-        }
-    }
-
-    public static class SlaveInfo extends Response {
-
-        /** 只读实例ID */
-        @SerializedName("Id")
-        private String id;
-
-        /** 对应数据节点的ID */
-        @SerializedName("DataNodeId")
-        private String dataNodeId;
-
-        /**
-         * 只读实例状态, 状态列表如下: Init: 初始化中 Fail: 安装失败 Starting: 启动中 Running: 系统正常运行中 Shutdown: 关闭中
-         * Shutoff: 已关闭 Deleted: 已删除 Upgrading: 系统升级中
-         */
-        @SerializedName("State")
-        private String state;
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getDataNodeId() {
-            return dataNodeId;
-        }
-
-        public void setDataNodeId(String dataNodeId) {
-            this.dataNodeId = dataNodeId;
-        }
-
-        public String getState() {
-            return state;
-        }
-
-        public void setState(String state) {
-            this.state = state;
         }
     }
 }

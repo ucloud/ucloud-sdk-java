@@ -222,6 +222,51 @@ public class DescribeUPhoneServerResponse extends Response {
         }
     }
 
+    public static class ServerDiskSet extends Response {
+
+        /** 磁盘类型。请参考磁盘类型。 */
+        @SerializedName("DiskType")
+        private String diskType;
+
+        /**
+         * 是否是系统盘。枚举值：
+         *
+         * <p>> True，是系统盘
+         *
+         * <p>> False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。
+         */
+        @SerializedName("IsBoot")
+        private Boolean isBoot;
+
+        /** 磁盘大小，单位: GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        public String getDiskType() {
+            return diskType;
+        }
+
+        public void setDiskType(String diskType) {
+            this.diskType = diskType;
+        }
+
+        public Boolean getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(Boolean isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+    }
+
     public static class ServerInstance extends Response {
 
         /** 云手机服务器的唯一标识。 */
@@ -398,51 +443,6 @@ public class DescribeUPhoneServerResponse extends Response {
 
         public void setIpSet(List<IpSet> ipSet) {
             this.ipSet = ipSet;
-        }
-    }
-
-    public static class ServerDiskSet extends Response {
-
-        /** 磁盘类型。请参考磁盘类型。 */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /**
-         * 是否是系统盘。枚举值：
-         *
-         * <p>> True，是系统盘
-         *
-         * <p>> False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。
-         */
-        @SerializedName("IsBoot")
-        private Boolean isBoot;
-
-        /** 磁盘大小，单位: GB */
-        @SerializedName("Size")
-        private Integer size;
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public Boolean getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(Boolean isBoot) {
-            this.isBoot = isBoot;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
         }
     }
 }

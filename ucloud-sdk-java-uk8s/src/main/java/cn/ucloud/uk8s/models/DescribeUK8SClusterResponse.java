@@ -273,6 +273,21 @@ public class DescribeUK8SClusterResponse extends Response {
         this.masterResourceStatus = masterResourceStatus;
     }
 
+    public static class KubeProxy extends Response {
+
+        /** KubeProxy模式，枚举值为[ipvs,iptables] */
+        @SerializedName("Mode")
+        private String mode;
+
+        public String getMode() {
+            return mode;
+        }
+
+        public void setMode(String mode) {
+            this.mode = mode;
+        }
+    }
+
     public static class UhostInfo extends Response {
 
         /** 所在机房 */
@@ -603,21 +618,6 @@ public class DescribeUK8SClusterResponse extends Response {
 
         public void setDefault(String fDefault) {
             this.fDefault = fDefault;
-        }
-    }
-
-    public static class KubeProxy extends Response {
-
-        /** KubeProxy模式，枚举值为[ipvs,iptables] */
-        @SerializedName("Mode")
-        private String mode;
-
-        public String getMode() {
-            return mode;
-        }
-
-        public void setMode(String mode) {
-            this.mode = mode;
         }
     }
 }

@@ -111,33 +111,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         }
     }
 
-    public static class PHostComponentSet extends Response {
-
-        /** 组件名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 组件数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-    }
-
     public static class PHostDiskSet extends Response {
 
         /** 单盘大小，单位GB */
@@ -285,6 +258,33 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setRaidSupported(String raidSupported) {
             this.raidSupported = raidSupported;
+        }
+    }
+
+    public static class PHostComponentSet extends Response {
+
+        /** 组件名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 组件数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
         }
     }
 }
