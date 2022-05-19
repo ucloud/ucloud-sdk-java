@@ -33,72 +33,6 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         this.availableInstanceTypes = availableInstanceTypes;
     }
 
-    public static class CpuPlatforms extends Response {
-
-        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
-        @SerializedName("Intel")
-        private List<String> intel;
-
-        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
-        @SerializedName("Amd")
-        private List<String> amd;
-
-        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
-        @SerializedName("Ampere")
-        private List<String> ampere;
-
-        public List<String> getIntel() {
-            return intel;
-        }
-
-        public void setIntel(List<String> intel) {
-            this.intel = intel;
-        }
-
-        public List<String> getAmd() {
-            return amd;
-        }
-
-        public void setAmd(List<String> amd) {
-            this.amd = amd;
-        }
-
-        public List<String> getAmpere() {
-            return ampere;
-        }
-
-        public void setAmpere(List<String> ampere) {
-            this.ampere = ampere;
-        }
-    }
-
-    public static class GraphicsMemory extends Response {
-
-        /** 值，单位是GB */
-        @SerializedName("Value")
-        private Integer value;
-
-        /** 交互展示参数，可忽略 */
-        @SerializedName("Rate")
-        private Integer rate;
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
-
-        public Integer getRate() {
-            return rate;
-        }
-
-        public void setRate(Integer rate) {
-            this.rate = rate;
-        }
-    }
-
     public static class FeatureModes extends Response {
 
         /** 模式|特性名称 */
@@ -138,30 +72,69 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class MachineSizes extends Response {
+    public static class Disks extends Response {
 
-        /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
-        @SerializedName("Gpu")
-        private Integer gpu;
+        /** 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 */
+        @SerializedName("Name")
+        private String name;
 
-        /** CPU和内存可支持的规格 */
-        @SerializedName("Collection")
-        private List<Collection> collection;
+        /** 系统盘信息 */
+        @SerializedName("BootDisk")
+        private List<BootDiskInfo> bootDisk;
 
-        public Integer getGpu() {
-            return gpu;
+        /** 数据盘信息 */
+        @SerializedName("DataDisk")
+        private List<DataDiskInfo> dataDisk;
+
+        public String getName() {
+            return name;
         }
 
-        public void setGpu(Integer gpu) {
-            this.gpu = gpu;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public List<Collection> getCollection() {
-            return collection;
+        public List<BootDiskInfo> getBootDisk() {
+            return bootDisk;
         }
 
-        public void setCollection(List<Collection> collection) {
-            this.collection = collection;
+        public void setBootDisk(List<BootDiskInfo> bootDisk) {
+            this.bootDisk = bootDisk;
+        }
+
+        public List<DataDiskInfo> getDataDisk() {
+            return dataDisk;
+        }
+
+        public void setDataDisk(List<DataDiskInfo> dataDisk) {
+            this.dataDisk = dataDisk;
+        }
+    }
+
+    public static class Performance extends Response {
+
+        /** 值，单位是TFlops */
+        @SerializedName("Value")
+        private Integer value;
+
+        /** 交互展示参数，可忽略 */
+        @SerializedName("Rate")
+        private Integer rate;
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
+        }
+
+        public Integer getRate() {
+            return rate;
+        }
+
+        public void setRate(Integer rate) {
+            this.rate = rate;
         }
     }
 
@@ -189,6 +162,98 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setModes(List<FeatureModes> modes) {
             this.modes = modes;
+        }
+    }
+
+    public static class BootDiskInfo extends Response {
+
+        /**
+         * 系统盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
+         */
+        @SerializedName("Name")
+        private String name;
+
+        /** 系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。 */
+        @SerializedName("InstantResize")
+        private Boolean instantResize;
+
+        /** MaximalSize为磁盘最大值 */
+        @SerializedName("MaximalSize")
+        private Integer maximalSize;
+
+        /** 磁盘可支持的服务 */
+        @SerializedName("Features")
+        private List<String> features;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Boolean getInstantResize() {
+            return instantResize;
+        }
+
+        public void setInstantResize(Boolean instantResize) {
+            this.instantResize = instantResize;
+        }
+
+        public Integer getMaximalSize() {
+            return maximalSize;
+        }
+
+        public void setMaximalSize(Integer maximalSize) {
+            this.maximalSize = maximalSize;
+        }
+
+        public List<String> getFeatures() {
+            return features;
+        }
+
+        public void setFeatures(List<String> features) {
+            this.features = features;
+        }
+    }
+
+    public static class CpuPlatforms extends Response {
+
+        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
+        @SerializedName("Intel")
+        private List<String> intel;
+
+        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
+        @SerializedName("Amd")
+        private List<String> amd;
+
+        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
+        @SerializedName("Ampere")
+        private List<String> ampere;
+
+        public List<String> getIntel() {
+            return intel;
+        }
+
+        public void setIntel(List<String> intel) {
+            this.intel = intel;
+        }
+
+        public List<String> getAmd() {
+            return amd;
+        }
+
+        public void setAmd(List<String> amd) {
+            this.amd = amd;
+        }
+
+        public List<String> getAmpere() {
+            return ampere;
+        }
+
+        public void setAmpere(List<String> ampere) {
+            this.ampere = ampere;
         }
     }
 
@@ -364,101 +429,36 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class BootDiskInfo extends Response {
+    public static class MachineSizes extends Response {
 
-        /**
-         * 系统盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
-         */
-        @SerializedName("Name")
-        private String name;
+        /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
+        @SerializedName("Gpu")
+        private Integer gpu;
 
-        /** 系统盘是否允许扩容，如果是本地盘，则不允许扩容，InstantResize为false。 */
-        @SerializedName("InstantResize")
-        private Boolean instantResize;
+        /** CPU和内存可支持的规格 */
+        @SerializedName("Collection")
+        private List<Collection> collection;
 
-        /** MaximalSize为磁盘最大值 */
-        @SerializedName("MaximalSize")
-        private Integer maximalSize;
-
-        /** 磁盘可支持的服务 */
-        @SerializedName("Features")
-        private List<String> features;
-
-        public String getName() {
-            return name;
+        public Integer getGpu() {
+            return gpu;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setGpu(Integer gpu) {
+            this.gpu = gpu;
         }
 
-        public Boolean getInstantResize() {
-            return instantResize;
+        public List<Collection> getCollection() {
+            return collection;
         }
 
-        public void setInstantResize(Boolean instantResize) {
-            this.instantResize = instantResize;
-        }
-
-        public Integer getMaximalSize() {
-            return maximalSize;
-        }
-
-        public void setMaximalSize(Integer maximalSize) {
-            this.maximalSize = maximalSize;
-        }
-
-        public List<String> getFeatures() {
-            return features;
-        }
-
-        public void setFeatures(List<String> features) {
-            this.features = features;
+        public void setCollection(List<Collection> collection) {
+            this.collection = collection;
         }
     }
 
-    public static class Disks extends Response {
+    public static class GraphicsMemory extends Response {
 
-        /** 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 系统盘信息 */
-        @SerializedName("BootDisk")
-        private List<BootDiskInfo> bootDisk;
-
-        /** 数据盘信息 */
-        @SerializedName("DataDisk")
-        private List<DataDiskInfo> dataDisk;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public List<BootDiskInfo> getBootDisk() {
-            return bootDisk;
-        }
-
-        public void setBootDisk(List<BootDiskInfo> bootDisk) {
-            this.bootDisk = bootDisk;
-        }
-
-        public List<DataDiskInfo> getDataDisk() {
-            return dataDisk;
-        }
-
-        public void setDataDisk(List<DataDiskInfo> dataDisk) {
-            this.dataDisk = dataDisk;
-        }
-    }
-
-    public static class Performance extends Response {
-
-        /** 值，单位是TFlops */
+        /** 值，单位是GB */
         @SerializedName("Value")
         private Integer value;
 

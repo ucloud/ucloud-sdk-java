@@ -33,33 +33,6 @@ public class GetUcdnDomainLogV2Response extends Response {
         this.domainLogSet = domainLogSet;
     }
 
-    public static class DomanLogList extends Response {
-
-        /** 域名 */
-        @SerializedName("Domain")
-        private String domain;
-
-        /** 日志信息列表 */
-        @SerializedName("LogList")
-        private List<LogInfo> logList;
-
-        public String getDomain() {
-            return domain;
-        }
-
-        public void setDomain(String domain) {
-            this.domain = domain;
-        }
-
-        public List<LogInfo> getLogList() {
-            return logList;
-        }
-
-        public void setLogList(List<LogInfo> logList) {
-            this.logList = logList;
-        }
-    }
-
     public static class LogInfo extends Response {
 
         /** Unix时间戳 */
@@ -84,6 +57,33 @@ public class GetUcdnDomainLogV2Response extends Response {
 
         public void setLogUrl(String logUrl) {
             this.logUrl = logUrl;
+        }
+    }
+
+    public static class DomanLogList extends Response {
+
+        /** 域名 */
+        @SerializedName("Domain")
+        private String domain;
+
+        /** 日志信息列表 */
+        @SerializedName("LogList")
+        private List<LogInfo> logList;
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public List<LogInfo> getLogList() {
+            return logList;
+        }
+
+        public void setLogList(List<LogInfo> logList) {
+            this.logList = logList;
         }
     }
 }
