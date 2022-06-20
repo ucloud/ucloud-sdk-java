@@ -273,168 +273,6 @@ public class DescribeUK8SClusterResponse extends Response {
         this.masterResourceStatus = masterResourceStatus;
     }
 
-    public static class KubeProxy extends Response {
-
-        /** KubeProxy模式，枚举值为[ipvs,iptables] */
-        @SerializedName("Mode")
-        private String mode;
-
-        public String getMode() {
-            return mode;
-        }
-
-        public void setMode(String mode) {
-            this.mode = mode;
-        }
-    }
-
-    public static class UhostInfo extends Response {
-
-        /** 所在机房 */
-        @SerializedName("Zone")
-        private String zone;
-
-        /** 主机名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** Cpu数量 */
-        @SerializedName("CPU")
-        private Integer cpu;
-
-        /** 内存 */
-        @SerializedName("Memory")
-        private Integer memory;
-
-        /** 节点IP信息 */
-        @SerializedName("IPSet")
-        private List<IPSet> ipSet;
-
-        /** 节点磁盘信息 */
-        @SerializedName("DiskSet")
-        private List<DiskSet> diskSet;
-
-        /** 主机ID */
-        @SerializedName("NodeId")
-        private String nodeId;
-
-        /** 镜像信息 */
-        @SerializedName("OsName")
-        private String osName;
-
-        /** 创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** 到期时间 */
-        @SerializedName("ExpireTime")
-        private Integer expireTime;
-
-        /** 主机状态 */
-        @SerializedName("State")
-        private String state;
-
-        /** 节点类型：uhost表示云主机;uphost表示物理云主机 */
-        @SerializedName("NodeType")
-        private String nodeType;
-
-        public String getZone() {
-            return zone;
-        }
-
-        public void setZone(String zone) {
-            this.zone = zone;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCPU() {
-            return cpu;
-        }
-
-        public void setCPU(Integer cpu) {
-            this.cpu = cpu;
-        }
-
-        public Integer getMemory() {
-            return memory;
-        }
-
-        public void setMemory(Integer memory) {
-            this.memory = memory;
-        }
-
-        public List<IPSet> getIPSet() {
-            return ipSet;
-        }
-
-        public void setIPSet(List<IPSet> ipSet) {
-            this.ipSet = ipSet;
-        }
-
-        public List<DiskSet> getDiskSet() {
-            return diskSet;
-        }
-
-        public void setDiskSet(List<DiskSet> diskSet) {
-            this.diskSet = diskSet;
-        }
-
-        public String getNodeId() {
-            return nodeId;
-        }
-
-        public void setNodeId(String nodeId) {
-            this.nodeId = nodeId;
-        }
-
-        public String getOsName() {
-            return osName;
-        }
-
-        public void setOsName(String osName) {
-            this.osName = osName;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public Integer getExpireTime() {
-            return expireTime;
-        }
-
-        public void setExpireTime(Integer expireTime) {
-            this.expireTime = expireTime;
-        }
-
-        public String getState() {
-            return state;
-        }
-
-        public void setState(String state) {
-            this.state = state;
-        }
-
-        public String getNodeType() {
-            return nodeType;
-        }
-
-        public void setNodeType(String nodeType) {
-            this.nodeType = nodeType;
-        }
-    }
-
     public static class DiskSet extends Response {
 
         /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
@@ -618,6 +456,168 @@ public class DescribeUK8SClusterResponse extends Response {
 
         public void setDefault(String fDefault) {
             this.fDefault = fDefault;
+        }
+    }
+
+    public static class KubeProxy extends Response {
+
+        /** KubeProxy模式，枚举值为[ipvs,iptables] */
+        @SerializedName("Mode")
+        private String mode;
+
+        public String getMode() {
+            return mode;
+        }
+
+        public void setMode(String mode) {
+            this.mode = mode;
+        }
+    }
+
+    public static class UhostInfo extends Response {
+
+        /** 所在机房 */
+        @SerializedName("Zone")
+        private String zone;
+
+        /** 主机名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** Cpu数量 */
+        @SerializedName("CPU")
+        private Integer cpu;
+
+        /** 内存 */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** 节点IP信息 */
+        @SerializedName("IPSet")
+        private List<IPSet> ipSet;
+
+        /** 节点磁盘信息 */
+        @SerializedName("DiskSet")
+        private List<DiskSet> diskSet;
+
+        /** 主机ID */
+        @SerializedName("NodeId")
+        private String nodeId;
+
+        /** 镜像信息 */
+        @SerializedName("OsName")
+        private String osName;
+
+        /** 创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 到期时间 */
+        @SerializedName("ExpireTime")
+        private Integer expireTime;
+
+        /** 主机状态 */
+        @SerializedName("State")
+        private String state;
+
+        /** 节点类型：uhost表示云主机;uphost表示物理云主机 */
+        @SerializedName("NodeType")
+        private String nodeType;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCPU() {
+            return cpu;
+        }
+
+        public void setCPU(Integer cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public List<IPSet> getIPSet() {
+            return ipSet;
+        }
+
+        public void setIPSet(List<IPSet> ipSet) {
+            this.ipSet = ipSet;
+        }
+
+        public List<DiskSet> getDiskSet() {
+            return diskSet;
+        }
+
+        public void setDiskSet(List<DiskSet> diskSet) {
+            this.diskSet = diskSet;
+        }
+
+        public String getNodeId() {
+            return nodeId;
+        }
+
+        public void setNodeId(String nodeId) {
+            this.nodeId = nodeId;
+        }
+
+        public String getOsName() {
+            return osName;
+        }
+
+        public void setOsName(String osName) {
+            this.osName = osName;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public Integer getExpireTime() {
+            return expireTime;
+        }
+
+        public void setExpireTime(Integer expireTime) {
+            this.expireTime = expireTime;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public String getNodeType() {
+            return nodeType;
+        }
+
+        public void setNodeType(String nodeType) {
+            this.nodeType = nodeType;
         }
     }
 }

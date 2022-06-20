@@ -45,85 +45,6 @@ public class DescribeUDBParamGroupResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class UDBParamGroupSet extends Response {
-
-        /** 参数组id */
-        @SerializedName("GroupId")
-        private Integer groupId;
-
-        /** 参数组名称 */
-        @SerializedName("GroupName")
-        private String groupName;
-
-        /**
-         * DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下
-         * 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6
-         * 7：percona-5.6
-         */
-        @SerializedName("DBTypeId")
-        private String dbTypeId;
-
-        /** 参数组描述 */
-        @SerializedName("Description")
-        private String description;
-
-        /** 参数组是否可修改 */
-        @SerializedName("Modifiable")
-        private Boolean modifiable;
-
-        /** 参数的键值对表 UDBParamMemberSet */
-        @SerializedName("ParamMember")
-        private List<UDBParamMemberSet> paramMember;
-
-        public Integer getGroupId() {
-            return groupId;
-        }
-
-        public void setGroupId(Integer groupId) {
-            this.groupId = groupId;
-        }
-
-        public String getGroupName() {
-            return groupName;
-        }
-
-        public void setGroupName(String groupName) {
-            this.groupName = groupName;
-        }
-
-        public String getDBTypeId() {
-            return dbTypeId;
-        }
-
-        public void setDBTypeId(String dbTypeId) {
-            this.dbTypeId = dbTypeId;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public Boolean getModifiable() {
-            return modifiable;
-        }
-
-        public void setModifiable(Boolean modifiable) {
-            this.modifiable = modifiable;
-        }
-
-        public List<UDBParamMemberSet> getParamMember() {
-            return paramMember;
-        }
-
-        public void setParamMember(List<UDBParamMemberSet> paramMember) {
-            this.paramMember = paramMember;
-        }
-    }
-
     public static class UDBParamMemberSet extends Response {
 
         /** 参数名称 */
@@ -208,6 +129,85 @@ public class DescribeUDBParamGroupResponse extends Response {
 
         public void setFormatType(Integer formatType) {
             this.formatType = formatType;
+        }
+    }
+
+    public static class UDBParamGroupSet extends Response {
+
+        /** 参数组id */
+        @SerializedName("GroupId")
+        private Integer groupId;
+
+        /** 参数组名称 */
+        @SerializedName("GroupName")
+        private String groupName;
+
+        /**
+         * DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下
+         * 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6
+         * 7：percona-5.6
+         */
+        @SerializedName("DBTypeId")
+        private String dbTypeId;
+
+        /** 参数组描述 */
+        @SerializedName("Description")
+        private String description;
+
+        /** 参数组是否可修改 */
+        @SerializedName("Modifiable")
+        private Boolean modifiable;
+
+        /** 参数的键值对表 UDBParamMemberSet */
+        @SerializedName("ParamMember")
+        private List<UDBParamMemberSet> paramMember;
+
+        public Integer getGroupId() {
+            return groupId;
+        }
+
+        public void setGroupId(Integer groupId) {
+            this.groupId = groupId;
+        }
+
+        public String getGroupName() {
+            return groupName;
+        }
+
+        public void setGroupName(String groupName) {
+            this.groupName = groupName;
+        }
+
+        public String getDBTypeId() {
+            return dbTypeId;
+        }
+
+        public void setDBTypeId(String dbTypeId) {
+            this.dbTypeId = dbTypeId;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Boolean getModifiable() {
+            return modifiable;
+        }
+
+        public void setModifiable(Boolean modifiable) {
+            this.modifiable = modifiable;
+        }
+
+        public List<UDBParamMemberSet> getParamMember() {
+            return paramMember;
+        }
+
+        public void setParamMember(List<UDBParamMemberSet> paramMember) {
+            this.paramMember = paramMember;
         }
     }
 }

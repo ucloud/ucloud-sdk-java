@@ -45,6 +45,120 @@ public class DescribeVServerResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class PolicyBackendSet extends Response {
+
+        /** 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关 */
+        @SerializedName("BackendId")
+        private String backendId;
+
+        /**
+         * 所添加的后端资源的类型，枚举值：UHost -> 云主机；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker ->
+         * 容器；UHybrid->混合云主机；CUBE->Cube；UNI -> 虚拟网卡
+         */
+        @SerializedName("ResourceType")
+        private String resourceType;
+
+        /** 后端资源的实例名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
+
+        /** 如果资源绑定了弹性网卡，则展示弹性网卡的资源ID */
+        @SerializedName("SubResourceId")
+        private String subResourceId;
+
+        /** 如果资源绑定了弹性网卡，则展示弹性网卡的资源名称 */
+        @SerializedName("SubResourceName")
+        private String subResourceName;
+
+        /** "UNI"或者为空 */
+        @SerializedName("SubResourceType")
+        private String subResourceType;
+
+        /** 后端资源的对象ID */
+        @SerializedName("ObjectId")
+        private String objectId;
+
+        /** 所添加的后端资源服务端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** 后端资源的内网IP */
+        @SerializedName("PrivateIP")
+        private String privateIP;
+
+        public String getBackendId() {
+            return backendId;
+        }
+
+        public void setBackendId(String backendId) {
+            this.backendId = backendId;
+        }
+
+        public String getResourceType() {
+            return resourceType;
+        }
+
+        public void setResourceType(String resourceType) {
+            this.resourceType = resourceType;
+        }
+
+        public String getResourceName() {
+            return resourceName;
+        }
+
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+        }
+
+        public String getSubResourceId() {
+            return subResourceId;
+        }
+
+        public void setSubResourceId(String subResourceId) {
+            this.subResourceId = subResourceId;
+        }
+
+        public String getSubResourceName() {
+            return subResourceName;
+        }
+
+        public void setSubResourceName(String subResourceName) {
+            this.subResourceName = subResourceName;
+        }
+
+        public String getSubResourceType() {
+            return subResourceType;
+        }
+
+        public void setSubResourceType(String subResourceType) {
+            this.subResourceType = subResourceType;
+        }
+
+        public String getObjectId() {
+            return objectId;
+        }
+
+        public void setObjectId(String objectId) {
+            this.objectId = objectId;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public String getPrivateIP() {
+            return privateIP;
+        }
+
+        public void setPrivateIP(String privateIP) {
+            this.privateIP = privateIP;
+        }
+    }
+
     public static class ULBVServerSet extends Response {
 
         /**
@@ -371,6 +485,57 @@ public class DescribeVServerResponse extends Response {
         }
     }
 
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的VServer的资源ID */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 对应的VServer的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer 所属的ULB实例的资源ID */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** ULB实例的名称 */
+        @SerializedName("ULBName")
+        private String ulbName;
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getULBName() {
+            return ulbName;
+        }
+
+        public void setULBName(String ulbName) {
+            this.ulbName = ulbName;
+        }
+    }
+
     public static class ULBPolicySet extends Response {
 
         /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
@@ -479,171 +644,6 @@ public class DescribeVServerResponse extends Response {
 
         public void setBackendSet(List<PolicyBackendSet> backendSet) {
             this.backendSet = backendSet;
-        }
-    }
-
-    public static class SSLBindedTargetSet extends Response {
-
-        /** SSL证书绑定到的VServer的资源ID */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** 对应的VServer的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
-
-        /** VServer 所属的ULB实例的资源ID */
-        @SerializedName("ULBId")
-        private String ulbId;
-
-        /** ULB实例的名称 */
-        @SerializedName("ULBName")
-        private String ulbName;
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public String getVServerName() {
-            return vServerName;
-        }
-
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
-        }
-
-        public String getULBId() {
-            return ulbId;
-        }
-
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
-        }
-
-        public String getULBName() {
-            return ulbName;
-        }
-
-        public void setULBName(String ulbName) {
-            this.ulbName = ulbName;
-        }
-    }
-
-    public static class PolicyBackendSet extends Response {
-
-        /** 所添加的后端资源在ULB中的对象ID，（为ULB系统中使用，与资源自身ID无关 */
-        @SerializedName("BackendId")
-        private String backendId;
-
-        /**
-         * 所添加的后端资源的类型，枚举值：UHost -> 云主机；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker ->
-         * 容器；UHybrid->混合云主机；CUBE->Cube；UNI -> 虚拟网卡
-         */
-        @SerializedName("ResourceType")
-        private String resourceType;
-
-        /** 后端资源的实例名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
-
-        /** 如果资源绑定了弹性网卡，则展示弹性网卡的资源ID */
-        @SerializedName("SubResourceId")
-        private String subResourceId;
-
-        /** 如果资源绑定了弹性网卡，则展示弹性网卡的资源名称 */
-        @SerializedName("SubResourceName")
-        private String subResourceName;
-
-        /** "UNI"或者为空 */
-        @SerializedName("SubResourceType")
-        private String subResourceType;
-
-        /** 后端资源的对象ID */
-        @SerializedName("ObjectId")
-        private String objectId;
-
-        /** 所添加的后端资源服务端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 后端资源的内网IP */
-        @SerializedName("PrivateIP")
-        private String privateIP;
-
-        public String getBackendId() {
-            return backendId;
-        }
-
-        public void setBackendId(String backendId) {
-            this.backendId = backendId;
-        }
-
-        public String getResourceType() {
-            return resourceType;
-        }
-
-        public void setResourceType(String resourceType) {
-            this.resourceType = resourceType;
-        }
-
-        public String getResourceName() {
-            return resourceName;
-        }
-
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
-        }
-
-        public String getSubResourceId() {
-            return subResourceId;
-        }
-
-        public void setSubResourceId(String subResourceId) {
-            this.subResourceId = subResourceId;
-        }
-
-        public String getSubResourceName() {
-            return subResourceName;
-        }
-
-        public void setSubResourceName(String subResourceName) {
-            this.subResourceName = subResourceName;
-        }
-
-        public String getSubResourceType() {
-            return subResourceType;
-        }
-
-        public void setSubResourceType(String subResourceType) {
-            this.subResourceType = subResourceType;
-        }
-
-        public String getObjectId() {
-            return objectId;
-        }
-
-        public void setObjectId(String objectId) {
-            this.objectId = objectId;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getPrivateIP() {
-            return privateIP;
-        }
-
-        public void setPrivateIP(String privateIP) {
-            this.privateIP = privateIP;
         }
     }
 

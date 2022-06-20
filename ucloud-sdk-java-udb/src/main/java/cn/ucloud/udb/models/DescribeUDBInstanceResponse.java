@@ -45,33 +45,6 @@ public class DescribeUDBInstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class UFileDataSet extends Response {
-
-        /** Ufile的令牌tokenid */
-        @SerializedName("TokenID")
-        private String tokenID;
-
-        /** bucket名称 */
-        @SerializedName("Bucket")
-        private String bucket;
-
-        public String getTokenID() {
-            return tokenID;
-        }
-
-        public void setTokenID(String tokenID) {
-            this.tokenID = tokenID;
-        }
-
-        public String getBucket() {
-            return bucket;
-        }
-
-        public void setBucket(String bucket) {
-            this.bucket = bucket;
-        }
-    }
-
     public static class UDBSlaveInstanceSet extends Response {
 
         /** 可用区 */
@@ -1028,6 +1001,33 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setUserUFileData(UFileDataSet userUFileData) {
             this.userUFileData = userUFileData;
+        }
+    }
+
+    public static class UFileDataSet extends Response {
+
+        /** Ufile的令牌tokenid */
+        @SerializedName("TokenID")
+        private String tokenID;
+
+        /** bucket名称 */
+        @SerializedName("Bucket")
+        private String bucket;
+
+        public String getTokenID() {
+            return tokenID;
+        }
+
+        public void setTokenID(String tokenID) {
+            this.tokenID = tokenID;
+        }
+
+        public String getBucket() {
+            return bucket;
+        }
+
+        public void setBucket(String bucket) {
+            this.bucket = bucket;
         }
     }
 }
