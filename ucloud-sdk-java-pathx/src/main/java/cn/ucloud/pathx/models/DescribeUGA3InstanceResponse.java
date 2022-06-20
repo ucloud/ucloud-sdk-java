@@ -45,63 +45,30 @@ public class DescribeUGA3InstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class ForwardTask extends Response {
+    public static class SrcAreaInfo extends Response {
 
-        /**
-         * 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"，"WSWS"，"WSSWS"，"WSSWSS"]。TCP和UDP代表四层转发，其余为七层转发。
-         */
-        @SerializedName("Protocol")
-        private String protocol;
+        /** AreaCode ,城市机场代码 */
+        @SerializedName("AreaCode")
+        private String areaCode;
 
-        /** 源站服务器监听的端口号 */
-        @SerializedName("RSPort")
-        private Integer rsPort;
-
-        /** 加速端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-
-        public Integer getRSPort() {
-            return rsPort;
-        }
-
-        public void setRSPort(Integer rsPort) {
-            this.rsPort = rsPort;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-    }
-
-    public static class OutPublicIpInfo extends Response {
-
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路回源节点机房代号 */
+        /** AreaCode对应城市名 */
         @SerializedName("Area")
         private String area;
 
-        public String getIP() {
-            return ip;
+        /** 国旗Emoji */
+        @SerializedName("FlagEmoji")
+        private String flagEmoji;
+
+        /** 国旗Unicode */
+        @SerializedName("FlagUnicode")
+        private String flagUnicode;
+
+        public String getAreaCode() {
+            return areaCode;
         }
 
-        public void setIP(String ip) {
-            this.ip = ip;
+        public void setAreaCode(String areaCode) {
+            this.areaCode = areaCode;
         }
 
         public String getArea() {
@@ -111,32 +78,21 @@ public class DescribeUGA3InstanceResponse extends Response {
         public void setArea(String area) {
             this.area = area;
         }
-    }
 
-    public static class AccelerationAreaInfos extends Response {
-
-        /** 加速区code */
-        @SerializedName("AccelerationArea")
-        private String accelerationArea;
-
-        /** 加速节点信息 */
-        @SerializedName("AccelerationNodes")
-        private List<SrcAreaInfo> accelerationNodes;
-
-        public String getAccelerationArea() {
-            return accelerationArea;
+        public String getFlagEmoji() {
+            return flagEmoji;
         }
 
-        public void setAccelerationArea(String accelerationArea) {
-            this.accelerationArea = accelerationArea;
+        public void setFlagEmoji(String flagEmoji) {
+            this.flagEmoji = flagEmoji;
         }
 
-        public List<SrcAreaInfo> getAccelerationNodes() {
-            return accelerationNodes;
+        public String getFlagUnicode() {
+            return flagUnicode;
         }
 
-        public void setAccelerationNodes(List<SrcAreaInfo> accelerationNodes) {
-            this.accelerationNodes = accelerationNodes;
+        public void setFlagUnicode(String flagUnicode) {
+            this.flagUnicode = flagUnicode;
         }
     }
 
@@ -347,30 +303,63 @@ public class DescribeUGA3InstanceResponse extends Response {
         }
     }
 
-    public static class SrcAreaInfo extends Response {
+    public static class ForwardTask extends Response {
 
-        /** AreaCode ,城市机场代码 */
-        @SerializedName("AreaCode")
-        private String areaCode;
+        /**
+         * 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"，"WSWS"，"WSSWS"，"WSSWSS"]。TCP和UDP代表四层转发，其余为七层转发。
+         */
+        @SerializedName("Protocol")
+        private String protocol;
 
-        /** AreaCode对应城市名 */
+        /** 源站服务器监听的端口号 */
+        @SerializedName("RSPort")
+        private Integer rsPort;
+
+        /** 加速端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        public String getProtocol() {
+            return protocol;
+        }
+
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+
+        public Integer getRSPort() {
+            return rsPort;
+        }
+
+        public void setRSPort(Integer rsPort) {
+            this.rsPort = rsPort;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+    }
+
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
         @SerializedName("Area")
         private String area;
 
-        /** 国旗Emoji */
-        @SerializedName("FlagEmoji")
-        private String flagEmoji;
-
-        /** 国旗Unicode */
-        @SerializedName("FlagUnicode")
-        private String flagUnicode;
-
-        public String getAreaCode() {
-            return areaCode;
+        public String getIP() {
+            return ip;
         }
 
-        public void setAreaCode(String areaCode) {
-            this.areaCode = areaCode;
+        public void setIP(String ip) {
+            this.ip = ip;
         }
 
         public String getArea() {
@@ -380,21 +369,32 @@ public class DescribeUGA3InstanceResponse extends Response {
         public void setArea(String area) {
             this.area = area;
         }
+    }
 
-        public String getFlagEmoji() {
-            return flagEmoji;
+    public static class AccelerationAreaInfos extends Response {
+
+        /** 加速区code */
+        @SerializedName("AccelerationArea")
+        private String accelerationArea;
+
+        /** 加速节点信息 */
+        @SerializedName("AccelerationNodes")
+        private List<SrcAreaInfo> accelerationNodes;
+
+        public String getAccelerationArea() {
+            return accelerationArea;
         }
 
-        public void setFlagEmoji(String flagEmoji) {
-            this.flagEmoji = flagEmoji;
+        public void setAccelerationArea(String accelerationArea) {
+            this.accelerationArea = accelerationArea;
         }
 
-        public String getFlagUnicode() {
-            return flagUnicode;
+        public List<SrcAreaInfo> getAccelerationNodes() {
+            return accelerationNodes;
         }
 
-        public void setFlagUnicode(String flagUnicode) {
-            this.flagUnicode = flagUnicode;
+        public void setAccelerationNodes(List<SrcAreaInfo> accelerationNodes) {
+            this.accelerationNodes = accelerationNodes;
         }
     }
 }

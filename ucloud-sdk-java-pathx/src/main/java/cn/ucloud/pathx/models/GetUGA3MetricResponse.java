@@ -33,6 +33,33 @@ public class GetUGA3MetricResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class MatricPoint extends Response {
+
+        /** 时间戳 */
+        @SerializedName("Timestamp")
+        private Integer timestamp;
+
+        /** 监控点数值 */
+        @SerializedName("Value")
+        private Integer value;
+
+        public Integer getTimestamp() {
+            return timestamp;
+        }
+
+        public void setTimestamp(Integer timestamp) {
+            this.timestamp = timestamp;
+        }
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
+        }
+    }
+
     public static class UGA3Metric extends Response {
 
         /** 出向带宽 */
@@ -177,33 +204,6 @@ public class GetUGA3MetricResponse extends Response {
 
         public void setConnectCountSubline(List<MatricPoint> connectCountSubline) {
             this.connectCountSubline = connectCountSubline;
-        }
-    }
-
-    public static class MatricPoint extends Response {
-
-        /** 时间戳 */
-        @SerializedName("Timestamp")
-        private Integer timestamp;
-
-        /** 监控点数值 */
-        @SerializedName("Value")
-        private Integer value;
-
-        public Integer getTimestamp() {
-            return timestamp;
-        }
-
-        public void setTimestamp(Integer timestamp) {
-            this.timestamp = timestamp;
-        }
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
         }
     }
 }

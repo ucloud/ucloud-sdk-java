@@ -45,6 +45,72 @@ public class DescribeUGAInstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class UGAL4Forwarder extends Response {
+
+        /** 接入端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
+        @SerializedName("Protocol")
+        private String protocol;
+
+        /** RSPort，源站监听端口 */
+        @SerializedName("RSPort")
+        private Integer rsPort;
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public String getProtocol() {
+            return protocol;
+        }
+
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+
+        public Integer getRSPort() {
+            return rsPort;
+        }
+
+        public void setRSPort(Integer rsPort) {
+            this.rsPort = rsPort;
+        }
+    }
+
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
+        @SerializedName("Area")
+        private String area;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+    }
+
     public static class UGAAInfo extends Response {
 
         /** 加速配置实例ID */
@@ -207,135 +273,6 @@ public class DescribeUGAInstanceResponse extends Response {
         }
     }
 
-    public static class OutPublicIpInfo extends Response {
-
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-    }
-
-    public static class UGAL7Forwarder extends Response {
-
-        /** 接入端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
-        @SerializedName("Protocol")
-        private String protocol;
-
-        /** RSPort，源站监听端口 */
-        @SerializedName("RSPort")
-        private Integer rsPort;
-
-        /** 证书ID */
-        @SerializedName("SSLId")
-        private String sslId;
-
-        /** 证书名称 */
-        @SerializedName("SSLName")
-        private String sslName;
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-
-        public Integer getRSPort() {
-            return rsPort;
-        }
-
-        public void setRSPort(Integer rsPort) {
-            this.rsPort = rsPort;
-        }
-
-        public String getSSLId() {
-            return sslId;
-        }
-
-        public void setSSLId(String sslId) {
-            this.sslId = sslId;
-        }
-
-        public String getSSLName() {
-            return sslName;
-        }
-
-        public void setSSLName(String sslName) {
-            this.sslName = sslName;
-        }
-    }
-
-    public static class UGAL4Forwarder extends Response {
-
-        /** 接入端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
-        @SerializedName("Protocol")
-        private String protocol;
-
-        /** RSPort，源站监听端口 */
-        @SerializedName("RSPort")
-        private Integer rsPort;
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-
-        public Integer getRSPort() {
-            return rsPort;
-        }
-
-        public void setRSPort(Integer rsPort) {
-            this.rsPort = rsPort;
-        }
-    }
-
     public static class UPathSet extends Response {
 
         /** UPath名字 */
@@ -432,6 +369,69 @@ public class DescribeUGAInstanceResponse extends Response {
 
         public void setLineTo(String lineTo) {
             this.lineTo = lineTo;
+        }
+    }
+
+    public static class UGAL7Forwarder extends Response {
+
+        /** 接入端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
+        @SerializedName("Protocol")
+        private String protocol;
+
+        /** RSPort，源站监听端口 */
+        @SerializedName("RSPort")
+        private Integer rsPort;
+
+        /** 证书ID */
+        @SerializedName("SSLId")
+        private String sslId;
+
+        /** 证书名称 */
+        @SerializedName("SSLName")
+        private String sslName;
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public String getProtocol() {
+            return protocol;
+        }
+
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+
+        public Integer getRSPort() {
+            return rsPort;
+        }
+
+        public void setRSPort(Integer rsPort) {
+            this.rsPort = rsPort;
+        }
+
+        public String getSSLId() {
+            return sslId;
+        }
+
+        public void setSSLId(String sslId) {
+            this.sslId = sslId;
+        }
+
+        public String getSSLName() {
+            return sslName;
+        }
+
+        public void setSSLName(String sslName) {
+            this.sslName = sslName;
         }
     }
 }

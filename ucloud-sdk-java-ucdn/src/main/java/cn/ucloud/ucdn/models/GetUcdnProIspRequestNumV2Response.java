@@ -33,33 +33,6 @@ public class GetUcdnProIspRequestNumV2Response extends Response {
         this.requestNumSet = requestNumSet;
     }
 
-    public static class ProIspRequestListV2 extends Response {
-
-        /** 带宽获取的时间点。格式：时间戳 */
-        @SerializedName("Time")
-        private Integer time;
-
-        /** 返回值返回指定时间区间内的请求数 */
-        @SerializedName("CdnRequest")
-        private Double cdnRequest;
-
-        public Integer getTime() {
-            return time;
-        }
-
-        public void setTime(Integer time) {
-            this.time = time;
-        }
-
-        public Double getCdnRequest() {
-            return cdnRequest;
-        }
-
-        public void setCdnRequest(Double cdnRequest) {
-            this.cdnRequest = cdnRequest;
-        }
-    }
-
     public static class ProIspRequestNumSetV2 extends Response {
 
         /** 省份代码 */
@@ -84,6 +57,33 @@ public class GetUcdnProIspRequestNumV2Response extends Response {
 
         public void setRequestList(List<ProIspRequestListV2> requestList) {
             this.requestList = requestList;
+        }
+    }
+
+    public static class ProIspRequestListV2 extends Response {
+
+        /** 带宽获取的时间点。格式：时间戳 */
+        @SerializedName("Time")
+        private Integer time;
+
+        /** 返回值返回指定时间区间内的请求数 */
+        @SerializedName("CdnRequest")
+        private Double cdnRequest;
+
+        public Integer getTime() {
+            return time;
+        }
+
+        public void setTime(Integer time) {
+            this.time = time;
+        }
+
+        public Double getCdnRequest() {
+            return cdnRequest;
+        }
+
+        public void setCdnRequest(Double cdnRequest) {
+            this.cdnRequest = cdnRequest;
         }
     }
 }

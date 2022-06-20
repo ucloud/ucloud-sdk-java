@@ -33,33 +33,6 @@ public class GetCubeMetricsResponse extends Response {
         this.dataSets = dataSets;
     }
 
-    public static class ValueSet extends Response {
-
-        /** */
-        @SerializedName("Value")
-        private Double value;
-
-        /** */
-        @SerializedName("Timestamp")
-        private Integer timestamp;
-
-        public Double getValue() {
-            return value;
-        }
-
-        public void setValue(Double value) {
-            this.value = value;
-        }
-
-        public Integer getTimestamp() {
-            return timestamp;
-        }
-
-        public void setTimestamp(Integer timestamp) {
-            this.timestamp = timestamp;
-        }
-    }
-
     public static class MetricDataSet extends Response {
 
         /** */
@@ -84,6 +57,33 @@ public class GetCubeMetricsResponse extends Response {
 
         public void setValues(List<ValueSet> values) {
             this.values = values;
+        }
+    }
+
+    public static class ValueSet extends Response {
+
+        /** */
+        @SerializedName("Value")
+        private Double value;
+
+        /** */
+        @SerializedName("Timestamp")
+        private Integer timestamp;
+
+        public Double getValue() {
+            return value;
+        }
+
+        public void setValue(Double value) {
+            this.value = value;
+        }
+
+        public Integer getTimestamp() {
+            return timestamp;
+        }
+
+        public void setTimestamp(Integer timestamp) {
+            this.timestamp = timestamp;
         }
     }
 }

@@ -45,6 +45,105 @@ public class DescribeUPhoneJobResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class Task extends Response {
+
+        /** Task的唯一标识 */
+        @SerializedName("TaskId")
+        private String taskId;
+
+        /** 任务处理开始时间，格式为Unix时间戳。 */
+        @SerializedName("BeginTime")
+        private Integer beginTime;
+
+        /** 任务处理结束时间，格式为Unix时间戳。 */
+        @SerializedName("EndTime")
+        private Integer endTime;
+
+        /** 任务状态 等待中：PENDING 运行中：RUNNING 成功：SUCCESS 失败：FAILED */
+        @SerializedName("State")
+        private String state;
+
+        /** Task错误信息 */
+        @SerializedName("ErrorMsg")
+        private String errorMsg;
+
+        /** 异步任务执行结果 */
+        @SerializedName("ExecuteMsg")
+        private String executeMsg;
+
+        /** 云手机的唯一标识，云手机相关任务包含此字段。 */
+        @SerializedName("UPhoneId")
+        private String uPhoneId;
+
+        /** 安装/卸载任务相关的应用版本唯一标识ID */
+        @SerializedName("AppVersionId")
+        private String appVersionId;
+
+        public String getTaskId() {
+            return taskId;
+        }
+
+        public void setTaskId(String taskId) {
+            this.taskId = taskId;
+        }
+
+        public Integer getBeginTime() {
+            return beginTime;
+        }
+
+        public void setBeginTime(Integer beginTime) {
+            this.beginTime = beginTime;
+        }
+
+        public Integer getEndTime() {
+            return endTime;
+        }
+
+        public void setEndTime(Integer endTime) {
+            this.endTime = endTime;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public String getErrorMsg() {
+            return errorMsg;
+        }
+
+        public void setErrorMsg(String errorMsg) {
+            this.errorMsg = errorMsg;
+        }
+
+        public String getExecuteMsg() {
+            return executeMsg;
+        }
+
+        public void setExecuteMsg(String executeMsg) {
+            this.executeMsg = executeMsg;
+        }
+
+        public String getUPhoneId() {
+            return uPhoneId;
+        }
+
+        public void setUPhoneId(String uPhoneId) {
+            this.uPhoneId = uPhoneId;
+        }
+
+        public String getAppVersionId() {
+            return appVersionId;
+        }
+
+        public void setAppVersionId(String appVersionId) {
+            this.appVersionId = appVersionId;
+        }
+    }
+
     public static class Job extends Response {
 
         /** Job的唯一标识Id */
@@ -153,105 +252,6 @@ public class DescribeUPhoneJobResponse extends Response {
 
         public void setUPhoneIds(List<String> uPhoneIds) {
             this.uPhoneIds = uPhoneIds;
-        }
-    }
-
-    public static class Task extends Response {
-
-        /** Task的唯一标识 */
-        @SerializedName("TaskId")
-        private String taskId;
-
-        /** 任务处理开始时间，格式为Unix时间戳。 */
-        @SerializedName("BeginTime")
-        private Integer beginTime;
-
-        /** 任务处理结束时间，格式为Unix时间戳。 */
-        @SerializedName("EndTime")
-        private Integer endTime;
-
-        /** 任务状态 等待中：PENDING 运行中：RUNNING 成功：SUCCESS 失败：FAILED */
-        @SerializedName("State")
-        private String state;
-
-        /** Task错误信息 */
-        @SerializedName("ErrorMsg")
-        private String errorMsg;
-
-        /** 异步任务执行结果 */
-        @SerializedName("ExecuteMsg")
-        private String executeMsg;
-
-        /** 云手机的唯一标识，云手机相关任务包含此字段。 */
-        @SerializedName("UPhoneId")
-        private String uPhoneId;
-
-        /** 安装/卸载任务相关的应用版本唯一标识ID */
-        @SerializedName("AppVersionId")
-        private String appVersionId;
-
-        public String getTaskId() {
-            return taskId;
-        }
-
-        public void setTaskId(String taskId) {
-            this.taskId = taskId;
-        }
-
-        public Integer getBeginTime() {
-            return beginTime;
-        }
-
-        public void setBeginTime(Integer beginTime) {
-            this.beginTime = beginTime;
-        }
-
-        public Integer getEndTime() {
-            return endTime;
-        }
-
-        public void setEndTime(Integer endTime) {
-            this.endTime = endTime;
-        }
-
-        public String getState() {
-            return state;
-        }
-
-        public void setState(String state) {
-            this.state = state;
-        }
-
-        public String getErrorMsg() {
-            return errorMsg;
-        }
-
-        public void setErrorMsg(String errorMsg) {
-            this.errorMsg = errorMsg;
-        }
-
-        public String getExecuteMsg() {
-            return executeMsg;
-        }
-
-        public void setExecuteMsg(String executeMsg) {
-            this.executeMsg = executeMsg;
-        }
-
-        public String getUPhoneId() {
-            return uPhoneId;
-        }
-
-        public void setUPhoneId(String uPhoneId) {
-            this.uPhoneId = uPhoneId;
-        }
-
-        public String getAppVersionId() {
-            return appVersionId;
-        }
-
-        public void setAppVersionId(String appVersionId) {
-            this.appVersionId = appVersionId;
         }
     }
 }

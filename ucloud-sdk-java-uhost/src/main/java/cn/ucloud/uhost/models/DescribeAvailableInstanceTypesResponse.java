@@ -72,19 +72,33 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class Disks extends Response {
+    public static class DataDiskInfo extends Response {
 
-        /** 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 */
+        /** 磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。 */
+        @SerializedName("MinimalSize")
+        private Integer minimalSize;
+
+        /**
+         * 数据盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
+         */
         @SerializedName("Name")
         private String name;
 
-        /** 系统盘信息 */
-        @SerializedName("BootDisk")
-        private List<BootDiskInfo> bootDisk;
+        /** MaximalSize为磁盘最大值 */
+        @SerializedName("MaximalSize")
+        private Integer maximalSize;
 
-        /** 数据盘信息 */
-        @SerializedName("DataDisk")
-        private List<DataDiskInfo> dataDisk;
+        /** 数据盘可支持的服务 */
+        @SerializedName("Features")
+        private List<String> features;
+
+        public Integer getMinimalSize() {
+            return minimalSize;
+        }
+
+        public void setMinimalSize(Integer minimalSize) {
+            this.minimalSize = minimalSize;
+        }
 
         public String getName() {
             return name;
@@ -94,26 +108,26 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
             this.name = name;
         }
 
-        public List<BootDiskInfo> getBootDisk() {
-            return bootDisk;
+        public Integer getMaximalSize() {
+            return maximalSize;
         }
 
-        public void setBootDisk(List<BootDiskInfo> bootDisk) {
-            this.bootDisk = bootDisk;
+        public void setMaximalSize(Integer maximalSize) {
+            this.maximalSize = maximalSize;
         }
 
-        public List<DataDiskInfo> getDataDisk() {
-            return dataDisk;
+        public List<String> getFeatures() {
+            return features;
         }
 
-        public void setDataDisk(List<DataDiskInfo> dataDisk) {
-            this.dataDisk = dataDisk;
+        public void setFeatures(List<String> features) {
+            this.features = features;
         }
     }
 
-    public static class Performance extends Response {
+    public static class GraphicsMemory extends Response {
 
-        /** 值，单位是TFlops */
+        /** 值，单位是GB */
         @SerializedName("Value")
         private Integer value;
 
@@ -135,33 +149,6 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setRate(Integer rate) {
             this.rate = rate;
-        }
-    }
-
-    public static class Features extends Response {
-
-        /** 可支持的特性名称。目前支持的特性网络增强|NetCapability、热升级|Hotplug */
-        @SerializedName("Name")
-        private String name;
-
-        /** 可以提供的模式类别 */
-        @SerializedName("Modes")
-        private List<FeatureModes> modes;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public List<FeatureModes> getModes() {
-            return modes;
-        }
-
-        public void setModes(List<FeatureModes> modes) {
-            this.modes = modes;
         }
     }
 
@@ -215,84 +202,6 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setFeatures(List<String> features) {
             this.features = features;
-        }
-    }
-
-    public static class CpuPlatforms extends Response {
-
-        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
-        @SerializedName("Intel")
-        private List<String> intel;
-
-        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
-        @SerializedName("Amd")
-        private List<String> amd;
-
-        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
-        @SerializedName("Ampere")
-        private List<String> ampere;
-
-        public List<String> getIntel() {
-            return intel;
-        }
-
-        public void setIntel(List<String> intel) {
-            this.intel = intel;
-        }
-
-        public List<String> getAmd() {
-            return amd;
-        }
-
-        public void setAmd(List<String> amd) {
-            this.amd = amd;
-        }
-
-        public List<String> getAmpere() {
-            return ampere;
-        }
-
-        public void setAmpere(List<String> ampere) {
-            this.ampere = ampere;
-        }
-    }
-
-    public static class Collection extends Response {
-
-        /** CPU规格 */
-        @SerializedName("Cpu")
-        private Integer cpu;
-
-        /** 内存规格 */
-        @SerializedName("Memory")
-        private List<Integer> memory;
-
-        /** CPU和内存规格只能在列出来的CPU平台支持 */
-        @SerializedName("MinimalCpuPlatform")
-        private List<String> minimalCpuPlatform;
-
-        public Integer getCpu() {
-            return cpu;
-        }
-
-        public void setCpu(Integer cpu) {
-            this.cpu = cpu;
-        }
-
-        public List<Integer> getMemory() {
-            return memory;
-        }
-
-        public void setMemory(List<Integer> memory) {
-            this.memory = memory;
-        }
-
-        public List<String> getMinimalCpuPlatform() {
-            return minimalCpuPlatform;
-        }
-
-        public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
-            this.minimalCpuPlatform = minimalCpuPlatform;
         }
     }
 
@@ -429,6 +338,138 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
+    public static class Performance extends Response {
+
+        /** 值，单位是TFlops */
+        @SerializedName("Value")
+        private Integer value;
+
+        /** 交互展示参数，可忽略 */
+        @SerializedName("Rate")
+        private Integer rate;
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
+        }
+
+        public Integer getRate() {
+            return rate;
+        }
+
+        public void setRate(Integer rate) {
+            this.rate = rate;
+        }
+    }
+
+    public static class Features extends Response {
+
+        /** 可支持的特性名称。目前支持的特性网络增强|NetCapability、热升级|Hotplug */
+        @SerializedName("Name")
+        private String name;
+
+        /** 可以提供的模式类别 */
+        @SerializedName("Modes")
+        private List<FeatureModes> modes;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<FeatureModes> getModes() {
+            return modes;
+        }
+
+        public void setModes(List<FeatureModes> modes) {
+            this.modes = modes;
+        }
+    }
+
+    public static class Disks extends Response {
+
+        /** 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 系统盘信息 */
+        @SerializedName("BootDisk")
+        private List<BootDiskInfo> bootDisk;
+
+        /** 数据盘信息 */
+        @SerializedName("DataDisk")
+        private List<DataDiskInfo> dataDisk;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<BootDiskInfo> getBootDisk() {
+            return bootDisk;
+        }
+
+        public void setBootDisk(List<BootDiskInfo> bootDisk) {
+            this.bootDisk = bootDisk;
+        }
+
+        public List<DataDiskInfo> getDataDisk() {
+            return dataDisk;
+        }
+
+        public void setDataDisk(List<DataDiskInfo> dataDisk) {
+            this.dataDisk = dataDisk;
+        }
+    }
+
+    public static class CpuPlatforms extends Response {
+
+        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
+        @SerializedName("Intel")
+        private List<String> intel;
+
+        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
+        @SerializedName("Amd")
+        private List<String> amd;
+
+        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
+        @SerializedName("Ampere")
+        private List<String> ampere;
+
+        public List<String> getIntel() {
+            return intel;
+        }
+
+        public void setIntel(List<String> intel) {
+            this.intel = intel;
+        }
+
+        public List<String> getAmd() {
+            return amd;
+        }
+
+        public void setAmd(List<String> amd) {
+            this.amd = amd;
+        }
+
+        public List<String> getAmpere() {
+            return ampere;
+        }
+
+        public void setAmpere(List<String> ampere) {
+            this.ampere = ampere;
+        }
+    }
+
     public static class MachineSizes extends Response {
 
         /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
@@ -456,83 +497,42 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class GraphicsMemory extends Response {
+    public static class Collection extends Response {
 
-        /** 值，单位是GB */
-        @SerializedName("Value")
-        private Integer value;
+        /** CPU规格 */
+        @SerializedName("Cpu")
+        private Integer cpu;
 
-        /** 交互展示参数，可忽略 */
-        @SerializedName("Rate")
-        private Integer rate;
+        /** 内存规格 */
+        @SerializedName("Memory")
+        private List<Integer> memory;
 
-        public Integer getValue() {
-            return value;
+        /** CPU和内存规格只能在列出来的CPU平台支持 */
+        @SerializedName("MinimalCpuPlatform")
+        private List<String> minimalCpuPlatform;
+
+        public Integer getCpu() {
+            return cpu;
         }
 
-        public void setValue(Integer value) {
-            this.value = value;
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
         }
 
-        public Integer getRate() {
-            return rate;
+        public List<Integer> getMemory() {
+            return memory;
         }
 
-        public void setRate(Integer rate) {
-            this.rate = rate;
-        }
-    }
-
-    public static class DataDiskInfo extends Response {
-
-        /** 磁盘最小值，如果没有该字段，最小值取基础镜像Size值即可（linux为20G，windows为40G）。 */
-        @SerializedName("MinimalSize")
-        private Integer minimalSize;
-
-        /**
-         * 数据盘类别，包含普通云盘|CLOUD_NORMAL、SSD云盘|CLOUD_SSD和RSSD云盘|CLOUD_RSSD。普通本地盘只包含普通本地盘|LOCAL_NORMAL一种。SSD本地盘只包含SSD本地盘|LOCAL_SSD一种。
-         */
-        @SerializedName("Name")
-        private String name;
-
-        /** MaximalSize为磁盘最大值 */
-        @SerializedName("MaximalSize")
-        private Integer maximalSize;
-
-        /** 数据盘可支持的服务 */
-        @SerializedName("Features")
-        private List<String> features;
-
-        public Integer getMinimalSize() {
-            return minimalSize;
+        public void setMemory(List<Integer> memory) {
+            this.memory = memory;
         }
 
-        public void setMinimalSize(Integer minimalSize) {
-            this.minimalSize = minimalSize;
+        public List<String> getMinimalCpuPlatform() {
+            return minimalCpuPlatform;
         }
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getMaximalSize() {
-            return maximalSize;
-        }
-
-        public void setMaximalSize(Integer maximalSize) {
-            this.maximalSize = maximalSize;
-        }
-
-        public List<String> getFeatures() {
-            return features;
-        }
-
-        public void setFeatures(List<String> features) {
-            this.features = features;
+        public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
+            this.minimalCpuPlatform = minimalCpuPlatform;
         }
     }
 }
