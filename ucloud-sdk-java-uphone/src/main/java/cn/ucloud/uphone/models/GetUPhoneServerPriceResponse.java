@@ -35,7 +35,7 @@ public class GetUPhoneServerPriceResponse extends Response {
 
     public static class UPhoneServerPriceSet extends Response {
 
-        /** 计费类型，枚举值：Year，Month */
+        /** 计费类型，枚举值：Year，Month, Dynamic */
         @SerializedName("ChargeType")
         private String chargeType;
 

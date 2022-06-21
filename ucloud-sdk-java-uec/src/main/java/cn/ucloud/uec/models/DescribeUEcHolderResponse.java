@@ -45,6 +45,33 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class EnvList extends Response {
+
+        /** 环境变量key值 */
+        @SerializedName("Key")
+        private String key;
+
+        /** 环境变量Value值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
     public static class StorVolumeInfo extends Response {
 
         /** 名称 */
@@ -255,33 +282,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setResourceId(String resourceId) {
             this.resourceId = resourceId;
-        }
-    }
-
-    public static class EnvList extends Response {
-
-        /** 环境变量key值 */
-        @SerializedName("Key")
-        private String key;
-
-        /** 环境变量Value值 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
         }
     }
 

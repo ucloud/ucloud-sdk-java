@@ -33,22 +33,30 @@ public class CreateUPhoneServerRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表]()查询支持的云手机服务器规格。 */
+    /**
+     * 云手机服务器规格名称，不超过64个字节。可通过[查询云手机服务器规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_server_model
+     * )查询支持的云手机服务器规格。
+     */
     @NotEmpty
     @UCloudParam("ServerModelName")
     private String serverModelName;
 
-    /** 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表]()查询支持的云手机规格。 */
+    /**
+     * 云手机规格名称，不超过64个字节。可通过[查询云手机规格列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_model
+     * )查询支持的云手机规格。
+     */
     @NotEmpty
     @UCloudParam("UPhoneModelName")
     private String uPhoneModelName;
 
-    /** 云手机镜像ID，不超过32个字节。可通过[查询手机镜像]()查询云手机规格对应的镜像ID。 */
+    /**
+     * 云手机镜像ID，不超过32个字节。可通过[查询手机镜像](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_image)查询云手机规格对应的镜像ID。
+     */
     @NotEmpty
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    /** 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取 */
     @NotEmpty
     @UCloudParam("CityId")
     private String cityId;

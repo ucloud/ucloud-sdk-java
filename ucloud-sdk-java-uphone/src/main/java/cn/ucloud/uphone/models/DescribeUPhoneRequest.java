@@ -48,7 +48,7 @@ public class DescribeUPhoneRequest extends Request {
     @UCloudParam("Offset")
     private Integer offset;
 
-    /** 返回数据长度，默认为20，最大100 */
+    /** 返回数据长度，默认为200，最大200 */
     @UCloudParam("Limit")
     private Integer limit;
 
@@ -59,6 +59,10 @@ public class DescribeUPhoneRequest extends Request {
     /** 是否返回全部。如果有此参数，分页不生效。 */
     @UCloudParam("IsAll")
     private Boolean isAll;
+
+    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
 
     public String getProjectId() {
         return projectId;
@@ -122,5 +126,13 @@ public class DescribeUPhoneRequest extends Request {
 
     public void setIsAll(Boolean isAll) {
         this.isAll = isAll;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 }

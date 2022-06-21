@@ -33,6 +33,33 @@ public class AllocateEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
+    public static class UnetEIPAddrSet extends Response {
+
+        /** 运营商信息如: 电信: Telecom, 联通: Unicom, 国际: International, Duplet: 双线IP（电信+联通), BGP: Bgp */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+    }
+
     public static class UnetAllocateEIPSet extends Response {
 
         /** 申请到的EIP资源ID */
@@ -57,33 +84,6 @@ public class AllocateEIPResponse extends Response {
 
         public void setEIPAddr(List<UnetEIPAddrSet> eipAddr) {
             this.eipAddr = eipAddr;
-        }
-    }
-
-    public static class UnetEIPAddrSet extends Response {
-
-        /** 运营商信息如: 国际: International, BGP: BGP */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
         }
     }
 }

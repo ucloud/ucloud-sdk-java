@@ -136,6 +136,22 @@ public class DescribeUPhoneResponse extends Response {
         @SerializedName("Remark")
         private String remark;
 
+        /** 计费模式。枚举值为： > 年 Year，按年付费； > Month，按月付费； > Dynamic，按小时预付费; 默认为月付 */
+        @SerializedName("ChargeType")
+        private String chargeType;
+
+        /** 到期时间；格式为Unix时间戳 */
+        @SerializedName("ExpireTime")
+        private Integer expireTime;
+
+        /** IP所属地域Id，eg: hk，th-bkk */
+        @SerializedName("IpRegion")
+        private String ipRegion;
+
+        /** 云手机IP地址 */
+        @SerializedName("Ip")
+        private String ip;
+
         public String getUPhoneName() {
             return uPhoneName;
         }
@@ -286,6 +302,38 @@ public class DescribeUPhoneResponse extends Response {
 
         public void setRemark(String remark) {
             this.remark = remark;
+        }
+
+        public String getChargeType() {
+            return chargeType;
+        }
+
+        public void setChargeType(String chargeType) {
+            this.chargeType = chargeType;
+        }
+
+        public Integer getExpireTime() {
+            return expireTime;
+        }
+
+        public void setExpireTime(Integer expireTime) {
+            this.expireTime = expireTime;
+        }
+
+        public String getIpRegion() {
+            return ipRegion;
+        }
+
+        public void setIpRegion(String ipRegion) {
+            this.ipRegion = ipRegion;
+        }
+
+        public String getIp() {
+            return ip;
+        }
+
+        public void setIp(String ip) {
+            this.ip = ip;
         }
     }
 }

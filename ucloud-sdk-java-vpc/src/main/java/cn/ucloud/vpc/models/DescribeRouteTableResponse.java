@@ -59,6 +59,10 @@ public class DescribeRouteTableResponse extends Response {
         @SerializedName("SubnetCount")
         private Integer subnetCount;
 
+        /** 绑定该路由表的子网 */
+        @SerializedName("SubnetIds")
+        private List<String> subnetIds;
+
         /** 路由表所属的VPC资源ID */
         @SerializedName("VPCId")
         private String vpcId;
@@ -105,6 +109,14 @@ public class DescribeRouteTableResponse extends Response {
 
         public void setSubnetCount(Integer subnetCount) {
             this.subnetCount = subnetCount;
+        }
+
+        public List<String> getSubnetIds() {
+            return subnetIds;
+        }
+
+        public void setSubnetIds(List<String> subnetIds) {
+            this.subnetIds = subnetIds;
         }
 
         public String getVPCId() {
@@ -181,6 +193,10 @@ public class DescribeRouteTableResponse extends Response {
         @SerializedName("NexthopType")
         private String nexthopType;
 
+        /** 实例类型，枚举值：UHOST，云主机；UNI，虚拟网卡；PHOST，物理云主机 */
+        @SerializedName("InstanceType")
+        private String instanceType;
+
         /** 保留字段，暂未使用 */
         @SerializedName("OriginAddr")
         private String originAddr;
@@ -255,6 +271,14 @@ public class DescribeRouteTableResponse extends Response {
 
         public void setNexthopType(String nexthopType) {
             this.nexthopType = nexthopType;
+        }
+
+        public String getInstanceType() {
+            return instanceType;
+        }
+
+        public void setInstanceType(String instanceType) {
+            this.instanceType = instanceType;
         }
 
         public String getOriginAddr() {
