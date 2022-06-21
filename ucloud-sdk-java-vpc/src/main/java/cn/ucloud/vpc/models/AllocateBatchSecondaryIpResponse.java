@@ -33,33 +33,6 @@ public class AllocateBatchSecondaryIpResponse extends Response {
         this.ipsInfo = ipsInfo;
     }
 
-    public static class StatusInfo extends Response {
-
-        /** 枚举值：Succeeded，Failed */
-        @SerializedName("StatusCode")
-        private String statusCode;
-
-        /** IP分配失败原因 */
-        @SerializedName("Message")
-        private String message;
-
-        public String getStatusCode() {
-            return statusCode;
-        }
-
-        public void setStatusCode(String statusCode) {
-            this.statusCode = statusCode;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-    }
-
     public static class IpsInfo extends Response {
 
         /** 内网IP地址 */
@@ -144,6 +117,33 @@ public class AllocateBatchSecondaryIpResponse extends Response {
 
         public void setStatus(StatusInfo status) {
             this.status = status;
+        }
+    }
+
+    public static class StatusInfo extends Response {
+
+        /** 枚举值：Succeeded，Failed */
+        @SerializedName("StatusCode")
+        private String statusCode;
+
+        /** IP分配失败原因 */
+        @SerializedName("Message")
+        private String message;
+
+        public String getStatusCode() {
+            return statusCode;
+        }
+
+        public void setStatusCode(String statusCode) {
+            this.statusCode = statusCode;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
         }
     }
 }

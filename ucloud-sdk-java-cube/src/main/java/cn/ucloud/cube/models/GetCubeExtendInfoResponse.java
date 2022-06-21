@@ -33,69 +33,6 @@ public class GetCubeExtendInfoResponse extends Response {
         this.extendInfo = extendInfo;
     }
 
-    public static class CubeExtendInfo extends Response {
-
-        /** Cube的Id */
-        @SerializedName("CubeId")
-        private String cubeId;
-
-        /** Cube的名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** EIPSet */
-        @SerializedName("Eip")
-        private List<EIPSet> eip;
-
-        /** 资源有效期 */
-        @SerializedName("Expiration")
-        private Integer expiration;
-
-        /** 业务组名称 */
-        @SerializedName("Tag")
-        private String tag;
-
-        public String getCubeId() {
-            return cubeId;
-        }
-
-        public void setCubeId(String cubeId) {
-            this.cubeId = cubeId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public List<EIPSet> getEip() {
-            return eip;
-        }
-
-        public void setEip(List<EIPSet> eip) {
-            this.eip = eip;
-        }
-
-        public Integer getExpiration() {
-            return expiration;
-        }
-
-        public void setExpiration(Integer expiration) {
-            this.expiration = expiration;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public void setTag(String tag) {
-            this.tag = tag;
-        }
-    }
-
     public static class EIPSet extends Response {
 
         /** EIP带宽值 */
@@ -231,6 +168,69 @@ public class GetCubeExtendInfoResponse extends Response {
 
         public void setOperatorName(String operatorName) {
             this.operatorName = operatorName;
+        }
+    }
+
+    public static class CubeExtendInfo extends Response {
+
+        /** Cube的Id */
+        @SerializedName("CubeId")
+        private String cubeId;
+
+        /** Cube的名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** EIPSet */
+        @SerializedName("Eip")
+        private List<EIPSet> eip;
+
+        /** 资源有效期 */
+        @SerializedName("Expiration")
+        private Integer expiration;
+
+        /** 业务组名称 */
+        @SerializedName("Tag")
+        private String tag;
+
+        public String getCubeId() {
+            return cubeId;
+        }
+
+        public void setCubeId(String cubeId) {
+            this.cubeId = cubeId;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<EIPSet> getEip() {
+            return eip;
+        }
+
+        public void setEip(List<EIPSet> eip) {
+            this.eip = eip;
+        }
+
+        public Integer getExpiration() {
+            return expiration;
+        }
+
+        public void setExpiration(Integer expiration) {
+            this.expiration = expiration;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
         }
     }
 }

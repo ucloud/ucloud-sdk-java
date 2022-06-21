@@ -33,33 +33,6 @@ public class GetPathXMetricResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class MatricPoint extends Response {
-
-        /** 时间戳 */
-        @SerializedName("Timestamp")
-        private Integer timestamp;
-
-        /** 监控点数值 */
-        @SerializedName("Value")
-        private Integer value;
-
-        public Integer getTimestamp() {
-            return timestamp;
-        }
-
-        public void setTimestamp(Integer timestamp) {
-            this.timestamp = timestamp;
-        }
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
-    }
-
     public static class MetricPeriod extends Response {
 
         /** 出向带宽 */
@@ -108,6 +81,33 @@ public class GetPathXMetricResponse extends Response {
 
         public void setNetworkInUsage(List<MatricPoint> networkInUsage) {
             this.networkInUsage = networkInUsage;
+        }
+    }
+
+    public static class MatricPoint extends Response {
+
+        /** 时间戳 */
+        @SerializedName("Timestamp")
+        private Integer timestamp;
+
+        /** 监控点数值 */
+        @SerializedName("Value")
+        private Integer value;
+
+        public Integer getTimestamp() {
+            return timestamp;
+        }
+
+        public void setTimestamp(Integer timestamp) {
+            this.timestamp = timestamp;
+        }
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
         }
     }
 }

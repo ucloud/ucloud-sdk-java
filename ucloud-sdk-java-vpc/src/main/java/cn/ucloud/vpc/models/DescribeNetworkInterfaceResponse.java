@@ -45,6 +45,33 @@ public class DescribeNetworkInterfaceResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class UNIQuotaInfo extends Response {
+
+        /** 网卡拥有的内网IP数量 */
+        @SerializedName("PrivateIpCount")
+        private Integer privateIpCount;
+
+        /** 网卡内网IP配额 */
+        @SerializedName("PrivateIpQuota")
+        private Integer privateIpQuota;
+
+        public Integer getPrivateIpCount() {
+            return privateIpCount;
+        }
+
+        public void setPrivateIpCount(Integer privateIpCount) {
+            this.privateIpCount = privateIpCount;
+        }
+
+        public Integer getPrivateIpQuota() {
+            return privateIpQuota;
+        }
+
+        public void setPrivateIpQuota(Integer privateIpQuota) {
+            this.privateIpQuota = privateIpQuota;
+        }
+    }
+
     public static class UNIIpInfo extends Response {
 
         /** ip类型 SecondaryIp/PrimaryIp */
@@ -288,33 +315,6 @@ public class DescribeNetworkInterfaceResponse extends Response {
 
         public void setPrivateIpLimit(UNIQuotaInfo privateIpLimit) {
             this.privateIpLimit = privateIpLimit;
-        }
-    }
-
-    public static class UNIQuotaInfo extends Response {
-
-        /** 网卡拥有的内网IP数量 */
-        @SerializedName("PrivateIpCount")
-        private Integer privateIpCount;
-
-        /** 网卡内网IP配额 */
-        @SerializedName("PrivateIpQuota")
-        private Integer privateIpQuota;
-
-        public Integer getPrivateIpCount() {
-            return privateIpCount;
-        }
-
-        public void setPrivateIpCount(Integer privateIpCount) {
-            this.privateIpCount = privateIpCount;
-        }
-
-        public Integer getPrivateIpQuota() {
-            return privateIpQuota;
-        }
-
-        public void setPrivateIpQuota(Integer privateIpQuota) {
-            this.privateIpQuota = privateIpQuota;
         }
     }
 }

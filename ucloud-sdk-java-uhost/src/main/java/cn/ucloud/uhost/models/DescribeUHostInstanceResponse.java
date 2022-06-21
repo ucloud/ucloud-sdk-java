@@ -45,279 +45,6 @@ public class DescribeUHostInstanceResponse extends Response {
         this.uHostSet = uHostSet;
     }
 
-    public static class UHostKeyPair extends Response {
-
-        /** 密钥对ID */
-        @SerializedName("KeyPairId")
-        private String keyPairId;
-
-        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
-        @SerializedName("KeyPairState")
-        private String keyPairState;
-
-        public String getKeyPairId() {
-            return keyPairId;
-        }
-
-        public void setKeyPairId(String keyPairId) {
-            this.keyPairId = keyPairId;
-        }
-
-        public String getKeyPairState() {
-            return keyPairState;
-        }
-
-        public void setKeyPairState(String keyPairState) {
-            this.keyPairState = keyPairState;
-        }
-    }
-
-    public static class UHostIPSet extends Response {
-
-        /** IPv4/IPv6； */
-        @SerializedName("IPMode")
-        private String ipMode;
-
-        /** 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。 */
-        @SerializedName("Default")
-        private String fDefault;
-
-        /** 内网 Private 类型下，当前网卡的Mac。 */
-        @SerializedName("Mac")
-        private String mac;
-
-        /** 当前EIP的权重。权重最大的为当前的出口IP。 */
-        @SerializedName("Weight")
-        private Integer weight;
-
-        /** 国际: Internation，BGP: Bgp，内网: Private */
-        @SerializedName("Type")
-        private String type;
-
-        /** 外网IP资源ID 。(内网IP无对应的资源ID) */
-        @SerializedName("IPId")
-        private String ipId;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** IP地址对应的VPC ID。（北京一不支持，字段返回为空） */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        /** IP地址对应的子网 ID。（北京一不支持，字段返回为空） */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /** 弹性网卡为默认网卡时，返回对应的 ID 值 */
-        @SerializedName("NetworkInterfaceId")
-        private String networkInterfaceId;
-
-        public String getIPMode() {
-            return ipMode;
-        }
-
-        public void setIPMode(String ipMode) {
-            this.ipMode = ipMode;
-        }
-
-        public String getDefault() {
-            return fDefault;
-        }
-
-        public void setDefault(String fDefault) {
-            this.fDefault = fDefault;
-        }
-
-        public String getMac() {
-            return mac;
-        }
-
-        public void setMac(String mac) {
-            this.mac = mac;
-        }
-
-        public Integer getWeight() {
-            return weight;
-        }
-
-        public void setWeight(Integer weight) {
-            this.weight = weight;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getIPId() {
-            return ipId;
-        }
-
-        public void setIPId(String ipId) {
-            this.ipId = ipId;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public String getNetworkInterfaceId() {
-            return networkInterfaceId;
-        }
-
-        public void setNetworkInterfaceId(String networkInterfaceId) {
-            this.networkInterfaceId = networkInterfaceId;
-        }
-    }
-
-    public static class UHostDiskSet extends Response {
-
-        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
-        @SerializedName("IsBoot")
-        private String isBoot;
-
-        /** "true": 加密盘 "false"：非加密盘 */
-        @SerializedName("Encrypted")
-        private String encrypted;
-
-        /** 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘ID */
-        @SerializedName("DiskId")
-        private String diskId;
-
-        /** UDisk名字（仅当磁盘是UDisk时返回） */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘盘符 */
-        @SerializedName("Drive")
-        private String drive;
-
-        /** 磁盘大小，单位: GB */
-        @SerializedName("Size")
-        private Integer size;
-
-        /** 备份方案。若开通了数据方舟，则为DATAARK */
-        @SerializedName("BackupType")
-        private String backupType;
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-
-        public String getEncrypted() {
-            return encrypted;
-        }
-
-        public void setEncrypted(String encrypted) {
-            this.encrypted = encrypted;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getDiskId() {
-            return diskId;
-        }
-
-        public void setDiskId(String diskId) {
-            this.diskId = diskId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDrive() {
-            return drive;
-        }
-
-        public void setDrive(String drive) {
-            this.drive = drive;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
-        }
-    }
-
     public static class UHostInstanceSet extends Response {
 
         /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
@@ -801,6 +528,279 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setKeyPair(UHostKeyPair keyPair) {
             this.keyPair = keyPair;
+        }
+    }
+
+    public static class UHostDiskSet extends Response {
+
+        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
+        @SerializedName("DiskType")
+        private String diskType;
+
+        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
+        @SerializedName("IsBoot")
+        private String isBoot;
+
+        /** "true": 加密盘 "false"：非加密盘 */
+        @SerializedName("Encrypted")
+        private String encrypted;
+
+        /** 【建议不再使用】磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘ID */
+        @SerializedName("DiskId")
+        private String diskId;
+
+        /** UDisk名字（仅当磁盘是UDisk时返回） */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘盘符 */
+        @SerializedName("Drive")
+        private String drive;
+
+        /** 磁盘大小，单位: GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        /** 备份方案。若开通了数据方舟，则为DATAARK */
+        @SerializedName("BackupType")
+        private String backupType;
+
+        public String getDiskType() {
+            return diskType;
+        }
+
+        public void setDiskType(String diskType) {
+            this.diskType = diskType;
+        }
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public String getEncrypted() {
+            return encrypted;
+        }
+
+        public void setEncrypted(String encrypted) {
+            this.encrypted = encrypted;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getDiskId() {
+            return diskId;
+        }
+
+        public void setDiskId(String diskId) {
+            this.diskId = diskId;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getDrive() {
+            return drive;
+        }
+
+        public void setDrive(String drive) {
+            this.drive = drive;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        public String getBackupType() {
+            return backupType;
+        }
+
+        public void setBackupType(String backupType) {
+            this.backupType = backupType;
+        }
+    }
+
+    public static class UHostKeyPair extends Response {
+
+        /** 密钥对ID */
+        @SerializedName("KeyPairId")
+        private String keyPairId;
+
+        /** 主机密钥对状态，Normal 正常，Deleted 删除 */
+        @SerializedName("KeyPairState")
+        private String keyPairState;
+
+        public String getKeyPairId() {
+            return keyPairId;
+        }
+
+        public void setKeyPairId(String keyPairId) {
+            this.keyPairId = keyPairId;
+        }
+
+        public String getKeyPairState() {
+            return keyPairState;
+        }
+
+        public void setKeyPairState(String keyPairState) {
+            this.keyPairState = keyPairState;
+        }
+    }
+
+    public static class UHostIPSet extends Response {
+
+        /** IPv4/IPv6； */
+        @SerializedName("IPMode")
+        private String ipMode;
+
+        /** 内网 Private 类型下，表示是否为默认网卡。true: 是默认网卡；其他值：不是。 */
+        @SerializedName("Default")
+        private String fDefault;
+
+        /** 内网 Private 类型下，当前网卡的Mac。 */
+        @SerializedName("Mac")
+        private String mac;
+
+        /** 当前EIP的权重。权重最大的为当前的出口IP。 */
+        @SerializedName("Weight")
+        private Integer weight;
+
+        /** 国际: Internation，BGP: Bgp，内网: Private */
+        @SerializedName("Type")
+        private String type;
+
+        /** 外网IP资源ID 。(内网IP无对应的资源ID) */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** IP地址对应的VPC ID。（北京一不支持，字段返回为空） */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** IP地址对应的子网 ID。（北京一不支持，字段返回为空） */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /** 弹性网卡为默认网卡时，返回对应的 ID 值 */
+        @SerializedName("NetworkInterfaceId")
+        private String networkInterfaceId;
+
+        public String getIPMode() {
+            return ipMode;
+        }
+
+        public void setIPMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
+
+        public String getDefault() {
+            return fDefault;
+        }
+
+        public void setDefault(String fDefault) {
+            this.fDefault = fDefault;
+        }
+
+        public String getMac() {
+            return mac;
+        }
+
+        public void setMac(String mac) {
+            this.mac = mac;
+        }
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getIPId() {
+            return ipId;
+        }
+
+        public void setIPId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getNetworkInterfaceId() {
+            return networkInterfaceId;
+        }
+
+        public void setNetworkInterfaceId(String networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
         }
     }
 }

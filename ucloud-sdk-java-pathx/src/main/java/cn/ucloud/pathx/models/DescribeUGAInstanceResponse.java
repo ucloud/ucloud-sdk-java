@@ -180,132 +180,6 @@ public class DescribeUGAInstanceResponse extends Response {
         }
     }
 
-    public static class UPathSet extends Response {
-
-        /** UPath名字 */
-        @SerializedName("UPathName")
-        private String uPathName;
-
-        /** UPath 实例ID */
-        @SerializedName("UPathId")
-        private String uPathId;
-
-        /** 带宽 Mbps, 1~800Mbps */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** 线路ID */
-        @SerializedName("LineId")
-        private String lineId;
-
-        /** 线路起点中文名字，加速区域 */
-        @SerializedName("LineFromName")
-        private String lineFromName;
-
-        /** 线路对端中文名字，源站区域 */
-        @SerializedName("LineToName")
-        private String lineToName;
-
-        /** 线路起点英文代号，加速区域 */
-        @SerializedName("LineFrom")
-        private String lineFrom;
-
-        /** 线路对端英文代号，源站区域 */
-        @SerializedName("LineTo")
-        private String lineTo;
-
-        public String getUPathName() {
-            return uPathName;
-        }
-
-        public void setUPathName(String uPathName) {
-            this.uPathName = uPathName;
-        }
-
-        public String getUPathId() {
-            return uPathId;
-        }
-
-        public void setUPathId(String uPathId) {
-            this.uPathId = uPathId;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getLineId() {
-            return lineId;
-        }
-
-        public void setLineId(String lineId) {
-            this.lineId = lineId;
-        }
-
-        public String getLineFromName() {
-            return lineFromName;
-        }
-
-        public void setLineFromName(String lineFromName) {
-            this.lineFromName = lineFromName;
-        }
-
-        public String getLineToName() {
-            return lineToName;
-        }
-
-        public void setLineToName(String lineToName) {
-            this.lineToName = lineToName;
-        }
-
-        public String getLineFrom() {
-            return lineFrom;
-        }
-
-        public void setLineFrom(String lineFrom) {
-            this.lineFrom = lineFrom;
-        }
-
-        public String getLineTo() {
-            return lineTo;
-        }
-
-        public void setLineTo(String lineTo) {
-            this.lineTo = lineTo;
-        }
-    }
-
-    public static class OutPublicIpInfo extends Response {
-
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-    }
-
     public static class UGAL7Forwarder extends Response {
 
         /** 接入端口 */
@@ -432,6 +306,132 @@ public class DescribeUGAInstanceResponse extends Response {
 
         public void setProtocol(String protocol) {
             this.protocol = protocol;
+        }
+    }
+
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
+        @SerializedName("Area")
+        private String area;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+    }
+
+    public static class UPathSet extends Response {
+
+        /** UPath名字 */
+        @SerializedName("UPathName")
+        private String uPathName;
+
+        /** UPath 实例ID */
+        @SerializedName("UPathId")
+        private String uPathId;
+
+        /** 带宽 Mbps, 1~800Mbps */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** 线路ID */
+        @SerializedName("LineId")
+        private String lineId;
+
+        /** 线路起点中文名字，加速区域 */
+        @SerializedName("LineFromName")
+        private String lineFromName;
+
+        /** 线路对端中文名字，源站区域 */
+        @SerializedName("LineToName")
+        private String lineToName;
+
+        /** 线路起点英文代号，加速区域 */
+        @SerializedName("LineFrom")
+        private String lineFrom;
+
+        /** 线路对端英文代号，源站区域 */
+        @SerializedName("LineTo")
+        private String lineTo;
+
+        public String getUPathName() {
+            return uPathName;
+        }
+
+        public void setUPathName(String uPathName) {
+            this.uPathName = uPathName;
+        }
+
+        public String getUPathId() {
+            return uPathId;
+        }
+
+        public void setUPathId(String uPathId) {
+            this.uPathId = uPathId;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getLineId() {
+            return lineId;
+        }
+
+        public void setLineId(String lineId) {
+            this.lineId = lineId;
+        }
+
+        public String getLineFromName() {
+            return lineFromName;
+        }
+
+        public void setLineFromName(String lineFromName) {
+            this.lineFromName = lineFromName;
+        }
+
+        public String getLineToName() {
+            return lineToName;
+        }
+
+        public void setLineToName(String lineToName) {
+            this.lineToName = lineToName;
+        }
+
+        public String getLineFrom() {
+            return lineFrom;
+        }
+
+        public void setLineFrom(String lineFrom) {
+            this.lineFrom = lineFrom;
+        }
+
+        public String getLineTo() {
+            return lineTo;
+        }
+
+        public void setLineTo(String lineTo) {
+            this.lineTo = lineTo;
         }
     }
 }

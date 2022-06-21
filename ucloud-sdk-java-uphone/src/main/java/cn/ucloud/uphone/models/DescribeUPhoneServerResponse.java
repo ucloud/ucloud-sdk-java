@@ -45,57 +45,6 @@ public class DescribeUPhoneServerResponse extends Response {
         this.servers = servers;
     }
 
-    public static class IpSet extends Response {
-
-        /** IP地址 */
-        @SerializedName("Ip")
-        private String ip;
-
-        /** ipv4或者ipv6 */
-        @SerializedName("IpMode")
-        private String ipMode;
-
-        /** 共有或私有 */
-        @SerializedName("IpType")
-        private String ipType;
-
-        /** 运营商 */
-        @SerializedName("Isp")
-        private String isp;
-
-        public String getIp() {
-            return ip;
-        }
-
-        public void setIp(String ip) {
-            this.ip = ip;
-        }
-
-        public String getIpMode() {
-            return ipMode;
-        }
-
-        public void setIpMode(String ipMode) {
-            this.ipMode = ipMode;
-        }
-
-        public String getIpType() {
-            return ipType;
-        }
-
-        public void setIpType(String ipType) {
-            this.ipType = ipType;
-        }
-
-        public String getIsp() {
-            return isp;
-        }
-
-        public void setIsp(String isp) {
-            this.isp = isp;
-        }
-    }
-
     public static class ServerDiskSet extends Response {
 
         /** 磁盘类型。请参考磁盘类型。 */
@@ -138,6 +87,33 @@ public class DescribeUPhoneServerResponse extends Response {
 
         public void setSize(Integer size) {
             this.size = size;
+        }
+    }
+
+    public static class UPhoneSpec extends Response {
+
+        /** 手机规格名 */
+        @SerializedName("UPhoneModelName")
+        private String uPhoneModelName;
+
+        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
+        @SerializedName("UPhoneCount")
+        private Integer uPhoneCount;
+
+        public String getUPhoneModelName() {
+            return uPhoneModelName;
+        }
+
+        public void setUPhoneModelName(String uPhoneModelName) {
+            this.uPhoneModelName = uPhoneModelName;
+        }
+
+        public Integer getUPhoneCount() {
+            return uPhoneCount;
+        }
+
+        public void setUPhoneCount(Integer uPhoneCount) {
+            this.uPhoneCount = uPhoneCount;
         }
     }
 
@@ -320,30 +296,54 @@ public class DescribeUPhoneServerResponse extends Response {
         }
     }
 
-    public static class UPhoneSpec extends Response {
+    public static class IpSet extends Response {
 
-        /** 手机规格名 */
-        @SerializedName("UPhoneModelName")
-        private String uPhoneModelName;
+        /** IP地址 */
+        @SerializedName("Ip")
+        private String ip;
 
-        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
-        @SerializedName("UPhoneCount")
-        private Integer uPhoneCount;
+        /** ipv4或者ipv6 */
+        @SerializedName("IpMode")
+        private String ipMode;
 
-        public String getUPhoneModelName() {
-            return uPhoneModelName;
+        /** 共有或私有 */
+        @SerializedName("IpType")
+        private String ipType;
+
+        /** 运营商 */
+        @SerializedName("Isp")
+        private String isp;
+
+        public String getIp() {
+            return ip;
         }
 
-        public void setUPhoneModelName(String uPhoneModelName) {
-            this.uPhoneModelName = uPhoneModelName;
+        public void setIp(String ip) {
+            this.ip = ip;
         }
 
-        public Integer getUPhoneCount() {
-            return uPhoneCount;
+        public String getIpMode() {
+            return ipMode;
         }
 
-        public void setUPhoneCount(Integer uPhoneCount) {
-            this.uPhoneCount = uPhoneCount;
+        public void setIpMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
+
+        public String getIpType() {
+            return ipType;
+        }
+
+        public void setIpType(String ipType) {
+            this.ipType = ipType;
+        }
+
+        public String getIsp() {
+            return isp;
+        }
+
+        public void setIsp(String isp) {
+            this.isp = isp;
         }
     }
 

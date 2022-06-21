@@ -252,6 +252,74 @@ public class DescribeUGA3InstanceResponse extends Response {
         }
     }
 
+    public static class ForwardTask extends Response {
+
+        /**
+         * 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"，"WSWS"，"WSSWS"，"WSSWSS"]。TCP和UDP代表四层转发，其余为七层转发。
+         */
+        @SerializedName("Protocol")
+        private String protocol;
+
+        /** 源站服务器监听的端口号 */
+        @SerializedName("RSPort")
+        private Integer rsPort;
+
+        /** 加速端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        public String getProtocol() {
+            return protocol;
+        }
+
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+
+        public Integer getRSPort() {
+            return rsPort;
+        }
+
+        public void setRSPort(Integer rsPort) {
+            this.rsPort = rsPort;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+    }
+
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
+        @SerializedName("Area")
+        private String area;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+    }
+
     public static class AccelerationAreaInfos extends Response {
 
         /** 加速区code */
@@ -327,74 +395,6 @@ public class DescribeUGA3InstanceResponse extends Response {
 
         public void setFlagUnicode(String flagUnicode) {
             this.flagUnicode = flagUnicode;
-        }
-    }
-
-    public static class ForwardTask extends Response {
-
-        /**
-         * 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"，"WSWS"，"WSSWS"，"WSSWSS"]。TCP和UDP代表四层转发，其余为七层转发。
-         */
-        @SerializedName("Protocol")
-        private String protocol;
-
-        /** 源站服务器监听的端口号 */
-        @SerializedName("RSPort")
-        private Integer rsPort;
-
-        /** 加速端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-
-        public Integer getRSPort() {
-            return rsPort;
-        }
-
-        public void setRSPort(Integer rsPort) {
-            this.rsPort = rsPort;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-    }
-
-    public static class OutPublicIpInfo extends Response {
-
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
         }
     }
 }
