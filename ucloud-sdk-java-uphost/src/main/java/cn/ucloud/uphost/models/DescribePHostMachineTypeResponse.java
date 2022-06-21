@@ -96,33 +96,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         }
     }
 
-    public static class PHostClusterSet extends Response {
-
-        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
-        @SerializedName("Name")
-        private String name;
-
-        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
-        @SerializedName("StockStatus")
-        private String stockStatus;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getStockStatus() {
-            return stockStatus;
-        }
-
-        public void setStockStatus(String stockStatus) {
-            this.stockStatus = stockStatus;
-        }
-    }
-
     public static class PHostCPUSet extends Response {
 
         /** CPU型号 */
@@ -171,6 +144,60 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setCoreCount(Integer coreCount) {
             this.coreCount = coreCount;
+        }
+    }
+
+    public static class PHostClusterSet extends Response {
+
+        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
+        @SerializedName("Name")
+        private String name;
+
+        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
+        @SerializedName("StockStatus")
+        private String stockStatus;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getStockStatus() {
+            return stockStatus;
+        }
+
+        public void setStockStatus(String stockStatus) {
+            this.stockStatus = stockStatus;
+        }
+    }
+
+    public static class PHostComponentSet extends Response {
+
+        /** 组件名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 组件数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
         }
     }
 
@@ -258,33 +285,6 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setRaidSupported(String raidSupported) {
             this.raidSupported = raidSupported;
-        }
-    }
-
-    public static class PHostComponentSet extends Response {
-
-        /** 组件名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 组件数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
         }
     }
 }

@@ -33,10 +33,7 @@ public class DescribeUPhoneJobRequest extends Request {
     @UCloudParam("CityId")
     private String cityId;
 
-    /**
-     * 【数组】Job 的唯一标识 Id，调用方式举例：ServerIds.0=希望查询状态的 Job1，ServerIds.1=Job2。 如果不传入，则返回当前 城市 所有符合条件的 Job
-     * 。
-     */
+    /** 【数组】Job 的唯一标识 Id，调用方式举例：JobIds.0=希望查询状态的 Job1，JobIds.1=Job2。 如果不传入，则返回当前 城市 所有符合条件的 Job 。 */
     @UCloudParam("JobIds")
     private List<String> jobIds;
 
@@ -61,6 +58,10 @@ public class DescribeUPhoneJobRequest extends Request {
      */
     @UCloudParam("Types")
     private List<String> types;
+
+    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
 
     public String getProjectId() {
         return projectId;
@@ -116,5 +117,13 @@ public class DescribeUPhoneJobRequest extends Request {
 
     public void setTypes(List<String> types) {
         this.types = types;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 }

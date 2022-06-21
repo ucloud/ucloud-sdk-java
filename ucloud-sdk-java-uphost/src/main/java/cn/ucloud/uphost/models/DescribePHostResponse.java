@@ -45,156 +45,6 @@ public class DescribePHostResponse extends Response {
         this.pHostSet = pHostSet;
     }
 
-    public static class PHostDescDiskSet extends Response {
-
-        /** 单盘大小，单位GB */
-        @SerializedName("Space")
-        private Integer space;
-
-        /** 磁盘数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** 磁盘属性 */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘名称，sys/data */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘IO性能，单位MB/s（待废弃） */
-        @SerializedName("IOCap")
-        private Integer ioCap;
-
-        /** 裸金属机型参数：磁盘盘符 */
-        @SerializedName("Drive")
-        private String drive;
-
-        /** 裸金属机型参数：磁盘ID */
-        @SerializedName("DiskId")
-        private String diskId;
-
-        /** 裸金属机型参数：是否是启动盘。True/False */
-        @SerializedName("IsBoot")
-        private String isBoot;
-
-        public Integer getSpace() {
-            return space;
-        }
-
-        public void setSpace(Integer space) {
-            this.space = space;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getIOCap() {
-            return ioCap;
-        }
-
-        public void setIOCap(Integer ioCap) {
-            this.ioCap = ioCap;
-        }
-
-        public String getDrive() {
-            return drive;
-        }
-
-        public void setDrive(String drive) {
-            this.drive = drive;
-        }
-
-        public String getDiskId() {
-            return diskId;
-        }
-
-        public void setDiskId(String diskId) {
-            this.diskId = diskId;
-        }
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-    }
-
-    public static class PHostCPUSet extends Response {
-
-        /** CPU型号 */
-        @SerializedName("Model")
-        private String model;
-
-        /** CPU主频 */
-        @SerializedName("Frequence")
-        private Double frequence;
-
-        /** CPU个数 */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** CPU核数 */
-        @SerializedName("CoreCount")
-        private Integer coreCount;
-
-        public String getModel() {
-            return model;
-        }
-
-        public void setModel(String model) {
-            this.model = model;
-        }
-
-        public Double getFrequence() {
-            return frequence;
-        }
-
-        public void setFrequence(Double frequence) {
-            this.frequence = frequence;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public Integer getCoreCount() {
-            return coreCount;
-        }
-
-        public void setCoreCount(Integer coreCount) {
-            this.coreCount = coreCount;
-        }
-    }
-
     public static class PHostSet extends Response {
 
         /** 可用区，参见 [可用区列表](../summary/regionlist.html) */
@@ -501,6 +351,57 @@ public class DescribePHostResponse extends Response {
         }
     }
 
+    public static class PHostCPUSet extends Response {
+
+        /** CPU型号 */
+        @SerializedName("Model")
+        private String model;
+
+        /** CPU主频 */
+        @SerializedName("Frequence")
+        private Double frequence;
+
+        /** CPU个数 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** CPU核数 */
+        @SerializedName("CoreCount")
+        private Integer coreCount;
+
+        public String getModel() {
+            return model;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
+        }
+
+        public Double getFrequence() {
+            return frequence;
+        }
+
+        public void setFrequence(Double frequence) {
+            this.frequence = frequence;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public Integer getCoreCount() {
+            return coreCount;
+        }
+
+        public void setCoreCount(Integer coreCount) {
+            this.coreCount = coreCount;
+        }
+    }
+
     public static class PHostIPSet extends Response {
 
         /** 国际: Internation， BGP: BGP， 内网: Private */
@@ -585,6 +486,105 @@ public class DescribePHostResponse extends Response {
 
         public void setVPCId(String vpcId) {
             this.vpcId = vpcId;
+        }
+    }
+
+    public static class PHostDescDiskSet extends Response {
+
+        /** 单盘大小，单位GB */
+        @SerializedName("Space")
+        private Integer space;
+
+        /** 磁盘数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** 磁盘属性 */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘名称，sys/data */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘IO性能，单位MB/s（待废弃） */
+        @SerializedName("IOCap")
+        private Integer ioCap;
+
+        /** 裸金属机型参数：磁盘盘符 */
+        @SerializedName("Drive")
+        private String drive;
+
+        /** 裸金属机型参数：磁盘ID */
+        @SerializedName("DiskId")
+        private String diskId;
+
+        /** 裸金属机型参数：是否是启动盘。True/False */
+        @SerializedName("IsBoot")
+        private String isBoot;
+
+        public Integer getSpace() {
+            return space;
+        }
+
+        public void setSpace(Integer space) {
+            this.space = space;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getIOCap() {
+            return ioCap;
+        }
+
+        public void setIOCap(Integer ioCap) {
+            this.ioCap = ioCap;
+        }
+
+        public String getDrive() {
+            return drive;
+        }
+
+        public void setDrive(String drive) {
+            this.drive = drive;
+        }
+
+        public String getDiskId() {
+            return diskId;
+        }
+
+        public void setDiskId(String diskId) {
+            this.diskId = diskId;
+        }
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
         }
     }
 }

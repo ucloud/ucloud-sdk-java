@@ -32,10 +32,14 @@ public class GetUPhoneScreenCaptureRequest extends Request {
     @UCloudParam("UPhoneID")
     private String uPhoneID;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    /** 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取 */
     @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
+
+    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
 
     public String getProjectId() {
         return projectId;
@@ -59,5 +63,13 @@ public class GetUPhoneScreenCaptureRequest extends Request {
 
     public void setCityId(String cityId) {
         this.cityId = cityId;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 }

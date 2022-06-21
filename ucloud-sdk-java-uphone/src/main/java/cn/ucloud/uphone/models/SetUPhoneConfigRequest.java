@@ -33,9 +33,7 @@ public class SetUPhoneConfigRequest extends Request {
     @UCloudParam("CityId")
     private String cityId;
 
-    /**
-     * 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=希望重启的云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
-     */
+    /** 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。 */
     @NotEmpty
     @UCloudParam("UPhoneIds")
     private List<String> uPhoneIds;
@@ -48,7 +46,7 @@ public class SetUPhoneConfigRequest extends Request {
     @UCloudParam("Refresh")
     private String refresh;
 
-    /** 云手机画面传输码率（例，8000）取值范围[100,5000] */
+    /** 云手机画面传输码率（例，8000）取值范围[100,50000] */
     @UCloudParam("Bitrate")
     private String bitrate;
 
@@ -59,6 +57,10 @@ public class SetUPhoneConfigRequest extends Request {
     /** 云手机dpi，取值范围[100,1000] */
     @UCloudParam("Dpi")
     private String dpi;
+
+    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
 
     public String getProjectId() {
         return projectId;
@@ -122,5 +124,13 @@ public class SetUPhoneConfigRequest extends Request {
 
     public void setDpi(String dpi) {
         this.dpi = dpi;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 }

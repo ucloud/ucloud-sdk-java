@@ -33,6 +33,21 @@ public class GetUFileQuotaInfoResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class UFileQuotaLeft extends Response {
+
+        /** 配额剩余量 */
+        @SerializedName("Left")
+        private Double left;
+
+        public Double getLeft() {
+            return left;
+        }
+
+        public void setLeft(Double left) {
+            this.left = left;
+        }
+    }
+
     public static class UFileQuotaDataSetItem extends Response {
 
         /** 可用地域 */
@@ -93,21 +108,6 @@ public class GetUFileQuotaInfoResponse extends Response {
 
         public void setRequestCnt(UFileQuotaLeft requestCnt) {
             this.requestCnt = requestCnt;
-        }
-    }
-
-    public static class UFileQuotaLeft extends Response {
-
-        /** 配额剩余量 */
-        @SerializedName("Left")
-        private Double left;
-
-        public Double getLeft() {
-            return left;
-        }
-
-        public void setLeft(Double left) {
-            this.left = left;
         }
     }
 }

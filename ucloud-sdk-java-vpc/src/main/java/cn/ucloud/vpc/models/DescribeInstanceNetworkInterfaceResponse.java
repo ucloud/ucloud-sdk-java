@@ -23,17 +23,17 @@ public class DescribeInstanceNetworkInterfaceResponse extends Response {
 
     /** 虚拟网卡信息 */
     @SerializedName("NetworkInterfaceSet")
-    private List<NetworkInterface> networkInterfaceSet;
+    private List<InstanceNetworkInterface> networkInterfaceSet;
 
-    public List<NetworkInterface> getNetworkInterfaceSet() {
+    public List<InstanceNetworkInterface> getNetworkInterfaceSet() {
         return networkInterfaceSet;
     }
 
-    public void setNetworkInterfaceSet(List<NetworkInterface> networkInterfaceSet) {
+    public void setNetworkInterfaceSet(List<InstanceNetworkInterface> networkInterfaceSet) {
         this.networkInterfaceSet = networkInterfaceSet;
     }
 
-    public static class NetworkInterface extends Response {
+    public static class InstanceNetworkInterface extends Response {
 
         /** 虚拟网卡资源ID */
         @SerializedName("InterfaceId")
@@ -58,10 +58,6 @@ public class DescribeInstanceNetworkInterfaceResponse extends Response {
         /** 绑定状态 */
         @SerializedName("Status")
         private Integer status;
-
-        /** 网卡的内网IP信息 */
-        @SerializedName("PrivateIp")
-        private List<String> privateIp;
 
         /** 虚拟网卡名称 */
         @SerializedName("Name")
@@ -102,10 +98,6 @@ public class DescribeInstanceNetworkInterfaceResponse extends Response {
         /** 虚拟网卡绑定的防火墙ID信息 */
         @SerializedName("FirewallIdSet")
         private List<String> firewallIdSet;
-
-        /** 网卡的内网IP配额信息 */
-        @SerializedName("PrivateIplimit")
-        private List<String> privateIplimit;
 
         public String getInterfaceId() {
             return interfaceId;
@@ -153,14 +145,6 @@ public class DescribeInstanceNetworkInterfaceResponse extends Response {
 
         public void setStatus(Integer status) {
             this.status = status;
-        }
-
-        public List<String> getPrivateIp() {
-            return privateIp;
-        }
-
-        public void setPrivateIp(List<String> privateIp) {
-            this.privateIp = privateIp;
         }
 
         public String getName() {
@@ -241,14 +225,6 @@ public class DescribeInstanceNetworkInterfaceResponse extends Response {
 
         public void setFirewallIdSet(List<String> firewallIdSet) {
             this.firewallIdSet = firewallIdSet;
-        }
-
-        public List<String> getPrivateIplimit() {
-            return privateIplimit;
-        }
-
-        public void setPrivateIplimit(List<String> privateIplimit) {
-            this.privateIplimit = privateIplimit;
         }
     }
 }

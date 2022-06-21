@@ -47,7 +47,7 @@ public class UpdateBackendAttributeRequest extends Request {
     @UCloudParam("Port")
     private Integer port;
 
-    /** 所添加的后端RS权重（在加权轮询算法下有效），取值范围[0-100]，默认为1 */
+    /** 所添加的后端RS权重（在加权轮询算法下有效），取值范围[1-100]，默认为1 */
     @UCloudParam("Weight")
     private Integer weight;
 

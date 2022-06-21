@@ -45,57 +45,6 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class StorVolumeInfo extends Response {
-
-        /** 名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 资源id */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        /** 挂载点 */
-        @SerializedName("MountPoint")
-        private String mountPoint;
-
-        /** 容量（单位GB） */
-        @SerializedName("DiskSize")
-        private Integer diskSize;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-
-        public String getMountPoint() {
-            return mountPoint;
-        }
-
-        public void setMountPoint(String mountPoint) {
-            this.mountPoint = mountPoint;
-        }
-
-        public Integer getDiskSize() {
-            return diskSize;
-        }
-
-        public void setDiskSize(Integer diskSize) {
-            this.diskSize = diskSize;
-        }
-    }
-
     public static class DockerInfo extends Response {
 
         /** CPU核数（/核）精度0.1核 */
@@ -255,60 +204,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setResourceId(String resourceId) {
             this.resourceId = resourceId;
-        }
-    }
-
-    public static class EnvList extends Response {
-
-        /** 环境变量key值 */
-        @SerializedName("Key")
-        private String key;
-
-        /** 环境变量Value值 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
-
-    public static class IpList extends Response {
-
-        /** 外网ip */
-        @SerializedName("Ip")
-        private String ip;
-
-        /** 运营商 */
-        @SerializedName("Isp")
-        private String isp;
-
-        public String getIp() {
-            return ip;
-        }
-
-        public void setIp(String ip) {
-            this.ip = ip;
-        }
-
-        public String getIsp() {
-            return isp;
-        }
-
-        public void setIsp(String isp) {
-            this.isp = isp;
         }
     }
 
@@ -615,6 +510,111 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setImageKey(String imageKey) {
             this.imageKey = imageKey;
+        }
+    }
+
+    public static class IpList extends Response {
+
+        /** 外网ip */
+        @SerializedName("Ip")
+        private String ip;
+
+        /** 运营商 */
+        @SerializedName("Isp")
+        private String isp;
+
+        public String getIp() {
+            return ip;
+        }
+
+        public void setIp(String ip) {
+            this.ip = ip;
+        }
+
+        public String getIsp() {
+            return isp;
+        }
+
+        public void setIsp(String isp) {
+            this.isp = isp;
+        }
+    }
+
+    public static class StorVolumeInfo extends Response {
+
+        /** 名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 资源id */
+        @SerializedName("ResourceId")
+        private String resourceId;
+
+        /** 挂载点 */
+        @SerializedName("MountPoint")
+        private String mountPoint;
+
+        /** 容量（单位GB） */
+        @SerializedName("DiskSize")
+        private Integer diskSize;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+
+        public String getMountPoint() {
+            return mountPoint;
+        }
+
+        public void setMountPoint(String mountPoint) {
+            this.mountPoint = mountPoint;
+        }
+
+        public Integer getDiskSize() {
+            return diskSize;
+        }
+
+        public void setDiskSize(Integer diskSize) {
+            this.diskSize = diskSize;
+        }
+    }
+
+    public static class EnvList extends Response {
+
+        /** 环境变量key值 */
+        @SerializedName("Key")
+        private String key;
+
+        /** 环境变量Value值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 }

@@ -33,33 +33,6 @@ public class GetUcdnProIspBandwidthV2Response extends Response {
         this.bandwidthSet = bandwidthSet;
     }
 
-    public static class ProIspBandwidthSet extends Response {
-
-        /** 省份代码 */
-        @SerializedName("Province")
-        private String province;
-
-        /** 省份带宽流量实例表 */
-        @SerializedName("BandwidthTrafficList")
-        private List<ProIspBandwidthList> bandwidthTrafficList;
-
-        public String getProvince() {
-            return province;
-        }
-
-        public void setProvince(String province) {
-            this.province = province;
-        }
-
-        public List<ProIspBandwidthList> getBandwidthTrafficList() {
-            return bandwidthTrafficList;
-        }
-
-        public void setBandwidthTrafficList(List<ProIspBandwidthList> bandwidthTrafficList) {
-            this.bandwidthTrafficList = bandwidthTrafficList;
-        }
-    }
-
     public static class ProIspBandwidthList extends Response {
 
         /** 带宽获取的时间点。格式：时间戳 */
@@ -96,6 +69,33 @@ public class GetUcdnProIspBandwidthV2Response extends Response {
 
         public void setTraffic(Double traffic) {
             this.traffic = traffic;
+        }
+    }
+
+    public static class ProIspBandwidthSet extends Response {
+
+        /** 省份代码 */
+        @SerializedName("Province")
+        private String province;
+
+        /** 省份带宽流量实例表 */
+        @SerializedName("BandwidthTrafficList")
+        private List<ProIspBandwidthList> bandwidthTrafficList;
+
+        public String getProvince() {
+            return province;
+        }
+
+        public void setProvince(String province) {
+            this.province = province;
+        }
+
+        public List<ProIspBandwidthList> getBandwidthTrafficList() {
+            return bandwidthTrafficList;
+        }
+
+        public void setBandwidthTrafficList(List<ProIspBandwidthList> bandwidthTrafficList) {
+            this.bandwidthTrafficList = bandwidthTrafficList;
         }
     }
 }
