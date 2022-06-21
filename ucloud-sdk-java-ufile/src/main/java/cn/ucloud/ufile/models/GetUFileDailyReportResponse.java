@@ -33,6 +33,33 @@ public class GetUFileDailyReportResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class UFileReportItem extends Response {
+
+        /** 总消费情况 */
+        @SerializedName("Total")
+        private List<UFileTotalReportItem> total;
+
+        /** 日消费情况 */
+        @SerializedName("Daily")
+        private List<UFileDailyReportItem> daily;
+
+        public List<UFileTotalReportItem> getTotal() {
+            return total;
+        }
+
+        public void setTotal(List<UFileTotalReportItem> total) {
+            this.total = total;
+        }
+
+        public List<UFileDailyReportItem> getDaily() {
+            return daily;
+        }
+
+        public void setDaily(List<UFileDailyReportItem> daily) {
+            this.daily = daily;
+        }
+    }
+
     public static class UFileDailyReportItem extends Response {
 
         /** 标准存储量；单位byte */
@@ -228,33 +255,6 @@ public class GetUFileDailyReportResponse extends Response {
 
         public void setApiTimes(Double apiTimes) {
             this.apiTimes = apiTimes;
-        }
-    }
-
-    public static class UFileReportItem extends Response {
-
-        /** 总消费情况 */
-        @SerializedName("Total")
-        private List<UFileTotalReportItem> total;
-
-        /** 日消费情况 */
-        @SerializedName("Daily")
-        private List<UFileDailyReportItem> daily;
-
-        public List<UFileTotalReportItem> getTotal() {
-            return total;
-        }
-
-        public void setTotal(List<UFileTotalReportItem> total) {
-            this.total = total;
-        }
-
-        public List<UFileDailyReportItem> getDaily() {
-            return daily;
-        }
-
-        public void setDaily(List<UFileDailyReportItem> daily) {
-            this.daily = daily;
         }
     }
 }

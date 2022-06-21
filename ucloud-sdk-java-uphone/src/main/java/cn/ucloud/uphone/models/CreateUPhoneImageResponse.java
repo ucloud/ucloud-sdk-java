@@ -24,11 +24,23 @@ public class CreateUPhoneImageResponse extends Response {
     @SerializedName("ImageId")
     private String imageId;
 
+    /** 请求的唯一标识Id，`RetCode`为0时返回，可根据此ID查询请求的执行状态 */
+    @SerializedName("JobId")
+    private String jobId;
+
     public String getImageId() {
         return imageId;
     }
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 }

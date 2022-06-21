@@ -250,6 +250,8 @@ public class GetUHostInstancePriceRequest extends Request {
         this.virtualGpu = virtualGpu;
     }
 
+    public static class Volumes extends Request {}
+
     public static class Disks extends Request {
 
         /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
@@ -308,6 +310,4 @@ public class GetUHostInstancePriceRequest extends Request {
     }
 
     public static class VirtualGpu extends Request {}
-
-    public static class Volumes extends Request {}
 }

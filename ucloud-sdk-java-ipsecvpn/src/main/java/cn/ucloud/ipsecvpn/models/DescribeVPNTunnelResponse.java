@@ -45,165 +45,6 @@ public class DescribeVPNTunnelResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class VPNTunnelDataSet extends Response {
-
-        /** 隧道id */
-        @SerializedName("VPNTunnelId")
-        private String vpnTunnelId;
-
-        /** 隧道名称 */
-        @SerializedName("VPNTunnelName")
-        private String vpnTunnelName;
-
-        /** 用户组 */
-        @SerializedName("Tag")
-        private String tag;
-
-        /** 备注 */
-        @SerializedName("Remark")
-        private String remark;
-
-        /** 所属VPN网关id */
-        @SerializedName("VPNGatewayId")
-        private String vpnGatewayId;
-
-        /** 对端网关Id */
-        @SerializedName("RemoteVPNGatewayId")
-        private String remoteVPNGatewayId;
-
-        /** VPN网关名字 */
-        @SerializedName("VPNGatewayName")
-        private String vpnGatewayName;
-
-        /** 对端网关名字 */
-        @SerializedName("RemoteVPNGatewayName")
-        private String remoteVPNGatewayName;
-
-        /** 所属VPCId */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        /** 所属VOC名字 */
-        @SerializedName("VPCName")
-        private String vpcName;
-
-        /** 创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** IKE参数 */
-        @SerializedName("IKEData")
-        private IKEData ikeData;
-
-        /** IPSec参数 */
-        @SerializedName("IPSecData")
-        private IPSecData ipSecData;
-
-        public String getVPNTunnelId() {
-            return vpnTunnelId;
-        }
-
-        public void setVPNTunnelId(String vpnTunnelId) {
-            this.vpnTunnelId = vpnTunnelId;
-        }
-
-        public String getVPNTunnelName() {
-            return vpnTunnelName;
-        }
-
-        public void setVPNTunnelName(String vpnTunnelName) {
-            this.vpnTunnelName = vpnTunnelName;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public void setTag(String tag) {
-            this.tag = tag;
-        }
-
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
-        }
-
-        public String getVPNGatewayId() {
-            return vpnGatewayId;
-        }
-
-        public void setVPNGatewayId(String vpnGatewayId) {
-            this.vpnGatewayId = vpnGatewayId;
-        }
-
-        public String getRemoteVPNGatewayId() {
-            return remoteVPNGatewayId;
-        }
-
-        public void setRemoteVPNGatewayId(String remoteVPNGatewayId) {
-            this.remoteVPNGatewayId = remoteVPNGatewayId;
-        }
-
-        public String getVPNGatewayName() {
-            return vpnGatewayName;
-        }
-
-        public void setVPNGatewayName(String vpnGatewayName) {
-            this.vpnGatewayName = vpnGatewayName;
-        }
-
-        public String getRemoteVPNGatewayName() {
-            return remoteVPNGatewayName;
-        }
-
-        public void setRemoteVPNGatewayName(String remoteVPNGatewayName) {
-            this.remoteVPNGatewayName = remoteVPNGatewayName;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public String getVPCName() {
-            return vpcName;
-        }
-
-        public void setVPCName(String vpcName) {
-            this.vpcName = vpcName;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public IKEData getIKEData() {
-            return ikeData;
-        }
-
-        public void setIKEData(IKEData ikeData) {
-            this.ikeData = ikeData;
-        }
-
-        public IPSecData getIPSecData() {
-            return ipSecData;
-        }
-
-        public void setIPSecData(IPSecData ipSecData) {
-            this.ipSecData = ipSecData;
-        }
-    }
-
     public static class IPSecData extends Response {
 
         /** IPSec通道中使用的认证算法 */
@@ -411,6 +252,165 @@ public class DescribeVPNTunnelResponse extends Response {
 
         public void setIKEVersion(String ikeVersion) {
             this.ikeVersion = ikeVersion;
+        }
+    }
+
+    public static class VPNTunnelDataSet extends Response {
+
+        /** 隧道id */
+        @SerializedName("VPNTunnelId")
+        private String vpnTunnelId;
+
+        /** 隧道名称 */
+        @SerializedName("VPNTunnelName")
+        private String vpnTunnelName;
+
+        /** 用户组 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** 备注 */
+        @SerializedName("Remark")
+        private String remark;
+
+        /** 所属VPN网关id */
+        @SerializedName("VPNGatewayId")
+        private String vpnGatewayId;
+
+        /** 对端网关Id */
+        @SerializedName("RemoteVPNGatewayId")
+        private String remoteVPNGatewayId;
+
+        /** VPN网关名字 */
+        @SerializedName("VPNGatewayName")
+        private String vpnGatewayName;
+
+        /** 对端网关名字 */
+        @SerializedName("RemoteVPNGatewayName")
+        private String remoteVPNGatewayName;
+
+        /** 所属VPCId */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** 所属VOC名字 */
+        @SerializedName("VPCName")
+        private String vpcName;
+
+        /** 创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** IKE参数 */
+        @SerializedName("IKEData")
+        private IKEData ikeData;
+
+        /** IPSec参数 */
+        @SerializedName("IPSecData")
+        private IPSecData ipSecData;
+
+        public String getVPNTunnelId() {
+            return vpnTunnelId;
+        }
+
+        public void setVPNTunnelId(String vpnTunnelId) {
+            this.vpnTunnelId = vpnTunnelId;
+        }
+
+        public String getVPNTunnelName() {
+            return vpnTunnelName;
+        }
+
+        public void setVPNTunnelName(String vpnTunnelName) {
+            this.vpnTunnelName = vpnTunnelName;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public String getVPNGatewayId() {
+            return vpnGatewayId;
+        }
+
+        public void setVPNGatewayId(String vpnGatewayId) {
+            this.vpnGatewayId = vpnGatewayId;
+        }
+
+        public String getRemoteVPNGatewayId() {
+            return remoteVPNGatewayId;
+        }
+
+        public void setRemoteVPNGatewayId(String remoteVPNGatewayId) {
+            this.remoteVPNGatewayId = remoteVPNGatewayId;
+        }
+
+        public String getVPNGatewayName() {
+            return vpnGatewayName;
+        }
+
+        public void setVPNGatewayName(String vpnGatewayName) {
+            this.vpnGatewayName = vpnGatewayName;
+        }
+
+        public String getRemoteVPNGatewayName() {
+            return remoteVPNGatewayName;
+        }
+
+        public void setRemoteVPNGatewayName(String remoteVPNGatewayName) {
+            this.remoteVPNGatewayName = remoteVPNGatewayName;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getVPCName() {
+            return vpcName;
+        }
+
+        public void setVPCName(String vpcName) {
+            this.vpcName = vpcName;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public IKEData getIKEData() {
+            return ikeData;
+        }
+
+        public void setIKEData(IKEData ikeData) {
+            this.ikeData = ikeData;
+        }
+
+        public IPSecData getIPSecData() {
+            return ipSecData;
+        }
+
+        public void setIPSecData(IPSecData ipSecData) {
+            this.ipSecData = ipSecData;
         }
     }
 }

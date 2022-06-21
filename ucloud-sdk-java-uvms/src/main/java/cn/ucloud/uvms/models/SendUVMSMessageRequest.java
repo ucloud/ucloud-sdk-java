@@ -21,16 +21,6 @@ import java.util.List;
 
 public class SendUVMSMessageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @NotEmpty
-    @UCloudParam("Region")
-    private String region;
-
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @NotEmpty
-    @UCloudParam("Zone")
-    private String zone;
-
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -63,21 +53,13 @@ public class SendUVMSMessageRequest extends Request {
     @UCloudParam("UserId")
     private String userId;
 
-    public String getRegion() {
-        return region;
-    }
+    /** 号码组类型，1-随机组，2-专属组。如不填写则根据主叫号码判断，若主叫号码为空，则为随机组，若不为空，则为专属组。 */
+    @UCloudParam("GroupType")
+    private Integer groupType;
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getZone() {
-        return zone;
-    }
-
-    public void setZone(String zone) {
-        this.zone = zone;
-    }
+    /** 调度规则，0-默认（归属地优先），1-随机。当不指定外显号码（主叫号码为空）时生效。如不填写，默认为归属地优先。 */
+    @UCloudParam("DispatchRule")
+    private Integer dispatchRule;
 
     public String getProjectId() {
         return projectId;
@@ -125,5 +107,21 @@ public class SendUVMSMessageRequest extends Request {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public Integer getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(Integer groupType) {
+        this.groupType = groupType;
+    }
+
+    public Integer getDispatchRule() {
+        return dispatchRule;
+    }
+
+    public void setDispatchRule(Integer dispatchRule) {
+        this.dispatchRule = dispatchRule;
     }
 }

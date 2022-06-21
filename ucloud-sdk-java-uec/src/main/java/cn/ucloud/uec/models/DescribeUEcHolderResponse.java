@@ -45,23 +45,19 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class StorVolumeInfo extends Response {
+    public static class CfgDictList extends Response {
 
         /** 名称 */
         @SerializedName("Name")
         private String name;
 
+        /** 挂载路径 */
+        @SerializedName("MountPath")
+        private String mountPath;
+
         /** 资源id */
         @SerializedName("ResourceId")
         private String resourceId;
-
-        /** 挂载点 */
-        @SerializedName("MountPoint")
-        private String mountPoint;
-
-        /** 容量（单位GB） */
-        @SerializedName("DiskSize")
-        private Integer diskSize;
 
         public String getName() {
             return name;
@@ -71,6 +67,14 @@ public class DescribeUEcHolderResponse extends Response {
             this.name = name;
         }
 
+        public String getMountPath() {
+            return mountPath;
+        }
+
+        public void setMountPath(String mountPath) {
+            this.mountPath = mountPath;
+        }
+
         public String getResourceId() {
             return resourceId;
         }
@@ -78,21 +82,32 @@ public class DescribeUEcHolderResponse extends Response {
         public void setResourceId(String resourceId) {
             this.resourceId = resourceId;
         }
+    }
 
-        public String getMountPoint() {
-            return mountPoint;
+    public static class EnvList extends Response {
+
+        /** 环境变量key值 */
+        @SerializedName("Key")
+        private String key;
+
+        /** 环境变量Value值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
         }
 
-        public void setMountPoint(String mountPoint) {
-            this.mountPoint = mountPoint;
+        public void setKey(String key) {
+            this.key = key;
         }
 
-        public Integer getDiskSize() {
-            return diskSize;
+        public String getValue() {
+            return value;
         }
 
-        public void setDiskSize(Integer diskSize) {
-            this.diskSize = diskSize;
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 
@@ -219,19 +234,62 @@ public class DescribeUEcHolderResponse extends Response {
         }
     }
 
-    public static class CfgDictList extends Response {
+    public static class ImageList extends Response {
+
+        /** 仓库地址 */
+        @SerializedName("StoreAddr")
+        private String storeAddr;
+
+        /** 用户名称 */
+        @SerializedName("UserName")
+        private String userName;
+
+        /** 镜像密钥 */
+        @SerializedName("ImageKey")
+        private String imageKey;
+
+        public String getStoreAddr() {
+            return storeAddr;
+        }
+
+        public void setStoreAddr(String storeAddr) {
+            this.storeAddr = storeAddr;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getImageKey() {
+            return imageKey;
+        }
+
+        public void setImageKey(String imageKey) {
+            this.imageKey = imageKey;
+        }
+    }
+
+    public static class StorVolumeInfo extends Response {
 
         /** 名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 挂载路径 */
-        @SerializedName("MountPath")
-        private String mountPath;
-
         /** 资源id */
         @SerializedName("ResourceId")
         private String resourceId;
+
+        /** 挂载点 */
+        @SerializedName("MountPoint")
+        private String mountPoint;
+
+        /** 容量（单位GB） */
+        @SerializedName("DiskSize")
+        private Integer diskSize;
 
         public String getName() {
             return name;
@@ -241,14 +299,6 @@ public class DescribeUEcHolderResponse extends Response {
             this.name = name;
         }
 
-        public String getMountPath() {
-            return mountPath;
-        }
-
-        public void setMountPath(String mountPath) {
-            this.mountPath = mountPath;
-        }
-
         public String getResourceId() {
             return resourceId;
         }
@@ -256,32 +306,21 @@ public class DescribeUEcHolderResponse extends Response {
         public void setResourceId(String resourceId) {
             this.resourceId = resourceId;
         }
-    }
 
-    public static class EnvList extends Response {
-
-        /** 环境变量key值 */
-        @SerializedName("Key")
-        private String key;
-
-        /** 环境变量Value值 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getKey() {
-            return key;
+        public String getMountPoint() {
+            return mountPoint;
         }
 
-        public void setKey(String key) {
-            this.key = key;
+        public void setMountPoint(String mountPoint) {
+            this.mountPoint = mountPoint;
         }
 
-        public String getValue() {
-            return value;
+        public Integer getDiskSize() {
+            return diskSize;
         }
 
-        public void setValue(String value) {
-            this.value = value;
+        public void setDiskSize(Integer diskSize) {
+            this.diskSize = diskSize;
         }
     }
 
@@ -576,45 +615,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setImageList(List<ImageList> imageList) {
             this.imageList = imageList;
-        }
-    }
-
-    public static class ImageList extends Response {
-
-        /** 仓库地址 */
-        @SerializedName("StoreAddr")
-        private String storeAddr;
-
-        /** 用户名称 */
-        @SerializedName("UserName")
-        private String userName;
-
-        /** 镜像密钥 */
-        @SerializedName("ImageKey")
-        private String imageKey;
-
-        public String getStoreAddr() {
-            return storeAddr;
-        }
-
-        public void setStoreAddr(String storeAddr) {
-            this.storeAddr = storeAddr;
-        }
-
-        public String getUserName() {
-            return userName;
-        }
-
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
-
-        public String getImageKey() {
-            return imageKey;
-        }
-
-        public void setImageKey(String imageKey) {
-            this.imageKey = imageKey;
         }
     }
 }

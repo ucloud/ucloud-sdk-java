@@ -273,192 +273,6 @@ public class DescribeUK8SClusterResponse extends Response {
         this.masterResourceStatus = masterResourceStatus;
     }
 
-    public static class DiskSet extends Response {
-
-        /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘长ID */
-        @SerializedName("DiskId")
-        private String diskId;
-
-        /** UDisk名字（仅当磁盘是UDisk时返回） */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘盘符 */
-        @SerializedName("Drive")
-        private String drive;
-
-        /** 磁盘大小，单位: GB */
-        @SerializedName("Size")
-        private Integer size;
-
-        /** 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。 */
-        @SerializedName("BackupType")
-        private String backupType;
-
-        /** 当前主机的IOPS值 */
-        @SerializedName("IOPS")
-        private Integer iops;
-
-        /** Yes: 加密 No: 非加密 */
-        @SerializedName("Encrypted")
-        private String encrypted;
-
-        /** LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /** True| False */
-        @SerializedName("IsBoot")
-        private String isBoot;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getDiskId() {
-            return diskId;
-        }
-
-        public void setDiskId(String diskId) {
-            this.diskId = diskId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDrive() {
-            return drive;
-        }
-
-        public void setDrive(String drive) {
-            this.drive = drive;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
-        }
-
-        public Integer getIOPS() {
-            return iops;
-        }
-
-        public void setIOPS(Integer iops) {
-            this.iops = iops;
-        }
-
-        public String getEncrypted() {
-            return encrypted;
-        }
-
-        public void setEncrypted(String encrypted) {
-            this.encrypted = encrypted;
-        }
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-    }
-
-    public static class IPSet extends Response {
-
-        /** 国际: Internation，BGP: Bgp，内网: Private */
-        @SerializedName("Type")
-        private String type;
-
-        /** IP资源ID (内网IP无对应的资源ID) */
-        @SerializedName("IPId")
-        private String ipId;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。 */
-        @SerializedName("Default")
-        private String fDefault;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getIPId() {
-            return ipId;
-        }
-
-        public void setIPId(String ipId) {
-            this.ipId = ipId;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getDefault() {
-            return fDefault;
-        }
-
-        public void setDefault(String fDefault) {
-            this.fDefault = fDefault;
-        }
-    }
-
     public static class KubeProxy extends Response {
 
         /** KubeProxy模式，枚举值为[ipvs,iptables] */
@@ -618,6 +432,192 @@ public class DescribeUK8SClusterResponse extends Response {
 
         public void setNodeType(String nodeType) {
             this.nodeType = nodeType;
+        }
+    }
+
+    public static class IPSet extends Response {
+
+        /** 国际: Internation，BGP: Bgp，内网: Private */
+        @SerializedName("Type")
+        private String type;
+
+        /** IP资源ID (内网IP无对应的资源ID) */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。 */
+        @SerializedName("Default")
+        private String fDefault;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getIPId() {
+            return ipId;
+        }
+
+        public void setIPId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getDefault() {
+            return fDefault;
+        }
+
+        public void setDefault(String fDefault) {
+            this.fDefault = fDefault;
+        }
+    }
+
+    public static class DiskSet extends Response {
+
+        /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘长ID */
+        @SerializedName("DiskId")
+        private String diskId;
+
+        /** UDisk名字（仅当磁盘是UDisk时返回） */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘盘符 */
+        @SerializedName("Drive")
+        private String drive;
+
+        /** 磁盘大小，单位: GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        /** 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。 */
+        @SerializedName("BackupType")
+        private String backupType;
+
+        /** 当前主机的IOPS值 */
+        @SerializedName("IOPS")
+        private Integer iops;
+
+        /** Yes: 加密 No: 非加密 */
+        @SerializedName("Encrypted")
+        private String encrypted;
+
+        /** LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK */
+        @SerializedName("DiskType")
+        private String diskType;
+
+        /** True| False */
+        @SerializedName("IsBoot")
+        private String isBoot;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getDiskId() {
+            return diskId;
+        }
+
+        public void setDiskId(String diskId) {
+            this.diskId = diskId;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getDrive() {
+            return drive;
+        }
+
+        public void setDrive(String drive) {
+            this.drive = drive;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        public String getBackupType() {
+            return backupType;
+        }
+
+        public void setBackupType(String backupType) {
+            this.backupType = backupType;
+        }
+
+        public Integer getIOPS() {
+            return iops;
+        }
+
+        public void setIOPS(Integer iops) {
+            this.iops = iops;
+        }
+
+        public String getEncrypted() {
+            return encrypted;
+        }
+
+        public void setEncrypted(String encrypted) {
+            this.encrypted = encrypted;
+        }
+
+        public String getDiskType() {
+            return diskType;
+        }
+
+        public void setDiskType(String diskType) {
+            this.diskType = diskType;
+        }
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
         }
     }
 }

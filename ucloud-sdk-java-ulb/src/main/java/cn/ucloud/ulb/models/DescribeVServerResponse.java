@@ -536,117 +536,6 @@ public class DescribeVServerResponse extends Response {
         }
     }
 
-    public static class ULBPolicySet extends Response {
-
-        /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
-        @SerializedName("DomainMatchMode")
-        private String domainMatchMode;
-
-        /** 内容转发Id，默认内容转发类型下为空。 */
-        @SerializedName("PolicyId")
-        private String policyId;
-
-        /** 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发 */
-        @SerializedName("PolicyType")
-        private String policyType;
-
-        /** 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空 */
-        @SerializedName("Type")
-        private String type;
-
-        /** 内容转发匹配字段;默认内容转发类型下为空。 */
-        @SerializedName("Match")
-        private String match;
-
-        /** 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。 */
-        @SerializedName("PolicyPriority")
-        private Integer policyPriority;
-
-        /** 所属VServerId */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** 默认内容转发类型下返回当前rs总数 */
-        @SerializedName("TotalCount")
-        private Integer totalCount;
-
-        /** 内容转发下rs的详细信息，参考PolicyBackendSet */
-        @SerializedName("BackendSet")
-        private List<PolicyBackendSet> backendSet;
-
-        public String getDomainMatchMode() {
-            return domainMatchMode;
-        }
-
-        public void setDomainMatchMode(String domainMatchMode) {
-            this.domainMatchMode = domainMatchMode;
-        }
-
-        public String getPolicyId() {
-            return policyId;
-        }
-
-        public void setPolicyId(String policyId) {
-            this.policyId = policyId;
-        }
-
-        public String getPolicyType() {
-            return policyType;
-        }
-
-        public void setPolicyType(String policyType) {
-            this.policyType = policyType;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getMatch() {
-            return match;
-        }
-
-        public void setMatch(String match) {
-            this.match = match;
-        }
-
-        public Integer getPolicyPriority() {
-            return policyPriority;
-        }
-
-        public void setPolicyPriority(Integer policyPriority) {
-            this.policyPriority = policyPriority;
-        }
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public Integer getTotalCount() {
-            return totalCount;
-        }
-
-        public void setTotalCount(Integer totalCount) {
-            this.totalCount = totalCount;
-        }
-
-        public List<PolicyBackendSet> getBackendSet() {
-            return backendSet;
-        }
-
-        public void setBackendSet(List<PolicyBackendSet> backendSet) {
-            this.backendSet = backendSet;
-        }
-    }
-
     public static class ULBBackendSet extends Response {
 
         /** 后端资源实例的Id */
@@ -807,6 +696,117 @@ public class DescribeVServerResponse extends Response {
 
         public void setIsBackup(Integer isBackup) {
             this.isBackup = isBackup;
+        }
+    }
+
+    public static class ULBPolicySet extends Response {
+
+        /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
+        @SerializedName("DomainMatchMode")
+        private String domainMatchMode;
+
+        /** 内容转发Id，默认内容转发类型下为空。 */
+        @SerializedName("PolicyId")
+        private String policyId;
+
+        /** 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发 */
+        @SerializedName("PolicyType")
+        private String policyType;
+
+        /** 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空 */
+        @SerializedName("Type")
+        private String type;
+
+        /** 内容转发匹配字段;默认内容转发类型下为空。 */
+        @SerializedName("Match")
+        private String match;
+
+        /** 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。 */
+        @SerializedName("PolicyPriority")
+        private Integer policyPriority;
+
+        /** 所属VServerId */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 默认内容转发类型下返回当前rs总数 */
+        @SerializedName("TotalCount")
+        private Integer totalCount;
+
+        /** 内容转发下rs的详细信息，参考PolicyBackendSet */
+        @SerializedName("BackendSet")
+        private List<PolicyBackendSet> backendSet;
+
+        public String getDomainMatchMode() {
+            return domainMatchMode;
+        }
+
+        public void setDomainMatchMode(String domainMatchMode) {
+            this.domainMatchMode = domainMatchMode;
+        }
+
+        public String getPolicyId() {
+            return policyId;
+        }
+
+        public void setPolicyId(String policyId) {
+            this.policyId = policyId;
+        }
+
+        public String getPolicyType() {
+            return policyType;
+        }
+
+        public void setPolicyType(String policyType) {
+            this.policyType = policyType;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getMatch() {
+            return match;
+        }
+
+        public void setMatch(String match) {
+            this.match = match;
+        }
+
+        public Integer getPolicyPriority() {
+            return policyPriority;
+        }
+
+        public void setPolicyPriority(Integer policyPriority) {
+            this.policyPriority = policyPriority;
+        }
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public Integer getTotalCount() {
+            return totalCount;
+        }
+
+        public void setTotalCount(Integer totalCount) {
+            this.totalCount = totalCount;
+        }
+
+        public List<PolicyBackendSet> getBackendSet() {
+            return backendSet;
+        }
+
+        public void setBackendSet(List<PolicyBackendSet> backendSet) {
+            this.backendSet = backendSet;
         }
     }
 }

@@ -45,30 +45,22 @@ public class DescribeUGA3InstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class SrcAreaInfo extends Response {
+    public static class OutPublicIpInfo extends Response {
 
-        /** AreaCode ,城市机场代码 */
-        @SerializedName("AreaCode")
-        private String areaCode;
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
 
-        /** AreaCode对应城市名 */
+        /** 线路回源节点机房代号 */
         @SerializedName("Area")
         private String area;
 
-        /** 国旗Emoji */
-        @SerializedName("FlagEmoji")
-        private String flagEmoji;
-
-        /** 国旗Unicode */
-        @SerializedName("FlagUnicode")
-        private String flagUnicode;
-
-        public String getAreaCode() {
-            return areaCode;
+        public String getIP() {
+            return ip;
         }
 
-        public void setAreaCode(String areaCode) {
-            this.areaCode = areaCode;
+        public void setIP(String ip) {
+            this.ip = ip;
         }
 
         public String getArea() {
@@ -77,22 +69,6 @@ public class DescribeUGA3InstanceResponse extends Response {
 
         public void setArea(String area) {
             this.area = area;
-        }
-
-        public String getFlagEmoji() {
-            return flagEmoji;
-        }
-
-        public void setFlagEmoji(String flagEmoji) {
-            this.flagEmoji = flagEmoji;
-        }
-
-        public String getFlagUnicode() {
-            return flagUnicode;
-        }
-
-        public void setFlagUnicode(String flagUnicode) {
-            this.flagUnicode = flagUnicode;
         }
     }
 
@@ -344,33 +320,6 @@ public class DescribeUGA3InstanceResponse extends Response {
         }
     }
 
-    public static class OutPublicIpInfo extends Response {
-
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-    }
-
     public static class AccelerationAreaInfos extends Response {
 
         /** 加速区code */
@@ -395,6 +344,57 @@ public class DescribeUGA3InstanceResponse extends Response {
 
         public void setAccelerationNodes(List<SrcAreaInfo> accelerationNodes) {
             this.accelerationNodes = accelerationNodes;
+        }
+    }
+
+    public static class SrcAreaInfo extends Response {
+
+        /** AreaCode ,城市机场代码 */
+        @SerializedName("AreaCode")
+        private String areaCode;
+
+        /** AreaCode对应城市名 */
+        @SerializedName("Area")
+        private String area;
+
+        /** 国旗Emoji */
+        @SerializedName("FlagEmoji")
+        private String flagEmoji;
+
+        /** 国旗Unicode */
+        @SerializedName("FlagUnicode")
+        private String flagUnicode;
+
+        public String getAreaCode() {
+            return areaCode;
+        }
+
+        public void setAreaCode(String areaCode) {
+            this.areaCode = areaCode;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+
+        public String getFlagEmoji() {
+            return flagEmoji;
+        }
+
+        public void setFlagEmoji(String flagEmoji) {
+            this.flagEmoji = flagEmoji;
+        }
+
+        public String getFlagUnicode() {
+            return flagUnicode;
+        }
+
+        public void setFlagUnicode(String flagUnicode) {
+            this.flagUnicode = flagUnicode;
         }
     }
 }

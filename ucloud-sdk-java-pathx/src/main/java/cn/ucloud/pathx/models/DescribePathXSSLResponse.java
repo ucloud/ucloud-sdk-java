@@ -45,6 +45,33 @@ public class DescribePathXSSLResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的实例ID */
+        @SerializedName("ResourceId")
+        private String resourceId;
+
+        /** SSL证书绑定到的实例名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+
+        public String getResourceName() {
+            return resourceName;
+        }
+
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+        }
+    }
+
     public static class PathXSSLSet extends Response {
 
         /** SSL证书的Id */
@@ -153,33 +180,6 @@ public class DescribePathXSSLResponse extends Response {
 
         public void setSSLContent(String sslContent) {
             this.sslContent = sslContent;
-        }
-    }
-
-    public static class SSLBindedTargetSet extends Response {
-
-        /** SSL证书绑定到的实例ID */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        /** SSL证书绑定到的实例名称 */
-        @SerializedName("ResourceName")
-        private String resourceName;
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-
-        public String getResourceName() {
-            return resourceName;
-        }
-
-        public void setResourceName(String resourceName) {
-            this.resourceName = resourceName;
         }
     }
 }

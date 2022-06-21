@@ -45,6 +45,96 @@ public class DescribeUGAInstanceResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class OutPublicIpInfo extends Response {
+
+        /** 线路回源节点EIP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路回源节点机房代号 */
+        @SerializedName("Area")
+        private String area;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+    }
+
+    public static class UGAL7Forwarder extends Response {
+
+        /** 接入端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
+        @SerializedName("Protocol")
+        private String protocol;
+
+        /** RSPort，源站监听端口 */
+        @SerializedName("RSPort")
+        private Integer rsPort;
+
+        /** 证书ID */
+        @SerializedName("SSLId")
+        private String sslId;
+
+        /** 证书名称 */
+        @SerializedName("SSLName")
+        private String sslName;
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public String getProtocol() {
+            return protocol;
+        }
+
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+
+        public Integer getRSPort() {
+            return rsPort;
+        }
+
+        public void setRSPort(Integer rsPort) {
+            this.rsPort = rsPort;
+        }
+
+        public String getSSLId() {
+            return sslId;
+        }
+
+        public void setSSLId(String sslId) {
+            this.sslId = sslId;
+        }
+
+        public String getSSLName() {
+            return sslName;
+        }
+
+        public void setSSLName(String sslName) {
+            this.sslName = sslName;
+        }
+    }
+
     public static class UGAL4Forwarder extends Response {
 
         /** 接入端口 */
@@ -84,30 +174,129 @@ public class DescribeUGAInstanceResponse extends Response {
         }
     }
 
-    public static class OutPublicIpInfo extends Response {
+    public static class UGAATask extends Response {
 
-        /** 线路回源节点EIP */
-        @SerializedName("IP")
-        private String ip;
+        /** 接入端口 */
+        @SerializedName("Port")
+        private Integer port;
 
-        /** 线路回源节点机房代号 */
-        @SerializedName("Area")
-        private String area;
+        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
+        @SerializedName("Protocol")
+        private String protocol;
 
-        public String getIP() {
-            return ip;
+        public Integer getPort() {
+            return port;
         }
 
-        public void setIP(String ip) {
-            this.ip = ip;
+        public void setPort(Integer port) {
+            this.port = port;
         }
 
-        public String getArea() {
-            return area;
+        public String getProtocol() {
+            return protocol;
         }
 
-        public void setArea(String area) {
-            this.area = area;
+        public void setProtocol(String protocol) {
+            this.protocol = protocol;
+        }
+    }
+
+    public static class UPathSet extends Response {
+
+        /** UPath名字 */
+        @SerializedName("UPathName")
+        private String uPathName;
+
+        /** UPath 实例ID */
+        @SerializedName("UPathId")
+        private String uPathId;
+
+        /** 带宽 Mbps, 1~800Mbps */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** 线路ID */
+        @SerializedName("LineId")
+        private String lineId;
+
+        /** 线路起点中文名字，加速区域 */
+        @SerializedName("LineFromName")
+        private String lineFromName;
+
+        /** 线路对端中文名字，源站区域 */
+        @SerializedName("LineToName")
+        private String lineToName;
+
+        /** 线路起点英文代号，加速区域 */
+        @SerializedName("LineFrom")
+        private String lineFrom;
+
+        /** 线路对端英文代号，源站区域 */
+        @SerializedName("LineTo")
+        private String lineTo;
+
+        public String getUPathName() {
+            return uPathName;
+        }
+
+        public void setUPathName(String uPathName) {
+            this.uPathName = uPathName;
+        }
+
+        public String getUPathId() {
+            return uPathId;
+        }
+
+        public void setUPathId(String uPathId) {
+            this.uPathId = uPathId;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getLineId() {
+            return lineId;
+        }
+
+        public void setLineId(String lineId) {
+            this.lineId = lineId;
+        }
+
+        public String getLineFromName() {
+            return lineFromName;
+        }
+
+        public void setLineFromName(String lineFromName) {
+            this.lineFromName = lineFromName;
+        }
+
+        public String getLineToName() {
+            return lineToName;
+        }
+
+        public void setLineToName(String lineToName) {
+            this.lineToName = lineToName;
+        }
+
+        public String getLineFrom() {
+            return lineFrom;
+        }
+
+        public void setLineFrom(String lineFrom) {
+            this.lineFrom = lineFrom;
+        }
+
+        public String getLineTo() {
+            return lineTo;
+        }
+
+        public void setLineTo(String lineTo) {
+            this.lineTo = lineTo;
         }
     }
 
@@ -243,195 +432,6 @@ public class DescribeUGAInstanceResponse extends Response {
 
         public void setOutPublicIpList(List<OutPublicIpInfo> outPublicIpList) {
             this.outPublicIpList = outPublicIpList;
-        }
-    }
-
-    public static class UGAATask extends Response {
-
-        /** 接入端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
-        @SerializedName("Protocol")
-        private String protocol;
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-    }
-
-    public static class UPathSet extends Response {
-
-        /** UPath名字 */
-        @SerializedName("UPathName")
-        private String uPathName;
-
-        /** UPath 实例ID */
-        @SerializedName("UPathId")
-        private String uPathId;
-
-        /** 带宽 Mbps, 1~800Mbps */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** 线路ID */
-        @SerializedName("LineId")
-        private String lineId;
-
-        /** 线路起点中文名字，加速区域 */
-        @SerializedName("LineFromName")
-        private String lineFromName;
-
-        /** 线路对端中文名字，源站区域 */
-        @SerializedName("LineToName")
-        private String lineToName;
-
-        /** 线路起点英文代号，加速区域 */
-        @SerializedName("LineFrom")
-        private String lineFrom;
-
-        /** 线路对端英文代号，源站区域 */
-        @SerializedName("LineTo")
-        private String lineTo;
-
-        public String getUPathName() {
-            return uPathName;
-        }
-
-        public void setUPathName(String uPathName) {
-            this.uPathName = uPathName;
-        }
-
-        public String getUPathId() {
-            return uPathId;
-        }
-
-        public void setUPathId(String uPathId) {
-            this.uPathId = uPathId;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getLineId() {
-            return lineId;
-        }
-
-        public void setLineId(String lineId) {
-            this.lineId = lineId;
-        }
-
-        public String getLineFromName() {
-            return lineFromName;
-        }
-
-        public void setLineFromName(String lineFromName) {
-            this.lineFromName = lineFromName;
-        }
-
-        public String getLineToName() {
-            return lineToName;
-        }
-
-        public void setLineToName(String lineToName) {
-            this.lineToName = lineToName;
-        }
-
-        public String getLineFrom() {
-            return lineFrom;
-        }
-
-        public void setLineFrom(String lineFrom) {
-            this.lineFrom = lineFrom;
-        }
-
-        public String getLineTo() {
-            return lineTo;
-        }
-
-        public void setLineTo(String lineTo) {
-            this.lineTo = lineTo;
-        }
-    }
-
-    public static class UGAL7Forwarder extends Response {
-
-        /** 接入端口 */
-        @SerializedName("Port")
-        private Integer port;
-
-        /** 转发协议，枚举值["TCP"，"UDP"，"HTTPHTTP"，"HTTPSHTTP"，"HTTPSHTTPS"]。TCP和UDP代表四层转发，其余为七层转发 */
-        @SerializedName("Protocol")
-        private String protocol;
-
-        /** RSPort，源站监听端口 */
-        @SerializedName("RSPort")
-        private Integer rsPort;
-
-        /** 证书ID */
-        @SerializedName("SSLId")
-        private String sslId;
-
-        /** 证书名称 */
-        @SerializedName("SSLName")
-        private String sslName;
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-
-        public String getProtocol() {
-            return protocol;
-        }
-
-        public void setProtocol(String protocol) {
-            this.protocol = protocol;
-        }
-
-        public Integer getRSPort() {
-            return rsPort;
-        }
-
-        public void setRSPort(Integer rsPort) {
-            this.rsPort = rsPort;
-        }
-
-        public String getSSLId() {
-            return sslId;
-        }
-
-        public void setSSLId(String sslId) {
-            this.sslId = sslId;
-        }
-
-        public String getSSLName() {
-            return sslName;
-        }
-
-        public void setSSLName(String sslName) {
-            this.sslName = sslName;
         }
     }
 }

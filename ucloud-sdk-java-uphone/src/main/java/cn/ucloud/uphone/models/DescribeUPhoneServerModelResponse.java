@@ -25,6 +25,10 @@ public class DescribeUPhoneServerModelResponse extends Response {
     @SerializedName("TotalCount")
     private Integer totalCount;
 
+    /** 服务器model的库存 */
+    @SerializedName("Stock")
+    private List<StockInfo> stock;
+
     /** ServerModel实例列表，每项参数可见数据模型 ServerModelInstance */
     @SerializedName("ServerModels")
     private List<ServerModelInstance> serverModels;
@@ -35,6 +39,14 @@ public class DescribeUPhoneServerModelResponse extends Response {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
+    }
+
+    public List<StockInfo> getStock() {
+        return stock;
+    }
+
+    public void setStock(List<StockInfo> stock) {
+        this.stock = stock;
     }
 
     public List<ServerModelInstance> getServerModels() {
@@ -213,6 +225,33 @@ public class DescribeUPhoneServerModelResponse extends Response {
 
         public void setSize(Integer size) {
             this.size = size;
+        }
+    }
+
+    public static class StockInfo extends Response {
+
+        /** ServerModel名称 */
+        @SerializedName("ModelName")
+        private String modelName;
+
+        /** 资源余量 */
+        @SerializedName("StockCount")
+        private Integer stockCount;
+
+        public String getModelName() {
+            return modelName;
+        }
+
+        public void setModelName(String modelName) {
+            this.modelName = modelName;
+        }
+
+        public Integer getStockCount() {
+            return stockCount;
+        }
+
+        public void setStockCount(Integer stockCount) {
+            this.stockCount = stockCount;
         }
     }
 }
