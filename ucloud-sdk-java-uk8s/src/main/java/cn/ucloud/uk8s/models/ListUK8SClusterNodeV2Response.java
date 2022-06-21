@@ -45,108 +45,6 @@ public class ListUK8SClusterNodeV2Response extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class KubeProxy extends Response {
-
-        /** KubeProxy模式，枚举值为[ipvs,iptables] */
-        @SerializedName("Mode")
-        private String mode;
-
-        public String getMode() {
-            return mode;
-        }
-
-        public void setMode(String mode) {
-            this.mode = mode;
-        }
-    }
-
-    public static class UHostIPSet extends Response {
-
-        /** 国际: Internation，BGP: Bgp，内网: Private */
-        @SerializedName("Type")
-        private String type;
-
-        /** IP资源ID (内网IP无对应的资源ID) */
-        @SerializedName("IPId")
-        private String ipId;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** IP地址对应的VPC ID */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        /** IP地址对应的子网 ID */
-        @SerializedName("SubnetId")
-        private String subnetId;
-
-        /** Mac地址 */
-        @SerializedName("Mac")
-        private String mac;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getIPId() {
-            return ipId;
-        }
-
-        public void setIPId(String ipId) {
-            this.ipId = ipId;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public String getSubnetId() {
-            return subnetId;
-        }
-
-        public void setSubnetId(String subnetId) {
-            this.subnetId = subnetId;
-        }
-
-        public String getMac() {
-            return mac;
-        }
-
-        public void setMac(String mac) {
-            this.mac = mac;
-        }
-    }
-
     public static class NodeInfoV2 extends Response {
 
         /** Node所在可用区 */
@@ -390,6 +288,108 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
         public void setGPU(Integer gpu) {
             this.gpu = gpu;
+        }
+    }
+
+    public static class KubeProxy extends Response {
+
+        /** KubeProxy模式，枚举值为[ipvs,iptables] */
+        @SerializedName("Mode")
+        private String mode;
+
+        public String getMode() {
+            return mode;
+        }
+
+        public void setMode(String mode) {
+            this.mode = mode;
+        }
+    }
+
+    public static class UHostIPSet extends Response {
+
+        /** 国际: Internation，BGP: Bgp，内网: Private */
+        @SerializedName("Type")
+        private String type;
+
+        /** IP资源ID (内网IP无对应的资源ID) */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** IP地址对应的VPC ID */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** IP地址对应的子网 ID */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /** Mac地址 */
+        @SerializedName("Mac")
+        private String mac;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getIPId() {
+            return ipId;
+        }
+
+        public void setIPId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getMac() {
+            return mac;
+        }
+
+        public void setMac(String mac) {
+            this.mac = mac;
         }
     }
 }

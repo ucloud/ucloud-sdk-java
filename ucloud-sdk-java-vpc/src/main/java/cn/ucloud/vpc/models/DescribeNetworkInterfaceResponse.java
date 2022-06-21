@@ -45,6 +45,33 @@ public class DescribeNetworkInterfaceResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class UNIIpInfo extends Response {
+
+        /** ip类型 SecondaryIp/PrimaryIp */
+        @SerializedName("IpType")
+        private String ipType;
+
+        /** ip 地址 */
+        @SerializedName("IpAddr")
+        private List<String> ipAddr;
+
+        public String getIpType() {
+            return ipType;
+        }
+
+        public void setIpType(String ipType) {
+            this.ipType = ipType;
+        }
+
+        public List<String> getIpAddr() {
+            return ipAddr;
+        }
+
+        public void setIpAddr(List<String> ipAddr) {
+            this.ipAddr = ipAddr;
+        }
+    }
+
     public static class NetworkInterface extends Response {
 
         /** 虚拟网卡资源ID */
@@ -73,7 +100,7 @@ public class DescribeNetworkInterfaceResponse extends Response {
 
         /** 网卡的内网IP信息 */
         @SerializedName("PrivateIp")
-        private List<String> privateIp;
+        private List<UNIIpInfo> privateIp;
 
         /** 虚拟网卡名称 */
         @SerializedName("Name")
@@ -116,8 +143,8 @@ public class DescribeNetworkInterfaceResponse extends Response {
         private List<String> firewallIdSet;
 
         /** 网卡的内网IP配额信息 */
-        @SerializedName("PrivateIplimit")
-        private List<String> privateIplimit;
+        @SerializedName("PrivateIpLimit")
+        private UNIQuotaInfo privateIpLimit;
 
         public String getInterfaceId() {
             return interfaceId;
@@ -167,11 +194,11 @@ public class DescribeNetworkInterfaceResponse extends Response {
             this.status = status;
         }
 
-        public List<String> getPrivateIp() {
+        public List<UNIIpInfo> getPrivateIp() {
             return privateIp;
         }
 
-        public void setPrivateIp(List<String> privateIp) {
+        public void setPrivateIp(List<UNIIpInfo> privateIp) {
             this.privateIp = privateIp;
         }
 
@@ -255,12 +282,39 @@ public class DescribeNetworkInterfaceResponse extends Response {
             this.firewallIdSet = firewallIdSet;
         }
 
-        public List<String> getPrivateIplimit() {
-            return privateIplimit;
+        public UNIQuotaInfo getPrivateIpLimit() {
+            return privateIpLimit;
         }
 
-        public void setPrivateIplimit(List<String> privateIplimit) {
-            this.privateIplimit = privateIplimit;
+        public void setPrivateIpLimit(UNIQuotaInfo privateIpLimit) {
+            this.privateIpLimit = privateIpLimit;
+        }
+    }
+
+    public static class UNIQuotaInfo extends Response {
+
+        /** 网卡拥有的内网IP数量 */
+        @SerializedName("PrivateIpCount")
+        private Integer privateIpCount;
+
+        /** 网卡内网IP配额 */
+        @SerializedName("PrivateIpQuota")
+        private Integer privateIpQuota;
+
+        public Integer getPrivateIpCount() {
+            return privateIpCount;
+        }
+
+        public void setPrivateIpCount(Integer privateIpCount) {
+            this.privateIpCount = privateIpCount;
+        }
+
+        public Integer getPrivateIpQuota() {
+            return privateIpQuota;
+        }
+
+        public void setPrivateIpQuota(Integer privateIpQuota) {
+            this.privateIpQuota = privateIpQuota;
         }
     }
 }

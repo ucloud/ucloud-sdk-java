@@ -23,10 +23,14 @@ import cn.ucloud.uphone.models.CreateUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.CreateUPhoneAppVersionResponse;
 import cn.ucloud.uphone.models.CreateUPhoneImageRequest;
 import cn.ucloud.uphone.models.CreateUPhoneImageResponse;
+import cn.ucloud.uphone.models.CreateUPhoneRequest;
+import cn.ucloud.uphone.models.CreateUPhoneResponse;
 import cn.ucloud.uphone.models.CreateUPhoneServerRequest;
 import cn.ucloud.uphone.models.CreateUPhoneServerResponse;
 import cn.ucloud.uphone.models.DeleteUPhoneImageRequest;
 import cn.ucloud.uphone.models.DeleteUPhoneImageResponse;
+import cn.ucloud.uphone.models.DeleteUPhoneRequest;
+import cn.ucloud.uphone.models.DeleteUPhoneResponse;
 import cn.ucloud.uphone.models.DeleteUPhoneServerRequest;
 import cn.ucloud.uphone.models.DeleteUPhoneServerResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneAppRequest;
@@ -51,12 +55,20 @@ import cn.ucloud.uphone.models.DescribeUPhoneServerModelRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneServerModelResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneServerRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneServerResponse;
+import cn.ucloud.uphone.models.GetUPhoneAllowanceRequest;
+import cn.ucloud.uphone.models.GetUPhoneAllowanceResponse;
+import cn.ucloud.uphone.models.GetUPhonePriceRequest;
+import cn.ucloud.uphone.models.GetUPhonePriceResponse;
+import cn.ucloud.uphone.models.GetUPhoneRenewPriceRequest;
+import cn.ucloud.uphone.models.GetUPhoneRenewPriceResponse;
 import cn.ucloud.uphone.models.GetUPhoneScreenCaptureRequest;
 import cn.ucloud.uphone.models.GetUPhoneScreenCaptureResponse;
 import cn.ucloud.uphone.models.GetUPhoneServerPriceRequest;
 import cn.ucloud.uphone.models.GetUPhoneServerPriceResponse;
 import cn.ucloud.uphone.models.GetUPhoneServerRenewPriceRequest;
 import cn.ucloud.uphone.models.GetUPhoneServerRenewPriceResponse;
+import cn.ucloud.uphone.models.ImportFileRequest;
+import cn.ucloud.uphone.models.ImportFileResponse;
 import cn.ucloud.uphone.models.InstallUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.InstallUPhoneAppVersionResponse;
 import cn.ucloud.uphone.models.ModifyUPhoneNameRequest;
@@ -73,20 +85,28 @@ import cn.ucloud.uphone.models.PoweronUPhoneRequest;
 import cn.ucloud.uphone.models.PoweronUPhoneResponse;
 import cn.ucloud.uphone.models.RebootUPhoneRequest;
 import cn.ucloud.uphone.models.RebootUPhoneResponse;
+import cn.ucloud.uphone.models.RenewUPhoneRequest;
+import cn.ucloud.uphone.models.RenewUPhoneResponse;
 import cn.ucloud.uphone.models.ResetUPhoneRequest;
 import cn.ucloud.uphone.models.ResetUPhoneResponse;
 import cn.ucloud.uphone.models.RunAsyncCommandRequest;
 import cn.ucloud.uphone.models.RunAsyncCommandResponse;
 import cn.ucloud.uphone.models.RunSyncCommandRequest;
 import cn.ucloud.uphone.models.RunSyncCommandResponse;
+import cn.ucloud.uphone.models.SetUPhoneCallbackRequest;
+import cn.ucloud.uphone.models.SetUPhoneCallbackResponse;
 import cn.ucloud.uphone.models.SetUPhoneConfigRequest;
 import cn.ucloud.uphone.models.SetUPhoneConfigResponse;
 import cn.ucloud.uphone.models.SetUPhoneGPSRequest;
 import cn.ucloud.uphone.models.SetUPhoneGPSResponse;
 import cn.ucloud.uphone.models.SetUPhoneManagerModeRequest;
 import cn.ucloud.uphone.models.SetUPhoneManagerModeResponse;
+import cn.ucloud.uphone.models.SetUPhoneRootModeRequest;
+import cn.ucloud.uphone.models.SetUPhoneRootModeResponse;
 import cn.ucloud.uphone.models.SetUPhoneSplashScreenRequest;
 import cn.ucloud.uphone.models.SetUPhoneSplashScreenResponse;
+import cn.ucloud.uphone.models.SetUPhoneTokenRequest;
+import cn.ucloud.uphone.models.SetUPhoneTokenResponse;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionResponse;
 import cn.ucloud.uphone.models.UpdateUPhoneImageRequest;
@@ -96,6 +116,17 @@ import cn.ucloud.uphone.models.UpdateUPhoneImageResponse;
 public class UPhoneClient extends DefaultClient implements UPhoneClientInterface {
     public UPhoneClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * CreateUPhone - 创建云手机
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateUPhoneResponse createUPhone(CreateUPhoneRequest request) throws UCloudException {
+        request.setAction("CreateUPhone");
+        return (CreateUPhoneResponse) this.invoke(request, CreateUPhoneResponse.class);
     }
 
     /**
@@ -145,6 +176,17 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
             throws UCloudException {
         request.setAction("CreateUPhoneServer");
         return (CreateUPhoneServerResponse) this.invoke(request, CreateUPhoneServerResponse.class);
+    }
+
+    /**
+     * DeleteUPhone - 删除云手机
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUPhoneResponse deleteUPhone(DeleteUPhoneRequest request) throws UCloudException {
+        request.setAction("DeleteUPhone");
+        return (DeleteUPhoneResponse) this.invoke(request, DeleteUPhoneResponse.class);
     }
 
     /**
@@ -248,7 +290,7 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
     }
 
     /**
-     * DescribeUPhoneIpRegions - 获取云手机支持绑定独立IP的城市列表
+     * DescribeUPhoneIpRegions - 获取云手机所在城市支持绑定独立IP的地域列表
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -312,6 +354,43 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
     }
 
     /**
+     * GetUPhoneAllowance - 获取云手机创建余量
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPhoneAllowanceResponse getUPhoneAllowance(GetUPhoneAllowanceRequest request)
+            throws UCloudException {
+        request.setAction("GetUPhoneAllowance");
+        return (GetUPhoneAllowanceResponse) this.invoke(request, GetUPhoneAllowanceResponse.class);
+    }
+
+    /**
+     * GetUPhonePrice - 获取云手机价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPhonePriceResponse getUPhonePrice(GetUPhonePriceRequest request)
+            throws UCloudException {
+        request.setAction("GetUPhonePrice");
+        return (GetUPhonePriceResponse) this.invoke(request, GetUPhonePriceResponse.class);
+    }
+
+    /**
+     * GetUPhoneRenewPrice - 获取云手机续费价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPhoneRenewPriceResponse getUPhoneRenewPrice(GetUPhoneRenewPriceRequest request)
+            throws UCloudException {
+        request.setAction("GetUPhoneRenewPrice");
+        return (GetUPhoneRenewPriceResponse)
+                this.invoke(request, GetUPhoneRenewPriceResponse.class);
+    }
+
+    /**
      * GetUPhoneScreenCapture - 云手机截屏
      *
      * @param request Request object
@@ -348,6 +427,17 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
         request.setAction("GetUPhoneServerRenewPrice");
         return (GetUPhoneServerRenewPriceResponse)
                 this.invoke(request, GetUPhoneServerRenewPriceResponse.class);
+    }
+
+    /**
+     * ImportFile - 上传文件
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ImportFileResponse importFile(ImportFileRequest request) throws UCloudException {
+        request.setAction("ImportFile");
+        return (ImportFileResponse) this.invoke(request, ImportFileResponse.class);
     }
 
     /**
@@ -449,6 +539,17 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
     }
 
     /**
+     * RenewUPhone - 一键新机
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RenewUPhoneResponse renewUPhone(RenewUPhoneRequest request) throws UCloudException {
+        request.setAction("RenewUPhone");
+        return (RenewUPhoneResponse) this.invoke(request, RenewUPhoneResponse.class);
+    }
+
+    /**
      * ResetUPhone - 重置云手机
      *
      * @param request Request object
@@ -481,6 +582,18 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
             throws UCloudException {
         request.setAction("RunSyncCommand");
         return (RunSyncCommandResponse) this.invoke(request, RunSyncCommandResponse.class);
+    }
+
+    /**
+     * SetUPhoneCallback - 设置云手机异步操作回调
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SetUPhoneCallbackResponse setUPhoneCallback(SetUPhoneCallbackRequest request)
+            throws UCloudException {
+        request.setAction("SetUPhoneCallback");
+        return (SetUPhoneCallbackResponse) this.invoke(request, SetUPhoneCallbackResponse.class);
     }
 
     /**
@@ -520,6 +633,18 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
     }
 
     /**
+     * SetUPhoneRootMode - 设置云手机Root模式
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SetUPhoneRootModeResponse setUPhoneRootMode(SetUPhoneRootModeRequest request)
+            throws UCloudException {
+        request.setAction("SetUPhoneRootMode");
+        return (SetUPhoneRootModeResponse) this.invoke(request, SetUPhoneRootModeResponse.class);
+    }
+
+    /**
      * SetUPhoneSplashScreen - 设置启动画面
      *
      * @param request Request object
@@ -530,6 +655,18 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
         request.setAction("SetUPhoneSplashScreen");
         return (SetUPhoneSplashScreenResponse)
                 this.invoke(request, SetUPhoneSplashScreenResponse.class);
+    }
+
+    /**
+     * SetUPhoneToken - 设置云手机RTC连接Token
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SetUPhoneTokenResponse setUPhoneToken(SetUPhoneTokenRequest request)
+            throws UCloudException {
+        request.setAction("SetUPhoneToken");
+        return (SetUPhoneTokenResponse) this.invoke(request, SetUPhoneTokenResponse.class);
     }
 
     /**

@@ -25,6 +25,10 @@ public class DescribeUPhoneServerModelResponse extends Response {
     @SerializedName("TotalCount")
     private Integer totalCount;
 
+    /** 服务器model的库存 */
+    @SerializedName("Stock")
+    private List<StockInfo> stock;
+
     /** ServerModel实例列表，每项参数可见数据模型 ServerModelInstance */
     @SerializedName("ServerModels")
     private List<ServerModelInstance> serverModels;
@@ -37,12 +41,119 @@ public class DescribeUPhoneServerModelResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public List<StockInfo> getStock() {
+        return stock;
+    }
+
+    public void setStock(List<StockInfo> stock) {
+        this.stock = stock;
+    }
+
     public List<ServerModelInstance> getServerModels() {
         return serverModels;
     }
 
     public void setServerModels(List<ServerModelInstance> serverModels) {
         this.serverModels = serverModels;
+    }
+
+    public static class UPhoneSpec extends Response {
+
+        /** 手机规格名 */
+        @SerializedName("UPhoneModelName")
+        private String uPhoneModelName;
+
+        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
+        @SerializedName("UPhoneCount")
+        private Integer uPhoneCount;
+
+        public String getUPhoneModelName() {
+            return uPhoneModelName;
+        }
+
+        public void setUPhoneModelName(String uPhoneModelName) {
+            this.uPhoneModelName = uPhoneModelName;
+        }
+
+        public Integer getUPhoneCount() {
+            return uPhoneCount;
+        }
+
+        public void setUPhoneCount(Integer uPhoneCount) {
+            this.uPhoneCount = uPhoneCount;
+        }
+    }
+
+    public static class ServerDiskSet extends Response {
+
+        /** 磁盘类型。请参考磁盘类型。 */
+        @SerializedName("DiskType")
+        private String diskType;
+
+        /**
+         * 是否是系统盘。枚举值：
+         *
+         * <p>> True，是系统盘
+         *
+         * <p>> False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。
+         */
+        @SerializedName("IsBoot")
+        private Boolean isBoot;
+
+        /** 磁盘大小，单位: GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        public String getDiskType() {
+            return diskType;
+        }
+
+        public void setDiskType(String diskType) {
+            this.diskType = diskType;
+        }
+
+        public Boolean getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(Boolean isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+    }
+
+    public static class StockInfo extends Response {
+
+        /** ServerModel名称 */
+        @SerializedName("ModelName")
+        private String modelName;
+
+        /** 资源余量 */
+        @SerializedName("StockCount")
+        private Integer stockCount;
+
+        public String getModelName() {
+            return modelName;
+        }
+
+        public void setModelName(String modelName) {
+            this.modelName = modelName;
+        }
+
+        public Integer getStockCount() {
+            return stockCount;
+        }
+
+        public void setStockCount(Integer stockCount) {
+            this.stockCount = stockCount;
+        }
     }
 
     public static class ServerModelInstance extends Response {
@@ -141,78 +252,6 @@ public class DescribeUPhoneServerModelResponse extends Response {
 
         public void setServerModelState(String serverModelState) {
             this.serverModelState = serverModelState;
-        }
-    }
-
-    public static class UPhoneSpec extends Response {
-
-        /** 手机规格名 */
-        @SerializedName("UPhoneModelName")
-        private String uPhoneModelName;
-
-        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
-        @SerializedName("UPhoneCount")
-        private Integer uPhoneCount;
-
-        public String getUPhoneModelName() {
-            return uPhoneModelName;
-        }
-
-        public void setUPhoneModelName(String uPhoneModelName) {
-            this.uPhoneModelName = uPhoneModelName;
-        }
-
-        public Integer getUPhoneCount() {
-            return uPhoneCount;
-        }
-
-        public void setUPhoneCount(Integer uPhoneCount) {
-            this.uPhoneCount = uPhoneCount;
-        }
-    }
-
-    public static class ServerDiskSet extends Response {
-
-        /** 磁盘类型。请参考磁盘类型。 */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /**
-         * 是否是系统盘。枚举值：
-         *
-         * <p>> True，是系统盘
-         *
-         * <p>> False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。
-         */
-        @SerializedName("IsBoot")
-        private Boolean isBoot;
-
-        /** 磁盘大小，单位: GB */
-        @SerializedName("Size")
-        private Integer size;
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public Boolean getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(Boolean isBoot) {
-            this.isBoot = isBoot;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
         }
     }
 }

@@ -37,6 +37,10 @@ public class SetUPhoneGPSRequest extends Request {
     @UCloudParam("UPhoneGPSs")
     private List<UPhoneGPSs> uPhoneGPSs;
 
+    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
+
     public String getProjectId() {
         return projectId;
     }
@@ -59,6 +63,14 @@ public class SetUPhoneGPSRequest extends Request {
 
     public void setUPhoneGPSs(List<UPhoneGPSs> uPhoneGPSs) {
         this.uPhoneGPSs = uPhoneGPSs;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     public static class UPhoneGPSs extends Request {
