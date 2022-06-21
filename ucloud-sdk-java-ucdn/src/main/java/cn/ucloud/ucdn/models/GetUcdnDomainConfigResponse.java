@@ -84,6 +84,159 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
+    public static class CacheConf extends Response {
+
+        /** 路径模式，支持正则 */
+        @SerializedName("PathPattern")
+        private String pathPattern;
+
+        /** 缓存时间 */
+        @SerializedName("CacheTTL")
+        private Integer cacheTTL;
+
+        /** 缓存时间的单位。sec（秒），min（分钟），hour（小时），day（天）。上限1年。 */
+        @SerializedName("CacheUnit")
+        private String cacheUnit;
+
+        /** 是否缓存，true为缓存，flase为不缓存。为flase的情况下，CacheTTL和CacheUnit强制不生效 */
+        @SerializedName("CacheBehavior")
+        private Boolean cacheBehavior;
+
+        /** 状态码模式，非200，206状态码，多个状态码用竖线(|)分隔，该属性仅仅在状态码缓存配置列表中返回 */
+        @SerializedName("HttpCodePattern")
+        private String httpCodePattern;
+
+        /** 缓存规则描述 */
+        @SerializedName("Description")
+        private String description;
+
+        /** 是否优先遵循源站头部缓存策略，false为不优先遵循源站，true为优先遵循源站缓存头部。默认为0 */
+        @SerializedName("FollowOriginRule")
+        private Boolean followOriginRule;
+
+        public String getPathPattern() {
+            return pathPattern;
+        }
+
+        public void setPathPattern(String pathPattern) {
+            this.pathPattern = pathPattern;
+        }
+
+        public Integer getCacheTTL() {
+            return cacheTTL;
+        }
+
+        public void setCacheTTL(Integer cacheTTL) {
+            this.cacheTTL = cacheTTL;
+        }
+
+        public String getCacheUnit() {
+            return cacheUnit;
+        }
+
+        public void setCacheUnit(String cacheUnit) {
+            this.cacheUnit = cacheUnit;
+        }
+
+        public Boolean getCacheBehavior() {
+            return cacheBehavior;
+        }
+
+        public void setCacheBehavior(Boolean cacheBehavior) {
+            this.cacheBehavior = cacheBehavior;
+        }
+
+        public String getHttpCodePattern() {
+            return httpCodePattern;
+        }
+
+        public void setHttpCodePattern(String httpCodePattern) {
+            this.httpCodePattern = httpCodePattern;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Boolean getFollowOriginRule() {
+            return followOriginRule;
+        }
+
+        public void setFollowOriginRule(Boolean followOriginRule) {
+            this.followOriginRule = followOriginRule;
+        }
+    }
+
+    public static class CacheKeyInfo extends Response {
+
+        /** 是否忽略 */
+        @SerializedName("Ignore")
+        private Boolean ignore;
+
+        /** 路径模式，支持正则 */
+        @SerializedName("PathPattern")
+        private String pathPattern;
+
+        /** 自定义变量,以$符号开头，多个变量用加号(+)连接，$querystring表示所有变量 */
+        @SerializedName("QueryString")
+        private String queryString;
+
+        public Boolean getIgnore() {
+            return ignore;
+        }
+
+        public void setIgnore(Boolean ignore) {
+            this.ignore = ignore;
+        }
+
+        public String getPathPattern() {
+            return pathPattern;
+        }
+
+        public void setPathPattern(String pathPattern) {
+            this.pathPattern = pathPattern;
+        }
+
+        public String getQueryString() {
+            return queryString;
+        }
+
+        public void setQueryString(String queryString) {
+            this.queryString = queryString;
+        }
+    }
+
+    public static class AccessControlConf extends Response {
+
+        /** ip黑名单，多个ip，可表示为： IpBlackList.0=1.1.1.1，IpBlackList.1=2.2.2.2 */
+        @SerializedName("IpBlackList")
+        private List<String> ipBlackList;
+
+        /** refer配置 */
+        @SerializedName("ReferConf")
+        private ReferConf referConf;
+
+        public List<String> getIpBlackList() {
+            return ipBlackList;
+        }
+
+        public void setIpBlackList(List<String> ipBlackList) {
+            this.ipBlackList = ipBlackList;
+        }
+
+        public ReferConf getReferConf() {
+            return referConf;
+        }
+
+        public void setReferConf(ReferConf referConf) {
+            this.referConf = referConf;
+        }
+    }
+
     public static class OriginConf extends Response {
 
         /** 源站ip即cdn服务器回源访问的ip地址。多个源站ip，可以这样表述，如：["1.1.1.1","2.2.2.2"] */
@@ -420,171 +573,6 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class CacheKeyInfo extends Response {
-
-        /** 是否忽略 */
-        @SerializedName("Ignore")
-        private Boolean ignore;
-
-        /** 路径模式，支持正则 */
-        @SerializedName("PathPattern")
-        private String pathPattern;
-
-        /** 自定义变量,以$符号开头，多个变量用加号(+)连接，$querystring表示所有变量 */
-        @SerializedName("QueryString")
-        private String queryString;
-
-        public Boolean getIgnore() {
-            return ignore;
-        }
-
-        public void setIgnore(Boolean ignore) {
-            this.ignore = ignore;
-        }
-
-        public String getPathPattern() {
-            return pathPattern;
-        }
-
-        public void setPathPattern(String pathPattern) {
-            this.pathPattern = pathPattern;
-        }
-
-        public String getQueryString() {
-            return queryString;
-        }
-
-        public void setQueryString(String queryString) {
-            this.queryString = queryString;
-        }
-    }
-
-    public static class CacheConf extends Response {
-
-        /** 路径模式，支持正则 */
-        @SerializedName("PathPattern")
-        private String pathPattern;
-
-        /** 缓存时间 */
-        @SerializedName("CacheTTL")
-        private Integer cacheTTL;
-
-        /** 缓存时间的单位。sec（秒），min（分钟），hour（小时），day（天）。上限1年。 */
-        @SerializedName("CacheUnit")
-        private String cacheUnit;
-
-        /** 是否缓存，true为缓存，flase为不缓存。为flase的情况下，CacheTTL和CacheUnit强制不生效 */
-        @SerializedName("CacheBehavior")
-        private Boolean cacheBehavior;
-
-        /** 状态码模式，非200，206状态码，多个状态码用竖线(|)分隔，该属性仅仅在状态码缓存配置列表中返回 */
-        @SerializedName("HttpCodePattern")
-        private String httpCodePattern;
-
-        /** 缓存规则描述 */
-        @SerializedName("Description")
-        private String description;
-
-        /** 是否优先遵循源站头部缓存策略，false为不优先遵循源站，true为优先遵循源站缓存头部。默认为0 */
-        @SerializedName("FollowOriginRule")
-        private Boolean followOriginRule;
-
-        public String getPathPattern() {
-            return pathPattern;
-        }
-
-        public void setPathPattern(String pathPattern) {
-            this.pathPattern = pathPattern;
-        }
-
-        public Integer getCacheTTL() {
-            return cacheTTL;
-        }
-
-        public void setCacheTTL(Integer cacheTTL) {
-            this.cacheTTL = cacheTTL;
-        }
-
-        public String getCacheUnit() {
-            return cacheUnit;
-        }
-
-        public void setCacheUnit(String cacheUnit) {
-            this.cacheUnit = cacheUnit;
-        }
-
-        public Boolean getCacheBehavior() {
-            return cacheBehavior;
-        }
-
-        public void setCacheBehavior(Boolean cacheBehavior) {
-            this.cacheBehavior = cacheBehavior;
-        }
-
-        public String getHttpCodePattern() {
-            return httpCodePattern;
-        }
-
-        public void setHttpCodePattern(String httpCodePattern) {
-            this.httpCodePattern = httpCodePattern;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public Boolean getFollowOriginRule() {
-            return followOriginRule;
-        }
-
-        public void setFollowOriginRule(Boolean followOriginRule) {
-            this.followOriginRule = followOriginRule;
-        }
-    }
-
-    public static class ReferConf extends Response {
-
-        /** Refer防盗链配置 0白名单，1黑名单 */
-        @SerializedName("ReferType")
-        private Integer referType;
-
-        /** ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问 */
-        @SerializedName("NullRefer")
-        private Integer nullRefer;
-
-        /** Refer防盗链规则列表，支持正则表达式 */
-        @SerializedName("ReferList")
-        private List<String> referList;
-
-        public Integer getReferType() {
-            return referType;
-        }
-
-        public void setReferType(Integer referType) {
-            this.referType = referType;
-        }
-
-        public Integer getNullRefer() {
-            return nullRefer;
-        }
-
-        public void setNullRefer(Integer nullRefer) {
-            this.nullRefer = nullRefer;
-        }
-
-        public List<String> getReferList() {
-            return referList;
-        }
-
-        public void setReferList(List<String> referList) {
-            this.referList = referList;
-        }
-    }
-
     public static class AdvancedConf extends Response {
 
         /** 客户端响应http头列表 */
@@ -624,30 +612,42 @@ public class GetUcdnDomainConfigResponse extends Response {
         }
     }
 
-    public static class AccessControlConf extends Response {
+    public static class ReferConf extends Response {
 
-        /** ip黑名单，多个ip，可表示为： IpBlackList.0=1.1.1.1，IpBlackList.1=2.2.2.2 */
-        @SerializedName("IpBlackList")
-        private List<String> ipBlackList;
+        /** Refer防盗链配置 0白名单，1黑名单 */
+        @SerializedName("ReferType")
+        private Integer referType;
 
-        /** refer配置 */
-        @SerializedName("ReferConf")
-        private ReferConf referConf;
+        /** ReferType为白名单时（删除），NullRefer为0代表不允许NULL refer访问，为1代表允许Null refer访问 */
+        @SerializedName("NullRefer")
+        private Integer nullRefer;
 
-        public List<String> getIpBlackList() {
-            return ipBlackList;
+        /** Refer防盗链规则列表，支持正则表达式 */
+        @SerializedName("ReferList")
+        private List<String> referList;
+
+        public Integer getReferType() {
+            return referType;
         }
 
-        public void setIpBlackList(List<String> ipBlackList) {
-            this.ipBlackList = ipBlackList;
+        public void setReferType(Integer referType) {
+            this.referType = referType;
         }
 
-        public ReferConf getReferConf() {
-            return referConf;
+        public Integer getNullRefer() {
+            return nullRefer;
         }
 
-        public void setReferConf(ReferConf referConf) {
-            this.referConf = referConf;
+        public void setNullRefer(Integer nullRefer) {
+            this.nullRefer = nullRefer;
+        }
+
+        public List<String> getReferList() {
+            return referList;
+        }
+
+        public void setReferList(List<String> referList) {
+            this.referList = referList;
         }
     }
 }

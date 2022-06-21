@@ -71,6 +71,14 @@ public class DescribeUPhoneModelResponse extends Response {
         @SerializedName("Refresh")
         private Integer refresh;
 
+        /** DPI */
+        @SerializedName("Dpi")
+        private Integer dpi;
+
+        /** 型号描述信息 */
+        @SerializedName("Description")
+        private String description;
+
         public String getUPhoneModelName() {
             return uPhoneModelName;
         }
@@ -117,6 +125,22 @@ public class DescribeUPhoneModelResponse extends Response {
 
         public void setRefresh(Integer refresh) {
             this.refresh = refresh;
+        }
+
+        public Integer getDpi() {
+            return dpi;
+        }
+
+        public void setDpi(Integer dpi) {
+            this.dpi = dpi;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
         }
     }
 }

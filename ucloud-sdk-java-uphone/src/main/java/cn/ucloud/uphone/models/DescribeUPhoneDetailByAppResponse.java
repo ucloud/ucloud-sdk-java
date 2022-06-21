@@ -51,9 +51,13 @@ public class DescribeUPhoneDetailByAppResponse extends Response {
         @SerializedName("UPhoneName")
         private String uPhoneName;
 
-        /** 云手机规格名称 */
+        /** 云手机的唯一标识，不超过32个字节。 */
         @SerializedName("UPhoneId")
         private String uPhoneId;
+
+        /** 云手机规格名称 */
+        @SerializedName("UPhoneModelName")
+        private String uPhoneModelName;
 
         /** 虚拟CPU核数。 */
         @SerializedName("CPU")
@@ -138,6 +142,14 @@ public class DescribeUPhoneDetailByAppResponse extends Response {
 
         public void setUPhoneId(String uPhoneId) {
             this.uPhoneId = uPhoneId;
+        }
+
+        public String getUPhoneModelName() {
+            return uPhoneModelName;
+        }
+
+        public void setUPhoneModelName(String uPhoneModelName) {
+            this.uPhoneModelName = uPhoneModelName;
         }
 
         public Integer getCPU() {

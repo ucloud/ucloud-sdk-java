@@ -21,6 +21,8 @@ import cn.ucloud.vpc.models.AddVPCNetworkRequest;
 import cn.ucloud.vpc.models.AddVPCNetworkResponse;
 import cn.ucloud.vpc.models.AddWhiteListResourceRequest;
 import cn.ucloud.vpc.models.AddWhiteListResourceResponse;
+import cn.ucloud.vpc.models.AllocateBatchSecondaryIpRequest;
+import cn.ucloud.vpc.models.AllocateBatchSecondaryIpResponse;
 import cn.ucloud.vpc.models.AllocateSecondaryIpRequest;
 import cn.ucloud.vpc.models.AllocateSecondaryIpResponse;
 import cn.ucloud.vpc.models.AllocateVIPRequest;
@@ -39,6 +41,8 @@ import cn.ucloud.vpc.models.CreateNetworkAclEntryRequest;
 import cn.ucloud.vpc.models.CreateNetworkAclEntryResponse;
 import cn.ucloud.vpc.models.CreateNetworkAclRequest;
 import cn.ucloud.vpc.models.CreateNetworkAclResponse;
+import cn.ucloud.vpc.models.CreateNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.CreateNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.CreateRouteTableRequest;
 import cn.ucloud.vpc.models.CreateRouteTableResponse;
 import cn.ucloud.vpc.models.CreateSnatDnatRuleRequest;
@@ -179,6 +183,15 @@ public interface VPCClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * AllocateBatchSecondaryIp - 批量申请虚拟网卡辅助IP
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AllocateBatchSecondaryIpResponse allocateBatchSecondaryIp(
+            AllocateBatchSecondaryIpRequest request) throws UCloudException;
+
+    /**
      * AllocateSecondaryIp - 分配ip
      *
      * @param request Request object
@@ -256,6 +269,15 @@ public interface VPCClientInterface extends Client {
      */
     public CreateNetworkAclEntryResponse createNetworkAclEntry(CreateNetworkAclEntryRequest request)
             throws UCloudException;
+
+    /**
+     * CreateNetworkInterface - 创建虚拟网卡
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateNetworkInterfaceResponse createNetworkInterface(
+            CreateNetworkInterfaceRequest request) throws UCloudException;
 
     /**
      * CreateRouteTable - 创建路由表

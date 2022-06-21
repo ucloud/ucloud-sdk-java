@@ -33,6 +33,45 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         this.availableInstanceTypes = availableInstanceTypes;
     }
 
+    public static class Disks extends Response {
+
+        /** 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 系统盘信息 */
+        @SerializedName("BootDisk")
+        private List<BootDiskInfo> bootDisk;
+
+        /** 数据盘信息 */
+        @SerializedName("DataDisk")
+        private List<DataDiskInfo> dataDisk;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<BootDiskInfo> getBootDisk() {
+            return bootDisk;
+        }
+
+        public void setBootDisk(List<BootDiskInfo> bootDisk) {
+            this.bootDisk = bootDisk;
+        }
+
+        public List<DataDiskInfo> getDataDisk() {
+            return dataDisk;
+        }
+
+        public void setDataDisk(List<DataDiskInfo> dataDisk) {
+            this.dataDisk = dataDisk;
+        }
+    }
+
     public static class FeatureModes extends Response {
 
         /** 模式|特性名称 */
@@ -125,6 +164,33 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
+    public static class Performance extends Response {
+
+        /** 值，单位是TFlops */
+        @SerializedName("Value")
+        private Integer value;
+
+        /** 交互展示参数，可忽略 */
+        @SerializedName("Rate")
+        private Integer rate;
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
+        }
+
+        public Integer getRate() {
+            return rate;
+        }
+
+        public void setRate(Integer rate) {
+            this.rate = rate;
+        }
+    }
+
     public static class GraphicsMemory extends Response {
 
         /** 值，单位是GB */
@@ -149,6 +215,72 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setRate(Integer rate) {
             this.rate = rate;
+        }
+    }
+
+    public static class MachineSizes extends Response {
+
+        /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
+        @SerializedName("Gpu")
+        private Integer gpu;
+
+        /** CPU和内存可支持的规格 */
+        @SerializedName("Collection")
+        private List<Collection> collection;
+
+        public Integer getGpu() {
+            return gpu;
+        }
+
+        public void setGpu(Integer gpu) {
+            this.gpu = gpu;
+        }
+
+        public List<Collection> getCollection() {
+            return collection;
+        }
+
+        public void setCollection(List<Collection> collection) {
+            this.collection = collection;
+        }
+    }
+
+    public static class CpuPlatforms extends Response {
+
+        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
+        @SerializedName("Intel")
+        private List<String> intel;
+
+        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
+        @SerializedName("Amd")
+        private List<String> amd;
+
+        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
+        @SerializedName("Ampere")
+        private List<String> ampere;
+
+        public List<String> getIntel() {
+            return intel;
+        }
+
+        public void setIntel(List<String> intel) {
+            this.intel = intel;
+        }
+
+        public List<String> getAmd() {
+            return amd;
+        }
+
+        public void setAmd(List<String> amd) {
+            this.amd = amd;
+        }
+
+        public List<String> getAmpere() {
+            return ampere;
+        }
+
+        public void setAmpere(List<String> ampere) {
+            this.ampere = ampere;
         }
     }
 
@@ -217,7 +349,7 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         /** 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回 */
         @SerializedName("CpuPlatforms")
-        private List<CpuPlatforms> cpuPlatforms;
+        private CpuPlatforms cpuPlatforms;
 
         /**
          * 磁盘信息。磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。
@@ -281,11 +413,11 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
             this.status = status;
         }
 
-        public List<CpuPlatforms> getCpuPlatforms() {
+        public CpuPlatforms getCpuPlatforms() {
             return cpuPlatforms;
         }
 
-        public void setCpuPlatforms(List<CpuPlatforms> cpuPlatforms) {
+        public void setCpuPlatforms(CpuPlatforms cpuPlatforms) {
             this.cpuPlatforms = cpuPlatforms;
         }
 
@@ -338,33 +470,6 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         }
     }
 
-    public static class Performance extends Response {
-
-        /** 值，单位是TFlops */
-        @SerializedName("Value")
-        private Integer value;
-
-        /** 交互展示参数，可忽略 */
-        @SerializedName("Rate")
-        private Integer rate;
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
-
-        public Integer getRate() {
-            return rate;
-        }
-
-        public void setRate(Integer rate) {
-            this.rate = rate;
-        }
-    }
-
     public static class Features extends Response {
 
         /** 可支持的特性名称。目前支持的特性网络增强|NetCapability、热升级|Hotplug */
@@ -389,111 +494,6 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setModes(List<FeatureModes> modes) {
             this.modes = modes;
-        }
-    }
-
-    public static class Disks extends Response {
-
-        /** 磁盘介质类别信息，磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 系统盘信息 */
-        @SerializedName("BootDisk")
-        private List<BootDiskInfo> bootDisk;
-
-        /** 数据盘信息 */
-        @SerializedName("DataDisk")
-        private List<DataDiskInfo> dataDisk;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public List<BootDiskInfo> getBootDisk() {
-            return bootDisk;
-        }
-
-        public void setBootDisk(List<BootDiskInfo> bootDisk) {
-            this.bootDisk = bootDisk;
-        }
-
-        public List<DataDiskInfo> getDataDisk() {
-            return dataDisk;
-        }
-
-        public void setDataDisk(List<DataDiskInfo> dataDisk) {
-            this.dataDisk = dataDisk;
-        }
-    }
-
-    public static class CpuPlatforms extends Response {
-
-        /** 返回Intel的CPU平台信息，例如：Intel: ['Intel/CascadeLake','Intel/CascadelakeR','Intel/IceLake'] */
-        @SerializedName("Intel")
-        private List<String> intel;
-
-        /** 返回AMD的CPU平台信息，例如：AMD: ['Amd/Epyc2'] */
-        @SerializedName("Amd")
-        private List<String> amd;
-
-        /** 返回Arm的CPU平台信息，例如：Ampere: ['Ampere/Altra'] */
-        @SerializedName("Ampere")
-        private List<String> ampere;
-
-        public List<String> getIntel() {
-            return intel;
-        }
-
-        public void setIntel(List<String> intel) {
-            this.intel = intel;
-        }
-
-        public List<String> getAmd() {
-            return amd;
-        }
-
-        public void setAmd(List<String> amd) {
-            this.amd = amd;
-        }
-
-        public List<String> getAmpere() {
-            return ampere;
-        }
-
-        public void setAmpere(List<String> ampere) {
-            this.ampere = ampere;
-        }
-    }
-
-    public static class MachineSizes extends Response {
-
-        /** Gpu为GPU可支持的规格即GPU颗数，非GPU机型，Gpu为0 */
-        @SerializedName("Gpu")
-        private Integer gpu;
-
-        /** CPU和内存可支持的规格 */
-        @SerializedName("Collection")
-        private List<Collection> collection;
-
-        public Integer getGpu() {
-            return gpu;
-        }
-
-        public void setGpu(Integer gpu) {
-            this.gpu = gpu;
-        }
-
-        public List<Collection> getCollection() {
-            return collection;
-        }
-
-        public void setCollection(List<Collection> collection) {
-            this.collection = collection;
         }
     }
 

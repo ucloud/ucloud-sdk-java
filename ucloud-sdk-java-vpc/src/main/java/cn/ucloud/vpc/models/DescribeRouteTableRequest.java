@@ -20,12 +20,15 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeRouteTableRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -48,6 +51,14 @@ public class DescribeRouteTableRequest extends Request {
     /** 业务组ID */
     @UCloudParam("BusinessId")
     private String businessId;
+
+    /** 默认为 false, 返回详细路由规则信息 */
+    @UCloudParam("Brief")
+    private Boolean brief;
+
+    /** 默认为 false, 表示路由表是短 ID */
+    @UCloudParam("LongId")
+    private String longId;
 
     public String getRegion() {
         return region;
@@ -103,5 +114,21 @@ public class DescribeRouteTableRequest extends Request {
 
     public void setBusinessId(String businessId) {
         this.businessId = businessId;
+    }
+
+    public Boolean getBrief() {
+        return brief;
+    }
+
+    public void setBrief(Boolean brief) {
+        this.brief = brief;
+    }
+
+    public String getLongId() {
+        return longId;
+    }
+
+    public void setLongId(String longId) {
+        this.longId = longId;
     }
 }

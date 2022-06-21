@@ -45,6 +45,111 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class CfgDictList extends Response {
+
+        /** 名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 挂载路径 */
+        @SerializedName("MountPath")
+        private String mountPath;
+
+        /** 资源id */
+        @SerializedName("ResourceId")
+        private String resourceId;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getMountPath() {
+            return mountPath;
+        }
+
+        public void setMountPath(String mountPath) {
+            this.mountPath = mountPath;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+    }
+
+    public static class IpList extends Response {
+
+        /** 外网ip */
+        @SerializedName("Ip")
+        private String ip;
+
+        /** 运营商 */
+        @SerializedName("Isp")
+        private String isp;
+
+        public String getIp() {
+            return ip;
+        }
+
+        public void setIp(String ip) {
+            this.ip = ip;
+        }
+
+        public String getIsp() {
+            return isp;
+        }
+
+        public void setIsp(String isp) {
+            this.isp = isp;
+        }
+    }
+
+    public static class ImageList extends Response {
+
+        /** 仓库地址 */
+        @SerializedName("StoreAddr")
+        private String storeAddr;
+
+        /** 用户名称 */
+        @SerializedName("UserName")
+        private String userName;
+
+        /** 镜像密钥 */
+        @SerializedName("ImageKey")
+        private String imageKey;
+
+        public String getStoreAddr() {
+            return storeAddr;
+        }
+
+        public void setStoreAddr(String storeAddr) {
+            this.storeAddr = storeAddr;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public String getImageKey() {
+            return imageKey;
+        }
+
+        public void setImageKey(String imageKey) {
+            this.imageKey = imageKey;
+        }
+    }
+
     public static class StorVolumeInfo extends Response {
 
         /** 名称 */
@@ -219,45 +324,6 @@ public class DescribeUEcHolderResponse extends Response {
         }
     }
 
-    public static class CfgDictList extends Response {
-
-        /** 名称 */
-        @SerializedName("Name")
-        private String name;
-
-        /** 挂载路径 */
-        @SerializedName("MountPath")
-        private String mountPath;
-
-        /** 资源id */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getMountPath() {
-            return mountPath;
-        }
-
-        public void setMountPath(String mountPath) {
-            this.mountPath = mountPath;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
-        }
-    }
-
     public static class EnvList extends Response {
 
         /** 环境变量key值 */
@@ -282,33 +348,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setValue(String value) {
             this.value = value;
-        }
-    }
-
-    public static class IpList extends Response {
-
-        /** 外网ip */
-        @SerializedName("Ip")
-        private String ip;
-
-        /** 运营商 */
-        @SerializedName("Isp")
-        private String isp;
-
-        public String getIp() {
-            return ip;
-        }
-
-        public void setIp(String ip) {
-            this.ip = ip;
-        }
-
-        public String getIsp() {
-            return isp;
-        }
-
-        public void setIsp(String isp) {
-            this.isp = isp;
         }
     }
 
@@ -576,45 +615,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setImageList(List<ImageList> imageList) {
             this.imageList = imageList;
-        }
-    }
-
-    public static class ImageList extends Response {
-
-        /** 仓库地址 */
-        @SerializedName("StoreAddr")
-        private String storeAddr;
-
-        /** 用户名称 */
-        @SerializedName("UserName")
-        private String userName;
-
-        /** 镜像密钥 */
-        @SerializedName("ImageKey")
-        private String imageKey;
-
-        public String getStoreAddr() {
-            return storeAddr;
-        }
-
-        public void setStoreAddr(String storeAddr) {
-            this.storeAddr = storeAddr;
-        }
-
-        public String getUserName() {
-            return userName;
-        }
-
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
-
-        public String getImageKey() {
-            return imageKey;
-        }
-
-        public void setImageKey(String imageKey) {
-            this.imageKey = imageKey;
         }
     }
 }

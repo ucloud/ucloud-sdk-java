@@ -14,7 +14,21 @@
 package cn.ucloud.uphone.models;
 
 
-
 import cn.ucloud.common.response.Response;
 
-public class RebootUPhoneResponse extends Response {}
+import com.google.gson.annotations.SerializedName;
+
+public class RebootUPhoneResponse extends Response {
+
+    /** 异步请求成功后返回JobId，用以查询Job状态 */
+    @SerializedName("JobId")
+    private String jobId;
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+}

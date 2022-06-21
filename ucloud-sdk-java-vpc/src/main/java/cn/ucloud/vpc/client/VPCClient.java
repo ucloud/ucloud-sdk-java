@@ -23,6 +23,8 @@ import cn.ucloud.vpc.models.AddVPCNetworkRequest;
 import cn.ucloud.vpc.models.AddVPCNetworkResponse;
 import cn.ucloud.vpc.models.AddWhiteListResourceRequest;
 import cn.ucloud.vpc.models.AddWhiteListResourceResponse;
+import cn.ucloud.vpc.models.AllocateBatchSecondaryIpRequest;
+import cn.ucloud.vpc.models.AllocateBatchSecondaryIpResponse;
 import cn.ucloud.vpc.models.AllocateSecondaryIpRequest;
 import cn.ucloud.vpc.models.AllocateSecondaryIpResponse;
 import cn.ucloud.vpc.models.AllocateVIPRequest;
@@ -41,6 +43,8 @@ import cn.ucloud.vpc.models.CreateNetworkAclEntryRequest;
 import cn.ucloud.vpc.models.CreateNetworkAclEntryResponse;
 import cn.ucloud.vpc.models.CreateNetworkAclRequest;
 import cn.ucloud.vpc.models.CreateNetworkAclResponse;
+import cn.ucloud.vpc.models.CreateNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.CreateNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.CreateRouteTableRequest;
 import cn.ucloud.vpc.models.CreateRouteTableResponse;
 import cn.ucloud.vpc.models.CreateSnatDnatRuleRequest;
@@ -195,6 +199,19 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
     }
 
     /**
+     * AllocateBatchSecondaryIp - 批量申请虚拟网卡辅助IP
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AllocateBatchSecondaryIpResponse allocateBatchSecondaryIp(
+            AllocateBatchSecondaryIpRequest request) throws UCloudException {
+        request.setAction("AllocateBatchSecondaryIp");
+        return (AllocateBatchSecondaryIpResponse)
+                this.invoke(request, AllocateBatchSecondaryIpResponse.class);
+    }
+
+    /**
      * AllocateSecondaryIp - 分配ip
      *
      * @param request Request object
@@ -302,6 +319,19 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
         request.setAction("CreateNetworkAclEntry");
         return (CreateNetworkAclEntryResponse)
                 this.invoke(request, CreateNetworkAclEntryResponse.class);
+    }
+
+    /**
+     * CreateNetworkInterface - 创建虚拟网卡
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateNetworkInterfaceResponse createNetworkInterface(
+            CreateNetworkInterfaceRequest request) throws UCloudException {
+        request.setAction("CreateNetworkInterface");
+        return (CreateNetworkInterfaceResponse)
+                this.invoke(request, CreateNetworkInterfaceResponse.class);
     }
 
     /**

@@ -48,6 +48,10 @@ public class BindEIPRequest extends Request {
     @UCloudParam("ResourceId")
     private String resourceId;
 
+    /** EIP与内网IP进行绑定时需要传入UNI下未绑定过EIP的内网IP */
+    @UCloudParam("PrivateIP")
+    private String privateIP;
+
     public String getRegion() {
         return region;
     }
@@ -86,5 +90,13 @@ public class BindEIPRequest extends Request {
 
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
+    }
+
+    public String getPrivateIP() {
+        return privateIP;
+    }
+
+    public void setPrivateIP(String privateIP) {
+        this.privateIP = privateIP;
     }
 }
