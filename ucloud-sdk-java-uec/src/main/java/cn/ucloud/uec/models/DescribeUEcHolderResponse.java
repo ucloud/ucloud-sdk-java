@@ -45,6 +45,45 @@ public class DescribeUEcHolderResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class CfgDictList extends Response {
+
+        /** 名称 */
+        @SerializedName("Name")
+        private String name;
+
+        /** 挂载路径 */
+        @SerializedName("MountPath")
+        private String mountPath;
+
+        /** 资源id */
+        @SerializedName("ResourceId")
+        private String resourceId;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getMountPath() {
+            return mountPath;
+        }
+
+        public void setMountPath(String mountPath) {
+            this.mountPath = mountPath;
+        }
+
+        public String getResourceId() {
+            return resourceId;
+        }
+
+        public void setResourceId(String resourceId) {
+            this.resourceId = resourceId;
+        }
+    }
+
     public static class DockerInfo extends Response {
 
         /** CPU核数（/核）精度0.1核 */
@@ -168,42 +207,30 @@ public class DescribeUEcHolderResponse extends Response {
         }
     }
 
-    public static class CfgDictList extends Response {
+    public static class EnvList extends Response {
 
-        /** 名称 */
-        @SerializedName("Name")
-        private String name;
+        /** 环境变量key值 */
+        @SerializedName("Key")
+        private String key;
 
-        /** 挂载路径 */
-        @SerializedName("MountPath")
-        private String mountPath;
+        /** 环境变量Value值 */
+        @SerializedName("Value")
+        private String value;
 
-        /** 资源id */
-        @SerializedName("ResourceId")
-        private String resourceId;
-
-        public String getName() {
-            return name;
+        public String getKey() {
+            return key;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setKey(String key) {
+            this.key = key;
         }
 
-        public String getMountPath() {
-            return mountPath;
+        public String getValue() {
+            return value;
         }
 
-        public void setMountPath(String mountPath) {
-            this.mountPath = mountPath;
-        }
-
-        public String getResourceId() {
-            return resourceId;
-        }
-
-        public void setResourceId(String resourceId) {
-            this.resourceId = resourceId;
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 
@@ -588,33 +615,6 @@ public class DescribeUEcHolderResponse extends Response {
 
         public void setDiskSize(Integer diskSize) {
             this.diskSize = diskSize;
-        }
-    }
-
-    public static class EnvList extends Response {
-
-        /** 环境变量key值 */
-        @SerializedName("Key")
-        private String key;
-
-        /** 环境变量Value值 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
         }
     }
 }

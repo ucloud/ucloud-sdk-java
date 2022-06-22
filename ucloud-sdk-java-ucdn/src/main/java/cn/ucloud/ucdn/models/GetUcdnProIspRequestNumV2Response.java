@@ -33,33 +33,6 @@ public class GetUcdnProIspRequestNumV2Response extends Response {
         this.requestNumSet = requestNumSet;
     }
 
-    public static class ProIspRequestNumSetV2 extends Response {
-
-        /** 省份代码 */
-        @SerializedName("Province")
-        private String province;
-
-        /** 省份请求数实例表 ProIspRequestListV2 */
-        @SerializedName("RequestList")
-        private List<ProIspRequestListV2> requestList;
-
-        public String getProvince() {
-            return province;
-        }
-
-        public void setProvince(String province) {
-            this.province = province;
-        }
-
-        public List<ProIspRequestListV2> getRequestList() {
-            return requestList;
-        }
-
-        public void setRequestList(List<ProIspRequestListV2> requestList) {
-            this.requestList = requestList;
-        }
-    }
-
     public static class ProIspRequestListV2 extends Response {
 
         /** 带宽获取的时间点。格式：时间戳 */
@@ -84,6 +57,33 @@ public class GetUcdnProIspRequestNumV2Response extends Response {
 
         public void setCdnRequest(Double cdnRequest) {
             this.cdnRequest = cdnRequest;
+        }
+    }
+
+    public static class ProIspRequestNumSetV2 extends Response {
+
+        /** 省份代码 */
+        @SerializedName("Province")
+        private String province;
+
+        /** 省份请求数实例表 ProIspRequestListV2 */
+        @SerializedName("RequestList")
+        private List<ProIspRequestListV2> requestList;
+
+        public String getProvince() {
+            return province;
+        }
+
+        public void setProvince(String province) {
+            this.province = province;
+        }
+
+        public List<ProIspRequestListV2> getRequestList() {
+            return requestList;
+        }
+
+        public void setRequestList(List<ProIspRequestListV2> requestList) {
+            this.requestList = requestList;
         }
     }
 }

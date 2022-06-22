@@ -45,6 +45,33 @@ public class DescribeUMemSpaceResponse extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class UMemSpaceAddressSet extends Response {
+
+        /** UMem实例访问IP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** UMem实例访问Port */
+        @SerializedName("Port")
+        private Integer port;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+    }
+
     public static class UMemSpaceSet extends Response {
 
         /** 可用区，参见[可用区列表](../summary/regionlist.html) */
@@ -237,33 +264,6 @@ public class DescribeUMemSpaceResponse extends Response {
 
         public void setAddress(List<UMemSpaceAddressSet> address) {
             this.address = address;
-        }
-    }
-
-    public static class UMemSpaceAddressSet extends Response {
-
-        /** UMem实例访问IP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** UMem实例访问Port */
-        @SerializedName("Port")
-        private Integer port;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
         }
     }
 }

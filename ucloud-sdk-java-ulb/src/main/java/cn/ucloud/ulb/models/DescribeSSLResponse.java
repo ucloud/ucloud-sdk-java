@@ -45,6 +45,57 @@ public class DescribeSSLResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的VServer的资源ID */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 对应的VServer的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer 所属的ULB实例的资源ID */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** ULB实例的名称 */
+        @SerializedName("ULBName")
+        private String ulbName;
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getULBName() {
+            return ulbName;
+        }
+
+        public void setULBName(String ulbName) {
+            this.ulbName = ulbName;
+        }
+    }
+
     public static class ULBSSLSet extends Response {
 
         /** SSL证书的Id */
@@ -129,57 +180,6 @@ public class DescribeSSLResponse extends Response {
 
         public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
             this.bindedTargetSet = bindedTargetSet;
-        }
-    }
-
-    public static class SSLBindedTargetSet extends Response {
-
-        /** SSL证书绑定到的VServer的资源ID */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** 对应的VServer的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
-
-        /** VServer 所属的ULB实例的资源ID */
-        @SerializedName("ULBId")
-        private String ulbId;
-
-        /** ULB实例的名称 */
-        @SerializedName("ULBName")
-        private String ulbName;
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public String getVServerName() {
-            return vServerName;
-        }
-
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
-        }
-
-        public String getULBId() {
-            return ulbId;
-        }
-
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
-        }
-
-        public String getULBName() {
-            return ulbName;
-        }
-
-        public void setULBName(String ulbName) {
-            this.ulbName = ulbName;
         }
     }
 }
