@@ -65,7 +65,7 @@ public class DescribeUDiskResponse extends Response {
 
         /**
          * 状态:Available(可用),Attaching(挂载中), InUse(已挂载), Detaching(卸载中), Initializating(分配中),
-         * Failed(创建失败),Cloning(克隆中),Restoring(恢复中),RestoreFailed(恢复失败),
+         * Failed(创建失败),Cloning(克隆中),Restoring(恢复中),RestoreFailed(恢复失败)
          */
         @SerializedName("Status")
         private String status;

@@ -45,6 +45,21 @@ public class ListUK8SClusterNodeV2Response extends Response {
         this.totalCount = totalCount;
     }
 
+    public static class KubeProxy extends Response {
+
+        /** KubeProxy模式，枚举值为[ipvs,iptables] */
+        @SerializedName("Mode")
+        private String mode;
+
+        public String getMode() {
+            return mode;
+        }
+
+        public void setMode(String mode) {
+            this.mode = mode;
+        }
+    }
+
     public static class NodeInfoV2 extends Response {
 
         /** Node所在可用区 */
@@ -288,21 +303,6 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
         public void setGPU(Integer gpu) {
             this.gpu = gpu;
-        }
-    }
-
-    public static class KubeProxy extends Response {
-
-        /** KubeProxy模式，枚举值为[ipvs,iptables] */
-        @SerializedName("Mode")
-        private String mode;
-
-        public String getMode() {
-            return mode;
-        }
-
-        public void setMode(String mode) {
-            this.mode = mode;
         }
     }
 

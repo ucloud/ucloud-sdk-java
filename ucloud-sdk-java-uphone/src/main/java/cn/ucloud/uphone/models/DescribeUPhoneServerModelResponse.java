@@ -57,33 +57,6 @@ public class DescribeUPhoneServerModelResponse extends Response {
         this.serverModels = serverModels;
     }
 
-    public static class UPhoneSpec extends Response {
-
-        /** 手机规格名 */
-        @SerializedName("UPhoneModelName")
-        private String uPhoneModelName;
-
-        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
-        @SerializedName("UPhoneCount")
-        private Integer uPhoneCount;
-
-        public String getUPhoneModelName() {
-            return uPhoneModelName;
-        }
-
-        public void setUPhoneModelName(String uPhoneModelName) {
-            this.uPhoneModelName = uPhoneModelName;
-        }
-
-        public Integer getUPhoneCount() {
-            return uPhoneCount;
-        }
-
-        public void setUPhoneCount(Integer uPhoneCount) {
-            this.uPhoneCount = uPhoneCount;
-        }
-    }
-
     public static class ServerDiskSet extends Response {
 
         /** 磁盘类型。请参考磁盘类型。 */
@@ -126,33 +99,6 @@ public class DescribeUPhoneServerModelResponse extends Response {
 
         public void setSize(Integer size) {
             this.size = size;
-        }
-    }
-
-    public static class StockInfo extends Response {
-
-        /** ServerModel名称 */
-        @SerializedName("ModelName")
-        private String modelName;
-
-        /** 资源余量 */
-        @SerializedName("StockCount")
-        private Integer stockCount;
-
-        public String getModelName() {
-            return modelName;
-        }
-
-        public void setModelName(String modelName) {
-            this.modelName = modelName;
-        }
-
-        public Integer getStockCount() {
-            return stockCount;
-        }
-
-        public void setStockCount(Integer stockCount) {
-            this.stockCount = stockCount;
         }
     }
 
@@ -252,6 +198,60 @@ public class DescribeUPhoneServerModelResponse extends Response {
 
         public void setServerModelState(String serverModelState) {
             this.serverModelState = serverModelState;
+        }
+    }
+
+    public static class StockInfo extends Response {
+
+        /** ServerModel名称 */
+        @SerializedName("ModelName")
+        private String modelName;
+
+        /** 资源余量 */
+        @SerializedName("StockCount")
+        private Integer stockCount;
+
+        public String getModelName() {
+            return modelName;
+        }
+
+        public void setModelName(String modelName) {
+            this.modelName = modelName;
+        }
+
+        public Integer getStockCount() {
+            return stockCount;
+        }
+
+        public void setStockCount(Integer stockCount) {
+            this.stockCount = stockCount;
+        }
+    }
+
+    public static class UPhoneSpec extends Response {
+
+        /** 手机规格名 */
+        @SerializedName("UPhoneModelName")
+        private String uPhoneModelName;
+
+        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
+        @SerializedName("UPhoneCount")
+        private Integer uPhoneCount;
+
+        public String getUPhoneModelName() {
+            return uPhoneModelName;
+        }
+
+        public void setUPhoneModelName(String uPhoneModelName) {
+            this.uPhoneModelName = uPhoneModelName;
+        }
+
+        public Integer getUPhoneCount() {
+            return uPhoneCount;
+        }
+
+        public void setUPhoneCount(Integer uPhoneCount) {
+            this.uPhoneCount = uPhoneCount;
         }
     }
 }

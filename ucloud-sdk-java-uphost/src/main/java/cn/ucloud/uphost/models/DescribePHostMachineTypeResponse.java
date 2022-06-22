@@ -33,69 +33,6 @@ public class DescribePHostMachineTypeResponse extends Response {
         this.machineTypes = machineTypes;
     }
 
-    public static class PHostDiskSet extends Response {
-
-        /** 单盘大小，单位GB */
-        @SerializedName("Space")
-        private Integer space;
-
-        /** 磁盘数量 */
-        @SerializedName("Count")
-        private Integer count;
-
-        /** 磁盘属性 */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘名称，sys/data */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘IO性能，单位MB/s（待废弃） */
-        @SerializedName("IOCap")
-        private Integer ioCap;
-
-        public Integer getSpace() {
-            return space;
-        }
-
-        public void setSpace(Integer space) {
-            this.space = space;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Integer getIOCap() {
-            return ioCap;
-        }
-
-        public void setIOCap(Integer ioCap) {
-            this.ioCap = ioCap;
-        }
-    }
-
     public static class PHostCPUSet extends Response {
 
         /** CPU型号 */
@@ -198,6 +135,69 @@ public class DescribePHostMachineTypeResponse extends Response {
 
         public void setCount(Integer count) {
             this.count = count;
+        }
+    }
+
+    public static class PHostDiskSet extends Response {
+
+        /** 单盘大小，单位GB */
+        @SerializedName("Space")
+        private Integer space;
+
+        /** 磁盘数量 */
+        @SerializedName("Count")
+        private Integer count;
+
+        /** 磁盘属性 */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘名称，sys/data */
+        @SerializedName("Name")
+        private String name;
+
+        /** 磁盘IO性能，单位MB/s（待废弃） */
+        @SerializedName("IOCap")
+        private Integer ioCap;
+
+        public Integer getSpace() {
+            return space;
+        }
+
+        public void setSpace(Integer space) {
+            this.space = space;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getIOCap() {
+            return ioCap;
+        }
+
+        public void setIOCap(Integer ioCap) {
+            this.ioCap = ioCap;
         }
     }
 

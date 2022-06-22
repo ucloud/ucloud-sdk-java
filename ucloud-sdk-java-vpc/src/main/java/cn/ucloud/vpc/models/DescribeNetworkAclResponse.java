@@ -33,6 +33,153 @@ public class DescribeNetworkAclResponse extends Response {
         this.aclList = aclList;
     }
 
+    public static class AclEntryInfo extends Response {
+
+        /** Entry的ID */
+        @SerializedName("EntryId")
+        private String entryId;
+
+        /** 优先级 */
+        @SerializedName("Priority")
+        private String priority;
+
+        /** 出向或者入向 */
+        @SerializedName("Direction")
+        private String direction;
+
+        /** 针对的IP协议 */
+        @SerializedName("IpProtocol")
+        private String ipProtocol;
+
+        /** IP段的CIDR信息 */
+        @SerializedName("CidrBlock")
+        private String cidrBlock;
+
+        /** Port的段信息 */
+        @SerializedName("PortRange")
+        private String portRange;
+
+        /** 匹配规则的动作 */
+        @SerializedName("EntryAction")
+        private String entryAction;
+
+        /** 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。 */
+        @SerializedName("TargetType")
+        private Integer targetType;
+
+        /** 创建的Unix时间戳 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 更改的Unix时间戳 */
+        @SerializedName("UpdateTime")
+        private Integer updateTime;
+
+        /** 应用目标资源信息。TargetType为0时不返回该值。具体结构见下方TargetResourceInfo */
+        @SerializedName("TargetResourceList")
+        private List<TargetResourceInfo> targetResourceList;
+
+        /** 应用目标资源数量。TargetType为0时不返回该值。 */
+        @SerializedName("TargetResourceCount")
+        private Integer targetResourceCount;
+
+        public String getEntryId() {
+            return entryId;
+        }
+
+        public void setEntryId(String entryId) {
+            this.entryId = entryId;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
+        }
+
+        public String getDirection() {
+            return direction;
+        }
+
+        public void setDirection(String direction) {
+            this.direction = direction;
+        }
+
+        public String getIpProtocol() {
+            return ipProtocol;
+        }
+
+        public void setIpProtocol(String ipProtocol) {
+            this.ipProtocol = ipProtocol;
+        }
+
+        public String getCidrBlock() {
+            return cidrBlock;
+        }
+
+        public void setCidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+        }
+
+        public String getPortRange() {
+            return portRange;
+        }
+
+        public void setPortRange(String portRange) {
+            this.portRange = portRange;
+        }
+
+        public String getEntryAction() {
+            return entryAction;
+        }
+
+        public void setEntryAction(String entryAction) {
+            this.entryAction = entryAction;
+        }
+
+        public Integer getTargetType() {
+            return targetType;
+        }
+
+        public void setTargetType(Integer targetType) {
+            this.targetType = targetType;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public Integer getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(Integer updateTime) {
+            this.updateTime = updateTime;
+        }
+
+        public List<TargetResourceInfo> getTargetResourceList() {
+            return targetResourceList;
+        }
+
+        public void setTargetResourceList(List<TargetResourceInfo> targetResourceList) {
+            this.targetResourceList = targetResourceList;
+        }
+
+        public Integer getTargetResourceCount() {
+            return targetResourceCount;
+        }
+
+        public void setTargetResourceCount(Integer targetResourceCount) {
+            this.targetResourceCount = targetResourceCount;
+        }
+    }
+
     public static class AclInfo extends Response {
 
         /** ACL所属的VPC ID */
@@ -180,153 +327,6 @@ public class DescribeNetworkAclResponse extends Response {
 
         public void setCreateTime(Integer createTime) {
             this.createTime = createTime;
-        }
-    }
-
-    public static class AclEntryInfo extends Response {
-
-        /** Entry的ID */
-        @SerializedName("EntryId")
-        private String entryId;
-
-        /** 优先级 */
-        @SerializedName("Priority")
-        private String priority;
-
-        /** 出向或者入向 */
-        @SerializedName("Direction")
-        private String direction;
-
-        /** 针对的IP协议 */
-        @SerializedName("IpProtocol")
-        private String ipProtocol;
-
-        /** IP段的CIDR信息 */
-        @SerializedName("CidrBlock")
-        private String cidrBlock;
-
-        /** Port的段信息 */
-        @SerializedName("PortRange")
-        private String portRange;
-
-        /** 匹配规则的动作 */
-        @SerializedName("EntryAction")
-        private String entryAction;
-
-        /** 应用目标类型。 0代表“子网内全部资源” ，1代表“子网内指定资源” 。 */
-        @SerializedName("TargetType")
-        private Integer targetType;
-
-        /** 创建的Unix时间戳 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** 更改的Unix时间戳 */
-        @SerializedName("UpdateTime")
-        private Integer updateTime;
-
-        /** 应用目标资源信息。TargetType为0时不返回该值。具体结构见下方TargetResourceInfo */
-        @SerializedName("TargetResourceList")
-        private List<TargetResourceInfo> targetResourceList;
-
-        /** 应用目标资源数量。TargetType为0时不返回该值。 */
-        @SerializedName("TargetResourceCount")
-        private Integer targetResourceCount;
-
-        public String getEntryId() {
-            return entryId;
-        }
-
-        public void setEntryId(String entryId) {
-            this.entryId = entryId;
-        }
-
-        public String getPriority() {
-            return priority;
-        }
-
-        public void setPriority(String priority) {
-            this.priority = priority;
-        }
-
-        public String getDirection() {
-            return direction;
-        }
-
-        public void setDirection(String direction) {
-            this.direction = direction;
-        }
-
-        public String getIpProtocol() {
-            return ipProtocol;
-        }
-
-        public void setIpProtocol(String ipProtocol) {
-            this.ipProtocol = ipProtocol;
-        }
-
-        public String getCidrBlock() {
-            return cidrBlock;
-        }
-
-        public void setCidrBlock(String cidrBlock) {
-            this.cidrBlock = cidrBlock;
-        }
-
-        public String getPortRange() {
-            return portRange;
-        }
-
-        public void setPortRange(String portRange) {
-            this.portRange = portRange;
-        }
-
-        public String getEntryAction() {
-            return entryAction;
-        }
-
-        public void setEntryAction(String entryAction) {
-            this.entryAction = entryAction;
-        }
-
-        public Integer getTargetType() {
-            return targetType;
-        }
-
-        public void setTargetType(Integer targetType) {
-            this.targetType = targetType;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public Integer getUpdateTime() {
-            return updateTime;
-        }
-
-        public void setUpdateTime(Integer updateTime) {
-            this.updateTime = updateTime;
-        }
-
-        public List<TargetResourceInfo> getTargetResourceList() {
-            return targetResourceList;
-        }
-
-        public void setTargetResourceList(List<TargetResourceInfo> targetResourceList) {
-            this.targetResourceList = targetResourceList;
-        }
-
-        public Integer getTargetResourceCount() {
-            return targetResourceCount;
-        }
-
-        public void setTargetResourceCount(Integer targetResourceCount) {
-            this.targetResourceCount = targetResourceCount;
         }
     }
 
