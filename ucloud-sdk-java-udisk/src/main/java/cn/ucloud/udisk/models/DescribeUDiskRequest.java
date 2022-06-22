@@ -95,6 +95,13 @@ public class DescribeUDiskRequest extends Request {
     @UCloudParam("HostProduct")
     private String hostProduct;
 
+    /**
+     * 云盘状态。All(所有状态)，Available(可用)，Attaching(挂载中)，InUse(已挂载)， Detaching(卸载中)，
+     * Initializating(分配中)，Failed(创建失败)，Cloning(克隆中)，Restoring(恢复中)，RestoreFailed(恢复失败)。默认值：All
+     */
+    @UCloudParam("Status")
+    private String status;
+
     public String getRegion() {
         return region;
     }
@@ -221,5 +228,13 @@ public class DescribeUDiskRequest extends Request {
 
     public void setHostProduct(String hostProduct) {
         this.hostProduct = hostProduct;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

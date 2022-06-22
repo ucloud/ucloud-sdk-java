@@ -45,33 +45,6 @@ public class DescribeNetworkInterfaceResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class UNIIpInfo extends Response {
-
-        /** ip类型 SecondaryIp/PrimaryIp */
-        @SerializedName("IpType")
-        private String ipType;
-
-        /** ip 地址 */
-        @SerializedName("IpAddr")
-        private List<String> ipAddr;
-
-        public String getIpType() {
-            return ipType;
-        }
-
-        public void setIpType(String ipType) {
-            this.ipType = ipType;
-        }
-
-        public List<String> getIpAddr() {
-            return ipAddr;
-        }
-
-        public void setIpAddr(List<String> ipAddr) {
-            this.ipAddr = ipAddr;
-        }
-    }
-
     public static class NetworkInterface extends Response {
 
         /** 虚拟网卡资源ID */
@@ -288,6 +261,33 @@ public class DescribeNetworkInterfaceResponse extends Response {
 
         public void setPrivateIpLimit(UNIQuotaInfo privateIpLimit) {
             this.privateIpLimit = privateIpLimit;
+        }
+    }
+
+    public static class UNIIpInfo extends Response {
+
+        /** ip类型 SecondaryIp/PrimaryIp */
+        @SerializedName("IpType")
+        private String ipType;
+
+        /** ip 地址 */
+        @SerializedName("IpAddr")
+        private List<String> ipAddr;
+
+        public String getIpType() {
+            return ipType;
+        }
+
+        public void setIpType(String ipType) {
+            this.ipType = ipType;
+        }
+
+        public List<String> getIpAddr() {
+            return ipAddr;
+        }
+
+        public void setIpAddr(List<String> ipAddr) {
+            this.ipAddr = ipAddr;
         }
     }
 

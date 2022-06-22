@@ -45,129 +45,6 @@ public class DescribeRouteTableResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class RouteTableInfo extends Response {
-
-        /** 路由表资源ID */
-        @SerializedName("RouteTableId")
-        private String routeTableId;
-
-        /** 路由表类型。1为默认路由表，0为自定义路由表 */
-        @SerializedName("RouteTableType")
-        private Integer routeTableType;
-
-        /** 绑定该路由表的子网数量 */
-        @SerializedName("SubnetCount")
-        private Integer subnetCount;
-
-        /** 绑定该路由表的子网 */
-        @SerializedName("SubnetIds")
-        private List<String> subnetIds;
-
-        /** 路由表所属的VPC资源ID */
-        @SerializedName("VPCId")
-        private String vpcId;
-
-        /** 路由表所属的VPC资源名称 */
-        @SerializedName("VPCName")
-        private String vpcName;
-
-        /** 路由表所属业务组 */
-        @SerializedName("Tag")
-        private String tag;
-
-        /** 路由表备注 */
-        @SerializedName("Remark")
-        private String remark;
-
-        /** 创建时间戳 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
-
-        /** 路由规则 */
-        @SerializedName("RouteRules")
-        private List<RouteRuleInfo> routeRules;
-
-        public String getRouteTableId() {
-            return routeTableId;
-        }
-
-        public void setRouteTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-        }
-
-        public Integer getRouteTableType() {
-            return routeTableType;
-        }
-
-        public void setRouteTableType(Integer routeTableType) {
-            this.routeTableType = routeTableType;
-        }
-
-        public Integer getSubnetCount() {
-            return subnetCount;
-        }
-
-        public void setSubnetCount(Integer subnetCount) {
-            this.subnetCount = subnetCount;
-        }
-
-        public List<String> getSubnetIds() {
-            return subnetIds;
-        }
-
-        public void setSubnetIds(List<String> subnetIds) {
-            this.subnetIds = subnetIds;
-        }
-
-        public String getVPCId() {
-            return vpcId;
-        }
-
-        public void setVPCId(String vpcId) {
-            this.vpcId = vpcId;
-        }
-
-        public String getVPCName() {
-            return vpcName;
-        }
-
-        public void setVPCName(String vpcName) {
-            this.vpcName = vpcName;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public void setTag(String tag) {
-            this.tag = tag;
-        }
-
-        public String getRemark() {
-            return remark;
-        }
-
-        public void setRemark(String remark) {
-            this.remark = remark;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public List<RouteRuleInfo> getRouteRules() {
-            return routeRules;
-        }
-
-        public void setRouteRules(List<RouteRuleInfo> routeRules) {
-            this.routeRules = routeRules;
-        }
-    }
-
     public static class RouteRuleInfo extends Response {
 
         /** 项目ID信息 */
@@ -351,6 +228,129 @@ public class DescribeRouteTableResponse extends Response {
 
         public void setVNetId(String vNetId) {
             this.vNetId = vNetId;
+        }
+    }
+
+    public static class RouteTableInfo extends Response {
+
+        /** 路由表资源ID */
+        @SerializedName("RouteTableId")
+        private String routeTableId;
+
+        /** 路由表类型。1为默认路由表，0为自定义路由表 */
+        @SerializedName("RouteTableType")
+        private Integer routeTableType;
+
+        /** 绑定该路由表的子网数量 */
+        @SerializedName("SubnetCount")
+        private Integer subnetCount;
+
+        /** 绑定该路由表的子网 */
+        @SerializedName("SubnetIds")
+        private List<String> subnetIds;
+
+        /** 路由表所属的VPC资源ID */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** 路由表所属的VPC资源名称 */
+        @SerializedName("VPCName")
+        private String vpcName;
+
+        /** 路由表所属业务组 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** 路由表备注 */
+        @SerializedName("Remark")
+        private String remark;
+
+        /** 创建时间戳 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 路由规则 */
+        @SerializedName("RouteRules")
+        private List<RouteRuleInfo> routeRules;
+
+        public String getRouteTableId() {
+            return routeTableId;
+        }
+
+        public void setRouteTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+        }
+
+        public Integer getRouteTableType() {
+            return routeTableType;
+        }
+
+        public void setRouteTableType(Integer routeTableType) {
+            this.routeTableType = routeTableType;
+        }
+
+        public Integer getSubnetCount() {
+            return subnetCount;
+        }
+
+        public void setSubnetCount(Integer subnetCount) {
+            this.subnetCount = subnetCount;
+        }
+
+        public List<String> getSubnetIds() {
+            return subnetIds;
+        }
+
+        public void setSubnetIds(List<String> subnetIds) {
+            this.subnetIds = subnetIds;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getVPCName() {
+            return vpcName;
+        }
+
+        public void setVPCName(String vpcName) {
+            this.vpcName = vpcName;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public List<RouteRuleInfo> getRouteRules() {
+            return routeRules;
+        }
+
+        public void setRouteRules(List<RouteRuleInfo> routeRules) {
+            this.routeRules = routeRules;
         }
     }
 }

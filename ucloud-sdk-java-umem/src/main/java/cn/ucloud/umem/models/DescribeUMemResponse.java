@@ -364,33 +364,6 @@ public class DescribeUMemResponse extends Response {
         }
     }
 
-    public static class UMemSpaceAddressSet extends Response {
-
-        /** UMem实例访问IP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** UMem实例访问Port */
-        @SerializedName("Port")
-        private Integer port;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getPort() {
-            return port;
-        }
-
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-    }
-
     public static class UMemSlaveDataSet extends Response {
 
         /** 实例所在可用区，或者master redis所在可用区，参见 [可用区列表](../summary/regionlist.html) */
@@ -671,6 +644,33 @@ public class DescribeUMemResponse extends Response {
 
         public void setVersion(String version) {
             this.version = version;
+        }
+    }
+
+    public static class UMemSpaceAddressSet extends Response {
+
+        /** UMem实例访问IP */
+        @SerializedName("IP")
+        private String ip;
+
+        /** UMem实例访问Port */
+        @SerializedName("Port")
+        private Integer port;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
         }
     }
 }

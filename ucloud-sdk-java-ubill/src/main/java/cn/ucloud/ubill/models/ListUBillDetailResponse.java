@@ -45,33 +45,6 @@ public class ListUBillDetailResponse extends Response {
         this.totalCount = totalCount;
     }
 
-    public static class ItemDetail extends Response {
-
-        /** 产品小类名称 */
-        @SerializedName("ProductName")
-        private String productName;
-
-        /** 产品小类规格 */
-        @SerializedName("Value")
-        private String value;
-
-        public String getProductName() {
-            return productName;
-        }
-
-        public void setProductName(String productName) {
-            this.productName = productName;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
-
     public static class BillDetailItem extends Response {
 
         /** 订单总金额 */
@@ -335,6 +308,33 @@ public class ListUBillDetailResponse extends Response {
 
         public void setAdmin(Integer admin) {
             this.admin = admin;
+        }
+    }
+
+    public static class ItemDetail extends Response {
+
+        /** 产品小类名称 */
+        @SerializedName("ProductName")
+        private String productName;
+
+        /** 产品小类规格 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getProductName() {
+            return productName;
+        }
+
+        public void setProductName(String productName) {
+            this.productName = productName;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 

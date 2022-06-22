@@ -96,6 +96,33 @@ public class GetCubeExtendInfoResponse extends Response {
         }
     }
 
+    public static class EIPAddr extends Response {
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** 线路名称BGP或者internalation */
+        @SerializedName("OperatorName")
+        private String operatorName;
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+    }
+
     public static class EIPSet extends Response {
 
         /** EIP带宽值 */
@@ -204,33 +231,6 @@ public class GetCubeExtendInfoResponse extends Response {
 
         public void setWeight(Integer weight) {
             this.weight = weight;
-        }
-    }
-
-    public static class EIPAddr extends Response {
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 线路名称BGP或者internalation */
-        @SerializedName("OperatorName")
-        private String operatorName;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public String getOperatorName() {
-            return operatorName;
-        }
-
-        public void setOperatorName(String operatorName) {
-            this.operatorName = operatorName;
         }
     }
 }
