@@ -96,6 +96,33 @@ public class DescribeBaremetalMachineTypeResponse extends Response {
         }
     }
 
+    public static class PHostClusterSet extends Response {
+
+        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
+        @SerializedName("Name")
+        private String name;
+
+        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
+        @SerializedName("StockStatus")
+        private String stockStatus;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getStockStatus() {
+            return stockStatus;
+        }
+
+        public void setStockStatus(String stockStatus) {
+            this.stockStatus = stockStatus;
+        }
+    }
+
     public static class PHostComponentSet extends Response {
 
         /** 组件名称 */
@@ -171,33 +198,6 @@ public class DescribeBaremetalMachineTypeResponse extends Response {
 
         public void setCoreCount(Integer coreCount) {
             this.coreCount = coreCount;
-        }
-    }
-
-    public static class PHostClusterSet extends Response {
-
-        /** 集群名。枚举值：千兆网络集群：1G；万兆网络集群：10G；智能网卡网络：25G； */
-        @SerializedName("Name")
-        private String name;
-
-        /** 库存状态。枚举值：有库存：Available；无库存：SoldOut */
-        @SerializedName("StockStatus")
-        private String stockStatus;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getStockStatus() {
-            return stockStatus;
-        }
-
-        public void setStockStatus(String stockStatus) {
-            this.stockStatus = stockStatus;
         }
     }
 }

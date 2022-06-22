@@ -273,6 +273,69 @@ public class DescribeUK8SClusterResponse extends Response {
         this.masterResourceStatus = masterResourceStatus;
     }
 
+    public static class IPSet extends Response {
+
+        /** 国际: Internation，BGP: Bgp，内网: Private */
+        @SerializedName("Type")
+        private String type;
+
+        /** IP资源ID (内网IP无对应的资源ID) */
+        @SerializedName("IPId")
+        private String ipId;
+
+        /** IP地址 */
+        @SerializedName("IP")
+        private String ip;
+
+        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
+        @SerializedName("Bandwidth")
+        private Integer bandwidth;
+
+        /** 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。 */
+        @SerializedName("Default")
+        private String fDefault;
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getIPId() {
+            return ipId;
+        }
+
+        public void setIPId(String ipId) {
+            this.ipId = ipId;
+        }
+
+        public String getIP() {
+            return ip;
+        }
+
+        public void setIP(String ip) {
+            this.ip = ip;
+        }
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getDefault() {
+            return fDefault;
+        }
+
+        public void setDefault(String fDefault) {
+            this.fDefault = fDefault;
+        }
+    }
+
     public static class KubeProxy extends Response {
 
         /** KubeProxy模式，枚举值为[ipvs,iptables] */
@@ -555,69 +618,6 @@ public class DescribeUK8SClusterResponse extends Response {
 
         public void setIsBoot(String isBoot) {
             this.isBoot = isBoot;
-        }
-    }
-
-    public static class IPSet extends Response {
-
-        /** 国际: Internation，BGP: Bgp，内网: Private */
-        @SerializedName("Type")
-        private String type;
-
-        /** IP资源ID (内网IP无对应的资源ID) */
-        @SerializedName("IPId")
-        private String ipId;
-
-        /** IP地址 */
-        @SerializedName("IP")
-        private String ip;
-
-        /** IP对应的带宽, 单位: Mb (内网IP不显示带宽信息) */
-        @SerializedName("Bandwidth")
-        private Integer bandwidth;
-
-        /** 是否默认的弹性网卡的信息。true: 是默认弹性网卡；其他值：不是。 */
-        @SerializedName("Default")
-        private String fDefault;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getIPId() {
-            return ipId;
-        }
-
-        public void setIPId(String ipId) {
-            this.ipId = ipId;
-        }
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getBandwidth() {
-            return bandwidth;
-        }
-
-        public void setBandwidth(Integer bandwidth) {
-            this.bandwidth = bandwidth;
-        }
-
-        public String getDefault() {
-            return fDefault;
-        }
-
-        public void setDefault(String fDefault) {
-            this.fDefault = fDefault;
         }
     }
 }

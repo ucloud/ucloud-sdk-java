@@ -334,6 +334,25 @@ public class CreateUK8SClusterV2Request extends Request {
         this.initScript = initScript;
     }
 
+    public static class Master extends Request {
+
+        /**
+         * Master节点所属可用区，需要设置 Master.0.Zone、 Master.1.Zone、Master.2.Zone 三个 Master 节点的可用区。
+         * 三个节点可部署在不同可用区。参见 [可用区列表](../summary/regionlist.html)
+         */
+        @NotEmpty
+        @UCloudParam("Zone")
+        private String zone;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
+    }
+
     public static class KubeProxy extends Request {
 
         /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。 */
@@ -528,25 +547,6 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setDataDiskSize(Integer dataDiskSize) {
             this.dataDiskSize = dataDiskSize;
-        }
-    }
-
-    public static class Master extends Request {
-
-        /**
-         * Master节点所属可用区，需要设置 Master.0.Zone、 Master.1.Zone、Master.2.Zone 三个 Master 节点的可用区。
-         * 三个节点可部署在不同可用区。参见 [可用区列表](../summary/regionlist.html)
-         */
-        @NotEmpty
-        @UCloudParam("Zone")
-        private String zone;
-
-        public String getZone() {
-            return zone;
-        }
-
-        public void setZone(String zone) {
-            this.zone = zone;
         }
     }
 }

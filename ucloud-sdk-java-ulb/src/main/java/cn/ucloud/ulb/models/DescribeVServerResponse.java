@@ -45,110 +45,91 @@ public class DescribeVServerResponse extends Response {
         this.dataSet = dataSet;
     }
 
-    public static class ULBSSLSet extends Response {
+    public static class ULBPolicySet extends Response {
 
-        /** SSL证书的Id */
-        @SerializedName("SSLId")
-        private String sslId;
+        /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
+        @SerializedName("DomainMatchMode")
+        private String domainMatchMode;
 
-        /** SSL证书的名字 */
-        @SerializedName("SSLName")
-        private String sslName;
+        /** 内容转发Id，默认内容转发类型下为空。 */
+        @SerializedName("PolicyId")
+        private String policyId;
 
-        /** SSL证书类型，暂时只有 Pem 一种类型 */
-        @SerializedName("SSLType")
-        private String sslType;
+        /** 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发 */
+        @SerializedName("PolicyType")
+        private String policyType;
 
-        /** SSL证书的内容 */
-        @SerializedName("SSLContent")
-        private String sslContent;
+        /** 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空 */
+        @SerializedName("Type")
+        private String type;
 
-        /** SSL证书的创建时间 */
-        @SerializedName("CreateTime")
-        private Integer createTime;
+        /** 内容转发匹配字段;默认内容转发类型下为空。 */
+        @SerializedName("Match")
+        private String match;
 
-        /** SSL证书的HASH值 */
-        @SerializedName("HashValue")
-        private String hashValue;
+        /** 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。 */
+        @SerializedName("PolicyPriority")
+        private Integer policyPriority;
 
-        /** SSL证书绑定到的对象 */
-        @SerializedName("BindedTargetSet")
-        private List<SSLBindedTargetSet> bindedTargetSet;
-
-        public String getSSLId() {
-            return sslId;
-        }
-
-        public void setSSLId(String sslId) {
-            this.sslId = sslId;
-        }
-
-        public String getSSLName() {
-            return sslName;
-        }
-
-        public void setSSLName(String sslName) {
-            this.sslName = sslName;
-        }
-
-        public String getSSLType() {
-            return sslType;
-        }
-
-        public void setSSLType(String sslType) {
-            this.sslType = sslType;
-        }
-
-        public String getSSLContent() {
-            return sslContent;
-        }
-
-        public void setSSLContent(String sslContent) {
-            this.sslContent = sslContent;
-        }
-
-        public Integer getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Integer createTime) {
-            this.createTime = createTime;
-        }
-
-        public String getHashValue() {
-            return hashValue;
-        }
-
-        public void setHashValue(String hashValue) {
-            this.hashValue = hashValue;
-        }
-
-        public List<SSLBindedTargetSet> getBindedTargetSet() {
-            return bindedTargetSet;
-        }
-
-        public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
-            this.bindedTargetSet = bindedTargetSet;
-        }
-    }
-
-    public static class SSLBindedTargetSet extends Response {
-
-        /** SSL证书绑定到的VServer的资源ID */
+        /** 所属VServerId */
         @SerializedName("VServerId")
         private String vServerId;
 
-        /** 对应的VServer的名字 */
-        @SerializedName("VServerName")
-        private String vServerName;
+        /** 默认内容转发类型下返回当前rs总数 */
+        @SerializedName("TotalCount")
+        private Integer totalCount;
 
-        /** VServer 所属的ULB实例的资源ID */
-        @SerializedName("ULBId")
-        private String ulbId;
+        /** 内容转发下rs的详细信息，参考PolicyBackendSet */
+        @SerializedName("BackendSet")
+        private List<PolicyBackendSet> backendSet;
 
-        /** ULB实例的名称 */
-        @SerializedName("ULBName")
-        private String ulbName;
+        public String getDomainMatchMode() {
+            return domainMatchMode;
+        }
+
+        public void setDomainMatchMode(String domainMatchMode) {
+            this.domainMatchMode = domainMatchMode;
+        }
+
+        public String getPolicyId() {
+            return policyId;
+        }
+
+        public void setPolicyId(String policyId) {
+            this.policyId = policyId;
+        }
+
+        public String getPolicyType() {
+            return policyType;
+        }
+
+        public void setPolicyType(String policyType) {
+            this.policyType = policyType;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getMatch() {
+            return match;
+        }
+
+        public void setMatch(String match) {
+            this.match = match;
+        }
+
+        public Integer getPolicyPriority() {
+            return policyPriority;
+        }
+
+        public void setPolicyPriority(Integer policyPriority) {
+            this.policyPriority = policyPriority;
+        }
 
         public String getVServerId() {
             return vServerId;
@@ -158,28 +139,20 @@ public class DescribeVServerResponse extends Response {
             this.vServerId = vServerId;
         }
 
-        public String getVServerName() {
-            return vServerName;
+        public Integer getTotalCount() {
+            return totalCount;
         }
 
-        public void setVServerName(String vServerName) {
-            this.vServerName = vServerName;
+        public void setTotalCount(Integer totalCount) {
+            this.totalCount = totalCount;
         }
 
-        public String getULBId() {
-            return ulbId;
+        public List<PolicyBackendSet> getBackendSet() {
+            return backendSet;
         }
 
-        public void setULBId(String ulbId) {
-            this.ulbId = ulbId;
-        }
-
-        public String getULBName() {
-            return ulbName;
-        }
-
-        public void setULBName(String ulbName) {
-            this.ulbName = ulbName;
+        public void setBackendSet(List<PolicyBackendSet> backendSet) {
+            this.backendSet = backendSet;
         }
     }
 
@@ -419,6 +392,144 @@ public class DescribeVServerResponse extends Response {
 
         public void setPolicySet(List<ULBPolicySet> policySet) {
             this.policySet = policySet;
+        }
+    }
+
+    public static class ULBSSLSet extends Response {
+
+        /** SSL证书的Id */
+        @SerializedName("SSLId")
+        private String sslId;
+
+        /** SSL证书的名字 */
+        @SerializedName("SSLName")
+        private String sslName;
+
+        /** SSL证书类型，暂时只有 Pem 一种类型 */
+        @SerializedName("SSLType")
+        private String sslType;
+
+        /** SSL证书的内容 */
+        @SerializedName("SSLContent")
+        private String sslContent;
+
+        /** SSL证书的创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** SSL证书的HASH值 */
+        @SerializedName("HashValue")
+        private String hashValue;
+
+        /** SSL证书绑定到的对象 */
+        @SerializedName("BindedTargetSet")
+        private List<SSLBindedTargetSet> bindedTargetSet;
+
+        public String getSSLId() {
+            return sslId;
+        }
+
+        public void setSSLId(String sslId) {
+            this.sslId = sslId;
+        }
+
+        public String getSSLName() {
+            return sslName;
+        }
+
+        public void setSSLName(String sslName) {
+            this.sslName = sslName;
+        }
+
+        public String getSSLType() {
+            return sslType;
+        }
+
+        public void setSSLType(String sslType) {
+            this.sslType = sslType;
+        }
+
+        public String getSSLContent() {
+            return sslContent;
+        }
+
+        public void setSSLContent(String sslContent) {
+            this.sslContent = sslContent;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getHashValue() {
+            return hashValue;
+        }
+
+        public void setHashValue(String hashValue) {
+            this.hashValue = hashValue;
+        }
+
+        public List<SSLBindedTargetSet> getBindedTargetSet() {
+            return bindedTargetSet;
+        }
+
+        public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
+            this.bindedTargetSet = bindedTargetSet;
+        }
+    }
+
+    public static class SSLBindedTargetSet extends Response {
+
+        /** SSL证书绑定到的VServer的资源ID */
+        @SerializedName("VServerId")
+        private String vServerId;
+
+        /** 对应的VServer的名字 */
+        @SerializedName("VServerName")
+        private String vServerName;
+
+        /** VServer 所属的ULB实例的资源ID */
+        @SerializedName("ULBId")
+        private String ulbId;
+
+        /** ULB实例的名称 */
+        @SerializedName("ULBName")
+        private String ulbName;
+
+        public String getVServerId() {
+            return vServerId;
+        }
+
+        public void setVServerId(String vServerId) {
+            this.vServerId = vServerId;
+        }
+
+        public String getVServerName() {
+            return vServerName;
+        }
+
+        public void setVServerName(String vServerName) {
+            this.vServerName = vServerName;
+        }
+
+        public String getULBId() {
+            return ulbId;
+        }
+
+        public void setULBId(String ulbId) {
+            this.ulbId = ulbId;
+        }
+
+        public String getULBName() {
+            return ulbName;
+        }
+
+        public void setULBName(String ulbName) {
+            this.ulbName = ulbName;
         }
     }
 
@@ -696,117 +807,6 @@ public class DescribeVServerResponse extends Response {
 
         public void setIsBackup(Integer isBackup) {
             this.isBackup = isBackup;
-        }
-    }
-
-    public static class ULBPolicySet extends Response {
-
-        /** 内容转发规则中域名的匹配方式。枚举值：Regular，正则；Wildcard，泛域名 */
-        @SerializedName("DomainMatchMode")
-        private String domainMatchMode;
-
-        /** 内容转发Id，默认内容转发类型下为空。 */
-        @SerializedName("PolicyId")
-        private String policyId;
-
-        /** 内容类型，枚举值：Custom -> 客户自定义；Default -> 默认内容转发 */
-        @SerializedName("PolicyType")
-        private String policyType;
-
-        /** 内容转发匹配字段的类型，枚举值：Domain -> 域名；Path -> 路径； 默认内容转发类型下为空 */
-        @SerializedName("Type")
-        private String type;
-
-        /** 内容转发匹配字段;默认内容转发类型下为空。 */
-        @SerializedName("Match")
-        private String match;
-
-        /** 内容转发优先级，范围[1,9999]，数字越大优先级越高。默认内容转发规则下为0。 */
-        @SerializedName("PolicyPriority")
-        private Integer policyPriority;
-
-        /** 所属VServerId */
-        @SerializedName("VServerId")
-        private String vServerId;
-
-        /** 默认内容转发类型下返回当前rs总数 */
-        @SerializedName("TotalCount")
-        private Integer totalCount;
-
-        /** 内容转发下rs的详细信息，参考PolicyBackendSet */
-        @SerializedName("BackendSet")
-        private List<PolicyBackendSet> backendSet;
-
-        public String getDomainMatchMode() {
-            return domainMatchMode;
-        }
-
-        public void setDomainMatchMode(String domainMatchMode) {
-            this.domainMatchMode = domainMatchMode;
-        }
-
-        public String getPolicyId() {
-            return policyId;
-        }
-
-        public void setPolicyId(String policyId) {
-            this.policyId = policyId;
-        }
-
-        public String getPolicyType() {
-            return policyType;
-        }
-
-        public void setPolicyType(String policyType) {
-            this.policyType = policyType;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getMatch() {
-            return match;
-        }
-
-        public void setMatch(String match) {
-            this.match = match;
-        }
-
-        public Integer getPolicyPriority() {
-            return policyPriority;
-        }
-
-        public void setPolicyPriority(Integer policyPriority) {
-            this.policyPriority = policyPriority;
-        }
-
-        public String getVServerId() {
-            return vServerId;
-        }
-
-        public void setVServerId(String vServerId) {
-            this.vServerId = vServerId;
-        }
-
-        public Integer getTotalCount() {
-            return totalCount;
-        }
-
-        public void setTotalCount(Integer totalCount) {
-            this.totalCount = totalCount;
-        }
-
-        public List<PolicyBackendSet> getBackendSet() {
-            return backendSet;
-        }
-
-        public void setBackendSet(List<PolicyBackendSet> backendSet) {
-            this.backendSet = backendSet;
         }
     }
 }

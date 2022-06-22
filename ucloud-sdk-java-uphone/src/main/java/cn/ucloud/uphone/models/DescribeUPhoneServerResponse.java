@@ -96,6 +96,33 @@ public class DescribeUPhoneServerResponse extends Response {
         }
     }
 
+    public static class UPhoneSpec extends Response {
+
+        /** 手机规格名 */
+        @SerializedName("UPhoneModelName")
+        private String uPhoneModelName;
+
+        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
+        @SerializedName("UPhoneCount")
+        private Integer uPhoneCount;
+
+        public String getUPhoneModelName() {
+            return uPhoneModelName;
+        }
+
+        public void setUPhoneModelName(String uPhoneModelName) {
+            this.uPhoneModelName = uPhoneModelName;
+        }
+
+        public Integer getUPhoneCount() {
+            return uPhoneCount;
+        }
+
+        public void setUPhoneCount(Integer uPhoneCount) {
+            this.uPhoneCount = uPhoneCount;
+        }
+    }
+
     public static class ServerDiskSet extends Response {
 
         /** 磁盘类型。请参考磁盘类型。 */
@@ -317,33 +344,6 @@ public class DescribeUPhoneServerResponse extends Response {
 
         public void setIpSet(List<IpSet> ipSet) {
             this.ipSet = ipSet;
-        }
-    }
-
-    public static class UPhoneSpec extends Response {
-
-        /** 手机规格名 */
-        @SerializedName("UPhoneModelName")
-        private String uPhoneModelName;
-
-        /** 手机开数，即该服务器规格能生成对应手机规格的云手机个数 */
-        @SerializedName("UPhoneCount")
-        private Integer uPhoneCount;
-
-        public String getUPhoneModelName() {
-            return uPhoneModelName;
-        }
-
-        public void setUPhoneModelName(String uPhoneModelName) {
-            this.uPhoneModelName = uPhoneModelName;
-        }
-
-        public Integer getUPhoneCount() {
-            return uPhoneCount;
-        }
-
-        public void setUPhoneCount(Integer uPhoneCount) {
-            this.uPhoneCount = uPhoneCount;
         }
     }
 

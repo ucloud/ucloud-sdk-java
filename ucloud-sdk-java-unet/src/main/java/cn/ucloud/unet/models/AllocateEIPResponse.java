@@ -33,33 +33,6 @@ public class AllocateEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
-    public static class UnetAllocateEIPSet extends Response {
-
-        /** 申请到的EIP资源ID */
-        @SerializedName("EIPId")
-        private String eipId;
-
-        /** 申请到的IPv4地址. */
-        @SerializedName("EIPAddr")
-        private List<UnetEIPAddrSet> eipAddr;
-
-        public String getEIPId() {
-            return eipId;
-        }
-
-        public void setEIPId(String eipId) {
-            this.eipId = eipId;
-        }
-
-        public List<UnetEIPAddrSet> getEIPAddr() {
-            return eipAddr;
-        }
-
-        public void setEIPAddr(List<UnetEIPAddrSet> eipAddr) {
-            this.eipAddr = eipAddr;
-        }
-    }
-
     public static class UnetEIPAddrSet extends Response {
 
         /** 运营商信息如: 电信: Telecom, 联通: Unicom, 国际: International, Duplet: 双线IP（电信+联通), BGP: Bgp */
@@ -84,6 +57,33 @@ public class AllocateEIPResponse extends Response {
 
         public void setIP(String ip) {
             this.ip = ip;
+        }
+    }
+
+    public static class UnetAllocateEIPSet extends Response {
+
+        /** 申请到的EIP资源ID */
+        @SerializedName("EIPId")
+        private String eipId;
+
+        /** 申请到的IPv4地址. */
+        @SerializedName("EIPAddr")
+        private List<UnetEIPAddrSet> eipAddr;
+
+        public String getEIPId() {
+            return eipId;
+        }
+
+        public void setEIPId(String eipId) {
+            this.eipId = eipId;
+        }
+
+        public List<UnetEIPAddrSet> getEIPAddr() {
+            return eipAddr;
+        }
+
+        public void setEIPAddr(List<UnetEIPAddrSet> eipAddr) {
+            this.eipAddr = eipAddr;
         }
     }
 }

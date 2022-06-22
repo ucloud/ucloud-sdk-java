@@ -469,6 +469,132 @@ public class CreateUHostInstanceRequest extends Request {
         this.couponId = couponId;
     }
 
+    public static class Disks extends Request {
+
+        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
+        @NotEmpty
+        @UCloudParam("IsBoot")
+        private String isBoot;
+
+        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
+        @NotEmpty
+        @UCloudParam("Type")
+        private String type;
+
+        /** 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
+        @NotEmpty
+        @UCloudParam("Size")
+        private Integer size;
+
+        /**
+         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
+         * [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
+         */
+        @UCloudParam("BackupType")
+        private String backupType;
+
+        /** 【功能仅部分可用区开放，详询技术支持】磁盘是否加密。加密：true, 不加密: false 加密必须传入对应的的KmsKeyId,默认值false */
+        @UCloudParam("Encrypted")
+        private Boolean encrypted;
+
+        /** 【功能仅部分可用区开放，详询技术支持】kms key id。选择加密盘时必填。 */
+        @UCloudParam("KmsKeyId")
+        private String kmsKeyId;
+
+        /** 云盘代金券id。不适用于系统盘/本地盘。请通过DescribeCoupon接口查询，或登录用户中心查看 */
+        @UCloudParam("CouponId")
+        private String couponId;
+
+        /** */
+        @UCloudParam("CustomBackup")
+        private DisksCustomBackup customBackup;
+
+        public String getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(String isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        public String getBackupType() {
+            return backupType;
+        }
+
+        public void setBackupType(String backupType) {
+            this.backupType = backupType;
+        }
+
+        public Boolean getEncrypted() {
+            return encrypted;
+        }
+
+        public void setEncrypted(Boolean encrypted) {
+            this.encrypted = encrypted;
+        }
+
+        public String getKmsKeyId() {
+            return kmsKeyId;
+        }
+
+        public void setKmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+
+        public DisksCustomBackup getCustomBackup() {
+            return customBackup;
+        }
+
+        public void setCustomBackup(DisksCustomBackup customBackup) {
+            this.customBackup = customBackup;
+        }
+    }
+
+    public static class NetworkInterfaceIPv6 extends Request {}
+
+    public static class Features extends Request {
+
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
+        @UCloudParam("UNI")
+        private Boolean uni;
+
+        public Boolean getUNI() {
+            return uni;
+        }
+
+        public void setUNI(Boolean uni) {
+            this.uni = uni;
+        }
+    }
+
+    public static class DisksCustomBackup extends Request {}
+
+    public static class Volumes extends Request {}
+
     public static class NetworkInterface extends Request {
 
         /** */
@@ -583,130 +709,4 @@ public class CreateUHostInstanceRequest extends Request {
     }
 
     public static class SecGroupId extends Request {}
-
-    public static class DisksCustomBackup extends Request {}
-
-    public static class NetworkInterfaceIPv6 extends Request {}
-
-    public static class Disks extends Request {
-
-        /** 是否是系统盘。枚举值：\\ > True，是系统盘 \\ > False，是数据盘（默认）。Disks数组中有且只能有一块盘是系统盘。 */
-        @NotEmpty
-        @UCloudParam("IsBoot")
-        private String isBoot;
-
-        /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
-        @NotEmpty
-        @UCloudParam("Type")
-        private String type;
-
-        /** 磁盘大小，单位GB。请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
-        @NotEmpty
-        @UCloudParam("Size")
-        private Integer size;
-
-        /**
-         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
-         * [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
-         */
-        @UCloudParam("BackupType")
-        private String backupType;
-
-        /** 【功能仅部分可用区开放，详询技术支持】磁盘是否加密。加密：true, 不加密: false 加密必须传入对应的的KmsKeyId,默认值false */
-        @UCloudParam("Encrypted")
-        private Boolean encrypted;
-
-        /** 【功能仅部分可用区开放，详询技术支持】kms key id。选择加密盘时必填。 */
-        @UCloudParam("KmsKeyId")
-        private String kmsKeyId;
-
-        /** 云盘代金券id。不适用于系统盘/本地盘。请通过DescribeCoupon接口查询，或登录用户中心查看 */
-        @UCloudParam("CouponId")
-        private String couponId;
-
-        /** */
-        @UCloudParam("CustomBackup")
-        private DisksCustomBackup customBackup;
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
-        }
-
-        public Boolean getEncrypted() {
-            return encrypted;
-        }
-
-        public void setEncrypted(Boolean encrypted) {
-            this.encrypted = encrypted;
-        }
-
-        public String getKmsKeyId() {
-            return kmsKeyId;
-        }
-
-        public void setKmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = kmsKeyId;
-        }
-
-        public String getCouponId() {
-            return couponId;
-        }
-
-        public void setCouponId(String couponId) {
-            this.couponId = couponId;
-        }
-
-        public DisksCustomBackup getCustomBackup() {
-            return customBackup;
-        }
-
-        public void setCustomBackup(DisksCustomBackup customBackup) {
-            this.customBackup = customBackup;
-        }
-    }
-
-    public static class Volumes extends Request {}
-
-    public static class Features extends Request {
-
-        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
-        @UCloudParam("UNI")
-        private Boolean uni;
-
-        public Boolean getUNI() {
-            return uni;
-        }
-
-        public void setUNI(Boolean uni) {
-            this.uni = uni;
-        }
-    }
 }
