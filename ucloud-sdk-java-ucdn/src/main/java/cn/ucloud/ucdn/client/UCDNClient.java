@@ -77,6 +77,8 @@ import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheRequest;
 import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheResponse;
 import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeRequest;
 import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeResponse;
+import cn.ucloud.ucdn.models.UpdateUcdnDomainStatusRequest;
+import cn.ucloud.ucdn.models.UpdateUcdnDomainStatusResponse;
 
 /** This client is used to call actions of **UCDN** service */
 public class UCDNClient extends DefaultClient implements UCDNClientInterface {
@@ -465,5 +467,18 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
         request.setAction("SwitchUcdnChargeType");
         return (SwitchUcdnChargeTypeResponse)
                 this.invoke(request, SwitchUcdnChargeTypeResponse.class);
+    }
+
+    /**
+     * UpdateUcdnDomainStatus - 更新加速域名状态
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUcdnDomainStatusResponse updateUcdnDomainStatus(
+            UpdateUcdnDomainStatusRequest request) throws UCloudException {
+        request.setAction("UpdateUcdnDomainStatus");
+        return (UpdateUcdnDomainStatusResponse)
+                this.invoke(request, UpdateUcdnDomainStatusResponse.class);
     }
 }

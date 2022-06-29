@@ -152,6 +152,18 @@ public class DescribeUPhoneResponse extends Response {
         @SerializedName("Ip")
         private String ip;
 
+        /** 云手机IP地址ID */
+        @SerializedName("EipId")
+        private String eipId;
+
+        /** 所属共享带宽ID */
+        @SerializedName("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        /** 所属共享带宽名称 */
+        @SerializedName("ShareBandwidthName")
+        private String shareBandwidthName;
+
         public String getUPhoneName() {
             return uPhoneName;
         }
@@ -334,6 +346,30 @@ public class DescribeUPhoneResponse extends Response {
 
         public void setIp(String ip) {
             this.ip = ip;
+        }
+
+        public String getEipId() {
+            return eipId;
+        }
+
+        public void setEipId(String eipId) {
+            this.eipId = eipId;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+
+        public String getShareBandwidthName() {
+            return shareBandwidthName;
+        }
+
+        public void setShareBandwidthName(String shareBandwidthName) {
+            this.shareBandwidthName = shareBandwidthName;
         }
     }
 }

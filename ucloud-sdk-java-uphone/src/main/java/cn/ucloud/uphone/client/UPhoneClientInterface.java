@@ -31,6 +31,8 @@ import cn.ucloud.uphone.models.DeleteUPhoneRequest;
 import cn.ucloud.uphone.models.DeleteUPhoneResponse;
 import cn.ucloud.uphone.models.DeleteUPhoneServerRequest;
 import cn.ucloud.uphone.models.DeleteUPhoneServerResponse;
+import cn.ucloud.uphone.models.DeleteUPhoneShareBandwidthRequest;
+import cn.ucloud.uphone.models.DeleteUPhoneShareBandwidthResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneAppRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneAppResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneAppVersionRequest;
@@ -53,6 +55,8 @@ import cn.ucloud.uphone.models.DescribeUPhoneServerModelRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneServerModelResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneServerRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneServerResponse;
+import cn.ucloud.uphone.models.DescribeUPhoneShareBandwidthRequest;
+import cn.ucloud.uphone.models.DescribeUPhoneShareBandwidthResponse;
 import cn.ucloud.uphone.models.GetUPhoneAllowanceRequest;
 import cn.ucloud.uphone.models.GetUPhoneAllowanceResponse;
 import cn.ucloud.uphone.models.GetUPhonePriceRequest;
@@ -65,6 +69,8 @@ import cn.ucloud.uphone.models.GetUPhoneServerPriceRequest;
 import cn.ucloud.uphone.models.GetUPhoneServerPriceResponse;
 import cn.ucloud.uphone.models.GetUPhoneServerRenewPriceRequest;
 import cn.ucloud.uphone.models.GetUPhoneServerRenewPriceResponse;
+import cn.ucloud.uphone.models.GetUPhoneShareBandwidthUpgradePriceRequest;
+import cn.ucloud.uphone.models.GetUPhoneShareBandwidthUpgradePriceResponse;
 import cn.ucloud.uphone.models.ImportFileRequest;
 import cn.ucloud.uphone.models.ImportFileResponse;
 import cn.ucloud.uphone.models.InstallUPhoneAppVersionRequest;
@@ -77,6 +83,12 @@ import cn.ucloud.uphone.models.ModifyUPhoneServerNameRequest;
 import cn.ucloud.uphone.models.ModifyUPhoneServerNameResponse;
 import cn.ucloud.uphone.models.ModifyUPhoneServerRemarkRequest;
 import cn.ucloud.uphone.models.ModifyUPhoneServerRemarkResponse;
+import cn.ucloud.uphone.models.ModifyUPhoneShareBandwidthNameRequest;
+import cn.ucloud.uphone.models.ModifyUPhoneShareBandwidthNameResponse;
+import cn.ucloud.uphone.models.ModifyUPhoneShareBandwidthRemarkRequest;
+import cn.ucloud.uphone.models.ModifyUPhoneShareBandwidthRemarkResponse;
+import cn.ucloud.uphone.models.ModifyUPhoneShareBandwidthRequest;
+import cn.ucloud.uphone.models.ModifyUPhoneShareBandwidthResponse;
 import cn.ucloud.uphone.models.PoweroffUPhoneRequest;
 import cn.ucloud.uphone.models.PoweroffUPhoneResponse;
 import cn.ucloud.uphone.models.PoweronUPhoneRequest;
@@ -101,10 +113,10 @@ import cn.ucloud.uphone.models.SetUPhoneManagerModeRequest;
 import cn.ucloud.uphone.models.SetUPhoneManagerModeResponse;
 import cn.ucloud.uphone.models.SetUPhoneRootModeRequest;
 import cn.ucloud.uphone.models.SetUPhoneRootModeResponse;
-import cn.ucloud.uphone.models.SetUPhoneSplashScreenRequest;
-import cn.ucloud.uphone.models.SetUPhoneSplashScreenResponse;
 import cn.ucloud.uphone.models.SetUPhoneTokenRequest;
 import cn.ucloud.uphone.models.SetUPhoneTokenResponse;
+import cn.ucloud.uphone.models.SwitchUPhoneIndependentIpRequest;
+import cn.ucloud.uphone.models.SwitchUPhoneIndependentIpResponse;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionResponse;
 import cn.ucloud.uphone.models.UpdateUPhoneImageRequest;
@@ -182,6 +194,15 @@ public interface UPhoneClientInterface extends Client {
      */
     public DeleteUPhoneServerResponse deleteUPhoneServer(DeleteUPhoneServerRequest request)
             throws UCloudException;
+
+    /**
+     * DeleteUPhoneShareBandwidth - 删除云手机共享带宽
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUPhoneShareBandwidthResponse deleteUPhoneShareBandwidth(
+            DeleteUPhoneShareBandwidthRequest request) throws UCloudException;
 
     /**
      * DescribeUPhone - 获取云手机列表
@@ -283,6 +304,15 @@ public interface UPhoneClientInterface extends Client {
             DescribeUPhoneServerModelRequest request) throws UCloudException;
 
     /**
+     * DescribeUPhoneShareBandwidth - 获取共享带宽列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUPhoneShareBandwidthResponse describeUPhoneShareBandwidth(
+            DescribeUPhoneShareBandwidthRequest request) throws UCloudException;
+
+    /**
      * GetUPhoneAllowance - 获取云手机创建余量
      *
      * @param request Request object
@@ -337,6 +367,15 @@ public interface UPhoneClientInterface extends Client {
             GetUPhoneServerRenewPriceRequest request) throws UCloudException;
 
     /**
+     * GetUPhoneShareBandwidthUpgradePrice - 获取云手机共享带宽升降级价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPhoneShareBandwidthUpgradePriceResponse getUPhoneShareBandwidthUpgradePrice(
+            GetUPhoneShareBandwidthUpgradePriceRequest request) throws UCloudException;
+
+    /**
      * ImportFile - 上传文件
      *
      * @param request Request object
@@ -388,6 +427,33 @@ public interface UPhoneClientInterface extends Client {
      */
     public ModifyUPhoneServerRemarkResponse modifyUPhoneServerRemark(
             ModifyUPhoneServerRemarkRequest request) throws UCloudException;
+
+    /**
+     * ModifyUPhoneShareBandwidth - 修改云手机共享带宽
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUPhoneShareBandwidthResponse modifyUPhoneShareBandwidth(
+            ModifyUPhoneShareBandwidthRequest request) throws UCloudException;
+
+    /**
+     * ModifyUPhoneShareBandwidthName - 修改云手机共享带宽名称
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUPhoneShareBandwidthNameResponse modifyUPhoneShareBandwidthName(
+            ModifyUPhoneShareBandwidthNameRequest request) throws UCloudException;
+
+    /**
+     * ModifyUPhoneShareBandwidthRemark - 修改云手机共享带宽备注
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUPhoneShareBandwidthRemarkResponse modifyUPhoneShareBandwidthRemark(
+            ModifyUPhoneShareBandwidthRemarkRequest request) throws UCloudException;
 
     /**
      * PoweroffUPhone - 关闭云手机
@@ -493,15 +559,6 @@ public interface UPhoneClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * SetUPhoneSplashScreen - 设置启动画面
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public SetUPhoneSplashScreenResponse setUPhoneSplashScreen(SetUPhoneSplashScreenRequest request)
-            throws UCloudException;
-
-    /**
      * SetUPhoneToken - 设置云手机RTC连接Token
      *
      * @param request Request object
@@ -509,6 +566,15 @@ public interface UPhoneClientInterface extends Client {
      */
     public SetUPhoneTokenResponse setUPhoneToken(SetUPhoneTokenRequest request)
             throws UCloudException;
+
+    /**
+     * SwitchUPhoneIndependentIp - 更换云手机独立IP
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SwitchUPhoneIndependentIpResponse switchUPhoneIndependentIp(
+            SwitchUPhoneIndependentIpRequest request) throws UCloudException;
 
     /**
      * UnInstallUPhoneAppVersion - 卸载云手机应用版本

@@ -77,13 +77,21 @@ public class CreateUPhoneRequest extends Request {
     @UCloudParam("BindIp")
     private Boolean bindIp;
 
-    /** 独立IP带宽 */
+    /** 共享带宽大小 */
     @UCloudParam("Bandwidth")
     private Integer bandwidth;
 
     /** 独立IP参数。需要独立IP的比例。eg: [4:1]->4， [3:1]->3。 */
     @UCloudParam("IpProportion")
     private Integer ipProportion;
+
+    /** 共享带宽名称，可以在创建新的共享带宽时指定一个名称 */
+    @UCloudParam("ShareBandwidthName")
+    private String shareBandwidthName;
+
+    /** 共享带宽ID，使用现有共享带宽时需要传入此参数 */
+    @UCloudParam("ShareBandwidthId")
+    private String shareBandwidthId;
 
     /** 云手机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看。注：代金券对带宽不适用，仅适用于云手机计费 */
     @UCloudParam("CouponId")
@@ -199,6 +207,22 @@ public class CreateUPhoneRequest extends Request {
 
     public void setIpProportion(Integer ipProportion) {
         this.ipProportion = ipProportion;
+    }
+
+    public String getShareBandwidthName() {
+        return shareBandwidthName;
+    }
+
+    public void setShareBandwidthName(String shareBandwidthName) {
+        this.shareBandwidthName = shareBandwidthName;
+    }
+
+    public String getShareBandwidthId() {
+        return shareBandwidthId;
+    }
+
+    public void setShareBandwidthId(String shareBandwidthId) {
+        this.shareBandwidthId = shareBandwidthId;
     }
 
     public String getCouponId() {

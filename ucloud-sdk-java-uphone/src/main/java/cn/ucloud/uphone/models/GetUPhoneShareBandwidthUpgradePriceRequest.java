@@ -11,15 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.ucdn.models;
+package cn.ucloud.uphone.models;
+
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-import java.util.List;
-
-public class RefreshNewUcdnDomainCacheRequest extends Request {
+public class GetUPhoneShareBandwidthUpgradePriceRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
@@ -28,19 +27,15 @@ public class RefreshNewUcdnDomainCacheRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 刷新类型，file代表文件刷新，dir 代表路径刷新，m3u8带表m3u8刷新 */
+    /** 共享带宽的ID */
     @NotEmpty
-    @UCloudParam("Type")
-    private String type;
+    @UCloudParam("ShareBandwidthId")
+    private String shareBandwidthId;
 
-    /**
-     * 需要刷新的URL，n 从自然数0开始，刷新多个URL列表时，一次最多提交100个。必须以”http://域名/”开始。目录要以”/”结尾，
-     * 如刷新目录a下所有文件，格式为：http://abc.ucloud.cn/a/；如刷新文件目录a下面img.png文件，
-     * 格式为http://abc.ucloud.cn/a/img.png。请正确提交需要刷新的域名
-     */
+    /** 需要升降级的带宽，默认是当前带宽大小 */
     @NotEmpty
-    @UCloudParam("UrlList")
-    private List<String> urlList;
+    @UCloudParam("Bandwidth")
+    private Integer bandwidth;
 
     public String getProjectId() {
         return projectId;
@@ -50,19 +45,19 @@ public class RefreshNewUcdnDomainCacheRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getType() {
-        return type;
+    public String getShareBandwidthId() {
+        return shareBandwidthId;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setShareBandwidthId(String shareBandwidthId) {
+        this.shareBandwidthId = shareBandwidthId;
     }
 
-    public List<String> getUrlList() {
-        return urlList;
+    public Integer getBandwidth() {
+        return bandwidth;
     }
 
-    public void setUrlList(List<String> urlList) {
-        this.urlList = urlList;
+    public void setBandwidth(Integer bandwidth) {
+        this.bandwidth = bandwidth;
     }
 }

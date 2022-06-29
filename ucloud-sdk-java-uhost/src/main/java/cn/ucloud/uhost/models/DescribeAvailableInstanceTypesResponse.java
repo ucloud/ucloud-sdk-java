@@ -513,17 +513,17 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         /** 值，单位是TFlops */
         @SerializedName("Value")
-        private Integer value;
+        private Double value;
 
         /** 交互展示参数，可忽略 */
         @SerializedName("Rate")
         private Integer rate;
 
-        public Integer getValue() {
+        public Double getValue() {
             return value;
         }
 
-        public void setValue(Integer value) {
+        public void setValue(Double value) {
             this.value = value;
         }
 

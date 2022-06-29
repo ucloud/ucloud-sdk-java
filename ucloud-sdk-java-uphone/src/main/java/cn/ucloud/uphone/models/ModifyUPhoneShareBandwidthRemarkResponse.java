@@ -17,4 +17,4 @@ package cn.ucloud.uphone.models;
 
 import cn.ucloud.common.response.Response;
 
-public class SetUPhoneSplashScreenResponse extends Response {}
+public class ModifyUPhoneShareBandwidthRemarkResponse extends Response {}

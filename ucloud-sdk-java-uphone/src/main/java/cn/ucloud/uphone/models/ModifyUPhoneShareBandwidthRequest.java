@@ -18,7 +18,7 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class SetUPhoneSplashScreenRequest extends Request {
+public class ModifyUPhoneShareBandwidthRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
@@ -27,24 +27,15 @@ public class SetUPhoneSplashScreenRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 启动画面下载地址 */
+    /** 共享带宽ID */
     @NotEmpty
-    @UCloudParam("URL")
-    private String url;
+    @UCloudParam("ShareBandwidthId")
+    private String shareBandwidthId;
 
-    /** 云手机ID */
+    /** 共享带宽大小；单位M */
     @NotEmpty
-    @UCloudParam("UPhoneId")
-    private String uPhoneId;
-
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
-    @UCloudParam("ProductType")
-    private String productType;
+    @UCloudParam("Bandwidth")
+    private String bandwidth;
 
     public String getProjectId() {
         return projectId;
@@ -54,35 +45,19 @@ public class SetUPhoneSplashScreenRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getURL() {
-        return url;
+    public String getShareBandwidthId() {
+        return shareBandwidthId;
     }
 
-    public void setURL(String url) {
-        this.url = url;
+    public void setShareBandwidthId(String shareBandwidthId) {
+        this.shareBandwidthId = shareBandwidthId;
     }
 
-    public String getUPhoneId() {
-        return uPhoneId;
+    public String getBandwidth() {
+        return bandwidth;
     }
 
-    public void setUPhoneId(String uPhoneId) {
-        this.uPhoneId = uPhoneId;
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
+    public void setBandwidth(String bandwidth) {
+        this.bandwidth = bandwidth;
     }
 }
