@@ -83,6 +83,14 @@ public class DescribeGlobalSSHInstanceResponse extends Response {
         @SerializedName("Expire")
         private Boolean expire;
 
+        /** 是否开启EIP IPV6 接入,Flase:未开启 */
+        @SerializedName("IPV6Access")
+        private Boolean ipv6Access;
+
+        /** GlobalSSH分配的其他可用加速域名列表 */
+        @SerializedName("ExtraDomain")
+        private List<String> extraDomain;
+
         /** globalssh Ultimate带宽包大小 */
         @SerializedName("BandwidthPackage")
         private Integer bandwidthPackage;
@@ -90,6 +98,10 @@ public class DescribeGlobalSSHInstanceResponse extends Response {
         /** InstanceType为Basic版本时，需要展示具体分配的转发机房 */
         @SerializedName("ForwardRegion")
         private String forwardRegion;
+
+        /** 加速域名当前可用性检测结果 HashMap 结构 0表示可用, 1 表示有污染 */
+        @SerializedName("DomainStatus")
+        private Object domainStatus;
 
         public String getInstanceId() {
             return instanceId;
@@ -187,6 +199,22 @@ public class DescribeGlobalSSHInstanceResponse extends Response {
             this.expire = expire;
         }
 
+        public Boolean getIPV6Access() {
+            return ipv6Access;
+        }
+
+        public void setIPV6Access(Boolean ipv6Access) {
+            this.ipv6Access = ipv6Access;
+        }
+
+        public List<String> getExtraDomain() {
+            return extraDomain;
+        }
+
+        public void setExtraDomain(List<String> extraDomain) {
+            this.extraDomain = extraDomain;
+        }
+
         public Integer getBandwidthPackage() {
             return bandwidthPackage;
         }
@@ -201,6 +229,14 @@ public class DescribeGlobalSSHInstanceResponse extends Response {
 
         public void setForwardRegion(String forwardRegion) {
             this.forwardRegion = forwardRegion;
+        }
+
+        public Object getDomainStatus() {
+            return domainStatus;
+        }
+
+        public void setDomainStatus(Object domainStatus) {
+            this.domainStatus = domainStatus;
         }
     }
 }
