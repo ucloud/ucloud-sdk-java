@@ -45,6 +45,69 @@ public class DescribeULBResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public static class BindSecurityPolicy extends Response {
+
+        /** 安全策略组ID */
+        @SerializedName("SecurityPolicyId")
+        private String securityPolicyId;
+
+        /** 安全策略组名称 */
+        @SerializedName("SecurityPolicyName")
+        private String securityPolicyName;
+
+        /** TLS最低版本 */
+        @SerializedName("TLSVersion")
+        private String tlsVersion;
+
+        /** 加密套件 */
+        @SerializedName("SSLCiphers")
+        private List<String> sslCiphers;
+
+        /** 安全策略类型 0：预定义 1：自定义 */
+        @SerializedName("SecurityPolicyType")
+        private Integer securityPolicyType;
+
+        public String getSecurityPolicyId() {
+            return securityPolicyId;
+        }
+
+        public void setSecurityPolicyId(String securityPolicyId) {
+            this.securityPolicyId = securityPolicyId;
+        }
+
+        public String getSecurityPolicyName() {
+            return securityPolicyName;
+        }
+
+        public void setSecurityPolicyName(String securityPolicyName) {
+            this.securityPolicyName = securityPolicyName;
+        }
+
+        public String getTLSVersion() {
+            return tlsVersion;
+        }
+
+        public void setTLSVersion(String tlsVersion) {
+            this.tlsVersion = tlsVersion;
+        }
+
+        public List<String> getSSLCiphers() {
+            return sslCiphers;
+        }
+
+        public void setSSLCiphers(List<String> sslCiphers) {
+            this.sslCiphers = sslCiphers;
+        }
+
+        public Integer getSecurityPolicyType() {
+            return securityPolicyType;
+        }
+
+        public void setSecurityPolicyType(Integer securityPolicyType) {
+            this.securityPolicyType = securityPolicyType;
+        }
+    }
+
     public static class FirewallSet extends Response {
 
         /** 防火墙名称 */
@@ -334,6 +397,14 @@ public class DescribeULBResponse extends Response {
         @SerializedName("IsBackup")
         private Integer isBackup;
 
+        /** 后端RS权重（在加权轮询算法下有效） */
+        @SerializedName("Weight")
+        private Integer weight;
+
+        /** 后端服务器所在的VPC */
+        @SerializedName("VPCId")
+        private String vpcId;
+
         public String getBackendId() {
             return backendId;
         }
@@ -436,6 +507,22 @@ public class DescribeULBResponse extends Response {
 
         public void setIsBackup(Integer isBackup) {
             this.isBackup = isBackup;
+        }
+
+        public Integer getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Integer weight) {
+            this.weight = weight;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
         }
     }
 
@@ -942,6 +1029,10 @@ public class DescribeULBResponse extends Response {
         @SerializedName("MonitorType")
         private String monitorType;
 
+        /** VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。 */
+        @SerializedName("PersistenceType")
+        private String persistenceType;
+
         /** 负载均衡实例的Id */
         @SerializedName("ULBId")
         private String ulbId;
@@ -985,10 +1076,6 @@ public class DescribeULBResponse extends Response {
         @SerializedName("Method")
         private String method;
 
-        /** VServer会话保持方式。枚举值为： None -> 关闭会话保持； ServerInsert -> 自动生成； UserDefined -> 用户自定义。 */
-        @SerializedName("PersistenceType")
-        private String persistenceType;
-
         /** 根据PersistenceType确定： None或ServerInsert，此字段为空； UserDefined，此字段展示用户自定义会话string。 */
         @SerializedName("PersistenceInfo")
         private String persistenceInfo;
@@ -1017,12 +1104,36 @@ public class DescribeULBResponse extends Response {
         @SerializedName("PolicySet")
         private List<ULBPolicySet> policySet;
 
+        /** 数据压缩开关，0:关闭 1:开启 */
+        @SerializedName("EnableCompression")
+        private Integer enableCompression;
+
+        /** VServer绑定的安全策略,具体结构见BindSecurityPolicy */
+        @SerializedName("SecurityPolicy")
+        private BindSecurityPolicy securityPolicy;
+
+        /** 重定向端口，取值范围[0-65535]；默认值为0，代表关闭；仅HTTP协议支持开启重定向功能 */
+        @SerializedName("ForwardPort")
+        private Integer forwardPort;
+
+        /** 0:关闭 1:开启，用于开启http2功能；默认值为0 */
+        @SerializedName("EnableHTTP2")
+        private Integer enableHTTP2;
+
         public String getMonitorType() {
             return monitorType;
         }
 
         public void setMonitorType(String monitorType) {
             this.monitorType = monitorType;
+        }
+
+        public String getPersistenceType() {
+            return persistenceType;
+        }
+
+        public void setPersistenceType(String persistenceType) {
+            this.persistenceType = persistenceType;
         }
 
         public String getULBId() {
@@ -1105,14 +1216,6 @@ public class DescribeULBResponse extends Response {
             this.method = method;
         }
 
-        public String getPersistenceType() {
-            return persistenceType;
-        }
-
-        public void setPersistenceType(String persistenceType) {
-            this.persistenceType = persistenceType;
-        }
-
         public String getPersistenceInfo() {
             return persistenceInfo;
         }
@@ -1167,6 +1270,38 @@ public class DescribeULBResponse extends Response {
 
         public void setPolicySet(List<ULBPolicySet> policySet) {
             this.policySet = policySet;
+        }
+
+        public Integer getEnableCompression() {
+            return enableCompression;
+        }
+
+        public void setEnableCompression(Integer enableCompression) {
+            this.enableCompression = enableCompression;
+        }
+
+        public BindSecurityPolicy getSecurityPolicy() {
+            return securityPolicy;
+        }
+
+        public void setSecurityPolicy(BindSecurityPolicy securityPolicy) {
+            this.securityPolicy = securityPolicy;
+        }
+
+        public Integer getForwardPort() {
+            return forwardPort;
+        }
+
+        public void setForwardPort(Integer forwardPort) {
+            this.forwardPort = forwardPort;
+        }
+
+        public Integer getEnableHTTP2() {
+            return enableHTTP2;
+        }
+
+        public void setEnableHTTP2(Integer enableHTTP2) {
+            this.enableHTTP2 = enableHTTP2;
         }
     }
 }

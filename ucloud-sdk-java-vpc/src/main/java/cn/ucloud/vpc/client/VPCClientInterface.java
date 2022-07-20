@@ -29,6 +29,8 @@ import cn.ucloud.vpc.models.AllocateVIPRequest;
 import cn.ucloud.vpc.models.AllocateVIPResponse;
 import cn.ucloud.vpc.models.AssociateRouteTableRequest;
 import cn.ucloud.vpc.models.AssociateRouteTableResponse;
+import cn.ucloud.vpc.models.AttachNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.AttachNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.CloneRouteTableRequest;
 import cn.ucloud.vpc.models.CloneRouteTableResponse;
 import cn.ucloud.vpc.models.CreateNATGWPolicyRequest;
@@ -216,6 +218,15 @@ public interface VPCClientInterface extends Client {
      */
     public AssociateRouteTableResponse associateRouteTable(AssociateRouteTableRequest request)
             throws UCloudException;
+
+    /**
+     * AttachNetworkInterface - 绑定网卡到云主机
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AttachNetworkInterfaceResponse attachNetworkInterface(
+            AttachNetworkInterfaceRequest request) throws UCloudException;
 
     /**
      * CloneRouteTable - 克隆路由表

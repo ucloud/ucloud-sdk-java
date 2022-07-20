@@ -119,6 +119,8 @@ import cn.ucloud.uphone.models.SetUPhoneTokenRequest;
 import cn.ucloud.uphone.models.SetUPhoneTokenResponse;
 import cn.ucloud.uphone.models.SwitchUPhoneIndependentIpRequest;
 import cn.ucloud.uphone.models.SwitchUPhoneIndependentIpResponse;
+import cn.ucloud.uphone.models.SwitchUPhoneInstanceRequest;
+import cn.ucloud.uphone.models.SwitchUPhoneInstanceResponse;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionResponse;
 import cn.ucloud.uphone.models.UpdateUPhoneImageRequest;
@@ -757,6 +759,19 @@ public class UPhoneClient extends DefaultClient implements UPhoneClientInterface
         request.setAction("SwitchUPhoneIndependentIp");
         return (SwitchUPhoneIndependentIpResponse)
                 this.invoke(request, SwitchUPhoneIndependentIpResponse.class);
+    }
+
+    /**
+     * SwitchUPhoneInstance - 故障更换云手机
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SwitchUPhoneInstanceResponse switchUPhoneInstance(SwitchUPhoneInstanceRequest request)
+            throws UCloudException {
+        request.setAction("SwitchUPhoneInstance");
+        return (SwitchUPhoneInstanceResponse)
+                this.invoke(request, SwitchUPhoneInstanceResponse.class);
     }
 
     /**

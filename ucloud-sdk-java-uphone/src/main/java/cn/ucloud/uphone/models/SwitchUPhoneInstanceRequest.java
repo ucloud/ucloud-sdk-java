@@ -19,7 +19,7 @@ import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-public class ResetUPhoneRequest extends Request {
+public class SwitchUPhoneInstanceRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
@@ -28,25 +28,16 @@ public class ResetUPhoneRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    /**
+     * 城市Id，通过[获取城市列表](https://cms-docs.ucloudadmin.com/api/uphone-api/describe_u_phone_cities)获取
+     */
     @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
 
-    /**
-     * 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=希望重置的云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
-     */
-    @NotEmpty
-    @UCloudParam("UPhoneIds")
-    private List<String> uPhoneIds;
-
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
-    @UCloudParam("ProductType")
-    private String productType;
-
-    /** 镜像ID，默认为空。不为空则手机会以填写的镜像进行重置，为空则手机会以重置前的镜像重置 */
-    @UCloudParam("ImageId")
-    private String imageId;
+    /** */
+    @UCloudParam("SwitchInfos")
+    private List<SwitchInfos> switchInfos;
 
     public String getProjectId() {
         return projectId;
@@ -64,27 +55,39 @@ public class ResetUPhoneRequest extends Request {
         this.cityId = cityId;
     }
 
-    public List<String> getUPhoneIds() {
-        return uPhoneIds;
+    public List<SwitchInfos> getSwitchInfos() {
+        return switchInfos;
     }
 
-    public void setUPhoneIds(List<String> uPhoneIds) {
-        this.uPhoneIds = uPhoneIds;
+    public void setSwitchInfos(List<SwitchInfos> switchInfos) {
+        this.switchInfos = switchInfos;
     }
 
-    public String getProductType() {
-        return productType;
-    }
+    public static class SwitchInfos extends Request {
 
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
+        /** 【数组】云手机实例的资源 ID，N<200 */
+        @NotEmpty
+        @UCloudParam("UPhoneId")
+        private String uPhoneId;
 
-    public String getImageId() {
-        return imageId;
-    }
+        /** 【数组】云手机实例的镜像ID，N<200，该值为空时，默认使用云手机之前的镜像ID，如果镜像ID已经不存在了则会返回错误 */
+        @UCloudParam("ImageId")
+        private String imageId;
 
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
+        public String getUPhoneId() {
+            return uPhoneId;
+        }
+
+        public void setUPhoneId(String uPhoneId) {
+            this.uPhoneId = uPhoneId;
+        }
+
+        public String getImageId() {
+            return imageId;
+        }
+
+        public void setImageId(String imageId) {
+            this.imageId = imageId;
+        }
     }
 }

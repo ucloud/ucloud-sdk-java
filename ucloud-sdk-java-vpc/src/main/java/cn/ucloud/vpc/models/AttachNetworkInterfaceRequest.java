@@ -13,13 +13,12 @@
  */
 package cn.ucloud.vpc.models;
 
+
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-import java.util.List;
-
-public class DescribeVPCRequest extends Request {
+public class AttachNetworkInterfaceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -34,21 +33,15 @@ public class DescribeVPCRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPCId */
-    @UCloudParam("VPCIds")
-    private List<String> vpcIds;
+    /** 虚拟网卡ID */
+    @NotEmpty
+    @UCloudParam("InterfaceId")
+    private String interfaceId;
 
-    /** 业务组名称 */
-    @UCloudParam("Tag")
-    private String tag;
-
-    /** 数据偏移量，默认为0 */
-    @UCloudParam("Offset")
-    private Integer offset;
-
-    /** 数据分页值 */
-    @UCloudParam("Limit")
-    private Integer limit;
+    /** 云主机ID（仅支持绑定开启网卡功能，且未开启网络增强的云主机） */
+    @NotEmpty
+    @UCloudParam("InstanceId")
+    private String instanceId;
 
     public String getRegion() {
         return region;
@@ -66,35 +59,19 @@ public class DescribeVPCRequest extends Request {
         this.projectId = projectId;
     }
 
-    public List<String> getVPCIds() {
-        return vpcIds;
+    public String getInterfaceId() {
+        return interfaceId;
     }
 
-    public void setVPCIds(List<String> vpcIds) {
-        this.vpcIds = vpcIds;
+    public void setInterfaceId(String interfaceId) {
+        this.interfaceId = interfaceId;
     }
 
-    public String getTag() {
-        return tag;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 }

@@ -31,6 +31,8 @@ import cn.ucloud.vpc.models.AllocateVIPRequest;
 import cn.ucloud.vpc.models.AllocateVIPResponse;
 import cn.ucloud.vpc.models.AssociateRouteTableRequest;
 import cn.ucloud.vpc.models.AssociateRouteTableResponse;
+import cn.ucloud.vpc.models.AttachNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.AttachNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.CloneRouteTableRequest;
 import cn.ucloud.vpc.models.CloneRouteTableResponse;
 import cn.ucloud.vpc.models.CreateNATGWPolicyRequest;
@@ -246,6 +248,19 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
         request.setAction("AssociateRouteTable");
         return (AssociateRouteTableResponse)
                 this.invoke(request, AssociateRouteTableResponse.class);
+    }
+
+    /**
+     * AttachNetworkInterface - 绑定网卡到云主机
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AttachNetworkInterfaceResponse attachNetworkInterface(
+            AttachNetworkInterfaceRequest request) throws UCloudException {
+        request.setAction("AttachNetworkInterface");
+        return (AttachNetworkInterfaceResponse)
+                this.invoke(request, AttachNetworkInterfaceResponse.class);
     }
 
     /**

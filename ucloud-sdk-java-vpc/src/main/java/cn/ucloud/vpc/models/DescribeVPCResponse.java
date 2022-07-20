@@ -25,6 +25,10 @@ public class DescribeVPCResponse extends Response {
     @SerializedName("DataSet")
     private List<VPCInfo> dataSet;
 
+    /** */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
     public List<VPCInfo> getDataSet() {
         return dataSet;
     }
@@ -33,37 +37,49 @@ public class DescribeVPCResponse extends Response {
         this.dataSet = dataSet;
     }
 
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     public static class VPCInfo extends Response {
 
-        /** */
+        /** vpc地址空间信息，详见VPCNetworkInfo */
         @SerializedName("NetworkInfo")
         private List<VPCNetworkInfo> networkInfo;
 
-        /** */
+        /** 子网数 */
         @SerializedName("SubnetCount")
         private Integer subnetCount;
 
-        /** */
+        /** 创建时间 */
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** */
+        /** 更新时间 */
         @SerializedName("UpdateTime")
         private Integer updateTime;
 
-        /** */
+        /** 业务组 */
         @SerializedName("Tag")
         private String tag;
 
-        /** */
+        /** VPC名称 */
         @SerializedName("Name")
         private String name;
 
-        /** VPCId */
+        /** DefaultVPC 默认VPC，DefinedVPC，自定义VPC      */
+        @SerializedName("VPCType")
+        private String vpcType;
+
+        /** VPC资源ID */
         @SerializedName("VPCId")
         private String vpcId;
 
-        /** */
+        /** VPC网段 */
         @SerializedName("Network")
         private List<String> network;
 
@@ -121,6 +137,14 @@ public class DescribeVPCResponse extends Response {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public String getVPCType() {
+            return vpcType;
+        }
+
+        public void setVPCType(String vpcType) {
+            this.vpcType = vpcType;
         }
 
         public String getVPCId() {

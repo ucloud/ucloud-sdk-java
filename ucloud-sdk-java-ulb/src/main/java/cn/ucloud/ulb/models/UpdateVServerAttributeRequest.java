@@ -100,6 +100,22 @@ public class UpdateVServerAttributeRequest extends Request {
     @UCloudParam("ResponseMsg")
     private String responseMsg;
 
+    /** 安全策略组ID */
+    @UCloudParam("SecurityPolicyId")
+    private String securityPolicyId;
+
+    /** 0:关闭 1:开启，用于数据压缩功能 */
+    @UCloudParam("EnableCompression")
+    private Integer enableCompression;
+
+    /** 重定向端口，取值范围[0-65535]；默认值为0，代表关闭；仅HTTP协议支持开启重定向功能 */
+    @UCloudParam("ForwardPort")
+    private Integer forwardPort;
+
+    /** 0:关闭 1:开启，用于开启http2功能；默认值为0 */
+    @UCloudParam("EnableHTTP2")
+    private Integer enableHTTP2;
+
     public String getRegion() {
         return region;
     }
@@ -210,5 +226,37 @@ public class UpdateVServerAttributeRequest extends Request {
 
     public void setResponseMsg(String responseMsg) {
         this.responseMsg = responseMsg;
+    }
+
+    public String getSecurityPolicyId() {
+        return securityPolicyId;
+    }
+
+    public void setSecurityPolicyId(String securityPolicyId) {
+        this.securityPolicyId = securityPolicyId;
+    }
+
+    public Integer getEnableCompression() {
+        return enableCompression;
+    }
+
+    public void setEnableCompression(Integer enableCompression) {
+        this.enableCompression = enableCompression;
+    }
+
+    public Integer getForwardPort() {
+        return forwardPort;
+    }
+
+    public void setForwardPort(Integer forwardPort) {
+        this.forwardPort = forwardPort;
+    }
+
+    public Integer getEnableHTTP2() {
+        return enableHTTP2;
+    }
+
+    public void setEnableHTTP2(Integer enableHTTP2) {
+        this.enableHTTP2 = enableHTTP2;
     }
 }

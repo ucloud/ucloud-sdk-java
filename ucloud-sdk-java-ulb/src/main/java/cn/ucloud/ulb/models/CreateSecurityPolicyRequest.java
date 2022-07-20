@@ -11,7 +11,7 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uphone.models;
+package cn.ucloud.ulb.models;
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
@@ -19,31 +19,43 @@ import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-public class DeleteUPhoneRequest extends Request {
+public class CreateSecurityPolicyRequest extends Request {
+
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
+    @UCloudParam("Region")
+    private String region;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
+    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取 */
+    /** TLS版本 */
     @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
+    @UCloudParam("TLSVersion")
+    private String tlsVersion;
 
-    /**
-     * 【数组】云手机实例的资源 ID，N<200；调用方式举例：UPhoneIds.0=希望获取信息的云手机 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的
-     * UPhoneId
-     */
+    /** 加密套件 */
     @NotEmpty
-    @UCloudParam("UPhoneIds")
-    private List<String> uPhoneIds;
+    @UCloudParam("SSLCiphers")
+    private List<String> sslCiphers;
 
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
-    @UCloudParam("ProductType")
-    private String productType;
+    /** 安全策略名称 */
+    @NotEmpty
+    @UCloudParam("SecurityPolicyName")
+    private String securityPolicyName;
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
 
     public String getProjectId() {
         return projectId;
@@ -53,27 +65,27 @@ public class DeleteUPhoneRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getCityId() {
-        return cityId;
+    public String getTLSVersion() {
+        return tlsVersion;
     }
 
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
+    public void setTLSVersion(String tlsVersion) {
+        this.tlsVersion = tlsVersion;
     }
 
-    public List<String> getUPhoneIds() {
-        return uPhoneIds;
+    public List<String> getSSLCiphers() {
+        return sslCiphers;
     }
 
-    public void setUPhoneIds(List<String> uPhoneIds) {
-        this.uPhoneIds = uPhoneIds;
+    public void setSSLCiphers(List<String> sslCiphers) {
+        this.sslCiphers = sslCiphers;
     }
 
-    public String getProductType() {
-        return productType;
+    public String getSecurityPolicyName() {
+        return securityPolicyName;
     }
 
-    public void setProductType(String productType) {
-        this.productType = productType;
+    public void setSecurityPolicyName(String securityPolicyName) {
+        this.securityPolicyName = securityPolicyName;
     }
 }

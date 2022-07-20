@@ -25,6 +25,8 @@ import cn.ucloud.ulb.models.CreatePolicyRequest;
 import cn.ucloud.ulb.models.CreatePolicyResponse;
 import cn.ucloud.ulb.models.CreateSSLRequest;
 import cn.ucloud.ulb.models.CreateSSLResponse;
+import cn.ucloud.ulb.models.CreateSecurityPolicyRequest;
+import cn.ucloud.ulb.models.CreateSecurityPolicyResponse;
 import cn.ucloud.ulb.models.CreateULBRequest;
 import cn.ucloud.ulb.models.CreateULBResponse;
 import cn.ucloud.ulb.models.CreateVServerRequest;
@@ -33,12 +35,18 @@ import cn.ucloud.ulb.models.DeletePolicyRequest;
 import cn.ucloud.ulb.models.DeletePolicyResponse;
 import cn.ucloud.ulb.models.DeleteSSLRequest;
 import cn.ucloud.ulb.models.DeleteSSLResponse;
+import cn.ucloud.ulb.models.DeleteSecurityPolicyRequest;
+import cn.ucloud.ulb.models.DeleteSecurityPolicyResponse;
 import cn.ucloud.ulb.models.DeleteULBRequest;
 import cn.ucloud.ulb.models.DeleteULBResponse;
 import cn.ucloud.ulb.models.DeleteVServerRequest;
 import cn.ucloud.ulb.models.DeleteVServerResponse;
 import cn.ucloud.ulb.models.DescribeSSLRequest;
 import cn.ucloud.ulb.models.DescribeSSLResponse;
+import cn.ucloud.ulb.models.DescribeSecurityPoliciesRequest;
+import cn.ucloud.ulb.models.DescribeSecurityPoliciesResponse;
+import cn.ucloud.ulb.models.DescribeSupportCiphersRequest;
+import cn.ucloud.ulb.models.DescribeSupportCiphersResponse;
 import cn.ucloud.ulb.models.DescribeULBRequest;
 import cn.ucloud.ulb.models.DescribeULBResponse;
 import cn.ucloud.ulb.models.DescribeULBSimpleRequest;
@@ -47,6 +55,8 @@ import cn.ucloud.ulb.models.DescribeVServerRequest;
 import cn.ucloud.ulb.models.DescribeVServerResponse;
 import cn.ucloud.ulb.models.ReleaseBackendRequest;
 import cn.ucloud.ulb.models.ReleaseBackendResponse;
+import cn.ucloud.ulb.models.UnBindSecurityPolicyRequest;
+import cn.ucloud.ulb.models.UnBindSecurityPolicyResponse;
 import cn.ucloud.ulb.models.UnbindSSLRequest;
 import cn.ucloud.ulb.models.UnbindSSLResponse;
 import cn.ucloud.ulb.models.UpdateBackendAttributeRequest;
@@ -55,6 +65,8 @@ import cn.ucloud.ulb.models.UpdatePolicyRequest;
 import cn.ucloud.ulb.models.UpdatePolicyResponse;
 import cn.ucloud.ulb.models.UpdateSSLAttributeRequest;
 import cn.ucloud.ulb.models.UpdateSSLAttributeResponse;
+import cn.ucloud.ulb.models.UpdateSecurityPolicyRequest;
+import cn.ucloud.ulb.models.UpdateSecurityPolicyResponse;
 import cn.ucloud.ulb.models.UpdateULBAttributeRequest;
 import cn.ucloud.ulb.models.UpdateULBAttributeResponse;
 import cn.ucloud.ulb.models.UpdateVServerAttributeRequest;
@@ -112,6 +124,19 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
+     * CreateSecurityPolicy - 创建安全策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateSecurityPolicyResponse createSecurityPolicy(CreateSecurityPolicyRequest request)
+            throws UCloudException {
+        request.setAction("CreateSecurityPolicy");
+        return (CreateSecurityPolicyResponse)
+                this.invoke(request, CreateSecurityPolicyResponse.class);
+    }
+
+    /**
      * CreateULB - 创建负载均衡
      *
      * @param request Request object
@@ -157,6 +182,19 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
+     * DeleteSecurityPolicy - 删除安全策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteSecurityPolicyResponse deleteSecurityPolicy(DeleteSecurityPolicyRequest request)
+            throws UCloudException {
+        request.setAction("DeleteSecurityPolicy");
+        return (DeleteSecurityPolicyResponse)
+                this.invoke(request, DeleteSecurityPolicyResponse.class);
+    }
+
+    /**
      * DeleteULB - 删除负载均衡
      *
      * @param request Request object
@@ -188,6 +226,32 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     public DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException {
         request.setAction("DescribeSSL");
         return (DescribeSSLResponse) this.invoke(request, DescribeSSLResponse.class);
+    }
+
+    /**
+     * DescribeSecurityPolicies - 获取安全策略的信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeSecurityPoliciesResponse describeSecurityPolicies(
+            DescribeSecurityPoliciesRequest request) throws UCloudException {
+        request.setAction("DescribeSecurityPolicies");
+        return (DescribeSecurityPoliciesResponse)
+                this.invoke(request, DescribeSecurityPoliciesResponse.class);
+    }
+
+    /**
+     * DescribeSupportCiphers - 描述支持的加密套件
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeSupportCiphersResponse describeSupportCiphers(
+            DescribeSupportCiphersRequest request) throws UCloudException {
+        request.setAction("DescribeSupportCiphers");
+        return (DescribeSupportCiphersResponse)
+                this.invoke(request, DescribeSupportCiphersResponse.class);
     }
 
     /**
@@ -238,6 +302,19 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
+     * UnBindSecurityPolicy - 解绑安全策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UnBindSecurityPolicyResponse unBindSecurityPolicy(UnBindSecurityPolicyRequest request)
+            throws UCloudException {
+        request.setAction("UnBindSecurityPolicy");
+        return (UnBindSecurityPolicyResponse)
+                this.invoke(request, UnBindSecurityPolicyResponse.class);
+    }
+
+    /**
      * UnbindSSL - 解绑SSL证书
      *
      * @param request Request object
@@ -282,6 +359,19 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
             throws UCloudException {
         request.setAction("UpdateSSLAttribute");
         return (UpdateSSLAttributeResponse) this.invoke(request, UpdateSSLAttributeResponse.class);
+    }
+
+    /**
+     * UpdateSecurityPolicy - 更新安全策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateSecurityPolicyResponse updateSecurityPolicy(UpdateSecurityPolicyRequest request)
+            throws UCloudException {
+        request.setAction("UpdateSecurityPolicy");
+        return (UpdateSecurityPolicyResponse)
+                this.invoke(request, UpdateSecurityPolicyResponse.class);
     }
 
     /**

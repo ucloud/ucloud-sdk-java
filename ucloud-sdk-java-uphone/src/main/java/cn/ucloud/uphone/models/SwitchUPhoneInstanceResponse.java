@@ -13,21 +13,16 @@
  */
 package cn.ucloud.uphone.models;
 
+
 import cn.ucloud.common.response.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+public class SwitchUPhoneInstanceResponse extends Response {
 
-public class CreateUPhoneResponse extends Response {
-
-    /** 任务ID，用来查询创建云手机任务状态 */
+    /** 任务ID，用来查询故障更换云手机任务状态 */
     @SerializedName("JobId")
     private String jobId;
-
-    /** 【数组】创建的云手机ID */
-    @SerializedName("UPhoneIds")
-    private List<String> uPhoneIds;
 
     public String getJobId() {
         return jobId;
@@ -35,13 +30,5 @@ public class CreateUPhoneResponse extends Response {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
-    }
-
-    public List<String> getUPhoneIds() {
-        return uPhoneIds;
-    }
-
-    public void setUPhoneIds(List<String> uPhoneIds) {
-        this.uPhoneIds = uPhoneIds;
     }
 }
