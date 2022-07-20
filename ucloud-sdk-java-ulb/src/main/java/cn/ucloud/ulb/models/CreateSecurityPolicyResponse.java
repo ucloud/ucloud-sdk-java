@@ -11,37 +11,24 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uphone.models;
+package cn.ucloud.ulb.models;
+
 
 import cn.ucloud.common.response.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+public class CreateSecurityPolicyResponse extends Response {
 
-public class CreateUPhoneResponse extends Response {
+    /** 安全策略ID */
+    @SerializedName("SecurityPolicyId")
+    private String securityPolicyId;
 
-    /** 任务ID，用来查询创建云手机任务状态 */
-    @SerializedName("JobId")
-    private String jobId;
-
-    /** 【数组】创建的云手机ID */
-    @SerializedName("UPhoneIds")
-    private List<String> uPhoneIds;
-
-    public String getJobId() {
-        return jobId;
+    public String getSecurityPolicyId() {
+        return securityPolicyId;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
-    }
-
-    public List<String> getUPhoneIds() {
-        return uPhoneIds;
-    }
-
-    public void setUPhoneIds(List<String> uPhoneIds) {
-        this.uPhoneIds = uPhoneIds;
+    public void setSecurityPolicyId(String securityPolicyId) {
+        this.securityPolicyId = securityPolicyId;
     }
 }

@@ -11,15 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.vpc.models;
+package cn.ucloud.ulb.models;
+
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-import java.util.List;
-
-public class DescribeVPCRequest extends Request {
+public class DeleteSecurityPolicyRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -34,21 +33,10 @@ public class DescribeVPCRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VPCId */
-    @UCloudParam("VPCIds")
-    private List<String> vpcIds;
-
-    /** 业务组名称 */
-    @UCloudParam("Tag")
-    private String tag;
-
-    /** 数据偏移量，默认为0 */
-    @UCloudParam("Offset")
-    private Integer offset;
-
-    /** 数据分页值 */
-    @UCloudParam("Limit")
-    private Integer limit;
+    /** 安全策略ID */
+    @NotEmpty
+    @UCloudParam("SecurityPolicyId")
+    private String securityPolicyId;
 
     public String getRegion() {
         return region;
@@ -66,35 +54,11 @@ public class DescribeVPCRequest extends Request {
         this.projectId = projectId;
     }
 
-    public List<String> getVPCIds() {
-        return vpcIds;
+    public String getSecurityPolicyId() {
+        return securityPolicyId;
     }
 
-    public void setVPCIds(List<String> vpcIds) {
-        this.vpcIds = vpcIds;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setSecurityPolicyId(String securityPolicyId) {
+        this.securityPolicyId = securityPolicyId;
     }
 }
