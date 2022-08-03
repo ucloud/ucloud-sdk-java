@@ -58,6 +58,10 @@ public class CreateSSLRequest extends Request {
     @UCloudParam("CaCert")
     private String caCert;
 
+    /** USSL证书的ID */
+    @UCloudParam("USSLId")
+    private String usslId;
+
     public String getRegion() {
         return region;
     }
@@ -120,5 +124,13 @@ public class CreateSSLRequest extends Request {
 
     public void setCaCert(String caCert) {
         this.caCert = caCert;
+    }
+
+    public String getUSSLId() {
+        return usslId;
+    }
+
+    public void setUSSLId(String usslId) {
+        this.usslId = usslId;
     }
 }

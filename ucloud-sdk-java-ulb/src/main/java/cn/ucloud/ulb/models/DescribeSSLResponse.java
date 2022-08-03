@@ -126,6 +126,18 @@ public class DescribeSSLResponse extends Response {
         @SerializedName("BindedTargetSet")
         private List<SSLBindedTargetSet> bindedTargetSet;
 
+        /** SSL证书来源，SSL证书来源，0代表证书来自于ULB平台，1代表证书来自于USSL平台 */
+        @SerializedName("SSLSource")
+        private Integer sslSource;
+
+        /** USSL证书平台的编号,只有当SSLSource为1时才出现 */
+        @SerializedName("USSLId")
+        private String usslId;
+
+        /** USSL证书平台的域名,只有当SSLSource为1时才出现 */
+        @SerializedName("Domains")
+        private String domains;
+
         public String getSSLId() {
             return sslId;
         }
@@ -180,6 +192,30 @@ public class DescribeSSLResponse extends Response {
 
         public void setBindedTargetSet(List<SSLBindedTargetSet> bindedTargetSet) {
             this.bindedTargetSet = bindedTargetSet;
+        }
+
+        public Integer getSSLSource() {
+            return sslSource;
+        }
+
+        public void setSSLSource(Integer sslSource) {
+            this.sslSource = sslSource;
+        }
+
+        public String getUSSLId() {
+            return usslId;
+        }
+
+        public void setUSSLId(String usslId) {
+            this.usslId = usslId;
+        }
+
+        public String getDomains() {
+            return domains;
+        }
+
+        public void setDomains(String domains) {
+            this.domains = domains;
         }
     }
 }
