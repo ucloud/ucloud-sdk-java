@@ -29,11 +29,6 @@ public class SetUPhoneRootModeRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /**
      * 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=希望重启的云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
      */
@@ -46,9 +41,17 @@ public class SetUPhoneRootModeRequest extends Request {
     @UCloudParam("Root")
     private Boolean root;
 
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    @UCloudParam("CityId")
+    private String cityId;
+
     /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
     @UCloudParam("ProductType")
     private String productType;
+
+    /** 【数组】加入应用白名单的包名 */
+    @UCloudParam("PkgNames")
+    private List<String> pkgNames;
 
     public String getProjectId() {
         return projectId;
@@ -56,14 +59,6 @@ public class SetUPhoneRootModeRequest extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
     }
 
     public List<String> getUPhoneIds() {
@@ -82,11 +77,27 @@ public class SetUPhoneRootModeRequest extends Request {
         this.root = root;
     }
 
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
+    }
+
     public String getProductType() {
         return productType;
     }
 
     public void setProductType(String productType) {
         this.productType = productType;
+    }
+
+    public List<String> getPkgNames() {
+        return pkgNames;
+    }
+
+    public void setPkgNames(List<String> pkgNames) {
+        this.pkgNames = pkgNames;
     }
 }

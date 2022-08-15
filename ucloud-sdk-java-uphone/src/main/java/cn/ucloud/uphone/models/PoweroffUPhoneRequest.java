@@ -36,7 +36,6 @@ public class PoweroffUPhoneRequest extends Request {
     private List<String> uPhoneIds;
 
     /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
 

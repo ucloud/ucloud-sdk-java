@@ -33,7 +33,6 @@ public class SetUPhoneTokenRequest extends Request {
     private String uPhoneId;
 
     /** 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取 */
-    @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
 

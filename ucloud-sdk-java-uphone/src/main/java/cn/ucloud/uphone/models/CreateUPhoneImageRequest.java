@@ -27,17 +27,16 @@ public class CreateUPhoneImageRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /**
-     * 城市Id，通过[获取城市列表](https://cms-docs.ucloudadmin.com/api/uphone-api/describe_u_phone_cities)获取
-     */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /** 手机实例的资源ID */
     @NotEmpty
     @UCloudParam("UPhoneId")
     private String uPhoneId;
+
+    /**
+     * 城市Id，通过[获取城市列表](https://cms-docs.ucloudadmin.com/api/uphone-api/describe_u_phone_cities)获取
+     */
+    @UCloudParam("CityId")
+    private String cityId;
 
     /** 镜像名称。长度为2~128个英文或中文字符。 */
     @UCloudParam("Name")
@@ -59,20 +58,20 @@ public class CreateUPhoneImageRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
     public String getUPhoneId() {
         return uPhoneId;
     }
 
     public void setUPhoneId(String uPhoneId) {
         this.uPhoneId = uPhoneId;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 
     public String getName() {

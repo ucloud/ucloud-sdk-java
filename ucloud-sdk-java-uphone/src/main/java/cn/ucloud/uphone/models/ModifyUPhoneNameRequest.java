@@ -27,11 +27,6 @@ public class ModifyUPhoneNameRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /** 云手机实例的资源ID */
     @NotEmpty
     @UCloudParam("UPhoneId")
@@ -42,20 +37,16 @@ public class ModifyUPhoneNameRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    @UCloudParam("CityId")
+    private String cityId;
+
     public String getProjectId() {
         return projectId;
     }
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
     }
 
     public String getUPhoneId() {
@@ -72,5 +63,13 @@ public class ModifyUPhoneNameRequest extends Request {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 }

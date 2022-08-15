@@ -27,11 +27,6 @@ public class SetUPhoneCallbackRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市ID */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /** 云手机ID。 */
     @NotEmpty
     @UCloudParam("UPhoneId")
@@ -41,6 +36,10 @@ public class SetUPhoneCallbackRequest extends Request {
     @NotEmpty
     @UCloudParam("URL")
     private String url;
+
+    /** 城市ID */
+    @UCloudParam("CityId")
+    private String cityId;
 
     /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
     @UCloudParam("ProductType")
@@ -52,14 +51,6 @@ public class SetUPhoneCallbackRequest extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
     }
 
     public String getUPhoneId() {
@@ -76,6 +67,14 @@ public class SetUPhoneCallbackRequest extends Request {
 
     public void setURL(String url) {
         this.url = url;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 
     public String getProductType() {

@@ -38,15 +38,14 @@ public class ImportFileRequest extends Request {
     @UCloudParam("FileName")
     private String fileName;
 
-    /** 城市。 参见 [云手机城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities) */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /** 文件下载链接 */
     @NotEmpty
     @UCloudParam("URL")
     private String url;
+
+    /** 城市。 参见 [云手机城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities) */
+    @UCloudParam("CityId")
+    private String cityId;
 
     /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
     @UCloudParam("ProductType")
@@ -76,20 +75,20 @@ public class ImportFileRequest extends Request {
         this.fileName = fileName;
     }
 
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
     public String getURL() {
         return url;
     }
 
     public void setURL(String url) {
         this.url = url;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 
     public String getProductType() {
