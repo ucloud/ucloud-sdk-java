@@ -61,7 +61,7 @@ public class DescribeUPhoneResponse extends Response {
 
         /** 虚拟CPU核数。 */
         @SerializedName("CPU")
-        private Integer cpu;
+        private Double cpu;
 
         /** 内存大小。单位MB */
         @SerializedName("Memory")
@@ -164,6 +164,10 @@ public class DescribeUPhoneResponse extends Response {
         @SerializedName("ShareBandwidthName")
         private String shareBandwidthName;
 
+        /** 云手机的ADB信息 */
+        @SerializedName("ADB")
+        private String adb;
+
         public String getUPhoneName() {
             return uPhoneName;
         }
@@ -188,11 +192,11 @@ public class DescribeUPhoneResponse extends Response {
             this.uPhoneModelName = uPhoneModelName;
         }
 
-        public Integer getCPU() {
+        public Double getCPU() {
             return cpu;
         }
 
-        public void setCPU(Integer cpu) {
+        public void setCPU(Double cpu) {
             this.cpu = cpu;
         }
 
@@ -370,6 +374,14 @@ public class DescribeUPhoneResponse extends Response {
 
         public void setShareBandwidthName(String shareBandwidthName) {
             this.shareBandwidthName = shareBandwidthName;
+        }
+
+        public String getADB() {
+            return adb;
+        }
+
+        public void setADB(String adb) {
+            this.adb = adb;
         }
     }
 }

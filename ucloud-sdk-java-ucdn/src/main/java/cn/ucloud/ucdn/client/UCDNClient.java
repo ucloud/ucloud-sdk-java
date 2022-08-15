@@ -47,8 +47,6 @@ import cn.ucloud.ucdn.models.GetUcdnDomainHttpCodeV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomainHttpCodeV2Response;
 import cn.ucloud.ucdn.models.GetUcdnDomainInfoListRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainInfoListResponse;
-import cn.ucloud.ucdn.models.GetUcdnDomainLogRequest;
-import cn.ucloud.ucdn.models.GetUcdnDomainLogResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Response;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailRequest;
@@ -276,18 +274,6 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
         request.setAction("GetUcdnDomainInfoList");
         return (GetUcdnDomainInfoListResponse)
                 this.invoke(request, GetUcdnDomainInfoListResponse.class);
-    }
-
-    /**
-     * GetUcdnDomainLog - 获取加速域名原始日志
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUcdnDomainLogResponse getUcdnDomainLog(GetUcdnDomainLogRequest request)
-            throws UCloudException {
-        request.setAction("GetUcdnDomainLog");
-        return (GetUcdnDomainLogResponse) this.invoke(request, GetUcdnDomainLogResponse.class);
     }
 
     /**

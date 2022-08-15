@@ -28,15 +28,14 @@ public class PoweronUPhoneRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /** 【数组】云手机实例的资源ID，调用方式举例：UPhoneIds.0=希望开启的云手机实例1的UPhoneId，UPhoneIds.1=云手机实例2的UPhoneId。 */
     @NotEmpty
     @UCloudParam("UPhoneIds")
     private List<String> uPhoneIds;
+
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    @UCloudParam("CityId")
+    private String cityId;
 
     /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
     @UCloudParam("ProductType")
@@ -50,20 +49,20 @@ public class PoweronUPhoneRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
     public List<String> getUPhoneIds() {
         return uPhoneIds;
     }
 
     public void setUPhoneIds(List<String> uPhoneIds) {
         this.uPhoneIds = uPhoneIds;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 
     public String getProductType() {

@@ -93,8 +93,8 @@ public class CreateUHostInstanceRequest extends Request {
     private Integer memory;
 
     /**
-     * GPU类型，枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4", "MI100",
-     * "V100S"]，MachineType为G时必填
+     * GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4",
+     * "MI100", "V100S",2080","2080TiS","2080TiPro","3090","A100"]，MachineType为G时必填
      */
     @UCloudParam("GpuType")
     private String gpuType;
@@ -148,7 +148,7 @@ public class CreateUHostInstanceRequest extends Request {
     /**
      * 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell",
      * "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2",
-     * "Amd/Auto"],默认值是"Intel/Auto"。
+     * "Amd/Auto","Ampere/Auto","Ampere/Altra"],默认值是"Intel/Auto"。
      */
     @UCloudParam("MinimalCpuPlatform")
     private String minimalCpuPlatform;

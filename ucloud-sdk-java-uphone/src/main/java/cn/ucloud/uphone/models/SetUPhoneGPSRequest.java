@@ -13,7 +13,6 @@
  */
 package cn.ucloud.uphone.models;
 
-import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
@@ -29,7 +28,6 @@ public class SetUPhoneGPSRequest extends Request {
     private String projectId;
 
     /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
 
@@ -91,6 +89,10 @@ public class SetUPhoneGPSRequest extends Request {
         @UCloudParam("Altitude")
         private Double altitude;
 
+        /** GPS开关，true开启，false关闭，默认false */
+        @UCloudParam("Enabled")
+        private Boolean enabled;
+
         public String getUPhoneId() {
             return uPhoneId;
         }
@@ -121,6 +123,14 @@ public class SetUPhoneGPSRequest extends Request {
 
         public void setAltitude(Double altitude) {
             this.altitude = altitude;
+        }
+
+        public Boolean getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Boolean enabled) {
+            this.enabled = enabled;
         }
     }
 }

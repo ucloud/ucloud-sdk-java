@@ -41,6 +41,8 @@ import cn.ucloud.uphone.models.DescribeUPhoneCitiesRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneCitiesResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneDetailByAppRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneDetailByAppResponse;
+import cn.ucloud.uphone.models.DescribeUPhoneEipListRequest;
+import cn.ucloud.uphone.models.DescribeUPhoneEipListResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneImageRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneImageResponse;
 import cn.ucloud.uphone.models.DescribeUPhoneIpRegionsRequest;
@@ -115,10 +117,6 @@ import cn.ucloud.uphone.models.SetUPhoneRootModeRequest;
 import cn.ucloud.uphone.models.SetUPhoneRootModeResponse;
 import cn.ucloud.uphone.models.SetUPhoneTokenRequest;
 import cn.ucloud.uphone.models.SetUPhoneTokenResponse;
-import cn.ucloud.uphone.models.SwitchUPhoneIndependentIpRequest;
-import cn.ucloud.uphone.models.SwitchUPhoneIndependentIpResponse;
-import cn.ucloud.uphone.models.SwitchUPhoneInstanceRequest;
-import cn.ucloud.uphone.models.SwitchUPhoneInstanceResponse;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.UnInstallUPhoneAppVersionResponse;
 import cn.ucloud.uphone.models.UpdateUPhoneImageRequest;
@@ -250,6 +248,15 @@ public interface UPhoneClientInterface extends Client {
      */
     public DescribeUPhoneDetailByAppResponse describeUPhoneDetailByApp(
             DescribeUPhoneDetailByAppRequest request) throws UCloudException;
+
+    /**
+     * DescribeUPhoneEipList - 获取云手机Eip列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUPhoneEipListResponse describeUPhoneEipList(DescribeUPhoneEipListRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUPhoneImage - 获取云手机镜像信息列表
@@ -567,24 +574,6 @@ public interface UPhoneClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public SetUPhoneTokenResponse setUPhoneToken(SetUPhoneTokenRequest request)
-            throws UCloudException;
-
-    /**
-     * SwitchUPhoneIndependentIp - 更换云手机独立IP
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public SwitchUPhoneIndependentIpResponse switchUPhoneIndependentIp(
-            SwitchUPhoneIndependentIpRequest request) throws UCloudException;
-
-    /**
-     * SwitchUPhoneInstance - 故障更换云手机
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public SwitchUPhoneInstanceResponse switchUPhoneInstance(SwitchUPhoneInstanceRequest request)
             throws UCloudException;
 
     /**

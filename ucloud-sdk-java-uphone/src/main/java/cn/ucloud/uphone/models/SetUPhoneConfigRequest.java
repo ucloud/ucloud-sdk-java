@@ -28,15 +28,14 @@ public class SetUPhoneConfigRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
-    @UCloudParam("CityId")
-    private String cityId;
-
     /** 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。 */
     @NotEmpty
     @UCloudParam("UPhoneIds")
     private List<String> uPhoneIds;
+
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    @UCloudParam("CityId")
+    private String cityId;
 
     /** 云手机画面分辨率（宽x高） （例，1920x1080，中间是字母x）宽和高的取值范围[100,5000] */
     @UCloudParam("Resolution")
@@ -70,20 +69,20 @@ public class SetUPhoneConfigRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
     public List<String> getUPhoneIds() {
         return uPhoneIds;
     }
 
     public void setUPhoneIds(List<String> uPhoneIds) {
         this.uPhoneIds = uPhoneIds;
+    }
+
+    public String getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
     }
 
     public String getResolution() {

@@ -14,11 +14,10 @@
 package cn.ucloud.uphone.models;
 
 
-import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class SwitchUPhoneIndependentIpRequest extends Request {
+public class DescribeUPhoneEipListRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
@@ -27,10 +26,13 @@ public class SwitchUPhoneIndependentIpRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 云手机独立IP地址ID */
-    @NotEmpty
-    @UCloudParam("EipId")
-    private String eipId;
+    /** Eip所属区域，没有该参数表示获取所有区域 */
+    @UCloudParam("Region")
+    private String region;
+
+    /** 云手机与Eip绑定比例，没有该参数表示获取所有绑定比例 */
+    @UCloudParam("Proportion")
+    private String proportion;
 
     public String getProjectId() {
         return projectId;
@@ -40,11 +42,19 @@ public class SwitchUPhoneIndependentIpRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getEipId() {
-        return eipId;
+    public String getRegion() {
+        return region;
     }
 
-    public void setEipId(String eipId) {
-        this.eipId = eipId;
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getProportion() {
+        return proportion;
+    }
+
+    public void setProportion(String proportion) {
+        this.proportion = proportion;
     }
 }

@@ -38,7 +38,6 @@ public class SetUPhoneManagerModeRequest extends Request {
     private String mode;
 
     /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
 

@@ -13,7 +13,6 @@
  */
 package cn.ucloud.uphone.models;
 
-import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
@@ -29,7 +28,6 @@ public class DescribeUPhoneJobRequest extends Request {
     private String projectId;
 
     /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
-    @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
 
