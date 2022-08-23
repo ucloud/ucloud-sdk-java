@@ -20,16 +20,19 @@ import cn.ucloud.common.request.Request;
 
 public class CreateUDBSlaveRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -47,11 +50,7 @@ public class CreateUDBSlaveRequest extends Request {
     @UCloudParam("Port")
     private Integer port;
 
-    /** 是否使用SSD，默认为true */
-    @UCloudParam("UseSSD")
-    private Boolean useSSD;
-
-    /** SSD类型，可选值为"SATA"、"PCI-E"、“NVMe”，如果UseSSD为true ，则必选 */
+    /** 仅对主为SSD型实例有效。 可选值"SATA","NVMe" */
     @UCloudParam("SSDType")
     private String ssdType;
 
@@ -59,12 +58,8 @@ public class CreateUDBSlaveRequest extends Request {
     @UCloudParam("IsLock")
     private Boolean isLock;
 
-    /** UDB实例部署模式，可选值如下： Normal: 普通单点实例 HA: 高可用部署实例 */
-    @UCloudParam("InstanceMode")
-    private String instanceMode;
-
     /**
-     * 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
+     * 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
      * 64000M/96000M/128000M/192000M/256000M/320000M
      */
     @UCloudParam("MemoryLimit")
@@ -73,10 +68,6 @@ public class CreateUDBSlaveRequest extends Request {
     /** 磁盘空间(GB), 暂时支持20G - 3000G（API支持，前端暂时只开放内存定制） */
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
-
-    /** UDB实例类型：Normal、SATA_SSD、NVMe_SSD */
-    @UCloudParam("InstanceType")
-    private String instanceType;
 
     /** 子网ID（如果不传用默认子网） */
     @UCloudParam("SubnetId")
@@ -97,6 +88,14 @@ public class CreateUDBSlaveRequest extends Request {
     /** DB实例使用的配置参数组id，默认和主库保持一致 */
     @UCloudParam("ParamGroupId")
     private Integer paramGroupId;
+
+    /** 使用物理方式创建从库，目前仅限创建快杰从库，默认为false */
+    @UCloudParam("IsCreatePhysically")
+    private Boolean isCreatePhysically;
+
+    /** 设置从库的延时复制时长（单位秒） */
+    @UCloudParam("DelaySeconds")
+    private Integer delaySeconds;
 
     /** 使用的代金券id */
     @UCloudParam("CouponId")
@@ -150,14 +149,6 @@ public class CreateUDBSlaveRequest extends Request {
         this.port = port;
     }
 
-    public Boolean getUseSSD() {
-        return useSSD;
-    }
-
-    public void setUseSSD(Boolean useSSD) {
-        this.useSSD = useSSD;
-    }
-
     public String getSSDType() {
         return ssdType;
     }
@@ -174,14 +165,6 @@ public class CreateUDBSlaveRequest extends Request {
         this.isLock = isLock;
     }
 
-    public String getInstanceMode() {
-        return instanceMode;
-    }
-
-    public void setInstanceMode(String instanceMode) {
-        this.instanceMode = instanceMode;
-    }
-
     public Integer getMemoryLimit() {
         return memoryLimit;
     }
@@ -196,14 +179,6 @@ public class CreateUDBSlaveRequest extends Request {
 
     public void setDiskSpace(Integer diskSpace) {
         this.diskSpace = diskSpace;
-    }
-
-    public String getInstanceType() {
-        return instanceType;
-    }
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
     }
 
     public String getSubnetId() {
@@ -244,6 +219,22 @@ public class CreateUDBSlaveRequest extends Request {
 
     public void setParamGroupId(Integer paramGroupId) {
         this.paramGroupId = paramGroupId;
+    }
+
+    public Boolean getIsCreatePhysically() {
+        return isCreatePhysically;
+    }
+
+    public void setIsCreatePhysically(Boolean isCreatePhysically) {
+        this.isCreatePhysically = isCreatePhysically;
+    }
+
+    public Integer getDelaySeconds() {
+        return delaySeconds;
+    }
+
+    public void setDelaySeconds(Integer delaySeconds) {
+        this.delaySeconds = delaySeconds;
     }
 
     public String getCouponId() {

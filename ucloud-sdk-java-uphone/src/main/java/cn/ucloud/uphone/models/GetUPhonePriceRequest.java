@@ -36,10 +36,6 @@ public class GetUPhonePriceRequest extends Request {
     @UCloudParam("UPhoneModelName")
     private Integer uPhoneModelName;
 
-    /** 云手机画面带宽值，画面带宽和手机强绑定关系，必须和手机数量对应。 */
-    @UCloudParam("MediaBandwidth")
-    private Integer mediaBandwidth;
-
     /** 云手机个数 */
     @UCloudParam("UPhoneCount")
     private Integer uPhoneCount;
@@ -64,6 +60,10 @@ public class GetUPhonePriceRequest extends Request {
     @UCloudParam("IpCount")
     private Integer ipCount;
 
+    /** 购买独立IP时需要此参数，带宽线路数量，与云手机数量一致 */
+    @UCloudParam("BandwidthLine")
+    private Integer bandwidthLine;
+
     public String getProjectId() {
         return projectId;
     }
@@ -86,14 +86,6 @@ public class GetUPhonePriceRequest extends Request {
 
     public void setUPhoneModelName(Integer uPhoneModelName) {
         this.uPhoneModelName = uPhoneModelName;
-    }
-
-    public Integer getMediaBandwidth() {
-        return mediaBandwidth;
-    }
-
-    public void setMediaBandwidth(Integer mediaBandwidth) {
-        this.mediaBandwidth = mediaBandwidth;
     }
 
     public Integer getUPhoneCount() {
@@ -142,5 +134,13 @@ public class GetUPhonePriceRequest extends Request {
 
     public void setIpCount(Integer ipCount) {
         this.ipCount = ipCount;
+    }
+
+    public Integer getBandwidthLine() {
+        return bandwidthLine;
+    }
+
+    public void setBandwidthLine(Integer bandwidthLine) {
+        this.bandwidthLine = bandwidthLine;
     }
 }

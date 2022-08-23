@@ -20,17 +20,17 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeUDBInstancePriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 内存限制(MB)，单位为MB. 目前支持：1000-96000 */
+    /** 内存限制(MB)，单位为MB.目前支持：2000-96000 */
     @NotEmpty
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
@@ -53,21 +53,21 @@ public class DescribeUDBInstancePriceRequest extends Request {
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** DB购买多少个"计费时间单位"，默认值为1。 比如：买2个月，Quantity就是2。 如果计费单位是“按月”，并且Quantity为0，表示“购买到月底” */
+    /** DB购买多少个"计费时间单位"，默认值为1。比如：买2个月，Quantity就是2。如果计费单位是“按月”，并且Quantity为0，表示“购买到月底” */
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** 是否使用SSD，只能填true或false，默认为false */
-    @UCloudParam("UseSSD")
-    private String useSSD;
-
-    /** SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必填 */
+    /** SSD类型，可选值为"SATA"、“NVMe”. 默认为“SATA” */
     @UCloudParam("SSDType")
     private String ssdType;
 
-    /** 实例的部署类型。可选值为： Normal: 普通单点实例， Slave: 从库实例, HA: 高可用部署实例， 默认是Normal */
+    /** 实例的部署类型。可选值为：Normal: 普通单点实例，Slave: 从库实例，HA: 高可用部署实例，默认是Normal */
     @UCloudParam("InstanceMode")
     private String instanceMode;
+
+    /** CPU个数，如果db类型为sqlserver，则为必填参数 */
+    @UCloudParam("CPU")
+    private Integer cpu;
 
     public String getRegion() {
         return region;
@@ -133,14 +133,6 @@ public class DescribeUDBInstancePriceRequest extends Request {
         this.quantity = quantity;
     }
 
-    public String getUseSSD() {
-        return useSSD;
-    }
-
-    public void setUseSSD(String useSSD) {
-        this.useSSD = useSSD;
-    }
-
     public String getSSDType() {
         return ssdType;
     }
@@ -155,5 +147,13 @@ public class DescribeUDBInstancePriceRequest extends Request {
 
     public void setInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
+    }
+
+    public Integer getCPU() {
+        return cpu;
+    }
+
+    public void setCPU(Integer cpu) {
+        this.cpu = cpu;
     }
 }

@@ -86,6 +86,22 @@ public class CreateUDiskRequest extends Request {
     @UCloudParam("RdmaClusterId")
     private String rdmaClusterId;
 
+    /** 快照服务备份策略。默认采用基础版套餐开通，“Base”：基础版，“ Ultimate”：旗舰版，“ Custom”：自定义备份链 */
+    @UCloudParam("BackupMode")
+    private String backupMode;
+
+    /** BackupMode为Custom时，进行设置, 以12小时秒级为基础进行倍数扩增，如12、24、36、48 */
+    @UCloudParam("Journal")
+    private Integer journal;
+
+    /** BackupMode为Custom时，进行设置, 以24小时级为基础进行倍数扩增，如24、48、72、96 */
+    @UCloudParam("Hour")
+    private Integer hour;
+
+    /** BackupMode为Custom时，进行设置, 以5天级为基础进行倍数扩增，如5、10、15、20、25、30 */
+    @UCloudParam("Day")
+    private Integer day;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -200,6 +216,38 @@ public class CreateUDiskRequest extends Request {
 
     public void setRdmaClusterId(String rdmaClusterId) {
         this.rdmaClusterId = rdmaClusterId;
+    }
+
+    public String getBackupMode() {
+        return backupMode;
+    }
+
+    public void setBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+    }
+
+    public Integer getJournal() {
+        return journal;
+    }
+
+    public void setJournal(Integer journal) {
+        this.journal = journal;
+    }
+
+    public Integer getHour() {
+        return hour;
+    }
+
+    public void setHour(Integer hour) {
+        this.hour = hour;
+    }
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public void setDay(Integer day) {
+        this.day = day;
     }
 
     public String getCouponId() {

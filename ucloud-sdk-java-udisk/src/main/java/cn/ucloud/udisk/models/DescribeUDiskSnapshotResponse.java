@@ -83,7 +83,7 @@ public class DescribeUDiskSnapshotResponse extends Response {
         @SerializedName("DiskType")
         private Integer diskType;
 
-        /** 过期时间 */
+        /** 【已废弃】过期时间 */
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 

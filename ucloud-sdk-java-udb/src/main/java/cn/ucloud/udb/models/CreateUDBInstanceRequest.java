@@ -20,17 +20,20 @@ import cn.ucloud.common.request.Request;
 
 public class CreateUDBInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -45,8 +48,10 @@ public class CreateUDBInstanceRequest extends Request {
     private String adminPassword;
 
     /**
-     * DB类型id，mysql/mongodb/postgesql按版本细分
-     * 1：mysql-5.1，2：mysql-5.5，3：percona-5.5，4：mysql-5.6，5：percona-5.6，6：mysql-5.7，7：percona-5.7，8：mariadb-10.0，9：mongodb-2.4，10：mongodb-2.6，11：mongodb-3.0，12：mongodb-3.2,13：postgresql-9.4，14：postgresql-9.6，14：postgresql-10.4
+     * DB类型，mysql/mongodb/postgesql/sqlserver按版本细分 mysql-8.0, mysql-5.5, percona-5.5, mysql-5.6,
+     * percona-5.6, mysql-5.7, percona-5.7, mariadb-10.0, postgresql-9.6, postgresql-10.4,
+     * postgresql-12.8, postgresql-13.4，mongodb-2.6, mongodb-3.0, mongodb-3.6, mongodb-4.0,
+     * sqlserver-2017
      */
     @NotEmpty
     @UCloudParam("DBTypeId")
@@ -68,7 +73,7 @@ public class CreateUDBInstanceRequest extends Request {
     private Integer paramGroupId;
 
     /**
-     * 内存限制(MB)，目前支持以下几档 1000M/2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
+     * 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
      * 64000M/96000M/128000M/192000M/256000M/320000M
      */
     @NotEmpty
@@ -103,11 +108,7 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("BackupId")
     private Integer backupId;
 
-    /** 是否使用SSD，默认为true。目前主要可用区、海外机房、新机房只提供SSD资源，非SSD资源不再提供。 */
-    @UCloudParam("UseSSD")
-    private Boolean useSSD;
-
-    /** SSD类型，可选值为"SATA"、“NVMe”，如果UseSSD为true ，则必选 */
+    /** SSD类型，可选值为"SATA"、“NVMe”，默认为“SATA” */
     @UCloudParam("SSDType")
     private String ssdType;
 
@@ -115,15 +116,11 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("InstanceMode")
     private String instanceMode;
 
-    /** 专区ID信息（如果这个参数存在这说明是在专区中创建DB） */
-    @UCloudParam("UDBCId")
-    private String udbcId;
-
-    /** cpu核数 */
+    /** cpu核数，如果db类型为sqlserver，必传参数 */
     @UCloudParam("CPU")
     private Integer cpu;
 
-    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](../summary/regionlist.html) */
+    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("BackupZone")
     private String backupZone;
 
@@ -142,10 +139,6 @@ public class CreateUDBInstanceRequest extends Request {
     /** 当DB类型(DBTypeId)为mongodb时，需要指定mongo的角色，可选值为 configsrv (配置节点)，shardsrv (数据节点) */
     @UCloudParam("ClusterRole")
     private String clusterRole;
-
-    /** 高可用架构: 1） haproxy（默认）: 当前仅支持mysql。 2） sentinel: 基于vip和哨兵节点的架构，当前支持mysql和pg。 */
-    @UCloudParam("HAArch")
-    private String haArch;
 
     /** 实例所在的业务组名称 */
     @UCloudParam("Tag")
@@ -295,14 +288,6 @@ public class CreateUDBInstanceRequest extends Request {
         this.backupId = backupId;
     }
 
-    public Boolean getUseSSD() {
-        return useSSD;
-    }
-
-    public void setUseSSD(Boolean useSSD) {
-        this.useSSD = useSSD;
-    }
-
     public String getSSDType() {
         return ssdType;
     }
@@ -317,14 +302,6 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
-    }
-
-    public String getUDBCId() {
-        return udbcId;
-    }
-
-    public void setUDBCId(String udbcId) {
-        this.udbcId = udbcId;
     }
 
     public Integer getCPU() {
@@ -373,14 +350,6 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setClusterRole(String clusterRole) {
         this.clusterRole = clusterRole;
-    }
-
-    public String getHAArch() {
-        return haArch;
-    }
-
-    public void setHAArch(String haArch) {
-        this.haArch = haArch;
     }
 
     public String getTag() {

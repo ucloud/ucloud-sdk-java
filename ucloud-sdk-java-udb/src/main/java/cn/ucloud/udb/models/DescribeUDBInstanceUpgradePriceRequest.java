@@ -20,16 +20,19 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeUDBInstanceUpgradePriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -48,13 +51,13 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** 是否使用SSD，默认为false */
-    @UCloudParam("UseSSD")
-    private Boolean useSSD;
-
-    /** SSD类型，可选值为"SATA"、"PCI-E"，如果UseSSD为true ，则必选 */
+    /** "SATA", "NVMe" */
     @UCloudParam("SSDType")
     private String ssdType;
+
+    /** 获取指定时间开始后面的升级价格， 不填的话 是默认当前时间 */
+    @UCloudParam("OrderStartTime")
+    private Integer orderStartTime;
 
     public String getRegion() {
         return region;
@@ -104,19 +107,19 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
         this.diskSpace = diskSpace;
     }
 
-    public Boolean getUseSSD() {
-        return useSSD;
-    }
-
-    public void setUseSSD(Boolean useSSD) {
-        this.useSSD = useSSD;
-    }
-
     public String getSSDType() {
         return ssdType;
     }
 
     public void setSSDType(String ssdType) {
         this.ssdType = ssdType;
+    }
+
+    public Integer getOrderStartTime() {
+        return orderStartTime;
+    }
+
+    public void setOrderStartTime(Integer orderStartTime) {
+        this.orderStartTime = orderStartTime;
     }
 }
