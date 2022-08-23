@@ -315,7 +315,7 @@ public interface UDBClientInterface extends Client {
             DescribeUDBBackupBlacklistRequest request) throws UCloudException;
 
     /**
-     * DescribeUDBBinlogBackupURL - 获取UDB的Binlog备份地址
+     * DescribeUDBBinlogBackupURL - (新)获取UDB的日志备份地址
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -405,7 +405,7 @@ public interface UDBClientInterface extends Client {
             DescribeUDBInstanceUpgradePriceRequest request) throws UCloudException;
 
     /**
-     * DescribeUDBLogBackupURL - 获取UDB的slowlog备份地址
+     * DescribeUDBLogBackupURL - 获取UDB的日志备份地址
      *
      * @param request Request object
      * @throws UCloudException Exception

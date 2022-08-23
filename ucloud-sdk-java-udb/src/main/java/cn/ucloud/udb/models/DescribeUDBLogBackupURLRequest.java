@@ -41,7 +41,7 @@ public class DescribeUDBLogBackupURLRequest extends Request {
     @UCloudParam("DBId")
     private String dbId;
 
-    /** DB实例备份ID */
+    /** DB实例日志备份ID, 可以从DescribeUDBLogPackage结果当中获得。 */
     @NotEmpty
     @UCloudParam("BackupId")
     private Integer backupId;

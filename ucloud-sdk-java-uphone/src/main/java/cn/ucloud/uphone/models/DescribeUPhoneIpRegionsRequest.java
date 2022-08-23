@@ -27,7 +27,9 @@ public class DescribeUPhoneIpRegionsRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取 */
+    /**
+     * 城市Id，通过[获取城市列表](https://docs.ucloud.cn/api/uphone-api/describe_u_phone_cities)获取；新增一个oversea虚拟城市，用来获取所有支持的海外独立IP地域
+     */
     @NotEmpty
     @UCloudParam("CityId")
     private String cityId;

@@ -85,6 +85,8 @@ import cn.ucloud.umem.models.ISolationURedisGroupRequest;
 import cn.ucloud.umem.models.ISolationURedisGroupResponse;
 import cn.ucloud.umem.models.ModifyUMemSpaceNameRequest;
 import cn.ucloud.umem.models.ModifyUMemSpaceNameResponse;
+import cn.ucloud.umem.models.ModifyURedisConfigRequest;
+import cn.ucloud.umem.models.ModifyURedisConfigResponse;
 import cn.ucloud.umem.models.ModifyURedisGroupNameRequest;
 import cn.ucloud.umem.models.ModifyURedisGroupNameResponse;
 import cn.ucloud.umem.models.ModifyURedisGroupPasswordRequest;
@@ -539,6 +541,18 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
+     * ModifyURedisConfig - 修改主备Redis配置文件参数
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyURedisConfigResponse modifyURedisConfig(ModifyURedisConfigRequest request)
+            throws UCloudException {
+        request.setAction("ModifyURedisConfig");
+        return (ModifyURedisConfigResponse) this.invoke(request, ModifyURedisConfigResponse.class);
+    }
+
+    /**
      * ModifyURedisGroupName - 修改名称
      *
      * @param request Request object
@@ -626,7 +640,7 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * UpdateURedisBackupStrategy - 更改zhubeiredis的备份策略
+     * UpdateURedisBackupStrategy - 更改主备Redis备份策略
      *
      * @param request Request object
      * @throws UCloudException Exception

@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.umem.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBParamGroupRequest extends Request {
+public class ModifyURedisConfigRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class DescribeUDBParamGroupRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,31 +37,28 @@ public class DescribeUDBParamGroupRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 分页显示的起始偏移，列表操作则指定 */
+    /** 配置文件的ID */
     @NotEmpty
-    @UCloudParam("Offset")
-    private Integer offset;
+    @UCloudParam("ConfigId")
+    private String configId;
 
-    /** 分页显示的条目数，列表操作则指定 */
+    /** 参数名称 */
     @NotEmpty
-    @UCloudParam("Limit")
-    private Integer limit;
+    @UCloudParam("Key")
+    private String key;
 
-    /** 参数组id，如果指定则获取描述，否则是列表操作，需要 指定Offset/Limit */
+    /** 对应参数的值 */
+    @NotEmpty
+    @UCloudParam("Value")
+    private String value;
+
+    /** 如果实例使用默认配置创建，修改配置信息需要填写GroupId */
     @UCloudParam("GroupId")
-    private Integer groupId;
+    private String groupId;
 
-    /** 是否选取专区中配置 */
-    @UCloudParam("IsInUDBC")
-    private Boolean isInUDBC;
-
-    /** 当请求没有填写Zone时，如果指定为true，表示只拉取跨可用区的相关配置文件，否则，拉取所有机房的配置文件（包括每个单可用区和跨可用区） */
+    /** 是否是跨机房URedis(默认false) */
     @UCloudParam("RegionFlag")
     private Boolean regionFlag;
-
-    /** 如果未指定GroupId，则可选是否选取特定DB类型的配置(sql, nosql, postgresql, sqlserver) */
-    @UCloudParam("ClassType")
-    private String classType;
 
     public String getRegion() {
         return region;
@@ -86,36 +84,36 @@ public class DescribeUDBParamGroupRequest extends Request {
         this.projectId = projectId;
     }
 
-    public Integer getOffset() {
-        return offset;
+    public String getConfigId() {
+        return configId;
     }
 
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setConfigId(String configId) {
+        this.configId = configId;
     }
 
-    public Integer getLimit() {
-        return limit;
+    public String getKey() {
+        return key;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public Integer getGroupId() {
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(Integer groupId) {
+    public void setGroupId(String groupId) {
         this.groupId = groupId;
-    }
-
-    public Boolean getIsInUDBC() {
-        return isInUDBC;
-    }
-
-    public void setIsInUDBC(Boolean isInUDBC) {
-        this.isInUDBC = isInUDBC;
     }
 
     public Boolean getRegionFlag() {
@@ -124,13 +122,5 @@ public class DescribeUDBParamGroupRequest extends Request {
 
     public void setRegionFlag(Boolean regionFlag) {
         this.regionFlag = regionFlag;
-    }
-
-    public String getClassType() {
-        return classType;
-    }
-
-    public void setClassType(String classType) {
-        this.classType = classType;
     }
 }

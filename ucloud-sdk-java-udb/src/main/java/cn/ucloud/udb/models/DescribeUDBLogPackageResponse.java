@@ -47,6 +47,10 @@ public class DescribeUDBLogPackageResponse extends Response {
 
     public static class LogPackageDataSet extends Response {
 
+        /** 所在可用区 */
+        @SerializedName("Zone")
+        private String zone;
+
         /** 备份id */
         @SerializedName("BackupId")
         private Integer backupId;
@@ -67,6 +71,10 @@ public class DescribeUDBLogPackageResponse extends Response {
         @SerializedName("BackupType")
         private Integer backupType;
 
+        /** binlog备份类型 Manual //手动备份 Auto //自动备份 */
+        @SerializedName("BinlogType")
+        private String binlogType;
+
         /** 备份状态 Backuping // 备份中 Success // 备份成功 Failed // 备份失败 Expired // 备份过期 */
         @SerializedName("State")
         private String state;
@@ -79,13 +87,17 @@ public class DescribeUDBLogPackageResponse extends Response {
         @SerializedName("DBName")
         private String dbName;
 
-        /** 所在可用区 */
-        @SerializedName("Zone")
-        private String zone;
-
         /** 跨可用区高可用备库所在可用区 */
         @SerializedName("BackupZone")
         private String backupZone;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
 
         public Integer getBackupId() {
             return backupId;
@@ -127,6 +139,14 @@ public class DescribeUDBLogPackageResponse extends Response {
             this.backupType = backupType;
         }
 
+        public String getBinlogType() {
+            return binlogType;
+        }
+
+        public void setBinlogType(String binlogType) {
+            this.binlogType = binlogType;
+        }
+
         public String getState() {
             return state;
         }
@@ -149,14 +169,6 @@ public class DescribeUDBLogPackageResponse extends Response {
 
         public void setDBName(String dbName) {
             this.dbName = dbName;
-        }
-
-        public String getZone() {
-            return zone;
-        }
-
-        public void setZone(String zone) {
-            this.zone = zone;
         }
 
         public String getBackupZone() {

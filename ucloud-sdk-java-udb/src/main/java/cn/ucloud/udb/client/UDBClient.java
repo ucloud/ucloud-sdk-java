@@ -394,7 +394,7 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBBinlogBackupURL - 获取UDB的Binlog备份地址
+     * DescribeUDBBinlogBackupURL - (新)获取UDB的日志备份地址
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -524,7 +524,7 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
-     * DescribeUDBLogBackupURL - 获取UDB的slowlog备份地址
+     * DescribeUDBLogBackupURL - 获取UDB的日志备份地址
      *
      * @param request Request object
      * @throws UCloudException Exception

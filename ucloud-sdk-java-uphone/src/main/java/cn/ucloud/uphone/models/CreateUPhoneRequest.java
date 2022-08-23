@@ -37,17 +37,12 @@ public class CreateUPhoneRequest extends Request {
     @UCloudParam("UPhoneModelName")
     private String uPhoneModelName;
 
-    /** 云手机画面带宽，默认2M */
-    @NotEmpty
-    @UCloudParam("MediaBandwidth")
-    private Integer mediaBandwidth;
-
     /** 云手机镜像ID，不超过32个字节。可通过[查询手机镜像]()查询云手机规格对应的镜像ID。 */
     @NotEmpty
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取；新增一个oversea虚拟城市，可以用来绑定所有支持的海外独立IP */
     @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
@@ -81,6 +76,14 @@ public class CreateUPhoneRequest extends Request {
     @UCloudParam("IpProportion")
     private Integer ipProportion;
 
+    /** 共享带宽名称，可以在创建新的共享带宽时指定一个名称 */
+    @UCloudParam("ShareBandwidthName")
+    private String shareBandwidthName;
+
+    /** 共享带宽ID，使用现有共享带宽时需要传入此参数 */
+    @UCloudParam("ShareBandwidthId")
+    private String shareBandwidthId;
+
     /** 云手机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看。注：代金券对带宽不适用，仅适用于云手机计费 */
     @UCloudParam("CouponId")
     private String couponId;
@@ -107,14 +110,6 @@ public class CreateUPhoneRequest extends Request {
 
     public void setUPhoneModelName(String uPhoneModelName) {
         this.uPhoneModelName = uPhoneModelName;
-    }
-
-    public Integer getMediaBandwidth() {
-        return mediaBandwidth;
-    }
-
-    public void setMediaBandwidth(Integer mediaBandwidth) {
-        this.mediaBandwidth = mediaBandwidth;
     }
 
     public String getImageId() {
@@ -187,6 +182,22 @@ public class CreateUPhoneRequest extends Request {
 
     public void setIpProportion(Integer ipProportion) {
         this.ipProportion = ipProportion;
+    }
+
+    public String getShareBandwidthName() {
+        return shareBandwidthName;
+    }
+
+    public void setShareBandwidthName(String shareBandwidthName) {
+        this.shareBandwidthName = shareBandwidthName;
+    }
+
+    public String getShareBandwidthId() {
+        return shareBandwidthId;
+    }
+
+    public void setShareBandwidthId(String shareBandwidthId) {
+        this.shareBandwidthId = shareBandwidthId;
     }
 
     public String getCouponId() {
