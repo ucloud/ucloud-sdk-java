@@ -117,6 +117,8 @@ import cn.ucloud.vpc.models.DescribeVPCRequest;
 import cn.ucloud.vpc.models.DescribeVPCResponse;
 import cn.ucloud.vpc.models.DescribeWhiteListResourceRequest;
 import cn.ucloud.vpc.models.DescribeWhiteListResourceResponse;
+import cn.ucloud.vpc.models.DetachNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.DetachNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.EnableWhiteListRequest;
 import cn.ucloud.vpc.models.EnableWhiteListResponse;
 import cn.ucloud.vpc.models.GetAvailableResourceForPolicyRequest;
@@ -605,6 +607,15 @@ public interface VPCClientInterface extends Client {
      */
     public DescribeWhiteListResourceResponse describeWhiteListResource(
             DescribeWhiteListResourceRequest request) throws UCloudException;
+
+    /**
+     * DetachNetworkInterface - 解绑云主机关联网卡
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DetachNetworkInterfaceResponse detachNetworkInterface(
+            DetachNetworkInterfaceRequest request) throws UCloudException;
 
     /**
      * EnableWhiteList - 修改NAT网关白名单开关

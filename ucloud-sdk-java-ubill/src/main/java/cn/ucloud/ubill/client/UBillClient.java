@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ubill.models.CreateRenewRequest;
+import cn.ucloud.ubill.models.CreateRenewResponse;
 import cn.ucloud.ubill.models.GetBalanceRequest;
 import cn.ucloud.ubill.models.GetBalanceResponse;
 import cn.ucloud.ubill.models.GetBillDataFileUrlRequest;
@@ -25,11 +27,24 @@ import cn.ucloud.ubill.models.ListUBillDetailRequest;
 import cn.ucloud.ubill.models.ListUBillDetailResponse;
 import cn.ucloud.ubill.models.ListUBillOverviewRequest;
 import cn.ucloud.ubill.models.ListUBillOverviewResponse;
+import cn.ucloud.ubill.models.ModifyAutoRenewFlagRequest;
+import cn.ucloud.ubill.models.ModifyAutoRenewFlagResponse;
 
 /** This client is used to call actions of **UBill** service */
 public class UBillClient extends DefaultClient implements UBillClientInterface {
     public UBillClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * CreateRenew - 创建单个续费订单
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateRenewResponse createRenew(CreateRenewRequest request) throws UCloudException {
+        request.setAction("CreateRenew");
+        return (CreateRenewResponse) this.invoke(request, CreateRenewResponse.class);
     }
 
     /**
@@ -77,5 +92,18 @@ public class UBillClient extends DefaultClient implements UBillClientInterface {
             throws UCloudException {
         request.setAction("ListUBillOverview");
         return (ListUBillOverviewResponse) this.invoke(request, ListUBillOverviewResponse.class);
+    }
+
+    /**
+     * ModifyAutoRenewFlag - 修改资源自动续费标识
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyAutoRenewFlagResponse modifyAutoRenewFlag(ModifyAutoRenewFlagRequest request)
+            throws UCloudException {
+        request.setAction("ModifyAutoRenewFlag");
+        return (ModifyAutoRenewFlagResponse)
+                this.invoke(request, ModifyAutoRenewFlagResponse.class);
     }
 }
