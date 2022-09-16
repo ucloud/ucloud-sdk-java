@@ -119,6 +119,8 @@ import cn.ucloud.vpc.models.DescribeVPCRequest;
 import cn.ucloud.vpc.models.DescribeVPCResponse;
 import cn.ucloud.vpc.models.DescribeWhiteListResourceRequest;
 import cn.ucloud.vpc.models.DescribeWhiteListResourceResponse;
+import cn.ucloud.vpc.models.DetachNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.DetachNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.EnableWhiteListRequest;
 import cn.ucloud.vpc.models.EnableWhiteListResponse;
 import cn.ucloud.vpc.models.GetAvailableResourceForPolicyRequest;
@@ -786,6 +788,19 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
         request.setAction("DescribeWhiteListResource");
         return (DescribeWhiteListResourceResponse)
                 this.invoke(request, DescribeWhiteListResourceResponse.class);
+    }
+
+    /**
+     * DetachNetworkInterface - 解绑云主机关联网卡
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DetachNetworkInterfaceResponse detachNetworkInterface(
+            DetachNetworkInterfaceRequest request) throws UCloudException {
+        request.setAction("DetachNetworkInterface");
+        return (DetachNetworkInterfaceResponse)
+                this.invoke(request, DetachNetworkInterfaceResponse.class);
     }
 
     /**

@@ -25,6 +25,8 @@ import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskRequest;
 import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskResponse;
 import cn.ucloud.ucdn.models.DescribeNewUcdnRefreshCacheTaskRequest;
 import cn.ucloud.ucdn.models.DescribeNewUcdnRefreshCacheTaskResponse;
+import cn.ucloud.ucdn.models.GetAuthConfigRequest;
+import cn.ucloud.ucdn.models.GetAuthConfigResponse;
 import cn.ucloud.ucdn.models.GetCertificateV2Request;
 import cn.ucloud.ucdn.models.GetCertificateV2Response;
 import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateRequest;
@@ -123,6 +125,14 @@ public interface UCDNClientInterface extends Client {
      */
     public DescribeNewUcdnRefreshCacheTaskResponse describeNewUcdnRefreshCacheTask(
             DescribeNewUcdnRefreshCacheTaskRequest request) throws UCloudException;
+
+    /**
+     * GetAuthConfig - 接口获取鉴权信息(非标使用)
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetAuthConfigResponse getAuthConfig(GetAuthConfigRequest request) throws UCloudException;
 
     /**
      * GetCertificateV2 - 获取证书

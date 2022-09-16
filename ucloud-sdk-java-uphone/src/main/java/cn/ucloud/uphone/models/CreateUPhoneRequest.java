@@ -84,6 +84,10 @@ public class CreateUPhoneRequest extends Request {
     @UCloudParam("ShareBandwidthId")
     private String shareBandwidthId;
 
+    /** 使用区域全局共享带宽 */
+    @UCloudParam("UseGlobalBws")
+    private Boolean useGlobalBws;
+
     /** 云手机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看。注：代金券对带宽不适用，仅适用于云手机计费 */
     @UCloudParam("CouponId")
     private String couponId;
@@ -198,6 +202,14 @@ public class CreateUPhoneRequest extends Request {
 
     public void setShareBandwidthId(String shareBandwidthId) {
         this.shareBandwidthId = shareBandwidthId;
+    }
+
+    public Boolean getUseGlobalBws() {
+        return useGlobalBws;
+    }
+
+    public void setUseGlobalBws(Boolean useGlobalBws) {
+        this.useGlobalBws = useGlobalBws;
     }
 
     public String getCouponId() {

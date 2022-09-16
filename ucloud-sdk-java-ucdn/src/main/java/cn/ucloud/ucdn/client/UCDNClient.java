@@ -27,6 +27,8 @@ import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskRequest;
 import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskResponse;
 import cn.ucloud.ucdn.models.DescribeNewUcdnRefreshCacheTaskRequest;
 import cn.ucloud.ucdn.models.DescribeNewUcdnRefreshCacheTaskResponse;
+import cn.ucloud.ucdn.models.GetAuthConfigRequest;
+import cn.ucloud.ucdn.models.GetAuthConfigResponse;
 import cn.ucloud.ucdn.models.GetCertificateV2Request;
 import cn.ucloud.ucdn.models.GetCertificateV2Response;
 import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateRequest;
@@ -145,6 +147,18 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
         request.setAction("DescribeNewUcdnRefreshCacheTask");
         return (DescribeNewUcdnRefreshCacheTaskResponse)
                 this.invoke(request, DescribeNewUcdnRefreshCacheTaskResponse.class);
+    }
+
+    /**
+     * GetAuthConfig - 接口获取鉴权信息(非标使用)
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetAuthConfigResponse getAuthConfig(GetAuthConfigRequest request)
+            throws UCloudException {
+        request.setAction("GetAuthConfig");
+        return (GetAuthConfigResponse) this.invoke(request, GetAuthConfigResponse.class);
     }
 
     /**

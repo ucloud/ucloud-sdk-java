@@ -15,6 +15,8 @@ package cn.ucloud.ubill.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ubill.models.CreateRenewRequest;
+import cn.ucloud.ubill.models.CreateRenewResponse;
 import cn.ucloud.ubill.models.GetBalanceRequest;
 import cn.ucloud.ubill.models.GetBalanceResponse;
 import cn.ucloud.ubill.models.GetBillDataFileUrlRequest;
@@ -23,9 +25,19 @@ import cn.ucloud.ubill.models.ListUBillDetailRequest;
 import cn.ucloud.ubill.models.ListUBillDetailResponse;
 import cn.ucloud.ubill.models.ListUBillOverviewRequest;
 import cn.ucloud.ubill.models.ListUBillOverviewResponse;
+import cn.ucloud.ubill.models.ModifyAutoRenewFlagRequest;
+import cn.ucloud.ubill.models.ModifyAutoRenewFlagResponse;
 
 /** This client is used to call actions of **UBill** service */
 public interface UBillClientInterface extends Client {
+
+    /**
+     * CreateRenew - 创建单个续费订单
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateRenewResponse createRenew(CreateRenewRequest request) throws UCloudException;
 
     /**
      * GetBalance - 获取账户余额
@@ -60,5 +72,14 @@ public interface UBillClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public ListUBillOverviewResponse listUBillOverview(ListUBillOverviewRequest request)
+            throws UCloudException;
+
+    /**
+     * ModifyAutoRenewFlag - 修改资源自动续费标识
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyAutoRenewFlagResponse modifyAutoRenewFlag(ModifyAutoRenewFlagRequest request)
             throws UCloudException;
 }

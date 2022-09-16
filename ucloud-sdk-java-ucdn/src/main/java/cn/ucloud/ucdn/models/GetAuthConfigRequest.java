@@ -11,15 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uhost.models;
+package cn.ucloud.ucdn.models;
+
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-import java.util.List;
-
-public class DescribeAvailableInstanceTypesRequest extends Request {
+public class GetAuthConfigRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -27,16 +26,20 @@ public class DescribeAvailableInstanceTypesRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 指定机型列表 */
-    @UCloudParam("MachineTypes")
-    private List<String> machineTypes;
+    /** 希望获取的域名，不传则获取所有 */
+    @UCloudParam("Domain")
+    private String domain;
 
     public String getRegion() {
         return region;
@@ -62,11 +65,11 @@ public class DescribeAvailableInstanceTypesRequest extends Request {
         this.projectId = projectId;
     }
 
-    public List<String> getMachineTypes() {
-        return machineTypes;
+    public String getDomain() {
+        return domain;
     }
 
-    public void setMachineTypes(List<String> machineTypes) {
-        this.machineTypes = machineTypes;
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 }
