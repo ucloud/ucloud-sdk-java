@@ -66,7 +66,7 @@ public class GetUcdnDomainLogV2Response extends Response {
         @SerializedName("LogTime")
         private Integer logTime;
 
-        /** 日志url地址 */
+        /** 日志url地址，多个URL用分号隔开 */
         @SerializedName("LogUrl")
         private String logUrl;
 

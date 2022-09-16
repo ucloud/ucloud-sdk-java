@@ -25,6 +25,10 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
     @SerializedName("AvailableInstanceTypes")
     private List<AvailableInstanceTypes> availableInstanceTypes;
 
+    /** 当前区域是否可售 */
+    @SerializedName("Status")
+    private String status;
+
     public List<AvailableInstanceTypes> getAvailableInstanceTypes() {
         return availableInstanceTypes;
     }
@@ -33,7 +37,19 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         this.availableInstanceTypes = availableInstanceTypes;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public static class AvailableInstanceTypes extends Response {
+
+        /** 可用区信息 */
+        @SerializedName("Zone")
+        private String zone;
 
         /** 机型名称：快杰O型|O 、快杰共享型|OM 、快杰内存型|OMEM 、 快杰PRO型|OPRO、通用N型|N、高主频C型|C和GPU G型|G等 */
         @SerializedName("Name")
@@ -92,6 +108,14 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         /** GPU的性能指标，value为值，单位是TFlops。 */
         @SerializedName("Performance")
         private Performance performance;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
 
         public String getName() {
             return name;

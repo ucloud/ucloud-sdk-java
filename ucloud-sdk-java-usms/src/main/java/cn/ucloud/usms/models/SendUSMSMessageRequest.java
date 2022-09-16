@@ -36,17 +36,16 @@ public class SendUSMSMessageRequest extends Request {
     @UCloudParam("PhoneNumbers")
     private List<String> phoneNumbers;
 
-    /** 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核； */
-    @NotEmpty
-    @UCloudParam("SigContent")
-    private String sigContent;
-
     /**
      * 模板ID（也即短信模板申请时的工单ID），请到[USMS控制台](https://console.ucloud.cn/usms)的模板管理页面查看；使用的短信模板必须是已申请并通过审核；
      */
     @NotEmpty
     @UCloudParam("TemplateId")
     private String templateId;
+
+    /** 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核； */
+    @UCloudParam("SigContent")
+    private String sigContent;
 
     /**
      * 模板可变参数，以数组的方式填写，举例，TemplateParams.0，TemplateParams.1，...
@@ -79,20 +78,20 @@ public class SendUSMSMessageRequest extends Request {
         this.phoneNumbers = phoneNumbers;
     }
 
-    public String getSigContent() {
-        return sigContent;
-    }
-
-    public void setSigContent(String sigContent) {
-        this.sigContent = sigContent;
-    }
-
     public String getTemplateId() {
         return templateId;
     }
 
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
+    }
+
+    public String getSigContent() {
+        return sigContent;
+    }
+
+    public void setSigContent(String sigContent) {
+        this.sigContent = sigContent;
     }
 
     public List<String> getTemplateParams() {
