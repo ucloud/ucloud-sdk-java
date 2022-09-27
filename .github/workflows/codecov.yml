@@ -18,10 +18,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Write GPG key
-        run: echo ${{ GPG_PRIVATE_KEY }} > gpg-private.key
-      - name: Import GPG key
-        run: gpg --import gpg-private.key
       - name: Run tests
         run: mvn --batch-mode --update-snapshots test
       - name: Upload coverage to Codecov

@@ -11,6 +11,12 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Write GPG key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+        run: echo $GPG_PRIVATE_KEY > gpg-private.key
+      - name: Import GPG key
+        run: gpg --import gpg-private.key
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
