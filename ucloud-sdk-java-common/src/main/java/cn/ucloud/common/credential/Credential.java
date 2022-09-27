@@ -19,7 +19,9 @@ import cn.ucloud.common.request.Request;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
 import java.security.NoSuchAlgorithmException;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -47,10 +49,21 @@ public class Credential {
         String[] keys = params.keySet().toArray(new String[0]);
         Arrays.sort(keys);
 
+        DecimalFormat df = new DecimalFormat("#");
+        df.setMaximumFractionDigits(Integer.MAX_VALUE);
         String s = "";
         for (String key : keys) {
             s = s.concat(key);
-            s = s.concat(params.get(key).toString());
+            Object value = params.get(key);
+            String valueStr;
+            if (value instanceof Double || value instanceof Float) {
+                // If the type is double or float, we need to trim the tailing zeros
+                // to be consistent with the json decoder.
+                valueStr = df.format(value);
+            } else {
+                valueStr = value.toString();
+            }
+            s = s.concat(valueStr);
         }
         s = s.concat(this.privateKey);
 
