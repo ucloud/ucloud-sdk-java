@@ -16,7 +16,7 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
         run: echo $GPG_PRIVATE_KEY > gpg-private.key
       - name: Import GPG key
-        run: echo gpg-private.key
+        run: cat gpg-private.key
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
