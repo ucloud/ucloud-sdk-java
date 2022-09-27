@@ -11,12 +11,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Write GPG key
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-        run: echo $GPG_PRIVATE_KEY > gpg-private.key
-      - name: Import GPG key
-        run: cat gpg-private.key
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
@@ -40,4 +34,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ucloud_ucloud-sdk-java
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dgpg.skip -Dsonar.projectKey=ucloud_ucloud-sdk-java
