@@ -35,6 +35,10 @@ public class DescribeUFileTokenResponse extends Response {
 
     public static class UFileTokenSet extends Response {
 
+        /** 所属地区 */
+        @SerializedName("Region")
+        private String region;
+
         /** 令牌ID */
         @SerializedName("TokenId")
         private String tokenId;
@@ -52,8 +56,8 @@ public class DescribeUFileTokenResponse extends Response {
         private String privateKey;
 
         /**
-         * 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE
-         * , TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
+         * 令牌允许执行的操作，[ TOKEN_ALLOW_NONE 没有权限, TOKEN_ALLOW_READ 下载权限, TOKEN_ALLOW_WRITE 上传权限,
+         * TOKEN_ALLOW_DELETE 删除权限, TOKEN_ALLOW_LIST 列表权限, TOKEN_ALLOW_IOP 图片处理权限]
          */
         @SerializedName("AllowedOps")
         private List<String> allowedOps;
@@ -78,9 +82,21 @@ public class DescribeUFileTokenResponse extends Response {
         @SerializedName("ModifyTime")
         private Integer modifyTime;
 
-        /** 所属地区 */
-        @SerializedName("Region")
-        private String region;
+        /** 令牌黑名单 */
+        @SerializedName("BlackIPList")
+        private List<String> blackIPList;
+
+        /** 令牌白名单 */
+        @SerializedName("WhiteIPList")
+        private List<String> whiteIPList;
+
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
 
         public String getTokenId() {
             return tokenId;
@@ -162,12 +178,20 @@ public class DescribeUFileTokenResponse extends Response {
             this.modifyTime = modifyTime;
         }
 
-        public String getRegion() {
-            return region;
+        public List<String> getBlackIPList() {
+            return blackIPList;
         }
 
-        public void setRegion(String region) {
-            this.region = region;
+        public void setBlackIPList(List<String> blackIPList) {
+            this.blackIPList = blackIPList;
+        }
+
+        public List<String> getWhiteIPList() {
+            return whiteIPList;
+        }
+
+        public void setWhiteIPList(List<String> whiteIPList) {
+            this.whiteIPList = whiteIPList;
         }
     }
 }

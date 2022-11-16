@@ -32,6 +32,10 @@ public class DeleteUPhoneImageRequest extends Request {
     @UCloudParam("ImageId")
     private String imageId;
 
+    /** 枚举值【必填项】。表示当前操作的产品类型，目前固定值【uphone】，表示云手机场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
+
     public String getProjectId() {
         return projectId;
     }
@@ -46,5 +50,13 @@ public class DeleteUPhoneImageRequest extends Request {
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 }

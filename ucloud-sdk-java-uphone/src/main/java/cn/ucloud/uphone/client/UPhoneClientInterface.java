@@ -61,6 +61,8 @@ import cn.ucloud.uphone.models.DescribeUPhoneShareBandwidthRequest;
 import cn.ucloud.uphone.models.DescribeUPhoneShareBandwidthResponse;
 import cn.ucloud.uphone.models.GetUPhoneAllowanceRequest;
 import cn.ucloud.uphone.models.GetUPhoneAllowanceResponse;
+import cn.ucloud.uphone.models.GetUPhoneBandwidthUpgradePriceRequest;
+import cn.ucloud.uphone.models.GetUPhoneBandwidthUpgradePriceResponse;
 import cn.ucloud.uphone.models.GetUPhonePriceRequest;
 import cn.ucloud.uphone.models.GetUPhonePriceResponse;
 import cn.ucloud.uphone.models.GetUPhoneRenewPriceRequest;
@@ -77,6 +79,8 @@ import cn.ucloud.uphone.models.ImportFileRequest;
 import cn.ucloud.uphone.models.ImportFileResponse;
 import cn.ucloud.uphone.models.InstallUPhoneAppVersionRequest;
 import cn.ucloud.uphone.models.InstallUPhoneAppVersionResponse;
+import cn.ucloud.uphone.models.ModifyUPhoneBandwidthRequest;
+import cn.ucloud.uphone.models.ModifyUPhoneBandwidthResponse;
 import cn.ucloud.uphone.models.ModifyUPhoneNameRequest;
 import cn.ucloud.uphone.models.ModifyUPhoneNameResponse;
 import cn.ucloud.uphone.models.ModifyUPhoneRemarkRequest;
@@ -331,6 +335,15 @@ public interface UPhoneClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * GetUPhoneBandwidthUpgradePrice - 获取云手机带宽升降级价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPhoneBandwidthUpgradePriceResponse getUPhoneBandwidthUpgradePrice(
+            GetUPhoneBandwidthUpgradePriceRequest request) throws UCloudException;
+
+    /**
      * GetUPhonePrice - 获取云手机价格
      *
      * @param request Request object
@@ -400,6 +413,15 @@ public interface UPhoneClientInterface extends Client {
      */
     public InstallUPhoneAppVersionResponse installUPhoneAppVersion(
             InstallUPhoneAppVersionRequest request) throws UCloudException;
+
+    /**
+     * ModifyUPhoneBandwidth - 修改云手机带宽
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUPhoneBandwidthResponse modifyUPhoneBandwidth(ModifyUPhoneBandwidthRequest request)
+            throws UCloudException;
 
     /**
      * ModifyUPhoneName - 修改云手机名称

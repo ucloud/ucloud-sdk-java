@@ -27,6 +27,10 @@ public class DescribeUPhoneRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
+    /** 枚举值。【必填项】表示当前操作的产品类型，目前固定值【uphone】，表示云手机场景。 */
+    @UCloudParam("ProductType")
+    private String productType;
+
     /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取，没有该参数表示获取所有城市 */
     @UCloudParam("CityId")
     private String cityId;
@@ -58,16 +62,20 @@ public class DescribeUPhoneRequest extends Request {
     @UCloudParam("IsAll")
     private Boolean isAll;
 
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
-    @UCloudParam("ProductType")
-    private String productType;
-
     public String getProjectId() {
         return projectId;
     }
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     public String getCityId() {
@@ -124,13 +132,5 @@ public class DescribeUPhoneRequest extends Request {
 
     public void setIsAll(Boolean isAll) {
         this.isAll = isAll;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
     }
 }

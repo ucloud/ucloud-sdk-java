@@ -67,6 +67,8 @@ import cn.ucloud.vpc.models.DeleteNetworkAclEntryRequest;
 import cn.ucloud.vpc.models.DeleteNetworkAclEntryResponse;
 import cn.ucloud.vpc.models.DeleteNetworkAclRequest;
 import cn.ucloud.vpc.models.DeleteNetworkAclResponse;
+import cn.ucloud.vpc.models.DeleteNetworkInterfaceRequest;
+import cn.ucloud.vpc.models.DeleteNetworkInterfaceResponse;
 import cn.ucloud.vpc.models.DeleteRouteTableRequest;
 import cn.ucloud.vpc.models.DeleteRouteTableResponse;
 import cn.ucloud.vpc.models.DeleteSecondaryIpRequest;
@@ -468,6 +470,19 @@ public class VPCClient extends DefaultClient implements VPCClientInterface {
         request.setAction("DeleteNetworkAclEntry");
         return (DeleteNetworkAclEntryResponse)
                 this.invoke(request, DeleteNetworkAclEntryResponse.class);
+    }
+
+    /**
+     * DeleteNetworkInterface - 删除网卡
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteNetworkInterfaceResponse deleteNetworkInterface(
+            DeleteNetworkInterfaceRequest request) throws UCloudException {
+        request.setAction("DeleteNetworkInterface");
+        return (DeleteNetworkInterfaceResponse)
+                this.invoke(request, DeleteNetworkInterfaceResponse.class);
     }
 
     /**
