@@ -168,6 +168,18 @@ public class DescribeUPhoneResponse extends Response {
         @SerializedName("ADB")
         private String adb;
 
+        /** 云手机带宽，单位Kbps */
+        @SerializedName("UPhoneBandwidth")
+        private Integer uPhoneBandwidth;
+
+        /** 是否锁定带宽，true代表锁定不可更改，false代表未锁定可以修改带宽 */
+        @SerializedName("LockBandwidth")
+        private Boolean lockBandwidth;
+
+        /** 云手机场景 */
+        @SerializedName("UPhoneScene")
+        private String uPhoneScene;
+
         public String getUPhoneName() {
             return uPhoneName;
         }
@@ -382,6 +394,30 @@ public class DescribeUPhoneResponse extends Response {
 
         public void setADB(String adb) {
             this.adb = adb;
+        }
+
+        public Integer getUPhoneBandwidth() {
+            return uPhoneBandwidth;
+        }
+
+        public void setUPhoneBandwidth(Integer uPhoneBandwidth) {
+            this.uPhoneBandwidth = uPhoneBandwidth;
+        }
+
+        public Boolean getLockBandwidth() {
+            return lockBandwidth;
+        }
+
+        public void setLockBandwidth(Boolean lockBandwidth) {
+            this.lockBandwidth = lockBandwidth;
+        }
+
+        public String getUPhoneScene() {
+            return uPhoneScene;
+        }
+
+        public void setUPhoneScene(String uPhoneScene) {
+            this.uPhoneScene = uPhoneScene;
         }
     }
 }

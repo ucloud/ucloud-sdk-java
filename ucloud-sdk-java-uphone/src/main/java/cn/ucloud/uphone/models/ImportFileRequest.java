@@ -47,9 +47,13 @@ public class ImportFileRequest extends Request {
     @UCloudParam("CityId")
     private String cityId;
 
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    /** 枚举值。表示当前操作的产品类型，目前固定值【uphone】，表示云手机场景。 */
     @UCloudParam("ProductType")
     private String productType;
+
+    /** 上传文件为apk时，可强制指定32位还是64位运行 。armeabi-v7a（32位）;不填为系统默认值（64位） */
+    @UCloudParam("ABI")
+    private String abi;
 
     public String getProjectId() {
         return projectId;
@@ -97,5 +101,13 @@ public class ImportFileRequest extends Request {
 
     public void setProductType(String productType) {
         this.productType = productType;
+    }
+
+    public String getABI() {
+        return abi;
+    }
+
+    public void setABI(String abi) {
+        this.abi = abi;
     }
 }

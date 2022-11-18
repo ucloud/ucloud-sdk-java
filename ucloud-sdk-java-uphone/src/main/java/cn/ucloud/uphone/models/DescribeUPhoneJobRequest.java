@@ -57,7 +57,7 @@ public class DescribeUPhoneJobRequest extends Request {
     @UCloudParam("Types")
     private List<String> types;
 
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    /** 枚举值。表示当前操作的产品类型，目前固定值【uphone】，表示云手机场景。 */
     @UCloudParam("ProductType")
     private String productType;
 

@@ -51,6 +51,8 @@ import cn.ucloud.ufile.models.UpdateUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.UpdateUFileTokenRequest;
 import cn.ucloud.ufile.models.UpdateUFileTokenResponse;
+import cn.ucloud.ufile.models.UpdateUdsRuleRequest;
+import cn.ucloud.ufile.models.UpdateUdsRuleResponse;
 
 /** This client is used to call actions of **UFile** service */
 public interface UFileClientInterface extends Client {
@@ -212,4 +214,12 @@ public interface UFileClientInterface extends Client {
      */
     public UpdateUFileTokenResponse updateUFileToken(UpdateUFileTokenRequest request)
             throws UCloudException;
+
+    /**
+     * UpdateUdsRule - 更新解压缩规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUdsRuleResponse updateUdsRule(UpdateUdsRuleRequest request) throws UCloudException;
 }

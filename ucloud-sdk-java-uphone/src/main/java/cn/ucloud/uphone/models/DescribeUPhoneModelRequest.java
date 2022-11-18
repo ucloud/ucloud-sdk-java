@@ -42,9 +42,13 @@ public class DescribeUPhoneModelRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+    /** 枚举值。表示当前操作的产品类型，目前固定值【uphone】，表示云手机场景。 */
     @UCloudParam("ProductType")
     private String productType;
+
+    /** 使用场景：海外(OVERSEA)，境内(INLAND) */
+    @UCloudParam("Scene")
+    private String scene;
 
     public String getProjectId() {
         return projectId;
@@ -84,5 +88,13 @@ public class DescribeUPhoneModelRequest extends Request {
 
     public void setProductType(String productType) {
         this.productType = productType;
+    }
+
+    public String getScene() {
+        return scene;
+    }
+
+    public void setScene(String scene) {
+        this.scene = scene;
     }
 }

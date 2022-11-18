@@ -42,7 +42,7 @@ public class CreateUPhoneRequest extends Request {
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取；新增一个oversea虚拟城市，可以用来绑定所有支持的海外独立IP */
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取；新增一个oversea虚拟城市，可以用来绑定海外独立IP */
     @NotEmpty
     @UCloudParam("CityId")
     private String cityId;
@@ -87,6 +87,14 @@ public class CreateUPhoneRequest extends Request {
     /** 使用区域全局共享带宽 */
     @UCloudParam("UseGlobalBws")
     private Boolean useGlobalBws;
+
+    /** 单个云手机独立IP网络带宽，单位Kbps；CityId为oversea时不生效；手机规格为UPhone Store和UPhone Live时不生效 */
+    @UCloudParam("UPhoneBandwidth")
+    private Integer uPhoneBandwidth;
+
+    /** 使用Kbps限速 */
+    @UCloudParam("UseKbps")
+    private Boolean useKbps;
 
     /** 云手机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看。注：代金券对带宽不适用，仅适用于云手机计费 */
     @UCloudParam("CouponId")
@@ -210,6 +218,22 @@ public class CreateUPhoneRequest extends Request {
 
     public void setUseGlobalBws(Boolean useGlobalBws) {
         this.useGlobalBws = useGlobalBws;
+    }
+
+    public Integer getUPhoneBandwidth() {
+        return uPhoneBandwidth;
+    }
+
+    public void setUPhoneBandwidth(Integer uPhoneBandwidth) {
+        this.uPhoneBandwidth = uPhoneBandwidth;
+    }
+
+    public Boolean getUseKbps() {
+        return useKbps;
+    }
+
+    public void setUseKbps(Boolean useKbps) {
+        this.useKbps = useKbps;
     }
 
     public String getCouponId() {

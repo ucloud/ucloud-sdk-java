@@ -7,17 +7,15 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.0-release</version>
+    <version>1.1.1-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
-        <module>ucloud-sdk-java-cube</module>
         <module>ucloud-sdk-java-ipsecvpn</module>
         <module>ucloud-sdk-java-pathx</module>
         <module>ucloud-sdk-java-uaccount</module>
         <module>ucloud-sdk-java-ubill</module>
         <module>ucloud-sdk-java-ucdn</module>
         <module>ucloud-sdk-java-udb</module>
-        <module>ucloud-sdk-java-uddb</module>
         <module>ucloud-sdk-java-udpn</module>
         <module>ucloud-sdk-java-udisk</module>
         <module>ucloud-sdk-java-uec</module>
@@ -27,6 +25,7 @@
         <module>ucloud-sdk-java-uk8s</module>
         <module>ucloud-sdk-java-ulb</module>
         <module>ucloud-sdk-java-umem</module>
+        <module>ucloud-sdk-java-umongodb</module>
         <module>ucloud-sdk-java-unet</module>
         <module>ucloud-sdk-java-uphost</module>
         <module>ucloud-sdk-java-uphone</module>

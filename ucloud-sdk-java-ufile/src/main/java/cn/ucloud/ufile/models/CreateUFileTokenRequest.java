@@ -21,11 +21,14 @@ import java.util.List;
 
 public class CreateUFileTokenRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -35,8 +38,9 @@ public class CreateUFileTokenRequest extends Request {
     private String tokenName;
 
     /**
-     * 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE ,
-     * TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]。默认TOKEN_ALLOW_NONE
+     * 令牌允许执行的操作 [ TOKEN_ALLOW_NONE 没有权限, TOKEN_ALLOW_READ 下载权限 , TOKEN_ALLOW_WRITE 上传权限 ,
+     * TOKEN_ALLOW_DELETE 删除权限 , TOKEN_ALLOW_LIST 列表权限, TOKEN_ALLOW_IOP 图片处理权限, TOKEN_DENY_UPDATE
+     * 禁止覆盖权限]。默认TOKEN_ALLOW_NONE
      */
     @UCloudParam("AllowedOps")
     private List<String> allowedOps;
@@ -52,6 +56,14 @@ public class CreateUFileTokenRequest extends Request {
     /** Unix 时间戳，精确到秒，为令牌过期时间点。默认过期时间为一天（即当前Unix时间戳+86400）；注意：过期时间不能超过 4102416000 */
     @UCloudParam("ExpireTime")
     private Integer expireTime;
+
+    /** 令牌黑名单，支持ipv4，ipv6格式。 */
+    @UCloudParam("BlackIPList")
+    private List<String> blackIPList;
+
+    /** 令牌白名单，支持ipv4，ipv6格式。 */
+    @UCloudParam("WhiteIPList")
+    private List<String> whiteIPList;
 
     public String getRegion() {
         return region;
@@ -107,5 +119,21 @@ public class CreateUFileTokenRequest extends Request {
 
     public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
+    }
+
+    public List<String> getBlackIPList() {
+        return blackIPList;
+    }
+
+    public void setBlackIPList(List<String> blackIPList) {
+        this.blackIPList = blackIPList;
+    }
+
+    public List<String> getWhiteIPList() {
+        return whiteIPList;
+    }
+
+    public void setWhiteIPList(List<String> whiteIPList) {
+        this.whiteIPList = whiteIPList;
     }
 }

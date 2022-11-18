@@ -40,7 +40,9 @@ public class GetUPhonePriceRequest extends Request {
     @UCloudParam("UPhoneCount")
     private Integer uPhoneCount;
 
-    /** 计费模式。枚举值为： > Year，按年付费； > Month，按月付费； > Dynamic，按小时预付费; 如果不传某个枚举值，默认返回年付、月付的价格组合集。 */
+    /**
+     * 计费模式。枚举值为： > Year，按年付费； > Month，按月付费；> Day，按天付费； > Dynamic，按小时预付费; 如果不传某个枚举值，默认返回年付、月付的价格组合集。
+     */
     @UCloudParam("ChargeType")
     private String chargeType;
 
@@ -60,9 +62,21 @@ public class GetUPhonePriceRequest extends Request {
     @UCloudParam("IpCount")
     private Integer ipCount;
 
-    /** 购买独立IP时需要此参数，带宽线路数量，与云手机数量一致 */
+    /** 使用全局共享带宽 */
+    @UCloudParam("UseGlobalBws")
+    private Boolean useGlobalBws;
+
+    /** 购买独立IP并且使用全局共享带宽时需要此参数，带宽线路数量，与云手机数量一致 */
     @UCloudParam("BandwidthLine")
     private Integer bandwidthLine;
+
+    /** 单个云手机带宽大小，单位Kbps，仅在UseKbps为true时生效 */
+    @UCloudParam("UPhoneBandwidth")
+    private Integer uPhoneBandwidth;
+
+    /** 使用Kbps单位带宽，仅在使用全局共享带宽时生效，值为true时BandwidthLine参数不再生效 */
+    @UCloudParam("UseKbps")
+    private Boolean useKbps;
 
     public String getProjectId() {
         return projectId;
@@ -136,11 +150,35 @@ public class GetUPhonePriceRequest extends Request {
         this.ipCount = ipCount;
     }
 
+    public Boolean getUseGlobalBws() {
+        return useGlobalBws;
+    }
+
+    public void setUseGlobalBws(Boolean useGlobalBws) {
+        this.useGlobalBws = useGlobalBws;
+    }
+
     public Integer getBandwidthLine() {
         return bandwidthLine;
     }
 
     public void setBandwidthLine(Integer bandwidthLine) {
         this.bandwidthLine = bandwidthLine;
+    }
+
+    public Integer getUPhoneBandwidth() {
+        return uPhoneBandwidth;
+    }
+
+    public void setUPhoneBandwidth(Integer uPhoneBandwidth) {
+        this.uPhoneBandwidth = uPhoneBandwidth;
+    }
+
+    public Boolean getUseKbps() {
+        return useKbps;
+    }
+
+    public void setUseKbps(Boolean useKbps) {
+        this.useKbps = useKbps;
     }
 }

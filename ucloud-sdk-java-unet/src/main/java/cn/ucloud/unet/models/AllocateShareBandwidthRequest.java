@@ -52,6 +52,13 @@ public class AllocateShareBandwidthRequest extends Request {
     @UCloudParam("IPVersion")
     private String ipVersion;
 
+    /**
+     * 共享带宽线路：BGP 国内多线,International 国际多线,ChinaMobile 移动单线,Unicom 联通单线,Telecom 电信单线,BGPPro
+     * 精品BGP（仅香港支持精品BGP）
+     */
+    @UCloudParam("OperatorName")
+    private String operatorName;
+
     public String getRegion() {
         return region;
     }
@@ -106,5 +113,13 @@ public class AllocateShareBandwidthRequest extends Request {
 
     public void setIPVersion(String ipVersion) {
         this.ipVersion = ipVersion;
+    }
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
     }
 }
