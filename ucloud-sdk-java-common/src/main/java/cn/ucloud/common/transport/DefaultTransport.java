@@ -80,7 +80,7 @@ public class DefaultTransport implements Transport {
             throw new TransportException("http error", e);
         }
 
-        String requestId;
+        String requestId = "";
         if (httpResponse.getLastHeader(HEADER_REQUEST_ID) != null) {
             requestId = httpResponse.getLastHeader(HEADER_REQUEST_ID).getValue();
         }
