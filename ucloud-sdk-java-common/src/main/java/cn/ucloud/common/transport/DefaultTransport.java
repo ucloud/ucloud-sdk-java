@@ -79,7 +79,11 @@ public class DefaultTransport implements Transport {
         } catch (Exception e) {
             throw new TransportException("http error", e);
         }
-        String requestId = httpResponse.getLastHeader(HEADER_REQUEST_ID).getValue();
+
+        String requestId = "";
+        if (httpResponse.getLastHeader(HEADER_REQUEST_ID) != null) {
+            requestId = httpResponse.getLastHeader(HEADER_REQUEST_ID).getValue();
+        }
 
         // check http status
         StatusLine httpStatus = httpResponse.getStatusLine();
