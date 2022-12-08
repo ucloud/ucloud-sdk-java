@@ -56,7 +56,7 @@ public class CreateULBRequest extends Request {
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** ULB所在的VPC的ID, 如果不传则使用默认的VPC */
+    /** ULB所在的VPC的ID。 如果不传则使用默认的VPC，若不传且无默认VPC则接口报错 */
     @UCloudParam("VPCId")
     private String vpcId;
 
