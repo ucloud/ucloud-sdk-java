@@ -51,10 +51,6 @@ import cn.ucloud.ucdn.models.GetUcdnDomainInfoListRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainInfoListResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Response;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailRequest;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailResponse;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeRequest;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginRequestNumRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginRequestNumResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainPrefetchEnableRequest;
@@ -300,32 +296,6 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
             throws UCloudException {
         request.setAction("GetUcdnDomainLogV2");
         return (GetUcdnDomainLogV2Response) this.invoke(request, GetUcdnDomainLogV2Response.class);
-    }
-
-    /**
-     * GetUcdnDomainOriginHttpCode - 获取域名源站状态码监控
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
-            GetUcdnDomainOriginHttpCodeRequest request) throws UCloudException {
-        request.setAction("GetUcdnDomainOriginHttpCode");
-        return (GetUcdnDomainOriginHttpCodeResponse)
-                this.invoke(request, GetUcdnDomainOriginHttpCodeResponse.class);
-    }
-
-    /**
-     * GetUcdnDomainOriginHttpCodeDetail - 获取域名源站详细状态码监控
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
-            GetUcdnDomainOriginHttpCodeDetailRequest request) throws UCloudException {
-        request.setAction("GetUcdnDomainOriginHttpCodeDetail");
-        return (GetUcdnDomainOriginHttpCodeDetailResponse)
-                this.invoke(request, GetUcdnDomainOriginHttpCodeDetailResponse.class);
     }
 
     /**

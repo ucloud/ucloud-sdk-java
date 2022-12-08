@@ -101,6 +101,8 @@ import cn.ucloud.umem.models.RestartURedisGroupRequest;
 import cn.ucloud.umem.models.RestartURedisGroupResponse;
 import cn.ucloud.umem.models.UpdateURedisBackupStrategyRequest;
 import cn.ucloud.umem.models.UpdateURedisBackupStrategyResponse;
+import cn.ucloud.umem.models.UpdateURedisRewriteTimeRequest;
+import cn.ucloud.umem.models.UpdateURedisRewriteTimeResponse;
 
 /** This client is used to call actions of **UMem** service */
 public interface UMemClientInterface extends Client {
@@ -490,4 +492,13 @@ public interface UMemClientInterface extends Client {
      */
     public UpdateURedisBackupStrategyResponse updateURedisBackupStrategy(
             UpdateURedisBackupStrategyRequest request) throws UCloudException;
+
+    /**
+     * UpdateURedisRewriteTime - 修改主备redis重写时间
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateURedisRewriteTimeResponse updateURedisRewriteTime(
+            UpdateURedisRewriteTimeRequest request) throws UCloudException;
 }

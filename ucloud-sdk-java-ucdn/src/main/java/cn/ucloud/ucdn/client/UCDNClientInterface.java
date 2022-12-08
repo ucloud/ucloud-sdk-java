@@ -49,10 +49,6 @@ import cn.ucloud.ucdn.models.GetUcdnDomainInfoListRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainInfoListResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomainLogV2Response;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailRequest;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeDetailResponse;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeRequest;
-import cn.ucloud.ucdn.models.GetUcdnDomainOriginHttpCodeResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginRequestNumRequest;
 import cn.ucloud.ucdn.models.GetUcdnDomainOriginRequestNumResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainPrefetchEnableRequest;
@@ -232,24 +228,6 @@ public interface UCDNClientInterface extends Client {
      */
     public GetUcdnDomainLogV2Response getUcdnDomainLogV2(GetUcdnDomainLogV2Request request)
             throws UCloudException;
-
-    /**
-     * GetUcdnDomainOriginHttpCode - 获取域名源站状态码监控
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUcdnDomainOriginHttpCodeResponse getUcdnDomainOriginHttpCode(
-            GetUcdnDomainOriginHttpCodeRequest request) throws UCloudException;
-
-    /**
-     * GetUcdnDomainOriginHttpCodeDetail - 获取域名源站详细状态码监控
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUcdnDomainOriginHttpCodeDetailResponse getUcdnDomainOriginHttpCodeDetail(
-            GetUcdnDomainOriginHttpCodeDetailRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomainOriginRequestNum - 获取域名回源请求数【新】
