@@ -1,35 +1,49 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
- * except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- * <p>Unless required by applicable law or agreed to in writing, software distributed under the
- * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing permissions and
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package cn.ucloud.uslk.models;
 
+import java.util.List;
 
+
+import cn.ucloud.common.request.Request;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
 
 public class CreateUSLKLongLinkRequest extends Request {
 
-    /** 场景ID */
+    
+        
+    /**
+     * 场景ID
+     */
     @NotEmpty
     @UCloudParam("ScenarioID")
     private Integer scenarioID;
-
-    /** 要报备的长链接 */
+        
+    
+        
+    /**
+     * 要报备的长链接
+     */
     @NotEmpty
     @UCloudParam("LongLink")
     private String longLink;
-
+        
+    
     public Integer getScenarioID() {
         return scenarioID;
     }
@@ -37,7 +51,7 @@ public class CreateUSLKLongLinkRequest extends Request {
     public void setScenarioID(Integer scenarioID) {
         this.scenarioID = scenarioID;
     }
-
+    
     public String getLongLink() {
         return longLink;
     }
@@ -45,4 +59,14 @@ public class CreateUSLKLongLinkRequest extends Request {
     public void setLongLink(String longLink) {
         this.longLink = longLink;
     }
+    
 }
+
+
+
+
+
+
+
+
+

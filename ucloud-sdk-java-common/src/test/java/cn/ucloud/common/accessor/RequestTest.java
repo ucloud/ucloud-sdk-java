@@ -3,11 +3,9 @@ package cn.ucloud.common.accessor;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
-
+import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.*;
 
 class DemoRequest extends Request {
 
