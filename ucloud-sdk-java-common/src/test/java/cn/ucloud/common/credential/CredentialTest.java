@@ -63,9 +63,7 @@ public class CredentialTest {
     }
 
     static class DoubleRequest extends Request {
-        DoubleRequest() {
-            super();
-        }
+        DoubleRequest() { super(); }
 
         @UCloudParam("Proportion")
         private Double proportion;

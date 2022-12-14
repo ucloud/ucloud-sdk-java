@@ -26,7 +26,6 @@ import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
 import cn.ucloud.common.transport.DefaultTransport;
 import cn.ucloud.common.transport.Transport;
-
 import java.util.ArrayList;
 import java.util.List;
 
