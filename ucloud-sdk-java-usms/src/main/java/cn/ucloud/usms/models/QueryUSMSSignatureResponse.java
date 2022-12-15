@@ -34,19 +34,19 @@ public class QueryUSMSSignatureResponse extends Response {
 
     public static class OutSignature extends Response {
 
-        /** 短信签名ID */
+        /** 签名ID */
         @SerializedName("SigId")
         private String sigId;
 
-        /** 短信签名内容 */
+        /** 签名内容 */
         @SerializedName("SigContent")
         private String sigContent;
 
-        /** 签名状态，0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 */
+        /** 签名状态。0-待审核 1-审核中 2-审核通过 3-审核未通过 4-被禁用 */
         @SerializedName("Status")
         private Integer status;
 
-        /** 短信签名未通过审核原因 */
+        /** 签名审核失败原因 */
         @SerializedName("ErrDesc")
         private String errDesc;
 

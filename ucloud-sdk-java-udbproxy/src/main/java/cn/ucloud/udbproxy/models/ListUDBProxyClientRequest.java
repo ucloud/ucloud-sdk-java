@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.umongodb.models;
+package cn.ucloud.udbproxy.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUMongoDBBackupURLRequest extends Request {
+public class ListUDBProxyClientRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -37,22 +37,10 @@ public class DescribeUMongoDBBackupURLRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 集群ID */
+    /** 代理ID */
     @NotEmpty
-    @UCloudParam("ClusterId")
-    private String clusterId;
-
-    /** 文件备份ID */
-    @UCloudParam("BackupId")
-    private String backupId;
-
-    /** 打包ID */
-    @UCloudParam("PackageId")
-    private Integer packageId;
-
-    /** 备份链接过期时间（单位秒） */
-    @UCloudParam("ValidTime")
-    private Integer validTime;
+    @UCloudParam("UDBProxyID")
+    private String udbProxyID;
 
     public String getRegion() {
         return region;
@@ -78,35 +66,11 @@ public class DescribeUMongoDBBackupURLRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getClusterId() {
-        return clusterId;
+    public String getUDBProxyID() {
+        return udbProxyID;
     }
 
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
-
-    public String getBackupId() {
-        return backupId;
-    }
-
-    public void setBackupId(String backupId) {
-        this.backupId = backupId;
-    }
-
-    public Integer getPackageId() {
-        return packageId;
-    }
-
-    public void setPackageId(Integer packageId) {
-        this.packageId = packageId;
-    }
-
-    public Integer getValidTime() {
-        return validTime;
-    }
-
-    public void setValidTime(Integer validTime) {
-        this.validTime = validTime;
+    public void setUDBProxyID(String udbProxyID) {
+        this.udbProxyID = udbProxyID;
     }
 }
