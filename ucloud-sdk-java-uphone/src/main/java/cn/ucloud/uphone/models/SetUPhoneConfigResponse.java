@@ -1,38 +1,55 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
- * except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- * <p>Unless required by applicable law or agreed to in writing, software distributed under the
- * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing permissions and
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package cn.ucloud.uphone.models;
-
-import cn.ucloud.common.response.Response;
-
-import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+
+import com.google.gson.annotations.SerializedName;
+
+import cn.ucloud.common.response.Response;
+
 public class SetUPhoneConfigResponse extends Response {
 
-    /** request_uuid，唯一值，用于区分request */
+    
+        
+    /**
+     * request_uuid，唯一值，用于区分request
+     */
     @SerializedName("RequestId")
     private String requestId;
-
-    /** 异步请求成功后返回JobId，用以查询Job状态 */
+        
+    
+        
+    /**
+     * 异步请求成功后返回JobId，用以查询Job状态
+     */
     @SerializedName("JobId")
     private String jobId;
-
-    /** 同步请求会返回命令行结果，异步请求该参数为空 */
+        
+    
+        
+    /**
+     * 同步请求会返回命令行结果，异步请求该参数为空
+     */
     @SerializedName("Results")
     private List<Results> results;
-
+        
+    
     public String getRequestId() {
         return requestId;
     }
@@ -40,7 +57,7 @@ public class SetUPhoneConfigResponse extends Response {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
-
+    
     public String getJobId() {
         return jobId;
     }
@@ -48,7 +65,7 @@ public class SetUPhoneConfigResponse extends Response {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
-
+    
     public List<Results> getResults() {
         return results;
     }
@@ -56,31 +73,49 @@ public class SetUPhoneConfigResponse extends Response {
     public void setResults(List<Results> results) {
         this.results = results;
     }
-
-    public static class Results extends Response {
-
-        /** */
-        @SerializedName("ExecuteMsg")
-        private String executeMsg;
-
-        /** */
-        @SerializedName("UPhoneId")
-        private String uPhoneId;
-
-        public String getExecuteMsg() {
-            return executeMsg;
-        }
-
-        public void setExecuteMsg(String executeMsg) {
-            this.executeMsg = executeMsg;
-        }
-
-        public String getUPhoneId() {
-            return uPhoneId;
-        }
-
-        public void setUPhoneId(String uPhoneId) {
-            this.uPhoneId = uPhoneId;
-        }
+    
+        public static class Results extends Response {
+            
+        
+    /**
+     * 
+     */
+    @SerializedName("ExecuteMsg")
+    private String executeMsg;
+        
+    
+        
+    /**
+     * 
+     */
+    @SerializedName("UPhoneId")
+    private String uPhoneId;
+        
+    
+    public String getExecuteMsg() {
+        return executeMsg;
     }
+
+    public void setExecuteMsg(String executeMsg) {
+        this.executeMsg = executeMsg;
+    }
+    
+    public String getUPhoneId() {
+        return uPhoneId;
+    }
+
+    public void setUPhoneId(String uPhoneId) {
+        this.uPhoneId = uPhoneId;
+    }
+    
+        }
 }
+
+
+
+
+
+
+
+
+
