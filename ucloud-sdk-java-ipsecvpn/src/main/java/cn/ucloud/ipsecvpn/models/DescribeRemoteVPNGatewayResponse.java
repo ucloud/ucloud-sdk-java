@@ -1,47 +1,34 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package cn.ucloud.ipsecvpn.models;
-
-import java.util.List;
-
-
-import com.google.gson.annotations.SerializedName;
 
 import cn.ucloud.common.response.Response;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 public class DescribeRemoteVPNGatewayResponse extends Response {
 
-    
-        
-    /**
-     * 符合条件的客户VPN网关总数
-     */
+    /** 符合条件的客户VPN网关总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
-        
-    
-        
-    /**
-     * 客户VPN网关列表, 每项参数详见 RemoteVPNGatewayDataSet
-     */
+
+    /** 客户VPN网关列表, 每项参数详见 RemoteVPNGatewayDataSet */
     @SerializedName("DataSet")
     private List<RemoteVPNGatewayDataSet> dataSet;
-        
-    
+
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -49,7 +36,7 @@ public class DescribeRemoteVPNGatewayResponse extends Response {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-    
+
     public List<RemoteVPNGatewayDataSet> getDataSet() {
         return dataSet;
     }
@@ -57,129 +44,91 @@ public class DescribeRemoteVPNGatewayResponse extends Response {
     public void setDataSet(List<RemoteVPNGatewayDataSet> dataSet) {
         this.dataSet = dataSet;
     }
-    
-        public static class RemoteVPNGatewayDataSet extends Response {
-            
-        
-    /**
-     * 客户网关ID
-     */
-    @SerializedName("RemoteVPNGatewayId")
-    private String remoteVPNGatewayId;
-        
-    
-        
-    /**
-     * 客户网关名称
-     */
-    @SerializedName("RemoteVPNGatewayName")
-    private String remoteVPNGatewayName;
-        
-    
-        
-    /**
-     * 客户网关IP地址
-     */
-    @SerializedName("RemoteVPNGatewayAddr")
-    private String remoteVPNGatewayAddr;
-        
-    
-        
-    /**
-     * 用户组
-     */
-    @SerializedName("Tag")
-    private String tag;
-        
-    
-        
-    /**
-     * 备注
-     */
-    @SerializedName("Remark")
-    private String remark;
-        
-    
-        
-    /**
-     * 创建时间
-     */
-    @SerializedName("CreateTime")
-    private Integer createTime;
-        
-    
-        
-    /**
-     * 活跃的隧道数量
-     */
-    @SerializedName("TunnelCount")
-    private Integer tunnelCount;
-        
-    
-    public String getRemoteVPNGatewayId() {
-        return remoteVPNGatewayId;
-    }
 
-    public void setRemoteVPNGatewayId(String remoteVPNGatewayId) {
-        this.remoteVPNGatewayId = remoteVPNGatewayId;
-    }
-    
-    public String getRemoteVPNGatewayName() {
-        return remoteVPNGatewayName;
-    }
+    public static class RemoteVPNGatewayDataSet extends Response {
 
-    public void setRemoteVPNGatewayName(String remoteVPNGatewayName) {
-        this.remoteVPNGatewayName = remoteVPNGatewayName;
-    }
-    
-    public String getRemoteVPNGatewayAddr() {
-        return remoteVPNGatewayAddr;
-    }
+        /** 客户网关ID */
+        @SerializedName("RemoteVPNGatewayId")
+        private String remoteVPNGatewayId;
 
-    public void setRemoteVPNGatewayAddr(String remoteVPNGatewayAddr) {
-        this.remoteVPNGatewayAddr = remoteVPNGatewayAddr;
-    }
-    
-    public String getTag() {
-        return tag;
-    }
+        /** 客户网关名称 */
+        @SerializedName("RemoteVPNGatewayName")
+        private String remoteVPNGatewayName;
 
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-    
-    public String getRemark() {
-        return remark;
-    }
+        /** 客户网关IP地址 */
+        @SerializedName("RemoteVPNGatewayAddr")
+        private String remoteVPNGatewayAddr;
 
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-    
-    public Integer getCreateTime() {
-        return createTime;
-    }
+        /** 用户组 */
+        @SerializedName("Tag")
+        private String tag;
 
-    public void setCreateTime(Integer createTime) {
-        this.createTime = createTime;
-    }
-    
-    public Integer getTunnelCount() {
-        return tunnelCount;
-    }
+        /** 备注 */
+        @SerializedName("Remark")
+        private String remark;
 
-    public void setTunnelCount(Integer tunnelCount) {
-        this.tunnelCount = tunnelCount;
-    }
-    
+        /** 创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        /** 活跃的隧道数量 */
+        @SerializedName("TunnelCount")
+        private Integer tunnelCount;
+
+        public String getRemoteVPNGatewayId() {
+            return remoteVPNGatewayId;
         }
+
+        public void setRemoteVPNGatewayId(String remoteVPNGatewayId) {
+            this.remoteVPNGatewayId = remoteVPNGatewayId;
+        }
+
+        public String getRemoteVPNGatewayName() {
+            return remoteVPNGatewayName;
+        }
+
+        public void setRemoteVPNGatewayName(String remoteVPNGatewayName) {
+            this.remoteVPNGatewayName = remoteVPNGatewayName;
+        }
+
+        public String getRemoteVPNGatewayAddr() {
+            return remoteVPNGatewayAddr;
+        }
+
+        public void setRemoteVPNGatewayAddr(String remoteVPNGatewayAddr) {
+            this.remoteVPNGatewayAddr = remoteVPNGatewayAddr;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+
+        public Integer getTunnelCount() {
+            return tunnelCount;
+        }
+
+        public void setTunnelCount(Integer tunnelCount) {
+            this.tunnelCount = tunnelCount;
+        }
+    }
 }
-
-
-
-
-
-
-
-
-

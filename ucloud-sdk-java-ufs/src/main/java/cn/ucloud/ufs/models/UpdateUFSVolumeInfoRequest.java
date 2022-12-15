@@ -1,73 +1,50 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package cn.ucloud.ufs.models;
 
-import java.util.List;
 
-
-import cn.ucloud.common.request.Request;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
+import cn.ucloud.common.request.Request;
 
 public class UpdateUFSVolumeInfoRequest extends Request {
 
-    
-        
-    /**
-     * 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
-        
-    
-        
+
     /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
-        
-    
-        
-    /**
-     * 文件系统ID
-     */
+
+    /** 文件系统ID */
     @NotEmpty
     @UCloudParam("VolumeId")
     private String volumeId;
-        
-    
-        
-    /**
-     * 文件系统名称（文件系统名称／备注至少传入其中一个）
-     */
+
+    /** 文件系统名称（文件系统名称／备注至少传入其中一个） */
     @UCloudParam("VolumeName")
     private String volumeName;
-        
-    
-        
-    /**
-     * 文件系统备注（文件系统名称／备注至少传入其中一个）
-     */
+
+    /** 文件系统备注（文件系统名称／备注至少传入其中一个） */
     @UCloudParam("Remark")
     private String remark;
-        
-    
+
     public String getRegion() {
         return region;
     }
@@ -75,7 +52,7 @@ public class UpdateUFSVolumeInfoRequest extends Request {
     public void setRegion(String region) {
         this.region = region;
     }
-    
+
     public String getProjectId() {
         return projectId;
     }
@@ -83,7 +60,7 @@ public class UpdateUFSVolumeInfoRequest extends Request {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-    
+
     public String getVolumeId() {
         return volumeId;
     }
@@ -91,7 +68,7 @@ public class UpdateUFSVolumeInfoRequest extends Request {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
-    
+
     public String getVolumeName() {
         return volumeName;
     }
@@ -99,7 +76,7 @@ public class UpdateUFSVolumeInfoRequest extends Request {
     public void setVolumeName(String volumeName) {
         this.volumeName = volumeName;
     }
-    
+
     public String getRemark() {
         return remark;
     }
@@ -107,14 +84,4 @@ public class UpdateUFSVolumeInfoRequest extends Request {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-    
 }
-
-
-
-
-
-
-
-
-
