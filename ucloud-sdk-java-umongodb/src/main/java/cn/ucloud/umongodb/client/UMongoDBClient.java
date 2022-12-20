@@ -23,6 +23,8 @@ import cn.ucloud.umongodb.models.CreateUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.CreateUMongoDBConfigTemplateResponse;
 import cn.ucloud.umongodb.models.DescribeUMongoDBBackupURLRequest;
 import cn.ucloud.umongodb.models.DescribeUMongoDBBackupURLResponse;
+import cn.ucloud.umongodb.models.DescribeUMongoDBInstanceRequest;
+import cn.ucloud.umongodb.models.DescribeUMongoDBInstanceResponse;
 import cn.ucloud.umongodb.models.GetUMongoDBBackupParamRequest;
 import cn.ucloud.umongodb.models.GetUMongoDBBackupParamResponse;
 import cn.ucloud.umongodb.models.GetUMongoDBCfgTempItemRequest;
@@ -93,6 +95,19 @@ public class UMongoDBClient extends DefaultClient implements UMongoDBClientInter
         request.setAction("DescribeUMongoDBBackupURL");
         return (DescribeUMongoDBBackupURLResponse)
                 this.invoke(request, DescribeUMongoDBBackupURLResponse.class);
+    }
+
+    /**
+     * DescribeUMongoDBInstance - 描述MongoDB实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUMongoDBInstanceResponse describeUMongoDBInstance(
+            DescribeUMongoDBInstanceRequest request) throws UCloudException {
+        request.setAction("DescribeUMongoDBInstance");
+        return (DescribeUMongoDBInstanceResponse)
+                this.invoke(request, DescribeUMongoDBInstanceResponse.class);
     }
 
     /**
