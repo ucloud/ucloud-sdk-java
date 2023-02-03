@@ -25,8 +25,6 @@ import cn.ucloud.uaccount.models.GetProjectListRequest;
 import cn.ucloud.uaccount.models.GetProjectListResponse;
 import cn.ucloud.uaccount.models.GetRegionRequest;
 import cn.ucloud.uaccount.models.GetRegionResponse;
-import cn.ucloud.uaccount.models.InviteSubaccountRequest;
-import cn.ucloud.uaccount.models.InviteSubaccountResponse;
 import cn.ucloud.uaccount.models.RemoveMemberFromProjectRequest;
 import cn.ucloud.uaccount.models.RemoveMemberFromProjectResponse;
 import cn.ucloud.uaccount.models.SetNetworkMaskRequest;
@@ -77,15 +75,6 @@ public interface UAccountClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public GetRegionResponse getRegion(GetRegionRequest request) throws UCloudException;
-
-    /**
-     * InviteSubaccount - 邀请子帐号成员
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public InviteSubaccountResponse inviteSubaccount(InviteSubaccountRequest request)
-            throws UCloudException;
 
     /**
      * RemoveMemberFromProject - 从项目中移除成员
