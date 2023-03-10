@@ -46,6 +46,10 @@ public class GetUcdnDomain95BandwidthV2Request extends Request {
     @UCloudParam("Areacode")
     private String areacode;
 
+    /** 是否是动态加速 默认是false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -84,5 +88,13 @@ public class GetUcdnDomain95BandwidthV2Request extends Request {
 
     public void setAreacode(String areacode) {
         this.areacode = areacode;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

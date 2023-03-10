@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.upgsql.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBInstanceBackupURLRequest extends Request {
+public class ListUPgSQLLogRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,19 +37,20 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** DB实例Id,该值可通过DescribeUDBInstance获取 */
+    /** 查询的日志开始的时间戳 */
     @NotEmpty
-    @UCloudParam("DBId")
-    private String dbId;
+    @UCloudParam("BeginTime")
+    private Integer beginTime;
 
-    /** DB实例备份ID,该值可以通过DescribeUDBBackup获取 */
+    /** 查询日志的结束时间戳 */
     @NotEmpty
-    @UCloudParam("BackupId")
-    private Integer backupId;
+    @UCloudParam("EndTime")
+    private Integer endTime;
 
-    /** DB响应中URL的过期时间,该值最小默认4小时,最大7天。不填默认为四小时。(单位/秒) */
-    @UCloudParam("ValidTime")
-    private Integer validTime;
+    /** 资源ID */
+    @NotEmpty
+    @UCloudParam("InstanceID")
+    private String instanceID;
 
     public String getRegion() {
         return region;
@@ -74,27 +76,27 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getDBId() {
-        return dbId;
+    public Integer getBeginTime() {
+        return beginTime;
     }
 
-    public void setDBId(String dbId) {
-        this.dbId = dbId;
+    public void setBeginTime(Integer beginTime) {
+        this.beginTime = beginTime;
     }
 
-    public Integer getBackupId() {
-        return backupId;
+    public Integer getEndTime() {
+        return endTime;
     }
 
-    public void setBackupId(Integer backupId) {
-        this.backupId = backupId;
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
     }
 
-    public Integer getValidTime() {
-        return validTime;
+    public String getInstanceID() {
+        return instanceID;
     }
 
-    public void setValidTime(Integer validTime) {
-        this.validTime = validTime;
+    public void setInstanceID(String instanceID) {
+        this.instanceID = instanceID;
     }
 }

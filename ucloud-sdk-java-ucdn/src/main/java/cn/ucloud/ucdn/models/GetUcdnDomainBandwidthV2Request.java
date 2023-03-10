@@ -31,7 +31,7 @@ public class GetUcdnDomainBandwidthV2Request extends Request {
     @UCloudParam("Type")
     private Integer type;
 
-    /** 域名id，创建域名时生成的id。默认全部域名 */
+    /** 域名id，创建域名时生成的id。默认全部域名;例(DomainId.0=ucdn-xxxxxx;DomainId.1=ucdn-xxxxxx) */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
@@ -50,13 +50,17 @@ public class GetUcdnDomainBandwidthV2Request extends Request {
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 协议，http、https 不传则查所有协议的带宽 */
+    /** 协议，http、https、websocket 不传则查所有协议的带宽，可以查多个协议，用逗号分隔 */
     @UCloudParam("Protocol")
     private String protocol;
 
     /** 原始带宽，不为0则获取原始带宽，默认为0 */
     @UCloudParam("Primeval")
     private Integer primeval;
+
+    /** 是否全站加速，默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
 
     public String getProjectId() {
         return projectId;
@@ -120,5 +124,13 @@ public class GetUcdnDomainBandwidthV2Request extends Request {
 
     public void setPrimeval(Integer primeval) {
         this.primeval = primeval;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

@@ -52,6 +52,10 @@ public class GetUcdnPassBandwidthV2Request extends Request {
     @UCloudParam("EndTime")
     private Integer endTime;
 
+    /** 是否全站加速 默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -98,5 +102,13 @@ public class GetUcdnPassBandwidthV2Request extends Request {
 
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

@@ -11,23 +11,19 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.upgsql.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBInstanceBackupURLRequest extends Request {
+public class GetUPgSQLInstanceLogRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
-
-    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @UCloudParam("Zone")
-    private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
@@ -36,19 +32,40 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** DB实例Id,该值可通过DescribeUDBInstance获取 */
+    /** 可用区 */
+    @NotEmpty
+    @UCloudParam("ZoneID")
+    private Integer zoneID;
+
+    /** 实例ClusterID */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
 
-    /** DB实例备份ID,该值可以通过DescribeUDBBackup获取 */
+    /** 日志类型 */
     @NotEmpty
-    @UCloudParam("BackupId")
-    private Integer backupId;
+    @UCloudParam("LogType")
+    private String logType;
 
-    /** DB响应中URL的过期时间,该值最小默认4小时,最大7天。不填默认为四小时。(单位/秒) */
-    @UCloudParam("ValidTime")
-    private Integer validTime;
+    /** */
+    @NotEmpty
+    @UCloudParam("CompanyID")
+    private Integer companyID;
+
+    /** */
+    @NotEmpty
+    @UCloudParam("AccountID")
+    private Integer accountID;
+
+    /** 起始时间，需使用时间戳 */
+    @NotEmpty
+    @UCloudParam("BeginTime")
+    private Integer beginTime;
+
+    /** 结束时间，需使用时间戳，结束时间需大于起始时间 */
+    @NotEmpty
+    @UCloudParam("EndTime")
+    private Integer endTime;
 
     public String getRegion() {
         return region;
@@ -56,14 +73,6 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
 
     public void setRegion(String region) {
         this.region = region;
-    }
-
-    public String getZone() {
-        return zone;
-    }
-
-    public void setZone(String zone) {
-        this.zone = zone;
     }
 
     public String getProjectId() {
@@ -74,6 +83,14 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
         this.projectId = projectId;
     }
 
+    public Integer getZoneID() {
+        return zoneID;
+    }
+
+    public void setZoneID(Integer zoneID) {
+        this.zoneID = zoneID;
+    }
+
     public String getDBId() {
         return dbId;
     }
@@ -82,19 +99,43 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
         this.dbId = dbId;
     }
 
-    public Integer getBackupId() {
-        return backupId;
+    public String getLogType() {
+        return logType;
     }
 
-    public void setBackupId(Integer backupId) {
-        this.backupId = backupId;
+    public void setLogType(String logType) {
+        this.logType = logType;
     }
 
-    public Integer getValidTime() {
-        return validTime;
+    public Integer getCompanyID() {
+        return companyID;
     }
 
-    public void setValidTime(Integer validTime) {
-        this.validTime = validTime;
+    public void setCompanyID(Integer companyID) {
+        this.companyID = companyID;
+    }
+
+    public Integer getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(Integer accountID) {
+        this.accountID = accountID;
+    }
+
+    public Integer getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Integer beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public Integer getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
     }
 }

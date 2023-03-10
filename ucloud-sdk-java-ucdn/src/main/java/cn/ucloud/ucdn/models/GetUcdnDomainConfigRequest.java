@@ -43,6 +43,14 @@ public class GetUcdnDomainConfigRequest extends Request {
     @UCloudParam("ChannelType")
     private String channelType;
 
+    /** 域名 */
+    @UCloudParam("Domain")
+    private List<String> domain;
+
+    /** 是否是动态加速 默认是false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -81,5 +89,21 @@ public class GetUcdnDomainConfigRequest extends Request {
 
     public void setChannelType(String channelType) {
         this.channelType = channelType;
+    }
+
+    public List<String> getDomain() {
+        return domain;
+    }
+
+    public void setDomain(List<String> domain) {
+        this.domain = domain;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

@@ -35,39 +35,39 @@ public class GetUFileDailyReportResponse extends Response {
 
     public static class UFileDailyReportItem extends Response {
 
-        /** 标准存储量；单位byte */
+        /** 标准存储量；单位GB */
         @SerializedName("Storage")
         private Double storage;
 
-        /** 低频存储量；单位byte */
+        /** 低频存储量；单位GB */
         @SerializedName("IaStorage")
         private Double iaStorage;
 
-        /** 冷存（归档）存储量；单位byte */
+        /** 冷存（归档）存储量；单位GB */
         @SerializedName("AcStorage")
         private Double acStorage;
 
-        /** 低频数据取回量；单位byte */
+        /** 低频数据取回量；单位GB */
         @SerializedName("IaGetSize")
         private Double iaGetSize;
 
-        /** 冷存激活量，即归档数据取回量；单位byte */
+        /** 冷存激活量，即归档数据取回量；单位GB */
         @SerializedName("AcRestore")
         private Double acRestore;
 
-        /** 忙时流量；单位byte；海外无此字段 */
+        /** 忙时流量；单位GB；海外无此字段 */
         @SerializedName("BusyFlow")
         private Double busyFlow;
 
-        /** 闲时流量；单位byte；海外无此字段 */
+        /** 闲时流量；单位GB；海外无此字段 */
         @SerializedName("IdleFlow")
         private Double idleFlow;
 
-        /** cdn回源流量;单位byte */
+        /** cdn回源流量;单位GB */
         @SerializedName("CdnFlow")
         private Double cdnFlow;
 
-        /** 下载流量：单位byte；国内无此字段 */
+        /** 下载流量：单位GB；国内无此字段 */
         @SerializedName("Flow")
         private Double flow;
 
@@ -197,19 +197,19 @@ public class GetUFileDailyReportResponse extends Response {
 
     public static class UFileTotalReportItem extends Response {
 
-        /** 下载流量：单位byte；国内无此字段 */
+        /** 下载流量：单位GB；国内无此字段 */
         @SerializedName("Flow")
         private Double flow;
 
-        /** 闲时流量；单位byte；海外无此字段 */
+        /** 闲时流量；单位GB；海外无此字段 */
         @SerializedName("IdleFlow")
         private Double idleFlow;
 
-        /** 忙时流量；单位byte；海外无此字段 */
+        /** 忙时流量；单位GB；海外无此字段 */
         @SerializedName("BusyFlow")
         private Double busyFlow;
 
-        /** cdn回源流量;单位byte */
+        /** cdn回源流量;单位GB */
         @SerializedName("CdnFlow")
         private Double cdnFlow;
 

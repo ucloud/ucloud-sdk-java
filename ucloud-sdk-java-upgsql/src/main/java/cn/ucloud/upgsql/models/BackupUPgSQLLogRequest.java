@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.upgsql.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBInstanceBackupURLRequest extends Request {
+public class BackupUPgSQLLogRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,19 +37,32 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** DB实例Id,该值可通过DescribeUDBInstance获取 */
+    /** 备份导出文件名称 */
     @NotEmpty
-    @UCloudParam("DBId")
-    private String dbId;
+    @UCloudParam("BackupName")
+    private String backupName;
 
-    /** DB实例备份ID,该值可以通过DescribeUDBBackup获取 */
+    /** 备份查询结果文件名称 */
     @NotEmpty
-    @UCloudParam("BackupId")
-    private Integer backupId;
+    @UCloudParam("BackupFile")
+    private String backupFile;
 
-    /** DB响应中URL的过期时间,该值最小默认4小时,最大7天。不填默认为四小时。(单位/秒) */
-    @UCloudParam("ValidTime")
-    private Integer validTime;
+    /** 资源ID */
+    @NotEmpty
+    @UCloudParam("InstanceID")
+    private String instanceID;
+
+    /** 日志类型:slow(慢日志),error(错误日志) */
+    @UCloudParam("LogType")
+    private String logType;
+
+    /** 日志开始时间 */
+    @UCloudParam("BeginTime")
+    private Integer beginTime;
+
+    /** 日志结束时间 */
+    @UCloudParam("EndTime")
+    private Integer endTime;
 
     public String getRegion() {
         return region;
@@ -74,27 +88,51 @@ public class DescribeUDBInstanceBackupURLRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getDBId() {
-        return dbId;
+    public String getBackupName() {
+        return backupName;
     }
 
-    public void setDBId(String dbId) {
-        this.dbId = dbId;
+    public void setBackupName(String backupName) {
+        this.backupName = backupName;
     }
 
-    public Integer getBackupId() {
-        return backupId;
+    public String getBackupFile() {
+        return backupFile;
     }
 
-    public void setBackupId(Integer backupId) {
-        this.backupId = backupId;
+    public void setBackupFile(String backupFile) {
+        this.backupFile = backupFile;
     }
 
-    public Integer getValidTime() {
-        return validTime;
+    public String getInstanceID() {
+        return instanceID;
     }
 
-    public void setValidTime(Integer validTime) {
-        this.validTime = validTime;
+    public void setInstanceID(String instanceID) {
+        this.instanceID = instanceID;
+    }
+
+    public String getLogType() {
+        return logType;
+    }
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
+
+    public Integer getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Integer beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public Integer getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
     }
 }

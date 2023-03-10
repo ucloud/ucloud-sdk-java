@@ -47,6 +47,10 @@ public class DescribeUDBBackupResponse extends Response {
 
     public static class UDBBackupSet extends Response {
 
+        /** 备份所在可用区 */
+        @SerializedName("Zone")
+        private String zone;
+
         /** 备份id */
         @SerializedName("BackupId")
         private Integer backupId;
@@ -71,6 +75,10 @@ public class DescribeUDBBackupResponse extends Response {
         @SerializedName("State")
         private String state;
 
+        /** 备份错误信息 */
+        @SerializedName("ErrorInfo")
+        private String errorInfo;
+
         /** dbid */
         @SerializedName("DBId")
         private String dbId;
@@ -79,10 +87,6 @@ public class DescribeUDBBackupResponse extends Response {
         @SerializedName("DBName")
         private String dbName;
 
-        /** 备份所在可用区 */
-        @SerializedName("Zone")
-        private String zone;
-
         /** 跨机房高可用备库所在可用区 */
         @SerializedName("BackupZone")
         private String backupZone;
@@ -90,6 +94,18 @@ public class DescribeUDBBackupResponse extends Response {
         /** 备份完成时间(Unix时间戳) */
         @SerializedName("BackupEndTime")
         private Integer backupEndTime;
+
+        /** 备份文件的MD5值，备份完成后显示，备份中或备份失败时为空,目前只支持Mysql NVMe机型与Mongo */
+        @SerializedName("MD5")
+        private String md5;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
 
         public Integer getBackupId() {
             return backupId;
@@ -139,6 +155,14 @@ public class DescribeUDBBackupResponse extends Response {
             this.state = state;
         }
 
+        public String getErrorInfo() {
+            return errorInfo;
+        }
+
+        public void setErrorInfo(String errorInfo) {
+            this.errorInfo = errorInfo;
+        }
+
         public String getDBId() {
             return dbId;
         }
@@ -155,14 +179,6 @@ public class DescribeUDBBackupResponse extends Response {
             this.dbName = dbName;
         }
 
-        public String getZone() {
-            return zone;
-        }
-
-        public void setZone(String zone) {
-            this.zone = zone;
-        }
-
         public String getBackupZone() {
             return backupZone;
         }
@@ -177,6 +193,14 @@ public class DescribeUDBBackupResponse extends Response {
 
         public void setBackupEndTime(Integer backupEndTime) {
             this.backupEndTime = backupEndTime;
+        }
+
+        public String getMD5() {
+            return md5;
+        }
+
+        public void setMD5(String md5) {
+            this.md5 = md5;
         }
     }
 }

@@ -28,6 +28,10 @@ public class DescribeUDBInstanceBackupURLResponse extends Response {
     @SerializedName("InnerBackupPath")
     private String innerBackupPath;
 
+    /** 备份文件的md5值 */
+    @SerializedName("MD5")
+    private String md5;
+
     public String getBackupPath() {
         return backupPath;
     }
@@ -42,5 +46,13 @@ public class DescribeUDBInstanceBackupURLResponse extends Response {
 
     public void setInnerBackupPath(String innerBackupPath) {
         this.innerBackupPath = innerBackupPath;
+    }
+
+    public String getMD5() {
+        return md5;
+    }
+
+    public void setMD5(String md5) {
+        this.md5 = md5;
     }
 }

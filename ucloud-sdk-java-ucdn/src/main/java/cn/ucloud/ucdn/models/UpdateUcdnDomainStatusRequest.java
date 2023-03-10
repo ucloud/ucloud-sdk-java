@@ -37,6 +37,10 @@ public class UpdateUcdnDomainStatusRequest extends Request {
     @UCloudParam("Status")
     private String status;
 
+    /** 是否全站加速，默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -59,5 +63,13 @@ public class UpdateUcdnDomainStatusRequest extends Request {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

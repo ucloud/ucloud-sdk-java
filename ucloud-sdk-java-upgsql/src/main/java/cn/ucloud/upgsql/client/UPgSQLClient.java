@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.upgsql.models.BackupUPgSQLLogRequest;
+import cn.ucloud.upgsql.models.BackupUPgSQLLogResponse;
 import cn.ucloud.upgsql.models.CreateUPgSQLInstanceRequest;
 import cn.ucloud.upgsql.models.CreateUPgSQLInstanceResponse;
 import cn.ucloud.upgsql.models.CreateUPgSQLParamTemplateRequest;
@@ -33,6 +35,8 @@ import cn.ucloud.upgsql.models.GetUPgSQLBackupStrategyRequest;
 import cn.ucloud.upgsql.models.GetUPgSQLBackupStrategyResponse;
 import cn.ucloud.upgsql.models.GetUPgSQLBackupURLRequest;
 import cn.ucloud.upgsql.models.GetUPgSQLBackupURLResponse;
+import cn.ucloud.upgsql.models.GetUPgSQLInstanceLogRequest;
+import cn.ucloud.upgsql.models.GetUPgSQLInstanceLogResponse;
 import cn.ucloud.upgsql.models.GetUPgSQLInstancePriceRequest;
 import cn.ucloud.upgsql.models.GetUPgSQLInstancePriceResponse;
 import cn.ucloud.upgsql.models.GetUPgSQLInstanceRequest;
@@ -45,6 +49,8 @@ import cn.ucloud.upgsql.models.ListUPgSQLBackupRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLBackupResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLInstanceRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLInstanceResponse;
+import cn.ucloud.upgsql.models.ListUPgSQLLogRequest;
+import cn.ucloud.upgsql.models.ListUPgSQLLogResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLVersionRequest;
@@ -72,6 +78,18 @@ import cn.ucloud.upgsql.models.UploadUPgSQLParamTemplateResponse;
 public class UPgSQLClient extends DefaultClient implements UPgSQLClientInterface {
     public UPgSQLClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * BackupUPgSQLLog - 备份日志包
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public BackupUPgSQLLogResponse backupUPgSQLLog(BackupUPgSQLLogRequest request)
+            throws UCloudException {
+        request.setAction("BackupUPgSQLLog");
+        return (BackupUPgSQLLogResponse) this.invoke(request, BackupUPgSQLLogResponse.class);
     }
 
     /**
@@ -190,6 +208,19 @@ public class UPgSQLClient extends DefaultClient implements UPgSQLClientInterface
     }
 
     /**
+     * GetUPgSQLInstanceLog - 查询日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPgSQLInstanceLogResponse getUPgSQLInstanceLog(GetUPgSQLInstanceLogRequest request)
+            throws UCloudException {
+        request.setAction("GetUPgSQLInstanceLog");
+        return (GetUPgSQLInstanceLogResponse)
+                this.invoke(request, GetUPgSQLInstanceLogResponse.class);
+    }
+
+    /**
      * GetUPgSQLInstancePrice - 获取创建PG云数据库价格
      *
      * @param request Request object
@@ -250,6 +281,18 @@ public class UPgSQLClient extends DefaultClient implements UPgSQLClientInterface
             throws UCloudException {
         request.setAction("ListUPgSQLInstance");
         return (ListUPgSQLInstanceResponse) this.invoke(request, ListUPgSQLInstanceResponse.class);
+    }
+
+    /**
+     * ListUPgSQLLog - 获取数据库日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUPgSQLLogResponse listUPgSQLLog(ListUPgSQLLogRequest request)
+            throws UCloudException {
+        request.setAction("ListUPgSQLLog");
+        return (ListUPgSQLLogResponse) this.invoke(request, ListUPgSQLLogResponse.class);
     }
 
     /**

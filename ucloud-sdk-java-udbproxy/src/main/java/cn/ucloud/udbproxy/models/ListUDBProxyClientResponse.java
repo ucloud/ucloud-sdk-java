@@ -45,38 +45,11 @@ public class ListUDBProxyClientResponse extends Response {
         this.nodeClientInfos = nodeClientInfos;
     }
 
-    public static class ClientInfo extends Response {
-
-        /** 客户端连接IP */
-        @SerializedName("IP")
-        private String ip;
-
-        /** 客户端连接IP数 */
-        @SerializedName("Count")
-        private Integer count;
-
-        public String getIP() {
-            return ip;
-        }
-
-        public void setIP(String ip) {
-            this.ip = ip;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-    }
-
     public static class NodeClientInfo extends Response {
 
         /** 客户端IP连接信息 */
         @SerializedName("Records")
-        private List<ClientInfo> records;
+        private List<ProxyProcesslist> records;
 
         /** 代理节点ID */
         @SerializedName("ID")
@@ -86,11 +59,11 @@ public class ListUDBProxyClientResponse extends Response {
         @SerializedName("IP")
         private String ip;
 
-        public List<ClientInfo> getRecords() {
+        public List<ProxyProcesslist> getRecords() {
             return records;
         }
 
-        public void setRecords(List<ClientInfo> records) {
+        public void setRecords(List<ProxyProcesslist> records) {
             this.records = records;
         }
 
@@ -108,6 +81,141 @@ public class ListUDBProxyClientResponse extends Response {
 
         public void setIP(String ip) {
             this.ip = ip;
+        }
+    }
+
+    public static class ProxyProcesslist extends Response {
+
+        /** 当前连接DB进程ID */
+        @SerializedName("ID")
+        private Integer id;
+
+        /** 启动这个线程的用户 */
+        @SerializedName("User")
+        private String user;
+
+        /** 代理连接DB地址 */
+        @SerializedName("Host")
+        private String host;
+
+        /** 当前执行的命令是在哪一个数据库上。如果没有指定数据库，则该值为 NULL */
+        @SerializedName("DB")
+        private String db;
+
+        /** 显示当前连接的执行的命令 */
+        @SerializedName("Command")
+        private String command;
+
+        /** 表示该线程处于当前状态的时间 */
+        @SerializedName("Time")
+        private Integer time;
+
+        /** 线程的状态，和 Command 对应 */
+        @SerializedName("State")
+        private String state;
+
+        /** 一般记录的是线程执行的语句 */
+        @SerializedName("Info")
+        private String info;
+
+        /** 代理连接DB地址 */
+        @SerializedName("ClientHost")
+        private String clientHost;
+
+        /** 数据库资源ID */
+        @SerializedName("DBID")
+        private String dbid;
+
+        /** 数据库角色(主库/从库) */
+        @SerializedName("Role")
+        private String role;
+
+        public Integer getID() {
+            return id;
+        }
+
+        public void setID(Integer id) {
+            this.id = id;
+        }
+
+        public String getUser() {
+            return user;
+        }
+
+        public void setUser(String user) {
+            this.user = user;
+        }
+
+        public String getHost() {
+            return host;
+        }
+
+        public void setHost(String host) {
+            this.host = host;
+        }
+
+        public String getDB() {
+            return db;
+        }
+
+        public void setDB(String db) {
+            this.db = db;
+        }
+
+        public String getCommand() {
+            return command;
+        }
+
+        public void setCommand(String command) {
+            this.command = command;
+        }
+
+        public Integer getTime() {
+            return time;
+        }
+
+        public void setTime(Integer time) {
+            this.time = time;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
+
+        public String getClientHost() {
+            return clientHost;
+        }
+
+        public void setClientHost(String clientHost) {
+            this.clientHost = clientHost;
+        }
+
+        public String getDBID() {
+            return dbid;
+        }
+
+        public void setDBID(String dbid) {
+            this.dbid = dbid;
+        }
+
+        public String getRole() {
+            return role;
+        }
+
+        public void setRole(String role) {
+            this.role = role;
         }
     }
 }

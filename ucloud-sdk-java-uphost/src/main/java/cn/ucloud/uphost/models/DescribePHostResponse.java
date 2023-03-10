@@ -387,6 +387,14 @@ public class DescribePHostResponse extends Response {
         @SerializedName("PhostClass")
         private String phostClass;
 
+        /** 裸金属机型字段。枚举值：Normal=>正常、ImageMaking=>镜像制作中。 */
+        @SerializedName("BootDiskState")
+        private String bootDiskState;
+
+        /** RDMA集群id，仅云盘裸金属返回该值；其他类型物理云主机返回""。当物理机的此值与RSSD云盘的RdmaClusterId相同时，RSSD可以挂载到这台物理机。 */
+        @SerializedName("RdmaClusterId")
+        private String rdmaClusterId;
+
         public String getZone() {
             return zone;
         }
@@ -585,6 +593,22 @@ public class DescribePHostResponse extends Response {
 
         public void setPhostClass(String phostClass) {
             this.phostClass = phostClass;
+        }
+
+        public String getBootDiskState() {
+            return bootDiskState;
+        }
+
+        public void setBootDiskState(String bootDiskState) {
+            this.bootDiskState = bootDiskState;
+        }
+
+        public String getRdmaClusterId() {
+            return rdmaClusterId;
+        }
+
+        public void setRdmaClusterId(String rdmaClusterId) {
+            this.rdmaClusterId = rdmaClusterId;
         }
     }
 }

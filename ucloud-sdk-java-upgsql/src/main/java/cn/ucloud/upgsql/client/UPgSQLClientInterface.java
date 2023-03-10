@@ -15,6 +15,8 @@ package cn.ucloud.upgsql.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.upgsql.models.BackupUPgSQLLogRequest;
+import cn.ucloud.upgsql.models.BackupUPgSQLLogResponse;
 import cn.ucloud.upgsql.models.CreateUPgSQLInstanceRequest;
 import cn.ucloud.upgsql.models.CreateUPgSQLInstanceResponse;
 import cn.ucloud.upgsql.models.CreateUPgSQLParamTemplateRequest;
@@ -31,6 +33,8 @@ import cn.ucloud.upgsql.models.GetUPgSQLBackupStrategyRequest;
 import cn.ucloud.upgsql.models.GetUPgSQLBackupStrategyResponse;
 import cn.ucloud.upgsql.models.GetUPgSQLBackupURLRequest;
 import cn.ucloud.upgsql.models.GetUPgSQLBackupURLResponse;
+import cn.ucloud.upgsql.models.GetUPgSQLInstanceLogRequest;
+import cn.ucloud.upgsql.models.GetUPgSQLInstanceLogResponse;
 import cn.ucloud.upgsql.models.GetUPgSQLInstancePriceRequest;
 import cn.ucloud.upgsql.models.GetUPgSQLInstancePriceResponse;
 import cn.ucloud.upgsql.models.GetUPgSQLInstanceRequest;
@@ -43,6 +47,8 @@ import cn.ucloud.upgsql.models.ListUPgSQLBackupRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLBackupResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLInstanceRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLInstanceResponse;
+import cn.ucloud.upgsql.models.ListUPgSQLLogRequest;
+import cn.ucloud.upgsql.models.ListUPgSQLLogResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLVersionRequest;
@@ -68,6 +74,15 @@ import cn.ucloud.upgsql.models.UploadUPgSQLParamTemplateResponse;
 
 /** This client is used to call actions of **UPgSQL** service */
 public interface UPgSQLClientInterface extends Client {
+
+    /**
+     * BackupUPgSQLLog - 备份日志包
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public BackupUPgSQLLogResponse backupUPgSQLLog(BackupUPgSQLLogRequest request)
+            throws UCloudException;
 
     /**
      * CreateUPgSQLInstance - 创建PG云数据库
@@ -151,6 +166,15 @@ public interface UPgSQLClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * GetUPgSQLInstanceLog - 查询日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUPgSQLInstanceLogResponse getUPgSQLInstanceLog(GetUPgSQLInstanceLogRequest request)
+            throws UCloudException;
+
+    /**
      * GetUPgSQLInstancePrice - 获取创建PG云数据库价格
      *
      * @param request Request object
@@ -194,6 +218,14 @@ public interface UPgSQLClientInterface extends Client {
      */
     public ListUPgSQLInstanceResponse listUPgSQLInstance(ListUPgSQLInstanceRequest request)
             throws UCloudException;
+
+    /**
+     * ListUPgSQLLog - 获取数据库日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUPgSQLLogResponse listUPgSQLLog(ListUPgSQLLogRequest request) throws UCloudException;
 
     /**
      * ListUPgSQLMachineType - 获取UPgSQL支持机器类型列表
