@@ -56,6 +56,10 @@ public class GetUcdnDomainHttpCodeV2Request extends Request {
     @UCloudParam("Layer")
     private String layer;
 
+    /** 是否全站加速 默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -110,5 +114,13 @@ public class GetUcdnDomainHttpCodeV2Request extends Request {
 
     public void setLayer(String layer) {
         this.layer = layer;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

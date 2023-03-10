@@ -51,6 +51,10 @@ public class GetUcdnDomainOriginRequestNumRequest extends Request {
     @UCloudParam("Areacode")
     private String areacode;
 
+    /** 是否全站加速 默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -97,5 +101,13 @@ public class GetUcdnDomainOriginRequestNumRequest extends Request {
 
     public void setAreacode(String areacode) {
         this.areacode = areacode;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

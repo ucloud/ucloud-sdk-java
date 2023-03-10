@@ -56,6 +56,10 @@ public class GetUcdnDomainHitRateRequest extends Request {
     @UCloudParam("HitType")
     private Integer hitType;
 
+    /** 是否全站加速，默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
+
     public String getProjectId() {
         return projectId;
     }
@@ -110,5 +114,13 @@ public class GetUcdnDomainHitRateRequest extends Request {
 
     public void setHitType(Integer hitType) {
         this.hitType = hitType;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

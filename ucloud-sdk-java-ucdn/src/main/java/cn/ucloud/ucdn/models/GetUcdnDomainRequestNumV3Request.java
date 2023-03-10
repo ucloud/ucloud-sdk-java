@@ -51,9 +51,13 @@ public class GetUcdnDomainRequestNumV3Request extends Request {
     @UCloudParam("Areacode")
     private String areacode;
 
-    /** 协议，http、https 不传则查所有协议的带宽 */
+    /** 协议，http、https、quic 不传则查所有协议的带宽 可同时查询多个协议用逗号隔开 */
     @UCloudParam("Protocol")
     private String protocol;
+
+    /** 是否全站加速，默认false */
+    @UCloudParam("IsDcdn")
+    private Boolean isDcdn;
 
     public String getProjectId() {
         return projectId;
@@ -109,5 +113,13 @@ public class GetUcdnDomainRequestNumV3Request extends Request {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    public Boolean getIsDcdn() {
+        return isDcdn;
+    }
+
+    public void setIsDcdn(Boolean isDcdn) {
+        this.isDcdn = isDcdn;
     }
 }

@@ -103,23 +103,23 @@ public class DescribeUDiskSnapshotResponse extends Response {
         @SerializedName("UHostId")
         private String uHostId;
 
-        /** 是否是加密盘快照，是:"Yes", 否:"No" */
+        /** 【已废弃】是否是加密盘快照，是:"Yes", 否:"No" */
         @SerializedName("UKmsMode")
         private String uKmsMode;
 
-        /** 该快照的cmk id */
+        /** 【已废弃】该快照的cmk id */
         @SerializedName("CmkId")
         private String cmkId;
 
-        /** 该快照的密文密钥 */
+        /** 【已废弃】该快照的密文密钥 */
         @SerializedName("DataKey")
         private String dataKey;
 
-        /** 该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘) */
+        /** 【已废弃】该快照cmk的状态, Enabled(正常)，Disabled(失效)，Deleted(删除)，NoCmkId(非加密盘) */
         @SerializedName("CmkIdStatus")
         private String cmkIdStatus;
 
-        /** cmk id 别名 */
+        /** 【已废弃】cmk id 别名 */
         @SerializedName("CmkIdAlias")
         private String cmkIdAlias;
 

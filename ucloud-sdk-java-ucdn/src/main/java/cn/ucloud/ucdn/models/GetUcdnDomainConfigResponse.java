@@ -287,8 +287,9 @@ public class GetUcdnDomainConfigResponse extends Response {
         private String cdnType;
 
         /**
-         * 创建的加速域名的当前的状态。check代表审核中，checkSuccess代表审核通过，checkFail代表审核失败，enable代表加速中，disable代表停止加速，delete代表删除加速
-         * enableing代表正在开启加速，disableing代表正在停止加速中，deleteing代表删除中
+         * 创建的加速域名的当前的状态。 check代表审核中； checkSuccess代表审核通过； checkFail代表审核失败； enable代表加速中；
+         * disable代表停止加速； delete代表删除加速； enableing代表正在开启加速； disableing代表正在停止加速中； deleteing代表删除中；
+         * deploying代表部署中
          */
         @SerializedName("Status")
         private String status;

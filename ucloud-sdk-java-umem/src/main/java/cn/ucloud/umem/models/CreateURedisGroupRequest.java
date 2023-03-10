@@ -20,17 +20,20 @@ import cn.ucloud.common.request.Request;
 
 public class CreateURedisGroupRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -57,14 +60,13 @@ public class CreateURedisGroupRequest extends Request {
     private Integer backupTime;
 
     /**
-     * 配置ID,目前支持
-     * 3.0版本配置ID:"03f58ca9-b64d-4bdd-abc7-c6b9a46fd801",3.2版本配置ID:"3e45ac48-f8a2-a9q2-261d-l342dab130gf",
-     * 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea",默认版本3.0,从备份创建为必传项
+     * 配置ID,目前支持 4.0版本配置ID:"6c9298a3-9d7f-428c-b1d0-e87ab3b8a1ea",
+     * 5.0版本配置ID:"3cdeeb90-dcbf-46e8-95cd-a05d8860a22c",6.0版本配置ID:"1d990520-aac8-4e0f-9384-f58611e8eb28",7.0版本配置ID:"48dcf534-db41-11ec-a1a6-52670028d520",默认版本4.0,从备份创建为必传项
      */
     @UCloudParam("ConfigId")
     private String configId;
 
-    /** Redis版本信息(详见DescribeURedisVersion返回结果),默认版本3.0 */
+    /** Redis版本信息(详见DescribeURedisVersion返回结果),默认版本4.0 */
     @UCloudParam("Version")
     private String version;
 
@@ -107,6 +109,10 @@ public class CreateURedisGroupRequest extends Request {
     /** VPC的ID */
     @UCloudParam("VPCId")
     private String vpcId;
+
+    /** 是否创建高性能Redis， 默认为false， 或者不填， 创建高性能为true */
+    @UCloudParam("HighPerformance")
+    private Boolean highPerformance;
 
     /** 代金券ID */
     @UCloudParam("CouponId")
@@ -270,6 +276,14 @@ public class CreateURedisGroupRequest extends Request {
 
     public void setVPCId(String vpcId) {
         this.vpcId = vpcId;
+    }
+
+    public Boolean getHighPerformance() {
+        return highPerformance;
+    }
+
+    public void setHighPerformance(Boolean highPerformance) {
+        this.highPerformance = highPerformance;
     }
 
     public String getCouponId() {

@@ -101,7 +101,7 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("InstanceType")
         private String instanceType;
 
-        /** UDB数据库机型ID */
+        /** UDB数据库机型ID (已弃用) */
         @SerializedName("InstanceTypeId")
         private Integer instanceTypeId;
 
@@ -550,6 +550,10 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
+        /** 延时从库时长 */
+        @SerializedName("ReplicationDelaySeconds")
+        private Integer replicationDelaySeconds;
+
         /** DB实例id */
         @SerializedName("DBId")
         private String dbId;
@@ -713,6 +717,14 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public Integer getReplicationDelaySeconds() {
+            return replicationDelaySeconds;
+        }
+
+        public void setReplicationDelaySeconds(Integer replicationDelaySeconds) {
+            this.replicationDelaySeconds = replicationDelaySeconds;
         }
 
         public String getDBId() {

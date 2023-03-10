@@ -20,12 +20,15 @@ import cn.ucloud.common.request.Request;
 
 public class UpdateULBAttributeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
@@ -35,17 +38,37 @@ public class UpdateULBAttributeRequest extends Request {
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 名字 */
+    /** 名字，不传则默认不修改 */
     @UCloudParam("Name")
     private String name;
 
-    /** 业务 */
+    /** 业务，不传则默认不修改 */
     @UCloudParam("Tag")
     private String tag;
 
-    /** 备注 */
+    /** 备注，不传则默认不修改 */
     @UCloudParam("Remark")
     private String remark;
+
+    /** 日志开关，1代表开启日志，0代表关闭日志，传1时必须同时传BucketName，TokenName与TokenId二选一 */
+    @UCloudParam("EnableLog")
+    private Integer enableLog;
+
+    /** 设置用于存储ulb日志的bucket */
+    @UCloudParam("BucketName")
+    private String bucketName;
+
+    /** 用于指定上传到bucket所需的token，与TokenId选填其一即可 */
+    @UCloudParam("TokenName")
+    private String tokenName;
+
+    /** 用于指定上传到bucket所需的token，与TokenName选填其一即可 */
+    @UCloudParam("TokenId")
+    private String tokenId;
+
+    /** 是否开启WAF。枚举类型：Yes，No，默认值为No */
+    @UCloudParam("IsWAFOn")
+    private String isWAFOn;
 
     public String getRegion() {
         return region;
@@ -93,5 +116,45 @@ public class UpdateULBAttributeRequest extends Request {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public Integer getEnableLog() {
+        return enableLog;
+    }
+
+    public void setEnableLog(Integer enableLog) {
+        this.enableLog = enableLog;
+    }
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    public String getTokenName() {
+        return tokenName;
+    }
+
+    public void setTokenName(String tokenName) {
+        this.tokenName = tokenName;
+    }
+
+    public String getTokenId() {
+        return tokenId;
+    }
+
+    public void setTokenId(String tokenId) {
+        this.tokenId = tokenId;
+    }
+
+    public String getIsWAFOn() {
+        return isWAFOn;
+    }
+
+    public void setIsWAFOn(String isWAFOn) {
+        this.isWAFOn = isWAFOn;
     }
 }
