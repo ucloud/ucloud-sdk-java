@@ -74,6 +74,14 @@ public class GetUcdnDomainConfigResponse extends Response {
         @SerializedName("Http2Https")
         private Boolean http2Https;
 
+        /** 是否开启websocket */
+        @SerializedName("WebSocketEnable")
+        private Boolean webSocketEnable;
+
+        /** 是否开启quic */
+        @SerializedName("QuicEnable")
+        private Boolean quicEnable;
+
         public List<String> getHttpClientHeader() {
             return httpClientHeader;
         }
@@ -96,6 +104,22 @@ public class GetUcdnDomainConfigResponse extends Response {
 
         public void setHttp2Https(Boolean http2Https) {
             this.http2Https = http2Https;
+        }
+
+        public Boolean getWebSocketEnable() {
+            return webSocketEnable;
+        }
+
+        public void setWebSocketEnable(Boolean webSocketEnable) {
+            this.webSocketEnable = webSocketEnable;
+        }
+
+        public Boolean getQuicEnable() {
+            return quicEnable;
+        }
+
+        public void setQuicEnable(Boolean quicEnable) {
+            this.quicEnable = quicEnable;
         }
     }
 

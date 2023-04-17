@@ -69,6 +69,45 @@ public class DescribeEIPResponse extends Response {
         this.eipSet = eipSet;
     }
 
+    public static class EIPBinding extends Response {
+
+        /** 外网ip */
+        @SerializedName("EIP")
+        private String eip;
+
+        /** 内网ip */
+        @SerializedName("PrivateIP")
+        private String privateIP;
+
+        /** 内网ip类型：PrimaryIP（默认）、SecondaryIP（非默认） */
+        @SerializedName("PrivateIPType")
+        private String privateIPType;
+
+        public String getEIP() {
+            return eip;
+        }
+
+        public void setEIP(String eip) {
+            this.eip = eip;
+        }
+
+        public String getPrivateIP() {
+            return privateIP;
+        }
+
+        public void setPrivateIP(String privateIP) {
+            this.privateIP = privateIP;
+        }
+
+        public String getPrivateIPType() {
+            return privateIPType;
+        }
+
+        public void setPrivateIPType(String privateIPType) {
+            this.privateIPType = privateIPType;
+        }
+    }
+
     public static class ShareBandwidthSet extends Response {
 
         /** 共享带宽带宽值 */
@@ -110,7 +149,7 @@ public class DescribeEIPResponse extends Response {
 
     public static class UnetEIPAddrSet extends Response {
 
-        /** 运营商信息如: 电信: Telecom, 联通: Unicom, 国际: International, Duplet: 双线IP（电信+联通), BGP: Bgp */
+        /** 运营商信息如: 国际: International, BGP: BGP */
         @SerializedName("OperatorName")
         private String operatorName;
 
@@ -297,6 +336,10 @@ public class DescribeEIPResponse extends Response {
         @SerializedName("Expire")
         private Boolean expire;
 
+        /** EIP绑定内网IP关系数据 */
+        @SerializedName("EIPBinding")
+        private EIPBinding eipBinding;
+
         public String getEIPId() {
             return eipId;
         }
@@ -423,6 +466,14 @@ public class DescribeEIPResponse extends Response {
 
         public void setExpire(Boolean expire) {
             this.expire = expire;
+        }
+
+        public EIPBinding getEIPBinding() {
+            return eipBinding;
+        }
+
+        public void setEIPBinding(EIPBinding eipBinding) {
+            this.eipBinding = eipBinding;
         }
     }
 }

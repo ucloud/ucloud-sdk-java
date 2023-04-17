@@ -37,6 +37,8 @@ import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsRequest;
 import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomain95BandwidthV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomain95BandwidthV2Response;
+import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthByIpProtocolRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthByIpProtocolResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthV2Response;
 import cn.ucloud.ucdn.models.GetUcdnDomainConfigRequest;
@@ -174,6 +176,15 @@ public interface UCDNClientInterface extends Client {
      */
     public GetUcdnDomain95BandwidthV2Response getUcdnDomain95BandwidthV2(
             GetUcdnDomain95BandwidthV2Request request) throws UCloudException;
+
+    /**
+     * GetUcdnDomainBandwidthByIpProtocol - 获取域名带宽数据按ip协议【新】
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUcdnDomainBandwidthByIpProtocolResponse getUcdnDomainBandwidthByIpProtocol(
+            GetUcdnDomainBandwidthByIpProtocolRequest request) throws UCloudException;
 
     /**
      * GetUcdnDomainBandwidthV2 - 获取域名带宽数据【新】

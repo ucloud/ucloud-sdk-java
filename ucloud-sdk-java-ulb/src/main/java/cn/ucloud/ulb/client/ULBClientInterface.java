@@ -91,7 +91,7 @@ public interface ULBClientInterface extends Client {
     public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
 
     /**
-     * CreatePolicy - 创建转发策略
+     * CreatePolicy - 创建内容转发策略
      *
      * @param request Request object
      * @throws UCloudException Exception

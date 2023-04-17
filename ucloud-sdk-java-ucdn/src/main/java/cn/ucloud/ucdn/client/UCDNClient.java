@@ -39,6 +39,8 @@ import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsRequest;
 import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomain95BandwidthV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomain95BandwidthV2Response;
+import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthByIpProtocolRequest;
+import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthByIpProtocolResponse;
 import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthV2Request;
 import cn.ucloud.ucdn.models.GetUcdnDomainBandwidthV2Response;
 import cn.ucloud.ucdn.models.GetUcdnDomainConfigRequest;
@@ -219,6 +221,19 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
         request.setAction("GetUcdnDomain95BandwidthV2");
         return (GetUcdnDomain95BandwidthV2Response)
                 this.invoke(request, GetUcdnDomain95BandwidthV2Response.class);
+    }
+
+    /**
+     * GetUcdnDomainBandwidthByIpProtocol - 获取域名带宽数据按ip协议【新】
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUcdnDomainBandwidthByIpProtocolResponse getUcdnDomainBandwidthByIpProtocol(
+            GetUcdnDomainBandwidthByIpProtocolRequest request) throws UCloudException {
+        request.setAction("GetUcdnDomainBandwidthByIpProtocol");
+        return (GetUcdnDomainBandwidthByIpProtocolResponse)
+                this.invoke(request, GetUcdnDomainBandwidthByIpProtocolResponse.class);
     }
 
     /**

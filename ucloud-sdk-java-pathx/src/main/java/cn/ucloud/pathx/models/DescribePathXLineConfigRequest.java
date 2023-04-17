@@ -14,14 +14,14 @@
 package cn.ucloud.pathx.models;
 
 
-import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribePathXLineConfigRequest extends Request {
 
-    /** 项目ID,如org-xxxx。请参考[GetProjectList接口](../summary/get_project_list.html) */
-    @NotEmpty
+    /**
+     * 项目ID,如org-xxxx。不填为默认项目。请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 

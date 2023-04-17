@@ -62,7 +62,7 @@ public class AllocateEIPResponse extends Response {
 
     public static class UnetEIPAddrSet extends Response {
 
-        /** 运营商信息如: 电信: Telecom, 联通: Unicom, 国际: International, Duplet: 双线IP（电信+联通), BGP: Bgp */
+        /** 运营商信息如: 国际: International, BGP: BGP */
         @SerializedName("OperatorName")
         private String operatorName;
 

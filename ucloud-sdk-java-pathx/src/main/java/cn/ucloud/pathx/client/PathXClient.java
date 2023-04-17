@@ -23,10 +23,6 @@ import cn.ucloud.pathx.models.CreateGlobalSSHInstanceRequest;
 import cn.ucloud.pathx.models.CreateGlobalSSHInstanceResponse;
 import cn.ucloud.pathx.models.CreatePathXSSLRequest;
 import cn.ucloud.pathx.models.CreatePathXSSLResponse;
-import cn.ucloud.pathx.models.CreateUGA3InstanceRequest;
-import cn.ucloud.pathx.models.CreateUGA3InstanceResponse;
-import cn.ucloud.pathx.models.CreateUGA3PortRequest;
-import cn.ucloud.pathx.models.CreateUGA3PortResponse;
 import cn.ucloud.pathx.models.CreateUGAForwarderRequest;
 import cn.ucloud.pathx.models.CreateUGAForwarderResponse;
 import cn.ucloud.pathx.models.CreateUGAInstanceRequest;
@@ -37,10 +33,6 @@ import cn.ucloud.pathx.models.DeleteGlobalSSHInstanceRequest;
 import cn.ucloud.pathx.models.DeleteGlobalSSHInstanceResponse;
 import cn.ucloud.pathx.models.DeletePathXSSLRequest;
 import cn.ucloud.pathx.models.DeletePathXSSLResponse;
-import cn.ucloud.pathx.models.DeleteUGA3InstanceRequest;
-import cn.ucloud.pathx.models.DeleteUGA3InstanceResponse;
-import cn.ucloud.pathx.models.DeleteUGA3PortRequest;
-import cn.ucloud.pathx.models.DeleteUGA3PortResponse;
 import cn.ucloud.pathx.models.DeleteUGAForwarderRequest;
 import cn.ucloud.pathx.models.DeleteUGAForwarderResponse;
 import cn.ucloud.pathx.models.DeleteUGAInstanceRequest;
@@ -53,12 +45,6 @@ import cn.ucloud.pathx.models.DescribePathXLineConfigRequest;
 import cn.ucloud.pathx.models.DescribePathXLineConfigResponse;
 import cn.ucloud.pathx.models.DescribePathXSSLRequest;
 import cn.ucloud.pathx.models.DescribePathXSSLResponse;
-import cn.ucloud.pathx.models.DescribeUGA3AreaRequest;
-import cn.ucloud.pathx.models.DescribeUGA3AreaResponse;
-import cn.ucloud.pathx.models.DescribeUGA3InstanceRequest;
-import cn.ucloud.pathx.models.DescribeUGA3InstanceResponse;
-import cn.ucloud.pathx.models.DescribeUGA3OptimizationRequest;
-import cn.ucloud.pathx.models.DescribeUGA3OptimizationResponse;
 import cn.ucloud.pathx.models.DescribeUGAInstanceRequest;
 import cn.ucloud.pathx.models.DescribeUGAInstanceResponse;
 import cn.ucloud.pathx.models.DescribeUPathRequest;
@@ -71,26 +57,12 @@ import cn.ucloud.pathx.models.GetGlobalSSHUpdatePriceRequest;
 import cn.ucloud.pathx.models.GetGlobalSSHUpdatePriceResponse;
 import cn.ucloud.pathx.models.GetPathXMetricRequest;
 import cn.ucloud.pathx.models.GetPathXMetricResponse;
-import cn.ucloud.pathx.models.GetUGA3MetricRequest;
-import cn.ucloud.pathx.models.GetUGA3MetricResponse;
-import cn.ucloud.pathx.models.GetUGA3PriceRequest;
-import cn.ucloud.pathx.models.GetUGA3PriceResponse;
-import cn.ucloud.pathx.models.GetUGA3UpdatePriceRequest;
-import cn.ucloud.pathx.models.GetUGA3UpdatePriceResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHPortRequest;
 import cn.ucloud.pathx.models.ModifyGlobalSSHPortResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHRemarkRequest;
 import cn.ucloud.pathx.models.ModifyGlobalSSHRemarkResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHTypeRequest;
 import cn.ucloud.pathx.models.ModifyGlobalSSHTypeResponse;
-import cn.ucloud.pathx.models.ModifyUGA3BandwidthRequest;
-import cn.ucloud.pathx.models.ModifyUGA3BandwidthResponse;
-import cn.ucloud.pathx.models.ModifyUGA3InstanceRequest;
-import cn.ucloud.pathx.models.ModifyUGA3InstanceResponse;
-import cn.ucloud.pathx.models.ModifyUGA3OriginInfoRequest;
-import cn.ucloud.pathx.models.ModifyUGA3OriginInfoResponse;
-import cn.ucloud.pathx.models.ModifyUGA3PortRequest;
-import cn.ucloud.pathx.models.ModifyUGA3PortResponse;
 import cn.ucloud.pathx.models.ModifyUPathBandwidthRequest;
 import cn.ucloud.pathx.models.ModifyUPathBandwidthResponse;
 import cn.ucloud.pathx.models.ModifyUPathTemplateRequest;
@@ -144,30 +116,6 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
             throws UCloudException {
         request.setAction("CreatePathXSSL");
         return (CreatePathXSSLResponse) this.invoke(request, CreatePathXSSLResponse.class);
-    }
-
-    /**
-     * CreateUGA3Instance - 创建全球统一接入加速配置项
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public CreateUGA3InstanceResponse createUGA3Instance(CreateUGA3InstanceRequest request)
-            throws UCloudException {
-        request.setAction("CreateUGA3Instance");
-        return (CreateUGA3InstanceResponse) this.invoke(request, CreateUGA3InstanceResponse.class);
-    }
-
-    /**
-     * CreateUGA3Port - 创建统一接入加速实例端口
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public CreateUGA3PortResponse createUGA3Port(CreateUGA3PortRequest request)
-            throws UCloudException {
-        request.setAction("CreateUGA3Port");
-        return (CreateUGA3PortResponse) this.invoke(request, CreateUGA3PortResponse.class);
     }
 
     /**
@@ -228,30 +176,6 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
             throws UCloudException {
         request.setAction("DeletePathXSSL");
         return (DeletePathXSSLResponse) this.invoke(request, DeletePathXSSLResponse.class);
-    }
-
-    /**
-     * DeleteUGA3Instance - 删除全球统一接入转发实例
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DeleteUGA3InstanceResponse deleteUGA3Instance(DeleteUGA3InstanceRequest request)
-            throws UCloudException {
-        request.setAction("DeleteUGA3Instance");
-        return (DeleteUGA3InstanceResponse) this.invoke(request, DeleteUGA3InstanceResponse.class);
-    }
-
-    /**
-     * DeleteUGA3Port - 删除统一接入加速实例转发器
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DeleteUGA3PortResponse deleteUGA3Port(DeleteUGA3PortRequest request)
-            throws UCloudException {
-        request.setAction("DeleteUGA3Port");
-        return (DeleteUGA3PortResponse) this.invoke(request, DeleteUGA3PortResponse.class);
     }
 
     /**
@@ -325,44 +249,6 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
             throws UCloudException {
         request.setAction("DescribePathXSSL");
         return (DescribePathXSSLResponse) this.invoke(request, DescribePathXSSLResponse.class);
-    }
-
-    /**
-     * DescribeUGA3Area - 获取全球接入源站可选列表
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DescribeUGA3AreaResponse describeUGA3Area(DescribeUGA3AreaRequest request)
-            throws UCloudException {
-        request.setAction("DescribeUGA3Area");
-        return (DescribeUGA3AreaResponse) this.invoke(request, DescribeUGA3AreaResponse.class);
-    }
-
-    /**
-     * DescribeUGA3Instance - 获取全球统一接入加速服务加速配置信息
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DescribeUGA3InstanceResponse describeUGA3Instance(DescribeUGA3InstanceRequest request)
-            throws UCloudException {
-        request.setAction("DescribeUGA3Instance");
-        return (DescribeUGA3InstanceResponse)
-                this.invoke(request, DescribeUGA3InstanceResponse.class);
-    }
-
-    /**
-     * DescribeUGA3Optimization - 获取全球接入UGA3线路加速优化情况
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DescribeUGA3OptimizationResponse describeUGA3Optimization(
-            DescribeUGA3OptimizationRequest request) throws UCloudException {
-        request.setAction("DescribeUGA3Optimization");
-        return (DescribeUGA3OptimizationResponse)
-                this.invoke(request, DescribeUGA3OptimizationResponse.class);
     }
 
     /**
@@ -441,41 +327,6 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
     }
 
     /**
-     * GetUGA3Metric - 获取全地域加速监控信息
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUGA3MetricResponse getUGA3Metric(GetUGA3MetricRequest request)
-            throws UCloudException {
-        request.setAction("GetUGA3Metric");
-        return (GetUGA3MetricResponse) this.invoke(request, GetUGA3MetricResponse.class);
-    }
-
-    /**
-     * GetUGA3Price - 获取全球统一接入转发实例价格
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUGA3PriceResponse getUGA3Price(GetUGA3PriceRequest request) throws UCloudException {
-        request.setAction("GetUGA3Price");
-        return (GetUGA3PriceResponse) this.invoke(request, GetUGA3PriceResponse.class);
-    }
-
-    /**
-     * GetUGA3UpdatePrice - 全球统一接入获取实例更新价格（增加、删退）
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public GetUGA3UpdatePriceResponse getUGA3UpdatePrice(GetUGA3UpdatePriceRequest request)
-            throws UCloudException {
-        request.setAction("GetUGA3UpdatePrice");
-        return (GetUGA3UpdatePriceResponse) this.invoke(request, GetUGA3UpdatePriceResponse.class);
-    }
-
-    /**
      * ModifyGlobalSSHPort - 修改GlobalSSH端口
      *
      * @param request Request object
@@ -512,56 +363,6 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
         request.setAction("ModifyGlobalSSHType");
         return (ModifyGlobalSSHTypeResponse)
                 this.invoke(request, ModifyGlobalSSHTypeResponse.class);
-    }
-
-    /**
-     * ModifyUGA3Bandwidth - 修改统一接入加速配置带宽
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ModifyUGA3BandwidthResponse modifyUGA3Bandwidth(ModifyUGA3BandwidthRequest request)
-            throws UCloudException {
-        request.setAction("ModifyUGA3Bandwidth");
-        return (ModifyUGA3BandwidthResponse)
-                this.invoke(request, ModifyUGA3BandwidthResponse.class);
-    }
-
-    /**
-     * ModifyUGA3Instance - 修改统一接入加速配置属性
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ModifyUGA3InstanceResponse modifyUGA3Instance(ModifyUGA3InstanceRequest request)
-            throws UCloudException {
-        request.setAction("ModifyUGA3Instance");
-        return (ModifyUGA3InstanceResponse) this.invoke(request, ModifyUGA3InstanceResponse.class);
-    }
-
-    /**
-     * ModifyUGA3OriginInfo - 修改统一接入加速配置源站信息
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ModifyUGA3OriginInfoResponse modifyUGA3OriginInfo(ModifyUGA3OriginInfoRequest request)
-            throws UCloudException {
-        request.setAction("ModifyUGA3OriginInfo");
-        return (ModifyUGA3OriginInfoResponse)
-                this.invoke(request, ModifyUGA3OriginInfoResponse.class);
-    }
-
-    /**
-     * ModifyUGA3Port - 修改统一接入加速实例端口
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ModifyUGA3PortResponse modifyUGA3Port(ModifyUGA3PortRequest request)
-            throws UCloudException {
-        request.setAction("ModifyUGA3Port");
-        return (ModifyUGA3PortResponse) this.invoke(request, ModifyUGA3PortResponse.class);
     }
 
     /**

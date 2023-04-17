@@ -49,6 +49,10 @@ public class UpdatePolicyRequest extends Request {
     @UCloudParam("Match")
     private String match;
 
+    /** 策略优先级，1-9999；只针对路径规则生效 */
+    @UCloudParam("PolicyPriority")
+    private Integer policyPriority;
+
     /** 内容转发规则中域名的匹配方式，默认与原本一致。枚举值：Regular，正则；Wildcard，泛域名 */
     @UCloudParam("DomainMatchMode")
     private String domainMatchMode;
@@ -103,6 +107,14 @@ public class UpdatePolicyRequest extends Request {
 
     public void setMatch(String match) {
         this.match = match;
+    }
+
+    public Integer getPolicyPriority() {
+        return policyPriority;
+    }
+
+    public void setPolicyPriority(Integer policyPriority) {
+        this.policyPriority = policyPriority;
     }
 
     public String getDomainMatchMode() {

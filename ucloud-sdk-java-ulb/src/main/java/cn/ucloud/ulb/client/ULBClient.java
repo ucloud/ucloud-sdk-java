@@ -102,7 +102,7 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
-     * CreatePolicy - 创建转发策略
+     * CreatePolicy - 创建内容转发策略
      *
      * @param request Request object
      * @throws UCloudException Exception
