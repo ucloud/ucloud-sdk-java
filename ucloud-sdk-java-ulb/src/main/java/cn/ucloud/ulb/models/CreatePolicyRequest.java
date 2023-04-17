@@ -21,12 +21,15 @@ import java.util.List;
 
 public class CreatePolicyRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
@@ -51,11 +54,15 @@ public class CreatePolicyRequest extends Request {
     @UCloudParam("Match")
     private String match;
 
+    /** 内容转发规则中域名的匹配方式，默认与原本一致。枚举值：Regular，正则；Wildcard，泛域名 */
+    @UCloudParam("DomainMatchMode")
+    private String domainMatchMode;
+
     /** 内容转发匹配字段的类型 */
     @UCloudParam("Type")
     private String type;
 
-    /** 策略优先级，1-9999 */
+    /** 策略优先级，1-9999；只针对路径规则生效 */
     @UCloudParam("PolicyPriority")
     private Integer policyPriority;
 
@@ -105,6 +112,14 @@ public class CreatePolicyRequest extends Request {
 
     public void setMatch(String match) {
         this.match = match;
+    }
+
+    public String getDomainMatchMode() {
+        return domainMatchMode;
+    }
+
+    public void setDomainMatchMode(String domainMatchMode) {
+        this.domainMatchMode = domainMatchMode;
     }
 
     public String getType() {

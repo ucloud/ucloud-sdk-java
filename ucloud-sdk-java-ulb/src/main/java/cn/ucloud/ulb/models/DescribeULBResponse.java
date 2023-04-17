@@ -869,6 +869,10 @@ public class DescribeULBResponse extends Response {
         @SerializedName("IPVersion")
         private String ipVersion;
 
+        /** ULB后向代理IP，仅当有代理IP时返回 否 */
+        @SerializedName("SnatIps")
+        private List<String> snatIps;
+
         /** ULB 监听器类型，枚举值：RequestProxy，请求代理； PacketsTransmit ，报文转发；Comprehensive，兼容型；Pending，未定型 */
         @SerializedName("ListenType")
         private String listenType;
@@ -987,6 +991,14 @@ public class DescribeULBResponse extends Response {
 
         public void setIPVersion(String ipVersion) {
             this.ipVersion = ipVersion;
+        }
+
+        public List<String> getSnatIps() {
+            return snatIps;
+        }
+
+        public void setSnatIps(List<String> snatIps) {
+            this.snatIps = snatIps;
         }
 
         public String getListenType() {

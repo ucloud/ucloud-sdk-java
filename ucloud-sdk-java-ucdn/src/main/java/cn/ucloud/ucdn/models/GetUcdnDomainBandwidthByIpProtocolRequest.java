@@ -19,7 +19,7 @@ import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-public class GetUcdnDomainRequestNumV3Request extends Request {
+public class GetUcdnDomainBandwidthByIpProtocolRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
@@ -28,40 +28,34 @@ public class GetUcdnDomainRequestNumV3Request extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度, 3=按1分钟） */
+    /** 时间粒度（0表示按照5分钟粒度，1表示按照1小时粒度，2表示按照一天的粒度，3表示按照1分钟粒度） */
     @NotEmpty
     @UCloudParam("Type")
     private Integer type;
 
-    /** 查询的起始时间，格式为Unix Timestamp */
+    /** 协议，ipv4、ipv6 */
     @NotEmpty
-    @UCloudParam("BeginTime")
-    private Integer beginTime;
-
-    /** 查询的结束时间，格式为Unix Timestamp */
-    @NotEmpty
-    @UCloudParam("EndTime")
-    private Integer endTime;
+    @UCloudParam("IpProtocol")
+    private String ipProtocol;
 
     /** 域名id，创建域名时生成的id。默认全部域名 */
     @UCloudParam("DomainId")
     private List<String> domainId;
 
-    /** 查询区域 cn代表国内 abroad代表海外，只支持国内 */
+    /** 查询带宽区域 cn代表国内 abroad代表海外 不填默认为全部区域 */
     @UCloudParam("Areacode")
     private String areacode;
 
     /**
-     * 协议，IsDcdn=false时，可传http、https不传则查所有协议的带宽。
-     * 如果IsDcdn=true，这里可传http_dynamic、http_static、https_dynamic、https_static、quic_dynamic、quic_static、websocket
-     * 并支持同时查询多个协议用逗号隔开
+     * 查询的起始时间，格式为Unix Timestamp。如果有EndTime，BeginTime必须赋值。如没有赋值，则返回缺少参
+     * 数错误，如果没有EndTime，BeginTime也可以不赋值，EndTime默认当前时间，BeginTime 默认前一天的当前时间。
      */
-    @UCloudParam("Protocol")
-    private String protocol;
+    @UCloudParam("BeginTime")
+    private Integer beginTime;
 
-    /** 是否全站加速，默认false */
-    @UCloudParam("IsDcdn")
-    private Boolean isDcdn;
+    /** 查询的结束时间，格式为Unix Timestamp。EndTime默认为当前时间，BeginTime默认为当前时间前一天时间。 */
+    @UCloudParam("EndTime")
+    private Integer endTime;
 
     public String getProjectId() {
         return projectId;
@@ -79,20 +73,12 @@ public class GetUcdnDomainRequestNumV3Request extends Request {
         this.type = type;
     }
 
-    public Integer getBeginTime() {
-        return beginTime;
+    public String getIpProtocol() {
+        return ipProtocol;
     }
 
-    public void setBeginTime(Integer beginTime) {
-        this.beginTime = beginTime;
-    }
-
-    public Integer getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Integer endTime) {
-        this.endTime = endTime;
+    public void setIpProtocol(String ipProtocol) {
+        this.ipProtocol = ipProtocol;
     }
 
     public List<String> getDomainId() {
@@ -111,19 +97,19 @@ public class GetUcdnDomainRequestNumV3Request extends Request {
         this.areacode = areacode;
     }
 
-    public String getProtocol() {
-        return protocol;
+    public Integer getBeginTime() {
+        return beginTime;
     }
 
-    public void setProtocol(String protocol) {
-        this.protocol = protocol;
+    public void setBeginTime(Integer beginTime) {
+        this.beginTime = beginTime;
     }
 
-    public Boolean getIsDcdn() {
-        return isDcdn;
+    public Integer getEndTime() {
+        return endTime;
     }
 
-    public void setIsDcdn(Boolean isDcdn) {
-        this.isDcdn = isDcdn;
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
     }
 }

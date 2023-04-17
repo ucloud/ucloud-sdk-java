@@ -184,6 +184,10 @@ public class DescribeULBSimpleResponse extends Response {
         @SerializedName("IPVersion")
         private String ipVersion;
 
+        /** ULB后向代理IP，仅当有代理IP时返回 否 */
+        @SerializedName("SnatIps")
+        private List<String> snatIps;
+
         /** 负载均衡的资源ID */
         @SerializedName("ULBId")
         private String ulbId;
@@ -252,6 +256,10 @@ public class DescribeULBSimpleResponse extends Response {
         @SerializedName("LogSet")
         private LoggerSet logSet;
 
+        /** WAF功能状态，枚举类型：Unavailable：无法创建WAF；NoWAF：未绑定WAF；Intranet：内网回源Waf；Extranet：外网回源Waf */
+        @SerializedName("WAFMode")
+        private String wafMode;
+
         public String getListenType() {
             return listenType;
         }
@@ -266,6 +274,14 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setIPVersion(String ipVersion) {
             this.ipVersion = ipVersion;
+        }
+
+        public List<String> getSnatIps() {
+            return snatIps;
+        }
+
+        public void setSnatIps(List<String> snatIps) {
+            this.snatIps = snatIps;
         }
 
         public String getULBId() {
@@ -402,6 +418,14 @@ public class DescribeULBSimpleResponse extends Response {
 
         public void setLogSet(LoggerSet logSet) {
             this.logSet = logSet;
+        }
+
+        public String getWAFMode() {
+            return wafMode;
+        }
+
+        public void setWAFMode(String wafMode) {
+            this.wafMode = wafMode;
         }
     }
 }
