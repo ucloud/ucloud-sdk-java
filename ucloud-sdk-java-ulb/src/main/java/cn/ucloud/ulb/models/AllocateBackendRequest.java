@@ -45,26 +45,26 @@ public class AllocateBackendRequest extends Request {
 
     /**
      * 所添加的后端资源的类型，枚举值：UHost -> 云主机；UNI -> 虚拟网卡；UPM -> 物理云主机； UDHost -> 私有专区主机；UDocker ->
-     * 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE
+     * 容器；UHybrid->混合云主机；CUBE->Cube，USDP->智能大数据平台，
+     * IP->IP类型；默认值为UHost。报文转发模式不支持UDocker、UHybrid、CUBE、IP
      */
     @NotEmpty
     @UCloudParam("ResourceType")
     private String resourceType;
 
-    /** 所添加的后端资源的资源ID */
-    @NotEmpty
+    /** 所添加的后端资源的资源ID；与ResourceIP二选一必填 */
     @UCloudParam("ResourceId")
     private String resourceId;
 
-    /** 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 时有效，且必填 */
+    /** 所添加的后端服务器的资源实例IP，当ResourceType 为 UHybrid 或 IP时有效，且必填；与ResourceId二选一必填 */
     @UCloudParam("ResourceIP")
     private String resourceIP;
 
-    /** 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 时有效，且必填 */
+    /** 所添加的后端服务器所在的vpc，当ResourceType 为 UHybrid 或 IP 时有效，且必填 */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 时有效，且必填 */
+    /** 所添加的后端服务器所在的子网，当ResourceType 为 UHybrid 或 IP 时有效，且必填 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
