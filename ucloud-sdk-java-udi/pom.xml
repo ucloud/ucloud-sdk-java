@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>ucloud-sdk-java-ulb</artifactId>
+    <artifactId>ucloud-sdk-java-udi</artifactId>
     <version>1.2.7-release</version>
 
     <dependencies>
