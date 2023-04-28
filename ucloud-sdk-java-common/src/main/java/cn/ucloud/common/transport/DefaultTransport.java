@@ -71,39 +71,32 @@ public class DefaultTransport implements Transport {
         entity.setContentType(ContentType.APPLICATION_JSON.getMimeType());
         httpPost.setHeader(HTTP.CONTENT_TYPE, ContentType.APPLICATION_JSON.getMimeType());
         httpPost.setEntity(entity);
-
         // invoke http requesting
-        CloseableHttpResponse httpResponse;
-        try {
-            httpResponse = this.getHttpClient().execute(httpPost);
+        try (CloseableHttpResponse httpResponse = this.getHttpClient().execute(httpPost)) {
+            String requestId = "";
+            if (httpResponse.getLastHeader(HEADER_REQUEST_ID) != null) {
+                requestId = httpResponse.getLastHeader(HEADER_REQUEST_ID).getValue();
+            }
+
+            // check http status
+            StatusLine httpStatus = httpResponse.getStatusLine();
+            if (httpStatus.getStatusCode() >= 400) {
+                throw new UCloudException(
+                        String.format(
+                                "http error, status code %d %s",
+                                httpStatus.getStatusCode(), httpStatus.getReasonPhrase()));
+            }
+
+            // decode response
+            String content = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+            Response response = new Gson().fromJson(content, clazz);
+            response.setRequestId(requestId);
+            return response;
+        } catch (UCloudException e) {
+            throw e;
         } catch (Exception e) {
             throw new TransportException("http error", e);
         }
-
-        String requestId = "";
-        if (httpResponse.getLastHeader(HEADER_REQUEST_ID) != null) {
-            requestId = httpResponse.getLastHeader(HEADER_REQUEST_ID).getValue();
-        }
-
-        // check http status
-        StatusLine httpStatus = httpResponse.getStatusLine();
-        if (httpStatus.getStatusCode() >= 400) {
-            throw new UCloudException(
-                    String.format(
-                            "http error, status code %d %s",
-                            httpStatus.getStatusCode(), httpStatus.getReasonPhrase()));
-        }
-
-        // decode response
-        String content = null;
-        try {
-            content = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
-        } catch (IOException e) {
-            throw new UCloudException("http error", e);
-        }
-        Response response = new Gson().fromJson(content, clazz);
-        response.setRequestId(requestId);
-        return response;
     }
 
     public String getBaseUrl() {
@@ -128,5 +121,10 @@ public class DefaultTransport implements Transport {
 
     public void setHttpClient(CloseableHttpClient httpClient) {
         this.httpClient = httpClient;
+    }
+
+    @Override
+    public void close() throws IOException {
+        this.httpClient.close();
     }
 }

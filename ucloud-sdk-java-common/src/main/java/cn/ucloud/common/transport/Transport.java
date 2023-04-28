@@ -17,7 +17,9 @@ import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
 
-public interface Transport {
+import java.io.Closeable;
+
+public interface Transport extends Closeable {
     /**
      * @param request Request payload with data
      * @param clazz Response class without data
