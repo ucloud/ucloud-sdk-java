@@ -17,7 +17,9 @@ import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
 
-public interface Client {
+import java.io.Closeable;
+
+public interface Client extends Closeable {
     /**
      * invoke api from request and response
      *
