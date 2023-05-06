@@ -33,6 +33,57 @@ public class GetUHostInstancePriceResponse extends Response {
         this.priceSet = priceSet;
     }
 
+    public static class PriceDetail extends Response {
+
+        /** 主机价格 */
+        @SerializedName("UHost")
+        private Double uHost;
+
+        /** 云盘价格 */
+        @SerializedName("UDisk")
+        private Double uDisk;
+
+        /** 快照价格 */
+        @SerializedName("Snapshot")
+        private Double snapshot;
+
+        /** 数据卷价格 */
+        @SerializedName("Volume")
+        private Double volume;
+
+        public Double getUHost() {
+            return uHost;
+        }
+
+        public void setUHost(Double uHost) {
+            this.uHost = uHost;
+        }
+
+        public Double getUDisk() {
+            return uDisk;
+        }
+
+        public void setUDisk(Double uDisk) {
+            this.uDisk = uDisk;
+        }
+
+        public Double getSnapshot() {
+            return snapshot;
+        }
+
+        public void setSnapshot(Double snapshot) {
+            this.snapshot = snapshot;
+        }
+
+        public Double getVolume() {
+            return volume;
+        }
+
+        public void setVolume(Double volume) {
+            this.volume = volume;
+        }
+    }
+
     public static class UHostPriceSet extends Response {
 
         /** 计费类型。Year，Month，Dynamic */
@@ -50,6 +101,18 @@ public class GetUHostInstancePriceResponse extends Response {
         /** 产品列表价。 */
         @SerializedName("ListPrice")
         private Double listPrice;
+
+        /** 价格详细信息（只有询价接口返回）。 */
+        @SerializedName("PriceDetail")
+        private PriceDetail priceDetail;
+
+        /** 原价详细信息（只有询价接口返回）。 */
+        @SerializedName("OriginalPriceDetail")
+        private PriceDetail originalPriceDetail;
+
+        /** 列表价详细信息（只有询价接口返回）。 */
+        @SerializedName("ListPriceDetail")
+        private PriceDetail listPriceDetail;
 
         public String getChargeType() {
             return chargeType;
@@ -81,6 +144,30 @@ public class GetUHostInstancePriceResponse extends Response {
 
         public void setListPrice(Double listPrice) {
             this.listPrice = listPrice;
+        }
+
+        public PriceDetail getPriceDetail() {
+            return priceDetail;
+        }
+
+        public void setPriceDetail(PriceDetail priceDetail) {
+            this.priceDetail = priceDetail;
+        }
+
+        public PriceDetail getOriginalPriceDetail() {
+            return originalPriceDetail;
+        }
+
+        public void setOriginalPriceDetail(PriceDetail originalPriceDetail) {
+            this.originalPriceDetail = originalPriceDetail;
+        }
+
+        public PriceDetail getListPriceDetail() {
+            return listPriceDetail;
+        }
+
+        public void setListPriceDetail(PriceDetail listPriceDetail) {
+            this.listPriceDetail = listPriceDetail;
         }
     }
 }

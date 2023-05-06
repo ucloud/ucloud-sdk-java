@@ -47,6 +47,8 @@ import cn.ucloud.uhost.models.GetUHostInstancePriceRequest;
 import cn.ucloud.uhost.models.GetUHostInstancePriceResponse;
 import cn.ucloud.uhost.models.GetUHostInstanceVncInfoRequest;
 import cn.ucloud.uhost.models.GetUHostInstanceVncInfoResponse;
+import cn.ucloud.uhost.models.GetUHostRenewPriceRequest;
+import cn.ucloud.uhost.models.GetUHostRenewPriceResponse;
 import cn.ucloud.uhost.models.GetUHostUpgradePriceRequest;
 import cn.ucloud.uhost.models.GetUHostUpgradePriceResponse;
 import cn.ucloud.uhost.models.ImportCustomImageRequest;
@@ -231,6 +233,15 @@ public interface UHostClientInterface extends Client {
      */
     public GetUHostInstanceVncInfoResponse getUHostInstanceVncInfo(
             GetUHostInstanceVncInfoRequest request) throws UCloudException;
+
+    /**
+     * GetUHostRenewPrice - 获取主机续费价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUHostRenewPriceResponse getUHostRenewPrice(GetUHostRenewPriceRequest request)
+            throws UCloudException;
 
     /**
      * GetUHostUpgradePrice - 获取主机规格调整差价

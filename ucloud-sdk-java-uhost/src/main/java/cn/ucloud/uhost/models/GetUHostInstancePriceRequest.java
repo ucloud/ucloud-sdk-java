@@ -80,13 +80,16 @@ public class GetUHostInstancePriceRequest extends Request {
     private String uHostType;
 
     /**
-     * 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX",
-     * "O.BM"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * 云主机机型（V2版本概念）。枚举值["N", "C", "G", "O", "OS", "OPRO", "OMAX", "O.BM",
+     * "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      */
     @UCloudParam("MachineType")
     private String machineType;
 
-    /** GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti"] */
+    /**
+     * GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti",
+     * "T4/4","MI100","V100S"]
+     */
     @UCloudParam("GpuType")
     private String gpuType;
 
@@ -102,9 +105,13 @@ public class GetUHostInstancePriceRequest extends Request {
     @UCloudParam("Volumes")
     private List<Volumes> volumes;
 
-    /** */
-    @UCloudParam("VirtualGpu")
-    private VirtualGpu virtualGpu;
+    /** 专区云主机。如果要在专区宿主机上创建云主机，该参数可以填写为true */
+    @UCloudParam("UDSetUHostInstance")
+    private Boolean udSetUHostInstance;
+
+    /** 返回价格详细信息 */
+    @UCloudParam("ShowPriceDetails")
+    private Boolean showPriceDetails;
 
     public String getRegion() {
         return region;
@@ -242,12 +249,20 @@ public class GetUHostInstancePriceRequest extends Request {
         this.volumes = volumes;
     }
 
-    public VirtualGpu getVirtualGpu() {
-        return virtualGpu;
+    public Boolean getUDSetUHostInstance() {
+        return udSetUHostInstance;
     }
 
-    public void setVirtualGpu(VirtualGpu virtualGpu) {
-        this.virtualGpu = virtualGpu;
+    public void setUDSetUHostInstance(Boolean udSetUHostInstance) {
+        this.udSetUHostInstance = udSetUHostInstance;
+    }
+
+    public Boolean getShowPriceDetails() {
+        return showPriceDetails;
+    }
+
+    public void setShowPriceDetails(Boolean showPriceDetails) {
+        this.showPriceDetails = showPriceDetails;
     }
 
     public static class Disks extends Request {
@@ -306,8 +321,6 @@ public class GetUHostInstancePriceRequest extends Request {
             this.backupType = backupType;
         }
     }
-
-    public static class VirtualGpu extends Request {}
 
     public static class Volumes extends Request {}
 }
