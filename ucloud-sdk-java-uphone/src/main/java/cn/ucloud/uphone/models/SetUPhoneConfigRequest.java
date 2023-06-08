@@ -1,66 +1,104 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
- * except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- * <p>Unless required by applicable law or agreed to in writing, software distributed under the
- * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing permissions and
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uphone.models;
 
-import cn.ucloud.common.annotation.NotEmpty;
-import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
+package cn.ucloud.uphone.models;
 
 import java.util.List;
 
+
+import cn.ucloud.common.request.Request;
+import cn.ucloud.common.annotation.NotEmpty;
+import cn.ucloud.common.annotation.UCloudParam;
+
 public class SetUPhoneConfigRequest extends Request {
 
+    
+        
     /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
-
-    /** 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。 */
+        
+    
+        
+    /**
+     * 【数组】云手机实例的资源 ID，调用方式举例：UPhoneIds.0=云手机实例 1 的 UPhoneId，UPhoneIds.1=云手机实例 2 的 UPhoneId。
+     */
     @NotEmpty
     @UCloudParam("UPhoneIds")
     private List<String> uPhoneIds;
-
-    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
+        
+    
+        
+    /**
+     * 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
+     */
     @UCloudParam("CityId")
     private String cityId;
-
-    /** 云手机画面分辨率（宽x高） （例，1920x1080，中间是字母x）宽和高的取值范围[100,5000] */
+        
+    
+        
+    /**
+     * 云手机画面分辨率（宽x高） （例，1920x1080，中间是字母x）宽和高的取值范围[100,5000]
+     */
     @UCloudParam("Resolution")
     private String resolution;
-
-    /** 云手机画面刷新率，即帧率（例，30）取值范围[1,200] */
+        
+    
+        
+    /**
+     * 云手机画面刷新率，即帧率（例，30）取值范围[1,200]
+     */
     @UCloudParam("Refresh")
     private String refresh;
-
-    /** 云手机画面传输码率（例，8000）取值范围[100,50000] */
+        
+    
+        
+    /**
+     * 云手机画面传输码率（例，8000）取值范围[100,50000]
+     */
     @UCloudParam("Bitrate")
     private String bitrate;
-
-    /** 异步请求开关，只有为1的时候才是异步，不填或者其他数值为同步 */
+        
+    
+        
+    /**
+     * 异步请求开关，只有为1的时候才是异步，不填或者其他数值为同步
+     */
     @UCloudParam("Async")
     private String async;
-
-    /** 云手机dpi，取值范围[100,1000] */
+        
+    
+        
+    /**
+     * 云手机dpi，取值范围[100,1000]
+     */
     @UCloudParam("Dpi")
     private String dpi;
-
-    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
+        
+    
+        
+    /**
+     * 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
+     */
     @UCloudParam("ProductType")
     private String productType;
-
+        
+    
     public String getProjectId() {
         return projectId;
     }
@@ -68,7 +106,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-
+    
     public List<String> getUPhoneIds() {
         return uPhoneIds;
     }
@@ -76,7 +114,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setUPhoneIds(List<String> uPhoneIds) {
         this.uPhoneIds = uPhoneIds;
     }
-
+    
     public String getCityId() {
         return cityId;
     }
@@ -84,7 +122,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setCityId(String cityId) {
         this.cityId = cityId;
     }
-
+    
     public String getResolution() {
         return resolution;
     }
@@ -92,7 +130,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
-
+    
     public String getRefresh() {
         return refresh;
     }
@@ -100,7 +138,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setRefresh(String refresh) {
         this.refresh = refresh;
     }
-
+    
     public String getBitrate() {
         return bitrate;
     }
@@ -108,7 +146,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setBitrate(String bitrate) {
         this.bitrate = bitrate;
     }
-
+    
     public String getAsync() {
         return async;
     }
@@ -116,7 +154,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setAsync(String async) {
         this.async = async;
     }
-
+    
     public String getDpi() {
         return dpi;
     }
@@ -124,7 +162,7 @@ public class SetUPhoneConfigRequest extends Request {
     public void setDpi(String dpi) {
         this.dpi = dpi;
     }
-
+    
     public String getProductType() {
         return productType;
     }
@@ -132,4 +170,14 @@ public class SetUPhoneConfigRequest extends Request {
     public void setProductType(String productType) {
         this.productType = productType;
     }
+    
 }
+
+
+
+
+
+
+
+
+

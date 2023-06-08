@@ -7,9 +7,10 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.9-release</version>
+    <version>1.2.10-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
+        <module>ucloud-sdk-java-cube</module>
         <module>ucloud-sdk-java-ipsecvpn</module>
         <module>ucloud-sdk-java-pathx</module>
         <module>ucloud-sdk-java-uaccount</module>
