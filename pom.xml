@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.10-release</version>
+    <version>1.2.11-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cube</module>
@@ -16,6 +16,7 @@
         <module>ucloud-sdk-java-uaccount</module>
         <module>ucloud-sdk-java-ubill</module>
         <module>ucloud-sdk-java-ucdn</module>
+        <module>ucloud-sdk-java-ucompshare</module>
         <module>ucloud-sdk-java-udb</module>
         <module>ucloud-sdk-java-udbproxy</module>
         <module>ucloud-sdk-java-udi</module>

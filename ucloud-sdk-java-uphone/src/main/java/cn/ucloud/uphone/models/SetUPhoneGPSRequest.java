@@ -1,63 +1,44 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package cn.ucloud.uphone.models;
+
+import cn.ucloud.common.annotation.UCloudParam;
+import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-
-import cn.ucloud.common.request.Request;
-import cn.ucloud.common.annotation.NotEmpty;
-import cn.ucloud.common.annotation.UCloudParam;
-
 public class SetUPhoneGPSRequest extends Request {
 
-    
-        
     /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
-        
-    
-        
-    /**
-     * 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取
-     */
+
+    /** 城市Id，通过[获取城市列表](#DescribeUPhoneCities)获取 */
     @UCloudParam("CityId")
     private String cityId;
-        
-    
-        
-    /**
-     * 
-     */
+
+    /** */
     @UCloudParam("UPhoneGPSs")
     private List<UPhoneGPSs> uPhoneGPSs;
-        
-    
-        
-    /**
-     * 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。
-     */
+
+    /** 枚举值。当前操作的产品类型，1、uphone：云手机场景；2、uphone-server：云手机服务器场景。默认云手机服务器场景。 */
     @UCloudParam("ProductType")
     private String productType;
-        
-    
+
     public String getProjectId() {
         return projectId;
     }
@@ -65,7 +46,7 @@ public class SetUPhoneGPSRequest extends Request {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-    
+
     public String getCityId() {
         return cityId;
     }
@@ -73,7 +54,7 @@ public class SetUPhoneGPSRequest extends Request {
     public void setCityId(String cityId) {
         this.cityId = cityId;
     }
-    
+
     public List<UPhoneGPSs> getUPhoneGPSs() {
         return uPhoneGPSs;
     }
@@ -81,7 +62,7 @@ public class SetUPhoneGPSRequest extends Request {
     public void setUPhoneGPSs(List<UPhoneGPSs> uPhoneGPSs) {
         this.uPhoneGPSs = uPhoneGPSs;
     }
-    
+
     public String getProductType() {
         return productType;
     }
@@ -89,97 +70,67 @@ public class SetUPhoneGPSRequest extends Request {
     public void setProductType(String productType) {
         this.productType = productType;
     }
-    
-        public static class UPhoneGPSs extends Request {
-            
-        
-    /**
-     * 云手机ID
-     */
-    @UCloudParam("UPhoneId")
-    private String uPhoneId;
-        
-    
-        
-    /**
-     * 经度：-180~180
-     */
-    @UCloudParam("Longitude")
-    private Double longitude;
-        
-    
-        
-    /**
-     * 纬度：-90~90
-     */
-    @UCloudParam("Latitude")
-    private Double latitude;
-        
-    
-        
-    /**
-     * 海拔
-     */
-    @UCloudParam("Altitude")
-    private Double altitude;
-        
-    
-        
-    /**
-     * GPS开关，true开启，false关闭，默认false
-     */
-    @UCloudParam("Enabled")
-    private Boolean enabled;
-        
-    
-    public String getUPhoneId() {
-        return uPhoneId;
-    }
 
-    public void setUPhoneId(String uPhoneId) {
-        this.uPhoneId = uPhoneId;
-    }
-    
-    public Double getLongitude() {
-        return longitude;
-    }
+    public static class UPhoneGPSs extends Request {
 
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-    
-    public Double getLatitude() {
-        return latitude;
-    }
+        /** 云手机ID */
+        @UCloudParam("UPhoneId")
+        private String uPhoneId;
 
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-    
-    public Double getAltitude() {
-        return altitude;
-    }
+        /** 经度：-180~180 */
+        @UCloudParam("Longitude")
+        private Double longitude;
 
-    public void setAltitude(Double altitude) {
-        this.altitude = altitude;
-    }
-    
-    public Boolean getEnabled() {
-        return enabled;
-    }
+        /** 纬度：-90~90 */
+        @UCloudParam("Latitude")
+        private Double latitude;
 
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-    
+        /** 海拔 */
+        @UCloudParam("Altitude")
+        private Double altitude;
+
+        /** GPS开关，true开启，false关闭，默认false */
+        @UCloudParam("Enabled")
+        private Boolean enabled;
+
+        public String getUPhoneId() {
+            return uPhoneId;
         }
+
+        public void setUPhoneId(String uPhoneId) {
+            this.uPhoneId = uPhoneId;
+        }
+
+        public Double getLongitude() {
+            return longitude;
+        }
+
+        public void setLongitude(Double longitude) {
+            this.longitude = longitude;
+        }
+
+        public Double getLatitude() {
+            return latitude;
+        }
+
+        public void setLatitude(Double latitude) {
+            this.latitude = latitude;
+        }
+
+        public Double getAltitude() {
+            return altitude;
+        }
+
+        public void setAltitude(Double altitude) {
+            this.altitude = altitude;
+        }
+
+        public Boolean getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Boolean enabled) {
+            this.enabled = enabled;
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
