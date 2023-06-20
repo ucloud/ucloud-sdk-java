@@ -3,6 +3,7 @@ package cn.ucloud.common.accessor;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.exception.RetCodeException;
 import cn.ucloud.common.exception.ValidatorException;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
