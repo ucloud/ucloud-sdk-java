@@ -63,6 +63,8 @@ import cn.ucloud.ulb.models.UpdatePolicyRequest;
 import cn.ucloud.ulb.models.UpdatePolicyResponse;
 import cn.ucloud.ulb.models.UpdateSSLAttributeRequest;
 import cn.ucloud.ulb.models.UpdateSSLAttributeResponse;
+import cn.ucloud.ulb.models.UpdateSSLBindingRequest;
+import cn.ucloud.ulb.models.UpdateSSLBindingResponse;
 import cn.ucloud.ulb.models.UpdateSecurityPolicyRequest;
 import cn.ucloud.ulb.models.UpdateSecurityPolicyResponse;
 import cn.ucloud.ulb.models.UpdateULBAttributeRequest;
@@ -274,6 +276,15 @@ public interface ULBClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public UpdateSSLAttributeResponse updateSSLAttribute(UpdateSSLAttributeRequest request)
+            throws UCloudException;
+
+    /**
+     * UpdateSSLBinding - 更换证书绑定关系
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateSSLBindingResponse updateSSLBinding(UpdateSSLBindingRequest request)
             throws UCloudException;
 
     /**
