@@ -1,39 +1,29 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package cn.ucloud.uhost.models;
 
-import java.util.List;
-
-
-import com.google.gson.annotations.SerializedName;
 
 import cn.ucloud.common.response.Response;
 
+import com.google.gson.annotations.SerializedName;
+
 public class DeleteIsolationGroupResponse extends Response {
 
-    
-        
-    /**
-     * 硬件隔离组id
-     */
+    /** 硬件隔离组id */
     @SerializedName("GroupId")
     private String groupId;
-        
-    
+
     public String getGroupId() {
         return groupId;
     }
@@ -41,14 +31,4 @@ public class DeleteIsolationGroupResponse extends Response {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-    
 }
-
-
-
-
-
-
-
-
-
