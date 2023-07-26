@@ -8,7 +8,6 @@ import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
 import cn.ucloud.common.transport.DefaultTransport;
-
 import org.apache.http.*;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
