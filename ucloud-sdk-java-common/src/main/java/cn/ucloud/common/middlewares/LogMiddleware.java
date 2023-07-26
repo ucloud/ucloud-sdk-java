@@ -19,9 +19,7 @@ import cn.ucloud.common.middleware.Context;
 import cn.ucloud.common.middleware.Middleware;
 import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
-
 import com.google.gson.Gson;
-
 import org.slf4j.Logger;
 
 /** LogMiddleware is the middleware to print logs */

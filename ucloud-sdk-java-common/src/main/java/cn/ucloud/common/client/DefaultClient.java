@@ -27,6 +27,7 @@ import cn.ucloud.common.response.Response;
 import cn.ucloud.common.transport.DefaultTransport;
 import cn.ucloud.common.transport.Transport;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

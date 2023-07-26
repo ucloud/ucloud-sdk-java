@@ -1,63 +1,101 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
- * except in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- * <p>Unless required by applicable law or agreed to in writing, software distributed under the
- * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing permissions and
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package cn.ucloud.vpc.models;
 
+import java.util.List;
 
+
+import cn.ucloud.common.request.Request;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
 
 public class DeleteSecondaryIpRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    
+        
+    /**
+     * 地域。 参见 [地域和可用区列表](../summary/regionlist.html)
+     */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
-
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+        
+    
+        
+    /**
+     * 可用区。参见 [可用区列表](../summary/regionlist.html)
+     */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
-
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+        
+    
+        
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
-
-    /** ip */
+        
+    
+        
+    /**
+     * ip
+     */
     @NotEmpty
     @UCloudParam("Ip")
     private String ip;
-
-    /** mac */
+        
+    
+        
+    /**
+     * mac
+     */
     @NotEmpty
     @UCloudParam("Mac")
     private String mac;
-
-    /** 子网Id */
+        
+    
+        
+    /**
+     * 子网Id
+     */
     @NotEmpty
     @UCloudParam("SubnetId")
     private String subnetId;
-
-    /** VPCId */
+        
+    
+        
+    /**
+     * VPCId
+     */
     @UCloudParam("VPCId")
     private String vpcId;
-
-    /** 资源Id */
+        
+    
+        
+    /**
+     * 资源Id
+     */
     @UCloudParam("ObjectId")
     private String objectId;
-
+        
+    
     public String getRegion() {
         return region;
     }
@@ -65,7 +103,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setRegion(String region) {
         this.region = region;
     }
-
+    
     public String getZone() {
         return zone;
     }
@@ -73,7 +111,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setZone(String zone) {
         this.zone = zone;
     }
-
+    
     public String getProjectId() {
         return projectId;
     }
@@ -81,7 +119,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-
+    
     public String getIp() {
         return ip;
     }
@@ -89,7 +127,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setIp(String ip) {
         this.ip = ip;
     }
-
+    
     public String getMac() {
         return mac;
     }
@@ -97,7 +135,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setMac(String mac) {
         this.mac = mac;
     }
-
+    
     public String getSubnetId() {
         return subnetId;
     }
@@ -105,7 +143,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-
+    
     public String getVPCId() {
         return vpcId;
     }
@@ -113,7 +151,7 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setVPCId(String vpcId) {
         this.vpcId = vpcId;
     }
-
+    
     public String getObjectId() {
         return objectId;
     }
@@ -121,4 +159,14 @@ public class DeleteSecondaryIpRequest extends Request {
     public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
+    
 }
+
+
+
+
+
+
+
+
+
