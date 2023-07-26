@@ -17,12 +17,9 @@ import cn.ucloud.common.exception.TransportException;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.common.request.Request;
 import cn.ucloud.common.response.Response;
+
 import com.google.gson.Gson;
 
-import java.io.Closeable;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -33,6 +30,10 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 /** DefaultTransport is the default implementation of transport */
 public class DefaultTransport implements Transport {
@@ -81,9 +82,9 @@ public class DefaultTransport implements Transport {
             StatusLine httpStatus = httpResponse.getStatusLine();
             if (httpStatus.getStatusCode() >= 400) {
                 throw new UCloudException(
-                    String.format(
-                            "http error, status code %d %s",
-                            httpStatus.getStatusCode(), httpStatus.getReasonPhrase()));
+                        String.format(
+                                "http error, status code %d %s",
+                                httpStatus.getStatusCode(), httpStatus.getReasonPhrase()));
             }
 
             // decode response

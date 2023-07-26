@@ -1,187 +1,111 @@
 /**
  * Copyright 2021 UCloud Technology Co., Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
- *  http://www.apache.org/licenses/LICENSE-2.0
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package cn.ucloud.umem.models;
 
-import java.util.List;
 
-
-import cn.ucloud.common.request.Request;
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
+import cn.ucloud.common.request.Request;
 
 public class CreateUMemSpaceRequest extends Request {
 
-    
-        
-    /**
-     * 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
-        
-    
-        
-    /**
-     * 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
-     */
+
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
-        
-    
-        
+
     /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
     @UCloudParam("ProjectId")
     private String projectId;
-        
-    
-        
-    /**
-     * 内存大小, 单位:GB, 范围[1~1024]
-     */
+
+    /** 内存大小, 单位:GB, 范围[1~1024] */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
-        
-    
-        
-    /**
-     * 空间名称,长度(6<=size<=63)
-     */
+
+    /** 空间名称,长度(6<=size<=63) */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
-        
-    
-        
-    /**
-     * 协议:memcache, redis (默认redis).注意:redis无single类型
-     */
+
+    /** 协议:memcache, redis (默认redis).注意:redis无single类型 */
     @UCloudParam("Protocol")
     private String protocol;
-        
-    
-        
-    /**
-     * 空间类型:single(无热备),double(热备)(默认: double)
-     */
+
+    /** 空间类型:single(无热备),double(热备)(默认: double) */
     @UCloudParam("Type")
     private String type;
-        
-    
-        
-    /**
-     * Year , Month, Dynamic 默认: Month
-     */
+
+    /** Year , Month, Dynamic 默认: Month */
     @UCloudParam("ChargeType")
     private String chargeType;
-        
-    
-        
-    /**
-     * 购买时长 默认: 1
-     */
+
+    /** 购买时长 默认: 1 */
     @UCloudParam("Quantity")
     private Integer quantity;
-        
-    
-        
-    /**
-     * VPC的ID
-     */
+
+    /** VPC的ID */
     @UCloudParam("VPCId")
     private String vpcId;
-        
-    
-        
-    /**
-     * 子网ID
-     */
+
+    /** 子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
-        
-    
-        
-    /**
-     * 
-     */
+
+    /** */
     @UCloudParam("Tag")
     private String tag;
-        
-    
-        
+
     /**
-     * URedis密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx。
+     * URedis密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1
+     * | base64UGFzc3dvcmQx。
      */
     @UCloudParam("Password")
     private String password;
-        
-    
-        
-    /**
-     * 跨机房UDRedis，slave所在可用区（必须和Zone在同一Region，且不可相同）
-     */
+
+    /** 跨机房UDRedis，slave所在可用区（必须和Zone在同一Region，且不可相同） */
     @UCloudParam("SlaveZone")
     private String slaveZone;
-        
-    
-        
-    /**
-     * 分片个数
-     */
+
+    /** 分片个数 */
     @UCloudParam("BlockCnt")
     private Integer blockCnt;
-        
-    
-        
-    /**
-     * 是否是cluster模式（参数为cluster创建redis cluster，其他参数或者不传该参数仍然创建老版本分布式）
-     */
+
+    /** 是否是cluster模式（参数为cluster创建redis cluster，其他参数或者不传该参数仍然创建老版本分布式） */
     @UCloudParam("ClusterMode")
     private String clusterMode;
-        
-    
-        
-    /**
-     * 分布式分片版本（默认版本是4.0，其他版本见DescribeUDRedisBlockVersion）
-     */
+
+    /** 分布式分片版本（默认版本是4.0，其他版本见DescribeUDRedisBlockVersion） */
     @UCloudParam("Version")
     private String version;
-        
-    
-        
-    /**
-     * 是否创建性能增强性。默认为false，或者不填，填true为性能增强型。
-     */
+
+    /** 是否创建性能增强性。默认为false，或者不填，填true为性能增强型。 */
     @UCloudParam("HighPerformance")
     private Boolean highPerformance;
-        
-    
-        
-    /**
-     * 使用的代金券id
-     */
+
+    /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
-        
-    
+
     public String getRegion() {
         return region;
     }
@@ -189,7 +113,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setRegion(String region) {
         this.region = region;
     }
-    
+
     public String getZone() {
         return zone;
     }
@@ -197,7 +121,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setZone(String zone) {
         this.zone = zone;
     }
-    
+
     public String getProjectId() {
         return projectId;
     }
@@ -205,7 +129,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-    
+
     public Integer getSize() {
         return size;
     }
@@ -213,7 +137,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setSize(Integer size) {
         this.size = size;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -221,7 +145,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public String getProtocol() {
         return protocol;
     }
@@ -229,7 +153,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
-    
+
     public String getType() {
         return type;
     }
@@ -237,7 +161,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setType(String type) {
         this.type = type;
     }
-    
+
     public String getChargeType() {
         return chargeType;
     }
@@ -245,7 +169,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setChargeType(String chargeType) {
         this.chargeType = chargeType;
     }
-    
+
     public Integer getQuantity() {
         return quantity;
     }
@@ -253,7 +177,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-    
+
     public String getVPCId() {
         return vpcId;
     }
@@ -261,7 +185,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setVPCId(String vpcId) {
         this.vpcId = vpcId;
     }
-    
+
     public String getSubnetId() {
         return subnetId;
     }
@@ -269,7 +193,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-    
+
     public String getTag() {
         return tag;
     }
@@ -277,7 +201,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setTag(String tag) {
         this.tag = tag;
     }
-    
+
     public String getPassword() {
         return password;
     }
@@ -285,7 +209,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     public String getSlaveZone() {
         return slaveZone;
     }
@@ -293,7 +217,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setSlaveZone(String slaveZone) {
         this.slaveZone = slaveZone;
     }
-    
+
     public Integer getBlockCnt() {
         return blockCnt;
     }
@@ -301,7 +225,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setBlockCnt(Integer blockCnt) {
         this.blockCnt = blockCnt;
     }
-    
+
     public String getClusterMode() {
         return clusterMode;
     }
@@ -309,7 +233,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setClusterMode(String clusterMode) {
         this.clusterMode = clusterMode;
     }
-    
+
     public String getVersion() {
         return version;
     }
@@ -317,7 +241,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setVersion(String version) {
         this.version = version;
     }
-    
+
     public Boolean getHighPerformance() {
         return highPerformance;
     }
@@ -325,7 +249,7 @@ public class CreateUMemSpaceRequest extends Request {
     public void setHighPerformance(Boolean highPerformance) {
         this.highPerformance = highPerformance;
     }
-    
+
     public String getCouponId() {
         return couponId;
     }
@@ -333,14 +257,4 @@ public class CreateUMemSpaceRequest extends Request {
     public void setCouponId(String couponId) {
         this.couponId = couponId;
     }
-    
 }
-
-
-
-
-
-
-
-
-
