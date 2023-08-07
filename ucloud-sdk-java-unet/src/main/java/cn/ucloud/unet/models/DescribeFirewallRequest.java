@@ -34,13 +34,14 @@ public class DescribeFirewallRequest extends Request {
     private String fwId;
 
     /**
-     * 绑定防火墙组的资源类型，默认为全部资源类型。枚举值为："unatgw"，NAT网关； "uhost"，云主机；“uni”，虚拟网卡； "upm"，物理云主机；
-     * "hadoophost"，hadoop节点； "fortresshost"，堡垒机； "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计.
+     * 绑定防火墙的资源类型，仅获取资源对应防火墙信息时需要。枚举值为："unatgw"，NAT网关； "uhost"，云主机； "upm"，物理云主机；
+     * "hadoophost"，hadoop节点； "fortresshost"，堡垒机；
+     * "udhost"，私有专区主机；"udockhost"，容器；"dbaudit"，数据库审计；”uni“，虚拟网卡；“cube”，Cube容器实例；“ulb”，负载均衡实例。
      */
     @UCloudParam("ResourceType")
     private String resourceType;
 
-    /** 绑定防火墙组的资源ID */
+    /** 绑定防火墙组的资源ID。 */
     @UCloudParam("ResourceId")
     private String resourceId;
 

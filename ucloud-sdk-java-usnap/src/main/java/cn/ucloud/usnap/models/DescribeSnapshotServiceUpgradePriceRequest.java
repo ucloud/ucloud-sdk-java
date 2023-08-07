@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.usnap.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class StopUDBInstanceRequest extends Request {
+public class DescribeSnapshotServiceUpgradePriceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class StopUDBInstanceRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,14 +37,19 @@ public class StopUDBInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id,该值可以通过DescribeUDBInstance获取 */
+    /** 磁盘ID */
     @NotEmpty
-    @UCloudParam("DBId")
-    private String dbId;
+    @UCloudParam("VDiskId")
+    private String vDiskId;
 
-    /** 是否使用强制手段关闭DB，默认是false */
-    @UCloudParam("ForceToKill")
-    private Boolean forceToKill;
+    /** 磁盘大小 */
+    @NotEmpty
+    @UCloudParam("Size")
+    private Integer size;
+
+    /** 升降级快照服务, 升级"Yes",降级"No", 默认为No */
+    @UCloudParam("SnapshotsvcMode")
+    private String snapshotsvcMode;
 
     public String getRegion() {
         return region;
@@ -69,19 +75,27 @@ public class StopUDBInstanceRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getDBId() {
-        return dbId;
+    public String getVDiskId() {
+        return vDiskId;
     }
 
-    public void setDBId(String dbId) {
-        this.dbId = dbId;
+    public void setVDiskId(String vDiskId) {
+        this.vDiskId = vDiskId;
     }
 
-    public Boolean getForceToKill() {
-        return forceToKill;
+    public Integer getSize() {
+        return size;
     }
 
-    public void setForceToKill(Boolean forceToKill) {
-        this.forceToKill = forceToKill;
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public String getSnapshotsvcMode() {
+        return snapshotsvcMode;
+    }
+
+    public void setSnapshotsvcMode(String snapshotsvcMode) {
+        this.snapshotsvcMode = snapshotsvcMode;
     }
 }

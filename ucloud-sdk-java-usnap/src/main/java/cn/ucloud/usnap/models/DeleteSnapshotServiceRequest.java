@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.usnap.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class StopUDBInstanceRequest extends Request {
+public class DeleteSnapshotServiceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class StopUDBInstanceRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,14 +37,10 @@ public class StopUDBInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id,该值可以通过DescribeUDBInstance获取 */
+    /** 磁盘ID */
     @NotEmpty
-    @UCloudParam("DBId")
-    private String dbId;
-
-    /** 是否使用强制手段关闭DB，默认是false */
-    @UCloudParam("ForceToKill")
-    private Boolean forceToKill;
+    @UCloudParam("VDiskId")
+    private String vDiskId;
 
     public String getRegion() {
         return region;
@@ -69,19 +66,11 @@ public class StopUDBInstanceRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getDBId() {
-        return dbId;
+    public String getVDiskId() {
+        return vDiskId;
     }
 
-    public void setDBId(String dbId) {
-        this.dbId = dbId;
-    }
-
-    public Boolean getForceToKill() {
-        return forceToKill;
-    }
-
-    public void setForceToKill(Boolean forceToKill) {
-        this.forceToKill = forceToKill;
+    public void setVDiskId(String vDiskId) {
+        this.vDiskId = vDiskId;
     }
 }
