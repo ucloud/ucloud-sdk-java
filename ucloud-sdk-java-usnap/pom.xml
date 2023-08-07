@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>ucloud-sdk-java-uec</artifactId>
+    <artifactId>ucloud-sdk-java-usnap</artifactId>
     <version>1.2.15-release</version>
 
     <dependencies>

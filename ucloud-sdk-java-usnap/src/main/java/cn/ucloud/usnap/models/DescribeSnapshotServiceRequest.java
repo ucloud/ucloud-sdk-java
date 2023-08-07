@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.udb.models;
+package cn.ucloud.usnap.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class StopUDBInstanceRequest extends Request {
+public class DescribeSnapshotServiceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class StopUDBInstanceRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,14 +37,25 @@ public class StopUDBInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id,该值可以通过DescribeUDBInstance获取 */
-    @NotEmpty
-    @UCloudParam("DBId")
-    private String dbId;
+    /** 数据偏移量, 默认为0 */
+    @UCloudParam("Offset")
+    private Integer offset;
 
-    /** 是否使用强制手段关闭DB，默认是false */
-    @UCloudParam("ForceToKill")
-    private Boolean forceToKill;
+    /** 返回数据长度, 默认为20 */
+    @UCloudParam("Limit")
+    private Integer limit;
+
+    /** 快照服务ID(传入则获取当前快照服务ID, 不传则获取当前可用区快照服务列表) */
+    @UCloudParam("SnapshotServiceId")
+    private String snapshotServiceId;
+
+    /** 磁盘ID (传入则获取当前盘快照服务, 不传则获取当前可用区快照服务列表) */
+    @UCloudParam("VDiskId")
+    private String vDiskId;
+
+    /** 快照ID (传入则获取当前快照对应盘的快照服务, 不传则获取当前可用区快照服务列表，磁盘ID和快照ID同时传入以磁盘ID为准) */
+    @UCloudParam("SnapshotId")
+    private String snapshotId;
 
     public String getRegion() {
         return region;
@@ -69,19 +81,43 @@ public class StopUDBInstanceRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getDBId() {
-        return dbId;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setDBId(String dbId) {
-        this.dbId = dbId;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
-    public Boolean getForceToKill() {
-        return forceToKill;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setForceToKill(Boolean forceToKill) {
-        this.forceToKill = forceToKill;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public String getSnapshotServiceId() {
+        return snapshotServiceId;
+    }
+
+    public void setSnapshotServiceId(String snapshotServiceId) {
+        this.snapshotServiceId = snapshotServiceId;
+    }
+
+    public String getVDiskId() {
+        return vDiskId;
+    }
+
+    public void setVDiskId(String vDiskId) {
+        this.vDiskId = vDiskId;
+    }
+
+    public String getSnapshotId() {
+        return snapshotId;
+    }
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
     }
 }
