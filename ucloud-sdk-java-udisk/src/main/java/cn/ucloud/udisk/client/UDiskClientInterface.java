@@ -43,6 +43,8 @@ import cn.ucloud.udisk.models.DescribeUDiskSnapshotRequest;
 import cn.ucloud.udisk.models.DescribeUDiskSnapshotResponse;
 import cn.ucloud.udisk.models.DescribeUDiskUpgradePriceRequest;
 import cn.ucloud.udisk.models.DescribeUDiskUpgradePriceResponse;
+import cn.ucloud.udisk.models.DetachDeleteUDiskRequest;
+import cn.ucloud.udisk.models.DetachDeleteUDiskResponse;
 import cn.ucloud.udisk.models.DetachUDiskRequest;
 import cn.ucloud.udisk.models.DetachUDiskResponse;
 import cn.ucloud.udisk.models.RecoverUDiskRequest;
@@ -179,6 +181,15 @@ public interface UDiskClientInterface extends Client {
      */
     public DescribeUDiskUpgradePriceResponse describeUDiskUpgradePrice(
             DescribeUDiskUpgradePriceRequest request) throws UCloudException;
+
+    /**
+     * DetachDeleteUDisk - 卸载删除云硬盘
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DetachDeleteUDiskResponse detachDeleteUDisk(DetachDeleteUDiskRequest request)
+            throws UCloudException;
 
     /**
      * DetachUDisk - 卸载云硬盘

@@ -102,6 +102,10 @@ public class ListUBillDetailResponse extends Response {
         @SerializedName("ProjectName")
         private String projectName;
 
+        /** 业务组 */
+        @SerializedName("BusinessGroup")
+        private String businessGroup;
+
         /** 资源ID */
         @SerializedName("ResourceId")
         private String resourceId;
@@ -240,6 +244,14 @@ public class ListUBillDetailResponse extends Response {
 
         public void setProjectName(String projectName) {
             this.projectName = projectName;
+        }
+
+        public String getBusinessGroup() {
+            return businessGroup;
+        }
+
+        public void setBusinessGroup(String businessGroup) {
+            this.businessGroup = businessGroup;
         }
 
         public String getResourceId() {

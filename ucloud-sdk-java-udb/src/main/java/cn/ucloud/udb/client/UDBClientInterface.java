@@ -101,6 +101,8 @@ import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordResponse;
+import cn.ucloud.udb.models.ModifyUDBInstanceRemarkNameRequest;
+import cn.ucloud.udb.models.ModifyUDBInstanceRemarkNameResponse;
 import cn.ucloud.udb.models.PromoteUDBInstanceToHARequest;
 import cn.ucloud.udb.models.PromoteUDBInstanceToHAResponse;
 import cn.ucloud.udb.models.PromoteUDBSlaveRequest;
@@ -520,6 +522,15 @@ public interface UDBClientInterface extends Client {
      */
     public ModifyUDBInstancePasswordResponse modifyUDBInstancePassword(
             ModifyUDBInstancePasswordRequest request) throws UCloudException;
+
+    /**
+     * ModifyUDBInstanceRemarkName - 修改云数据库备注
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUDBInstanceRemarkNameResponse modifyUDBInstanceRemarkName(
+            ModifyUDBInstanceRemarkNameRequest request) throws UCloudException;
 
     /**
      * PromoteUDBInstanceToHA - 普通db升级为高可用
