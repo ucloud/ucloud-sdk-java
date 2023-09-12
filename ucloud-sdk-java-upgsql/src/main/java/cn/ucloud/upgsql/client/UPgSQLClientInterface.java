@@ -51,6 +51,8 @@ import cn.ucloud.upgsql.models.ListUPgSQLLogRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLLogResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeResponse;
+import cn.ucloud.upgsql.models.ListUPgSQLParamTemplateRequest;
+import cn.ucloud.upgsql.models.ListUPgSQLParamTemplateResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLVersionRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLVersionResponse;
 import cn.ucloud.upgsql.models.RestartUPgSQLInstanceRequest;
@@ -235,6 +237,15 @@ public interface UPgSQLClientInterface extends Client {
      */
     public ListUPgSQLMachineTypeResponse listUPgSQLMachineType(ListUPgSQLMachineTypeRequest request)
             throws UCloudException;
+
+    /**
+     * ListUPgSQLParamTemplate - 获取可用参数模板列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUPgSQLParamTemplateResponse listUPgSQLParamTemplate(
+            ListUPgSQLParamTemplateRequest request) throws UCloudException;
 
     /**
      * ListUPgSQLVersion - 获取UPgSQL支持版本列表

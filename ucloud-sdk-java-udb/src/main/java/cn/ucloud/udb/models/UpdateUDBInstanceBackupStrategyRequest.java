@@ -20,16 +20,19 @@ import cn.ucloud.common.request.Request;
 
 public class UpdateUDBInstanceBackupStrategyRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -53,11 +56,27 @@ public class UpdateUDBInstanceBackupStrategyRequest extends Request {
     private Boolean forceDump;
 
     /**
-     * 选择默认的备份方式，可选 snapshot 表示使用快照/物理备份，不填或者其它任何值为默认的逻辑备份。需要同时设置BackupDate字段。（注意现在只有SSD 版本的
-     * MySQL实例支持物理备份）
+     * 选择默认的备份方式，可选nobackup表示不备份， snapshot 表示使用快照备份，logic
+     * 表示使用逻辑备份。需要同时设置BackupDate字段。（快照备份即物理备份。SSD版本的mysql实例支持设置为snapshot，NVMe版本的mysql实例支持设置为xtrabackup）
      */
     @UCloudParam("BackupMethod")
     private String backupMethod;
+
+    /** 自动备份转存到用户自己的bucket 的tokenid， 需要用户自己自己设置权限 */
+    @UCloudParam("UserTokenID")
+    private String userTokenID;
+
+    /** 自动备份转存到用户自己的bucket名称，要包含到对应的token id里 */
+    @UCloudParam("UserBucket")
+    private String userBucket;
+
+    /** 是否开启binlog备份, 默认为未开启 */
+    @UCloudParam("EnableBinlogBackup")
+    private Boolean enableBinlogBackup;
+
+    /** 远端binlog保存时长(天) */
+    @UCloudParam("BinlogRemoteSaveDays")
+    private Integer binlogRemoteSaveDays;
 
     public String getRegion() {
         return region;
@@ -121,5 +140,37 @@ public class UpdateUDBInstanceBackupStrategyRequest extends Request {
 
     public void setBackupMethod(String backupMethod) {
         this.backupMethod = backupMethod;
+    }
+
+    public String getUserTokenID() {
+        return userTokenID;
+    }
+
+    public void setUserTokenID(String userTokenID) {
+        this.userTokenID = userTokenID;
+    }
+
+    public String getUserBucket() {
+        return userBucket;
+    }
+
+    public void setUserBucket(String userBucket) {
+        this.userBucket = userBucket;
+    }
+
+    public Boolean getEnableBinlogBackup() {
+        return enableBinlogBackup;
+    }
+
+    public void setEnableBinlogBackup(Boolean enableBinlogBackup) {
+        this.enableBinlogBackup = enableBinlogBackup;
+    }
+
+    public Integer getBinlogRemoteSaveDays() {
+        return binlogRemoteSaveDays;
+    }
+
+    public void setBinlogRemoteSaveDays(Integer binlogRemoteSaveDays) {
+        this.binlogRemoteSaveDays = binlogRemoteSaveDays;
     }
 }

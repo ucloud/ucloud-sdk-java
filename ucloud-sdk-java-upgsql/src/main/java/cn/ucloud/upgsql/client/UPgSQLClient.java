@@ -53,6 +53,8 @@ import cn.ucloud.upgsql.models.ListUPgSQLLogRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLLogResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLMachineTypeResponse;
+import cn.ucloud.upgsql.models.ListUPgSQLParamTemplateRequest;
+import cn.ucloud.upgsql.models.ListUPgSQLParamTemplateResponse;
 import cn.ucloud.upgsql.models.ListUPgSQLVersionRequest;
 import cn.ucloud.upgsql.models.ListUPgSQLVersionResponse;
 import cn.ucloud.upgsql.models.RestartUPgSQLInstanceRequest;
@@ -306,6 +308,19 @@ public class UPgSQLClient extends DefaultClient implements UPgSQLClientInterface
         request.setAction("ListUPgSQLMachineType");
         return (ListUPgSQLMachineTypeResponse)
                 this.invoke(request, ListUPgSQLMachineTypeResponse.class);
+    }
+
+    /**
+     * ListUPgSQLParamTemplate - 获取可用参数模板列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUPgSQLParamTemplateResponse listUPgSQLParamTemplate(
+            ListUPgSQLParamTemplateRequest request) throws UCloudException {
+        request.setAction("ListUPgSQLParamTemplate");
+        return (ListUPgSQLParamTemplateResponse)
+                this.invoke(request, ListUPgSQLParamTemplateResponse.class);
     }
 
     /**

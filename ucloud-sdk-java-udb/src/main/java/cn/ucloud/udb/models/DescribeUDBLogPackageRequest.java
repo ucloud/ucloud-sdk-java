@@ -47,7 +47,7 @@ public class DescribeUDBLogPackageRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 需要列出的备份文件类型，每种类型的值如下： 2 代表 BINLOG_BACKUP； 3 代表 SLOW_QUERY_BACKUP； 4 代表 ERRORLOG_BACKUP。 */
+    /** 需要列出的备份文件类型，每种类型的值如下： 2 代表 BINLOG_BACKUP； 3 代表 SLOW_QUERY_BACKUP； 4 代表 ERRORLOG_BACKUP； */
     @UCloudParam("Type")
     private Integer type;
 

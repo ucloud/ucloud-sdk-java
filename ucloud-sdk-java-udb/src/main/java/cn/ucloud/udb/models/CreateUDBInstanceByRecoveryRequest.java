@@ -20,16 +20,19 @@ import cn.ucloud.common.request.Request;
 
 public class CreateUDBInstanceByRecoveryRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -75,6 +78,16 @@ public class CreateUDBInstanceByRecoveryRequest extends Request {
     /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true */
     @UCloudParam("EnableIpV6")
     private Boolean enableIpV6;
+
+    /**
+     * 指定需要恢复的表, 如果指定该字段则回档实例只有指定的表数据，格式为(库名.表名)， 指定多个用逗号隔开，eg: [ udb.test, mysql_school.my_student]
+     */
+    @UCloudParam("Tables")
+    private String tables;
+
+    /** 管理员密码 (指定库表回档到新实例时有效) */
+    @UCloudParam("AdminPassword")
+    private String adminPassword;
 
     /** 使用的代金券id */
     @UCloudParam("CouponId")
@@ -182,6 +195,22 @@ public class CreateUDBInstanceByRecoveryRequest extends Request {
 
     public void setEnableIpV6(Boolean enableIpV6) {
         this.enableIpV6 = enableIpV6;
+    }
+
+    public String getTables() {
+        return tables;
+    }
+
+    public void setTables(String tables) {
+        this.tables = tables;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
     }
 
     public String getCouponId() {
