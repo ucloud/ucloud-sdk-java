@@ -5,18 +5,18 @@
     <parent>
         <artifactId>ucloud-sdk-java</artifactId>
         <groupId>cn.ucloud</groupId>
-        <version>1.2.16-release</version>
+        <version>1.2.17-release</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>ucloud-sdk-java-pathx</artifactId>
-    <version>1.2.16-release</version>
+    <version>1.2.17-release</version>
 
     <dependencies>
         <dependency>
             <groupId>cn.ucloud</groupId>
             <artifactId>ucloud-sdk-java-common</artifactId>
-            <version>1.2.16-release</version>
+            <version>1.2.17-release</version>
         </dependency>
 
         <dependency>

@@ -20,16 +20,19 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeUDBInstanceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区，不填时默认全部可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区，不填时默认全部可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -60,6 +63,14 @@ public class DescribeUDBInstanceRequest extends Request {
     /** 当只获取这个特定DBId的信息时，如果有该选项，那么把这个DBId实例的所有从库信息一起拉取并返回 */
     @UCloudParam("IncludeSlaves")
     private Boolean includeSlaves;
+
+    /** 根据VPCId筛选DB */
+    @UCloudParam("VPCId")
+    private String vpcId;
+
+    /** 根据 业务组 筛选DB */
+    @UCloudParam("Tag")
+    private String tag;
 
     public String getRegion() {
         return region;
@@ -139,5 +150,21 @@ public class DescribeUDBInstanceRequest extends Request {
 
     public void setIncludeSlaves(Boolean includeSlaves) {
         this.includeSlaves = includeSlaves;
+    }
+
+    public String getVPCId() {
+        return vpcId;
+    }
+
+    public void setVPCId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

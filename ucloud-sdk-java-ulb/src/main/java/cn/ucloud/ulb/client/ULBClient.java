@@ -17,10 +17,16 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ulb.models.AddTargetsRequest;
+import cn.ucloud.ulb.models.AddTargetsResponse;
 import cn.ucloud.ulb.models.AllocateBackendRequest;
 import cn.ucloud.ulb.models.AllocateBackendResponse;
 import cn.ucloud.ulb.models.BindSSLRequest;
 import cn.ucloud.ulb.models.BindSSLResponse;
+import cn.ucloud.ulb.models.CreateListenerRequest;
+import cn.ucloud.ulb.models.CreateListenerResponse;
+import cn.ucloud.ulb.models.CreateLoadBalancerRequest;
+import cn.ucloud.ulb.models.CreateLoadBalancerResponse;
 import cn.ucloud.ulb.models.CreatePolicyRequest;
 import cn.ucloud.ulb.models.CreatePolicyResponse;
 import cn.ucloud.ulb.models.CreateSSLRequest;
@@ -31,8 +37,14 @@ import cn.ucloud.ulb.models.CreateULBRequest;
 import cn.ucloud.ulb.models.CreateULBResponse;
 import cn.ucloud.ulb.models.CreateVServerRequest;
 import cn.ucloud.ulb.models.CreateVServerResponse;
+import cn.ucloud.ulb.models.DeleteListenerRequest;
+import cn.ucloud.ulb.models.DeleteListenerResponse;
+import cn.ucloud.ulb.models.DeleteLoadBalancerRequest;
+import cn.ucloud.ulb.models.DeleteLoadBalancerResponse;
 import cn.ucloud.ulb.models.DeletePolicyRequest;
 import cn.ucloud.ulb.models.DeletePolicyResponse;
+import cn.ucloud.ulb.models.DeleteRuleRequest;
+import cn.ucloud.ulb.models.DeleteRuleResponse;
 import cn.ucloud.ulb.models.DeleteSSLRequest;
 import cn.ucloud.ulb.models.DeleteSSLResponse;
 import cn.ucloud.ulb.models.DeleteSecurityPolicyRequest;
@@ -55,20 +67,30 @@ import cn.ucloud.ulb.models.DescribeVServerRequest;
 import cn.ucloud.ulb.models.DescribeVServerResponse;
 import cn.ucloud.ulb.models.ReleaseBackendRequest;
 import cn.ucloud.ulb.models.ReleaseBackendResponse;
+import cn.ucloud.ulb.models.RemoveTargetsRequest;
+import cn.ucloud.ulb.models.RemoveTargetsResponse;
 import cn.ucloud.ulb.models.UnBindSecurityPolicyRequest;
 import cn.ucloud.ulb.models.UnBindSecurityPolicyResponse;
 import cn.ucloud.ulb.models.UnbindSSLRequest;
 import cn.ucloud.ulb.models.UnbindSSLResponse;
 import cn.ucloud.ulb.models.UpdateBackendAttributeRequest;
 import cn.ucloud.ulb.models.UpdateBackendAttributeResponse;
+import cn.ucloud.ulb.models.UpdateListenerAttributeRequest;
+import cn.ucloud.ulb.models.UpdateListenerAttributeResponse;
+import cn.ucloud.ulb.models.UpdateLoadBalancerAttributeRequest;
+import cn.ucloud.ulb.models.UpdateLoadBalancerAttributeResponse;
 import cn.ucloud.ulb.models.UpdatePolicyRequest;
 import cn.ucloud.ulb.models.UpdatePolicyResponse;
+import cn.ucloud.ulb.models.UpdateRuleAttributeRequest;
+import cn.ucloud.ulb.models.UpdateRuleAttributeResponse;
 import cn.ucloud.ulb.models.UpdateSSLAttributeRequest;
 import cn.ucloud.ulb.models.UpdateSSLAttributeResponse;
 import cn.ucloud.ulb.models.UpdateSSLBindingRequest;
 import cn.ucloud.ulb.models.UpdateSSLBindingResponse;
 import cn.ucloud.ulb.models.UpdateSecurityPolicyRequest;
 import cn.ucloud.ulb.models.UpdateSecurityPolicyResponse;
+import cn.ucloud.ulb.models.UpdateTargetsAttributeRequest;
+import cn.ucloud.ulb.models.UpdateTargetsAttributeResponse;
 import cn.ucloud.ulb.models.UpdateULBAttributeRequest;
 import cn.ucloud.ulb.models.UpdateULBAttributeResponse;
 import cn.ucloud.ulb.models.UpdateVServerAttributeRequest;
@@ -78,6 +100,17 @@ import cn.ucloud.ulb.models.UpdateVServerAttributeResponse;
 public class ULBClient extends DefaultClient implements ULBClientInterface {
     public ULBClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * AddTargets - 添加后端服务节点
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddTargetsResponse addTargets(AddTargetsRequest request) throws UCloudException {
+        request.setAction("AddTargets");
+        return (AddTargetsResponse) this.invoke(request, AddTargetsResponse.class);
     }
 
     /**
@@ -101,6 +134,30 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException {
         request.setAction("BindSSL");
         return (BindSSLResponse) this.invoke(request, BindSSLResponse.class);
+    }
+
+    /**
+     * CreateListener - 创建监听器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateListenerResponse createListener(CreateListenerRequest request)
+            throws UCloudException {
+        request.setAction("CreateListener");
+        return (CreateListenerResponse) this.invoke(request, CreateListenerResponse.class);
+    }
+
+    /**
+     * CreateLoadBalancer - 创建负载均衡实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request)
+            throws UCloudException {
+        request.setAction("CreateLoadBalancer");
+        return (CreateLoadBalancerResponse) this.invoke(request, CreateLoadBalancerResponse.class);
     }
 
     /**
@@ -162,6 +219,30 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
+     * DeleteListener - 删除监听器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteListenerResponse deleteListener(DeleteListenerRequest request)
+            throws UCloudException {
+        request.setAction("DeleteListener");
+        return (DeleteListenerResponse) this.invoke(request, DeleteListenerResponse.class);
+    }
+
+    /**
+     * DeleteLoadBalancer - 删除负载均衡实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request)
+            throws UCloudException {
+        request.setAction("DeleteLoadBalancer");
+        return (DeleteLoadBalancerResponse) this.invoke(request, DeleteLoadBalancerResponse.class);
+    }
+
+    /**
      * DeletePolicy - 删除转发策略
      *
      * @param request Request object
@@ -170,6 +251,17 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException {
         request.setAction("DeletePolicy");
         return (DeletePolicyResponse) this.invoke(request, DeletePolicyResponse.class);
+    }
+
+    /**
+     * DeleteRule - 删除转发规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteRuleResponse deleteRule(DeleteRuleRequest request) throws UCloudException {
+        request.setAction("DeleteRule");
+        return (DeleteRuleResponse) this.invoke(request, DeleteRuleResponse.class);
     }
 
     /**
@@ -304,6 +396,18 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
+     * RemoveTargets - 删除后端服务节点
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RemoveTargetsResponse removeTargets(RemoveTargetsRequest request)
+            throws UCloudException {
+        request.setAction("RemoveTargets");
+        return (RemoveTargetsResponse) this.invoke(request, RemoveTargetsResponse.class);
+    }
+
+    /**
      * UnBindSecurityPolicy - 解绑安全策略
      *
      * @param request Request object
@@ -341,6 +445,32 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     }
 
     /**
+     * UpdateListenerAttribute - 更新监听器属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateListenerAttributeResponse updateListenerAttribute(
+            UpdateListenerAttributeRequest request) throws UCloudException {
+        request.setAction("UpdateListenerAttribute");
+        return (UpdateListenerAttributeResponse)
+                this.invoke(request, UpdateListenerAttributeResponse.class);
+    }
+
+    /**
+     * UpdateLoadBalancerAttribute - 更新负载均衡实例属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateLoadBalancerAttributeResponse updateLoadBalancerAttribute(
+            UpdateLoadBalancerAttributeRequest request) throws UCloudException {
+        request.setAction("UpdateLoadBalancerAttribute");
+        return (UpdateLoadBalancerAttributeResponse)
+                this.invoke(request, UpdateLoadBalancerAttributeResponse.class);
+    }
+
+    /**
      * UpdatePolicy - 更新内容转发规则
      *
      * @param request Request object
@@ -349,6 +479,19 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException {
         request.setAction("UpdatePolicy");
         return (UpdatePolicyResponse) this.invoke(request, UpdatePolicyResponse.class);
+    }
+
+    /**
+     * UpdateRuleAttribute - 更新转发规则属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateRuleAttributeResponse updateRuleAttribute(UpdateRuleAttributeRequest request)
+            throws UCloudException {
+        request.setAction("UpdateRuleAttribute");
+        return (UpdateRuleAttributeResponse)
+                this.invoke(request, UpdateRuleAttributeResponse.class);
     }
 
     /**
@@ -386,6 +529,19 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
         request.setAction("UpdateSecurityPolicy");
         return (UpdateSecurityPolicyResponse)
                 this.invoke(request, UpdateSecurityPolicyResponse.class);
+    }
+
+    /**
+     * UpdateTargetsAttribute - 更新后端服务节点属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateTargetsAttributeResponse updateTargetsAttribute(
+            UpdateTargetsAttributeRequest request) throws UCloudException {
+        request.setAction("UpdateTargetsAttribute");
+        return (UpdateTargetsAttributeResponse)
+                this.invoke(request, UpdateTargetsAttributeResponse.class);
     }
 
     /**

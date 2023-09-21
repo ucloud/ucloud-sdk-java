@@ -18,7 +18,7 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBInstanceUpgradePriceRequest extends Request {
+public class UpgradeUDBVersionRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -36,32 +37,30 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id */
+    /** db实例资源id */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 内存限制(MB) */
+    /** db需要升级的小版本 */
     @NotEmpty
-    @UCloudParam("MemoryLimit")
-    private Integer memoryLimit;
+    @UCloudParam("DBSubVersion")
+    private String dbSubVersion;
 
-    /** 磁盘空间(GB), 暂时支持20G - 500G */
+    /**
+     * 切换类型，可选值为"immediately"和"customize"，分别代表立即切换和自定义切换时间，自定义切换时间需要填写SwitchStartTime和SwitchEndTime
+     */
     @NotEmpty
-    @UCloudParam("DiskSpace")
-    private Integer diskSpace;
+    @UCloudParam("SwitchType")
+    private String switchType;
 
-    /** "SATA", "NVMe" */
-    @UCloudParam("SSDType")
-    private String ssdType;
+    /** 该值为一个unix时间戳，代表开始切换实例的时间 */
+    @UCloudParam("SwitchStartTime")
+    private Integer switchStartTime;
 
-    /** "SATA_SSD", "NVMe_SSD" */
-    @UCloudParam("InstanceType")
-    private String instanceType;
-
-    /** 获取指定时间开始后面的升级价格， 不填的话 是默认当前时间 */
-    @UCloudParam("OrderStartTime")
-    private Integer orderStartTime;
+    /** 该值为一个unix时间戳，代表开始预期切换实例结束的时间 */
+    @UCloudParam("SwitchEndTime")
+    private Integer switchEndTime;
 
     public String getRegion() {
         return region;
@@ -95,43 +94,35 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
         this.dbId = dbId;
     }
 
-    public Integer getMemoryLimit() {
-        return memoryLimit;
+    public String getDBSubVersion() {
+        return dbSubVersion;
     }
 
-    public void setMemoryLimit(Integer memoryLimit) {
-        this.memoryLimit = memoryLimit;
+    public void setDBSubVersion(String dbSubVersion) {
+        this.dbSubVersion = dbSubVersion;
     }
 
-    public Integer getDiskSpace() {
-        return diskSpace;
+    public String getSwitchType() {
+        return switchType;
     }
 
-    public void setDiskSpace(Integer diskSpace) {
-        this.diskSpace = diskSpace;
+    public void setSwitchType(String switchType) {
+        this.switchType = switchType;
     }
 
-    public String getSSDType() {
-        return ssdType;
+    public Integer getSwitchStartTime() {
+        return switchStartTime;
     }
 
-    public void setSSDType(String ssdType) {
-        this.ssdType = ssdType;
+    public void setSwitchStartTime(Integer switchStartTime) {
+        this.switchStartTime = switchStartTime;
     }
 
-    public String getInstanceType() {
-        return instanceType;
+    public Integer getSwitchEndTime() {
+        return switchEndTime;
     }
 
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    public Integer getOrderStartTime() {
-        return orderStartTime;
-    }
-
-    public void setOrderStartTime(Integer orderStartTime) {
-        this.orderStartTime = orderStartTime;
+    public void setSwitchEndTime(Integer switchEndTime) {
+        this.switchEndTime = switchEndTime;
     }
 }
