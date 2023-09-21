@@ -113,6 +113,8 @@ import cn.ucloud.udb.models.RestartRWSplittingRequest;
 import cn.ucloud.udb.models.RestartRWSplittingResponse;
 import cn.ucloud.udb.models.RestartUDBInstanceRequest;
 import cn.ucloud.udb.models.RestartUDBInstanceResponse;
+import cn.ucloud.udb.models.RollbackUDBInstanceRequest;
+import cn.ucloud.udb.models.RollbackUDBInstanceResponse;
 import cn.ucloud.udb.models.SetUDBRWSplittingRequest;
 import cn.ucloud.udb.models.SetUDBRWSplittingResponse;
 import cn.ucloud.udb.models.StartUDBInstanceRequest;
@@ -131,6 +133,8 @@ import cn.ucloud.udb.models.UpdateUDBParamGroupRequest;
 import cn.ucloud.udb.models.UpdateUDBParamGroupResponse;
 import cn.ucloud.udb.models.UpgradeUDBInstanceToHARequest;
 import cn.ucloud.udb.models.UpgradeUDBInstanceToHAResponse;
+import cn.ucloud.udb.models.UpgradeUDBVersionRequest;
+import cn.ucloud.udb.models.UpgradeUDBVersionResponse;
 import cn.ucloud.udb.models.UploadUDBParamGroupRequest;
 import cn.ucloud.udb.models.UploadUDBParamGroupResponse;
 
@@ -578,6 +582,15 @@ public interface UDBClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * RollbackUDBInstance - 回档指定库表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RollbackUDBInstanceResponse rollbackUDBInstance(RollbackUDBInstanceRequest request)
+            throws UCloudException;
+
+    /**
      * SetUDBRWSplitting - 设置读写分离
      *
      * @param request Request object
@@ -657,6 +670,15 @@ public interface UDBClientInterface extends Client {
      */
     public UpgradeUDBInstanceToHAResponse upgradeUDBInstanceToHA(
             UpgradeUDBInstanceToHARequest request) throws UCloudException;
+
+    /**
+     * UpgradeUDBVersion - 升级db实例版本
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpgradeUDBVersionResponse upgradeUDBVersion(UpgradeUDBVersionRequest request)
+            throws UCloudException;
 
     /**
      * UploadUDBParamGroup - 导入配置

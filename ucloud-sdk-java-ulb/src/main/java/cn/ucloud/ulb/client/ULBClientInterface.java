@@ -15,10 +15,16 @@ package cn.ucloud.ulb.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ulb.models.AddTargetsRequest;
+import cn.ucloud.ulb.models.AddTargetsResponse;
 import cn.ucloud.ulb.models.AllocateBackendRequest;
 import cn.ucloud.ulb.models.AllocateBackendResponse;
 import cn.ucloud.ulb.models.BindSSLRequest;
 import cn.ucloud.ulb.models.BindSSLResponse;
+import cn.ucloud.ulb.models.CreateListenerRequest;
+import cn.ucloud.ulb.models.CreateListenerResponse;
+import cn.ucloud.ulb.models.CreateLoadBalancerRequest;
+import cn.ucloud.ulb.models.CreateLoadBalancerResponse;
 import cn.ucloud.ulb.models.CreatePolicyRequest;
 import cn.ucloud.ulb.models.CreatePolicyResponse;
 import cn.ucloud.ulb.models.CreateSSLRequest;
@@ -29,8 +35,14 @@ import cn.ucloud.ulb.models.CreateULBRequest;
 import cn.ucloud.ulb.models.CreateULBResponse;
 import cn.ucloud.ulb.models.CreateVServerRequest;
 import cn.ucloud.ulb.models.CreateVServerResponse;
+import cn.ucloud.ulb.models.DeleteListenerRequest;
+import cn.ucloud.ulb.models.DeleteListenerResponse;
+import cn.ucloud.ulb.models.DeleteLoadBalancerRequest;
+import cn.ucloud.ulb.models.DeleteLoadBalancerResponse;
 import cn.ucloud.ulb.models.DeletePolicyRequest;
 import cn.ucloud.ulb.models.DeletePolicyResponse;
+import cn.ucloud.ulb.models.DeleteRuleRequest;
+import cn.ucloud.ulb.models.DeleteRuleResponse;
 import cn.ucloud.ulb.models.DeleteSSLRequest;
 import cn.ucloud.ulb.models.DeleteSSLResponse;
 import cn.ucloud.ulb.models.DeleteSecurityPolicyRequest;
@@ -53,20 +65,30 @@ import cn.ucloud.ulb.models.DescribeVServerRequest;
 import cn.ucloud.ulb.models.DescribeVServerResponse;
 import cn.ucloud.ulb.models.ReleaseBackendRequest;
 import cn.ucloud.ulb.models.ReleaseBackendResponse;
+import cn.ucloud.ulb.models.RemoveTargetsRequest;
+import cn.ucloud.ulb.models.RemoveTargetsResponse;
 import cn.ucloud.ulb.models.UnBindSecurityPolicyRequest;
 import cn.ucloud.ulb.models.UnBindSecurityPolicyResponse;
 import cn.ucloud.ulb.models.UnbindSSLRequest;
 import cn.ucloud.ulb.models.UnbindSSLResponse;
 import cn.ucloud.ulb.models.UpdateBackendAttributeRequest;
 import cn.ucloud.ulb.models.UpdateBackendAttributeResponse;
+import cn.ucloud.ulb.models.UpdateListenerAttributeRequest;
+import cn.ucloud.ulb.models.UpdateListenerAttributeResponse;
+import cn.ucloud.ulb.models.UpdateLoadBalancerAttributeRequest;
+import cn.ucloud.ulb.models.UpdateLoadBalancerAttributeResponse;
 import cn.ucloud.ulb.models.UpdatePolicyRequest;
 import cn.ucloud.ulb.models.UpdatePolicyResponse;
+import cn.ucloud.ulb.models.UpdateRuleAttributeRequest;
+import cn.ucloud.ulb.models.UpdateRuleAttributeResponse;
 import cn.ucloud.ulb.models.UpdateSSLAttributeRequest;
 import cn.ucloud.ulb.models.UpdateSSLAttributeResponse;
 import cn.ucloud.ulb.models.UpdateSSLBindingRequest;
 import cn.ucloud.ulb.models.UpdateSSLBindingResponse;
 import cn.ucloud.ulb.models.UpdateSecurityPolicyRequest;
 import cn.ucloud.ulb.models.UpdateSecurityPolicyResponse;
+import cn.ucloud.ulb.models.UpdateTargetsAttributeRequest;
+import cn.ucloud.ulb.models.UpdateTargetsAttributeResponse;
 import cn.ucloud.ulb.models.UpdateULBAttributeRequest;
 import cn.ucloud.ulb.models.UpdateULBAttributeResponse;
 import cn.ucloud.ulb.models.UpdateVServerAttributeRequest;
@@ -74,6 +96,14 @@ import cn.ucloud.ulb.models.UpdateVServerAttributeResponse;
 
 /** This client is used to call actions of **ULB** service */
 public interface ULBClientInterface extends Client {
+
+    /**
+     * AddTargets - 添加后端服务节点
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddTargetsResponse addTargets(AddTargetsRequest request) throws UCloudException;
 
     /**
      * AllocateBackend - 添加后端实例
@@ -91,6 +121,24 @@ public interface ULBClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
+
+    /**
+     * CreateListener - 创建监听器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateListenerResponse createListener(CreateListenerRequest request)
+            throws UCloudException;
+
+    /**
+     * CreateLoadBalancer - 创建负载均衡实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request)
+            throws UCloudException;
 
     /**
      * CreatePolicy - 创建内容转发策略
@@ -134,12 +182,38 @@ public interface ULBClientInterface extends Client {
     public CreateVServerResponse createVServer(CreateVServerRequest request) throws UCloudException;
 
     /**
+     * DeleteListener - 删除监听器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteListenerResponse deleteListener(DeleteListenerRequest request)
+            throws UCloudException;
+
+    /**
+     * DeleteLoadBalancer - 删除负载均衡实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request)
+            throws UCloudException;
+
+    /**
      * DeletePolicy - 删除转发策略
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException;
+
+    /**
+     * DeleteRule - 删除转发规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteRuleResponse deleteRule(DeleteRuleRequest request) throws UCloudException;
 
     /**
      * DeleteSSL - 删除SSL证书
@@ -236,6 +310,14 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * RemoveTargets - 删除后端服务节点
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RemoveTargetsResponse removeTargets(RemoveTargetsRequest request) throws UCloudException;
+
+    /**
      * UnBindSecurityPolicy - 解绑安全策略
      *
      * @param request Request object
@@ -262,12 +344,39 @@ public interface ULBClientInterface extends Client {
             UpdateBackendAttributeRequest request) throws UCloudException;
 
     /**
+     * UpdateListenerAttribute - 更新监听器属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateListenerAttributeResponse updateListenerAttribute(
+            UpdateListenerAttributeRequest request) throws UCloudException;
+
+    /**
+     * UpdateLoadBalancerAttribute - 更新负载均衡实例属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateLoadBalancerAttributeResponse updateLoadBalancerAttribute(
+            UpdateLoadBalancerAttributeRequest request) throws UCloudException;
+
+    /**
      * UpdatePolicy - 更新内容转发规则
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
+
+    /**
+     * UpdateRuleAttribute - 更新转发规则属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateRuleAttributeResponse updateRuleAttribute(UpdateRuleAttributeRequest request)
+            throws UCloudException;
 
     /**
      * UpdateSSLAttribute - 更新SSL属性
@@ -295,6 +404,15 @@ public interface ULBClientInterface extends Client {
      */
     public UpdateSecurityPolicyResponse updateSecurityPolicy(UpdateSecurityPolicyRequest request)
             throws UCloudException;
+
+    /**
+     * UpdateTargetsAttribute - 更新后端服务节点属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateTargetsAttributeResponse updateTargetsAttribute(
+            UpdateTargetsAttributeRequest request) throws UCloudException;
 
     /**
      * UpdateULBAttribute - 更新负载均衡属性

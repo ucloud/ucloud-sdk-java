@@ -11,10 +11,10 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uaccount.models;
+package cn.ucloud.ulb.models;
 
 
 
 import cn.ucloud.common.response.Response;
 
-public class AddMemberToProjectResponse extends Response {}
+public class RemoveTargetsResponse extends Response {}

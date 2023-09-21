@@ -11,10 +11,24 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uaccount.models;
-
+package cn.ucloud.ulb.models;
 
 
 import cn.ucloud.common.response.Response;
 
-public class RemoveMemberFromProjectResponse extends Response {}
+import com.google.gson.annotations.SerializedName;
+
+public class CreateListenerResponse extends Response {
+
+    /** 监听器的ID */
+    @SerializedName("ListenerId")
+    private String listenerId;
+
+    public String getListenerId() {
+        return listenerId;
+    }
+
+    public void setListenerId(String listenerId) {
+        this.listenerId = listenerId;
+    }
+}

@@ -51,6 +51,10 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
+        /** 0区分大小写, 1不分区 */
+        @SerializedName("CaseSensitivityParam")
+        private Integer caseSensitivityParam;
+
         /**
          * 当DB类型为mongodb时，返回该实例所在集群中的角色，包括：mongos、configsrv_sccc、configsrv_csrs、shardsrv_datanode、shardsrv_arbiter，其中congfigsrv分为sccc和csrs两种模式，shardsrv分为datanode和arbiter两种模式
          */
@@ -136,7 +140,8 @@ public class DescribeUDBInstanceResponse extends Response {
         /**
          * DB状态标记
          * Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover
-         * fail：恢复失败
+         * fail：恢复失败,
+         * Remakeing:重做中,RemakeFail:重做失败，VersionUpgrading:小版本升级中，VersionUpgradeWaitForSwitch:高可用等待切换，VersionUpgradeFail：小版本升级失败
          */
         @SerializedName("State")
         private String state;
@@ -223,12 +228,24 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("UserUFileData")
         private UFileDataSet userUFileData;
 
+        /** mysql实例提供具体小版本信息 */
+        @SerializedName("DBSubVersion")
+        private String dbSubVersion;
+
         public String getZone() {
             return zone;
         }
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public Integer getCaseSensitivityParam() {
+            return caseSensitivityParam;
+        }
+
+        public void setCaseSensitivityParam(Integer caseSensitivityParam) {
+            this.caseSensitivityParam = caseSensitivityParam;
         }
 
         public String getClusterRole() {
@@ -542,6 +559,14 @@ public class DescribeUDBInstanceResponse extends Response {
         public void setUserUFileData(UFileDataSet userUFileData) {
             this.userUFileData = userUFileData;
         }
+
+        public String getDBSubVersion() {
+            return dbSubVersion;
+        }
+
+        public void setDBSubVersion(String dbSubVersion) {
+            this.dbSubVersion = dbSubVersion;
+        }
     }
 
     public static class UDBSlaveInstanceSet extends Response {
@@ -613,7 +638,7 @@ public class DescribeUDBInstanceResponse extends Response {
         /**
          * DB状态标记
          * Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover
-         * fail：恢复失败
+         * fail：恢复失败,Remakeing:重做中,RemakeFail:重做失败
          */
         @SerializedName("State")
         private String state;
@@ -710,6 +735,10 @@ public class DescribeUDBInstanceResponse extends Response {
         /** 获取该实例的IPv6地址 */
         @SerializedName("IPv6Address")
         private String iPv6Address;
+
+        /** 0 区分大小写, 1不区分, 只针对mysql8.0 */
+        @SerializedName("CaseSensitivityParam")
+        private Integer caseSensitivityParam;
 
         public String getZone() {
             return zone;
@@ -1013,6 +1042,14 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setIPv6Address(String iPv6Address) {
             this.iPv6Address = iPv6Address;
+        }
+
+        public Integer getCaseSensitivityParam() {
+            return caseSensitivityParam;
+        }
+
+        public void setCaseSensitivityParam(Integer caseSensitivityParam) {
+            this.caseSensitivityParam = caseSensitivityParam;
         }
     }
 

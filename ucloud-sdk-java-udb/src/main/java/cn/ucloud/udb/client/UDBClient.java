@@ -115,6 +115,8 @@ import cn.ucloud.udb.models.RestartRWSplittingRequest;
 import cn.ucloud.udb.models.RestartRWSplittingResponse;
 import cn.ucloud.udb.models.RestartUDBInstanceRequest;
 import cn.ucloud.udb.models.RestartUDBInstanceResponse;
+import cn.ucloud.udb.models.RollbackUDBInstanceRequest;
+import cn.ucloud.udb.models.RollbackUDBInstanceResponse;
 import cn.ucloud.udb.models.SetUDBRWSplittingRequest;
 import cn.ucloud.udb.models.SetUDBRWSplittingResponse;
 import cn.ucloud.udb.models.StartUDBInstanceRequest;
@@ -133,6 +135,8 @@ import cn.ucloud.udb.models.UpdateUDBParamGroupRequest;
 import cn.ucloud.udb.models.UpdateUDBParamGroupResponse;
 import cn.ucloud.udb.models.UpgradeUDBInstanceToHARequest;
 import cn.ucloud.udb.models.UpgradeUDBInstanceToHAResponse;
+import cn.ucloud.udb.models.UpgradeUDBVersionRequest;
+import cn.ucloud.udb.models.UpgradeUDBVersionResponse;
 import cn.ucloud.udb.models.UploadUDBParamGroupRequest;
 import cn.ucloud.udb.models.UploadUDBParamGroupResponse;
 
@@ -768,6 +772,19 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
+     * RollbackUDBInstance - 回档指定库表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RollbackUDBInstanceResponse rollbackUDBInstance(RollbackUDBInstanceRequest request)
+            throws UCloudException {
+        request.setAction("RollbackUDBInstance");
+        return (RollbackUDBInstanceResponse)
+                this.invoke(request, RollbackUDBInstanceResponse.class);
+    }
+
+    /**
      * SetUDBRWSplitting - 设置读写分离
      *
      * @param request Request object
@@ -879,6 +896,18 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
         request.setAction("UpgradeUDBInstanceToHA");
         return (UpgradeUDBInstanceToHAResponse)
                 this.invoke(request, UpgradeUDBInstanceToHAResponse.class);
+    }
+
+    /**
+     * UpgradeUDBVersion - 升级db实例版本
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpgradeUDBVersionResponse upgradeUDBVersion(UpgradeUDBVersionRequest request)
+            throws UCloudException {
+        request.setAction("UpgradeUDBVersion");
+        return (UpgradeUDBVersionResponse) this.invoke(request, UpgradeUDBVersionResponse.class);
     }
 
     /**

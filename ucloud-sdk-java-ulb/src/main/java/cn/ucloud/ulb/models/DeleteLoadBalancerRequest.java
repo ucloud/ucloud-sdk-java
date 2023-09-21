@@ -11,24 +11,40 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uaccount.models;
+package cn.ucloud.ulb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class RemoveMemberFromProjectRequest extends Request {
+public class DeleteLoadBalancerRequest extends Request {
 
-    /** 项目ID，请参考[GetProjectList接口](../summary/get_project_list.html)的描述。不填写为默认项目，子帐号必须填写。 */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
+    @UCloudParam("Region")
+    private String region;
+
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要被移除成员Email */
+    /** 负载均衡实例的ID */
     @NotEmpty
-    @UCloudParam("MemberEmail")
-    private String memberEmail;
+    @UCloudParam("LoadBalancerId")
+    private String loadBalancerId;
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
 
     public String getProjectId() {
         return projectId;
@@ -38,11 +54,11 @@ public class RemoveMemberFromProjectRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getMemberEmail() {
-        return memberEmail;
+    public String getLoadBalancerId() {
+        return loadBalancerId;
     }
 
-    public void setMemberEmail(String memberEmail) {
-        this.memberEmail = memberEmail;
+    public void setLoadBalancerId(String loadBalancerId) {
+        this.loadBalancerId = loadBalancerId;
     }
 }

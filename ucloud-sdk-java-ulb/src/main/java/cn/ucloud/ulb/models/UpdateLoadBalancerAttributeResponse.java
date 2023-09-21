@@ -11,25 +11,10 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uaccount.models;
+package cn.ucloud.ulb.models;
 
 
-import cn.ucloud.common.annotation.NotEmpty;
-import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
 
-public class FreezeMemberRequest extends Request {
+import cn.ucloud.common.response.Response;
 
-    /** 需要被冻结的成员Email */
-    @NotEmpty
-    @UCloudParam("MemberEmail")
-    private String memberEmail;
-
-    public String getMemberEmail() {
-        return memberEmail;
-    }
-
-    public void setMemberEmail(String memberEmail) {
-        this.memberEmail = memberEmail;
-    }
-}
+public class UpdateLoadBalancerAttributeResponse extends Response {}
