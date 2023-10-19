@@ -102,6 +102,10 @@ public class CreateUMemSpaceRequest extends Request {
     @UCloudParam("HighPerformance")
     private Boolean highPerformance;
 
+    /** 分布式代理CPU核数 */
+    @UCloudParam("ProxySize")
+    private Integer proxySize;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -248,6 +252,14 @@ public class CreateUMemSpaceRequest extends Request {
 
     public void setHighPerformance(Boolean highPerformance) {
         this.highPerformance = highPerformance;
+    }
+
+    public Integer getProxySize() {
+        return proxySize;
+    }
+
+    public void setProxySize(Integer proxySize) {
+        this.proxySize = proxySize;
     }
 
     public String getCouponId() {

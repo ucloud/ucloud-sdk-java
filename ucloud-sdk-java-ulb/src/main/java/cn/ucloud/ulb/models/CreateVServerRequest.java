@@ -32,7 +32,7 @@ public class CreateVServerRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例ID */
+    /** 传统型负载均衡实例ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;

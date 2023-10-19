@@ -33,7 +33,7 @@ public class UpdateULBAttributeRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** ULB资源ID */
+    /** CLB资源ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;

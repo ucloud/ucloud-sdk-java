@@ -33,7 +33,7 @@ public class AllocateBackendRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的ID */
+    /** 传统型负载均衡实例的ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;

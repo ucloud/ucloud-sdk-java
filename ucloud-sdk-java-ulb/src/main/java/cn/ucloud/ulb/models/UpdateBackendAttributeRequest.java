@@ -33,12 +33,12 @@ public class UpdateBackendAttributeRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡资源ID */
+    /** 传统型负载均衡资源ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 后端资源实例的ID(ULB后端ID，非资源自身ID) */
+    /** 后端资源实例的ID(CLB后端ID，非资源自身ID) */
     @NotEmpty
     @UCloudParam("BackendId")
     private String backendId;

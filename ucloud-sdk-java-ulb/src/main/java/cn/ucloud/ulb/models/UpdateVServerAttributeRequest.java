@@ -33,12 +33,12 @@ public class UpdateVServerAttributeRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例ID */
+    /** 传统型负载均衡实例ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** VServer实例ID */
+    /** 传统型负载均衡VServer实例ID */
     @NotEmpty
     @UCloudParam("VServerId")
     private String vServerId;
