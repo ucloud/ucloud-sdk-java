@@ -34,17 +34,17 @@ public class CreatePolicyRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要添加内容转发策略的负载均衡实例ID */
+    /** 需要添加内容转发策略的传统型负载均衡实例ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 需要添加内容转发策略的VServer实例ID */
+    /** 需要添加内容转发策略的传统型负载均衡VServer实例ID */
     @NotEmpty
     @UCloudParam("VServerId")
     private String vServerId;
 
-    /** 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId */
+    /** 内容转发策略应用的传统型负载均衡后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId */
     @NotEmpty
     @UCloudParam("BackendId")
     private List<String> backendId;

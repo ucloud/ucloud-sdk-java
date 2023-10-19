@@ -44,11 +44,11 @@ public class CreateULBRequest extends Request {
     @UCloudParam("Remark")
     private String remark;
 
-    /** 创建的ULB是否为外网模式，默认即为外网模式 */
+    /** 创建的CLB是否为外网模式，默认即为外网模式 */
     @UCloudParam("OuterMode")
     private String outerMode;
 
-    /** 创建的ULB是否为内网模式 */
+    /** 创建的CLB是否为内网模式 */
     @UCloudParam("InnerMode")
     private String innerMode;
 
@@ -56,15 +56,15 @@ public class CreateULBRequest extends Request {
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** ULB所在的VPC的ID。 如果不传则使用默认的VPC，若不传且无默认VPC则接口报错 */
+    /** CLB所在的VPC的ID。 如果不传则使用默认的VPC，若不传且无默认VPC则接口报错 */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** ULB 所属的子网ID，如果不传则随机选择一个。 */
+    /** CLB 所属的子网ID，如果不传则随机选择一个。 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** ULB 所属的业务组ID，如果不传则使用默认的业务组 */
+    /** CLB 所属的业务组ID，如果不传则使用默认的业务组 */
     @UCloudParam("BusinessId")
     private String businessId;
 
@@ -73,7 +73,7 @@ public class CreateULBRequest extends Request {
     private String firewallId;
 
     /**
-     * ULB 监听器类型，外网ULB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit
+     * CLB 监听器类型，外网CLB默认RequestProxy，内网ULB默认PacketsTransmit。枚举值：RequestProxy，请求代理； PacketsTransmit
      * ，报文转发。
      */
     @UCloudParam("ListenType")

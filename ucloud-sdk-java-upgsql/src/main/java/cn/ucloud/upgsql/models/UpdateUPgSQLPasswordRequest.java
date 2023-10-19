@@ -47,6 +47,10 @@ public class UpdateUPgSQLPasswordRequest extends Request {
     @UCloudParam("Password")
     private String password;
 
+    /** 数据库用户的名称。默认是root */
+    @UCloudParam("Name")
+    private String name;
+
     public String getRegion() {
         return region;
     }
@@ -85,5 +89,13 @@ public class UpdateUPgSQLPasswordRequest extends Request {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

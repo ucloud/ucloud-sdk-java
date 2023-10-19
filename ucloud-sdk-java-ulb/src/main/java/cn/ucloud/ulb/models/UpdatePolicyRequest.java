@@ -34,12 +34,12 @@ public class UpdatePolicyRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 需要添加内容转发策略的负载均衡实例ID */
+    /** 需要添加内容转发策略的传统型负载均衡实例ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 需要添加内容转发策略的VServer实例ID，只支持请求代理模式下，HTTP或HTTPS协议的VServer */
+    /** 需要添加内容转发策略的VServer实例ID，只支持请求代理模式下，HTTP或HTTPS协议的CLB下的VServer */
     @NotEmpty
     @UCloudParam("VServerId")
     private String vServerId;
@@ -57,11 +57,11 @@ public class UpdatePolicyRequest extends Request {
     @UCloudParam("DomainMatchMode")
     private String domainMatchMode;
 
-    /** 转发规则的ID，当Type为Default时，可以不传或为空 */
+    /** 传统型负载均衡转发规则的ID，当Type为Default时，可以不传或为空 */
     @UCloudParam("PolicyId")
     private String policyId;
 
-    /** 内容转发策略应用的后端资源实例的ID，来源于 AllocateBackend 返回的 BackendId，不传表示更新转发节点为空 */
+    /** 内容转发策略应用的后端资源实例的ID（CLB的后端节点Id），来源于 AllocateBackend 返回的 BackendId，不传表示更新转发节点为空 */
     @UCloudParam("BackendId")
     private List<String> backendId;
 

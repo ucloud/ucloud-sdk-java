@@ -53,8 +53,12 @@ import cn.ucloud.ulb.models.DeleteVServerRequest;
 import cn.ucloud.ulb.models.DeleteVServerResponse;
 import cn.ucloud.ulb.models.DescribeSSLRequest;
 import cn.ucloud.ulb.models.DescribeSSLResponse;
+import cn.ucloud.ulb.models.DescribeSSLV2Request;
+import cn.ucloud.ulb.models.DescribeSSLV2Response;
 import cn.ucloud.ulb.models.DescribeSecurityPoliciesRequest;
 import cn.ucloud.ulb.models.DescribeSecurityPoliciesResponse;
+import cn.ucloud.ulb.models.DescribeSecurityPoliciesV2Request;
+import cn.ucloud.ulb.models.DescribeSecurityPoliciesV2Response;
 import cn.ucloud.ulb.models.DescribeSupportCiphersRequest;
 import cn.ucloud.ulb.models.DescribeSupportCiphersResponse;
 import cn.ucloud.ulb.models.DescribeULBRequest;
@@ -73,6 +77,8 @@ import cn.ucloud.ulb.models.UnbindSSLRequest;
 import cn.ucloud.ulb.models.UnbindSSLResponse;
 import cn.ucloud.ulb.models.UpdateBackendAttributeRequest;
 import cn.ucloud.ulb.models.UpdateBackendAttributeResponse;
+import cn.ucloud.ulb.models.UpdateBackendBatchRequest;
+import cn.ucloud.ulb.models.UpdateBackendBatchResponse;
 import cn.ucloud.ulb.models.UpdateListenerAttributeRequest;
 import cn.ucloud.ulb.models.UpdateListenerAttributeResponse;
 import cn.ucloud.ulb.models.UpdateLoadBalancerAttributeRequest;
@@ -98,7 +104,7 @@ import cn.ucloud.ulb.models.UpdateVServerAttributeResponse;
 public interface ULBClientInterface extends Client {
 
     /**
-     * AddTargets - 添加后端服务节点
+     * AddTargets - 添加应用型负载均衡的后端服务节点
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -106,7 +112,7 @@ public interface ULBClientInterface extends Client {
     public AddTargetsResponse addTargets(AddTargetsRequest request) throws UCloudException;
 
     /**
-     * AllocateBackend - 添加后端实例
+     * AllocateBackend - 添加传统型负载均衡的后端实例
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -115,7 +121,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * BindSSL - 绑定SSL证书
+     * BindSSL - 传统型负载均衡绑定SSL证书
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -123,7 +129,7 @@ public interface ULBClientInterface extends Client {
     public BindSSLResponse bindSSL(BindSSLRequest request) throws UCloudException;
 
     /**
-     * CreateListener - 创建监听器
+     * CreateListener - 创建应用型负载均衡监听器
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -132,7 +138,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * CreateLoadBalancer - 创建负载均衡实例
+     * CreateLoadBalancer - 创建应用型负载均衡实例
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -141,7 +147,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * CreatePolicy - 创建内容转发策略
+     * CreatePolicy - 传统型负载均衡创建内容转发策略
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -166,7 +172,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * CreateULB - 创建负载均衡
+     * CreateULB - 创建传统型负载均衡负载均衡
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -174,7 +180,7 @@ public interface ULBClientInterface extends Client {
     public CreateULBResponse createULB(CreateULBRequest request) throws UCloudException;
 
     /**
-     * CreateVServer - 创建VServer
+     * CreateVServer - 创建CLB的VServer
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -182,7 +188,7 @@ public interface ULBClientInterface extends Client {
     public CreateVServerResponse createVServer(CreateVServerRequest request) throws UCloudException;
 
     /**
-     * DeleteListener - 删除监听器
+     * DeleteListener - 删除应用型负载均衡监听器
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -191,7 +197,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * DeleteLoadBalancer - 删除负载均衡实例
+     * DeleteLoadBalancer - 删除应用型负载均衡实例
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -200,7 +206,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * DeletePolicy - 删除转发策略
+     * DeletePolicy - 删除传统型负载均衡的内容转发策略
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -208,7 +214,7 @@ public interface ULBClientInterface extends Client {
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) throws UCloudException;
 
     /**
-     * DeleteRule - 删除转发规则
+     * DeleteRule - 删除应用型负载均衡的转发规则
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -233,7 +239,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * DeleteULB - 删除负载均衡
+     * DeleteULB - 删除传统型负载均衡
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -241,7 +247,7 @@ public interface ULBClientInterface extends Client {
     public DeleteULBResponse deleteULB(DeleteULBRequest request) throws UCloudException;
 
     /**
-     * DeleteVServer - 删除VServer
+     * DeleteVServer - 删除CLB的VServer
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -257,6 +263,14 @@ public interface ULBClientInterface extends Client {
     public DescribeSSLResponse describeSSL(DescribeSSLRequest request) throws UCloudException;
 
     /**
+     * DescribeSSLV2 - 获取SSL证书信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeSSLV2Response describeSSLV2(DescribeSSLV2Request request) throws UCloudException;
+
+    /**
      * DescribeSecurityPolicies - 获取安全策略的信息
      *
      * @param request Request object
@@ -264,6 +278,15 @@ public interface ULBClientInterface extends Client {
      */
     public DescribeSecurityPoliciesResponse describeSecurityPolicies(
             DescribeSecurityPoliciesRequest request) throws UCloudException;
+
+    /**
+     * DescribeSecurityPoliciesV2 - 获取安全策略的信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeSecurityPoliciesV2Response describeSecurityPoliciesV2(
+            DescribeSecurityPoliciesV2Request request) throws UCloudException;
 
     /**
      * DescribeSupportCiphers - 描述支持的加密套件
@@ -275,7 +298,7 @@ public interface ULBClientInterface extends Client {
             DescribeSupportCiphersRequest request) throws UCloudException;
 
     /**
-     * DescribeULB - 获取负载均衡信息
+     * DescribeULB - 获取传统型负载均衡信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -283,7 +306,7 @@ public interface ULBClientInterface extends Client {
     public DescribeULBResponse describeULB(DescribeULBRequest request) throws UCloudException;
 
     /**
-     * DescribeULBSimple - 获取负载均衡信息
+     * DescribeULBSimple - 获取传统型负载均衡信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -292,7 +315,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * DescribeVServer - 获取VServer信息
+     * DescribeVServer - 获取CLB下的VServer信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -301,7 +324,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * ReleaseBackend - 释放后端实例
+     * ReleaseBackend - 释放传统型负载均衡的后端实例
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -310,7 +333,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * RemoveTargets - 删除后端服务节点
+     * RemoveTargets - 删除应用型负载均衡的后端服务节点
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -327,7 +350,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * UnbindSSL - 解绑SSL证书
+     * UnbindSSL - 传统型负载均衡解绑SSL证书
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -335,7 +358,7 @@ public interface ULBClientInterface extends Client {
     public UnbindSSLResponse unbindSSL(UnbindSSLRequest request) throws UCloudException;
 
     /**
-     * UpdateBackendAttribute - 更新后端实例属性
+     * UpdateBackendAttribute - 更新传统型负载均衡的后端实例属性
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -344,7 +367,16 @@ public interface ULBClientInterface extends Client {
             UpdateBackendAttributeRequest request) throws UCloudException;
 
     /**
-     * UpdateListenerAttribute - 更新监听器属性
+     * UpdateBackendBatch - 批量更新后端实例属性
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateBackendBatchResponse updateBackendBatch(UpdateBackendBatchRequest request)
+            throws UCloudException;
+
+    /**
+     * UpdateListenerAttribute - 更新应用型负载均衡监听器属性
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -353,7 +385,7 @@ public interface ULBClientInterface extends Client {
             UpdateListenerAttributeRequest request) throws UCloudException;
 
     /**
-     * UpdateLoadBalancerAttribute - 更新负载均衡实例属性
+     * UpdateLoadBalancerAttribute - 更新应用型负载均衡实例属性
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -362,7 +394,7 @@ public interface ULBClientInterface extends Client {
             UpdateLoadBalancerAttributeRequest request) throws UCloudException;
 
     /**
-     * UpdatePolicy - 更新内容转发规则
+     * UpdatePolicy - 更新传统型负载均衡内容转发规则
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -370,7 +402,7 @@ public interface ULBClientInterface extends Client {
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) throws UCloudException;
 
     /**
-     * UpdateRuleAttribute - 更新转发规则属性
+     * UpdateRuleAttribute - 更新应用型负载均衡的转发规则属性
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -406,7 +438,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * UpdateTargetsAttribute - 更新后端服务节点属性
+     * UpdateTargetsAttribute - 更新应用型负载均衡的后端服务节点属性
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -415,7 +447,7 @@ public interface ULBClientInterface extends Client {
             UpdateTargetsAttributeRequest request) throws UCloudException;
 
     /**
-     * UpdateULBAttribute - 更新负载均衡属性
+     * UpdateULBAttribute - 更新传统型负载均衡属性
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -424,7 +456,7 @@ public interface ULBClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * UpdateVServerAttribute - 更新VServer属性
+     * UpdateVServerAttribute - 更新传统型负载均衡VServer属性
      *
      * @param request Request object
      * @throws UCloudException Exception

@@ -18,7 +18,7 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DeleteULBRequest extends Request {
+public class DescribeSecurityPoliciesV2Request extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -29,17 +29,21 @@ public class DeleteULBRequest extends Request {
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
+    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 传统型负载均衡实例的ID */
-    @NotEmpty
-    @UCloudParam("ULBId")
-    private String ulbId;
+    /** 安全策略ID */
+    @UCloudParam("SecurityPolicyId")
+    private String securityPolicyId;
 
-    /** 删除clb时是否释放绑定的EIP，false标识只解绑EIP，true表示会释放绑定的EIP，默认是false。Anycast IP 此参数无效 */
-    @UCloudParam("ReleaseEip")
-    private Boolean releaseEip;
+    /** 数据分页值 */
+    @UCloudParam("Limit")
+    private Integer limit;
+
+    /** 数据偏移量 */
+    @UCloudParam("Offset")
+    private Integer offset;
 
     public String getRegion() {
         return region;
@@ -57,19 +61,27 @@ public class DeleteULBRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getULBId() {
-        return ulbId;
+    public String getSecurityPolicyId() {
+        return securityPolicyId;
     }
 
-    public void setULBId(String ulbId) {
-        this.ulbId = ulbId;
+    public void setSecurityPolicyId(String securityPolicyId) {
+        this.securityPolicyId = securityPolicyId;
     }
 
-    public Boolean getReleaseEip() {
-        return releaseEip;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setReleaseEip(Boolean releaseEip) {
-        this.releaseEip = releaseEip;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 }

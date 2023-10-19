@@ -20,22 +20,25 @@ import cn.ucloud.common.request.Request;
 
 public class ReleaseBackendRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的ID */
+    /** 传统型负载均衡实例的ID */
     @NotEmpty
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** 后端资源实例的ID(ULB后端ID，非资源自身ID) */
+    /** 后端资源实例的ID(CLB后端ID，非资源自身ID) */
     @NotEmpty
     @UCloudParam("BackendId")
     private String backendId;

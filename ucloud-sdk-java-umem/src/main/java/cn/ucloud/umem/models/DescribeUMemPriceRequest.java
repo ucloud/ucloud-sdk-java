@@ -56,6 +56,18 @@ public class DescribeUMemPriceRequest extends Request {
     @UCloudParam("Quantity")
     private Integer quantity;
 
+    /** 实例类型是否为性能增强型。默认为false，或者不填，true为性能增强型。 */
+    @UCloudParam("HighPerformance")
+    private Boolean highPerformance;
+
+    /** umem 分片个数 */
+    @UCloudParam("BlockCnt")
+    private Integer blockCnt;
+
+    /** umem 代理CPU核心数 */
+    @UCloudParam("ProxySize")
+    private Integer proxySize;
+
     public String getRegion() {
         return region;
     }
@@ -110,5 +122,29 @@ public class DescribeUMemPriceRequest extends Request {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Boolean getHighPerformance() {
+        return highPerformance;
+    }
+
+    public void setHighPerformance(Boolean highPerformance) {
+        this.highPerformance = highPerformance;
+    }
+
+    public Integer getBlockCnt() {
+        return blockCnt;
+    }
+
+    public void setBlockCnt(Integer blockCnt) {
+        this.blockCnt = blockCnt;
+    }
+
+    public Integer getProxySize() {
+        return proxySize;
+    }
+
+    public void setProxySize(Integer proxySize) {
+        this.proxySize = proxySize;
     }
 }

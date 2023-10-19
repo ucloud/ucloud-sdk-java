@@ -33,7 +33,7 @@ public class DeleteLoadBalancerRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的ID */
+    /** 应用型负载均衡实例的ID */
     @NotEmpty
     @UCloudParam("LoadBalancerId")
     private String loadBalancerId;

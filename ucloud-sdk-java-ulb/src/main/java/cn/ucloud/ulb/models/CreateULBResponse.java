@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class CreateULBResponse extends Response {
 
-    /** 负载均衡实例的Id */
+    /** 传统型负载均衡实例的Id */
     @SerializedName("ULBId")
     private String ulbId;
 

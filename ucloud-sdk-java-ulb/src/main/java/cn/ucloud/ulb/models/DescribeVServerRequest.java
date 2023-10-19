@@ -33,11 +33,11 @@ public class DescribeVServerRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的Id */
+    /** 传统型负载均衡实例的Id */
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前负载均衡实例下所有VServer的信息 */
+    /** CLB下的VServer实例的Id；若指定则返回指定的VServer实例的信息； 若不指定则返回当前传统型负载均衡实例下所有VServer的信息 */
     @UCloudParam("VServerId")
     private String vServerId;
 

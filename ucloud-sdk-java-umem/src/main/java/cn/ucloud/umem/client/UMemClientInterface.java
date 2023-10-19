@@ -341,7 +341,7 @@ public interface UMemClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * DescribeURedisPrice - 取uredis价格信息
+     * DescribeURedisPrice - 获取URedis价格信息
      *
      * @param request Request object
      * @throws UCloudException Exception
