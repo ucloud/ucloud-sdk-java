@@ -440,7 +440,7 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
-     * DescribeURedisPrice - 取uredis价格信息
+     * DescribeURedisPrice - 获取URedis价格信息
      *
      * @param request Request object
      * @throws UCloudException Exception

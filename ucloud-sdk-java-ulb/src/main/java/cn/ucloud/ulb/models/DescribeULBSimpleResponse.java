@@ -21,11 +21,11 @@ import java.util.List;
 
 public class DescribeULBSimpleResponse extends Response {
 
-    /** 满足条件的ULB总数 */
+    /** 满足条件的CLB总数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** ULB列表，每项参数详见 ULBSimpleSet */
+    /** CLB列表，每项参数详见 ULBSimpleSet */
     @SerializedName("DataSet")
     private List<ULBSimpleSet> dataSet;
 

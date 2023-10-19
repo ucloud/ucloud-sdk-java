@@ -20,17 +20,20 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeURedisPriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -54,6 +57,10 @@ public class DescribeURedisPriceRequest extends Request {
     /** 产品类型：MS_Redis（标准主备版），S_Redis（从库），默认为MS_Redis */
     @UCloudParam("ProductType")
     private String productType;
+
+    /** 查询高性能Redis， 默认为false， 或者不填， 查询高性能为true */
+    @UCloudParam("HighPerformance")
+    private Boolean highPerformance;
 
     public String getRegion() {
         return region;
@@ -117,5 +124,13 @@ public class DescribeURedisPriceRequest extends Request {
 
     public void setProductType(String productType) {
         this.productType = productType;
+    }
+
+    public Boolean getHighPerformance() {
+        return highPerformance;
+    }
+
+    public void setHighPerformance(Boolean highPerformance) {
+        this.highPerformance = highPerformance;
     }
 }

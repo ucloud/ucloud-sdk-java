@@ -33,24 +33,24 @@ public class UpdateSSLBindingRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** VServer实例绑定的旧的证书 */
+    /** 监听器实例绑定的旧的证书 */
     @NotEmpty
     @UCloudParam("OldSSLId")
     private String oldSSLId;
 
-    /** VServer实例需要绑定的新的证书 */
+    /** 监听器实例需要绑定的新的证书 */
     @NotEmpty
     @UCloudParam("NewSSLId")
     private String newSSLId;
 
     /**
-     * 所操作ULB实例ID（仅LoadBalancerId传参时，将更换该ULB所有原证书为OldSSLId的绑定关系；LoadBalancerId和ListenerId都不传参则将更新该项目下所有原证书为OldSSLId的绑定关系）
+     * 所操作LB实例ID（仅LoadBalancerId传参时，将更换该LB所有原证书为OldSSLId的绑定关系；LoadBalancerId和ListenerId都不传参则将更新该项目下所有原证书为OldSSLId的绑定关系）（LB指CLB或ALB）
      */
     @UCloudParam("LoadBalancerId")
     private String loadBalancerId;
 
     /**
-     * 所操作VServer实例ID（仅ListenerId传参时，将更换该Vserver所有原证书为OldSSLId的绑定关系；LoadBalancerId和ListenerId都不传参则将更新该项目下所有原证书为OldSSLId的绑定关系；若LoadBalancerId与ListenerId皆有传参，则会强校验ULB与Vsserver的所属关系，将更换该ulb下vserver所绑定的OldSSLId为NewSSLId）
+     * 所操作监听器实例ID（仅ListenerId传参时，将更换该监听器所有原证书为OldSSLId的绑定关系；LoadBalancerId和ListenerId都不传参则将更新该项目下所有原证书为OldSSLId的绑定关系；若LoadBalancerId与ListenerId皆有传参，则会强校验ULB与Vsserver的所属关系，将更换该ulb下vserver所绑定的OldSSLId为NewSSLId）（监听器指VServer或Listener）
      */
     @UCloudParam("ListenerId")
     private String listenerId;

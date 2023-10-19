@@ -33,17 +33,17 @@ public class DeleteRuleRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的ID */
+    /** 应用型负载均衡实例的ID */
     @NotEmpty
     @UCloudParam("LoadBalancerId")
     private String loadBalancerId;
 
-    /** 监听器的ID */
+    /** 应用型负载均衡监听器的ID */
     @NotEmpty
     @UCloudParam("ListenerId")
     private String listenerId;
 
-    /** 转发规则的ID */
+    /** 应用型负载均衡的转发规则的ID */
     @NotEmpty
     @UCloudParam("RuleId")
     private String ruleId;

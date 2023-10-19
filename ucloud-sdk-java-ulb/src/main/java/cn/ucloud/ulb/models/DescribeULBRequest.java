@@ -40,19 +40,19 @@ public class DescribeULBRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
-    /** 负载均衡实例的Id。 若指定则返回指定的负载均衡实例的信息； 若不指定则返回当前数据中心中所有的负载均衡实例的信息 */
+    /** 传统型负载均衡实例的Id。 若指定则返回指定的传统型负载均衡实例的信息； 若不指定则返回当前数据中心中所有的传统型负载均衡实例的信息 */
     @UCloudParam("ULBId")
     private String ulbId;
 
-    /** ULB所属的VPC */
+    /** CLB所属的VPC */
     @UCloudParam("VPCId")
     private String vpcId;
 
-    /** ULB所属的子网ID */
+    /** CLB所属的子网ID */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** ULB所属的业务组ID */
+    /** CLB所属的业务组ID */
     @UCloudParam("BusinessId")
     private String businessId;
 
