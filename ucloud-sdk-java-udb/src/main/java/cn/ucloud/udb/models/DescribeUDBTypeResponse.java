@@ -43,12 +43,24 @@ public class DescribeUDBTypeResponse extends Response {
         @SerializedName("DBTypeId")
         private String dbTypeId;
 
+        /** mysql子版本，如mysql-8.0.25,mysql-8.0.16 */
+        @SerializedName("DBSubVersion")
+        private String dbSubVersion;
+
         public String getDBTypeId() {
             return dbTypeId;
         }
 
         public void setDBTypeId(String dbTypeId) {
             this.dbTypeId = dbTypeId;
+        }
+
+        public String getDBSubVersion() {
+            return dbSubVersion;
+        }
+
+        public void setDBSubVersion(String dbSubVersion) {
+            this.dbSubVersion = dbSubVersion;
         }
     }
 }

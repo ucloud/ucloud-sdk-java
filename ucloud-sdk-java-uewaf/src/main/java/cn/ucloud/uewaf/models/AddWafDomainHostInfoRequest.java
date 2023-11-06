@@ -74,6 +74,10 @@ public class AddWafDomainHostInfoRequest extends Request {
     @UCloudParam("Http2")
     private String http2;
 
+    /** 源站负载策略，默认为轮询RR，可填：IpHash、RR */
+    @UCloudParam("SrcLBMode")
+    private String srcLBMode;
+
     public String getProjectId() {
         return projectId;
     }
@@ -168,5 +172,13 @@ public class AddWafDomainHostInfoRequest extends Request {
 
     public void setHttp2(String http2) {
         this.http2 = http2;
+    }
+
+    public String getSrcLBMode() {
+        return srcLBMode;
+    }
+
+    public void setSrcLBMode(String srcLBMode) {
+        this.srcLBMode = srcLBMode;
     }
 }

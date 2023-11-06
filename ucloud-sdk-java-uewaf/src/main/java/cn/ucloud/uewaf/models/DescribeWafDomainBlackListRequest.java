@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uewaf.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class DescribeWafDomainBlackListRequest extends Request {
 
@@ -48,7 +49,7 @@ public class DescribeWafDomainBlackListRequest extends Request {
 
     /** 排序参数，支持"ExpireTime", "-ExpireTime", "CreateTime", "-CreateTime" */
     @UCloudParam("Sort")
-    private String sort;
+    private List<String> sort;
 
     public String getProjectId() {
         return projectId;
@@ -90,11 +91,11 @@ public class DescribeWafDomainBlackListRequest extends Request {
         this.filter = filter;
     }
 
-    public String getSort() {
+    public List<String> getSort() {
         return sort;
     }
 
-    public void setSort(String sort) {
+    public void setSort(List<String> sort) {
         this.sort = sort;
     }
 }
