@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uewaf.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class DescribeWafAttackDetailListInfoRequest extends Request {
 
@@ -43,15 +44,15 @@ public class DescribeWafAttackDetailListInfoRequest extends Request {
      * "protocol", "other"]
      */
     @UCloudParam("AttackType")
-    private String attackType;
+    private List<String> attackType;
 
     /** 风险级别 */
     @UCloudParam("RiskRank")
-    private String riskRank;
+    private List<String> riskRank;
 
     /** 匹配动作，拦截、放行、告警 */
     @UCloudParam("ActionType")
-    private String actionType;
+    private List<String> actionType;
 
     /** 自定义开始时间戳 */
     @UCloudParam("BeginTime")
@@ -97,27 +98,27 @@ public class DescribeWafAttackDetailListInfoRequest extends Request {
         this.timeType = timeType;
     }
 
-    public String getAttackType() {
+    public List<String> getAttackType() {
         return attackType;
     }
 
-    public void setAttackType(String attackType) {
+    public void setAttackType(List<String> attackType) {
         this.attackType = attackType;
     }
 
-    public String getRiskRank() {
+    public List<String> getRiskRank() {
         return riskRank;
     }
 
-    public void setRiskRank(String riskRank) {
+    public void setRiskRank(List<String> riskRank) {
         this.riskRank = riskRank;
     }
 
-    public String getActionType() {
+    public List<String> getActionType() {
         return actionType;
     }
 
-    public void setActionType(String actionType) {
+    public void setActionType(List<String> actionType) {
         this.actionType = actionType;
     }
 

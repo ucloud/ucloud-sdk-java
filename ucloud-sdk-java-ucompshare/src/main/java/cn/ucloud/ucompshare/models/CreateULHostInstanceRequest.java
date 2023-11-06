@@ -62,6 +62,21 @@ public class CreateULHostInstanceRequest extends Request {
     @UCloudParam("Quantity")
     private Integer quantity;
 
+    /** VPC ID。默认为当前地域的默认VPC。 */
+    @UCloudParam("VPCId")
+    private String vpcId;
+
+    /** 子网 ID。默认为当前地域的默认子网。 */
+    @UCloudParam("SubnetId")
+    private String subnetId;
+
+    /**
+     * 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见
+     * [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     */
+    @UCloudParam("SecurityGroupId")
+    private String securityGroupId;
+
     /** 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看 */
     @UCloudParam("CouponId")
     private String couponId;
@@ -128,6 +143,30 @@ public class CreateULHostInstanceRequest extends Request {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public String getVPCId() {
+        return vpcId;
+    }
+
+    public void setVPCId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    public String getSecurityGroupId() {
+        return securityGroupId;
+    }
+
+    public void setSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
     }
 
     public String getCouponId() {

@@ -20,17 +20,19 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeUDBTypeRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
-    /** 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](../summary/regionlist.html) */
+    /**
+     * 跨可用区高可用DB的备库所在区域，仅当该可用区支持跨可用区高可用时填入。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
+     */
     @UCloudParam("BackupZone")
     private String backupZone;
 
@@ -49,6 +51,10 @@ public class DescribeUDBTypeRequest extends Request {
     /** 返回从备份创建实例时，该版本号所支持的备份创建版本。如果没传，则表示不是从备份创建。 */
     @UCloudParam("CompatibleWithDBType")
     private String compatibleWithDBType;
+
+    /** 返回从备份创建实例时，该小版本号所支持的备份创建小版本。如果没传，则表示不是从备份创建。 */
+    @UCloudParam("DBSubVersion")
+    private String dbSubVersion;
 
     public String getRegion() {
         return region;
@@ -104,5 +110,13 @@ public class DescribeUDBTypeRequest extends Request {
 
     public void setCompatibleWithDBType(String compatibleWithDBType) {
         this.compatibleWithDBType = compatibleWithDBType;
+    }
+
+    public String getDBSubVersion() {
+        return dbSubVersion;
+    }
+
+    public void setDBSubVersion(String dbSubVersion) {
+        this.dbSubVersion = dbSubVersion;
     }
 }
