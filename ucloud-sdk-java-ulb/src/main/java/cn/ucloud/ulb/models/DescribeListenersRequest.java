@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.ucompshare.models;
+package cn.ucloud.ulb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class ReinstallULHostInstanceRequest extends Request {
+public class DescribeListenersRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -29,23 +29,25 @@ public class ReinstallULHostInstanceRequest extends Request {
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
+    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像Id。暂不支持使用自定义镜像重装 */
-    @NotEmpty
-    @UCloudParam("ImageId")
-    private String imageId;
+    /** 应用型负载均衡监听器的ID。若指定ListenerId，则忽略LoadBalancerId。ListenId和LoadBalancerId必选其一 */
+    @UCloudParam("ListenerId")
+    private String listenerId;
 
-    /** 实例Id */
-    @NotEmpty
-    @UCloudParam("ULHostId")
-    private String ulHostId;
+    /** 应用型负载均衡实例的ID。未指定ListenId，则描述指定的LoadBalancerId下的所有监听器。 */
+    @UCloudParam("LoadBalancerId")
+    private String loadBalancerId;
 
-    /** 登陆密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx */
-    @NotEmpty
-    @UCloudParam("Password")
-    private String password;
+    /** 数据偏移量，默认为0 */
+    @UCloudParam("Offset")
+    private Integer offset;
+
+    /** 数据分页值，默认为100 */
+    @UCloudParam("Limit")
+    private Integer limit;
 
     public String getRegion() {
         return region;
@@ -63,27 +65,35 @@ public class ReinstallULHostInstanceRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getImageId() {
-        return imageId;
+    public String getListenerId() {
+        return listenerId;
     }
 
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
+    public void setListenerId(String listenerId) {
+        this.listenerId = listenerId;
     }
 
-    public String getULHostId() {
-        return ulHostId;
+    public String getLoadBalancerId() {
+        return loadBalancerId;
     }
 
-    public void setULHostId(String ulHostId) {
-        this.ulHostId = ulHostId;
+    public void setLoadBalancerId(String loadBalancerId) {
+        this.loadBalancerId = loadBalancerId;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 }

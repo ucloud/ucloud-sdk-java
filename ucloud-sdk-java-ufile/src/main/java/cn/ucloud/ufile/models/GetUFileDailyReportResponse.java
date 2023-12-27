@@ -35,25 +35,45 @@ public class GetUFileDailyReportResponse extends Response {
 
     public static class UFileDailyReportItem extends Response {
 
-        /** 标准存储量；单位GB */
+        /** 标准-存储总容量；单位GB */
         @SerializedName("Storage")
         private Double storage;
 
-        /** 低频存储量；单位GB */
+        /** 低频-存储总容量；单位GB */
         @SerializedName("IaStorage")
         private Double iaStorage;
 
-        /** 冷存（归档）存储量；单位GB */
+        /** 归档-存储总容量；单位GB */
         @SerializedName("AcStorage")
         private Double acStorage;
 
-        /** 低频数据取回量；单位GB */
+        /** 低频-数据取回量，即低频文件的数据取回量；单位GB */
         @SerializedName("IaGetSize")
         private Double iaGetSize;
 
-        /** 冷存激活量，即归档数据取回量；单位GB */
+        /** 归档-标准解冻量，即归档文件的解冻类型为标准（Strandard）的解冻量；单位GB */
         @SerializedName("AcRestore")
         private Double acRestore;
+
+        /** 归档-高优先级解冻量，即归档文件的解冻类型为高优先级（Expedited）的解冻量；单位GB */
+        @SerializedName("AcExpeditedRetrieval")
+        private Double acExpeditedRetrieval;
+
+        /** 低频-短期存储量，即补足未满最短存储期限的剩余天数的存储量；单位GB */
+        @SerializedName("IaShortStorage")
+        private Double iaShortStorage;
+
+        /** 归档-短期存储量，即补足未满最短存储期限的剩余天数的存储量；单位GB */
+        @SerializedName("AcShortStorage")
+        private Double acShortStorage;
+
+        /** 基础图片处理量；单位GB */
+        @SerializedName("ImageHandleFlow")
+        private Double imageHandleFlow;
+
+        /** 图片高级压缩次数；单位千次 */
+        @SerializedName("ImageCompressCount")
+        private Double imageCompressCount;
 
         /** 忙时流量；单位GB；海外无此字段 */
         @SerializedName("BusyFlow")
@@ -71,11 +91,11 @@ public class GetUFileDailyReportResponse extends Response {
         @SerializedName("Flow")
         private Double flow;
 
-        /** 配额消费时间，unix时间戳（单位s），精确到日期 */
+        /** 配额消费时间，unix时间戳；单位s，精确到日期 */
         @SerializedName("Date")
         private Integer date;
 
-        /** API请求次数（万次） */
+        /** 请求次数；单位万次 */
         @SerializedName("ApiTimes")
         private Double apiTimes;
 
@@ -117,6 +137,46 @@ public class GetUFileDailyReportResponse extends Response {
 
         public void setAcRestore(Double acRestore) {
             this.acRestore = acRestore;
+        }
+
+        public Double getAcExpeditedRetrieval() {
+            return acExpeditedRetrieval;
+        }
+
+        public void setAcExpeditedRetrieval(Double acExpeditedRetrieval) {
+            this.acExpeditedRetrieval = acExpeditedRetrieval;
+        }
+
+        public Double getIaShortStorage() {
+            return iaShortStorage;
+        }
+
+        public void setIaShortStorage(Double iaShortStorage) {
+            this.iaShortStorage = iaShortStorage;
+        }
+
+        public Double getAcShortStorage() {
+            return acShortStorage;
+        }
+
+        public void setAcShortStorage(Double acShortStorage) {
+            this.acShortStorage = acShortStorage;
+        }
+
+        public Double getImageHandleFlow() {
+            return imageHandleFlow;
+        }
+
+        public void setImageHandleFlow(Double imageHandleFlow) {
+            this.imageHandleFlow = imageHandleFlow;
+        }
+
+        public Double getImageCompressCount() {
+            return imageCompressCount;
+        }
+
+        public void setImageCompressCount(Double imageCompressCount) {
+            this.imageCompressCount = imageCompressCount;
         }
 
         public Double getBusyFlow() {

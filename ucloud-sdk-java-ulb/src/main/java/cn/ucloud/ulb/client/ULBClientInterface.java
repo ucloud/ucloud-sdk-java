@@ -27,6 +27,8 @@ import cn.ucloud.ulb.models.CreateLoadBalancerRequest;
 import cn.ucloud.ulb.models.CreateLoadBalancerResponse;
 import cn.ucloud.ulb.models.CreatePolicyRequest;
 import cn.ucloud.ulb.models.CreatePolicyResponse;
+import cn.ucloud.ulb.models.CreateRuleRequest;
+import cn.ucloud.ulb.models.CreateRuleResponse;
 import cn.ucloud.ulb.models.CreateSSLRequest;
 import cn.ucloud.ulb.models.CreateSSLResponse;
 import cn.ucloud.ulb.models.CreateSecurityPolicyRequest;
@@ -51,6 +53,12 @@ import cn.ucloud.ulb.models.DeleteULBRequest;
 import cn.ucloud.ulb.models.DeleteULBResponse;
 import cn.ucloud.ulb.models.DeleteVServerRequest;
 import cn.ucloud.ulb.models.DeleteVServerResponse;
+import cn.ucloud.ulb.models.DescribeListenersRequest;
+import cn.ucloud.ulb.models.DescribeListenersResponse;
+import cn.ucloud.ulb.models.DescribeLoadBalancersRequest;
+import cn.ucloud.ulb.models.DescribeLoadBalancersResponse;
+import cn.ucloud.ulb.models.DescribeRulesRequest;
+import cn.ucloud.ulb.models.DescribeRulesResponse;
 import cn.ucloud.ulb.models.DescribeSSLRequest;
 import cn.ucloud.ulb.models.DescribeSSLResponse;
 import cn.ucloud.ulb.models.DescribeSSLV2Request;
@@ -155,6 +163,14 @@ public interface ULBClientInterface extends Client {
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException;
 
     /**
+     * CreateRule - 创建应用型负载均衡的转发规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateRuleResponse createRule(CreateRuleRequest request) throws UCloudException;
+
+    /**
      * CreateSSL - 创建SSL证书
      *
      * @param request Request object
@@ -253,6 +269,32 @@ public interface ULBClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public DeleteVServerResponse deleteVServer(DeleteVServerRequest request) throws UCloudException;
+
+    /**
+     * DescribeListeners - 描述应用型负载均衡监听器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeListenersResponse describeListeners(DescribeListenersRequest request)
+            throws UCloudException;
+
+    /**
+     * DescribeLoadBalancers - 描述应用型负载均衡实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeLoadBalancersResponse describeLoadBalancers(DescribeLoadBalancersRequest request)
+            throws UCloudException;
+
+    /**
+     * DescribeRules - 描述应用型负载均衡转发规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeRulesResponse describeRules(DescribeRulesRequest request) throws UCloudException;
 
     /**
      * DescribeSSL - 获取SSL证书信息

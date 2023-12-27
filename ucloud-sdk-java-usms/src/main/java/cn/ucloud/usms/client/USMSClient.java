@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.usms.models.AddBackfillRequest;
+import cn.ucloud.usms.models.AddBackfillResponse;
 import cn.ucloud.usms.models.CreateUSMSSignatureRequest;
 import cn.ucloud.usms.models.CreateUSMSSignatureResponse;
 import cn.ucloud.usms.models.CreateUSMSTemplateRequest;
@@ -44,6 +46,17 @@ import cn.ucloud.usms.models.UpdateUSMSTemplateResponse;
 public class USMSClient extends DefaultClient implements USMSClientInterface {
     public USMSClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * AddBackfill - 添加回填
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddBackfillResponse addBackfill(AddBackfillRequest request) throws UCloudException {
+        request.setAction("AddBackfill");
+        return (AddBackfillResponse) this.invoke(request, AddBackfillResponse.class);
     }
 
     /**

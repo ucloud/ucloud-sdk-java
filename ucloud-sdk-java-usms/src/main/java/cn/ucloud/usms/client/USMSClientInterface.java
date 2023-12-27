@@ -15,6 +15,8 @@ package cn.ucloud.usms.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.usms.models.AddBackfillRequest;
+import cn.ucloud.usms.models.AddBackfillResponse;
 import cn.ucloud.usms.models.CreateUSMSSignatureRequest;
 import cn.ucloud.usms.models.CreateUSMSSignatureResponse;
 import cn.ucloud.usms.models.CreateUSMSTemplateRequest;
@@ -40,6 +42,14 @@ import cn.ucloud.usms.models.UpdateUSMSTemplateResponse;
 
 /** This client is used to call actions of **USMS** service */
 public interface USMSClientInterface extends Client {
+
+    /**
+     * AddBackfill - 添加回填
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddBackfillResponse addBackfill(AddBackfillRequest request) throws UCloudException;
 
     /**
      * CreateUSMSSignature - 申请短信签名

@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.ucompshare.models;
+package cn.ucloud.ulb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class ReinstallULHostInstanceRequest extends Request {
+public class DescribeRulesRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -29,23 +29,23 @@ public class ReinstallULHostInstanceRequest extends Request {
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
+    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 镜像Id。暂不支持使用自定义镜像重装 */
+    /** 应用型负载均衡实例的ID */
     @NotEmpty
-    @UCloudParam("ImageId")
-    private String imageId;
+    @UCloudParam("LoadBalancerId")
+    private String loadBalancerId;
 
-    /** 实例Id */
+    /** 监听器的ID */
     @NotEmpty
-    @UCloudParam("ULHostId")
-    private String ulHostId;
+    @UCloudParam("ListenerId")
+    private String listenerId;
 
-    /** 登陆密码。密码需使用base64进行编码，举例如下：# echo -n Password1 | base64UGFzc3dvcmQx */
-    @NotEmpty
-    @UCloudParam("Password")
-    private String password;
+    /** 应用型负载均衡转发规则的ID。指定RuleId，则只描述该规则 */
+    @UCloudParam("RuleId")
+    private String ruleId;
 
     public String getRegion() {
         return region;
@@ -63,27 +63,27 @@ public class ReinstallULHostInstanceRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getImageId() {
-        return imageId;
+    public String getLoadBalancerId() {
+        return loadBalancerId;
     }
 
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
+    public void setLoadBalancerId(String loadBalancerId) {
+        this.loadBalancerId = loadBalancerId;
     }
 
-    public String getULHostId() {
-        return ulHostId;
+    public String getListenerId() {
+        return listenerId;
     }
 
-    public void setULHostId(String ulHostId) {
-        this.ulHostId = ulHostId;
+    public void setListenerId(String listenerId) {
+        this.listenerId = listenerId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getRuleId() {
+        return ruleId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setRuleId(String ruleId) {
+        this.ruleId = ruleId;
     }
 }

@@ -63,6 +63,10 @@ public class CreateUFileLifeCycleRequest extends Request {
     @UCloudParam("IADays")
     private Integer iaDays;
 
+    /** Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10 */
+    @UCloudParam("Tags")
+    private String tags;
+
     public String getRegion() {
         return region;
     }
@@ -133,5 +137,13 @@ public class CreateUFileLifeCycleRequest extends Request {
 
     public void setIADays(Integer iaDays) {
         this.iaDays = iaDays;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }
