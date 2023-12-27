@@ -29,6 +29,8 @@ import cn.ucloud.ulb.models.CreateLoadBalancerRequest;
 import cn.ucloud.ulb.models.CreateLoadBalancerResponse;
 import cn.ucloud.ulb.models.CreatePolicyRequest;
 import cn.ucloud.ulb.models.CreatePolicyResponse;
+import cn.ucloud.ulb.models.CreateRuleRequest;
+import cn.ucloud.ulb.models.CreateRuleResponse;
 import cn.ucloud.ulb.models.CreateSSLRequest;
 import cn.ucloud.ulb.models.CreateSSLResponse;
 import cn.ucloud.ulb.models.CreateSecurityPolicyRequest;
@@ -53,6 +55,12 @@ import cn.ucloud.ulb.models.DeleteULBRequest;
 import cn.ucloud.ulb.models.DeleteULBResponse;
 import cn.ucloud.ulb.models.DeleteVServerRequest;
 import cn.ucloud.ulb.models.DeleteVServerResponse;
+import cn.ucloud.ulb.models.DescribeListenersRequest;
+import cn.ucloud.ulb.models.DescribeListenersResponse;
+import cn.ucloud.ulb.models.DescribeLoadBalancersRequest;
+import cn.ucloud.ulb.models.DescribeLoadBalancersResponse;
+import cn.ucloud.ulb.models.DescribeRulesRequest;
+import cn.ucloud.ulb.models.DescribeRulesResponse;
 import cn.ucloud.ulb.models.DescribeSSLRequest;
 import cn.ucloud.ulb.models.DescribeSSLResponse;
 import cn.ucloud.ulb.models.DescribeSSLV2Request;
@@ -175,6 +183,17 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) throws UCloudException {
         request.setAction("CreatePolicy");
         return (CreatePolicyResponse) this.invoke(request, CreatePolicyResponse.class);
+    }
+
+    /**
+     * CreateRule - 创建应用型负载均衡的转发规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateRuleResponse createRule(CreateRuleRequest request) throws UCloudException {
+        request.setAction("CreateRule");
+        return (CreateRuleResponse) this.invoke(request, CreateRuleResponse.class);
     }
 
     /**
@@ -315,6 +334,43 @@ public class ULBClient extends DefaultClient implements ULBClientInterface {
             throws UCloudException {
         request.setAction("DeleteVServer");
         return (DeleteVServerResponse) this.invoke(request, DeleteVServerResponse.class);
+    }
+
+    /**
+     * DescribeListeners - 描述应用型负载均衡监听器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeListenersResponse describeListeners(DescribeListenersRequest request)
+            throws UCloudException {
+        request.setAction("DescribeListeners");
+        return (DescribeListenersResponse) this.invoke(request, DescribeListenersResponse.class);
+    }
+
+    /**
+     * DescribeLoadBalancers - 描述应用型负载均衡实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeLoadBalancersResponse describeLoadBalancers(DescribeLoadBalancersRequest request)
+            throws UCloudException {
+        request.setAction("DescribeLoadBalancers");
+        return (DescribeLoadBalancersResponse)
+                this.invoke(request, DescribeLoadBalancersResponse.class);
+    }
+
+    /**
+     * DescribeRules - 描述应用型负载均衡转发规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeRulesResponse describeRules(DescribeRulesRequest request)
+            throws UCloudException {
+        request.setAction("DescribeRules");
+        return (DescribeRulesResponse) this.invoke(request, DescribeRulesResponse.class);
     }
 
     /**

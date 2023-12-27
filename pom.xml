@@ -7,13 +7,14 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.19-release</version>
+    <version>1.2.20-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cube</module>
         <module>ucloud-sdk-java-ipsecvpn</module>
         <module>ucloud-sdk-java-pathx</module>
         <module>ucloud-sdk-java-sts</module>
+        <module>ucloud-sdk-java-uai_modelverse</module>
         <module>ucloud-sdk-java-uaccount</module>
         <module>ucloud-sdk-java-ubill</module>
         <module>ucloud-sdk-java-ucdn</module>
