@@ -49,6 +49,10 @@ public class GetUHostUpgradePriceRequest extends Request {
     @UCloudParam("Memory")
     private Integer memory;
 
+    /** GPU卡核心数。仅GPU机型支持此字段（可选范围与MachineType+GpuType相关） */
+    @UCloudParam("GPU")
+    private Integer gpu;
+
     /** 网卡升降级（1，表示升级，2表示降级，0表示不变） */
     @UCloudParam("NetCapValue")
     private Integer netCapValue;
@@ -99,6 +103,14 @@ public class GetUHostUpgradePriceRequest extends Request {
 
     public void setMemory(Integer memory) {
         this.memory = memory;
+    }
+
+    public Integer getGPU() {
+        return gpu;
+    }
+
+    public void setGPU(Integer gpu) {
+        this.gpu = gpu;
     }
 
     public Integer getNetCapValue() {
