@@ -30,6 +30,13 @@ public class BackupUMongoDBClusterRequest extends Request {
     @UCloudParam("Zone")
     private String zone;
 
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
+    @UCloudParam("ProjectId")
+    private String projectId;
+
     /** 实例ID */
     @NotEmpty
     @UCloudParam("ClusterId")
@@ -54,6 +61,14 @@ public class BackupUMongoDBClusterRequest extends Request {
 
     public void setZone(String zone) {
         this.zone = zone;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public String getClusterId() {

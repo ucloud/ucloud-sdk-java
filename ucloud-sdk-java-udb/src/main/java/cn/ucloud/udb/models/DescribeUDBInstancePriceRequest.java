@@ -69,6 +69,21 @@ public class DescribeUDBInstancePriceRequest extends Request {
     @UCloudParam("CPU")
     private Integer cpu;
 
+    /**
+     * UDB数据库机型: "SATA_SSD": "SSD机型" , "PCIE_SSD": "SSD高性能机型" , "Normal_Volume": "标准大容量机型",
+     * "SATA_SSD_Volume": "SSD大容量机型" , "PCIE_SSD_Volume": "SSD高性能大容量机型", "NVMe_SSD": "快杰机型"
+     */
+    @UCloudParam("InstanceType")
+    private String instanceType;
+
+    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
+    @UCloudParam("SpecificationType")
+    private Integer specificationType;
+
+    /** 规格类型ID,当SpecificationType为1时有效 */
+    @UCloudParam("MachineType")
+    private String machineType;
+
     public String getRegion() {
         return region;
     }
@@ -155,5 +170,29 @@ public class DescribeUDBInstancePriceRequest extends Request {
 
     public void setCPU(Integer cpu) {
         this.cpu = cpu;
+    }
+
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public Integer getSpecificationType() {
+        return specificationType;
+    }
+
+    public void setSpecificationType(Integer specificationType) {
+        this.specificationType = specificationType;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
     }
 }
