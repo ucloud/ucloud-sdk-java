@@ -63,6 +63,18 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
     @UCloudParam("OrderStartTime")
     private Integer orderStartTime;
 
+    /** CPU核数 快杰SQLServer升降级必传 */
+    @UCloudParam("CPU")
+    private Integer cpu;
+
+    /** 规格类型ID,当SpecificationType为1时有效 */
+    @UCloudParam("MachineType")
+    private String machineType;
+
+    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
+    @UCloudParam("SpecificationType")
+    private Integer specificationType;
+
     public String getRegion() {
         return region;
     }
@@ -133,5 +145,29 @@ public class DescribeUDBInstanceUpgradePriceRequest extends Request {
 
     public void setOrderStartTime(Integer orderStartTime) {
         this.orderStartTime = orderStartTime;
+    }
+
+    public Integer getCPU() {
+        return cpu;
+    }
+
+    public void setCPU(Integer cpu) {
+        this.cpu = cpu;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
+    }
+
+    public Integer getSpecificationType() {
+        return specificationType;
+    }
+
+    public void setSpecificationType(Integer specificationType) {
+        this.specificationType = specificationType;
     }
 }

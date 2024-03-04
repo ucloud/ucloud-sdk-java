@@ -97,12 +97,16 @@ import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeRequest;
 import cn.ucloud.udb.models.FetchUDBInstanceEarliestRecoverTimeResponse;
 import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
 import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
+import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLRequest;
+import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceRemarkNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceRemarkNameResponse;
+import cn.ucloud.udb.models.ModifyUDBInstanceSSLRequest;
+import cn.ucloud.udb.models.ModifyUDBInstanceSSLResponse;
 import cn.ucloud.udb.models.PromoteUDBInstanceToHARequest;
 import cn.ucloud.udb.models.PromoteUDBInstanceToHAResponse;
 import cn.ucloud.udb.models.PromoteUDBSlaveRequest;
@@ -510,6 +514,15 @@ public interface UDBClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * GetUDBInstanceSSLCertURL - 获取SSL证书下载地址
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUDBInstanceSSLCertURLResponse getUDBInstanceSSLCertURL(
+            GetUDBInstanceSSLCertURLRequest request) throws UCloudException;
+
+    /**
      * ModifyUDBInstanceName - 修改云数据库名称
      *
      * @param request Request object
@@ -535,6 +548,15 @@ public interface UDBClientInterface extends Client {
      */
     public ModifyUDBInstanceRemarkNameResponse modifyUDBInstanceRemarkName(
             ModifyUDBInstanceRemarkNameRequest request) throws UCloudException;
+
+    /**
+     * ModifyUDBInstanceSSL - 调整SSL的信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUDBInstanceSSLResponse modifyUDBInstanceSSL(ModifyUDBInstanceSSLRequest request)
+            throws UCloudException;
 
     /**
      * PromoteUDBInstanceToHA - 普通db升级为高可用

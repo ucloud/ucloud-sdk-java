@@ -76,7 +76,6 @@ public class CreateUDBInstanceRequest extends Request {
      * 内存限制(MB)，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
      * 64000M/96000M/128000M/192000M/256000M/320000M
      */
-    @NotEmpty
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
 
@@ -144,10 +143,6 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("Tag")
     private String tag;
 
-    /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true */
-    @UCloudParam("EnableIpV6")
-    private Boolean enableIpV6;
-
     /** mysql小版本号，支持指定小版本创建 */
     @UCloudParam("DBSubVersion")
     private String dbSubVersion;
@@ -155,6 +150,14 @@ public class CreateUDBInstanceRequest extends Request {
     /** mysql大小写参数, 0 为大小写敏感, 1 为大小写不敏感, 目前只针对mysql8.0有效 */
     @UCloudParam("CaseSensitivityParam")
     private Integer caseSensitivityParam;
+
+    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
+    @UCloudParam("SpecificationType")
+    private String specificationType;
+
+    /** 规格类型ID,当SpecificationType为1时有效 */
+    @UCloudParam("MachineType")
+    private String machineType;
 
     /** 使用的代金券id */
     @UCloudParam("CouponId")
@@ -368,14 +371,6 @@ public class CreateUDBInstanceRequest extends Request {
         this.tag = tag;
     }
 
-    public Boolean getEnableIpV6() {
-        return enableIpV6;
-    }
-
-    public void setEnableIpV6(Boolean enableIpV6) {
-        this.enableIpV6 = enableIpV6;
-    }
-
     public String getDBSubVersion() {
         return dbSubVersion;
     }
@@ -390,6 +385,22 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setCaseSensitivityParam(Integer caseSensitivityParam) {
         this.caseSensitivityParam = caseSensitivityParam;
+    }
+
+    public String getSpecificationType() {
+        return specificationType;
+    }
+
+    public void setSpecificationType(String specificationType) {
+        this.specificationType = specificationType;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
     }
 
     public String getCouponId() {

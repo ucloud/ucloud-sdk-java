@@ -97,6 +97,14 @@ public class CreateUDBSlaveRequest extends Request {
     @UCloudParam("DelaySeconds")
     private Integer delaySeconds;
 
+    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
+    @UCloudParam("SpecificationType")
+    private Integer specificationType;
+
+    /** 规格类型ID,当SpecificationType为1时有效 */
+    @UCloudParam("MachineType")
+    private String machineType;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -235,6 +243,22 @@ public class CreateUDBSlaveRequest extends Request {
 
     public void setDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;
+    }
+
+    public Integer getSpecificationType() {
+        return specificationType;
+    }
+
+    public void setSpecificationType(Integer specificationType) {
+        this.specificationType = specificationType;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
     }
 
     public String getCouponId() {
