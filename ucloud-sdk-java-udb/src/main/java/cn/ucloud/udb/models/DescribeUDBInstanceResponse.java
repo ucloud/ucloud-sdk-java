@@ -141,7 +141,7 @@ public class DescribeUDBInstanceResponse extends Response {
          * DB状态标记
          * Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover
          * fail：恢复失败,
-         * Remakeing:重做中,RemakeFail:重做失败，VersionUpgrading:小版本升级中，VersionUpgradeWaitForSwitch:高可用等待切换，VersionUpgradeFail：小版本升级失败，UpdatingSSL：修改SSL中，UpdateSSLFail：修改SSL失败
+         * Remakeing:重做中,RemakeFail:重做失败，VersionUpgrading:小版本升级中，VersionUpgradeWaitForSwitch:高可用等待切换，VersionUpgradeFail：小版本升级失败，UpdatingSSL：修改SSL中，UpdateSSLFail：修改SSL失败,MajorVersionUpgrading:小版本升级中，MajorVersionUpgradeWaitForSwitch:高可用等待切换，MajorVersionUpgradeFail
          */
         @SerializedName("State")
         private String state;
@@ -243,6 +243,14 @@ public class DescribeUDBInstanceResponse extends Response {
         /** 默认的备份方式，nobackup表示不备份， snapshot 表示使用快照备份，logic 表示使用逻辑备份，xtrabackup表示使用物理备份。 */
         @SerializedName("BackupMethod")
         private String backupMethod;
+
+        /** 数据库机型规格 */
+        @SerializedName("MachineType")
+        private String machineType;
+
+        /** 是否使用可选cpu类型规格 */
+        @SerializedName("SpecificationType")
+        private Integer specificationType;
 
         public String getZone() {
             return zone;
@@ -603,6 +611,22 @@ public class DescribeUDBInstanceResponse extends Response {
         public void setBackupMethod(String backupMethod) {
             this.backupMethod = backupMethod;
         }
+
+        public String getMachineType() {
+            return machineType;
+        }
+
+        public void setMachineType(String machineType) {
+            this.machineType = machineType;
+        }
+
+        public Integer getSpecificationType() {
+            return specificationType;
+        }
+
+        public void setSpecificationType(Integer specificationType) {
+            this.specificationType = specificationType;
+        }
     }
 
     public static class UDBSlaveInstanceSet extends Response {
@@ -674,7 +698,8 @@ public class DescribeUDBInstanceResponse extends Response {
         /**
          * DB状态标记
          * Init：初始化中，Fail：安装失败，Starting：启动中，Running：运行，Shutdown：关闭中，Shutoff：已关闭，Delete：已删除，Upgrading：升级中，Promoting：提升为独库进行中，Recovering：恢复中，Recover
-         * fail：恢复失败,Remakeing:重做中,RemakeFail:重做失败
+         * fail：恢复失败,Remakeing:重做中,RemakeFail:重做失败,
+         * MajorVersionUpgrading:小版本升级中，MajorVersionUpgradeWaitForSwitch:高可用等待切换，MajorVersionUpgradeFail
          */
         @SerializedName("State")
         private String state;
@@ -771,6 +796,14 @@ public class DescribeUDBInstanceResponse extends Response {
         /** 0 区分大小写, 1不区分, 只针对mysql8.0 */
         @SerializedName("CaseSensitivityParam")
         private Integer caseSensitivityParam;
+
+        /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
+        @SerializedName("SpecificationType")
+        private String specificationType;
+
+        /** 规格类型ID,当SpecificationType为1时有效 */
+        @SerializedName("MachineType")
+        private String machineType;
 
         public String getZone() {
             return zone;
@@ -1074,6 +1107,22 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setCaseSensitivityParam(Integer caseSensitivityParam) {
             this.caseSensitivityParam = caseSensitivityParam;
+        }
+
+        public String getSpecificationType() {
+            return specificationType;
+        }
+
+        public void setSpecificationType(String specificationType) {
+            this.specificationType = specificationType;
+        }
+
+        public String getMachineType() {
+            return machineType;
+        }
+
+        public void setMachineType(String machineType) {
+            this.machineType = machineType;
         }
     }
 

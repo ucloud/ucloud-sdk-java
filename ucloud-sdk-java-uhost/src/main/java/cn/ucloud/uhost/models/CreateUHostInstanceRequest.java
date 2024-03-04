@@ -153,7 +153,7 @@ public class CreateUHostInstanceRequest extends Request {
     @UCloudParam("MinimalCpuPlatform")
     private String minimalCpuPlatform;
 
-    /** 本次最大创建主机数量，取值范围是[1,100]，默认值为1。 */
+    /** 本次最大创建主机数量，取值范围是[1,100]，默认值为1。 - 库存数量不足时，按库存数量创建。 - 配额不足时，返回错误。 - 使用隔离组时，以隔离组可用数量为准。 */
     @UCloudParam("MaxCount")
     private Integer maxCount;
 
@@ -184,6 +184,10 @@ public class CreateUHostInstanceRequest extends Request {
     /** */
     @UCloudParam("SecGroupId")
     private List<SecGroupId> secGroupId;
+
+    /** 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。 */
+    @UCloudParam("SecurityMode")
+    private String securityMode;
 
     /** 【私有专区属性】专区id */
     @UCloudParam("UDSetId")
@@ -473,6 +477,14 @@ public class CreateUHostInstanceRequest extends Request {
         this.secGroupId = secGroupId;
     }
 
+    public String getSecurityMode() {
+        return securityMode;
+    }
+
+    public void setSecurityMode(String securityMode) {
+        this.securityMode = securityMode;
+    }
+
     public String getUDSetId() {
         return udSetId;
     }
@@ -523,7 +535,7 @@ public class CreateUHostInstanceRequest extends Request {
         private Integer size;
 
         /**
-         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
+         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟【已下线，不再支持】 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
          * [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
          */
         @UCloudParam("BackupType")
@@ -754,7 +766,32 @@ public class CreateUHostInstanceRequest extends Request {
 
     public static class NetworkInterfaceIPv6 extends Request {}
 
-    public static class SecGroupId extends Request {}
+    public static class SecGroupId extends Request {
+
+        /** 安全组 ID。至多可以同时绑定5个安全组。 */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级。取值范围[1, 5] */
+        @UCloudParam("Priority")
+        private Integer priority;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Integer getPriority() {
+            return priority;
+        }
+
+        public void setPriority(Integer priority) {
+            this.priority = priority;
+        }
+    }
 
     public static class Volumes extends Request {}
 }

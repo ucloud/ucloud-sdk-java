@@ -30,6 +30,13 @@ public class ModifyUMongoDBBackupParamRequest extends Request {
     @UCloudParam("Zone")
     private String zone;
 
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
+    @UCloudParam("ProjectId")
+    private String projectId;
+
     /** 实例ID */
     @NotEmpty
     @UCloudParam("ClusterId")
@@ -42,6 +49,10 @@ public class ModifyUMongoDBBackupParamRequest extends Request {
     /** 自动备份预期开始时间范围(00:00~23:59),默认 5:00~6:00 */
     @UCloudParam("AutoBackupToggleTime")
     private String autoBackupToggleTime;
+
+    /** 是否禁用,true:禁用;false:开启 */
+    @UCloudParam("Disabled")
+    private Boolean disabled;
 
     public String getRegion() {
         return region;
@@ -57,6 +68,14 @@ public class ModifyUMongoDBBackupParamRequest extends Request {
 
     public void setZone(String zone) {
         this.zone = zone;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public String getClusterId() {
@@ -81,5 +100,13 @@ public class ModifyUMongoDBBackupParamRequest extends Request {
 
     public void setAutoBackupToggleTime(String autoBackupToggleTime) {
         this.autoBackupToggleTime = autoBackupToggleTime;
+    }
+
+    public Boolean getDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(Boolean disabled) {
+        this.disabled = disabled;
     }
 }
