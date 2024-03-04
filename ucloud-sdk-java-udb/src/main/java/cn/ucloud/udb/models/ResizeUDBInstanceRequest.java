@@ -73,6 +73,14 @@ public class ResizeUDBInstanceRequest extends Request {
     @UCloudParam("StartAfterUpgrade")
     private Boolean startAfterUpgrade;
 
+    /** 规格类型ID,当SpecificationType为1时有效 */
+    @UCloudParam("MachineType")
+    private String machineType;
+
+    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
+    @UCloudParam("SpecificationType")
+    private String specificationType;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -155,6 +163,22 @@ public class ResizeUDBInstanceRequest extends Request {
 
     public void setStartAfterUpgrade(Boolean startAfterUpgrade) {
         this.startAfterUpgrade = startAfterUpgrade;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
+    }
+
+    public String getSpecificationType() {
+        return specificationType;
+    }
+
+    public void setSpecificationType(String specificationType) {
+        this.specificationType = specificationType;
     }
 
     public String getCouponId() {

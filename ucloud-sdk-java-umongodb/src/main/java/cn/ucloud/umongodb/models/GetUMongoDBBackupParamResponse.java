@@ -54,6 +54,10 @@ public class GetUMongoDBBackupParamResponse extends Response {
         @SerializedName("ManualBackupCopies")
         private Integer manualBackupCopies;
 
+        /** 是否禁用(false:未禁用;true:禁用) */
+        @SerializedName("Disabled")
+        private Boolean disabled;
+
         public String getClusterId() {
             return clusterId;
         }
@@ -92,6 +96,14 @@ public class GetUMongoDBBackupParamResponse extends Response {
 
         public void setManualBackupCopies(Integer manualBackupCopies) {
             this.manualBackupCopies = manualBackupCopies;
+        }
+
+        public Boolean getDisabled() {
+            return disabled;
+        }
+
+        public void setDisabled(Boolean disabled) {
+            this.disabled = disabled;
         }
     }
 }
