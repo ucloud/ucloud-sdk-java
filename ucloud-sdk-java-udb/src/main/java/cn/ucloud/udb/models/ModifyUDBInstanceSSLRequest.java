@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.umongodb.models;
+package cn.ucloud.udb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class ListUMongoDBBackupRequest extends Request {
+public class ModifyUDBInstanceSSLRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -39,8 +39,17 @@ public class ListUMongoDBBackupRequest extends Request {
 
     /** 实例ID */
     @NotEmpty
-    @UCloudParam("ClusterId")
-    private String clusterId;
+    @UCloudParam("DBId")
+    private String dbId;
+
+    /** 是否开启SSL 1->关闭 2->开启 */
+    @NotEmpty
+    @UCloudParam("EnableSSL")
+    private Integer enableSSL;
+
+    /** SSL证书有效时间，1-5年，默认为1年 */
+    @UCloudParam("ValidTime")
+    private Integer validTime;
 
     public String getRegion() {
         return region;
@@ -66,11 +75,27 @@ public class ListUMongoDBBackupRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getClusterId() {
-        return clusterId;
+    public String getDBId() {
+        return dbId;
     }
 
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
+    public void setDBId(String dbId) {
+        this.dbId = dbId;
+    }
+
+    public Integer getEnableSSL() {
+        return enableSSL;
+    }
+
+    public void setEnableSSL(Integer enableSSL) {
+        this.enableSSL = enableSSL;
+    }
+
+    public Integer getValidTime() {
+        return validTime;
+    }
+
+    public void setValidTime(Integer validTime) {
+        this.validTime = validTime;
     }
 }

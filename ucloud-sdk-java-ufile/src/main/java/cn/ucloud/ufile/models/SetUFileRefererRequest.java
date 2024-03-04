@@ -46,13 +46,24 @@ public class SetUFileRefererRequest extends Request {
     @UCloudParam("RefererAllowNull")
     private Boolean refererAllowNull;
 
-    /** 防盗链Referer类型，支持两种类型，黑名单和白名单; 1黑名单，2白名单；RefererStatus为"on"时此参数必填； */
+    /**
+     * 防盗链Referer类型，支持三种类型， 1代表设置黑名单、2代表设置白名单， 3代表同时设置黑白名单; （其中1和2是为了向前兼容，后续调用只应该传递类型3）
+     * RefererStatus为"on"时此参数必填；
+     */
     @UCloudParam("RefererType")
     private Integer refererType;
 
-    /** 防盗链Referer规则，支持正则表达式（不支持符号';') */
+    /** 防盗链Referer规则，支持正则表达式（不支持符号';')，该字段已弃用，请使用WhiteList.n或BlackList.n */
     @UCloudParam("Referers")
     private List<String> referers;
+
+    /** 白名单列表中的一项 */
+    @UCloudParam("WhiteList")
+    private List<String> whiteList;
+
+    /** 黑名单列表中的一项 */
+    @UCloudParam("BlackList")
+    private List<String> blackList;
 
     public String getRegion() {
         return region;
@@ -108,5 +119,21 @@ public class SetUFileRefererRequest extends Request {
 
     public void setReferers(List<String> referers) {
         this.referers = referers;
+    }
+
+    public List<String> getWhiteList() {
+        return whiteList;
+    }
+
+    public void setWhiteList(List<String> whiteList) {
+        this.whiteList = whiteList;
+    }
+
+    public List<String> getBlackList() {
+        return blackList;
+    }
+
+    public void setBlackList(List<String> blackList) {
+        this.blackList = blackList;
     }
 }

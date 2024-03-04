@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.umongodb.models;
+package cn.ucloud.udb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class ListUMongoDBBackupRequest extends Request {
+public class GetUDBInstanceSSLCertURLRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -39,8 +39,12 @@ public class ListUMongoDBBackupRequest extends Request {
 
     /** 实例ID */
     @NotEmpty
-    @UCloudParam("ClusterId")
-    private String clusterId;
+    @UCloudParam("DBId")
+    private String dbId;
+
+    /** URL的过期时间，该值最小默认1小时，最大7天。（单位/秒） */
+    @UCloudParam("ExpireTime")
+    private Integer expireTime;
 
     public String getRegion() {
         return region;
@@ -66,11 +70,19 @@ public class ListUMongoDBBackupRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getClusterId() {
-        return clusterId;
+    public String getDBId() {
+        return dbId;
     }
 
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
+    public void setDBId(String dbId) {
+        this.dbId = dbId;
+    }
+
+    public Integer getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Integer expireTime) {
+        this.expireTime = expireTime;
     }
 }
