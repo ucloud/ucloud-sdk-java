@@ -20,12 +20,15 @@ import cn.ucloud.common.request.Request;
 
 public class CreateBucketRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -37,6 +40,10 @@ public class CreateBucketRequest extends Request {
     /** Bucket访问类型，public或private; 默认为private */
     @UCloudParam("Type")
     private String type;
+
+    /** Bucket所属业务组，默认为default */
+    @UCloudParam("Tag")
+    private String tag;
 
     public String getRegion() {
         return region;
@@ -68,5 +75,13 @@ public class CreateBucketRequest extends Request {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

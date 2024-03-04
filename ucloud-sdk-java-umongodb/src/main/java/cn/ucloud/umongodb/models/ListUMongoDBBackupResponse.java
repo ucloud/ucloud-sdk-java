@@ -67,6 +67,18 @@ public class ListUMongoDBBackupResponse extends Response {
         @SerializedName("EndTime")
         private Integer endTime;
 
+        /** 虚拟节点id */
+        @SerializedName("VirtualClusterId")
+        private String virtualClusterId;
+
+        /** 副本类型,ConfigRepl或者DataRepl */
+        @SerializedName("ReplicaType")
+        private String replicaType;
+
+        /** 批次id */
+        @SerializedName("BatchId")
+        private String batchId;
+
         public String getBackupId() {
             return backupId;
         }
@@ -129,6 +141,30 @@ public class ListUMongoDBBackupResponse extends Response {
 
         public void setEndTime(Integer endTime) {
             this.endTime = endTime;
+        }
+
+        public String getVirtualClusterId() {
+            return virtualClusterId;
+        }
+
+        public void setVirtualClusterId(String virtualClusterId) {
+            this.virtualClusterId = virtualClusterId;
+        }
+
+        public String getReplicaType() {
+            return replicaType;
+        }
+
+        public void setReplicaType(String replicaType) {
+            this.replicaType = replicaType;
+        }
+
+        public String getBatchId() {
+            return batchId;
+        }
+
+        public void setBatchId(String batchId) {
+            this.batchId = batchId;
         }
     }
 }
