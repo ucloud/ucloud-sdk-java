@@ -38,7 +38,7 @@ public class GetUPgSQLInstanceResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
-        /** 跨可用区高可用备库所在可用区 */
+        /** 备份所在可用区 */
         @SerializedName("BackupZone")
         private String backupZone;
 
@@ -121,6 +121,10 @@ public class GetUPgSQLInstanceResponse extends Response {
         @SerializedName("ExpiredTime")
         private Integer expiredTime;
 
+        /** CPU限制(核)，默认根据配置机型 */
+        @SerializedName("Cpu")
+        private Integer cpu;
+
         /** 内存限制(MB)，默认根据配置机型 */
         @SerializedName("MemoryLimit")
         private Integer memoryLimit;
@@ -148,6 +152,10 @@ public class GetUPgSQLInstanceResponse extends Response {
         /** Normal/HA,普通/高可用 */
         @SerializedName("InstanceMode")
         private String instanceMode;
+
+        /** 配置机型名称 */
+        @SerializedName("MachineType")
+        private String machineType;
 
         public String getZone() {
             return zone;
@@ -309,6 +317,14 @@ public class GetUPgSQLInstanceResponse extends Response {
             this.expiredTime = expiredTime;
         }
 
+        public Integer getCpu() {
+            return cpu;
+        }
+
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
+        }
+
         public Integer getMemoryLimit() {
             return memoryLimit;
         }
@@ -363,6 +379,14 @@ public class GetUPgSQLInstanceResponse extends Response {
 
         public void setInstanceMode(String instanceMode) {
             this.instanceMode = instanceMode;
+        }
+
+        public String getMachineType() {
+            return machineType;
+        }
+
+        public void setMachineType(String machineType) {
+            this.machineType = machineType;
         }
     }
 }

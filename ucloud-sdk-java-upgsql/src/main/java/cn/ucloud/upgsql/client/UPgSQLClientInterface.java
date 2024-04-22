@@ -311,7 +311,7 @@ public interface UPgSQLClientInterface extends Client {
             UpdateUPgSQLBackupStrategyRequest request) throws UCloudException;
 
     /**
-     * UpdateUPgSQLPassword - 更新数据库密码
+     * UpdateUPgSQLPassword - 更新数据库用户密码
      *
      * @param request Request object
      * @throws UCloudException Exception

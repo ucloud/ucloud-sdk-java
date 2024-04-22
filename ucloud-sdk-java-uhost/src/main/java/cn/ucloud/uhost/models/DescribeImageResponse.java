@@ -72,8 +72,8 @@ public class DescribeImageResponse extends Response {
         private String imageType;
 
         /**
-         * 特殊状态标识， 目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra（网络增强2.0）, HotPlug(热升级),
-         * GPU（GPU镜像）,CloudInit,
+         * 特殊状态标识，目前包含NetEnhnced（网络增强1.0）, NetEnhanced_Ultra（网络增强2.0）, NetEnhanced_Extreme（网络增强3.0）,
+         * HotPlug(热升级), GPU（GPU镜像）,CloudInit,
          * IPv6（支持IPv6网络）,RssdAttachable（支持RSSD云盘）,Vgpu_AMD（支持AMD的vgpu）,Vgpu_NVIDIA（支持NVIDIA的vgpu）,Aarch64_Type（支持arm64架构）
          */
         @SerializedName("Features")

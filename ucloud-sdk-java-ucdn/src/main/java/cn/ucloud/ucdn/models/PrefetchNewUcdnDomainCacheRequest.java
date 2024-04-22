@@ -30,7 +30,7 @@ public class PrefetchNewUcdnDomainCacheRequest extends Request {
 
     /**
      * 预热URL列表，n从自然数0开始。UrlList.n字段必须以”http://域名/”开始。如刷新文件目录a下面img.png文件，
-     * 格式为http://abc.ucloud.cn/a/img.png。请正确提交需要刷新的域名
+     * 格式为http://abc.ucloud.cn/a/img.png。请正确提交需要刷新的域名，一次性可提交1000条，最少每10S调用一次
      */
     @NotEmpty
     @UCloudParam("UrlList")

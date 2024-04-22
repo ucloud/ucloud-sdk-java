@@ -53,7 +53,9 @@ public class GetUHostUpgradePriceRequest extends Request {
     @UCloudParam("GPU")
     private Integer gpu;
 
-    /** 网卡升降级（1，表示升级，2表示降级，0表示不变） */
+    /**
+     * 网卡升降级（1，表示升级，2表示降级，0表示不变）。仅支持网络增强1.0和网络增强2.0的开启和关闭，不支持网络增强特性互相转换，如网络增强1.0升级到网络增强2.0是不被支持的。
+     */
     @UCloudParam("NetCapValue")
     private Integer netCapValue;
 

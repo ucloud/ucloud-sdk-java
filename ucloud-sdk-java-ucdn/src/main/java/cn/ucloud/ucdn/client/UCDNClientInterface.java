@@ -17,8 +17,6 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ucdn.models.AddCertificateRequest;
 import cn.ucloud.ucdn.models.AddCertificateResponse;
-import cn.ucloud.ucdn.models.ControlUcdnDomainCacheAccessRequest;
-import cn.ucloud.ucdn.models.ControlUcdnDomainCacheAccessResponse;
 import cn.ucloud.ucdn.models.DeleteCertificateRequest;
 import cn.ucloud.ucdn.models.DeleteCertificateResponse;
 import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskRequest;
@@ -87,15 +85,6 @@ public interface UCDNClientInterface extends Client {
      */
     public AddCertificateResponse addCertificate(AddCertificateRequest request)
             throws UCloudException;
-
-    /**
-     * ControlUcdnDomainCacheAccess - 封禁解封缓存访问
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ControlUcdnDomainCacheAccessResponse controlUcdnDomainCacheAccess(
-            ControlUcdnDomainCacheAccessRequest request) throws UCloudException;
 
     /**
      * DeleteCertificate - 删除证书

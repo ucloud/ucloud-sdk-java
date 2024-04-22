@@ -37,7 +37,7 @@ public class CreateMediaTaskRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 存储源 */
+    /** 存储源。当前仅支持填写“US3” */
     @NotEmpty
     @UCloudParam("StorageBackend")
     private String storageBackend;
@@ -57,7 +57,7 @@ public class CreateMediaTaskRequest extends Request {
     @UCloudParam("DstKey")
     private String dstKey;
 
-    /** 功能名称：例VideoTranscode */
+    /** 功能名称： - VideoTranscode，视频转码 - VideoCapture，视频截帧 */
     @NotEmpty
     @UCloudParam("Function")
     private String function;

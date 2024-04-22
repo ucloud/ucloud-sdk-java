@@ -52,7 +52,7 @@ public class GetUcdnDomainHitRateRequest extends Request {
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 命中类型：0=整体命中 1=边缘命中 默认是0 */
+    /** 默认是0 */
     @UCloudParam("HitType")
     private Integer hitType;
 

@@ -21,12 +21,15 @@ import java.util.List;
 
 public class DescribeBandwidthUsageRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -41,6 +44,14 @@ public class DescribeBandwidthUsageRequest extends Request {
     /** 弹性IP的资源Id. 如果为空, 则返回当前 Region中符合条件的所有EIP的带宽用量, n为自然数 */
     @UCloudParam("EIPIds")
     private List<String> eipIds;
+
+    /** 统计开始时间 */
+    @UCloudParam("BeginTime")
+    private Integer beginTime;
+
+    /** 统计结束时间 */
+    @UCloudParam("EndTime")
+    private Integer endTime;
 
     public String getRegion() {
         return region;
@@ -80,5 +91,21 @@ public class DescribeBandwidthUsageRequest extends Request {
 
     public void setEIPIds(List<String> eipIds) {
         this.eipIds = eipIds;
+    }
+
+    public Integer getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Integer beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public Integer getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
     }
 }

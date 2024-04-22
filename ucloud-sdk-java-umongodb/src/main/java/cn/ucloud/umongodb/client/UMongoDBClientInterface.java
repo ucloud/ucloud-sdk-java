@@ -37,6 +37,8 @@ import cn.ucloud.umongodb.models.ListUMongoDBBackupRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBBackupResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateResponse;
+import cn.ucloud.umongodb.models.ListUMongoDBInstancesRequest;
+import cn.ucloud.umongodb.models.ListUMongoDBInstancesResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBVersionRequest;
@@ -155,6 +157,15 @@ public interface UMongoDBClientInterface extends Client {
      */
     public ListUMongoDBConfigTemplateResponse listUMongoDBConfigTemplate(
             ListUMongoDBConfigTemplateRequest request) throws UCloudException;
+
+    /**
+     * ListUMongoDBInstances - 获取副本集/分片集群列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUMongoDBInstancesResponse listUMongoDBInstances(ListUMongoDBInstancesRequest request)
+            throws UCloudException;
 
     /**
      * ListUMongoDBMachineType - 获取UmongDB支持机器类型列表

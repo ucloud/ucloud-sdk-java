@@ -87,8 +87,6 @@ import cn.ucloud.uhost.models.TerminateCustomImageRequest;
 import cn.ucloud.uhost.models.TerminateCustomImageResponse;
 import cn.ucloud.uhost.models.TerminateUHostInstanceRequest;
 import cn.ucloud.uhost.models.TerminateUHostInstanceResponse;
-import cn.ucloud.uhost.models.UpgradeToArkUHostInstanceRequest;
-import cn.ucloud.uhost.models.UpgradeToArkUHostInstanceResponse;
 
 /** This client is used to call actions of **UHost** service */
 public interface UHostClientInterface extends Client {
@@ -414,13 +412,4 @@ public interface UHostClientInterface extends Client {
      */
     public TerminateUHostInstanceResponse terminateUHostInstance(
             TerminateUHostInstanceRequest request) throws UCloudException;
-
-    /**
-     * UpgradeToArkUHostInstance - 普通升级为方舟机型
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public UpgradeToArkUHostInstanceResponse upgradeToArkUHostInstance(
-            UpgradeToArkUHostInstanceRequest request) throws UCloudException;
 }

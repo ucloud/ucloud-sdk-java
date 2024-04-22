@@ -43,7 +43,9 @@ public class SendUSMSMessageRequest extends Request {
     @UCloudParam("TemplateId")
     private String templateId;
 
-    /** 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核； */
+    /**
+     * 短信签名内容，请到[USMS控制台](https://console.ucloud.cn/usms)的签名管理页面查看；使用的短信签名必须是已申请并且通过审核；（注：国内短信为必选参数、国际短信为可选参数）
+     */
     @UCloudParam("SigContent")
     private String sigContent;
 
