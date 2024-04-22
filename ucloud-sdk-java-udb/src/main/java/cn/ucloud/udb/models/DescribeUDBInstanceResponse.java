@@ -252,6 +252,10 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("SpecificationType")
         private Integer specificationType;
 
+        /** CPU核数 */
+        @SerializedName("CPU")
+        private Integer cpu;
+
         public String getZone() {
             return zone;
         }
@@ -626,6 +630,14 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setSpecificationType(Integer specificationType) {
             this.specificationType = specificationType;
+        }
+
+        public Integer getCPU() {
+            return cpu;
+        }
+
+        public void setCPU(Integer cpu) {
+            this.cpu = cpu;
         }
     }
 

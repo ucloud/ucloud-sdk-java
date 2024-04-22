@@ -39,6 +39,8 @@ import cn.ucloud.umongodb.models.ListUMongoDBBackupRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBBackupResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateResponse;
+import cn.ucloud.umongodb.models.ListUMongoDBInstancesRequest;
+import cn.ucloud.umongodb.models.ListUMongoDBInstancesResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBVersionRequest;
@@ -202,6 +204,19 @@ public class UMongoDBClient extends DefaultClient implements UMongoDBClientInter
         request.setAction("ListUMongoDBConfigTemplate");
         return (ListUMongoDBConfigTemplateResponse)
                 this.invoke(request, ListUMongoDBConfigTemplateResponse.class);
+    }
+
+    /**
+     * ListUMongoDBInstances - 获取副本集/分片集群列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUMongoDBInstancesResponse listUMongoDBInstances(ListUMongoDBInstancesRequest request)
+            throws UCloudException {
+        request.setAction("ListUMongoDBInstances");
+        return (ListUMongoDBInstancesResponse)
+                this.invoke(request, ListUMongoDBInstancesResponse.class);
     }
 
     /**

@@ -52,7 +52,7 @@ public class GetUcdnDomainHttpCodeV2Request extends Request {
     @UCloudParam("EndTime")
     private Integer endTime;
 
-    /** 指定获取的状态码是边缘还是上层 edge 表示边缘 layer 表示上层 */
+    /** edge 表示边缘 */
     @UCloudParam("Layer")
     private String layer;
 

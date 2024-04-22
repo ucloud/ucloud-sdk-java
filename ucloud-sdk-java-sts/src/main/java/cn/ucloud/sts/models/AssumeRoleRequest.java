@@ -25,12 +25,12 @@ public class AssumeRoleRequest extends Request {
     @UCloudParam("RoleUrn")
     private String roleUrn;
 
-    /** 角色会话名称。 */
+    /** 角色会话名称。格式允许 字母、数字、下划线（_）、连字符（-）、英文（.）组成的 1-64 位字符。 */
     @NotEmpty
     @UCloudParam("RoleSessionName")
     private String roleSessionName;
 
-    /** Token有效期。 */
+    /** Token有效期，单位：秒。最小值 900，最大值受限于角色配置的最大会话时间。 */
     @UCloudParam("DurationSeconds")
     private Integer durationSeconds;
 

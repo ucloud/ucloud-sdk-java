@@ -101,6 +101,8 @@ import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
 import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLRequest;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLResponse;
+import cn.ucloud.udb.models.ListUDBUserTablesRequest;
+import cn.ucloud.udb.models.ListUDBUserTablesResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
@@ -686,6 +688,18 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
         request.setAction("GetUDBInstanceSSLCertURL");
         return (GetUDBInstanceSSLCertURLResponse)
                 this.invoke(request, GetUDBInstanceSSLCertURLResponse.class);
+    }
+
+    /**
+     * ListUDBUserTables - 查看udb实例的用户表集合
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUDBUserTablesResponse listUDBUserTables(ListUDBUserTablesRequest request)
+            throws UCloudException {
+        request.setAction("ListUDBUserTables");
+        return (ListUDBUserTablesResponse) this.invoke(request, ListUDBUserTablesResponse.class);
     }
 
     /**

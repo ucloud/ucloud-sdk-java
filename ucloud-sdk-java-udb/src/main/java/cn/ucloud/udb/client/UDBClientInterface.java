@@ -99,6 +99,8 @@ import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
 import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLRequest;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLResponse;
+import cn.ucloud.udb.models.ListUDBUserTablesRequest;
+import cn.ucloud.udb.models.ListUDBUserTablesResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameResponse;
 import cn.ucloud.udb.models.ModifyUDBInstancePasswordRequest;
@@ -521,6 +523,15 @@ public interface UDBClientInterface extends Client {
      */
     public GetUDBInstanceSSLCertURLResponse getUDBInstanceSSLCertURL(
             GetUDBInstanceSSLCertURLRequest request) throws UCloudException;
+
+    /**
+     * ListUDBUserTables - 查看udb实例的用户表集合
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUDBUserTablesResponse listUDBUserTables(ListUDBUserTablesRequest request)
+            throws UCloudException;
 
     /**
      * ModifyUDBInstanceName - 修改云数据库名称

@@ -19,8 +19,6 @@ import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ucdn.models.AddCertificateRequest;
 import cn.ucloud.ucdn.models.AddCertificateResponse;
-import cn.ucloud.ucdn.models.ControlUcdnDomainCacheAccessRequest;
-import cn.ucloud.ucdn.models.ControlUcdnDomainCacheAccessResponse;
 import cn.ucloud.ucdn.models.DeleteCertificateRequest;
 import cn.ucloud.ucdn.models.DeleteCertificateResponse;
 import cn.ucloud.ucdn.models.DescribeNewUcdnPrefetchCacheTaskRequest;
@@ -94,19 +92,6 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
             throws UCloudException {
         request.setAction("AddCertificate");
         return (AddCertificateResponse) this.invoke(request, AddCertificateResponse.class);
-    }
-
-    /**
-     * ControlUcdnDomainCacheAccess - 封禁解封缓存访问
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ControlUcdnDomainCacheAccessResponse controlUcdnDomainCacheAccess(
-            ControlUcdnDomainCacheAccessRequest request) throws UCloudException {
-        request.setAction("ControlUcdnDomainCacheAccess");
-        return (ControlUcdnDomainCacheAccessResponse)
-                this.invoke(request, ControlUcdnDomainCacheAccessResponse.class);
     }
 
     /**

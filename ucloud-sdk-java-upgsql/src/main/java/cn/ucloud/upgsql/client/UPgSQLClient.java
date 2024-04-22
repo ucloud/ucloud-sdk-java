@@ -413,7 +413,7 @@ public class UPgSQLClient extends DefaultClient implements UPgSQLClientInterface
     }
 
     /**
-     * UpdateUPgSQLPassword - 更新数据库密码
+     * UpdateUPgSQLPassword - 更新数据库用户密码
      *
      * @param request Request object
      * @throws UCloudException Exception
