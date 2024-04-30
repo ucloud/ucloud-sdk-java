@@ -115,6 +115,10 @@ public class DescribeImageResponse extends Response {
         @SerializedName("MinimalCPU")
         private String minimalCPU;
 
+        /** 系统EOL的时间，格式：YYYY/MM/DD */
+        @SerializedName("MaintainEol")
+        private String maintainEol;
+
         /** 支持的GPU机型 */
         @SerializedName("SupportedGPUTypes")
         private List<String> supportedGPUTypes;
@@ -255,6 +259,14 @@ public class DescribeImageResponse extends Response {
 
         public void setMinimalCPU(String minimalCPU) {
             this.minimalCPU = minimalCPU;
+        }
+
+        public String getMaintainEol() {
+            return maintainEol;
+        }
+
+        public void setMaintainEol(String maintainEol) {
+            this.maintainEol = maintainEol;
         }
 
         public List<String> getSupportedGPUTypes() {

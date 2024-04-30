@@ -54,7 +54,7 @@ public class CreateUHostInstanceRequest extends Request {
 
     /**
      * UHost密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，举例如下：# echo -n Password1
-     * | base64UGFzc3dvcmQx。
+     * | base64 UGFzc3dvcmQx。
      */
     @UCloudParam("Password")
     private String password;
@@ -94,7 +94,7 @@ public class CreateUHostInstanceRequest extends Request {
 
     /**
      * GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4",
-     * "MI100", "V100S",2080","2080TiS","2080TiPro","3090","A100"]，MachineType为G时必填
+     * "V100S",2080","2080TiS","2080TiPro","3090","4090","A100"]。MachineType为G时必填
      */
     @UCloudParam("GpuType")
     private String gpuType;
@@ -103,7 +103,7 @@ public class CreateUHostInstanceRequest extends Request {
     @UCloudParam("GPU")
     private Integer gpu;
 
-    /** 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0（详情参考官网文档） */
+    /** 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0（详情参考官网文档） */
     @UCloudParam("NetCapability")
     private String netCapability;
 
@@ -134,20 +134,21 @@ public class CreateUHostInstanceRequest extends Request {
     @UCloudParam("IsolationGroup")
     private String isolationGroup;
 
-    /** 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败只会在后台有日志，不会影响创建主机流程，也不会在前端报错。 */
+    /** 告警模板id，如果传了告警模板id，且告警模板id正确，则绑定告警模板。绑定告警模板失败不会影响创建主机流程。 */
     @UCloudParam("AlarmTemplateId")
     private Integer alarmTemplateId;
 
     /**
-     * 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OS", "OM", "OPRO", "OMAX",
-     * "O.BM", "O.EPC"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
+     * 云主机机型（V2.0），在本字段和字段UHostType中，仅需要其中1个字段即可。枚举值["N", "C", "G", "O", "OM", "OMEM"， "OPRO",
+     * "OPROG"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。
      */
     @UCloudParam("MachineType")
     private String machineType;
 
     /**
      * 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell",
-     * "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2",
+     * "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake",
+     * "Intel/SapphireRapids", "Amd/Epyc2",
      * "Amd/Auto","Ampere/Auto","Ampere/Altra"],默认值是"Intel/Auto"。
      */
     @UCloudParam("MinimalCpuPlatform")
@@ -535,7 +536,7 @@ public class CreateUHostInstanceRequest extends Request {
         private Integer size;
 
         /**
-         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > DATAARK，数据方舟【已下线，不再支持】 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
+         * 磁盘备份方案。枚举值：\\ > NONE，无备份 \\ > SNAPSHOT，快照 \\当前磁盘支持的备份模式参考
          * [[api:uhost-api:disk_type|磁盘类型]],默认值:NONE
          */
         @UCloudParam("BackupType")
@@ -638,7 +639,7 @@ public class CreateUHostInstanceRequest extends Request {
 
     public static class Features extends Request {
 
-        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启，仅与 NetCapability Normal 兼容。 */
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。 */
         @UCloudParam("UNI")
         private Boolean uni;
 

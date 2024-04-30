@@ -59,6 +59,10 @@ public class AllocateShareBandwidthRequest extends Request {
     @UCloudParam("OperatorName")
     private String operatorName;
 
+    /** 业务组名称, 默认为 "Default" */
+    @UCloudParam("Tag")
+    private String tag;
+
     public String getRegion() {
         return region;
     }
@@ -121,5 +125,13 @@ public class AllocateShareBandwidthRequest extends Request {
 
     public void setOperatorName(String operatorName) {
         this.operatorName = operatorName;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }
