@@ -83,15 +83,19 @@ public class DescribeSSLV2Response extends Response {
         @SerializedName("USSLId")
         private String usslId;
 
-        /** USSL证书平台的域名,只有当SSLSource为1时才出现 */
+        /** SSL证书的域名 */
         @SerializedName("Domains")
         private String domains;
 
-        /** 证书颁发时间,只有当SSLSource为1时才出现 */
+        /** SSL证书的扩展域名 */
+        @SerializedName("DNSNames")
+        private String dnsNames;
+
+        /** 证书颁发时间 */
         @SerializedName("NotBefore")
         private Integer notBefore;
 
-        /** 证书过期时间,只有当SSLSource为1时才出现 */
+        /** 证书过期时间 */
         @SerializedName("NotAfter")
         private Integer notAfter;
 
@@ -173,6 +177,14 @@ public class DescribeSSLV2Response extends Response {
 
         public void setDomains(String domains) {
             this.domains = domains;
+        }
+
+        public String getDNSNames() {
+            return dnsNames;
+        }
+
+        public void setDNSNames(String dnsNames) {
+            this.dnsNames = dnsNames;
         }
 
         public Integer getNotBefore() {

@@ -134,15 +134,15 @@ public class DescribeSSLResponse extends Response {
         @SerializedName("USSLId")
         private String usslId;
 
-        /** USSL证书平台的域名,只有当SSLSource为1时才出现 */
+        /** SSL证书平台的域名，多域名时，不展示扩展域名 */
         @SerializedName("Domains")
         private String domains;
 
-        /** 证书颁发时间,只有当SSLSource为1时才出现 */
+        /** 证书颁发时间 */
         @SerializedName("NotBefore")
         private Integer notBefore;
 
-        /** 证书过期时间,只有当SSLSource为1时才出现 */
+        /** 证书过期时间 */
         @SerializedName("NotAfter")
         private Integer notAfter;
 
