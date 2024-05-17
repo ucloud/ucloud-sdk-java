@@ -53,6 +53,14 @@ public class AddWafDomainBlackListRequest extends Request {
     @UCloudParam("ExpireTime")
     private Integer expireTime;
 
+    /** 域名记录ID */
+    @UCloudParam("RecordId")
+    private Integer recordId;
+
+    /** 目标IP; Source为bot时需传递 */
+    @UCloudParam("DestIp")
+    private String destIp;
+
     /** IP、网段或者IP段，传递数组；类型为custom时必填 */
     @UCloudParam("CIDRS")
     private List<String> cidrs;
@@ -60,6 +68,10 @@ public class AddWafDomainBlackListRequest extends Request {
     /** 备注信息 */
     @UCloudParam("Remark")
     private String remark;
+
+    /** 名称 */
+    @UCloudParam("Name")
+    private String name;
 
     public String getProjectId() {
         return projectId;
@@ -109,6 +121,22 @@ public class AddWafDomainBlackListRequest extends Request {
         this.expireTime = expireTime;
     }
 
+    public Integer getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(Integer recordId) {
+        this.recordId = recordId;
+    }
+
+    public String getDestIp() {
+        return destIp;
+    }
+
+    public void setDestIp(String destIp) {
+        this.destIp = destIp;
+    }
+
     public List<String> getCIDRS() {
         return cidrs;
     }
@@ -123,5 +151,13 @@ public class AddWafDomainBlackListRequest extends Request {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

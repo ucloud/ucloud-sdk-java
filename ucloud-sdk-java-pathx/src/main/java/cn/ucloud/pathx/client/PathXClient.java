@@ -53,10 +53,14 @@ import cn.ucloud.pathx.models.DescribeUPathTemplateRequest;
 import cn.ucloud.pathx.models.DescribeUPathTemplateResponse;
 import cn.ucloud.pathx.models.GetGlobalSSHPriceRequest;
 import cn.ucloud.pathx.models.GetGlobalSSHPriceResponse;
+import cn.ucloud.pathx.models.GetGlobalSSHTrafficRequest;
+import cn.ucloud.pathx.models.GetGlobalSSHTrafficResponse;
 import cn.ucloud.pathx.models.GetGlobalSSHUpdatePriceRequest;
 import cn.ucloud.pathx.models.GetGlobalSSHUpdatePriceResponse;
 import cn.ucloud.pathx.models.GetPathXMetricRequest;
 import cn.ucloud.pathx.models.GetPathXMetricResponse;
+import cn.ucloud.pathx.models.ModifyGlobalSSHOriginInfoRequest;
+import cn.ucloud.pathx.models.ModifyGlobalSSHOriginInfoResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHPortRequest;
 import cn.ucloud.pathx.models.ModifyGlobalSSHPortResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHRemarkRequest;
@@ -302,6 +306,19 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
     }
 
     /**
+     * GetGlobalSSHTraffic - 获取GlobalSSH流量统计数据
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetGlobalSSHTrafficResponse getGlobalSSHTraffic(GetGlobalSSHTrafficRequest request)
+            throws UCloudException {
+        request.setAction("GetGlobalSSHTraffic");
+        return (GetGlobalSSHTrafficResponse)
+                this.invoke(request, GetGlobalSSHTrafficResponse.class);
+    }
+
+    /**
      * GetGlobalSSHUpdatePrice - 获取GlobalSSH升级价格
      *
      * @param request Request object
@@ -324,6 +341,19 @@ public class PathXClient extends DefaultClient implements PathXClientInterface {
             throws UCloudException {
         request.setAction("GetPathXMetric");
         return (GetPathXMetricResponse) this.invoke(request, GetPathXMetricResponse.class);
+    }
+
+    /**
+     * ModifyGlobalSSHOriginInfo - 修改GlobalSSH 源站信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyGlobalSSHOriginInfoResponse modifyGlobalSSHOriginInfo(
+            ModifyGlobalSSHOriginInfoRequest request) throws UCloudException {
+        request.setAction("ModifyGlobalSSHOriginInfo");
+        return (ModifyGlobalSSHOriginInfoResponse)
+                this.invoke(request, ModifyGlobalSSHOriginInfoResponse.class);
     }
 
     /**

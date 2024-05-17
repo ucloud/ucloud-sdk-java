@@ -62,9 +62,17 @@ public class ModifyWafDomainBlackListRequest extends Request {
     @UCloudParam("CIDRS")
     private List<String> cidrs;
 
+    /** 域名记录ID */
+    @UCloudParam("RecordId")
+    private Integer recordId;
+
     /** 备注信息 */
     @UCloudParam("Remark")
     private String remark;
+
+    /** 本策略的名字 */
+    @UCloudParam("Name")
+    private String name;
 
     public String getProjectId() {
         return projectId;
@@ -130,11 +138,27 @@ public class ModifyWafDomainBlackListRequest extends Request {
         this.cidrs = cidrs;
     }
 
+    public Integer getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(Integer recordId) {
+        this.recordId = recordId;
+    }
+
     public String getRemark() {
         return remark;
     }
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

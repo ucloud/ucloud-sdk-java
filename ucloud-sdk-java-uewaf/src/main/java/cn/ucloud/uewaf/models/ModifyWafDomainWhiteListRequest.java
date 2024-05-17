@@ -38,9 +38,17 @@ public class ModifyWafDomainWhiteListRequest extends Request {
     @UCloudParam("FullDomain")
     private String fullDomain;
 
+    /** 域名记录ID */
+    @UCloudParam("RecordId")
+    private Integer recordId;
+
     /** IP、网段或者IP段，传递数组 */
     @UCloudParam("CIDRS")
     private List<String> cidrs;
+
+    /** 规则名称 */
+    @UCloudParam("Name")
+    private String name;
 
     /** 备注信息 */
     @UCloudParam("Remark")
@@ -70,12 +78,28 @@ public class ModifyWafDomainWhiteListRequest extends Request {
         this.fullDomain = fullDomain;
     }
 
+    public Integer getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(Integer recordId) {
+        this.recordId = recordId;
+    }
+
     public List<String> getCIDRS() {
         return cidrs;
     }
 
     public void setCIDRS(List<String> cidrs) {
         this.cidrs = cidrs;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRemark() {

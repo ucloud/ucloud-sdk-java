@@ -43,6 +43,14 @@ public class AddWafDomainWhiteListRequest extends Request {
     @UCloudParam("CIDRS")
     private List<String> cidrs;
 
+    /** 域名记录 */
+    @UCloudParam("RecordId")
+    private Integer recordId;
+
+    /** 名称 */
+    @UCloudParam("Name")
+    private String name;
+
     /** 备注信息 */
     @UCloudParam("Remark")
     private String remark;
@@ -77,6 +85,22 @@ public class AddWafDomainWhiteListRequest extends Request {
 
     public void setCIDRS(List<String> cidrs) {
         this.cidrs = cidrs;
+    }
+
+    public Integer getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(Integer recordId) {
+        this.recordId = recordId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRemark() {

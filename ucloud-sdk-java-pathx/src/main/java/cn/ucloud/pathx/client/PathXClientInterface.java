@@ -51,10 +51,14 @@ import cn.ucloud.pathx.models.DescribeUPathTemplateRequest;
 import cn.ucloud.pathx.models.DescribeUPathTemplateResponse;
 import cn.ucloud.pathx.models.GetGlobalSSHPriceRequest;
 import cn.ucloud.pathx.models.GetGlobalSSHPriceResponse;
+import cn.ucloud.pathx.models.GetGlobalSSHTrafficRequest;
+import cn.ucloud.pathx.models.GetGlobalSSHTrafficResponse;
 import cn.ucloud.pathx.models.GetGlobalSSHUpdatePriceRequest;
 import cn.ucloud.pathx.models.GetGlobalSSHUpdatePriceResponse;
 import cn.ucloud.pathx.models.GetPathXMetricRequest;
 import cn.ucloud.pathx.models.GetPathXMetricResponse;
+import cn.ucloud.pathx.models.ModifyGlobalSSHOriginInfoRequest;
+import cn.ucloud.pathx.models.ModifyGlobalSSHOriginInfoResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHPortRequest;
 import cn.ucloud.pathx.models.ModifyGlobalSSHPortResponse;
 import cn.ucloud.pathx.models.ModifyGlobalSSHRemarkRequest;
@@ -236,6 +240,15 @@ public interface PathXClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * GetGlobalSSHTraffic - 获取GlobalSSH流量统计数据
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetGlobalSSHTrafficResponse getGlobalSSHTraffic(GetGlobalSSHTrafficRequest request)
+            throws UCloudException;
+
+    /**
      * GetGlobalSSHUpdatePrice - 获取GlobalSSH升级价格
      *
      * @param request Request object
@@ -252,6 +265,15 @@ public interface PathXClientInterface extends Client {
      */
     public GetPathXMetricResponse getPathXMetric(GetPathXMetricRequest request)
             throws UCloudException;
+
+    /**
+     * ModifyGlobalSSHOriginInfo - 修改GlobalSSH 源站信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyGlobalSSHOriginInfoResponse modifyGlobalSSHOriginInfo(
+            ModifyGlobalSSHOriginInfoRequest request) throws UCloudException;
 
     /**
      * ModifyGlobalSSHPort - 修改GlobalSSH端口
