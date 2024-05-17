@@ -102,6 +102,10 @@ public class DescribeUDiskRequest extends Request {
     @UCloudParam("Status")
     private String status;
 
+    /** 业务组名称 */
+    @UCloudParam("Tag")
+    private String tag;
+
     public String getRegion() {
         return region;
     }
@@ -236,5 +240,13 @@ public class DescribeUDiskRequest extends Request {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }
