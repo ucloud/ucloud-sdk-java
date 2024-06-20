@@ -68,6 +68,10 @@ public class DescribeUMemPriceRequest extends Request {
     @UCloudParam("ProxySize")
     private Integer proxySize;
 
+    /** umem分布式代理类型，默认false，true为负载均衡型代理 */
+    @UCloudParam("UlbMode")
+    private String ulbMode;
+
     public String getRegion() {
         return region;
     }
@@ -146,5 +150,13 @@ public class DescribeUMemPriceRequest extends Request {
 
     public void setProxySize(Integer proxySize) {
         this.proxySize = proxySize;
+    }
+
+    public String getUlbMode() {
+        return ulbMode;
+    }
+
+    public void setUlbMode(String ulbMode) {
+        this.ulbMode = ulbMode;
     }
 }

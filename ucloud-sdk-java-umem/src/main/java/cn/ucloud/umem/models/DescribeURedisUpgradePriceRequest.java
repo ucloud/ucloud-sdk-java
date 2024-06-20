@@ -20,14 +20,21 @@ import cn.ucloud.common.request.Request;
 
 public class DescribeURedisUpgradePriceRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 可用区。参见 [可用区列表](../summary/regionlist.html) */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Zone")
     private String zone;
+
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
+    @UCloudParam("ProjectId")
+    private String projectId;
 
     /** 购买uredis大小,单位:GB,范围是[1-32] */
     @NotEmpty
@@ -38,6 +45,10 @@ public class DescribeURedisUpgradePriceRequest extends Request {
     @NotEmpty
     @UCloudParam("GroupId")
     private String groupId;
+
+    /** 查询高性能Redis， 默认为false， 或者不填， 查询高性能为true */
+    @UCloudParam("HighPerformance")
+    private Boolean highPerformance;
 
     public String getRegion() {
         return region;
@@ -55,6 +66,14 @@ public class DescribeURedisUpgradePriceRequest extends Request {
         this.zone = zone;
     }
 
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     public Integer getSize() {
         return size;
     }
@@ -69,5 +88,13 @@ public class DescribeURedisUpgradePriceRequest extends Request {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    public Boolean getHighPerformance() {
+        return highPerformance;
+    }
+
+    public void setHighPerformance(Boolean highPerformance) {
+        this.highPerformance = highPerformance;
     }
 }

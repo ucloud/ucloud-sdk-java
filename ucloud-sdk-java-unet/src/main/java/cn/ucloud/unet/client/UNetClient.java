@@ -43,6 +43,8 @@ import cn.ucloud.unet.models.DescribeFirewallRequest;
 import cn.ucloud.unet.models.DescribeFirewallResourceRequest;
 import cn.ucloud.unet.models.DescribeFirewallResourceResponse;
 import cn.ucloud.unet.models.DescribeFirewallResponse;
+import cn.ucloud.unet.models.DescribePrivateIPRequest;
+import cn.ucloud.unet.models.DescribePrivateIPResponse;
 import cn.ucloud.unet.models.DescribeShareBandwidthPriceRequest;
 import cn.ucloud.unet.models.DescribeShareBandwidthPriceResponse;
 import cn.ucloud.unet.models.DescribeShareBandwidthRequest;
@@ -250,6 +252,18 @@ public class UNetClient extends DefaultClient implements UNetClientInterface {
         request.setAction("DescribeFirewallResource");
         return (DescribeFirewallResourceResponse)
                 this.invoke(request, DescribeFirewallResourceResponse.class);
+    }
+
+    /**
+     * DescribePrivateIP - 获取辅助IP信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribePrivateIPResponse describePrivateIP(DescribePrivateIPRequest request)
+            throws UCloudException {
+        request.setAction("DescribePrivateIP");
+        return (DescribePrivateIPResponse) this.invoke(request, DescribePrivateIPResponse.class);
     }
 
     /**

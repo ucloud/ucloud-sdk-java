@@ -114,6 +114,22 @@ public class CreateURedisGroupRequest extends Request {
     @UCloudParam("HighPerformance")
     private Boolean highPerformance;
 
+    /** 端口 */
+    @UCloudParam("Port")
+    private Integer port;
+
+    /** 如果是通过回档创建实例，需要传回档实例的GroupId */
+    @UCloudParam("RollbackGroupId")
+    private String rollbackGroupId;
+
+    /** 回档的AOF文件ID */
+    @UCloudParam("AOFID")
+    private String aofid;
+
+    /** 回档时间点 */
+    @UCloudParam("RollbackTime")
+    private Integer rollbackTime;
+
     /** 代金券ID */
     @UCloudParam("CouponId")
     private String couponId;
@@ -284,6 +300,38 @@ public class CreateURedisGroupRequest extends Request {
 
     public void setHighPerformance(Boolean highPerformance) {
         this.highPerformance = highPerformance;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    public String getRollbackGroupId() {
+        return rollbackGroupId;
+    }
+
+    public void setRollbackGroupId(String rollbackGroupId) {
+        this.rollbackGroupId = rollbackGroupId;
+    }
+
+    public String getAOFID() {
+        return aofid;
+    }
+
+    public void setAOFID(String aofid) {
+        this.aofid = aofid;
+    }
+
+    public Integer getRollbackTime() {
+        return rollbackTime;
+    }
+
+    public void setRollbackTime(Integer rollbackTime) {
+        this.rollbackTime = rollbackTime;
     }
 
     public String getCouponId() {

@@ -101,6 +101,8 @@ import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
 import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLRequest;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLResponse;
+import cn.ucloud.udb.models.ListUDBMachineTypeRequest;
+import cn.ucloud.udb.models.ListUDBMachineTypeResponse;
 import cn.ucloud.udb.models.ListUDBUserTablesRequest;
 import cn.ucloud.udb.models.ListUDBUserTablesResponse;
 import cn.ucloud.udb.models.ModifyUDBInstanceNameRequest;
@@ -688,6 +690,18 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
         request.setAction("GetUDBInstanceSSLCertURL");
         return (GetUDBInstanceSSLCertURLResponse)
                 this.invoke(request, GetUDBInstanceSSLCertURLResponse.class);
+    }
+
+    /**
+     * ListUDBMachineType - 获取UDB云数据库计算规格列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUDBMachineTypeResponse listUDBMachineType(ListUDBMachineTypeRequest request)
+            throws UCloudException {
+        request.setAction("ListUDBMachineType");
+        return (ListUDBMachineTypeResponse) this.invoke(request, ListUDBMachineTypeResponse.class);
     }
 
     /**

@@ -41,6 +41,8 @@ import cn.ucloud.unet.models.DescribeFirewallRequest;
 import cn.ucloud.unet.models.DescribeFirewallResourceRequest;
 import cn.ucloud.unet.models.DescribeFirewallResourceResponse;
 import cn.ucloud.unet.models.DescribeFirewallResponse;
+import cn.ucloud.unet.models.DescribePrivateIPRequest;
+import cn.ucloud.unet.models.DescribePrivateIPResponse;
 import cn.ucloud.unet.models.DescribeShareBandwidthPriceRequest;
 import cn.ucloud.unet.models.DescribeShareBandwidthPriceResponse;
 import cn.ucloud.unet.models.DescribeShareBandwidthRequest;
@@ -200,6 +202,15 @@ public interface UNetClientInterface extends Client {
      */
     public DescribeFirewallResourceResponse describeFirewallResource(
             DescribeFirewallResourceRequest request) throws UCloudException;
+
+    /**
+     * DescribePrivateIP - 获取辅助IP信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribePrivateIPResponse describePrivateIP(DescribePrivateIPRequest request)
+            throws UCloudException;
 
     /**
      * DescribeShareBandwidth - 获取共享带宽信息

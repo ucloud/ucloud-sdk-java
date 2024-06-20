@@ -56,7 +56,7 @@ public class ListUBillDetailRequest extends Request {
     @UCloudParam("ShowZero")
     private Integer showZero;
 
-    /** 支付状态 (筛选项, 1:仅显示未支付订单; 2:仅显示已支付订单; 0:两者都显示) */
+    /** 支付状态 (筛选项, 1:仅显示未支付订单; 2:仅显示已支付订单; 0:两者都显示) 当前月份 传递1或者0，会返回历史所有未支付账单；历史月份不支持查询未支付，请勿传递1 */
     @UCloudParam("PaidState")
     private Integer paidState;
 

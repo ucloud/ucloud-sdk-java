@@ -71,7 +71,7 @@ public class CreateUMemSpaceRequest extends Request {
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** */
+    /** 业务组名称 */
     @UCloudParam("Tag")
     private String tag;
 
@@ -90,7 +90,7 @@ public class CreateUMemSpaceRequest extends Request {
     @UCloudParam("BlockCnt")
     private Integer blockCnt;
 
-    /** 是否是cluster模式（参数为cluster创建redis cluster，其他参数或者不传该参数仍然创建老版本分布式） */
+    /** 【待废弃】是否是cluster模式（参数为cluster创建redis cluster，其他参数或者不传该参数仍然创建老版本分布式） */
     @UCloudParam("ClusterMode")
     private String clusterMode;
 
@@ -102,9 +102,21 @@ public class CreateUMemSpaceRequest extends Request {
     @UCloudParam("HighPerformance")
     private Boolean highPerformance;
 
-    /** 分布式代理CPU核数 */
+    /** 分布式代理CPU核数，不填或者传0时默认不创建代理 */
     @UCloudParam("ProxySize")
     private Integer proxySize;
+
+    /** 是否创建负载均衡型分布式代理，true时表示创建负载均衡型代理 */
+    @UCloudParam("UlbMode")
+    private Boolean ulbMode;
+
+    /** 分片端口, 默认为 6379 */
+    @UCloudParam("Port")
+    private Integer port;
+
+    /** 代理端口, 默认为 6379 */
+    @UCloudParam("ProxyPort")
+    private Integer proxyPort;
 
     /** 使用的代金券id */
     @UCloudParam("CouponId")
@@ -260,6 +272,30 @@ public class CreateUMemSpaceRequest extends Request {
 
     public void setProxySize(Integer proxySize) {
         this.proxySize = proxySize;
+    }
+
+    public Boolean getUlbMode() {
+        return ulbMode;
+    }
+
+    public void setUlbMode(Boolean ulbMode) {
+        this.ulbMode = ulbMode;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    public Integer getProxyPort() {
+        return proxyPort;
+    }
+
+    public void setProxyPort(Integer proxyPort) {
+        this.proxyPort = proxyPort;
     }
 
     public String getCouponId() {
