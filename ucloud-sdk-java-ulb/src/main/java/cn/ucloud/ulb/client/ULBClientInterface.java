@@ -15,6 +15,8 @@ package cn.ucloud.ulb.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ulb.models.AddSSLBindingRequest;
+import cn.ucloud.ulb.models.AddSSLBindingResponse;
 import cn.ucloud.ulb.models.AddTargetsRequest;
 import cn.ucloud.ulb.models.AddTargetsResponse;
 import cn.ucloud.ulb.models.AllocateBackendRequest;
@@ -45,6 +47,8 @@ import cn.ucloud.ulb.models.DeletePolicyRequest;
 import cn.ucloud.ulb.models.DeletePolicyResponse;
 import cn.ucloud.ulb.models.DeleteRuleRequest;
 import cn.ucloud.ulb.models.DeleteRuleResponse;
+import cn.ucloud.ulb.models.DeleteSSLBindingRequest;
+import cn.ucloud.ulb.models.DeleteSSLBindingResponse;
 import cn.ucloud.ulb.models.DeleteSSLRequest;
 import cn.ucloud.ulb.models.DeleteSSLResponse;
 import cn.ucloud.ulb.models.DeleteSecurityPolicyRequest;
@@ -110,6 +114,14 @@ import cn.ucloud.ulb.models.UpdateVServerAttributeResponse;
 
 /** This client is used to call actions of **ULB** service */
 public interface ULBClientInterface extends Client {
+
+    /**
+     * AddSSLBinding - 新增监听器绑定证书
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddSSLBindingResponse addSSLBinding(AddSSLBindingRequest request) throws UCloudException;
 
     /**
      * AddTargets - 添加应用型负载均衡的后端服务节点
@@ -244,6 +256,15 @@ public interface ULBClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public DeleteSSLResponse deleteSSL(DeleteSSLRequest request) throws UCloudException;
+
+    /**
+     * DeleteSSLBinding - 删除监听器绑定的扩展证书
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteSSLBindingResponse deleteSSLBinding(DeleteSSLBindingRequest request)
+            throws UCloudException;
 
     /**
      * DeleteSecurityPolicy - 删除安全策略

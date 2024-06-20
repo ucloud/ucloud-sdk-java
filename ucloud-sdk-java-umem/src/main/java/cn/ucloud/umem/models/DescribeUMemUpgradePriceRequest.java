@@ -13,10 +13,11 @@
  */
 package cn.ucloud.umem.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class DescribeUMemUpgradePriceRequest extends Request {
 
@@ -50,6 +51,30 @@ public class DescribeUMemUpgradePriceRequest extends Request {
     @NotEmpty
     @UCloudParam("SpaceId")
     private String spaceId;
+
+    /** 是否为性能增强型。默认为false，或者不填，true为性能增强型。 */
+    @UCloudParam("HighPerformance")
+    private String highPerformance;
+
+    /** 如果是拆分按钮查询价格就填 true, 否则就填 false,默认为 false */
+    @UCloudParam("IsSplit")
+    private String isSplit;
+
+    /** 进行容量调整分片的分片ID(性能增强型不需要传入) */
+    @UCloudParam("BlockIds")
+    private List<String> blockIds;
+
+    /** 进行容量调整的分片的目标容量,单位 GB (性能增强型不需要传入) */
+    @UCloudParam("BlockSize")
+    private List<Integer> blockSize;
+
+    /** 代理id */
+    @UCloudParam("ProxyId")
+    private String proxyId;
+
+    /** 代理升级后CPU核数 */
+    @UCloudParam("NewCPU")
+    private Integer newCPU;
 
     public String getRegion() {
         return region;
@@ -97,5 +122,53 @@ public class DescribeUMemUpgradePriceRequest extends Request {
 
     public void setSpaceId(String spaceId) {
         this.spaceId = spaceId;
+    }
+
+    public String getHighPerformance() {
+        return highPerformance;
+    }
+
+    public void setHighPerformance(String highPerformance) {
+        this.highPerformance = highPerformance;
+    }
+
+    public String getIsSplit() {
+        return isSplit;
+    }
+
+    public void setIsSplit(String isSplit) {
+        this.isSplit = isSplit;
+    }
+
+    public List<String> getBlockIds() {
+        return blockIds;
+    }
+
+    public void setBlockIds(List<String> blockIds) {
+        this.blockIds = blockIds;
+    }
+
+    public List<Integer> getBlockSize() {
+        return blockSize;
+    }
+
+    public void setBlockSize(List<Integer> blockSize) {
+        this.blockSize = blockSize;
+    }
+
+    public String getProxyId() {
+        return proxyId;
+    }
+
+    public void setProxyId(String proxyId) {
+        this.proxyId = proxyId;
+    }
+
+    public Integer getNewCPU() {
+        return newCPU;
+    }
+
+    public void setNewCPU(Integer newCPU) {
+        this.newCPU = newCPU;
     }
 }

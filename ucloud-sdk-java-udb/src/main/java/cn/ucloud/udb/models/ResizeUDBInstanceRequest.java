@@ -81,6 +81,10 @@ public class ResizeUDBInstanceRequest extends Request {
     @UCloudParam("SpecificationType")
     private String specificationType;
 
+    /** 数据库的CPU核数（只对普通版的SQLServer有用） */
+    @UCloudParam("CPU")
+    private Integer cpu;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -179,6 +183,14 @@ public class ResizeUDBInstanceRequest extends Request {
 
     public void setSpecificationType(String specificationType) {
         this.specificationType = specificationType;
+    }
+
+    public Integer getCPU() {
+        return cpu;
+    }
+
+    public void setCPU(Integer cpu) {
+        this.cpu = cpu;
     }
 
     public String getCouponId() {

@@ -19,6 +19,8 @@ import cn.ucloud.umem.models.CheckUDredisSpaceAllowanceRequest;
 import cn.ucloud.umem.models.CheckUDredisSpaceAllowanceResponse;
 import cn.ucloud.umem.models.CheckURedisAllowanceRequest;
 import cn.ucloud.umem.models.CheckURedisAllowanceResponse;
+import cn.ucloud.umem.models.CreateScanHotBigKeysRequest;
+import cn.ucloud.umem.models.CreateScanHotBigKeysResponse;
 import cn.ucloud.umem.models.CreateUMemBackupRequest;
 import cn.ucloud.umem.models.CreateUMemBackupResponse;
 import cn.ucloud.umem.models.CreateUMemSpaceRequest;
@@ -123,6 +125,15 @@ public interface UMemClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public CheckURedisAllowanceResponse checkURedisAllowance(CheckURedisAllowanceRequest request)
+            throws UCloudException;
+
+    /**
+     * CreateScanHotBigKeys - 创建扫大key和热key的任务
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateScanHotBigKeysResponse createScanHotBigKeys(CreateScanHotBigKeysRequest request)
             throws UCloudException;
 
     /**

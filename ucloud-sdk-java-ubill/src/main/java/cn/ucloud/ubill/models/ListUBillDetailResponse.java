@@ -47,6 +47,10 @@ public class ListUBillDetailResponse extends Response {
 
     public static class BillDetailItem extends Response {
 
+        /** 项目id */
+        @SerializedName("ProjectId")
+        private String projectId;
+
         /** 订单总金额 */
         @SerializedName("Amount")
         private String amount;
@@ -130,6 +134,10 @@ public class ListUBillDetailResponse extends Response {
         @SerializedName("ResourceExtendInfo")
         private List<ResourceExtendInfo> resourceExtendInfo;
 
+        /** 资源标签。字符串键值对的map：{"cs_label": "cs_label_value"} */
+        @SerializedName("ResourceLabel")
+        private Object resourceLabel;
+
         /** 订单支付状态。枚举值：\\> 0:未支付 \\ > 1:已支付 */
         @SerializedName("ShowHover")
         private Integer showHover;
@@ -149,6 +157,14 @@ public class ListUBillDetailResponse extends Response {
         /** 是否为主账号。枚举值：\\ > 0:子账号 \\ > 1:主账号 */
         @SerializedName("Admin")
         private Integer admin;
+
+        public String getProjectId() {
+            return projectId;
+        }
+
+        public void setProjectId(String projectId) {
+            this.projectId = projectId;
+        }
 
         public String getAmount() {
             return amount;
@@ -292,6 +308,14 @@ public class ListUBillDetailResponse extends Response {
 
         public void setResourceExtendInfo(List<ResourceExtendInfo> resourceExtendInfo) {
             this.resourceExtendInfo = resourceExtendInfo;
+        }
+
+        public Object getResourceLabel() {
+            return resourceLabel;
+        }
+
+        public void setResourceLabel(Object resourceLabel) {
+            this.resourceLabel = resourceLabel;
         }
 
         public Integer getShowHover() {

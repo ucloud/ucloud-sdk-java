@@ -20,9 +20,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class DescribeURedisUpgradePriceResponse extends Response {
 
-    /** 扩容差价，单位: 元，保留小数点后两位有效数字 */
+    /** 价格 */
     @SerializedName("Price")
     private Double price;
+
+    /** 原价 */
+    @SerializedName("OriginalPrice")
+    private Integer originalPrice;
 
     public Double getPrice() {
         return price;
@@ -30,5 +34,13 @@ public class DescribeURedisUpgradePriceResponse extends Response {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Integer getOriginalPrice() {
+        return originalPrice;
+    }
+
+    public void setOriginalPrice(Integer originalPrice) {
+        this.originalPrice = originalPrice;
     }
 }
