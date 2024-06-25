@@ -40,6 +40,13 @@ public class DescribeImageRequest extends Request {
     @UCloudParam("ImageType")
     private String imageType;
 
+    /**
+     * 镜像归属,枚举值:["gpu","app","uhost"]。"gpu":
+     * 对gpu进行处理过的行业镜像；"app"：轻量云主机专用的镜像；"uhost"：云主机镜像市场的行业镜像。FuncType传参错误会被忽略
+     */
+    @UCloudParam("FuncType")
+    private String funcType;
+
     /** 操作系统类型：Linux， Windows 默认返回所有类型 */
     @UCloudParam("OsType")
     private String osType;
@@ -90,6 +97,14 @@ public class DescribeImageRequest extends Request {
 
     public void setImageType(String imageType) {
         this.imageType = imageType;
+    }
+
+    public String getFuncType() {
+        return funcType;
+    }
+
+    public void setFuncType(String funcType) {
+        this.funcType = funcType;
     }
 
     public String getOsType() {
