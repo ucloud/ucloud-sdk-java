@@ -79,7 +79,10 @@ public class DescribeImageResponse extends Response {
         @SerializedName("Features")
         private List<String> features;
 
-        /** 行业镜像类型（仅行业镜像将返回这个值） */
+        /**
+         * 镜像归属,枚举值:["gpu","app","uhost"]。"gpu":
+         * 对gpu进行处理过的行业镜像；"app"：轻量云主机专用的镜像；"uhost"：云主机镜像市场的行业镜像
+         */
         @SerializedName("FuncType")
         private String funcType;
 
