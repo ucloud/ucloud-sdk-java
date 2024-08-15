@@ -17,6 +17,8 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.umongodb.models.BackupUMongoDBClusterRequest;
 import cn.ucloud.umongodb.models.BackupUMongoDBClusterResponse;
+import cn.ucloud.umongodb.models.BackupUMongoDBLogRequest;
+import cn.ucloud.umongodb.models.BackupUMongoDBLogResponse;
 import cn.ucloud.umongodb.models.CreateUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.CreateUMongoDBConfigTemplateResponse;
 import cn.ucloud.umongodb.models.CreateUMongoDBReplSetRequest;
@@ -39,6 +41,8 @@ import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBInstancesRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBInstancesResponse;
+import cn.ucloud.umongodb.models.ListUMongoDBLogPackageRequest;
+import cn.ucloud.umongodb.models.ListUMongoDBLogPackageResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBVersionRequest;
@@ -66,6 +70,15 @@ public interface UMongoDBClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public BackupUMongoDBClusterResponse backupUMongoDBCluster(BackupUMongoDBClusterRequest request)
+            throws UCloudException;
+
+    /**
+     * BackupUMongoDBLog - 集群日志打包
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public BackupUMongoDBLogResponse backupUMongoDBLog(BackupUMongoDBLogRequest request)
             throws UCloudException;
 
     /**
@@ -166,6 +179,15 @@ public interface UMongoDBClientInterface extends Client {
      */
     public ListUMongoDBInstancesResponse listUMongoDBInstances(ListUMongoDBInstancesRequest request)
             throws UCloudException;
+
+    /**
+     * ListUMongoDBLogPackage - 日志打包列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUMongoDBLogPackageResponse listUMongoDBLogPackage(
+            ListUMongoDBLogPackageRequest request) throws UCloudException;
 
     /**
      * ListUMongoDBMachineType - 获取UmongDB支持机器类型列表

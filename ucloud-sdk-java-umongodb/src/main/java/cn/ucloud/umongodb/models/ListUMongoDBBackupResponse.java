@@ -79,6 +79,10 @@ public class ListUMongoDBBackupResponse extends Response {
         @SerializedName("BatchId")
         private String batchId;
 
+        /** 磁盘大小 */
+        @SerializedName("DiskSize")
+        private Integer diskSize;
+
         public String getBackupId() {
             return backupId;
         }
@@ -165,6 +169,14 @@ public class ListUMongoDBBackupResponse extends Response {
 
         public void setBatchId(String batchId) {
             this.batchId = batchId;
+        }
+
+        public Integer getDiskSize() {
+            return diskSize;
+        }
+
+        public void setDiskSize(Integer diskSize) {
+            this.diskSize = diskSize;
         }
     }
 }

@@ -29,6 +29,8 @@ import cn.ucloud.ucdn.models.GetCertificateV2Request;
 import cn.ucloud.ucdn.models.GetCertificateV2Response;
 import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateRequest;
 import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateResponse;
+import cn.ucloud.ucdn.models.GetNewUcdnLogClientIpStatisticsRequest;
+import cn.ucloud.ucdn.models.GetNewUcdnLogClientIpStatisticsResponse;
 import cn.ucloud.ucdn.models.GetNewUcdnLogRefererStatisticsRequest;
 import cn.ucloud.ucdn.models.GetNewUcdnLogRefererStatisticsResponse;
 import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsRequest;
@@ -71,6 +73,8 @@ import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheRequest;
 import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheResponse;
 import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeRequest;
 import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeResponse;
+import cn.ucloud.ucdn.models.UpdateUcdnDomainHttpsConfigV2Request;
+import cn.ucloud.ucdn.models.UpdateUcdnDomainHttpsConfigV2Response;
 import cn.ucloud.ucdn.models.UpdateUcdnDomainStatusRequest;
 import cn.ucloud.ucdn.models.UpdateUcdnDomainStatusResponse;
 
@@ -138,6 +142,15 @@ public interface UCDNClientInterface extends Client {
      */
     public GetNewUcdnDomainHitRateResponse getNewUcdnDomainHitRate(
             GetNewUcdnDomainHitRateRequest request) throws UCloudException;
+
+    /**
+     * GetNewUcdnLogClientIpStatistics - 获取日志客户端ip统计
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetNewUcdnLogClientIpStatisticsResponse getNewUcdnLogClientIpStatistics(
+            GetNewUcdnLogClientIpStatisticsRequest request) throws UCloudException;
 
     /**
      * GetNewUcdnLogRefererStatistics - 获取热点referer统计
@@ -327,6 +340,15 @@ public interface UCDNClientInterface extends Client {
      */
     public SwitchUcdnChargeTypeResponse switchUcdnChargeType(SwitchUcdnChargeTypeRequest request)
             throws UCloudException;
+
+    /**
+     * UpdateUcdnDomainHttpsConfigV2 - https加速配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUcdnDomainHttpsConfigV2Response updateUcdnDomainHttpsConfigV2(
+            UpdateUcdnDomainHttpsConfigV2Request request) throws UCloudException;
 
     /**
      * UpdateUcdnDomainStatus - 更新加速域名状态

@@ -20,15 +20,39 @@ import com.google.gson.annotations.SerializedName;
 
 public class DescribeUMemcacheUpgradePriceResponse extends Response {
 
-    /** 价格，单位：元 */
+    /** 价格 */
     @SerializedName("Price")
-    private Double price;
+    private Integer price;
 
-    public Double getPrice() {
+    /** 原价 */
+    @SerializedName("OriginalPrice")
+    private Integer originalPrice;
+
+    /** 列表价格 */
+    @SerializedName("ListPrice")
+    private Integer listPrice;
+
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    public Integer getOriginalPrice() {
+        return originalPrice;
+    }
+
+    public void setOriginalPrice(Integer originalPrice) {
+        this.originalPrice = originalPrice;
+    }
+
+    public Integer getListPrice() {
+        return listPrice;
+    }
+
+    public void setListPrice(Integer listPrice) {
+        this.listPrice = listPrice;
     }
 }
