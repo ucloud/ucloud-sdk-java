@@ -29,6 +29,8 @@ import cn.ucloud.usms.models.DeleteUSMSTemplateRequest;
 import cn.ucloud.usms.models.DeleteUSMSTemplateResponse;
 import cn.ucloud.usms.models.GetUSMSSendReceiptRequest;
 import cn.ucloud.usms.models.GetUSMSSendReceiptResponse;
+import cn.ucloud.usms.models.GetUSMSSendStatisticsRequest;
+import cn.ucloud.usms.models.GetUSMSSendStatisticsResponse;
 import cn.ucloud.usms.models.QueryUSMSSignatureRequest;
 import cn.ucloud.usms.models.QueryUSMSSignatureResponse;
 import cn.ucloud.usms.models.QueryUSMSTemplateRequest;
@@ -119,6 +121,19 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
             throws UCloudException {
         request.setAction("GetUSMSSendReceipt");
         return (GetUSMSSendReceiptResponse) this.invoke(request, GetUSMSSendReceiptResponse.class);
+    }
+
+    /**
+     * GetUSMSSendStatistics - 获取发送统计数据
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUSMSSendStatisticsResponse getUSMSSendStatistics(GetUSMSSendStatisticsRequest request)
+            throws UCloudException {
+        request.setAction("GetUSMSSendStatistics");
+        return (GetUSMSSendStatisticsResponse)
+                this.invoke(request, GetUSMSSendStatisticsResponse.class);
     }
 
     /**

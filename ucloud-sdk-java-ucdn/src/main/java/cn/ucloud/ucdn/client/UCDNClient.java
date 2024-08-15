@@ -31,6 +31,8 @@ import cn.ucloud.ucdn.models.GetCertificateV2Request;
 import cn.ucloud.ucdn.models.GetCertificateV2Response;
 import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateRequest;
 import cn.ucloud.ucdn.models.GetNewUcdnDomainHitRateResponse;
+import cn.ucloud.ucdn.models.GetNewUcdnLogClientIpStatisticsRequest;
+import cn.ucloud.ucdn.models.GetNewUcdnLogClientIpStatisticsResponse;
 import cn.ucloud.ucdn.models.GetNewUcdnLogRefererStatisticsRequest;
 import cn.ucloud.ucdn.models.GetNewUcdnLogRefererStatisticsResponse;
 import cn.ucloud.ucdn.models.GetNewUcdnLogUrlStatisticsRequest;
@@ -73,6 +75,8 @@ import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheRequest;
 import cn.ucloud.ucdn.models.RefreshNewUcdnDomainCacheResponse;
 import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeRequest;
 import cn.ucloud.ucdn.models.SwitchUcdnChargeTypeResponse;
+import cn.ucloud.ucdn.models.UpdateUcdnDomainHttpsConfigV2Request;
+import cn.ucloud.ucdn.models.UpdateUcdnDomainHttpsConfigV2Response;
 import cn.ucloud.ucdn.models.UpdateUcdnDomainStatusRequest;
 import cn.ucloud.ucdn.models.UpdateUcdnDomainStatusResponse;
 
@@ -167,6 +171,19 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
         request.setAction("GetNewUcdnDomainHitRate");
         return (GetNewUcdnDomainHitRateResponse)
                 this.invoke(request, GetNewUcdnDomainHitRateResponse.class);
+    }
+
+    /**
+     * GetNewUcdnLogClientIpStatistics - 获取日志客户端ip统计
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetNewUcdnLogClientIpStatisticsResponse getNewUcdnLogClientIpStatistics(
+            GetNewUcdnLogClientIpStatisticsRequest request) throws UCloudException {
+        request.setAction("GetNewUcdnLogClientIpStatistics");
+        return (GetNewUcdnLogClientIpStatisticsResponse)
+                this.invoke(request, GetNewUcdnLogClientIpStatisticsResponse.class);
     }
 
     /**
@@ -437,6 +454,19 @@ public class UCDNClient extends DefaultClient implements UCDNClientInterface {
         request.setAction("SwitchUcdnChargeType");
         return (SwitchUcdnChargeTypeResponse)
                 this.invoke(request, SwitchUcdnChargeTypeResponse.class);
+    }
+
+    /**
+     * UpdateUcdnDomainHttpsConfigV2 - https加速配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUcdnDomainHttpsConfigV2Response updateUcdnDomainHttpsConfigV2(
+            UpdateUcdnDomainHttpsConfigV2Request request) throws UCloudException {
+        request.setAction("UpdateUcdnDomainHttpsConfigV2");
+        return (UpdateUcdnDomainHttpsConfigV2Response)
+                this.invoke(request, UpdateUcdnDomainHttpsConfigV2Response.class);
     }
 
     /**

@@ -811,7 +811,7 @@ public class DescribeUDBInstanceResponse extends Response {
 
         /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
         @SerializedName("SpecificationType")
-        private String specificationType;
+        private Integer specificationType;
 
         /** 规格类型ID,当SpecificationType为1时有效 */
         @SerializedName("MachineType")
@@ -1121,11 +1121,11 @@ public class DescribeUDBInstanceResponse extends Response {
             this.caseSensitivityParam = caseSensitivityParam;
         }
 
-        public String getSpecificationType() {
+        public Integer getSpecificationType() {
             return specificationType;
         }
 
-        public void setSpecificationType(String specificationType) {
+        public void setSpecificationType(Integer specificationType) {
             this.specificationType = specificationType;
         }
 

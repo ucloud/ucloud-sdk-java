@@ -19,6 +19,8 @@ import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.umongodb.models.BackupUMongoDBClusterRequest;
 import cn.ucloud.umongodb.models.BackupUMongoDBClusterResponse;
+import cn.ucloud.umongodb.models.BackupUMongoDBLogRequest;
+import cn.ucloud.umongodb.models.BackupUMongoDBLogResponse;
 import cn.ucloud.umongodb.models.CreateUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.CreateUMongoDBConfigTemplateResponse;
 import cn.ucloud.umongodb.models.CreateUMongoDBReplSetRequest;
@@ -41,6 +43,8 @@ import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBConfigTemplateResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBInstancesRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBInstancesResponse;
+import cn.ucloud.umongodb.models.ListUMongoDBLogPackageRequest;
+import cn.ucloud.umongodb.models.ListUMongoDBLogPackageResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBVersionRequest;
@@ -75,6 +79,18 @@ public class UMongoDBClient extends DefaultClient implements UMongoDBClientInter
         request.setAction("BackupUMongoDBCluster");
         return (BackupUMongoDBClusterResponse)
                 this.invoke(request, BackupUMongoDBClusterResponse.class);
+    }
+
+    /**
+     * BackupUMongoDBLog - 集群日志打包
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public BackupUMongoDBLogResponse backupUMongoDBLog(BackupUMongoDBLogRequest request)
+            throws UCloudException {
+        request.setAction("BackupUMongoDBLog");
+        return (BackupUMongoDBLogResponse) this.invoke(request, BackupUMongoDBLogResponse.class);
     }
 
     /**
@@ -217,6 +233,19 @@ public class UMongoDBClient extends DefaultClient implements UMongoDBClientInter
         request.setAction("ListUMongoDBInstances");
         return (ListUMongoDBInstancesResponse)
                 this.invoke(request, ListUMongoDBInstancesResponse.class);
+    }
+
+    /**
+     * ListUMongoDBLogPackage - 日志打包列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUMongoDBLogPackageResponse listUMongoDBLogPackage(
+            ListUMongoDBLogPackageRequest request) throws UCloudException {
+        request.setAction("ListUMongoDBLogPackage");
+        return (ListUMongoDBLogPackageResponse)
+                this.invoke(request, ListUMongoDBLogPackageResponse.class);
     }
 
     /**
