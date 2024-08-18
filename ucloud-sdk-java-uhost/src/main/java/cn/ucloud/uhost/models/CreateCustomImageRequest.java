@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uhost.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class CreateCustomImageRequest extends Request {
 
@@ -49,6 +50,10 @@ public class CreateCustomImageRequest extends Request {
     /** 镜像描述 */
     @UCloudParam("ImageDescription")
     private String imageDescription;
+
+    /** 【数组】关联的云盘数据盘id列表。注意: 云盘数据盘需要开启快照服务 */
+    @UCloudParam("DataUDiskIds")
+    private List<String> dataUDiskIds;
 
     public String getRegion() {
         return region;
@@ -96,5 +101,13 @@ public class CreateCustomImageRequest extends Request {
 
     public void setImageDescription(String imageDescription) {
         this.imageDescription = imageDescription;
+    }
+
+    public List<String> getDataUDiskIds() {
+        return dataUDiskIds;
+    }
+
+    public void setDataUDiskIds(List<String> dataUDiskIds) {
+        this.dataUDiskIds = dataUDiskIds;
     }
 }

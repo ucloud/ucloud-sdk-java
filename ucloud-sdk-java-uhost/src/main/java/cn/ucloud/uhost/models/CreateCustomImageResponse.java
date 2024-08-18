@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uhost.models;
 
-
 import cn.ucloud.common.response.Response;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class CreateCustomImageResponse extends Response {
 
@@ -24,11 +25,23 @@ public class CreateCustomImageResponse extends Response {
     @SerializedName("ImageId")
     private String imageId;
 
+    /** 云盘数据盘快照id列表 */
+    @SerializedName("DataSnapshotIds")
+    private List<String> dataSnapshotIds;
+
     public String getImageId() {
         return imageId;
     }
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public List<String> getDataSnapshotIds() {
+        return dataSnapshotIds;
+    }
+
+    public void setDataSnapshotIds(List<String> dataSnapshotIds) {
+        this.dataSnapshotIds = dataSnapshotIds;
     }
 }

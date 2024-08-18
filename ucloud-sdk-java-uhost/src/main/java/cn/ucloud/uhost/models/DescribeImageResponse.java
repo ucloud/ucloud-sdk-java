@@ -122,6 +122,10 @@ public class DescribeImageResponse extends Response {
         @SerializedName("MaintainEol")
         private String maintainEol;
 
+        /** 关联的云盘数据盘快照Id列表 */
+        @SerializedName("DataSnapshotIds")
+        private List<String> dataSnapshotIds;
+
         /** 支持的GPU机型 */
         @SerializedName("SupportedGPUTypes")
         private List<String> supportedGPUTypes;
@@ -270,6 +274,14 @@ public class DescribeImageResponse extends Response {
 
         public void setMaintainEol(String maintainEol) {
             this.maintainEol = maintainEol;
+        }
+
+        public List<String> getDataSnapshotIds() {
+            return dataSnapshotIds;
+        }
+
+        public void setDataSnapshotIds(List<String> dataSnapshotIds) {
+            this.dataSnapshotIds = dataSnapshotIds;
         }
 
         public List<String> getSupportedGPUTypes() {
