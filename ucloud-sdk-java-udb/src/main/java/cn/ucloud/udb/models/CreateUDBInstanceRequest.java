@@ -107,6 +107,13 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("BackupId")
     private Integer backupId;
 
+    /**
+     * UDB数据库机型: "SATA_SSD": "SSD机型" , "PCIE_SSD": "SSD高性能机型" , "Normal_Volume": "标准大容量机型",
+     * "SATA_SSD_Volume": "SSD大容量机型" , "PCIE_SSD_Volume": "SSD高性能大容量机型", "NVMe_SSD": "快杰机型"
+     */
+    @UCloudParam("InstanceType")
+    private String instanceType;
+
     /** SSD类型，可选值为"SATA"、“NVMe”，默认为“SATA” */
     @UCloudParam("SSDType")
     private String ssdType;
@@ -297,6 +304,14 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setBackupId(Integer backupId) {
         this.backupId = backupId;
+    }
+
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
     }
 
     public String getSSDType() {
