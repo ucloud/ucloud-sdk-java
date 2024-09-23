@@ -42,6 +42,10 @@ public class GetUserOperationEventsRequest extends Request {
     @UCloudParam("NextToken")
     private String nextToken;
 
+    /** 资源 ID，用于搜索某个资源关联的操作日志 */
+    @UCloudParam("ResourceID")
+    private String resourceID;
+
     public String getProjectId() {
         return projectId;
     }
@@ -80,5 +84,13 @@ public class GetUserOperationEventsRequest extends Request {
 
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
+    }
+
+    public String getResourceID() {
+        return resourceID;
+    }
+
+    public void setResourceID(String resourceID) {
+        this.resourceID = resourceID;
     }
 }

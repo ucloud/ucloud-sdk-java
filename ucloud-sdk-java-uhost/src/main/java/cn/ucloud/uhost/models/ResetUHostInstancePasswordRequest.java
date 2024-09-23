@@ -42,9 +42,20 @@ public class ResetUHostInstancePasswordRequest extends Request {
     private String uHostId;
 
     /** UHost新密码（密码格式使用BASE64编码） */
-    @NotEmpty
     @UCloudParam("Password")
     private String password;
+
+    /** 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。 */
+    @UCloudParam("LoginMode")
+    private String loginMode;
+
+    /** KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。 */
+    @UCloudParam("KeyPairId")
+    private String keyPairId;
+
+    /** 修改密码结束后是否立即开机，默认为false， 如果设置为true，则修改密码成功后立即开机； 抢占式和后付费云主机暂不支持当前功能； */
+    @UCloudParam("AutoStart")
+    private Boolean autoStart;
 
     public String getRegion() {
         return region;
@@ -84,5 +95,29 @@ public class ResetUHostInstancePasswordRequest extends Request {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getLoginMode() {
+        return loginMode;
+    }
+
+    public void setLoginMode(String loginMode) {
+        this.loginMode = loginMode;
+    }
+
+    public String getKeyPairId() {
+        return keyPairId;
+    }
+
+    public void setKeyPairId(String keyPairId) {
+        this.keyPairId = keyPairId;
+    }
+
+    public Boolean getAutoStart() {
+        return autoStart;
+    }
+
+    public void setAutoStart(Boolean autoStart) {
+        this.autoStart = autoStart;
     }
 }

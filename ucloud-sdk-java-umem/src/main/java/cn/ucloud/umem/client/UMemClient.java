@@ -93,6 +93,8 @@ import cn.ucloud.umem.models.ModifyURedisGroupNameRequest;
 import cn.ucloud.umem.models.ModifyURedisGroupNameResponse;
 import cn.ucloud.umem.models.ModifyURedisGroupPasswordRequest;
 import cn.ucloud.umem.models.ModifyURedisGroupPasswordResponse;
+import cn.ucloud.umem.models.RegisterUMemDefragRequest;
+import cn.ucloud.umem.models.RegisterUMemDefragResponse;
 import cn.ucloud.umem.models.RemoveUDRedisDataRequest;
 import cn.ucloud.umem.models.RemoveUDRedisDataResponse;
 import cn.ucloud.umem.models.ResizeUMemSpaceRequest;
@@ -593,6 +595,18 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
         request.setAction("ModifyURedisGroupPassword");
         return (ModifyURedisGroupPasswordResponse)
                 this.invoke(request, ModifyURedisGroupPasswordResponse.class);
+    }
+
+    /**
+     * RegisterUMemDefrag - 动态开关redis碎片整理选项
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RegisterUMemDefragResponse registerUMemDefrag(RegisterUMemDefragRequest request)
+            throws UCloudException {
+        request.setAction("RegisterUMemDefrag");
+        return (RegisterUMemDefragResponse) this.invoke(request, RegisterUMemDefragResponse.class);
     }
 
     /**

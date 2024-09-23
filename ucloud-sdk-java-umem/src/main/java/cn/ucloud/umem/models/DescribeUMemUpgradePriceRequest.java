@@ -76,6 +76,10 @@ public class DescribeUMemUpgradePriceRequest extends Request {
     @UCloudParam("NewCPU")
     private Integer newCPU;
 
+    /** 新增读写分离节点容量大小 */
+    @UCloudParam("ReplicaSize")
+    private Integer replicaSize;
+
     public String getRegion() {
         return region;
     }
@@ -170,5 +174,13 @@ public class DescribeUMemUpgradePriceRequest extends Request {
 
     public void setNewCPU(Integer newCPU) {
         this.newCPU = newCPU;
+    }
+
+    public Integer getReplicaSize() {
+        return replicaSize;
+    }
+
+    public void setReplicaSize(Integer replicaSize) {
+        this.replicaSize = replicaSize;
     }
 }

@@ -57,6 +57,10 @@ public class ResizeUHostInstanceRequest extends Request {
     @UCloudParam("NetCapValue")
     private Integer netCapValue;
 
+    /** 扩容结束后是否立即开机，默认为false， 如果设置为true，则扩容成功后立即开机； 抢占式和后付费云主机暂不支持当前功能； */
+    @UCloudParam("AutoStart")
+    private Boolean autoStart;
+
     public String getRegion() {
         return region;
     }
@@ -119,5 +123,13 @@ public class ResizeUHostInstanceRequest extends Request {
 
     public void setNetCapValue(Integer netCapValue) {
         this.netCapValue = netCapValue;
+    }
+
+    public Boolean getAutoStart() {
+        return autoStart;
+    }
+
+    public void setAutoStart(Boolean autoStart) {
+        this.autoStart = autoStart;
     }
 }
