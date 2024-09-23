@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uvms.models.GetUVMSSendRecordRequest;
+import cn.ucloud.uvms.models.GetUVMSSendRecordResponse;
 import cn.ucloud.uvms.models.SendUVMSMessageRequest;
 import cn.ucloud.uvms.models.SendUVMSMessageResponse;
 
@@ -24,6 +26,18 @@ import cn.ucloud.uvms.models.SendUVMSMessageResponse;
 public class UVMSClient extends DefaultClient implements UVMSClientInterface {
     public UVMSClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * GetUVMSSendRecord - 获取语音发送记录
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUVMSSendRecordResponse getUVMSSendRecord(GetUVMSSendRecordRequest request)
+            throws UCloudException {
+        request.setAction("GetUVMSSendRecord");
+        return (GetUVMSSendRecordResponse) this.invoke(request, GetUVMSSendRecordResponse.class);
     }
 
     /**

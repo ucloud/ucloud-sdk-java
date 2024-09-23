@@ -15,11 +15,22 @@ package cn.ucloud.uvms.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uvms.models.GetUVMSSendRecordRequest;
+import cn.ucloud.uvms.models.GetUVMSSendRecordResponse;
 import cn.ucloud.uvms.models.SendUVMSMessageRequest;
 import cn.ucloud.uvms.models.SendUVMSMessageResponse;
 
 /** This client is used to call actions of **UVMS** service */
 public interface UVMSClientInterface extends Client {
+
+    /**
+     * GetUVMSSendRecord - 获取语音发送记录
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUVMSSendRecordResponse getUVMSSendRecord(GetUVMSSendRecordRequest request)
+            throws UCloudException;
 
     /**
      * SendUVMSMessage - 发送语音消息

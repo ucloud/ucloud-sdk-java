@@ -20,7 +20,7 @@ import cn.ucloud.common.request.Request;
 
 public class AssumeRoleRequest extends Request {
 
-    /** 要扮演的RAM角色URN。 */
+    /** 要扮演的 IAM 角色URN。 */
     @NotEmpty
     @UCloudParam("RoleUrn")
     private String roleUrn;

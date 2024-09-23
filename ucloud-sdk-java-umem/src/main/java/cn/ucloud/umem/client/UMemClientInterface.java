@@ -91,6 +91,8 @@ import cn.ucloud.umem.models.ModifyURedisGroupNameRequest;
 import cn.ucloud.umem.models.ModifyURedisGroupNameResponse;
 import cn.ucloud.umem.models.ModifyURedisGroupPasswordRequest;
 import cn.ucloud.umem.models.ModifyURedisGroupPasswordResponse;
+import cn.ucloud.umem.models.RegisterUMemDefragRequest;
+import cn.ucloud.umem.models.RegisterUMemDefragResponse;
 import cn.ucloud.umem.models.RemoveUDRedisDataRequest;
 import cn.ucloud.umem.models.RemoveUDRedisDataResponse;
 import cn.ucloud.umem.models.ResizeUMemSpaceRequest;
@@ -449,6 +451,15 @@ public interface UMemClientInterface extends Client {
      */
     public ModifyURedisGroupPasswordResponse modifyURedisGroupPassword(
             ModifyURedisGroupPasswordRequest request) throws UCloudException;
+
+    /**
+     * RegisterUMemDefrag - 动态开关redis碎片整理选项
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RegisterUMemDefragResponse registerUMemDefrag(RegisterUMemDefragRequest request)
+            throws UCloudException;
 
     /**
      * RemoveUDRedisData - 清除udredis实例数据
