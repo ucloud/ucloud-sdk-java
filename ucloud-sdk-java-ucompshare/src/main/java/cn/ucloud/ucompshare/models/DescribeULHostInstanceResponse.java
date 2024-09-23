@@ -33,6 +33,93 @@ public class DescribeULHostInstanceResponse extends Response {
         this.ulHostInstanceSets = ulHostInstanceSets;
     }
 
+    public static class ExclusiveUTPInfo extends Response {
+
+        /** 当前周期总流量 */
+        @SerializedName("TotalSize")
+        private Integer totalSize;
+
+        /** 当前周期剩余流量 */
+        @SerializedName("AvailableSize")
+        private Integer availableSize;
+
+        /** 当前周期已使用流量 */
+        @SerializedName("UsedSize")
+        private Integer usedSize;
+
+        /** 当前周期超出限额的流量 */
+        @SerializedName("ExcessSize")
+        private Integer excessSize;
+
+        /** 上次重置时间 */
+        @SerializedName("LastResetTime")
+        private Integer lastResetTime;
+
+        /** 下次重置时间 */
+        @SerializedName("NextResetTime")
+        private Integer nextResetTime;
+
+        /** 创建时间 */
+        @SerializedName("CreateTime")
+        private Integer createTime;
+
+        public Integer getTotalSize() {
+            return totalSize;
+        }
+
+        public void setTotalSize(Integer totalSize) {
+            this.totalSize = totalSize;
+        }
+
+        public Integer getAvailableSize() {
+            return availableSize;
+        }
+
+        public void setAvailableSize(Integer availableSize) {
+            this.availableSize = availableSize;
+        }
+
+        public Integer getUsedSize() {
+            return usedSize;
+        }
+
+        public void setUsedSize(Integer usedSize) {
+            this.usedSize = usedSize;
+        }
+
+        public Integer getExcessSize() {
+            return excessSize;
+        }
+
+        public void setExcessSize(Integer excessSize) {
+            this.excessSize = excessSize;
+        }
+
+        public Integer getLastResetTime() {
+            return lastResetTime;
+        }
+
+        public void setLastResetTime(Integer lastResetTime) {
+            this.lastResetTime = lastResetTime;
+        }
+
+        public Integer getNextResetTime() {
+            return nextResetTime;
+        }
+
+        public void setNextResetTime(Integer nextResetTime) {
+            this.nextResetTime = nextResetTime;
+        }
+
+        public Integer getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Integer createTime) {
+            this.createTime = createTime;
+        }
+    }
+
     public static class UHostIPSet extends Response {
 
         /** IPv4/IPv6； */
@@ -304,6 +391,10 @@ public class DescribeULHostInstanceResponse extends Response {
         @SerializedName("DiskSet")
         private List<ULHostDiskSet> diskSet;
 
+        /** 流量包详情信息 */
+        @SerializedName("ExclusiveUTPInfo")
+        private ExclusiveUTPInfo exclusiveUTPInfo;
+
         /** 是否自动续费。枚举值：Yes/No */
         @SerializedName("AutoRenew")
         private String autoRenew;
@@ -430,6 +521,14 @@ public class DescribeULHostInstanceResponse extends Response {
 
         public void setDiskSet(List<ULHostDiskSet> diskSet) {
             this.diskSet = diskSet;
+        }
+
+        public ExclusiveUTPInfo getExclusiveUTPInfo() {
+            return exclusiveUTPInfo;
+        }
+
+        public void setExclusiveUTPInfo(ExclusiveUTPInfo exclusiveUTPInfo) {
+            this.exclusiveUTPInfo = exclusiveUTPInfo;
         }
 
         public String getAutoRenew() {
