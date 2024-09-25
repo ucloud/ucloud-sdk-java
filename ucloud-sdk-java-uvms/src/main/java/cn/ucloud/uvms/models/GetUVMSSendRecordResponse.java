@@ -81,11 +81,11 @@ public class GetUVMSSendRecordResponse extends Response {
 
         /** 呼叫开始时间(毫秒时间戳) */
         @SerializedName("CallStartTime")
-        private Integer callStartTime;
+        private Double callStartTime;
 
         /** 呼叫结束时间(毫秒时间戳) */
         @SerializedName("CallEndTime")
-        private Integer callEndTime;
+        private Double callEndTime;
 
         /** 呼叫持续时间 */
         @SerializedName("Duration")
@@ -105,7 +105,7 @@ public class GetUVMSSendRecordResponse extends Response {
 
         /** 回执时间 */
         @SerializedName("ReceiveTime")
-        private Integer receiveTime;
+        private Double receiveTime;
 
         /** 主叫所属城市码 */
         @SerializedName("CallingCityCode")
@@ -121,7 +121,7 @@ public class GetUVMSSendRecordResponse extends Response {
 
         /** 客户提交时间 */
         @SerializedName("SubmitTime")
-        private Integer submitTime;
+        private Double submitTime;
 
         /** 1随机号码组2专属号码组 */
         @SerializedName("GroupType")
@@ -199,19 +199,19 @@ public class GetUVMSSendRecordResponse extends Response {
             this.templateId = templateId;
         }
 
-        public Integer getCallStartTime() {
+        public Double getCallStartTime() {
             return callStartTime;
         }
 
-        public void setCallStartTime(Integer callStartTime) {
+        public void setCallStartTime(Double callStartTime) {
             this.callStartTime = callStartTime;
         }
 
-        public Integer getCallEndTime() {
+        public Double getCallEndTime() {
             return callEndTime;
         }
 
-        public void setCallEndTime(Integer callEndTime) {
+        public void setCallEndTime(Double callEndTime) {
             this.callEndTime = callEndTime;
         }
 
@@ -247,11 +247,11 @@ public class GetUVMSSendRecordResponse extends Response {
             this.receiptDesc = receiptDesc;
         }
 
-        public Integer getReceiveTime() {
+        public Double getReceiveTime() {
             return receiveTime;
         }
 
-        public void setReceiveTime(Integer receiveTime) {
+        public void setReceiveTime(Double receiveTime) {
             this.receiveTime = receiveTime;
         }
 
@@ -279,11 +279,11 @@ public class GetUVMSSendRecordResponse extends Response {
             this.calledOperatorCode = calledOperatorCode;
         }
 
-        public Integer getSubmitTime() {
+        public Double getSubmitTime() {
             return submitTime;
         }
 
-        public void setSubmitTime(Integer submitTime) {
+        public void setSubmitTime(Double submitTime) {
             this.submitTime = submitTime;
         }
 

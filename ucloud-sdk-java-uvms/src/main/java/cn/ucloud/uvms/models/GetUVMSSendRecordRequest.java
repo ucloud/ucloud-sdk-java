@@ -42,13 +42,13 @@ public class GetUVMSSendRecordRequest extends Request {
     @UCloudParam("OrderType")
     private String orderType;
 
-    /** 开始时间-拨打时间，默认最近7天 */
+    /** 开始时间-拨打时间，时间戳（秒），默认最近7天 */
     @UCloudParam("StartTime")
-    private Integer startTime;
+    private Double startTime;
 
-    /** 结束时间-拨打时间，默认当前 */
+    /** 结束时间-拨打时间，时间戳（秒），默认当前 */
     @UCloudParam("EndTime")
-    private Integer endTime;
+    private Double endTime;
 
     /** 模糊搜索，支持 主叫号码和被叫号码 */
     @UCloudParam("FuzzySearch")
@@ -130,19 +130,19 @@ public class GetUVMSSendRecordRequest extends Request {
         this.orderType = orderType;
     }
 
-    public Integer getStartTime() {
+    public Double getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Double startTime) {
         this.startTime = startTime;
     }
 
-    public Integer getEndTime() {
+    public Double getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Double endTime) {
         this.endTime = endTime;
     }
 
