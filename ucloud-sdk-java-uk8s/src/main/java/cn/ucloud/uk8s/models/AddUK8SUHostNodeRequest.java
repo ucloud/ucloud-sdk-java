@@ -77,6 +77,10 @@ public class AddUK8SUHostNodeRequest extends Request {
     @UCloudParam("BootDiskType")
     private String bootDiskType;
 
+    /** 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。 */
+    @UCloudParam("BootDiskSize")
+    private Integer bootDiskSize;
+
     /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
     @UCloudParam("DataDiskType")
     private String dataDiskType;
@@ -92,14 +96,6 @@ public class AddUK8SUHostNodeRequest extends Request {
     /** 云主机机型。枚举值["N", "C", "G", "O", "OS"]。参考[[api:uhost-api:uhost_type|云主机机型说明]]。 */
     @UCloudParam("MachineType")
     private String machineType;
-
-    /**
-     * 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell",
-     * "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR";
-     * “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
-     */
-    @UCloudParam("MinmalCpuPlatform")
-    private String minmalCpuPlatform;
 
     /** GPU类型，枚举值["K80", "P40", "V100",]，MachineType为G时必填 */
     @UCloudParam("GpuType")
@@ -140,6 +136,26 @@ public class AddUK8SUHostNodeRequest extends Request {
     /** 用户自定义Shell脚本。与UserData的区别在于InitScript在节点初始化完毕后才执行，UserData则是云主机初始化时执行。 */
     @UCloudParam("InitScript")
     private String initScript;
+
+    /**
+     * 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell",
+     * "Intel/Skylake", "Intel/Cascadelake"；"Intel/CascadelakeR";
+     * “Amd/Epyc2”,"Amd/Auto"],默认值是"Intel/Auto"
+     */
+    @UCloudParam("MinimalCpuPlatform")
+    private String minimalCpuPlatform;
+
+    /** Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。 */
+    @UCloudParam("Taints")
+    private String taints;
+
+    /** 业务组 */
+    @UCloudParam("Tag")
+    private String tag;
+
+    /** 节点池id */
+    @UCloudParam("NodeGroupId")
+    private String nodeGroupId;
 
     public String getZone() {
         return zone;
@@ -221,6 +237,14 @@ public class AddUK8SUHostNodeRequest extends Request {
         this.bootDiskType = bootDiskType;
     }
 
+    public Integer getBootDiskSize() {
+        return bootDiskSize;
+    }
+
+    public void setBootDiskSize(Integer bootDiskSize) {
+        this.bootDiskSize = bootDiskSize;
+    }
+
     public String getDataDiskType() {
         return dataDiskType;
     }
@@ -251,14 +275,6 @@ public class AddUK8SUHostNodeRequest extends Request {
 
     public void setMachineType(String machineType) {
         this.machineType = machineType;
-    }
-
-    public String getMinmalCpuPlatform() {
-        return minmalCpuPlatform;
-    }
-
-    public void setMinmalCpuPlatform(String minmalCpuPlatform) {
-        this.minmalCpuPlatform = minmalCpuPlatform;
     }
 
     public String getGpuType() {
@@ -339,5 +355,37 @@ public class AddUK8SUHostNodeRequest extends Request {
 
     public void setInitScript(String initScript) {
         this.initScript = initScript;
+    }
+
+    public String getMinimalCpuPlatform() {
+        return minimalCpuPlatform;
+    }
+
+    public void setMinimalCpuPlatform(String minimalCpuPlatform) {
+        this.minimalCpuPlatform = minimalCpuPlatform;
+    }
+
+    public String getTaints() {
+        return taints;
+    }
+
+    public void setTaints(String taints) {
+        this.taints = taints;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getNodeGroupId() {
+        return nodeGroupId;
+    }
+
+    public void setNodeGroupId(String nodeGroupId) {
+        this.nodeGroupId = nodeGroupId;
     }
 }

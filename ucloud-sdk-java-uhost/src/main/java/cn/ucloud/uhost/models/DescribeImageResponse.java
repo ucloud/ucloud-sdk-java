@@ -45,6 +45,45 @@ public class DescribeImageResponse extends Response {
         this.imageSet = imageSet;
     }
 
+    public static class BasePriceSet extends Response {
+
+        /** 计费类型 */
+        @SerializedName("ChargeType")
+        private String chargeType;
+
+        /** 价格，单位: 元，保留小数点后两位有效数字 */
+        @SerializedName("Price")
+        private Double price;
+
+        /** 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。 */
+        @SerializedName("OriginalPrice")
+        private Double originalPrice;
+
+        public String getChargeType() {
+            return chargeType;
+        }
+
+        public void setChargeType(String chargeType) {
+            this.chargeType = chargeType;
+        }
+
+        public Double getPrice() {
+            return price;
+        }
+
+        public void setPrice(Double price) {
+            this.price = price;
+        }
+
+        public Double getOriginalPrice() {
+            return originalPrice;
+        }
+
+        public void setOriginalPrice(Double originalPrice) {
+            this.originalPrice = originalPrice;
+        }
+    }
+
     public static class UHostImageSet extends Response {
 
         /** 可用区，参见 [可用区列表](../summary/regionlist.html) */
@@ -139,6 +178,10 @@ public class DescribeImageResponse extends Response {
         /** 主要安装软件 */
         @SerializedName("PrimarySoftware")
         private String primarySoftware;
+
+        /** 镜像的价格信息 */
+        @SerializedName("PriceSet")
+        private List<BasePriceSet> priceSet;
 
         public String getZone() {
             return zone;
@@ -306,6 +349,14 @@ public class DescribeImageResponse extends Response {
 
         public void setPrimarySoftware(String primarySoftware) {
             this.primarySoftware = primarySoftware;
+        }
+
+        public List<BasePriceSet> getPriceSet() {
+            return priceSet;
+        }
+
+        public void setPriceSet(List<BasePriceSet> priceSet) {
+            this.priceSet = priceSet;
         }
     }
 }

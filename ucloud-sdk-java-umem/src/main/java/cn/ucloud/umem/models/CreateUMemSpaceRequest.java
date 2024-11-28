@@ -90,7 +90,7 @@ public class CreateUMemSpaceRequest extends Request {
     @UCloudParam("BlockCnt")
     private Integer blockCnt;
 
-    /** 【待废弃】是否是cluster模式（参数为cluster创建redis cluster，其他参数或者不传该参数仍然创建老版本分布式） */
+    /** "RWMode"：表示创建读写分离版本;其他为创建普通版本 */
     @UCloudParam("ClusterMode")
     private String clusterMode;
 
@@ -117,6 +117,14 @@ public class CreateUMemSpaceRequest extends Request {
     /** 代理端口, 默认为 6379 */
     @UCloudParam("ProxyPort")
     private Integer proxyPort;
+
+    /** 备份ID，选择从该备份新建集群 */
+    @UCloudParam("BackupId")
+    private String backupId;
+
+    /** 集群ID，选择某个备份创建时，需要填写源集群ID */
+    @UCloudParam("SpaceId")
+    private String spaceId;
 
     /** 使用的代金券id */
     @UCloudParam("CouponId")
@@ -296,6 +304,22 @@ public class CreateUMemSpaceRequest extends Request {
 
     public void setProxyPort(Integer proxyPort) {
         this.proxyPort = proxyPort;
+    }
+
+    public String getBackupId() {
+        return backupId;
+    }
+
+    public void setBackupId(String backupId) {
+        this.backupId = backupId;
+    }
+
+    public String getSpaceId() {
+        return spaceId;
+    }
+
+    public void setSpaceId(String spaceId) {
+        this.spaceId = spaceId;
     }
 
     public String getCouponId() {

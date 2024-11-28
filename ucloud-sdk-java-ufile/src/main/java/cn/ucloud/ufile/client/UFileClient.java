@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ufile.models.AddCORSRuleRequest;
+import cn.ucloud.ufile.models.AddCORSRuleResponse;
 import cn.ucloud.ufile.models.CreateBucketRequest;
 import cn.ucloud.ufile.models.CreateBucketResponse;
 import cn.ucloud.ufile.models.CreateUFileLifeCycleRequest;
@@ -25,12 +27,16 @@ import cn.ucloud.ufile.models.CreateUFileTokenRequest;
 import cn.ucloud.ufile.models.CreateUFileTokenResponse;
 import cn.ucloud.ufile.models.DeleteBucketRequest;
 import cn.ucloud.ufile.models.DeleteBucketResponse;
+import cn.ucloud.ufile.models.DeleteCORSRuleRequest;
+import cn.ucloud.ufile.models.DeleteCORSRuleResponse;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DeleteUFileTokenRequest;
 import cn.ucloud.ufile.models.DeleteUFileTokenResponse;
 import cn.ucloud.ufile.models.DescribeBucketRequest;
 import cn.ucloud.ufile.models.DescribeBucketResponse;
+import cn.ucloud.ufile.models.DescribeCORSRuleRequest;
+import cn.ucloud.ufile.models.DescribeCORSRuleResponse;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
@@ -49,6 +55,8 @@ import cn.ucloud.ufile.models.SetUFileRefererRequest;
 import cn.ucloud.ufile.models.SetUFileRefererResponse;
 import cn.ucloud.ufile.models.UpdateBucketRequest;
 import cn.ucloud.ufile.models.UpdateBucketResponse;
+import cn.ucloud.ufile.models.UpdateCORSRuleRequest;
+import cn.ucloud.ufile.models.UpdateCORSRuleResponse;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.UpdateUFileTokenRequest;
@@ -60,6 +68,17 @@ import cn.ucloud.ufile.models.UpdateUdsRuleResponse;
 public class UFileClient extends DefaultClient implements UFileClientInterface {
     public UFileClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * AddCORSRule - 添加跨域规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddCORSRuleResponse addCORSRule(AddCORSRuleRequest request) throws UCloudException {
+        request.setAction("AddCORSRule");
+        return (AddCORSRuleResponse) this.invoke(request, AddCORSRuleResponse.class);
     }
 
     /**
@@ -110,6 +129,18 @@ public class UFileClient extends DefaultClient implements UFileClientInterface {
     }
 
     /**
+     * DeleteCORSRule - 删除跨域规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteCORSRuleResponse deleteCORSRule(DeleteCORSRuleRequest request)
+            throws UCloudException {
+        request.setAction("DeleteCORSRule");
+        return (DeleteCORSRuleResponse) this.invoke(request, DeleteCORSRuleResponse.class);
+    }
+
+    /**
      * DeleteUFileLifeCycle - 删除生命周期管理
      *
      * @param request Request object
@@ -144,6 +175,18 @@ public class UFileClient extends DefaultClient implements UFileClientInterface {
             throws UCloudException {
         request.setAction("DescribeBucket");
         return (DescribeBucketResponse) this.invoke(request, DescribeBucketResponse.class);
+    }
+
+    /**
+     * DescribeCORSRule - 获取跨域规则信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCORSRuleResponse describeCORSRule(DescribeCORSRuleRequest request)
+            throws UCloudException {
+        request.setAction("DescribeCORSRule");
+        return (DescribeCORSRuleResponse) this.invoke(request, DescribeCORSRuleResponse.class);
     }
 
     /**
@@ -253,6 +296,18 @@ public class UFileClient extends DefaultClient implements UFileClientInterface {
     public UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException {
         request.setAction("UpdateBucket");
         return (UpdateBucketResponse) this.invoke(request, UpdateBucketResponse.class);
+    }
+
+    /**
+     * UpdateCORSRule - 更新跨域规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateCORSRuleResponse updateCORSRule(UpdateCORSRuleRequest request)
+            throws UCloudException {
+        request.setAction("UpdateCORSRule");
+        return (UpdateCORSRuleResponse) this.invoke(request, UpdateCORSRuleResponse.class);
     }
 
     /**

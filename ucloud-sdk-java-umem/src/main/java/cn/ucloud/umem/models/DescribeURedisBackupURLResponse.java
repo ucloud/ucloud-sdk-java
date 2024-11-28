@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class DescribeURedisBackupURLResponse extends Response {
 
-    /** 备份文件公网的地址 */
+    /** [即将下线,请使用BackupPath] */
     @SerializedName("BackupURL")
     private String backupURL;
 
