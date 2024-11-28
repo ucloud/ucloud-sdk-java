@@ -75,6 +75,10 @@ public class ListUK8SNodeGroupResponse extends Response {
         @SerializedName("BootDiskType")
         private String bootDiskType;
 
+        /** 系统盘大小 */
+        @SerializedName("BootDiskSize")
+        private Integer bootDiskSize;
+
         /** 数据盘大小 */
         @SerializedName("DataDiskSize")
         private Integer dataDiskSize;
@@ -173,6 +177,14 @@ public class ListUK8SNodeGroupResponse extends Response {
 
         public void setBootDiskType(String bootDiskType) {
             this.bootDiskType = bootDiskType;
+        }
+
+        public Integer getBootDiskSize() {
+            return bootDiskSize;
+        }
+
+        public void setBootDiskSize(Integer bootDiskSize) {
+            this.bootDiskSize = bootDiskSize;
         }
 
         public Integer getDataDiskSize() {

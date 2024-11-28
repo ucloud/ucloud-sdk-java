@@ -41,6 +41,10 @@ public class DescribeBaremetalMachineTypeRequest extends Request {
     @UCloudParam("Type")
     private String type;
 
+    /** 请求版本。仅支持v2，不传或传其他值表示请求旧版本 */
+    @UCloudParam("APIVersion")
+    private String apiVersion;
+
     public String getRegion() {
         return region;
     }
@@ -71,5 +75,13 @@ public class DescribeBaremetalMachineTypeRequest extends Request {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getAPIVersion() {
+        return apiVersion;
+    }
+
+    public void setAPIVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 }

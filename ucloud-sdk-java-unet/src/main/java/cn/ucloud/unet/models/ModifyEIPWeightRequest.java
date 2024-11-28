@@ -20,12 +20,15 @@ import cn.ucloud.common.request.Request;
 
 public class ModifyEIPWeightRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -35,8 +38,7 @@ public class ModifyEIPWeightRequest extends Request {
     private String eipId;
 
     /**
-     * 外网出口权重, 范围[0-100] 取值为0时, 该弹性IP不会被使用. 取值为100时, 同主机下只会使用这个弹性IP，其他弹性IP不会被使用
-     * 请勿将多个绑定在同一资源的弹性IP设置为相同权重
+     * 外网出口权重，范围[0-100]；该权重值只在EIP绑定资源为主机/网卡(非直通模式)时有效；同一个主机/网卡主动访问外网时，将使用权重最高的EIP作为源IP；权重相同时，行为不确定
      */
     @NotEmpty
     @UCloudParam("Weight")

@@ -64,7 +64,7 @@ public class CreatePHostRequest extends Request {
     @UCloudParam("Tag")
     private String tag;
 
-    /** 计费模式，枚举值为：year, 按年付费； month,按月付费；默认为按月付费 */
+    /** 计费模式，枚举值为：Year, 按年付费； Month,按月付费；默认按月付费 */
     @UCloudParam("ChargeType")
     private String chargeType;
 
@@ -79,7 +79,7 @@ public class CreatePHostRequest extends Request {
     @UCloudParam("SecurityGroupId")
     private String securityGroupId;
 
-    /** Raid配置，默认Raid10 支持:Raid0、Raid1、Raid5、Raid10，NoRaid */
+    /** 本地盘和裸金属1.0需要的参数。Raid配置，默认Raid10 支持:Raid0、Raid1、Raid5、Raid10，NoRaid */
     @UCloudParam("Raid")
     private String raid;
 
@@ -102,6 +102,18 @@ public class CreatePHostRequest extends Request {
     /** 指定内网ip创建 */
     @UCloudParam("VpcIp")
     private String vpcIp;
+
+    /** 短期促销活动时所需参数 */
+    @UCloudParam("ActivityId")
+    private Integer activityId;
+
+    /** 短期促销活动时所需参数 */
+    @UCloudParam("RuleId")
+    private Integer ruleId;
+
+    /** */
+    @UCloudParam("NetworkInterface")
+    private List<NetworkInterface> networkInterface;
 
     /** 代金券 */
     @UCloudParam("CouponId")
@@ -251,6 +263,30 @@ public class CreatePHostRequest extends Request {
         this.vpcIp = vpcIp;
     }
 
+    public Integer getActivityId() {
+        return activityId;
+    }
+
+    public void setActivityId(Integer activityId) {
+        this.activityId = activityId;
+    }
+
+    public Integer getRuleId() {
+        return ruleId;
+    }
+
+    public void setRuleId(Integer ruleId) {
+        this.ruleId = ruleId;
+    }
+
+    public List<NetworkInterface> getNetworkInterface() {
+        return networkInterface;
+    }
+
+    public void setNetworkInterface(List<NetworkInterface> networkInterface) {
+        this.networkInterface = networkInterface;
+    }
+
     public String getCouponId() {
         return couponId;
     }
@@ -299,6 +335,95 @@ public class CreatePHostRequest extends Request {
 
         public void setSize(Integer size) {
             this.size = size;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+    }
+
+    public static class NetworkInterface extends Request {
+
+        /** */
+        @UCloudParam("EIP")
+        private NetworkInterfaceEIP eip;
+
+        public NetworkInterfaceEIP getEIP() {
+            return eip;
+        }
+
+        public void setEIP(NetworkInterfaceEIP eip) {
+            this.eip = eip;
+        }
+    }
+
+    public static class NetworkInterfaceEIP extends Request {
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
+         * 流量计费[1-300]，带宽计费[1-800]
+         */
+        @UCloudParam("Bandwidth")
+        private String bandwidth;
+
+        /**
+         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
+         * "Free":免费带宽模式,默认为 "Bandwidth"
+         */
+        @UCloudParam("PayMode")
+        private String payMode;
+
+        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
+        @UCloudParam("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
+         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
+         * International kr-seoul:International us-ws:International ge-fra:International
+         * sg:International tw-kh:International.其他海外线路均为 International
+         */
+        @UCloudParam("OperatorName")
+        private String operatorName;
+
+        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
+        @UCloudParam("CouponId")
+        private String couponId;
+
+        public String getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(String bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
         }
 
         public String getCouponId() {

@@ -21,12 +21,12 @@ import java.util.List;
 
 public class CreateUK8SClusterV2Request extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /** 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list) */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
@@ -83,16 +83,13 @@ public class CreateUK8SClusterV2Request extends Request {
     @UCloudParam("MasterBootDiskType")
     private String masterBootDiskType;
 
+    /** Master节点系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。 */
+    @UCloudParam("MasterBootDiskSize")
+    private Integer masterBootDiskSize;
+
     /** Master节点数据盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
     @UCloudParam("MasterDataDiskType")
     private String masterDataDiskType;
-
-    /**
-     * Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
-     * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
-     */
-    @UCloudParam("MasterMinmalCpuPlatform")
-    private String masterMinmalCpuPlatform;
 
     /** Master节点的数据盘大小，单位GB，默认为0。范围 ：[20, 1000] */
     @UCloudParam("MasterDataDiskSize")
@@ -133,6 +130,21 @@ public class CreateUK8SClusterV2Request extends Request {
     /** 用户自定义脚本，与UserData不同，自定义脚本将在集群安装完毕后执行。 注意：1、总数据量大小不超多16K；2、使用base64编码。 */
     @UCloudParam("InitScript")
     private String initScript;
+
+    /**
+     * Master节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
+     * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
+     */
+    @UCloudParam("MasterMinimalCpuPlatform")
+    private String masterMinimalCpuPlatform;
+
+    /** 创建集群的时候定义clusterdomain */
+    @UCloudParam("ClusterDomain")
+    private String clusterDomain;
+
+    /** 业务组 */
+    @UCloudParam("Tag")
+    private String tag;
 
     public String getRegion() {
         return region;
@@ -238,20 +250,20 @@ public class CreateUK8SClusterV2Request extends Request {
         this.masterBootDiskType = masterBootDiskType;
     }
 
+    public Integer getMasterBootDiskSize() {
+        return masterBootDiskSize;
+    }
+
+    public void setMasterBootDiskSize(Integer masterBootDiskSize) {
+        this.masterBootDiskSize = masterBootDiskSize;
+    }
+
     public String getMasterDataDiskType() {
         return masterDataDiskType;
     }
 
     public void setMasterDataDiskType(String masterDataDiskType) {
         this.masterDataDiskType = masterDataDiskType;
-    }
-
-    public String getMasterMinmalCpuPlatform() {
-        return masterMinmalCpuPlatform;
-    }
-
-    public void setMasterMinmalCpuPlatform(String masterMinmalCpuPlatform) {
-        this.masterMinmalCpuPlatform = masterMinmalCpuPlatform;
     }
 
     public Integer getMasterDataDiskSize() {
@@ -334,6 +346,30 @@ public class CreateUK8SClusterV2Request extends Request {
         this.initScript = initScript;
     }
 
+    public String getMasterMinimalCpuPlatform() {
+        return masterMinimalCpuPlatform;
+    }
+
+    public void setMasterMinimalCpuPlatform(String masterMinimalCpuPlatform) {
+        this.masterMinimalCpuPlatform = masterMinimalCpuPlatform;
+    }
+
+    public String getClusterDomain() {
+        return clusterDomain;
+    }
+
+    public void setClusterDomain(String clusterDomain) {
+        this.clusterDomain = clusterDomain;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     public static class KubeProxy extends Request {
 
         /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。 */
@@ -353,7 +389,7 @@ public class CreateUK8SClusterV2Request extends Request {
 
         /**
          * Master节点所属可用区，需要设置 Master.0.Zone、 Master.1.Zone、Master.2.Zone 三个 Master 节点的可用区。
-         * 三个节点可部署在不同可用区。参见 [可用区列表](../summary/regionlist.html)
+         * 三个节点可部署在不同可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
          */
         @NotEmpty
         @UCloudParam("Zone")
@@ -372,7 +408,7 @@ public class CreateUK8SClusterV2Request extends Request {
 
         /**
          * 一组Nodes节点所属可用区，可创建多组Nodes节点，如一组是CPU Nodes节点，另一组是GPU Nodes节点。参见
-         * [可用区列表](../summary/regionlist.html)
+         * [可用区列表](https://docs.ucloud.cn/api/summary/regionlist)
          */
         @NotEmpty
         @UCloudParam("Zone")
@@ -414,16 +450,13 @@ public class CreateUK8SClusterV2Request extends Request {
         @UCloudParam("BootDiskType")
         private String bootDiskType;
 
+        /** Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。 */
+        @UCloudParam("BootDiskSIze")
+        private Integer bootDiskSIze;
+
         /** 一组Node节点的数据盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
         @UCloudParam("DataDiskType")
         private String dataDiskType;
-
-        /**
-         * Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
-         * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
-         */
-        @UCloudParam("MinmalCpuPlatform")
-        private String minmalCpuPlatform;
 
         /** 一组Node节点的GPU类型，枚举值["K80", "P40", "V100"]，最新值参考Console。 */
         @UCloudParam("GpuType")
@@ -436,6 +469,17 @@ public class CreateUK8SClusterV2Request extends Request {
         /** 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000] */
         @UCloudParam("DataDiskSize")
         private Integer dataDiskSize;
+
+        /**
+         * Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
+         * "Intel/Broadwell", "Intel/Skylake", "Intel/Cascadelake"。
+         */
+        @UCloudParam("MinimalCpuPlatform")
+        private String minimalCpuPlatform;
+
+        /** Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。 */
+        @UCloudParam("Taints")
+        private String taints;
 
         public String getZone() {
             return zone;
@@ -509,20 +553,20 @@ public class CreateUK8SClusterV2Request extends Request {
             this.bootDiskType = bootDiskType;
         }
 
+        public Integer getBootDiskSIze() {
+            return bootDiskSIze;
+        }
+
+        public void setBootDiskSIze(Integer bootDiskSIze) {
+            this.bootDiskSIze = bootDiskSIze;
+        }
+
         public String getDataDiskType() {
             return dataDiskType;
         }
 
         public void setDataDiskType(String dataDiskType) {
             this.dataDiskType = dataDiskType;
-        }
-
-        public String getMinmalCpuPlatform() {
-            return minmalCpuPlatform;
-        }
-
-        public void setMinmalCpuPlatform(String minmalCpuPlatform) {
-            this.minmalCpuPlatform = minmalCpuPlatform;
         }
 
         public String getGpuType() {
@@ -547,6 +591,22 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setDataDiskSize(Integer dataDiskSize) {
             this.dataDiskSize = dataDiskSize;
+        }
+
+        public String getMinimalCpuPlatform() {
+            return minimalCpuPlatform;
+        }
+
+        public void setMinimalCpuPlatform(String minimalCpuPlatform) {
+            this.minimalCpuPlatform = minimalCpuPlatform;
+        }
+
+        public String getTaints() {
+            return taints;
+        }
+
+        public void setTaints(String taints) {
+            this.taints = taints;
         }
     }
 }

@@ -47,72 +47,116 @@ public class CreateFunctionTemplateRequest extends Request {
     @UCloudParam("TemplateName")
     private String templateName;
 
-    /** 功能名称 */
+    /** 功能名称： - VideoTranscode ，视频转码； - VideoCapture，视频截帧 */
     @NotEmpty
     @UCloudParam("Function")
     private String function;
 
-    /** 文件输出格式 */
+    /** VideoTranscode，文件输出格式： - mp4 - flv - mpegts - webm - avi */
     @NotEmpty
     @UCloudParam("ContainerFormat")
     private String containerFormat;
 
-    /** 编码格式 */
+    /** VideoTranscode，编码格式： - H.264 - H.265 - VPX - VPX-VP9 */
     @NotEmpty
     @UCloudParam("EncodeFormat")
     private String encodeFormat;
 
-    /** 视频比特率 */
+    /** VideoTranscode，视频比特率(Kbps)： - custom - adpative */
     @UCloudParam("VideoBitRate")
     private String videoBitRate;
 
-    /** 自定义视频比特率 */
+    /** VideoTranscode，自定义视频比特率： 最小值：10 最大值：50000 */
     @UCloudParam("VideoBitRateCustom")
     private String videoBitRateCustom;
 
-    /** 分辨率 */
+    /** VideoTranscode，分辨率(px)： - custom - origin */
     @UCloudParam("Resolution")
     private String resolution;
 
-    /** 分辨率宽 */
+    /** VideoTranscode，分辨率宽： 最小值：160 最大值：1920 */
     @UCloudParam("ResolutionWidth")
     private String resolutionWidth;
 
-    /** 分辨率高 */
+    /** VideoTranscode，分辨率高： 最小值：160 最大值：1920 */
     @UCloudParam("ResolutionHeight")
     private String resolutionHeight;
 
-    /** 音频比特率 */
+    /** VideoTranscode，音频比特率： - custom - 48 - 64 - 128 - 160 */
     @UCloudParam("AudioBitRate")
     private String audioBitRate;
 
-    /** 自定义音频比特率 */
+    /** VideoTranscode，自定义音频比特率 最小值：8 最大值：1000 */
     @UCloudParam("AudioBitRateCustom")
     private String audioBitRateCustom;
 
-    /** 音频采样率 */
+    /** VideoTranscode，音频采样率（Hz）： - 22050 - 32000 - 44100 - 48000 */
     @UCloudParam("AudioSampleRate")
     private String audioSampleRate;
 
-    /** 音频声道 */
+    /** VideoTranscode，音频声道： - one - two */
     @UCloudParam("AudioChannel")
     private String audioChannel;
 
-    /** CRF压缩率 */
+    /** VideoTranscode，CRF压缩率： - custom - 15 - 22 - 30 */
     @UCloudParam("CRF")
     private String crf;
 
-    /** 自定义CRF压缩率 */
+    /** VideoTranscode，自定义CRF压缩率： 最小值：0 最大值：51 */
     @UCloudParam("CRFCustom")
     private String crfCustom;
 
-    /** 帧率 */
+    /** VideoTranscode，帧率(fps)： - custom - 25 */
     @UCloudParam("FrameRate")
     private String frameRate;
 
-    /** 自定义帧率 */
+    /** VideoTranscode，自定义帧率： 最小值：0 最大值：60 */
     @UCloudParam("FrameRateCustom")
     private String frameRateCustom;
+
+    /** VideoCapture，截帧图片格式： - jpg - png - gif */
+    @UCloudParam("ImageFormat")
+    private String imageFormat;
+
+    /** VideoCapture，截帧时间点（s）： - custom - 0 - 1 - 2 */
+    @UCloudParam("SnapTime")
+    private String snapTime;
+
+    /** VideoCapture，自定义截帧时间点： 最小值：0 最大值：10000 */
+    @UCloudParam("SnapTimeCustom")
+    private Integer snapTimeCustom;
+
+    /** VideoCapture，截帧图片宽度: - custom - 640 */
+    @UCloudParam("ImageWidth")
+    private String imageWidth;
+
+    /** VideoCapture，自定义截帧图片宽度： 最小值：0 最大值：10000 */
+    @UCloudParam("ImageWidthCustom")
+    private Integer imageWidthCustom;
+
+    /** VideoCapture，截帧图片高度： - custom - 480 */
+    @UCloudParam("ImageHeight")
+    private String imageHeight;
+
+    /** VideoCapture，自定义截帧图片高度： 最小值：16 最大值：2160 */
+    @UCloudParam("ImageHeightCustom")
+    private Integer imageHeightCustom;
+
+    /** VideoCapture，截帧gif图片帧率，仅支持gif格式（fps） - custom - 480 */
+    @UCloudParam("GifFrameRate")
+    private String gifFrameRate;
+
+    /** VideoCapture，自定义截帧gif图片帧率(fps)： 最小值：16 最大值：2160 */
+    @UCloudParam("GifFrameRateCustom")
+    private Integer gifFrameRateCustom;
+
+    /** VideoCapture，gif图片持续时间，仅支持gif格式（s）： - custom - 1 - 5 - 10 */
+    @UCloudParam("GifTime")
+    private String gifTime;
+
+    /** VideoCapture，自定义gif图片持续时间： 最小值：1 最大值：60 */
+    @UCloudParam("GifTimeCustom")
+    private Integer gifTimeCustom;
 
     public String getRegion() {
         return region;
@@ -280,5 +324,93 @@ public class CreateFunctionTemplateRequest extends Request {
 
     public void setFrameRateCustom(String frameRateCustom) {
         this.frameRateCustom = frameRateCustom;
+    }
+
+    public String getImageFormat() {
+        return imageFormat;
+    }
+
+    public void setImageFormat(String imageFormat) {
+        this.imageFormat = imageFormat;
+    }
+
+    public String getSnapTime() {
+        return snapTime;
+    }
+
+    public void setSnapTime(String snapTime) {
+        this.snapTime = snapTime;
+    }
+
+    public Integer getSnapTimeCustom() {
+        return snapTimeCustom;
+    }
+
+    public void setSnapTimeCustom(Integer snapTimeCustom) {
+        this.snapTimeCustom = snapTimeCustom;
+    }
+
+    public String getImageWidth() {
+        return imageWidth;
+    }
+
+    public void setImageWidth(String imageWidth) {
+        this.imageWidth = imageWidth;
+    }
+
+    public Integer getImageWidthCustom() {
+        return imageWidthCustom;
+    }
+
+    public void setImageWidthCustom(Integer imageWidthCustom) {
+        this.imageWidthCustom = imageWidthCustom;
+    }
+
+    public String getImageHeight() {
+        return imageHeight;
+    }
+
+    public void setImageHeight(String imageHeight) {
+        this.imageHeight = imageHeight;
+    }
+
+    public Integer getImageHeightCustom() {
+        return imageHeightCustom;
+    }
+
+    public void setImageHeightCustom(Integer imageHeightCustom) {
+        this.imageHeightCustom = imageHeightCustom;
+    }
+
+    public String getGifFrameRate() {
+        return gifFrameRate;
+    }
+
+    public void setGifFrameRate(String gifFrameRate) {
+        this.gifFrameRate = gifFrameRate;
+    }
+
+    public Integer getGifFrameRateCustom() {
+        return gifFrameRateCustom;
+    }
+
+    public void setGifFrameRateCustom(Integer gifFrameRateCustom) {
+        this.gifFrameRateCustom = gifFrameRateCustom;
+    }
+
+    public String getGifTime() {
+        return gifTime;
+    }
+
+    public void setGifTime(String gifTime) {
+        this.gifTime = gifTime;
+    }
+
+    public Integer getGifTimeCustom() {
+        return gifTimeCustom;
+    }
+
+    public void setGifTimeCustom(Integer gifTimeCustom) {
+        this.gifTimeCustom = gifTimeCustom;
     }
 }

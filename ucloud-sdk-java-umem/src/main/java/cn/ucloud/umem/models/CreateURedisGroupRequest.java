@@ -98,7 +98,7 @@ public class CreateURedisGroupRequest extends Request {
     @UCloudParam("MasterGroupId")
     private String masterGroupId;
 
-    /** 是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true */
+    /** 【即将下线,请勿使用】是否创建使用ipv6 资源， 默认为false， 或者不填， 创建ipv6为true */
     @UCloudParam("EnableIpV6")
     private Boolean enableIpV6;
 
