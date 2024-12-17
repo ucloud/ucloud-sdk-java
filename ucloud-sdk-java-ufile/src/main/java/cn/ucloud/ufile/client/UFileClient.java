@@ -41,6 +41,8 @@ import cn.ucloud.ufile.models.DescribeUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
 import cn.ucloud.ufile.models.DescribeUFileTokenResponse;
+import cn.ucloud.ufile.models.GetUFileDailyBillRequest;
+import cn.ucloud.ufile.models.GetUFileDailyBillResponse;
 import cn.ucloud.ufile.models.GetUFileDailyReportRequest;
 import cn.ucloud.ufile.models.GetUFileDailyReportResponse;
 import cn.ucloud.ufile.models.GetUFileQuotaInfoRequest;
@@ -212,6 +214,18 @@ public class UFileClient extends DefaultClient implements UFileClientInterface {
             throws UCloudException {
         request.setAction("DescribeUFileToken");
         return (DescribeUFileTokenResponse) this.invoke(request, DescribeUFileTokenResponse.class);
+    }
+
+    /**
+     * GetUFileDailyBill - 获取bucket每日账单
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUFileDailyBillResponse getUFileDailyBill(GetUFileDailyBillRequest request)
+            throws UCloudException {
+        request.setAction("GetUFileDailyBill");
+        return (GetUFileDailyBillResponse) this.invoke(request, GetUFileDailyBillResponse.class);
     }
 
     /**
