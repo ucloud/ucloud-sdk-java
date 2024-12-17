@@ -26,6 +26,10 @@ public class GetCertificateV2Request extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
+    /** 根据加速域名筛选对应的证书 */
+    @UCloudParam("CdnDomain")
+    private String cdnDomain;
+
     /** 偏移，默认为0，非负整数 */
     @UCloudParam("Offset")
     private Integer offset;
@@ -40,6 +44,14 @@ public class GetCertificateV2Request extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
+    }
+
+    public String getCdnDomain() {
+        return cdnDomain;
+    }
+
+    public void setCdnDomain(String cdnDomain) {
+        this.cdnDomain = cdnDomain;
     }
 
     public Integer getOffset() {

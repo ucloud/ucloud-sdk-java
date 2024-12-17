@@ -99,6 +99,10 @@ public class GetUFileDailyReportResponse extends Response {
         @SerializedName("ApiTimes")
         private Double apiTimes;
 
+        /** 对象标签个数; 单位万个 */
+        @SerializedName("ObjectTagCount")
+        private Double objectTagCount;
+
         public Double getStorage() {
             return storage;
         }
@@ -225,6 +229,14 @@ public class GetUFileDailyReportResponse extends Response {
 
         public void setApiTimes(Double apiTimes) {
             this.apiTimes = apiTimes;
+        }
+
+        public Double getObjectTagCount() {
+            return objectTagCount;
+        }
+
+        public void setObjectTagCount(Double objectTagCount) {
+            this.objectTagCount = objectTagCount;
         }
     }
 
