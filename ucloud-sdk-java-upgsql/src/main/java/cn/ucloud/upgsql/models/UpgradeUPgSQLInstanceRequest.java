@@ -52,6 +52,11 @@ public class UpgradeUPgSQLInstanceRequest extends Request {
     @UCloudParam("MachineType")
     private String machineType;
 
+    /** 数据库类型（ha:高可用类型，normal：普通类型，readonly：从库） */
+    @NotEmpty
+    @UCloudParam("InstanceMode")
+    private String instanceMode;
+
     public String getRegion() {
         return region;
     }
@@ -98,5 +103,13 @@ public class UpgradeUPgSQLInstanceRequest extends Request {
 
     public void setMachineType(String machineType) {
         this.machineType = machineType;
+    }
+
+    public String getInstanceMode() {
+        return instanceMode;
+    }
+
+    public void setInstanceMode(String instanceMode) {
+        this.instanceMode = instanceMode;
     }
 }

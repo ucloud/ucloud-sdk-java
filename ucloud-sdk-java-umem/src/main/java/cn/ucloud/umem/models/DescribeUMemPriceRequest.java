@@ -72,6 +72,10 @@ public class DescribeUMemPriceRequest extends Request {
     @UCloudParam("UlbMode")
     private String ulbMode;
 
+    /** 数据库类型，RWMode为读写分离 */
+    @UCloudParam("ClusterMode")
+    private String clusterMode;
+
     public String getRegion() {
         return region;
     }
@@ -158,5 +162,13 @@ public class DescribeUMemPriceRequest extends Request {
 
     public void setUlbMode(String ulbMode) {
         this.ulbMode = ulbMode;
+    }
+
+    public String getClusterMode() {
+        return clusterMode;
+    }
+
+    public void setClusterMode(String clusterMode) {
+        this.clusterMode = clusterMode;
     }
 }

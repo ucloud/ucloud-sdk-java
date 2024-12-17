@@ -14,19 +14,16 @@
 package cn.ucloud.uphost.models;
 
 
-import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
 public class DescribePHostMachineTypeRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -40,6 +37,10 @@ public class DescribePHostMachineTypeRequest extends Request {
     /** 具体机型。若不填写，则返回全部机型 */
     @UCloudParam("Type")
     private String type;
+
+    /** 请求版本。仅支持v2，不传或传其他值表示请求旧版本 */
+    @UCloudParam("APIVersion")
+    private String apiVersion;
 
     public String getRegion() {
         return region;
@@ -71,5 +72,13 @@ public class DescribePHostMachineTypeRequest extends Request {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getAPIVersion() {
+        return apiVersion;
+    }
+
+    public void setAPIVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 }

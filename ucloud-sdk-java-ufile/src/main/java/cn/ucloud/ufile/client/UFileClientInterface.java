@@ -15,6 +15,8 @@ package cn.ucloud.ufile.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ufile.models.AddCORSRuleRequest;
+import cn.ucloud.ufile.models.AddCORSRuleResponse;
 import cn.ucloud.ufile.models.CreateBucketRequest;
 import cn.ucloud.ufile.models.CreateBucketResponse;
 import cn.ucloud.ufile.models.CreateUFileLifeCycleRequest;
@@ -23,12 +25,16 @@ import cn.ucloud.ufile.models.CreateUFileTokenRequest;
 import cn.ucloud.ufile.models.CreateUFileTokenResponse;
 import cn.ucloud.ufile.models.DeleteBucketRequest;
 import cn.ucloud.ufile.models.DeleteBucketResponse;
+import cn.ucloud.ufile.models.DeleteCORSRuleRequest;
+import cn.ucloud.ufile.models.DeleteCORSRuleResponse;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DeleteUFileTokenRequest;
 import cn.ucloud.ufile.models.DeleteUFileTokenResponse;
 import cn.ucloud.ufile.models.DescribeBucketRequest;
 import cn.ucloud.ufile.models.DescribeBucketResponse;
+import cn.ucloud.ufile.models.DescribeCORSRuleRequest;
+import cn.ucloud.ufile.models.DescribeCORSRuleResponse;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
@@ -47,6 +53,8 @@ import cn.ucloud.ufile.models.SetUFileRefererRequest;
 import cn.ucloud.ufile.models.SetUFileRefererResponse;
 import cn.ucloud.ufile.models.UpdateBucketRequest;
 import cn.ucloud.ufile.models.UpdateBucketResponse;
+import cn.ucloud.ufile.models.UpdateCORSRuleRequest;
+import cn.ucloud.ufile.models.UpdateCORSRuleResponse;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.UpdateUFileTokenRequest;
@@ -56,6 +64,14 @@ import cn.ucloud.ufile.models.UpdateUdsRuleResponse;
 
 /** This client is used to call actions of **UFile** service */
 public interface UFileClientInterface extends Client {
+
+    /**
+     * AddCORSRule - 添加跨域规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddCORSRuleResponse addCORSRule(AddCORSRuleRequest request) throws UCloudException;
 
     /**
      * CreateBucket - 创建Bucket
@@ -92,6 +108,15 @@ public interface UFileClientInterface extends Client {
     public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) throws UCloudException;
 
     /**
+     * DeleteCORSRule - 删除跨域规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteCORSRuleResponse deleteCORSRule(DeleteCORSRuleRequest request)
+            throws UCloudException;
+
+    /**
      * DeleteUFileLifeCycle - 删除生命周期管理
      *
      * @param request Request object
@@ -116,6 +141,15 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public DescribeBucketResponse describeBucket(DescribeBucketRequest request)
+            throws UCloudException;
+
+    /**
+     * DescribeCORSRule - 获取跨域规则信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCORSRuleResponse describeCORSRule(DescribeCORSRuleRequest request)
             throws UCloudException;
 
     /**
@@ -196,6 +230,15 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException;
+
+    /**
+     * UpdateCORSRule - 更新跨域规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateCORSRuleResponse updateCORSRule(UpdateCORSRuleRequest request)
+            throws UCloudException;
 
     /**
      * UpdateUFileLifeCycle - 更新生命周期管理

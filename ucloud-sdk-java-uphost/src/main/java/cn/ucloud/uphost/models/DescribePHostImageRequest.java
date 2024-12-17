@@ -58,6 +58,10 @@ public class DescribePHostImageRequest extends Request {
     @UCloudParam("MachineType")
     private String machineType;
 
+    /** 机器的网络集群，MachineType传是必须传，默认25G */
+    @UCloudParam("Cluster")
+    private String cluster;
+
     public String getRegion() {
         return region;
     }
@@ -120,5 +124,13 @@ public class DescribePHostImageRequest extends Request {
 
     public void setMachineType(String machineType) {
         this.machineType = machineType;
+    }
+
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
     }
 }

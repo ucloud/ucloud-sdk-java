@@ -77,7 +77,7 @@ public class DescribePHostImageResponse extends Response {
 
         /** 裸金属2.0参数。镜像创建时间。 */
         @SerializedName("CreateTime")
-        private Integer createTime;
+        private String createTime;
 
         /** 裸金属2.0参数。镜像当前状态。 */
         @SerializedName("State")
@@ -147,11 +147,11 @@ public class DescribePHostImageResponse extends Response {
             this.imageType = imageType;
         }
 
-        public Integer getCreateTime() {
+        public String getCreateTime() {
             return createTime;
         }
 
-        public void setCreateTime(Integer createTime) {
+        public void setCreateTime(String createTime) {
             this.createTime = createTime;
         }
 

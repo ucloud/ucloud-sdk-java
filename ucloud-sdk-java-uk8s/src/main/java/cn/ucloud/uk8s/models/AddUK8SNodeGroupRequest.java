@@ -98,6 +98,14 @@ public class AddUK8SNodeGroupRequest extends Request {
     @UCloudParam("ChargeType")
     private String chargeType;
 
+    /** 系统盘大小，单位GB。默认40。范围：[40, 500]。注意SSD本地盘无法调整。 */
+    @UCloudParam("BootDiskSize")
+    private Integer bootDiskSize;
+
+    /** 子网 ID。默认为集群创建时填写的子网ID，也可以填写集群同VPC内的子网ID。 */
+    @UCloudParam("SubnetId")
+    private String subnetId;
+
     public String getRegion() {
         return region;
     }
@@ -232,5 +240,21 @@ public class AddUK8SNodeGroupRequest extends Request {
 
     public void setChargeType(String chargeType) {
         this.chargeType = chargeType;
+    }
+
+    public Integer getBootDiskSize() {
+        return bootDiskSize;
+    }
+
+    public void setBootDiskSize(Integer bootDiskSize) {
+        this.bootDiskSize = bootDiskSize;
+    }
+
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 }

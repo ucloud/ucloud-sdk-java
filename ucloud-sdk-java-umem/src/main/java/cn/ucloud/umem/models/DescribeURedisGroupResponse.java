@@ -83,11 +83,11 @@ public class DescribeURedisGroupResponse extends Response {
         @SerializedName("Protocol")
         private String protocol;
 
-        /** 容量单位GB */
+        /** [即将下线,请使用Size] 容量单位GB */
         @SerializedName("MemorySize")
         private Integer memorySize;
 
-        /** 组名称 */
+        /** [即将下线,请使用Name] 组名称 */
         @SerializedName("GroupName")
         private String groupName;
 
@@ -157,6 +157,10 @@ public class DescribeURedisGroupResponse extends Response {
         /** 跨机房URedis，slave redis所在可用区，参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("SlaveZone")
         private String slaveZone;
+
+        /** 是否是高性能Redis， true表示是； false表示否 */
+        @SerializedName("IsHighPerformance")
+        private Boolean isHighPerformance;
 
         public String getZone() {
             return zone;
@@ -372,6 +376,14 @@ public class DescribeURedisGroupResponse extends Response {
 
         public void setSlaveZone(String slaveZone) {
             this.slaveZone = slaveZone;
+        }
+
+        public Boolean getIsHighPerformance() {
+            return isHighPerformance;
+        }
+
+        public void setIsHighPerformance(Boolean isHighPerformance) {
+            this.isHighPerformance = isHighPerformance;
         }
     }
 }
