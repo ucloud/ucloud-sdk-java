@@ -30,9 +30,13 @@ public class GetUcdnDomainInfoListRequest extends Request {
     @UCloudParam("PageSize")
     private Integer pageSize;
 
-    /** 返回第几页，不填默认是第1页 */
+    /** 返回第几页，序号从1开始，不填默认是第1页，填0表示不用分页直接返回所有数据 */
     @UCloudParam("PageIndex")
     private Integer pageIndex;
+
+    /** 是否按项目查询，true 或 false 默认为false */
+    @UCloudParam("QueryByProject")
+    private Boolean queryByProject;
 
     public String getProjectId() {
         return projectId;
@@ -56,5 +60,13 @@ public class GetUcdnDomainInfoListRequest extends Request {
 
     public void setPageIndex(Integer pageIndex) {
         this.pageIndex = pageIndex;
+    }
+
+    public Boolean getQueryByProject() {
+        return queryByProject;
+    }
+
+    public void setQueryByProject(Boolean queryByProject) {
+        this.queryByProject = queryByProject;
     }
 }

@@ -17,6 +17,10 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ufile.models.AddCORSRuleRequest;
 import cn.ucloud.ufile.models.AddCORSRuleResponse;
+import cn.ucloud.ufile.models.AddUFileSSLCertRequest;
+import cn.ucloud.ufile.models.AddUFileSSLCertResponse;
+import cn.ucloud.ufile.models.BindBucketDomainRequest;
+import cn.ucloud.ufile.models.BindBucketDomainResponse;
 import cn.ucloud.ufile.models.CreateBucketRequest;
 import cn.ucloud.ufile.models.CreateBucketResponse;
 import cn.ucloud.ufile.models.CreateUFileLifeCycleRequest;
@@ -29,6 +33,8 @@ import cn.ucloud.ufile.models.DeleteCORSRuleRequest;
 import cn.ucloud.ufile.models.DeleteCORSRuleResponse;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleResponse;
+import cn.ucloud.ufile.models.DeleteUFileSSLCertRequest;
+import cn.ucloud.ufile.models.DeleteUFileSSLCertResponse;
 import cn.ucloud.ufile.models.DeleteUFileTokenRequest;
 import cn.ucloud.ufile.models.DeleteUFileTokenResponse;
 import cn.ucloud.ufile.models.DescribeBucketRequest;
@@ -37,6 +43,8 @@ import cn.ucloud.ufile.models.DescribeCORSRuleRequest;
 import cn.ucloud.ufile.models.DescribeCORSRuleResponse;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleResponse;
+import cn.ucloud.ufile.models.DescribeUFileSSLCertRequest;
+import cn.ucloud.ufile.models.DescribeUFileSSLCertResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
 import cn.ucloud.ufile.models.DescribeUFileTokenResponse;
 import cn.ucloud.ufile.models.GetUFileDailyBillRequest;
@@ -59,6 +67,8 @@ import cn.ucloud.ufile.models.UpdateCORSRuleRequest;
 import cn.ucloud.ufile.models.UpdateCORSRuleResponse;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleResponse;
+import cn.ucloud.ufile.models.UpdateUFileSSLCertRequest;
+import cn.ucloud.ufile.models.UpdateUFileSSLCertResponse;
 import cn.ucloud.ufile.models.UpdateUFileTokenRequest;
 import cn.ucloud.ufile.models.UpdateUFileTokenResponse;
 import cn.ucloud.ufile.models.UpdateUdsRuleRequest;
@@ -74,6 +84,24 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public AddCORSRuleResponse addCORSRule(AddCORSRuleRequest request) throws UCloudException;
+
+    /**
+     * AddUFileSSLCert - 添加SSL证书
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddUFileSSLCertResponse addUFileSSLCert(AddUFileSSLCertRequest request)
+            throws UCloudException;
+
+    /**
+     * BindBucketDomain - 绑定自定义域名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public BindBucketDomainResponse bindBucketDomain(BindBucketDomainRequest request)
+            throws UCloudException;
 
     /**
      * CreateBucket - 创建Bucket
@@ -128,6 +156,15 @@ public interface UFileClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * DeleteUFileSSLCert - 删除SSL证书
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUFileSSLCertResponse deleteUFileSSLCert(DeleteUFileSSLCertRequest request)
+            throws UCloudException;
+
+    /**
      * DeleteUFileToken - 删除令牌
      *
      * @param request Request object
@@ -162,6 +199,15 @@ public interface UFileClientInterface extends Client {
      */
     public DescribeUFileLifeCycleResponse describeUFileLifeCycle(
             DescribeUFileLifeCycleRequest request) throws UCloudException;
+
+    /**
+     * DescribeUFileSSLCert - 查询SSL证书
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUFileSSLCertResponse describeUFileSSLCert(DescribeUFileSSLCertRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUFileToken - 获取令牌信息
@@ -258,6 +304,15 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public UpdateUFileLifeCycleResponse updateUFileLifeCycle(UpdateUFileLifeCycleRequest request)
+            throws UCloudException;
+
+    /**
+     * UpdateUFileSSLCert - 更新SSL证书
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUFileSSLCertResponse updateUFileSSLCert(UpdateUFileSSLCertRequest request)
             throws UCloudException;
 
     /**

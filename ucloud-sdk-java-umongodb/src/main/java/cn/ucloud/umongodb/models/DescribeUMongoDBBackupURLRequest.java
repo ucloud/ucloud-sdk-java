@@ -54,6 +54,10 @@ public class DescribeUMongoDBBackupURLRequest extends Request {
     @UCloudParam("ValidTime")
     private Integer validTime;
 
+    /** 类型:如 oplog */
+    @UCloudParam("Category")
+    private String category;
+
     public String getRegion() {
         return region;
     }
@@ -108,5 +112,13 @@ public class DescribeUMongoDBBackupURLRequest extends Request {
 
     public void setValidTime(Integer validTime) {
         this.validTime = validTime;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

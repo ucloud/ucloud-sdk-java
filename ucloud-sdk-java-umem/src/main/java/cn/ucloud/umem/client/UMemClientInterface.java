@@ -95,6 +95,8 @@ import cn.ucloud.umem.models.RegisterUMemDefragRequest;
 import cn.ucloud.umem.models.RegisterUMemDefragResponse;
 import cn.ucloud.umem.models.RemoveUDRedisDataRequest;
 import cn.ucloud.umem.models.RemoveUDRedisDataResponse;
+import cn.ucloud.umem.models.ResizeUDRedisBlockSizeRequest;
+import cn.ucloud.umem.models.ResizeUDRedisBlockSizeResponse;
 import cn.ucloud.umem.models.ResizeUMemSpaceRequest;
 import cn.ucloud.umem.models.ResizeUMemSpaceResponse;
 import cn.ucloud.umem.models.ResizeURedisGroupRequest;
@@ -469,6 +471,15 @@ public interface UMemClientInterface extends Client {
      */
     public RemoveUDRedisDataResponse removeUDRedisData(RemoveUDRedisDataRequest request)
             throws UCloudException;
+
+    /**
+     * ResizeUDRedisBlockSize - 更改udredis分片容量
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ResizeUDRedisBlockSizeResponse resizeUDRedisBlockSize(
+            ResizeUDRedisBlockSizeRequest request) throws UCloudException;
 
     /**
      * ResizeUMemSpace - 调整容量
