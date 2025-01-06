@@ -13,6 +13,7 @@
  */
 package cn.ucloud.cloudwatch.models;
 
+import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
@@ -21,22 +22,27 @@ import java.util.List;
 public class QueryMetricDataSetRequest extends Request {
 
     /** 地域。 全局产品可不传，其他类型必传。 */
+    @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /** 项目ID。 */
+    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
     /** 资源类型 */
+    @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;
 
     /** 开始时间 */
+    @NotEmpty
     @UCloudParam("StartTime")
     private Integer startTime;
 
     /** 截止时间 */
+    @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
 
@@ -95,10 +101,12 @@ public class QueryMetricDataSetRequest extends Request {
     public static class MetricInfos extends Request {
 
         /** 指标名 */
+        @NotEmpty
         @UCloudParam("Metric")
         private String metric;
 
         /** 指标所属资源id */
+        @NotEmpty
         @UCloudParam("ResourceId")
         private String resourceId;
 

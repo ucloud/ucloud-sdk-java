@@ -22,6 +22,7 @@ import java.util.List;
 public class QueryMetricDataSummaryRequest extends Request {
 
     /** 地域，全局产品可以不传，其他必传 */
+    @NotEmpty
     @UCloudParam("Region")
     private String region;
 
