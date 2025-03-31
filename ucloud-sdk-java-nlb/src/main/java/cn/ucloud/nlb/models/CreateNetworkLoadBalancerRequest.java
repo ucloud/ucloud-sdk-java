@@ -66,7 +66,7 @@ public class CreateNetworkLoadBalancerRequest extends Request {
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** 购买的时长 */
+    /** 购买的时长，ChargeType = "Month"，Quantity = 0 代表购买到月底，其余情况必须赋值 */
     @UCloudParam("Quantity")
     private Integer quantity;
 

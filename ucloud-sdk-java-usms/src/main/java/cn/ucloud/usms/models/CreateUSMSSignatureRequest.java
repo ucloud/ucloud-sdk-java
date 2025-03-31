@@ -58,7 +58,6 @@ public class CreateUSMSSignatureRequest extends Request {
     private String description;
 
     /** 短信签名的资质证明文件，需先进行base64编码格式转换，此处填写转换后的字符串。文件大小不超过4 MB */
-    @NotEmpty
     @UCloudParam("File")
     private String file;
 
@@ -72,6 +71,10 @@ public class CreateUSMSSignatureRequest extends Request {
      */
     @UCloudParam("ProxyFile")
     private String proxyFile;
+
+    /** 资质ID */
+    @UCloudParam("QualificationId")
+    private String qualificationId;
 
     public String getProjectId() {
         return projectId;
@@ -143,5 +146,13 @@ public class CreateUSMSSignatureRequest extends Request {
 
     public void setProxyFile(String proxyFile) {
         this.proxyFile = proxyFile;
+    }
+
+    public String getQualificationId() {
+        return qualificationId;
+    }
+
+    public void setQualificationId(String qualificationId) {
+        this.qualificationId = qualificationId;
     }
 }

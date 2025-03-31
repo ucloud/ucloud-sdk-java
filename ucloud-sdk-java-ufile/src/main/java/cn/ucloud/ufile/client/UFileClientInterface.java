@@ -47,6 +47,8 @@ import cn.ucloud.ufile.models.DescribeUFileSSLCertRequest;
 import cn.ucloud.ufile.models.DescribeUFileSSLCertResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
 import cn.ucloud.ufile.models.DescribeUFileTokenResponse;
+import cn.ucloud.ufile.models.GetBucketStaticPageRuleRequest;
+import cn.ucloud.ufile.models.GetBucketStaticPageRuleResponse;
 import cn.ucloud.ufile.models.GetUFileDailyBillRequest;
 import cn.ucloud.ufile.models.GetUFileDailyBillResponse;
 import cn.ucloud.ufile.models.GetUFileDailyReportRequest;
@@ -63,6 +65,8 @@ import cn.ucloud.ufile.models.SetUFileRefererRequest;
 import cn.ucloud.ufile.models.SetUFileRefererResponse;
 import cn.ucloud.ufile.models.UpdateBucketRequest;
 import cn.ucloud.ufile.models.UpdateBucketResponse;
+import cn.ucloud.ufile.models.UpdateBucketStaticPageRuleRequest;
+import cn.ucloud.ufile.models.UpdateBucketStaticPageRuleResponse;
 import cn.ucloud.ufile.models.UpdateCORSRuleRequest;
 import cn.ucloud.ufile.models.UpdateCORSRuleResponse;
 import cn.ucloud.ufile.models.UpdateUFileLifeCycleRequest;
@@ -219,6 +223,15 @@ public interface UFileClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * GetBucketStaticPageRule - 获取bucket静态网页配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetBucketStaticPageRuleResponse getBucketStaticPageRule(
+            GetBucketStaticPageRuleRequest request) throws UCloudException;
+
+    /**
      * GetUFileDailyBill - 获取bucket每日账单
      *
      * @param request Request object
@@ -287,6 +300,15 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public UpdateBucketResponse updateBucket(UpdateBucketRequest request) throws UCloudException;
+
+    /**
+     * UpdateBucketStaticPageRule - 修改bucket静态网页配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateBucketStaticPageRuleResponse updateBucketStaticPageRule(
+            UpdateBucketStaticPageRuleRequest request) throws UCloudException;
 
     /**
      * UpdateCORSRule - 更新跨域规则

@@ -15,6 +15,10 @@ package cn.ucloud.cloudwatch.client;
 
 import cn.ucloud.cloudwatch.models.BindAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.BindAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateRequest;
+import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateResponse;
+import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
+import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -50,6 +54,32 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
             throws UCloudException {
         request.setAction("BindAlertStrategy");
         return (BindAlertStrategyResponse) this.invoke(request, BindAlertStrategyResponse.class);
+    }
+
+    /**
+     * CreateAlertStrategyTemplate - 新建条件模板
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateAlertStrategyTemplateResponse createAlertStrategyTemplate(
+            CreateAlertStrategyTemplateRequest request) throws UCloudException {
+        request.setAction("CreateAlertStrategyTemplate");
+        return (CreateAlertStrategyTemplateResponse)
+                this.invoke(request, CreateAlertStrategyTemplateResponse.class);
+    }
+
+    /**
+     * DeleteAlertStrategyTemplate - 删除告警策略模板
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteAlertStrategyTemplateResponse deleteAlertStrategyTemplate(
+            DeleteAlertStrategyTemplateRequest request) throws UCloudException {
+        request.setAction("DeleteAlertStrategyTemplate");
+        return (DeleteAlertStrategyTemplateResponse)
+                this.invoke(request, DeleteAlertStrategyTemplateResponse.class);
     }
 
     /**

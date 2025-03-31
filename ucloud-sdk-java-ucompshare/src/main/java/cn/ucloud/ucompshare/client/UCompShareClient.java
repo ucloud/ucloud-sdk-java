@@ -19,6 +19,8 @@ import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.DescribeCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.DescribeCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.DescribeULHostBundlesRequest;
 import cn.ucloud.ucompshare.models.DescribeULHostBundlesResponse;
 import cn.ucloud.ucompshare.models.DescribeULHostInstanceRequest;
@@ -33,12 +35,18 @@ import cn.ucloud.ucompshare.models.PoweroffULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.PoweroffULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.RebootULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.RebootULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.ReinstallCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.ReinstallCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.ReinstallULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.ReinstallULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.ResetULHostInstancePasswordRequest;
 import cn.ucloud.ucompshare.models.ResetULHostInstancePasswordResponse;
+import cn.ucloud.ucompshare.models.StartCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.StartCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.StartULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.StartULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.StopCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.StopCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.StopULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.StopULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.TerminateULHostInstanceRequest;
@@ -61,6 +69,19 @@ public class UCompShareClient extends DefaultClient implements UCompShareClientI
         request.setAction("CreateULHostInstance");
         return (CreateULHostInstanceResponse)
                 this.invoke(request, CreateULHostInstanceResponse.class);
+    }
+
+    /**
+     * DescribeCompShareInstance - 获取用户所有地域的主机资源列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCompShareInstanceResponse describeCompShareInstance(
+            DescribeCompShareInstanceRequest request) throws UCloudException {
+        request.setAction("DescribeCompShareInstance");
+        return (DescribeCompShareInstanceResponse)
+                this.invoke(request, DescribeCompShareInstanceResponse.class);
     }
 
     /**
@@ -155,6 +176,19 @@ public class UCompShareClient extends DefaultClient implements UCompShareClientI
     }
 
     /**
+     * ReinstallCompShareInstance - 重装算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ReinstallCompShareInstanceResponse reinstallCompShareInstance(
+            ReinstallCompShareInstanceRequest request) throws UCloudException {
+        request.setAction("ReinstallCompShareInstance");
+        return (ReinstallCompShareInstanceResponse)
+                this.invoke(request, ReinstallCompShareInstanceResponse.class);
+    }
+
+    /**
      * ReinstallULHostInstance - 重装轻量应用云主机
      *
      * @param request Request object
@@ -181,6 +215,19 @@ public class UCompShareClient extends DefaultClient implements UCompShareClientI
     }
 
     /**
+     * StartCompShareInstance - 启动算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public StartCompShareInstanceResponse startCompShareInstance(
+            StartCompShareInstanceRequest request) throws UCloudException {
+        request.setAction("StartCompShareInstance");
+        return (StartCompShareInstanceResponse)
+                this.invoke(request, StartCompShareInstanceResponse.class);
+    }
+
+    /**
      * StartULHostInstance - 启动轻量应用主机
      *
      * @param request Request object
@@ -191,6 +238,19 @@ public class UCompShareClient extends DefaultClient implements UCompShareClientI
         request.setAction("StartULHostInstance");
         return (StartULHostInstanceResponse)
                 this.invoke(request, StartULHostInstanceResponse.class);
+    }
+
+    /**
+     * StopCompShareInstance - 关闭算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public StopCompShareInstanceResponse stopCompShareInstance(StopCompShareInstanceRequest request)
+            throws UCloudException {
+        request.setAction("StopCompShareInstance");
+        return (StopCompShareInstanceResponse)
+                this.invoke(request, StopCompShareInstanceResponse.class);
     }
 
     /**

@@ -61,17 +61,17 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         /** 时间戳 */
         @SerializedName("Timestamp")
-        private Double timestamp;
+        private Integer timestamp;
 
         /** 样本值 */
         @SerializedName("Value")
         private Double value;
 
-        public Double getTimestamp() {
+        public Integer getTimestamp() {
             return timestamp;
         }
 
-        public void setTimestamp(Double timestamp) {
+        public void setTimestamp(Integer timestamp) {
             this.timestamp = timestamp;
         }
 

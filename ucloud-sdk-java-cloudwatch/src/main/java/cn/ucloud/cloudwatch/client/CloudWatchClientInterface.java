@@ -15,6 +15,10 @@ package cn.ucloud.cloudwatch.client;
 
 import cn.ucloud.cloudwatch.models.BindAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.BindAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateRequest;
+import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateResponse;
+import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
+import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -43,6 +47,24 @@ public interface CloudWatchClientInterface extends Client {
      */
     public BindAlertStrategyResponse bindAlertStrategy(BindAlertStrategyRequest request)
             throws UCloudException;
+
+    /**
+     * CreateAlertStrategyTemplate - 新建条件模板
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateAlertStrategyTemplateResponse createAlertStrategyTemplate(
+            CreateAlertStrategyTemplateRequest request) throws UCloudException;
+
+    /**
+     * DeleteAlertStrategyTemplate - 删除告警策略模板
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteAlertStrategyTemplateResponse deleteAlertStrategyTemplate(
+            DeleteAlertStrategyTemplateRequest request) throws UCloudException;
 
     /**
      * GetProductMetrics - 获取云产品关联的指标列表
