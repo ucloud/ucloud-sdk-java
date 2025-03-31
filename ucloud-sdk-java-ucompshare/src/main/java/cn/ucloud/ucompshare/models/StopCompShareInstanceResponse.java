@@ -11,23 +11,24 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uai_modelverse.models;
+package cn.ucloud.ucompshare.models;
 
 
-import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
+import cn.ucloud.common.response.Response;
 
-public class QueryMVAppRequest extends Request {
+import com.google.gson.annotations.SerializedName;
 
-    /** 应用ID (缺省则返回所有应用列表) */
-    @UCloudParam("APPID")
-    private String appid;
+public class StopCompShareInstanceResponse extends Response {
 
-    public String getAPPID() {
-        return appid;
+    /** 实例Id */
+    @SerializedName("UHostId")
+    private String uHostId;
+
+    public String getUHostId() {
+        return uHostId;
     }
 
-    public void setAPPID(String appid) {
-        this.appid = appid;
+    public void setUHostId(String uHostId) {
+        this.uHostId = uHostId;
     }
 }

@@ -11,23 +11,10 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uai_modelverse.models;
+package cn.ucloud.ufile.models;
 
 
-import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
 
-public class QueryMVLLMListRequest extends Request {
+import cn.ucloud.common.response.Response;
 
-    /** 语言模型ID (缺省则返回所有模型列表) */
-    @UCloudParam("LLMID")
-    private String llmid;
-
-    public String getLLMID() {
-        return llmid;
-    }
-
-    public void setLLMID(String llmid) {
-        this.llmid = llmid;
-    }
-}
+public class UpdateBucketStaticPageRuleResponse extends Response {}

@@ -57,6 +57,8 @@ import cn.ucloud.udb.models.DescribeUDBBackupBlacklistRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupBlacklistResponse;
 import cn.ucloud.udb.models.DescribeUDBBackupRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupRequest;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupResponse;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLRequest;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLResponse;
 import cn.ucloud.udb.models.DescribeUDBInstanceBackupStateRequest;
@@ -405,6 +407,19 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
         request.setAction("DescribeUDBBackupBlacklist");
         return (DescribeUDBBackupBlacklistResponse)
                 this.invoke(request, DescribeUDBBackupBlacklistResponse.class);
+    }
+
+    /**
+     * DescribeUDBBinlogBackup - 列表UDB实例Binlog自动备份信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDBBinlogBackupResponse describeUDBBinlogBackup(
+            DescribeUDBBinlogBackupRequest request) throws UCloudException {
+        request.setAction("DescribeUDBBinlogBackup");
+        return (DescribeUDBBinlogBackupResponse)
+                this.invoke(request, DescribeUDBBinlogBackupResponse.class);
     }
 
     /**

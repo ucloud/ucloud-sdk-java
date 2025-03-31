@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class CreateNetworkLoadBalancerResponse extends Response {
 
-    /** */
+    /** 返回的NLBId */
     @SerializedName("NLBId")
     private String nlbId;
 

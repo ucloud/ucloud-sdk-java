@@ -17,6 +17,8 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.DescribeCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.DescribeCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.DescribeULHostBundlesRequest;
 import cn.ucloud.ucompshare.models.DescribeULHostBundlesResponse;
 import cn.ucloud.ucompshare.models.DescribeULHostInstanceRequest;
@@ -31,12 +33,18 @@ import cn.ucloud.ucompshare.models.PoweroffULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.PoweroffULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.RebootULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.RebootULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.ReinstallCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.ReinstallCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.ReinstallULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.ReinstallULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.ResetULHostInstancePasswordRequest;
 import cn.ucloud.ucompshare.models.ResetULHostInstancePasswordResponse;
+import cn.ucloud.ucompshare.models.StartCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.StartCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.StartULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.StartULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.StopCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.StopCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.StopULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.StopULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.TerminateULHostInstanceRequest;
@@ -53,6 +61,15 @@ public interface UCompShareClientInterface extends Client {
      */
     public CreateULHostInstanceResponse createULHostInstance(CreateULHostInstanceRequest request)
             throws UCloudException;
+
+    /**
+     * DescribeCompShareInstance - 获取用户所有地域的主机资源列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCompShareInstanceResponse describeCompShareInstance(
+            DescribeCompShareInstanceRequest request) throws UCloudException;
 
     /**
      * DescribeULHostBundles - 获取轻量应用云主机套餐列表
@@ -118,6 +135,15 @@ public interface UCompShareClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * ReinstallCompShareInstance - 重装算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ReinstallCompShareInstanceResponse reinstallCompShareInstance(
+            ReinstallCompShareInstanceRequest request) throws UCloudException;
+
+    /**
      * ReinstallULHostInstance - 重装轻量应用云主机
      *
      * @param request Request object
@@ -136,12 +162,30 @@ public interface UCompShareClientInterface extends Client {
             ResetULHostInstancePasswordRequest request) throws UCloudException;
 
     /**
+     * StartCompShareInstance - 启动算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public StartCompShareInstanceResponse startCompShareInstance(
+            StartCompShareInstanceRequest request) throws UCloudException;
+
+    /**
      * StartULHostInstance - 启动轻量应用主机
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
     public StartULHostInstanceResponse startULHostInstance(StartULHostInstanceRequest request)
+            throws UCloudException;
+
+    /**
+     * StopCompShareInstance - 关闭算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public StopCompShareInstanceResponse stopCompShareInstance(StopCompShareInstanceRequest request)
             throws UCloudException;
 
     /**

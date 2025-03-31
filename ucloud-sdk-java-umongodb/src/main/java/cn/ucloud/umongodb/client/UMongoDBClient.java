@@ -55,6 +55,8 @@ import cn.ucloud.umongodb.models.ModifyUMongoDBAttributeRequest;
 import cn.ucloud.umongodb.models.ModifyUMongoDBAttributeResponse;
 import cn.ucloud.umongodb.models.ModifyUMongoDBBackupParamRequest;
 import cn.ucloud.umongodb.models.ModifyUMongoDBBackupParamResponse;
+import cn.ucloud.umongodb.models.ResizeUMongoDBInstanceRequest;
+import cn.ucloud.umongodb.models.ResizeUMongoDBInstanceResponse;
 import cn.ucloud.umongodb.models.RestartUMongoDBClusterRequest;
 import cn.ucloud.umongodb.models.RestartUMongoDBClusterResponse;
 import cn.ucloud.umongodb.models.StartUMongoDBClusterRequest;
@@ -311,6 +313,19 @@ public class UMongoDBClient extends DefaultClient implements UMongoDBClientInter
         request.setAction("ModifyUMongoDBBackupParam");
         return (ModifyUMongoDBBackupParamResponse)
                 this.invoke(request, ModifyUMongoDBBackupParamResponse.class);
+    }
+
+    /**
+     * ResizeUMongoDBInstance - 集群配置升降级
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ResizeUMongoDBInstanceResponse resizeUMongoDBInstance(
+            ResizeUMongoDBInstanceRequest request) throws UCloudException {
+        request.setAction("ResizeUMongoDBInstance");
+        return (ResizeUMongoDBInstanceResponse)
+                this.invoke(request, ResizeUMongoDBInstanceResponse.class);
     }
 
     /**
