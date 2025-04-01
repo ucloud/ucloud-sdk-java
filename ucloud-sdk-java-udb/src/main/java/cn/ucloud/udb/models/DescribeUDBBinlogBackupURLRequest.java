@@ -39,6 +39,11 @@ public class DescribeUDBBinlogBackupURLRequest extends Request {
     @UCloudParam("BackupId")
     private Integer backupId;
 
+    /** binlog备份类型 Manual:手动备份 ,Auto:自动备份 */
+    @NotEmpty
+    @UCloudParam("BinlogType")
+    private String binlogType;
+
     public String getRegion() {
         return region;
     }
@@ -69,5 +74,13 @@ public class DescribeUDBBinlogBackupURLRequest extends Request {
 
     public void setBackupId(Integer backupId) {
         this.backupId = backupId;
+    }
+
+    public String getBinlogType() {
+        return binlogType;
+    }
+
+    public void setBinlogType(String binlogType) {
+        this.binlogType = binlogType;
     }
 }
