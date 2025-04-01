@@ -15,68 +15,18 @@ package cn.ucloud.uai_modelverse.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
-import cn.ucloud.uai_modelverse.models.CreateMVAppRequest;
-import cn.ucloud.uai_modelverse.models.CreateMVAppResponse;
-import cn.ucloud.uai_modelverse.models.DeleteMVAppRequest;
-import cn.ucloud.uai_modelverse.models.DeleteMVAppResponse;
-import cn.ucloud.uai_modelverse.models.QueryMVAppRequest;
-import cn.ucloud.uai_modelverse.models.QueryMVAppResponse;
-import cn.ucloud.uai_modelverse.models.QueryMVLLMListRequest;
-import cn.ucloud.uai_modelverse.models.QueryMVLLMListResponse;
-import cn.ucloud.uai_modelverse.models.RunMVChatRequest;
-import cn.ucloud.uai_modelverse.models.RunMVChatResponse;
-import cn.ucloud.uai_modelverse.models.UpdateMVAppRequest;
-import cn.ucloud.uai_modelverse.models.UpdateMVAppResponse;
+import cn.ucloud.uai_modelverse.models.GetUMInferServiceRequest;
+import cn.ucloud.uai_modelverse.models.GetUMInferServiceResponse;
 
 /** This client is used to call actions of **UAIModelverse** service */
 public interface UAIModelverseClientInterface extends Client {
 
     /**
-     * CreateMVApp - 创建应用
+     * GetUMInferService - 获取模型服务
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
-    public CreateMVAppResponse createMVApp(CreateMVAppRequest request) throws UCloudException;
-
-    /**
-     * DeleteMVApp - 删除应用
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DeleteMVAppResponse deleteMVApp(DeleteMVAppRequest request) throws UCloudException;
-
-    /**
-     * QueryMVApp - 查询应用信息
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public QueryMVAppResponse queryMVApp(QueryMVAppRequest request) throws UCloudException;
-
-    /**
-     * QueryMVLLMList - 查询语言模型信息
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public QueryMVLLMListResponse queryMVLLMList(QueryMVLLMListRequest request)
+    public GetUMInferServiceResponse getUMInferService(GetUMInferServiceRequest request)
             throws UCloudException;
-
-    /**
-     * RunMVChat - 聊天
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public RunMVChatResponse runMVChat(RunMVChatRequest request) throws UCloudException;
-
-    /**
-     * UpdateMVApp - 更新应用
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public UpdateMVAppResponse updateMVApp(UpdateMVAppRequest request) throws UCloudException;
 }

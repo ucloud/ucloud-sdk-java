@@ -55,6 +55,8 @@ import cn.ucloud.udb.models.DescribeUDBBackupBlacklistRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupBlacklistResponse;
 import cn.ucloud.udb.models.DescribeUDBBackupRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupRequest;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupResponse;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLRequest;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLResponse;
 import cn.ucloud.udb.models.DescribeUDBInstanceBackupStateRequest;
@@ -327,6 +329,15 @@ public interface UDBClientInterface extends Client {
      */
     public DescribeUDBBackupBlacklistResponse describeUDBBackupBlacklist(
             DescribeUDBBackupBlacklistRequest request) throws UCloudException;
+
+    /**
+     * DescribeUDBBinlogBackup - 列表UDB实例Binlog自动备份信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDBBinlogBackupResponse describeUDBBinlogBackup(
+            DescribeUDBBinlogBackupRequest request) throws UCloudException;
 
     /**
      * DescribeUDBBinlogBackupURL - (新)获取UDB的日志备份地址

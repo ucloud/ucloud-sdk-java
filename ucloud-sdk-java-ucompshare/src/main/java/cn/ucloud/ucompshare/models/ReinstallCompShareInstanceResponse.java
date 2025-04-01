@@ -11,25 +11,24 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uai_modelverse.models;
+package cn.ucloud.ucompshare.models;
 
 
-import cn.ucloud.common.annotation.NotEmpty;
-import cn.ucloud.common.annotation.UCloudParam;
-import cn.ucloud.common.request.Request;
+import cn.ucloud.common.response.Response;
 
-public class DeleteMVAppRequest extends Request {
+import com.google.gson.annotations.SerializedName;
 
-    /** 应用ID */
-    @NotEmpty
-    @UCloudParam("AppID")
-    private String appID;
+public class ReinstallCompShareInstanceResponse extends Response {
 
-    public String getAppID() {
-        return appID;
+    /** 实例Id */
+    @SerializedName("UHostId")
+    private String uHostId;
+
+    public String getUHostId() {
+        return uHostId;
     }
 
-    public void setAppID(String appID) {
-        this.appID = appID;
+    public void setUHostId(String uHostId) {
+        this.uHostId = uHostId;
     }
 }

@@ -11,24 +11,39 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.uai_modelverse.models;
+package cn.ucloud.cloudwatch.models;
 
 
 import cn.ucloud.common.response.Response;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DeleteMVAppResponse extends Response {
+public class CreateAlertStrategyTemplateResponse extends Response {
 
-    /** Code非0时，描述错误信息 */
-    @SerializedName("Msg")
-    private String msg;
+    /** 创建告警模板返回对象 */
+    @SerializedName("Data")
+    private AlertTemplate data;
 
-    public String getMsg() {
-        return msg;
+    public AlertTemplate getData() {
+        return data;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setData(AlertTemplate data) {
+        this.data = data;
+    }
+
+    public static class AlertTemplate extends Response {
+
+        /** 告警模板ID */
+        @SerializedName("TemplateID")
+        private Integer templateID;
+
+        public Integer getTemplateID() {
+            return templateID;
+        }
+
+        public void setTemplateID(Integer templateID) {
+            this.templateID = templateID;
+        }
     }
 }
