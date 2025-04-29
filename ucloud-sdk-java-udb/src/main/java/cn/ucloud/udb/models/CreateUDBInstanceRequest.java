@@ -166,6 +166,29 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("MachineType")
     private String machineType;
 
+    /** 告警模版id */
+    @UCloudParam("AlarmTemplateId")
+    private String alarmTemplateId;
+
+    /** 备份文件的US3内网下载地址 */
+    @UCloudParam("BackupURL")
+    private String backupURL;
+
+    /**
+     * 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
+     * ，该字段和SpecificationClass组合优先级比InstanceType字段高 该字段和SpecificationClass组合优先级比InstanceType字段高，
+     */
+    @UCloudParam("StorageClass")
+    private String storageClass;
+
+    /** 规格类型 O: NVMe型, OM: 共享型，N: 通用型 */
+    @UCloudParam("SpecificationClass")
+    private String specificationClass;
+
+    /** 半同步开启开关 1：表示开启半同步，2：表示关闭半同步，0：表示默认值，默认也是开启半同步 */
+    @UCloudParam("SemisyncFlag")
+    private Integer semisyncFlag;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -416,6 +439,46 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setMachineType(String machineType) {
         this.machineType = machineType;
+    }
+
+    public String getAlarmTemplateId() {
+        return alarmTemplateId;
+    }
+
+    public void setAlarmTemplateId(String alarmTemplateId) {
+        this.alarmTemplateId = alarmTemplateId;
+    }
+
+    public String getBackupURL() {
+        return backupURL;
+    }
+
+    public void setBackupURL(String backupURL) {
+        this.backupURL = backupURL;
+    }
+
+    public String getStorageClass() {
+        return storageClass;
+    }
+
+    public void setStorageClass(String storageClass) {
+        this.storageClass = storageClass;
+    }
+
+    public String getSpecificationClass() {
+        return specificationClass;
+    }
+
+    public void setSpecificationClass(String specificationClass) {
+        this.specificationClass = specificationClass;
+    }
+
+    public Integer getSemisyncFlag() {
+        return semisyncFlag;
+    }
+
+    public void setSemisyncFlag(Integer semisyncFlag) {
+        this.semisyncFlag = semisyncFlag;
     }
 
     public String getCouponId() {

@@ -47,6 +47,10 @@ public class DescribeUDBParamGroupResponse extends Response {
 
     public static class UDBParamGroupSet extends Response {
 
+        /** 参数组类型：1：稳定版参数组，2:高性能版参数组。默认是稳定版参数组 */
+        @SerializedName("GroupType")
+        private Integer groupType;
+
         /** 参数组id */
         @SerializedName("GroupId")
         private Integer groupId;
@@ -74,6 +78,14 @@ public class DescribeUDBParamGroupResponse extends Response {
         /** 参数的键值对表 UDBParamMemberSet */
         @SerializedName("ParamMember")
         private List<UDBParamMemberSet> paramMember;
+
+        public Integer getGroupType() {
+            return groupType;
+        }
+
+        public void setGroupType(Integer groupType) {
+            this.groupType = groupType;
+        }
 
         public Integer getGroupId() {
             return groupId;
