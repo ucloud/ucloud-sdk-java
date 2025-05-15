@@ -78,6 +78,10 @@ public class UpdateUSMSSignatureRequest extends Request {
     @UCloudParam("ProxyDoc")
     private String proxyDoc;
 
+    /** 短信签名对应的场景说明 */
+    @UCloudParam("SceneDesc")
+    private String sceneDesc;
+
     public String getProjectId() {
         return projectId;
     }
@@ -156,5 +160,13 @@ public class UpdateUSMSSignatureRequest extends Request {
 
     public void setProxyDoc(String proxyDoc) {
         this.proxyDoc = proxyDoc;
+    }
+
+    public String getSceneDesc() {
+        return sceneDesc;
+    }
+
+    public void setSceneDesc(String sceneDesc) {
+        this.sceneDesc = sceneDesc;
     }
 }
