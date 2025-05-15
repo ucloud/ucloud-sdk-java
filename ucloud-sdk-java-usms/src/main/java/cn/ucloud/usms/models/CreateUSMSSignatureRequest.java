@@ -76,6 +76,10 @@ public class CreateUSMSSignatureRequest extends Request {
     @UCloudParam("QualificationId")
     private String qualificationId;
 
+    /** 短信签名对应的场景说明 */
+    @UCloudParam("SceneDesc")
+    private String sceneDesc;
+
     public String getProjectId() {
         return projectId;
     }
@@ -154,5 +158,13 @@ public class CreateUSMSSignatureRequest extends Request {
 
     public void setQualificationId(String qualificationId) {
         this.qualificationId = qualificationId;
+    }
+
+    public String getSceneDesc() {
+        return sceneDesc;
+    }
+
+    public void setSceneDesc(String sceneDesc) {
+        this.sceneDesc = sceneDesc;
     }
 }

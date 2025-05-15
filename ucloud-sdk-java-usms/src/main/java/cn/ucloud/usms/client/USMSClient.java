@@ -19,10 +19,14 @@ import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.usms.models.AddBackfillRequest;
 import cn.ucloud.usms.models.AddBackfillResponse;
+import cn.ucloud.usms.models.AddUSMSSignatureQualificationRequest;
+import cn.ucloud.usms.models.AddUSMSSignatureQualificationResponse;
 import cn.ucloud.usms.models.CreateUSMSSignatureRequest;
 import cn.ucloud.usms.models.CreateUSMSSignatureResponse;
 import cn.ucloud.usms.models.CreateUSMSTemplateRequest;
 import cn.ucloud.usms.models.CreateUSMSTemplateResponse;
+import cn.ucloud.usms.models.DeleteUSMSSignatureQualificationRequest;
+import cn.ucloud.usms.models.DeleteUSMSSignatureQualificationResponse;
 import cn.ucloud.usms.models.DeleteUSMSSignatureRequest;
 import cn.ucloud.usms.models.DeleteUSMSSignatureResponse;
 import cn.ucloud.usms.models.DeleteUSMSTemplateRequest;
@@ -31,6 +35,10 @@ import cn.ucloud.usms.models.GetUSMSSendReceiptRequest;
 import cn.ucloud.usms.models.GetUSMSSendReceiptResponse;
 import cn.ucloud.usms.models.GetUSMSSendStatisticsRequest;
 import cn.ucloud.usms.models.GetUSMSSendStatisticsResponse;
+import cn.ucloud.usms.models.GetUSMSSignatureQualificationRequest;
+import cn.ucloud.usms.models.GetUSMSSignatureQualificationResponse;
+import cn.ucloud.usms.models.QueryUSMSSignatureQualificationRequest;
+import cn.ucloud.usms.models.QueryUSMSSignatureQualificationResponse;
 import cn.ucloud.usms.models.QueryUSMSSignatureRequest;
 import cn.ucloud.usms.models.QueryUSMSSignatureResponse;
 import cn.ucloud.usms.models.QueryUSMSTemplateRequest;
@@ -39,10 +47,14 @@ import cn.ucloud.usms.models.SendBatchUSMSMessageRequest;
 import cn.ucloud.usms.models.SendBatchUSMSMessageResponse;
 import cn.ucloud.usms.models.SendUSMSMessageRequest;
 import cn.ucloud.usms.models.SendUSMSMessageResponse;
+import cn.ucloud.usms.models.UpdateUSMSSignatureQualificationRequest;
+import cn.ucloud.usms.models.UpdateUSMSSignatureQualificationResponse;
 import cn.ucloud.usms.models.UpdateUSMSSignatureRequest;
 import cn.ucloud.usms.models.UpdateUSMSSignatureResponse;
 import cn.ucloud.usms.models.UpdateUSMSTemplateRequest;
 import cn.ucloud.usms.models.UpdateUSMSTemplateResponse;
+import cn.ucloud.usms.models.UploadUSMSFileRequest;
+import cn.ucloud.usms.models.UploadUSMSFileResponse;
 
 /** This client is used to call actions of **USMS** service */
 public class USMSClient extends DefaultClient implements USMSClientInterface {
@@ -59,6 +71,19 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     public AddBackfillResponse addBackfill(AddBackfillRequest request) throws UCloudException {
         request.setAction("AddBackfill");
         return (AddBackfillResponse) this.invoke(request, AddBackfillResponse.class);
+    }
+
+    /**
+     * AddUSMSSignatureQualification - 添加短信签名资质申请记录
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddUSMSSignatureQualificationResponse addUSMSSignatureQualification(
+            AddUSMSSignatureQualificationRequest request) throws UCloudException {
+        request.setAction("AddUSMSSignatureQualification");
+        return (AddUSMSSignatureQualificationResponse)
+                this.invoke(request, AddUSMSSignatureQualificationResponse.class);
     }
 
     /**
@@ -100,6 +125,19 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
+     * DeleteUSMSSignatureQualification - 删除短信签名资质申请记录
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUSMSSignatureQualificationResponse deleteUSMSSignatureQualification(
+            DeleteUSMSSignatureQualificationRequest request) throws UCloudException {
+        request.setAction("DeleteUSMSSignatureQualification");
+        return (DeleteUSMSSignatureQualificationResponse)
+                this.invoke(request, DeleteUSMSSignatureQualificationResponse.class);
+    }
+
+    /**
      * DeleteUSMSTemplate - 删除短信模板
      *
      * @param request Request object
@@ -137,6 +175,19 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
+     * GetUSMSSignatureQualification - 获取短信签名资质申请记录列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUSMSSignatureQualificationResponse getUSMSSignatureQualification(
+            GetUSMSSignatureQualificationRequest request) throws UCloudException {
+        request.setAction("GetUSMSSignatureQualification");
+        return (GetUSMSSignatureQualificationResponse)
+                this.invoke(request, GetUSMSSignatureQualificationResponse.class);
+    }
+
+    /**
      * QueryUSMSSignature - 查询短信签名申请状态
      *
      * @param request Request object
@@ -146,6 +197,19 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
             throws UCloudException {
         request.setAction("QueryUSMSSignature");
         return (QueryUSMSSignatureResponse) this.invoke(request, QueryUSMSSignatureResponse.class);
+    }
+
+    /**
+     * QueryUSMSSignatureQualification - 获取短信签名资质申请记录详情
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public QueryUSMSSignatureQualificationResponse queryUSMSSignatureQualification(
+            QueryUSMSSignatureQualificationRequest request) throws UCloudException {
+        request.setAction("QueryUSMSSignatureQualification");
+        return (QueryUSMSSignatureQualificationResponse)
+                this.invoke(request, QueryUSMSSignatureQualificationResponse.class);
     }
 
     /**
@@ -199,6 +263,19 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
     }
 
     /**
+     * UpdateUSMSSignatureQualification - 修改短信签名资质申请记录
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUSMSSignatureQualificationResponse updateUSMSSignatureQualification(
+            UpdateUSMSSignatureQualificationRequest request) throws UCloudException {
+        request.setAction("UpdateUSMSSignatureQualification");
+        return (UpdateUSMSSignatureQualificationResponse)
+                this.invoke(request, UpdateUSMSSignatureQualificationResponse.class);
+    }
+
+    /**
      * UpdateUSMSTemplate - 修改短信模板
      *
      * @param request Request object
@@ -208,5 +285,17 @@ public class USMSClient extends DefaultClient implements USMSClientInterface {
             throws UCloudException {
         request.setAction("UpdateUSMSTemplate");
         return (UpdateUSMSTemplateResponse) this.invoke(request, UpdateUSMSTemplateResponse.class);
+    }
+
+    /**
+     * UploadUSMSFile - 上传文件
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UploadUSMSFileResponse uploadUSMSFile(UploadUSMSFileRequest request)
+            throws UCloudException {
+        request.setAction("UploadUSMSFile");
+        return (UploadUSMSFileResponse) this.invoke(request, UploadUSMSFileResponse.class);
     }
 }
