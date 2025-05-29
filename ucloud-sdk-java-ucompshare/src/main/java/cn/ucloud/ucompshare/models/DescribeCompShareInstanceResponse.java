@@ -95,6 +95,10 @@ public class DescribeCompShareInstanceResponse extends Response {
         @SerializedName("Password")
         private String password;
 
+        /** SSH登录命令 */
+        @SerializedName("SshLoginCommand")
+        private String sshLoginCommand;
+
         /** 实例名称 */
         @SerializedName("Name")
         private String name;
@@ -125,7 +129,7 @@ public class DescribeCompShareInstanceResponse extends Response {
 
         /** 内存大小，单位：MB */
         @SerializedName("Memory")
-        private String memory;
+        private Integer memory;
 
         /** GPU类型。如: "4090" */
         @SerializedName("GpuType")
@@ -185,43 +189,19 @@ public class DescribeCompShareInstanceResponse extends Response {
 
         /** 过期时间 */
         @SerializedName("ExpireTime")
-        private String expireTime;
+        private Integer expireTime;
 
         /** 创建时间 */
         @SerializedName("CreateTime")
-        private String createTime;
+        private Integer createTime;
 
-        /** 【内部API返回】宿主所在Set Id */
-        @SerializedName("SetId")
-        private Integer setId;
+        /** 此实例是否支持无卡开机 */
+        @SerializedName("SupportWithoutGpuStart")
+        private Boolean supportWithoutGpuStart;
 
-        /** 【内部API返回】宿主IP */
-        @SerializedName("HostIp")
-        private String hostIp;
-
-        /** 【内部API返回】udisk podId */
-        @SerializedName("PodId")
-        private String podId;
-
-        /** 【内部API返回】大页内存 */
-        @SerializedName("HugepageCfg")
-        private String hugepageCfg;
-
-        /** 【内部API返回】Qemu版本号 */
-        @SerializedName("QemuVersion")
-        private String qemuVersion;
-
-        /** 【内部API返回】Qemu完整版本号 */
-        @SerializedName("QemuFullVersion")
-        private String qemuFullVersion;
-
-        /** 【内部API返回】资源长Id */
-        @SerializedName("UUID")
-        private String uuid;
-
-        /** 【内部API返回】后付费关机 */
-        @SerializedName("PostPayShutdown")
-        private Boolean postPayShutdown;
+        /** 无卡配置规格，详情见：WithoutGpuSpecInfo */
+        @SerializedName("WithoutGpuSpec")
+        private WithoutGpuSpec withoutGpuSpec;
 
         public String getZone() {
             return zone;
@@ -319,6 +299,14 @@ public class DescribeCompShareInstanceResponse extends Response {
             this.password = password;
         }
 
+        public String getSshLoginCommand() {
+            return sshLoginCommand;
+        }
+
+        public void setSshLoginCommand(String sshLoginCommand) {
+            this.sshLoginCommand = sshLoginCommand;
+        }
+
         public String getName() {
             return name;
         }
@@ -367,11 +355,11 @@ public class DescribeCompShareInstanceResponse extends Response {
             this.cpu = cpu;
         }
 
-        public String getMemory() {
+        public Integer getMemory() {
             return memory;
         }
 
-        public void setMemory(String memory) {
+        public void setMemory(Integer memory) {
             this.memory = memory;
         }
 
@@ -487,84 +475,36 @@ public class DescribeCompShareInstanceResponse extends Response {
             this.compShareImagePrice = compShareImagePrice;
         }
 
-        public String getExpireTime() {
+        public Integer getExpireTime() {
             return expireTime;
         }
 
-        public void setExpireTime(String expireTime) {
+        public void setExpireTime(Integer expireTime) {
             this.expireTime = expireTime;
         }
 
-        public String getCreateTime() {
+        public Integer getCreateTime() {
             return createTime;
         }
 
-        public void setCreateTime(String createTime) {
+        public void setCreateTime(Integer createTime) {
             this.createTime = createTime;
         }
 
-        public Integer getSetId() {
-            return setId;
+        public Boolean getSupportWithoutGpuStart() {
+            return supportWithoutGpuStart;
         }
 
-        public void setSetId(Integer setId) {
-            this.setId = setId;
+        public void setSupportWithoutGpuStart(Boolean supportWithoutGpuStart) {
+            this.supportWithoutGpuStart = supportWithoutGpuStart;
         }
 
-        public String getHostIp() {
-            return hostIp;
+        public WithoutGpuSpec getWithoutGpuSpec() {
+            return withoutGpuSpec;
         }
 
-        public void setHostIp(String hostIp) {
-            this.hostIp = hostIp;
-        }
-
-        public String getPodId() {
-            return podId;
-        }
-
-        public void setPodId(String podId) {
-            this.podId = podId;
-        }
-
-        public String getHugepageCfg() {
-            return hugepageCfg;
-        }
-
-        public void setHugepageCfg(String hugepageCfg) {
-            this.hugepageCfg = hugepageCfg;
-        }
-
-        public String getQemuVersion() {
-            return qemuVersion;
-        }
-
-        public void setQemuVersion(String qemuVersion) {
-            this.qemuVersion = qemuVersion;
-        }
-
-        public String getQemuFullVersion() {
-            return qemuFullVersion;
-        }
-
-        public void setQemuFullVersion(String qemuFullVersion) {
-            this.qemuFullVersion = qemuFullVersion;
-        }
-
-        public String getUUID() {
-            return uuid;
-        }
-
-        public void setUUID(String uuid) {
-            this.uuid = uuid;
-        }
-
-        public Boolean getPostPayShutdown() {
-            return postPayShutdown;
-        }
-
-        public void setPostPayShutdown(Boolean postPayShutdown) {
-            this.postPayShutdown = postPayShutdown;
+        public void setWithoutGpuSpec(WithoutGpuSpec withoutGpuSpec) {
+            this.withoutGpuSpec = withoutGpuSpec;
         }
     }
 
@@ -656,10 +596,6 @@ public class DescribeCompShareInstanceResponse extends Response {
         @SerializedName("Size")
         private Integer size;
 
-        /** 备份方案。若开通了数据方舟，则为DATAARK */
-        @SerializedName("BackupType")
-        private String backupType;
-
         public String getDiskType() {
             return diskType;
         }
@@ -722,14 +658,6 @@ public class DescribeCompShareInstanceResponse extends Response {
 
         public void setSize(Integer size) {
             this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
         }
     }
 
@@ -865,6 +793,45 @@ public class DescribeCompShareInstanceResponse extends Response {
 
         public void setNetworkInterfaceId(String networkInterfaceId) {
             this.networkInterfaceId = networkInterfaceId;
+        }
+    }
+
+    public static class WithoutGpuSpec extends Response {
+
+        /** cpu */
+        @SerializedName("Cpu")
+        private Integer cpu;
+
+        /** 内存 */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** gpu */
+        @SerializedName("Gpu")
+        private Integer gpu;
+
+        public Integer getCpu() {
+            return cpu;
+        }
+
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public Integer getGpu() {
+            return gpu;
+        }
+
+        public void setGpu(Integer gpu) {
+            this.gpu = gpu;
         }
     }
 }

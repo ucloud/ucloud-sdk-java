@@ -13,18 +13,20 @@
  */
 package cn.ucloud.ucompshare.models;
 
+
+import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-import java.util.List;
-
-public class DescribeCompShareInstanceRequest extends Request {
+public class TerminateCompShareInstanceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Region")
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -35,23 +37,10 @@ public class DescribeCompShareInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /**
-     * 【数组】UHost主机的资源ID，例如UHostIds.0代表希望获取信息 的主机1，UHostIds.1代表主机2。 如果不传入，则返回当前Region 所有符合条件的UHost实例。
-     */
-    @UCloudParam("UHostIds")
-    private List<String> uHostIds;
-
-    /** 无卡GPU */
-    @UCloudParam("WithoutGpu")
-    private Boolean withoutGpu;
-
-    /** 列表起始位置偏移量，默认为0 */
-    @UCloudParam("Offset")
-    private Integer offset;
-
-    /** 返回数据长度，默认为20，最大100 */
-    @UCloudParam("Limit")
-    private Integer limit;
+    /** 虚机资源id */
+    @NotEmpty
+    @UCloudParam("UHostId")
+    private String uHostId;
 
     public String getRegion() {
         return region;
@@ -77,35 +66,11 @@ public class DescribeCompShareInstanceRequest extends Request {
         this.projectId = projectId;
     }
 
-    public List<String> getUHostIds() {
-        return uHostIds;
+    public String getUHostId() {
+        return uHostId;
     }
 
-    public void setUHostIds(List<String> uHostIds) {
-        this.uHostIds = uHostIds;
-    }
-
-    public Boolean getWithoutGpu() {
-        return withoutGpu;
-    }
-
-    public void setWithoutGpu(Boolean withoutGpu) {
-        this.withoutGpu = withoutGpu;
-    }
-
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setUHostId(String uHostId) {
+        this.uHostId = uHostId;
     }
 }
