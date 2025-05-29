@@ -392,8 +392,8 @@ public class DescribeULHostInstanceResponse extends Response {
         private List<ULHostDiskSet> diskSet;
 
         /** 流量包详情信息 */
-        @SerializedName("ExclusiveUTPInfo")
-        private ExclusiveUTPInfo exclusiveUTPInfo;
+        @SerializedName("EIPExclusiveUTPInfo")
+        private ExclusiveUTPInfo eipExclusiveUTPInfo;
 
         /** 是否自动续费。枚举值：Yes/No */
         @SerializedName("AutoRenew")
@@ -523,12 +523,12 @@ public class DescribeULHostInstanceResponse extends Response {
             this.diskSet = diskSet;
         }
 
-        public ExclusiveUTPInfo getExclusiveUTPInfo() {
-            return exclusiveUTPInfo;
+        public ExclusiveUTPInfo getEIPExclusiveUTPInfo() {
+            return eipExclusiveUTPInfo;
         }
 
-        public void setExclusiveUTPInfo(ExclusiveUTPInfo exclusiveUTPInfo) {
-            this.exclusiveUTPInfo = exclusiveUTPInfo;
+        public void setEIPExclusiveUTPInfo(ExclusiveUTPInfo eipExclusiveUTPInfo) {
+            this.eipExclusiveUTPInfo = eipExclusiveUTPInfo;
         }
 
         public String getAutoRenew() {

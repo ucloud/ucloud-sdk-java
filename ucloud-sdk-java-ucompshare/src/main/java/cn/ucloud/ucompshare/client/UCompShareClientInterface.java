@@ -15,6 +15,8 @@ package cn.ucloud.ucompshare.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ucompshare.models.CreateCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.CreateCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.DescribeCompShareInstanceRequest;
@@ -31,12 +33,16 @@ import cn.ucloud.ucompshare.models.ModifyULHostAttributeRequest;
 import cn.ucloud.ucompshare.models.ModifyULHostAttributeResponse;
 import cn.ucloud.ucompshare.models.PoweroffULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.PoweroffULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.RebootCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.RebootCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.RebootULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.RebootULHostInstanceResponse;
 import cn.ucloud.ucompshare.models.ReinstallCompShareInstanceRequest;
 import cn.ucloud.ucompshare.models.ReinstallCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.ReinstallULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.ReinstallULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.ResetCompShareInstancePasswordRequest;
+import cn.ucloud.ucompshare.models.ResetCompShareInstancePasswordResponse;
 import cn.ucloud.ucompshare.models.ResetULHostInstancePasswordRequest;
 import cn.ucloud.ucompshare.models.ResetULHostInstancePasswordResponse;
 import cn.ucloud.ucompshare.models.StartCompShareInstanceRequest;
@@ -47,11 +53,22 @@ import cn.ucloud.ucompshare.models.StopCompShareInstanceRequest;
 import cn.ucloud.ucompshare.models.StopCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.StopULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.StopULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.TerminateCompShareInstanceRequest;
+import cn.ucloud.ucompshare.models.TerminateCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.TerminateULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.TerminateULHostInstanceResponse;
 
 /** This client is used to call actions of **UCompShare** service */
 public interface UCompShareClientInterface extends Client {
+
+    /**
+     * CreateCompShareInstance - 创建轻量级算力平台主机资源
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateCompShareInstanceResponse createCompShareInstance(
+            CreateCompShareInstanceRequest request) throws UCloudException;
 
     /**
      * CreateULHostInstance - 创建轻量应用云主机
@@ -126,6 +143,15 @@ public interface UCompShareClientInterface extends Client {
             PoweroffULHostInstanceRequest request) throws UCloudException;
 
     /**
+     * RebootCompShareInstance - 重启轻量算力平台实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RebootCompShareInstanceResponse rebootCompShareInstance(
+            RebootCompShareInstanceRequest request) throws UCloudException;
+
+    /**
      * RebootULHostInstance - 重启轻量应用云主机
      *
      * @param request Request object
@@ -151,6 +177,15 @@ public interface UCompShareClientInterface extends Client {
      */
     public ReinstallULHostInstanceResponse reinstallULHostInstance(
             ReinstallULHostInstanceRequest request) throws UCloudException;
+
+    /**
+     * ResetCompShareInstancePassword - 重置算力平台实例密码
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ResetCompShareInstancePasswordResponse resetCompShareInstancePassword(
+            ResetCompShareInstancePasswordRequest request) throws UCloudException;
 
     /**
      * ResetULHostInstancePassword - 重置轻量应用云主机密码
@@ -196,6 +231,15 @@ public interface UCompShareClientInterface extends Client {
      */
     public StopULHostInstanceResponse stopULHostInstance(StopULHostInstanceRequest request)
             throws UCloudException;
+
+    /**
+     * TerminateCompShareInstance - 删除轻量算力共享平台虚机实例
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public TerminateCompShareInstanceResponse terminateCompShareInstance(
+            TerminateCompShareInstanceRequest request) throws UCloudException;
 
     /**
      * TerminateULHostInstance - 删除轻量应用云主机
