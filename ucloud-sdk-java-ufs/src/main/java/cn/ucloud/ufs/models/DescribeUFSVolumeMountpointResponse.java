@@ -21,7 +21,7 @@ import java.util.List;
 
 public class DescribeUFSVolumeMountpointResponse extends Response {
 
-    /** */
+    /** 挂载点数据 */
     @SerializedName("DataSet")
     private List<MountPointInfo> dataSet;
 
