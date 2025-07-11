@@ -25,6 +25,10 @@ public class DescribeUFSVolumeMountpointRequest extends Request {
     @UCloudParam("Region")
     private String region;
 
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @UCloudParam("Zone")
+    private String zone;
+
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
@@ -43,6 +47,14 @@ public class DescribeUFSVolumeMountpointRequest extends Request {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public String getProjectId() {
