@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.43-release</version>
+    <version>1.2.44-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cloudwatch</module>
@@ -37,6 +37,7 @@
         <module>ucloud-sdk-java-ulb</module>
         <module>ucloud-sdk-java-ulog</module>
         <module>ucloud-sdk-java-umem</module>
+        <module>ucloud-sdk-java-umon</module>
         <module>ucloud-sdk-java-umongodb</module>
         <module>ucloud-sdk-java-unet</module>
         <module>ucloud-sdk-java-uphost</module>
