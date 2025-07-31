@@ -20,7 +20,7 @@ import cn.ucloud.common.request.Request;
 
 public class GetProductMetricsRequest extends Request {
 
-    /** 云产品key 例如 UHOST-uhost */
+    /** 云产品key 例如 uhost */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;

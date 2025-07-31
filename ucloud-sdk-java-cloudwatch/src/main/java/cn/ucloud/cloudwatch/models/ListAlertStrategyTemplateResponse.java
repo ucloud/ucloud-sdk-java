@@ -19,25 +19,21 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ListAlertStrategyResponse extends Response {
+public class ListAlertStrategyTemplateResponse extends Response {
 
-    /** 告警策略集合 */
+    /** 条件模板列表 */
     @SerializedName("Data")
-    private List<AlertStrategy> data;
+    private List<ListAlertTemplate> data;
 
-    /** 告警策略总数 */
+    /** 条件模板总条数 */
     @SerializedName("TotalCount")
     private Integer totalCount;
 
-    /** 链路ID */
-    @SerializedName("TraceId")
-    private String traceId;
-
-    public List<AlertStrategy> getData() {
+    public List<ListAlertTemplate> getData() {
         return data;
     }
 
-    public void setData(List<AlertStrategy> data) {
+    public void setData(List<ListAlertTemplate> data) {
         this.data = data;
     }
 
@@ -47,14 +43,6 @@ public class ListAlertStrategyResponse extends Response {
 
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
-    }
-
-    public String getTraceId() {
-        return traceId;
-    }
-
-    public void setTraceId(String traceId) {
-        this.traceId = traceId;
     }
 
     public static class AlertRule extends Response {
@@ -204,98 +192,50 @@ public class ListAlertStrategyResponse extends Response {
         }
     }
 
-    public static class AlertStrategy extends Response {
+    public static class ListAlertTemplate extends Response {
 
-        /** 告警规则集合 */
-        @SerializedName("RuleSet")
-        private List<AlertRule> ruleSet;
+        /** 公司id */
+        @SerializedName("CompanyID")
+        private Integer companyID;
 
-        /** 告警策略Id */
-        @SerializedName("AlertStrategyID")
-        private Integer alertStrategyID;
+        /** 模板Id */
+        @SerializedName("TemplateID")
+        private Integer templateID;
 
-        /** 告警策略名称 */
+        /** 告警模板名称 */
         @SerializedName("Name")
         private String name;
 
-        /** 资源类型 */
+        /** 产品类型(数值型)。参考ListMonitorProduct获取监控对象类型列表 */
         @SerializedName("ProductType")
         private Integer productType;
 
-        /** 资源类型名称 */
+        /** 产品类型(字符型)。参考ListMonitorProduct获取监控对象类型列表 */
         @SerializedName("ProductKey")
         private String productKey;
 
-        /** 告警规则配置类型(基于模板配置、基于手工配置) */
-        @SerializedName("ConfigMode")
-        private Integer configMode;
+        /** 告警条件规则 */
+        @SerializedName("RuleSet")
+        private List<AlertRule> ruleSet;
 
-        /** 模板Id */
-        @SerializedName("TemplateId")
-        private Integer templateId;
-
-        /** 通知方式(通知组：group，通知人：user) */
-        @SerializedName("NotifyType")
-        private String notifyType;
-
-        /** 通知人用户id集合 */
-        @SerializedName("NotifyUserIDs")
-        private List<Integer> notifyUserIDs;
-
-        /** 通知组id集合 */
-        @SerializedName("NotifyGroupIDs")
-        private List<Integer> notifyGroupIDs;
-
-        /** 通知渠道('email', 'sms', 'webhook') */
-        @SerializedName("NotifyChannelDs")
-        private List<String> notifyChannelDs;
-
-        /** 回调语言(cn,en) */
-        @SerializedName("CallbackLanguage")
-        private String callbackLanguage;
-
-        /** 回调地址 */
-        @SerializedName("CallbackUrls")
-        private List<String> callbackUrls;
-
-        /** 告警策略状态 */
-        @SerializedName("Status")
-        private Integer status;
-
-        /** 告警策略备注 */
+        /** 条件模板备注 */
         @SerializedName("Remark")
         private String remark;
 
-        /** 创建人 */
-        @SerializedName("CreatedBy")
-        private String createdBy;
-
-        /** 更新人 */
-        @SerializedName("UpdatedBy")
-        private String updatedBy;
-
-        /** 创建时间 */
-        @SerializedName("CreatedAt")
-        private Integer createdAt;
-
-        /** 更新时间 */
-        @SerializedName("UpdatedAt")
-        private Integer updatedAt;
-
-        public List<AlertRule> getRuleSet() {
-            return ruleSet;
+        public Integer getCompanyID() {
+            return companyID;
         }
 
-        public void setRuleSet(List<AlertRule> ruleSet) {
-            this.ruleSet = ruleSet;
+        public void setCompanyID(Integer companyID) {
+            this.companyID = companyID;
         }
 
-        public Integer getAlertStrategyID() {
-            return alertStrategyID;
+        public Integer getTemplateID() {
+            return templateID;
         }
 
-        public void setAlertStrategyID(Integer alertStrategyID) {
-            this.alertStrategyID = alertStrategyID;
+        public void setTemplateID(Integer templateID) {
+            this.templateID = templateID;
         }
 
         public String getName() {
@@ -322,76 +262,12 @@ public class ListAlertStrategyResponse extends Response {
             this.productKey = productKey;
         }
 
-        public Integer getConfigMode() {
-            return configMode;
+        public List<AlertRule> getRuleSet() {
+            return ruleSet;
         }
 
-        public void setConfigMode(Integer configMode) {
-            this.configMode = configMode;
-        }
-
-        public Integer getTemplateId() {
-            return templateId;
-        }
-
-        public void setTemplateId(Integer templateId) {
-            this.templateId = templateId;
-        }
-
-        public String getNotifyType() {
-            return notifyType;
-        }
-
-        public void setNotifyType(String notifyType) {
-            this.notifyType = notifyType;
-        }
-
-        public List<Integer> getNotifyUserIDs() {
-            return notifyUserIDs;
-        }
-
-        public void setNotifyUserIDs(List<Integer> notifyUserIDs) {
-            this.notifyUserIDs = notifyUserIDs;
-        }
-
-        public List<Integer> getNotifyGroupIDs() {
-            return notifyGroupIDs;
-        }
-
-        public void setNotifyGroupIDs(List<Integer> notifyGroupIDs) {
-            this.notifyGroupIDs = notifyGroupIDs;
-        }
-
-        public List<String> getNotifyChannelDs() {
-            return notifyChannelDs;
-        }
-
-        public void setNotifyChannelDs(List<String> notifyChannelDs) {
-            this.notifyChannelDs = notifyChannelDs;
-        }
-
-        public String getCallbackLanguage() {
-            return callbackLanguage;
-        }
-
-        public void setCallbackLanguage(String callbackLanguage) {
-            this.callbackLanguage = callbackLanguage;
-        }
-
-        public List<String> getCallbackUrls() {
-            return callbackUrls;
-        }
-
-        public void setCallbackUrls(List<String> callbackUrls) {
-            this.callbackUrls = callbackUrls;
-        }
-
-        public Integer getStatus() {
-            return status;
-        }
-
-        public void setStatus(Integer status) {
-            this.status = status;
+        public void setRuleSet(List<AlertRule> ruleSet) {
+            this.ruleSet = ruleSet;
         }
 
         public String getRemark() {
@@ -400,38 +276,6 @@ public class ListAlertStrategyResponse extends Response {
 
         public void setRemark(String remark) {
             this.remark = remark;
-        }
-
-        public String getCreatedBy() {
-            return createdBy;
-        }
-
-        public void setCreatedBy(String createdBy) {
-            this.createdBy = createdBy;
-        }
-
-        public String getUpdatedBy() {
-            return updatedBy;
-        }
-
-        public void setUpdatedBy(String updatedBy) {
-            this.updatedBy = updatedBy;
-        }
-
-        public Integer getCreatedAt() {
-            return createdAt;
-        }
-
-        public void setCreatedAt(Integer createdAt) {
-            this.createdAt = createdAt;
-        }
-
-        public Integer getUpdatedAt() {
-            return updatedAt;
-        }
-
-        public void setUpdatedAt(Integer updatedAt) {
-            this.updatedAt = updatedAt;
         }
     }
 }

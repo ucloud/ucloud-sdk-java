@@ -19,24 +19,16 @@ import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-public class ListAlertStrategyRequest extends Request {
+public class ListAlertStrategyTemplateRequest extends Request {
 
-    /** 项目ID */
+    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考GetProjectList接口 */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 模糊查询(支持告警策略名称模糊搜索) */
-    @UCloudParam("Fuzzy")
-    private String fuzzy;
-
     /** */
     @UCloudParam("Filter")
     private Filter filter;
-
-    /** 资源id集合,根据资源id返回绑定的告警策略列表 */
-    @UCloudParam("Resources")
-    private List<String> resources;
 
     /** 查询返回数量，默认值300，最大值：300。 */
     @UCloudParam("Limit")
@@ -54,28 +46,12 @@ public class ListAlertStrategyRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getFuzzy() {
-        return fuzzy;
-    }
-
-    public void setFuzzy(String fuzzy) {
-        this.fuzzy = fuzzy;
-    }
-
     public Filter getFilter() {
         return filter;
     }
 
     public void setFilter(Filter filter) {
         this.filter = filter;
-    }
-
-    public List<String> getResources() {
-        return resources;
-    }
-
-    public void setResources(List<String> resources) {
-        this.resources = resources;
     }
 
     public Integer getLimit() {
@@ -96,40 +72,16 @@ public class ListAlertStrategyRequest extends Request {
 
     public static class Filter extends Request {
 
-        /** 产品类型，根据产品类型精确搜索对应的告警策略 */
-        @UCloudParam("ProductTypes")
-        private List<Integer> productTypes;
+        /** 模板id集合，根据模板id获取告警条件模板列表 */
+        @UCloudParam("TemplateIDs")
+        private List<Integer> templateIDs;
 
-        /** 告警策略id，根据策略id获取告警策略列表 */
-        @UCloudParam("AlertStrategyIDs")
-        private List<Integer> alertStrategyIDs;
-
-        /** 告警策略状态，根据告警策略状态精确搜索对应的告警策略 */
-        @UCloudParam("Status")
-        private List<Integer> status;
-
-        public List<Integer> getProductTypes() {
-            return productTypes;
+        public List<Integer> getTemplateIDs() {
+            return templateIDs;
         }
 
-        public void setProductTypes(List<Integer> productTypes) {
-            this.productTypes = productTypes;
-        }
-
-        public List<Integer> getAlertStrategyIDs() {
-            return alertStrategyIDs;
-        }
-
-        public void setAlertStrategyIDs(List<Integer> alertStrategyIDs) {
-            this.alertStrategyIDs = alertStrategyIDs;
-        }
-
-        public List<Integer> getStatus() {
-            return status;
-        }
-
-        public void setStatus(List<Integer> status) {
-            this.status = status;
+        public void setTemplateIDs(List<Integer> templateIDs) {
+            this.templateIDs = templateIDs;
         }
     }
 }

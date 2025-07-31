@@ -46,6 +46,19 @@ public class QueryMetricDataSetRequest extends Request {
     @UCloudParam("EndTime")
     private Integer endTime;
 
+    /** 计算方式，枚举值如下： raw:原始值, max:最大值, min:最小值, avg:平均值, sum:求和 */
+    @NotEmpty
+    @UCloudParam("CalcMethod")
+    private String calcMethod;
+
+    /**
+     * 周期即：数据查询时，后端上报数据点的频率，选择不同的自定义时间范围，对应的周期不同： 0<时间范围<=1h——周期：1分钟/5分钟 1h<时间范围<=3h——周期：1分钟/5分钟/1小时
+     * 3h<时间范围<=24h——周期：5分钟/1小时 1天<时间范围<=30天——周期：1小时/6小时/24小时 需将周期转化为单位为秒的数值，传入参数
+     */
+    @NotEmpty
+    @UCloudParam("Period")
+    private Integer period;
+
     /** */
     @UCloudParam("MetricInfos")
     private List<MetricInfos> metricInfos;
@@ -88,6 +101,22 @@ public class QueryMetricDataSetRequest extends Request {
 
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
+    }
+
+    public String getCalcMethod() {
+        return calcMethod;
+    }
+
+    public void setCalcMethod(String calcMethod) {
+        this.calcMethod = calcMethod;
+    }
+
+    public Integer getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Integer period) {
+        this.period = period;
     }
 
     public List<MetricInfos> getMetricInfos() {
