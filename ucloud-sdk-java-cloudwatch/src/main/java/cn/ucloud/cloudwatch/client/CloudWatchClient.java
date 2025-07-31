@@ -15,6 +15,8 @@ package cn.ucloud.cloudwatch.client;
 
 import cn.ucloud.cloudwatch.models.BindAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.BindAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.CreateAlertStrategyRequest;
+import cn.ucloud.cloudwatch.models.CreateAlertStrategyResponse;
 import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
@@ -25,6 +27,8 @@ import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
 import cn.ucloud.cloudwatch.models.ListAlertRecordResponse;
 import cn.ucloud.cloudwatch.models.ListAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.ListAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.ListAlertStrategyTemplateRequest;
+import cn.ucloud.cloudwatch.models.ListAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.ListMonitorProductRequest;
 import cn.ucloud.cloudwatch.models.ListMonitorProductResponse;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSetRequest;
@@ -33,6 +37,10 @@ import cn.ucloud.cloudwatch.models.QueryMetricDataSummaryRequest;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSummaryResponse;
 import cn.ucloud.cloudwatch.models.UnBindAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.UnBindAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.UpdateAlertStrategyRequest;
+import cn.ucloud.cloudwatch.models.UpdateAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.UpdateAlertStrategyTemplateRequest;
+import cn.ucloud.cloudwatch.models.UpdateAlertStrategyTemplateResponse;
 import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
@@ -54,6 +62,19 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
             throws UCloudException {
         request.setAction("BindAlertStrategy");
         return (BindAlertStrategyResponse) this.invoke(request, BindAlertStrategyResponse.class);
+    }
+
+    /**
+     * CreateAlertStrategy - 创建告警策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateAlertStrategyResponse createAlertStrategy(CreateAlertStrategyRequest request)
+            throws UCloudException {
+        request.setAction("CreateAlertStrategy");
+        return (CreateAlertStrategyResponse)
+                this.invoke(request, CreateAlertStrategyResponse.class);
     }
 
     /**
@@ -119,6 +140,19 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
     }
 
     /**
+     * ListAlertStrategyTemplate - 条件模板列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListAlertStrategyTemplateResponse listAlertStrategyTemplate(
+            ListAlertStrategyTemplateRequest request) throws UCloudException {
+        request.setAction("ListAlertStrategyTemplate");
+        return (ListAlertStrategyTemplateResponse)
+                this.invoke(request, ListAlertStrategyTemplateResponse.class);
+    }
+
+    /**
      * ListMonitorProduct - 获取监控对象类型列表
      *
      * @param request Request object
@@ -166,5 +200,31 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
         request.setAction("UnBindAlertStrategy");
         return (UnBindAlertStrategyResponse)
                 this.invoke(request, UnBindAlertStrategyResponse.class);
+    }
+
+    /**
+     * UpdateAlertStrategy - 更新告警策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateAlertStrategyResponse updateAlertStrategy(UpdateAlertStrategyRequest request)
+            throws UCloudException {
+        request.setAction("UpdateAlertStrategy");
+        return (UpdateAlertStrategyResponse)
+                this.invoke(request, UpdateAlertStrategyResponse.class);
+    }
+
+    /**
+     * UpdateAlertStrategyTemplate - 编辑条件模板
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateAlertStrategyTemplateResponse updateAlertStrategyTemplate(
+            UpdateAlertStrategyTemplateRequest request) throws UCloudException {
+        request.setAction("UpdateAlertStrategyTemplate");
+        return (UpdateAlertStrategyTemplateResponse)
+                this.invoke(request, UpdateAlertStrategyTemplateResponse.class);
     }
 }

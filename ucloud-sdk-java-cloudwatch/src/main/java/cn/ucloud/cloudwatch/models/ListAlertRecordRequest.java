@@ -36,7 +36,7 @@ public class ListAlertRecordRequest extends Request {
     @UCloudParam("EndAt")
     private Integer endAt;
 
-    /** 模糊查询(支持资源id和告警内容模糊搜索) */
+    /** 模糊查询(支持资源id模糊搜索) */
     @UCloudParam("Fuzzy")
     private String fuzzy;
 

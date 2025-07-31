@@ -47,6 +47,10 @@ public class ListAlertRecordResponse extends Response {
 
     public static class AlertRecord extends Response {
 
+        /** 可用区 */
+        @SerializedName("Region")
+        private String region;
+
         /** 告警记录RecordID */
         @SerializedName("RecordID")
         private Integer recordID;
@@ -79,6 +83,10 @@ public class ListAlertRecordResponse extends Response {
         @SerializedName("MetricName")
         private String metricName;
 
+        /** 指标单位名称 */
+        @SerializedName("UnitName")
+        private String unitName;
+
         /** 告警记录触发告警策略Id */
         @SerializedName("StrategyID")
         private Integer strategyID;
@@ -87,13 +95,25 @@ public class ListAlertRecordResponse extends Response {
         @SerializedName("RuleID")
         private Integer ruleID;
 
+        /** 告警点tag信息 */
+        @SerializedName("Tag")
+        private List<String> tag;
+
+        /** 告警当前值 */
+        @SerializedName("Value")
+        private Integer value;
+
+        /** 比较符 */
+        @SerializedName("ThresholdCompare")
+        private Integer thresholdCompare;
+
+        /** 告警阈值 */
+        @SerializedName("ThresholdValue")
+        private Integer thresholdValue;
+
         /** 告警屏蔽规则id(如果配置了屏蔽规则，并且满足条件) */
         @SerializedName("ShieldRuleID")
         private Integer shieldRuleID;
-
-        /** 告警内容 */
-        @SerializedName("Content")
-        private String content;
 
         /** 告警等级 */
         @SerializedName("Level")
@@ -110,6 +130,14 @@ public class ListAlertRecordResponse extends Response {
         /** 告警恢复时间 */
         @SerializedName("EndAt")
         private Integer endAt;
+
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion(String region) {
+            this.region = region;
+        }
 
         public Integer getRecordID() {
             return recordID;
@@ -175,6 +203,14 @@ public class ListAlertRecordResponse extends Response {
             this.metricName = metricName;
         }
 
+        public String getUnitName() {
+            return unitName;
+        }
+
+        public void setUnitName(String unitName) {
+            this.unitName = unitName;
+        }
+
         public Integer getStrategyID() {
             return strategyID;
         }
@@ -191,20 +227,44 @@ public class ListAlertRecordResponse extends Response {
             this.ruleID = ruleID;
         }
 
+        public List<String> getTag() {
+            return tag;
+        }
+
+        public void setTag(List<String> tag) {
+            this.tag = tag;
+        }
+
+        public Integer getValue() {
+            return value;
+        }
+
+        public void setValue(Integer value) {
+            this.value = value;
+        }
+
+        public Integer getThresholdCompare() {
+            return thresholdCompare;
+        }
+
+        public void setThresholdCompare(Integer thresholdCompare) {
+            this.thresholdCompare = thresholdCompare;
+        }
+
+        public Integer getThresholdValue() {
+            return thresholdValue;
+        }
+
+        public void setThresholdValue(Integer thresholdValue) {
+            this.thresholdValue = thresholdValue;
+        }
+
         public Integer getShieldRuleID() {
             return shieldRuleID;
         }
 
         public void setShieldRuleID(Integer shieldRuleID) {
             this.shieldRuleID = shieldRuleID;
-        }
-
-        public String getContent() {
-            return content;
-        }
-
-        public void setContent(String content) {
-            this.content = content;
         }
 
         public String getLevel() {
