@@ -21,6 +21,8 @@ import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateResponse;
+import cn.ucloud.cloudwatch.models.EnableAlertStrategyRequest;
+import cn.ucloud.cloudwatch.models.EnableAlertStrategyResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -31,6 +33,8 @@ import cn.ucloud.cloudwatch.models.ListAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.ListAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.ListMonitorProductRequest;
 import cn.ucloud.cloudwatch.models.ListMonitorProductResponse;
+import cn.ucloud.cloudwatch.models.ModifyAlertStrategyRemarkRequest;
+import cn.ucloud.cloudwatch.models.ModifyAlertStrategyRemarkResponse;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSetRequest;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSetResponse;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSummaryRequest;
@@ -91,7 +95,7 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
     }
 
     /**
-     * DeleteAlertStrategyTemplate - 删除告警策略模板
+     * DeleteAlertStrategyTemplate - 删除告警条件模板
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -101,6 +105,19 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
         request.setAction("DeleteAlertStrategyTemplate");
         return (DeleteAlertStrategyTemplateResponse)
                 this.invoke(request, DeleteAlertStrategyTemplateResponse.class);
+    }
+
+    /**
+     * EnableAlertStrategy - 是否启用告警策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EnableAlertStrategyResponse enableAlertStrategy(EnableAlertStrategyRequest request)
+            throws UCloudException {
+        request.setAction("EnableAlertStrategy");
+        return (EnableAlertStrategyResponse)
+                this.invoke(request, EnableAlertStrategyResponse.class);
     }
 
     /**
@@ -162,6 +179,19 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
             throws UCloudException {
         request.setAction("ListMonitorProduct");
         return (ListMonitorProductResponse) this.invoke(request, ListMonitorProductResponse.class);
+    }
+
+    /**
+     * ModifyAlertStrategyRemark - 修改告警策略备注
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyAlertStrategyRemarkResponse modifyAlertStrategyRemark(
+            ModifyAlertStrategyRemarkRequest request) throws UCloudException {
+        request.setAction("ModifyAlertStrategyRemark");
+        return (ModifyAlertStrategyRemarkResponse)
+                this.invoke(request, ModifyAlertStrategyRemarkResponse.class);
     }
 
     /**

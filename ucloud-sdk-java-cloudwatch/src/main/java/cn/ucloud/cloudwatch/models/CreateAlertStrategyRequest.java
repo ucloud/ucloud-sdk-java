@@ -57,10 +57,6 @@ public class CreateAlertStrategyRequest extends Request {
     @UCloudParam("ResourceGroupIDs")
     private List<Integer> resourceGroupIDs;
 
-    /** */
-    @UCloudParam("Tags")
-    private List<Tags> tags;
-
     /** 模板id.对应TemplateId=2 */
     @UCloudParam("TemplateId")
     private Integer templateId;
@@ -147,14 +143,6 @@ public class CreateAlertStrategyRequest extends Request {
 
     public void setResourceGroupIDs(List<Integer> resourceGroupIDs) {
         this.resourceGroupIDs = resourceGroupIDs;
-    }
-
-    public List<Tags> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tags> tags) {
-        this.tags = tags;
     }
 
     public Integer getTemplateId() {
@@ -317,45 +305,6 @@ public class CreateAlertStrategyRequest extends Request {
 
         public void setSendInterval(Integer sendInterval) {
             this.sendInterval = sendInterval;
-        }
-    }
-
-    public static class Tags extends Request {
-
-        /** 数据点tag key */
-        @UCloudParam("Key")
-        private String key;
-
-        /** 数据点tag operator 包含= 不包含!= */
-        @UCloudParam("Operator")
-        private String operator;
-
-        /** 数据点tag value */
-        @UCloudParam("Values")
-        private List<String> values;
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public String getOperator() {
-            return operator;
-        }
-
-        public void setOperator(String operator) {
-            this.operator = operator;
-        }
-
-        public List<String> getValues() {
-            return values;
-        }
-
-        public void setValues(List<String> values) {
-            this.values = values;
         }
     }
 }
