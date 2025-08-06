@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.47-release</version>
+    <version>1.2.48-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cloudwatch</module>
@@ -77,12 +77,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-nexus-ucloud</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>central</id>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-ucloud</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>central</id>
+            <url>https://central.sonatype.com/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
@@ -100,12 +100,18 @@
         <codec.version>1.9</codec.version>
         <slf4j.version>1.7.25</slf4j.version>
         <jsonassert.version>1.5.0</jsonassert.version>
+        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
         <sonar.organization>ucloud</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>${central-publishing-maven-plugin.version}</version>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -193,6 +199,18 @@
 
         <plugins>
 
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.8.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>published</waitUntil>
+                    <deploymentName>ucloud-sdk-java</deploymentName>
+                </configuration>
+            </plugin>
             <!-- 编译插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -273,10 +291,18 @@
                 <version>1.6</version>
                 <executions>
                     <execution>
+                        <id>sign-artifacts</id>
                         <phase>verify</phase>
                             <goals>
                                 <goal>sign</goal>
                             </goals>
+                            <configuration>
+                                <keyname>339E925AC495D2A80D9C7E27E04CE029BE42D2B5</keyname> <!-- 可选 -->
+                                <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg> <!-- 禁止交互式弹窗 -->
+                                </gpgArguments>
+                            </configuration>
                     </execution>
                 </executions>
             </plugin>
