@@ -21,6 +21,8 @@ import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.CreateAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateResponse;
+import cn.ucloud.cloudwatch.models.EnableAlertStrategyRequest;
+import cn.ucloud.cloudwatch.models.EnableAlertStrategyResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -31,6 +33,8 @@ import cn.ucloud.cloudwatch.models.ListAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.ListAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.ListMonitorProductRequest;
 import cn.ucloud.cloudwatch.models.ListMonitorProductResponse;
+import cn.ucloud.cloudwatch.models.ModifyAlertStrategyRemarkRequest;
+import cn.ucloud.cloudwatch.models.ModifyAlertStrategyRemarkResponse;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSetRequest;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSetResponse;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSummaryRequest;
@@ -75,13 +79,22 @@ public interface CloudWatchClientInterface extends Client {
             CreateAlertStrategyTemplateRequest request) throws UCloudException;
 
     /**
-     * DeleteAlertStrategyTemplate - 删除告警策略模板
+     * DeleteAlertStrategyTemplate - 删除告警条件模板
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
     public DeleteAlertStrategyTemplateResponse deleteAlertStrategyTemplate(
             DeleteAlertStrategyTemplateRequest request) throws UCloudException;
+
+    /**
+     * EnableAlertStrategy - 是否启用告警策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EnableAlertStrategyResponse enableAlertStrategy(EnableAlertStrategyRequest request)
+            throws UCloudException;
 
     /**
      * GetProductMetrics - 获取云产品关联的指标列表
@@ -127,6 +140,15 @@ public interface CloudWatchClientInterface extends Client {
      */
     public ListMonitorProductResponse listMonitorProduct(ListMonitorProductRequest request)
             throws UCloudException;
+
+    /**
+     * ModifyAlertStrategyRemark - 修改告警策略备注
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyAlertStrategyRemarkResponse modifyAlertStrategyRemark(
+            ModifyAlertStrategyRemarkRequest request) throws UCloudException;
 
     /**
      * QueryMetricDataSet - 查询监控指标数据集
