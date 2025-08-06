@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.48-release</version>
+    <version>1.2.49-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cloudwatch</module>
@@ -68,6 +68,11 @@
     </scm>
 
     <developers>
+        <developer>
+            <name>ali.yu</name>
+            <email>ali.yu@ucloud.cn</email>
+            <url>https://github.com/ucloud/ucloud-sdk-java</url>
+        </developer>
         <developer>
             <name>wenqian.tang</name>
             <email>wenqian.tang@ucloud.cn</email>
