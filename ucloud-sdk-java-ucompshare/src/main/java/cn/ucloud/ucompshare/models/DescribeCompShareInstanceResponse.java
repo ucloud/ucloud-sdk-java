@@ -51,6 +51,10 @@ public class DescribeCompShareInstanceResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
+        /** 计划关机时间 */
+        @SerializedName("StopSchedulerTime")
+        private Integer stopSchedulerTime;
+
         /** 实例Id */
         @SerializedName("UHostId")
         private String uHostId;
@@ -203,12 +207,44 @@ public class DescribeCompShareInstanceResponse extends Response {
         @SerializedName("WithoutGpuSpec")
         private WithoutGpuSpec withoutGpuSpec;
 
+        /** 定时关机时间 */
+        @SerializedName("StopTime")
+        private Integer stopTime;
+
+        /** 虚机状态更新时间 */
+        @SerializedName("UpdateTime")
+        private Integer updateTime;
+
+        /** 释放时间（关机时候返回） */
+        @SerializedName("ReleaseTime")
+        private Integer releaseTime;
+
+        /** 磁盘价格信息，详见:DiskPriceInfo */
+        @SerializedName("DiskPriceInfo")
+        private List<DiskPriceInfo> diskPriceInfo;
+
+        /** 后付费关机计费信息列表，详见：详见:DiskPriceInfo */
+        @SerializedName("PostPayPowerOffBillingResource")
+        private List<DiskPriceInfo> postPayPowerOffBillingResource;
+
+        /** 监控信息，详见：MonitorMessage */
+        @SerializedName("MonitorMessages")
+        private MonitorMessage monitorMessages;
+
         public String getZone() {
             return zone;
         }
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public Integer getStopSchedulerTime() {
+            return stopSchedulerTime;
+        }
+
+        public void setStopSchedulerTime(Integer stopSchedulerTime) {
+            this.stopSchedulerTime = stopSchedulerTime;
         }
 
         public String getUHostId() {
@@ -506,6 +542,133 @@ public class DescribeCompShareInstanceResponse extends Response {
         public void setWithoutGpuSpec(WithoutGpuSpec withoutGpuSpec) {
             this.withoutGpuSpec = withoutGpuSpec;
         }
+
+        public Integer getStopTime() {
+            return stopTime;
+        }
+
+        public void setStopTime(Integer stopTime) {
+            this.stopTime = stopTime;
+        }
+
+        public Integer getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(Integer updateTime) {
+            this.updateTime = updateTime;
+        }
+
+        public Integer getReleaseTime() {
+            return releaseTime;
+        }
+
+        public void setReleaseTime(Integer releaseTime) {
+            this.releaseTime = releaseTime;
+        }
+
+        public List<DiskPriceInfo> getDiskPriceInfo() {
+            return diskPriceInfo;
+        }
+
+        public void setDiskPriceInfo(List<DiskPriceInfo> diskPriceInfo) {
+            this.diskPriceInfo = diskPriceInfo;
+        }
+
+        public List<DiskPriceInfo> getPostPayPowerOffBillingResource() {
+            return postPayPowerOffBillingResource;
+        }
+
+        public void setPostPayPowerOffBillingResource(
+                List<DiskPriceInfo> postPayPowerOffBillingResource) {
+            this.postPayPowerOffBillingResource = postPayPowerOffBillingResource;
+        }
+
+        public MonitorMessage getMonitorMessages() {
+            return monitorMessages;
+        }
+
+        public void setMonitorMessages(MonitorMessage monitorMessages) {
+            this.monitorMessages = monitorMessages;
+        }
+    }
+
+    public static class DiskPriceInfo extends Response {
+
+        /** 计费类型 */
+        @SerializedName("ChargeType")
+        private String chargeType;
+
+        /** 磁盘价格 */
+        @SerializedName("Price")
+        private Double price;
+
+        /** 是否为系统盘 */
+        @SerializedName("IsBoot")
+        private Boolean isBoot;
+
+        public String getChargeType() {
+            return chargeType;
+        }
+
+        public void setChargeType(String chargeType) {
+            this.chargeType = chargeType;
+        }
+
+        public Double getPrice() {
+            return price;
+        }
+
+        public void setPrice(Double price) {
+            this.price = price;
+        }
+
+        public Boolean getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(Boolean isBoot) {
+            this.isBoot = isBoot;
+        }
+    }
+
+    public static class GpuMonitorInfo extends Response {
+
+        /** GPU卡使用率 */
+        @SerializedName("GpuUsageRate")
+        private String gpuUsageRate;
+
+        /** GPU显存使用率 */
+        @SerializedName("MemoryUsageRate")
+        private String memoryUsageRate;
+
+        /** GPU卡名称 */
+        @SerializedName("GPU")
+        private String gpu;
+
+        public String getGpuUsageRate() {
+            return gpuUsageRate;
+        }
+
+        public void setGpuUsageRate(String gpuUsageRate) {
+            this.gpuUsageRate = gpuUsageRate;
+        }
+
+        public String getMemoryUsageRate() {
+            return memoryUsageRate;
+        }
+
+        public void setMemoryUsageRate(String memoryUsageRate) {
+            this.memoryUsageRate = memoryUsageRate;
+        }
+
+        public String getGPU() {
+            return gpu;
+        }
+
+        public void setGPU(String gpu) {
+            this.gpu = gpu;
+        }
     }
 
     public static class GraphicsMemory extends Response {
@@ -532,6 +695,45 @@ public class DescribeCompShareInstanceResponse extends Response {
 
         public void setRate(Integer rate) {
             this.rate = rate;
+        }
+    }
+
+    public static class MonitorMessage extends Response {
+
+        /** CPU使用率 */
+        @SerializedName("CpuUsageRate")
+        private String cpuUsageRate;
+
+        /** 内存使用率 */
+        @SerializedName("MemUsageRate")
+        private String memUsageRate;
+
+        /** GPU卡监控信息 */
+        @SerializedName("GpuInfo")
+        private List<GpuMonitorInfo> gpuInfo;
+
+        public String getCpuUsageRate() {
+            return cpuUsageRate;
+        }
+
+        public void setCpuUsageRate(String cpuUsageRate) {
+            this.cpuUsageRate = cpuUsageRate;
+        }
+
+        public String getMemUsageRate() {
+            return memUsageRate;
+        }
+
+        public void setMemUsageRate(String memUsageRate) {
+            this.memUsageRate = memUsageRate;
+        }
+
+        public List<GpuMonitorInfo> getGpuInfo() {
+            return gpuInfo;
+        }
+
+        public void setGpuInfo(List<GpuMonitorInfo> gpuInfo) {
+            this.gpuInfo = gpuInfo;
         }
     }
 

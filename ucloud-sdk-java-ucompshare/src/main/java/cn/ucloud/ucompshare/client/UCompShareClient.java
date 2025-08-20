@@ -21,6 +21,12 @@ import cn.ucloud.ucompshare.models.CreateCompShareInstanceRequest;
 import cn.ucloud.ucompshare.models.CreateCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceRequest;
 import cn.ucloud.ucompshare.models.CreateULHostInstanceResponse;
+import cn.ucloud.ucompshare.models.DescribeCommunityImagesRequest;
+import cn.ucloud.ucompshare.models.DescribeCommunityImagesResponse;
+import cn.ucloud.ucompshare.models.DescribeCompShareCustomImagesRequest;
+import cn.ucloud.ucompshare.models.DescribeCompShareCustomImagesResponse;
+import cn.ucloud.ucompshare.models.DescribeCompShareImagesRequest;
+import cn.ucloud.ucompshare.models.DescribeCompShareImagesResponse;
 import cn.ucloud.ucompshare.models.DescribeCompShareInstanceRequest;
 import cn.ucloud.ucompshare.models.DescribeCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.DescribeULHostBundlesRequest;
@@ -90,6 +96,45 @@ public class UCompShareClient extends DefaultClient implements UCompShareClientI
         request.setAction("CreateULHostInstance");
         return (CreateULHostInstanceResponse)
                 this.invoke(request, CreateULHostInstanceResponse.class);
+    }
+
+    /**
+     * DescribeCommunityImages - 获取社区镜像列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCommunityImagesResponse describeCommunityImages(
+            DescribeCommunityImagesRequest request) throws UCloudException {
+        request.setAction("DescribeCommunityImages");
+        return (DescribeCommunityImagesResponse)
+                this.invoke(request, DescribeCommunityImagesResponse.class);
+    }
+
+    /**
+     * DescribeCompShareCustomImages - 获取自制镜像列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCompShareCustomImagesResponse describeCompShareCustomImages(
+            DescribeCompShareCustomImagesRequest request) throws UCloudException {
+        request.setAction("DescribeCompShareCustomImages");
+        return (DescribeCompShareCustomImagesResponse)
+                this.invoke(request, DescribeCompShareCustomImagesResponse.class);
+    }
+
+    /**
+     * DescribeCompShareImages - 获取算力平台镜像信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeCompShareImagesResponse describeCompShareImages(
+            DescribeCompShareImagesRequest request) throws UCloudException {
+        request.setAction("DescribeCompShareImages");
+        return (DescribeCompShareImagesResponse)
+                this.invoke(request, DescribeCompShareImagesResponse.class);
     }
 
     /**
