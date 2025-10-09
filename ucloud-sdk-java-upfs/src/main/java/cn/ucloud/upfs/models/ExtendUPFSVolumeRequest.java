@@ -32,14 +32,17 @@ public class ExtendUPFSVolumeRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
+    @UCloudParam("Zone")
+    private String zone;
+
     /** 文件系统ID */
     @NotEmpty
     @UCloudParam("VolumeId")
     private String volumeId;
 
-    /**
-     * 文件系统大小，单位为GB，最大不超过20T，香港容量型必须为100的整数倍，Size最小为500GB，北京，上海，广州的容量型必须为1024的整数倍，Size最小为1024GB。性能型文件系统Size最小为100GB
-     */
+    /** 文件系统大小，单位为GB，最小为6000GB，最大为10PB，必须为1000的整数倍 */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
@@ -58,6 +61,14 @@ public class ExtendUPFSVolumeRequest extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public String getVolumeId() {
