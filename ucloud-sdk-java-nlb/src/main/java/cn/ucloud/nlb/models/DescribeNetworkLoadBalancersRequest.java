@@ -33,10 +33,6 @@ public class DescribeNetworkLoadBalancersRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 负载均衡实例的转发类型 */
-    @UCloudParam("ForwardingMode")
-    private String forwardingMode;
-
     /** 是否获取监听器和后端服务节点的详细信息 */
     @UCloudParam("ShowDetail")
     private Boolean showDetail;
@@ -75,14 +71,6 @@ public class DescribeNetworkLoadBalancersRequest extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public String getForwardingMode() {
-        return forwardingMode;
-    }
-
-    public void setForwardingMode(String forwardingMode) {
-        this.forwardingMode = forwardingMode;
     }
 
     public Boolean getShowDetail() {

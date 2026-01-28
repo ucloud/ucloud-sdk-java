@@ -37,6 +37,15 @@ public class CreateNLBListenerRequest extends Request {
     @UCloudParam("NLBId")
     private String nlbId;
 
+    /** 监听协议 限定取值："TCP"/"UDP" */
+    @NotEmpty
+    @UCloudParam("Protocol")
+    private String protocol;
+
+    /** */
+    @UCloudParam("HealthCheckConfig")
+    private HealthCheckConfig healthCheckConfig;
+
     /** 监听器的名称 限定字符长度：[1-255] 限定特殊字符，仅支持：-_. 默认值：listener */
     @UCloudParam("Name")
     private String name;
@@ -53,10 +62,6 @@ public class CreateNLBListenerRequest extends Request {
     @UCloudParam("EndPort")
     private Integer endPort;
 
-    /** 监听协议 限定取值："TCP"/"UDP" */
-    @UCloudParam("Protocol")
-    private String protocol;
-
     /**
      * 负载均衡算法 限定取值："RoundRobin"/"SourceHash"/"LeastConn"/"WeightLeastConn "/"WeightRoundRobin" 默认值
      * "RoundRobin"
@@ -68,11 +73,7 @@ public class CreateNLBListenerRequest extends Request {
     @UCloudParam("StickinessTimeout")
     private Integer stickinessTimeout;
 
-    /** */
-    @UCloudParam("HealthCheckConfig")
-    private HealthCheckConfig healthCheckConfig;
-
-    /** 传递源 IP 方法。 限定取值："" / "None" / "Toa"，空字符串和 None 代表关闭。 */
+    /** 传递源 IP 方法。 限定取值："" / "None" / "Toa"/"ProxyProto"，空字符串和 None 代表关闭。 */
     @UCloudParam("ForwardSrcIPMethod")
     private String forwardSrcIPMethod;
 
@@ -98,6 +99,22 @@ public class CreateNLBListenerRequest extends Request {
 
     public void setNLBId(String nlbId) {
         this.nlbId = nlbId;
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    public HealthCheckConfig getHealthCheckConfig() {
+        return healthCheckConfig;
+    }
+
+    public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
+        this.healthCheckConfig = healthCheckConfig;
     }
 
     public String getName() {
@@ -132,14 +149,6 @@ public class CreateNLBListenerRequest extends Request {
         this.endPort = endPort;
     }
 
-    public String getProtocol() {
-        return protocol;
-    }
-
-    public void setProtocol(String protocol) {
-        this.protocol = protocol;
-    }
-
     public String getScheduler() {
         return scheduler;
     }
@@ -156,14 +165,6 @@ public class CreateNLBListenerRequest extends Request {
         this.stickinessTimeout = stickinessTimeout;
     }
 
-    public HealthCheckConfig getHealthCheckConfig() {
-        return healthCheckConfig;
-    }
-
-    public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
-        this.healthCheckConfig = healthCheckConfig;
-    }
-
     public String getForwardSrcIPMethod() {
         return forwardSrcIPMethod;
     }
@@ -174,15 +175,16 @@ public class CreateNLBListenerRequest extends Request {
 
     public static class HealthCheckConfig extends Request {
 
+        /** 健康检查探测端口 说明： 限定取值：[1-65535]，Ping 探测下，端口可填 0 */
+        @NotEmpty
+        @UCloudParam("Port")
+        private Integer port;
+
         /** 是否开启健康检查功能。暂时不支持关闭，默认 true */
         @UCloudParam("Enabled")
         private Boolean enabled;
 
-        /** 健康检查探测端口 说明： 限定取值：[1-65535] */
-        @UCloudParam("Port")
-        private Integer port;
-
-        /** 健康检查方式 限定取值："Port"/"UDP"/"Ping" 默认值：“Port” */
+        /** 健康检查方式 限定取值："Port"/"UDP"/"Ping" 默认值：“Port”，Ping 只允许 UDP 协议监听器设置 */
         @UCloudParam("Type")
         private String type;
 
@@ -194,20 +196,20 @@ public class CreateNLBListenerRequest extends Request {
         @UCloudParam("ResMsg")
         private String resMsg;
 
-        public Boolean getEnabled() {
-            return enabled;
-        }
-
-        public void setEnabled(Boolean enabled) {
-            this.enabled = enabled;
-        }
-
         public Integer getPort() {
             return port;
         }
 
         public void setPort(Integer port) {
             this.port = port;
+        }
+
+        public Boolean getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Boolean enabled) {
+            this.enabled = enabled;
         }
 
         public String getType() {

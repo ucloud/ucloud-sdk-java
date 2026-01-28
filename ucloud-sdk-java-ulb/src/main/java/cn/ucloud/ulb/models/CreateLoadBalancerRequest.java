@@ -13,10 +13,11 @@
  */
 package cn.ucloud.ulb.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class CreateLoadBalancerRequest extends Request {
 
@@ -70,6 +71,10 @@ public class CreateLoadBalancerRequest extends Request {
     /** 购买的时长, 默认: 1; 0-> 购买至月末(0只在月付费有效，其余付费模式传0，实际收费按一个周期计费) */
     @UCloudParam("Quantity")
     private Integer quantity;
+
+    /** */
+    @UCloudParam("SecGroups")
+    private List<SecGroups> secGroups;
 
     /** 代金券code */
     @UCloudParam("CouponId")
@@ -163,11 +168,46 @@ public class CreateLoadBalancerRequest extends Request {
         this.quantity = quantity;
     }
 
+    public List<SecGroups> getSecGroups() {
+        return secGroups;
+    }
+
+    public void setSecGroups(List<SecGroups> secGroups) {
+        this.secGroups = secGroups;
+    }
+
     public String getCouponId() {
         return couponId;
     }
 
     public void setCouponId(String couponId) {
         this.couponId = couponId;
+    }
+
+    public static class SecGroups extends Request {
+
+        /** 安全组id */
+        @UCloudParam("SecGroupId")
+        private String secGroupId;
+
+        /** 安全组优先级 */
+        @UCloudParam("Priority")
+        private Integer priority;
+
+        public String getSecGroupId() {
+            return secGroupId;
+        }
+
+        public void setSecGroupId(String secGroupId) {
+            this.secGroupId = secGroupId;
+        }
+
+        public Integer getPriority() {
+            return priority;
+        }
+
+        public void setPriority(Integer priority) {
+            this.priority = priority;
+        }
     }
 }

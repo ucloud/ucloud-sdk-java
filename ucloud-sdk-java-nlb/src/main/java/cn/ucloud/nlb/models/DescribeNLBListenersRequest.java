@@ -47,7 +47,7 @@ public class DescribeNLBListenersRequest extends Request {
 
     /** 设置监听器的偏移量 */
     @UCloudParam("Offset")
-    private String offset;
+    private Integer offset;
 
     public String getRegion() {
         return region;
@@ -89,11 +89,11 @@ public class DescribeNLBListenersRequest extends Request {
         this.limit = limit;
     }
 
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 }

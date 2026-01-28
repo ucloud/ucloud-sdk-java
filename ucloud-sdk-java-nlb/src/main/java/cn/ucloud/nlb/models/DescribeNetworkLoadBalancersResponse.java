@@ -282,7 +282,7 @@ public class DescribeNetworkLoadBalancersResponse extends Response {
         @SerializedName("StickinessTimeout")
         private Integer stickinessTimeout;
 
-        /** 传递源 IP 方法。限定取值："" / "None" / "Toa"，空字符串和 None 代表关闭。 */
+        /** 传递源 IP 方法。限定取值："" / "None" / "Toa"/"ProxyProto"，空字符串和 None 代表关闭。 */
         @SerializedName("ForwardSrcIPMethod")
         private String forwardSrcIPMethod;
 
@@ -297,6 +297,10 @@ public class DescribeNetworkLoadBalancersResponse extends Response {
         /** listener 健康状态，"Healthy"/"Unhealthy"/"PartialHealth"/"None" */
         @SerializedName("State")
         private String state;
+
+        /** 是否开启删除保护 */
+        @SerializedName("DeletionProtection")
+        private Boolean deletionProtection;
 
         public String getListenerId() {
             return listenerId;
@@ -392,6 +396,14 @@ public class DescribeNetworkLoadBalancersResponse extends Response {
 
         public void setState(String state) {
             this.state = state;
+        }
+
+        public Boolean getDeletionProtection() {
+            return deletionProtection;
+        }
+
+        public void setDeletionProtection(Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
         }
     }
 
