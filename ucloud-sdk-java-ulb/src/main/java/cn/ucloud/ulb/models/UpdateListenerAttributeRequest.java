@@ -238,6 +238,14 @@ public class UpdateListenerAttributeRequest extends Request {
         @UCloudParam("Path")
         private String path;
 
+        /** （应用型专用）HTTP检查方法。只支持GET和HEAD。 */
+        @UCloudParam("Method")
+        private String method;
+
+        /** （应用型专用）GRPC检查响应码 */
+        @UCloudParam("ResponseCode")
+        private String responseCode;
+
         public Boolean getEnabled() {
             return enabled;
         }
@@ -269,6 +277,22 @@ public class UpdateListenerAttributeRequest extends Request {
         public void setPath(String path) {
             this.path = path;
         }
+
+        public String getMethod() {
+            return method;
+        }
+
+        public void setMethod(String method) {
+            this.method = method;
+        }
+
+        public String getResponseCode() {
+            return responseCode;
+        }
+
+        public void setResponseCode(String responseCode) {
+            this.responseCode = responseCode;
+        }
     }
 
     public static class StickinessConfig extends Request {
@@ -277,7 +301,7 @@ public class UpdateListenerAttributeRequest extends Request {
         @UCloudParam("Enabled")
         private Boolean enabled;
 
-        /** （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，默认值为：“ServerInsert” */
+        /** （应用型专用）Cookie处理方式。限定枚举值："ServerInsert" / "UserDefined"，不传值则不修改 */
         @UCloudParam("Type")
         private String type;
 
