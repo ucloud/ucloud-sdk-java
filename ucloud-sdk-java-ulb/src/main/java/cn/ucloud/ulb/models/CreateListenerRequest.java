@@ -239,7 +239,7 @@ public class CreateListenerRequest extends Request {
         @UCloudParam("Enabled")
         private Boolean enabled;
 
-        /** 健康检查方式。应用型限定取值：“Port”/"HTTP"，默认值：“Port” */
+        /** 健康检查方式。应用型限定取值：“Port”/"HTTP/GRPC"，默认值：“Port” */
         @UCloudParam("Type")
         private String type;
 
@@ -250,6 +250,14 @@ public class CreateListenerRequest extends Request {
         /** （应用型专用）HTTP检查路径 */
         @UCloudParam("Path")
         private String path;
+
+        /** （应用型专用）HTTP检查方法。只支持GET和HEAD。 */
+        @UCloudParam("Method")
+        private String method;
+
+        /** （应用型专用）GRPC检查响应码 */
+        @UCloudParam("ResponseCode")
+        private String responseCode;
 
         public Boolean getEnabled() {
             return enabled;
@@ -281,6 +289,22 @@ public class CreateListenerRequest extends Request {
 
         public void setPath(String path) {
             this.path = path;
+        }
+
+        public String getMethod() {
+            return method;
+        }
+
+        public void setMethod(String method) {
+            this.method = method;
+        }
+
+        public String getResponseCode() {
+            return responseCode;
+        }
+
+        public void setResponseCode(String responseCode) {
+            this.responseCode = responseCode;
         }
     }
 

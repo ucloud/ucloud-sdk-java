@@ -323,6 +323,14 @@ public class DescribeLoadBalancersResponse extends Response {
         @SerializedName("Path")
         private String path;
 
+        /** （应用型专用）HTTP检查方法。当Type为HTTP时，此字段有意义，代表HTTP检查方法 */
+        @SerializedName("Method")
+        private String method;
+
+        /** （应用型专用）GRPC检查响应码。当Type为GRPC时，此字段有意义，代表GRPC检查响应码 */
+        @SerializedName("ResponseCode")
+        private String responseCode;
+
         public Boolean getEnabled() {
             return enabled;
         }
@@ -353,6 +361,22 @@ public class DescribeLoadBalancersResponse extends Response {
 
         public void setPath(String path) {
             this.path = path;
+        }
+
+        public String getMethod() {
+            return method;
+        }
+
+        public void setMethod(String method) {
+            this.method = method;
+        }
+
+        public String getResponseCode() {
+            return responseCode;
+        }
+
+        public void setResponseCode(String responseCode) {
+            this.responseCode = responseCode;
         }
     }
 

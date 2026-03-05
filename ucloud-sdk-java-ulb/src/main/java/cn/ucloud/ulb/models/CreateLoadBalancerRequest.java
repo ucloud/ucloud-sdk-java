@@ -76,6 +76,10 @@ public class CreateLoadBalancerRequest extends Request {
     @UCloudParam("SecGroups")
     private List<SecGroups> secGroups;
 
+    /** */
+    @UCloudParam("LabelInfos")
+    private List<LabelInfos> labelInfos;
+
     /** 代金券code */
     @UCloudParam("CouponId")
     private String couponId;
@@ -176,12 +180,47 @@ public class CreateLoadBalancerRequest extends Request {
         this.secGroups = secGroups;
     }
 
+    public List<LabelInfos> getLabelInfos() {
+        return labelInfos;
+    }
+
+    public void setLabelInfos(List<LabelInfos> labelInfos) {
+        this.labelInfos = labelInfos;
+    }
+
     public String getCouponId() {
         return couponId;
     }
 
     public void setCouponId(String couponId) {
         this.couponId = couponId;
+    }
+
+    public static class LabelInfos extends Request {
+
+        /** 标签键 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** 标签值 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
     }
 
     public static class SecGroups extends Request {
