@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uhost.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class CopyCustomImageRequest extends Request {
 
@@ -46,7 +47,7 @@ public class CopyCustomImageRequest extends Request {
     @UCloudParam("TargetProjectId")
     private String targetProjectId;
 
-    /** 目标地域，不跨地域不用填 */
+    /** 目标地域，不跨地域可不填 */
     @UCloudParam("TargetRegion")
     private String targetRegion;
 
@@ -57,6 +58,14 @@ public class CopyCustomImageRequest extends Request {
     /** 目标镜像描述 */
     @UCloudParam("TargetImageDescription")
     private String targetImageDescription;
+
+    /** 目标镜像业务组 */
+    @UCloudParam("TargetImageTag")
+    private String targetImageTag;
+
+    /** 目标地域的集合，批量复制时填写 */
+    @UCloudParam("TargetRegionList")
+    private List<String> targetRegionList;
 
     public String getRegion() {
         return region;
@@ -120,5 +129,21 @@ public class CopyCustomImageRequest extends Request {
 
     public void setTargetImageDescription(String targetImageDescription) {
         this.targetImageDescription = targetImageDescription;
+    }
+
+    public String getTargetImageTag() {
+        return targetImageTag;
+    }
+
+    public void setTargetImageTag(String targetImageTag) {
+        this.targetImageTag = targetImageTag;
+    }
+
+    public List<String> getTargetRegionList() {
+        return targetRegionList;
+    }
+
+    public void setTargetRegionList(List<String> targetRegionList) {
+        this.targetRegionList = targetRegionList;
     }
 }

@@ -52,11 +52,11 @@ public class ReinstallUHostInstanceRequest extends Request {
     @UCloudParam("ImageId")
     private String imageId;
 
-    /** 是否保留数据盘，保留：Yes，不报留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用） */
+    /** 是否保留数据盘，保留：Yes，不保留：No， 默认：Yes；如果是从Windows重装为Linux或反之，则无法保留数据盘（该参数目前仅对本地数据盘起作用） */
     @UCloudParam("ReserveDisk")
     private String reserveDisk;
 
-    /** 系统盘大小。 单位：GB， 范围[20,100]， 步长：10 */
+    /** 系统盘大小。 单位：GB， 范围[20,100]。 */
     @UCloudParam("BootDiskSpace")
     private Integer bootDiskSpace;
 
@@ -68,13 +68,17 @@ public class ReinstallUHostInstanceRequest extends Request {
     @UCloudParam("AutoDataDiskInit")
     private String autoDataDiskInit;
 
-    /** 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair。 */
+    /** 主机登陆模式。密码（默认选项）: Password，密钥 KeyPair，自制镜像密码: ImagePasswd。 */
     @UCloudParam("LoginMode")
     private String loginMode;
 
     /** KeypairId 密钥对ID，LoginMode为KeyPair时此项必须。 */
     @UCloudParam("KeyPairId")
     private String keyPairId;
+
+    /** 操作系统主机名 */
+    @UCloudParam("HostName")
+    private String hostName;
 
     public String getRegion() {
         return region;
@@ -170,5 +174,13 @@ public class ReinstallUHostInstanceRequest extends Request {
 
     public void setKeyPairId(String keyPairId) {
         this.keyPairId = keyPairId;
+    }
+
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
     }
 }

@@ -65,7 +65,7 @@ public class GetUHostInstancePriceRequest extends Request {
     private Integer gpu;
 
     /**
-     * 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Preemptive 抢占式实例 \\
+     * 计费模式。枚举值为： \\ > Year，按年付费； \\ > Month，按月付费；\\ > Dynamic，按小时付费 // >Spot 抢占式实例 \\
      * 如果不传某个枚举值，默认返回年付、月付、时付的价格组合集。
      */
     @UCloudParam("ChargeType")
@@ -87,8 +87,8 @@ public class GetUHostInstancePriceRequest extends Request {
     private String machineType;
 
     /**
-     * GPU类型，枚举值["K80", "P40", "V100", "T4","T4S","2080Ti","2080Ti-4C","1080Ti",
-     * "T4/4","MI100","V100S"]
+     * GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4",
+     * "MI100", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","A100","A800"]
      */
     @UCloudParam("GpuType")
     private String gpuType;
@@ -112,6 +112,15 @@ public class GetUHostInstancePriceRequest extends Request {
     /** 返回价格详细信息 */
     @UCloudParam("ShowPriceDetails")
     private Boolean showPriceDetails;
+
+    /**
+     * 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1
+     * 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台
+     * 默认值：o1i 或 o1a或o1r（系统将根据资源情况自动选择） 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1
+     * 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     */
+    @UCloudParam("UHostFamily")
+    private String uHostFamily;
 
     public String getRegion() {
         return region;
@@ -263,6 +272,14 @@ public class GetUHostInstancePriceRequest extends Request {
 
     public void setShowPriceDetails(Boolean showPriceDetails) {
         this.showPriceDetails = showPriceDetails;
+    }
+
+    public String getUHostFamily() {
+        return uHostFamily;
+    }
+
+    public void setUHostFamily(String uHostFamily) {
+        this.uHostFamily = uHostFamily;
     }
 
     public static class Disks extends Request {

@@ -43,10 +43,6 @@ public class GetUHostRefundPriceResponse extends Response {
         @SerializedName("Code")
         private Integer code;
 
-        /** 当 Code 非 0 时提供详细的描述信息 */
-        @SerializedName("Message")
-        private String message;
-
         /** 实例的删除退费金额 */
         @SerializedName("RefundPrice")
         private Double refundPrice;
@@ -65,14 +61,6 @@ public class GetUHostRefundPriceResponse extends Response {
 
         public void setCode(Integer code) {
             this.code = code;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
         }
 
         public Double getRefundPrice() {
