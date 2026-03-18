@@ -13,7 +13,6 @@
  */
 package cn.ucloud.uhost.models;
 
-import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
@@ -22,7 +21,6 @@ import java.util.List;
 public class DescribeAvailableInstanceTypesRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @NotEmpty
     @UCloudParam("Region")
     private String region;
 

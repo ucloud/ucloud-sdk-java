@@ -62,6 +62,10 @@ public class ImportCustomImageRequest extends Request {
     @UCloudParam("Auth")
     private Boolean auth;
 
+    /** 业务组 */
+    @UCloudParam("Tag")
+    private String tag;
+
     /** 镜像描述 */
     @UCloudParam("ImageDescription")
     private String imageDescription;
@@ -128,6 +132,14 @@ public class ImportCustomImageRequest extends Request {
 
     public void setAuth(Boolean auth) {
         this.auth = auth;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public String getImageDescription() {

@@ -367,6 +367,15 @@ public class DescribeUHostInstanceResponse extends Response {
         @SerializedName("CpuPlatform")
         private String cpuPlatform;
 
+        /**
+         * 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1
+         * 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或
+         * o1a或o1r（系统将根据资源情况自动选择） 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台
+         * - om2i：快杰内存增强型 OM2 代，Intel 平台
+         */
+        @SerializedName("UHostFamily")
+        private String uHostFamily;
+
         /** 【建议不再使用】主机磁盘类型。 枚举值为：\\ > LocalDisk，本地磁盘; \\ > UDisk 云盘。\\只要有一块磁盘为本地盘，即返回LocalDisk。 */
         @SerializedName("StorageType")
         private String storageType;
@@ -471,8 +480,8 @@ public class DescribeUHostInstanceResponse extends Response {
         private Integer gpu;
 
         /**
-         * GPU类型;枚举值["K80", "P40", "V100", "T4", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4",
-         * "MI100", "V100S"]
+         * GPU类型;枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4",
+         * "MI100", "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","A100","A800","H20"]
          */
         @SerializedName("GpuType")
         private String gpuType;
@@ -521,9 +530,13 @@ public class DescribeUHostInstanceResponse extends Response {
         @SerializedName("EpcInstance")
         private Boolean epcInstance;
 
-        /** true: 绑定了安全组的主机；false: 不是 */
+        /** 【待废弃】true: 绑定了安全组的主机；false: 不是 */
         @SerializedName("SecGroupInstance")
         private Boolean secGroupInstance;
+
+        /** Firewall:防火墙,SecGroup:安全组,Acl:acl */
+        @SerializedName("NetFeatureTag")
+        private String netFeatureTag;
 
         /** true: 开启 hidden kvm 功能；false: 不是 */
         @SerializedName("HiddenKvm")
@@ -579,6 +592,14 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setCpuPlatform(String cpuPlatform) {
             this.cpuPlatform = cpuPlatform;
+        }
+
+        public String getUHostFamily() {
+            return uHostFamily;
+        }
+
+        public void setUHostFamily(String uHostFamily) {
+            this.uHostFamily = uHostFamily;
         }
 
         public String getStorageType() {
@@ -883,6 +904,14 @@ public class DescribeUHostInstanceResponse extends Response {
 
         public void setSecGroupInstance(Boolean secGroupInstance) {
             this.secGroupInstance = secGroupInstance;
+        }
+
+        public String getNetFeatureTag() {
+            return netFeatureTag;
+        }
+
+        public void setNetFeatureTag(String netFeatureTag) {
+            this.netFeatureTag = netFeatureTag;
         }
 
         public Boolean getHiddenKvm() {

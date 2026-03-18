@@ -51,6 +51,10 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
+        /** 实例类型，枚举值["uhost", "spot"] */
+        @SerializedName("InstanceType")
+        private String instanceType;
+
         /** 机型名称：快杰O型|O 、快杰共享型|OM 、快杰内存型|OMEM 、 快杰PRO型|OPRO、通用N型|N、高主频C型|C和GPU G型|G等 */
         @SerializedName("Name")
         private String name;
@@ -62,6 +66,10 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         /** 支持的CPU平台，并且按照Intel、AMD和Ampere分类返回 */
         @SerializedName("CpuPlatforms")
         private CpuPlatforms cpuPlatforms;
+
+        /** 规格族信息 */
+        @SerializedName("UHostFamilies")
+        private List<UHostFamily> uHostFamilies;
 
         /**
          * 磁盘信息。磁盘主要分类如下：云盘|cloudDisk、普通本地盘|normalLocalDisk和SSD本地盘|ssdLocalDisk。
@@ -109,12 +117,28 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         @SerializedName("Performance")
         private Performance performance;
 
+        /** 父机型 */
+        @SerializedName("ParentType")
+        private String parentType;
+
+        /** 机型描述 */
+        @SerializedName("Description")
+        private String description;
+
         public String getZone() {
             return zone;
         }
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public String getInstanceType() {
+            return instanceType;
+        }
+
+        public void setInstanceType(String instanceType) {
+            this.instanceType = instanceType;
         }
 
         public String getName() {
@@ -139,6 +163,14 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setCpuPlatforms(CpuPlatforms cpuPlatforms) {
             this.cpuPlatforms = cpuPlatforms;
+        }
+
+        public List<UHostFamily> getUHostFamilies() {
+            return uHostFamilies;
+        }
+
+        public void setUHostFamilies(List<UHostFamily> uHostFamilies) {
+            this.uHostFamilies = uHostFamilies;
         }
 
         public List<Disks> getDisks() {
@@ -187,6 +219,22 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setPerformance(Performance performance) {
             this.performance = performance;
+        }
+
+        public String getParentType() {
+            return parentType;
+        }
+
+        public void setParentType(String parentType) {
+            this.parentType = parentType;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
         }
     }
 
@@ -279,6 +327,45 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setMinimalCpuPlatform(List<String> minimalCpuPlatform) {
             this.minimalCpuPlatform = minimalCpuPlatform;
+        }
+    }
+
+    public static class CpuPlatformWithModels extends Response {
+
+        /** CPU平台 */
+        @SerializedName("Name")
+        private String name;
+
+        /** CPU Model列表 */
+        @SerializedName("CpuModels")
+        private List<String> cpuModels;
+
+        /** CPU频率 */
+        @SerializedName("CpuFrequency")
+        private String cpuFrequency;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public List<String> getCpuModels() {
+            return cpuModels;
+        }
+
+        public void setCpuModels(List<String> cpuModels) {
+            this.cpuModels = cpuModels;
+        }
+
+        public String getCpuFrequency() {
+            return cpuFrequency;
+        }
+
+        public void setCpuFrequency(String cpuFrequency) {
+            this.cpuFrequency = cpuFrequency;
         }
     }
 
@@ -557,6 +644,45 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setRate(Integer rate) {
             this.rate = rate;
+        }
+    }
+
+    public static class UHostFamily extends Response {
+
+        /** 规格族 */
+        @SerializedName("Name")
+        private String name;
+
+        /** CPU频率信息 */
+        @SerializedName("CpuFrequency")
+        private String cpuFrequency;
+
+        /** CPU平台信息 */
+        @SerializedName("CpuPlatforms")
+        private List<CpuPlatformWithModels> cpuPlatforms;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getCpuFrequency() {
+            return cpuFrequency;
+        }
+
+        public void setCpuFrequency(String cpuFrequency) {
+            this.cpuFrequency = cpuFrequency;
+        }
+
+        public List<CpuPlatformWithModels> getCpuPlatforms() {
+            return cpuPlatforms;
+        }
+
+        public void setCpuPlatforms(List<CpuPlatformWithModels> cpuPlatforms) {
+            this.cpuPlatforms = cpuPlatforms;
         }
     }
 }

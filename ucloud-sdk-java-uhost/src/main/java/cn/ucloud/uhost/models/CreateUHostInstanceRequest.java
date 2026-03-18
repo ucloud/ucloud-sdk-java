@@ -47,7 +47,7 @@ public class CreateUHostInstanceRequest extends Request {
     @UCloudParam("Disks")
     private List<Disks> disks;
 
-    /** 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair。 */
+    /** 主机登陆模式。密码（默认选项）: Password，密钥：KeyPair，Password，自制镜像密码：ImagePasswd。 */
     @NotEmpty
     @UCloudParam("LoginMode")
     private String loginMode;
@@ -94,7 +94,7 @@ public class CreateUHostInstanceRequest extends Request {
 
     /**
      * GPU类型，枚举值["K80", "P40", "V100", "T4","T4A", "T4S","2080Ti","2080Ti-4C","1080Ti", "T4/4",
-     * "V100S",2080","2080TiS","2080TiPro","3090","4090","A100"]。MachineType为G时必填
+     * "V100S",2080","2080TiS","2080TiPro","3090","4090","4090Pro","4090_48G","A100","A800","H20"]。MachineType为G时必填
      */
     @UCloudParam("GpuType")
     private String gpuType;
@@ -201,6 +201,23 @@ public class CreateUHostInstanceRequest extends Request {
     /** 【私有专区属性】专区云主机开启宿住关联属性 */
     @UCloudParam("HostBinding")
     private Boolean hostBinding;
+
+    /** 本次最小创建主机数量，取值范围是[1,100]，默认值为1。 - 配额不足时，返回错误。 */
+    @UCloudParam("MinCount")
+    private Integer minCount;
+
+    /** */
+    @UCloudParam("Labels")
+    private List<Labels> labels;
+
+    /**
+     * 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1
+     * 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台
+     * 默认值：o1i 或 o1a（系统将根据资源情况自动选择） 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel
+     * 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     */
+    @UCloudParam("UHostFamily")
+    private String uHostFamily;
 
     /** 主机代金券ID。请通过DescribeCoupon接口查询，或登录用户中心查看 */
     @UCloudParam("CouponId")
@@ -510,6 +527,30 @@ public class CreateUHostInstanceRequest extends Request {
         this.hostBinding = hostBinding;
     }
 
+    public Integer getMinCount() {
+        return minCount;
+    }
+
+    public void setMinCount(Integer minCount) {
+        this.minCount = minCount;
+    }
+
+    public List<Labels> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Labels> labels) {
+        this.labels = labels;
+    }
+
+    public String getUHostFamily() {
+        return uHostFamily;
+    }
+
+    public void setUHostFamily(String uHostFamily) {
+        this.uHostFamily = uHostFamily;
+    }
+
     public String getCouponId() {
         return couponId;
     }
@@ -553,6 +594,12 @@ public class CreateUHostInstanceRequest extends Request {
         /** 云盘代金券id。不适用于系统盘/本地盘。请通过DescribeCoupon接口查询，或登录用户中心查看 */
         @UCloudParam("CouponId")
         private String couponId;
+
+        /**
+         * 指定快照备份策略。当Disks.N.BackupType为"SNAPSHOT"时此参数生效。枚举值："Base"：标准版，"Ultimate"：旗舰版，"Custom"：自定义备份链；默认值："Base"。
+         */
+        @UCloudParam("BackupMode")
+        private String backupMode;
 
         /** */
         @UCloudParam("CustomBackup")
@@ -618,6 +665,14 @@ public class CreateUHostInstanceRequest extends Request {
             this.couponId = couponId;
         }
 
+        public String getBackupMode() {
+            return backupMode;
+        }
+
+        public void setBackupMode(String backupMode) {
+            this.backupMode = backupMode;
+        }
+
         public DisksCustomBackup getCustomBackup() {
             return customBackup;
         }
@@ -635,7 +690,44 @@ public class CreateUHostInstanceRequest extends Request {
         }
     }
 
-    public static class DisksCustomBackup extends Request {}
+    public static class DisksCustomBackup extends Request {
+
+        /** Disks.N.BackupMode为"Custom"时，进行设置, 以12小时秒级为基础进行倍数扩增，如12、24、36、48。 */
+        @UCloudParam("Journal")
+        private String journal;
+
+        /** Disks.N.BackupMode为"Custom"时，进行设置, 以24小时级为基础进行倍数扩增，如24、48、72、96。 */
+        @UCloudParam("Hour")
+        private String hour;
+
+        /** Disks.N.BackupMode为"Custom"时，进行设置, 以5天级为基础进行倍数扩增，如5、10、15、20、25、30。 */
+        @UCloudParam("Day")
+        private String day;
+
+        public String getJournal() {
+            return journal;
+        }
+
+        public void setJournal(String journal) {
+            this.journal = journal;
+        }
+
+        public String getHour() {
+            return hour;
+        }
+
+        public void setHour(String hour) {
+            this.hour = hour;
+        }
+
+        public String getDay() {
+            return day;
+        }
+
+        public void setDay(String day) {
+            this.day = day;
+        }
+    }
 
     public static class Features extends Request {
 
@@ -649,6 +741,33 @@ public class CreateUHostInstanceRequest extends Request {
 
         public void setUNI(Boolean uni) {
             this.uni = uni;
+        }
+    }
+
+    public static class Labels extends Request {
+
+        /** 用户资源标签的键值 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** 用户资源标签的值 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 
@@ -694,7 +813,7 @@ public class CreateUHostInstanceRequest extends Request {
     public static class NetworkInterfaceEIP extends Request {
 
         /**
-         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式必须指定0M带宽, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
+         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
          * 流量计费[1-300]，带宽计费[1-800]
          */
         @UCloudParam("Bandwidth")
@@ -765,7 +884,20 @@ public class CreateUHostInstanceRequest extends Request {
         }
     }
 
-    public static class NetworkInterfaceIPv6 extends Request {}
+    public static class NetworkInterfaceIPv6 extends Request {
+
+        /** 第N个网卡对应的IPv6地址，默认不分配IPv6，“Auto”自动分配，不为空的其他字符串为实际要分配的IPv6地址。当前仅支持分配一个IPv6地址 */
+        @UCloudParam("Address")
+        private String address;
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+    }
 
     public static class SecGroupId extends Request {
 

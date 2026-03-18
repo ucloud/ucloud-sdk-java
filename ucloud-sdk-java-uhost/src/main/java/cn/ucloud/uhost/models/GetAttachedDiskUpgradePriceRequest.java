@@ -36,7 +36,7 @@ public class GetAttachedDiskUpgradePriceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 磁盘大小，单位GB，步长为10。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
+    /** 磁盘大小，单位GB。取值范围需大于当前磁盘大小，最大值请参考[[api:uhost-api:disk_type|磁盘类型]]。 */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;

@@ -98,6 +98,10 @@ public class DescribeImageResponse extends Response {
         @SerializedName("ImageName")
         private String imageName;
 
+        /** 业务组 */
+        @SerializedName("Tag")
+        private String tag;
+
         /** 操作系统类型：Linux，Windows */
         @SerializedName("OsType")
         private String osType;
@@ -205,6 +209,14 @@ public class DescribeImageResponse extends Response {
 
         public void setImageName(String imageName) {
             this.imageName = imageName;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
         }
 
         public String getOsType() {

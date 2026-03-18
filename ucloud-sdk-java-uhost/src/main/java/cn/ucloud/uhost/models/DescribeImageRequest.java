@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uhost.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class DescribeImageRequest extends Request {
 
@@ -54,6 +55,14 @@ public class DescribeImageRequest extends Request {
     /** 镜像Id */
     @UCloudParam("ImageId")
     private String imageId;
+
+    /** 镜像Id列表 */
+    @UCloudParam("ImageIds")
+    private List<String> imageIds;
+
+    /** 业务组Id。默认：Default */
+    @UCloudParam("Tag")
+    private String tag;
 
     /** 列表起始位置偏移量，默认为0 */
     @UCloudParam("Offset")
@@ -121,6 +130,22 @@ public class DescribeImageRequest extends Request {
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public List<String> getImageIds() {
+        return imageIds;
+    }
+
+    public void setImageIds(List<String> imageIds) {
+        this.imageIds = imageIds;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public Integer getOffset() {

@@ -51,6 +51,10 @@ public class CreateCustomImageRequest extends Request {
     @UCloudParam("ImageDescription")
     private String imageDescription;
 
+    /** 镜像业务组。默认：Default */
+    @UCloudParam("Tag")
+    private String tag;
+
     /** 【数组】关联的云盘数据盘id列表。注意: 云盘数据盘需要开启快照服务 */
     @UCloudParam("DataUDiskIds")
     private List<String> dataUDiskIds;
@@ -101,6 +105,14 @@ public class CreateCustomImageRequest extends Request {
 
     public void setImageDescription(String imageDescription) {
         this.imageDescription = imageDescription;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public List<String> getDataUDiskIds() {
