@@ -60,6 +60,10 @@ public class ModifyUDNSRecordRequest extends Request {
     @UCloudParam("Remark")
     private String remark;
 
+    /** 记录类型。枚举值，“A”,"CNAME","MX","AAAA","SRV","PTR","TXT"。 */
+    @UCloudParam("Type")
+    private String type;
+
     public String getRegion() {
         return region;
     }
@@ -122,5 +126,13 @@ public class ModifyUDNSRecordRequest extends Request {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

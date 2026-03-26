@@ -50,6 +50,18 @@ public class DescribeUDNSRecordRequest extends Request {
     @UCloudParam("Offset")
     private Integer offset;
 
+    /** 模糊查询记录 */
+    @UCloudParam("Query")
+    private String query;
+
+    /** 排序字段，只支持host update_time */
+    @UCloudParam("SortKey")
+    private String sortKey;
+
+    /** 排序方式，支持asc desc */
+    @UCloudParam("SortDir")
+    private String sortDir;
+
     public String getRegion() {
         return region;
     }
@@ -96,5 +108,29 @@ public class DescribeUDNSRecordRequest extends Request {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    public String getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
     }
 }

@@ -94,13 +94,9 @@ public class GetUHostInstancePriceResponse extends Response {
         @SerializedName("Price")
         private Double price;
 
-        /** 限时优惠的折前原价（即列表价乘以商务折扣后的单价）。 */
+        /** 限时优惠的折前原价。 */
         @SerializedName("OriginalPrice")
         private Double originalPrice;
-
-        /** 产品列表价。 */
-        @SerializedName("ListPrice")
-        private Double listPrice;
 
         /** 价格详细信息（只有询价接口返回）。 */
         @SerializedName("PriceDetail")
@@ -109,10 +105,6 @@ public class GetUHostInstancePriceResponse extends Response {
         /** 原价详细信息（只有询价接口返回）。 */
         @SerializedName("OriginalPriceDetail")
         private PriceDetail originalPriceDetail;
-
-        /** 列表价详细信息（只有询价接口返回）。 */
-        @SerializedName("ListPriceDetail")
-        private PriceDetail listPriceDetail;
 
         public String getChargeType() {
             return chargeType;
@@ -138,14 +130,6 @@ public class GetUHostInstancePriceResponse extends Response {
             this.originalPrice = originalPrice;
         }
 
-        public Double getListPrice() {
-            return listPrice;
-        }
-
-        public void setListPrice(Double listPrice) {
-            this.listPrice = listPrice;
-        }
-
         public PriceDetail getPriceDetail() {
             return priceDetail;
         }
@@ -160,14 +144,6 @@ public class GetUHostInstancePriceResponse extends Response {
 
         public void setOriginalPriceDetail(PriceDetail originalPriceDetail) {
             this.originalPriceDetail = originalPriceDetail;
-        }
-
-        public PriceDetail getListPriceDetail() {
-            return listPriceDetail;
-        }
-
-        public void setListPriceDetail(PriceDetail listPriceDetail) {
-            this.listPriceDetail = listPriceDetail;
         }
     }
 }

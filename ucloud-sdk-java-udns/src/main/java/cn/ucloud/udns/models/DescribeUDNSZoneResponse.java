@@ -114,6 +114,10 @@ public class DescribeUDNSZoneResponse extends Response {
         @SerializedName("DNSZoneName")
         private String dnsZoneName;
 
+        /** UDNS私有域名 Zone ID */
+        @SerializedName("DNSZoneId")
+        private String dnsZoneId;
+
         /** 业务组 */
         @SerializedName("Tag")
         private String tag;
@@ -156,6 +160,14 @@ public class DescribeUDNSZoneResponse extends Response {
 
         public void setDNSZoneName(String dnsZoneName) {
             this.dnsZoneName = dnsZoneName;
+        }
+
+        public String getDNSZoneId() {
+            return dnsZoneId;
+        }
+
+        public void setDNSZoneId(String dnsZoneId) {
+            this.dnsZoneId = dnsZoneId;
         }
 
         public String getTag() {
