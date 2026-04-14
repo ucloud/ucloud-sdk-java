@@ -96,7 +96,8 @@ public class CreateCompShareInstanceRequest extends Request {
     /**
      * 最低cpu平台，枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell", "Intel/Broadwell",
      * "Intel/Skylake", "Intel/Cascadelake", "Intel/CascadelakeR", "Intel/IceLake", "Amd/Epyc2",
-     * "Amd/Auto","Ampere/Auto","Ampere/Altra"],默认值是"Intel/Auto"。
+     * "Amd/Auto","Ampere/Auto","Ampere/Altra", "Auto"],默认值是"Intel/Auto", "Auto" 自动分配Amd或者Intel
+     * cpu平台。
      */
     @UCloudParam("MinimalCpuPlatform")
     private String minimalCpuPlatform;
@@ -115,6 +116,10 @@ public class CreateCompShareInstanceRequest extends Request {
     /** 防火墙Id */
     @UCloudParam("SecurityGroupId")
     private String securityGroupId;
+
+    /** 是否挂载云存储（仅容器实例支持此操作） */
+    @UCloudParam("EnableUS3")
+    private Boolean enableUS3;
 
     public String getRegion() {
         return region;
@@ -250,6 +255,14 @@ public class CreateCompShareInstanceRequest extends Request {
 
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
+    }
+
+    public Boolean getEnableUS3() {
+        return enableUS3;
+    }
+
+    public void setEnableUS3(Boolean enableUS3) {
+        this.enableUS3 = enableUS3;
     }
 
     public static class Disks extends Request {
