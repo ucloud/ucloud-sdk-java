@@ -231,6 +231,14 @@ public class DescribeCompShareInstanceResponse extends Response {
         @SerializedName("MonitorMessages")
         private MonitorMessage monitorMessages;
 
+        /** 主机折扣类型 1:夜间折扣 2:节日折扣 */
+        @SerializedName("DiscountType")
+        private Integer discountType;
+
+        /** 主机启动时间 */
+        @SerializedName("StartTime")
+        private Integer startTime;
+
         public String getZone() {
             return zone;
         }
@@ -590,6 +598,22 @@ public class DescribeCompShareInstanceResponse extends Response {
 
         public void setMonitorMessages(MonitorMessage monitorMessages) {
             this.monitorMessages = monitorMessages;
+        }
+
+        public Integer getDiscountType() {
+            return discountType;
+        }
+
+        public void setDiscountType(Integer discountType) {
+            this.discountType = discountType;
+        }
+
+        public Integer getStartTime() {
+            return startTime;
+        }
+
+        public void setStartTime(Integer startTime) {
+            this.startTime = startTime;
         }
     }
 
