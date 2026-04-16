@@ -33,6 +33,8 @@ import cn.ucloud.umongodb.models.GetUMongoDBBackupParamRequest;
 import cn.ucloud.umongodb.models.GetUMongoDBBackupParamResponse;
 import cn.ucloud.umongodb.models.GetUMongoDBCfgTempItemRequest;
 import cn.ucloud.umongodb.models.GetUMongoDBCfgTempItemResponse;
+import cn.ucloud.umongodb.models.GetUMongoDBLogRequest;
+import cn.ucloud.umongodb.models.GetUMongoDBLogResponse;
 import cn.ucloud.umongodb.models.GetUMongoDBRecoverTimeRangeRequest;
 import cn.ucloud.umongodb.models.GetUMongoDBRecoverTimeRangeResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBBackupRequest;
@@ -43,6 +45,8 @@ import cn.ucloud.umongodb.models.ListUMongoDBInstancesRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBInstancesResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBLogPackageRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBLogPackageResponse;
+import cn.ucloud.umongodb.models.ListUMongoDBMachineSpecRequest;
+import cn.ucloud.umongodb.models.ListUMongoDBMachineSpecResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeRequest;
 import cn.ucloud.umongodb.models.ListUMongoDBMachineTypeResponse;
 import cn.ucloud.umongodb.models.ListUMongoDBVersionRequest;
@@ -147,6 +151,15 @@ public interface UMongoDBClientInterface extends Client {
             GetUMongoDBCfgTempItemRequest request) throws UCloudException;
 
     /**
+     * GetUMongoDBLog - 获取集群节点日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUMongoDBLogResponse getUMongoDBLog(GetUMongoDBLogRequest request)
+            throws UCloudException;
+
+    /**
      * GetUMongoDBRecoverTimeRange - 获取UMongoDB可回档时间范围
      *
      * @param request Request object
@@ -190,6 +203,15 @@ public interface UMongoDBClientInterface extends Client {
      */
     public ListUMongoDBLogPackageResponse listUMongoDBLogPackage(
             ListUMongoDBLogPackageRequest request) throws UCloudException;
+
+    /**
+     * ListUMongoDBMachineSpec - 获取UMongoDB支持机器类型列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUMongoDBMachineSpecResponse listUMongoDBMachineSpec(
+            ListUMongoDBMachineSpecRequest request) throws UCloudException;
 
     /**
      * ListUMongoDBMachineType - 获取UmongDB支持机器类型列表
