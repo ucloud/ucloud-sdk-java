@@ -66,7 +66,8 @@ public class ListUMongoDBInstancesResponse extends Response {
         /**
          * 副本集/分片集群状态标记
          * Initing：初始化中，InitFailed：安装失败，Starting：启动中，StartFailed：启动失败，Running：运行，Stopping：关闭中，Stopped：已关闭,
-         * StopFailed：关闭失败，Deleting：删除中，Deleted：已删除，DeleteFailed：删除失败，Restarting：重启中，RestartFailed：重启失败。
+         * StopFailed：关闭失败，Deleting：删除中，Deleted：已删除，DeleteFailed：删除失败，Restarting：重启中，RestartFailed：重启失败,Upgrading:
+         * 升降级中，UpgradeFailed: 升降级失败,Switching:主备切换中
          */
         @SerializedName("State")
         private String state;
@@ -74,6 +75,34 @@ public class ListUMongoDBInstancesResponse extends Response {
         /** 副本集/分片集IPv6访问地址 */
         @SerializedName("IPv6ConnectURL")
         private String iPv6ConnectURL;
+
+        /** DB实例过期时间，采用UTC计时时间戳 */
+        @SerializedName("ExpiredTime")
+        private Integer expiredTime;
+
+        /** 数据节点计算规格 */
+        @SerializedName("DataComputeType")
+        private MongodbMachineType dataComputeType;
+
+        /** VPC的ID */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** 子网ID */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /** 数据节点磁盘空间(GB) */
+        @SerializedName("DiskSpace")
+        private Integer diskSpace;
+
+        /** 业务组 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** 跨可用区列表 */
+        @SerializedName("CrossZones")
+        private List<String> crossZones;
 
         public String getZone() {
             return zone;
@@ -145,6 +174,137 @@ public class ListUMongoDBInstancesResponse extends Response {
 
         public void setIPv6ConnectURL(String iPv6ConnectURL) {
             this.iPv6ConnectURL = iPv6ConnectURL;
+        }
+
+        public Integer getExpiredTime() {
+            return expiredTime;
+        }
+
+        public void setExpiredTime(Integer expiredTime) {
+            this.expiredTime = expiredTime;
+        }
+
+        public MongodbMachineType getDataComputeType() {
+            return dataComputeType;
+        }
+
+        public void setDataComputeType(MongodbMachineType dataComputeType) {
+            this.dataComputeType = dataComputeType;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public Integer getDiskSpace() {
+            return diskSpace;
+        }
+
+        public void setDiskSpace(Integer diskSpace) {
+            this.diskSpace = diskSpace;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public List<String> getCrossZones() {
+            return crossZones;
+        }
+
+        public void setCrossZones(List<String> crossZones) {
+            this.crossZones = crossZones;
+        }
+    }
+
+    public static class MongodbMachineType extends Response {
+
+        /** 机器类型ID o.mongo2m.medium，o.mongo2m.xlarge */
+        @SerializedName("MachineTypeId")
+        private String machineTypeId;
+
+        /** 配置简称 2C4G */
+        @SerializedName("Description")
+        private String description;
+
+        /** cpu核数 */
+        @SerializedName("Cpu")
+        private Integer cpu;
+
+        /** 内存用量(GB) */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** 机器类型，N/O */
+        @SerializedName("UHhostMachineType")
+        private String uHhostMachineType;
+
+        /** 配置分组，2m , 4m */
+        @SerializedName("Group")
+        private String group;
+
+        public String getMachineTypeId() {
+            return machineTypeId;
+        }
+
+        public void setMachineTypeId(String machineTypeId) {
+            this.machineTypeId = machineTypeId;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Integer getCpu() {
+            return cpu;
+        }
+
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public String getUHhostMachineType() {
+            return uHhostMachineType;
+        }
+
+        public void setUHhostMachineType(String uHhostMachineType) {
+            this.uHhostMachineType = uHhostMachineType;
+        }
+
+        public String getGroup() {
+            return group;
+        }
+
+        public void setGroup(String group) {
+            this.group = group;
         }
     }
 }

@@ -26,7 +26,6 @@ public class DescribeUMongoDBBackupURLRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 

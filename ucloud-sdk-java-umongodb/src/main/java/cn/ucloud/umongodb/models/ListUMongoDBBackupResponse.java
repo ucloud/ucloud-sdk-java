@@ -35,6 +35,10 @@ public class ListUMongoDBBackupResponse extends Response {
 
     public static class BackupInfo extends Response {
 
+        /** 可用区 */
+        @SerializedName("Zone")
+        private String zone;
+
         /** 备份ID */
         @SerializedName("BackupId")
         private String backupId;
@@ -82,6 +86,14 @@ public class ListUMongoDBBackupResponse extends Response {
         /** 磁盘大小 */
         @SerializedName("DiskSize")
         private Integer diskSize;
+
+        public String getZone() {
+            return zone;
+        }
+
+        public void setZone(String zone) {
+            this.zone = zone;
+        }
 
         public String getBackupId() {
             return backupId;

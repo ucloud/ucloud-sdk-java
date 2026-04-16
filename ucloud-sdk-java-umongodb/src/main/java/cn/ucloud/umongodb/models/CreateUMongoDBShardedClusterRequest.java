@@ -13,10 +13,11 @@
  */
 package cn.ucloud.umongodb.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class CreateUMongoDBShardedClusterRequest extends Request {
 
@@ -42,7 +43,7 @@ public class CreateUMongoDBShardedClusterRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 副本集的Mongodb的版本，例如MongoDB-3.6, MongoDB-4.2 */
+    /** 副本集的Mongodb的版本，例如MongoDB 3.6, MongoDB 4.2 */
     @NotEmpty
     @UCloudParam("DBVersion")
     private String dbVersion;
@@ -67,12 +68,12 @@ public class CreateUMongoDBShardedClusterRequest extends Request {
     @UCloudParam("NodeCount")
     private Integer nodeCount;
 
-    /** 数据节点磁盘空间(GB) */
+    /** 数据节点磁盘空间(GB):取值范围 20~32000，仅支持 10 的整数倍 */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** 数据节点机型配置 */
+    /** 数据节点机型配置,如 o.mongo2m.medium */
     @NotEmpty
     @UCloudParam("MachineTypeId")
     private String machineTypeId;
@@ -108,6 +109,14 @@ public class CreateUMongoDBShardedClusterRequest extends Request {
     /** Mongos节点机型配置 */
     @UCloudParam("MongosMachineTypeId")
     private String mongosMachineTypeId;
+
+    /** */
+    @UCloudParam("Labels")
+    private List<Labels> labels;
+
+    /** */
+    @UCloudParam("SecGroupId")
+    private List<SecGroupId> secGroupId;
 
     public String getRegion() {
         return region;
@@ -259,5 +268,75 @@ public class CreateUMongoDBShardedClusterRequest extends Request {
 
     public void setMongosMachineTypeId(String mongosMachineTypeId) {
         this.mongosMachineTypeId = mongosMachineTypeId;
+    }
+
+    public List<Labels> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Labels> labels) {
+        this.labels = labels;
+    }
+
+    public List<SecGroupId> getSecGroupId() {
+        return secGroupId;
+    }
+
+    public void setSecGroupId(List<SecGroupId> secGroupId) {
+        this.secGroupId = secGroupId;
+    }
+
+    public static class Labels extends Request {
+
+        /** 用户资源标签的键值 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** 用户资源标签值 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    public static class SecGroupId extends Request {
+
+        /** 安全组 ID。至多可以同时绑定5个安全组。 */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级。取值范围[1, 5] */
+        @UCloudParam("Priority")
+        private Integer priority;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Integer getPriority() {
+            return priority;
+        }
+
+        public void setPriority(Integer priority) {
+            this.priority = priority;
+        }
     }
 }

@@ -58,7 +58,8 @@ public class DescribeUMongoDBInstanceResponse extends Response {
         /**
          * 副本集/分片集群状态标记
          * Initing：初始化中，InitFailed：安装失败，Starting：启动中，StartFailed：启动失败，Running：运行，Stopping：关闭中，Stopped：已关闭,
-         * StopFailed：关闭失败，Deleting：删除中，Deleted：已删除，DeleteFailed：删除失败，Restarting：重启中，RestartFailed：重启失败。
+         * StopFailed：关闭失败，Deleting：删除中，Deleted：已删除，DeleteFailed：删除失败，Restarting：重启中，RestartFailed：重启失败,Upgrading:
+         * 升降级中，UpgradeFailed: 升降级失败,Switching:主备切换中，UpdatingSSL：修改SSL中，UpdateSSLFail：修改SSL失败
          */
         @SerializedName("State")
         private String state;
@@ -130,6 +131,30 @@ public class DescribeUMongoDBInstanceResponse extends Response {
         /** 实例业务组 */
         @SerializedName("Tag")
         private String tag;
+
+        /** 数据节点计算规格 */
+        @SerializedName("DataComputeType")
+        private MongodbMachineType dataComputeType;
+
+        /** 配置节点计算规格 */
+        @SerializedName("ConfigComputeType")
+        private MongodbMachineType configComputeType;
+
+        /** 路由节点计算规格 */
+        @SerializedName("MongosComputeType")
+        private MongodbMachineType mongosComputeType;
+
+        /** 跨用区列表 */
+        @SerializedName("CrossZones")
+        private List<String> crossZones;
+
+        /** 是否开启了SSL；1->未开启 2->开启 */
+        @SerializedName("EnableSSL")
+        private Integer enableSSL;
+
+        /** SSL到期时间 */
+        @SerializedName("SSLExpirationTime")
+        private Integer sslExpirationTime;
 
         public String getZone() {
             return zone;
@@ -314,6 +339,54 @@ public class DescribeUMongoDBInstanceResponse extends Response {
         public void setTag(String tag) {
             this.tag = tag;
         }
+
+        public MongodbMachineType getDataComputeType() {
+            return dataComputeType;
+        }
+
+        public void setDataComputeType(MongodbMachineType dataComputeType) {
+            this.dataComputeType = dataComputeType;
+        }
+
+        public MongodbMachineType getConfigComputeType() {
+            return configComputeType;
+        }
+
+        public void setConfigComputeType(MongodbMachineType configComputeType) {
+            this.configComputeType = configComputeType;
+        }
+
+        public MongodbMachineType getMongosComputeType() {
+            return mongosComputeType;
+        }
+
+        public void setMongosComputeType(MongodbMachineType mongosComputeType) {
+            this.mongosComputeType = mongosComputeType;
+        }
+
+        public List<String> getCrossZones() {
+            return crossZones;
+        }
+
+        public void setCrossZones(List<String> crossZones) {
+            this.crossZones = crossZones;
+        }
+
+        public Integer getEnableSSL() {
+            return enableSSL;
+        }
+
+        public void setEnableSSL(Integer enableSSL) {
+            this.enableSSL = enableSSL;
+        }
+
+        public Integer getSSLExpirationTime() {
+            return sslExpirationTime;
+        }
+
+        public void setSSLExpirationTime(Integer sslExpirationTime) {
+            this.sslExpirationTime = sslExpirationTime;
+        }
     }
 
     public static class DiskInfo extends Response {
@@ -340,6 +413,81 @@ public class DescribeUMongoDBInstanceResponse extends Response {
 
         public void setDiskSize(Integer diskSize) {
             this.diskSize = diskSize;
+        }
+    }
+
+    public static class MongodbMachineType extends Response {
+
+        /** 机器类型ID o.mongo2m.medium，o.mongo2m.xlarge */
+        @SerializedName("MachineTypeId")
+        private String machineTypeId;
+
+        /** 配置简称 2C4G */
+        @SerializedName("Description")
+        private String description;
+
+        /** cpu核数 */
+        @SerializedName("Cpu")
+        private Integer cpu;
+
+        /** 内存用量(GB) */
+        @SerializedName("Memory")
+        private Integer memory;
+
+        /** 机器类型，N/O */
+        @SerializedName("UHhostMachineType")
+        private String uHhostMachineType;
+
+        /** 配置分组，2m , 4m */
+        @SerializedName("Group")
+        private String group;
+
+        public String getMachineTypeId() {
+            return machineTypeId;
+        }
+
+        public void setMachineTypeId(String machineTypeId) {
+            this.machineTypeId = machineTypeId;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Integer getCpu() {
+            return cpu;
+        }
+
+        public void setCpu(Integer cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Integer memory) {
+            this.memory = memory;
+        }
+
+        public String getUHhostMachineType() {
+            return uHhostMachineType;
+        }
+
+        public void setUHhostMachineType(String uHhostMachineType) {
+            this.uHhostMachineType = uHhostMachineType;
+        }
+
+        public String getGroup() {
+            return group;
+        }
+
+        public void setGroup(String group) {
+            this.group = group;
         }
     }
 

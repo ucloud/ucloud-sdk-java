@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.ucompshare.models;
+package cn.ucloud.umongodb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class UpdateCompShareStopSchedulerRequest extends Request {
+public class GetUMongoDBLogRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -33,19 +33,32 @@ public class UpdateCompShareStopSchedulerRequest extends Request {
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
-    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UHost实例ID。【UHostId和HostId必须选填一个，本字段即将废弃，建议使用HostId】 */
+    /** 集群id */
     @NotEmpty
-    @UCloudParam("UHostId")
-    private String uHostId;
+    @UCloudParam("ClusterId")
+    private String clusterId;
 
-    /** 定时关机时间 */
+    /** 节点id, 慢日志 mongos 节点不可选 */
     @NotEmpty
-    @UCloudParam("StopTime")
-    private Integer stopTime;
+    @UCloudParam("NodeId")
+    private String nodeId;
+
+    /** 查询的日志开始的时间戳（Unix Timestamp）。对于实时查询，这个参数应该是上次轮询请求时的时间戳，后台会返回从该值到当前时间的日志内容 */
+    @NotEmpty
+    @UCloudParam("Begin")
+    private Integer begin;
+
+    /** 日志类型:SlowLog,ErrorLog */
+    @NotEmpty
+    @UCloudParam("LogType")
+    private String logType;
+
+    /** 查询日志的结束时间戳(Unix Timestamp），对于实时查询不传该值，与BeginTime的差值不超过24小时：(EndTime-BeginTime) < 24*60*60 */
+    @UCloudParam("End")
+    private Integer end;
 
     public String getRegion() {
         return region;
@@ -71,19 +84,43 @@ public class UpdateCompShareStopSchedulerRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getUHostId() {
-        return uHostId;
+    public String getClusterId() {
+        return clusterId;
     }
 
-    public void setUHostId(String uHostId) {
-        this.uHostId = uHostId;
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
     }
 
-    public Integer getStopTime() {
-        return stopTime;
+    public String getNodeId() {
+        return nodeId;
     }
 
-    public void setStopTime(Integer stopTime) {
-        this.stopTime = stopTime;
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public Integer getBegin() {
+        return begin;
+    }
+
+    public void setBegin(Integer begin) {
+        this.begin = begin;
+    }
+
+    public String getLogType() {
+        return logType;
+    }
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
+
+    public Integer getEnd() {
+        return end;
+    }
+
+    public void setEnd(Integer end) {
+        this.end = end;
     }
 }

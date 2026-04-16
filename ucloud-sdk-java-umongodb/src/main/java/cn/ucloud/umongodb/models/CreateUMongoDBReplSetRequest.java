@@ -13,10 +13,11 @@
  */
 package cn.ucloud.umongodb.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class CreateUMongoDBReplSetRequest extends Request {
 
@@ -42,7 +43,7 @@ public class CreateUMongoDBReplSetRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 副本集的Mongodb的版本，例如MongoDB_3_6, MongoDB_4_2 */
+    /** 副本集的Mongodb的版本，例如MongoDB 3.6, MongoDB 4.2 */
     @NotEmpty
     @UCloudParam("DBVersion")
     private String dbVersion;
@@ -52,17 +53,17 @@ public class CreateUMongoDBReplSetRequest extends Request {
     @UCloudParam("AdminPassword")
     private String adminPassword;
 
-    /** 磁盘空间(GB) */
+    /** 磁盘空间 (GB)：取值范围 20~32000，仅支持 10 的整数倍 */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** 机型配置 */
+    /** 机型配置,如 o.mongo2m.medium */
     @NotEmpty
     @UCloudParam("MachineTypeId")
     private String machineTypeId;
 
-    /** 副本集节点数量 */
+    /** 副本集节点数量：仅支持 3、5、7 奇数节点 */
     @NotEmpty
     @UCloudParam("NodeCount")
     private Integer nodeCount;
@@ -90,6 +91,18 @@ public class CreateUMongoDBReplSetRequest extends Request {
     /** 购买时长，默认值1 */
     @UCloudParam("Quantity")
     private Integer quantity;
+
+    /** 跨可用区列表 */
+    @UCloudParam("CrossZones")
+    private List<String> crossZones;
+
+    /** */
+    @UCloudParam("Labels")
+    private List<Labels> labels;
+
+    /** */
+    @UCloudParam("SecGroupId")
+    private List<SecGroupId> secGroupId;
 
     public String getRegion() {
         return region;
@@ -209,5 +222,83 @@ public class CreateUMongoDBReplSetRequest extends Request {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public List<String> getCrossZones() {
+        return crossZones;
+    }
+
+    public void setCrossZones(List<String> crossZones) {
+        this.crossZones = crossZones;
+    }
+
+    public List<Labels> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Labels> labels) {
+        this.labels = labels;
+    }
+
+    public List<SecGroupId> getSecGroupId() {
+        return secGroupId;
+    }
+
+    public void setSecGroupId(List<SecGroupId> secGroupId) {
+        this.secGroupId = secGroupId;
+    }
+
+    public static class Labels extends Request {
+
+        /** 用户资源标签的键值 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** 用户资源标签值 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    public static class SecGroupId extends Request {
+
+        /** 安全组 ID。至多可以同时绑定5个安全组。 */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级。取值范围[1, 5] */
+        @UCloudParam("Priority")
+        private Integer priority;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Integer getPriority() {
+            return priority;
+        }
+
+        public void setPriority(Integer priority) {
+            this.priority = priority;
+        }
     }
 }

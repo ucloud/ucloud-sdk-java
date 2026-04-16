@@ -11,14 +11,14 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.ucompshare.models;
+package cn.ucloud.umongodb.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class UpdateCompShareStopSchedulerRequest extends Request {
+public class ListUMongoDBMachineSpecRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -26,6 +26,7 @@ public class UpdateCompShareStopSchedulerRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -33,19 +34,16 @@ public class UpdateCompShareStopSchedulerRequest extends Request {
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
-    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UHost实例ID。【UHostId和HostId必须选填一个，本字段即将废弃，建议使用HostId】 */
-    @NotEmpty
-    @UCloudParam("UHostId")
-    private String uHostId;
+    /** 机型,如O */
+    @UCloudParam("ClassType")
+    private String classType;
 
-    /** 定时关机时间 */
-    @NotEmpty
-    @UCloudParam("StopTime")
-    private Integer stopTime;
+    /** 磁盘类型，如CLOUD_RSSD */
+    @UCloudParam("DiskType")
+    private String diskType;
 
     public String getRegion() {
         return region;
@@ -71,19 +69,19 @@ public class UpdateCompShareStopSchedulerRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getUHostId() {
-        return uHostId;
+    public String getClassType() {
+        return classType;
     }
 
-    public void setUHostId(String uHostId) {
-        this.uHostId = uHostId;
+    public void setClassType(String classType) {
+        this.classType = classType;
     }
 
-    public Integer getStopTime() {
-        return stopTime;
+    public String getDiskType() {
+        return diskType;
     }
 
-    public void setStopTime(Integer stopTime) {
-        this.stopTime = stopTime;
+    public void setDiskType(String diskType) {
+        this.diskType = diskType;
     }
 }
