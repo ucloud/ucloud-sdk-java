@@ -13,8 +13,6 @@
  */
 package cn.ucloud.label.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class DeleteLabelsResponse extends Response {}

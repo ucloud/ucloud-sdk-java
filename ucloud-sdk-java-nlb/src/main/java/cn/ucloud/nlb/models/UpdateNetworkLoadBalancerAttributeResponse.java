@@ -13,8 +13,6 @@
  */
 package cn.ucloud.nlb.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class UpdateNetworkLoadBalancerAttributeResponse extends Response {}

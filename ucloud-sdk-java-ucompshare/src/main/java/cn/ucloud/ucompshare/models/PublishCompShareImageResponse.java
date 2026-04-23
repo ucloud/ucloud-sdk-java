@@ -13,8 +13,6 @@
  */
 package cn.ucloud.ucompshare.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class PublishCompShareImageResponse extends Response {}

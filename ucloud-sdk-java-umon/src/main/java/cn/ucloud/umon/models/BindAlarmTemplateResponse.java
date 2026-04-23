@@ -13,8 +13,6 @@
  */
 package cn.ucloud.umon.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class BindAlarmTemplateResponse extends Response {}

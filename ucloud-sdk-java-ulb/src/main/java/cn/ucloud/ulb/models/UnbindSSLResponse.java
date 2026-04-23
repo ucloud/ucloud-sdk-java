@@ -13,8 +13,6 @@
  */
 package cn.ucloud.ulb.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class UnbindSSLResponse extends Response {}

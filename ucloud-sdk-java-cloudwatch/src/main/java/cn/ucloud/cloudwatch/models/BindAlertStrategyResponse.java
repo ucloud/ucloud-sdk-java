@@ -13,8 +13,6 @@
  */
 package cn.ucloud.cloudwatch.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class BindAlertStrategyResponse extends Response {}

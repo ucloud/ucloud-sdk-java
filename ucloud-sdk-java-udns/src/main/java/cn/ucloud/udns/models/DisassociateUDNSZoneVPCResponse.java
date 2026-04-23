@@ -13,8 +13,6 @@
  */
 package cn.ucloud.udns.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class DisassociateUDNSZoneVPCResponse extends Response {}

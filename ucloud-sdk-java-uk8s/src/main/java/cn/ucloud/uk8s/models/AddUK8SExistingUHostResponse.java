@@ -13,8 +13,6 @@
  */
 package cn.ucloud.uk8s.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class AddUK8SExistingUHostResponse extends Response {}
