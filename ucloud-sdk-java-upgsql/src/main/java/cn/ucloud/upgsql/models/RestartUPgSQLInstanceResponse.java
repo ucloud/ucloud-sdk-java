@@ -13,6 +13,8 @@
  */
 package cn.ucloud.upgsql.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class RestartUPgSQLInstanceResponse extends Response {}

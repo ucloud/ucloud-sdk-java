@@ -13,6 +13,8 @@
  */
 package cn.ucloud.udi.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class DeleteFunctionTemplateResponse extends Response {}

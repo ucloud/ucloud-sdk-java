@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uec.models;
 
+
 import cn.ucloud.common.request.Request;
 
 public class GetUEcIDCCutInfoRequest extends Request {}

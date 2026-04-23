@@ -13,6 +13,8 @@
  */
 package cn.ucloud.ucompshare.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class AttachCompshareDiskResponse extends Response {}

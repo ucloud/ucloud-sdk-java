@@ -13,6 +13,8 @@
  */
 package cn.ucloud.uec.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class UpdateUEcFirewallAttributeResponse extends Response {}

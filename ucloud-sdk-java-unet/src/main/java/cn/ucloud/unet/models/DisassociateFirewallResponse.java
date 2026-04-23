@@ -13,6 +13,8 @@
  */
 package cn.ucloud.unet.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class DisassociateFirewallResponse extends Response {}
