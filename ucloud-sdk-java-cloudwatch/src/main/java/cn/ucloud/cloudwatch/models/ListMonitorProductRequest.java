@@ -13,7 +13,6 @@
  */
 package cn.ucloud.cloudwatch.models;
 
-
 import cn.ucloud.common.request.Request;
 
 public class ListMonitorProductRequest extends Request {}

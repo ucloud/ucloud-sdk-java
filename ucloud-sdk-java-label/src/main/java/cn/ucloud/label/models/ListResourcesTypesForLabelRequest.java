@@ -13,7 +13,6 @@
  */
 package cn.ucloud.label.models;
 
-
 import cn.ucloud.common.request.Request;
 
 public class ListResourcesTypesForLabelRequest extends Request {}

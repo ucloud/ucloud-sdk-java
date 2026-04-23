@@ -13,8 +13,6 @@
  */
 package cn.ucloud.umem.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class RestartURedisGroupResponse extends Response {}

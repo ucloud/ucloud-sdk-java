@@ -13,8 +13,6 @@
  */
 package cn.ucloud.upfs.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class ExtendUPFSVolumeResponse extends Response {}

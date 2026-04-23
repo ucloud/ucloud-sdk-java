@@ -13,8 +13,6 @@
  */
 package cn.ucloud.ipsecvpn.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class UpdateVPNTunnelAttributeResponse extends Response {}

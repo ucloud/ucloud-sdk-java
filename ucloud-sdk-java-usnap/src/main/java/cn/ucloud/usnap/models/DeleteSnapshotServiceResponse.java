@@ -13,8 +13,6 @@
  */
 package cn.ucloud.usnap.models;
 
-
-
 import cn.ucloud.common.response.Response;
 
 public class DeleteSnapshotServiceResponse extends Response {}
