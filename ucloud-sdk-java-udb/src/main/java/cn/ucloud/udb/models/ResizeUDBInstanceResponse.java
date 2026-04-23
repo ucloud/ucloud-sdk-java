@@ -13,6 +13,8 @@
  */
 package cn.ucloud.udb.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class ResizeUDBInstanceResponse extends Response {}

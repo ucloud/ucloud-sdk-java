@@ -13,6 +13,8 @@
  */
 package cn.ucloud.uewaf.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class DeleteWafRegionBlockRuleResponse extends Response {}

@@ -13,6 +13,8 @@
  */
 package cn.ucloud.label.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class UnbindLabelsResponse extends Response {}

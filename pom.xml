@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.61-release</version>
+    <version>1.2.62-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cloudwatch</module>
@@ -21,6 +21,7 @@
         <module>ucloud-sdk-java-uaccount</module>
         <module>ucloud-sdk-java-ubill</module>
         <module>ucloud-sdk-java-ucdn</module>
+        <module>ucloud-sdk-java-uclickhouse</module>
         <module>ucloud-sdk-java-ucompshare</module>
         <module>ucloud-sdk-java-udb</module>
         <module>ucloud-sdk-java-udbproxy</module>
@@ -29,11 +30,14 @@
         <module>ucloud-sdk-java-udpn</module>
         <module>ucloud-sdk-java-udisk</module>
         <module>ucloud-sdk-java-uec</module>
+        <module>ucloud-sdk-java-ues</module>
         <module>ucloud-sdk-java-uewaf</module>
         <module>ucloud-sdk-java-ufs</module>
         <module>ucloud-sdk-java-ufile</module>
+        <module>ucloud-sdk-java-uhadoop</module>
         <module>ucloud-sdk-java-uhost</module>
         <module>ucloud-sdk-java-uk8s</module>
+        <module>ucloud-sdk-java-ukafka</module>
         <module>ucloud-sdk-java-ulb</module>
         <module>ucloud-sdk-java-ulighthost</module>
         <module>ucloud-sdk-java-ulog</module>
@@ -51,9 +55,6 @@
         <module>ucloud-sdk-java-uvms</module>
         <module>ucloud-sdk-java-vpc</module>
         <module>ucloud-sdk-java-vpc</module>
-        <module>ucloud-sdk-java-ukafka</module>
-        <module>ucloud-sdk-java-uclickhouse</module>
-        <module>ucloud-sdk-java-ues</module>
     </modules>
 
     <name>ucloud-sdk-java</name>

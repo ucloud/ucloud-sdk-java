@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uvms.models;
 
+
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 

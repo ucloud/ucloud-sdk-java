@@ -13,6 +13,7 @@
  */
 package cn.ucloud.uaccount.models;
 
+
 import cn.ucloud.common.request.Request;
 
 public class GetRegionRequest extends Request {}

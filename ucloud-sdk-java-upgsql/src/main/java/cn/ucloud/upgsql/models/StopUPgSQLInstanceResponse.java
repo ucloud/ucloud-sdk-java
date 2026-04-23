@@ -13,6 +13,8 @@
  */
 package cn.ucloud.upgsql.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class StopUPgSQLInstanceResponse extends Response {}

@@ -13,6 +13,8 @@
  */
 package cn.ucloud.ucdn.models;
 
+
+
 import cn.ucloud.common.response.Response;
 
 public class AddCertificateResponse extends Response {}
