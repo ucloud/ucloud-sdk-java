@@ -64,7 +64,7 @@ public class UKafkaClient extends DefaultClient implements UKafkaClientInterface
     }
 
     /**
-     * CreateUKafkaInstance - 创建一个实例
+     * CreateUKafkaInstance - 创建实例
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -103,7 +103,7 @@ public class UKafkaClient extends DefaultClient implements UKafkaClientInterface
     }
 
     /**
-     * DescribeUKafkaInstance - 获取整个集群的信息
+     * DescribeUKafkaInstance - 获取整个实例的信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -167,7 +167,7 @@ public class UKafkaClient extends DefaultClient implements UKafkaClientInterface
     }
 
     /**
-     * ListUKafkaInstance - 列举集群信息
+     * ListUKafkaInstance - 获取实例列表信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -179,7 +179,7 @@ public class UKafkaClient extends DefaultClient implements UKafkaClientInterface
     }
 
     /**
-     * ListUKafkaTopics - 列出 kafka 集群 topic
+     * ListUKafkaTopics - 获取 kafka 实例 topic 列表信息
      *
      * @param request Request object
      * @throws UCloudException Exception

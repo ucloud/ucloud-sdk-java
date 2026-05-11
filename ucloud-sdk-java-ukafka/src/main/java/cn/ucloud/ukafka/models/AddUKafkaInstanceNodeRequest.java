@@ -50,7 +50,7 @@ public class AddUKafkaInstanceNodeRequest extends Request {
     /** 新添加节点数量 */
     @NotEmpty
     @UCloudParam("NodeCount")
-    private Integer nodeCount;
+    private String nodeCount;
 
     public String getRegion() {
         return region;
@@ -92,11 +92,11 @@ public class AddUKafkaInstanceNodeRequest extends Request {
         this.nodeType = nodeType;
     }
 
-    public Integer getNodeCount() {
+    public String getNodeCount() {
         return nodeCount;
     }
 
-    public void setNodeCount(Integer nodeCount) {
+    public void setNodeCount(String nodeCount) {
         this.nodeCount = nodeCount;
     }
 }

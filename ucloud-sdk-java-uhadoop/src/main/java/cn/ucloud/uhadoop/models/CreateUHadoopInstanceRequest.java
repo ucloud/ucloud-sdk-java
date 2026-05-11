@@ -38,7 +38,7 @@ public class CreateUHadoopInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 集群机器的登录密码 */
+    /** 集群机器的登录密码,需要输入base64编码后的内容 */
     @NotEmpty
     @UCloudParam("Password")
     private String password;
@@ -75,8 +75,8 @@ public class CreateUHadoopInstanceRequest extends Request {
 
     /** 集群需要安装的组件，格式：组件#版本 通过ListUHadoopFrameworkApp接口获取，例如：Spark#3.3.0 */
     @NotEmpty
-    @UCloudParam("AppConfig")
-    private List<String> appConfig;
+    @UCloudParam("AppConfigs")
+    private List<String> appConfigs;
 
     /**
      * 框架，值为'Hadoop'|'HDFS'|'MR'|'StarRocks'之一,框架，例如Hadoop|MR|HDFS|StarRocks Hadoop框架包含存储与计算服务
@@ -198,12 +198,12 @@ public class CreateUHadoopInstanceRequest extends Request {
         this.subnetId = subnetId;
     }
 
-    public List<String> getAppConfig() {
-        return appConfig;
+    public List<String> getAppConfigs() {
+        return appConfigs;
     }
 
-    public void setAppConfig(List<String> appConfig) {
-        this.appConfig = appConfig;
+    public void setAppConfigs(List<String> appConfigs) {
+        this.appConfigs = appConfigs;
     }
 
     public String getFramework() {

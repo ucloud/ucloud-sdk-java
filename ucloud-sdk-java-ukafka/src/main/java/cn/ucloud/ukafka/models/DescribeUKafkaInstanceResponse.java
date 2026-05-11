@@ -21,7 +21,7 @@ import java.util.List;
 
 public class DescribeUKafkaInstanceResponse extends Response {
 
-    /** 集群信息列表 */
+    /** 实例信息列表 */
     @SerializedName("ClusterSet")
     private List<ClusterInfo> clusterSet;
 

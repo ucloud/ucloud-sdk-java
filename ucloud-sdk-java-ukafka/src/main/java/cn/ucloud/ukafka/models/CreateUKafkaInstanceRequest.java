@@ -67,7 +67,7 @@ public class CreateUKafkaInstanceRequest extends Request {
     @UCloudParam("DiskSize")
     private Integer diskSize;
 
-    /** 实例名，可自定义 */
+    /** 实例名，可自定义。只能包含中英文、数字以及- _ . */
     @NotEmpty
     @UCloudParam("InstanceName")
     private String instanceName;
@@ -80,7 +80,7 @@ public class CreateUKafkaInstanceRequest extends Request {
     @UCloudParam("Quantity")
     private String quantity;
 
-    /** 集群节点数量。默认 3 节点 */
+    /** 实例节点数量。默认 3 节点 */
     @UCloudParam("NodeCount")
     private Integer nodeCount;
 

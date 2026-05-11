@@ -37,7 +37,7 @@ public class DescribeUKafkaConsumerRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** Kafka 集群 ID */
+    /** 实例 ID */
     @NotEmpty
     @UCloudParam("ClusterInstanceId")
     private String clusterInstanceId;

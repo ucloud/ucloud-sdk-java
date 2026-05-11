@@ -26,6 +26,7 @@ public class ListUKafkaInstanceRequest extends Request {
     private String region;
 
     /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
     @UCloudParam("Zone")
     private String zone;
 
@@ -44,10 +45,6 @@ public class ListUKafkaInstanceRequest extends Request {
     @UCloudParam("Offset")
     private String offset;
 
-    /** 是否过滤删除了的节点，默认为‘true’ */
-    @UCloudParam("Filter")
-    private String filter;
-
     /** VPCId */
     @UCloudParam("VPCId")
     private String vpcId;
@@ -59,10 +56,6 @@ public class ListUKafkaInstanceRequest extends Request {
     /** 业务组 ID */
     @UCloudParam("BusinessId")
     private String businessId;
-
-    /** 实例ID */
-    @UCloudParam("ClusterInstanceId")
-    private String clusterInstanceId;
 
     public String getRegion() {
         return region;
@@ -104,14 +97,6 @@ public class ListUKafkaInstanceRequest extends Request {
         this.offset = offset;
     }
 
-    public String getFilter() {
-        return filter;
-    }
-
-    public void setFilter(String filter) {
-        this.filter = filter;
-    }
-
     public String getVPCId() {
         return vpcId;
     }
@@ -134,13 +119,5 @@ public class ListUKafkaInstanceRequest extends Request {
 
     public void setBusinessId(String businessId) {
         this.businessId = businessId;
-    }
-
-    public String getClusterInstanceId() {
-        return clusterInstanceId;
-    }
-
-    public void setClusterInstanceId(String clusterInstanceId) {
-        this.clusterInstanceId = clusterInstanceId;
     }
 }
