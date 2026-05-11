@@ -55,7 +55,7 @@ public interface UKafkaClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * CreateUKafkaInstance - 创建一个实例
+     * CreateUKafkaInstance - 创建实例
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -82,7 +82,7 @@ public interface UKafkaClientInterface extends Client {
             DescribeUKafkaConsumerRequest request) throws UCloudException;
 
     /**
-     * DescribeUKafkaInstance - 获取整个集群的信息
+     * DescribeUKafkaInstance - 获取整个实例的信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -127,7 +127,7 @@ public interface UKafkaClientInterface extends Client {
             ListUKafkaFrameworkVersionRequest request) throws UCloudException;
 
     /**
-     * ListUKafkaInstance - 列举集群信息
+     * ListUKafkaInstance - 获取实例列表信息
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -136,7 +136,7 @@ public interface UKafkaClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * ListUKafkaTopics - 列出 kafka 集群 topic
+     * ListUKafkaTopics - 获取 kafka 实例 topic 列表信息
      *
      * @param request Request object
      * @throws UCloudException Exception

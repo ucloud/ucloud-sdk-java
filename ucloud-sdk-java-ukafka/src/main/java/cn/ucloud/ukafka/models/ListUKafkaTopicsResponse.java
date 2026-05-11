@@ -25,7 +25,7 @@ public class ListUKafkaTopicsResponse extends Response {
     @SerializedName("TopicList")
     private List<TopicInfo> topicList;
 
-    /** 列表长度 */
+    /** topic 列表长度 */
     @SerializedName("Length")
     private Integer length;
 

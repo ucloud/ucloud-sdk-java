@@ -47,6 +47,10 @@ public class ListUKafkaConsumersResponse extends Response {
         @SerializedName("NumOfTopics")
         private Integer numOfTopics;
 
+        /** 消费者组资源ID */
+        @SerializedName("GroupId")
+        private String groupId;
+
         public String getGroupName() {
             return groupName;
         }
@@ -69,6 +73,14 @@ public class ListUKafkaConsumersResponse extends Response {
 
         public void setNumOfTopics(Integer numOfTopics) {
             this.numOfTopics = numOfTopics;
+        }
+
+        public String getGroupId() {
+            return groupId;
+        }
+
+        public void setGroupId(String groupId) {
+            this.groupId = groupId;
         }
     }
 }

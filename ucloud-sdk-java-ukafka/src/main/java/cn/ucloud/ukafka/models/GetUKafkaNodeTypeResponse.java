@@ -82,6 +82,18 @@ public class GetUKafkaNodeTypeResponse extends Response {
         @SerializedName("Memory")
         private String memory;
 
+        /** 机型最大支持磁盘大小 */
+        @SerializedName("MaxDiskSize")
+        private Integer maxDiskSize;
+
+        /** 机型最小支持磁盘大小 */
+        @SerializedName("MinDiskSize")
+        private Integer minDiskSize;
+
+        /** 该机型是否支持安全组 */
+        @SerializedName("IsOpenSecGroup")
+        private Boolean isOpenSecGroup;
+
         public DiskSet getDiskSet() {
             return diskSet;
         }
@@ -120,6 +132,30 @@ public class GetUKafkaNodeTypeResponse extends Response {
 
         public void setMemory(String memory) {
             this.memory = memory;
+        }
+
+        public Integer getMaxDiskSize() {
+            return maxDiskSize;
+        }
+
+        public void setMaxDiskSize(Integer maxDiskSize) {
+            this.maxDiskSize = maxDiskSize;
+        }
+
+        public Integer getMinDiskSize() {
+            return minDiskSize;
+        }
+
+        public void setMinDiskSize(Integer minDiskSize) {
+            this.minDiskSize = minDiskSize;
+        }
+
+        public Boolean getIsOpenSecGroup() {
+            return isOpenSecGroup;
+        }
+
+        public void setIsOpenSecGroup(Boolean isOpenSecGroup) {
+            this.isOpenSecGroup = isOpenSecGroup;
         }
     }
 }

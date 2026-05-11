@@ -42,7 +42,7 @@ public class ModifyUKafkaInstanceTypeRequest extends Request {
     @UCloudParam("InstanceId")
     private String instanceId;
 
-    /** 目标机型，支持的机型可通过GetUKafkaNodeType 接口返回的InstanceTypeSet[].InstanceTypeName */
+    /** 目标机型，支持的机型可通过GetUKafkaNodeType 接口返回的InstanceTypeSet[].InstanceTypeName。仅升级CPU 和内存 */
     @NotEmpty
     @UCloudParam("NodeType")
     private String nodeType;

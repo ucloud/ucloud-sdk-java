@@ -13,10 +13,11 @@
  */
 package cn.ucloud.ukafka.models;
 
-
 import cn.ucloud.common.response.Response;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class DescribeUKafkaConsumerResponse extends Response {
 
@@ -30,7 +31,7 @@ public class DescribeUKafkaConsumerResponse extends Response {
 
     /** 消费者组所订阅 topic 信息 */
     @SerializedName("Topics")
-    private String topics;
+    private List<String> topics;
 
     public String getGroupName() {
         return groupName;
@@ -48,11 +49,11 @@ public class DescribeUKafkaConsumerResponse extends Response {
         this.type = type;
     }
 
-    public String getTopics() {
+    public List<String> getTopics() {
         return topics;
     }
 
-    public void setTopics(String topics) {
+    public void setTopics(List<String> topics) {
         this.topics = topics;
     }
 }
