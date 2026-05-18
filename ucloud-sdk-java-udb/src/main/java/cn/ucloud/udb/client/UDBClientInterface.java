@@ -37,12 +37,16 @@ import cn.ucloud.udb.models.CreateUDBInstanceByRecoveryRequest;
 import cn.ucloud.udb.models.CreateUDBInstanceByRecoveryResponse;
 import cn.ucloud.udb.models.CreateUDBInstanceRequest;
 import cn.ucloud.udb.models.CreateUDBInstanceResponse;
+import cn.ucloud.udb.models.CreateUDBMySQLInstanceRequest;
+import cn.ucloud.udb.models.CreateUDBMySQLInstanceResponse;
 import cn.ucloud.udb.models.CreateUDBParamGroupRequest;
 import cn.ucloud.udb.models.CreateUDBParamGroupResponse;
 import cn.ucloud.udb.models.CreateUDBReplicationInstanceRequest;
 import cn.ucloud.udb.models.CreateUDBReplicationInstanceResponse;
 import cn.ucloud.udb.models.CreateUDBRouteInstanceRequest;
 import cn.ucloud.udb.models.CreateUDBRouteInstanceResponse;
+import cn.ucloud.udb.models.CreateUDBSQLServerInstanceRequest;
+import cn.ucloud.udb.models.CreateUDBSQLServerInstanceResponse;
 import cn.ucloud.udb.models.CreateUDBSlaveRequest;
 import cn.ucloud.udb.models.CreateUDBSlaveResponse;
 import cn.ucloud.udb.models.DeleteUDBInstanceRequest;
@@ -250,6 +254,15 @@ public interface UDBClientInterface extends Client {
             CreateUDBInstanceByRecoveryRequest request) throws UCloudException;
 
     /**
+     * CreateUDBMySQLInstance - 创建MySQL数据库
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateUDBMySQLInstanceResponse createUDBMySQLInstance(
+            CreateUDBMySQLInstanceRequest request) throws UCloudException;
+
+    /**
      * CreateUDBParamGroup - 创建配置文件
      *
      * @param request Request object
@@ -275,6 +288,15 @@ public interface UDBClientInterface extends Client {
      */
     public CreateUDBRouteInstanceResponse createUDBRouteInstance(
             CreateUDBRouteInstanceRequest request) throws UCloudException;
+
+    /**
+     * CreateUDBSQLServerInstance - 创建SQLServer数据库
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateUDBSQLServerInstanceResponse createUDBSQLServerInstance(
+            CreateUDBSQLServerInstanceRequest request) throws UCloudException;
 
     /**
      * CreateUDBSlave - 创建从库

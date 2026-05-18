@@ -19,7 +19,7 @@ import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-public class CreateUDBInstanceRequest extends Request {
+public class CreateUDBSQLServerInstanceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -48,15 +48,12 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("AdminPassword")
     private String adminPassword;
 
-    /**
-     * DB类型，mysql/sqlserver按版本细分 mysql-8.0, mysql-5.6, percona-5.6, mysql-5.7, percona-5.7,
-     * sqlserver-2017
-     */
+    /** DB类型，SQL Server按版本细分 sqlserver-2017、sqlserver-2019、sqlserver-2022 */
     @NotEmpty
     @UCloudParam("DBTypeId")
     private String dbTypeId;
 
-    /** 端口号，mysql默认3306，sqlserver默认1433 */
+    /** 端口号，sqlserver默认1433 */
     @NotEmpty
     @UCloudParam("Port")
     private Integer port;
@@ -66,15 +63,31 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** DB实例使用的配置参数组id */
+    /** 存储类型 CLOUD_RSSD: RSSD 云盘，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型 */
     @NotEmpty
-    @UCloudParam("ParamGroupId")
-    private Integer paramGroupId;
+    @UCloudParam("StorageClass")
+    private String storageClass;
+
+    /** 规格类型 O: NVMe型 */
+    @NotEmpty
+    @UCloudParam("SpecificationClass")
+    private String specificationClass;
+
+    /** UDB实例模式类型, 可选值如下: "Normal": SQL Server普通版实例 "HA": SQL Server集群版实例 默认是"Normal" */
+    @UCloudParam("InstanceMode")
+    private String instanceMode;
+
+    /** 规格类型 ID，如果创建的是SQL Server集群版，该参数必填，请通过 ListUDBMachineType 接口获取，返回体中的ID字段为MachineType的值。 */
+    @UCloudParam("MachineType")
+    private String machineType;
+
+    /** CPU核，如果是创建的SQL Server普通版，该参数必传，目前支持2/4/8/16/32/64 */
+    @UCloudParam("CPU")
+    private Integer cpu;
 
     /**
-     * 内存限制(MB)（待废弃，请通过指定MachineType和SpecificationType创建），目前支持以下几档 2000M/4000M/
-     * 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
-     * 64000M/96000M/128000M/192000M/256000M/320000M
+     * 内存限制(MB)，如果是创建的SQL Server普通版，该参数必传，目前支持以下几档 2000M/4000M/ 6000M/8000M/12000M/16000M/
+     * 24000M/32000M/48000M/ 64000M/96000M/128000M/192000M/256000M/320000M
      */
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
@@ -86,10 +99,6 @@ public class CreateUDBInstanceRequest extends Request {
     /** 购买时长，默认值1 */
     @UCloudParam("Quantity")
     private Integer quantity;
-
-    /** 管理员帐户名，默认root */
-    @UCloudParam("AdminUser")
-    private String adminUser;
 
     /** 备份策略，每周备份数量，默认7次 */
     @UCloudParam("BackupCount")
@@ -107,68 +116,17 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("BackupId")
     private Integer backupId;
 
-    /**
-     * 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。 目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是
-     * SATA_SSD 机型，可通过该字段指定。
-     *
-     * <p>字段说明：
-     *
-     * <p>SATA_SSD：SATA SSD 机型（仅部分地域支持） NVMe_SSD：快杰机型
-     */
-    @UCloudParam("InstanceType")
-    private String instanceType;
-
-    /** 已废弃 */
-    @UCloudParam("SSDType")
-    private String ssdType;
-
-    /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal" */
-    @UCloudParam("InstanceMode")
-    private String instanceMode;
-
-    /** cpu核数，如果db类型为sqlserver，必传参数 */
-    @UCloudParam("CPU")
-    private Integer cpu;
-
-    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @UCloudParam("BackupZone")
-    private String backupZone;
-
-    /** 子网ID */
+    /** 子网ID，如果创建的是SQL Server集群版，该参数必填 */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPC的ID */
+    /** VPC的ID，如果创建的是SQL Server集群版，该参数必填 */
     @UCloudParam("VPCId")
     private String vpcId;
-
-    /** 是否开启异步高可用，默认不填，可置为true */
-    @UCloudParam("DisableSemisync")
-    private Boolean disableSemisync;
-
-    /** 已废弃 */
-    @UCloudParam("ClusterRole")
-    private String clusterRole;
 
     /** 实例所在的业务组名称 */
     @UCloudParam("Tag")
     private String tag;
-
-    /** MySQL 小版本号，支持指定小版本进行创建，请通过 DescribeUDBType 接口获取可用版本。 */
-    @UCloudParam("DBSubVersion")
-    private String dbSubVersion;
-
-    /** mysql大小写参数, 0 为大小写敏感, 1 为大小写不敏感, 目前只针对mysql8.0有效 */
-    @UCloudParam("CaseSensitivityParam")
-    private Integer caseSensitivityParam;
-
-    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
-    @UCloudParam("SpecificationType")
-    private String specificationType;
-
-    /** 规格类型 ID，当 SpecificationType = 1 时生效，请通过 ListUDBMachineType 接口获取。 */
-    @UCloudParam("MachineType")
-    private String machineType;
 
     /** 告警模版id */
     @UCloudParam("AlarmTemplateId")
@@ -177,21 +135,6 @@ public class CreateUDBInstanceRequest extends Request {
     /** 备份文件的US3内网下载地址 */
     @UCloudParam("BackupURL")
     private String backupURL;
-
-    /**
-     * 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
-     * ，该字段和SpecificationClass组合优先级比InstanceType字段高
-     */
-    @UCloudParam("StorageClass")
-    private String storageClass;
-
-    /** 规格类型 O: NVMe型, OM: 共享型，N: 通用型 */
-    @UCloudParam("SpecificationClass")
-    private String specificationClass;
-
-    /** 半同步开启开关 1：表示开启半同步，2：表示关闭半同步，0：表示默认值，默认也是开启半同步 */
-    @UCloudParam("SemisyncFlag")
-    private Integer semisyncFlag;
 
     /** */
     @UCloudParam("Labels")
@@ -265,12 +208,44 @@ public class CreateUDBInstanceRequest extends Request {
         this.diskSpace = diskSpace;
     }
 
-    public Integer getParamGroupId() {
-        return paramGroupId;
+    public String getStorageClass() {
+        return storageClass;
     }
 
-    public void setParamGroupId(Integer paramGroupId) {
-        this.paramGroupId = paramGroupId;
+    public void setStorageClass(String storageClass) {
+        this.storageClass = storageClass;
+    }
+
+    public String getSpecificationClass() {
+        return specificationClass;
+    }
+
+    public void setSpecificationClass(String specificationClass) {
+        this.specificationClass = specificationClass;
+    }
+
+    public String getInstanceMode() {
+        return instanceMode;
+    }
+
+    public void setInstanceMode(String instanceMode) {
+        this.instanceMode = instanceMode;
+    }
+
+    public String getMachineType() {
+        return machineType;
+    }
+
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
+    }
+
+    public Integer getCPU() {
+        return cpu;
+    }
+
+    public void setCPU(Integer cpu) {
+        this.cpu = cpu;
     }
 
     public Integer getMemoryLimit() {
@@ -295,14 +270,6 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public String getAdminUser() {
-        return adminUser;
-    }
-
-    public void setAdminUser(String adminUser) {
-        this.adminUser = adminUser;
     }
 
     public Integer getBackupCount() {
@@ -337,46 +304,6 @@ public class CreateUDBInstanceRequest extends Request {
         this.backupId = backupId;
     }
 
-    public String getInstanceType() {
-        return instanceType;
-    }
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    public String getSSDType() {
-        return ssdType;
-    }
-
-    public void setSSDType(String ssdType) {
-        this.ssdType = ssdType;
-    }
-
-    public String getInstanceMode() {
-        return instanceMode;
-    }
-
-    public void setInstanceMode(String instanceMode) {
-        this.instanceMode = instanceMode;
-    }
-
-    public Integer getCPU() {
-        return cpu;
-    }
-
-    public void setCPU(Integer cpu) {
-        this.cpu = cpu;
-    }
-
-    public String getBackupZone() {
-        return backupZone;
-    }
-
-    public void setBackupZone(String backupZone) {
-        this.backupZone = backupZone;
-    }
-
     public String getSubnetId() {
         return subnetId;
     }
@@ -393,60 +320,12 @@ public class CreateUDBInstanceRequest extends Request {
         this.vpcId = vpcId;
     }
 
-    public Boolean getDisableSemisync() {
-        return disableSemisync;
-    }
-
-    public void setDisableSemisync(Boolean disableSemisync) {
-        this.disableSemisync = disableSemisync;
-    }
-
-    public String getClusterRole() {
-        return clusterRole;
-    }
-
-    public void setClusterRole(String clusterRole) {
-        this.clusterRole = clusterRole;
-    }
-
     public String getTag() {
         return tag;
     }
 
     public void setTag(String tag) {
         this.tag = tag;
-    }
-
-    public String getDBSubVersion() {
-        return dbSubVersion;
-    }
-
-    public void setDBSubVersion(String dbSubVersion) {
-        this.dbSubVersion = dbSubVersion;
-    }
-
-    public Integer getCaseSensitivityParam() {
-        return caseSensitivityParam;
-    }
-
-    public void setCaseSensitivityParam(Integer caseSensitivityParam) {
-        this.caseSensitivityParam = caseSensitivityParam;
-    }
-
-    public String getSpecificationType() {
-        return specificationType;
-    }
-
-    public void setSpecificationType(String specificationType) {
-        this.specificationType = specificationType;
-    }
-
-    public String getMachineType() {
-        return machineType;
-    }
-
-    public void setMachineType(String machineType) {
-        this.machineType = machineType;
     }
 
     public String getAlarmTemplateId() {
@@ -463,30 +342,6 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setBackupURL(String backupURL) {
         this.backupURL = backupURL;
-    }
-
-    public String getStorageClass() {
-        return storageClass;
-    }
-
-    public void setStorageClass(String storageClass) {
-        this.storageClass = storageClass;
-    }
-
-    public String getSpecificationClass() {
-        return specificationClass;
-    }
-
-    public void setSpecificationClass(String specificationClass) {
-        this.specificationClass = specificationClass;
-    }
-
-    public Integer getSemisyncFlag() {
-        return semisyncFlag;
-    }
-
-    public void setSemisyncFlag(Integer semisyncFlag) {
-        this.semisyncFlag = semisyncFlag;
     }
 
     public List<Labels> getLabels() {
