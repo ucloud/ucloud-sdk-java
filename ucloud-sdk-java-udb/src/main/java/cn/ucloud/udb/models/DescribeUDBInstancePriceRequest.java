@@ -57,7 +57,7 @@ public class DescribeUDBInstancePriceRequest extends Request {
     @UCloudParam("Quantity")
     private Integer quantity;
 
-    /** SSD类型，可选值为"SATA"、“NVMe”. 默认为“SATA” */
+    /** 该字段已废弃。 */
     @UCloudParam("SSDType")
     private String ssdType;
 
@@ -70,8 +70,12 @@ public class DescribeUDBInstancePriceRequest extends Request {
     private Integer cpu;
 
     /**
-     * UDB数据库机型: "SATA_SSD": "SSD机型" , "PCIE_SSD": "SSD高性能机型" , "Normal_Volume": "标准大容量机型",
-     * "SATA_SSD_Volume": "SSD大容量机型" , "PCIE_SSD_Volume": "SSD高性能大容量机型", "NVMe_SSD": "快杰机型"
+     * 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。 目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是
+     * SATA_SSD 机型，可通过该字段指定。
+     *
+     * <p>字段说明：
+     *
+     * <p>SATA_SSD：SATA SSD 机型（仅部分地域支持） NVMe_SSD：快杰机型
      */
     @UCloudParam("InstanceType")
     private String instanceType;
@@ -83,6 +87,17 @@ public class DescribeUDBInstancePriceRequest extends Request {
     /** 规格类型ID,当SpecificationType为1时有效 */
     @UCloudParam("MachineType")
     private String machineType;
+
+    /**
+     * 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
+     * ，该字段和SpecificationClass组合优先级比InstanceType字段高
+     */
+    @UCloudParam("StorageClass")
+    private String storageClass;
+
+    /** 规格类型 O: NVME, OM: 共享型，N: 通用型 */
+    @UCloudParam("SpecificationClass")
+    private String specificationClass;
 
     public String getRegion() {
         return region;
@@ -194,5 +209,21 @@ public class DescribeUDBInstancePriceRequest extends Request {
 
     public void setMachineType(String machineType) {
         this.machineType = machineType;
+    }
+
+    public String getStorageClass() {
+        return storageClass;
+    }
+
+    public void setStorageClass(String storageClass) {
+        this.storageClass = storageClass;
+    }
+
+    public String getSpecificationClass() {
+        return specificationClass;
+    }
+
+    public void setSpecificationClass(String specificationClass) {
+        this.specificationClass = specificationClass;
     }
 }

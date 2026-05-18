@@ -19,7 +19,7 @@ import cn.ucloud.common.request.Request;
 
 import java.util.List;
 
-public class CreateUDBInstanceRequest extends Request {
+public class CreateUDBMySQLInstanceRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -49,14 +49,14 @@ public class CreateUDBInstanceRequest extends Request {
     private String adminPassword;
 
     /**
-     * DB类型，mysql/sqlserver按版本细分 mysql-8.0, mysql-5.6, percona-5.6, mysql-5.7, percona-5.7,
-     * sqlserver-2017
+     * DB类型，mysql按版本细分 mysql-8.4, mysql-8.0, mysql-5.7, percona-5.7, mysql-5.6,
+     * percona-5.6、mysql-5.5
      */
     @NotEmpty
     @UCloudParam("DBTypeId")
     private String dbTypeId;
 
-    /** 端口号，mysql默认3306，sqlserver默认1433 */
+    /** 端口号，mysql默认3306 */
     @NotEmpty
     @UCloudParam("Port")
     private Integer port;
@@ -71,13 +71,23 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("ParamGroupId")
     private Integer paramGroupId;
 
+    /** 规格类型 ID，请通过 ListUDBMachineType 接口获取，返回体中的ID字段为MachineType的值。 */
+    @NotEmpty
+    @UCloudParam("MachineType")
+    private String machineType;
+
     /**
-     * 内存限制(MB)（待废弃，请通过指定MachineType和SpecificationType创建），目前支持以下几档 2000M/4000M/
-     * 6000M/8000M/12000M/16000M/ 24000M/32000M/48000M/
-     * 64000M/96000M/128000M/192000M/256000M/320000M
+     * 存储类型 CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
+     * ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型
      */
-    @UCloudParam("MemoryLimit")
-    private Integer memoryLimit;
+    @NotEmpty
+    @UCloudParam("StorageClass")
+    private String storageClass;
+
+    /** 规格类型 O: NVMe型, O2: O2 ,OM: 共享型 */
+    @NotEmpty
+    @UCloudParam("SpecificationClass")
+    private String specificationClass;
 
     /** Year， Month， Dynamic，Trial，默认: Month */
     @UCloudParam("ChargeType")
@@ -86,10 +96,6 @@ public class CreateUDBInstanceRequest extends Request {
     /** 购买时长，默认值1 */
     @UCloudParam("Quantity")
     private Integer quantity;
-
-    /** 管理员帐户名，默认root */
-    @UCloudParam("AdminUser")
-    private String adminUser;
 
     /** 备份策略，每周备份数量，默认7次 */
     @UCloudParam("BackupCount")
@@ -107,28 +113,9 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("BackupId")
     private Integer backupId;
 
-    /**
-     * 对于快杰机型，请使用最新的 SpecificationClass 和 StorageClass 字段进行创建。 目前仅有少量地域支持 SATA_SSD 存储类型；若创建的是
-     * SATA_SSD 机型，可通过该字段指定。
-     *
-     * <p>字段说明：
-     *
-     * <p>SATA_SSD：SATA SSD 机型（仅部分地域支持） NVMe_SSD：快杰机型
-     */
-    @UCloudParam("InstanceType")
-    private String instanceType;
-
-    /** 已废弃 */
-    @UCloudParam("SSDType")
-    private String ssdType;
-
     /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal" */
     @UCloudParam("InstanceMode")
     private String instanceMode;
-
-    /** cpu核数，如果db类型为sqlserver，必传参数 */
-    @UCloudParam("CPU")
-    private Integer cpu;
 
     /** 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("BackupZone")
@@ -146,10 +133,6 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("DisableSemisync")
     private Boolean disableSemisync;
 
-    /** 已废弃 */
-    @UCloudParam("ClusterRole")
-    private String clusterRole;
-
     /** 实例所在的业务组名称 */
     @UCloudParam("Tag")
     private String tag;
@@ -162,14 +145,6 @@ public class CreateUDBInstanceRequest extends Request {
     @UCloudParam("CaseSensitivityParam")
     private Integer caseSensitivityParam;
 
-    /** 实例计算规格类型，0或不传代表使用内存方式购买，1代表使用内存-cpu可选配比方式购买，需要填写MachineType */
-    @UCloudParam("SpecificationType")
-    private String specificationType;
-
-    /** 规格类型 ID，当 SpecificationType = 1 时生效，请通过 ListUDBMachineType 接口获取。 */
-    @UCloudParam("MachineType")
-    private String machineType;
-
     /** 告警模版id */
     @UCloudParam("AlarmTemplateId")
     private String alarmTemplateId;
@@ -177,17 +152,6 @@ public class CreateUDBInstanceRequest extends Request {
     /** 备份文件的US3内网下载地址 */
     @UCloudParam("BackupURL")
     private String backupURL;
-
-    /**
-     * 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
-     * ，该字段和SpecificationClass组合优先级比InstanceType字段高
-     */
-    @UCloudParam("StorageClass")
-    private String storageClass;
-
-    /** 规格类型 O: NVMe型, OM: 共享型，N: 通用型 */
-    @UCloudParam("SpecificationClass")
-    private String specificationClass;
 
     /** 半同步开启开关 1：表示开启半同步，2：表示关闭半同步，0：表示默认值，默认也是开启半同步 */
     @UCloudParam("SemisyncFlag")
@@ -273,12 +237,28 @@ public class CreateUDBInstanceRequest extends Request {
         this.paramGroupId = paramGroupId;
     }
 
-    public Integer getMemoryLimit() {
-        return memoryLimit;
+    public String getMachineType() {
+        return machineType;
     }
 
-    public void setMemoryLimit(Integer memoryLimit) {
-        this.memoryLimit = memoryLimit;
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
+    }
+
+    public String getStorageClass() {
+        return storageClass;
+    }
+
+    public void setStorageClass(String storageClass) {
+        this.storageClass = storageClass;
+    }
+
+    public String getSpecificationClass() {
+        return specificationClass;
+    }
+
+    public void setSpecificationClass(String specificationClass) {
+        this.specificationClass = specificationClass;
     }
 
     public String getChargeType() {
@@ -295,14 +275,6 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public String getAdminUser() {
-        return adminUser;
-    }
-
-    public void setAdminUser(String adminUser) {
-        this.adminUser = adminUser;
     }
 
     public Integer getBackupCount() {
@@ -337,36 +309,12 @@ public class CreateUDBInstanceRequest extends Request {
         this.backupId = backupId;
     }
 
-    public String getInstanceType() {
-        return instanceType;
-    }
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    public String getSSDType() {
-        return ssdType;
-    }
-
-    public void setSSDType(String ssdType) {
-        this.ssdType = ssdType;
-    }
-
     public String getInstanceMode() {
         return instanceMode;
     }
 
     public void setInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
-    }
-
-    public Integer getCPU() {
-        return cpu;
-    }
-
-    public void setCPU(Integer cpu) {
-        this.cpu = cpu;
     }
 
     public String getBackupZone() {
@@ -401,14 +349,6 @@ public class CreateUDBInstanceRequest extends Request {
         this.disableSemisync = disableSemisync;
     }
 
-    public String getClusterRole() {
-        return clusterRole;
-    }
-
-    public void setClusterRole(String clusterRole) {
-        this.clusterRole = clusterRole;
-    }
-
     public String getTag() {
         return tag;
     }
@@ -433,22 +373,6 @@ public class CreateUDBInstanceRequest extends Request {
         this.caseSensitivityParam = caseSensitivityParam;
     }
 
-    public String getSpecificationType() {
-        return specificationType;
-    }
-
-    public void setSpecificationType(String specificationType) {
-        this.specificationType = specificationType;
-    }
-
-    public String getMachineType() {
-        return machineType;
-    }
-
-    public void setMachineType(String machineType) {
-        this.machineType = machineType;
-    }
-
     public String getAlarmTemplateId() {
         return alarmTemplateId;
     }
@@ -463,22 +387,6 @@ public class CreateUDBInstanceRequest extends Request {
 
     public void setBackupURL(String backupURL) {
         this.backupURL = backupURL;
-    }
-
-    public String getStorageClass() {
-        return storageClass;
-    }
-
-    public void setStorageClass(String storageClass) {
-        this.storageClass = storageClass;
-    }
-
-    public String getSpecificationClass() {
-        return specificationClass;
-    }
-
-    public void setSpecificationClass(String specificationClass) {
-        this.specificationClass = specificationClass;
     }
 
     public Integer getSemisyncFlag() {
