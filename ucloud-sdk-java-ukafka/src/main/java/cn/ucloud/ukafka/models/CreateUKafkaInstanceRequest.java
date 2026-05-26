@@ -42,16 +42,6 @@ public class CreateUKafkaInstanceRequest extends Request {
     @UCloudParam("FrameworkVersion")
     private String frameworkVersion;
 
-    /** VPCID */
-    @NotEmpty
-    @UCloudParam("VPCId")
-    private String vpcId;
-
-    /** 子网 ID */
-    @NotEmpty
-    @UCloudParam("SubnetId")
-    private String subnetId;
-
     /** 付费方式 */
     @NotEmpty
     @UCloudParam("ChargeType")
@@ -71,6 +61,14 @@ public class CreateUKafkaInstanceRequest extends Request {
     @NotEmpty
     @UCloudParam("InstanceName")
     private String instanceName;
+
+    /** VPCID，不填时为默认VPCID */
+    @UCloudParam("VPCId")
+    private String vpcId;
+
+    /** 子网 ID，不填时为默认子网 ID */
+    @UCloudParam("SubnetId")
+    private String subnetId;
 
     /** 业务组，默认Default */
     @UCloudParam("BusinessId")
@@ -132,22 +130,6 @@ public class CreateUKafkaInstanceRequest extends Request {
         this.frameworkVersion = frameworkVersion;
     }
 
-    public String getVPCId() {
-        return vpcId;
-    }
-
-    public void setVPCId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    public String getSubnetId() {
-        return subnetId;
-    }
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
     public String getChargeType() {
         return chargeType;
     }
@@ -178,6 +160,22 @@ public class CreateUKafkaInstanceRequest extends Request {
 
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
+    }
+
+    public String getVPCId() {
+        return vpcId;
+    }
+
+    public void setVPCId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     public String getBusinessId() {
