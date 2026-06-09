@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uhost.models.CheckUHostResourceCapacityRequest;
+import cn.ucloud.uhost.models.CheckUHostResourceCapacityResponse;
 import cn.ucloud.uhost.models.CopyCustomImageRequest;
 import cn.ucloud.uhost.models.CopyCustomImageResponse;
 import cn.ucloud.uhost.models.CreateCustomImageRequest;
@@ -33,6 +35,8 @@ import cn.ucloud.uhost.models.DeleteUHostKeyPairsRequest;
 import cn.ucloud.uhost.models.DeleteUHostKeyPairsResponse;
 import cn.ucloud.uhost.models.DescribeAvailableInstanceTypesRequest;
 import cn.ucloud.uhost.models.DescribeAvailableInstanceTypesResponse;
+import cn.ucloud.uhost.models.DescribeHostMachineTypeFamiliesRequest;
+import cn.ucloud.uhost.models.DescribeHostMachineTypeFamiliesResponse;
 import cn.ucloud.uhost.models.DescribeImageRequest;
 import cn.ucloud.uhost.models.DescribeImageResponse;
 import cn.ucloud.uhost.models.DescribeIsolationGroupRequest;
@@ -94,6 +98,19 @@ import cn.ucloud.uhost.models.TerminateUHostInstanceResponse;
 public class UHostClient extends DefaultClient implements UHostClientInterface {
     public UHostClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * CheckUHostResourceCapacity - 主机创建资源余量检查
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CheckUHostResourceCapacityResponse checkUHostResourceCapacity(
+            CheckUHostResourceCapacityRequest request) throws UCloudException {
+        request.setAction("CheckUHostResourceCapacity");
+        return (CheckUHostResourceCapacityResponse)
+                this.invoke(request, CheckUHostResourceCapacityResponse.class);
     }
 
     /**
@@ -195,6 +212,19 @@ public class UHostClient extends DefaultClient implements UHostClientInterface {
         request.setAction("DescribeAvailableInstanceTypes");
         return (DescribeAvailableInstanceTypesResponse)
                 this.invoke(request, DescribeAvailableInstanceTypesResponse.class);
+    }
+
+    /**
+     * DescribeHostMachineTypeFamilies - 获取实例规格族列表（所有机型的信息）
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeHostMachineTypeFamiliesResponse describeHostMachineTypeFamilies(
+            DescribeHostMachineTypeFamiliesRequest request) throws UCloudException {
+        request.setAction("DescribeHostMachineTypeFamilies");
+        return (DescribeHostMachineTypeFamiliesResponse)
+                this.invoke(request, DescribeHostMachineTypeFamiliesResponse.class);
     }
 
     /**

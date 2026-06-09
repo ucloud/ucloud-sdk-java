@@ -116,8 +116,8 @@ public class GetUHostInstancePriceRequest extends Request {
     /**
      * 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。 当 MachineType 为 "O"（快杰型）时，支持以下取值： - o1i：快杰型 O1
      * 代，Intel 平台 - o1a：快杰型 O1 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o2i：快杰型 O2 代，Intel 平台
-     * 默认值：o1i 或 o1a或o1r（系统将根据资源情况自动选择） 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1
-     * 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     * 默认值：o1i 或 o1a或o1r 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 -
+     * om2i：快杰内存增强型 OM2 代，Intel 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
      */
     @UCloudParam("UHostFamily")
     private String uHostFamily;

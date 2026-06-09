@@ -15,6 +15,8 @@ package cn.ucloud.uhost.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uhost.models.CheckUHostResourceCapacityRequest;
+import cn.ucloud.uhost.models.CheckUHostResourceCapacityResponse;
 import cn.ucloud.uhost.models.CopyCustomImageRequest;
 import cn.ucloud.uhost.models.CopyCustomImageResponse;
 import cn.ucloud.uhost.models.CreateCustomImageRequest;
@@ -31,6 +33,8 @@ import cn.ucloud.uhost.models.DeleteUHostKeyPairsRequest;
 import cn.ucloud.uhost.models.DeleteUHostKeyPairsResponse;
 import cn.ucloud.uhost.models.DescribeAvailableInstanceTypesRequest;
 import cn.ucloud.uhost.models.DescribeAvailableInstanceTypesResponse;
+import cn.ucloud.uhost.models.DescribeHostMachineTypeFamiliesRequest;
+import cn.ucloud.uhost.models.DescribeHostMachineTypeFamiliesResponse;
 import cn.ucloud.uhost.models.DescribeImageRequest;
 import cn.ucloud.uhost.models.DescribeImageResponse;
 import cn.ucloud.uhost.models.DescribeIsolationGroupRequest;
@@ -90,6 +94,15 @@ import cn.ucloud.uhost.models.TerminateUHostInstanceResponse;
 
 /** This client is used to call actions of **UHost** service */
 public interface UHostClientInterface extends Client {
+
+    /**
+     * CheckUHostResourceCapacity - 主机创建资源余量检查
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CheckUHostResourceCapacityResponse checkUHostResourceCapacity(
+            CheckUHostResourceCapacityRequest request) throws UCloudException;
 
     /**
      * CopyCustomImage - 复制自制镜像
@@ -162,6 +175,15 @@ public interface UHostClientInterface extends Client {
      */
     public DescribeAvailableInstanceTypesResponse describeAvailableInstanceTypes(
             DescribeAvailableInstanceTypesRequest request) throws UCloudException;
+
+    /**
+     * DescribeHostMachineTypeFamilies - 获取实例规格族列表（所有机型的信息）
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeHostMachineTypeFamiliesResponse describeHostMachineTypeFamilies(
+            DescribeHostMachineTypeFamiliesRequest request) throws UCloudException;
 
     /**
      * DescribeImage - 获取镜像列表
