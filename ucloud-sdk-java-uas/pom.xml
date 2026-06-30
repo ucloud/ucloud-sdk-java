@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>ucloud-sdk-java-tidb</artifactId>
+    <artifactId>ucloud-sdk-java-uas</artifactId>
     <name>ucloud-sdk-java</name>
     <version>1.2.70-release</version>
 
