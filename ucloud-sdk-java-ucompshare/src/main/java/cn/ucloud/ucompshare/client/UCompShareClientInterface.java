@@ -139,6 +139,8 @@ import cn.ucloud.ucompshare.models.TerminateCompShareInstanceRequest;
 import cn.ucloud.ucompshare.models.TerminateCompShareInstanceResponse;
 import cn.ucloud.ucompshare.models.UpdateCompShareImageRequest;
 import cn.ucloud.ucompshare.models.UpdateCompShareImageResponse;
+import cn.ucloud.ucompshare.models.UpdateCompShareInstancePortsRequest;
+import cn.ucloud.ucompshare.models.UpdateCompShareInstancePortsResponse;
 import cn.ucloud.ucompshare.models.UpdateCompShareStopSchedulerRequest;
 import cn.ucloud.ucompshare.models.UpdateCompShareStopSchedulerResponse;
 import cn.ucloud.ucompshare.models.UpdateCompShareTeamRequest;
@@ -703,6 +705,15 @@ public interface UCompShareClientInterface extends Client {
      */
     public UpdateCompShareImageResponse updateCompShareImage(UpdateCompShareImageRequest request)
             throws UCloudException;
+
+    /**
+     * UpdateCompShareInstancePorts - 更改Pod实例的端口信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateCompShareInstancePortsResponse updateCompShareInstancePorts(
+            UpdateCompShareInstancePortsRequest request) throws UCloudException;
 
     /**
      * UpdateCompShareStopScheduler - 更新实例定时关机时间
