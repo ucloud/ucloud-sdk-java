@@ -25,26 +25,36 @@ import cn.ucloud.uai_modelverse.models.DownloadListUnpaidOrdersRequest;
 import cn.ucloud.uai_modelverse.models.DownloadListUnpaidOrdersResponse;
 import cn.ucloud.uai_modelverse.models.DownloadOrderSummaryRequest;
 import cn.ucloud.uai_modelverse.models.DownloadOrderSummaryResponse;
+import cn.ucloud.uai_modelverse.models.DownloadUMInferRequestLogRequest;
+import cn.ucloud.uai_modelverse.models.DownloadUMInferRequestLogResponse;
 import cn.ucloud.uai_modelverse.models.GetFilterOptionsRequest;
 import cn.ucloud.uai_modelverse.models.GetFilterOptionsResponse;
 import cn.ucloud.uai_modelverse.models.GetOrderAmountRequest;
 import cn.ucloud.uai_modelverse.models.GetOrderAmountResponse;
-import cn.ucloud.uai_modelverse.models.GetUMInferAPIModelRequest;
-import cn.ucloud.uai_modelverse.models.GetUMInferAPIModelResponse;
-import cn.ucloud.uai_modelverse.models.GetUMInferTokenUsageRequest;
-import cn.ucloud.uai_modelverse.models.GetUMInferTokenUsageResponse;
+import cn.ucloud.uai_modelverse.models.GetUFSquareModelDetailRequest;
+import cn.ucloud.uai_modelverse.models.GetUFSquareModelDetailResponse;
+import cn.ucloud.uai_modelverse.models.GetUFSquareModelPricesRequest;
+import cn.ucloud.uai_modelverse.models.GetUFSquareModelPricesResponse;
+import cn.ucloud.uai_modelverse.models.GetUMInferRequestLogDetailRequest;
+import cn.ucloud.uai_modelverse.models.GetUMInferRequestLogDetailResponse;
 import cn.ucloud.uai_modelverse.models.ListPaidOrderSummaryRequest;
 import cn.ucloud.uai_modelverse.models.ListPaidOrderSummaryResponse;
 import cn.ucloud.uai_modelverse.models.ListPaidOrdersRequest;
 import cn.ucloud.uai_modelverse.models.ListPaidOrdersResponse;
+import cn.ucloud.uai_modelverse.models.ListUFSquareModelFiltersAuthRequest;
+import cn.ucloud.uai_modelverse.models.ListUFSquareModelFiltersAuthResponse;
 import cn.ucloud.uai_modelverse.models.ListUFSquareModelRequest;
 import cn.ucloud.uai_modelverse.models.ListUFSquareModelResponse;
 import cn.ucloud.uai_modelverse.models.ListUMInferAPIKeyRequest;
 import cn.ucloud.uai_modelverse.models.ListUMInferAPIKeyResponse;
+import cn.ucloud.uai_modelverse.models.ListUMInferRequestLogsRequest;
+import cn.ucloud.uai_modelverse.models.ListUMInferRequestLogsResponse;
 import cn.ucloud.uai_modelverse.models.ListUnpaidOrderSummaryRequest;
 import cn.ucloud.uai_modelverse.models.ListUnpaidOrderSummaryResponse;
 import cn.ucloud.uai_modelverse.models.ListUnpaidOrdersRequest;
 import cn.ucloud.uai_modelverse.models.ListUnpaidOrdersResponse;
+import cn.ucloud.uai_modelverse.models.StartPayUnpaidOrdersRequest;
+import cn.ucloud.uai_modelverse.models.StartPayUnpaidOrdersResponse;
 import cn.ucloud.uai_modelverse.models.UpdateUMInferAPIKeyRequest;
 import cn.ucloud.uai_modelverse.models.UpdateUMInferAPIKeyResponse;
 
@@ -97,7 +107,16 @@ public interface UAIModelverseClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * GetFilterOptions - 查询筛选选项
+     * DownloadUMInferRequestLog - 导出推理请求日志
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DownloadUMInferRequestLogResponse downloadUMInferRequestLog(
+            DownloadUMInferRequestLogRequest request) throws UCloudException;
+
+    /**
+     * GetFilterOptions - 查询订单筛选选项
      *
      * @param request Request object
      * @throws UCloudException Exception
@@ -115,22 +134,31 @@ public interface UAIModelverseClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * GetUMInferAPIModel - 获取api模型列表
+     * GetUFSquareModelDetail - 获取广场模型详情
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
-    public GetUMInferAPIModelResponse getUMInferAPIModel(GetUMInferAPIModelRequest request)
-            throws UCloudException;
+    public GetUFSquareModelDetailResponse getUFSquareModelDetail(
+            GetUFSquareModelDetailRequest request) throws UCloudException;
 
     /**
-     * GetUMInferTokenUsage - 获取token使用量
+     * GetUFSquareModelPrices - 批量查询模型价格
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
-    public GetUMInferTokenUsageResponse getUMInferTokenUsage(GetUMInferTokenUsageRequest request)
-            throws UCloudException;
+    public GetUFSquareModelPricesResponse getUFSquareModelPrices(
+            GetUFSquareModelPricesRequest request) throws UCloudException;
+
+    /**
+     * GetUMInferRequestLogDetail - 原始日志详情
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUMInferRequestLogDetailResponse getUMInferRequestLogDetail(
+            GetUMInferRequestLogDetailRequest request) throws UCloudException;
 
     /**
      * ListPaidOrderSummary - 查询已完成订单汇总
@@ -160,6 +188,15 @@ public interface UAIModelverseClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * ListUFSquareModelFiltersAuth - 查询模型广场过滤条件
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUFSquareModelFiltersAuthResponse listUFSquareModelFiltersAuth(
+            ListUFSquareModelFiltersAuthRequest request) throws UCloudException;
+
+    /**
      * ListUMInferAPIKey - 列表查询APIKey
      *
      * @param request Request object
@@ -167,6 +204,15 @@ public interface UAIModelverseClientInterface extends Client {
      */
     public ListUMInferAPIKeyResponse listUMInferAPIKey(ListUMInferAPIKeyRequest request)
             throws UCloudException;
+
+    /**
+     * ListUMInferRequestLogs - 日志明细列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUMInferRequestLogsResponse listUMInferRequestLogs(
+            ListUMInferRequestLogsRequest request) throws UCloudException;
 
     /**
      * ListUnpaidOrderSummary - 查询欠费订单汇总
@@ -184,6 +230,15 @@ public interface UAIModelverseClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public ListUnpaidOrdersResponse listUnpaidOrders(ListUnpaidOrdersRequest request)
+            throws UCloudException;
+
+    /**
+     * StartPayUnpaidOrders - 批量支付欠费订单
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public StartPayUnpaidOrdersResponse startPayUnpaidOrders(StartPayUnpaidOrdersRequest request)
             throws UCloudException;
 
     /**
