@@ -18,27 +18,45 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class GetUMInferAPIModelRequest extends Request {
+public class GetUFSquareModelDetailRequest extends Request {
+
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
+    @UCloudParam("Region")
+    private String region;
+
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
+    @UCloudParam("Zone")
+    private String zone;
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
-    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** apikey 的id */
-    @UCloudParam("KeyId")
-    private String keyId;
+    /** 主键 */
+    @NotEmpty
+    @UCloudParam("Id")
+    private String id;
 
-    /** 模型类型，1: 文本生成，2: 图片生成。 */
-    @UCloudParam("ModelType")
-    private Integer modelType;
+    public String getRegion() {
+        return region;
+    }
 
-    /** 模型广场的id，用来跳转体验中心 */
-    @UCloudParam("SquareId")
-    private String squareId;
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
+    }
 
     public String getProjectId() {
         return projectId;
@@ -48,27 +66,11 @@ public class GetUMInferAPIModelRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getKeyId() {
-        return keyId;
+    public String getId() {
+        return id;
     }
 
-    public void setKeyId(String keyId) {
-        this.keyId = keyId;
-    }
-
-    public Integer getModelType() {
-        return modelType;
-    }
-
-    public void setModelType(Integer modelType) {
-        this.modelType = modelType;
-    }
-
-    public String getSquareId() {
-        return squareId;
-    }
-
-    public void setSquareId(String squareId) {
-        this.squareId = squareId;
+    public void setId(String id) {
+        this.id = id;
     }
 }

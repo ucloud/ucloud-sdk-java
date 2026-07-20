@@ -18,35 +18,24 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class GetUMInferTokenUsageRequest extends Request {
+public class ListUFSquareModelFiltersAuthRequest extends Request {
 
     /**
      * 项目ID。不填写为默认项目，子帐号必须填写。
      * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
      */
-    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** apikey的id */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
-    @UCloudParam("KeyId")
-    private String keyId;
+    @UCloudParam("Zone")
+    private String zone;
 
-    /** 模型名称 */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
-    @UCloudParam("Model")
-    private String model;
-
-    /** 开始时间戳 */
-    @NotEmpty
-    @UCloudParam("StartTime")
-    private Integer startTime;
-
-    /** 结束时间戳 */
-    @NotEmpty
-    @UCloudParam("EndTime")
-    private Integer endTime;
+    @UCloudParam("Region")
+    private String region;
 
     public String getProjectId() {
         return projectId;
@@ -56,35 +45,19 @@ public class GetUMInferTokenUsageRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getKeyId() {
-        return keyId;
+    public String getZone() {
+        return zone;
     }
 
-    public void setKeyId(String keyId) {
-        this.keyId = keyId;
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
-    public String getModel() {
-        return model;
+    public String getRegion() {
+        return region;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Integer getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Integer startTime) {
-        this.startTime = startTime;
-    }
-
-    public Integer getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Integer endTime) {
-        this.endTime = endTime;
+    public void setRegion(String region) {
+        this.region = region;
     }
 }

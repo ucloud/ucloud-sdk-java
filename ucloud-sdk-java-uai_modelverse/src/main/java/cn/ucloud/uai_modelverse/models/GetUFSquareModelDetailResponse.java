@@ -19,30 +19,18 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ListUFSquareModelResponse extends Response {
+public class GetUFSquareModelDetailResponse extends Response {
 
-    /** 总数 */
-    @SerializedName("TotalCount")
-    private Integer totalCount;
+    /** 模型 */
+    @SerializedName("SquareModel")
+    private SquareModel squareModel;
 
-    /** 广场模型 */
-    @SerializedName("SquareModels")
-    private List<SquareModel> squareModels;
-
-    public Integer getTotalCount() {
-        return totalCount;
+    public SquareModel getSquareModel() {
+        return squareModel;
     }
 
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
-
-    public List<SquareModel> getSquareModels() {
-        return squareModels;
-    }
-
-    public void setSquareModels(List<SquareModel> squareModels) {
-        this.squareModels = squareModels;
+    public void setSquareModel(SquareModel squareModel) {
+        this.squareModel = squareModel;
     }
 
     public static class PriceRate extends Response {
