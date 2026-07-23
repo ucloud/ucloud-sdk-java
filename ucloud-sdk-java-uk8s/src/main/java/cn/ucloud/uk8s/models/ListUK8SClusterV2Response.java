@@ -29,6 +29,10 @@ public class ListUK8SClusterV2Response extends Response {
     @SerializedName("ClusterSet")
     private List<ClusterSet> clusterSet;
 
+    /** 总数 */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
     public Integer getClusterCount() {
         return clusterCount;
     }
@@ -43,6 +47,14 @@ public class ListUK8SClusterV2Response extends Response {
 
     public void setClusterSet(List<ClusterSet> clusterSet) {
         this.clusterSet = clusterSet;
+    }
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public static class ClusterSet extends Response {
@@ -71,6 +83,10 @@ public class ListUK8SClusterV2Response extends Response {
         @SerializedName("ServiceCIDR")
         private String serviceCIDR;
 
+        /** CNI网络模式 */
+        @SerializedName("CNIMode")
+        private String cniMode;
+
         /** Master 节点数量 */
         @SerializedName("MasterCount")
         private Integer masterCount;
@@ -82,6 +98,26 @@ public class ListUK8SClusterV2Response extends Response {
         /** 集群版本 */
         @SerializedName("K8sVersion")
         private String k8sVersion;
+
+        /** 删除保护开关。0表示不开启，1表示开启。默认不开启 */
+        @SerializedName("DeleteProtection")
+        private Integer deleteProtection;
+
+        /** 容器运行时名称 */
+        @SerializedName("RuntimeName")
+        private String runtimeName;
+
+        /** 容器运行时版本号，docker 或 containerd 版本 */
+        @SerializedName("RuntimeVersion")
+        private String runtimeVersion;
+
+        /** 计费/管理形态，区分"专有版"和"托管版"两种售卖形态 */
+        @SerializedName("ClusterType")
+        private String clusterType;
+
+        /** API Server 内部回环客户端证书 */
+        @SerializedName("LoopbackClientCert")
+        private LoopbackClientCert loopbackClientCert;
 
         /** 创建集群时判断如果为NORESOURCE则为没资源，否则为空 */
         @SerializedName("ClusterLogInfo")
@@ -153,6 +189,14 @@ public class ListUK8SClusterV2Response extends Response {
             this.serviceCIDR = serviceCIDR;
         }
 
+        public String getCNIMode() {
+            return cniMode;
+        }
+
+        public void setCNIMode(String cniMode) {
+            this.cniMode = cniMode;
+        }
+
         public Integer getMasterCount() {
             return masterCount;
         }
@@ -175,6 +219,46 @@ public class ListUK8SClusterV2Response extends Response {
 
         public void setK8sVersion(String k8sVersion) {
             this.k8sVersion = k8sVersion;
+        }
+
+        public Integer getDeleteProtection() {
+            return deleteProtection;
+        }
+
+        public void setDeleteProtection(Integer deleteProtection) {
+            this.deleteProtection = deleteProtection;
+        }
+
+        public String getRuntimeName() {
+            return runtimeName;
+        }
+
+        public void setRuntimeName(String runtimeName) {
+            this.runtimeName = runtimeName;
+        }
+
+        public String getRuntimeVersion() {
+            return runtimeVersion;
+        }
+
+        public void setRuntimeVersion(String runtimeVersion) {
+            this.runtimeVersion = runtimeVersion;
+        }
+
+        public String getClusterType() {
+            return clusterType;
+        }
+
+        public void setClusterType(String clusterType) {
+            this.clusterType = clusterType;
+        }
+
+        public LoopbackClientCert getLoopbackClientCert() {
+            return loopbackClientCert;
+        }
+
+        public void setLoopbackClientCert(LoopbackClientCert loopbackClientCert) {
+            this.loopbackClientCert = loopbackClientCert;
         }
 
         public String getClusterLogInfo() {
@@ -215,6 +299,33 @@ public class ListUK8SClusterV2Response extends Response {
 
         public void setStatus(String status) {
             this.status = status;
+        }
+    }
+
+    public static class LoopbackClientCert extends Response {
+
+        /** 证书到期时间 */
+        @SerializedName("ExpireTime")
+        private Integer expireTime;
+
+        /** 证书是否进入过期告警状态 */
+        @SerializedName("Warn")
+        private Boolean warn;
+
+        public Integer getExpireTime() {
+            return expireTime;
+        }
+
+        public void setExpireTime(Integer expireTime) {
+            this.expireTime = expireTime;
+        }
+
+        public Boolean getWarn() {
+            return warn;
+        }
+
+        public void setWarn(Boolean warn) {
+            this.warn = warn;
         }
     }
 }

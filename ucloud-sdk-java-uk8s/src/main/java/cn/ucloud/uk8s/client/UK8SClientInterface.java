@@ -35,6 +35,10 @@ import cn.ucloud.uk8s.models.DescribeUK8SImageRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SImageResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SNodeRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SNodeResponse;
+import cn.ucloud.uk8s.models.GetClusterConfigRequest;
+import cn.ucloud.uk8s.models.GetClusterConfigResponse;
+import cn.ucloud.uk8s.models.GetUK8SVersionsRequest;
+import cn.ucloud.uk8s.models.GetUK8SVersionsResponse;
 import cn.ucloud.uk8s.models.ListUK8SClusterNodeV2Request;
 import cn.ucloud.uk8s.models.ListUK8SClusterNodeV2Response;
 import cn.ucloud.uk8s.models.ListUK8SClusterV2Request;
@@ -135,6 +139,24 @@ public interface UK8SClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public DescribeUK8SNodeResponse describeUK8SNode(DescribeUK8SNodeRequest request)
+            throws UCloudException;
+
+    /**
+     * GetClusterConfig - 获取集群配置文件
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetClusterConfigResponse getClusterConfig(GetClusterConfigRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUK8SVersions - 获取支持创建的UK8S集群版本
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SVersionsResponse getUK8SVersions(GetUK8SVersionsRequest request)
             throws UCloudException;
 
     /**

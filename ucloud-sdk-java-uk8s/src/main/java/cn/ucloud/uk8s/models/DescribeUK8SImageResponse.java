@@ -25,9 +25,17 @@ public class DescribeUK8SImageResponse extends Response {
     @SerializedName("ImageSet")
     private List<ImageInfo> imageSet;
 
-    /** 物理机可用镜像集合, 详见ImageInfo 数组 */
+    /** 裸金属可用镜像集合, 详见ImageInfo 数组 */
     @SerializedName("PHostImageSet")
     private List<ImageInfo> pHostImageSet;
+
+    /** 虚拟机自制可用镜像集合, 详见ImageInfo 数组 */
+    @SerializedName("CustomImageSet")
+    private List<ImageInfo> customImageSet;
+
+    /** 裸金属自制可用镜像集合, 详见ImageInfo 数组 */
+    @SerializedName("CustomPHostImageSet")
+    private List<ImageInfo> customPHostImageSet;
 
     public List<ImageInfo> getImageSet() {
         return imageSet;
@@ -43,6 +51,22 @@ public class DescribeUK8SImageResponse extends Response {
 
     public void setPHostImageSet(List<ImageInfo> pHostImageSet) {
         this.pHostImageSet = pHostImageSet;
+    }
+
+    public List<ImageInfo> getCustomImageSet() {
+        return customImageSet;
+    }
+
+    public void setCustomImageSet(List<ImageInfo> customImageSet) {
+        this.customImageSet = customImageSet;
+    }
+
+    public List<ImageInfo> getCustomPHostImageSet() {
+        return customPHostImageSet;
+    }
+
+    public void setCustomPHostImageSet(List<ImageInfo> customPHostImageSet) {
+        this.customPHostImageSet = customPHostImageSet;
     }
 
     public static class ImageInfo extends Response {
@@ -62,6 +86,30 @@ public class DescribeUK8SImageResponse extends Response {
         /** 该镜像是否支持GPU机型，枚举值[true:不支持，false:支持]。 */
         @SerializedName("NotSupportGPU")
         private Boolean notSupportGPU;
+
+        /** OS 类型 */
+        @SerializedName("OsType")
+        private String osType;
+
+        /** OS 名称 */
+        @SerializedName("OsName")
+        private String osName;
+
+        /** 镜像支持的特性 */
+        @SerializedName("Features")
+        private List<String> features;
+
+        /** 镜像大小 */
+        @SerializedName("ImageSize")
+        private Integer imageSize;
+
+        /** 集成软件名称, 如NV驱动版本、cuda版本 */
+        @SerializedName("IntegratedSoftware")
+        private String integratedSoftware;
+
+        /** 支持的GPU机型 */
+        @SerializedName("SupportedGPUTypes")
+        private List<String> supportedGPUTypes;
 
         public Integer getZoneId() {
             return zoneId;
@@ -93,6 +141,54 @@ public class DescribeUK8SImageResponse extends Response {
 
         public void setNotSupportGPU(Boolean notSupportGPU) {
             this.notSupportGPU = notSupportGPU;
+        }
+
+        public String getOsType() {
+            return osType;
+        }
+
+        public void setOsType(String osType) {
+            this.osType = osType;
+        }
+
+        public String getOsName() {
+            return osName;
+        }
+
+        public void setOsName(String osName) {
+            this.osName = osName;
+        }
+
+        public List<String> getFeatures() {
+            return features;
+        }
+
+        public void setFeatures(List<String> features) {
+            this.features = features;
+        }
+
+        public Integer getImageSize() {
+            return imageSize;
+        }
+
+        public void setImageSize(Integer imageSize) {
+            this.imageSize = imageSize;
+        }
+
+        public String getIntegratedSoftware() {
+            return integratedSoftware;
+        }
+
+        public void setIntegratedSoftware(String integratedSoftware) {
+            this.integratedSoftware = integratedSoftware;
+        }
+
+        public List<String> getSupportedGPUTypes() {
+            return supportedGPUTypes;
+        }
+
+        public void setSupportedGPUTypes(List<String> supportedGPUTypes) {
+            this.supportedGPUTypes = supportedGPUTypes;
         }
     }
 }

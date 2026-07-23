@@ -18,28 +18,22 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class ListUK8SClusterNodeV2Request extends Request {
+public class GetUK8SVersionsRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /**
-     * 项目ID。不填写为默认项目，子帐号必须填写。
-     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
-     */
+    /** 项目ID。 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list) */
+    @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UK8S集群ID */
+    /** 集群类型，可选值为[Dedicated] */
     @NotEmpty
-    @UCloudParam("ClusterId")
-    private String clusterId;
-
-    /** 可传一个或多个节点id 不传或为空则返回所有节点 */
-    @UCloudParam("NodeIds")
-    private String nodeIds;
+    @UCloudParam("Kind")
+    private String kind;
 
     public String getRegion() {
         return region;
@@ -57,19 +51,11 @@ public class ListUK8SClusterNodeV2Request extends Request {
         this.projectId = projectId;
     }
 
-    public String getClusterId() {
-        return clusterId;
+    public String getKind() {
+        return kind;
     }
 
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
-    }
-
-    public String getNodeIds() {
-        return nodeIds;
-    }
-
-    public void setNodeIds(String nodeIds) {
-        this.nodeIds = nodeIds;
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 }

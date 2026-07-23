@@ -105,6 +105,74 @@ public class DescribeUK8SClusterResponse extends Response {
     @SerializedName("MasterResourceStatus")
     private String masterResourceStatus;
 
+    /** CNI模式，可选值VPC/Calico */
+    @SerializedName("CNIMode")
+    private String cniMode;
+
+    /** 集群的监控类型：no无监控；cloudwatch统一监控平台；prometheus内置监控 */
+    @SerializedName("MonitorType")
+    private String monitorType;
+
+    /** 集群的节点伸缩(CA)配置 */
+    @SerializedName("Autoscaler")
+    private Autoscaler autoscaler;
+
+    /** 是否开启了授权管理功能 */
+    @SerializedName("EnableUserAuth")
+    private Boolean enableUserAuth;
+
+    /** Pod是否使用独立子网 */
+    @SerializedName("DedicatedPodSubnet")
+    private Boolean dedicatedPodSubnet;
+
+    /** Pod使用的独立子网列表 */
+    @SerializedName("PodSubnetIds")
+    private List<String> podSubnetIds;
+
+    /** 删除保护开关。0表示不开启，1表示开启。默认不开启 */
+    @SerializedName("DeleteProtection")
+    private Integer deleteProtection;
+
+    /** Pod独立子网内的ip使用的安全组 */
+    @SerializedName("PodSubnetSecGroups")
+    private List<String> podSubnetSecGroups;
+
+    /** 节点网段 */
+    @SerializedName("NodeCIDR")
+    private String nodeCIDR;
+
+    /** 外部 API Server 负载均衡实例 ID */
+    @SerializedName("ExternalUlb")
+    private String externalUlb;
+
+    /** 内部 API Server 负载均衡实例 ID */
+    @SerializedName("InternalUlb")
+    private String internalUlb;
+
+    /** 更新时间 */
+    @SerializedName("UpdateTime")
+    private Integer updateTime;
+
+    /** 负载均衡类型 */
+    @SerializedName("LbClass")
+    private String lbClass;
+
+    /** 容器运行时名称 */
+    @SerializedName("RuntimeName")
+    private String runtimeName;
+
+    /** 容器运行时版本 */
+    @SerializedName("RuntimeVersion")
+    private String runtimeVersion;
+
+    /** 集群版本 */
+    @SerializedName("ClusterType")
+    private String clusterType;
+
+    /** API Server 回环客户端证书 */
+    @SerializedName("LoopbackClientCert")
+    private LoopbackClientCert loopbackClientCert;
+
     public String getClusterName() {
         return clusterName;
     }
@@ -273,6 +341,229 @@ public class DescribeUK8SClusterResponse extends Response {
         this.masterResourceStatus = masterResourceStatus;
     }
 
+    public String getCNIMode() {
+        return cniMode;
+    }
+
+    public void setCNIMode(String cniMode) {
+        this.cniMode = cniMode;
+    }
+
+    public String getMonitorType() {
+        return monitorType;
+    }
+
+    public void setMonitorType(String monitorType) {
+        this.monitorType = monitorType;
+    }
+
+    public Autoscaler getAutoscaler() {
+        return autoscaler;
+    }
+
+    public void setAutoscaler(Autoscaler autoscaler) {
+        this.autoscaler = autoscaler;
+    }
+
+    public Boolean getEnableUserAuth() {
+        return enableUserAuth;
+    }
+
+    public void setEnableUserAuth(Boolean enableUserAuth) {
+        this.enableUserAuth = enableUserAuth;
+    }
+
+    public Boolean getDedicatedPodSubnet() {
+        return dedicatedPodSubnet;
+    }
+
+    public void setDedicatedPodSubnet(Boolean dedicatedPodSubnet) {
+        this.dedicatedPodSubnet = dedicatedPodSubnet;
+    }
+
+    public List<String> getPodSubnetIds() {
+        return podSubnetIds;
+    }
+
+    public void setPodSubnetIds(List<String> podSubnetIds) {
+        this.podSubnetIds = podSubnetIds;
+    }
+
+    public Integer getDeleteProtection() {
+        return deleteProtection;
+    }
+
+    public void setDeleteProtection(Integer deleteProtection) {
+        this.deleteProtection = deleteProtection;
+    }
+
+    public List<String> getPodSubnetSecGroups() {
+        return podSubnetSecGroups;
+    }
+
+    public void setPodSubnetSecGroups(List<String> podSubnetSecGroups) {
+        this.podSubnetSecGroups = podSubnetSecGroups;
+    }
+
+    public String getNodeCIDR() {
+        return nodeCIDR;
+    }
+
+    public void setNodeCIDR(String nodeCIDR) {
+        this.nodeCIDR = nodeCIDR;
+    }
+
+    public String getExternalUlb() {
+        return externalUlb;
+    }
+
+    public void setExternalUlb(String externalUlb) {
+        this.externalUlb = externalUlb;
+    }
+
+    public String getInternalUlb() {
+        return internalUlb;
+    }
+
+    public void setInternalUlb(String internalUlb) {
+        this.internalUlb = internalUlb;
+    }
+
+    public Integer getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Integer updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getLbClass() {
+        return lbClass;
+    }
+
+    public void setLbClass(String lbClass) {
+        this.lbClass = lbClass;
+    }
+
+    public String getRuntimeName() {
+        return runtimeName;
+    }
+
+    public void setRuntimeName(String runtimeName) {
+        this.runtimeName = runtimeName;
+    }
+
+    public String getRuntimeVersion() {
+        return runtimeVersion;
+    }
+
+    public void setRuntimeVersion(String runtimeVersion) {
+        this.runtimeVersion = runtimeVersion;
+    }
+
+    public String getClusterType() {
+        return clusterType;
+    }
+
+    public void setClusterType(String clusterType) {
+        this.clusterType = clusterType;
+    }
+
+    public LoopbackClientCert getLoopbackClientCert() {
+        return loopbackClientCert;
+    }
+
+    public void setLoopbackClientCert(LoopbackClientCert loopbackClientCert) {
+        this.loopbackClientCert = loopbackClientCert;
+    }
+
+    public static class Autoscaler extends Response {
+
+        /** 缩容触发延时 */
+        @SerializedName("ScaleDownUnneededTime")
+        private String scaleDownUnneededTime;
+
+        /** CPU缩容阈值 */
+        @SerializedName("ScaleDownUtilizationThreshold")
+        private String scaleDownUtilizationThreshold;
+
+        /** 静默时间 */
+        @SerializedName("ScaleDownDelayAfterAdd")
+        private String scaleDownDelayAfterAdd;
+
+        /** 打开/关闭 */
+        @SerializedName("Enabled")
+        private Integer enabled;
+
+        /** 伸缩器版本 */
+        @SerializedName("Version")
+        private String version;
+
+        /** */
+        @SerializedName("UpdateTime")
+        private Integer updateTime;
+
+        /** GPU缩容阈值 */
+        @SerializedName("ScaleDownGpuUtilizationThreshold")
+        private String scaleDownGpuUtilizationThreshold;
+
+        public String getScaleDownUnneededTime() {
+            return scaleDownUnneededTime;
+        }
+
+        public void setScaleDownUnneededTime(String scaleDownUnneededTime) {
+            this.scaleDownUnneededTime = scaleDownUnneededTime;
+        }
+
+        public String getScaleDownUtilizationThreshold() {
+            return scaleDownUtilizationThreshold;
+        }
+
+        public void setScaleDownUtilizationThreshold(String scaleDownUtilizationThreshold) {
+            this.scaleDownUtilizationThreshold = scaleDownUtilizationThreshold;
+        }
+
+        public String getScaleDownDelayAfterAdd() {
+            return scaleDownDelayAfterAdd;
+        }
+
+        public void setScaleDownDelayAfterAdd(String scaleDownDelayAfterAdd) {
+            this.scaleDownDelayAfterAdd = scaleDownDelayAfterAdd;
+        }
+
+        public Integer getEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(Integer enabled) {
+            this.enabled = enabled;
+        }
+
+        public String getVersion() {
+            return version;
+        }
+
+        public void setVersion(String version) {
+            this.version = version;
+        }
+
+        public Integer getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(Integer updateTime) {
+            this.updateTime = updateTime;
+        }
+
+        public String getScaleDownGpuUtilizationThreshold() {
+            return scaleDownGpuUtilizationThreshold;
+        }
+
+        public void setScaleDownGpuUtilizationThreshold(String scaleDownGpuUtilizationThreshold) {
+            this.scaleDownGpuUtilizationThreshold = scaleDownGpuUtilizationThreshold;
+        }
+    }
+
     public static class DiskSet extends Response {
 
         /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
@@ -418,6 +709,26 @@ public class DescribeUK8SClusterResponse extends Response {
         @SerializedName("Default")
         private String fDefault;
 
+        /** IP 地址分配模式 */
+        @SerializedName("IPMode")
+        private String ipMode;
+
+        /** IP 所属的 VPC Id */
+        @SerializedName("VPCId")
+        private String vpcId;
+
+        /** IP 所在的 子网 Id */
+        @SerializedName("SubnetId")
+        private String subnetId;
+
+        /** 网卡的 MAC 地址 */
+        @SerializedName("Mac")
+        private String mac;
+
+        /** 虚拟网卡 Id */
+        @SerializedName("NetworkInterfaceId")
+        private String networkInterfaceId;
+
         public String getType() {
             return type;
         }
@@ -457,6 +768,46 @@ public class DescribeUK8SClusterResponse extends Response {
         public void setDefault(String fDefault) {
             this.fDefault = fDefault;
         }
+
+        public String getIPMode() {
+            return ipMode;
+        }
+
+        public void setIPMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
+
+        public String getVPCId() {
+            return vpcId;
+        }
+
+        public void setVPCId(String vpcId) {
+            this.vpcId = vpcId;
+        }
+
+        public String getSubnetId() {
+            return subnetId;
+        }
+
+        public void setSubnetId(String subnetId) {
+            this.subnetId = subnetId;
+        }
+
+        public String getMac() {
+            return mac;
+        }
+
+        public void setMac(String mac) {
+            this.mac = mac;
+        }
+
+        public String getNetworkInterfaceId() {
+            return networkInterfaceId;
+        }
+
+        public void setNetworkInterfaceId(String networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
+        }
     }
 
     public static class KubeProxy extends Response {
@@ -471,6 +822,72 @@ public class DescribeUK8SClusterResponse extends Response {
 
         public void setMode(String mode) {
             this.mode = mode;
+        }
+    }
+
+    public static class LoopbackClientCert extends Response {
+
+        /** 证书到期时间 */
+        @SerializedName("ExpireTime")
+        private Integer expireTime;
+
+        /** 证书是否进入过期告警状态 */
+        @SerializedName("Warn")
+        private Boolean warn;
+
+        public Integer getExpireTime() {
+            return expireTime;
+        }
+
+        public void setExpireTime(Integer expireTime) {
+            this.expireTime = expireTime;
+        }
+
+        public Boolean getWarn() {
+            return warn;
+        }
+
+        public void setWarn(Boolean warn) {
+            this.warn = warn;
+        }
+    }
+
+    public static class SecGroupId extends Response {
+
+        /** 安全组名称 */
+        @SerializedName("Id")
+        private String id;
+
+        /** 安全组id */
+        @SerializedName("Name")
+        private String name;
+
+        /** 安全组优先级 */
+        @SerializedName("Priority")
+        private String priority;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
         }
     }
 
@@ -523,6 +940,34 @@ public class DescribeUK8SClusterResponse extends Response {
         /** 节点类型：uhost表示云主机;uphost表示物理云主机 */
         @SerializedName("NodeType")
         private String nodeType;
+
+        /** GPU 数量 */
+        @SerializedName("GPU")
+        private Integer gpu;
+
+        /** GPU 型号 */
+        @SerializedName("GpuType")
+        private String gpuType;
+
+        /** 基础镜像名称 */
+        @SerializedName("BasicImageName")
+        private String basicImageName;
+
+        /** 操作系统类型 */
+        @SerializedName("OsType")
+        private String osType;
+
+        /** 节点总磁盘空间 */
+        @SerializedName("TotalDiskSpace")
+        private Integer totalDiskSpace;
+
+        /** 主机机型类别 */
+        @SerializedName("MachineType")
+        private String machineType;
+
+        /** 节点关联的安全组列表 */
+        @SerializedName("SecGroupId")
+        private List<SecGroupId> secGroupId;
 
         public String getZone() {
             return zone;
@@ -618,6 +1063,62 @@ public class DescribeUK8SClusterResponse extends Response {
 
         public void setNodeType(String nodeType) {
             this.nodeType = nodeType;
+        }
+
+        public Integer getGPU() {
+            return gpu;
+        }
+
+        public void setGPU(Integer gpu) {
+            this.gpu = gpu;
+        }
+
+        public String getGpuType() {
+            return gpuType;
+        }
+
+        public void setGpuType(String gpuType) {
+            this.gpuType = gpuType;
+        }
+
+        public String getBasicImageName() {
+            return basicImageName;
+        }
+
+        public void setBasicImageName(String basicImageName) {
+            this.basicImageName = basicImageName;
+        }
+
+        public String getOsType() {
+            return osType;
+        }
+
+        public void setOsType(String osType) {
+            this.osType = osType;
+        }
+
+        public Integer getTotalDiskSpace() {
+            return totalDiskSpace;
+        }
+
+        public void setTotalDiskSpace(Integer totalDiskSpace) {
+            this.totalDiskSpace = totalDiskSpace;
+        }
+
+        public String getMachineType() {
+            return machineType;
+        }
+
+        public void setMachineType(String machineType) {
+            this.machineType = machineType;
+        }
+
+        public List<SecGroupId> getSecGroupId() {
+            return secGroupId;
+        }
+
+        public void setSecGroupId(List<SecGroupId> secGroupId) {
+            this.secGroupId = secGroupId;
         }
     }
 }
