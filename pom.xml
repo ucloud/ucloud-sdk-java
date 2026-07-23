@@ -7,7 +7,7 @@
     <groupId>cn.ucloud</groupId>
     <artifactId>ucloud-sdk-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.2.72-release</version>
+    <version>1.2.73-release</version>
     <modules>
         <module>ucloud-sdk-java-common</module>
         <module>ucloud-sdk-java-cloudwatch</module>
@@ -57,7 +57,6 @@
         <module>ucloud-sdk-java-usnap</module>
         <module>ucloud-sdk-java-uvms</module>
         <module>ucloud-sdk-java-uwsc</module>
-        <module>ucloud-sdk-java-vpc</module>
         <module>ucloud-sdk-java-vpc</module>
     </modules>
 

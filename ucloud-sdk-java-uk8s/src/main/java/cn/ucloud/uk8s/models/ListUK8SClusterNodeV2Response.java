@@ -97,6 +97,14 @@ public class ListUK8SClusterNodeV2Response extends Response {
         @SerializedName("MachineType")
         private String machineType;
 
+        /** CPU平台 */
+        @SerializedName("CPUPlatform")
+        private String cpuPlatform;
+
+        /** 主机规格族 */
+        @SerializedName("UHostFamily")
+        private String uHostFamily;
+
         /** Node节点的操作系统类别，如Linux或Windows。 */
         @SerializedName("OsType")
         private String osType;
@@ -105,7 +113,7 @@ public class ListUK8SClusterNodeV2Response extends Response {
         @SerializedName("OsName")
         private String osName;
 
-        /** Node节点CPU核数，单位: 个。 */
+        /** Node节点CPU核数，单位: 核。 */
         @SerializedName("CPU")
         private Integer cpu;
 
@@ -141,9 +149,101 @@ public class ListUK8SClusterNodeV2Response extends Response {
         @SerializedName("NodeLogInfo")
         private String nodeLogInfo;
 
+        /** 节点标签 */
+        @SerializedName("Labels")
+        private List<String> labels;
+
+        /** Kubelet版本 */
+        @SerializedName("KubeletVersion")
+        private String kubeletVersion;
+
+        /** pod最大可用 */
+        @SerializedName("MaxPod")
+        private Integer maxPod;
+
+        /** 内存最大可用 */
+        @SerializedName("MaxMemory")
+        private Integer maxMemory;
+
+        /** CPU最大可用 */
+        @SerializedName("MaxCPU")
+        private Integer maxCPU;
+
+        /** 已申请的pod */
+        @SerializedName("RequestPod")
+        private Integer requestPod;
+
+        /** 已申请的Memory */
+        @SerializedName("RequestMemory")
+        private Integer requestMemory;
+
+        /** 已申请的CPU */
+        @SerializedName("RequestCPU")
+        private Integer requestCPU;
+
+        /** Runtime 版本 */
+        @SerializedName("RuntimeVersion")
+        private String runtimeVersion;
+
+        /** Runtime 名字 */
+        @SerializedName("RuntimeName")
+        private String runtimeName;
+
+        /** 已使用的CPU */
+        @SerializedName("UsedCPU")
+        private Integer usedCPU;
+
+        /** 已使用的Memory */
+        @SerializedName("UsedMemory")
+        private Integer usedMemory;
+
+        /** 系统盘大小 */
+        @SerializedName("BootDiskSize")
+        private Integer bootDiskSize;
+
+        /** 数据盘大小，如果有多块数据盘会汇总展示，不包括PVC */
+        @SerializedName("DataDiskSize")
+        private Integer dataDiskSize;
+
         /** 节点的GPU颗数。 */
         @SerializedName("GPU")
         private Integer gpu;
+
+        /** 节点池id */
+        @SerializedName("NodeGroupId")
+        private String nodeGroupId;
+
+        /** 边缘机房id */
+        @SerializedName("IDCId")
+        private String idcId;
+
+        /** 边缘机房 */
+        @SerializedName("IDCName")
+        private String idcName;
+
+        /** 节点主机备注信息 */
+        @SerializedName("Remark")
+        private String remark;
+
+        /** 节点GPU型号(如果为GPU机型) */
+        @SerializedName("GPUType")
+        private String gpuType;
+
+        /** 是否启用了容器镜像加速 */
+        @SerializedName("ImageAccelable")
+        private Boolean imageAccelable;
+
+        /** 节点所属业务组 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** Pod CIDR */
+        @SerializedName("PodCIDR")
+        private String podCIDR;
+
+        /** 节点所属节点池名称 */
+        @SerializedName("NodeGroupName")
+        private String nodeGroupName;
 
         public String getZone() {
             return zone;
@@ -207,6 +307,22 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
         public void setMachineType(String machineType) {
             this.machineType = machineType;
+        }
+
+        public String getCPUPlatform() {
+            return cpuPlatform;
+        }
+
+        public void setCPUPlatform(String cpuPlatform) {
+            this.cpuPlatform = cpuPlatform;
+        }
+
+        public String getUHostFamily() {
+            return uHostFamily;
+        }
+
+        public void setUHostFamily(String uHostFamily) {
+            this.uHostFamily = uHostFamily;
         }
 
         public String getOsType() {
@@ -297,12 +413,196 @@ public class ListUK8SClusterNodeV2Response extends Response {
             this.nodeLogInfo = nodeLogInfo;
         }
 
+        public List<String> getLabels() {
+            return labels;
+        }
+
+        public void setLabels(List<String> labels) {
+            this.labels = labels;
+        }
+
+        public String getKubeletVersion() {
+            return kubeletVersion;
+        }
+
+        public void setKubeletVersion(String kubeletVersion) {
+            this.kubeletVersion = kubeletVersion;
+        }
+
+        public Integer getMaxPod() {
+            return maxPod;
+        }
+
+        public void setMaxPod(Integer maxPod) {
+            this.maxPod = maxPod;
+        }
+
+        public Integer getMaxMemory() {
+            return maxMemory;
+        }
+
+        public void setMaxMemory(Integer maxMemory) {
+            this.maxMemory = maxMemory;
+        }
+
+        public Integer getMaxCPU() {
+            return maxCPU;
+        }
+
+        public void setMaxCPU(Integer maxCPU) {
+            this.maxCPU = maxCPU;
+        }
+
+        public Integer getRequestPod() {
+            return requestPod;
+        }
+
+        public void setRequestPod(Integer requestPod) {
+            this.requestPod = requestPod;
+        }
+
+        public Integer getRequestMemory() {
+            return requestMemory;
+        }
+
+        public void setRequestMemory(Integer requestMemory) {
+            this.requestMemory = requestMemory;
+        }
+
+        public Integer getRequestCPU() {
+            return requestCPU;
+        }
+
+        public void setRequestCPU(Integer requestCPU) {
+            this.requestCPU = requestCPU;
+        }
+
+        public String getRuntimeVersion() {
+            return runtimeVersion;
+        }
+
+        public void setRuntimeVersion(String runtimeVersion) {
+            this.runtimeVersion = runtimeVersion;
+        }
+
+        public String getRuntimeName() {
+            return runtimeName;
+        }
+
+        public void setRuntimeName(String runtimeName) {
+            this.runtimeName = runtimeName;
+        }
+
+        public Integer getUsedCPU() {
+            return usedCPU;
+        }
+
+        public void setUsedCPU(Integer usedCPU) {
+            this.usedCPU = usedCPU;
+        }
+
+        public Integer getUsedMemory() {
+            return usedMemory;
+        }
+
+        public void setUsedMemory(Integer usedMemory) {
+            this.usedMemory = usedMemory;
+        }
+
+        public Integer getBootDiskSize() {
+            return bootDiskSize;
+        }
+
+        public void setBootDiskSize(Integer bootDiskSize) {
+            this.bootDiskSize = bootDiskSize;
+        }
+
+        public Integer getDataDiskSize() {
+            return dataDiskSize;
+        }
+
+        public void setDataDiskSize(Integer dataDiskSize) {
+            this.dataDiskSize = dataDiskSize;
+        }
+
         public Integer getGPU() {
             return gpu;
         }
 
         public void setGPU(Integer gpu) {
             this.gpu = gpu;
+        }
+
+        public String getNodeGroupId() {
+            return nodeGroupId;
+        }
+
+        public void setNodeGroupId(String nodeGroupId) {
+            this.nodeGroupId = nodeGroupId;
+        }
+
+        public String getIDCId() {
+            return idcId;
+        }
+
+        public void setIDCId(String idcId) {
+            this.idcId = idcId;
+        }
+
+        public String getIDCName() {
+            return idcName;
+        }
+
+        public void setIDCName(String idcName) {
+            this.idcName = idcName;
+        }
+
+        public String getRemark() {
+            return remark;
+        }
+
+        public void setRemark(String remark) {
+            this.remark = remark;
+        }
+
+        public String getGPUType() {
+            return gpuType;
+        }
+
+        public void setGPUType(String gpuType) {
+            this.gpuType = gpuType;
+        }
+
+        public Boolean getImageAccelable() {
+            return imageAccelable;
+        }
+
+        public void setImageAccelable(Boolean imageAccelable) {
+            this.imageAccelable = imageAccelable;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getPodCIDR() {
+            return podCIDR;
+        }
+
+        public void setPodCIDR(String podCIDR) {
+            this.podCIDR = podCIDR;
+        }
+
+        public String getNodeGroupName() {
+            return nodeGroupName;
+        }
+
+        public void setNodeGroupName(String nodeGroupName) {
+            this.nodeGroupName = nodeGroupName;
         }
     }
 
@@ -335,6 +635,14 @@ public class ListUK8SClusterNodeV2Response extends Response {
         /** Mac地址 */
         @SerializedName("Mac")
         private String mac;
+
+        /** IP 协议类型 */
+        @SerializedName("IPMode")
+        private String ipMode;
+
+        /** 网络接口资源 ID */
+        @SerializedName("NetworkInterfaceId")
+        private String networkInterfaceId;
 
         public String getType() {
             return type;
@@ -390,6 +698,22 @@ public class ListUK8SClusterNodeV2Response extends Response {
 
         public void setMac(String mac) {
             this.mac = mac;
+        }
+
+        public String getIPMode() {
+            return ipMode;
+        }
+
+        public void setIPMode(String ipMode) {
+            this.ipMode = ipMode;
+        }
+
+        public String getNetworkInterfaceId() {
+            return networkInterfaceId;
+        }
+
+        public void setNetworkInterfaceId(String networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
         }
     }
 }

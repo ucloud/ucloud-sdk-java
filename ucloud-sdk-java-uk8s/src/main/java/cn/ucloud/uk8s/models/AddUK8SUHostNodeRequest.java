@@ -13,10 +13,11 @@
  */
 package cn.ucloud.uk8s.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class AddUK8SUHostNodeRequest extends Request {
 
@@ -52,14 +53,6 @@ public class AddUK8SUHostNodeRequest extends Request {
     @UCloudParam("Count")
     private Integer count;
 
-    /**
-     * Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 |
-     * base64
-     */
-    @NotEmpty
-    @UCloudParam("Password")
-    private String password;
-
     /** 内存大小。单位：MB。范围 ：[4096, 262144]，取值为1024的倍数（可选范围参考控制台）。默认值：8192 */
     @NotEmpty
     @UCloudParam("Mem")
@@ -72,6 +65,13 @@ public class AddUK8SUHostNodeRequest extends Request {
     @NotEmpty
     @UCloudParam("ChargeType")
     private String chargeType;
+
+    /**
+     * Node节点密码。请遵照[[api:uhost-api:specification|字段规范]]设定密码。密码需使用base64进行编码，如下：# echo -n Password1 |
+     * base64
+     */
+    @UCloudParam("Password")
+    private String password;
 
     /** 磁盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
     @UCloudParam("BootDiskType")
@@ -157,6 +157,52 @@ public class AddUK8SUHostNodeRequest extends Request {
     @UCloudParam("NodeGroupId")
     private String nodeGroupId;
 
+    /** 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。 */
+    @UCloudParam("SecurityMode")
+    private String securityMode;
+
+    /** 自定义主机名前缀。完整的自定义主机名为{NamePrefix}-{NodeIP}。 */
+    @UCloudParam("NamePrefix")
+    private String namePrefix;
+
+    /**
+     * 网络增强特性。枚举值：Normal，不开启; Super，开启网络增强1.0； Ultra，开启网络增强2.0；Extreme，开启网络增强3.0; Infiniband,
+     * 开启网络增强4.0（详情参考主机官网文档）
+     */
+    @UCloudParam("NetCapability")
+    private String netCapability;
+
+    /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。 */
+    @UCloudParam("UNIFeature")
+    private Boolean uniFeature;
+
+    /** */
+    @UCloudParam("NetworkInterface")
+    private List<NetworkInterface> networkInterface;
+
+    /**
+     * 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见
+     * [DescribeFirewall](api/unet-api/describe_firewall.html)。
+     */
+    @UCloudParam("SecurityGroupId")
+    private String securityGroupId;
+
+    /** */
+    @UCloudParam("SecGroupId")
+    private List<SecGroupId> secGroupId;
+
+    /** 主机规格族 */
+    @UCloudParam("UHostFamily")
+    private String uHostFamily;
+
+    /** */
+    @UCloudParam("UserLabels")
+    private List<UserLabels> userLabels;
+
+    /** */
+    @UCloudParam("KubeletConfiguration")
+    private KubeletConfiguration kubeletConfiguration;
+
     public String getZone() {
         return zone;
     }
@@ -205,14 +251,6 @@ public class AddUK8SUHostNodeRequest extends Request {
         this.count = count;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Integer getMem() {
         return mem;
     }
@@ -227,6 +265,14 @@ public class AddUK8SUHostNodeRequest extends Request {
 
     public void setChargeType(String chargeType) {
         this.chargeType = chargeType;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getBootDiskType() {
@@ -387,5 +433,258 @@ public class AddUK8SUHostNodeRequest extends Request {
 
     public void setNodeGroupId(String nodeGroupId) {
         this.nodeGroupId = nodeGroupId;
+    }
+
+    public String getSecurityMode() {
+        return securityMode;
+    }
+
+    public void setSecurityMode(String securityMode) {
+        this.securityMode = securityMode;
+    }
+
+    public String getNamePrefix() {
+        return namePrefix;
+    }
+
+    public void setNamePrefix(String namePrefix) {
+        this.namePrefix = namePrefix;
+    }
+
+    public String getNetCapability() {
+        return netCapability;
+    }
+
+    public void setNetCapability(String netCapability) {
+        this.netCapability = netCapability;
+    }
+
+    public Boolean getUNIFeature() {
+        return uniFeature;
+    }
+
+    public void setUNIFeature(Boolean uniFeature) {
+        this.uniFeature = uniFeature;
+    }
+
+    public List<NetworkInterface> getNetworkInterface() {
+        return networkInterface;
+    }
+
+    public void setNetworkInterface(List<NetworkInterface> networkInterface) {
+        this.networkInterface = networkInterface;
+    }
+
+    public String getSecurityGroupId() {
+        return securityGroupId;
+    }
+
+    public void setSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+    }
+
+    public List<SecGroupId> getSecGroupId() {
+        return secGroupId;
+    }
+
+    public void setSecGroupId(List<SecGroupId> secGroupId) {
+        this.secGroupId = secGroupId;
+    }
+
+    public String getUHostFamily() {
+        return uHostFamily;
+    }
+
+    public void setUHostFamily(String uHostFamily) {
+        this.uHostFamily = uHostFamily;
+    }
+
+    public List<UserLabels> getUserLabels() {
+        return userLabels;
+    }
+
+    public void setUserLabels(List<UserLabels> userLabels) {
+        this.userLabels = userLabels;
+    }
+
+    public KubeletConfiguration getKubeletConfiguration() {
+        return kubeletConfiguration;
+    }
+
+    public void setKubeletConfiguration(KubeletConfiguration kubeletConfiguration) {
+        this.kubeletConfiguration = kubeletConfiguration;
+    }
+
+    public static class KubeletConfiguration extends Request {
+
+        /**
+         * 全量KubeletConfiguration.XXX定义参考AddUK8SNodeGroup接口:
+         * https://uxiao.ucloudadmin.com/#/api-manager/api/detail/UK8S/AddUK8SNodeGroup
+         */
+        @UCloudParam("ContainerLogMaxFiles")
+        private String containerLogMaxFiles;
+
+        public String getContainerLogMaxFiles() {
+            return containerLogMaxFiles;
+        }
+
+        public void setContainerLogMaxFiles(String containerLogMaxFiles) {
+            this.containerLogMaxFiles = containerLogMaxFiles;
+        }
+    }
+
+    public static class NetworkInterface extends Request {
+
+        /** */
+        @UCloudParam("EIP")
+        private NetworkInterfaceEIP eip;
+
+        public NetworkInterfaceEIP getEIP() {
+            return eip;
+        }
+
+        public void setEIP(NetworkInterfaceEIP eip) {
+            this.eip = eip;
+        }
+    }
+
+    public static class NetworkInterfaceEIP extends Request {
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
+         * 流量计费[1-300]，带宽计费[1-800]
+         */
+        @UCloudParam("Bandwidth")
+        private Integer bandwidth;
+
+        /**
+         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
+         * "Free":免费带宽模式,默认为 "Bandwidth"
+         */
+        @UCloudParam("PayMode")
+        private String payMode;
+
+        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
+        @UCloudParam("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International，BGP: Bgp。 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
+         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
+         * International kr-seoul:International us-ws:International ge-fra:International
+         * sg:International tw-kh:International.其他海外线路均为 International
+         */
+        @UCloudParam("OperatorName")
+        private String operatorName;
+
+        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
+        @UCloudParam("CouponId")
+        private String couponId;
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+    }
+
+    public static class SecGroupId extends Request {
+
+        /** 安全组 ID。至多可以同时绑定5个安全组。 */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级。取值范围[1, 5] */
+        @UCloudParam("Priority")
+        private String priority;
+
+        /** 安全组名称。 */
+        @UCloudParam("Name")
+        private String name;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
+    public static class UserLabels extends Request {
+
+        /** UK8S用户资源标签的键值 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** UK8S用户资源标签的值 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
     }
 }

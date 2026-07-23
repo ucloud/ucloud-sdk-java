@@ -146,6 +146,22 @@ public class CreateUK8SClusterV2Request extends Request {
     @UCloudParam("Tag")
     private String tag;
 
+    /** Master节点的镜像 ID，不填则使用ImageId参数。支持用户自定义镜像。 */
+    @UCloudParam("MasterImageId")
+    private String masterImageId;
+
+    /** master lb 类型默认ulb，可选ulb nlb */
+    @UCloudParam("LbClass")
+    private String lbClass;
+
+    /** LbClass为nlb的时候支持的源ip转发模式，目前只支持Toa,为空则不开源ip功能 枚举："",Toa */
+    @UCloudParam("ForwardSrcIPMethod")
+    private String forwardSrcIPMethod;
+
+    /** UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game */
+    @UCloudParam("UserLabels")
+    private String userLabels;
+
     public String getRegion() {
         return region;
     }
@@ -370,6 +386,38 @@ public class CreateUK8SClusterV2Request extends Request {
         this.tag = tag;
     }
 
+    public String getMasterImageId() {
+        return masterImageId;
+    }
+
+    public void setMasterImageId(String masterImageId) {
+        this.masterImageId = masterImageId;
+    }
+
+    public String getLbClass() {
+        return lbClass;
+    }
+
+    public void setLbClass(String lbClass) {
+        this.lbClass = lbClass;
+    }
+
+    public String getForwardSrcIPMethod() {
+        return forwardSrcIPMethod;
+    }
+
+    public void setForwardSrcIPMethod(String forwardSrcIPMethod) {
+        this.forwardSrcIPMethod = forwardSrcIPMethod;
+    }
+
+    public String getUserLabels() {
+        return userLabels;
+    }
+
+    public void setUserLabels(String userLabels) {
+        this.userLabels = userLabels;
+    }
+
     public static class KubeProxy extends Request {
 
         /** 集群kube-proxy模式。支持iptables和ipvs，默认为iptables。 */
@@ -395,12 +443,63 @@ public class CreateUK8SClusterV2Request extends Request {
         @UCloudParam("Zone")
         private String zone;
 
+        /** */
+        @UCloudParam("SecGroupId")
+        private List<MasterSecGroupId> secGroupId;
+
         public String getZone() {
             return zone;
         }
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public List<MasterSecGroupId> getSecGroupId() {
+            return secGroupId;
+        }
+
+        public void setSecGroupId(List<MasterSecGroupId> secGroupId) {
+            this.secGroupId = secGroupId;
+        }
+    }
+
+    public static class MasterSecGroupId extends Request {
+
+        /** 安全组 ID。至多可以同时绑定5个安全组。 */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级。取值范围[1, 5] */
+        @UCloudParam("Priority")
+        private String priority;
+
+        /** 安全组名称。 */
+        @UCloudParam("Name")
+        private String name;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 
@@ -480,6 +579,37 @@ public class CreateUK8SClusterV2Request extends Request {
         /** Node节点污点，形式为key=value:effect，多组taints用”,“隔开,最多支持五组。 */
         @UCloudParam("Taints")
         private String taints;
+
+        /** 主机安全模式。Firewall：防火墙；SecGroup：安全组；默认值：Firewall。 */
+        @UCloudParam("SecurityMode")
+        private String securityMode;
+
+        /** 一组Node的自定义主机名前缀。 完整的自定义主机名为{NamePrefix}-{NodeIP}。 */
+        @UCloudParam("NamePrefix")
+        private String namePrefix;
+
+        /** Node节点的镜像 ID，不填则使用ImageId参数。支持用户自定义镜像。 */
+        @UCloudParam("ImageId")
+        private String imageId;
+
+        /** 弹性网卡特性。开启了弹性网卡权限位，此特性才生效，默认 false 未开启，true 开启。 */
+        @UCloudParam("UNIFeature")
+        private String uniFeature;
+
+        /** */
+        @UCloudParam("NetworkInterface")
+        private List<NodesNetworkInterface> networkInterface;
+
+        /**
+         * 防火墙ID，默认：Web推荐防火墙。如何查询SecurityGroupId请参见
+         * [DescribeFirewall](api/unet-api/describe_firewall.html)。
+         */
+        @UCloudParam("SecurityGroupId")
+        private String securityGroupId;
+
+        /** */
+        @UCloudParam("SecGroupId")
+        private List<NodesSecGroupId> secGroupId;
 
         public String getZone() {
             return zone;
@@ -607,6 +737,190 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setTaints(String taints) {
             this.taints = taints;
+        }
+
+        public String getSecurityMode() {
+            return securityMode;
+        }
+
+        public void setSecurityMode(String securityMode) {
+            this.securityMode = securityMode;
+        }
+
+        public String getNamePrefix() {
+            return namePrefix;
+        }
+
+        public void setNamePrefix(String namePrefix) {
+            this.namePrefix = namePrefix;
+        }
+
+        public String getImageId() {
+            return imageId;
+        }
+
+        public void setImageId(String imageId) {
+            this.imageId = imageId;
+        }
+
+        public String getUNIFeature() {
+            return uniFeature;
+        }
+
+        public void setUNIFeature(String uniFeature) {
+            this.uniFeature = uniFeature;
+        }
+
+        public List<NodesNetworkInterface> getNetworkInterface() {
+            return networkInterface;
+        }
+
+        public void setNetworkInterface(List<NodesNetworkInterface> networkInterface) {
+            this.networkInterface = networkInterface;
+        }
+
+        public String getSecurityGroupId() {
+            return securityGroupId;
+        }
+
+        public void setSecurityGroupId(String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+        }
+
+        public List<NodesSecGroupId> getSecGroupId() {
+            return secGroupId;
+        }
+
+        public void setSecGroupId(List<NodesSecGroupId> secGroupId) {
+            this.secGroupId = secGroupId;
+        }
+    }
+
+    public static class NodesNetworkInterface extends Request {
+
+        /** */
+        @UCloudParam("EIP")
+        private NodesNetworkInterfaceEIP eip;
+
+        public NodesNetworkInterfaceEIP getEIP() {
+            return eip;
+        }
+
+        public void setEIP(NodesNetworkInterfaceEIP eip) {
+            this.eip = eip;
+        }
+    }
+
+    public static class NodesNetworkInterfaceEIP extends Request {
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的外网带宽, 单位为Mbps. 共享带宽模式下非必传, 非共享带宽模式必须指定非0Mbps带宽. 各地域非共享带宽的带宽范围如下：
+         * 流量计费[1-300]，带宽计费[1-800]
+         */
+        @UCloudParam("Bandwidth")
+        private Integer bandwidth;
+
+        /**
+         * 弹性IP的计费模式. 枚举值: "Traffic", 流量计费; "Bandwidth", 带宽计费; "ShareBandwidth",共享带宽模式.
+         * "Free":免费带宽模式,默认为 "Bandwidth"
+         */
+        @UCloudParam("PayMode")
+        private String payMode;
+
+        /** 绑定的共享带宽Id，仅当PayMode为ShareBandwidth时有效 */
+        @UCloudParam("ShareBandwidthId")
+        private String shareBandwidthId;
+
+        /**
+         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
+         * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
+         * International kr-seoul:International us-ws:International ge-fra:International
+         * sg:International tw-kh:International.其他海外线路均为 International
+         */
+        @UCloudParam("OperatorName")
+        private String operatorName;
+
+        /** 当前EIP代金券id。请通过DescribeCoupon接口查询，或登录用户中心查看。 */
+        @UCloudParam("CouponId")
+        private String couponId;
+
+        public Integer getBandwidth() {
+            return bandwidth;
+        }
+
+        public void setBandwidth(Integer bandwidth) {
+            this.bandwidth = bandwidth;
+        }
+
+        public String getPayMode() {
+            return payMode;
+        }
+
+        public void setPayMode(String payMode) {
+            this.payMode = payMode;
+        }
+
+        public String getShareBandwidthId() {
+            return shareBandwidthId;
+        }
+
+        public void setShareBandwidthId(String shareBandwidthId) {
+            this.shareBandwidthId = shareBandwidthId;
+        }
+
+        public String getOperatorName() {
+            return operatorName;
+        }
+
+        public void setOperatorName(String operatorName) {
+            this.operatorName = operatorName;
+        }
+
+        public String getCouponId() {
+            return couponId;
+        }
+
+        public void setCouponId(String couponId) {
+            this.couponId = couponId;
+        }
+    }
+
+    public static class NodesSecGroupId extends Request {
+
+        /** 安全组 ID。至多可以同时绑定5个安全组。 */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级。取值范围[1, 5] */
+        @UCloudParam("Priority")
+        private String priority;
+
+        /** 安全组名称。 */
+        @UCloudParam("Name")
+        private String name;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getPriority() {
+            return priority;
+        }
+
+        public void setPriority(String priority) {
+            this.priority = priority;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 }
