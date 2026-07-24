@@ -61,8 +61,12 @@ import cn.ucloud.udb.models.DescribeUDBBackupBlacklistRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupBlacklistResponse;
 import cn.ucloud.udb.models.DescribeUDBBackupRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBackupStrategyRequest;
+import cn.ucloud.udb.models.DescribeUDBBackupStrategyResponse;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupRequest;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupStrategyRequest;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupStrategyResponse;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLRequest;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLResponse;
 import cn.ucloud.udb.models.DescribeUDBInstanceBackupStateRequest;
@@ -107,6 +111,8 @@ import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
 import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLRequest;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLResponse;
+import cn.ucloud.udb.models.ListUDBInstanceFailoverRecordRequest;
+import cn.ucloud.udb.models.ListUDBInstanceFailoverRecordResponse;
 import cn.ucloud.udb.models.ListUDBMachineTypeRequest;
 import cn.ucloud.udb.models.ListUDBMachineTypeResponse;
 import cn.ucloud.udb.models.ListUDBUserTablesRequest;
@@ -440,6 +446,19 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
     }
 
     /**
+     * DescribeUDBBackupStrategy - 获取实例备份策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDBBackupStrategyResponse describeUDBBackupStrategy(
+            DescribeUDBBackupStrategyRequest request) throws UCloudException {
+        request.setAction("DescribeUDBBackupStrategy");
+        return (DescribeUDBBackupStrategyResponse)
+                this.invoke(request, DescribeUDBBackupStrategyResponse.class);
+    }
+
+    /**
      * DescribeUDBBinlogBackup - 列表UDB实例Binlog自动备份信息
      *
      * @param request Request object
@@ -450,6 +469,19 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
         request.setAction("DescribeUDBBinlogBackup");
         return (DescribeUDBBinlogBackupResponse)
                 this.invoke(request, DescribeUDBBinlogBackupResponse.class);
+    }
+
+    /**
+     * DescribeUDBBinlogBackupStrategy - 获取UDB实例binlog自动备份策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDBBinlogBackupStrategyResponse describeUDBBinlogBackupStrategy(
+            DescribeUDBBinlogBackupStrategyRequest request) throws UCloudException {
+        request.setAction("DescribeUDBBinlogBackupStrategy");
+        return (DescribeUDBBinlogBackupStrategyResponse)
+                this.invoke(request, DescribeUDBBinlogBackupStrategyResponse.class);
     }
 
     /**
@@ -735,6 +767,19 @@ public class UDBClient extends DefaultClient implements UDBClientInterface {
         request.setAction("GetUDBInstanceSSLCertURL");
         return (GetUDBInstanceSSLCertURLResponse)
                 this.invoke(request, GetUDBInstanceSSLCertURLResponse.class);
+    }
+
+    /**
+     * ListUDBInstanceFailoverRecord - 获取实例容灾记录列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUDBInstanceFailoverRecordResponse listUDBInstanceFailoverRecord(
+            ListUDBInstanceFailoverRecordRequest request) throws UCloudException {
+        request.setAction("ListUDBInstanceFailoverRecord");
+        return (ListUDBInstanceFailoverRecordResponse)
+                this.invoke(request, ListUDBInstanceFailoverRecordResponse.class);
     }
 
     /**

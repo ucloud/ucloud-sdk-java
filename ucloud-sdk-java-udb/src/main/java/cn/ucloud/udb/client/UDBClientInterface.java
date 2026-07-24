@@ -59,8 +59,12 @@ import cn.ucloud.udb.models.DescribeUDBBackupBlacklistRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupBlacklistResponse;
 import cn.ucloud.udb.models.DescribeUDBBackupRequest;
 import cn.ucloud.udb.models.DescribeUDBBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBackupStrategyRequest;
+import cn.ucloud.udb.models.DescribeUDBBackupStrategyResponse;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupRequest;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupResponse;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupStrategyRequest;
+import cn.ucloud.udb.models.DescribeUDBBinlogBackupStrategyResponse;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLRequest;
 import cn.ucloud.udb.models.DescribeUDBBinlogBackupURLResponse;
 import cn.ucloud.udb.models.DescribeUDBInstanceBackupStateRequest;
@@ -105,6 +109,8 @@ import cn.ucloud.udb.models.GetUDBClientConnNumRequest;
 import cn.ucloud.udb.models.GetUDBClientConnNumResponse;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLRequest;
 import cn.ucloud.udb.models.GetUDBInstanceSSLCertURLResponse;
+import cn.ucloud.udb.models.ListUDBInstanceFailoverRecordRequest;
+import cn.ucloud.udb.models.ListUDBInstanceFailoverRecordResponse;
 import cn.ucloud.udb.models.ListUDBMachineTypeRequest;
 import cn.ucloud.udb.models.ListUDBMachineTypeResponse;
 import cn.ucloud.udb.models.ListUDBUserTablesRequest;
@@ -353,6 +359,15 @@ public interface UDBClientInterface extends Client {
             DescribeUDBBackupBlacklistRequest request) throws UCloudException;
 
     /**
+     * DescribeUDBBackupStrategy - 获取实例备份策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDBBackupStrategyResponse describeUDBBackupStrategy(
+            DescribeUDBBackupStrategyRequest request) throws UCloudException;
+
+    /**
      * DescribeUDBBinlogBackup - 列表UDB实例Binlog自动备份信息
      *
      * @param request Request object
@@ -360,6 +375,15 @@ public interface UDBClientInterface extends Client {
      */
     public DescribeUDBBinlogBackupResponse describeUDBBinlogBackup(
             DescribeUDBBinlogBackupRequest request) throws UCloudException;
+
+    /**
+     * DescribeUDBBinlogBackupStrategy - 获取UDB实例binlog自动备份策略
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDBBinlogBackupStrategyResponse describeUDBBinlogBackupStrategy(
+            DescribeUDBBinlogBackupStrategyRequest request) throws UCloudException;
 
     /**
      * DescribeUDBBinlogBackupURL - (新)获取UDB的日志备份地址
@@ -558,6 +582,15 @@ public interface UDBClientInterface extends Client {
      */
     public GetUDBInstanceSSLCertURLResponse getUDBInstanceSSLCertURL(
             GetUDBInstanceSSLCertURLRequest request) throws UCloudException;
+
+    /**
+     * ListUDBInstanceFailoverRecord - 获取实例容灾记录列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUDBInstanceFailoverRecordResponse listUDBInstanceFailoverRecord(
+            ListUDBInstanceFailoverRecordRequest request) throws UCloudException;
 
     /**
      * ListUDBMachineType - 获取UDB云数据库计算规格列表

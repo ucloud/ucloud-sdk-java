@@ -14,7 +14,21 @@
 package cn.ucloud.udb.models;
 
 
-
 import cn.ucloud.common.response.Response;
 
-public class BackupUDBInstanceResponse extends Response {}
+import com.google.gson.annotations.SerializedName;
+
+public class BackupUDBInstanceResponse extends Response {
+
+    /** 备份记录 ID */
+    @SerializedName("BackupId")
+    private Integer backupId;
+
+    public Integer getBackupId() {
+        return backupId;
+    }
+
+    public void setBackupId(Integer backupId) {
+        this.backupId = backupId;
+    }
+}

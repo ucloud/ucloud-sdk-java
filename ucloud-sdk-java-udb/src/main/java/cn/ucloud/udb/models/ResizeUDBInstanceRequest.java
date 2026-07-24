@@ -36,7 +36,7 @@ public class ResizeUDBInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例的Id */
+    /** DB实例Id,该值可以通过DescribeUDBInstance获取 */
     @NotEmpty
     @UCloudParam("DBId")
     private String dbId;
@@ -73,7 +73,7 @@ public class ResizeUDBInstanceRequest extends Request {
     @UCloudParam("StartAfterUpgrade")
     private Boolean startAfterUpgrade;
 
-    /** 规格类型ID,当SpecificationType为1时有效 */
+    /** 规格类型ID,当SpecificationType为1时有效, 可以通过 ListUDBMachineType 查询。 */
     @UCloudParam("MachineType")
     private String machineType;
 

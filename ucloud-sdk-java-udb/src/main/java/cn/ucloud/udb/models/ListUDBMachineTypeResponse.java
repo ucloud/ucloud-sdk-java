@@ -47,6 +47,14 @@ public class ListUDBMachineTypeResponse extends Response {
 
     public static class MachineType extends Response {
 
+        /** 存储类型 CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘 */
+        @SerializedName("StorageClass")
+        private String storageClass;
+
+        /** 规格类型 O: NVMe型, OM: 共享型，N: 通用型 */
+        @SerializedName("SpecificationClass")
+        private String specificationClass;
+
         /**
          * 计算规格id, 目前支持CPU和内存比1:2、1:4、1:8三类配比规格;
          *
@@ -76,13 +84,29 @@ public class ListUDBMachineTypeResponse extends Response {
         @SerializedName("Memory")
         private Integer memory;
 
-        /** 内部云主机机型，可选"o/n" */
+        /** 内部云主机机型，可选"O/N/OM" */
         @SerializedName("Os")
         private String os;
 
         /** 内存/cpu配比 */
         @SerializedName("Group")
         private String group;
+
+        public String getStorageClass() {
+            return storageClass;
+        }
+
+        public void setStorageClass(String storageClass) {
+            this.storageClass = storageClass;
+        }
+
+        public String getSpecificationClass() {
+            return specificationClass;
+        }
+
+        public void setSpecificationClass(String specificationClass) {
+            this.specificationClass = specificationClass;
+        }
 
         public String getID() {
             return id;
