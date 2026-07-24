@@ -25,12 +25,24 @@ public class DescribeUDBTypeResponse extends Response {
     @SerializedName("DataSet")
     private List<UDBTypeSet> dataSet;
 
+    /** 推荐DB版本 */
+    @SerializedName("DedaultType")
+    private UDBTypeSet dedaultType;
+
     public List<UDBTypeSet> getDataSet() {
         return dataSet;
     }
 
     public void setDataSet(List<UDBTypeSet> dataSet) {
         this.dataSet = dataSet;
+    }
+
+    public UDBTypeSet getDedaultType() {
+        return dedaultType;
+    }
+
+    public void setDedaultType(UDBTypeSet dedaultType) {
+        this.dedaultType = dedaultType;
     }
 
     public static class UDBTypeSet extends Response {

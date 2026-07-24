@@ -38,19 +38,19 @@ public class CreateUDBMySQLInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 实例名称，至少6位 */
+    /** 实例名称，至少6位,最大63位 */
     @NotEmpty
     @UCloudParam("Name")
     private String name;
 
-    /** 管理员密码 */
+    /** 管理员密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符 */
     @NotEmpty
     @UCloudParam("AdminPassword")
     private String adminPassword;
 
     /**
      * DB类型，mysql按版本细分 mysql-8.4, mysql-8.0, mysql-5.7, percona-5.7, mysql-5.6,
-     * percona-5.6、mysql-5.5
+     * percona-5.6、mysql-5.5。 可以通过 DescribeUDBType 查询
      */
     @NotEmpty
     @UCloudParam("DBTypeId")
@@ -61,12 +61,12 @@ public class CreateUDBMySQLInstanceRequest extends Request {
     @UCloudParam("Port")
     private Integer port;
 
-    /** 磁盘空间(GB), 暂时支持20G - 32T */
+    /** 磁盘空间(GB)，支持约 20G–32T，步长通常为 10； */
     @NotEmpty
     @UCloudParam("DiskSpace")
     private Integer diskSpace;
 
-    /** DB实例使用的配置参数组id */
+    /** DB实例使用的配置参数组id，取值见 DescribeUDBParamGroup 返回的 `GroupId`，且须与 `DBTypeId` 匹配。 */
     @NotEmpty
     @UCloudParam("ParamGroupId")
     private Integer paramGroupId;
@@ -78,7 +78,8 @@ public class CreateUDBMySQLInstanceRequest extends Request {
 
     /**
      * 存储类型 CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘
-     * ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型
+     * ，该字段和SpecificationClass组合使用，CLOUD_RSSD对应O型，CLOUD_SSD_ESSENTIAL对应OM型(北京2、乌兰察布支持)，注：圣保罗、丹佛、哈萨克斯坦地域仅支持O2机型，CLOUD_RSSD对应O2型。
+     * 可从 ListUDBMachineType 同条规格读取
      */
     @NotEmpty
     @UCloudParam("StorageClass")
@@ -109,7 +110,7 @@ public class CreateUDBMySQLInstanceRequest extends Request {
     @UCloudParam("BackupDuration")
     private Integer backupDuration;
 
-    /** 备份id，如果指定，则表明从备份恢复实例 */
+    /** 备份 ID；指定则从备份恢复。取值见 DescribeUDBBackup。 */
     @UCloudParam("BackupId")
     private Integer backupId;
 
@@ -121,11 +122,11 @@ public class CreateUDBMySQLInstanceRequest extends Request {
     @UCloudParam("BackupZone")
     private String backupZone;
 
-    /** 子网ID */
+    /** 子网 ID。与 `VPCId` 须同属一个 VPC */
     @UCloudParam("SubnetId")
     private String subnetId;
 
-    /** VPC的ID */
+    /** VPC ID。与 `SubnetId` 成对使用；取值见 UVPC 相关接口 */
     @UCloudParam("VPCId")
     private String vpcId;
 

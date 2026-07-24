@@ -41,7 +41,7 @@ public class ModifyUDBInstancePasswordRequest extends Request {
     @UCloudParam("DBId")
     private String dbId;
 
-    /** 实例的新密码 */
+    /** 实例的新密码。 8-36 位，支持大小写字母、数字、@#$%^*-+=_,?!&()~.|，须包含两类及以上字符 */
     @NotEmpty
     @UCloudParam("Password")
     private String password;

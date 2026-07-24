@@ -40,11 +40,11 @@ public class DescribeUDBTypeRequest extends Request {
     @UCloudParam("DBClusterType")
     private String dbClusterType;
 
-    /** 返回支持某种实例类型的DB类型。如果没传，则表示任何实例类型均可。 normal:单点,ha:高可用,sharded_cluster:分片集群 */
+    /** 返回支持某种实例类型的DB类型。如果没传，则表示任何实例类型均可。 Normal:单点,HA:高可用,sharded_cluster:分片集群。区分大小写 */
     @UCloudParam("InstanceMode")
     private String instanceMode;
 
-    /** 返回支持某种磁盘类型的DB类型，如Normal、SSD、NVMe_SSD。如果没传，则表示任何磁盘类型均可。 */
+    /** 返回支持某种磁盘类型的DB类型，如Normal、SSD、NVMe_SSD,CLOUD_SSD_ESSENTIAL。如果没传，则表示任何磁盘类型均可。 */
     @UCloudParam("DiskType")
     private String diskType;
 

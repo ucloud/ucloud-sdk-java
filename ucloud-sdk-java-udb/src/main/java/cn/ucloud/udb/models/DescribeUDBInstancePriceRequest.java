@@ -84,7 +84,7 @@ public class DescribeUDBInstancePriceRequest extends Request {
     @UCloudParam("SpecificationType")
     private Integer specificationType;
 
-    /** 规格类型ID,当SpecificationType为1时有效 */
+    /** 规格类型ID,当SpecificationType为1时有效。取值见 ListUDBMachineType */
     @UCloudParam("MachineType")
     private String machineType;
 

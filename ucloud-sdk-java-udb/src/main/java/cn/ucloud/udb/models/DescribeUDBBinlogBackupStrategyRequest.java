@@ -18,7 +18,7 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBInstanceBackupStateRequest extends Request {
+public class DescribeUDBBinlogBackupStrategyRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -37,14 +37,10 @@ public class DescribeUDBInstanceBackupStateRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 备份记录 ID，见 BackupUDBInstance 响应或 DescribeUDBBackup */
+    /** DB实例Id */
     @NotEmpty
-    @UCloudParam("BackupId")
-    private Integer backupId;
-
-    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @UCloudParam("BackupZone")
-    private String backupZone;
+    @UCloudParam("DBId")
+    private String dbId;
 
     public String getRegion() {
         return region;
@@ -70,19 +66,11 @@ public class DescribeUDBInstanceBackupStateRequest extends Request {
         this.projectId = projectId;
     }
 
-    public Integer getBackupId() {
-        return backupId;
+    public String getDBId() {
+        return dbId;
     }
 
-    public void setBackupId(Integer backupId) {
-        this.backupId = backupId;
-    }
-
-    public String getBackupZone() {
-        return backupZone;
-    }
-
-    public void setBackupZone(String backupZone) {
-        this.backupZone = backupZone;
+    public void setDBId(String dbId) {
+        this.dbId = dbId;
     }
 }

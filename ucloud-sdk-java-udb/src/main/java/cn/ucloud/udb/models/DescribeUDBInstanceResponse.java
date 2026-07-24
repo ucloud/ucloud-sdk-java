@@ -51,6 +51,21 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
+        /** 0 不自动续费， 1 自动续费 */
+        @SerializedName("AutoRenew")
+        private Integer autoRenew;
+
+        /**
+         * CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘，LOCAL_SSD:
+         * SSD本地盘
+         */
+        @SerializedName("StorageClass")
+        private String storageClass;
+
+        /** 规格类型 O: NVME, OM: 共享型，N: 通用型 空的话，显示为- */
+        @SerializedName("SpecificationClass")
+        private String specificationClass;
+
         /** 0区分大小写, 1不分区 */
         @SerializedName("CaseSensitivityParam")
         private Integer caseSensitivityParam;
@@ -70,9 +85,8 @@ public class DescribeUDBInstanceResponse extends Response {
         private String name;
 
         /**
-         * DB类型id，mysql/mongodb按版本细分各有一个id 目前id的取值范围为[1,7],数值对应的版本如下：
-         * 1：mysql-5.5，2：mysql-5.1，3：percona-5.5 4：mongodb-2.4，5：mongodb-2.6，6：mysql-5.6，
-         * 7：percona-5.6
+         * DB类型，mysql/mongodb 按版本细分 mysql-8.4, mysql-8.0, mysql-5.7, percona-5.7, mysql-5.6,
+         * percona-5.6、mysql-5.5、mongodb-2.4 、mongodb-2.6 等。可以通过 DescribeUDBType 查询
          */
         @SerializedName("DBTypeId")
         private String dbTypeId;
@@ -228,7 +242,7 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("UserUFileData")
         private UFileDataSet userUFileData;
 
-        /** mysql实例提供具体小版本信息 */
+        /** 实例提供具体内核版本信息 */
         @SerializedName("DBSubVersion")
         private String dbSubVersion;
 
@@ -256,12 +270,40 @@ public class DescribeUDBInstanceResponse extends Response {
         @SerializedName("CPU")
         private Integer cpu;
 
+        /** 是否强制加密，1为强制加密，0是不强制加密 */
+        @SerializedName("ForceEncryption")
+        private Integer forceEncryption;
+
         public String getZone() {
             return zone;
         }
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public Integer getAutoRenew() {
+            return autoRenew;
+        }
+
+        public void setAutoRenew(Integer autoRenew) {
+            this.autoRenew = autoRenew;
+        }
+
+        public String getStorageClass() {
+            return storageClass;
+        }
+
+        public void setStorageClass(String storageClass) {
+            this.storageClass = storageClass;
+        }
+
+        public String getSpecificationClass() {
+            return specificationClass;
+        }
+
+        public void setSpecificationClass(String specificationClass) {
+            this.specificationClass = specificationClass;
         }
 
         public Integer getCaseSensitivityParam() {
@@ -639,6 +681,14 @@ public class DescribeUDBInstanceResponse extends Response {
         public void setCPU(Integer cpu) {
             this.cpu = cpu;
         }
+
+        public Integer getForceEncryption() {
+            return forceEncryption;
+        }
+
+        public void setForceEncryption(Integer forceEncryption) {
+            this.forceEncryption = forceEncryption;
+        }
     }
 
     public static class UDBSlaveInstanceSet extends Response {
@@ -816,6 +866,17 @@ public class DescribeUDBInstanceResponse extends Response {
         /** 规格类型ID,当SpecificationType为1时有效 */
         @SerializedName("MachineType")
         private String machineType;
+
+        /**
+         * CLOUD_SSD: SSD云盘, CLOUD_RSSD: RSSD 云盘， CLOUD_SSD_ESSENTIAL: SSD Essential云盘，LOCAL_SSD:
+         * SSD本地盘
+         */
+        @SerializedName("StorageClass")
+        private String storageClass;
+
+        /** 规格类型 O: NVME, OM: 共享型，N: 通用型 空的话，显示为- */
+        @SerializedName("SpecificationClass")
+        private String specificationClass;
 
         public String getZone() {
             return zone;
@@ -1135,6 +1196,22 @@ public class DescribeUDBInstanceResponse extends Response {
 
         public void setMachineType(String machineType) {
             this.machineType = machineType;
+        }
+
+        public String getStorageClass() {
+            return storageClass;
+        }
+
+        public void setStorageClass(String storageClass) {
+            this.storageClass = storageClass;
+        }
+
+        public String getSpecificationClass() {
+            return specificationClass;
+        }
+
+        public void setSpecificationClass(String specificationClass) {
+            this.specificationClass = specificationClass;
         }
     }
 

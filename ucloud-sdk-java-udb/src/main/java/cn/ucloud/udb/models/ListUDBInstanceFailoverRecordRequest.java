@@ -18,7 +18,7 @@ import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DescribeUDBInstanceBackupStateRequest extends Request {
+public class ListUDBInstanceFailoverRecordRequest extends Request {
 
     /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
@@ -37,14 +37,20 @@ public class DescribeUDBInstanceBackupStateRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 备份记录 ID，见 BackupUDBInstance 响应或 DescribeUDBBackup */
+    /** 实例id */
     @NotEmpty
-    @UCloudParam("BackupId")
-    private Integer backupId;
+    @UCloudParam("DBId")
+    private String dbId;
 
-    /** 跨可用区高可用备库所在可用区，参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
-    @UCloudParam("BackupZone")
-    private String backupZone;
+    /** 开始时间 */
+    @NotEmpty
+    @UCloudParam("StartTime")
+    private Integer startTime;
+
+    /** 结束时间 */
+    @NotEmpty
+    @UCloudParam("EndTime")
+    private Integer endTime;
 
     public String getRegion() {
         return region;
@@ -70,19 +76,27 @@ public class DescribeUDBInstanceBackupStateRequest extends Request {
         this.projectId = projectId;
     }
 
-    public Integer getBackupId() {
-        return backupId;
+    public String getDBId() {
+        return dbId;
     }
 
-    public void setBackupId(Integer backupId) {
-        this.backupId = backupId;
+    public void setDBId(String dbId) {
+        this.dbId = dbId;
     }
 
-    public String getBackupZone() {
-        return backupZone;
+    public Integer getStartTime() {
+        return startTime;
     }
 
-    public void setBackupZone(String backupZone) {
-        this.backupZone = backupZone;
+    public void setStartTime(Integer startTime) {
+        this.startTime = startTime;
+    }
+
+    public Integer getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
     }
 }
