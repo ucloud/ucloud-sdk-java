@@ -39,6 +39,8 @@ import cn.ucloud.uhost.models.DescribeImageRequest;
 import cn.ucloud.uhost.models.DescribeImageResponse;
 import cn.ucloud.uhost.models.DescribeIsolationGroupRequest;
 import cn.ucloud.uhost.models.DescribeIsolationGroupResponse;
+import cn.ucloud.uhost.models.DescribeUHostAvailableDiskTypesRequest;
+import cn.ucloud.uhost.models.DescribeUHostAvailableDiskTypesResponse;
 import cn.ucloud.uhost.models.DescribeUHostInstanceRequest;
 import cn.ucloud.uhost.models.DescribeUHostInstanceResponse;
 import cn.ucloud.uhost.models.DescribeUHostKeyPairsRequest;
@@ -201,6 +203,15 @@ public interface UHostClientInterface extends Client {
      */
     public DescribeIsolationGroupResponse describeIsolationGroup(
             DescribeIsolationGroupRequest request) throws UCloudException;
+
+    /**
+     * DescribeUHostAvailableDiskTypes - 获取主机可挂载的磁盘信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUHostAvailableDiskTypesResponse describeUHostAvailableDiskTypes(
+            DescribeUHostAvailableDiskTypesRequest request) throws UCloudException;
 
     /**
      * DescribeUHostInstance - 获取主机信息
