@@ -428,6 +428,10 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
         @SerializedName("Features")
         private List<String> features;
 
+        /** 支持的快照备份策略 */
+        @SerializedName("BackupMode")
+        private List<String> backupMode;
+
         public Integer getMinimalSize() {
             return minimalSize;
         }
@@ -458,6 +462,14 @@ public class DescribeAvailableInstanceTypesResponse extends Response {
 
         public void setFeatures(List<String> features) {
             this.features = features;
+        }
+
+        public List<String> getBackupMode() {
+            return backupMode;
+        }
+
+        public void setBackupMode(List<String> backupMode) {
+            this.backupMode = backupMode;
         }
     }
 
