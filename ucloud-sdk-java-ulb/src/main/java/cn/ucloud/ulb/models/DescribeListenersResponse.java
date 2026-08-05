@@ -45,6 +45,21 @@ public class DescribeListenersResponse extends Response {
         this.listeners = listeners;
     }
 
+    public static class BackendConnectionConfig extends Response {
+
+        /** 是否开启长连接 */
+        @SerializedName("EnablePersistentConnection")
+        private Boolean enablePersistentConnection;
+
+        public Boolean getEnablePersistentConnection() {
+            return enablePersistentConnection;
+        }
+
+        public void setEnablePersistentConnection(Boolean enablePersistentConnection) {
+            this.enablePersistentConnection = enablePersistentConnection;
+        }
+    }
+
     public static class Certificate extends Response {
 
         /** 证书ID */
@@ -241,29 +256,53 @@ public class DescribeListenersResponse extends Response {
 
     public static class HealthCheckConfigSet extends Response {
 
-        /** 是否开启健康检查功能。暂时不支持关闭。 默认值为：true */
+        /** 是否开启健康检查功能。 默认值为：true */
         @SerializedName("Enabled")
         private Boolean enabled;
 
-        /** 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查； 默认值：Port */
+        /** 健康检查方式。应用型限定取值： Port -> 端口检查；HTTP -> HTTP检查；GRPC -> GRPC检测； 默认值：Port */
         @SerializedName("Type")
         private String type;
 
-        /** （应用型专用）HTTP检查域名。 当Type为HTTP时，此字段有意义，代表HTTP检查域名 */
+        /** （应用型专用）HTTP检查域名。 当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查域名 */
         @SerializedName("Domain")
         private String domain;
 
-        /** （应用型专用）HTTP检查路径。当Type为HTTP时，此字段有意义，代表HTTP检查路径 */
+        /** （应用型专用）HTTP检查路径。当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查路径 */
         @SerializedName("Path")
         private String path;
 
-        /** （应用型专用）HTTP检查方法。当Type为HTTP时，此字段有意义，代表HTTP检查方法 */
+        /** （应用型专用）HTTP检查方法。当Type为HTTP/GRPC时，此字段有意义，代表HTTP检查方法 */
         @SerializedName("Method")
         private String method;
 
-        /** （应用型专用）GRPC检查响应码。当Type为GRPC时，此字段有意义，代表GRPC检查响应码 */
+        /** （应用型专用）检查预期状态码。HTTP时为2xx,3xx格式(逗号分隔)，GRPC时为数字码(逗号分隔)。 */
         @SerializedName("ResponseCode")
         private String responseCode;
+
+        /** （应用型专用）检查协议 */
+        @SerializedName("HTTPVersion")
+        private String httpVersion;
+
+        /** （应用型专用）端口 */
+        @SerializedName("Port")
+        private Integer port;
+
+        /** （应用型专用）超时时间，秒，必须小于Interval */
+        @SerializedName("TimeOut")
+        private Integer timeOut;
+
+        /** （应用型专用）间隔时间，秒，必须大于TimeOut */
+        @SerializedName("Interval")
+        private Integer interval;
+
+        /** （应用型专用）判定成功的连续次数 */
+        @SerializedName("UpCounts")
+        private Integer upCounts;
+
+        /** （应用型专用）判定失败的连续次数 */
+        @SerializedName("DownCounts")
+        private Integer downCounts;
 
         public Boolean getEnabled() {
             return enabled;
@@ -311,6 +350,54 @@ public class DescribeListenersResponse extends Response {
 
         public void setResponseCode(String responseCode) {
             this.responseCode = responseCode;
+        }
+
+        public String getHTTPVersion() {
+            return httpVersion;
+        }
+
+        public void setHTTPVersion(String httpVersion) {
+            this.httpVersion = httpVersion;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public Integer getTimeOut() {
+            return timeOut;
+        }
+
+        public void setTimeOut(Integer timeOut) {
+            this.timeOut = timeOut;
+        }
+
+        public Integer getInterval() {
+            return interval;
+        }
+
+        public void setInterval(Integer interval) {
+            this.interval = interval;
+        }
+
+        public Integer getUpCounts() {
+            return upCounts;
+        }
+
+        public void setUpCounts(Integer upCounts) {
+            this.upCounts = upCounts;
+        }
+
+        public Integer getDownCounts() {
+            return downCounts;
+        }
+
+        public void setDownCounts(Integer downCounts) {
+            this.downCounts = downCounts;
         }
     }
 
@@ -484,6 +571,10 @@ public class DescribeListenersResponse extends Response {
         @SerializedName("State")
         private String state;
 
+        /** 后端协议。应用型限定取值：“HTTP,HTTPS,GRPC"，默认值“HTTP” */
+        @SerializedName("TargetProtocol")
+        private String targetProtocol;
+
         public String getListenerId() {
             return listenerId;
         }
@@ -627,6 +718,14 @@ public class DescribeListenersResponse extends Response {
         public void setState(String state) {
             this.state = state;
         }
+
+        public String getTargetProtocol() {
+            return targetProtocol;
+        }
+
+        public void setTargetProtocol(String targetProtocol) {
+            this.targetProtocol = targetProtocol;
+        }
     }
 
     public static class PathConfigSet extends Response {
@@ -641,6 +740,21 @@ public class DescribeListenersResponse extends Response {
 
         public void setValues(List<String> values) {
             this.values = values;
+        }
+    }
+
+    public static class ProxyBufferingConfig extends Response {
+
+        /** 关闭缓存 */
+        @SerializedName("CloseProxyBuffering")
+        private Boolean closeProxyBuffering;
+
+        public Boolean getCloseProxyBuffering() {
+            return closeProxyBuffering;
+        }
+
+        public void setCloseProxyBuffering(Boolean closeProxyBuffering) {
+            this.closeProxyBuffering = closeProxyBuffering;
         }
     }
 
@@ -759,6 +873,14 @@ public class DescribeListenersResponse extends Response {
         @SerializedName("Order")
         private Integer order;
 
+        /** 关闭缓存 */
+        @SerializedName("ProxyBufferingConfig")
+        private ProxyBufferingConfig proxyBufferingConfig;
+
+        /** 开启长连接 */
+        @SerializedName("BackendConnectionConfig")
+        private BackendConnectionConfig backendConnectionConfig;
+
         public String getType() {
             return type;
         }
@@ -813,6 +935,22 @@ public class DescribeListenersResponse extends Response {
 
         public void setOrder(Integer order) {
             this.order = order;
+        }
+
+        public ProxyBufferingConfig getProxyBufferingConfig() {
+            return proxyBufferingConfig;
+        }
+
+        public void setProxyBufferingConfig(ProxyBufferingConfig proxyBufferingConfig) {
+            this.proxyBufferingConfig = proxyBufferingConfig;
+        }
+
+        public BackendConnectionConfig getBackendConnectionConfig() {
+            return backendConnectionConfig;
+        }
+
+        public void setBackendConnectionConfig(BackendConnectionConfig backendConnectionConfig) {
+            this.backendConnectionConfig = backendConnectionConfig;
         }
     }
 

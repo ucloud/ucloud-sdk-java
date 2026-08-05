@@ -33,6 +33,21 @@ public class DescribeRulesResponse extends Response {
         this.rules = rules;
     }
 
+    public static class BackendConnectionConfig extends Response {
+
+        /** 是否开启长连接 */
+        @SerializedName("EnablePersistentConnection")
+        private Boolean enablePersistentConnection;
+
+        public Boolean getEnablePersistentConnection() {
+            return enablePersistentConnection;
+        }
+
+        public void setEnablePersistentConnection(Boolean enablePersistentConnection) {
+            this.enablePersistentConnection = enablePersistentConnection;
+        }
+    }
+
     public static class CorsConfigSet extends Response {
 
         /**
@@ -308,6 +323,21 @@ public class DescribeRulesResponse extends Response {
         }
     }
 
+    public static class ProxyBufferingConfig extends Response {
+
+        /** 关闭缓存 */
+        @SerializedName("CloseProxyBuffering")
+        private Boolean closeProxyBuffering;
+
+        public Boolean getCloseProxyBuffering() {
+            return closeProxyBuffering;
+        }
+
+        public void setCloseProxyBuffering(Boolean closeProxyBuffering) {
+            this.closeProxyBuffering = closeProxyBuffering;
+        }
+    }
+
     public static class RemoveHeaderConfigSet extends Response {
 
         /**
@@ -423,6 +453,14 @@ public class DescribeRulesResponse extends Response {
         @SerializedName("Order")
         private Integer order;
 
+        /** 关闭缓存 */
+        @SerializedName("ProxyBufferingConfig")
+        private ProxyBufferingConfig proxyBufferingConfig;
+
+        /** 开启长连接 */
+        @SerializedName("BackendConnectionConfig")
+        private BackendConnectionConfig backendConnectionConfig;
+
         public String getType() {
             return type;
         }
@@ -477,6 +515,22 @@ public class DescribeRulesResponse extends Response {
 
         public void setOrder(Integer order) {
             this.order = order;
+        }
+
+        public ProxyBufferingConfig getProxyBufferingConfig() {
+            return proxyBufferingConfig;
+        }
+
+        public void setProxyBufferingConfig(ProxyBufferingConfig proxyBufferingConfig) {
+            this.proxyBufferingConfig = proxyBufferingConfig;
+        }
+
+        public BackendConnectionConfig getBackendConnectionConfig() {
+            return backendConnectionConfig;
+        }
+
+        public void setBackendConnectionConfig(BackendConnectionConfig backendConnectionConfig) {
+            this.backendConnectionConfig = backendConnectionConfig;
         }
     }
 

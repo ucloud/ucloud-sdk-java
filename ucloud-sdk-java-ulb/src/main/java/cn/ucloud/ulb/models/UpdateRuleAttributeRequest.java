@@ -159,6 +159,14 @@ public class UpdateRuleAttributeRequest extends Request {
         @UCloudParam("FixedResponseConfig")
         private RuleActionsFixedResponseConfig fixedResponseConfig;
 
+        /** */
+        @UCloudParam("ProxyBufferingConfig")
+        private RuleActionsProxyBufferingConfig proxyBufferingConfig;
+
+        /** */
+        @UCloudParam("BackendConnectionConfig")
+        private RuleActionsBackendConnectionConfig backendConnectionConfig;
+
         public String getType() {
             return type;
         }
@@ -213,6 +221,38 @@ public class UpdateRuleAttributeRequest extends Request {
 
         public void setFixedResponseConfig(RuleActionsFixedResponseConfig fixedResponseConfig) {
             this.fixedResponseConfig = fixedResponseConfig;
+        }
+
+        public RuleActionsProxyBufferingConfig getProxyBufferingConfig() {
+            return proxyBufferingConfig;
+        }
+
+        public void setProxyBufferingConfig(RuleActionsProxyBufferingConfig proxyBufferingConfig) {
+            this.proxyBufferingConfig = proxyBufferingConfig;
+        }
+
+        public RuleActionsBackendConnectionConfig getBackendConnectionConfig() {
+            return backendConnectionConfig;
+        }
+
+        public void setBackendConnectionConfig(
+                RuleActionsBackendConnectionConfig backendConnectionConfig) {
+            this.backendConnectionConfig = backendConnectionConfig;
+        }
+    }
+
+    public static class RuleActionsBackendConnectionConfig extends Request {
+
+        /** 开启长连接 */
+        @UCloudParam("EnablePersistentConnection")
+        private Boolean enablePersistentConnection;
+
+        public Boolean getEnablePersistentConnection() {
+            return enablePersistentConnection;
+        }
+
+        public void setEnablePersistentConnection(Boolean enablePersistentConnection) {
+            this.enablePersistentConnection = enablePersistentConnection;
         }
     }
 
@@ -444,6 +484,21 @@ public class UpdateRuleAttributeRequest extends Request {
 
         public void setValue(String value) {
             this.value = value;
+        }
+    }
+
+    public static class RuleActionsProxyBufferingConfig extends Request {
+
+        /** 关闭缓存 */
+        @UCloudParam("CloseProxyBuffering")
+        private Boolean closeProxyBuffering;
+
+        public Boolean getCloseProxyBuffering() {
+            return closeProxyBuffering;
+        }
+
+        public void setCloseProxyBuffering(Boolean closeProxyBuffering) {
+            this.closeProxyBuffering = closeProxyBuffering;
         }
     }
 
