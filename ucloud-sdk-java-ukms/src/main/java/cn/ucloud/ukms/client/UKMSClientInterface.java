@@ -1,0 +1,335 @@
+/**
+ * Copyright 2021 UCloud Technology Co., Ltd.
+ *
+ * <p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * <p>http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * <p>Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package cn.ucloud.ukms.client;
+
+import cn.ucloud.common.client.Client;
+import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.ukms.models.CancelKeyDeletionRequest;
+import cn.ucloud.ukms.models.CancelKeyDeletionResponse;
+import cn.ucloud.ukms.models.CancelScheduleKeyDeletionRequest;
+import cn.ucloud.ukms.models.CancelScheduleKeyDeletionResponse;
+import cn.ucloud.ukms.models.CreateAliasRequest;
+import cn.ucloud.ukms.models.CreateAliasResponse;
+import cn.ucloud.ukms.models.CreateKeyRequest;
+import cn.ucloud.ukms.models.CreateKeyResponse;
+import cn.ucloud.ukms.models.DecryptRequest;
+import cn.ucloud.ukms.models.DecryptResponse;
+import cn.ucloud.ukms.models.DeleteAliasRequest;
+import cn.ucloud.ukms.models.DeleteAliasResponse;
+import cn.ucloud.ukms.models.DescribeKeyRequest;
+import cn.ucloud.ukms.models.DescribeKeyResponse;
+import cn.ucloud.ukms.models.DisableKeyRequest;
+import cn.ucloud.ukms.models.DisableKeyResponse;
+import cn.ucloud.ukms.models.DisableKeyRotationRequest;
+import cn.ucloud.ukms.models.DisableKeyRotationResponse;
+import cn.ucloud.ukms.models.EnableKeyRequest;
+import cn.ucloud.ukms.models.EnableKeyResponse;
+import cn.ucloud.ukms.models.EnableKeyRotationRequest;
+import cn.ucloud.ukms.models.EnableKeyRotationResponse;
+import cn.ucloud.ukms.models.EncryptRequest;
+import cn.ucloud.ukms.models.EncryptResponse;
+import cn.ucloud.ukms.models.GenerateDataKeyPairRequest;
+import cn.ucloud.ukms.models.GenerateDataKeyPairResponse;
+import cn.ucloud.ukms.models.GenerateDataKeyPairWithoutPlaintextRequest;
+import cn.ucloud.ukms.models.GenerateDataKeyPairWithoutPlaintextResponse;
+import cn.ucloud.ukms.models.GenerateDataKeyRequest;
+import cn.ucloud.ukms.models.GenerateDataKeyResponse;
+import cn.ucloud.ukms.models.GenerateDataKeyWithoutPlaintextRequest;
+import cn.ucloud.ukms.models.GenerateDataKeyWithoutPlaintextResponse;
+import cn.ucloud.ukms.models.GenerateMacRequest;
+import cn.ucloud.ukms.models.GenerateMacResponse;
+import cn.ucloud.ukms.models.GenerateRandomRequest;
+import cn.ucloud.ukms.models.GenerateRandomResponse;
+import cn.ucloud.ukms.models.GetKeyRotationStatusRequest;
+import cn.ucloud.ukms.models.GetKeyRotationStatusResponse;
+import cn.ucloud.ukms.models.GetPublicKeyRequest;
+import cn.ucloud.ukms.models.GetPublicKeyResponse;
+import cn.ucloud.ukms.models.ListAliasesRequest;
+import cn.ucloud.ukms.models.ListAliasesResponse;
+import cn.ucloud.ukms.models.ListKeysRequest;
+import cn.ucloud.ukms.models.ListKeysResponse;
+import cn.ucloud.ukms.models.ListScheduleDeletionKeysRequest;
+import cn.ucloud.ukms.models.ListScheduleDeletionKeysResponse;
+import cn.ucloud.ukms.models.RotateKeyOnDemandRequest;
+import cn.ucloud.ukms.models.RotateKeyOnDemandResponse;
+import cn.ucloud.ukms.models.ScheduleKeyDeletionRequest;
+import cn.ucloud.ukms.models.ScheduleKeyDeletionResponse;
+import cn.ucloud.ukms.models.SignRequest;
+import cn.ucloud.ukms.models.SignResponse;
+import cn.ucloud.ukms.models.UpdateAliasRequest;
+import cn.ucloud.ukms.models.UpdateAliasResponse;
+import cn.ucloud.ukms.models.UpdateKeyDescriptionRequest;
+import cn.ucloud.ukms.models.UpdateKeyDescriptionResponse;
+import cn.ucloud.ukms.models.VerifyMacRequest;
+import cn.ucloud.ukms.models.VerifyMacResponse;
+import cn.ucloud.ukms.models.VerifyRequest;
+import cn.ucloud.ukms.models.VerifyResponse;
+
+/** This client is used to call actions of **UKMS** service */
+public interface UKMSClientInterface extends Client {
+
+    /**
+     * CancelKeyDeletion - 取消密钥计划删除
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request)
+            throws UCloudException;
+
+    /**
+     * CancelScheduleKeyDeletion - 取消计划删除密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CancelScheduleKeyDeletionResponse cancelScheduleKeyDeletion(
+            CancelScheduleKeyDeletionRequest request) throws UCloudException;
+
+    /**
+     * CreateAlias - 创建别名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateAliasResponse createAlias(CreateAliasRequest request) throws UCloudException;
+
+    /**
+     * CreateKey - 创建密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateKeyResponse createKey(CreateKeyRequest request) throws UCloudException;
+
+    /**
+     * Decrypt - 解密
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DecryptResponse decrypt(DecryptRequest request) throws UCloudException;
+
+    /**
+     * DeleteAlias - 删除别名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteAliasResponse deleteAlias(DeleteAliasRequest request) throws UCloudException;
+
+    /**
+     * DescribeKey - 查看主密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeKeyResponse describeKey(DescribeKeyRequest request) throws UCloudException;
+
+    /**
+     * DisableKey - 禁用密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DisableKeyResponse disableKey(DisableKeyRequest request) throws UCloudException;
+
+    /**
+     * DisableKeyRotation - 关闭密钥轮转
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DisableKeyRotationResponse disableKeyRotation(DisableKeyRotationRequest request)
+            throws UCloudException;
+
+    /**
+     * EnableKey - 启用密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EnableKeyResponse enableKey(EnableKeyRequest request) throws UCloudException;
+
+    /**
+     * EnableKeyRotation - 开启密钥轮转
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EnableKeyRotationResponse enableKeyRotation(EnableKeyRotationRequest request)
+            throws UCloudException;
+
+    /**
+     * Encrypt - 加密
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EncryptResponse encrypt(EncryptRequest request) throws UCloudException;
+
+    /**
+     * GenerateDataKey - 创建数据密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GenerateDataKeyResponse generateDataKey(GenerateDataKeyRequest request)
+            throws UCloudException;
+
+    /**
+     * GenerateDataKeyPair - 创建数据密钥对
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GenerateDataKeyPairResponse generateDataKeyPair(GenerateDataKeyPairRequest request)
+            throws UCloudException;
+
+    /**
+     * GenerateDataKeyPairWithoutPlaintext - 创建数据密钥对（无明文返回）
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GenerateDataKeyPairWithoutPlaintextResponse generateDataKeyPairWithoutPlaintext(
+            GenerateDataKeyPairWithoutPlaintextRequest request) throws UCloudException;
+
+    /**
+     * GenerateDataKeyWithoutPlaintext - 创建数据密钥（无明文）
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GenerateDataKeyWithoutPlaintextResponse generateDataKeyWithoutPlaintext(
+            GenerateDataKeyWithoutPlaintextRequest request) throws UCloudException;
+
+    /**
+     * GenerateMac - 生成MAC
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GenerateMacResponse generateMac(GenerateMacRequest request) throws UCloudException;
+
+    /**
+     * GenerateRandom - 生成随机数
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GenerateRandomResponse generateRandom(GenerateRandomRequest request)
+            throws UCloudException;
+
+    /**
+     * GetKeyRotationStatus - 获取密钥轮转状态
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetKeyRotationStatusResponse getKeyRotationStatus(GetKeyRotationStatusRequest request)
+            throws UCloudException;
+
+    /**
+     * GetPublicKey - 获取公钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetPublicKeyResponse getPublicKey(GetPublicKeyRequest request) throws UCloudException;
+
+    /**
+     * ListAliases - 获取别名列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListAliasesResponse listAliases(ListAliasesRequest request) throws UCloudException;
+
+    /**
+     * ListKeys - 获取主密钥列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListKeysResponse listKeys(ListKeysRequest request) throws UCloudException;
+
+    /**
+     * ListScheduleDeletionKeys - 获取计划删除密钥列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListScheduleDeletionKeysResponse listScheduleDeletionKeys(
+            ListScheduleDeletionKeysRequest request) throws UCloudException;
+
+    /**
+     * RotateKeyOnDemand - 按需轮转密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RotateKeyOnDemandResponse rotateKeyOnDemand(RotateKeyOnDemandRequest request)
+            throws UCloudException;
+
+    /**
+     * ScheduleKeyDeletion - 计划删除密钥
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request)
+            throws UCloudException;
+
+    /**
+     * Sign - 签名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SignResponse sign(SignRequest request) throws UCloudException;
+
+    /**
+     * UpdateAlias - 更新别名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateAliasResponse updateAlias(UpdateAliasRequest request) throws UCloudException;
+
+    /**
+     * UpdateKeyDescription - 更新主密钥描述信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateKeyDescriptionResponse updateKeyDescription(UpdateKeyDescriptionRequest request)
+            throws UCloudException;
+
+    /**
+     * Verify - 验签
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public VerifyResponse verify(VerifyRequest request) throws UCloudException;
+
+    /**
+     * VerifyMac - 验证Mac签名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public VerifyMacResponse verifyMac(VerifyMacRequest request) throws UCloudException;
+}
