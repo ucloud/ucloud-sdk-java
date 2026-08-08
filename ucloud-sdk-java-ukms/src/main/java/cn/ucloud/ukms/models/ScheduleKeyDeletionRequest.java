@@ -32,11 +32,15 @@ public class ScheduleKeyDeletionRequest extends Request {
     /** 密钥 DB 数字 ID。 */
     @NotEmpty
     @UCloudParam("KeyId")
-    private Integer keyId;
+    private String keyId;
 
     /** UKMS 实例资源 ID。 */
     @UCloudParam("ResourceId")
     private String resourceId;
+
+    /** 删除等待天数，取值范围为 7~30 天；未填写时默认为 30 天。 */
+    @UCloudParam("DeleteDay")
+    private Integer deleteDay;
 
     public String getRegion() {
         return region;
@@ -54,11 +58,11 @@ public class ScheduleKeyDeletionRequest extends Request {
         this.projectId = projectId;
     }
 
-    public Integer getKeyId() {
+    public String getKeyId() {
         return keyId;
     }
 
-    public void setKeyId(Integer keyId) {
+    public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
 
@@ -68,5 +72,13 @@ public class ScheduleKeyDeletionRequest extends Request {
 
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
+    }
+
+    public Integer getDeleteDay() {
+        return deleteDay;
+    }
+
+    public void setDeleteDay(Integer deleteDay) {
+        this.deleteDay = deleteDay;
     }
 }

@@ -29,11 +29,6 @@ public class VerifyRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** UKMS 实例资源 ID。 */
-    @NotEmpty
-    @UCloudParam("ResourceId")
-    private String resourceId;
-
     /** 密钥 ID、ARN 或别名。 */
     @NotEmpty
     @UCloudParam("KeyId")
@@ -57,6 +52,10 @@ public class VerifyRequest extends Request {
     @UCloudParam("SigningAlgorithm")
     private String signingAlgorithm;
 
+    /** UKMS 实例资源 ID。 */
+    @UCloudParam("ResourceId")
+    private String resourceId;
+
     /** 消息类型。可选值：RAW、DIGEST；默认 RAW。 */
     @UCloudParam("MessageType")
     private String messageType;
@@ -75,14 +74,6 @@ public class VerifyRequest extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public String getResourceId() {
-        return resourceId;
-    }
-
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
     }
 
     public String getKeyId() {
@@ -115,6 +106,14 @@ public class VerifyRequest extends Request {
 
     public void setSigningAlgorithm(String signingAlgorithm) {
         this.signingAlgorithm = signingAlgorithm;
+    }
+
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
     }
 
     public String getMessageType() {

@@ -42,6 +42,11 @@ public class GenerateMacRequest extends Request {
     @UCloudParam("MacMessage")
     private String macMessage;
 
+    /** 用于生成消息认证码的 MAC 算法。 */
+    @NotEmpty
+    @UCloudParam("MacAlgorithm")
+    private String macAlgorithm;
+
     public String getRegion() {
         return region;
     }
@@ -72,5 +77,13 @@ public class GenerateMacRequest extends Request {
 
     public void setMacMessage(String macMessage) {
         this.macMessage = macMessage;
+    }
+
+    public String getMacAlgorithm() {
+        return macAlgorithm;
+    }
+
+    public void setMacAlgorithm(String macAlgorithm) {
+        this.macAlgorithm = macAlgorithm;
     }
 }
