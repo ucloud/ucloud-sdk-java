@@ -32,7 +32,7 @@ public class DisableKeyRequest extends Request {
     /** 密钥 DB 数字 ID。 */
     @NotEmpty
     @UCloudParam("KeyId")
-    private Integer keyId;
+    private String keyId;
 
     /** UKMS 实例资源 ID。 */
     @UCloudParam("ResourceId")
@@ -54,11 +54,11 @@ public class DisableKeyRequest extends Request {
         this.projectId = projectId;
     }
 
-    public Integer getKeyId() {
+    public String getKeyId() {
         return keyId;
     }
 
-    public void setKeyId(Integer keyId) {
+    public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
 
