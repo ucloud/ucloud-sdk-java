@@ -45,6 +45,18 @@ public class ListAliasesRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
+    /** 按完整别名（含 alias/ 前缀）进行子串模糊匹配 */
+    @UCloudParam("Alias")
+    private String alias;
+
+    /** 排序字段 */
+    @UCloudParam("OrderBy")
+    private String orderBy;
+
+    /** 排序方向，默认 desc */
+    @UCloudParam("Sort")
+    private String sort;
+
     public String getRegion() {
         return region;
     }
@@ -91,5 +103,29 @@ public class ListAliasesRequest extends Request {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }
