@@ -45,6 +45,18 @@ public class ListKeysRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
+    /** 状态筛选：Active、Deactivated、PendingDeletion */
+    @UCloudParam("Status")
+    private String status;
+
+    /** 排序字段 */
+    @UCloudParam("OrderBy")
+    private String orderBy;
+
+    /** 排序方向，默认 desc */
+    @UCloudParam("Sort")
+    private String sort;
+
     public String getRegion() {
         return region;
     }
@@ -91,5 +103,29 @@ public class ListKeysRequest extends Request {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }

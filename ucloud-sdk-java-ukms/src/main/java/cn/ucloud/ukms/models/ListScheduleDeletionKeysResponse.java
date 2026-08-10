@@ -75,29 +75,32 @@ public class ListScheduleDeletionKeysResponse extends Response {
         @SerializedName("KeyId")
         private String keyId;
 
-        /** 密钥类型，仅支持UCloudManagedKeys、CustomerManagedKeys。默认值CustomerManagedKeys */
-        @SerializedName("Type")
-        private String type;
+        /** 密钥类型，如RSA、EC、DES */
+        @SerializedName("KeyType")
+        private String keyType;
 
-        /** 对密钥的描述说明 */
-        @SerializedName("Description")
-        private String description;
-
-        /** 是否启用 */
-        @SerializedName("Enabled")
-        private Boolean enabled;
-
-        /** 创建时间 时间戳 */
+        /** 创建时间 */
         @SerializedName("CreatedTime")
         private Integer createdTime;
-
-        /** 最后修改时间 时间戳 */
-        @SerializedName("LastModifiedTime")
-        private Integer lastModifiedTime;
 
         /** 别名，与CMK一一对应 */
         @SerializedName("Alias")
         private String alias;
+
+        /**
+         * 密钥状态 "Pre-Active", "Active", "Deactivated", "Compromised", "Destroyed", "Destroyed
+         * Compromised"
+         */
+        @SerializedName("Status")
+        private String status;
+
+        /** 更新时间 */
+        @SerializedName("UpdateTime")
+        private Integer updateTime;
+
+        /** 对密钥的描述说明 */
+        @SerializedName("Description")
+        private String description;
 
         /** 计划删除时间 时间戳 */
         @SerializedName("PlanDeleteTime")
@@ -111,28 +114,12 @@ public class ListScheduleDeletionKeysResponse extends Response {
             this.keyId = keyId;
         }
 
-        public String getType() {
-            return type;
+        public String getKeyType() {
+            return keyType;
         }
 
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public Boolean getEnabled() {
-            return enabled;
-        }
-
-        public void setEnabled(Boolean enabled) {
-            this.enabled = enabled;
+        public void setKeyType(String keyType) {
+            this.keyType = keyType;
         }
 
         public Integer getCreatedTime() {
@@ -143,20 +130,36 @@ public class ListScheduleDeletionKeysResponse extends Response {
             this.createdTime = createdTime;
         }
 
-        public Integer getLastModifiedTime() {
-            return lastModifiedTime;
-        }
-
-        public void setLastModifiedTime(Integer lastModifiedTime) {
-            this.lastModifiedTime = lastModifiedTime;
-        }
-
         public String getAlias() {
             return alias;
         }
 
         public void setAlias(String alias) {
             this.alias = alias;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public Integer getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(Integer updateTime) {
+            this.updateTime = updateTime;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
         }
 
         public Integer getPlanDeleteTime() {

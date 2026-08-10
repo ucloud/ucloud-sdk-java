@@ -19,7 +19,10 @@ import cn.ucloud.common.request.Request;
 
 public class ListScheduleDeletionKeysRequest extends Request {
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -37,6 +40,18 @@ public class ListScheduleDeletionKeysRequest extends Request {
      */
     @UCloudParam("OrderBy")
     private String orderBy;
+
+    /** 按密钥 ID 或别名模糊过滤 */
+    @UCloudParam("Alias")
+    private String alias;
+
+    /** UKMS 实例资源 ID */
+    @UCloudParam("ResourceId")
+    private String resourceId;
+
+    /** 排序方向，默认 desc */
+    @UCloudParam("Sort")
+    private String sort;
 
     public String getProjectId() {
         return projectId;
@@ -68,5 +83,29 @@ public class ListScheduleDeletionKeysRequest extends Request {
 
     public void setOrderBy(String orderBy) {
         this.orderBy = orderBy;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 }
