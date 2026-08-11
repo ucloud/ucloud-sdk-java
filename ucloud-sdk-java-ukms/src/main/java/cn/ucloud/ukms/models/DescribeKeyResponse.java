@@ -35,6 +35,10 @@ public class DescribeKeyResponse extends Response {
 
     public static class KeyMetadata extends Response {
 
+        /** 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。 */
+        @SerializedName("ProjectId")
+        private String projectId;
+
         /** 密钥资源长 ID。 */
         @SerializedName("KeyId")
         private String keyId;
@@ -84,6 +88,18 @@ public class DescribeKeyResponse extends Response {
         /** 计划删除时间，Unix 时间戳。 */
         @SerializedName("DeletionDate")
         private Integer deletionDate;
+
+        /** 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。 */
+        @SerializedName("OrganizationId")
+        private Integer organizationId;
+
+        public String getProjectId() {
+            return projectId;
+        }
+
+        public void setProjectId(String projectId) {
+            this.projectId = projectId;
+        }
 
         public String getKeyId() {
             return keyId;
@@ -179,6 +195,14 @@ public class DescribeKeyResponse extends Response {
 
         public void setDeletionDate(Integer deletionDate) {
             this.deletionDate = deletionDate;
+        }
+
+        public Integer getOrganizationId() {
+            return organizationId;
+        }
+
+        public void setOrganizationId(Integer organizationId) {
+            this.organizationId = organizationId;
         }
     }
 }

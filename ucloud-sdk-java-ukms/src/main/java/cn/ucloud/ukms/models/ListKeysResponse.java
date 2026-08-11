@@ -47,6 +47,10 @@ public class ListKeysResponse extends Response {
 
     public static class DEK extends Response {
 
+        /** 密钥所属项目的对外别名，格式为 org-xxx。该值由项目数字 ID 解析得到，可能因项目别名查询失败而为空。 */
+        @SerializedName("ProjectId")
+        private String projectId;
+
         /** 对外主密钥 ID（ukms_key_info.key_id）。 */
         @SerializedName("KeyId")
         private String keyId;
@@ -100,6 +104,18 @@ public class ListKeysResponse extends Response {
         /** 下次自动轮转时间（Unix 时间戳，秒）；仅在已开启自动轮转时返回。 */
         @SerializedName("NextRotationDate")
         private Integer nextRotationDate;
+
+        /** 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。 */
+        @SerializedName("OrganizationId")
+        private Integer organizationId;
+
+        public String getProjectId() {
+            return projectId;
+        }
+
+        public void setProjectId(String projectId) {
+            this.projectId = projectId;
+        }
 
         public String getKeyId() {
             return keyId;
@@ -203,6 +219,14 @@ public class ListKeysResponse extends Response {
 
         public void setNextRotationDate(Integer nextRotationDate) {
             this.nextRotationDate = nextRotationDate;
+        }
+
+        public Integer getOrganizationId() {
+            return organizationId;
+        }
+
+        public void setOrganizationId(Integer organizationId) {
+            this.organizationId = organizationId;
         }
     }
 }
