@@ -23,6 +23,8 @@ import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.EnableAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.EnableAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.GetMetricDataAggregationMethodRequest;
+import cn.ucloud.cloudwatch.models.GetMetricDataAggregationMethodResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -118,6 +120,19 @@ public class CloudWatchClient extends DefaultClient implements CloudWatchClientI
         request.setAction("EnableAlertStrategy");
         return (EnableAlertStrategyResponse)
                 this.invoke(request, EnableAlertStrategyResponse.class);
+    }
+
+    /**
+     * GetMetricDataAggregationMethod - 获取指标数据聚合方式
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetMetricDataAggregationMethodResponse getMetricDataAggregationMethod(
+            GetMetricDataAggregationMethodRequest request) throws UCloudException {
+        request.setAction("GetMetricDataAggregationMethod");
+        return (GetMetricDataAggregationMethodResponse)
+                this.invoke(request, GetMetricDataAggregationMethodResponse.class);
     }
 
     /**

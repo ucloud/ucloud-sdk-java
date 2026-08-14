@@ -39,7 +39,7 @@ public class EncryptRequest extends Request {
     @UCloudParam("Plaintext")
     private String plaintext;
 
-    /** 加密上下文，JSON Object。 */
+    /** 加密上下文，JSON Object。该参数内容会记录在日志中，请勿传入密码、密钥、令牌等敏感信息。 */
     @UCloudParam("EncryptionContext")
     private String encryptionContext;
 

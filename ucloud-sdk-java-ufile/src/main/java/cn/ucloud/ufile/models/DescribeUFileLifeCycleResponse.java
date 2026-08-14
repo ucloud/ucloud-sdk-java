@@ -22,18 +22,26 @@ import java.util.List;
 public class DescribeUFileLifeCycleResponse extends Response {
 
     /** 生命周期信息 */
-    @SerializedName("DateSet")
-    private List<LifeCycleItem> dateSet;
+    @SerializedName("DataSet")
+    private List<LifeCycleItem> dataSet;
 
-    public List<LifeCycleItem> getDateSet() {
-        return dateSet;
+    public List<LifeCycleItem> getDataSet() {
+        return dataSet;
     }
 
-    public void setDateSet(List<LifeCycleItem> dateSet) {
-        this.dateSet = dateSet;
+    public void setDataSet(List<LifeCycleItem> dataSet) {
+        this.dataSet = dataSet;
     }
 
     public static class LifeCycleItem extends Response {
+
+        /** 文件的最小size */
+        @SerializedName("MinSize")
+        private String minSize;
+
+        /** 文件的最大size */
+        @SerializedName("MaxSize")
+        private String maxSize;
 
         /** 生命周期Id */
         @SerializedName("LifeCycleId")
@@ -66,6 +74,22 @@ public class DescribeUFileLifeCycleResponse extends Response {
         /** 指定一个过期天数N，文件会在其最近更新时间点的N天后过期，自动转换为低频存储类型，0代表不启用； */
         @SerializedName("IADays")
         private Integer iaDays;
+
+        public String getMinSize() {
+            return minSize;
+        }
+
+        public void setMinSize(String minSize) {
+            this.minSize = minSize;
+        }
+
+        public String getMaxSize() {
+            return maxSize;
+        }
+
+        public void setMaxSize(String maxSize) {
+            this.maxSize = maxSize;
+        }
 
         public String getLifeCycleId() {
             return lifeCycleId;

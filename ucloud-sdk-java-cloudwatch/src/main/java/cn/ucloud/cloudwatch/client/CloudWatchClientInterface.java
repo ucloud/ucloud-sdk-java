@@ -23,6 +23,8 @@ import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateRequest;
 import cn.ucloud.cloudwatch.models.DeleteAlertStrategyTemplateResponse;
 import cn.ucloud.cloudwatch.models.EnableAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.EnableAlertStrategyResponse;
+import cn.ucloud.cloudwatch.models.GetMetricDataAggregationMethodRequest;
+import cn.ucloud.cloudwatch.models.GetMetricDataAggregationMethodResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -95,6 +97,15 @@ public interface CloudWatchClientInterface extends Client {
      */
     public EnableAlertStrategyResponse enableAlertStrategy(EnableAlertStrategyRequest request)
             throws UCloudException;
+
+    /**
+     * GetMetricDataAggregationMethod - 获取指标数据聚合方式
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetMetricDataAggregationMethodResponse getMetricDataAggregationMethod(
+            GetMetricDataAggregationMethodRequest request) throws UCloudException;
 
     /**
      * GetProductMetrics - 获取云产品关联的指标列表

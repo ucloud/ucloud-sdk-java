@@ -21,17 +21,20 @@ import java.util.List;
 
 public class QueryMetricDataSummaryRequest extends Request {
 
-    /** 地域，全局产品可以不传，其他必传 */
+    /** 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。 */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 产品类型 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;

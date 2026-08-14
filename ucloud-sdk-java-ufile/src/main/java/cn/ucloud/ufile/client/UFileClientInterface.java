@@ -21,18 +21,24 @@ import cn.ucloud.ufile.models.AddUFileSSLCertRequest;
 import cn.ucloud.ufile.models.AddUFileSSLCertResponse;
 import cn.ucloud.ufile.models.BindBucketDomainRequest;
 import cn.ucloud.ufile.models.BindBucketDomainResponse;
+import cn.ucloud.ufile.models.BuyUFilePkgRequest;
+import cn.ucloud.ufile.models.BuyUFilePkgResponse;
 import cn.ucloud.ufile.models.CreateBucketRequest;
 import cn.ucloud.ufile.models.CreateBucketResponse;
 import cn.ucloud.ufile.models.CreateUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.CreateUFileLifeCycleResponse;
 import cn.ucloud.ufile.models.CreateUFileTokenRequest;
 import cn.ucloud.ufile.models.CreateUFileTokenResponse;
+import cn.ucloud.ufile.models.CreateUdsRuleRequest;
+import cn.ucloud.ufile.models.CreateUdsRuleResponse;
 import cn.ucloud.ufile.models.DeleteBucketRequest;
 import cn.ucloud.ufile.models.DeleteBucketResponse;
 import cn.ucloud.ufile.models.DeleteCORSRuleRequest;
 import cn.ucloud.ufile.models.DeleteCORSRuleResponse;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DeleteUFileLifeCycleResponse;
+import cn.ucloud.ufile.models.DeleteUFilePkgRequest;
+import cn.ucloud.ufile.models.DeleteUFilePkgResponse;
 import cn.ucloud.ufile.models.DeleteUFileSSLCertRequest;
 import cn.ucloud.ufile.models.DeleteUFileSSLCertResponse;
 import cn.ucloud.ufile.models.DeleteUFileTokenRequest;
@@ -41,18 +47,36 @@ import cn.ucloud.ufile.models.DescribeBucketRequest;
 import cn.ucloud.ufile.models.DescribeBucketResponse;
 import cn.ucloud.ufile.models.DescribeCORSRuleRequest;
 import cn.ucloud.ufile.models.DescribeCORSRuleResponse;
+import cn.ucloud.ufile.models.DescribeUFileAvailablePkgRequest;
+import cn.ucloud.ufile.models.DescribeUFileAvailablePkgResponse;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleRequest;
 import cn.ucloud.ufile.models.DescribeUFileLifeCycleResponse;
+import cn.ucloud.ufile.models.DescribeUFilePkgRequest;
+import cn.ucloud.ufile.models.DescribeUFilePkgResponse;
+import cn.ucloud.ufile.models.DescribeUFilePkgUsageRequest;
+import cn.ucloud.ufile.models.DescribeUFilePkgUsageResponse;
+import cn.ucloud.ufile.models.DescribeUFileRefererRequest;
+import cn.ucloud.ufile.models.DescribeUFileRefererResponse;
 import cn.ucloud.ufile.models.DescribeUFileSSLCertRequest;
 import cn.ucloud.ufile.models.DescribeUFileSSLCertResponse;
 import cn.ucloud.ufile.models.DescribeUFileTokenRequest;
 import cn.ucloud.ufile.models.DescribeUFileTokenResponse;
+import cn.ucloud.ufile.models.DescribeUdsRuleRequest;
+import cn.ucloud.ufile.models.DescribeUdsRuleResponse;
+import cn.ucloud.ufile.models.GetBucketQuotaRequest;
+import cn.ucloud.ufile.models.GetBucketQuotaResponse;
 import cn.ucloud.ufile.models.GetBucketStaticPageRuleRequest;
 import cn.ucloud.ufile.models.GetBucketStaticPageRuleResponse;
+import cn.ucloud.ufile.models.GetProjectRegionQuotaRequest;
+import cn.ucloud.ufile.models.GetProjectRegionQuotaResponse;
 import cn.ucloud.ufile.models.GetUFileDailyBillRequest;
 import cn.ucloud.ufile.models.GetUFileDailyBillResponse;
 import cn.ucloud.ufile.models.GetUFileDailyReportRequest;
 import cn.ucloud.ufile.models.GetUFileDailyReportResponse;
+import cn.ucloud.ufile.models.GetUFileMonthlyBillRequest;
+import cn.ucloud.ufile.models.GetUFileMonthlyBillResponse;
+import cn.ucloud.ufile.models.GetUFilePkgPriceRequest;
+import cn.ucloud.ufile.models.GetUFilePkgPriceResponse;
 import cn.ucloud.ufile.models.GetUFileQuotaInfoRequest;
 import cn.ucloud.ufile.models.GetUFileQuotaInfoResponse;
 import cn.ucloud.ufile.models.GetUFileQuotaPriceRequest;
@@ -61,6 +85,12 @@ import cn.ucloud.ufile.models.GetUFileQuotaRequest;
 import cn.ucloud.ufile.models.GetUFileQuotaResponse;
 import cn.ucloud.ufile.models.GetUFileReportRequest;
 import cn.ucloud.ufile.models.GetUFileReportResponse;
+import cn.ucloud.ufile.models.RenewUFilePkgRequest;
+import cn.ucloud.ufile.models.RenewUFilePkgResponse;
+import cn.ucloud.ufile.models.SetBucketQuotaRequest;
+import cn.ucloud.ufile.models.SetBucketQuotaResponse;
+import cn.ucloud.ufile.models.SetProjectRegionQuotaRequest;
+import cn.ucloud.ufile.models.SetProjectRegionQuotaResponse;
 import cn.ucloud.ufile.models.SetUFileRefererRequest;
 import cn.ucloud.ufile.models.SetUFileRefererResponse;
 import cn.ucloud.ufile.models.UpdateBucketRequest;
@@ -108,6 +138,14 @@ public interface UFileClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * BuyUFilePkg - 购买资源包
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public BuyUFilePkgResponse buyUFilePkg(BuyUFilePkgRequest request) throws UCloudException;
+
+    /**
      * CreateBucket - 创建Bucket
      *
      * @param request Request object
@@ -134,6 +172,14 @@ public interface UFileClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * CreateUdsRule - 创建解压缩规则
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateUdsRuleResponse createUdsRule(CreateUdsRuleRequest request) throws UCloudException;
+
+    /**
      * DeleteBucket - 删除Bucket
      *
      * @param request Request object
@@ -157,6 +203,15 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public DeleteUFileLifeCycleResponse deleteUFileLifeCycle(DeleteUFileLifeCycleRequest request)
+            throws UCloudException;
+
+    /**
+     * DeleteUFilePkg - 删除资源包(退费)
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUFilePkgResponse deleteUFilePkg(DeleteUFilePkgRequest request)
             throws UCloudException;
 
     /**
@@ -196,6 +251,15 @@ public interface UFileClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * DescribeUFileAvailablePkg - 查询可购买的资源包列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUFileAvailablePkgResponse describeUFileAvailablePkg(
+            DescribeUFileAvailablePkgRequest request) throws UCloudException;
+
+    /**
      * DescribeUFileLifeCycle - 获取生命周期信息
      *
      * @param request Request object
@@ -203,6 +267,33 @@ public interface UFileClientInterface extends Client {
      */
     public DescribeUFileLifeCycleResponse describeUFileLifeCycle(
             DescribeUFileLifeCycleRequest request) throws UCloudException;
+
+    /**
+     * DescribeUFilePkg - 查询已购买的资源包列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUFilePkgResponse describeUFilePkg(DescribeUFilePkgRequest request)
+            throws UCloudException;
+
+    /**
+     * DescribeUFilePkgUsage - 查询资源包使用明细
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUFilePkgUsageResponse describeUFilePkgUsage(DescribeUFilePkgUsageRequest request)
+            throws UCloudException;
+
+    /**
+     * DescribeUFileReferer - 对象存储防盗链列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUFileRefererResponse describeUFileReferer(DescribeUFileRefererRequest request)
+            throws UCloudException;
 
     /**
      * DescribeUFileSSLCert - 查询SSL证书
@@ -223,6 +314,24 @@ public interface UFileClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * DescribeUdsRule - 获取解压缩规则信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUdsRuleResponse describeUdsRule(DescribeUdsRuleRequest request)
+            throws UCloudException;
+
+    /**
+     * GetBucketQuota - 获取bucket配额
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetBucketQuotaResponse getBucketQuota(GetBucketQuotaRequest request)
+            throws UCloudException;
+
+    /**
      * GetBucketStaticPageRule - 获取bucket静态网页配置
      *
      * @param request Request object
@@ -230,6 +339,15 @@ public interface UFileClientInterface extends Client {
      */
     public GetBucketStaticPageRuleResponse getBucketStaticPageRule(
             GetBucketStaticPageRuleRequest request) throws UCloudException;
+
+    /**
+     * GetProjectRegionQuota - 获取项目地域配额
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetProjectRegionQuotaResponse getProjectRegionQuota(GetProjectRegionQuotaRequest request)
+            throws UCloudException;
 
     /**
      * GetUFileDailyBill - 获取bucket每日账单
@@ -247,6 +365,24 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public GetUFileDailyReportResponse getUFileDailyReport(GetUFileDailyReportRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUFileMonthlyBill - 获取bucket月度账单
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUFileMonthlyBillResponse getUFileMonthlyBill(GetUFileMonthlyBillRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUFilePkgPrice - 获取对资源进行新购、续费、升级等操作的价格
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUFilePkgPriceResponse getUFilePkgPrice(GetUFilePkgPriceRequest request)
             throws UCloudException;
 
     /**
@@ -282,6 +418,32 @@ public interface UFileClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public GetUFileReportResponse getUFileReport(GetUFileReportRequest request)
+            throws UCloudException;
+
+    /**
+     * RenewUFilePkg - 资源包续费
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public RenewUFilePkgResponse renewUFilePkg(RenewUFilePkgRequest request) throws UCloudException;
+
+    /**
+     * SetBucketQuota - 设置bucket配额
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SetBucketQuotaResponse setBucketQuota(SetBucketQuotaRequest request)
+            throws UCloudException;
+
+    /**
+     * SetProjectRegionQuota - 设置项目地域配额
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public SetProjectRegionQuotaResponse setProjectRegionQuota(SetProjectRegionQuotaRequest request)
             throws UCloudException;
 
     /**

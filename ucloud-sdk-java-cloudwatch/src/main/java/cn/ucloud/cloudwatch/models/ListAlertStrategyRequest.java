@@ -21,7 +21,10 @@ import java.util.List;
 
 public class ListAlertStrategyRequest extends Request {
 
-    /** 项目ID */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
@@ -96,7 +99,7 @@ public class ListAlertStrategyRequest extends Request {
 
     public static class Filter extends Request {
 
-        /** 产品类型，根据产品类型精确搜索对应的告警策略 */
+        /** 产品ID，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
         @UCloudParam("ProductTypes")
         private List<Integer> productTypes;
 
@@ -104,7 +107,7 @@ public class ListAlertStrategyRequest extends Request {
         @UCloudParam("AlertStrategyIDs")
         private List<Integer> alertStrategyIDs;
 
-        /** 告警策略状态，根据告警策略状态精确搜索对应的告警策略 */
+        /** 告警策略状态，根据告警策略状态精确搜索对应的告警策略，枚举值：0-停用，1-启用 */
         @UCloudParam("Status")
         private List<Integer> status;
 
