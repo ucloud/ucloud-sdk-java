@@ -21,7 +21,10 @@ import java.util.List;
 
 public class BindAlertStrategyRequest extends Request {
 
-    /** 项目ID */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
@@ -36,7 +39,7 @@ public class BindAlertStrategyRequest extends Request {
     @UCloudParam("Resources")
     private List<String> resources;
 
-    /** 产品类型名称 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;

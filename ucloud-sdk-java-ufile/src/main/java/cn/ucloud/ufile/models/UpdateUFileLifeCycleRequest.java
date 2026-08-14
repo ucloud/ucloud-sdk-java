@@ -68,9 +68,29 @@ public class UpdateUFileLifeCycleRequest extends Request {
     @UCloudParam("IADays")
     private Integer iaDays;
 
-    /** Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，单个object的tag的最大数量为10 */
+    /** 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500] */
+    @UCloudParam("HistVerDeleteDays")
+    private Integer histVerDeleteDays;
+
+    /** 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500] */
+    @UCloudParam("HistVerArchivalDays")
+    private Integer histVerArchivalDays;
+
+    /** 指定一个历史文件过期天数N，文件会在其最近更新时间点的N天后过期,自动删除；范围： [7,36500] */
+    @UCloudParam("HistVerIADays")
+    private Integer histVerIADays;
+
+    /** Tag，参数格式"k1=v1&k2=v2"，key的最大长度为128， value最大长度为256byte，tag的最大数量为10 */
     @UCloudParam("Tags")
     private String tags;
+
+    /** 文件的最小size */
+    @UCloudParam("MinSize")
+    private Integer minSize;
+
+    /** 文件的最大size */
+    @UCloudParam("MaxSize")
+    private String maxSize;
 
     public String getRegion() {
         return region;
@@ -152,11 +172,51 @@ public class UpdateUFileLifeCycleRequest extends Request {
         this.iaDays = iaDays;
     }
 
+    public Integer getHistVerDeleteDays() {
+        return histVerDeleteDays;
+    }
+
+    public void setHistVerDeleteDays(Integer histVerDeleteDays) {
+        this.histVerDeleteDays = histVerDeleteDays;
+    }
+
+    public Integer getHistVerArchivalDays() {
+        return histVerArchivalDays;
+    }
+
+    public void setHistVerArchivalDays(Integer histVerArchivalDays) {
+        this.histVerArchivalDays = histVerArchivalDays;
+    }
+
+    public Integer getHistVerIADays() {
+        return histVerIADays;
+    }
+
+    public void setHistVerIADays(Integer histVerIADays) {
+        this.histVerIADays = histVerIADays;
+    }
+
     public String getTags() {
         return tags;
     }
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public Integer getMinSize() {
+        return minSize;
+    }
+
+    public void setMinSize(Integer minSize) {
+        this.minSize = minSize;
+    }
+
+    public String getMaxSize() {
+        return maxSize;
+    }
+
+    public void setMaxSize(String maxSize) {
+        this.maxSize = maxSize;
     }
 }

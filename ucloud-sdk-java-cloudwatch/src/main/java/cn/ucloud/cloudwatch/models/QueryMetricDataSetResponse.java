@@ -51,11 +51,15 @@ public class QueryMetricDataSetResponse extends Response {
         @SerializedName("ResourceId")
         private String resourceId;
 
-        /** TagMap是一个对象，key和value均为字符串。 TagMap返回当前series的所有的tag的key和value。 */
-        @SerializedName("TagMap")
-        private Object tagMap;
+        /** 资源名称 */
+        @SerializedName("ResourceName")
+        private String resourceName;
 
-        /** */
+        /** 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。 */
+        @SerializedName("TagList")
+        private List<Integer> tagList;
+
+        /** 指标数据点列表，元素为 MetricPoint */
         @SerializedName("Values")
         private List<MetricSample> values;
 
@@ -67,12 +71,20 @@ public class QueryMetricDataSetResponse extends Response {
             this.resourceId = resourceId;
         }
 
-        public Object getTagMap() {
-            return tagMap;
+        public String getResourceName() {
+            return resourceName;
         }
 
-        public void setTagMap(Object tagMap) {
-            this.tagMap = tagMap;
+        public void setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+        }
+
+        public List<Integer> getTagList() {
+            return tagList;
+        }
+
+        public void setTagList(List<Integer> tagList) {
+            this.tagList = tagList;
         }
 
         public List<MetricSample> getValues() {
@@ -111,11 +123,122 @@ public class QueryMetricDataSetResponse extends Response {
         }
     }
 
+    public static class ObjectType extends Response {
+
+        /** ID */
+        @SerializedName("Id")
+        private Integer id;
+
+        /** 资源类型ID */
+        @SerializedName("ObjectType")
+        private String objectType;
+
+        /** 资源类型 */
+        @SerializedName("ObjectTypeKey")
+        private String objectTypeKey;
+
+        /** 产品名称 */
+        @SerializedName("ProductName")
+        private String productName;
+
+        /** 产品子名称 */
+        @SerializedName("ProductName1")
+        private String productName1;
+
+        /** 产品中文名称 */
+        @SerializedName("ProductCNName")
+        private String productCNName;
+
+        /** 产品英文名称 */
+        @SerializedName("ProductENName")
+        private String productENName;
+
+        /** {type: spec|basic, key:string, name: string}[] -> JSON字符串 */
+        @SerializedName("Metas")
+        private String metas;
+
+        public Integer getId() {
+            return id;
+        }
+
+        public void setId(Integer id) {
+            this.id = id;
+        }
+
+        public String getObjectType() {
+            return objectType;
+        }
+
+        public void setObjectType(String objectType) {
+            this.objectType = objectType;
+        }
+
+        public String getObjectTypeKey() {
+            return objectTypeKey;
+        }
+
+        public void setObjectTypeKey(String objectTypeKey) {
+            this.objectTypeKey = objectTypeKey;
+        }
+
+        public String getProductName() {
+            return productName;
+        }
+
+        public void setProductName(String productName) {
+            this.productName = productName;
+        }
+
+        public String getProductName1() {
+            return productName1;
+        }
+
+        public void setProductName1(String productName1) {
+            this.productName1 = productName1;
+        }
+
+        public String getProductCNName() {
+            return productCNName;
+        }
+
+        public void setProductCNName(String productCNName) {
+            this.productCNName = productCNName;
+        }
+
+        public String getProductENName() {
+            return productENName;
+        }
+
+        public void setProductENName(String productENName) {
+            this.productENName = productENName;
+        }
+
+        public String getMetas() {
+            return metas;
+        }
+
+        public void setMetas(String metas) {
+            this.metas = metas;
+        }
+    }
+
     public static class QueryMetricDataResp extends Response {
+
+        /** 无效或无权限资源的 ID 列表 */
+        @SerializedName("InvalidResourceIds")
+        private List<String> invalidResourceIds;
 
         /** 查询的结果集 */
         @SerializedName("List")
         private List<QueryMetricDataRespItem> list;
+
+        public List<String> getInvalidResourceIds() {
+            return invalidResourceIds;
+        }
+
+        public void setInvalidResourceIds(List<String> invalidResourceIds) {
+            this.invalidResourceIds = invalidResourceIds;
+        }
 
         public List<QueryMetricDataRespItem> getList() {
             return list;
@@ -132,15 +255,19 @@ public class QueryMetricDataSetResponse extends Response {
         @SerializedName("Metric")
         private String metric;
 
-        /**
-         * 指标查询结果的所有tag的key和对应的所有value数组。
-         *
-         * <p>Tags格式为，key为tagkey字符串，value为tagValue的字符串数组。
-         */
-        @SerializedName("Tags")
-        private Object tags;
+        /** 该指标查询的处理状态码 */
+        @SerializedName("ErrCode")
+        private Integer errCode;
 
-        /** */
+        /** 该指标查询的状态说明 */
+        @SerializedName("ErrMsg")
+        private String errMsg;
+
+        /** 标签列表。每项为 TagEntry：TagName（标签名）和 KeyList（该标签的全部候选值）。 */
+        @SerializedName("TagEntries")
+        private List<ObjectType> tagEntries;
+
+        /** 查询到的时间序列列表 */
         @SerializedName("Results")
         private List<MetricResult> results;
 
@@ -152,12 +279,28 @@ public class QueryMetricDataSetResponse extends Response {
             this.metric = metric;
         }
 
-        public Object getTags() {
-            return tags;
+        public Integer getErrCode() {
+            return errCode;
         }
 
-        public void setTags(Object tags) {
-            this.tags = tags;
+        public void setErrCode(Integer errCode) {
+            this.errCode = errCode;
+        }
+
+        public String getErrMsg() {
+            return errMsg;
+        }
+
+        public void setErrMsg(String errMsg) {
+            this.errMsg = errMsg;
+        }
+
+        public List<ObjectType> getTagEntries() {
+            return tagEntries;
+        }
+
+        public void setTagEntries(List<ObjectType> tagEntries) {
+            this.tagEntries = tagEntries;
         }
 
         public List<MetricResult> getResults() {

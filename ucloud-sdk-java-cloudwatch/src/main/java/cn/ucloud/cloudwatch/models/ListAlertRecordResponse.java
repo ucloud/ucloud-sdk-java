@@ -131,6 +131,10 @@ public class ListAlertRecordResponse extends Response {
         @SerializedName("EndAt")
         private Integer endAt;
 
+        /** 产品相关的额外属性 */
+        @SerializedName("ContentAttr")
+        private Object contentAttr;
+
         public String getRegion() {
             return region;
         }
@@ -297,6 +301,14 @@ public class ListAlertRecordResponse extends Response {
 
         public void setEndAt(Integer endAt) {
             this.endAt = endAt;
+        }
+
+        public Object getContentAttr() {
+            return contentAttr;
+        }
+
+        public void setContentAttr(Object contentAttr) {
+            this.contentAttr = contentAttr;
         }
     }
 }

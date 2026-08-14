@@ -36,7 +36,7 @@ public class UnBindAlertStrategyRequest extends Request {
     @UCloudParam("Resources")
     private List<String> resources;
 
-    /** 产品类型名称 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;

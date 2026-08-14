@@ -34,17 +34,17 @@ public class CreateAlertStrategyRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 产品类型。参考ListMonitorProduct获取监控对象类型列表 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;
 
-    /** 绑定资源类型 1 资源组 2 资源 */
+    /** 绑定资源类型 1 - 资源组 2 - 资源 */
     @NotEmpty
     @UCloudParam("ObjectType")
     private Integer objectType;
 
-    /** 条件设置方式 1. 手动配置 2.选择模版 */
+    /** 条件设置方式 1 - 手动配置 2 - 选择模版 */
     @NotEmpty
     @UCloudParam("ConfigMode")
     private Integer configMode;
@@ -57,7 +57,7 @@ public class CreateAlertStrategyRequest extends Request {
     @UCloudParam("ResourceGroupIDs")
     private List<Integer> resourceGroupIDs;
 
-    /** 模板id.对应TemplateId=2 */
+    /** 模板id.对应ConfigMode=2时候需要填写 */
     @UCloudParam("TemplateId")
     private Integer templateId;
 
@@ -65,7 +65,7 @@ public class CreateAlertStrategyRequest extends Request {
     @UCloudParam("RuleSet")
     private List<RuleSet> ruleSet;
 
-    /** 通知类型 通知组 group 通知人 user */
+    /** 通知类型。 枚举值： group - 通知组 user - 通知人 */
     @UCloudParam("NotifyType")
     private String notifyType;
 
@@ -77,17 +77,21 @@ public class CreateAlertStrategyRequest extends Request {
     @UCloudParam("NotifyGroupIDs")
     private List<Integer> notifyGroupIDs;
 
-    /** 通知渠道 短信sms 邮件email 回调webhook */
+    /** 通知渠道。 枚举值： sms - 短信 email - 邮件 webhook - 回调 */
     @UCloudParam("NotifyChannelDs")
     private List<String> notifyChannelDs;
 
-    /** 通知渠道回调webhook 回调语言 中文cn 英文en */
+    /** 当通知渠道=回调webhook时，需要设置回调语言。 枚举值： cn - 中文 en - 英文 */
     @UCloudParam("CallbackLanguage")
     private String callbackLanguage;
 
-    /** 回调语言url */
+    /** 回调URL地址 */
     @UCloudParam("CallbackUrls")
     private List<String> callbackUrls;
+
+    /** 通知模板id */
+    @UCloudParam("NotifyTemplateId")
+    private String notifyTemplateId;
 
     public String getProjectId() {
         return projectId;
@@ -209,13 +213,21 @@ public class CreateAlertStrategyRequest extends Request {
         this.callbackUrls = callbackUrls;
     }
 
+    public String getNotifyTemplateId() {
+        return notifyTemplateId;
+    }
+
+    public void setNotifyTemplateId(String notifyTemplateId) {
+        this.notifyTemplateId = notifyTemplateId;
+    }
+
     public static class RuleSet extends Request {
 
         /** 规则指标ID。参考该类型产品下返回的指标列表GetProductMetrics */
         @UCloudParam("MetricID")
         private Integer metricID;
 
-        /** 阈值比较方式。 枚举值比较方式: 1->= 2-<= 3-> 4-< 5-== 6-!= */
+        /** 阈值比较方式。 枚举值： 1：>= 2：<= 3：> 4：< 5：== 6：!= */
         @UCloudParam("ThresholdCompare")
         private Integer thresholdCompare;
 
@@ -227,7 +239,7 @@ public class CreateAlertStrategyRequest extends Request {
         @UCloudParam("TriggerCount")
         private Integer triggerCount;
 
-        /** 触发周期。枚举值：continuous连续 exponent 指数 single 不重复 */
+        /** 触发周期。枚举值continuous - 连续 exponent - 指数 single - 不重复 */
         @UCloudParam("SendPeriodType")
         private String sendPeriodType;
 
@@ -235,7 +247,7 @@ public class CreateAlertStrategyRequest extends Request {
         @UCloudParam("Level")
         private String level;
 
-        /** 告警状态。枚举值：0-关闭 1-开启 */
+        /** 告警状态。 枚举值 0 - 关闭 1 - 开启 */
         @UCloudParam("Status")
         private Integer status;
 

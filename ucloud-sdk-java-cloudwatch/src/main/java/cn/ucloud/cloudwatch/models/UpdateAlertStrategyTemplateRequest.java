@@ -39,7 +39,7 @@ public class UpdateAlertStrategyTemplateRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 产品类型。参考ListMonitorProduct获取监控对象类型列表 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;

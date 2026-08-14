@@ -21,17 +21,20 @@ import java.util.List;
 
 public class ListAlertRecordRequest extends Request {
 
-    /** 项目ID。 */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 开始时间，查询告警记录开始时间(不支持查询距当前时间一年前的数据) */
+    /** 开始时间，查询告警记录开始时间，不支持查询距当前时间一年前的数据)，值为10位数时间戳 */
     @NotEmpty
     @UCloudParam("StartAt")
     private Integer startAt;
 
-    /** 结束时间，查询告警记录结束时间(查询开始时间和结束时间不能超过一个月) */
+    /** 结束时间，查询告警记录结束时间(查询开始时间和结束时间不能超过一个月)，值为10位数时间戳 */
     @NotEmpty
     @UCloudParam("EndAt")
     private Integer endAt;
@@ -44,7 +47,7 @@ public class ListAlertRecordRequest extends Request {
     @UCloudParam("Filter")
     private Filter filter;
 
-    /** 排序(默认根据告警发生时间倒序) */
+    /** 排序(默认根据告警发生时间倒序)，枚举值：asc-升序，desc-降序 */
     @UCloudParam("OrderType")
     private String orderType;
 
@@ -122,15 +125,15 @@ public class ListAlertRecordRequest extends Request {
 
     public static class Filter extends Request {
 
-        /** 产品类型，根据产品类型精确搜索对应的告警记录 */
+        /** 产品ID，根据产品类型精确搜索对应的告警记录，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
         @UCloudParam("ProductTypes")
         private List<Integer> productTypes;
 
-        /** 告警级别，根据告警级别精确搜索对应的告警记录 */
+        /** 告警级别，根据告警级别精确搜索对应的告警记录，枚举值:P0,P1,P2,P3 */
         @UCloudParam("Levels")
         private List<String> levels;
 
-        /** 告警状态，根据告警状态精确搜索对应的告警记录 */
+        /** 告警状态，根据告警状态精确搜索对应的告警记录，枚举值：firing-告警中，resolved-已恢复 */
         @UCloudParam("Status")
         private List<String> status;
 

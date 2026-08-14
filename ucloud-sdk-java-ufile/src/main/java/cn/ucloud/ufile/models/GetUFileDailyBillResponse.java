@@ -35,7 +35,7 @@ public class GetUFileDailyBillResponse extends Response {
 
     public static class BucketBills extends Response {
 
-        /** */
+        /** bucket账单 */
         @SerializedName("BucketBills")
         private List<UFileDailyBillItem> bucketBills;
 
@@ -48,7 +48,38 @@ public class GetUFileDailyBillResponse extends Response {
         }
     }
 
+    public static class BucketLabels extends Response {
+
+        /** 标签对应key */
+        @SerializedName("Key")
+        private String key;
+
+        /** 标签对应value */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
     public static class UFileDailyBillItem extends Response {
+
+        /** bucket对应的资源系统标签 */
+        @SerializedName("Labels")
+        private List<BucketLabels> labels;
 
         /** 下载低频存储次数费用；分 */
         @SerializedName("GetCountIaBill")
@@ -137,6 +168,18 @@ public class GetUFileDailyBillResponse extends Response {
         /** 下载归档存储次数费用；分 */
         @SerializedName("GetCountAcBill")
         private Double getCountAcBill;
+
+        /** 总费用;分 */
+        @SerializedName("TotalBill")
+        private Double totalBill;
+
+        public List<BucketLabels> getLabels() {
+            return labels;
+        }
+
+        public void setLabels(List<BucketLabels> labels) {
+            this.labels = labels;
+        }
 
         public Double getGetCountIaBill() {
             return getCountIaBill;
@@ -312,6 +355,14 @@ public class GetUFileDailyBillResponse extends Response {
 
         public void setGetCountAcBill(Double getCountAcBill) {
             this.getCountAcBill = getCountAcBill;
+        }
+
+        public Double getTotalBill() {
+            return totalBill;
+        }
+
+        public void setTotalBill(Double totalBill) {
+            this.totalBill = totalBill;
         }
     }
 }

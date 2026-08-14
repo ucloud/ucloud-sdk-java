@@ -39,7 +39,7 @@ public class UpdateAlertStrategyRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 产品类型。参考ListMonitorProduct获取监控对象类型列表 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;
@@ -228,7 +228,7 @@ public class UpdateAlertStrategyRequest extends Request {
         @UCloudParam("MetricID")
         private Integer metricID;
 
-        /** 阈值比较方式。 枚举值比较方式: 1->= 2-<= 3-> 4-< 5-== 6-!= */
+        /** 阈值比较方式。 枚举值： 1：>= 2：<= 3：> 4：< 5：== 6：!= */
         @UCloudParam("ThresholdCompare")
         private Integer thresholdCompare;
 

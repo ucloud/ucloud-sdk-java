@@ -43,7 +43,7 @@ public class AddUFileSSLCertRequest extends Request {
     @UCloudParam("Certificate")
     private String certificate;
 
-    /** 填写SSL证书私钥内容（PEM编码）。 */
+    /** 填写SSL证书私钥内容（PEM编码）。私钥内容填写格式 RSA */
     @UCloudParam("CertificateKey")
     private String certificateKey;
 

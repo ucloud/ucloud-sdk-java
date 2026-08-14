@@ -39,6 +39,10 @@ public class DescribeBucketResponse extends Response {
         @SerializedName("Region")
         private String region;
 
+        /** 默认存储类型 */
+        @SerializedName("StorageClass")
+        private String storageClass;
+
         /** Bucket名称 */
         @SerializedName("BucketName")
         private String bucketName;
@@ -85,6 +89,14 @@ public class DescribeBucketResponse extends Response {
 
         public void setRegion(String region) {
             this.region = region;
+        }
+
+        public String getStorageClass() {
+            return storageClass;
+        }
+
+        public void setStorageClass(String storageClass) {
+            this.storageClass = storageClass;
         }
 
         public String getBucketName() {

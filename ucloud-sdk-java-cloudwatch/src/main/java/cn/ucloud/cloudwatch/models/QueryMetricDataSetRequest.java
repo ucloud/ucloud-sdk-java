@@ -21,27 +21,30 @@ import java.util.List;
 
 public class QueryMetricDataSetRequest extends Request {
 
-    /** 地域。 全局产品可不传，其他类型必传。 */
+    /** 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。 */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @NotEmpty
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 资源类型 */
+    /** 产品唯一标识，参见 [产品概览](https://docs.ucloud.cn/cloudwatch/metric/intro) */
     @NotEmpty
     @UCloudParam("ProductKey")
     private String productKey;
 
-    /** 开始时间 */
+    /** 开始时间，值为10位数时间戳 */
     @NotEmpty
     @UCloudParam("StartTime")
     private Integer startTime;
 
-    /** 截止时间 */
+    /** 截止时间，值为10位数时间戳 */
     @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
@@ -52,8 +55,13 @@ public class QueryMetricDataSetRequest extends Request {
     private String calcMethod;
 
     /**
-     * 周期即：数据查询时，后端上报数据点的频率，选择不同的自定义时间范围，对应的周期不同： 0<时间范围<=1h——周期：1分钟/5分钟 1h<时间范围<=3h——周期：1分钟/5分钟/1小时
-     * 3h<时间范围<=24h——周期：5分钟/1小时 1天<时间范围<=30天——周期：1小时/6小时/24小时 需将周期转化为单位为秒的数值，传入参数
+     * 周期，单位为秒，即：数据查询时，返回数据点的时间间隔。 不同的查询时间范围，对应的周期不同： 0<时间范围<=1h——周期：1分钟/5分钟，对应的枚举值为60、300；
+     *
+     * <p>1h<时间范围<=12h——周期：1分钟/5分钟/1小时，对应的枚举值为60、300、3600；
+     *
+     * <p>12h<时间范围<=24h——周期：5分钟/1小时，对应的枚举值为300、3600；
+     *
+     * <p>1天<时间范围<=30天——周期：1小时/6小时/24小时，对应的枚举值为3600、21600、86400
      */
     @NotEmpty
     @UCloudParam("Period")
@@ -129,15 +137,19 @@ public class QueryMetricDataSetRequest extends Request {
 
     public static class MetricInfos extends Request {
 
-        /** 指标名 */
+        /** 指标名，参数中N的取值范围为 0～9 */
         @NotEmpty
         @UCloudParam("Metric")
         private String metric;
 
-        /** 指标所属资源id */
+        /** 指标所属资源id，参数中N的取值范围为 0～9 */
         @NotEmpty
         @UCloudParam("ResourceId")
         private String resourceId;
+
+        /** 多个 Tag 条件的匹配方式；可选 and（默认）或 or。TagList 中使用 or 时最多支持 3 个 Tag。 */
+        @UCloudParam("TagOperation")
+        private String tagOperation;
 
         /** */
         @UCloudParam("TagList")
@@ -159,6 +171,14 @@ public class QueryMetricDataSetRequest extends Request {
             this.resourceId = resourceId;
         }
 
+        public String getTagOperation() {
+            return tagOperation;
+        }
+
+        public void setTagOperation(String tagOperation) {
+            this.tagOperation = tagOperation;
+        }
+
         public List<MetricInfosTagList> getTagList() {
             return tagList;
         }
@@ -170,11 +190,11 @@ public class QueryMetricDataSetRequest extends Request {
 
     public static class MetricInfosTagList extends Request {
 
-        /** 要查询指标的Tag的key */
+        /** 要查询指标的Tag的key，参数中N的取值范围为 0～9 */
         @UCloudParam("TagKey")
         private String tagKey;
 
-        /** 要查询指标的Tag的Value */
+        /** 要查询指标的Tag的Value，参数中N的取值范围为 0～9 */
         @UCloudParam("TagValues")
         private List<String> tagValues;
 
