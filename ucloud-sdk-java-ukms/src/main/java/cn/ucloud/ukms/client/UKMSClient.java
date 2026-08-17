@@ -19,8 +19,6 @@ import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ukms.models.CancelKeyDeletionRequest;
 import cn.ucloud.ukms.models.CancelKeyDeletionResponse;
-import cn.ucloud.ukms.models.CancelScheduleKeyDeletionRequest;
-import cn.ucloud.ukms.models.CancelScheduleKeyDeletionResponse;
 import cn.ucloud.ukms.models.CreateAliasRequest;
 import cn.ucloud.ukms.models.CreateAliasResponse;
 import cn.ucloud.ukms.models.CreateKeyRequest;
@@ -94,19 +92,6 @@ public class UKMSClient extends DefaultClient implements UKMSClientInterface {
             throws UCloudException {
         request.setAction("CancelKeyDeletion");
         return (CancelKeyDeletionResponse) this.invoke(request, CancelKeyDeletionResponse.class);
-    }
-
-    /**
-     * CancelScheduleKeyDeletion - 取消计划删除密钥
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public CancelScheduleKeyDeletionResponse cancelScheduleKeyDeletion(
-            CancelScheduleKeyDeletionRequest request) throws UCloudException {
-        request.setAction("CancelScheduleKeyDeletion");
-        return (CancelScheduleKeyDeletionResponse)
-                this.invoke(request, CancelScheduleKeyDeletionResponse.class);
     }
 
     /**

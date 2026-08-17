@@ -17,8 +17,6 @@ import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
 import cn.ucloud.ukms.models.CancelKeyDeletionRequest;
 import cn.ucloud.ukms.models.CancelKeyDeletionResponse;
-import cn.ucloud.ukms.models.CancelScheduleKeyDeletionRequest;
-import cn.ucloud.ukms.models.CancelScheduleKeyDeletionResponse;
 import cn.ucloud.ukms.models.CreateAliasRequest;
 import cn.ucloud.ukms.models.CreateAliasResponse;
 import cn.ucloud.ukms.models.CreateKeyRequest;
@@ -87,15 +85,6 @@ public interface UKMSClientInterface extends Client {
      */
     public CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request)
             throws UCloudException;
-
-    /**
-     * CancelScheduleKeyDeletion - 取消计划删除密钥
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public CancelScheduleKeyDeletionResponse cancelScheduleKeyDeletion(
-            CancelScheduleKeyDeletionRequest request) throws UCloudException;
 
     /**
      * CreateAlias - 创建别名

@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ListUHadoopInstanceResponse extends Response {
 
-    /** 集群信息集合 */
+    /** 集群信息 */
     @SerializedName("ClusterSet")
     private List<ListClusterInfo> clusterSet;
 
