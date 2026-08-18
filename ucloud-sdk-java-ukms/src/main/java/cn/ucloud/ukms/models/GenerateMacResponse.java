@@ -14,7 +14,33 @@
 package cn.ucloud.ukms.models;
 
 
-
 import cn.ucloud.common.response.Response;
 
-public class GenerateMacResponse extends Response {}
+import com.google.gson.annotations.SerializedName;
+
+public class GenerateMacResponse extends Response {
+
+    /** 针对指定消息生成的基于哈希的消息认证码 (HMAC)、HMAC KMS 密钥和 MAC 算法。 */
+    @SerializedName("Mac")
+    private String mac;
+
+    /** 用于生成 HMAC 的 MAC 算法。 */
+    @SerializedName("MacAlgorithm")
+    private String macAlgorithm;
+
+    public String getMac() {
+        return mac;
+    }
+
+    public void setMac(String mac) {
+        this.mac = mac;
+    }
+
+    public String getMacAlgorithm() {
+        return macAlgorithm;
+    }
+
+    public void setMacAlgorithm(String macAlgorithm) {
+        this.macAlgorithm = macAlgorithm;
+    }
+}
