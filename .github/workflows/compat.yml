@@ -1,0 +1,42 @@
+name: Compat
+
+# JDK 兼容性矩阵，**不是门禁**。
+#
+# 触发只留 schedule 与手动：codegen 机器人开的 PR 要靠 check 全绿才能自动合并，
+# 这里每多一个 check 就多一个卡住它的机会，而「声明的 JDK 下界还活着吗」这个问题
+# 并不需要每个 PR 都回答一次，定期回答就够了。
+#
+# 矩阵取 8 与 17 两端：
+#   8  —— pom 声明的 maven.compiler.source/target 是 1.8，这一格就是在验证该声明还成立。
+#          已本地用 `javac --release 8` 对全部 2301 个 reactor 源文件验过 exit 0，
+#          即源码确实只用了 Java 8 的 API；但**整条 maven 插件链在 JDK 8 运行时下能否跑通
+#          未在本地验证过**（本机没有 JDK 8），这一格首次调度跑红是可能的，
+#          红了说明真实下界已经高于声明值，应据实改声明或改代码，不要直接把这一格删掉。
+#   17 —— ci.yml 的门禁版本，作为对照基线。
+#
+# fail-fast: false —— 8 挂了也必须看到 17 的结果，否则矩阵只剩一个信号，等于没矩阵。
+
+on:
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compat:
+    name: compat (JDK ${{ matrix.java }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ['8', '17']
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v5
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
+      - run: make ci-syntax

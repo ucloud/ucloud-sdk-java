@@ -1,0 +1,87 @@
+name: CI
+
+# PR 门禁。只保两件事（详见 Makefile 的 ci-syntax）：
+#   G1 生成的代码能被编译
+#   G2 生成的代码没有重复项（重复方法、重复 <module> 都是 mvn compile 的编译期错误）
+# 代码风格不进门禁：风格问题不影响 SDK 能否使用。
+#
+# **本仓的 lint 目前是空壳**：Makefile 里 `lint` 就是 `echo "skipped"`，exit 0 但什么都没检查。
+# 之所以还留着这个 job，是为了将来填实时位置已经在、不用再动 workflow；
+# 但它的绿色不代表任何东西 —— 本仓门禁的有效性完全由 ci-syntax + test 两个 job 承担。
+# 不要把「java 有 lint job」读成「java 做了 lint 把关」。
+#
+# JDK 统一为 17。此前 codecov.yml 用 11、sonar.yml 用 17，同一份代码两个版本各测各的，
+# 出分歧时谁是准的说不清；codecov.yml 已随本次改动删除，覆盖率上传并进 test job，
+# 从此全仓只有 17 这一个门禁版本。声明下界 1.8 的兼容性验证移交 compat.yml。
+#
+# 分支保护只需把 `ci-gate` 配成 required check，其余 job 增删都不影响它。
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  ci-syntax:
+    name: ci-syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: temurin
+          # 51 个 module 每个 job 都重下一遍依赖太慢，交给 setup-java 自带的 ~/.m2 缓存。
+          cache: maven
+      - run: make ci-syntax
+
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: temurin
+          cache: maven
+      # 注意：这一步当前恒绿且什么都没做，见文件头部说明。
+      - run: make lint
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: temurin
+          cache: maven
+      - run: make test-cov
+      # 覆盖率上传是看板不是门禁：codecov 服务抖动不该把 PR 卡死，
+      # 故 step 级 continue-on-error，且 ci-gate 的 needs 里也没有它。
+      - name: Upload coverage
+        continue-on-error: true
+        uses: codecov/codecov-action@v7
+        with:
+          fail_ci_if_error: false
+
+  ci-gate:
+    name: ci-gate
+    needs: [ci-syntax, lint, test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Aggregate
+        run: |
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" \
+             || "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            echo "ci-gate: 有 job 失败或被取消"
+            exit 1
+          fi
+          echo "ci-gate: 全部通过"
