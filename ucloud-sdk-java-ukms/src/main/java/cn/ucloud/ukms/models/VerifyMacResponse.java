@@ -14,7 +14,45 @@
 package cn.ucloud.ukms.models;
 
 
-
 import cn.ucloud.common.response.Response;
 
-public class VerifyMacResponse extends Response {}
+import com.google.gson.annotations.SerializedName;
+
+public class VerifyMacResponse extends Response {
+
+    /** 密钥ID */
+    @SerializedName("KeyId")
+    private String keyId;
+
+    /** 验证中使用的 MAC 算法。 */
+    @SerializedName("MacAlgorithm")
+    private String macAlgorithm;
+
+    /** 一个布尔值，表示 HMAC 是否已验证。 */
+    @SerializedName("MacValid")
+    private Boolean macValid;
+
+    public String getKeyId() {
+        return keyId;
+    }
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    public String getMacAlgorithm() {
+        return macAlgorithm;
+    }
+
+    public void setMacAlgorithm(String macAlgorithm) {
+        this.macAlgorithm = macAlgorithm;
+    }
+
+    public Boolean getMacValid() {
+        return macValid;
+    }
+
+    public void setMacValid(Boolean macValid) {
+        this.macValid = macValid;
+    }
+}
