@@ -38,7 +38,7 @@ public class CreateUHadoopInstanceRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 集群机器的登录密码,需要输入base64编码后的内容 */
+    /** 集群机器的登录密码,需要Base64加密。 */
     @NotEmpty
     @UCloudParam("Password")
     private String password;
@@ -133,6 +133,10 @@ public class CreateUHadoopInstanceRequest extends Request {
     /** 实例名称，默认为实例ID */
     @UCloudParam("InstanceName")
     private String instanceName;
+
+    /** 集群加密磁盘密钥ID */
+    @UCloudParam("DataDiskKmsKeyId")
+    private String dataDiskKmsKeyId;
 
     public String getRegion() {
         return region;
@@ -308,5 +312,13 @@ public class CreateUHadoopInstanceRequest extends Request {
 
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
+    }
+
+    public String getDataDiskKmsKeyId() {
+        return dataDiskKmsKeyId;
+    }
+
+    public void setDataDiskKmsKeyId(String dataDiskKmsKeyId) {
+        this.dataDiskKmsKeyId = dataDiskKmsKeyId;
     }
 }

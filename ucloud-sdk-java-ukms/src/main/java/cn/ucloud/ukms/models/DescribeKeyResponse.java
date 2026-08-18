@@ -71,7 +71,7 @@ public class DescribeKeyResponse extends Response {
 
         /** 是否开启删除保护。取值：true、false。 */
         @SerializedName("DeletionProtection")
-        private String deletionProtection;
+        private Boolean deletionProtection;
 
         /** 当前密钥版本。 */
         @SerializedName("KeyVersion")
@@ -157,11 +157,11 @@ public class DescribeKeyResponse extends Response {
             this.keySpec = keySpec;
         }
 
-        public String getDeletionProtection() {
+        public Boolean getDeletionProtection() {
             return deletionProtection;
         }
 
-        public void setDeletionProtection(String deletionProtection) {
+        public void setDeletionProtection(Boolean deletionProtection) {
             this.deletionProtection = deletionProtection;
         }
 
