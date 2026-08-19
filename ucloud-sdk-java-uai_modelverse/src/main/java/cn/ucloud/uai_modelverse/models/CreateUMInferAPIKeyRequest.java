@@ -66,6 +66,10 @@ public class CreateUMInferAPIKeyRequest extends Request {
     @UCloudParam("IPWhitelist")
     private String ipWhitelist;
 
+    /** 是否开启推理日志 */
+    @UCloudParam("InferenceLogEnabled")
+    private Integer inferenceLogEnabled;
+
     public String getProjectId() {
         return projectId;
     }
@@ -136,5 +140,13 @@ public class CreateUMInferAPIKeyRequest extends Request {
 
     public void setIPWhitelist(String ipWhitelist) {
         this.ipWhitelist = ipWhitelist;
+    }
+
+    public Integer getInferenceLogEnabled() {
+        return inferenceLogEnabled;
+    }
+
+    public void setInferenceLogEnabled(Integer inferenceLogEnabled) {
+        this.inferenceLogEnabled = inferenceLogEnabled;
     }
 }
