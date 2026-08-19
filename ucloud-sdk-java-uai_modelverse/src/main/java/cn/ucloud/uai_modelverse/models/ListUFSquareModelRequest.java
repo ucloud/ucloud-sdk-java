@@ -67,6 +67,14 @@ public class ListUFSquareModelRequest extends Request {
     @UCloudParam("Language")
     private List<String> language;
 
+    /** 制造商，可选值来源于ListUFSquareModelFilters枚举接口。可多选 */
+    @UCloudParam("Manufacturer")
+    private List<String> manufacturer;
+
+    /** 模型特性，可选值来源于ListUFSquareModelFilters枚举接口。可多选 */
+    @UCloudParam("Capabilities")
+    private List<String> capabilities;
+
     public String getRegion() {
         return region;
     }
@@ -153,5 +161,21 @@ public class ListUFSquareModelRequest extends Request {
 
     public void setLanguage(List<String> language) {
         this.language = language;
+    }
+
+    public List<String> getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(List<String> manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public List<String> getCapabilities() {
+        return capabilities;
+    }
+
+    public void setCapabilities(List<String> capabilities) {
+        this.capabilities = capabilities;
     }
 }

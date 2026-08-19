@@ -272,6 +272,18 @@ public class ListUFSquareModelResponse extends Response {
 
     public static class SquareModel extends Response {
 
+        /** 关联的 batch 模型广场id */
+        @SerializedName("BatchSquareModelId")
+        private String batchSquareModelId;
+
+        /** 是否关联有可用 batch 模型 */
+        @SerializedName("IsHasBatch")
+        private Boolean isHasBatch;
+
+        /** 关联的 batch 模型名称 */
+        @SerializedName("BatchName")
+        private String batchName;
+
         /** 制造商 */
         @SerializedName("Manufacturer")
         private String manufacturer;
@@ -331,6 +343,30 @@ public class ListUFSquareModelResponse extends Response {
         /** 价格阶梯（有序数组） */
         @SerializedName("Tiers")
         private List<PriceTier> tiers;
+
+        public String getBatchSquareModelId() {
+            return batchSquareModelId;
+        }
+
+        public void setBatchSquareModelId(String batchSquareModelId) {
+            this.batchSquareModelId = batchSquareModelId;
+        }
+
+        public Boolean getIsHasBatch() {
+            return isHasBatch;
+        }
+
+        public void setIsHasBatch(Boolean isHasBatch) {
+            this.isHasBatch = isHasBatch;
+        }
+
+        public String getBatchName() {
+            return batchName;
+        }
+
+        public void setBatchName(String batchName) {
+            this.batchName = batchName;
+        }
 
         public String getManufacturer() {
             return manufacturer;

@@ -54,6 +54,10 @@ public class CreateUMInferAPIKeyResponse extends Response {
         @SerializedName("IPWhitelist")
         private String ipWhitelist;
 
+        /** 是否开启推理日志 */
+        @SerializedName("InferenceLogEnabled")
+        private Integer inferenceLogEnabled;
+
         /** 资源ID */
         @SerializedName("KeyId")
         private String keyId;
@@ -128,6 +132,14 @@ public class CreateUMInferAPIKeyResponse extends Response {
 
         public void setIPWhitelist(String ipWhitelist) {
             this.ipWhitelist = ipWhitelist;
+        }
+
+        public Integer getInferenceLogEnabled() {
+            return inferenceLogEnabled;
+        }
+
+        public void setInferenceLogEnabled(Integer inferenceLogEnabled) {
+            this.inferenceLogEnabled = inferenceLogEnabled;
         }
 
         public String getKeyId() {
