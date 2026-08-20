@@ -37,6 +37,15 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends Request {
     @UCloudParam("KeyId")
     private String keyId;
 
+    /** 指定生成的数据密钥对类型。 */
+    @NotEmpty
+    @UCloudParam("KeyPairSpec")
+    private String keyPairSpec;
+
+    /** 指定加密私钥时使用的加密上下文。 */
+    @UCloudParam("EncryptionContext")
+    private String encryptionContext;
+
     public String getRegion() {
         return region;
     }
@@ -59,5 +68,21 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends Request {
 
     public void setKeyId(String keyId) {
         this.keyId = keyId;
+    }
+
+    public String getKeyPairSpec() {
+        return keyPairSpec;
+    }
+
+    public void setKeyPairSpec(String keyPairSpec) {
+        this.keyPairSpec = keyPairSpec;
+    }
+
+    public String getEncryptionContext() {
+        return encryptionContext;
+    }
+
+    public void setEncryptionContext(String encryptionContext) {
+        this.encryptionContext = encryptionContext;
     }
 }

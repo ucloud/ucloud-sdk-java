@@ -59,8 +59,6 @@ import cn.ucloud.ukms.models.ListAliasesRequest;
 import cn.ucloud.ukms.models.ListAliasesResponse;
 import cn.ucloud.ukms.models.ListKeysRequest;
 import cn.ucloud.ukms.models.ListKeysResponse;
-import cn.ucloud.ukms.models.ListScheduleDeletionKeysRequest;
-import cn.ucloud.ukms.models.ListScheduleDeletionKeysResponse;
 import cn.ucloud.ukms.models.RotateKeyOnDemandRequest;
 import cn.ucloud.ukms.models.RotateKeyOnDemandResponse;
 import cn.ucloud.ukms.models.ScheduleKeyDeletionRequest;
@@ -324,19 +322,6 @@ public class UKMSClient extends DefaultClient implements UKMSClientInterface {
     public ListKeysResponse listKeys(ListKeysRequest request) throws UCloudException {
         request.setAction("ListKeys");
         return (ListKeysResponse) this.invoke(request, ListKeysResponse.class);
-    }
-
-    /**
-     * ListScheduleDeletionKeys - 获取计划删除密钥列表
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public ListScheduleDeletionKeysResponse listScheduleDeletionKeys(
-            ListScheduleDeletionKeysRequest request) throws UCloudException {
-        request.setAction("ListScheduleDeletionKeys");
-        return (ListScheduleDeletionKeysResponse)
-                this.invoke(request, ListScheduleDeletionKeysResponse.class);
     }
 
     /**
