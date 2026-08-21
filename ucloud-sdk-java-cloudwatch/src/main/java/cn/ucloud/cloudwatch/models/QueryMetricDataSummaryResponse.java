@@ -90,9 +90,9 @@ public class QueryMetricDataSummaryResponse extends Response {
         @SerializedName("Metric")
         private String metric;
 
-        /** 指标的tag的k-v对象 */
-        @SerializedName("Tags")
-        private Object tags;
+        /** 指标标签列表 */
+        @SerializedName("TagsList")
+        private List<Product> tagsList;
 
         /** 指标单个样本点对象 */
         @SerializedName("Value")
@@ -106,12 +106,12 @@ public class QueryMetricDataSummaryResponse extends Response {
             this.metric = metric;
         }
 
-        public Object getTags() {
-            return tags;
+        public List<Product> getTagsList() {
+            return tagsList;
         }
 
-        public void setTags(Object tags) {
-            this.tags = tags;
+        public void setTagsList(List<Product> tagsList) {
+            this.tagsList = tagsList;
         }
 
         public MetricSample getValue() {
@@ -120,6 +120,117 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         public void setValue(MetricSample value) {
             this.value = value;
+        }
+    }
+
+    public static class Product extends Response {
+
+        /** ID */
+        @SerializedName("Id")
+        private Integer id;
+
+        /** 资源类型ID */
+        @SerializedName("ProductType")
+        private Integer productType;
+
+        /** 资源类型唯一key */
+        @SerializedName("ProductKey")
+        private String productKey;
+
+        /** 产品名称 */
+        @SerializedName("ProductName")
+        private String productName;
+
+        /** 产品子名称 */
+        @SerializedName("ProductName1")
+        private String productName1;
+
+        /** 产品中文名称 */
+        @SerializedName("ProductChName")
+        private String productChName;
+
+        /** 产品英文名称 */
+        @SerializedName("ProductEnName")
+        private String productEnName;
+
+        /** {Type: 1|2, Key:string, Name: string}[] -> JSON字符串 */
+        @SerializedName("Metas")
+        private String metas;
+
+        /** 产品分组 */
+        @SerializedName("ProductGroup")
+        private String productGroup;
+
+        public Integer getId() {
+            return id;
+        }
+
+        public void setId(Integer id) {
+            this.id = id;
+        }
+
+        public Integer getProductType() {
+            return productType;
+        }
+
+        public void setProductType(Integer productType) {
+            this.productType = productType;
+        }
+
+        public String getProductKey() {
+            return productKey;
+        }
+
+        public void setProductKey(String productKey) {
+            this.productKey = productKey;
+        }
+
+        public String getProductName() {
+            return productName;
+        }
+
+        public void setProductName(String productName) {
+            this.productName = productName;
+        }
+
+        public String getProductName1() {
+            return productName1;
+        }
+
+        public void setProductName1(String productName1) {
+            this.productName1 = productName1;
+        }
+
+        public String getProductChName() {
+            return productChName;
+        }
+
+        public void setProductChName(String productChName) {
+            this.productChName = productChName;
+        }
+
+        public String getProductEnName() {
+            return productEnName;
+        }
+
+        public void setProductEnName(String productEnName) {
+            this.productEnName = productEnName;
+        }
+
+        public String getMetas() {
+            return metas;
+        }
+
+        public void setMetas(String metas) {
+            this.metas = metas;
+        }
+
+        public String getProductGroup() {
+            return productGroup;
+        }
+
+        public void setProductGroup(String productGroup) {
+            this.productGroup = productGroup;
         }
     }
 
@@ -191,6 +302,14 @@ public class QueryMetricDataSummaryResponse extends Response {
         @SerializedName("ProjectId")
         private Integer projectId;
 
+        /** 资源扩展属性列表 */
+        @SerializedName("ResourceExtendAttrList")
+        private List<ResourceMonitorItem> resourceExtendAttrList;
+
+        /** 资源标签属性列表 */
+        @SerializedName("LabelAttrList")
+        private List<ResourceMonitorItem> labelAttrList;
+
         /** 公司id */
         @SerializedName("CompanyId")
         private Integer companyId;
@@ -223,7 +342,7 @@ public class QueryMetricDataSummaryResponse extends Response {
         @SerializedName("Status")
         private Integer status;
 
-        /** 资源的各项指标当前值，类型为： map[string][]MetricSingleSample map的key为指标名，value为样本点数组。 */
+        /** 资源的各项指标当前值列表 */
         @SerializedName("MonitorAttr")
         private List<ResourceMonitorItem> monitorAttr;
 
@@ -249,6 +368,22 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         public void setProjectId(Integer projectId) {
             this.projectId = projectId;
+        }
+
+        public List<ResourceMonitorItem> getResourceExtendAttrList() {
+            return resourceExtendAttrList;
+        }
+
+        public void setResourceExtendAttrList(List<ResourceMonitorItem> resourceExtendAttrList) {
+            this.resourceExtendAttrList = resourceExtendAttrList;
+        }
+
+        public List<ResourceMonitorItem> getLabelAttrList() {
+            return labelAttrList;
+        }
+
+        public void setLabelAttrList(List<ResourceMonitorItem> labelAttrList) {
+            this.labelAttrList = labelAttrList;
         }
 
         public Integer getCompanyId() {

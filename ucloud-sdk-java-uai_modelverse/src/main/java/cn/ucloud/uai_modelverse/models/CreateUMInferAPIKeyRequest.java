@@ -70,6 +70,18 @@ public class CreateUMInferAPIKeyRequest extends Request {
     @UCloudParam("InferenceLogEnabled")
     private Integer inferenceLogEnabled;
 
+    /** API Key 过期时间，Unix 时间戳，单位为秒。传 -1 表示永不过期。 */
+    @UCloudParam("ExpireTime")
+    private Integer expireTime;
+
+    /** 模型访问策略：whitelist 表示白名单模式，blacklist 表示黑名单模式。 */
+    @UCloudParam("ModelAccessMode")
+    private String modelAccessMode;
+
+    /** API Key 禁止访问的模型列表。内容为数组格式。 */
+    @UCloudParam("DeniedModels")
+    private String deniedModels;
+
     public String getProjectId() {
         return projectId;
     }
@@ -148,5 +160,29 @@ public class CreateUMInferAPIKeyRequest extends Request {
 
     public void setInferenceLogEnabled(Integer inferenceLogEnabled) {
         this.inferenceLogEnabled = inferenceLogEnabled;
+    }
+
+    public Integer getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Integer expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public String getModelAccessMode() {
+        return modelAccessMode;
+    }
+
+    public void setModelAccessMode(String modelAccessMode) {
+        this.modelAccessMode = modelAccessMode;
+    }
+
+    public String getDeniedModels() {
+        return deniedModels;
+    }
+
+    public void setDeniedModels(String deniedModels) {
+        this.deniedModels = deniedModels;
     }
 }

@@ -46,6 +46,14 @@ public class ListUMInferAPIKeyResponse extends Response {
         @SerializedName("InferenceLogEnabled")
         private Integer inferenceLogEnabled;
 
+        /** 禁止访问的模型列表。当 ModelAccessMode=blacklist 时生效。 */
+        @SerializedName("DeniedModels")
+        private List<String> deniedModels;
+
+        /** 模型访问策略。可选值：whitelist（白名单模式，默认）或 blacklist（黑名单模式）。 */
+        @SerializedName("ModelAccessMode")
+        private String modelAccessMode;
+
         /** 资源ID */
         @SerializedName("KeyId")
         private String keyId;
@@ -128,6 +136,22 @@ public class ListUMInferAPIKeyResponse extends Response {
 
         public void setInferenceLogEnabled(Integer inferenceLogEnabled) {
             this.inferenceLogEnabled = inferenceLogEnabled;
+        }
+
+        public List<String> getDeniedModels() {
+            return deniedModels;
+        }
+
+        public void setDeniedModels(List<String> deniedModels) {
+            this.deniedModels = deniedModels;
+        }
+
+        public String getModelAccessMode() {
+            return modelAccessMode;
+        }
+
+        public void setModelAccessMode(String modelAccessMode) {
+            this.modelAccessMode = modelAccessMode;
         }
 
         public String getKeyId() {
