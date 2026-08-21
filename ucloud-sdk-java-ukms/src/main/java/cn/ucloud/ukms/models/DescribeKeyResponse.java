@@ -89,10 +89,6 @@ public class DescribeKeyResponse extends Response {
         @SerializedName("DeletionDate")
         private Integer deletionDate;
 
-        /** 密钥所属组织的数字 ID，来源于密钥关联的资源交易记录。 */
-        @SerializedName("OrganizationId")
-        private Integer organizationId;
-
         public String getProjectId() {
             return projectId;
         }
@@ -195,14 +191,6 @@ public class DescribeKeyResponse extends Response {
 
         public void setDeletionDate(Integer deletionDate) {
             this.deletionDate = deletionDate;
-        }
-
-        public Integer getOrganizationId() {
-            return organizationId;
-        }
-
-        public void setOrganizationId(Integer organizationId) {
-            this.organizationId = organizationId;
         }
     }
 }

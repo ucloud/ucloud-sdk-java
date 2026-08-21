@@ -14,7 +14,21 @@
 package cn.ucloud.ukms.models;
 
 
-
 import cn.ucloud.common.response.Response;
 
-public class GenerateRandomResponse extends Response {}
+import com.google.gson.annotations.SerializedName;
+
+public class GenerateRandomResponse extends Response {
+
+    /** 随机字节串。 */
+    @SerializedName("Plaintext")
+    private String plaintext;
+
+    public String getPlaintext() {
+        return plaintext;
+    }
+
+    public void setPlaintext(String plaintext) {
+        this.plaintext = plaintext;
+    }
+}
