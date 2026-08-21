@@ -57,6 +57,33 @@ public class QueryMetricDataSummaryResponse extends Response {
         this.data = data;
     }
 
+    public static class LabelAttrItem extends Response {
+
+        /** 键 */
+        @SerializedName("Key")
+        private String key;
+
+        /** 值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
     public static class MetricSample extends Response {
 
         /** 时间戳 */
@@ -92,7 +119,7 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         /** 指标标签列表 */
         @SerializedName("TagsList")
-        private List<Product> tagsList;
+        private List<TagListItem> tagsList;
 
         /** 指标单个样本点对象 */
         @SerializedName("Value")
@@ -106,11 +133,11 @@ public class QueryMetricDataSummaryResponse extends Response {
             this.metric = metric;
         }
 
-        public List<Product> getTagsList() {
+        public List<TagListItem> getTagsList() {
             return tagsList;
         }
 
-        public void setTagsList(List<Product> tagsList) {
+        public void setTagsList(List<TagListItem> tagsList) {
             this.tagsList = tagsList;
         }
 
@@ -120,117 +147,6 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         public void setValue(MetricSample value) {
             this.value = value;
-        }
-    }
-
-    public static class Product extends Response {
-
-        /** ID */
-        @SerializedName("Id")
-        private Integer id;
-
-        /** 资源类型ID */
-        @SerializedName("ProductType")
-        private Integer productType;
-
-        /** 资源类型唯一key */
-        @SerializedName("ProductKey")
-        private String productKey;
-
-        /** 产品名称 */
-        @SerializedName("ProductName")
-        private String productName;
-
-        /** 产品子名称 */
-        @SerializedName("ProductName1")
-        private String productName1;
-
-        /** 产品中文名称 */
-        @SerializedName("ProductChName")
-        private String productChName;
-
-        /** 产品英文名称 */
-        @SerializedName("ProductEnName")
-        private String productEnName;
-
-        /** {Type: 1|2, Key:string, Name: string}[] -> JSON字符串 */
-        @SerializedName("Metas")
-        private String metas;
-
-        /** 产品分组 */
-        @SerializedName("ProductGroup")
-        private String productGroup;
-
-        public Integer getId() {
-            return id;
-        }
-
-        public void setId(Integer id) {
-            this.id = id;
-        }
-
-        public Integer getProductType() {
-            return productType;
-        }
-
-        public void setProductType(Integer productType) {
-            this.productType = productType;
-        }
-
-        public String getProductKey() {
-            return productKey;
-        }
-
-        public void setProductKey(String productKey) {
-            this.productKey = productKey;
-        }
-
-        public String getProductName() {
-            return productName;
-        }
-
-        public void setProductName(String productName) {
-            this.productName = productName;
-        }
-
-        public String getProductName1() {
-            return productName1;
-        }
-
-        public void setProductName1(String productName1) {
-            this.productName1 = productName1;
-        }
-
-        public String getProductChName() {
-            return productChName;
-        }
-
-        public void setProductChName(String productChName) {
-            this.productChName = productChName;
-        }
-
-        public String getProductEnName() {
-            return productEnName;
-        }
-
-        public void setProductEnName(String productEnName) {
-            this.productEnName = productEnName;
-        }
-
-        public String getMetas() {
-            return metas;
-        }
-
-        public void setMetas(String metas) {
-            this.metas = metas;
-        }
-
-        public String getProductGroup() {
-            return productGroup;
-        }
-
-        public void setProductGroup(String productGroup) {
-            this.productGroup = productGroup;
         }
     }
 
@@ -258,6 +174,33 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         public void setList(List<ResourceSummary> list) {
             this.list = list;
+        }
+    }
+
+    public static class ResourceExtendAttrItem extends Response {
+
+        /** 键 */
+        @SerializedName("Key")
+        private String key;
+
+        /** 值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 
@@ -304,11 +247,11 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         /** 资源扩展属性列表 */
         @SerializedName("ResourceExtendAttrList")
-        private List<ResourceMonitorItem> resourceExtendAttrList;
+        private List<ResourceExtendAttrItem> resourceExtendAttrList;
 
         /** 资源标签属性列表 */
         @SerializedName("LabelAttrList")
-        private List<ResourceMonitorItem> labelAttrList;
+        private List<LabelAttrItem> labelAttrList;
 
         /** 公司id */
         @SerializedName("CompanyId")
@@ -370,19 +313,19 @@ public class QueryMetricDataSummaryResponse extends Response {
             this.projectId = projectId;
         }
 
-        public List<ResourceMonitorItem> getResourceExtendAttrList() {
+        public List<ResourceExtendAttrItem> getResourceExtendAttrList() {
             return resourceExtendAttrList;
         }
 
-        public void setResourceExtendAttrList(List<ResourceMonitorItem> resourceExtendAttrList) {
+        public void setResourceExtendAttrList(List<ResourceExtendAttrItem> resourceExtendAttrList) {
             this.resourceExtendAttrList = resourceExtendAttrList;
         }
 
-        public List<ResourceMonitorItem> getLabelAttrList() {
+        public List<LabelAttrItem> getLabelAttrList() {
             return labelAttrList;
         }
 
-        public void setLabelAttrList(List<ResourceMonitorItem> labelAttrList) {
+        public void setLabelAttrList(List<LabelAttrItem> labelAttrList) {
             this.labelAttrList = labelAttrList;
         }
 
@@ -456,6 +399,33 @@ public class QueryMetricDataSummaryResponse extends Response {
 
         public void setMonitorAttr(List<ResourceMonitorItem> monitorAttr) {
             this.monitorAttr = monitorAttr;
+        }
+    }
+
+    public static class TagListItem extends Response {
+
+        /** 标签名 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** 标签值 */
+        @SerializedName("TagValue")
+        private String tagValue;
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getTagValue() {
+            return tagValue;
+        }
+
+        public void setTagValue(String tagValue) {
+            this.tagValue = tagValue;
         }
     }
 }

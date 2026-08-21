@@ -57,7 +57,7 @@ public class QueryMetricDataSetResponse extends Response {
 
         /** 资源标签列表。每项为 TagListItem：Tag（标签名）和 TagValue（标签值）。 */
         @SerializedName("TagList")
-        private List<Integer> tagList;
+        private List<TagListItem> tagList;
 
         /** 指标数据点列表，元素为 MetricPoint */
         @SerializedName("Values")
@@ -79,11 +79,11 @@ public class QueryMetricDataSetResponse extends Response {
             this.resourceName = resourceName;
         }
 
-        public List<Integer> getTagList() {
+        public List<TagListItem> getTagList() {
             return tagList;
         }
 
-        public void setTagList(List<Integer> tagList) {
+        public void setTagList(List<TagListItem> tagList) {
             this.tagList = tagList;
         }
 
@@ -120,105 +120,6 @@ public class QueryMetricDataSetResponse extends Response {
 
         public void setValue(Double value) {
             this.value = value;
-        }
-    }
-
-    public static class ObjectType extends Response {
-
-        /** ID */
-        @SerializedName("Id")
-        private Integer id;
-
-        /** 资源类型ID */
-        @SerializedName("ObjectType")
-        private String objectType;
-
-        /** 资源类型 */
-        @SerializedName("ObjectTypeKey")
-        private String objectTypeKey;
-
-        /** 产品名称 */
-        @SerializedName("ProductName")
-        private String productName;
-
-        /** 产品子名称 */
-        @SerializedName("ProductName1")
-        private String productName1;
-
-        /** 产品中文名称 */
-        @SerializedName("ProductCNName")
-        private String productCNName;
-
-        /** 产品英文名称 */
-        @SerializedName("ProductENName")
-        private String productENName;
-
-        /** {type: spec|basic, key:string, name: string}[] -> JSON字符串 */
-        @SerializedName("Metas")
-        private String metas;
-
-        public Integer getId() {
-            return id;
-        }
-
-        public void setId(Integer id) {
-            this.id = id;
-        }
-
-        public String getObjectType() {
-            return objectType;
-        }
-
-        public void setObjectType(String objectType) {
-            this.objectType = objectType;
-        }
-
-        public String getObjectTypeKey() {
-            return objectTypeKey;
-        }
-
-        public void setObjectTypeKey(String objectTypeKey) {
-            this.objectTypeKey = objectTypeKey;
-        }
-
-        public String getProductName() {
-            return productName;
-        }
-
-        public void setProductName(String productName) {
-            this.productName = productName;
-        }
-
-        public String getProductName1() {
-            return productName1;
-        }
-
-        public void setProductName1(String productName1) {
-            this.productName1 = productName1;
-        }
-
-        public String getProductCNName() {
-            return productCNName;
-        }
-
-        public void setProductCNName(String productCNName) {
-            this.productCNName = productCNName;
-        }
-
-        public String getProductENName() {
-            return productENName;
-        }
-
-        public void setProductENName(String productENName) {
-            this.productENName = productENName;
-        }
-
-        public String getMetas() {
-            return metas;
-        }
-
-        public void setMetas(String metas) {
-            this.metas = metas;
         }
     }
 
@@ -265,7 +166,7 @@ public class QueryMetricDataSetResponse extends Response {
 
         /** 标签列表。每项为 TagEntry：TagName（标签名）和 KeyList（该标签的全部候选值）。 */
         @SerializedName("TagEntries")
-        private List<ObjectType> tagEntries;
+        private List<TagEntry> tagEntries;
 
         /** 查询到的时间序列列表 */
         @SerializedName("Results")
@@ -295,11 +196,11 @@ public class QueryMetricDataSetResponse extends Response {
             this.errMsg = errMsg;
         }
 
-        public List<ObjectType> getTagEntries() {
+        public List<TagEntry> getTagEntries() {
             return tagEntries;
         }
 
-        public void setTagEntries(List<ObjectType> tagEntries) {
+        public void setTagEntries(List<TagEntry> tagEntries) {
             this.tagEntries = tagEntries;
         }
 
@@ -309,6 +210,60 @@ public class QueryMetricDataSetResponse extends Response {
 
         public void setResults(List<MetricResult> results) {
             this.results = results;
+        }
+    }
+
+    public static class TagEntry extends Response {
+
+        /** 标签名称 */
+        @SerializedName("TagName")
+        private String tagName;
+
+        /** 标签候选值列表 */
+        @SerializedName("KeyList")
+        private List<String> keyList;
+
+        public String getTagName() {
+            return tagName;
+        }
+
+        public void setTagName(String tagName) {
+            this.tagName = tagName;
+        }
+
+        public List<String> getKeyList() {
+            return keyList;
+        }
+
+        public void setKeyList(List<String> keyList) {
+            this.keyList = keyList;
+        }
+    }
+
+    public static class TagListItem extends Response {
+
+        /** 标签名 */
+        @SerializedName("Tag")
+        private String tag;
+
+        /** 标签值 */
+        @SerializedName("TagValue")
+        private String tagValue;
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
+        }
+
+        public String getTagValue() {
+            return tagValue;
+        }
+
+        public void setTagValue(String tagValue) {
+            this.tagValue = tagValue;
         }
     }
 }
