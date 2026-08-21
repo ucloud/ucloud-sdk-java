@@ -127,13 +127,13 @@ public class ListAlertRecordResponse extends Response {
         @SerializedName("StartAt")
         private Integer startAt;
 
-        /** 告警恢复时间 */
+        /** 告警结束时间 */
         @SerializedName("EndAt")
         private Integer endAt;
 
-        /** 产品相关的额外属性 */
-        @SerializedName("ContentAttr")
-        private Object contentAttr;
+        /** 产品相关的额外属性列表 */
+        @SerializedName("ContentAttrList")
+        private List<String> contentAttrList;
 
         public String getRegion() {
             return region;
@@ -303,12 +303,12 @@ public class ListAlertRecordResponse extends Response {
             this.endAt = endAt;
         }
 
-        public Object getContentAttr() {
-            return contentAttr;
+        public List<String> getContentAttrList() {
+            return contentAttrList;
         }
 
-        public void setContentAttr(Object contentAttr) {
-            this.contentAttr = contentAttr;
+        public void setContentAttrList(List<String> contentAttrList) {
+            this.contentAttrList = contentAttrList;
         }
     }
 }
