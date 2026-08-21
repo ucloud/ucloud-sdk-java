@@ -133,7 +133,7 @@ public class ListAlertRecordResponse extends Response {
 
         /** 产品相关的额外属性列表 */
         @SerializedName("ContentAttrList")
-        private List<String> contentAttrList;
+        private List<ContentAttrItem> contentAttrList;
 
         public String getRegion() {
             return region;
@@ -303,12 +303,39 @@ public class ListAlertRecordResponse extends Response {
             this.endAt = endAt;
         }
 
-        public List<String> getContentAttrList() {
+        public List<ContentAttrItem> getContentAttrList() {
             return contentAttrList;
         }
 
-        public void setContentAttrList(List<String> contentAttrList) {
+        public void setContentAttrList(List<ContentAttrItem> contentAttrList) {
             this.contentAttrList = contentAttrList;
+        }
+    }
+
+    public static class ContentAttrItem extends Response {
+
+        /** 键 */
+        @SerializedName("Key")
+        private String key;
+
+        /** 值 */
+        @SerializedName("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 }

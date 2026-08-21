@@ -30,7 +30,7 @@ public class DescribeUDBInstancePriceRequest extends Request {
     @UCloudParam("Zone")
     private String zone;
 
-    /** 内存限制(MB)，单位为MB.目前支持：2000-96000 */
+    /** 内存限制(MB)，目前支持2000‑96000，按1000进制(1GB=1000MB)计算 */
     @NotEmpty
     @UCloudParam("MemoryLimit")
     private Integer memoryLimit;
