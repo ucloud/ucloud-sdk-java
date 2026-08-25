@@ -21,9 +21,13 @@ fmt:
 #   重复的 <dependency> 在 maven 里只有 WARNING、不会让构建失败，本 target 对它无闸。
 #   要补需引入 maven-enforcer-plugin 的 banDuplicatePomDependencyVersions，
 #   经评估后决定不引入，故该缺口保留。
+#
+# 编译命令包了一层 scripts/mvn-compile.sh：它只在「依赖解析失败」时重试，
+# 编译错误立刻失败。起因是 codegen PR #180 被一次拉不到发布插件的网络抖动打红，
+# 那既不是代码问题也不是闸误判，却会让那一轮发布退回人工。详见脚本文件头。
 .PHONY: ci-syntax
 ci-syntax:
-	mvn -B -DskipTests compile
+	@bash $(CURDIR)/scripts/mvn-compile.sh
 
 # 警告：当前是空壳，exit 0 但什么都没检查，不要把它的通过当成风格已过检。
 # 填实需要先跑一次全仓 google-java-format（见 fmt），是个独立的大 diff，不在 CI 改造范围内。
