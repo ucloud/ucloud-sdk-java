@@ -19,18 +19,30 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class GetSandboxSiteResponse extends Response {
+public class ListSandboxSitesResponse extends Response {
 
-    /** 站点 */
-    @SerializedName("Site")
-    private Site site;
+    /** 站点空间列表 */
+    @SerializedName("Sites")
+    private List<Site> sites;
 
-    public Site getSite() {
-        return site;
+    /** 目标域名地址 */
+    @SerializedName("CustomTargetDomain")
+    private String customTargetDomain;
+
+    public List<Site> getSites() {
+        return sites;
     }
 
-    public void setSite(Site site) {
-        this.site = site;
+    public void setSites(List<Site> sites) {
+        this.sites = sites;
+    }
+
+    public String getCustomTargetDomain() {
+        return customTargetDomain;
+    }
+
+    public void setCustomTargetDomain(String customTargetDomain) {
+        this.customTargetDomain = customTargetDomain;
     }
 
     public static class Site extends Response {
