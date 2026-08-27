@@ -40,6 +40,10 @@ public class GetKeyRotationStatusResponse extends Response {
     @SerializedName("OnDemandRotationStartDate")
     private Integer onDemandRotationStartDate;
 
+    /** 最后一次轮转时间，Unix 时间戳。 */
+    @SerializedName("LastRotationDate")
+    private Integer lastRotationDate;
+
     public Boolean getKeyRotationEnabled() {
         return keyRotationEnabled;
     }
@@ -78,5 +82,13 @@ public class GetKeyRotationStatusResponse extends Response {
 
     public void setOnDemandRotationStartDate(Integer onDemandRotationStartDate) {
         this.onDemandRotationStartDate = onDemandRotationStartDate;
+    }
+
+    public Integer getLastRotationDate() {
+        return lastRotationDate;
+    }
+
+    public void setLastRotationDate(Integer lastRotationDate) {
+        this.lastRotationDate = lastRotationDate;
     }
 }
