@@ -27,10 +27,14 @@ import cn.ucloud.uk8s.models.AddUK8SUHostNodeRequest;
 import cn.ucloud.uk8s.models.AddUK8SUHostNodeResponse;
 import cn.ucloud.uk8s.models.CreateUK8SClusterV2Request;
 import cn.ucloud.uk8s.models.CreateUK8SClusterV2Response;
+import cn.ucloud.uk8s.models.CreateUK8SULSConfigRequest;
+import cn.ucloud.uk8s.models.CreateUK8SULSConfigResponse;
 import cn.ucloud.uk8s.models.DelUK8SClusterNodeV2Request;
 import cn.ucloud.uk8s.models.DelUK8SClusterNodeV2Response;
 import cn.ucloud.uk8s.models.DelUK8SClusterRequest;
 import cn.ucloud.uk8s.models.DelUK8SClusterResponse;
+import cn.ucloud.uk8s.models.DeleteUK8SULSConfigRequest;
+import cn.ucloud.uk8s.models.DeleteUK8SULSConfigResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SClusterRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SClusterResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SImageRequest;
@@ -47,8 +51,12 @@ import cn.ucloud.uk8s.models.ListUK8SClusterV2Request;
 import cn.ucloud.uk8s.models.ListUK8SClusterV2Response;
 import cn.ucloud.uk8s.models.ListUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.ListUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.ListUK8SULSConfigRequest;
+import cn.ucloud.uk8s.models.ListUK8SULSConfigResponse;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.UpdateUK8SULSConfigRequest;
+import cn.ucloud.uk8s.models.UpdateUK8SULSConfigResponse;
 
 /** This client is used to call actions of **UK8S** service */
 public class UK8SClient extends DefaultClient implements UK8SClientInterface {
@@ -119,6 +127,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
     }
 
     /**
+     * CreateUK8SULSConfig - 创建UK8日志采集配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateUK8SULSConfigResponse createUK8SULSConfig(CreateUK8SULSConfigRequest request)
+            throws UCloudException {
+        request.setAction("CreateUK8SULSConfig");
+        return (CreateUK8SULSConfigResponse)
+                this.invoke(request, CreateUK8SULSConfigResponse.class);
+    }
+
+    /**
      * DelUK8SCluster - 删除UK8S集群
      *
      * @param request Request object
@@ -141,6 +162,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
         request.setAction("DelUK8SClusterNodeV2");
         return (DelUK8SClusterNodeV2Response)
                 this.invoke(request, DelUK8SClusterNodeV2Response.class);
+    }
+
+    /**
+     * DeleteUK8SULSConfig - 删除UK8S日志采集配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUK8SULSConfigResponse deleteUK8SULSConfig(DeleteUK8SULSConfigRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUK8SULSConfig");
+        return (DeleteUK8SULSConfigResponse)
+                this.invoke(request, DeleteUK8SULSConfigResponse.class);
     }
 
     /**
@@ -242,6 +276,18 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
     }
 
     /**
+     * ListUK8SULSConfig - 查询 UK8s 的 ULS 日志采集配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ListUK8SULSConfigResponse listUK8SULSConfig(ListUK8SULSConfigRequest request)
+            throws UCloudException {
+        request.setAction("ListUK8SULSConfig");
+        return (ListUK8SULSConfigResponse) this.invoke(request, ListUK8SULSConfigResponse.class);
+    }
+
+    /**
      * RemoveUK8SNodeGroup - 删除UK8S节点池
      *
      * @param request Request object
@@ -252,5 +298,18 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
         request.setAction("RemoveUK8SNodeGroup");
         return (RemoveUK8SNodeGroupResponse)
                 this.invoke(request, RemoveUK8SNodeGroupResponse.class);
+    }
+
+    /**
+     * UpdateUK8SULSConfig - 更新UK8S日志采集配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUK8SULSConfigResponse updateUK8SULSConfig(UpdateUK8SULSConfigRequest request)
+            throws UCloudException {
+        request.setAction("UpdateUK8SULSConfig");
+        return (UpdateUK8SULSConfigResponse)
+                this.invoke(request, UpdateUK8SULSConfigResponse.class);
     }
 }
