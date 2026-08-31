@@ -35,6 +35,7 @@ public class DisableKeyRotationRequest extends Request {
     private String keyId;
 
     /** UKMS 实例资源 ID。 */
+    @NotEmpty
     @UCloudParam("ResourceId")
     private String resourceId;
 
