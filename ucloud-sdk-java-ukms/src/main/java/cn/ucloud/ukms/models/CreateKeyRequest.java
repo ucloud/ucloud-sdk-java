@@ -53,13 +53,13 @@ public class CreateKeyRequest extends Request {
     @UCloudParam("KeyUsage")
     private String keyUsage;
 
-    /** 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 100660。 */
+    /** 密钥材料来源，默认 UCLOUD_KMS。当前仅支持 UCLOUD_KMS；EXTERNAL 为 BYOK 规划值，当前传入会返回 1230。 */
     @UCloudParam("Origin")
     private String origin;
 
     /** 是否开启删除保护。可选值：true、false；默认 false。 */
     @UCloudParam("DeletionProtection")
-    private String deletionProtection;
+    private Boolean deletionProtection;
 
     public String getProjectId() {
         return projectId;
@@ -125,11 +125,11 @@ public class CreateKeyRequest extends Request {
         this.origin = origin;
     }
 
-    public String getDeletionProtection() {
+    public Boolean getDeletionProtection() {
         return deletionProtection;
     }
 
-    public void setDeletionProtection(String deletionProtection) {
+    public void setDeletionProtection(Boolean deletionProtection) {
         this.deletionProtection = deletionProtection;
     }
 }

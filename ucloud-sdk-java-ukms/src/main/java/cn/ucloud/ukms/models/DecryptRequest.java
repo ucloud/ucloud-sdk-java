@@ -46,10 +46,7 @@ public class DecryptRequest extends Request {
     @UCloudParam("EncryptionContext")
     private String encryptionContext;
 
-    /**
-     * 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填或使用默认
-     * RSAES_OAEP_SHA_256。
-     */
+    /** 解密算法。可选值：SYMMETRIC_DEFAULT、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256；非对称密钥解密时必填。 */
     @UCloudParam("EncryptionAlgorithm")
     private String encryptionAlgorithm;
 

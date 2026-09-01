@@ -29,7 +29,7 @@ public class EnableKeyRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 密钥 DB 数字 ID。 */
+    /** 密钥资源长 ID */
     @NotEmpty
     @UCloudParam("KeyId")
     private String keyId;
