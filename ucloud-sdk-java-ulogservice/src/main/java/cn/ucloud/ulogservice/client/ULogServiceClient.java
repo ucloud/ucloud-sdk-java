@@ -37,6 +37,8 @@ import cn.ucloud.ulogservice.models.DeleteULogServiceTopicRequest;
 import cn.ucloud.ulogservice.models.DeleteULogServiceTopicResponse;
 import cn.ucloud.ulogservice.models.DescribeULogServiceMachineGroupRequest;
 import cn.ucloud.ulogservice.models.DescribeULogServiceMachineGroupResponse;
+import cn.ucloud.ulogservice.models.GetULogServiceTopicFieldRequest;
+import cn.ucloud.ulogservice.models.GetULogServiceTopicFieldResponse;
 import cn.ucloud.ulogservice.models.ListULogServiceCollectConfRequest;
 import cn.ucloud.ulogservice.models.ListULogServiceCollectConfResponse;
 import cn.ucloud.ulogservice.models.ListULogServiceLogSetRequest;
@@ -51,6 +53,8 @@ import cn.ucloud.ulogservice.models.UpdateULogServiceCollectConfRequest;
 import cn.ucloud.ulogservice.models.UpdateULogServiceCollectConfResponse;
 import cn.ucloud.ulogservice.models.UpdateULogServiceMachineGroupRequest;
 import cn.ucloud.ulogservice.models.UpdateULogServiceMachineGroupResponse;
+import cn.ucloud.ulogservice.models.UpdateULogServiceTopicFieldRequest;
+import cn.ucloud.ulogservice.models.UpdateULogServiceTopicFieldResponse;
 
 /** This client is used to call actions of **ULogService** service */
 public class ULogServiceClient extends DefaultClient implements ULogServiceClientInterface {
@@ -189,6 +193,19 @@ public class ULogServiceClient extends DefaultClient implements ULogServiceClien
     }
 
     /**
+     * GetULogServiceTopicField - 获取ULogService主题索引字段
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetULogServiceTopicFieldResponse getULogServiceTopicField(
+            GetULogServiceTopicFieldRequest request) throws UCloudException {
+        request.setAction("GetULogServiceTopicField");
+        return (GetULogServiceTopicFieldResponse)
+                this.invoke(request, GetULogServiceTopicFieldResponse.class);
+    }
+
+    /**
      * ListULogServiceCollectConf - 查询日志主题采集配置列表
      *
      * @param request Request object
@@ -277,5 +294,18 @@ public class ULogServiceClient extends DefaultClient implements ULogServiceClien
         request.setAction("UpdateULogServiceMachineGroup");
         return (UpdateULogServiceMachineGroupResponse)
                 this.invoke(request, UpdateULogServiceMachineGroupResponse.class);
+    }
+
+    /**
+     * UpdateULogServiceTopicField - 更新ULogService主题索引字段
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateULogServiceTopicFieldResponse updateULogServiceTopicField(
+            UpdateULogServiceTopicFieldRequest request) throws UCloudException {
+        request.setAction("UpdateULogServiceTopicField");
+        return (UpdateULogServiceTopicFieldResponse)
+                this.invoke(request, UpdateULogServiceTopicFieldResponse.class);
     }
 }

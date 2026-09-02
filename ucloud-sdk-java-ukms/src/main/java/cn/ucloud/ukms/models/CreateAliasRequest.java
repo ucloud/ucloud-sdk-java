@@ -34,7 +34,7 @@ public class CreateAliasRequest extends Request {
     @UCloudParam("AliasName")
     private String aliasName;
 
-    /** 密钥 ID、ARN 或别名。 */
+    /** 密钥 ID 或别名。 */
     @NotEmpty
     @UCloudParam("KeyId")
     private String keyId;

@@ -29,7 +29,7 @@ public class UpdateKeyDescriptionRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 密钥资源长 ID、ARN 或别名。 */
+    /** 密钥资源长 ID或别名。 */
     @NotEmpty
     @UCloudParam("KeyId")
     private String keyId;
