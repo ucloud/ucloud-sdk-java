@@ -11,33 +11,36 @@
  * express or implied. See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.ucloud.ukms.models;
+package cn.ucloud.ulogservice.models;
 
 
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
 
-public class DisableKeyRotationRequest extends Request {
+public class GetULogServiceTopicFieldRequest extends Request {
 
-    /** 地域。参见地域和可用区列表。 */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子账号必须填写。 */
+    /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
+    @NotEmpty
+    @UCloudParam("Zone")
+    private String zone;
+
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 密钥 ID或别名。 */
+    /** 主题Id */
     @NotEmpty
-    @UCloudParam("KeyId")
-    private String keyId;
-
-    /** UKMS 实例资源 ID。 */
-    @NotEmpty
-    @UCloudParam("ResourceId")
-    private String resourceId;
+    @UCloudParam("TopicId")
+    private String topicId;
 
     public String getRegion() {
         return region;
@@ -45,6 +48,14 @@ public class DisableKeyRotationRequest extends Request {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public String getProjectId() {
@@ -55,19 +66,11 @@ public class DisableKeyRotationRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getKeyId() {
-        return keyId;
+    public String getTopicId() {
+        return topicId;
     }
 
-    public void setKeyId(String keyId) {
-        this.keyId = keyId;
-    }
-
-    public String getResourceId() {
-        return resourceId;
-    }
-
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
     }
 }

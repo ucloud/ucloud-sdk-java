@@ -29,7 +29,7 @@ public class VerifyRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 密钥 ID、ARN 或别名。 */
+    /** 密钥 ID或别名。 */
     @NotEmpty
     @UCloudParam("KeyId")
     private String keyId;
