@@ -276,7 +276,7 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
     }
 
     /**
-     * ListUK8SULSConfig - 查询 UK8s 的 ULS 日志采集配置
+     * ListUK8SULSConfig - 查询UK8s的ULS日志采集配置
      *
      * @param request Request object
      * @throws UCloudException Exception

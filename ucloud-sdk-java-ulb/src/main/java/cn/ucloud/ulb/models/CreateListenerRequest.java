@@ -97,6 +97,10 @@ public class CreateListenerRequest extends Request {
     @UCloudParam("RedirectPort")
     private Integer redirectPort;
 
+    /** 后端协议。应用型限定取值：“HTTP,HTTPS,GRPC"，默认值“HTTP” */
+    @UCloudParam("TargetProtocol")
+    private String targetProtocol;
+
     public String getRegion() {
         return region;
     }
@@ -233,9 +237,17 @@ public class CreateListenerRequest extends Request {
         this.redirectPort = redirectPort;
     }
 
+    public String getTargetProtocol() {
+        return targetProtocol;
+    }
+
+    public void setTargetProtocol(String targetProtocol) {
+        this.targetProtocol = targetProtocol;
+    }
+
     public static class HealthCheckConfig extends Request {
 
-        /** 是否开启健康检查功能。暂时不支持关闭。默认值为：true */
+        /** 是否开启健康检查功能。默认值为：true */
         @UCloudParam("Enabled")
         private Boolean enabled;
 
@@ -243,11 +255,11 @@ public class CreateListenerRequest extends Request {
         @UCloudParam("Type")
         private String type;
 
-        /** （应用型专用）HTTP检查域名 */
+        /** （应用型专用）HTTP/GRPC检查域名 */
         @UCloudParam("Domain")
         private String domain;
 
-        /** （应用型专用）HTTP检查路径 */
+        /** （应用型专用）HTTP/GRPC检查路径 */
         @UCloudParam("Path")
         private String path;
 
@@ -255,9 +267,33 @@ public class CreateListenerRequest extends Request {
         @UCloudParam("Method")
         private String method;
 
-        /** （应用型专用）GRPC检查响应码 */
+        /** （应用型专用）HTTP时为2xx,3xx格式(逗号分隔)，GRPC时为数字码(逗号分隔) */
         @UCloudParam("ResponseCode")
         private String responseCode;
+
+        /** （应用型专用）端口 */
+        @UCloudParam("Port")
+        private Integer port;
+
+        /** （应用型专用）检查协议 */
+        @UCloudParam("HTTPVersion")
+        private String httpVersion;
+
+        /** （应用型专用）超时时间，秒，必须小于Interval */
+        @UCloudParam("TimeOut")
+        private Integer timeOut;
+
+        /** （应用型专用）间隔时间，秒，必须大于TimeOut */
+        @UCloudParam("Interval")
+        private Integer interval;
+
+        /** （应用型专用）判定成功的连续次数 */
+        @UCloudParam("UpCounts")
+        private Integer upCounts;
+
+        /** （应用型专用）判定失败的连续次数 */
+        @UCloudParam("DownCounts")
+        private Integer downCounts;
 
         public Boolean getEnabled() {
             return enabled;
@@ -305,6 +341,54 @@ public class CreateListenerRequest extends Request {
 
         public void setResponseCode(String responseCode) {
             this.responseCode = responseCode;
+        }
+
+        public Integer getPort() {
+            return port;
+        }
+
+        public void setPort(Integer port) {
+            this.port = port;
+        }
+
+        public String getHTTPVersion() {
+            return httpVersion;
+        }
+
+        public void setHTTPVersion(String httpVersion) {
+            this.httpVersion = httpVersion;
+        }
+
+        public Integer getTimeOut() {
+            return timeOut;
+        }
+
+        public void setTimeOut(Integer timeOut) {
+            this.timeOut = timeOut;
+        }
+
+        public Integer getInterval() {
+            return interval;
+        }
+
+        public void setInterval(Integer interval) {
+            this.interval = interval;
+        }
+
+        public Integer getUpCounts() {
+            return upCounts;
+        }
+
+        public void setUpCounts(Integer upCounts) {
+            this.upCounts = upCounts;
+        }
+
+        public Integer getDownCounts() {
+            return downCounts;
+        }
+
+        public void setDownCounts(Integer downCounts) {
+            this.downCounts = downCounts;
         }
     }
 
