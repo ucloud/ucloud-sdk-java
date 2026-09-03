@@ -35,45 +35,71 @@ public class ListUK8SULSConfigResponse extends Response {
 
     public static class ULSExtractRule extends Response {
 
-        /** 采集策略。可选值: full (全量采集存量日志), increment (从当前时间点增量采集)。默认为 full。 */
+        /** 采集策略。可选值：full（全量采集存量日志）、increment（从当前时间点增量采集）。默认为 full。 */
         @SerializedName("CollectPolicy")
         private String collectPolicy;
 
-        /** 日志原文的编码格式。可选值: utf-8, gbk。默认为 utf-8。 */
+        /** 日志原文的编码格式。可选值：utf-8、gbk。默认为 utf-8。 */
         @SerializedName("Encode")
         private String encode;
 
-        /** 日志解析类型，决定了如何结构化日志。 */
+        /**
+         * 日志解析类型。可选值：json、delimiter、full_regex、multi_line_full_regex、multi_line_delimiter、minimal_list、multi_line。
+         */
         @SerializedName("LogType")
         private String logType;
 
-        /** 当 LogType 为delimiter_log 时可选，可选字段 ' ',' ','|',';',',' */
+        /** 分隔符。适用于 delimiter 或 multi_line_delimiter，可选值：space、tab、|、;、,。 */
         @SerializedName("Delimiter")
         private String delimiter;
 
-        /** 行首正则表达式。当 logType 为多行模式 (如 multiline_log 或 multiline_fullregex_log) 时，用于标识一条新日志的开始。 */
+        /** Base64 编码的分隔符。填写时优先于 Delimiter。 */
+        @SerializedName("DelimiterBase64")
+        private String delimiterBase64;
+
+        /**
+         * 行首正则表达式。在 multi_line、multi_line_full_regex 或 multi_line_delimiter 模式下，BeginningRegex 和
+         * BeginningRegexBase64 必须至少填写一个。
+         */
         @SerializedName("BeginningRegex")
         private String beginningRegex;
 
-        /** 日志提取正则表达式。当 logType 为正则模式 (如 fullregex_log 或 multiline_fullregex_log) 时，用于从日志中提取字段。 */
+        /** Base64 编码的行首正则表达式。填写时优先于 BeginningRegex。 */
+        @SerializedName("BeginningRegexBase64")
+        private String beginningRegexBase64;
+
+        /**
+         * 日志提取正则表达式。在 full_regex 或 multi_line_full_regex 模式下，LogRegex 和 LogRegexBase64 必须至少填写一个。
+         */
         @SerializedName("LogRegex")
         private String logRegex;
 
-        /** 指定时间字段。 */
+        /** Base64 编码的日志提取正则表达式。填写时优先于 LogRegex。 */
+        @SerializedName("LogRegexBase64")
+        private String logRegexBase64;
+
+        /** 包含日志时间的字段名。 */
         @SerializedName("TimeKey")
         private String timeKey;
 
-        /** timeKey 对应的时间格式。如： %Y-%m-%d %H:%M:%S */
+        /**
+         * TimeKey 对应的时间格式。在 json、full_regex 或 multi_line_full_regex 模式下，填写 TimeKey 时必须同时填写
+         * TimeFormat。
+         */
         @SerializedName("TimeFormat")
         private String timeFormat;
 
-        /** 是否上传解析失败的日志。true 表示上传，false 表示丢弃。默认为 false。 */
+        /** 是否上传解析失败的日志。字符串 true 表示上传，false 表示丢弃。默认为 false。 */
         @SerializedName("UnMatchUpload")
         private String unMatchUpload;
 
-        /** 如果 unMatchUpload 为 true，无法解析的日志原文将被存放在此字段指定的 Key 下。默认为 LogParseFailure。 */
+        /** 存放无法解析的日志原文的 Key。UnMatchUpload 为 true 时必须填写。 */
         @SerializedName("UnMatchKey")
         private String unMatchKey;
+
+        /** 提取后的字段名列表。仅适用于 delimiter、full_regex、multi_line_full_regex 和 multi_line_delimiter。 */
+        @SerializedName("Keys")
+        private List<String> keys;
 
         public String getCollectPolicy() {
             return collectPolicy;
@@ -107,6 +133,14 @@ public class ListUK8SULSConfigResponse extends Response {
             this.delimiter = delimiter;
         }
 
+        public String getDelimiterBase64() {
+            return delimiterBase64;
+        }
+
+        public void setDelimiterBase64(String delimiterBase64) {
+            this.delimiterBase64 = delimiterBase64;
+        }
+
         public String getBeginningRegex() {
             return beginningRegex;
         }
@@ -115,12 +149,28 @@ public class ListUK8SULSConfigResponse extends Response {
             this.beginningRegex = beginningRegex;
         }
 
+        public String getBeginningRegexBase64() {
+            return beginningRegexBase64;
+        }
+
+        public void setBeginningRegexBase64(String beginningRegexBase64) {
+            this.beginningRegexBase64 = beginningRegexBase64;
+        }
+
         public String getLogRegex() {
             return logRegex;
         }
 
         public void setLogRegex(String logRegex) {
             this.logRegex = logRegex;
+        }
+
+        public String getLogRegexBase64() {
+            return logRegexBase64;
+        }
+
+        public void setLogRegexBase64(String logRegexBase64) {
+            this.logRegexBase64 = logRegexBase64;
         }
 
         public String getTimeKey() {
@@ -154,6 +204,14 @@ public class ListUK8SULSConfigResponse extends Response {
         public void setUnMatchKey(String unMatchKey) {
             this.unMatchKey = unMatchKey;
         }
+
+        public List<String> getKeys() {
+            return keys;
+        }
+
+        public void setKeys(List<String> keys) {
+            this.keys = keys;
+        }
     }
 
     public static class ULSFilePaths extends Response {
@@ -185,15 +243,19 @@ public class ListUK8SULSConfigResponse extends Response {
 
     public static class ULSInputDetail extends Response {
 
-        /** 采集路径，数组。 */
+        /** 日志采集路径列表。仅适用于 container_file。 */
         @SerializedName("FilePaths")
         private List<ULSFilePaths> filePaths;
 
-        /** 日志输入类型。当前主要支持 container_file，表示采集容器标准输出或文件。 */
+        /** 日志输入类型。可选值：container_file、container_stdout。 */
         @SerializedName("Type")
         private String type;
 
-        /** 定义哪些容器相关的元数据需要附加到日志中。 */
+        /** 容器标准输出流类型。仅适用于 container_stdout，可选值：all、stdout、stderr，默认为 all。 */
+        @SerializedName("Stream")
+        private String stream;
+
+        /** 定义需要附加到日志中的容器相关元数据。 */
         @SerializedName("InputMetadata")
         private ULSInputMetadata inputMetadata;
 
@@ -211,6 +273,14 @@ public class ListUK8SULSConfigResponse extends Response {
 
         public void setType(String type) {
             this.type = type;
+        }
+
+        public String getStream() {
+            return stream;
+        }
+
+        public void setStream(String stream) {
+            this.stream = stream;
         }
 
         public ULSInputMetadata getInputMetadata() {
