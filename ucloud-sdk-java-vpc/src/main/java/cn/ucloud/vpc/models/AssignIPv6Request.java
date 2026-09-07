@@ -65,7 +65,7 @@ public class AssignIPv6Request extends Request {
 
     /** 指定数量分配，与IPv6Addresses互斥 */
     @UCloudParam("Count")
-    private String count;
+    private Integer count;
 
     /** IP属性：支持开启公网(Normal)、仅支持内网(Private)，默认Normal */
     @UCloudParam("Attribute")
@@ -147,11 +147,11 @@ public class AssignIPv6Request extends Request {
         this.iPv6Addresses = iPv6Addresses;
     }
 
-    public String getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 
