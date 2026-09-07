@@ -42,6 +42,10 @@ public class AddSubnetIPv6Request extends Request {
     @UCloudParam("SubnetworkId")
     private String subnetworkId;
 
+    /** 私有网络 ID */
+    @UCloudParam("VPCId")
+    private String vpcId;
+
     /** 所属VPC的IPv6网段，可选，不填默认选择一个VPC IPv6网段进行分配 */
     @UCloudParam("VPCIPv6Network")
     private String vpciPv6Network;
@@ -84,6 +88,14 @@ public class AddSubnetIPv6Request extends Request {
 
     public void setSubnetworkId(String subnetworkId) {
         this.subnetworkId = subnetworkId;
+    }
+
+    public String getVPCId() {
+        return vpcId;
+    }
+
+    public void setVPCId(String vpcId) {
+        this.vpcId = vpcId;
     }
 
     public String getVPCIPv6Network() {
