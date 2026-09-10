@@ -57,6 +57,11 @@ public class CreateSandboxSiteRequest extends Request {
     @UCloudParam("AccessCode")
     private String accessCode;
 
+    /** 站点空间空间模版，格式：site-nc-ng, n为偶数 */
+    @NotEmpty
+    @UCloudParam("TemplateName")
+    private String templateName;
+
     /** 环境变量，格式：["key=value"] */
     @UCloudParam("Envs")
     private String envs;
@@ -115,6 +120,14 @@ public class CreateSandboxSiteRequest extends Request {
 
     public void setAccessCode(String accessCode) {
         this.accessCode = accessCode;
+    }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
     }
 
     public String getEnvs() {

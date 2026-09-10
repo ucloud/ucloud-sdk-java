@@ -50,6 +50,10 @@ public class DescribeURedisUpgradePriceRequest extends Request {
     @UCloudParam("HighPerformance")
     private Boolean highPerformance;
 
+    /** 切换类型，执行类型切换时询价需要传入的参数。 “HighPerformance”： 表示转换为性能加强型，“Normal”： 表示转换为普通主备版类型 */
+    @UCloudParam("ConvertType")
+    private String convertType;
+
     public String getRegion() {
         return region;
     }
@@ -96,5 +100,13 @@ public class DescribeURedisUpgradePriceRequest extends Request {
 
     public void setHighPerformance(Boolean highPerformance) {
         this.highPerformance = highPerformance;
+    }
+
+    public String getConvertType() {
+        return convertType;
+    }
+
+    public void setConvertType(String convertType) {
+        this.convertType = convertType;
     }
 }

@@ -76,6 +76,10 @@ public class DescribeUMemPriceRequest extends Request {
     @UCloudParam("ClusterMode")
     private String clusterMode;
 
+    /** umem 代理个数 */
+    @UCloudParam("ProxyCnt")
+    private Integer proxyCnt;
+
     public String getRegion() {
         return region;
     }
@@ -170,5 +174,13 @@ public class DescribeUMemPriceRequest extends Request {
 
     public void setClusterMode(String clusterMode) {
         this.clusterMode = clusterMode;
+    }
+
+    public Integer getProxyCnt() {
+        return proxyCnt;
+    }
+
+    public void setProxyCnt(Integer proxyCnt) {
+        this.proxyCnt = proxyCnt;
     }
 }

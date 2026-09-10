@@ -47,9 +47,17 @@ public class DescribeUMemSpaceResponse extends Response {
 
     public static class UMemSpaceAddressSet extends Response {
 
-        /** UMem实例访问IP */
+        /** UMem实例内网访问IP */
         @SerializedName("IP")
         private String ip;
+
+        /** UMem实例内网访问域名地址，未开启状态下返回为空 */
+        @SerializedName("PrivateDomain")
+        private String privateDomain;
+
+        /** 开启外网状态下外网IP，否则为空 */
+        @SerializedName("PublicIp")
+        private String publicIp;
 
         /** UMem实例访问Port */
         @SerializedName("Port")
@@ -61,6 +69,22 @@ public class DescribeUMemSpaceResponse extends Response {
 
         public void setIP(String ip) {
             this.ip = ip;
+        }
+
+        public String getPrivateDomain() {
+            return privateDomain;
+        }
+
+        public void setPrivateDomain(String privateDomain) {
+            this.privateDomain = privateDomain;
+        }
+
+        public String getPublicIp() {
+            return publicIp;
+        }
+
+        public void setPublicIp(String publicIp) {
+            this.publicIp = publicIp;
         }
 
         public Integer getPort() {
@@ -78,7 +102,7 @@ public class DescribeUMemSpaceResponse extends Response {
         @SerializedName("Zone")
         private String zone;
 
-        /** */
+        /** 实例tag */
         @SerializedName("Tag")
         private String tag;
 
@@ -90,11 +114,11 @@ public class DescribeUMemSpaceResponse extends Response {
         @SerializedName("SpaceId")
         private String spaceId;
 
-        /** */
+        /** 子网ID */
         @SerializedName("SubnetId")
         private String subnetId;
 
-        /** */
+        /** VPC ID */
         @SerializedName("VPCId")
         private String vpcId;
 
@@ -137,6 +161,14 @@ public class DescribeUMemSpaceResponse extends Response {
         /** IP端口信息请参见 UMemSpaceAddressSet */
         @SerializedName("Address")
         private List<UMemSpaceAddressSet> address;
+
+        /** 实例是否支持回档 */
+        @SerializedName("SupportAofRollback")
+        private Boolean supportAofRollback;
+
+        /** 实例是否开启了回档 */
+        @SerializedName("AofRollbackEnable")
+        private Boolean aofRollbackEnable;
 
         public String getZone() {
             return zone;
@@ -264,6 +296,22 @@ public class DescribeUMemSpaceResponse extends Response {
 
         public void setAddress(List<UMemSpaceAddressSet> address) {
             this.address = address;
+        }
+
+        public Boolean getSupportAofRollback() {
+            return supportAofRollback;
+        }
+
+        public void setSupportAofRollback(Boolean supportAofRollback) {
+            this.supportAofRollback = supportAofRollback;
+        }
+
+        public Boolean getAofRollbackEnable() {
+            return aofRollbackEnable;
+        }
+
+        public void setAofRollbackEnable(Boolean aofRollbackEnable) {
+            this.aofRollbackEnable = aofRollbackEnable;
         }
     }
 }

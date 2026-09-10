@@ -108,9 +108,12 @@ public class DescribeUMemResponse extends Response {
         private Integer usedSize;
 
         /**
-         * 实例状态 Starting // 创建中 Creating // 初始化中 CreateFail // 创建失败 Fail // 创建失败 Deleting // 删除中
-         * DeleteFail // 删除失败 Running // 运行 Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中
-         * ConfigFail // 配置失败Restarting // 重启中 SetPasswordFail //设置密码失败
+         * 实例状态 Starting // 创建中 Creating // 初始化中 Deleting // 删除中 CreateFail // 创建失败 DeleteFail //
+         * 删除失败 Resizing // 容量调整中 ResizeFail // 容量调整失败 Disasting // 容灾中 Running // 运行 SetPassword //
+         * 设置密码 SetPasswordFail // 设置密码失败 ISolation // 关闭 Replicating // 同步中 ReplicateDone // 数据同步完成
+         * ExecTimeout // 待重试 SlaveRecovering // 备库恢复中 ReplicateFail // 同步失败 DelayUpgrade // 待扩容迁移
+         * VersionUpgrading // 升级中 VersionUpgradeFail // 升级失败 UpgradeMemInit // 任务初始化
+         * ClusterUpgrading // 规格调整中 SSLSwitching // 修改TLS中 SSLSwitchFail // 修改TLS失败
          */
         @SerializedName("State")
         private String state;
@@ -154,6 +157,58 @@ public class DescribeUMemResponse extends Response {
         /** 跨机房URedis，slave redis所在可用区，参见 [可用区列表](../summary/regionlist.html) */
         @SerializedName("SlaveZone")
         private String slaveZone;
+
+        /** URedis是否开启读写分离 */
+        @SerializedName("ProxyName")
+        private String proxyName;
+
+        /** 判断后端是否快杰资源（非快杰: 0或者1 快杰: 2或者3） */
+        @SerializedName("ProductType")
+        private Integer productType;
+
+        /** 是否是默认配置文件， true表示默认； false表示非默认 */
+        @SerializedName("DefaultConfigId")
+        private String defaultConfigId;
+
+        /** 是否是高性能Redis， true表示是； false表示否 */
+        @SerializedName("IsHighPerformance")
+        private Boolean isHighPerformance;
+
+        /** 实例是否支持回档 */
+        @SerializedName("SupportAofRollback")
+        private Boolean supportAofRollback;
+
+        /** 实例是否开启了回档 */
+        @SerializedName("AofRollbackEnable")
+        private Boolean aofRollbackEnable;
+
+        /** 是否是读写分离 */
+        @SerializedName("IsRWMode")
+        private Boolean isRWMode;
+
+        /** SSL版本 */
+        @SerializedName("SSLVersion")
+        private String sslVersion;
+
+        /** 实例是否开启SSL */
+        @SerializedName("SSLEnable")
+        private Boolean sslEnable;
+
+        /** 证书过期时间 */
+        @SerializedName("SSLCertExpireTime")
+        private Integer sslCertExpireTime;
+
+        /** 安全策略。1:内网隔离，2:加密通信，3:内网隔离+加密通信 */
+        @SerializedName("SecPolicy")
+        private Integer secPolicy;
+
+        /** 实例是否设置密码 */
+        @SerializedName("HasPassword")
+        private Boolean hasPassword;
+
+        /** 实例是否有加入到自治中心 */
+        @SerializedName("UDACEnable")
+        private Boolean udacEnable;
 
         public String getZone() {
             return zone;
@@ -362,6 +417,110 @@ public class DescribeUMemResponse extends Response {
         public void setSlaveZone(String slaveZone) {
             this.slaveZone = slaveZone;
         }
+
+        public String getProxyName() {
+            return proxyName;
+        }
+
+        public void setProxyName(String proxyName) {
+            this.proxyName = proxyName;
+        }
+
+        public Integer getProductType() {
+            return productType;
+        }
+
+        public void setProductType(Integer productType) {
+            this.productType = productType;
+        }
+
+        public String getDefaultConfigId() {
+            return defaultConfigId;
+        }
+
+        public void setDefaultConfigId(String defaultConfigId) {
+            this.defaultConfigId = defaultConfigId;
+        }
+
+        public Boolean getIsHighPerformance() {
+            return isHighPerformance;
+        }
+
+        public void setIsHighPerformance(Boolean isHighPerformance) {
+            this.isHighPerformance = isHighPerformance;
+        }
+
+        public Boolean getSupportAofRollback() {
+            return supportAofRollback;
+        }
+
+        public void setSupportAofRollback(Boolean supportAofRollback) {
+            this.supportAofRollback = supportAofRollback;
+        }
+
+        public Boolean getAofRollbackEnable() {
+            return aofRollbackEnable;
+        }
+
+        public void setAofRollbackEnable(Boolean aofRollbackEnable) {
+            this.aofRollbackEnable = aofRollbackEnable;
+        }
+
+        public Boolean getIsRWMode() {
+            return isRWMode;
+        }
+
+        public void setIsRWMode(Boolean isRWMode) {
+            this.isRWMode = isRWMode;
+        }
+
+        public String getSSLVersion() {
+            return sslVersion;
+        }
+
+        public void setSSLVersion(String sslVersion) {
+            this.sslVersion = sslVersion;
+        }
+
+        public Boolean getSSLEnable() {
+            return sslEnable;
+        }
+
+        public void setSSLEnable(Boolean sslEnable) {
+            this.sslEnable = sslEnable;
+        }
+
+        public Integer getSSLCertExpireTime() {
+            return sslCertExpireTime;
+        }
+
+        public void setSSLCertExpireTime(Integer sslCertExpireTime) {
+            this.sslCertExpireTime = sslCertExpireTime;
+        }
+
+        public Integer getSecPolicy() {
+            return secPolicy;
+        }
+
+        public void setSecPolicy(Integer secPolicy) {
+            this.secPolicy = secPolicy;
+        }
+
+        public Boolean getHasPassword() {
+            return hasPassword;
+        }
+
+        public void setHasPassword(Boolean hasPassword) {
+            this.hasPassword = hasPassword;
+        }
+
+        public Boolean getUDACEnable() {
+            return udacEnable;
+        }
+
+        public void setUDACEnable(Boolean udacEnable) {
+            this.udacEnable = udacEnable;
+        }
     }
 
     public static class UMemSlaveDataSet extends Response {
@@ -461,6 +620,18 @@ public class DescribeUMemResponse extends Response {
         /** Redis版本信息 */
         @SerializedName("Version")
         private String version;
+
+        /** 是否是默认配置文件； true表示默认； false表示非默认 */
+        @SerializedName("DefaultConfigId")
+        private String defaultConfigId;
+
+        /** 实例是否设置密码 */
+        @SerializedName("HasPassword")
+        private Boolean hasPassword;
+
+        /** 实例是否有加入到自治中心 */
+        @SerializedName("UDACEnable")
+        private Boolean udacEnable;
 
         public String getZone() {
             return zone;
@@ -645,13 +816,45 @@ public class DescribeUMemResponse extends Response {
         public void setVersion(String version) {
             this.version = version;
         }
+
+        public String getDefaultConfigId() {
+            return defaultConfigId;
+        }
+
+        public void setDefaultConfigId(String defaultConfigId) {
+            this.defaultConfigId = defaultConfigId;
+        }
+
+        public Boolean getHasPassword() {
+            return hasPassword;
+        }
+
+        public void setHasPassword(Boolean hasPassword) {
+            this.hasPassword = hasPassword;
+        }
+
+        public Boolean getUDACEnable() {
+            return udacEnable;
+        }
+
+        public void setUDACEnable(Boolean udacEnable) {
+            this.udacEnable = udacEnable;
+        }
     }
 
     public static class UMemSpaceAddressSet extends Response {
 
-        /** UMem实例访问IP */
+        /** UMem实例内网访问IP */
         @SerializedName("IP")
         private String ip;
+
+        /** UMem实例内网访问域名地址，未开启状态下返回为空 */
+        @SerializedName("PrivateDomain")
+        private String privateDomain;
+
+        /** 开启外网状态下外网IP，否则为空 */
+        @SerializedName("PublicIp")
+        private String publicIp;
 
         /** UMem实例访问Port */
         @SerializedName("Port")
@@ -663,6 +866,22 @@ public class DescribeUMemResponse extends Response {
 
         public void setIP(String ip) {
             this.ip = ip;
+        }
+
+        public String getPrivateDomain() {
+            return privateDomain;
+        }
+
+        public void setPrivateDomain(String privateDomain) {
+            this.privateDomain = privateDomain;
+        }
+
+        public String getPublicIp() {
+            return publicIp;
+        }
+
+        public void setPublicIp(String publicIp) {
+            this.publicIp = publicIp;
         }
 
         public Integer getPort() {

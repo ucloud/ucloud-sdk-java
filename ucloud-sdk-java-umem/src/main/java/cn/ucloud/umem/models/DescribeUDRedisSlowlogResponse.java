@@ -63,6 +63,10 @@ public class DescribeUDRedisSlowlogResponse extends Response {
         @SerializedName("BlockId")
         private String blockId;
 
+        /** 慢日志的的客户信息 */
+        @SerializedName("Client")
+        private String client;
+
         public Integer getStartTime() {
             return startTime;
         }
@@ -93,6 +97,14 @@ public class DescribeUDRedisSlowlogResponse extends Response {
 
         public void setBlockId(String blockId) {
             this.blockId = blockId;
+        }
+
+        public String getClient() {
+            return client;
+        }
+
+        public void setClient(String client) {
+            this.client = client;
         }
     }
 }

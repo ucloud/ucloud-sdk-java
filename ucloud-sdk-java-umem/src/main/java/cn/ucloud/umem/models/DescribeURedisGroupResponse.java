@@ -137,7 +137,8 @@ public class DescribeURedisGroupResponse extends Response {
 
         /**
          * 状态标记 Creating // 初始化中 CreateFail // 创建失败 Deleting // 删除中 DeleteFail // 删除失败 Running // 运行
-         * Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败
+         * Resizing // 容量调整中 ResizeFail // 容量调整失败 Configing // 配置中 ConfigFail // 配置失败 // 修改SSL中
+         * SSLSwitching //SSLSwitchFail 修改SSL失败
          */
         @SerializedName("State")
         private String state;
@@ -161,6 +162,26 @@ public class DescribeURedisGroupResponse extends Response {
         /** 是否是高性能Redis， true表示是； false表示否 */
         @SerializedName("IsHighPerformance")
         private Boolean isHighPerformance;
+
+        /** SSL版本 */
+        @SerializedName("SSLVersion")
+        private String sslVersion;
+
+        /** 实例是否开启SSL */
+        @SerializedName("SSLEnable")
+        private Boolean sslEnable;
+
+        /** 证书过期时间 */
+        @SerializedName("SSLCertExpireTime")
+        private Integer sslCertExpireTime;
+
+        /** 安全策略。1:内网隔离，2:加密通信，3:内网隔离+加密通信 */
+        @SerializedName("SecPolicy")
+        private Integer secPolicy;
+
+        /** 实例是否有加入到自治中心 */
+        @SerializedName("UDACEnable")
+        private Boolean udacEnable;
 
         public String getZone() {
             return zone;
@@ -384,6 +405,46 @@ public class DescribeURedisGroupResponse extends Response {
 
         public void setIsHighPerformance(Boolean isHighPerformance) {
             this.isHighPerformance = isHighPerformance;
+        }
+
+        public String getSSLVersion() {
+            return sslVersion;
+        }
+
+        public void setSSLVersion(String sslVersion) {
+            this.sslVersion = sslVersion;
+        }
+
+        public Boolean getSSLEnable() {
+            return sslEnable;
+        }
+
+        public void setSSLEnable(Boolean sslEnable) {
+            this.sslEnable = sslEnable;
+        }
+
+        public Integer getSSLCertExpireTime() {
+            return sslCertExpireTime;
+        }
+
+        public void setSSLCertExpireTime(Integer sslCertExpireTime) {
+            this.sslCertExpireTime = sslCertExpireTime;
+        }
+
+        public Integer getSecPolicy() {
+            return secPolicy;
+        }
+
+        public void setSecPolicy(Integer secPolicy) {
+            this.secPolicy = secPolicy;
+        }
+
+        public Boolean getUDACEnable() {
+            return udacEnable;
+        }
+
+        public void setUDACEnable(Boolean udacEnable) {
+            this.udacEnable = udacEnable;
         }
     }
 }

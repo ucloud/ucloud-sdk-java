@@ -23,6 +23,8 @@ import cn.ucloud.umem.models.CheckURedisAllowanceRequest;
 import cn.ucloud.umem.models.CheckURedisAllowanceResponse;
 import cn.ucloud.umem.models.CreateScanHotBigKeysRequest;
 import cn.ucloud.umem.models.CreateScanHotBigKeysResponse;
+import cn.ucloud.umem.models.CreateUDRedisUhproxyRequest;
+import cn.ucloud.umem.models.CreateUDRedisUhproxyResponse;
 import cn.ucloud.umem.models.CreateUMemBackupRequest;
 import cn.ucloud.umem.models.CreateUMemBackupResponse;
 import cn.ucloud.umem.models.CreateUMemSpaceRequest;
@@ -33,12 +35,16 @@ import cn.ucloud.umem.models.CreateURedisBackupRequest;
 import cn.ucloud.umem.models.CreateURedisBackupResponse;
 import cn.ucloud.umem.models.CreateURedisGroupRequest;
 import cn.ucloud.umem.models.CreateURedisGroupResponse;
+import cn.ucloud.umem.models.DeleteUDRedisProxyRequest;
+import cn.ucloud.umem.models.DeleteUDRedisProxyResponse;
 import cn.ucloud.umem.models.DeleteUMemSpaceRequest;
 import cn.ucloud.umem.models.DeleteUMemSpaceResponse;
 import cn.ucloud.umem.models.DeleteUMemcacheGroupRequest;
 import cn.ucloud.umem.models.DeleteUMemcacheGroupResponse;
 import cn.ucloud.umem.models.DeleteURedisGroupRequest;
 import cn.ucloud.umem.models.DeleteURedisGroupResponse;
+import cn.ucloud.umem.models.DescribeUDRedisProxyClientListRequest;
+import cn.ucloud.umem.models.DescribeUDRedisProxyClientListResponse;
 import cn.ucloud.umem.models.DescribeUDRedisProxyInfoRequest;
 import cn.ucloud.umem.models.DescribeUDRedisProxyInfoResponse;
 import cn.ucloud.umem.models.DescribeUDRedisSlowlogRequest;
@@ -85,6 +91,8 @@ import cn.ucloud.umem.models.GetUMemSpaceStateRequest;
 import cn.ucloud.umem.models.GetUMemSpaceStateResponse;
 import cn.ucloud.umem.models.ISolationURedisGroupRequest;
 import cn.ucloud.umem.models.ISolationURedisGroupResponse;
+import cn.ucloud.umem.models.ModifyUMemPasswordRequest;
+import cn.ucloud.umem.models.ModifyUMemPasswordResponse;
 import cn.ucloud.umem.models.ModifyUMemSpaceNameRequest;
 import cn.ucloud.umem.models.ModifyUMemSpaceNameResponse;
 import cn.ucloud.umem.models.ModifyURedisConfigRequest;
@@ -101,8 +109,12 @@ import cn.ucloud.umem.models.ResizeUDRedisBlockSizeRequest;
 import cn.ucloud.umem.models.ResizeUDRedisBlockSizeResponse;
 import cn.ucloud.umem.models.ResizeUMemSpaceRequest;
 import cn.ucloud.umem.models.ResizeUMemSpaceResponse;
+import cn.ucloud.umem.models.ResizeUMemcacheGroupRequest;
+import cn.ucloud.umem.models.ResizeUMemcacheGroupResponse;
 import cn.ucloud.umem.models.ResizeURedisGroupRequest;
 import cn.ucloud.umem.models.ResizeURedisGroupResponse;
+import cn.ucloud.umem.models.ResizeUhproxyRequest;
+import cn.ucloud.umem.models.ResizeUhproxyResponse;
 import cn.ucloud.umem.models.RestartUMemcacheGroupRequest;
 import cn.ucloud.umem.models.RestartUMemcacheGroupResponse;
 import cn.ucloud.umem.models.RestartURedisGroupRequest;
@@ -155,6 +167,19 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
         request.setAction("CreateScanHotBigKeys");
         return (CreateScanHotBigKeysResponse)
                 this.invoke(request, CreateScanHotBigKeysResponse.class);
+    }
+
+    /**
+     * CreateUDRedisUhproxy - 添加分布式Redis代理
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public CreateUDRedisUhproxyResponse createUDRedisUhproxy(CreateUDRedisUhproxyRequest request)
+            throws UCloudException {
+        request.setAction("CreateUDRedisUhproxy");
+        return (CreateUDRedisUhproxyResponse)
+                this.invoke(request, CreateUDRedisUhproxyResponse.class);
     }
 
     /**
@@ -219,6 +244,18 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
+     * DeleteUDRedisProxy - 删除分布式Redis代理
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUDRedisProxyResponse deleteUDRedisProxy(DeleteUDRedisProxyRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUDRedisProxy");
+        return (DeleteUDRedisProxyResponse) this.invoke(request, DeleteUDRedisProxyResponse.class);
+    }
+
+    /**
      * DeleteUMemSpace - 删除空间
      *
      * @param request Request object
@@ -253,6 +290,19 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
             throws UCloudException {
         request.setAction("DeleteURedisGroup");
         return (DeleteURedisGroupResponse) this.invoke(request, DeleteURedisGroupResponse.class);
+    }
+
+    /**
+     * DescribeUDRedisProxyClientList - 查询分布式Redis代理客户端连接信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDRedisProxyClientListResponse describeUDRedisProxyClientList(
+            DescribeUDRedisProxyClientListRequest request) throws UCloudException {
+        request.setAction("DescribeUDRedisProxyClientList");
+        return (DescribeUDRedisProxyClientListResponse)
+                this.invoke(request, DescribeUDRedisProxyClientListResponse.class);
     }
 
     /**
@@ -549,6 +599,18 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
+     * ModifyUMemPassword - 更改分布式redis密码
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUMemPasswordResponse modifyUMemPassword(ModifyUMemPasswordRequest request)
+            throws UCloudException {
+        request.setAction("ModifyUMemPassword");
+        return (ModifyUMemPasswordResponse) this.invoke(request, ModifyUMemPasswordResponse.class);
+    }
+
+    /**
      * ModifyUMemSpaceName - 修改名称
      *
      * @param request Request object
@@ -649,6 +711,19 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
     }
 
     /**
+     * ResizeUMemcacheGroup - 调整memcache实例的容量
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ResizeUMemcacheGroupResponse resizeUMemcacheGroup(ResizeUMemcacheGroupRequest request)
+            throws UCloudException {
+        request.setAction("ResizeUMemcacheGroup");
+        return (ResizeUMemcacheGroupResponse)
+                this.invoke(request, ResizeUMemcacheGroupResponse.class);
+    }
+
+    /**
      * ResizeURedisGroup - 调整容量
      *
      * @param request Request object
@@ -658,6 +733,18 @@ public class UMemClient extends DefaultClient implements UMemClientInterface {
             throws UCloudException {
         request.setAction("ResizeURedisGroup");
         return (ResizeURedisGroupResponse) this.invoke(request, ResizeURedisGroupResponse.class);
+    }
+
+    /**
+     * ResizeUhproxy - 分布式Redis代理规格调整
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ResizeUhproxyResponse resizeUhproxy(ResizeUhproxyRequest request)
+            throws UCloudException {
+        request.setAction("ResizeUhproxy");
+        return (ResizeUhproxyResponse) this.invoke(request, ResizeUhproxyResponse.class);
     }
 
     /**

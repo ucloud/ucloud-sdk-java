@@ -126,6 +126,14 @@ public class CreateUMemSpaceRequest extends Request {
     @UCloudParam("SpaceId")
     private String spaceId;
 
+    /** 如果是通过回档创建，该实例ID不为空 */
+    @UCloudParam("RollbackSpaceId")
+    private String rollbackSpaceId;
+
+    /** 要回档的时间戳 */
+    @UCloudParam("RollbackTime")
+    private Integer rollbackTime;
+
     /** 使用的代金券id */
     @UCloudParam("CouponId")
     private String couponId;
@@ -320,6 +328,22 @@ public class CreateUMemSpaceRequest extends Request {
 
     public void setSpaceId(String spaceId) {
         this.spaceId = spaceId;
+    }
+
+    public String getRollbackSpaceId() {
+        return rollbackSpaceId;
+    }
+
+    public void setRollbackSpaceId(String rollbackSpaceId) {
+        this.rollbackSpaceId = rollbackSpaceId;
+    }
+
+    public Integer getRollbackTime() {
+        return rollbackTime;
+    }
+
+    public void setRollbackTime(Integer rollbackTime) {
+        this.rollbackTime = rollbackTime;
     }
 
     public String getCouponId() {

@@ -25,12 +25,24 @@ public class DescribeUMemBackupResponse extends Response {
     @SerializedName("DataSet")
     private List<UMemBackupSet> dataSet;
 
+    /** 备份总数 */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
     public List<UMemBackupSet> getDataSet() {
         return dataSet;
     }
 
     public void setDataSet(List<UMemBackupSet> dataSet) {
         this.dataSet = dataSet;
+    }
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public static class UMemBackupSet extends Response {
@@ -58,6 +70,10 @@ public class DescribeUMemBackupResponse extends Response {
         /** 本次备份，分片的数量 */
         @SerializedName("BlockCount")
         private Integer blockCount;
+
+        /** 备份大小 */
+        @SerializedName("BlockSize")
+        private Integer blockSize;
 
         public String getBackupName() {
             return backupName;
@@ -105,6 +121,14 @@ public class DescribeUMemBackupResponse extends Response {
 
         public void setBlockCount(Integer blockCount) {
             this.blockCount = blockCount;
+        }
+
+        public Integer getBlockSize() {
+            return blockSize;
+        }
+
+        public void setBlockSize(Integer blockSize) {
+            this.blockSize = blockSize;
         }
     }
 }
