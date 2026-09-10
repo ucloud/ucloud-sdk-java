@@ -55,6 +55,8 @@ import cn.ucloud.uk8s.models.ListUK8SULSConfigRequest;
 import cn.ucloud.uk8s.models.ListUK8SULSConfigResponse;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupRequest;
+import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupResponse;
 import cn.ucloud.uk8s.models.UpdateUK8SULSConfigRequest;
 import cn.ucloud.uk8s.models.UpdateUK8SULSConfigResponse;
 
@@ -298,6 +300,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
         request.setAction("RemoveUK8SNodeGroup");
         return (RemoveUK8SNodeGroupResponse)
                 this.invoke(request, RemoveUK8SNodeGroupResponse.class);
+    }
+
+    /**
+     * UpdateUK8SNodeGroup - 修改UK8S节点池
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUK8SNodeGroupResponse updateUK8SNodeGroup(UpdateUK8SNodeGroupRequest request)
+            throws UCloudException {
+        request.setAction("UpdateUK8SNodeGroup");
+        return (UpdateUK8SNodeGroupResponse)
+                this.invoke(request, UpdateUK8SNodeGroupResponse.class);
     }
 
     /**
