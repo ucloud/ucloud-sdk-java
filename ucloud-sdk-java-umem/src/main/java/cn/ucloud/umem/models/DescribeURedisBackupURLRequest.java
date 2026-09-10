@@ -53,6 +53,10 @@ public class DescribeURedisBackupURLRequest extends Request {
     @UCloudParam("SlaveZone")
     private String slaveZone;
 
+    /** 默认为false,true时代表查询跨地域备份URL */
+    @UCloudParam("IsCrossRegion")
+    private Boolean isCrossRegion;
+
     public String getRegion() {
         return region;
     }
@@ -107,5 +111,13 @@ public class DescribeURedisBackupURLRequest extends Request {
 
     public void setSlaveZone(String slaveZone) {
         this.slaveZone = slaveZone;
+    }
+
+    public Boolean getIsCrossRegion() {
+        return isCrossRegion;
+    }
+
+    public void setIsCrossRegion(Boolean isCrossRegion) {
+        this.isCrossRegion = isCrossRegion;
     }
 }

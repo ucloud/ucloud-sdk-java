@@ -47,13 +47,13 @@ public class DescribeURedisBackupResponse extends Response {
 
     public static class URedisBackupSet extends Response {
 
-        /** 备份ID */
-        @SerializedName("BackupId")
-        private String backupId;
-
         /** 可用区，参见[可用区列表](../summary/regionlist.html) */
         @SerializedName("Zone")
         private String zone;
+
+        /** 备份ID */
+        @SerializedName("BackupId")
+        private String backupId;
 
         /** 对应的实例ID */
         @SerializedName("GroupId")
@@ -83,13 +83,21 @@ public class DescribeURedisBackupResponse extends Response {
         @SerializedName("State")
         private String state;
 
-        public String getBackupId() {
-            return backupId;
-        }
+        /** 跨地域备份源地域 */
+        @SerializedName("SrcRegionName")
+        private String srcRegionName;
 
-        public void setBackupId(String backupId) {
-            this.backupId = backupId;
-        }
+        /** 跨地域备份目标地域 */
+        @SerializedName("DstRegionName")
+        private String dstRegionName;
+
+        /** 源实例容量大小 */
+        @SerializedName("MemorySize")
+        private Integer memorySize;
+
+        /** 源实例Redis版本 */
+        @SerializedName("RedisVersion")
+        private String redisVersion;
 
         public String getZone() {
             return zone;
@@ -97,6 +105,14 @@ public class DescribeURedisBackupResponse extends Response {
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public String getBackupId() {
+            return backupId;
+        }
+
+        public void setBackupId(String backupId) {
+            this.backupId = backupId;
         }
 
         public String getGroupId() {
@@ -153,6 +169,38 @@ public class DescribeURedisBackupResponse extends Response {
 
         public void setState(String state) {
             this.state = state;
+        }
+
+        public String getSrcRegionName() {
+            return srcRegionName;
+        }
+
+        public void setSrcRegionName(String srcRegionName) {
+            this.srcRegionName = srcRegionName;
+        }
+
+        public String getDstRegionName() {
+            return dstRegionName;
+        }
+
+        public void setDstRegionName(String dstRegionName) {
+            this.dstRegionName = dstRegionName;
+        }
+
+        public Integer getMemorySize() {
+            return memorySize;
+        }
+
+        public void setMemorySize(Integer memorySize) {
+            this.memorySize = memorySize;
+        }
+
+        public String getRedisVersion() {
+            return redisVersion;
+        }
+
+        public void setRedisVersion(String redisVersion) {
+            this.redisVersion = redisVersion;
         }
     }
 }

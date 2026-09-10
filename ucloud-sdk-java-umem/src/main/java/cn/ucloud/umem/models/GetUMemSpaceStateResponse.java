@@ -13,22 +13,23 @@
  */
 package cn.ucloud.umem.models;
 
-
 import cn.ucloud.common.response.Response;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class GetUMemSpaceStateResponse extends Response {
 
     /** Starting:创建中 Running:运行中 Fail:失败 */
     @SerializedName("State")
-    private String state;
+    private List<String> state;
 
-    public String getState() {
+    public List<String> getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(List<String> state) {
         this.state = state;
     }
 }

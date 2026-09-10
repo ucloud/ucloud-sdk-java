@@ -47,6 +47,10 @@ public class CreateScanHotBigKeysRequest extends Request {
     @UCloudParam("Type")
     private String type;
 
+    /** 分布式资源ID */
+    @UCloudParam("SpaceId")
+    private String spaceId;
+
     /** 是否要重试任务，如果是的话，TaskId必填 */
     @UCloudParam("IsRetry")
     private Boolean isRetry;
@@ -93,6 +97,14 @@ public class CreateScanHotBigKeysRequest extends Request {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getSpaceId() {
+        return spaceId;
+    }
+
+    public void setSpaceId(String spaceId) {
+        this.spaceId = spaceId;
     }
 
     public Boolean getIsRetry() {

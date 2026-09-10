@@ -42,7 +42,6 @@ public class UpdateURedisBackupStrategyRequest extends Request {
     private String groupId;
 
     /** 备份时间，默认为0 */
-    @NotEmpty
     @UCloudParam("BackupTime")
     private String backupTime;
 
@@ -53,6 +52,18 @@ public class UpdateURedisBackupStrategyRequest extends Request {
     /** 跨机房URedis，slave所在可用区（必须和Zone在同一Region，且不可相同） */
     @UCloudParam("SlaveZone")
     private String slaveZone;
+
+    /** 操作类型，不传默认为normal(即操控自动备份打开以及时间)，modify（修改跨地域备份策略）,close(关闭跨地域备份策略) */
+    @UCloudParam("OperationType")
+    private String operationType;
+
+    /** 跨可用备份目标地域（当Operation为modify时必选） */
+    @UCloudParam("DstRegion")
+    private String dstRegion;
+
+    /** 保存天数（当Operation为modify时必选） */
+    @UCloudParam("SaveDays")
+    private Integer saveDays;
 
     public String getRegion() {
         return region;
@@ -108,5 +119,29 @@ public class UpdateURedisBackupStrategyRequest extends Request {
 
     public void setSlaveZone(String slaveZone) {
         this.slaveZone = slaveZone;
+    }
+
+    public String getOperationType() {
+        return operationType;
+    }
+
+    public void setOperationType(String operationType) {
+        this.operationType = operationType;
+    }
+
+    public String getDstRegion() {
+        return dstRegion;
+    }
+
+    public void setDstRegion(String dstRegion) {
+        this.dstRegion = dstRegion;
+    }
+
+    public Integer getSaveDays() {
+        return saveDays;
+    }
+
+    public void setSaveDays(Integer saveDays) {
+        this.saveDays = saveDays;
     }
 }

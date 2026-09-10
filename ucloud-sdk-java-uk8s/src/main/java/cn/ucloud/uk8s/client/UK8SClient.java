@@ -53,6 +53,8 @@ import cn.ucloud.uk8s.models.ListUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.ListUK8SNodeGroupResponse;
 import cn.ucloud.uk8s.models.ListUK8SULSConfigRequest;
 import cn.ucloud.uk8s.models.ListUK8SULSConfigResponse;
+import cn.ucloud.uk8s.models.ModifyUK8SClusterNameRequest;
+import cn.ucloud.uk8s.models.ModifyUK8SClusterNameResponse;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupResponse;
 import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupRequest;
@@ -287,6 +289,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
             throws UCloudException {
         request.setAction("ListUK8SULSConfig");
         return (ListUK8SULSConfigResponse) this.invoke(request, ListUK8SULSConfigResponse.class);
+    }
+
+    /**
+     * ModifyUK8SClusterName - 修改k8s集群名称
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public ModifyUK8SClusterNameResponse modifyUK8SClusterName(ModifyUK8SClusterNameRequest request)
+            throws UCloudException {
+        request.setAction("ModifyUK8SClusterName");
+        return (ModifyUK8SClusterNameResponse)
+                this.invoke(request, ModifyUK8SClusterNameResponse.class);
     }
 
     /**

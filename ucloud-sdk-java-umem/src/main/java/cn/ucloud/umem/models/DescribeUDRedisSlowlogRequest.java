@@ -50,6 +50,10 @@ public class DescribeUDRedisSlowlogRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
+    /** 分布式资源Id */
+    @UCloudParam("SpaceId")
+    private String spaceId;
+
     public String getRegion() {
         return region;
     }
@@ -96,5 +100,13 @@ public class DescribeUDRedisSlowlogRequest extends Request {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public String getSpaceId() {
+        return spaceId;
+    }
+
+    public void setSpaceId(String spaceId) {
+        this.spaceId = spaceId;
     }
 }
