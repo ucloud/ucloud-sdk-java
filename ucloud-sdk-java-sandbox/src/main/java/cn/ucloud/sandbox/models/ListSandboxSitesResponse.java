@@ -83,6 +83,10 @@ public class ListSandboxSitesResponse extends Response {
         @SerializedName("ConnectKey")
         private String connectKey;
 
+        /** 计算资源 */
+        @SerializedName("Resource")
+        private SiteResource resource;
+
         /** 站点环境变量。格式：["key=value"] */
         @SerializedName("Envs")
         private List<String> envs;
@@ -175,6 +179,14 @@ public class ListSandboxSitesResponse extends Response {
             this.connectKey = connectKey;
         }
 
+        public SiteResource getResource() {
+            return resource;
+        }
+
+        public void setResource(SiteResource resource) {
+            this.resource = resource;
+        }
+
         public List<String> getEnvs() {
             return envs;
         }
@@ -240,6 +252,33 @@ public class ListSandboxSitesResponse extends Response {
 
         public void setMode(String mode) {
             this.mode = mode;
+        }
+    }
+
+    public static class SiteResource extends Response {
+
+        /** CPU核心 */
+        @SerializedName("CPU")
+        private Integer cpu;
+
+        /** 内存占用MB */
+        @SerializedName("MemoryMB")
+        private Integer memoryMB;
+
+        public Integer getCPU() {
+            return cpu;
+        }
+
+        public void setCPU(Integer cpu) {
+            this.cpu = cpu;
+        }
+
+        public Integer getMemoryMB() {
+            return memoryMB;
+        }
+
+        public void setMemoryMB(Integer memoryMB) {
+            this.memoryMB = memoryMB;
         }
     }
 }
