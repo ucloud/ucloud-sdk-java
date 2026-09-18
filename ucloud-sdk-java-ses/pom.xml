@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>ucloud-sdk-java-uhadoop</artifactId>
+    <artifactId>ucloud-sdk-java-ses</artifactId>
     <name>ucloud-sdk-java</name>
     <version>1.2.103-release</version>
 
