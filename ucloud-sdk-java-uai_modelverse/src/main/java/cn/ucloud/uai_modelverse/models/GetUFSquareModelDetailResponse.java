@@ -373,7 +373,7 @@ public class GetUFSquareModelDetailResponse extends Response {
 
         /** 价格 */
         @SerializedName("Price")
-        private String price;
+        private Integer price;
 
         public String getChargeItemDescriptionEn() {
             return chargeItemDescriptionEn;
@@ -423,11 +423,11 @@ public class GetUFSquareModelDetailResponse extends Response {
             this.chargeItemDescription = chargeItemDescription;
         }
 
-        public String getPrice() {
+        public Integer getPrice() {
             return price;
         }
 
-        public void setPrice(String price) {
+        public void setPrice(Integer price) {
             this.price = price;
         }
     }

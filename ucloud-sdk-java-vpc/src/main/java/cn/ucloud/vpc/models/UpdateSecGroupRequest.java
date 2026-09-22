@@ -13,10 +13,11 @@
  */
 package cn.ucloud.vpc.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class UpdateSecGroupRequest extends Request {
 
@@ -35,7 +36,7 @@ public class UpdateSecGroupRequest extends Request {
     /** 安全组资源ID数组。不支持 .n 格式。Type 为 string 数组。 */
     @NotEmpty
     @UCloudParam("SecGroupId")
-    private String secGroupId;
+    private List<String> secGroupId;
 
     /** 安全组名称，默认为空，为空则不做修改。Name,Tag,Remark必须填写1个及以上 */
     @UCloudParam("Name")
@@ -61,11 +62,11 @@ public class UpdateSecGroupRequest extends Request {
         this.projectId = projectId;
     }
 
-    public String getSecGroupId() {
+    public List<String> getSecGroupId() {
         return secGroupId;
     }
 
-    public void setSecGroupId(String secGroupId) {
+    public void setSecGroupId(List<String> secGroupId) {
         this.secGroupId = secGroupId;
     }
 
