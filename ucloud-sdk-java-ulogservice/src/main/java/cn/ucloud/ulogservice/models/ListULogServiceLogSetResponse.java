@@ -25,6 +25,10 @@ public class ListULogServiceLogSetResponse extends Response {
     @SerializedName("Data")
     private List<LogSetInfo> data;
 
+    /** 日志集数量 */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
+
     public List<LogSetInfo> getData() {
         return data;
     }
@@ -33,11 +37,23 @@ public class ListULogServiceLogSetResponse extends Response {
         this.data = data;
     }
 
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     public static class LogSetInfo extends Response {
 
         /** 日志集下主题数量 */
         @SerializedName("TopicCount")
         private Integer topicCount;
+
+        /** 日志集ID */
+        @SerializedName("LogSetId")
+        private String logSetId;
 
         /** 日志集备注 */
         @SerializedName("LogSetRemark")
@@ -61,6 +77,14 @@ public class ListULogServiceLogSetResponse extends Response {
 
         public void setTopicCount(Integer topicCount) {
             this.topicCount = topicCount;
+        }
+
+        public String getLogSetId() {
+            return logSetId;
+        }
+
+        public void setLogSetId(String logSetId) {
+            this.logSetId = logSetId;
         }
 
         public String getLogSetRemark() {
