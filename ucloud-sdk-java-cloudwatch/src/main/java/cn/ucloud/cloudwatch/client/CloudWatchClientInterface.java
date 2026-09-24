@@ -25,6 +25,8 @@ import cn.ucloud.cloudwatch.models.EnableAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.EnableAlertStrategyResponse;
 import cn.ucloud.cloudwatch.models.GetMetricDataAggregationMethodRequest;
 import cn.ucloud.cloudwatch.models.GetMetricDataAggregationMethodResponse;
+import cn.ucloud.cloudwatch.models.GetProductHighPrecisionMetricsRequest;
+import cn.ucloud.cloudwatch.models.GetProductHighPrecisionMetricsResponse;
 import cn.ucloud.cloudwatch.models.GetProductMetricsRequest;
 import cn.ucloud.cloudwatch.models.GetProductMetricsResponse;
 import cn.ucloud.cloudwatch.models.ListAlertRecordRequest;
@@ -41,6 +43,8 @@ import cn.ucloud.cloudwatch.models.QueryMetricDataSetRequest;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSetResponse;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSummaryRequest;
 import cn.ucloud.cloudwatch.models.QueryMetricDataSummaryResponse;
+import cn.ucloud.cloudwatch.models.QueryMetricDenseDataRequest;
+import cn.ucloud.cloudwatch.models.QueryMetricDenseDataResponse;
 import cn.ucloud.cloudwatch.models.UnBindAlertStrategyRequest;
 import cn.ucloud.cloudwatch.models.UnBindAlertStrategyResponse;
 import cn.ucloud.cloudwatch.models.UpdateAlertStrategyRequest;
@@ -106,6 +110,15 @@ public interface CloudWatchClientInterface extends Client {
      */
     public GetMetricDataAggregationMethodResponse getMetricDataAggregationMethod(
             GetMetricDataAggregationMethodRequest request) throws UCloudException;
+
+    /**
+     * GetProductHighPrecisionMetrics - 获取云产品关联的高精度指标列表
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetProductHighPrecisionMetricsResponse getProductHighPrecisionMetrics(
+            GetProductHighPrecisionMetricsRequest request) throws UCloudException;
 
     /**
      * GetProductMetrics - 获取云产品关联的指标列表
@@ -178,6 +191,15 @@ public interface CloudWatchClientInterface extends Client {
      */
     public QueryMetricDataSummaryResponse queryMetricDataSummary(
             QueryMetricDataSummaryRequest request) throws UCloudException;
+
+    /**
+     * QueryMetricDenseData - 获取高精度指标样本数据
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public QueryMetricDenseDataResponse queryMetricDenseData(QueryMetricDenseDataRequest request)
+            throws UCloudException;
 
     /**
      * UnBindAlertStrategy - 解绑告警策略
