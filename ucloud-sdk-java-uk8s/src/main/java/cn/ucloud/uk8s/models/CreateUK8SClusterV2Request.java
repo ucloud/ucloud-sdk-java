@@ -56,10 +56,6 @@ public class CreateUK8SClusterV2Request extends Request {
     @UCloudParam("Password")
     private String password;
 
-    /** */
-    @UCloudParam("Master")
-    private List<Master> master;
-
     /** Master节点的云主机机型（V2.0），如["N", "C", "O", "OS"]，具体请参照云主机机型。 */
     @NotEmpty
     @UCloudParam("MasterMachineType")
@@ -76,8 +72,22 @@ public class CreateUK8SClusterV2Request extends Request {
     private Integer masterMem;
 
     /** */
+    @UCloudParam("Master")
+    private List<Master> master;
+
+    /** */
     @UCloudParam("Nodes")
     private List<Nodes> nodes;
+
+    /** k8s集群的版本，版本信息请参考UK8S集群创建页。 */
+    @NotEmpty
+    @UCloudParam("K8sVersion")
+    private String k8sVersion;
+
+    /** Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。 */
+    @NotEmpty
+    @UCloudParam("ImageId")
+    private String imageId;
 
     /** Master节点系统盘类型。请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
     @UCloudParam("MasterBootDiskType")
@@ -99,10 +109,6 @@ public class CreateUK8SClusterV2Request extends Request {
     @UCloudParam("ChargeType")
     private String chargeType;
 
-    /** k8s集群的版本，版本信息请参考UK8S集群创建页，不指定的话默认为当前支持的最高版本。 */
-    @UCloudParam("K8sVersion")
-    private String k8sVersion;
-
     /** 购买时长。默认为1。按小时购买(Dynamic)时无需此参数。 月付时，此参数传0，代表了购买至月末。 */
     @UCloudParam("Quantity")
     private Integer quantity;
@@ -118,10 +124,6 @@ public class CreateUK8SClusterV2Request extends Request {
     /** */
     @UCloudParam("KubeProxy")
     private KubeProxy kubeProxy;
-
-    /** Master节点和Node节点的镜像 ID，不填则随机选择可用的基础镜像。支持用户自定义镜像。 */
-    @UCloudParam("ImageId")
-    private String imageId;
 
     /** 用户自定义数据。注意：1、总数据量大小不超多16K；2、使用base64编码。 */
     @UCloudParam("UserData")
@@ -158,9 +160,25 @@ public class CreateUK8SClusterV2Request extends Request {
     @UCloudParam("ForwardSrcIPMethod")
     private String forwardSrcIPMethod;
 
-    /** UK8S用户标签，key=value形式,多组用”,“隔开，最多5组。 如env=pro,type=game */
+    /** Master节点规格族，如o1a, o1i */
+    @UCloudParam("MasterUHostFamily")
+    private String masterUHostFamily;
+
+    /** 开启 kms 插件的 key id */
+    @UCloudParam("KmsPluginKeyId")
+    private String kmsPluginKeyId;
+
+    /** master 节点数据盘使用的 kms key id */
+    @UCloudParam("MasterDataDiskKmsKeyId")
+    private String masterDataDiskKmsKeyId;
+
+    /** kms 加密的资源 */
+    @UCloudParam("KmsPluginResource")
+    private List<String> kmsPluginResource;
+
+    /** */
     @UCloudParam("UserLabels")
-    private String userLabels;
+    private List<UserLabels> userLabels;
 
     public String getRegion() {
         return region;
@@ -218,14 +236,6 @@ public class CreateUK8SClusterV2Request extends Request {
         this.password = password;
     }
 
-    public List<Master> getMaster() {
-        return master;
-    }
-
-    public void setMaster(List<Master> master) {
-        this.master = master;
-    }
-
     public String getMasterMachineType() {
         return masterMachineType;
     }
@@ -250,12 +260,36 @@ public class CreateUK8SClusterV2Request extends Request {
         this.masterMem = masterMem;
     }
 
+    public List<Master> getMaster() {
+        return master;
+    }
+
+    public void setMaster(List<Master> master) {
+        this.master = master;
+    }
+
     public List<Nodes> getNodes() {
         return nodes;
     }
 
     public void setNodes(List<Nodes> nodes) {
         this.nodes = nodes;
+    }
+
+    public String getK8sVersion() {
+        return k8sVersion;
+    }
+
+    public void setK8sVersion(String k8sVersion) {
+        this.k8sVersion = k8sVersion;
+    }
+
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 
     public String getMasterBootDiskType() {
@@ -298,14 +332,6 @@ public class CreateUK8SClusterV2Request extends Request {
         this.chargeType = chargeType;
     }
 
-    public String getK8sVersion() {
-        return k8sVersion;
-    }
-
-    public void setK8sVersion(String k8sVersion) {
-        this.k8sVersion = k8sVersion;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
@@ -336,14 +362,6 @@ public class CreateUK8SClusterV2Request extends Request {
 
     public void setKubeProxy(KubeProxy kubeProxy) {
         this.kubeProxy = kubeProxy;
-    }
-
-    public String getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
     }
 
     public String getUserData() {
@@ -410,11 +428,43 @@ public class CreateUK8SClusterV2Request extends Request {
         this.forwardSrcIPMethod = forwardSrcIPMethod;
     }
 
-    public String getUserLabels() {
+    public String getMasterUHostFamily() {
+        return masterUHostFamily;
+    }
+
+    public void setMasterUHostFamily(String masterUHostFamily) {
+        this.masterUHostFamily = masterUHostFamily;
+    }
+
+    public String getKmsPluginKeyId() {
+        return kmsPluginKeyId;
+    }
+
+    public void setKmsPluginKeyId(String kmsPluginKeyId) {
+        this.kmsPluginKeyId = kmsPluginKeyId;
+    }
+
+    public String getMasterDataDiskKmsKeyId() {
+        return masterDataDiskKmsKeyId;
+    }
+
+    public void setMasterDataDiskKmsKeyId(String masterDataDiskKmsKeyId) {
+        this.masterDataDiskKmsKeyId = masterDataDiskKmsKeyId;
+    }
+
+    public List<String> getKmsPluginResource() {
+        return kmsPluginResource;
+    }
+
+    public void setKmsPluginResource(List<String> kmsPluginResource) {
+        this.kmsPluginResource = kmsPluginResource;
+    }
+
+    public List<UserLabels> getUserLabels() {
         return userLabels;
     }
 
-    public void setUserLabels(String userLabels) {
+    public void setUserLabels(List<UserLabels> userLabels) {
         this.userLabels = userLabels;
     }
 
@@ -550,12 +600,16 @@ public class CreateUK8SClusterV2Request extends Request {
         private String bootDiskType;
 
         /** Node节点的系统盘大小，单位GB，默认为40。范围：[40, 500]。注意SSD本地盘无法调整。 */
-        @UCloudParam("BootDiskSIze")
-        private Integer bootDiskSIze;
+        @UCloudParam("BootDiskSize")
+        private Integer bootDiskSize;
 
         /** 一组Node节点的数据盘类型，请参考[[api:uhost-api:disk_type|磁盘类型]]。默认为SSD云盘 */
         @UCloudParam("DataDiskType")
         private String dataDiskType;
+
+        /** 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000] */
+        @UCloudParam("DataDiskSize")
+        private Integer dataDiskSize;
 
         /** 一组Node节点的GPU类型，枚举值["K80", "P40", "V100"]，最新值参考Console。 */
         @UCloudParam("GpuType")
@@ -564,10 +618,6 @@ public class CreateUK8SClusterV2Request extends Request {
         /** 一组Node节点的GPU卡核心数，仅GPU机型支持此字段。 */
         @UCloudParam("GPU")
         private Integer gpu;
-
-        /** 数据磁盘大小，单位GB。默认0。范围 ：[20, 1000] */
-        @UCloudParam("DataDiskSize")
-        private Integer dataDiskSize;
 
         /**
          * Node节点的最低cpu平台，不选则随机。枚举值["Intel/Auto", "Intel/IvyBridge", "Intel/Haswell",
@@ -610,6 +660,18 @@ public class CreateUK8SClusterV2Request extends Request {
         /** */
         @UCloudParam("SecGroupId")
         private List<NodesSecGroupId> secGroupId;
+
+        /** Node节点规格族 */
+        @UCloudParam("UHostFamily")
+        private String uHostFamily;
+
+        /** */
+        @UCloudParam("KubeletConfiguration")
+        private NodesKubeletConfiguration kubeletConfiguration;
+
+        /** 节点数据盘加密使用的 key id */
+        @UCloudParam("DataDiskKmsKeyId")
+        private String dataDiskKmsKeyId;
 
         public String getZone() {
             return zone;
@@ -683,12 +745,12 @@ public class CreateUK8SClusterV2Request extends Request {
             this.bootDiskType = bootDiskType;
         }
 
-        public Integer getBootDiskSIze() {
-            return bootDiskSIze;
+        public Integer getBootDiskSize() {
+            return bootDiskSize;
         }
 
-        public void setBootDiskSIze(Integer bootDiskSIze) {
-            this.bootDiskSIze = bootDiskSIze;
+        public void setBootDiskSize(Integer bootDiskSize) {
+            this.bootDiskSize = bootDiskSize;
         }
 
         public String getDataDiskType() {
@@ -697,6 +759,14 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setDataDiskType(String dataDiskType) {
             this.dataDiskType = dataDiskType;
+        }
+
+        public Integer getDataDiskSize() {
+            return dataDiskSize;
+        }
+
+        public void setDataDiskSize(Integer dataDiskSize) {
+            this.dataDiskSize = dataDiskSize;
         }
 
         public String getGpuType() {
@@ -713,14 +783,6 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setGPU(Integer gpu) {
             this.gpu = gpu;
-        }
-
-        public Integer getDataDiskSize() {
-            return dataDiskSize;
-        }
-
-        public void setDataDiskSize(Integer dataDiskSize) {
-            this.dataDiskSize = dataDiskSize;
         }
 
         public String getMinimalCpuPlatform() {
@@ -794,6 +856,48 @@ public class CreateUK8SClusterV2Request extends Request {
         public void setSecGroupId(List<NodesSecGroupId> secGroupId) {
             this.secGroupId = secGroupId;
         }
+
+        public String getUHostFamily() {
+            return uHostFamily;
+        }
+
+        public void setUHostFamily(String uHostFamily) {
+            this.uHostFamily = uHostFamily;
+        }
+
+        public NodesKubeletConfiguration getKubeletConfiguration() {
+            return kubeletConfiguration;
+        }
+
+        public void setKubeletConfiguration(NodesKubeletConfiguration kubeletConfiguration) {
+            this.kubeletConfiguration = kubeletConfiguration;
+        }
+
+        public String getDataDiskKmsKeyId() {
+            return dataDiskKmsKeyId;
+        }
+
+        public void setDataDiskKmsKeyId(String dataDiskKmsKeyId) {
+            this.dataDiskKmsKeyId = dataDiskKmsKeyId;
+        }
+    }
+
+    public static class NodesKubeletConfiguration extends Request {
+
+        /**
+         * 全量KubeletConfiguration.XXX定义参考AddUK8SNodeGroup接口:
+         * https://uxiao.ucloudadmin.com/#/api-manager/api/detail/UK8S/AddUK8SNodeGroup
+         */
+        @UCloudParam("ContainerLogMaxFiles")
+        private String containerLogMaxFiles;
+
+        public String getContainerLogMaxFiles() {
+            return containerLogMaxFiles;
+        }
+
+        public void setContainerLogMaxFiles(String containerLogMaxFiles) {
+            this.containerLogMaxFiles = containerLogMaxFiles;
+        }
     }
 
     public static class NodesNetworkInterface extends Request {
@@ -832,7 +936,7 @@ public class CreateUK8SClusterV2Request extends Request {
         private String shareBandwidthId;
 
         /**
-         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International BGP: Bgp 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
+         * 【若绑定EIP，此参数必填】弹性IP的线路。枚举值: 国际: International，BGP: Bgp。 各地域允许的线路参数如下: cn-sh1: Bgp cn-sh2:
          * Bgp cn-gd: Bgp cn-bj1: Bgp cn-bj2: Bgp hk: International us-ca: International th-bkk:
          * International kr-seoul:International us-ws:International ge-fra:International
          * sg:International tw-kh:International.其他海外线路均为 International
@@ -921,6 +1025,33 @@ public class CreateUK8SClusterV2Request extends Request {
 
         public void setName(String name) {
             this.name = name;
+        }
+    }
+
+    public static class UserLabels extends Request {
+
+        /** UK8S用户资源标签的键值 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** UK8S用户资源标签的值 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
         }
     }
 }
