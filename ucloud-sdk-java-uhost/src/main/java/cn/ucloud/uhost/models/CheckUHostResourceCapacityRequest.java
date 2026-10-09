@@ -116,12 +116,13 @@ public class CheckUHostResourceCapacityRequest extends Request {
     /**
      * 规格族。 由机型代号和 CPU 平台组成，用于指定云主机的硬件类型与处理器平台。
      * 当 MachineType 为 "O"\"OM"\"OPRO"\"OPROG"（快杰系列）时，支持以下取值： - o1i：快杰型 O1 代，Intel 平台 - o1a：快杰型 O1
-     * 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o1h: 快杰型 O1 代，Hygon 平台 - o2i：快杰型 O2 代，Intel 平台 默认值：o1i 或 o1a
-     * 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 - om2i：快杰内存增强型 OM2 代，Intel
-     * 平台 - om1a：快杰内存增强型 OM1 代，Amd 平台 默认值：om1i 或 om1a 当 MachineType 为 "OPROG"（快杰PRO通用型）时，支持以下取值： -
-     * oprog1i：快杰PRO通用型 OPROG1 代，Intel 平台 - oprog2i：快杰PRO通用型 OPROG2 代，Intel 平台 - oprog1a：快杰PRO通用型
-     * OPROG1 代，Amd 平台 当 MachineType 为 "OPRO"（快杰PRO增强型）时，支持以下取值： - opro1a：快杰PRO增强型 OPRO1 代，Amd 平台 -
-     * opro2a：快杰PRO增强型 OPRO2 代，Amd 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
+     * 代，AMD 平台 - o1r：快杰型 O1 代，ARM 平台 - o1h：快杰型 O1 代，Hygon 平台 - o2i：快杰型 O2 代，Intel 平台 - o2a：快杰型 O2
+     * 代，AMD 平台 默认值：o1i 或 o1a 当 MachineType 为 "OM"（快杰共享型）时，支持以下取值： - om1i：快杰内存增强型 OM1 代，Intel 平台 -
+     * om2i：快杰内存增强型 OM2 代，Intel 平台 - om1a：快杰内存增强型 OM1 代，Amd 平台 默认值：om1i 或 om1a
+     * 当 MachineType 为 "OPROG"（快杰PRO通用型）时，支持以下取值： - oprog1i：快杰PRO通用型 OPROG1 代，Intel 平台 -
+     * oprog2i：快杰PRO通用型 OPROG2 代，Intel 平台 - oprog1a：快杰PRO通用型 OPROG1 代，Amd 平台
+     * 当 MachineType 为 "OPRO"（快杰PRO增强型）时，支持以下取值： - opro1a：快杰PRO增强型 OPRO1 代，Amd 平台 - opro2a：快杰PRO增强型
+     * OPRO2 代，Amd 平台 注意：规格族必须与 MachineType 匹配，否则请求将被拒绝。
      */
     @UCloudParam("UHostFamily")
     private String uHostFamily;
