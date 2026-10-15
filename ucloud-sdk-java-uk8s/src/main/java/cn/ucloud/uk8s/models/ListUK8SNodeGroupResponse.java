@@ -33,129 +33,6 @@ public class ListUK8SNodeGroupResponse extends Response {
         this.nodeGroupList = nodeGroupList;
     }
 
-    public static class DiskSet extends Response {
-
-        /** 磁盘类型。系统盘: Boot，数据盘: Data,网络盘：Udisk */
-        @SerializedName("Type")
-        private String type;
-
-        /** 磁盘长ID */
-        @SerializedName("DiskId")
-        private String diskId;
-
-        /** UDisk名字（仅当磁盘是UDisk时返回） */
-        @SerializedName("Name")
-        private String name;
-
-        /** 磁盘盘符 */
-        @SerializedName("Drive")
-        private String drive;
-
-        /** 磁盘大小，单位: GB */
-        @SerializedName("Size")
-        private Integer size;
-
-        /** 备份方案，枚举类型：BASIC_SNAPSHOT,普通快照；DATAARK,方舟。无快照则不返回该字段。 */
-        @SerializedName("BackupType")
-        private String backupType;
-
-        /** 当前主机的IOPS值 */
-        @SerializedName("IOPS")
-        private Integer iops;
-
-        /** Yes: 加密 No: 非加密 */
-        @SerializedName("Encrypted")
-        private String encrypted;
-
-        /** LOCAL_NOMAL| CLOUD_NORMAL| LOCAL_SSD| CLOUD_SSD|EXCLUSIVE_LOCAL_DISK */
-        @SerializedName("DiskType")
-        private String diskType;
-
-        /** True| False */
-        @SerializedName("IsBoot")
-        private String isBoot;
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getDiskId() {
-            return diskId;
-        }
-
-        public void setDiskId(String diskId) {
-            this.diskId = diskId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDrive() {
-            return drive;
-        }
-
-        public void setDrive(String drive) {
-            this.drive = drive;
-        }
-
-        public Integer getSize() {
-            return size;
-        }
-
-        public void setSize(Integer size) {
-            this.size = size;
-        }
-
-        public String getBackupType() {
-            return backupType;
-        }
-
-        public void setBackupType(String backupType) {
-            this.backupType = backupType;
-        }
-
-        public Integer getIOPS() {
-            return iops;
-        }
-
-        public void setIOPS(Integer iops) {
-            this.iops = iops;
-        }
-
-        public String getEncrypted() {
-            return encrypted;
-        }
-
-        public void setEncrypted(String encrypted) {
-            this.encrypted = encrypted;
-        }
-
-        public String getDiskType() {
-            return diskType;
-        }
-
-        public void setDiskType(String diskType) {
-            this.diskType = diskType;
-        }
-
-        public String getIsBoot() {
-            return isBoot;
-        }
-
-        public void setIsBoot(String isBoot) {
-            this.isBoot = isBoot;
-        }
-    }
-
     public static class EIP extends Response {
 
         /**
@@ -419,11 +296,70 @@ public class ListUK8SNodeGroupResponse extends Response {
         }
     }
 
+    public static class NodeGroupDiskConfig extends Response {
+
+        /** 是否为系统盘 */
+        @SerializedName("IsBoot")
+        private Boolean isBoot;
+
+        /** 磁盘类型 */
+        @SerializedName("Type")
+        private String type;
+
+        /** 磁盘大小，单位 GB */
+        @SerializedName("Size")
+        private Integer size;
+
+        /** 磁盘加密密钥 ID */
+        @SerializedName("KmsKeyId")
+        private String kmsKeyId;
+
+        public Boolean getIsBoot() {
+            return isBoot;
+        }
+
+        public void setIsBoot(Boolean isBoot) {
+            this.isBoot = isBoot;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public Integer getSize() {
+            return size;
+        }
+
+        public void setSize(Integer size) {
+            this.size = size;
+        }
+
+        public String getKmsKeyId() {
+            return kmsKeyId;
+        }
+
+        public void setKmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+        }
+    }
+
     public static class NodeGroupSet extends Response {
 
         /** 可用区。参见 [可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
         @SerializedName("Zone")
         private String zone;
+
+        /** 镜像状态：Unknown、Normal、Deleted、NotLatest */
+        @SerializedName("ImageStatus")
+        private String imageStatus;
+
+        /** 数据盘加密密钥 ID */
+        @SerializedName("DataDiskKmsKeyId")
+        private String dataDiskKmsKeyId;
 
         /** 节点池ID */
         @SerializedName("NodeGroupId")
@@ -574,7 +510,7 @@ public class ListUK8SNodeGroupResponse extends Response {
 
         /** 磁盘列表 */
         @SerializedName("Disks")
-        private List<DiskSet> disks;
+        private List<NodeGroupDiskConfig> disks;
 
         /** 节点池关联的弹性伸缩组ID */
         @SerializedName("RelatedAsg")
@@ -594,6 +530,22 @@ public class ListUK8SNodeGroupResponse extends Response {
 
         public void setZone(String zone) {
             this.zone = zone;
+        }
+
+        public String getImageStatus() {
+            return imageStatus;
+        }
+
+        public void setImageStatus(String imageStatus) {
+            this.imageStatus = imageStatus;
+        }
+
+        public String getDataDiskKmsKeyId() {
+            return dataDiskKmsKeyId;
+        }
+
+        public void setDataDiskKmsKeyId(String dataDiskKmsKeyId) {
+            this.dataDiskKmsKeyId = dataDiskKmsKeyId;
         }
 
         public String getNodeGroupId() {
@@ -884,11 +836,11 @@ public class ListUK8SNodeGroupResponse extends Response {
             this.uniFeature = uniFeature;
         }
 
-        public List<DiskSet> getDisks() {
+        public List<NodeGroupDiskConfig> getDisks() {
             return disks;
         }
 
-        public void setDisks(List<DiskSet> disks) {
+        public void setDisks(List<NodeGroupDiskConfig> disks) {
             this.disks = disks;
         }
 
@@ -970,11 +922,11 @@ public class ListUK8SNodeGroupResponse extends Response {
 
     public static class SecGroupId extends Response {
 
-        /** 安全组名称 */
+        /** 安全组 ID */
         @SerializedName("Id")
         private String id;
 
-        /** 安全组id */
+        /** 安全组名称 */
         @SerializedName("Name")
         private String name;
 

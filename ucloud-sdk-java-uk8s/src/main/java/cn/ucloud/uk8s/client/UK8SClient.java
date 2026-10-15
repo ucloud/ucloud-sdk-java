@@ -17,6 +17,8 @@ import cn.ucloud.common.client.DefaultClient;
 import cn.ucloud.common.config.Config;
 import cn.ucloud.common.credential.Credential;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uk8s.models.AddUK8SAutoScalingGroupV2Request;
+import cn.ucloud.uk8s.models.AddUK8SAutoScalingGroupV2Response;
 import cn.ucloud.uk8s.models.AddUK8SExistingUHostRequest;
 import cn.ucloud.uk8s.models.AddUK8SExistingUHostResponse;
 import cn.ucloud.uk8s.models.AddUK8SNodeGroupRequest;
@@ -33,16 +35,34 @@ import cn.ucloud.uk8s.models.DelUK8SClusterNodeV2Request;
 import cn.ucloud.uk8s.models.DelUK8SClusterNodeV2Response;
 import cn.ucloud.uk8s.models.DelUK8SClusterRequest;
 import cn.ucloud.uk8s.models.DelUK8SClusterResponse;
+import cn.ucloud.uk8s.models.DeleteUK8SAutoScalingGroupRequest;
+import cn.ucloud.uk8s.models.DeleteUK8SAutoScalingGroupResponse;
 import cn.ucloud.uk8s.models.DeleteUK8SULSConfigRequest;
 import cn.ucloud.uk8s.models.DeleteUK8SULSConfigResponse;
+import cn.ucloud.uk8s.models.DescribeUK8SAutoscalerGroupRequest;
+import cn.ucloud.uk8s.models.DescribeUK8SAutoscalerGroupResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SClusterRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SClusterResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SImageRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SImageResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SNodeRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SNodeResponse;
+import cn.ucloud.uk8s.models.EnableUK8SAutoscalerRequest;
+import cn.ucloud.uk8s.models.EnableUK8SAutoscalerResponse;
 import cn.ucloud.uk8s.models.GetClusterConfigRequest;
 import cn.ucloud.uk8s.models.GetClusterConfigResponse;
+import cn.ucloud.uk8s.models.GetUK8SAvailableInstanceTypesRequest;
+import cn.ucloud.uk8s.models.GetUK8SAvailableInstanceTypesResponse;
+import cn.ucloud.uk8s.models.GetUK8SCNINodeInfoRequest;
+import cn.ucloud.uk8s.models.GetUK8SCNINodeInfoResponse;
+import cn.ucloud.uk8s.models.GetUK8SIpamdStatusRequest;
+import cn.ucloud.uk8s.models.GetUK8SIpamdStatusResponse;
+import cn.ucloud.uk8s.models.GetUK8SLoadBalancerControllerRequest;
+import cn.ucloud.uk8s.models.GetUK8SLoadBalancerControllerResponse;
+import cn.ucloud.uk8s.models.GetUK8SNodeGroupRequest;
+import cn.ucloud.uk8s.models.GetUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.GetUK8SPluginInfoRequest;
+import cn.ucloud.uk8s.models.GetUK8SPluginInfoResponse;
 import cn.ucloud.uk8s.models.GetUK8SVersionsRequest;
 import cn.ucloud.uk8s.models.GetUK8SVersionsResponse;
 import cn.ucloud.uk8s.models.ListUK8SClusterNodeV2Request;
@@ -57,6 +77,10 @@ import cn.ucloud.uk8s.models.ModifyUK8SClusterNameRequest;
 import cn.ucloud.uk8s.models.ModifyUK8SClusterNameResponse;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoScalingGroupV2Request;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoScalingGroupV2Response;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoscalerRequest;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoscalerResponse;
 import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupResponse;
 import cn.ucloud.uk8s.models.UpdateUK8SULSConfigRequest;
@@ -66,6 +90,19 @@ import cn.ucloud.uk8s.models.UpdateUK8SULSConfigResponse;
 public class UK8SClient extends DefaultClient implements UK8SClientInterface {
     public UK8SClient(Config config, Credential credential) {
         super(config, credential);
+    }
+
+    /**
+     * AddUK8SAutoScalingGroupV2 - 集群增加伸缩组V2
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddUK8SAutoScalingGroupV2Response addUK8SAutoScalingGroupV2(
+            AddUK8SAutoScalingGroupV2Request request) throws UCloudException {
+        request.setAction("AddUK8SAutoScalingGroupV2");
+        return (AddUK8SAutoScalingGroupV2Response)
+                this.invoke(request, AddUK8SAutoScalingGroupV2Response.class);
     }
 
     /**
@@ -169,6 +206,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
     }
 
     /**
+     * DeleteUK8SAutoScalingGroup - 删除伸缩组
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUK8SAutoScalingGroupResponse deleteUK8SAutoScalingGroup(
+            DeleteUK8SAutoScalingGroupRequest request) throws UCloudException {
+        request.setAction("DeleteUK8SAutoScalingGroup");
+        return (DeleteUK8SAutoScalingGroupResponse)
+                this.invoke(request, DeleteUK8SAutoScalingGroupResponse.class);
+    }
+
+    /**
      * DeleteUK8SULSConfig - 删除UK8S日志采集配置
      *
      * @param request Request object
@@ -179,6 +229,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
         request.setAction("DeleteUK8SULSConfig");
         return (DeleteUK8SULSConfigResponse)
                 this.invoke(request, DeleteUK8SULSConfigResponse.class);
+    }
+
+    /**
+     * DescribeUK8SAutoscalerGroup - 获取AutoscalerGroup信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUK8SAutoscalerGroupResponse describeUK8SAutoscalerGroup(
+            DescribeUK8SAutoscalerGroupRequest request) throws UCloudException {
+        request.setAction("DescribeUK8SAutoscalerGroup");
+        return (DescribeUK8SAutoscalerGroupResponse)
+                this.invoke(request, DescribeUK8SAutoscalerGroupResponse.class);
     }
 
     /**
@@ -219,6 +282,19 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
     }
 
     /**
+     * EnableUK8SAutoscaler - 开启/关闭伸缩器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EnableUK8SAutoscalerResponse enableUK8SAutoscaler(EnableUK8SAutoscalerRequest request)
+            throws UCloudException {
+        request.setAction("EnableUK8SAutoscaler");
+        return (EnableUK8SAutoscalerResponse)
+                this.invoke(request, EnableUK8SAutoscalerResponse.class);
+    }
+
+    /**
      * GetClusterConfig - 获取集群配置文件
      *
      * @param request Request object
@@ -228,6 +304,80 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
             throws UCloudException {
         request.setAction("GetClusterConfig");
         return (GetClusterConfigResponse) this.invoke(request, GetClusterConfigResponse.class);
+    }
+
+    /**
+     * GetUK8SAvailableInstanceTypes - 获取可用机型
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SAvailableInstanceTypesResponse getUK8SAvailableInstanceTypes(
+            GetUK8SAvailableInstanceTypesRequest request) throws UCloudException {
+        request.setAction("GetUK8SAvailableInstanceTypes");
+        return (GetUK8SAvailableInstanceTypesResponse)
+                this.invoke(request, GetUK8SAvailableInstanceTypesResponse.class);
+    }
+
+    /**
+     * GetUK8SCNINodeInfo - 获取 UK8S CNI 节点信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SCNINodeInfoResponse getUK8SCNINodeInfo(GetUK8SCNINodeInfoRequest request)
+            throws UCloudException {
+        request.setAction("GetUK8SCNINodeInfo");
+        return (GetUK8SCNINodeInfoResponse) this.invoke(request, GetUK8SCNINodeInfoResponse.class);
+    }
+
+    /**
+     * GetUK8SIpamdStatus - 获取ipamd插件的状态
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SIpamdStatusResponse getUK8SIpamdStatus(GetUK8SIpamdStatusRequest request)
+            throws UCloudException {
+        request.setAction("GetUK8SIpamdStatus");
+        return (GetUK8SIpamdStatusResponse) this.invoke(request, GetUK8SIpamdStatusResponse.class);
+    }
+
+    /**
+     * GetUK8SLoadBalancerController - 获取 uk8s LoadBalancerController
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SLoadBalancerControllerResponse getUK8SLoadBalancerController(
+            GetUK8SLoadBalancerControllerRequest request) throws UCloudException {
+        request.setAction("GetUK8SLoadBalancerController");
+        return (GetUK8SLoadBalancerControllerResponse)
+                this.invoke(request, GetUK8SLoadBalancerControllerResponse.class);
+    }
+
+    /**
+     * GetUK8SNodeGroup - 列出某个UK8S节点池
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SNodeGroupResponse getUK8SNodeGroup(GetUK8SNodeGroupRequest request)
+            throws UCloudException {
+        request.setAction("GetUK8SNodeGroup");
+        return (GetUK8SNodeGroupResponse) this.invoke(request, GetUK8SNodeGroupResponse.class);
+    }
+
+    /**
+     * GetUK8SPluginInfo - 查询集群插件信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SPluginInfoResponse getUK8SPluginInfo(GetUK8SPluginInfoRequest request)
+            throws UCloudException {
+        request.setAction("GetUK8SPluginInfo");
+        return (GetUK8SPluginInfoResponse) this.invoke(request, GetUK8SPluginInfoResponse.class);
     }
 
     /**
@@ -315,6 +465,32 @@ public class UK8SClient extends DefaultClient implements UK8SClientInterface {
         request.setAction("RemoveUK8SNodeGroup");
         return (RemoveUK8SNodeGroupResponse)
                 this.invoke(request, RemoveUK8SNodeGroupResponse.class);
+    }
+
+    /**
+     * UpdateUK8SAutoScalingGroupV2 - 集群修改伸缩组V2
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUK8SAutoScalingGroupV2Response updateUK8SAutoScalingGroupV2(
+            UpdateUK8SAutoScalingGroupV2Request request) throws UCloudException {
+        request.setAction("UpdateUK8SAutoScalingGroupV2");
+        return (UpdateUK8SAutoScalingGroupV2Response)
+                this.invoke(request, UpdateUK8SAutoScalingGroupV2Response.class);
+    }
+
+    /**
+     * UpdateUK8SAutoscaler - 更新伸缩器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUK8SAutoscalerResponse updateUK8SAutoscaler(UpdateUK8SAutoscalerRequest request)
+            throws UCloudException {
+        request.setAction("UpdateUK8SAutoscaler");
+        return (UpdateUK8SAutoscalerResponse)
+                this.invoke(request, UpdateUK8SAutoscalerResponse.class);
     }
 
     /**

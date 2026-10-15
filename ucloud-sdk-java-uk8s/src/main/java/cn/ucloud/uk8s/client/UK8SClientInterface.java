@@ -15,6 +15,8 @@ package cn.ucloud.uk8s.client;
 
 import cn.ucloud.common.client.Client;
 import cn.ucloud.common.exception.UCloudException;
+import cn.ucloud.uk8s.models.AddUK8SAutoScalingGroupV2Request;
+import cn.ucloud.uk8s.models.AddUK8SAutoScalingGroupV2Response;
 import cn.ucloud.uk8s.models.AddUK8SExistingUHostRequest;
 import cn.ucloud.uk8s.models.AddUK8SExistingUHostResponse;
 import cn.ucloud.uk8s.models.AddUK8SNodeGroupRequest;
@@ -31,16 +33,34 @@ import cn.ucloud.uk8s.models.DelUK8SClusterNodeV2Request;
 import cn.ucloud.uk8s.models.DelUK8SClusterNodeV2Response;
 import cn.ucloud.uk8s.models.DelUK8SClusterRequest;
 import cn.ucloud.uk8s.models.DelUK8SClusterResponse;
+import cn.ucloud.uk8s.models.DeleteUK8SAutoScalingGroupRequest;
+import cn.ucloud.uk8s.models.DeleteUK8SAutoScalingGroupResponse;
 import cn.ucloud.uk8s.models.DeleteUK8SULSConfigRequest;
 import cn.ucloud.uk8s.models.DeleteUK8SULSConfigResponse;
+import cn.ucloud.uk8s.models.DescribeUK8SAutoscalerGroupRequest;
+import cn.ucloud.uk8s.models.DescribeUK8SAutoscalerGroupResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SClusterRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SClusterResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SImageRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SImageResponse;
 import cn.ucloud.uk8s.models.DescribeUK8SNodeRequest;
 import cn.ucloud.uk8s.models.DescribeUK8SNodeResponse;
+import cn.ucloud.uk8s.models.EnableUK8SAutoscalerRequest;
+import cn.ucloud.uk8s.models.EnableUK8SAutoscalerResponse;
 import cn.ucloud.uk8s.models.GetClusterConfigRequest;
 import cn.ucloud.uk8s.models.GetClusterConfigResponse;
+import cn.ucloud.uk8s.models.GetUK8SAvailableInstanceTypesRequest;
+import cn.ucloud.uk8s.models.GetUK8SAvailableInstanceTypesResponse;
+import cn.ucloud.uk8s.models.GetUK8SCNINodeInfoRequest;
+import cn.ucloud.uk8s.models.GetUK8SCNINodeInfoResponse;
+import cn.ucloud.uk8s.models.GetUK8SIpamdStatusRequest;
+import cn.ucloud.uk8s.models.GetUK8SIpamdStatusResponse;
+import cn.ucloud.uk8s.models.GetUK8SLoadBalancerControllerRequest;
+import cn.ucloud.uk8s.models.GetUK8SLoadBalancerControllerResponse;
+import cn.ucloud.uk8s.models.GetUK8SNodeGroupRequest;
+import cn.ucloud.uk8s.models.GetUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.GetUK8SPluginInfoRequest;
+import cn.ucloud.uk8s.models.GetUK8SPluginInfoResponse;
 import cn.ucloud.uk8s.models.GetUK8SVersionsRequest;
 import cn.ucloud.uk8s.models.GetUK8SVersionsResponse;
 import cn.ucloud.uk8s.models.ListUK8SClusterNodeV2Request;
@@ -55,6 +75,10 @@ import cn.ucloud.uk8s.models.ModifyUK8SClusterNameRequest;
 import cn.ucloud.uk8s.models.ModifyUK8SClusterNameResponse;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.RemoveUK8SNodeGroupResponse;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoScalingGroupV2Request;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoScalingGroupV2Response;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoscalerRequest;
+import cn.ucloud.uk8s.models.UpdateUK8SAutoscalerResponse;
 import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupRequest;
 import cn.ucloud.uk8s.models.UpdateUK8SNodeGroupResponse;
 import cn.ucloud.uk8s.models.UpdateUK8SULSConfigRequest;
@@ -62,6 +86,15 @@ import cn.ucloud.uk8s.models.UpdateUK8SULSConfigResponse;
 
 /** This client is used to call actions of **UK8S** service */
 public interface UK8SClientInterface extends Client {
+
+    /**
+     * AddUK8SAutoScalingGroupV2 - 集群增加伸缩组V2
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public AddUK8SAutoScalingGroupV2Response addUK8SAutoScalingGroupV2(
+            AddUK8SAutoScalingGroupV2Request request) throws UCloudException;
 
     /**
      * AddUK8SExistingUHost - 添加Node节点（已有云主机）
@@ -136,6 +169,15 @@ public interface UK8SClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * DeleteUK8SAutoScalingGroup - 删除伸缩组
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUK8SAutoScalingGroupResponse deleteUK8SAutoScalingGroup(
+            DeleteUK8SAutoScalingGroupRequest request) throws UCloudException;
+
+    /**
      * DeleteUK8SULSConfig - 删除UK8S日志采集配置
      *
      * @param request Request object
@@ -143,6 +185,15 @@ public interface UK8SClientInterface extends Client {
      */
     public DeleteUK8SULSConfigResponse deleteUK8SULSConfig(DeleteUK8SULSConfigRequest request)
             throws UCloudException;
+
+    /**
+     * DescribeUK8SAutoscalerGroup - 获取AutoscalerGroup信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUK8SAutoscalerGroupResponse describeUK8SAutoscalerGroup(
+            DescribeUK8SAutoscalerGroupRequest request) throws UCloudException;
 
     /**
      * DescribeUK8SCluster - 获取集群信息
@@ -172,12 +223,75 @@ public interface UK8SClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * EnableUK8SAutoscaler - 开启/关闭伸缩器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public EnableUK8SAutoscalerResponse enableUK8SAutoscaler(EnableUK8SAutoscalerRequest request)
+            throws UCloudException;
+
+    /**
      * GetClusterConfig - 获取集群配置文件
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
     public GetClusterConfigResponse getClusterConfig(GetClusterConfigRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUK8SAvailableInstanceTypes - 获取可用机型
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SAvailableInstanceTypesResponse getUK8SAvailableInstanceTypes(
+            GetUK8SAvailableInstanceTypesRequest request) throws UCloudException;
+
+    /**
+     * GetUK8SCNINodeInfo - 获取 UK8S CNI 节点信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SCNINodeInfoResponse getUK8SCNINodeInfo(GetUK8SCNINodeInfoRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUK8SIpamdStatus - 获取ipamd插件的状态
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SIpamdStatusResponse getUK8SIpamdStatus(GetUK8SIpamdStatusRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUK8SLoadBalancerController - 获取 uk8s LoadBalancerController
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SLoadBalancerControllerResponse getUK8SLoadBalancerController(
+            GetUK8SLoadBalancerControllerRequest request) throws UCloudException;
+
+    /**
+     * GetUK8SNodeGroup - 列出某个UK8S节点池
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SNodeGroupResponse getUK8SNodeGroup(GetUK8SNodeGroupRequest request)
+            throws UCloudException;
+
+    /**
+     * GetUK8SPluginInfo - 查询集群插件信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUK8SPluginInfoResponse getUK8SPluginInfo(GetUK8SPluginInfoRequest request)
             throws UCloudException;
 
     /**
@@ -241,6 +355,24 @@ public interface UK8SClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public RemoveUK8SNodeGroupResponse removeUK8SNodeGroup(RemoveUK8SNodeGroupRequest request)
+            throws UCloudException;
+
+    /**
+     * UpdateUK8SAutoScalingGroupV2 - 集群修改伸缩组V2
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUK8SAutoScalingGroupV2Response updateUK8SAutoScalingGroupV2(
+            UpdateUK8SAutoScalingGroupV2Request request) throws UCloudException;
+
+    /**
+     * UpdateUK8SAutoscaler - 更新伸缩器
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public UpdateUK8SAutoscalerResponse updateUK8SAutoscaler(UpdateUK8SAutoscalerRequest request)
             throws UCloudException;
 
     /**

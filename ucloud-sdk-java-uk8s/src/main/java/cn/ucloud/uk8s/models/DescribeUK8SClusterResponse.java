@@ -479,17 +479,17 @@ public class DescribeUK8SClusterResponse extends Response {
 
     public static class Autoscaler extends Response {
 
-        /** 缩容触发延时 */
+        /** 节点持续不需要后触发缩容的等待时间，单位分钟。 */
         @SerializedName("ScaleDownUnneededTime")
-        private String scaleDownUnneededTime;
+        private Integer scaleDownUnneededTime;
 
-        /** CPU缩容阈值 */
+        /** 节点缩容利用率阈值，单位百分比，范围 0–100。 */
         @SerializedName("ScaleDownUtilizationThreshold")
-        private String scaleDownUtilizationThreshold;
+        private Integer scaleDownUtilizationThreshold;
 
-        /** 静默时间 */
+        /** 添加节点后等待缩容的时间，单位分钟。 */
         @SerializedName("ScaleDownDelayAfterAdd")
-        private String scaleDownDelayAfterAdd;
+        private Integer scaleDownDelayAfterAdd;
 
         /** 打开/关闭 */
         @SerializedName("Enabled")
@@ -499,35 +499,35 @@ public class DescribeUK8SClusterResponse extends Response {
         @SerializedName("Version")
         private String version;
 
-        /** */
+        /** 配置更新时间，Unix 时间戳，单位秒。 */
         @SerializedName("UpdateTime")
         private Integer updateTime;
 
-        /** GPU缩容阈值 */
+        /** GPU 缩容利用率阈值，单位百分比，范围 0–100。 */
         @SerializedName("ScaleDownGpuUtilizationThreshold")
-        private String scaleDownGpuUtilizationThreshold;
+        private Integer scaleDownGpuUtilizationThreshold;
 
-        public String getScaleDownUnneededTime() {
+        public Integer getScaleDownUnneededTime() {
             return scaleDownUnneededTime;
         }
 
-        public void setScaleDownUnneededTime(String scaleDownUnneededTime) {
+        public void setScaleDownUnneededTime(Integer scaleDownUnneededTime) {
             this.scaleDownUnneededTime = scaleDownUnneededTime;
         }
 
-        public String getScaleDownUtilizationThreshold() {
+        public Integer getScaleDownUtilizationThreshold() {
             return scaleDownUtilizationThreshold;
         }
 
-        public void setScaleDownUtilizationThreshold(String scaleDownUtilizationThreshold) {
+        public void setScaleDownUtilizationThreshold(Integer scaleDownUtilizationThreshold) {
             this.scaleDownUtilizationThreshold = scaleDownUtilizationThreshold;
         }
 
-        public String getScaleDownDelayAfterAdd() {
+        public Integer getScaleDownDelayAfterAdd() {
             return scaleDownDelayAfterAdd;
         }
 
-        public void setScaleDownDelayAfterAdd(String scaleDownDelayAfterAdd) {
+        public void setScaleDownDelayAfterAdd(Integer scaleDownDelayAfterAdd) {
             this.scaleDownDelayAfterAdd = scaleDownDelayAfterAdd;
         }
 
@@ -555,11 +555,11 @@ public class DescribeUK8SClusterResponse extends Response {
             this.updateTime = updateTime;
         }
 
-        public String getScaleDownGpuUtilizationThreshold() {
+        public Integer getScaleDownGpuUtilizationThreshold() {
             return scaleDownGpuUtilizationThreshold;
         }
 
-        public void setScaleDownGpuUtilizationThreshold(String scaleDownGpuUtilizationThreshold) {
+        public void setScaleDownGpuUtilizationThreshold(Integer scaleDownGpuUtilizationThreshold) {
             this.scaleDownGpuUtilizationThreshold = scaleDownGpuUtilizationThreshold;
         }
     }
@@ -854,11 +854,11 @@ public class DescribeUK8SClusterResponse extends Response {
 
     public static class SecGroupId extends Response {
 
-        /** 安全组名称 */
+        /** 安全组 ID */
         @SerializedName("Id")
         private String id;
 
-        /** 安全组id */
+        /** 安全组名称 */
         @SerializedName("Name")
         private String name;
 
