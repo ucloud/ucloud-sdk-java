@@ -25,10 +25,16 @@ import cn.ucloud.udns.models.CreateUDNSZoneRequest;
 import cn.ucloud.udns.models.CreateUDNSZoneResponse;
 import cn.ucloud.udns.models.DeleteUDNSRecordRequest;
 import cn.ucloud.udns.models.DeleteUDNSRecordResponse;
+import cn.ucloud.udns.models.DeleteUDNSZoneRequest;
+import cn.ucloud.udns.models.DeleteUDNSZoneResponse;
 import cn.ucloud.udns.models.DescribeUDNSDomainRequest;
 import cn.ucloud.udns.models.DescribeUDNSDomainResponse;
 import cn.ucloud.udns.models.DescribeUDNSRecordRequest;
 import cn.ucloud.udns.models.DescribeUDNSRecordResponse;
+import cn.ucloud.udns.models.DescribeUDNSZoneByVPCRequest;
+import cn.ucloud.udns.models.DescribeUDNSZoneByVPCResponse;
+import cn.ucloud.udns.models.DescribeUDNSZoneForwardRequest;
+import cn.ucloud.udns.models.DescribeUDNSZoneForwardResponse;
 import cn.ucloud.udns.models.DescribeUDNSZoneRequest;
 import cn.ucloud.udns.models.DescribeUDNSZoneResponse;
 import cn.ucloud.udns.models.DisassociateUDNSZoneVPCRequest;
@@ -94,6 +100,18 @@ public class UDNSClient extends DefaultClient implements UDNSClientInterface {
     }
 
     /**
+     * DeleteUDNSZone - 删除域名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUDNSZoneResponse deleteUDNSZone(DeleteUDNSZoneRequest request)
+            throws UCloudException {
+        request.setAction("DeleteUDNSZone");
+        return (DeleteUDNSZoneResponse) this.invoke(request, DeleteUDNSZoneResponse.class);
+    }
+
+    /**
      * DescribeUDNSDomain - zone下所有域名的rr记录
      *
      * @param request Request object
@@ -127,6 +145,32 @@ public class UDNSClient extends DefaultClient implements UDNSClientInterface {
             throws UCloudException {
         request.setAction("DescribeUDNSZone");
         return (DescribeUDNSZoneResponse) this.invoke(request, DescribeUDNSZoneResponse.class);
+    }
+
+    /**
+     * DescribeUDNSZoneByVPC - 根据VPC查询绑定的UDNSZone
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDNSZoneByVPCResponse describeUDNSZoneByVPC(DescribeUDNSZoneByVPCRequest request)
+            throws UCloudException {
+        request.setAction("DescribeUDNSZoneByVPC");
+        return (DescribeUDNSZoneByVPCResponse)
+                this.invoke(request, DescribeUDNSZoneByVPCResponse.class);
+    }
+
+    /**
+     * DescribeUDNSZoneForward - 获取域名转发配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDNSZoneForwardResponse describeUDNSZoneForward(
+            DescribeUDNSZoneForwardRequest request) throws UCloudException {
+        request.setAction("DescribeUDNSZoneForward");
+        return (DescribeUDNSZoneForwardResponse)
+                this.invoke(request, DescribeUDNSZoneForwardResponse.class);
     }
 
     /**

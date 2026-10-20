@@ -41,7 +41,7 @@ public class ModifyUDNSZoneRequest extends Request {
     @UCloudParam("Remark")
     private String remark;
 
-    /** 是否支持迭代。枚举值,"enable",支持迭代; "disable",不支持迭代 */
+    /** 是否支持递归。枚举值,"enable",支持; "disable",不支持 */
     @UCloudParam("IsRecursionEnabled")
     private String isRecursionEnabled;
 
