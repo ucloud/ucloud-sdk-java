@@ -23,10 +23,16 @@ import cn.ucloud.udns.models.CreateUDNSZoneRequest;
 import cn.ucloud.udns.models.CreateUDNSZoneResponse;
 import cn.ucloud.udns.models.DeleteUDNSRecordRequest;
 import cn.ucloud.udns.models.DeleteUDNSRecordResponse;
+import cn.ucloud.udns.models.DeleteUDNSZoneRequest;
+import cn.ucloud.udns.models.DeleteUDNSZoneResponse;
 import cn.ucloud.udns.models.DescribeUDNSDomainRequest;
 import cn.ucloud.udns.models.DescribeUDNSDomainResponse;
 import cn.ucloud.udns.models.DescribeUDNSRecordRequest;
 import cn.ucloud.udns.models.DescribeUDNSRecordResponse;
+import cn.ucloud.udns.models.DescribeUDNSZoneByVPCRequest;
+import cn.ucloud.udns.models.DescribeUDNSZoneByVPCResponse;
+import cn.ucloud.udns.models.DescribeUDNSZoneForwardRequest;
+import cn.ucloud.udns.models.DescribeUDNSZoneForwardResponse;
 import cn.ucloud.udns.models.DescribeUDNSZoneRequest;
 import cn.ucloud.udns.models.DescribeUDNSZoneResponse;
 import cn.ucloud.udns.models.DisassociateUDNSZoneVPCRequest;
@@ -76,6 +82,15 @@ public interface UDNSClientInterface extends Client {
             throws UCloudException;
 
     /**
+     * DeleteUDNSZone - 删除域名
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DeleteUDNSZoneResponse deleteUDNSZone(DeleteUDNSZoneRequest request)
+            throws UCloudException;
+
+    /**
      * DescribeUDNSDomain - zone下所有域名的rr记录
      *
      * @param request Request object
@@ -101,6 +116,24 @@ public interface UDNSClientInterface extends Client {
      */
     public DescribeUDNSZoneResponse describeUDNSZone(DescribeUDNSZoneRequest request)
             throws UCloudException;
+
+    /**
+     * DescribeUDNSZoneByVPC - 根据VPC查询绑定的UDNSZone
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDNSZoneByVPCResponse describeUDNSZoneByVPC(DescribeUDNSZoneByVPCRequest request)
+            throws UCloudException;
+
+    /**
+     * DescribeUDNSZoneForward - 获取域名转发配置
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeUDNSZoneForwardResponse describeUDNSZoneForward(
+            DescribeUDNSZoneForwardRequest request) throws UCloudException;
 
     /**
      * DisassociateUDNSZoneVPC - 解绑域名和VPC
