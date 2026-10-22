@@ -43,6 +43,11 @@ public class AddUSMSSignatureQualificationRequest extends Request {
     @UCloudParam("Status")
     private Integer status;
 
+    /** 经办人手机号 */
+    @NotEmpty
+    @UCloudParam("HandlerPhone")
+    private String handlerPhone;
+
     /** 公司名称，长度限制100 */
     @UCloudParam("CompanyName")
     private String companyName;
@@ -83,6 +88,10 @@ public class AddUSMSSignatureQualificationRequest extends Request {
     @UCloudParam("ManagerName")
     private String managerName;
 
+    /** 法人手机号 */
+    @UCloudParam("ManagerPhone")
+    private String managerPhone;
+
     /** 法人身份证号码 */
     @UCloudParam("ManagerIDNumber")
     private String managerIDNumber;
@@ -117,6 +126,14 @@ public class AddUSMSSignatureQualificationRequest extends Request {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getHandlerPhone() {
+        return handlerPhone;
+    }
+
+    public void setHandlerPhone(String handlerPhone) {
+        this.handlerPhone = handlerPhone;
     }
 
     public String getCompanyName() {
@@ -197,6 +214,14 @@ public class AddUSMSSignatureQualificationRequest extends Request {
 
     public void setManagerName(String managerName) {
         this.managerName = managerName;
+    }
+
+    public String getManagerPhone() {
+        return managerPhone;
+    }
+
+    public void setManagerPhone(String managerPhone) {
+        this.managerPhone = managerPhone;
     }
 
     public String getManagerIDNumber() {

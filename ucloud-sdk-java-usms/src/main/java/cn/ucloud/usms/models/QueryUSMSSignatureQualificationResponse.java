@@ -62,6 +62,10 @@ public class QueryUSMSSignatureQualificationResponse extends Response {
         @SerializedName("ManagerName")
         private String managerName;
 
+        /** 负责人手机号 */
+        @SerializedName("ManagerPhone")
+        private String managerPhone;
+
         /** 负责人证件号码 */
         @SerializedName("ManagerIDNumber")
         private String managerIDNumber;
@@ -69,6 +73,10 @@ public class QueryUSMSSignatureQualificationResponse extends Response {
         /** 经办人姓名 */
         @SerializedName("HandlerName")
         private String handlerName;
+
+        /** 经办人手机号 */
+        @SerializedName("HandlerPhone")
+        private String handlerPhone;
 
         /** 经办人证件号码 */
         @SerializedName("HandlerIDNumber")
@@ -178,6 +186,14 @@ public class QueryUSMSSignatureQualificationResponse extends Response {
             this.managerName = managerName;
         }
 
+        public String getManagerPhone() {
+            return managerPhone;
+        }
+
+        public void setManagerPhone(String managerPhone) {
+            this.managerPhone = managerPhone;
+        }
+
         public String getManagerIDNumber() {
             return managerIDNumber;
         }
@@ -192,6 +208,14 @@ public class QueryUSMSSignatureQualificationResponse extends Response {
 
         public void setHandlerName(String handlerName) {
             this.handlerName = handlerName;
+        }
+
+        public String getHandlerPhone() {
+            return handlerPhone;
+        }
+
+        public void setHandlerPhone(String handlerPhone) {
+            this.handlerPhone = handlerPhone;
         }
 
         public String getHandlerIDNumber() {
