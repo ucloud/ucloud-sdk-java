@@ -35,6 +35,8 @@ import cn.ucloud.usms.models.GetUSMSSendStatisticsRequest;
 import cn.ucloud.usms.models.GetUSMSSendStatisticsResponse;
 import cn.ucloud.usms.models.GetUSMSSignatureQualificationRequest;
 import cn.ucloud.usms.models.GetUSMSSignatureQualificationResponse;
+import cn.ucloud.usms.models.GetUSMSTemplateSendStatisticsRequest;
+import cn.ucloud.usms.models.GetUSMSTemplateSendStatisticsResponse;
 import cn.ucloud.usms.models.QueryUSMSSignatureQualificationRequest;
 import cn.ucloud.usms.models.QueryUSMSSignatureQualificationResponse;
 import cn.ucloud.usms.models.QueryUSMSSignatureRequest;
@@ -145,6 +147,15 @@ public interface USMSClientInterface extends Client {
      */
     public GetUSMSSignatureQualificationResponse getUSMSSignatureQualification(
             GetUSMSSignatureQualificationRequest request) throws UCloudException;
+
+    /**
+     * GetUSMSTemplateSendStatistics - 获取模板发送统计数据
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public GetUSMSTemplateSendStatisticsResponse getUSMSTemplateSendStatistics(
+            GetUSMSTemplateSendStatisticsRequest request) throws UCloudException;
 
     /**
      * QueryUSMSSignature - 查询短信签名申请状态

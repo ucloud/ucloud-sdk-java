@@ -66,6 +66,10 @@ public class UpdateUSMSSignatureQualificationRequest extends Request {
     @UCloudParam("HandlerName")
     private String handlerName;
 
+    /** 经办人手机号 */
+    @UCloudParam("HandlerPhone")
+    private String handlerPhone;
+
     /** 经办人身份证号码 */
     @UCloudParam("HandlerIDNumber")
     private String handlerIDNumber;
@@ -85,6 +89,10 @@ public class UpdateUSMSSignatureQualificationRequest extends Request {
     /** 法人姓名 */
     @UCloudParam("ManagerName")
     private String managerName;
+
+    /** 法人手机号 */
+    @UCloudParam("ManagerPhone")
+    private String managerPhone;
 
     /** 法人身份证号码 */
     @UCloudParam("ManagerIDNumber")
@@ -170,6 +178,14 @@ public class UpdateUSMSSignatureQualificationRequest extends Request {
         this.handlerName = handlerName;
     }
 
+    public String getHandlerPhone() {
+        return handlerPhone;
+    }
+
+    public void setHandlerPhone(String handlerPhone) {
+        this.handlerPhone = handlerPhone;
+    }
+
     public String getHandlerIDNumber() {
         return handlerIDNumber;
     }
@@ -208,6 +224,14 @@ public class UpdateUSMSSignatureQualificationRequest extends Request {
 
     public void setManagerName(String managerName) {
         this.managerName = managerName;
+    }
+
+    public String getManagerPhone() {
+        return managerPhone;
+    }
+
+    public void setManagerPhone(String managerPhone) {
+        this.managerPhone = managerPhone;
     }
 
     public String getManagerIDNumber() {
