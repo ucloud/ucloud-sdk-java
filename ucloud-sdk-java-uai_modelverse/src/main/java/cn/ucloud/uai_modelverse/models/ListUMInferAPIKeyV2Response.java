@@ -19,11 +19,19 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ListUMInferAPIKeyResponse extends Response {
+public class ListUMInferAPIKeyV2Response extends Response {
 
-    /** apikey */
+    /** data */
     @SerializedName("Data")
     private List<APIKey> data;
+
+    /** 时间戳 */
+    @SerializedName("Timestamp")
+    private Integer timestamp;
+
+    /** 数据量 */
+    @SerializedName("TotalCount")
+    private Integer totalCount;
 
     public List<APIKey> getData() {
         return data;
@@ -31,6 +39,22 @@ public class ListUMInferAPIKeyResponse extends Response {
 
     public void setData(List<APIKey> data) {
         this.data = data;
+    }
+
+    public Integer getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Integer timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public static class APIKey extends Response {
@@ -82,7 +106,7 @@ public class ListUMInferAPIKeyResponse extends Response {
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 密钥值 */
+        /** 密钥值，前四后四，中间*掩码展示 */
         @SerializedName("Key")
         private String key;
 
