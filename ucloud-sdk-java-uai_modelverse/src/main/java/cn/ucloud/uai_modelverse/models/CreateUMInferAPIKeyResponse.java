@@ -94,7 +94,7 @@ public class CreateUMInferAPIKeyResponse extends Response {
         @SerializedName("CreateTime")
         private Integer createTime;
 
-        /** 密钥值 */
+        /** 密钥值，前四后四，中间*掩码展示 */
         @SerializedName("Key")
         private String key;
 

@@ -45,8 +45,8 @@ import cn.ucloud.uai_modelverse.models.ListUFSquareModelFiltersAuthRequest;
 import cn.ucloud.uai_modelverse.models.ListUFSquareModelFiltersAuthResponse;
 import cn.ucloud.uai_modelverse.models.ListUFSquareModelRequest;
 import cn.ucloud.uai_modelverse.models.ListUFSquareModelResponse;
-import cn.ucloud.uai_modelverse.models.ListUMInferAPIKeyRequest;
-import cn.ucloud.uai_modelverse.models.ListUMInferAPIKeyResponse;
+import cn.ucloud.uai_modelverse.models.ListUMInferAPIKeyV2Request;
+import cn.ucloud.uai_modelverse.models.ListUMInferAPIKeyV2Response;
 import cn.ucloud.uai_modelverse.models.ListUMInferRequestLogsRequest;
 import cn.ucloud.uai_modelverse.models.ListUMInferRequestLogsResponse;
 import cn.ucloud.uai_modelverse.models.ListUnpaidOrderSummaryRequest;
@@ -197,12 +197,12 @@ public interface UAIModelverseClientInterface extends Client {
             ListUFSquareModelFiltersAuthRequest request) throws UCloudException;
 
     /**
-     * ListUMInferAPIKey - 列表查询APIKey
+     * ListUMInferAPIKeyV2 - 获取modelverse apikey
      *
      * @param request Request object
      * @throws UCloudException Exception
      */
-    public ListUMInferAPIKeyResponse listUMInferAPIKey(ListUMInferAPIKeyRequest request)
+    public ListUMInferAPIKeyV2Response listUMInferAPIKeyV2(ListUMInferAPIKeyV2Request request)
             throws UCloudException;
 
     /**
