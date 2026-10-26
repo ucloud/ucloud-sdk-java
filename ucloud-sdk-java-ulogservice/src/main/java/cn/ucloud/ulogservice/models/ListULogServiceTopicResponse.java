@@ -67,9 +67,9 @@ public class ListULogServiceTopicResponse extends Response {
         @SerializedName("IsReserved")
         private Integer isReserved;
 
-        /** 主题描述 */
-        @SerializedName("TopicDesc")
-        private String topicDesc;
+        /** 日志主题状态 */
+        @SerializedName("State")
+        private String state;
 
         public String getTopicName() {
             return topicName;
@@ -111,12 +111,12 @@ public class ListULogServiceTopicResponse extends Response {
             this.isReserved = isReserved;
         }
 
-        public String getTopicDesc() {
-            return topicDesc;
+        public String getState() {
+            return state;
         }
 
-        public void setTopicDesc(String topicDesc) {
-            this.topicDesc = topicDesc;
+        public void setState(String state) {
+            this.state = state;
         }
     }
 }

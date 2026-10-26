@@ -35,8 +35,12 @@ import cn.ucloud.ulogservice.models.DeleteULogServiceMachineGroupRequest;
 import cn.ucloud.ulogservice.models.DeleteULogServiceMachineGroupResponse;
 import cn.ucloud.ulogservice.models.DeleteULogServiceTopicRequest;
 import cn.ucloud.ulogservice.models.DeleteULogServiceTopicResponse;
+import cn.ucloud.ulogservice.models.DescribeULogServiceLogSetRequest;
+import cn.ucloud.ulogservice.models.DescribeULogServiceLogSetResponse;
 import cn.ucloud.ulogservice.models.DescribeULogServiceMachineGroupRequest;
 import cn.ucloud.ulogservice.models.DescribeULogServiceMachineGroupResponse;
+import cn.ucloud.ulogservice.models.DescribeULogServiceTopicRequest;
+import cn.ucloud.ulogservice.models.DescribeULogServiceTopicResponse;
 import cn.ucloud.ulogservice.models.GetULogServiceTopicFieldRequest;
 import cn.ucloud.ulogservice.models.GetULogServiceTopicFieldResponse;
 import cn.ucloud.ulogservice.models.ListULogServiceCollectConfRequest;
@@ -180,6 +184,19 @@ public class ULogServiceClient extends DefaultClient implements ULogServiceClien
     }
 
     /**
+     * DescribeULogServiceLogSet - 获取日志集信息
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeULogServiceLogSetResponse describeULogServiceLogSet(
+            DescribeULogServiceLogSetRequest request) throws UCloudException {
+        request.setAction("DescribeULogServiceLogSet");
+        return (DescribeULogServiceLogSetResponse)
+                this.invoke(request, DescribeULogServiceLogSetResponse.class);
+    }
+
+    /**
      * DescribeULogServiceMachineGroup - 查询日志采集机器组
      *
      * @param request Request object
@@ -190,6 +207,19 @@ public class ULogServiceClient extends DefaultClient implements ULogServiceClien
         request.setAction("DescribeULogServiceMachineGroup");
         return (DescribeULogServiceMachineGroupResponse)
                 this.invoke(request, DescribeULogServiceMachineGroupResponse.class);
+    }
+
+    /**
+     * DescribeULogServiceTopic - 获取ULogService主题详情
+     *
+     * @param request Request object
+     * @throws UCloudException Exception
+     */
+    public DescribeULogServiceTopicResponse describeULogServiceTopic(
+            DescribeULogServiceTopicRequest request) throws UCloudException {
+        request.setAction("DescribeULogServiceTopic");
+        return (DescribeULogServiceTopicResponse)
+                this.invoke(request, DescribeULogServiceTopicResponse.class);
     }
 
     /**
