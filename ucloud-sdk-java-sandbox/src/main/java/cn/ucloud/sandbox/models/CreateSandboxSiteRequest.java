@@ -42,11 +42,6 @@ public class CreateSandboxSiteRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 密钥 */
-    @NotEmpty
-    @UCloudParam("APIKey")
-    private String apiKey;
-
     /** 密钥ID */
     @NotEmpty
     @UCloudParam("KeyID")
@@ -96,14 +91,6 @@ public class CreateSandboxSiteRequest extends Request {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAPIKey() {
-        return apiKey;
-    }
-
-    public void setAPIKey(String apiKey) {
-        this.apiKey = apiKey;
     }
 
     public String getKeyID() {

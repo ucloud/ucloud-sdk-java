@@ -46,10 +46,6 @@ public class UpdateSandboxSiteRequest extends Request {
     @UCloudParam("Name")
     private String name;
 
-    /** 更新站点空间API Key */
-    @UCloudParam("APIKey")
-    private String apiKey;
-
     /** 更新站点空间Key ID（需要和APIKey一起传） */
     @UCloudParam("KeyID")
     private String keyID;
@@ -104,14 +100,6 @@ public class UpdateSandboxSiteRequest extends Request {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAPIKey() {
-        return apiKey;
-    }
-
-    public void setAPIKey(String apiKey) {
-        this.apiKey = apiKey;
     }
 
     public String getKeyID() {
