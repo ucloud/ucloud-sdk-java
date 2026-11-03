@@ -13,10 +13,11 @@
  */
 package cn.ucloud.ulb.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class UpdateLoadBalancerAttributeRequest extends Request {
 
@@ -124,6 +125,42 @@ public class UpdateLoadBalancerAttributeRequest extends Request {
         @UCloudParam("US3TokenId")
         private String us3TokenId;
 
+        /** （应用型专用）上传访问日志的目标；us3,elasticsearch,logstash,kafka,uls */
+        @UCloudParam("Destination")
+        private String destination;
+
+        /** （应用型专用）是否开启自定义日志功能 */
+        @UCloudParam("EnableCustomLog")
+        private Boolean enableCustomLog;
+
+        /** （应用型专用）日志参数列表 */
+        @UCloudParam("Params")
+        private List<String> params;
+
+        /** （应用型专用）日志内容格式，space,json; */
+        @UCloudParam("ContentType")
+        private String contentType;
+
+        /** （应用型专用）是否开启日志聚合功能 */
+        @UCloudParam("EnableAggregate")
+        private Boolean enableAggregate;
+
+        /** （应用型专用）日志聚合频率 */
+        @UCloudParam("Frequency")
+        private Integer frequency;
+
+        /** （应用型专用）日志上传目标地址；仅对elasticsearch,logstash,kafka生效，最多支持五个 */
+        @UCloudParam("DestinationAddrs")
+        private String destinationAddrs;
+
+        /** （应用型专用）kafka topic；仅对kafka生效 */
+        @UCloudParam("Topic")
+        private String topic;
+
+        /** （应用型专用）uls topic；仅对上传目标为uls生效 */
+        @UCloudParam("ULSTopic")
+        private String ulsTopic;
+
         public Boolean getEnabled() {
             return enabled;
         }
@@ -146,6 +183,78 @@ public class UpdateLoadBalancerAttributeRequest extends Request {
 
         public void setUS3TokenId(String us3TokenId) {
             this.us3TokenId = us3TokenId;
+        }
+
+        public String getDestination() {
+            return destination;
+        }
+
+        public void setDestination(String destination) {
+            this.destination = destination;
+        }
+
+        public Boolean getEnableCustomLog() {
+            return enableCustomLog;
+        }
+
+        public void setEnableCustomLog(Boolean enableCustomLog) {
+            this.enableCustomLog = enableCustomLog;
+        }
+
+        public List<String> getParams() {
+            return params;
+        }
+
+        public void setParams(List<String> params) {
+            this.params = params;
+        }
+
+        public String getContentType() {
+            return contentType;
+        }
+
+        public void setContentType(String contentType) {
+            this.contentType = contentType;
+        }
+
+        public Boolean getEnableAggregate() {
+            return enableAggregate;
+        }
+
+        public void setEnableAggregate(Boolean enableAggregate) {
+            this.enableAggregate = enableAggregate;
+        }
+
+        public Integer getFrequency() {
+            return frequency;
+        }
+
+        public void setFrequency(Integer frequency) {
+            this.frequency = frequency;
+        }
+
+        public String getDestinationAddrs() {
+            return destinationAddrs;
+        }
+
+        public void setDestinationAddrs(String destinationAddrs) {
+            this.destinationAddrs = destinationAddrs;
+        }
+
+        public String getTopic() {
+            return topic;
+        }
+
+        public void setTopic(String topic) {
+            this.topic = topic;
+        }
+
+        public String getULSTopic() {
+            return ulsTopic;
+        }
+
+        public void setULSTopic(String ulsTopic) {
+            this.ulsTopic = ulsTopic;
         }
     }
 }
