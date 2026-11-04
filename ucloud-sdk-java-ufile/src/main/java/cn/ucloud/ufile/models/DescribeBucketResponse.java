@@ -83,6 +83,18 @@ public class DescribeBucketResponse extends Response {
         @SerializedName("HasUserDomain")
         private Integer hasUserDomain;
 
+        /** 标准存储量,单位Byte */
+        @SerializedName("Storage")
+        private Integer storage;
+
+        /** 低频存储量,单位Byte */
+        @SerializedName("IaStorage")
+        private Integer iaStorage;
+
+        /** 归档存储量,单位Byte */
+        @SerializedName("AcStorage")
+        private Integer acStorage;
+
         public String getRegion() {
             return region;
         }
@@ -177,6 +189,30 @@ public class DescribeBucketResponse extends Response {
 
         public void setHasUserDomain(Integer hasUserDomain) {
             this.hasUserDomain = hasUserDomain;
+        }
+
+        public Integer getStorage() {
+            return storage;
+        }
+
+        public void setStorage(Integer storage) {
+            this.storage = storage;
+        }
+
+        public Integer getIaStorage() {
+            return iaStorage;
+        }
+
+        public void setIaStorage(Integer iaStorage) {
+            this.iaStorage = iaStorage;
+        }
+
+        public Integer getAcStorage() {
+            return acStorage;
+        }
+
+        public void setAcStorage(Integer acStorage) {
+            this.acStorage = acStorage;
         }
     }
 
