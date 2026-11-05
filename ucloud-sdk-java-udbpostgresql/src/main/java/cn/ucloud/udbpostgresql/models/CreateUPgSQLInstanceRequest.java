@@ -13,10 +13,11 @@
  */
 package cn.ucloud.udbpostgresql.models;
 
-
 import cn.ucloud.common.annotation.NotEmpty;
 import cn.ucloud.common.annotation.UCloudParam;
 import cn.ucloud.common.request.Request;
+
+import java.util.List;
 
 public class CreateUPgSQLInstanceRequest extends Request {
 
@@ -82,9 +83,21 @@ public class CreateUPgSQLInstanceRequest extends Request {
     @UCloudParam("VPCID")
     private String vpcid;
 
+    /** 高可用实例的备库可用区 */
+    @UCloudParam("BackupZone")
+    private String backupZone;
+
     /** UDB实例模式类型, 可选值如下: "Normal": 普通版UDB实例 "HA": 高可用版UDB实例 默认是"Normal" */
     @UCloudParam("InstanceMode")
     private String instanceMode;
+
+    /** */
+    @UCloudParam("Labels")
+    private List<Labels> labels;
+
+    /** */
+    @UCloudParam("SecGroupId")
+    private List<SecGroupId> secGroupId;
 
     public String getRegion() {
         return region;
@@ -182,11 +195,89 @@ public class CreateUPgSQLInstanceRequest extends Request {
         this.vpcid = vpcid;
     }
 
+    public String getBackupZone() {
+        return backupZone;
+    }
+
+    public void setBackupZone(String backupZone) {
+        this.backupZone = backupZone;
+    }
+
     public String getInstanceMode() {
         return instanceMode;
     }
 
     public void setInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
+    }
+
+    public List<Labels> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Labels> labels) {
+        this.labels = labels;
+    }
+
+    public List<SecGroupId> getSecGroupId() {
+        return secGroupId;
+    }
+
+    public void setSecGroupId(List<SecGroupId> secGroupId) {
+        this.secGroupId = secGroupId;
+    }
+
+    public static class Labels extends Request {
+
+        /** 用户资源标签的键值 */
+        @UCloudParam("Key")
+        private String key;
+
+        /** 用户资源标签的键名 */
+        @UCloudParam("Value")
+        private String value;
+
+        public String getKey() {
+            return key;
+        }
+
+        public void setKey(String key) {
+            this.key = key;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    public static class SecGroupId extends Request {
+
+        /** 安全组id */
+        @UCloudParam("Id")
+        private String id;
+
+        /** 安全组优先级 */
+        @UCloudParam("Priority")
+        private Integer priority;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Integer getPriority() {
+            return priority;
+        }
+
+        public void setPriority(Integer priority) {
+            this.priority = priority;
+        }
     }
 }
