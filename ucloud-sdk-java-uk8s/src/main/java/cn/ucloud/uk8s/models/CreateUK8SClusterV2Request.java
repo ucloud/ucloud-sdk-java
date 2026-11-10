@@ -152,6 +152,18 @@ public class CreateUK8SClusterV2Request extends Request {
     @UCloudParam("MasterImageId")
     private String masterImageId;
 
+    /** Pod是否使用独立子网 */
+    @UCloudParam("DedicatedPodSubnet")
+    private Boolean dedicatedPodSubnet;
+
+    /** Pod独立子网模式下的子网Id */
+    @UCloudParam("PodSubnetId")
+    private String podSubnetId;
+
+    /** Pod独立子网模式下使用的安全组，如不配置则使用防火墙模式 */
+    @UCloudParam("PodSubnetSecGroup")
+    private String podSubnetSecGroup;
+
     /** master lb 类型默认ulb，可选ulb nlb */
     @UCloudParam("LbClass")
     private String lbClass;
@@ -410,6 +422,30 @@ public class CreateUK8SClusterV2Request extends Request {
 
     public void setMasterImageId(String masterImageId) {
         this.masterImageId = masterImageId;
+    }
+
+    public Boolean getDedicatedPodSubnet() {
+        return dedicatedPodSubnet;
+    }
+
+    public void setDedicatedPodSubnet(Boolean dedicatedPodSubnet) {
+        this.dedicatedPodSubnet = dedicatedPodSubnet;
+    }
+
+    public String getPodSubnetId() {
+        return podSubnetId;
+    }
+
+    public void setPodSubnetId(String podSubnetId) {
+        this.podSubnetId = podSubnetId;
+    }
+
+    public String getPodSubnetSecGroup() {
+        return podSubnetSecGroup;
+    }
+
+    public void setPodSubnetSecGroup(String podSubnetSecGroup) {
+        this.podSubnetSecGroup = podSubnetSecGroup;
     }
 
     public String getLbClass() {
