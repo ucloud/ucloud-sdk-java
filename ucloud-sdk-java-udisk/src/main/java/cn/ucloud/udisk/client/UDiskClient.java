@@ -35,8 +35,6 @@ import cn.ucloud.udisk.models.DeleteUDiskRequest;
 import cn.ucloud.udisk.models.DeleteUDiskResponse;
 import cn.ucloud.udisk.models.DeleteUDiskSnapshotRequest;
 import cn.ucloud.udisk.models.DeleteUDiskSnapshotResponse;
-import cn.ucloud.udisk.models.DescribeRecycleUDiskRequest;
-import cn.ucloud.udisk.models.DescribeRecycleUDiskResponse;
 import cn.ucloud.udisk.models.DescribeUDiskPriceRequest;
 import cn.ucloud.udisk.models.DescribeUDiskPriceResponse;
 import cn.ucloud.udisk.models.DescribeUDiskRequest;
@@ -49,8 +47,6 @@ import cn.ucloud.udisk.models.DetachDeleteUDiskRequest;
 import cn.ucloud.udisk.models.DetachDeleteUDiskResponse;
 import cn.ucloud.udisk.models.DetachUDiskRequest;
 import cn.ucloud.udisk.models.DetachUDiskResponse;
-import cn.ucloud.udisk.models.RecoverUDiskRequest;
-import cn.ucloud.udisk.models.RecoverUDiskResponse;
 import cn.ucloud.udisk.models.RenameUDiskRequest;
 import cn.ucloud.udisk.models.RenameUDiskResponse;
 import cn.ucloud.udisk.models.ResizeUDiskRequest;
@@ -173,19 +169,6 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     }
 
     /**
-     * DescribeRecycleUDisk - 【已废弃】拉取回收站中云硬盘列表
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DescribeRecycleUDiskResponse describeRecycleUDisk(DescribeRecycleUDiskRequest request)
-            throws UCloudException {
-        request.setAction("DescribeRecycleUDisk");
-        return (DescribeRecycleUDiskResponse)
-                this.invoke(request, DescribeRecycleUDiskResponse.class);
-    }
-
-    /**
      * DescribeUDisk - 获取云硬盘列表
      *
      * @param request Request object
@@ -256,17 +239,6 @@ public class UDiskClient extends DefaultClient implements UDiskClientInterface {
     public DetachUDiskResponse detachUDisk(DetachUDiskRequest request) throws UCloudException {
         request.setAction("DetachUDisk");
         return (DetachUDiskResponse) this.invoke(request, DetachUDiskResponse.class);
-    }
-
-    /**
-     * RecoverUDisk - 【已废弃】恢复云硬盘
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public RecoverUDiskResponse recoverUDisk(RecoverUDiskRequest request) throws UCloudException {
-        request.setAction("RecoverUDisk");
-        return (RecoverUDiskResponse) this.invoke(request, RecoverUDiskResponse.class);
     }
 
     /**

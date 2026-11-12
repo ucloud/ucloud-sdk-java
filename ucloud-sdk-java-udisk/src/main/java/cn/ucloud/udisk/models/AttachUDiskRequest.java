@@ -49,13 +49,17 @@ public class AttachUDiskRequest extends Request {
     @UCloudParam("MultiAttach")
     private String multiAttach;
 
-    /** Host实例ID */
+    /** Host实例ID。 */
     @UCloudParam("HostId")
     private String hostId;
 
     /** 是否允许跨pod挂载（Yes：允许跨pod挂载，No：不允许跨pod挂载，不填默认No） */
     @UCloudParam("EnableCrossPodAttach")
     private String enableCrossPodAttach;
+
+    /** 用户标签 */
+    @UCloudParam("Lable")
+    private String lable;
 
     public String getRegion() {
         return region;
@@ -119,5 +123,13 @@ public class AttachUDiskRequest extends Request {
 
     public void setEnableCrossPodAttach(String enableCrossPodAttach) {
         this.enableCrossPodAttach = enableCrossPodAttach;
+    }
+
+    public String getLable() {
+        return lable;
+    }
+
+    public void setLable(String lable) {
+        this.lable = lable;
     }
 }
