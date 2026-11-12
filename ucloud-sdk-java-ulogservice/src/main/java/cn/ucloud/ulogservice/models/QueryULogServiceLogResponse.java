@@ -139,7 +139,7 @@ public class QueryULogServiceLogResponse extends Response {
 
         /** 日志内容 */
         @SerializedName("Contents")
-        private LogContent contents;
+        private List<LogContent> contents;
 
         /** 滚动检索Id Deprecated */
         @SerializedName("ScrollId")
@@ -185,11 +185,11 @@ public class QueryULogServiceLogResponse extends Response {
             this.isOver = isOver;
         }
 
-        public LogContent getContents() {
+        public List<LogContent> getContents() {
             return contents;
         }
 
-        public void setContents(LogContent contents) {
+        public void setContents(List<LogContent> contents) {
             this.contents = contents;
         }
 

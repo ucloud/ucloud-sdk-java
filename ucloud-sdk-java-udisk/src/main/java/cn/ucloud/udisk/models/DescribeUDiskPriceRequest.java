@@ -38,7 +38,7 @@ public class DescribeUDiskPriceRequest extends Request {
     private String projectId;
 
     /**
-     * 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘：范围[1~4000]；RSSD数据盘：范围[1~32000]；RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
+     * 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘、经济型SSD数据盘：范围[1~8000]；普通系统盘：范围[1~8000]；SSD系统盘、经济型SSD系统盘：范围[1~4000]；RSSD数据盘、经济型RSSD数据盘：范围[1~32000]；RSSD系统盘、经济型RSSD系统盘：范围[1~4000]；高效数据盘：范围[1~32000]；高效系统盘：范围[1~500]。
      */
     @NotEmpty
     @UCloudParam("Size")
@@ -62,7 +62,7 @@ public class DescribeUDiskPriceRequest extends Request {
 
     /**
      * UDisk 类型:
-     * DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），RSSDDataDisk(RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），RSSDSystemDisk(RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
+     * DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），ESSDDataDisk（经济型SSD数据盘），RSSDDataDisk(RSSD数据盘)，ERSSDDataDisk(经济型RSSD数据盘)，EfficiencyDataDisk（高效数据盘），SystemDisk（普通系统盘），SSDSystemDisk（SSD系统盘），ESSDSystemDisk（经济型SSD系统盘），RSSDSystemDisk(RSSD系统盘)，ERSSDSystemDisk(经济型RSSD系统盘)，EfficiencySystemDisk（高效系统盘），默认值（DataDisk）
      */
     @UCloudParam("DiskType")
     private String diskType;
@@ -75,7 +75,10 @@ public class DescribeUDiskPriceRequest extends Request {
     @UCloudParam("MachineType")
     private String machineType;
 
-    /** 快照服务备份策略。默认采用基础版套餐开通，“Base”：基础版，“ Ultimate”：旗舰版，“ Custom”：自定义备份链 */
+    /**
+     * 快照服务备份策略。普通云盘，SSD云盘，RSSD云盘套餐选择：“Base”：基础版，“ Ultimate”：旗舰版，“
+     * Custom”：自定义备份链，默认采用基础版套餐开通；ESSD云盘，ERSSD云盘套餐：“Lite”：精简版，默认采用精简版套餐开通。
+     */
     @UCloudParam("BackupMode")
     private String backupMode;
 

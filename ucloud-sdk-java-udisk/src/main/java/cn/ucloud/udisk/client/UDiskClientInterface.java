@@ -33,8 +33,6 @@ import cn.ucloud.udisk.models.DeleteUDiskRequest;
 import cn.ucloud.udisk.models.DeleteUDiskResponse;
 import cn.ucloud.udisk.models.DeleteUDiskSnapshotRequest;
 import cn.ucloud.udisk.models.DeleteUDiskSnapshotResponse;
-import cn.ucloud.udisk.models.DescribeRecycleUDiskRequest;
-import cn.ucloud.udisk.models.DescribeRecycleUDiskResponse;
 import cn.ucloud.udisk.models.DescribeUDiskPriceRequest;
 import cn.ucloud.udisk.models.DescribeUDiskPriceResponse;
 import cn.ucloud.udisk.models.DescribeUDiskRequest;
@@ -47,8 +45,6 @@ import cn.ucloud.udisk.models.DetachDeleteUDiskRequest;
 import cn.ucloud.udisk.models.DetachDeleteUDiskResponse;
 import cn.ucloud.udisk.models.DetachUDiskRequest;
 import cn.ucloud.udisk.models.DetachUDiskResponse;
-import cn.ucloud.udisk.models.RecoverUDiskRequest;
-import cn.ucloud.udisk.models.RecoverUDiskResponse;
 import cn.ucloud.udisk.models.RenameUDiskRequest;
 import cn.ucloud.udisk.models.RenameUDiskResponse;
 import cn.ucloud.udisk.models.ResizeUDiskRequest;
@@ -139,15 +135,6 @@ public interface UDiskClientInterface extends Client {
             throws UCloudException;
 
     /**
-     * DescribeRecycleUDisk - 【已废弃】拉取回收站中云硬盘列表
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public DescribeRecycleUDiskResponse describeRecycleUDisk(DescribeRecycleUDiskRequest request)
-            throws UCloudException;
-
-    /**
      * DescribeUDisk - 获取云硬盘列表
      *
      * @param request Request object
@@ -198,14 +185,6 @@ public interface UDiskClientInterface extends Client {
      * @throws UCloudException Exception
      */
     public DetachUDiskResponse detachUDisk(DetachUDiskRequest request) throws UCloudException;
-
-    /**
-     * RecoverUDisk - 【已废弃】恢复云硬盘
-     *
-     * @param request Request object
-     * @throws UCloudException Exception
-     */
-    public RecoverUDiskResponse recoverUDisk(RecoverUDiskRequest request) throws UCloudException;
 
     /**
      * RenameUDisk - 重命名云硬盘

@@ -37,7 +37,9 @@ public class CreateUDiskRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘：范围[1~8000]；RSSD数据盘：范围[1~32000]；高效数据盘：范围[1~32000]。 */
+    /**
+     * 购买UDisk大小,单位:GB,普通数据盘：范围[1~8000]；SSD数据盘、经济型SSD数据盘：范围[1~8000]；RSSD数据盘、经济型RSSD数据盘：范围[1~32000]；高效数据盘：范围[1~32000]。
+     */
     @NotEmpty
     @UCloudParam("Size")
     private Integer size;
@@ -69,7 +71,8 @@ public class CreateUDiskRequest extends Request {
 
     /**
      * UDisk 类型:
-     * DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），RSSDDataDisk（RSSD数据盘），EfficiencyDataDisk（高效数据盘），默认值（DataDisk）
+     * DataDisk（普通数据盘），SSDDataDisk（SSD数据盘），ESSDDataDisk（经济型SSD数据盘），RSSDDataDisk（RSSD数据盘），ERSSDDataDisk（经济型
+     * RSSD数据盘），EfficiencyDataDisk（高效数据盘），默认值（DataDisk）
      */
     @UCloudParam("DiskType")
     private String diskType;
@@ -86,7 +89,10 @@ public class CreateUDiskRequest extends Request {
     @UCloudParam("RdmaClusterId")
     private String rdmaClusterId;
 
-    /** 快照服务备份策略。默认采用基础版套餐开通，“Base”：基础版，“ Ultimate”：旗舰版，“ Custom”：自定义备份链 */
+    /**
+     * 快照服务备份策略。普通云盘，SSD云盘，RSSD云盘套餐选择：“Base”：基础版，“ Ultimate”：旗舰版，“
+     * Custom”：自定义备份链，默认采用基础版套餐开通；ESSD云盘，ERSSD云盘套餐：“Lite”：精简版，默认采用精简版套餐开通。
+     */
     @UCloudParam("BackupMode")
     private String backupMode;
 
@@ -101,6 +107,10 @@ public class CreateUDiskRequest extends Request {
     /** BackupMode为Custom时，进行设置, 以5天级为基础进行倍数扩增，如5、10、15、20、25、30 */
     @UCloudParam("Day")
     private Integer day;
+
+    /** 用户标签 */
+    @UCloudParam("Labels")
+    private String labels;
 
     /** 使用的代金券id */
     @UCloudParam("CouponId")
@@ -248,6 +258,14 @@ public class CreateUDiskRequest extends Request {
 
     public void setDay(Integer day) {
         this.day = day;
+    }
+
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
     }
 
     public String getCouponId() {
