@@ -45,6 +45,10 @@ public class CreateBucketRequest extends Request {
     @UCloudParam("Tag")
     private String tag;
 
+    /** bucket的可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
+
     public String getRegion() {
         return region;
     }
@@ -83,5 +87,13 @@ public class CreateBucketRequest extends Request {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }

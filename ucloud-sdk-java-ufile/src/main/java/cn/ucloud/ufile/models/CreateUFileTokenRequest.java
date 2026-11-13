@@ -65,6 +65,10 @@ public class CreateUFileTokenRequest extends Request {
     @UCloudParam("WhiteIPList")
     private List<String> whiteIPList;
 
+    /** bucket的可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
+
     public String getRegion() {
         return region;
     }
@@ -135,5 +139,13 @@ public class CreateUFileTokenRequest extends Request {
 
     public void setWhiteIPList(List<String> whiteIPList) {
         this.whiteIPList = whiteIPList;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }

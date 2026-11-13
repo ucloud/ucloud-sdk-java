@@ -37,6 +37,10 @@ public class GetProjectRegionQuotaRequest extends Request {
     @UCloudParam("ProjectId")
     private String projectId;
 
+    /** bucket可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
+
     public String getRegion() {
         return region;
     }
@@ -59,5 +63,13 @@ public class GetProjectRegionQuotaRequest extends Request {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }
