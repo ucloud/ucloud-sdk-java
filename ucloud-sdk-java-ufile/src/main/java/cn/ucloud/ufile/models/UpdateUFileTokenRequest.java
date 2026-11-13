@@ -21,12 +21,14 @@ import java.util.List;
 
 public class UpdateUFileTokenRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
-    @NotEmpty
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
@@ -41,7 +43,7 @@ public class UpdateUFileTokenRequest extends Request {
 
     /**
      * 令牌允许执行的操作，[ TOKEN_ALLOW_NONE , TOKEN_ALLOW_READ , TOKEN_ALLOW_WRITE , TOKEN_ALLOW_DELETE ,
-     * TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ]
+     * TOKEN_ALLOW_LIST, TOKEN_ALLOW_IOP , TOKEN_ALLOW_DP ，TOKEN_DENY_UPDATE]
      */
     @UCloudParam("AllowedOps")
     private List<String> allowedOps;
@@ -57,6 +59,18 @@ public class UpdateUFileTokenRequest extends Request {
     /** 令牌的超时时间点（时间戳）;注意：过期时间不能超过 4102416000 */
     @UCloudParam("ExpireTime")
     private Integer expireTime;
+
+    /** 令牌黑名单，支持ipv4，ipv6格式。 */
+    @UCloudParam("BlackIPList")
+    private List<String> blackIPList;
+
+    /** 令牌黑名单，支持ipv4，ipv6格式。 */
+    @UCloudParam("WhiteIPList")
+    private List<String> whiteIPList;
+
+    /** bucket的可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
 
     public String getRegion() {
         return region;
@@ -120,5 +134,29 @@ public class UpdateUFileTokenRequest extends Request {
 
     public void setExpireTime(Integer expireTime) {
         this.expireTime = expireTime;
+    }
+
+    public List<String> getBlackIPList() {
+        return blackIPList;
+    }
+
+    public void setBlackIPList(List<String> blackIPList) {
+        this.blackIPList = blackIPList;
+    }
+
+    public List<String> getWhiteIPList() {
+        return whiteIPList;
+    }
+
+    public void setWhiteIPList(List<String> whiteIPList) {
+        this.whiteIPList = whiteIPList;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }

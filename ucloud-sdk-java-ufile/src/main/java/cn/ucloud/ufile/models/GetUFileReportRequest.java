@@ -20,24 +20,31 @@ import cn.ucloud.common.request.Request;
 
 public class GetUFileReportRequest extends Request {
 
-    /** 地域。 参见 [地域和可用区列表](../summary/regionlist.html) */
+    /** 地域。 参见 [地域和可用区列表](https://docs.ucloud.cn/api/summary/regionlist) */
     @NotEmpty
     @UCloudParam("Region")
     private String region;
 
-    /** 项目ID。不填写为默认项目，子帐号必须填写。 请参考[GetProjectList接口](../summary/get_project_list.html) */
+    /**
+     * 项目ID。不填写为默认项目，子帐号必须填写。
+     * 请参考[GetProjectList接口](https://docs.ucloud.cn/api/summary/get_project_list)
+     */
     @UCloudParam("ProjectId")
     private String projectId;
 
-    /** 查询开始时间 */
+    /** 查询开始时间，单位 s */
     @NotEmpty
     @UCloudParam("StartTime")
     private Integer startTime;
 
-    /** 查询结束时间 */
+    /** 查询结束时间, 单位 s */
     @NotEmpty
     @UCloudParam("EndTime")
     private Integer endTime;
+
+    /** bucket的可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
 
     public String getRegion() {
         return region;
@@ -69,5 +76,13 @@ public class GetUFileReportRequest extends Request {
 
     public void setEndTime(Integer endTime) {
         this.endTime = endTime;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }

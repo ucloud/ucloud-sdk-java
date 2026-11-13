@@ -42,6 +42,10 @@ public class SetProjectRegionQuotaRequest extends Request {
     @UCloudParam("QuotaLimit")
     private Integer quotaLimit;
 
+    /** bucket的可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
+
     public String getRegion() {
         return region;
     }
@@ -72,5 +76,13 @@ public class SetProjectRegionQuotaRequest extends Request {
 
     public void setQuotaLimit(Integer quotaLimit) {
         this.quotaLimit = quotaLimit;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }

@@ -42,6 +42,10 @@ public class DescribeBucketRequest extends Request {
     @UCloudParam("Limit")
     private Integer limit;
 
+    /** bucket可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
+
     public String getRegion() {
         return region;
     }
@@ -80,5 +84,13 @@ public class DescribeBucketRequest extends Request {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }

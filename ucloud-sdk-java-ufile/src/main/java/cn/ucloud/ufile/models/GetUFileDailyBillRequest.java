@@ -46,6 +46,10 @@ public class GetUFileDailyBillRequest extends Request {
     @UCloudParam("BucketName")
     private String bucketName;
 
+    /** bucket的可用区 */
+    @UCloudParam("FakeRegion")
+    private String fakeRegion;
+
     public String getRegion() {
         return region;
     }
@@ -84,5 +88,13 @@ public class GetUFileDailyBillRequest extends Request {
 
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
+    }
+
+    public String getFakeRegion() {
+        return fakeRegion;
+    }
+
+    public void setFakeRegion(String fakeRegion) {
+        this.fakeRegion = fakeRegion;
     }
 }
